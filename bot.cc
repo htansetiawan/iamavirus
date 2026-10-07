@@ -310,7 +310,8 @@ int Run() {
               << " safe_rows=" << trace.rows_added_for_safety
               << " p=" << trace.chosen_probability
               << " gv=" << trace.game_value << " fog=" << trace.unseen_squares
-              << " budget=" << trace.budget << " spent=" << trace.spent
+              << " budget=" << trace.budget << " x" << trace.budget_multiplier
+              << " spent=" << trace.spent
               << " infer=" << inference_seconds << " clock=" << remaining
               << " risk=" << trace.king_risk_permille
               << " nv=" << trace.neural_value << " cp=" << trace.chosen_policy

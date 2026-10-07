@@ -227,6 +227,10 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_EXPOSURE_MODE", &options.exposure_mode);
   Override("FOW_EXPOSURE_STRIDE", &options.exposure_stride);
   Override("FOW_TIME_CAP", &options.time_cap);
+  Override("FOW_HARD_TURN", &options.hard_turn_multiplier);
+  Override("FOW_EASY_TURN", &options.easy_turn_multiplier);
+  Override("FOW_HARD_RISK", &options.hard_risk_threshold);
+  Override("FOW_TIME_CAP_HARD", &options.time_cap_hard);
   Override("FOW_TIME_RESERVE", &options.time_reserve);
   Override("FOW_TIME_DIVISOR", &options.time_divisor);
   Override("FOW_HASH_MB", &options.transposition_megabytes);
@@ -415,6 +419,26 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   // is the only safe reply can be discarded by a search of one guessed board and
   // never considered again.
   const std::vector<double> king_risk = KingLossProbabilities(legal, en_passant);
+  {
+    // Scale the clock by the difficulty the population reports.
+    double lowest_risk = 2.0;
+    for (const double risk : king_risk) lowest_risk = std::min(lowest_risk, risk);
+    const double fog = static_cast<double>(trace->unseen_squares) / kNumSquares;
+    double multiplier = 1.0;
+    if (lowest_risk >= options_.hard_risk_threshold || fog > 0.6) {
+      multiplier = options_.hard_turn_multiplier;
+    } else if (legal.size() <= 2 || remaining_seconds < options_.time_reserve * 3) {
+      multiplier = options_.easy_turn_multiplier;
+    }
+    if (multiplier != 1.0) {
+      const double spare = remaining_seconds - options_.time_reserve;
+      double budget = trace->budget * multiplier;
+      budget = std::min(budget, multiplier > 1.0 ? options_.time_cap_hard : options_.time_cap);
+      budget = std::max(0.05, std::min(budget, std::max(0.0, spare) * 0.5));
+      trace->budget = budget;
+    }
+    trace->budget_multiplier = multiplier;
+  }
   // Records the chosen move's own risk, whichever path returns it. Without this
   // the early returns left the field at zero, which reads as "perfectly safe".
   const auto note_choice = [&](Move chosen) {

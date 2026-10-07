@@ -118,7 +118,17 @@ struct EngineOptions {
   // Particles sampled for the exposure term (stride over the population),
   // since it costs a move generation per particle and candidate.
   int exposure_stride = 4;
-  // Clock policy, in seconds.
+  // Clock policy, in seconds. The per-move target is scaled by how hard the
+  // decision looks once the king risks are known: a turn where the safest
+  // move still carries real risk, or the fog is deep, gets up to
+  // `hard_turn_multiplier` times the target (capped by `time_cap_hard`); a
+  // turn with one safe move, or where a single row dominates, gets
+  // `easy_turn_multiplier`. Games end with 60-150 s unused, so this moves
+  // depth from easy plies to the few that decide the game.
+  double hard_turn_multiplier = 2.0;
+  double easy_turn_multiplier = 0.4;
+  double hard_risk_threshold = 0.03;   // safest move's king risk
+  double time_cap_hard = 8.0;
   double time_reserve = 6.0;
   double time_divisor = 30.0;
   double time_cap = 4.0;
@@ -162,6 +172,7 @@ struct DecisionTrace {
   double neural_value = 0.0;
   double chosen_policy = 0.0;
   double chosen_danger = 0.0;
+  double budget_multiplier = 1.0;  // hard/easy turn scaling applied this turn
 };
 
 // Options with any overrides from the environment applied.
