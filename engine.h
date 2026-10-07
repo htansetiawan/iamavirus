@@ -200,7 +200,10 @@ struct EngineOptions {
   double easy_turn_multiplier = 0.4;
   double hard_risk_threshold = 0.03;   // safest move's king risk
   double time_cap_hard = 12.0;
-  double time_reserve = 6.0;
+  // Reserve: the full candidate's lowest clock over 16 real-clock games was
+  // 11 s with a 6 s reserve; 10 s keeps a slower arena host out of trouble
+  // and costs nodes only in very long games.
+  double time_reserve = 10.0;
   // Arena games (v5, v9, v10: 115 games) ended with a median 121 s unused on
   // our clock and never below 40 s; every decision stopped at the old 4 s
   // cap. With divisor 20 and cap 7 the budget formula spends about 6 s per
