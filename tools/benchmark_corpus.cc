@@ -57,7 +57,66 @@ struct Tally {
   int unsafe_rejected = 0;
   int exposed = 0;           // engine's move leaves >= 3 points en prise (true board)
   int real_exposed = 0;      // ...and the same for the move actually played
+  // Belief calibration: over hidden squares holding an enemy piece on the
+  // true board, the share of particles that hold that piece there (averaged
+  // per decision); and, at the recorded fatal plies, the share of particles
+  // holding the true attacker of the king's destination square.
+  double hidden_piece_mass = 0.0;
+  int hidden_piece_decisions = 0;
+  double attacker_mass = 0.0;
+  int attacker_plies = 0;
 };
+
+// Average over the true board's hidden enemy pieces of the particle share
+// holding that piece type on that square. 1.0 means the population knows
+// every hidden piece exactly; the uniform scatter of a rebuild scores ~0.05.
+double HiddenPieceMass(const BeliefState& belief, const Position& truth,
+                       const Observation& view, int side) {
+  const int enemy = side ^ 1;
+  const std::vector<Position>& population = belief.particles();
+  if (population.empty()) return 0.0;
+  double total = 0.0;
+  int squares = 0;
+  for (int square = 0; square < kNumSquares; ++square) {
+    if (!view.IsUnseen(square)) continue;
+    const int type = truth.piece_at(square);
+    if (type == kNoPiece || truth.color_at(square) != enemy) continue;
+    int holders = 0;
+    for (const Position& particle : population) {
+      if (particle.piece_at(square) == type && particle.color_at(square) == enemy) ++holders;
+    }
+    total += static_cast<double>(holders) / population.size();
+    ++squares;
+  }
+  return squares > 0 ? total / squares : -1.0;
+}
+
+// At a fatal ply: after the real (losing) move, the share of particles that
+// hold the piece which actually attacks our king, on its true square.
+double AttackerMass(const BeliefState& belief, const Position& truth, Move fatal, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(fatal, &undo);
+  const int king = after.KingSquare(side);
+  if (king < 0) return -1.0;
+  const Bitboard attackers = after.AttackersTo(king, side ^ 1);
+  if (attackers == 0) return -1.0;
+  const std::vector<Position>& population = belief.particles();
+  if (population.empty()) return 0.0;
+  // Credit any attacker square the particle agrees about.
+  int holders = 0;
+  for (const Position& particle : population) {
+    Bitboard scan = attackers;
+    bool holds = false;
+    while (scan) {
+      const int square = PopLsb(&scan);
+      if (particle.piece_at(square) == after.piece_at(square) &&
+          particle.color_at(square) == side ^ 1) holds = true;
+    }
+    if (holds) ++holders;
+  }
+  return static_cast<double>(holders) / population.size();
+}
 
 // Material the mover leaves to the opponent's best immediate capture after
 // `move` on the true board, in pawns; 0 when the move loses the king outright
@@ -133,6 +192,18 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
           tally->unsafe_rejected += trace.rejected_unsafe;
           const bool bad = LosesKing(truth, choice, seat.side);
           if (bad) ++tally->blunders;
+          const double mass = HiddenPieceMass(engine.belief(), truth, view, seat.side);
+          if (mass >= 0.0) {
+            tally->hidden_piece_mass += mass;
+            ++tally->hidden_piece_decisions;
+          }
+          if (is_fatal_ply) {
+            const double held = AttackerMass(engine.belief(), truth, actual, seat.side);
+            if (held >= 0.0) {
+              tally->attacker_mass += held;
+              ++tally->attacker_plies;
+            }
+          }
           if (choice == actual) ++tally->matched;
           if (ExposureOf(truth, choice, seat.side) >= 3) ++tally->exposed;
           if (ExposureOf(truth, actual, seat.side) >= 3) ++tally->real_exposed;
@@ -206,6 +277,10 @@ int main(int argc, char** argv) {
               tally.decisions ? 100.0 * tally.blunders / tally.decisions : 0.0);
   std::printf("  matched the real move     : %d (%.1f%%)\n", tally.matched,
               tally.decisions ? 100.0 * tally.matched / tally.decisions : 0.0);
+  std::printf("  belief: hidden enemy piece mass %.3f (%d decisions); true attacker held at fatal plies %.3f (%d plies)\n",
+              tally.hidden_piece_decisions ? tally.hidden_piece_mass / tally.hidden_piece_decisions : 0.0,
+              tally.hidden_piece_decisions,
+              tally.attacker_plies ? tally.attacker_mass / tally.attacker_plies : 0.0, tally.attacker_plies);
   std::printf("  left >=3 points en prise  : engine %d (%.2f%%), real player %d (%.2f%%)\n",
               tally.exposed, tally.decisions ? 100.0 * tally.exposed / tally.decisions : 0.0,
               tally.real_exposed, tally.decisions ? 100.0 * tally.real_exposed / tally.decisions : 0.0);

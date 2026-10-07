@@ -278,6 +278,16 @@ Offline benchmark, 634 real losing seats, same seed and node budget:
 immediate king losses 6.55% in both; survival 58% in both. Candidate archive
 `fable-submissions/iamavirus-v11-hybrid.zip`.
 
+**Sensitivity (19:00 UTC, same 634 seats).** 4,096 particles: king losses
+6.53%, left ≥3 en prise 7.53% (vs 6.55% / 7.83% at 2,048): a small gain at
+twice the belief cost. Exposure stride 2 vs 4: identical. **Belief
+calibration metric** added to the benchmark: the particle share holding each
+hidden enemy piece on its true square ("hidden piece mass"), and at the
+recorded fatal plies the share holding the true attacker. Three-seat smoke:
+0.305 and 0.053 — the population holds the right hidden piece on the right
+square 30% of the time and, when we walked into the attacker, held it in one
+particle in twenty. That is the number the belief work has to move.
+
 **What this means for the next step.** The engine's remaining weakness in the
 regression family is a *pricing* problem on a now-honest posterior, and the
 hybrid mode is where the learned signals meet it: neural danger is logged
