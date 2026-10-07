@@ -83,6 +83,13 @@ struct Tally {
   // not see that puts an unseen attacker on the mover's king (true board).
   // Our queen capturable for a net loss of >= 5 points after the move (true board).
   int queen_en_prise = 0;
+  // Opening split (ply < 30): decisions, queen en prise and en prise, engine vs real.
+  int early_decisions = 0;
+  int early_queen_en_prise = 0;
+  int early_real_queen_en_prise = 0;
+  int early_exposed = 0;
+  int early_real_exposed = 0;
+  int book_moves = 0;
   int real_queen_en_prise = 0;
   int king_threatened = 0;
   int real_king_threatened = 0;
@@ -277,6 +284,9 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
     return;
   }
   Engine engine(seat.side, 180.0, 2.0, options, seed);
+  if (const char* book = std::getenv("FOW_BOOK")) {
+    if (std::string(book) != "off") engine.LoadBook(book);
+  }
   ++tally->seats;
 
   // The last ply played by our seat is the one that ended the game when we lost.
@@ -351,6 +361,14 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
           }
           if (QueenEnPrise(truth, choice, seat.side)) ++tally->queen_en_prise;
           if (QueenEnPrise(truth, actual, seat.side)) ++tally->real_queen_en_prise;
+          if (ply < 30) {
+            ++tally->early_decisions;
+            if (QueenEnPrise(truth, choice, seat.side)) ++tally->early_queen_en_prise;
+            if (QueenEnPrise(truth, actual, seat.side)) ++tally->early_real_queen_en_prise;
+            if (ExposureOf(truth, choice, seat.side) >= 3) ++tally->early_exposed;
+            if (ExposureOf(truth, actual, seat.side) >= 3) ++tally->early_real_exposed;
+          }
+          if (trace.from_book) ++tally->book_moves;
           if (HiddenKingThreatOf(truth, choice, seat.side)) ++tally->king_threatened;
           if (HiddenKingThreatOf(truth, actual, seat.side)) ++tally->real_king_threatened;
           if (HiddenThreatOf(truth, choice, seat.side) >= 3) {
@@ -453,6 +471,12 @@ int main(int argc, char** argv) {
   std::printf("  ...the engine survives    : %d (%.0f%%)\n", tally.fatal_saved,
               tally.fatal_positions
                   ? 100.0 * tally.fatal_saved / tally.fatal_positions : 0.0);
+  std::printf("  opening (ply<30): %d decisions, book moves %d; queen en prise engine %.2f%% real %.2f%%; en prise engine %.2f%% real %.2f%%\n",
+              tally.early_decisions, tally.book_moves,
+              tally.early_decisions ? 100.0 * tally.early_queen_en_prise / tally.early_decisions : 0.0,
+              tally.early_decisions ? 100.0 * tally.early_real_queen_en_prise / tally.early_decisions : 0.0,
+              tally.early_decisions ? 100.0 * tally.early_exposed / tally.early_decisions : 0.0,
+              tally.early_decisions ? 100.0 * tally.early_real_exposed / tally.early_decisions : 0.0);
   std::printf("  queen left en prise (net>=5): engine %d (%.2f%%), real player %d (%.2f%%)\n",
               tally.queen_en_prise, tally.decisions ? 100.0 * tally.queen_en_prise / tally.decisions : 0.0,
               tally.real_queen_en_prise, tally.decisions ? 100.0 * tally.real_queen_en_prise / tally.decisions : 0.0);
