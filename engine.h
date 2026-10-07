@@ -130,8 +130,13 @@ struct EngineOptions {
   // the opponent's next turn (ExpectedHiddenThreat). A rook sliding behind
   // the fog onto the open file our knight sits on is invisible to the one-ply
   // terms, and to the search, which lets us answer a move we would never
-  // observe. Off until measured.
-  double hidden_threat_weight = 0.0;
+  // observe. Measured on the 634 real losing seats (balanced, deductions on,
+  // 400k nodes): decisions that leave the opponent a >= 3-point two-ply
+  // hidden threat on the true board fall 11.74% -> 8.34% (weight 0.5) ->
+  // 7.35% (weight 1.0) against the real players' 9.60%, with king losses,
+  // one-ply en prise and fatal-ply survival unchanged, at no measurable time
+  // cost at stride 16.
+  double hidden_threat_weight = 1.0;
   int hidden_threat_stride = 16;
   // Clock policy, in seconds. The per-move target is scaled by how hard the
   // decision looks once the king risks are known: a turn where the safest
