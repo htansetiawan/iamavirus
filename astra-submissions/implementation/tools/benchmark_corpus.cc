@@ -22,6 +22,8 @@
 // Corpus line: <id> <side w|b> <result> <reason> <opponent> <uci moves...>
 
 #include <cstdio>
+#include <algorithm>
+#include <cmath>
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
@@ -34,6 +36,7 @@
 #include "../engine.h"
 #include "../observation.h"
 #include "../position.h"
+#include "../neural_inference.h"
 
 namespace fow {
 namespace {
@@ -76,13 +79,15 @@ bool LosesKing(const Position& truth, Move move, int side) {
 }
 
 void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
-             Tally* tally, bool verbose) {
+             Tally* tally, bool verbose, NeuralModel* model) {
   Position truth;
   if (!PositionFromFen(
           "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth)) {
     return;
   }
   Engine engine(seat.side, 180.0, 2.0, options, 777);
+  NeuralTracker tracker(seat.side);
+  if (model != nullptr) model->Reset();
   ++tally->seats;
 
   // The last ply played by our seat is the one that ended the game when we lost.
@@ -99,6 +104,20 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
   for (size_t ply = 0; ply < seat.moves.size(); ++ply) {
     const Observation view(RenderObservation(truth, seat.side));
     engine.Observe(view, we_just_moved);
+    if (model != nullptr) {
+      const int phase = ply == 0 ? kPhaseInitial
+                        : we_just_moved ? kPhaseAfterOwnMove : kPhaseAfterOpponentMove;
+      tracker.Observe(view, phase, static_cast<int>(ply));
+      float planes[kNeuralPlanes * kNumSquares];
+      float scalars[kNeuralScalars];
+      tracker.Planes(planes);
+      tracker.Scalars(scalars);
+      std::string error;
+      if (!model->Observe(planes, scalars, &error)) {
+        std::fprintf(stderr, "replay inference failed: %s\n", error.c_str());
+        std::exit(1);
+      }
+    }
     we_just_moved = false;
 
     const Move actual = FindMove(truth, seat.moves[ply]);
@@ -114,7 +133,31 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
       const bool sampled = (ply % static_cast<size_t>(stride)) == 0;
       if (is_fatal_ply || sampled) {
         DecisionTrace trace;
-        const Move choice = engine.ChooseMove(view, 150.0, &trace);
+        NeuralAdvice advice;
+        if (model != nullptr) {
+          MoveList candidates;
+          tracker.LegalCandidates(&candidates);
+          const auto packed = tracker.MakeCandidates(candidates);
+          std::vector<float> logits, dangers;
+          std::string error;
+          if (packed.empty() || !model->Score(packed, &logits, &dangers, &error)) {
+            std::fprintf(stderr, "replay scoring failed: %s\n", error.c_str());
+            std::exit(1);
+          }
+          const float peak = *std::max_element(logits.begin(), logits.end());
+          double total = 0.0;
+          for (std::size_t i = 0; i < packed.size(); ++i) {
+            advice.moves.push_back(packed[i].move);
+            advice.policy.push_back(std::exp(static_cast<double>(logits[i] - peak)));
+            advice.danger.push_back(1.0 / (1.0 + std::exp(-static_cast<double>(dangers[i]))));
+            total += advice.policy.back();
+          }
+          for (double& p : advice.policy) p /= total;
+          advice.value = model->value();
+          advice.available = true;
+        }
+        const Move choice = engine.ChooseMove(view, 150.0, &trace,
+                                              advice.available ? &advice : nullptr);
         if (choice != kNullMove) {
           ++tally->decisions;
           tally->unsafe_rejected += trace.rejected_unsafe;
@@ -135,6 +178,7 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
         }
       }
       engine.NotifyMovePlayed(actual);
+      if (model != nullptr) tracker.RecordOwnMove(actual);
       we_just_moved = true;
     }
     UndoState undo;
@@ -162,6 +206,17 @@ int main(int argc, char** argv) {
   EngineOptions options = EngineOptionsFromEnvironment();
   options.node_budget = nodes;
   options.time_reserve = 0.0;
+  NeuralModel model;
+  NeuralModel* advisor = nullptr;
+  if (options.mode != EngineMode::kCpp) {
+    const char* directory = std::getenv("FOW_MODEL_DIR");
+    std::string error;
+    if (!model.Load(directory ? directory : "model", 1, &error)) {
+      std::fprintf(stderr, "benchmark requires the requested model: %s\n", error.c_str());
+      return 1;
+    }
+    advisor = &model;
+  }
 
   std::ifstream input(argv[1]);
   if (!input) {
@@ -180,7 +235,7 @@ int main(int argc, char** argv) {
     std::string uci;
     while (stream >> uci) seat.moves.push_back(uci);
     if (seat.moves.size() < 4) continue;
-    RunSeat(seat, options, stride, &tally, verbose);
+    RunSeat(seat, options, stride, &tally, verbose, advisor);
   }
 
   std::printf("\ncorpus: %s   stride %d   %llu nodes/decision\n", argv[1],

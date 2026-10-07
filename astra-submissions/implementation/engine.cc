@@ -528,6 +528,39 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     for (int k = 0; k < options_.hybrid_risk_top && k < static_cast<int>(by_risk.size()); ++k) {
       add(safe[by_risk[static_cast<std::size_t>(k)]]);
     }
+    // Astra: enforce the safety contract on the FINAL capped union. Preserve
+    // the existing search/policy ordering unless every kept move is riskier
+    // than a candidate we excluded. Replace at most one row, without expanding
+    // the matrix or changing the particle posterior or evaluation weights.
+    if (!by_risk.empty()) {
+      const int safest = by_risk.front();
+      const double minimum = safe_risk[static_cast<std::size_t>(safest)];
+      double kept_minimum = 2.0;
+      double worst = -1.0;
+      std::size_t replace = 0;
+      for (std::size_t k = 0; k < chosen.size(); ++k) {
+        for (int j = 0; j < safe.size(); ++j) {
+          if (chosen[k].move != safe[j]) continue;
+          const double risk = safe_risk[static_cast<std::size_t>(j)];
+          kept_minimum = std::min(kept_minimum, risk);
+          // Among equally risky rows evict the last, preserving earlier
+          // search/policy priorities as much as possible.
+          if (risk >= worst) {
+            worst = risk;
+            replace = k;
+          }
+        }
+      }
+      if (minimum < kept_minimum) {
+        for (const RootMoveValue& row : ranked) {
+          if (row.move != safe[safest]) continue;
+          if (chosen.empty()) chosen.push_back(row);
+          else chosen[replace] = row;
+          trace->safety_replacements = 1;
+          break;
+        }
+      }
+    }
     ranked = chosen;
     shortlist = static_cast<int>(ranked.size());
   }

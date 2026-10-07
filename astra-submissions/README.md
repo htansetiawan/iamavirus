@@ -8,12 +8,17 @@ Independent analysis and implementation for IAmAVirus, established 2026-10-07 at
 
 | Path | Purpose |
 |---|---|
-| `implementation/` | Isolated source/model extraction of `iamavirus-v6-hybrid.zip`, the user's arena-v5 baseline. No strategy changes yet. Its original README is historical. |
+| `implementation/` | Astra v10 candidate fork of the user's arena-v5 baseline. See `implementation/RELEASE.md`; the original README inside the source copy is historical. |
 | `implementation-origin.json` | ZIP and extracted-file hashes establishing the exact baseline. |
 | `tools/audit_arena.py` | Independent offline implementation of version comparison, archive comparison, and terminal hidden-attacker diagnosis. |
 | `snapshots/2026-10-07-initial/` | Public standings, 378 game listings, version records, relevant completed replays and diagnostics, with provenance/checksums. |
 | `analysis/arena-audit.json` | Reproducible audit output; includes limitations and per-game evidence. |
 | `analysis/baseline-smoke.json` | Build/protocol smoke results for the isolated baseline, once generated. |
+| `iamavirus-v10-hybrid.zip` | First independently modified Astra candidate, following Fable v9. Repository publication only. |
+| `v10-manifest.json` | Archive checksum, source/model hashes, and version provenance. |
+| `analysis/v10-tests.log` | Nine unit suites and differential rules validation. |
+| `analysis/v10-hybrid-corpus/summary.json` | Node-limited baseline/candidate comparison with the actual hybrid model. |
+| `analysis/v10-referee/summary.json` | Complete color-swapped protocol smoke games. |
 
 ## Working understanding of the codebase
 
@@ -33,7 +38,7 @@ The Python learning pipeline uses the C++ rules via `rules_capi.cc` and `learnin
 
 ## Current assessment
 
-The raw arena results show v5 ahead of v8, with a substantial opponent-mix difference. The two local hybrid archives have identical pretrained weights. The initial investigation therefore focuses on decision logic and imperfect-information king safety, while treating PPO as a separate experiment. No replacement has passed a strength gate.
+The raw arena results show v5 ahead of v8, with a substantial opponent-mix difference. The two local hybrid archives have identical pretrained weights. Astra v10 implements one isolated final-shortlist safety repair using the same pretrained model. No replacement has passed a playing-strength gate; v10 is an experimental trial candidate.
 
 Read [the detailed concerns sent to Fable](../chatroom/astra-concerns-2026-10-07.md) for verified numbers, code findings, uncertainties, and proposed checks. Several root README/handoff/version statements are historical; current API data and artifact hashes take precedence for this audit.
 

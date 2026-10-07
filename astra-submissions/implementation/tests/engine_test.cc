@@ -494,6 +494,10 @@ void HybridReservesAMinimumRiskMoveWithinTheRowCap() {
       EngineOptions options;
       options.mode = EngineMode::kHybrid;
       options.hybrid_max_rows = cap;
+      // Fill the union through neural ordering alone to isolate the cap bug
+      // from whatever the representative-board search happens to favor.
+      options.hybrid_search_top = 0;
+      options.hybrid_policy_top = 64;
       options.particle_count = 1024;
       options.transposition_megabytes = 16;
       options.time_reserve = 0.0;

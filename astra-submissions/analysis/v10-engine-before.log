@@ -10,12 +10,16 @@ ignoring malformed FOW_PARTICLES=not-a-number
        chose e8d7 (rejected 30 unsafe, king risk 156 permille)
        chose d1c2 (rejected 23 of 25, risk 0 permille)
        226 plies, worst budget overrun 0.001s
-       cap 6 seed 1 shortlist risk 291 minimum 291 replaced 0
+  FAIL tests/engine_test.cc:544 in fow::HybridReservesAMinimumRiskMoveWithinTheRowCap
+       trace.shortlist_risk_permille == trace.safest_risk_permille [actual=1000 expected=291]
+       cap 6 seed 1 shortlist risk 1000 minimum 291 replaced 0
        cap 6 seed 2 shortlist risk 145 minimum 145 replaced 0
        cap 6 seed 3 shortlist risk 129 minimum 129 replaced 0
        cap 6 seed 4 shortlist risk 0 minimum 0 replaced 0
-       cap 12 seed 1 shortlist risk 291 minimum 291 replaced 0
+  FAIL tests/engine_test.cc:544 in fow::HybridReservesAMinimumRiskMoveWithinTheRowCap
+       trace.shortlist_risk_permille == trace.safest_risk_permille [actual=1000 expected=291]
+       cap 12 seed 1 shortlist risk 1000 minimum 291 replaced 0
        cap 12 seed 2 shortlist risk 145 minimum 145 replaced 0
        cap 12 seed 3 shortlist risk 129 minimum 129 replaced 0
        cap 12 seed 4 shortlist risk 0 minimum 0 replaced 0
-engine_test: 575 checks, 0 failures
+engine_test: 575 checks, 2 failures
