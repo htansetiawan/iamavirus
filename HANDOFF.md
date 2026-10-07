@@ -203,10 +203,16 @@ opponent (paired bootstrap 95%).** vs capture-greedy: +0.10 [−0.07, +0.27]
 **Inconclusive**, as expected at this size; the spec's 200-pair final
 evaluation was not run. `data/reports/ppo-vs-pretrain-match.json`.
 
-**Arena-like comparison (real clocks, hybrid release v1 vs cpp, 3 pairs):**
-see `data/reports/v1-arena-hybrid.json` and the line below.
-
-ARENA_PLACEHOLDER
+**Arena-like comparison (real 180+2 clocks through `referee.py`, this machine,
+hybrid release v1 vs the repaired cpp bot, 3 colour-swapped seed pairs).** The
+hybrid won **6 of 6** games against cpp (as White and as Black, all by king
+capture, 44–93 plies); the baseline arm (cpp vs cpp with the same seeds) scored
+2 of 6. Paired candidate-minus-baseline +0.67, bootstrap interval [0.50, 1.00]
+over only three pairs, so it is a smoke result, not the promotion gate: the
+specification's 200-pair evaluation across opponents has not been run, and
+the hybrid's candidate union (search top 6 + policy top 8 + lowest-risk top 8,
+trimmed to 12 rows) has not been ablated. `data/reports/v1-arena-hybrid.json`;
+the twelve replays are in `data/arena/`.
 
 **Two more engine bugs found by the pipeline, both fixed with tests.**
 (1) `BeliefState::Recover` rebuilt *our own* castling rights from the board,
