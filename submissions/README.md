@@ -19,6 +19,8 @@ Team id `a2c35173659545c99752376a70418438` (`IAmAVirus`). Public record:
 | 4 | 2026-10-07 05:47 | (pre-session) | — | `5e0ef63` | cpp | — | [v4](../versions/v4-king-safety.md) | 102W–6D–156L (264 games) |
 | 5 | 2026-10-07 14:44 | `iamavirus-v6-hybrid.zip` | `662a989aa56c` | `61d33f9` (tree; published in `e2dc3b2`) | **hybrid** | stage A release `v1` | [v6](../versions/v6-neural.md) | **active**, 0 games at upload |
 | 6 | 2026-10-07 14:46 | `iamavirus-v6-cpp.zip` | `6b6b1f338501` | `61d33f9` (tree; published in `e2dc3b2`) | cpp | — | [v6](../versions/v6-neural.md) | validated, inactive |
+| *(not yet uploaded)* | — | `iamavirus-v6.1-cpp.zip` | `ed79ce45b31e` | see `git log` (v6.1) | cpp | — | [v6](../versions/v6-neural.md) + two repairs below | built 15:30 UTC |
+| *(not yet uploaded)* | — | `iamavirus-v6.1-hybrid.zip` | `0e4db2bf507b` | see `git log` (v6.1) | **hybrid** | stage A release `v1` | same | built 15:30 UTC |
 | 7 | 2026-10-07 14:47 | `iamavirus-cpp.zip` (committed upstream as "Add v5") | `eb994e3d89e4` | `f236ad7` (engine.cc identical) | cpp | — | [v5](../versions/v5-opponent-prior.md) + turn deadline | inactive; **confirm this is v7** |
 
 So the design note "v5" ([versions/v5-opponent-prior.md](../versions/v5-opponent-prior.md):
@@ -90,7 +92,24 @@ include zero), so the pretrained graphs shipped.
 | 2026-10-07 14:47 | v7 uploaded: `iamavirus-cpp.zip`, the design-v5 engine from `f236ad7`, inactive |
 | 2026-10-07 ~15:00 | team rating 1453 over 302 games before any v5/v6 game |
 | 2026-10-07 15:05 | v7 (design-v5 engine): **2W–10L** vs the TA baselines, including an **illegal move** forfeit (`m6uovffl`: it sent `e8c8`, castling with a right the king had forfeited — the `Recover` rights-rebuild bug fixed in the v6 archives). Of its 10 king-capture losses, 9 were taken by a piece invisible to us at our last view, 5 of them king moves into the covered square: the failure family again. |
+| 2026-10-07 15:25 | v6 (cpp): 2W–6L (wins vs Apricot Squad ×2 incl. `rz1wn4kx`; losses vs TA Baseline S ×2, duck ×2, Instructors ×2). Analysis in "v6.1" below. v5 (hybrid) re-activated. |
 | 2026-10-07 15:05 | v5 (hybrid): 1W–1L vs TA Baseline P; the loss (`nn8dt0e9`, 108 plies) was `f7f6` exposing the king to an unseen piece on g2. v6 (cpp) was then made active. |
+
+## v6.1: two repairs from the first v6 arena losses
+
+Replaying the losses offline through the engine (`HANDOFF.md`, "Measured")
+found a payoff bug: a matrix cell where a move loses the king outright scored
+a flat −30,000, while a move that only *might* lose it scored its search value
+minus its risk charge, which in a bad position lies below −30,000 — so the
+certain loss outranked the probable escape. In `1sv22xki` ply 40 one seed in
+four chose a 100%-risk rook move over a 33%-risk king move for that reason.
+Fatal cells now carry the same risk charge, and the shortlist is extended
+with any move the population rates safer than everything the search kept.
+Regression test: `engine_test: ShortlistKeepsTheSafestMovesThePopulationKnows`
+(all four seeds now choose the safest measured move). Of the eight v6 games
+(2W–6L), five losses were decided with ≤ 3 safe moves left, i.e. the position
+was already lost; the remaining three were belief failures where the
+population rated a truly fatal move at 0% risk.
 
 ## How to add a row
 

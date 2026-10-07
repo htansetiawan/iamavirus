@@ -473,6 +473,58 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                    });
   int shortlist =
       std::min<int>(options_.shortlist_size, static_cast<int>(ranked.size()));
+  // The shortlist is ranked by a search of one guessed board, which can leave
+  // out every defensive move when that board happens to show no attacker. The
+  // king risk was measured over the whole population before any shortlist
+  // existed, so moves safer than anything the search kept are appended here:
+  // the matrix game then prices them, instead of choosing among rows that all
+  // lose. Arena game 1sv22xki, ply 40: the three king moves measured 26-77%
+  // risk, the shortlist held only 100%-risk moves, and the bot played one.
+  if (static_cast<int>(ranked.size()) > shortlist) {
+    double lowest_kept = 2.0;
+    for (int i = 0; i < shortlist; ++i) {
+      for (int j = 0; j < safe.size(); ++j) {
+        if (safe[j] == ranked[static_cast<std::size_t>(i)].move) {
+          lowest_kept = std::min(lowest_kept, safe_risk[static_cast<std::size_t>(j)]);
+        }
+      }
+    }
+    std::vector<int> by_risk;
+    for (int j = 0; j < safe.size(); ++j) by_risk.push_back(j);
+    const Position& reference = belief_.Representative();
+    std::stable_sort(by_risk.begin(), by_risk.end(), [&](int a, int b) {
+      const double ra = safe_risk[static_cast<std::size_t>(a)];
+      const double rb = safe_risk[static_cast<std::size_t>(b)];
+      if (ra != rb) return ra < rb;
+      // Ties: king moves first, since a threatened king's escape is the
+      // defensive option most often missing from a material-ranked shortlist.
+      const bool ka = reference.piece_at(MoveFrom(safe[a])) == kKing;
+      const bool kb = reference.piece_at(MoveFrom(safe[b])) == kKing;
+      return ka && !kb;
+    });
+    int appended = 0;
+    for (const int j : by_risk) {
+      if (appended >= options_.hybrid_risk_top) break;
+      const double risk = safe_risk[static_cast<std::size_t>(j)];
+      if (risk >= lowest_kept - 1e-9) break;  // nothing safer than the search kept
+      const Move move = safe[j];
+      bool present = false;
+      for (int i = 0; i < shortlist; ++i) {
+        if (ranked[static_cast<std::size_t>(i)].move == move) present = true;
+      }
+      if (present) continue;
+      // Move the row up to the shortlist boundary so the resize keeps it.
+      for (std::size_t k = static_cast<std::size_t>(shortlist); k < ranked.size(); ++k) {
+        if (ranked[k].move == move) {
+          std::swap(ranked[k], ranked[static_cast<std::size_t>(shortlist)]);
+          ++shortlist;
+          ++appended;
+          trace->rows_added_for_safety = appended;
+          break;
+        }
+      }
+    }
+  }
   if (advised && options_.mode == EngineMode::kHybrid) {
     // The union of the search's own top moves, the policy's top moves and the
     // lowest particle-risk moves, so that a single representative board can
@@ -605,7 +657,7 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
         // The move cannot be made in this hypothesis, which only happens when a
         // rebuilt hypothesis disagrees about castling rights. Treat it as lost
         // rather than silently corrupting the board.
-        game.set(row, column, kDisasterScore);
+        game.set(row, column, kDisasterScore - risk[row]);
         continue;
       }
 
@@ -631,7 +683,13 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       hypothesis.UnmakeMove(move, undo);
 
       if (fatal) {
-        game.set(row, column, kDisasterScore);
+        // The risk charge applies here too. Without it a move that loses the
+        // king in every hypothesis scored a flat -30000 while a move that
+        // merely *might* lose it scored its search value minus its risk, which
+        // in a bad position is below -30000 -- so the certain loss looked
+        // better than the probable escape. Arena game 1sv22xki, ply 40: the
+        // bot chose a 100%-risk rook move over a 33%-risk king move.
+        game.set(row, column, kDisasterScore - risk[row]);
         continue;
       }
 
@@ -677,6 +735,13 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     }
   }
 
+  if (std::getenv("FOW_DEBUG_ROWS") != nullptr) {
+    for (int row = 0; row < reduced.rows; ++row) {
+      std::fprintf(stderr, "row %s risk=%.0f cells:", MoveToUci(ranked[safe_rows[row]].move).c_str(), risk[safe_rows[row]]);
+      for (int column = 0; column < columns; ++column) std::fprintf(stderr, " %.0f", reduced.at(row, column));
+      std::fprintf(stderr, "\n");
+    }
+  }
   const MixedStrategy solution =
       SolveMatrixGame(reduced, options_.regret_iterations);
   trace->game_value = solution.value;

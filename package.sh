@@ -11,7 +11,7 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
-OUT="${1:-/tmp/iamavirus-cpp.zip}"
+OUT="$(realpath -m "${1:-/tmp/iamavirus-cpp.zip}")"
 MODEL="${2:-}"
 MODE="${3:-cpp}"
 case "$MODE" in cpp|neural|hybrid) ;; *) echo "unknown mode $MODE" >&2; exit 1;; esac

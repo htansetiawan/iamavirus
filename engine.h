@@ -133,6 +133,7 @@ struct DecisionTrace {
   double budget = 0.0;
   double spent = 0.0;
   int cells_skipped = 0;   // matrix cells abandoned because the turn ran out
+  int rows_added_for_safety = 0;  // low-risk moves appended to the shortlist
   int unseen_squares = 0;
   bool collapsed = false;
   double pieces_located = 0.0;

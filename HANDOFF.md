@@ -237,6 +237,21 @@ informative in 8/8, risk term fires in 8/8, grab declined in 8/8). Every v2–v5
 measurement was made with the degenerate filter and should be treated as
 unmeasured.
 
+**Two repairs from the first arena losses of v6 (v6.1).** Replaying
+`1sv22xki` through the engine at ply 40 (our king attacked by a queen on f2,
+hidden bishop on c5 covering it): the particle risk of the three king moves
+was 26–77% and every other move 100%, yet one seed in four played a
+100%-risk rook move. The matrix cells for an outright loss scored a flat
+−30,000 with no risk charge, while the probable escapes scored their search
+value minus the charge (≈ −39,900), so the certain loss *outranked* them.
+Fatal cells now carry the charge, and moves the population rates safer than
+anything the search shortlisted are appended as rows. After the fix all four
+seeds choose the safest measured move there, and in `j8zn0ugw` ply 46 (a
+25/26-safe position where v6 played the one fatal move) all four seeds avoid
+it. The remaining v6 losses (`7tkm78ho` ply 45, `6blt5n5j` ply 60) are belief
+failures: the population rated the fatal move at 0% risk, and the repaired
+engine repeats it in 2 of 4 seeds.
+
 **What this means for the next step.** The engine's remaining weakness in the
 regression family is a *pricing* problem on a now-honest posterior, and the
 hybrid mode is where the learned signals meet it: neural danger is logged

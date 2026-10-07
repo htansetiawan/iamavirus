@@ -478,6 +478,66 @@ void InfersEnPassantAcrossTheOpponentsMove() {
   FOW_EXPECT_EQ(trace.legal_moves, expected.size());
 }
 
+// Regression from arena game 1sv22xki (v6, White vs TA Baseline S). At ply 40
+// the king stood attacked by a queen on f2; the three king moves measured
+// 26-77% risk over the population while every other move lost outright, yet
+// the search of one guessed board shortlisted only the outright losers and
+// the bot played one of them. The matrix game must always get to price the
+// safest moves the population knows about.
+void ShortlistKeepsTheSafestMovesThePopulationKnows() {
+  // The first 40 plies of the game as recorded by the arena; the decision
+  // under test is the 41st, where the bot played e1f2.
+  const char* line[] = {
+      "b1c3", "b8c6", "h2h3", "g8f6", "e2e4", "e7e5", "d2d3", "f8c5", "g1f3",
+      "d7d5", "d1d2", "f6e4", "d3e4", "d5d4", "c3d5", "c8e6", "d2d1", "e6d5",
+      "e4d5", "c6b4", "c2c3", "b4d5", "f3e5", "e8g8", "d1a4", "f8e8", "f1e2",
+      "d4c3", "b2c3", "e8e5", "c1f4", "d5f4", "a1d1", "d8f6", "a4c2", "e5e2",
+      "c2e2", "f4e2", "d1a1", "f6f2"};
+  int acceptable = 0;
+  const int kSeeds = 4;
+  for (uint64_t seed = 1; seed <= kSeeds; ++seed) {
+    EngineOptions options;
+    options.particle_count = 1024;
+    options.transposition_megabytes = 16;
+    options.time_reserve = 0.0;
+    options.node_budget = 400000;
+    Engine engine(kWhite, 180.0, 2.0, options, seed);
+    Position truth;
+    PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth);
+    bool we_just_moved = false;
+    for (const char* uci : line) {
+      engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+      we_just_moved = false;
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      Move move = kNullMove;
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == uci) move = candidate;
+      }
+      FOW_EXPECT_TRUE(move != kNullMove);
+      if (move == kNullMove) return;
+      if (truth.side_to_move() == kWhite) {
+        engine.NotifyMovePlayed(move);
+        we_just_moved = true;
+      }
+      UndoState undo;
+      truth.MakeMove(move, &undo);
+    }
+    const Observation view(RenderObservation(truth, kWhite));
+    engine.Observe(view, we_just_moved);
+    DecisionTrace trace;
+    const Move choice = engine.ChooseMove(view, 170.0, &trace);
+    std::fprintf(stderr, "       seed %llu chose %s (risk %d, safest %d, rows added %d)\n",
+                 static_cast<unsigned long long>(seed), MoveToUci(choice).c_str(),
+                 trace.king_risk_permille, trace.safest_risk_permille,
+                 trace.rows_added_for_safety);
+    // The chosen move must be within reach of the safest measured risk; a
+    // 100%-risk move with a 33%-risk alternative on the table is the bug.
+    if (trace.king_risk_permille <= trace.safest_risk_permille + 100) ++acceptable;
+  }
+  FOW_EXPECT_EQ(acceptable, kSeeds);
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -493,5 +553,6 @@ int main() {
   FOW_RUN_TEST(fow::DoesNotTakeTheBaitFromGameZ6mbi981);
   FOW_RUN_TEST(fow::EveryMoveTheEngineReturnsIsLegal);
   FOW_RUN_TEST(fow::InfersEnPassantAcrossTheOpponentsMove);
+  FOW_RUN_TEST(fow::ShortlistKeepsTheSafestMovesThePopulationKnows);
   return fow::testing::Summarize("engine_test");
 }
