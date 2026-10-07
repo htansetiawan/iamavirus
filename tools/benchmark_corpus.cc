@@ -57,6 +57,11 @@ struct Tally {
   int unsafe_rejected = 0;
   int exposed = 0;           // engine's move leaves >= 3 points en prise (true board)
   int real_exposed = 0;      // ...and the same for the move actually played
+  // The two-ply pattern the one-ply metric cannot see: the move lets the
+  // opponent set up >= 3 points with one quiet move to a square the mover's
+  // post-move view does not show (true board).
+  int threatened = 0;
+  int real_threatened = 0;
   // Belief calibration: over hidden squares holding an enemy piece on the
   // true board, the share of particles that hold that piece there (averaged
   // per decision); and, at the recorded fatal plies, the share of particles
@@ -127,6 +132,36 @@ int ExposureOf(const Position& truth, Move move, int side) {
   after.MakeMove(move, &undo);
   if (after.PreviousMoverIsLost()) return 0;
   return BestNetCapture(&after, side) / 100;
+}
+
+// Points (beyond what they can already take) the opponent can set up with one
+// quiet move to a square the mover's post-move view does not show, on the true
+// board: the oracle version of Engine::ExpectedHiddenThreat.
+int HiddenThreatOf(const Position& truth, Move move, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(move, &undo);
+  if (after.PreviousMoverIsLost()) return 0;
+  const int already = BestNetCapture(&after, side);
+  const Bitboard seen = VisibleSquares(after, side);
+  MoveList replies;
+  after.GenerateMoves(&replies);
+  int best = already;
+  for (const Move reply : replies) {
+    const int to = MoveTo(reply);
+    if (after.piece_at(to) != kNoPiece) continue;
+    if (MoveFlagOf(reply) == kFlagEnPassant) continue;
+    if (after.piece_at(MoveFrom(reply)) == kKing) continue;
+    if (seen & SquareBB(to)) continue;
+    UndoState quiet;
+    after.MakeMove(reply, &quiet);
+    after.set_side_to_move(side ^ 1);
+    const int threat = BestNetCapture(&after, side);
+    after.set_side_to_move(side);
+    after.UnmakeMove(reply, quiet);
+    if (threat > best) best = threat;
+  }
+  return (best - already) / 100;
 }
 
 Move FindMove(const Position& position, const std::string& uci) {
@@ -211,6 +246,8 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
           if (choice == actual) ++tally->matched;
           if (ExposureOf(truth, choice, seat.side) >= 3) ++tally->exposed;
           if (ExposureOf(truth, actual, seat.side) >= 3) ++tally->real_exposed;
+          if (HiddenThreatOf(truth, choice, seat.side) >= 3) ++tally->threatened;
+          if (HiddenThreatOf(truth, actual, seat.side) >= 3) ++tally->real_threatened;
           if (is_fatal_ply) {
             ++tally->fatal_positions;
             if (!bad) ++tally->fatal_saved;
@@ -292,6 +329,9 @@ int main(int argc, char** argv) {
   std::printf("  left >=3 points en prise  : engine %d (%.2f%%), real player %d (%.2f%%)\n",
               tally.exposed, tally.decisions ? 100.0 * tally.exposed / tally.decisions : 0.0,
               tally.real_exposed, tally.decisions ? 100.0 * tally.real_exposed / tally.decisions : 0.0);
+  std::printf("  left a 2-ply hidden threat>=3: engine %d (%.2f%%), real player %d (%.2f%%)\n",
+              tally.threatened, tally.decisions ? 100.0 * tally.threatened / tally.decisions : 0.0,
+              tally.real_threatened, tally.decisions ? 100.0 * tally.real_threatened / tally.decisions : 0.0);
   std::printf("  real losing positions     : %d\n", tally.fatal_positions);
   std::printf("  ...the engine survives    : %d (%.0f%%)\n", tally.fatal_saved,
               tally.fatal_positions
