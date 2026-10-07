@@ -162,6 +162,60 @@ std::string RenderObservation(const Position& position, int color) {
   return view;
 }
 
+Deductions DeduceFromObservation(const Observation& observation, int side) {
+  Deductions out;
+  const char* ours = SymbolsFor(side);
+  for (int square = 0; square < kNumSquares; ++square) {
+    const char symbol = observation.at(square);
+    if (symbol == kUnseen || symbol == kEmpty) continue;
+    if (std::strchr(ours, symbol) == nullptr) continue;
+    const int type = SymbolToPieceType(symbol);
+    if (type == kRook || type == kBishop || type == kQueen) {
+      for (int direction = 0; direction < kNumDirections; ++direction) {
+        const bool diagonal = direction == kNorthEast || direction == kNorthWest ||
+                              direction == kSouthEast || direction == kSouthWest;
+        if (type == kRook && diagonal) continue;
+        if (type == kBishop && !diagonal) continue;
+        int file = FileOf(square);
+        int rank = RankOf(square);
+        for (;;) {
+          file += internal::kFileStep[direction];
+          rank += internal::kRankStep[direction];
+          if (!OnBoard(file, rank)) break;
+          const int target = MakeSquare(file, rank);
+          const char seen = observation.at(target);
+          if (seen == kEmpty) continue;      // the ray carries on
+          if (seen == kUnseen) {             // would be a destination if empty
+            out.must_hold_enemy |= SquareBB(target);
+          }
+          break;                              // a piece, seen or deduced, ends the ray
+        }
+      }
+    } else if (type == kPawn) {
+      const int forward = side == kWhite ? 8 : -8;
+      const int start_rank = side == kWhite ? 1 : 6;
+      const int one = square + forward;
+      if (one >= 0 && one < kNumSquares) {
+        if (observation.at(one) == kUnseen) {
+          out.must_hold_enemy |= SquareBB(one);
+        } else if (observation.at(one) == kEmpty && RankOf(square) == start_rank) {
+          const int two = one + forward;
+          if (observation.at(two) == kUnseen) out.must_hold_enemy |= SquareBB(two);
+        }
+        for (const int df : {-1, 1}) {
+          const int file = FileOf(square) + df;
+          if (file < 0 || file > 7) continue;
+          const int diagonal = MakeSquare(file, RankOf(one));
+          if (observation.at(diagonal) == kUnseen) {
+            out.must_be_empty |= SquareBB(diagonal);
+          }
+        }
+      }
+    }
+  }
+  return out;
+}
+
 int InferEnPassant(const Observation* previous, const Observation& current,
                    int side) {
   if (previous == nullptr) return -1;

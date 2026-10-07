@@ -67,6 +67,12 @@ BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
 BeliefState::ObservedPieces BeliefState::Summarize(const Observation& view,
                                                   int color) {
   ObservedPieces seen;
+  {
+    // Deductions are about the *observer's* pieces; the summary of the enemy
+    // pieces is what carries them into the agreement test.
+    const int observer = color;  // caller passes our side when summarising us
+    (void)observer;
+  }
   for (int square = 0; square < kNumSquares; ++square) {
     const char symbol = view.at(square);
     if (symbol == kUnseen) continue;
@@ -89,6 +95,13 @@ bool BeliefState::AgreesAboutEnemy(const Position& position,
       return false;
     }
   }
+  // And what the visibility rule proves about unseen squares: a square that
+  // would have been a destination of ours if empty holds an enemy piece; a
+  // pawn's unseen capture square holds none.
+  if ((position.pieces_of(color) & seen.must_hold_enemy) != seen.must_hold_enemy) {
+    return false;
+  }
+  if ((position.pieces_of(color) & seen.must_be_empty) != 0) return false;
   return true;
 }
 
@@ -230,7 +243,12 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
 
 void BeliefState::Condition(const Observation& view,
                             BeliefUpdateReport* report) {
-  const ObservedPieces enemy = Summarize(view, our_side_ ^ 1);
+  ObservedPieces enemy = Summarize(view, our_side_ ^ 1);
+  {
+    const Deductions deduced = DeduceFromObservation(view, our_side_);
+    enemy.must_hold_enemy = deduced.must_hold_enemy;
+    enemy.must_be_empty = deduced.must_be_empty;
+  }
   const ObservedPieces ours = Summarize(view, our_side_);
   std::vector<Position> kept;
   std::vector<int> kept_to;
@@ -265,7 +283,12 @@ void BeliefState::Condition(const Observation& view,
 void BeliefState::PredictAndCondition(const Observation& view,
                                       BeliefUpdateReport* report) {
   const int enemy_side = our_side_ ^ 1;
-  const ObservedPieces enemy = Summarize(view, enemy_side);
+  ObservedPieces enemy = Summarize(view, enemy_side);
+  {
+    const Deductions deduced = DeduceFromObservation(view, our_side_);
+    enemy.must_hold_enemy = deduced.must_hold_enemy;
+    enemy.must_be_empty = deduced.must_be_empty;
+  }
   const ObservedPieces ours = Summarize(view, our_side_);
 
   // Enumerate every successor of every hypothesis that the new observation
@@ -401,9 +424,17 @@ void BeliefState::Recover(const Observation& view,
         0, enemy_census_[type] - PopCount(visible.pieces(type, enemy_side)));
   }
 
+  const Deductions deduced = DeduceFromObservation(view, our_side_);
   std::vector<int> hidden;
+  std::vector<int> required;  // unseen squares that must hold an enemy piece
   for (int square = 0; square < kNumSquares; ++square) {
-    if (view.IsUnseen(square)) hidden.push_back(square);
+    if (!view.IsUnseen(square)) continue;
+    if (deduced.must_be_empty & SquareBB(square)) continue;
+    if (deduced.must_hold_enemy & SquareBB(square)) {
+      required.push_back(square);
+    } else {
+      hidden.push_back(square);
+    }
   }
 
   // Rebuild castling rights from what the board shows: a right is possible
@@ -447,6 +478,25 @@ void BeliefState::Recover(const Observation& view,
     // hidden enemy piece occupies a square we cannot see, so the pool is always
     // large enough when no square is wasted.
     std::vector<int> available = hidden;
+    // Squares the rule proves occupied get a piece first, of a type still
+    // missing from the census (a pawn only off the promotion ranks), chosen
+    // at random so the rebuilt population stays diverse.
+    std::vector<int> must = required;
+    std::shuffle(must.begin(), must.end(), rng_);
+    std::array<int, kNumPieceTypes> remaining = missing;
+    for (const int square : must) {
+      std::vector<int> candidates;
+      for (int type = 0; type < kNumPieceTypes; ++type) {
+        if (remaining[type] <= 0) continue;
+        if (type == kPawn && (RankOf(square) == 0 || RankOf(square) == 7)) continue;
+        candidates.push_back(type);
+      }
+      if (candidates.empty()) break;
+      std::uniform_int_distribution<std::size_t> pick(0, candidates.size() - 1);
+      const int type = candidates[pick(rng_)];
+      particle.PutPiece(square, enemy_side, type);
+      --remaining[type];
+    }
     // Pawns are placed first because they are the only constrained piece: they
     // cannot stand on a promotion rank. Placing the free-roaming pieces first
     // can leave a pawn with nothing but promotion-rank squares and so drop it
@@ -454,7 +504,7 @@ void BeliefState::Recover(const Observation& view,
     // Every hidden pawn really does sit on a non-promotion fog square, so
     // satisfying the constrained type first always succeeds.
     for (const int type : {kPawn, kKnight, kBishop, kRook, kQueen, kKing}) {
-      for (int placed = 0; placed < missing[type]; ++placed) {
+      for (int placed = 0; placed < remaining[type]; ++placed) {
         std::size_t chosen = available.size();
         for (std::size_t index = 0; index < available.size(); ++index) {
           const int square = available[index];

@@ -102,6 +102,9 @@ class BeliefState {
   struct ObservedPieces {
     Bitboard visible = 0;
     std::array<Bitboard, kNumPieceTypes> by_type{};
+    // What the visibility rule proves about unseen squares (observation.h).
+    Bitboard must_hold_enemy = 0;
+    Bitboard must_be_empty = 0;
   };
 
   static ObservedPieces Summarize(const Observation& view, int color);

@@ -4,6 +4,9 @@
 
 #include "../observation.h"
 
+#include <cstdio>
+#include <random>
+
 #include <string>
 
 #include "../bitboard.h"
@@ -204,6 +207,48 @@ void VisibleSquaresRevealsEnPassantVictim() {
   FOW_EXPECT_TRUE((seen & SquareBB(MakeSquare(5, 5))) != 0);  // the f6 target
 }
 
+// What the visibility rule proves must be true on the real board, over random
+// play: every square deduced to hold an enemy piece does, and every square
+// deduced empty is.
+void DeductionsHoldOnTheTrueBoard() {
+  std::mt19937_64 rng(2026);
+  int holds = 0;
+  int empties = 0;
+  for (int game = 0; game < 60; ++game) {
+    Position truth;
+    PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth);
+    for (int ply = 0; ply < 80; ++ply) {
+      for (const int side : {kWhite, kBlack}) {
+        const Observation view(RenderObservation(truth, side));
+        const Deductions deduced = DeduceFromObservation(view, side);
+        Bitboard scan = deduced.must_hold_enemy;
+        while (scan) {
+          const int square = PopLsb(&scan);
+          FOW_EXPECT_TRUE(truth.piece_at(square) != kNoPiece &&
+                          truth.color_at(square) == (side ^ 1));
+          FOW_EXPECT_TRUE(view.IsUnseen(square));
+          ++holds;
+        }
+        scan = deduced.must_be_empty;
+        while (scan) {
+          const int square = PopLsb(&scan);
+          FOW_EXPECT_TRUE(truth.piece_at(square) == kNoPiece);
+          ++empties;
+        }
+      }
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      if (legal.empty() || truth.PreviousMoverIsLost()) break;
+      UndoState undo;
+      truth.MakeMove(legal[rng() % legal.size()], &undo);
+    }
+  }
+  FOW_EXPECT_TRUE(holds > 500);
+  FOW_EXPECT_TRUE(empties > 500);
+  std::fprintf(stderr, "       %d deduced enemy squares and %d deduced empty squares verified\n",
+               holds, empties);
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -221,5 +266,6 @@ int main() {
   FOW_RUN_TEST(fow::EnPassantIsInferredFromConsecutiveObservations);
   FOW_RUN_TEST(fow::EnPassantIsNotInferredAfterACapture);
   FOW_RUN_TEST(fow::VisibleSquaresRevealsEnPassantVictim);
+  FOW_RUN_TEST(fow::DeductionsHoldOnTheTrueBoard);
   return fow::testing::Summarize("observation_test");
 }
