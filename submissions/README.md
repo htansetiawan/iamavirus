@@ -96,6 +96,30 @@ include zero), so the pretrained graphs shipped.
 | 2026-10-07 15:25 | v6 (cpp): 2W–6L (wins vs Apricot Squad ×2 incl. `rz1wn4kx`; losses vs TA Baseline S ×2, duck ×2, Instructors ×2). Analysis in "v6.1" below. v5 (hybrid) re-activated. |
 | 2026-10-07 15:05 | v5 (hybrid): 1W–1L vs TA Baseline P; the loss (`nn8dt0e9`, 108 plies) was `f7f6` exposing the king to an unseen piece on g2. v6 (cpp) was then made active. |
 
+## Naming convention (from 2026-10-07 evening)
+
+Archives are named after the arena version they will be uploaded as, plus the
+mode: `iamavirus-v9-hybrid.zip` is the file to upload as arena v9. The arena
+numbers uploads sequentially per team, so the next number is always known.
+Earlier files (`v6-*`, `v6.1-*`) predate the convention; the table maps them.
+
+## Record by opponent, v5–v8 (as of 16:50 UTC)
+
+| opponent | v5 | v6 | v7 | v8 |
+|---|---|---|---|---|
+| Apricot Squad | 7-0-1 | 2-0-0 | | 2-0-0 |
+| Greek Gift | | | | 0-0-2 |
+| Instructors | | 0-0-2 | | |
+| TA Baseline A | 2-1-1 | | 1-0-5 | 1-0-1 |
+| TA Baseline P | 6-0-1 | | 1-0-1 | 5-0-5 |
+| TA Baseline S | 2-1-3 | 0-0-2 | 0-0-4 | 1-0-3 |
+| baseline.py | 6-0-0 | | | |
+| duck | | 0-0-2 | | 0-0-4 |
+| **total** | **23-2-6** | 2-0-6 | 2-0-10 | 9-0-15 |
+
+v5 re-activated at ~16:45 UTC after v8's record. The v8 suspect is the
+upstream turn deadline (see `chatroom/001-claude-state-and-findings.md`).
+
 ## v6.1: two repairs from the first v6 arena losses
 
 Replaying the losses offline through the engine (`HANDOFF.md`, "Measured")

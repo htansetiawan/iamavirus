@@ -104,7 +104,12 @@ def compute_losses(model: FogPolicy, batch: dict, weights: dict) -> tuple[torch.
     if pv.any():
         target = batch["demonstrated"].clamp(min=0)
         nll = -log_probs.gather(1, target.unsqueeze(1)).squeeze(1)
-        policy_loss = nll[pv].mean()
+        # Weighted by player strength when the config asks for it: cloning the
+        # average arena player imitates its blunders too; the top teams' moves
+        # are the prior worth having. Weights are normalised so the loss scale
+        # does not change with the mixture.
+        pw = batch["policy_weight"][pv]
+        policy_loss = (nll[pv] * pw).sum() / pw.sum().clamp(min=1e-6)
         with torch.no_grad():
             top = log_probs.argmax(1)
             metrics["policy_accuracy"] = (top[pv] == target[pv]).float().mean().item()
@@ -251,7 +256,8 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
         rng.shuffle(order)
         for start in range(0, len(order), batch_size):
             group = [train_episodes[i] for i in order[start:start + batch_size]]
-            batch = to_device(ds.make_batch(group, config["window"], rng), device)
+            batch = to_device(ds.make_batch(group, config["window"], rng,
+                                            player_weights=config.get("player_weights")), device)
             with torch.autocast(device_type=device.type, dtype=torch.bfloat16, enabled=use_amp):
                 loss, metrics = compute_losses(model, batch, config["loss_weights"])
             if metrics.get("decisions", 0) == 0:

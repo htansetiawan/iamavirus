@@ -159,6 +159,7 @@ class SequenceBatch:
     returns: np.ndarray            # [D]
     value_valid: np.ndarray        # [D] bool
     policy_valid: np.ndarray       # [D] bool
+    policy_weight: np.ndarray      # [D] float, per-player weight for the cloning loss
 
 
 def episode_tensors(episode: histories.PlayerEpisode):
@@ -194,7 +195,8 @@ def episode_tensors(episode: histories.PlayerEpisode):
 
 
 def make_batch(episodes: list[histories.PlayerEpisode], window: int, rng: random.Random,
-               window_starts: list[int] | None = None) -> SequenceBatch:
+               window_starts: list[int] | None = None,
+               player_weights: dict[str, float] | None = None) -> SequenceBatch:
     """Cuts one window per episode. The prefix before each window is kept whole so
     the recurrent state can be reconstructed from the episode's first event."""
     items = [episode_tensors(e) for e in episodes]
@@ -225,8 +227,13 @@ def make_batch(episodes: list[histories.PlayerEpisode], window: int, rng: random
         window_lengths[b] = end - start
         planes_out[b, :end - start] = planes[start:end]
         scalars_out[b, :end - start] = scalars[start:end]
+        weight = 1.0
+        if player_weights:
+            meta = episodes[b].metadata
+            weight = float(player_weights.get(meta.player_id, player_weights.get("default", 1.0)))
         for d in decisions:
             if start <= d["event"] < end:
+                d = dict(d, policy_weight=weight)
                 flat.append((b, d["event"] - start, d))
     D = len(flat)
     M = max((d["count"] for _, _, d in flat), default=1)
@@ -241,7 +248,8 @@ def make_batch(episodes: list[histories.PlayerEpisode], window: int, rng: random
         danger=np.zeros((D, M), dtype=np.float32), danger_valid=np.zeros(D, dtype=bool),
         belief_classes=np.zeros((D, 64), dtype=np.int64), belief_mask=np.zeros((D, 64), dtype=bool),
         belief_valid=np.zeros(D, dtype=bool), returns=np.zeros(D, dtype=np.float32),
-        value_valid=np.zeros(D, dtype=bool), policy_valid=np.zeros(D, dtype=bool))
+        value_valid=np.zeros(D, dtype=bool), policy_valid=np.zeros(D, dtype=bool),
+        policy_weight=np.ones(D, dtype=np.float32))
     for k, (_, _, d) in enumerate(flat):
         n = d["count"]
         batch.cand_from[k, :n] = d["from"]
@@ -258,6 +266,7 @@ def make_batch(episodes: list[histories.PlayerEpisode], window: int, rng: random
         batch.returns[k] = d["return"]
         batch.value_valid[k] = d["value_valid"]
         batch.policy_valid[k] = d["policy_valid"]
+        batch.policy_weight[k] = d.get("policy_weight", 1.0)
     return batch
 
 

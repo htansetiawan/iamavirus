@@ -65,7 +65,9 @@ struct EngineOptions {
   int hybrid_search_top = 6;
   int hybrid_risk_top = 8;
   // Rows the matrix game can afford; the union is trimmed to this in the
-  // order search, policy, lowest risk.
+  // order search, policy, lowest risk. Twelve is what arena v5 played with;
+  // since cells now shrink with the clock instead of being skipped, more rows
+  // cost depth per cell, never coverage of hypotheses.
   int hybrid_max_rows = 12;
   double neural_temperature = 1.0;
   int particle_count = 2048;

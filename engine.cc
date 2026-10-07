@@ -633,9 +633,17 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       trace->worst_risk = static_cast<int>(risk[row]);
     }
   }
+  // Budget per cell from the time actually left after the shortlist search,
+  // not from the nominal share: on a slow host the shortlist search overshoots
+  // and a fixed share would leave cells to be skipped, which reduces their
+  // rows to a verdict from one guessed board. Shallow cells over every
+  // hypothesis beat deep cells over a few.
+  const double after_shortlist = std::chrono::duration<double>(
+                                     std::chrono::steady_clock::now() - turn_start)
+                                     .count();
+  const double matrix_seconds = std::max(0.0, trace->budget - after_shortlist);
   const double cell_budget =
-      std::max(0.004, trace->budget * (1.0 - kShortlistShare) /
-                          std::max(1, shortlist * columns));
+      std::max(0.002, matrix_seconds / std::max(1, shortlist * columns));
 
   const auto matrix_deadline =
       turn_start + std::chrono::duration_cast<std::chrono::steady_clock::duration>(
@@ -645,12 +653,30 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     for (int row = 0; row < shortlist; ++row) {
       const Move move = ranked[row].move;
       if (out_of_time || std::chrono::steady_clock::now() >= matrix_deadline) {
-        // Fall back on the shortlist search's own verdict for this cell rather
-        // than spending time we no longer have.
+        // Out of time for a real search of this cell. A verdict from the
+        // shortlist search would come from one guessed board and ignore this
+        // hypothesis entirely, which is how a queen walks next to a hidden
+        // knight; a one-ply search with quiescence on this hypothesis costs
+        // microseconds and still sees the capture.
         out_of_time = true;
         ++trace->cells_skipped;
-        game.set(row, column,
-                 static_cast<double>(ranked[row].score) - risk[row]);
+        Position quick = *hypotheses[column];
+        quick.set_side_to_move(our_side_);
+        quick.set_en_passant_square(en_passant);
+        MoveList available;
+        quick.GenerateMoves(&available);
+        if (!ListContains(available, move)) {
+          game.set(row, column, kDisasterScore - risk[row]);
+          continue;
+        }
+        MoveList single;
+        single.Add(move);
+        SearchLimits shallow;
+        shallow.seconds = 0.05;
+        shallow.max_depth = 1;
+        const SearchResult verdict = searcher_.Search(&quick, single, shallow);
+        trace->nodes += verdict.nodes;
+        game.set(row, column, static_cast<double>(verdict.score) - risk[row]);
         continue;
       }
       Position hypothesis = *hypotheses[column];

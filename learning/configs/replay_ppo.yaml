@@ -18,6 +18,18 @@ pretrain:
   mixed_precision: false     # enable only after full-precision correctness passes
   seed: 1
   validation_sequences: 256  # episodes evaluated at each validation pass
+  # Per-player weight on the policy cloning loss, keyed by the arena player id
+  # (name for corpus-built replays). Belief, danger and value targets are not
+  # weighted: they are facts about hidden pieces whoever played.
+  player_weights:
+    default: 1.0
+    f394d843d970454f868c38c7f6963cc9: 4.0   # Greek Gift (2141)
+    knight-vision: 4.0                      # Knight Vision (2104)
+    strongly-invisible: 3.0                 # Strongly Invisible (2089, staff)
+    db107815c3b14827a79ec9e3d12f4726: 3.0   # Decent Chess Bot (2078)
+    8d775e234808489c815a4a9f6bbabfe4: 2.0   # duck (1885)
+    instructors: 2.0                        # Instructors (1918, staff)
+    a2c35173659545c99752376a70418438: 0.5   # IAmAVirus (ourselves)
 
 ppo:
   learning_rate: 1.0e-4

@@ -187,6 +187,17 @@ int Run() {
   bool have_observation = false;
   int observations_seen = 0;
   int decisions = 0;
+  // Offline analysis: FOW_FORCE_MOVES="e2e4 g1f3 ..." makes the bot play the
+  // listed moves at its decisions, in order, while still computing and logging
+  // what it would have chosen. This replays a recorded game through the full
+  // arena decision procedure (any mode) with the belief following the real
+  // moves. Never set in the arena.
+  std::vector<std::string> forced;
+  if (const char* text = std::getenv("FOW_FORCE_MOVES")) {
+    std::istringstream stream(text);
+    std::string uci;
+    while (stream >> uci) forced.push_back(uci);
+  }
 
   while (std::getline(std::cin, line)) {
     const std::string text = Trim(line);
@@ -267,6 +278,17 @@ int Run() {
     trace.spent = std::chrono::duration<double>(
                       std::chrono::steady_clock::now() - started)
                       .count();
+    std::string chosen_note;
+    if (static_cast<std::size_t>(decisions) < forced.size()) {
+      MoveList legal;
+      tracker.LegalCandidates(&legal);
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == forced[static_cast<std::size_t>(decisions)]) {
+          chosen_note = " chose=" + MoveToUci(move);
+          move = candidate;
+        }
+      }
+    }
 
     try {
       engine.NotifyMovePlayed(move);
@@ -293,7 +315,7 @@ int Run() {
               << " risk=" << trace.king_risk_permille
               << " nv=" << trace.neural_value << " cp=" << trace.chosen_policy
               << " cd=" << trace.chosen_danger << " cands=" << trace.candidates
-              << " move=" << MoveToUci(move) << "\n";
+              << chosen_note << " move=" << MoveToUci(move) << "\n";
 
     std::cout << "move " << MoveToUci(move) << std::endl;
   }
