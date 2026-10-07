@@ -418,6 +418,17 @@ evaluation before any mode other than `cpp` earns release.
 - **Vision term: null.** At weight 1.0 the engine sees 30.9 squares after its move vs 30.8 at weight 0 (real players 31.1), and every decision metric is flat (king losses 6.41% vs 6.37%, en prise 7.76% vs 7.63%). Shelved at default 0.
 - **tr0gwrvf replay**: the current build repeats 42.Kg4 in 3/4 seeds (chosen-move risk 20–79 cp), 43.Rg2 in 4/4 (risk ~250–290) and 44.Re2 in 3/4 (risk 312–375 cp, i.e. it knowingly accepted roughly a 3% chance of losing the king to attack where it believed the queen stood); xidde3fz: the current build avoids 43...Kg7 in 4/4 seeds.
 - **Head-to-head, Fable v12 bytes vs Astra v11 bytes** (seeds 5100/5300, cores 2–3/4–5, 180+2): 9W–0D–7L over 16 games, paired 0.562 (0.375–0.750), as White 6/8, as Black 3/8. A modest edge for the fuller build, not significant.
+- **Model v3** (stage A on 4,707 games, 10 epochs, `checkpoints/pretrain-v3/best.pt`, release `releases/v3`, ONNX parity PASS on 398 decisions). Same new test split for both models:
+
+| test split of manifest v3 | v1 (shipped) | v3 |
+|---|---|---|
+| policy top-1 accuracy | 32.7% | 34.5% |
+| hidden-square belief accuracy | 82.7% | 83.9% |
+| danger Brier | 0.042 | 0.031 |
+| danger false-negative rate | 87.5% | 64.7% |
+| value loss | 0.955 | 0.887 |
+
+  Tactical suite (probability on the six recorded losing moves): lower on 92of99z7 (0.28 → 0.16) and cxgvxx6h (0.53 → 0.49), slightly higher on the four small ones (0.02–0.08 → 0.06–0.14). Archive `fable-submissions/iamavirus-v11-candidate-full-v3model-hybrid.zip` (sha 519260f77245). **Caveat**: it was packaged from the current tree, so besides the v3 model it carries the caution defaults (king threat 0.6, repetition charge, opening book) and the 10 s reserve; its lanes vs the v13 bytes (L/M, queued) measure the whole next candidate, and the caution lanes (J/K) isolate the caution part.
 - **Candidate for the next upload:** `fable-submissions/iamavirus-v12-hybrid.zip` (arena v12; was `iamavirus-v11-candidate-hybrid.zip`) (sha `68a89006f6c2`): v10 + population-wide exposure term + pawn visibility deductions (on) + clock scaling by difficulty + underpromotion rule + per-particle move memory; hybrid, stage A release v1. Behaviourally identical to the former `v12-candidate-hybrid` (its extra slider deduction never fired), so that archive's paired lanes vs archived v5 are this candidate's evidence: **10W–0D–10L over 20 real-clock games** (16-game gate 9–7, then a 4-game smoke of the final bytes 1–3), paired score 0.500, bootstrap 95% 0.300–0.700 (v9 on the same gate scored 0.472, 0.306–0.639): even with v5 at real clocks, better offline; a 2-pair smoke lane of the new bytes is running; clean-directory build verified.
 - **Process lesson.** `pgrep -f` / `pkill -f` with a pattern that appears in the calling shell's own command line match the caller: four queued lanes waited on themselves for an hour and one shell killed itself. Use `pgrep -x name` or flag files.
 
