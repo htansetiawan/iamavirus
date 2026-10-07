@@ -89,6 +89,8 @@ include zero), so the pretrained graphs shipped.
 | 2026-10-07 14:46 | v6 (cpp archive) uploaded, inactive |
 | 2026-10-07 14:47 | v7 uploaded: `iamavirus-cpp.zip`, the design-v5 engine from `f236ad7`, inactive |
 | 2026-10-07 ~15:00 | team rating 1453 over 302 games before any v5/v6 game |
+| 2026-10-07 15:05 | v7 (design-v5 engine): **2W–10L** vs the TA baselines, including an **illegal move** forfeit (`m6uovffl`: it sent `e8c8`, castling with a right the king had forfeited — the `Recover` rights-rebuild bug fixed in the v6 archives). Of its 10 king-capture losses, 9 were taken by a piece invisible to us at our last view, 5 of them king moves into the covered square: the failure family again. |
+| 2026-10-07 15:05 | v5 (hybrid): 1W–1L vs TA Baseline P; the loss (`nn8dt0e9`, 108 plies) was `f7f6` exposing the king to an unseen piece on g2. v6 (cpp) was then made active. |
 
 ## How to add a row
 
