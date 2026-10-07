@@ -265,8 +265,14 @@ hidden boards, within the clock.
    lowest-risk moves, trimmed to 12 rows.
 4. Matrix game: rows = shortlisted moves, columns = 8 sampled hypotheses, cell
    = search score + invisible-attack bonus − (king risk × 30,000 + expected
-   material loss). **Fatal cells carry the same risk charge** (v6 repair).
-   One deadline bounds the whole turn (upstream `f236ad7`).
+   **exposure**: the opponent's best immediate net capture anywhere after the
+   move, averaged over a stride of particles; v2–v10 priced only the moved
+   piece's square). **Fatal cells carry the same risk charge** (v6 repair).
+   One deadline bounds the whole turn (upstream `f236ad7`); cells shrink with
+   the clock rather than being skipped, and a skipped cell gets a node-capped
+   one-ply verdict on its own hypothesis. Non-queen promotions are dropped
+   unless strictly safer. The per-move clock scales with difficulty (×2 when
+   the safest move still carries king risk or the fog is deep, cap 8 s).
 5. Regret matching; sample from the mixture.
 
 **Modes.** `cpp` (above), `neural` (sample the policy, no search), `hybrid`
@@ -274,10 +280,16 @@ hidden boards, within the clock.
 is logged, never a veto).
 
 **Belief.** Particle filter: predict by enumerating the opponent's legal moves
-per particle with a plausibility prior, condition on the view (exact on our
-own pieces, visible squares only for theirs), **resample from a shuffled
-pool** (v6 repair; it was degenerate), rebuild on collapse **keeping our own
-castling history** (v6 repair).
+per particle with a plausibility prior (hand constants by default; a learned
+conditional logit with per-particle memory of the opponent's last move is
+selectable), condition on the view (exact on our own pieces, visible squares
+only for theirs, **plus what the visibility rule proves about unseen squares**:
+the first unseen square on a ray from our slider and the unseen square in
+front of our pawn hold an enemy piece, an unseen pawn-capture square is
+empty), **resample from a shuffled pool** (v6 repair; it was degenerate),
+rebuild on collapse **keeping our own castling history** (v6 repair) and
+placing deduced pieces first. KPI: the benchmark's calibration lines (hidden
+enemy piece mass; true attacker held at fatal plies).
 
 **Search.** Alpha-beta with the referee's terminal rule, asymmetric win/loss
 scores, **no stand-pat under a king attack** (v6 repair), transposition
