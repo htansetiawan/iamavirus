@@ -278,6 +278,24 @@ Offline benchmark, 634 real losing seats, same seed and node budget:
 immediate king losses 6.55% in both; survival 58% in both. Candidate archive
 `fable-submissions/iamavirus-v11-hybrid.zip`.
 
+**Visibility deductions (19:40 UTC).** The filter now enforces what the
+visibility rule proves about unseen squares (`DeduceFromObservation`): the
+first unseen square on a ray from our slider, and the unseen square in front
+of our pawn, hold an enemy piece; an unseen pawn-capture square is empty.
+Invariants test: truth in population 621 → 805 of 1,444 plies, collapses
+19 → 14, pieces placed 77.5% → 79.6%. Consequence for the 92of99z7 test: the
+population no longer collapses at ply 6 of that line (403 survivors vs 44),
+the honest posterior puts d5 guarded at 15–22%, and the pawn grab becomes
+EV-marginal (3 of 8 seeds take it); the material-risk weight is being swept
+on the benchmark. The Greek Gift test moved one decision earlier: after
+8. Bxc4 the engine keeps an answer to Bf7+ in 6 of 6 seeds, and the belief
+holds a White piece on e5 (the e7 pawn's blocked double push proves it).
+
+**Belief calibration (19:30 UTC, 634 seats, pre-deduction binary):** hidden
+enemy piece mass 0.475 (hand prior) vs 0.513 (learned prior with memory);
+true attacker held at the fatal plies 0.191 vs 0.199. The learned prior
+places hidden pieces slightly better; decisions are within noise either way.
+
 **Learned prior with memory (19:10 UTC, same seats, exposure on):** king
 losses 6.72%, left ≥3 en prise 7.62%, survival 56% — against 6.55% / 7.83% /
 58% for the hand prior. Mixed and within noise; the hand prior stays the
