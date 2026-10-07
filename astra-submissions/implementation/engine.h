@@ -115,6 +115,7 @@ struct EngineOptions {
   bool preserve_capture_evidence = true;
   // Experimental: better support has not yet passed the action-quality gate.
   bool use_visibility_deductions = false;
+  bool use_grouped_prediction = false;
   SearchOptions search;
 };
 
@@ -167,6 +168,7 @@ struct DecisionTrace {
 // FOW_PIECE_RISK, FOW_TIME_CAP, FOW_TIME_RESERVE, FOW_TIME_DIVISOR,
 // FOW_HASH_MB, FOW_SPECULATIVE_WIN, FOW_LMR, FOW_ASPIRATION.
 // Belief experiments: FOW_CAPTURE_EVIDENCE, FOW_VISIBILITY_DEDUCTIONS.
+// FOW_GROUPED_PREDICTION expands unique predecessor states without a prefix cap.
 EngineOptions EngineOptionsFromEnvironment();
 
 class Engine {

@@ -94,12 +94,13 @@ struct GameAudit {
 };
 
 GameAudit AuditRandomGame(int our_side, int particle_count, uint64_t seed,
-                          int max_plies) {
+                          int max_plies, bool grouped = false) {
   std::mt19937_64 rng(seed);
   Position truth = StartPosition();
   // Exercise the combined opt-in deduction/capture variant here. The tactical
   // engine default keeps deductions off pending the separate action gate.
-  BeliefState belief(our_side, particle_count, seed ^ 0x5DEECE66DULL, true, true, true);
+  BeliefState belief(our_side, particle_count, seed ^ 0x5DEECE66DULL,
+                    true, true, true, grouped);
   GameAudit audit;
   bool we_just_moved = false;
 
@@ -418,6 +419,59 @@ void OurCaptureClearsTheEvidenceConstraint() {
   FOW_EXPECT_TRUE(!report.capture_evidence_conflict);
 }
 
+void GroupedPredictionEnumeratesTheExactOpeningSupportOnce() {
+  Position truth = StartPosition();
+  // A uniform opponent prior gives a closed-form posterior for this update.
+  BeliefState belief(kWhite, 2048, 813, false, true, true, true);
+  belief.Observe(Observation(RenderObservation(truth, kWhite)), false);
+  PlayObservedMove(&truth, &belief, "e2e3");
+  const Position before = truth;
+  const auto report = PlayObservedMove(&truth, &belief, "g8f6");
+  const std::string observed = RenderObservation(truth, kWhite);
+  MoveList moves;
+  before.GenerateMoves(&moves);
+  std::vector<Position> exact;
+  for (Move move : moves) {
+    Position after = before;
+    UndoState undo;
+    after.MakeMove(move, &undo);
+    if (RenderObservation(after, kWhite) == observed) exact.push_back(after);
+  }
+  FOW_EXPECT_EQ(report.expanded_predecessors, 1);
+  FOW_EXPECT_EQ(report.enumerated_transitions, moves.size());
+  FOW_EXPECT_TRUE(!report.successor_prefix_capped);
+  FOW_EXPECT_EQ(belief.particle_count(), 2048);
+  FOW_EXPECT_TRUE(exact.size() > 5);
+  int total = 0;
+  for (const Position& expected : exact) {
+    int count = 0;
+    for (const Position& particle : belief.particles()) {
+      count += SamePlacement(particle, expected, kBlack);
+    }
+    const int floor = 2048 / static_cast<int>(exact.size());
+    FOW_EXPECT_TRUE(count == floor || count == floor + 1);
+    total += count;
+  }
+  FOW_EXPECT_EQ(total, 2048);
+}
+
+void GroupedPredictionPreservesBeliefInvariantsAcrossGames() {
+  int plies = 0, retained = 0, collapses = 0;
+  for (int game = 0; game < 12; ++game) {
+    for (const int side : {kWhite, kBlack}) {
+      const auto audit = AuditRandomGame(side, 2048, 1000 + game * 7 + side, 70, true);
+      FOW_EXPECT_EQ(audit.agreement_failures, 0);
+      FOW_EXPECT_EQ(audit.deduction_failures, 0);
+      FOW_EXPECT_EQ(audit.total_count_failures, 0);
+      plies += audit.plies;
+      retained += audit.truth_present;
+      collapses += audit.collapses;
+    }
+  }
+  std::fprintf(stderr, "       grouped: %d plies, truth in population %d, collapses %d\n",
+               plies, retained, collapses);
+}
+
 // A hypothesis contradicted by every observation must not survive; the filter
 // must rebuild rather than crash or go empty.
 void RecoversWhenEveryHypothesisIsContradicted() {
@@ -533,6 +587,8 @@ int main() {
   FOW_RUN_TEST(fow::VisibleOrdinaryCaptureOfADoublePushedPawnIsRecognized);
   FOW_RUN_TEST(fow::CaptureEvidenceSurvivesOurMoveButExpiresOnTheirNextMove);
   FOW_RUN_TEST(fow::OurCaptureClearsTheEvidenceConstraint);
+  FOW_RUN_TEST(fow::GroupedPredictionEnumeratesTheExactOpeningSupportOnce);
+  FOW_RUN_TEST(fow::GroupedPredictionPreservesBeliefInvariantsAcrossGames);
   FOW_RUN_TEST(fow::RecoversWhenEveryHypothesisIsContradicted);
   FOW_RUN_TEST(fow::BeliefMaintainsItsInvariants);
   return fow::testing::Summarize("belief_test");

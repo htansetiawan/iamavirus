@@ -56,6 +56,9 @@ struct BeliefUpdateReport {
   bool capture_evidence_conflict = false;
   bool capture_en_passant_ambiguous = false;
   bool visibility_evidence_conflict = false;
+  int expanded_predecessors = 0;
+  int enumerated_transitions = 0;
+  bool successor_prefix_capped = false;
 };
 
 class BeliefState {
@@ -68,7 +71,8 @@ class BeliefState {
   BeliefState(int our_side, int particle_count, uint64_t seed,
               bool use_opponent_prior = true,
               bool preserve_capture_evidence = true,
-              bool use_visibility_deductions = false);
+              bool use_visibility_deductions = false,
+              bool use_grouped_prediction = false);
 
   // Absorbs an observation. `reflects_our_own_move` must be true for the
   // observation the arena sends immediately after our own move, since the only
@@ -163,12 +167,14 @@ class BeliefState {
   // pushed pawn is left to the existing legal-transition filter (EP can land
   // off the victim square). The fact expires on the next opponent move.
   void InferCaptureEvidence(const Observation& view, BeliefUpdateReport* report);
+  void PredictAndConditionGrouped(const Observation& view, BeliefUpdateReport* report);
 
   int our_side_;
   int target_count_;
   bool use_opponent_prior_;
   bool preserve_capture_evidence_;
   bool use_visibility_deductions_;
+  bool use_grouped_prediction_;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
   // Piece counts the opponent is believed to still own.

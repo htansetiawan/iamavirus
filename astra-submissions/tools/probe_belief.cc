@@ -34,12 +34,19 @@ static void CaptureDiagnostics(const Report& report) {
     std::cout << ",\"visibility_evidence_conflict\":"
               << (report.visibility_evidence_conflict ? "true" : "false");
   }
+  if constexpr (requires { report.expanded_predecessors; }) {
+    std::cout << ",\"expanded_predecessors\":" << report.expanded_predecessors
+              << ",\"enumerated_transitions\":" << report.enumerated_transitions
+              << ",\"successor_prefix_capped\":" << (report.successor_prefix_capped ? "true" : "false");
+  }
 }
 
 template <class Belief>
 static Belief MakeBelief(int side, int count, uint64_t seed,
-                         bool capture, bool deductions) {
-  if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool>) {
+                         bool capture, bool deductions, bool grouped) {
+  if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool>) {
+    return Belief(side, count, seed, true, capture, deductions, grouped);
+  } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions);
   } else {
     // Immutable earlier submissions expose only their original prior switch.
@@ -65,12 +72,16 @@ static Move FindMove(const Position& p, const std::string& uci) {
 }
 
 int main(int argc, char** argv) {
-  if (argc != 5 && argc != 7) {
-    std::cerr << "usage: probe_belief MOVES_FILE SIDE(0|1) SEED PARTICLES [CAPTURE DEDUCTIONS]\n";
+  if (argc != 5 && argc != 7 && argc != 8) {
+    std::cerr << "usage: probe_belief MOVES_FILE SIDE(0|1) SEED PARTICLES [CAPTURE DEDUCTIONS [GROUPED]]\n";
     return 2;
   }
   if (argc == 7 && !std::is_constructible_v<BeliefState, int, int, uint64_t, bool, bool, bool>) {
     std::cerr << "this source version does not expose both ablation switches\n";
+    return 2;
+  }
+  if (argc == 8 && !std::is_constructible_v<BeliefState, int, int, uint64_t, bool, bool, bool, bool>) {
+    std::cerr << "this source version does not expose grouped prediction\n";
     return 2;
   }
   InitializeAttackTables();
@@ -79,7 +90,8 @@ int main(int argc, char** argv) {
   const uint64_t seed = std::strtoull(argv[3], nullptr, 10);
   auto belief = MakeBelief<BeliefState>(side, std::atoi(argv[4]),
       seed ^ 0x9E3779B97F4A7C15ULL,
-      argc == 5 || std::atoi(argv[5]) != 0, argc == 5 || std::atoi(argv[6]) != 0);
+      argc == 5 || std::atoi(argv[5]) != 0, argc == 5 || std::atoi(argv[6]) != 0,
+      argc == 8 && std::atoi(argv[7]) != 0);
   Position truth;
   if (!PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth)) return 2;
   if (BoardText(truth) != "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr") return 2;

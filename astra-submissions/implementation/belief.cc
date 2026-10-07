@@ -8,6 +8,7 @@
 #include <cstdint>
 #include <numeric>
 #include <random>
+#include <unordered_map>
 #include <vector>
 
 namespace fow {
@@ -44,16 +45,70 @@ Position StartingPosition() {
   return position;
 }
 
+// Equality covers all state used by this hand-prior filter, including rights,
+// EP and the halfmove clock. Hash collisions are resolved by full equality.
+// A future history-dependent opponent model must also key its private metadata.
+struct StateIdentity {
+  std::array<uint64_t, 9> fields{};
+  explicit StateIdentity(const Position& p) {
+    for (int type = 0; type < kNumPieceTypes; ++type) fields[type] = p.pieces(type);
+    fields[6] = p.pieces_of(kWhite);
+    fields[7] = p.castling_rights();
+    fields[8] = (static_cast<uint64_t>(p.halfmove_clock()) << 8) |
+                (static_cast<uint64_t>(p.en_passant_square() + 1) << 1) |
+                static_cast<uint64_t>(p.side_to_move());
+  }
+  bool operator==(const StateIdentity&) const = default;
+};
+
+struct StateIdentityHash {
+  std::size_t operator()(const StateIdentity& key) const {
+    uint64_t hash = 0x9e3779b97f4a7c15ULL;
+    for (uint64_t value : key.fields) {
+      value = (value ^ (value >> 30)) * 0xbf58476d1ce4e5b9ULL;
+      value = (value ^ (value >> 27)) * 0x94d049bb133111ebULL;
+      hash ^= value ^ (value >> 31);
+      hash = (hash << 27) | (hash >> 37);
+    }
+    return static_cast<std::size_t>(hash);
+  }
+};
+
+// An unbiased allocation of `draws` offspring with low marginal variance.
+// Zero-weight entries cannot receive an offspring, even on an exact zero draw.
+std::vector<int> SystematicCounts(const std::vector<double>& weights, int draws,
+                                  std::mt19937_64* rng) {
+  std::vector<int> counts(weights.size(), 0);
+  std::vector<std::size_t> order;
+  double total = 0.0;
+  for (std::size_t i = 0; i < weights.size(); ++i) {
+    if (weights[i] > 0.0) { order.push_back(i); total += weights[i]; }
+  }
+  if (draws <= 0 || total <= kNegligibleWeight || order.empty()) return counts;
+  std::shuffle(order.begin(), order.end(), *rng);
+  const double step = total / draws;
+  double pointer = std::uniform_real_distribution<double>(0.0, 1.0)(*rng) * step;
+  std::size_t at = 0;
+  double cumulative = weights[order[0]];
+  for (int i = 0; i < draws; ++i) {
+    while (pointer > cumulative && at + 1 < order.size()) cumulative += weights[order[++at]];
+    ++counts[order[at]];
+    pointer += step;
+  }
+  return counts;
+}
+
 }  // namespace
 
 BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
                          bool use_opponent_prior, bool preserve_capture_evidence,
-                         bool use_visibility_deductions)
+                         bool use_visibility_deductions, bool use_grouped_prediction)
     : our_side_(our_side),
       target_count_(std::max(1, particle_count)),
       use_opponent_prior_(use_opponent_prior),
       preserve_capture_evidence_(preserve_capture_evidence),
       use_visibility_deductions_(use_visibility_deductions),
+      use_grouped_prediction_(use_grouped_prediction),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
   const int home_rank = our_side == kWhite ? 0 : 7;
@@ -299,6 +354,10 @@ void BeliefState::Condition(const Observation& view,
 
 void BeliefState::PredictAndCondition(const Observation& view,
                                       BeliefUpdateReport* report) {
+  if (use_grouped_prediction_) {
+    PredictAndConditionGrouped(view, report);
+    return;
+  }
   const int enemy_side = our_side_ ^ 1;
   ObservedPieces enemy = Summarize(view, enemy_side);
   if (use_visibility_deductions_) {
@@ -325,6 +384,7 @@ void BeliefState::PredictAndCondition(const Observation& view,
     particle.GenerateMoves(&moves);
     if (moves.empty()) continue;  // this hypothesis could not have moved at all
     ++considered;
+    ++report->expanded_predecessors;
     // Prior over their moves, normalised per hypothesis so that a hypothesis
     // offering many plausible continuations is not thereby favoured.
     double prior_total = 0.0;
@@ -339,7 +399,11 @@ void BeliefState::PredictAndCondition(const Observation& view,
 
     int consistent = 0;
     for (int index = 0; index < moves.size(); ++index) {
-      if (pool.size() >= kMaxPoolSize) break;
+      if (pool.size() >= kMaxPoolSize) {
+        report->successor_prefix_capped = true;
+        break;
+      }
+      ++report->enumerated_transitions;
       const Move move = moves[index];
       UndoState undo;
       particle.MakeMove(move, &undo);
@@ -362,6 +426,83 @@ void BeliefState::PredictAndCondition(const Observation& view,
     return;
   }
   Resample(weights, pool, report);
+}
+
+void BeliefState::PredictAndConditionGrouped(const Observation& view,
+                                            BeliefUpdateReport* report) {
+  const int enemy_side = our_side_ ^ 1;
+  ObservedPieces enemy = Summarize(view, enemy_side);
+  const ObservedPieces ours = Summarize(view, our_side_);
+  if (use_visibility_deductions_) {
+    const auto facts = DeduceFromObservation(view, our_side_);
+    enemy.must_hold_enemy = facts.must_hold_enemy;
+    enemy.must_be_empty = facts.must_be_empty;
+  }
+  struct WeightedMove { Move move; double weight; };
+  struct Group {
+    Position parent;
+    int multiplicity = 1;
+    std::vector<WeightedMove> children;
+  };
+  std::vector<Group> groups;
+  std::unordered_map<StateIdentity, std::size_t, StateIdentityHash> index;
+  index.reserve(particles_.size());
+  for (Position parent : particles_) {
+    parent.set_side_to_move(enemy_side);
+    auto [entry, inserted] = index.emplace(StateIdentity(parent), groups.size());
+    if (inserted) groups.push_back({parent, 1, {}});
+    else ++groups[entry->second].multiplicity;
+  }
+  std::vector<double> group_weights(groups.size(), 0.0);
+  int64_t weighted_consistent = 0;
+  for (std::size_t i = 0; i < groups.size(); ++i) {
+    auto& group = groups[i];
+    Position parent = group.parent;
+    MoveList moves;
+    parent.GenerateMoves(&moves);
+    ++report->expanded_predecessors;
+    double prior_total = 0.0, accepted_total = 0.0;
+    for (const Move move : moves) {
+      ++report->enumerated_transitions;
+      const double prior = MovePlausibility(&parent, move);
+      prior_total += prior;  // include inconsistent moves: observation likelihood matters
+      UndoState undo;
+      parent.MakeMove(move, &undo);
+      if (AgreesAboutEnemy(parent, enemy, enemy_side) && AgreesAboutUs(parent, ours, our_side_)) {
+        group.children.push_back({move, prior});
+        accepted_total += prior;
+      }
+      parent.UnmakeMove(move, undo);
+    }
+    weighted_consistent += static_cast<int64_t>(group.multiplicity) * group.children.size();
+    report->surviving_particles += static_cast<int>(group.children.size());
+    if (prior_total > 0.0) group_weights[i] = group.multiplicity * accepted_total / prior_total;
+  }
+  report->mean_consistent_moves = particles_.empty() ? 0.0
+      : static_cast<double>(weighted_consistent) / particles_.size();
+  // Two-stage resampling visits every unique predecessor and every legal
+  // transition, with no successor-prefix cutoff. Multiplicity preserves parent
+  // mass. Child sampling uses its conditional weights. Expected child offspring
+  // are N * parent_mass * prior(move) / total_consistent_mass.
+  const auto offspring = SystematicCounts(group_weights, target_count_, &rng_);
+  particles_.clear();
+  particles_.reserve(target_count_);
+  for (std::size_t i = 0; i < groups.size(); ++i) {
+    if (offspring[i] == 0) continue;
+    auto& group = groups[i];
+    std::vector<double> weights;
+    for (const auto& child : group.children) weights.push_back(child.weight);
+    const auto copies = SystematicCounts(weights, offspring[i], &rng_);
+    for (std::size_t j = 0; j < group.children.size(); ++j) {
+      if (copies[j] == 0) continue;
+      Position child = group.parent;
+      UndoState undo;
+      child.MakeMove(group.children[j].move, &undo);
+      for (int n = 0; n < copies[j]; ++n) particles_.push_back(child);
+    }
+  }
+  std::shuffle(particles_.begin(), particles_.end(), rng_);
+  report->resampled_particles = static_cast<int>(particles_.size());
 }
 
 void BeliefState::Resample(const std::vector<double>& weights,
