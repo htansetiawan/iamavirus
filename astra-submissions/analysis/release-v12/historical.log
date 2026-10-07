@@ -1,0 +1,54 @@
+baseline 0 {'seats': 37, 'decisions': 274, 'king_losses': 20, 'terminal_positions': 26, 'terminal_survived': 8, 'avoidable_king_losses': 8, 'safe_alternative_decisions': 262}
+candidate 0 {'seats': 37, 'decisions': 274, 'king_losses': 20, 'terminal_positions': 26, 'terminal_survived': 8, 'avoidable_king_losses': 8, 'safe_alternative_decisions': 262}
+{
+  "mode": "hybrid",
+  "node_budget": 400000,
+  "seed": 777,
+  "stride": 6,
+  "overrides": {
+    "baseline": {},
+    "candidate": {}
+  },
+  "paired": {
+    "changed_moves": 47,
+    "newly_safe": 0,
+    "newly_fatal": 0
+  },
+  "model_sha256": {
+    "observe.onnx": "a085a1a2d16d7b3545047ec28a2b626b2cfb1d050c12b9a31efdb6d120eb2dff",
+    "score.onnx": "0dc8118735c694a23243b4ab316a589900878a14c2efe1106cba48fa92351cd7"
+  },
+  "sampling": "each side's own decision index; terminal losses also included",
+  "corpus_sha256": "9d5193539b564e27259f0ee4ef4aa2c208e922c5fdd4fa022088b56c2d9940ae",
+  "binaries": {
+    "baseline": "1e105c73b58f9d0e718bbc1eef04606443afa6e1954faac3e469350c04af4202",
+    "candidate": "a4bca9a03bd604a7120cc2215ec1c672040c2a480f1b318f444664ad2d2911f1"
+  },
+  "results": {
+    "baseline": {
+      "seats": 37,
+      "decisions": 274,
+      "king_losses": 20,
+      "terminal_positions": 26,
+      "terminal_survived": 8,
+      "avoidable_king_losses": 8,
+      "safe_alternative_decisions": 262,
+      "king_loss_rate": 0.072992700729927
+    },
+    "candidate": {
+      "seats": 37,
+      "decisions": 274,
+      "king_losses": 20,
+      "terminal_positions": 26,
+      "terminal_survived": 8,
+      "avoidable_king_losses": 8,
+      "safe_alternative_decisions": 262,
+      "king_loss_rate": 0.072992700729927
+    }
+  },
+  "limitations": [
+    "Forced public histories, not counterfactual matches or Elo evidence.",
+    "Per-side stride balances colors; terminal positions are an additional selected stratum.",
+    "Only decisions actually queried consume search RNG, identical in both arms."
+  ]
+}

@@ -1,0 +1,38 @@
+bitboard_test: 112219 checks, 0 failures
+position_test: 55940 checks, 0 failures
+observation_test: 31 checks, 0 failures
+evaluation_test: 44 checks, 0 failures
+search_test: 67 checks, 0 failures
+       1444 plies, truth in population 621, collapses 19, pieces correctly placed 77.5%, composition unknown in 9014
+belief_test: 424 checks, 0 failures
+regret_test: 29 checks, 0 failures
+ignoring malformed FOW_PARTICLES=not-a-number
+       seed 2026 chose g8e7 (d5 guarded in 37%, risk seen 683 cp)
+       seed 1 chose c6d4 (d5 guarded in 38%, risk seen 367 cp)
+       seed 2 chose c6d4 (d5 guarded in 29%, risk seen 285 cp)
+       seed 3 chose c6d4 (d5 guarded in 30%, risk seen 457 cp)
+       seed 4 chose c6d4 (d5 guarded in 46%, risk seen 467 cp)
+       seed 5 chose c6e7 (d5 guarded in 17%, risk seen 817 cp)
+       seed 6 chose g8e7 (d5 guarded in 22%, risk seen 598 cp)
+       seed 7 chose c6d4 (d5 guarded in 20%, risk seen 225 cp)
+       chose e8d7 (rejected 30 unsafe, king risk 156 permille)
+       chose d1c2 (rejected 23 of 25, risk 0 permille)
+       239 plies, worst budget overrun 0.003s
+       seed 1 chose e1d1 (risk 291, safest 291, rows added 0)
+       seed 2 chose e1d1 (risk 145, safest 145, rows added 0)
+       seed 3 chose e1d1 (risk 129, safest 129, rows added 0)
+       seed 4 chose e1d2 (risk 0, safest 0, rows added 0)
+       seed 1 hybrid chose e2f2 (risk 0, safest 0, rows 5)
+       seed 2 hybrid chose e2f2 (risk 0, safest 0, rows 5)
+       seed 3 hybrid chose e2f2 (risk 0, safest 0, rows 5)
+engine_test: 460 checks, 0 failures
+neural_test: 145 checks, 0 failures
+  ep[0]      1794/1794 match
+  ep[1]      1843/1843 match
+  legal[0]   1894/1894 match
+  legal[1]   1843/1843 match
+  moves      3737/3737 match
+  perft3     40/40 match
+  visible[0] 3737/3737 match
+  visible[1] 3737/3737 match
+18625/18625 checks agree with referee.py  -- C++ rules conform exactly

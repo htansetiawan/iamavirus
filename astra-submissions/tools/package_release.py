@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Package Astra at max(Fable archive major versions) + 1, without overwrites."""
+import argparse
 import hashlib
 import json
 import os
@@ -15,7 +16,9 @@ ASTRA = ROOT / "astra-submissions"
 def next_version():
     versions = []
     for path in (ROOT / "fable-submissions").glob("*.zip"):
-        match = re.fullmatch(r"iamavirus-v(\d+)(?:\.\d+)?-(?:cpp|hybrid|neural)\.zip", path.name)
+        # Candidate/model suffixes still reserve a major version. In particular,
+        # v12-candidate-hybrid must not be ignored in favour of a plain v11 ZIP.
+        match = re.fullmatch(r"iamavirus-v(\d+)(?:\.\d+)?(?:-[A-Za-z0-9]+)+\.zip", path.name)
         if match:
             versions.append(int(match[1]))
     if not versions:
@@ -24,12 +27,22 @@ def next_version():
 
 
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--source", type=Path, default=ASTRA / "implementation")
+    parser.add_argument("--origin", type=Path, default=ASTRA / "implementation-origin.json")
+    parser.add_argument("--expected-version", type=int)
+    parser.add_argument("--model-description", default="unchanged Stage A v1; no PPO weights")
+    args = parser.parse_args()
     version = next_version()
+    if args.expected_version is not None and version != args.expected_version:
+        raise RuntimeError(f"Expected v{args.expected_version}, but Fable numbering requires v{version}")
     output = ASTRA / f"iamavirus-v{version}-hybrid.zip"
     if output.exists():
         raise FileExistsError(f"Refusing to overwrite {output}")
-    source = ASTRA / "implementation"
-    origin = json.loads((ASTRA / "implementation-origin.json").read_text())
+    source = args.source.resolve()
+    if not source.is_relative_to(ASTRA.resolve()):
+        raise ValueError("Release source must be inside the Astra workspace")
+    origin = json.loads(args.origin.read_text())
     names = sorted(origin["initial_files_sha256"])
     names += ["RELEASE.md"]
     # Explicit original-source allowlist: no binaries, caches, or credentials.
@@ -42,7 +55,9 @@ def main():
         "author": "Astra", "version": version, "fable_version": version - 1,
         "numbering_rule": "max(fable-submissions numbered archive major versions) + 1",
         "mode": "hybrid", "basis_archive_sha256": origin["archive_sha256"],
-        "model": "unchanged Stage A v1; no PPO weights",
+        "source": str(source.relative_to(ROOT)),
+        "origin": str(args.origin.resolve().relative_to(ROOT)),
+        "model": args.model_description,
         "files_sha256": {n: hashlib.sha256(data).hexdigest() for n, data in content.items()},
     }
     content["astra-release.json"] = (json.dumps(metadata, indent=2) + "\n").encode()

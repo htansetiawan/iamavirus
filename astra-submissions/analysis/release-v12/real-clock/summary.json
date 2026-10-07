@@ -1,0 +1,110 @@
+{
+  "candidate_archive": "astra-submissions/iamavirus-v12-hybrid.zip",
+  "candidate_archive_sha256": "a5f806d0039f514006f3af902767557ad35137d9d02e2779181d438eb5b47cf3",
+  "opponent": "archived arena v10 (6f57a44ec814), not Duck or TA executables",
+  "time_control": "180+2",
+  "pairs": 2,
+  "games": [
+    {
+      "replay": "pair-3100-0.json",
+      "result": "1-0",
+      "reason": "King capturable",
+      "plies": 94,
+      "candidate_color": "white",
+      "score": 1.0,
+      "seconds": 345.83427280792966,
+      "clocks": [
+        97.434794,
+        105.589611
+      ],
+      "seed_pair": 3100,
+      "replay_sha256": "6ea837b5f63d2279130b14dd556e6920d61d83dd08feef6c4d75f33b258ef302",
+      "hybrid_turns_in_diagnostic_tail": {
+        "white": 45,
+        "black": 45
+      },
+      "protocol_truncated": false,
+      "warnings": []
+    },
+    {
+      "replay": "pair-3100-1.json",
+      "result": "1-0",
+      "reason": "King capturable",
+      "plies": 88,
+      "candidate_color": "black",
+      "score": 0.0,
+      "seconds": 320.7420150230173,
+      "clocks": [
+        106.671141,
+        109.410854
+      ],
+      "seed_pair": 3100,
+      "replay_sha256": "8cab70954952b6769bd1ee007051df4368b5222c34c1ddf9d16b65284e51636a",
+      "hybrid_turns_in_diagnostic_tail": {
+        "white": 45,
+        "black": 45
+      },
+      "protocol_truncated": false,
+      "warnings": []
+    },
+    {
+      "replay": "pair-4100-0.json",
+      "result": "1-0",
+      "reason": "King capturable",
+      "plies": 102,
+      "candidate_color": "white",
+      "score": 1.0,
+      "seconds": 330.07085761101916,
+      "clocks": [
+        117.887562,
+        117.151327
+      ],
+      "seed_pair": 4100,
+      "replay_sha256": "f872bbbd9df8919147cb96e28fa4c8189d02f558b1ea1153878d727cd8428bca",
+      "hybrid_turns_in_diagnostic_tail": {
+        "white": 45,
+        "black": 45
+      },
+      "protocol_truncated": false,
+      "warnings": []
+    },
+    {
+      "replay": "pair-4100-1.json",
+      "result": "1-0",
+      "reason": "King capturable",
+      "plies": 62,
+      "candidate_color": "black",
+      "score": 0.0,
+      "seconds": 248.4693524558097,
+      "clocks": [
+        118.27173,
+        118.072138
+      ],
+      "seed_pair": 4100,
+      "replay_sha256": "86e0dca73ee2d5972b36f509b3f615dbc4dbfa3be54ed22847fbf0c58d531668",
+      "hybrid_turns_in_diagnostic_tail": {
+        "white": 32,
+        "black": 32
+      },
+      "protocol_truncated": false,
+      "warnings": []
+    }
+  ],
+  "record": {
+    "wins": 2,
+    "draws": 0,
+    "losses": 2
+  },
+  "score_rate": 0.5,
+  "pair_scores": [
+    0.5,
+    0.5
+  ],
+  "protocol_failures": 0,
+  "limitations": [
+    "Four games are a bounded release check, not an Elo estimate or resolved strength comparison.",
+    "No direct match against Duck or TA A/S is possible with their public replay API alone.",
+    "Bot diagnostics are bounded stderr tails; final protocol results cover complete games.",
+    "Wall-clock search depends on local hardware and load despite separated CPU affinity."
+  ]
+}

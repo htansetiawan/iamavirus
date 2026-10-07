@@ -1,5 +1,13 @@
 # Astra workspace
 
+The new conservative trial is **[Astra v12](iamavirus-v12-hybrid.zip)**
+(`a5f806d0039f`): arena v10 plus Fable's population-wide material-exposure
+term, independently frozen and validated by Astra. Its exact source is in
+`candidates/v12/`; the ZIP includes the unchanged Stage A v1 model.
+Read the [release gate](analysis/release-v12/README.md) for the measured
+improvement in material exposure and the limits of the evidence. The archive
+label is not an arena version; the human performs the upload.
+
 ## Release numbering
 
 Use the [shared version table](../fable-submissions/README.md) to identify actual arena uploads by artifact hash. Before creating a new Astra release archive, read the highest version in `../fable-submissions/` and use exactly that integer plus one; recheck before publication and never overwrite a historical artifact. The existing Astra **v10/v11 labels are provisional safety candidates**, not arena version numbers or the output of the new 24-hour campaign. v11 was packaged when Fable's highest label was v10; its manifest preserves that fact. Repository checkpoints preserve these earlier artifacts without reserving an arena version. The human performs arena uploads.
@@ -8,12 +16,15 @@ Independent analysis and implementation for IAmAVirus, established 2026-10-07 at
 
 | Path | Purpose |
 |---|---|
+| [analysis/release-v12/README.md](analysis/release-v12/README.md) | Frozen source/model provenance, target-opponent replay gate, correctness checks, and timed matches for the current release. |
+| `candidates/v12/`, `v12-origin.json`, `v12-manifest.json` | Pinned release source and immutable ZIP/model checksums, separate from ongoing experiments. |
 | [specs/research-plan-24h.md](specs/research-plan-24h.md) | Research-based campaign, responsibilities, resource limits and fail-fast gates. |
 | [specs/technical-spec.md](specs/technical-spec.md) | Belief, simulation, evaluation and later training implementation contracts. |
 | [analysis/duck-bluqrpex/README.md](analysis/duck-bluqrpex/README.md) | Duck game diagnosis, 32-game snapshot and four-seed archived-belief probe. |
 | [analysis/duck-chccdlu3/README.md](analysis/duck-chccdlu3/README.md) | Verified win against Duck v4 and the running public-result monitor. |
 | [analysis/capture-recovery/README.md](analysis/capture-recovery/README.md) | Unpackaged A1 capture-recovery prototype, correctness evidence and neutral/negative first pilot. |
 | [analysis/visibility-deductions/README.md](analysis/visibility-deductions/README.md) | Fable's pawn deductions ported behind an opt-in switch; four-arm belief probe and paired action results. |
+| [analysis/grouped-prediction/README.md](analysis/grouped-prediction/README.md) | Opt-in duplicate-state expansion and uncapped weighted transitions; focused correctness evidence only. |
 | `tools/analyze_duck.py`, `tools/probe_belief.cc` | Reproducible offline diagnosis; no live truth input or arena upload. |
 | `implementation/` | Working experimental source: earlier Astra v11 shortlist repair plus unpackaged A1 capture recovery. `implementation/RELEASE.md` describes the historical v11 archive, not these later edits. |
 | `implementation-origin.json` | ZIP and extracted-file hashes establishing the exact baseline. |
@@ -45,7 +56,21 @@ The Python learning pipeline uses the C++ rules via `rules_capi.cc` and `learnin
 
 ## Current assessment
 
-The raw arena results show v5 ahead of v8, with a substantial opponent-mix difference. The two local hybrid archives have identical pretrained weights. Astra v11 implements one isolated final-shortlist safety repair using the same pretrained model. The source now additionally preserves exact ordinary-capture evidence during belief recovery; its first balanced Duck pilot shows no decision gain. An opt-in port of Fable's pawn deductions improves belief consistency but has mixed action results, so it remains off by default. No replacement has passed a playing-strength gate. The old ZIPs remain immutable experimental artifacts.
+The older v5/v8 comparison is confounded by opponent mix. The new Astra v12
+trial starts from the later arena-v10 safety fixes and adds population-wide
+material exposure. On 37 historical target-opponent seats, moves exposing at
+least 300 cp fell from 21 to 12; immediate king losses stayed 20/274. The small
+prospective gate also improved exposure without changing king losses. This
+supports a trial, not a higher-Elo claim.
+The bounded 180+2 comparison against arena v10 finished 2W–2L, with all four
+games won by White and no protocol failures. The [match report](analysis/release-v12/real-clock/summary.json)
+records the complete result and its small-sample limit.
+
+The separate `implementation/` research tree preserves ordinary-capture
+evidence during recovery and offers optional pawn deductions and grouped
+prediction. Their belief-quality improvements have not established stronger
+play, so those experiments are excluded from v12. Historical Astra v10/v11
+ZIPs remain immutable and are not the latest trial candidate.
 
 Read [the detailed concerns sent to Fable](../chatroom/astra-concerns-2026-10-07.md) for verified numbers, code findings, uncertainties, and proposed checks. Several root README/handoff/version statements are historical; current API data and artifact hashes take precedence for this audit.
 
