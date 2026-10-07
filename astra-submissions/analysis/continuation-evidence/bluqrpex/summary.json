@@ -1,0 +1,116 @@
+{
+  "probe_sha256": "f58426e787b0de1442b4d4558f8f50ffb6118c82df5d5ca4e6399222cb83f450",
+  "moves_sha256": "82d0dced68ebe1b3364832c2f2fc71bbf5a1549ecfa27ecdc2de58712f07b94e",
+  "side": 0,
+  "seeds": [
+    1,
+    2,
+    3,
+    777
+  ],
+  "particles": 2048,
+  "arms": {
+    "control": {
+      "capture": 1,
+      "deductions": 1,
+      "grouped": 0,
+      "continuation": 0
+    },
+    "survival": {
+      "capture": 1,
+      "deductions": 1,
+      "grouped": 0,
+      "continuation": 1
+    },
+    "grouped": {
+      "capture": 1,
+      "deductions": 1,
+      "grouped": 1,
+      "continuation": 0
+    },
+    "grouped_survival": {
+      "capture": 1,
+      "deductions": 1,
+      "grouped": 1,
+      "continuation": 1
+    }
+  },
+  "results": {
+    "control": {
+      "updates": 260,
+      "collapses": 3,
+      "truth_in_population": 131,
+      "ordinary_capture_events": 36,
+      "capture_violations": 0,
+      "mean_observation_consistency": 1.0,
+      "visibility_conflicts": 0,
+      "continuation_conflicts": 0,
+      "continuation_invalid_fraction": 0.0016470102163461538,
+      "recovery_attempts": 6144,
+      "mean_hidden_brier": 0.1767845222150776,
+      "mean_hidden_log_loss": 0.6644467692904656,
+      "mean_hidden_piece_mass": 0.7445414078771695,
+      "zero_true_mass_fraction": 0.013968957871396896,
+      "mean_observe_ms": 2.5636965423076923
+    },
+    "survival": {
+      "updates": 260,
+      "collapses": 4,
+      "truth_in_population": 131,
+      "ordinary_capture_events": 36,
+      "capture_violations": 0,
+      "mean_observation_consistency": 1.0,
+      "visibility_conflicts": 0,
+      "continuation_conflicts": 0,
+      "continuation_invalid_fraction": 0.0,
+      "recovery_attempts": 8479,
+      "mean_hidden_brier": 0.17648525835698448,
+      "mean_hidden_log_loss": 0.653570760421286,
+      "mean_hidden_piece_mass": 0.7445663447930574,
+      "zero_true_mass_fraction": 0.01352549889135255,
+      "mean_observe_ms": 2.5985570730769227
+    },
+    "grouped": {
+      "updates": 260,
+      "collapses": 3,
+      "truth_in_population": 136,
+      "ordinary_capture_events": 36,
+      "capture_violations": 0,
+      "mean_observation_consistency": 1.0,
+      "visibility_conflicts": 0,
+      "continuation_conflicts": 0,
+      "continuation_invalid_fraction": 0.005335411658653846,
+      "recovery_attempts": 6144,
+      "mean_hidden_brier": 0.19128872741685143,
+      "mean_hidden_log_loss": 0.7695316700221729,
+      "mean_hidden_piece_mass": 0.7224073177570093,
+      "zero_true_mass_fraction": 0.01662971175166297,
+      "mean_observe_ms": 0.40820565384615387
+    },
+    "grouped_survival": {
+      "updates": 260,
+      "collapses": 3,
+      "truth_in_population": 136,
+      "ordinary_capture_events": 36,
+      "capture_violations": 0,
+      "mean_observation_consistency": 1.0,
+      "visibility_conflicts": 0,
+      "continuation_conflicts": 0,
+      "continuation_invalid_fraction": 0.0,
+      "recovery_attempts": 6764,
+      "mean_hidden_brier": 0.1927005622283814,
+      "mean_hidden_log_loss": 0.7482056944124168,
+      "mean_hidden_piece_mass": 0.7220274165554073,
+      "zero_true_mass_fraction": 0.015631929046563194,
+      "mean_observe_ms": 0.4393133576923077
+    }
+  },
+  "limits": [
+    "Single development trajectory, repeated across seeds; not independent games.",
+    "Truth labels never condition the belief update.",
+    "Only live observations are replayed: the completed game's final frame is excluded.",
+    "Mean probability on true hidden pieces is a placement diagnostic, not calibration by itself.",
+    "Categorical Brier/log loss include hidden empty squares; log loss floors mass at 1e-12.",
+    "Observe latency includes OS contention; no strength or Elo claim."
+  ]
+}

@@ -102,13 +102,15 @@ std::vector<int> SystematicCounts(const std::vector<double>& weights, int draws,
 
 BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
                          bool use_opponent_prior, bool preserve_capture_evidence,
-                         bool use_visibility_deductions, bool use_grouped_prediction)
+                         bool use_visibility_deductions, bool use_grouped_prediction,
+                         bool use_continuation_evidence)
     : our_side_(our_side),
       target_count_(std::max(1, particle_count)),
       use_opponent_prior_(use_opponent_prior),
       preserve_capture_evidence_(preserve_capture_evidence),
       use_visibility_deductions_(use_visibility_deductions),
       use_grouped_prediction_(use_grouped_prediction),
+      use_continuation_evidence_(use_continuation_evidence),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
   const int home_rank = our_side == kWhite ? 0 : 7;
@@ -261,6 +263,8 @@ void BeliefState::ApplyOurMove(Move move) {
 BeliefUpdateReport BeliefState::Observe(const Observation& view,
                                        bool reflects_our_own_move) {
   BeliefUpdateReport report;
+  previous_mover_ = seen_any_ ? (reflects_our_own_move ? our_side_ : our_side_ ^ 1) : -1;
+  report.continuation_previous_mover = previous_mover_;
   if (seen_any_ && !reflects_our_own_move) {
     capture_square_ = -1;  // an unseen opponent move may relocate the capturer
     if (preserve_capture_evidence_) InferCaptureEvidence(view, &report);
@@ -291,6 +295,15 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
   previous_view_ = view;
   last_report_ = report;
   return report;
+}
+
+bool BeliefState::ConsistentWithContinuation(const Position& position) const {
+  if (!use_continuation_evidence_ || previous_mover_ < 0) return true;
+  // referee.py adjudicates BEFORE delivering either player's next observation.
+  // The previous mover's king must therefore have survived. The current
+  // mover may be in a hidden check: do not reject those positions.
+  const int king = position.KingSquare(previous_mover_);
+  return king >= 0 && !position.IsAttacked(king, previous_mover_ ^ 1);
 }
 
 void BeliefState::InferCaptureEvidence(const Observation& view,
@@ -336,7 +349,8 @@ void BeliefState::Condition(const Observation& view,
   for (const Position& particle : particles_) {
     if (AgreesAboutEnemy(particle, enemy, our_side_ ^ 1) &&
         AgreesAboutUs(particle, ours, our_side_)) {
-      kept.push_back(particle);
+      if (ConsistentWithContinuation(particle)) kept.push_back(particle);
+      else ++report->continuation_rejected;
     }
   }
   report->surviving_particles = static_cast<int>(kept.size());
@@ -409,9 +423,13 @@ void BeliefState::PredictAndCondition(const Observation& view,
       particle.MakeMove(move, &undo);
       if (AgreesAboutEnemy(particle, enemy, enemy_side) &&
           AgreesAboutUs(particle, ours, our_side_)) {
-        pool.push_back(particle);
-        weights.push_back(prior[static_cast<std::size_t>(index)] / prior_total);
-        ++consistent;
+        if (ConsistentWithContinuation(particle)) {
+          pool.push_back(particle);
+          weights.push_back(prior[static_cast<std::size_t>(index)] / prior_total);
+          ++consistent;
+        } else {
+          ++report->continuation_rejected;
+        }
       }
       particle.UnmakeMove(move, undo);
     }
@@ -469,8 +487,12 @@ void BeliefState::PredictAndConditionGrouped(const Observation& view,
       UndoState undo;
       parent.MakeMove(move, &undo);
       if (AgreesAboutEnemy(parent, enemy, enemy_side) && AgreesAboutUs(parent, ours, our_side_)) {
-        group.children.push_back({move, prior});
-        accepted_total += prior;
+        if (ConsistentWithContinuation(parent)) {
+          group.children.push_back({move, prior});
+          accepted_total += prior;
+        } else {
+          ++report->continuation_rejected;
+        }
       }
       parent.UnmakeMove(move, undo);
     }
@@ -613,7 +635,12 @@ void BeliefState::Recover(const Observation& view,
   }
 
   particles_.clear();
-  for (int i = 0; i < target_count_; ++i) {
+  const int64_t attempt_limit = static_cast<int64_t>(target_count_) *
+                                (use_continuation_evidence_ ? 32 : 1);
+  Position first_rejected;
+  bool have_rejected = false;
+  for (int64_t i = 0; i < attempt_limit && static_cast<int>(particles_.size()) < target_count_; ++i) {
+    ++report->recovery_attempts;
     Position particle = visible;
     std::shuffle(hidden.begin(), hidden.end(), rng_);
 
@@ -665,17 +692,12 @@ void BeliefState::Recover(const Observation& view,
         --remaining[latent_promotion ? kPawn : type];
         particle.PutPiece(required_square, enemy_side, type);
         available.erase(std::remove(available.begin(), available.end(), required_square), available.end());
-        if (required_square == capture_square_) ++report->capture_constraints_preserved;
       } else {
         // A contradictory synthetic observation/census can make placement
         // impossible. Keep visibility intact and expose the inconsistency.
         if (required_square == capture_square_) report->capture_evidence_conflict = true;
         if (facts.must_hold_enemy & SquareBB(required_square)) report->visibility_evidence_conflict = true;
       }
-    }
-    if (capture_square_ >= 0 && !view.IsUnseen(capture_square_) &&
-        particle.color_at(capture_square_) == enemy_side) {
-      ++report->capture_constraints_preserved;
     }
     // Pawns are placed first because they are the only constrained piece: they
     // cannot stand on a promotion rank. Placing the free-roaming pieces first
@@ -700,9 +722,32 @@ void BeliefState::Recover(const Observation& view,
         available.erase(available.begin() + static_cast<std::ptrdiff_t>(chosen));
       }
     }
-    particle.set_side_to_move(our_side_);
+    particle.set_side_to_move(use_continuation_evidence_ && previous_mover_ >= 0
+                                 ? previous_mover_ ^ 1 : our_side_);
     particle.set_castling_rights(rebuilt_rights);
+    if (!ConsistentWithContinuation(particle)) {
+      ++report->recovery_continuation_rejected;
+      if (!have_rejected) { first_rejected = particle; have_rejected = true; }
+      continue;
+    }
     particles_.push_back(particle);
+  }
+  if (particles_.empty()) {
+    // Bounded failure for malformed input or a proposal family that cannot
+    // satisfy the evidence. Never report this degraded fallback as a consistent
+    // posterior. Live replay gates must have zero such conflicts before release.
+    report->continuation_evidence_conflict = true;
+    particles_.push_back(first_rejected);
+  }
+  const std::size_t survivors = particles_.size();
+  while (static_cast<int>(particles_.size()) < target_count_) {
+    particles_.push_back(particles_[particles_.size() % survivors]);
+  }
+  if (capture_square_ >= 0) {
+    report->capture_constraints_preserved = 0;
+    for (const Position& particle : particles_) {
+      report->capture_constraints_preserved += particle.color_at(capture_square_) == enemy_side;
+    }
   }
   report->resampled_particles = target_count_;
 }

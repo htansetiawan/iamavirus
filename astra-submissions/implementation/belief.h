@@ -59,6 +59,11 @@ struct BeliefUpdateReport {
   int expanded_predecessors = 0;
   int enumerated_transitions = 0;
   bool successor_prefix_capped = false;
+  int continuation_previous_mover = -1;
+  int continuation_rejected = 0;
+  int recovery_attempts = 0;
+  int recovery_continuation_rejected = 0;
+  bool continuation_evidence_conflict = false;
 };
 
 class BeliefState {
@@ -72,7 +77,8 @@ class BeliefState {
               bool use_opponent_prior = true,
               bool preserve_capture_evidence = true,
               bool use_visibility_deductions = false,
-              bool use_grouped_prediction = false);
+              bool use_grouped_prediction = false,
+              bool use_continuation_evidence = false);
 
   // Absorbs an observation. `reflects_our_own_move` must be true for the
   // observation the arena sends immediately after our own move, since the only
@@ -108,6 +114,7 @@ class BeliefState {
   bool EnemyKingVisible(const Observation& view) const;
 
  private:
+  friend struct BeliefStateTestAccess;
   // Squares where `view` shows a piece of `color`, per piece type.
   struct ObservedPieces {
     Bitboard visible = 0;
@@ -168,6 +175,7 @@ class BeliefState {
   // off the victim square). The fact expires on the next opponent move.
   void InferCaptureEvidence(const Observation& view, BeliefUpdateReport* report);
   void PredictAndConditionGrouped(const Observation& view, BeliefUpdateReport* report);
+  bool ConsistentWithContinuation(const Position& position) const;
 
   int our_side_;
   int target_count_;
@@ -175,6 +183,8 @@ class BeliefState {
   bool preserve_capture_evidence_;
   bool use_visibility_deductions_;
   bool use_grouped_prediction_;
+  bool use_continuation_evidence_;
+  int previous_mover_ = -1;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
   // Piece counts the opponent is believed to still own.

@@ -116,6 +116,7 @@ struct EngineOptions {
   // Experimental: better support has not yet passed the action-quality gate.
   bool use_visibility_deductions = false;
   bool use_grouped_prediction = false;
+  bool use_continuation_evidence = false;
   SearchOptions search;
 };
 

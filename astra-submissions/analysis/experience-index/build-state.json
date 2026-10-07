@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-07T20:48:32.341382+00:00",
+  "status": "paused_for_timed_match_cpu_allocation",
+  "pid": 3801137,
+  "exec_session": 73922,
+  "output": "/media/henrytan/seagate/iamavirus/astra/experience/v1",
+  "command": "taskset -c 4,5 python3 astra-submissions/tools/experience_index.py build --manifest data/manifests/v2.json --accepted data/raw/accepted.jsonl --output /media/henrytan/seagate/iamavirus/astra/experience/v1",
+  "source_sha256": "f3df44ab40a391b5457d7980e789594e9ecf4279aee730e6109e1a4937db8466",
+  "resume": "Automatic controller waits up to 120 minutes for learning.compare_archives drivers to release cores 4-5, then verifies command/start time and resumes PID 3801137. Inspect resume-state.json and require output manifest.json.",
+  "resume_controller_session": 85349,
+  "resume_controller": "astra-submissions/tools/resume_experience_index.py"
+}

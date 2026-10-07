@@ -23,6 +23,13 @@
 #include "testing.h"
 
 namespace fow {
+// Seed a tiny explicit support in unit tests. This hook has no live input path.
+struct BeliefStateTestAccess {
+  static void Assign(BeliefState* belief, const std::vector<Position>& support) {
+    belief->particles_ = support;
+    belief->representative_valid_ = false;
+  }
+};
 namespace {
 
 constexpr char kStartFen[] =
@@ -472,6 +479,124 @@ void GroupedPredictionPreservesBeliefInvariantsAcrossGames() {
                plies, retained, collapses);
 }
 
+Position SwapSides(const Position& original) {
+  Position flipped;
+  for (int square = 0; square < kNumSquares; ++square) {
+    if (original.piece_at(square) != kNoPiece) {
+      flipped.PutPiece(square ^ 56, original.color_at(square) ^ 1, original.piece_at(square));
+    }
+  }
+  flipped.set_side_to_move(original.side_to_move() ^ 1);
+  return flipped;
+}
+
+void ContinuedPlayProvesOurLastMoveDidNotLose() {
+  Position safe, attacked;
+  FOW_EXPECT_TRUE(PositionFromFen("k7/8/8/n7/8/8/7P/1K6 w - - 0 1", &safe));
+  FOW_EXPECT_TRUE(PositionFromFen("k7/8/8/8/8/n7/7P/1K6 w - - 0 1", &attacked));
+  for (int side : {kWhite, kBlack}) {
+    const Position before = side == kWhite ? safe : SwapSides(safe);
+    const Position false_world = side == kWhite ? attacked : SwapSides(attacked);
+    const int from = MakeSquare(7, side == kWhite ? 1 : 6);
+    const int to = MakeSquare(7, side == kWhite ? 2 : 5);
+    const Move quiet = EncodeMove(from, to);
+    const Observation initial(RenderObservation(before, side));
+    FOW_EXPECT_TRUE(RenderObservation(false_world, side) == initial.squares());
+    for (bool enabled : {false, true}) {
+      BeliefState belief(side, 32, 99, false, false, false, false, enabled);
+      belief.Observe(initial, false);
+      BeliefStateTestAccess::Assign(&belief, {before, false_world});
+      belief.ApplyOurMove(quiet);
+      Position after = before;
+      UndoState undo;
+      after.MakeMove(quiet, &undo);
+      const auto report = belief.Observe(Observation(RenderObservation(after, side)), true);
+      int unsafe = 0;
+      for (const Position& p : belief.particles()) unsafe += p.IsAttacked(p.KingSquare(side), side ^ 1);
+      FOW_EXPECT_EQ(unsafe, enabled ? 0 : 16);
+      FOW_EXPECT_EQ(report.continuation_previous_mover, side);
+      FOW_EXPECT_EQ(report.continuation_rejected, enabled ? 1 : 0);
+      FOW_EXPECT_TRUE(!report.collapsed);
+    }
+  }
+}
+
+void ContinuationAllowsAnInvisibleCheckByEitherMover() {
+  Position before;
+  FOW_EXPECT_TRUE(PositionFromFen("2k5/8/8/8/8/8/1R6/4K3 w - - 0 1", &before));
+  for (int side : {kWhite, kBlack}) {
+    Position truth = side == kWhite ? before : SwapSides(before);
+    BeliefState belief(side, 32, 16, false, false, false, false, true);
+    belief.Observe(Observation(RenderObservation(truth, side)), false);
+    BeliefStateTestAccess::Assign(&belief, {truth});
+    const int rank = side == kWhite ? 1 : 6;
+    const Move checking = EncodeMove(MakeSquare(1, rank), MakeSquare(2, rank));
+    belief.ApplyOurMove(checking);
+    UndoState undo;
+    truth.MakeMove(checking, &undo);
+    FOW_EXPECT_TRUE(truth.IsAttacked(truth.KingSquare(side ^ 1), side));
+    FOW_EXPECT_TRUE(Observation(RenderObservation(truth, side ^ 1)).IsUnseen(MoveTo(checking)));
+    const auto report = belief.Observe(Observation(RenderObservation(truth, side)), true);
+    FOW_EXPECT_TRUE(!report.collapsed);
+    FOW_EXPECT_EQ(report.continuation_rejected, 0);
+  }
+  // After the enemy moved, our own king may now be under a hidden check.
+  FOW_EXPECT_TRUE(PositionFromFen("k7/8/8/1r6/8/8/7P/1K6 b - - 0 1", &before));
+  for (bool grouped : {false, true}) {
+    BeliefState belief(kWhite, 2048, 84, false, false, true, grouped, true);
+    belief.Observe(Observation(RenderObservation(before, kWhite)), false);
+    BeliefStateTestAccess::Assign(&belief, {before});
+    Position after = before;
+    UndoState undo;
+    after.MakeMove(EncodeMove(MakeSquare(1, 4), MakeSquare(1, 2)), &undo);
+    const auto report = belief.Observe(Observation(RenderObservation(after, kWhite)), false);
+    FOW_EXPECT_TRUE(!report.collapsed);
+    FOW_EXPECT_TRUE(BeliefContainsTruth(belief, after));
+    FOW_EXPECT_EQ(report.continuation_previous_mover, kBlack);
+  }
+}
+
+void RecoveryConditionsOnThePreviousMoversSurvival() {
+  Position safe, attacked;
+  FOW_EXPECT_TRUE(PositionFromFen("k7/8/8/n7/8/8/7P/1K6 w - - 0 1", &safe));
+  FOW_EXPECT_TRUE(PositionFromFen("k7/8/8/8/8/n7/7P/1K6 w - - 0 1", &attacked));
+  BeliefState belief(kWhite, 128, 27, false, false, true, false, true);
+  belief.Observe(Observation(RenderObservation(safe, kWhite)), false);
+  BeliefStateTestAccess::Assign(&belief, {attacked});
+  const Move quiet = EncodeMove(MakeSquare(7, 1), MakeSquare(7, 2));
+  belief.ApplyOurMove(quiet);
+  UndoState undo;
+  safe.MakeMove(quiet, &undo);
+  const auto report = belief.Observe(Observation(RenderObservation(safe, kWhite)), true);
+  FOW_EXPECT_TRUE(report.collapsed);
+  FOW_EXPECT_TRUE(!report.continuation_evidence_conflict);
+  FOW_EXPECT_TRUE(report.recovery_continuation_rejected > 0);
+  FOW_EXPECT_TRUE(report.recovery_attempts <= 128 * 32);
+  FOW_EXPECT_EQ(belief.particle_count(), 128);
+  for (const Position& p : belief.particles()) {
+    FOW_EXPECT_EQ(p.side_to_move(), kBlack);
+    FOW_EXPECT_TRUE(!p.PreviousMoverIsLost());
+  }
+}
+
+void ImpossibleContinuationIsBoundedAndReported() {
+  Position terminal;
+  FOW_EXPECT_TRUE(PositionFromFen("k7/8/8/8/8/8/7P/rK6 w - - 0 1", &terminal));
+  BeliefState belief(kWhite, 8, 12, false, false, true, false, true);
+  belief.Observe(Observation(RenderObservation(terminal, kWhite)), false);
+  BeliefStateTestAccess::Assign(&belief, {terminal});
+  const Move quiet = EncodeMove(MakeSquare(7, 1), MakeSquare(7, 2));
+  belief.ApplyOurMove(quiet);
+  UndoState undo;
+  terminal.MakeMove(quiet, &undo);
+  // The arena would not send this terminal frame. Deliberately malformed input
+  // must expose a conflict rather than loop forever or claim a valid posterior.
+  const auto report = belief.Observe(Observation(RenderObservation(terminal, kWhite)), true);
+  FOW_EXPECT_TRUE(report.continuation_evidence_conflict);
+  FOW_EXPECT_EQ(report.recovery_attempts, 8 * 32);
+  FOW_EXPECT_EQ(belief.particle_count(), 8);
+}
+
 // A hypothesis contradicted by every observation must not survive; the filter
 // must rebuild rather than crash or go empty.
 void RecoversWhenEveryHypothesisIsContradicted() {
@@ -589,6 +714,10 @@ int main() {
   FOW_RUN_TEST(fow::OurCaptureClearsTheEvidenceConstraint);
   FOW_RUN_TEST(fow::GroupedPredictionEnumeratesTheExactOpeningSupportOnce);
   FOW_RUN_TEST(fow::GroupedPredictionPreservesBeliefInvariantsAcrossGames);
+  FOW_RUN_TEST(fow::ContinuedPlayProvesOurLastMoveDidNotLose);
+  FOW_RUN_TEST(fow::ContinuationAllowsAnInvisibleCheckByEitherMover);
+  FOW_RUN_TEST(fow::RecoveryConditionsOnThePreviousMoversSurvival);
+  FOW_RUN_TEST(fow::ImpossibleContinuationIsBoundedAndReported);
   FOW_RUN_TEST(fow::RecoversWhenEveryHypothesisIsContradicted);
   FOW_RUN_TEST(fow::BeliefMaintainsItsInvariants);
   return fow::testing::Summarize("belief_test");

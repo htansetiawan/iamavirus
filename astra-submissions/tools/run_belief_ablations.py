@@ -14,6 +14,8 @@ import subprocess
 
 ARMS = {"control": (0, 0), "capture": (1, 0),
         "deductions": (0, 1), "combined": (1, 1)}
+CONTINUATION_ARMS = {"control": (1, 1, 0, 0), "survival": (1, 1, 0, 1),
+                     "grouped": (1, 1, 1, 0), "grouped_survival": (1, 1, 1, 1)}
 
 
 def summarize(rows):
@@ -29,6 +31,10 @@ def summarize(rows):
         mean_observation_consistency=sum(r["exact_observation_matches"] / r["particles"]
                                         for r in rows) / len(rows),
         visibility_conflicts=sum(r.get("visibility_evidence_conflict", False) for r in rows),
+        continuation_conflicts=sum(r.get("continuation_evidence_conflict", False) for r in rows),
+        continuation_invalid_fraction=sum(r.get("continuation_invalid_particles", 0) for r in rows)
+                                      / sum(r["particles"] for r in rows),
+        recovery_attempts=sum(r.get("recovery_attempts", 0) for r in rows),
         mean_hidden_brier=sum(r["hidden_brier_sum"] for r in rows) / max(1, hidden),
         mean_hidden_log_loss=sum(r["hidden_log_loss_sum"] for r in rows) / max(1, hidden),
         mean_hidden_piece_mass=sum(r["hidden_piece_mass_sum"] for r in rows) / max(1, pieces),
@@ -45,10 +51,14 @@ def main():
     parser.add_argument("--particles", type=int, default=2048)
     parser.add_argument("--workers", type=int, default=2)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--suite", choices=["visibility", "continuation"], default="visibility")
     args = parser.parse_args()
     if args.workers < 1 or args.particles < 1:
         parser.error("workers and particles must be positive")
+    if args.output.exists() and any(args.output.iterdir()):
+        parser.error("output directory must be empty to preserve earlier results")
     args.output.mkdir(parents=True, exist_ok=True)
+    arm_flags = CONTINUATION_ARMS if args.suite == "continuation" else ARMS
 
     def run(task):
         name, flags, seed = task
@@ -61,8 +71,8 @@ def main():
         assert all(row["seed"] == seed for row in rows)
         return name, rows
 
-    tasks = [(name, flags, seed) for name, flags in ARMS.items() for seed in args.seeds]
-    arms = {name: [] for name in ARMS}
+    tasks = [(name, flags, seed) for name, flags in arm_flags.items() for seed in args.seeds]
+    arms = {name: [] for name in arm_flags}
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         for name, rows in executor.map(run, tasks):
             arms[name].extend(rows)
@@ -75,10 +85,12 @@ def main():
         probe_sha256=hashlib.sha256(args.probe.read_bytes()).hexdigest(),
         moves_sha256=hashlib.sha256(args.moves.read_bytes()).hexdigest(),
         side=args.side, seeds=args.seeds, particles=args.particles,
-        arms={name: dict(zip(("capture", "deductions"), flags)) for name, flags in ARMS.items()},
+        arms={name: dict(zip(("capture", "deductions", "grouped", "continuation"), flags))
+              for name, flags in arm_flags.items()},
         results=summary,
         limits=["Single development trajectory, repeated across seeds; not independent games.",
                 "Truth labels never condition the belief update.",
+                "Only live observations are replayed: the completed game's final frame is excluded.",
                 "Mean probability on true hidden pieces is a placement diagnostic, not calibration by itself.",
                 "Categorical Brier/log loss include hidden empty squares; log loss floors mass at 1e-12.",
                 "Observe latency includes OS contention; no strength or Elo claim."])

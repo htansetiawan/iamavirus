@@ -39,12 +39,22 @@ static void CaptureDiagnostics(const Report& report) {
               << ",\"enumerated_transitions\":" << report.enumerated_transitions
               << ",\"successor_prefix_capped\":" << (report.successor_prefix_capped ? "true" : "false");
   }
+  if constexpr (requires { report.continuation_previous_mover; }) {
+    std::cout << ",\"continuation_previous_mover\":" << report.continuation_previous_mover
+              << ",\"continuation_rejected\":" << report.continuation_rejected
+              << ",\"recovery_attempts\":" << report.recovery_attempts
+              << ",\"recovery_continuation_rejected\":" << report.recovery_continuation_rejected
+              << ",\"continuation_evidence_conflict\":"
+              << (report.continuation_evidence_conflict ? "true" : "false");
+  }
 }
 
 template <class Belief>
 static Belief MakeBelief(int side, int count, uint64_t seed,
-                         bool capture, bool deductions, bool grouped) {
-  if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool>) {
+                         bool capture, bool deductions, bool grouped, bool continuation) {
+  if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool>) {
+    return Belief(side, count, seed, true, capture, deductions, grouped, continuation);
+  } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions, grouped);
   } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions);
@@ -72,8 +82,8 @@ static Move FindMove(const Position& p, const std::string& uci) {
 }
 
 int main(int argc, char** argv) {
-  if (argc != 5 && argc != 7 && argc != 8) {
-    std::cerr << "usage: probe_belief MOVES_FILE SIDE(0|1) SEED PARTICLES [CAPTURE DEDUCTIONS [GROUPED]]\n";
+  if (argc != 5 && argc != 7 && argc != 8 && argc != 9) {
+    std::cerr << "usage: probe_belief MOVES_FILE SIDE(0|1) SEED PARTICLES [CAPTURE DEDUCTIONS [GROUPED [CONTINUATION]]]\n";
     return 2;
   }
   if (argc == 7 && !std::is_constructible_v<BeliefState, int, int, uint64_t, bool, bool, bool>) {
@@ -84,6 +94,10 @@ int main(int argc, char** argv) {
     std::cerr << "this source version does not expose grouped prediction\n";
     return 2;
   }
+  if (argc == 9 && !std::is_constructible_v<BeliefState, int, int, uint64_t, bool, bool, bool, bool, bool>) {
+    std::cerr << "this source version does not expose continuation evidence\n";
+    return 2;
+  }
   InitializeAttackTables();
   InitializeZobrist();
   const int side = std::atoi(argv[2]);
@@ -91,7 +105,7 @@ int main(int argc, char** argv) {
   auto belief = MakeBelief<BeliefState>(side, std::atoi(argv[4]),
       seed ^ 0x9E3779B97F4A7C15ULL,
       argc == 5 || std::atoi(argv[5]) != 0, argc == 5 || std::atoi(argv[6]) != 0,
-      argc == 8 && std::atoi(argv[7]) != 0);
+      argc >= 8 && std::atoi(argv[7]) != 0, argc >= 9 && std::atoi(argv[8]) != 0);
   Position truth;
   if (!PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth)) return 2;
   if (BoardText(truth) != "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr") return 2;
@@ -103,7 +117,13 @@ int main(int argc, char** argv) {
   bool own_move = false;
   int capture_landing = -1;
   bool capture_was_ep = false;
-  for (std::size_t ply = 0; ply <= moves.size(); ++ply) {
+  // Completed replay terminal frames are never delivered to a live bot. The
+  // final true move may be labelled, but its resulting frame is not an input.
+  for (std::size_t ply = 0; ply < moves.size(); ++ply) {
+    if (ply > 0 && truth.PreviousMoverIsLost()) {
+      std::cerr << "Recorded moves continue after a terminal king loss\n";
+      return 2;
+    }
     const Observation observation(RenderObservation(truth, side));
     const auto started = std::chrono::steady_clock::now();
     const auto report = belief.Observe(observation, own_move);
@@ -114,6 +134,7 @@ int main(int argc, char** argv) {
     std::set<std::string> unique_boards;
     std::array<std::array<int, 7>, 64> hidden_counts{};
     int matches = 0, f1_enemy = 0, b2_pawn = 0, renders_match = 0, capture_supported = 0;
+    int continuation_invalid = 0;
     for (const Position& p : particles) {
       const auto board = BoardText(p);
       unique_boards.insert(board);
@@ -122,6 +143,11 @@ int main(int argc, char** argv) {
       b2_pawn += board[9] == 'p';
       renders_match += RenderObservation(p, side) == observation.squares();
       capture_supported += capture_landing >= 0 && p.color_at(capture_landing) == (side ^ 1);
+      if (ply > 0) {
+        const int previous = truth.side_to_move() ^ 1;
+        const int king = p.KingSquare(previous);
+        continuation_invalid += king < 0 || p.IsAttacked(king, previous ^ 1);
+      }
       for (int sq = 0; sq < 64; ++sq) {
         if (!observation.IsUnseen(sq)) continue;
         const int type = p.piece_at(sq);
@@ -155,6 +181,7 @@ int main(int argc, char** argv) {
               << ",\"black_pawn_b2\":" << b2_pawn
               << ",\"exact_observation_matches\":" << renders_match
               << ",\"observe_ms\":" << observe_ms
+              << ",\"continuation_invalid_particles\":" << continuation_invalid
               << ",\"hidden_squares\":" << hidden_squares
               << ",\"hidden_pieces\":" << hidden_pieces
               << ",\"hidden_brier_sum\":" << brier
@@ -181,7 +208,6 @@ int main(int argc, char** argv) {
                 << "\",\"actual_move_king_loss_particles\":" << loses;
     }
     std::cout << "}\n";
-    if (ply == moves.size()) break;
     const Move actual = FindMove(truth, moves[ply]);
     own_move = truth.side_to_move() == side;
     if (own_move) belief.ApplyOurMove(actual);
