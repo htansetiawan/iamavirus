@@ -613,6 +613,63 @@ void HybridUnionKeepsTheSafestRows() {
   FOW_EXPECT_EQ(ok, kSeeds);
 }
 
+// Promotions: the queen, unless a lesser piece is strictly safer for the king.
+// 15 of 39 arena promotions were to a rook, bishop or knight for no reason but
+// the sampled mixture; with a pawn on b7 and nothing else going on, every seed
+// must promote to a queen.
+void PromotesToAQueenUnlessSaferOtherwise() {
+  // A line from the opening: 1. h4 h5 2. g4 hxg4 3. h5 g3 4. h6 g2 5. hxg7
+  // gxh1=Q, and now gxh8 promotes capturing the rook. The belief follows the
+  // real moves, so the only thing under test is the promotion choice.
+  const char* line[] = {"h2h4", "h7h5", "g2g4", "h5g4", "h4h5", "g4g3",
+                        "h5h6", "g3g2", "h6g7", "g2h1q"};
+  int queens = 0;
+  int underpromotions = 0;
+  const int kSeeds = 4;
+  for (uint64_t seed = 1; seed <= kSeeds; ++seed) {
+    EngineOptions options;
+    options.particle_count = 256;
+    options.transposition_megabytes = 8;
+    options.time_reserve = 0.0;
+    options.node_budget = 200000;
+    Engine engine(kWhite, 180.0, 2.0, options, seed);
+    Position truth;
+    PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth);
+    bool we_just_moved = false;
+    for (const char* uci : line) {
+      engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+      we_just_moved = false;
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      Move move = kNullMove;
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == uci) move = candidate;
+      }
+      FOW_EXPECT_TRUE(move != kNullMove);
+      if (move == kNullMove) return;
+      if (truth.side_to_move() == kWhite) {
+        engine.NotifyMovePlayed(move);
+        we_just_moved = true;
+      }
+      UndoState undo;
+      truth.MakeMove(move, &undo);
+    }
+    const Observation view(RenderObservation(truth, kWhite));
+    engine.Observe(view, we_just_moved);
+    DecisionTrace trace;
+    const Move choice = engine.ChooseMove(view, 170.0, &trace);
+    std::fprintf(stderr, "       seed %llu chose %s\n",
+                 static_cast<unsigned long long>(seed), MoveToUci(choice).c_str());
+    if (IsPromotion(choice)) {
+      if (PromotionType(choice) == kQueen) ++queens; else ++underpromotions;
+    }
+  }
+  // Never a rook, bishop or knight when the queen is no riskier; and the
+  // capture-promotion is the obvious move, so most seeds should take it.
+  FOW_EXPECT_EQ(underpromotions, 0);
+  FOW_EXPECT_TRUE(queens >= 3);
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -630,5 +687,6 @@ int main() {
   FOW_RUN_TEST(fow::InfersEnPassantAcrossTheOpponentsMove);
   FOW_RUN_TEST(fow::ShortlistKeepsTheSafestMovesThePopulationKnows);
   FOW_RUN_TEST(fow::HybridUnionKeepsTheSafestRows);
+  FOW_RUN_TEST(fow::PromotesToAQueenUnlessSaferOtherwise);
   return fow::testing::Summarize("engine_test");
 }

@@ -476,11 +476,30 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     }
   }
 
+  // Underpromotion is a sampled-mixture artefact, not a decision: the four
+  // promotions of one pawn get near-identical search scores, the regret
+  // mixture spreads over them, and the sample lands on a knight or a rook
+  // (15 of 39 arena promotions, gold data). A non-queen promotion is kept
+  // only when it is strictly safer for the king than the queen promotion of
+  // the same pawn; otherwise it is dropped before the shortlist.
+  std::vector<bool> dominated(static_cast<std::size_t>(legal.size()), false);
+  for (int i = 0; i < legal.size(); ++i) {
+    if (!IsPromotion(legal[i]) || PromotionType(legal[i]) == kQueen) continue;
+    for (int j = 0; j < legal.size(); ++j) {
+      if (j == i || !IsPromotion(legal[j]) || PromotionType(legal[j]) != kQueen) continue;
+      if (MoveFrom(legal[j]) != MoveFrom(legal[i]) || MoveTo(legal[j]) != MoveTo(legal[i])) continue;
+      if (king_risk[static_cast<std::size_t>(j)] <= king_risk[static_cast<std::size_t>(i)] + 1e-9) {
+        dominated[static_cast<std::size_t>(i)] = true;
+      }
+    }
+  }
+
   MoveList safe;
   double lowest = 2.0;
   int safest = 0;
   (void)safest;
   for (int i = 0; i < legal.size(); ++i) {
+    if (dominated[static_cast<std::size_t>(i)]) continue;
     const double risk = king_risk[static_cast<std::size_t>(i)];
     if (risk < options_.king_loss_tolerance) safe.Add(legal[i]);
     if (risk < lowest) {
@@ -495,7 +514,9 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     // discarding on a threshold here is what previously let the fatal move back
     // in through a fallback.
     trace->forced_risky = true;
-    for (int i = 0; i < legal.size(); ++i) safe.Add(legal[i]);
+    for (int i = 0; i < legal.size(); ++i) {
+      if (!dominated[static_cast<std::size_t>(i)]) safe.Add(legal[i]);
+    }
     trace->rejected_unsafe = 0;
   }
   // Risk of each surviving move, indexed alongside `safe`, so the payoff can be
