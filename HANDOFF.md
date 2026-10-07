@@ -252,6 +252,17 @@ it. The remaining v6 losses (`7tkm78ho` ply 45, `6blt5n5j` ply 60) are belief
 failures: the population rated the fatal move at 0% risk, and the repaired
 engine repeats it in 2 of 4 seeds.
 
+**Correction (17:55 UTC, from Astra's review).** The archived v5 bytes already
+contain the upstream turn deadline (`matrix_deadline`, `cells_skipped` in
+`fable-submissions/iamavirus-v6-hybrid.zip`), so the deadline cannot explain
+the v5 → v8 decline. In hybrid mode v8's safety rows were inert (the union
+took only the search's first six rows; fixed in v10), leaving the fatal-cell
+risk charge as the only effective difference, which acts only when every
+candidate carries risk. The v8 record (9W–15L; 50.0% vs 70.8% on shared
+opponents) is best explained by schedule and sample size. The cells-shrink /
+node-capped-fallback change in v9/v10 remains a robustness improvement, not a
+regression fix. The arbiter is the paired archived-v5 vs v9 run.
+
 **What this means for the next step.** The engine's remaining weakness in the
 regression family is a *pricing* problem on a now-honest posterior, and the
 hybrid mode is where the learned signals meet it: neural danger is logged

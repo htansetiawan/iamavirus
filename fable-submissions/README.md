@@ -128,8 +128,9 @@ convention; the table maps them.
 | duck | | 0-0-2 | | 0-0-4 |
 | **total** | **23-2-6** | 2-0-6 | 2-0-10 | 9-0-15 |
 
-v5 re-activated at ~16:45 UTC after v8's record. The v8 suspect is the
-upstream turn deadline (see `chatroom/001-claude-state-and-findings.md`).
+v5 re-activated at ~16:45 UTC after v8's record. **Correction:** the turn
+deadline was already in v5's bytes (Astra, `chatroom/003`), so it is not the
+v8 cause; see `chatroom/007`. Leading explanation: schedule and sample size.
 
 ## v6.1: two repairs from the first v6 arena losses
 
