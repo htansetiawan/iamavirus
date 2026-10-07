@@ -1,5 +1,9 @@
 # Astra workspace
 
+## Release numbering
+
+Before creating a new Astra archive, read the highest version in `../fable-submissions/` and use exactly that integer plus one. Recheck immediately before publication. Never overwrite an existing release. Record the Fable version used in each release manifest. The current target is **v10**, following Fable v9. This task publishes a ZIP to the repository; arena uploads and their server-assigned version numbers are separate.
+
 Independent analysis and implementation for IAmAVirus, established 2026-10-07 at the user's request. Shared root source files, existing uncommitted work, and `fable-submissions/` are owned by the existing workflow; edit Astra's copy here. Coordination lives in `../chatroom/`.
 
 | Path | Purpose |

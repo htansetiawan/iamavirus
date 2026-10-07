@@ -20,8 +20,8 @@ Team id `a2c35173659545c99752376a70418438` (`IAmAVirus`). Public record:
 | 5 | 2026-10-07 14:44 | `iamavirus-v6-hybrid.zip` | `662a989aa56c` | `61d33f9` (tree; published in `e2dc3b2`) | **hybrid** | stage A release `v1` | [v6](../versions/v6-neural.md) | **active**, 0 games at upload |
 | 6 | 2026-10-07 14:46 | `iamavirus-v6-cpp.zip` | `6b6b1f338501` | `61d33f9` (tree; published in `e2dc3b2`) | cpp | — | [v6](../versions/v6-neural.md) | validated, inactive |
 | *(not yet uploaded)* | — | `iamavirus-v6.1-cpp.zip` | `ed79ce45b31e` | see `git log` (v6.1) | cpp | — | [v6](../versions/v6-neural.md) + two repairs below | built 15:30 UTC |
-| 9 (upload next) | — | `iamavirus-v9-hybrid.zip` | `3076b45fb01d` | `addfc98` | **hybrid** | stage A release `v1` | v5 behaviour (12 rows) + fatal-cell risk charge + safety rows + deadline made harmless (cells shrink, skipped cells get a one-ply verdict on their hypothesis) | built 17:05 UTC; clean-dir build + referee game OK, 0 cells skipped, max turn 4.001 s |
-| — | — | `iamavirus-v9-cpp.zip` | `7b8b4343dd79` | `addfc98` | cpp | — | same engine, no model | built 17:05 UTC |
+| 9 (upload next) | — | `iamavirus-v9-hybrid.zip` | `6f57a44ec814` | see `git log` (v9) | **hybrid** | stage A release `v1` | v5 behaviour (12 rows) + fatal-cell risk charge + safety rows + deadline made harmless (cells shrink; skipped cells get a node-capped one-ply verdict on their hypothesis) + safety rows reserved in the hybrid union (Astra's finding) | rebuilt 17:35 UTC after Astra's review |
+| — | — | `iamavirus-v9-cpp.zip` | `954310feee0d` | see `git log` (v9) | cpp | — | same engine, no model | built 17:05 UTC |
 | 8 (assumed; confirm) | 2026-10-07 16:08 | `iamavirus-v6.1-hybrid.zip` | `0e4db2bf507b` | see `git log` (v6.1) | **hybrid** | stage A release `v1` | same | built 15:30 UTC |
 | 7 | 2026-10-07 14:47 | `iamavirus-cpp.zip` (committed upstream as "Add v5") | `eb994e3d89e4` | `f236ad7` (engine.cc identical) | cpp | — | [v5](../versions/v5-opponent-prior.md) + turn deadline | inactive; **confirm this is v7** |
 

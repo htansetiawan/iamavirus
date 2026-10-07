@@ -285,6 +285,8 @@ int Run() {
               << " hyp=" << trace.hypotheses
               << " unsafe=" << trace.rejected_unsafe
               << " skipped=" << trace.cells_skipped
+              << " safety_replace=" << trace.safety_replacements
+              << " shortlist_risk=" << trace.shortlist_risk_permille
               << " p=" << trace.chosen_probability
               << " gv=" << trace.game_value << " fog=" << trace.unseen_squares
               << " budget=" << trace.budget << " spent=" << trace.spent

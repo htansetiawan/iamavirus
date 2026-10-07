@@ -126,6 +126,8 @@ struct DecisionTrace {
   int rejected_unsafe = 0;
   int king_risk_permille = 0;   // king-loss probability of the CHOSEN move
   int safest_risk_permille = 0; // ...and of the safest move available
+  int shortlist_risk_permille = 0; // minimum risk in the final matrix rows
+  int safety_replacements = 0; // rows replaced to retain a safest candidate
   bool forced_risky = false;    // every move exceeded the tolerance
   int worst_risk = 0;
   double chosen_probability = 1.0;

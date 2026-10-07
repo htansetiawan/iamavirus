@@ -538,6 +538,81 @@ void ShortlistKeepsTheSafestMovesThePopulationKnows() {
   FOW_EXPECT_EQ(acceptable, kSeeds);
 }
 
+// Hybrid-mode contract (from Astra's review of v6.1): when the policy's top
+// moves fill the union, the rows the population rates safest must still be in
+// the matrix. The advice here puts all its probability mass on quiet moves
+// that are not the king's escapes, in a position where the king is attacked
+// and only two moves survive on the population; the chosen move must be one
+// of the low-risk rows, never a 100%-risk row.
+void HybridUnionKeepsTheSafestRows() {
+  // The 1sv22xki line again (king on e1 attacked by the queen on f2).
+  const char* line[] = {
+      "e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "g8f6", "d2d3", "f8c5", "b1c3",
+      "d7d6", "c1g5", "c8g4", "h2h3", "g4f3", "d1f3", "c6d4", "f3d1", "c7c6",
+      "g5f6", "d8f6", "c3e2", "d4e2", "d1e2", "f6f2"};
+  // Note: a different, shorter route to a queen on f2 with the king on e1 is
+  // not needed; what matters is that advice fills the slots.
+  int ok = 0;
+  const int kSeeds = 3;
+  for (uint64_t seed = 1; seed <= kSeeds; ++seed) {
+    EngineOptions options;
+    options.mode = EngineMode::kHybrid;
+    options.particle_count = 512;
+    options.transposition_megabytes = 16;
+    options.time_reserve = 0.0;
+    options.node_budget = 300000;
+    Engine engine(kWhite, 180.0, 2.0, options, seed);
+    Position truth;
+    PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth);
+    bool we_just_moved = false;
+    for (const char* uci : line) {
+      engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+      we_just_moved = false;
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      Move move = kNullMove;
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == uci) move = candidate;
+      }
+      FOW_EXPECT_TRUE(move != kNullMove);
+      if (move == kNullMove) return;
+      if (truth.side_to_move() == kWhite) {
+        engine.NotifyMovePlayed(move);
+        we_just_moved = true;
+      }
+      UndoState undo;
+      truth.MakeMove(move, &undo);
+    }
+    const Observation view(RenderObservation(truth, kWhite));
+    engine.Observe(view, we_just_moved);
+    // Advice: all probability on non-king moves, so the policy's eight slots
+    // are junk; danger estimates uninformative.
+    Position visible;
+    VisiblePositionFromObservation(view, kWhite, 0, -1, &visible);
+    MoveList legal;
+    LegalMovesFromObservation(visible, view, &legal);
+    NeuralAdvice advice;
+    advice.available = true;
+    for (const Move move : legal) {
+      advice.moves.push_back(move);
+      const bool king_move = visible.piece_at(MoveFrom(move)) == kKing;
+      advice.policy.push_back(king_move ? 1e-6 : 1.0);
+      advice.danger.push_back(0.5);
+    }
+    double total = 0.0;
+    for (const double p : advice.policy) total += p;
+    for (double& p : advice.policy) p /= total;
+    DecisionTrace trace;
+    const Move choice = engine.ChooseMove(view, 170.0, &trace, &advice);
+    std::fprintf(stderr, "       seed %llu hybrid chose %s (risk %d, safest %d, rows %d)\n",
+                 static_cast<unsigned long long>(seed), MoveToUci(choice).c_str(),
+                 trace.king_risk_permille, trace.safest_risk_permille, trace.shortlisted);
+    FOW_EXPECT_EQ(static_cast<int>(trace.mode_used), static_cast<int>(EngineMode::kHybrid));
+    if (trace.king_risk_permille <= trace.safest_risk_permille + 100) ++ok;
+  }
+  FOW_EXPECT_EQ(ok, kSeeds);
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -554,5 +629,6 @@ int main() {
   FOW_RUN_TEST(fow::EveryMoveTheEngineReturnsIsLegal);
   FOW_RUN_TEST(fow::InfersEnPassantAcrossTheOpponentsMove);
   FOW_RUN_TEST(fow::ShortlistKeepsTheSafestMovesThePopulationKnows);
+  FOW_RUN_TEST(fow::HybridUnionKeepsTheSafestRows);
   return fow::testing::Summarize("engine_test");
 }

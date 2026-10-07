@@ -550,9 +550,13 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
         }
       }
     };
-    const int search_top = std::min<int>(options_.hybrid_search_top,
-                                         static_cast<int>(ranked.size()));
-    for (int i = 0; i < search_top; ++i) add(ranked[static_cast<std::size_t>(i)].move);
+    // The search's own rows first, then the safety rows appended above (they
+    // sit at indices hybrid_search_top..shortlist), so a full policy slate can
+    // never push a population-safest move out of the matrix. Astra's review
+    // found the earlier version took only the first six ranked rows here.
+    const int search_rows = std::min<int>(std::max(options_.hybrid_search_top, shortlist),
+                                          static_cast<int>(ranked.size()));
+    for (int i = 0; i < search_rows; ++i) add(ranked[static_cast<std::size_t>(i)].move);
     std::vector<int> by_policy;
     for (int i = 0; i < safe.size(); ++i) by_policy.push_back(i);
     auto policy_of = [&](int i) {
@@ -672,8 +676,9 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
         MoveList single;
         single.Add(move);
         SearchLimits shallow;
-        shallow.seconds = 0.05;
+        shallow.seconds = 0.01;
         shallow.max_depth = 1;
+        shallow.max_nodes = 4000;  // one ply plus a bounded quiescence
         const SearchResult verdict = searcher_.Search(&quick, single, shallow);
         trace->nodes += verdict.nodes;
         game.set(row, column, static_cast<double>(verdict.score) - risk[row]);

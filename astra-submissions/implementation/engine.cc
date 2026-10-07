@@ -533,6 +533,15 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   }
   ranked.resize(shortlist);
   trace->shortlisted = shortlist;
+  double shortlist_minimum = 1.0;
+  for (const RootMoveValue& row : ranked) {
+    for (int i = 0; i < safe.size(); ++i) {
+      if (safe[i] == row.move) {
+        shortlist_minimum = std::min(shortlist_minimum, safe_risk[i]);
+      }
+    }
+  }
+  trace->shortlist_risk_permille = static_cast<int>(shortlist_minimum * 1000.0);
 
   if (!options_.use_matrix_game || shortlist == 1) {
     return note_choice(ranked.front().move);

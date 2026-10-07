@@ -478,6 +478,74 @@ void InfersEnPassantAcrossTheOpponentsMove() {
   FOW_EXPECT_EQ(trace.legal_moves, expected.size());
 }
 
+// Public replay 1sv22xki: after 40 plies a hidden bishop protects the queen
+// on f2. Neural advice deliberately favors non-king moves. Even with every
+// search/policy slot occupied, the matrix must contain a minimum-risk option.
+// This tests the final hybrid union, not a preliminary cpp-only shortlist.
+void HybridReservesAMinimumRiskMoveWithinTheRowCap() {
+  const char* line[] = {
+      "b1c3", "b8c6", "h2h3", "g8f6", "e2e4", "e7e5", "d2d3", "f8c5", "g1f3",
+      "d7d5", "d1d2", "f6e4", "d3e4", "d5d4", "c3d5", "c8e6", "d2d1", "e6d5",
+      "e4d5", "c6b4", "c2c3", "b4d5", "f3e5", "e8g8", "d1a4", "f8e8", "f1e2",
+      "d4c3", "b2c3", "e8e5", "c1f4", "d5f4", "a1d1", "d8f6", "a4c2", "e5e2",
+      "c2e2", "f4e2", "d1a1", "f6f2"};
+  for (int cap : {6, 12}) {
+    for (uint64_t seed = 1; seed <= 4; ++seed) {
+      EngineOptions options;
+      options.mode = EngineMode::kHybrid;
+      options.hybrid_max_rows = cap;
+      options.particle_count = 1024;
+      options.transposition_megabytes = 16;
+      options.time_reserve = 0.0;
+      options.node_budget = 400000;
+      Engine engine(kWhite, 180.0, 2.0, options, seed);
+      Position truth;
+      PositionFromFen(kStartFen, &truth);
+      bool ours = false;
+      for (const char* uci : line) {
+        engine.Observe(Observation(RenderObservation(truth, kWhite)), ours);
+        ours = truth.side_to_move() == kWhite;
+        MoveList legal;
+        truth.GenerateMoves(&legal);
+        Move move = kNullMove;
+        for (const Move candidate : legal) {
+          if (MoveToUci(candidate) == uci) move = candidate;
+        }
+        FOW_EXPECT_TRUE(move != kNullMove);
+        if (move == kNullMove) return;
+        if (ours) engine.NotifyMovePlayed(move);
+        UndoState undo;
+        truth.MakeMove(move, &undo);
+      }
+      const Observation view(RenderObservation(truth, kWhite));
+      engine.Observe(view, ours);
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      NeuralAdvice advice;
+      advice.available = true;
+      double total = 0.0;
+      for (const Move move : legal) {
+        advice.moves.push_back(move);
+        const bool king = truth.piece_at(MoveFrom(move)) == kKing;
+        advice.policy.push_back(king ? 0.001 : 1.0);
+        advice.danger.push_back(0.0);
+        total += advice.policy.back();
+      }
+      for (double& p : advice.policy) p /= total;
+      DecisionTrace trace;
+      const Move move = engine.ChooseMove(view, 170.0, &trace, &advice);
+      FOW_EXPECT_TRUE(move != kNullMove);
+      FOW_EXPECT_EQ(trace.mode_used, EngineMode::kHybrid);
+      FOW_EXPECT_TRUE(trace.shortlisted <= cap);
+      FOW_EXPECT_EQ(trace.shortlist_risk_permille, trace.safest_risk_permille);
+      std::fprintf(stderr, "       cap %d seed %llu shortlist risk %d minimum %d replaced %d\n",
+                   cap, static_cast<unsigned long long>(seed),
+                   trace.shortlist_risk_permille, trace.safest_risk_permille,
+                   trace.safety_replacements);
+    }
+  }
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -493,5 +561,6 @@ int main() {
   FOW_RUN_TEST(fow::DoesNotTakeTheBaitFromGameZ6mbi981);
   FOW_RUN_TEST(fow::EveryMoveTheEngineReturnsIsLegal);
   FOW_RUN_TEST(fow::InfersEnPassantAcrossTheOpponentsMove);
+  FOW_RUN_TEST(fow::HybridReservesAMinimumRiskMoveWithinTheRowCap);
   return fow::testing::Summarize("engine_test");
 }
