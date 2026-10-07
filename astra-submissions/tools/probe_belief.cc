@@ -58,13 +58,30 @@ static void CaptureDiagnostics(const Report& report) {
               << ",\"history_rewind_plies\":" << report.history_rewind_plies
               << ",\"history_unique_support\":" << report.history_unique_support;
   }
+  if constexpr (requires { report.strict_rejected; }) {
+    std::cout << ",\"strict_rejected\":" << report.strict_rejected
+              << ",\"recovery_attempts\":" << report.recovery_attempts
+              << ",\"recovery_rejected\":" << report.recovery_rejected
+              << ",\"history_evidence_conflict\":"
+              << (report.history_evidence_conflict ? "true" : "false");
+  }
 }
 
 template <class Belief>
 static Belief MakeBelief(int side, int count, uint64_t seed,
                          bool capture, bool deductions, bool grouped, bool continuation,
                          bool history) {
-  if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool, bool>) {
+  if constexpr (requires(Belief b) { b.set_history_mode(0); }) {
+    const char* mode_text = std::getenv("ASTRA_HISTORY_MODE");
+    const char* prior_text = std::getenv("ASTRA_OPPONENT_PRIOR");
+    const int mode = mode_text ? std::stoi(mode_text) : (history ? 2 : 0);
+    const int prior = prior_text ? std::stoi(prior_text) : 1;
+    if (mode < 0 || mode > 2 || prior < 0 || prior > 2) std::exit(2);
+    Belief belief(side, count, seed, prior);
+    belief.set_visibility_deductions(deductions);
+    belief.set_history_mode(mode);
+    return belief;
+  } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions, grouped, continuation, history);
   } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions, grouped, continuation);
@@ -74,7 +91,10 @@ static Belief MakeBelief(int side, int count, uint64_t seed,
     return Belief(side, count, seed, true, capture, deductions);
   } else {
     // Immutable earlier submissions expose only their original prior switch.
-    Belief belief(side, count, seed, true);
+    const char* prior_text = std::getenv("ASTRA_OPPONENT_PRIOR");
+    const int prior = prior_text ? std::stoi(prior_text) : 1;
+    if (prior < 0 || prior > 2) std::exit(2);
+    Belief belief(side, count, seed, prior);
     // Fable's newer four-argument class enables deductions through Engine's
     // setter, not the constructor. Reproduce that setting explicitly.
     if constexpr (requires { belief.set_visibility_deductions(deductions); }) {

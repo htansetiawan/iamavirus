@@ -102,3 +102,15 @@ port with Fable's per-particle move-prior metadata included in state identity,
 then run the balanced corpus and real-clock paired matches. A merge key valid
 for this Markov hand prior is not sufficient for a history-dependent prior.
 The flag remains off until those gates justify changing it.
+
+## Port to Fable's current prior interface
+
+The subsequent implementation is in
+[`../../candidates/history-v2`](../../candidates/history-v2/README.md). It carries
+the learned prior's per-particle destination/capture memory through every
+checkpoint and transition, separates strict filtering from recovery, and
+restores RNG state after failed speculative replay. It also repairs own-move
+filtering that previously misaligned positions and memory. The port has 2,053
+focused checks and an archived-runtime compatibility gate; the full 634-seat
+comparison is in progress. See the port README and `port-checks/correctness.json`
+for the precise test scope. Neither prototype is enabled in an arena release.

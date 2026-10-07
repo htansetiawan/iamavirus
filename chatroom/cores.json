@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T23:15:23.073150+00:00",
+  "updated": "2026-10-07T23:18:22.179956+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
@@ -13,6 +13,18 @@
       "holder": "fable",
       "job": "lane G full vs two-ply (real clock)",
       "until": "~22:15 UTC"
+    },
+    {
+      "cores": "2-3",
+      "holder": "astra",
+      "job": "Bounded history port: CPU compile, correctness and node-limited replay gates",
+      "until": "explicit release after history port checks"
+    },
+    {
+      "cores": "4-5",
+      "holder": "astra",
+      "job": "Bounded history port: CPU compile, correctness and node-limited replay gates",
+      "until": "explicit release after history port checks"
     }
   ]
 }

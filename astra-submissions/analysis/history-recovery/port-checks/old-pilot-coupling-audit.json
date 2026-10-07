@@ -1,0 +1,875 @@
+{
+  "status": "failed coupling invariant",
+  "source_state": "astra-submissions/analysis/history-recovery/port-pilot-v2/state.json",
+  "state_sha256": "da6e5d5690e86f4adeca058fb3ad46950b98ce180a87017dad55f1b909b7f25b",
+  "probe_sha256": "f89fec17443b256ab120284fbca2bfb3e848f8d97ec5dec110d5a494f99c0d5c",
+  "corpus_sha256": "724a772e17201afbf3c709e25212a515258b6f10a04b9495dd3ea038d1076b96",
+  "unique_games": 6,
+  "runs": 36,
+  "bootstrap_draws": 100,
+  "bootstrap_seed": 253,
+  "aggregates": {
+    "prior1-mode0": {
+      "runs": 6,
+      "failed_runs": 0,
+      "updates": 561,
+      "view_mismatch_updates": 20,
+      "continuation_invalid_updates": 55,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 9,
+      "random_rebuilds": 9,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 169,
+      "hidden_squares": 19109,
+      "hidden_brier_sum": 4973.262709,
+      "hidden_log_loss_sum": 18342.59996,
+      "max_observe_ms": 8.32185,
+      "hidden_brier": 0.2602576120676121,
+      "hidden_log_loss": 0.9598932419278874
+    },
+    "prior1-mode1": {
+      "runs": 6,
+      "failed_runs": 0,
+      "updates": 561,
+      "view_mismatch_updates": 0,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 11,
+      "random_rebuilds": 11,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 193,
+      "hidden_squares": 19109,
+      "hidden_brier_sum": 5114.748568999999,
+      "hidden_log_loss_sum": 17749.339099999997,
+      "max_observe_ms": 8.51338,
+      "hidden_brier": 0.2676617598513789,
+      "hidden_log_loss": 0.9288470929928304
+    },
+    "prior1-mode2": {
+      "runs": 6,
+      "failed_runs": 0,
+      "updates": 561,
+      "view_mismatch_updates": 0,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 11,
+      "random_rebuilds": 10,
+      "history_rescues": 1,
+      "history_budget_exhausted_updates": 3,
+      "history_transitions": 2157052,
+      "full_certified_updates": 380,
+      "truth_held_updates": 193,
+      "hidden_squares": 19109,
+      "hidden_brier_sum": 4912.385719,
+      "hidden_log_loss_sum": 17554.12,
+      "max_observe_ms": 129.203,
+      "hidden_brier": 0.2570718362551677,
+      "hidden_log_loss": 0.918631011565231
+    },
+    "prior2-mode0": {
+      "runs": 6,
+      "failed_runs": 0,
+      "updates": 561,
+      "view_mismatch_updates": 19,
+      "continuation_invalid_updates": 49,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 2,
+      "random_rebuilds": 2,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 290,
+      "hidden_squares": 19109,
+      "hidden_brier_sum": 3837.740804,
+      "hidden_log_loss_sum": 9157.88556,
+      "max_observe_ms": 34.0859,
+      "hidden_brier": 0.2008342039876498,
+      "hidden_log_loss": 0.4792446260924172
+    },
+    "prior2-mode1": {
+      "runs": 6,
+      "failed_runs": 0,
+      "updates": 561,
+      "view_mismatch_updates": 0,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 4,
+      "random_rebuilds": 4,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 252,
+      "hidden_squares": 19109,
+      "hidden_brier_sum": 4215.550198,
+      "hidden_log_loss_sum": 12400.392048000002,
+      "max_observe_ms": 34.1495,
+      "hidden_brier": 0.2206054842220943,
+      "hidden_log_loss": 0.6489294075043174
+    },
+    "prior2-mode2": {
+      "runs": 6,
+      "failed_runs": 0,
+      "updates": 561,
+      "view_mismatch_updates": 0,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 5,
+      "random_rebuilds": 5,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 1,
+      "history_transitions": 1067397,
+      "full_certified_updates": 444,
+      "truth_held_updates": 252,
+      "hidden_squares": 19109,
+      "hidden_brier_sum": 4214.626697999999,
+      "hidden_log_loss_sum": 13316.511648,
+      "max_observe_ms": 163.09,
+      "hidden_brier": 0.2205571562091161,
+      "hidden_log_loss": 0.6968711940970224
+    }
+  },
+  "zero_rescue_coupling_checks": 11,
+  "zero_rescue_coupling_failures": [
+    {
+      "game": "ew9267c5",
+      "side": 0,
+      "seed": 777,
+      "prior": 1,
+      "different": [
+        "collapsed_updates",
+        "random_rebuilds",
+        "hidden_brier_sum",
+        "hidden_log_loss_sum"
+      ]
+    },
+    {
+      "game": "l5t1lxwd",
+      "side": 0,
+      "seed": 777,
+      "prior": 1,
+      "different": [
+        "hidden_brier_sum",
+        "hidden_log_loss_sum"
+      ]
+    },
+    {
+      "game": "bwcp4b59",
+      "side": 1,
+      "seed": 777,
+      "prior": 1,
+      "different": [
+        "hidden_brier_sum",
+        "hidden_log_loss_sum"
+      ]
+    },
+    {
+      "game": "ew9267c5",
+      "side": 0,
+      "seed": 777,
+      "prior": 2,
+      "different": [
+        "hidden_brier_sum",
+        "hidden_log_loss_sum"
+      ]
+    },
+    {
+      "game": "bwcp4b59",
+      "side": 1,
+      "seed": 777,
+      "prior": 2,
+      "different": [
+        "collapsed_updates",
+        "random_rebuilds",
+        "hidden_brier_sum",
+        "hidden_log_loss_sum"
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "before": {
+        "prior": 1,
+        "mode": 0
+      },
+      "after": {
+        "prior": 1,
+        "mode": 1
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.30124777183600715,
+          "after": 0.34402852049910876,
+          "delta": 0.04278074866310161,
+          "paired_game_95_interval": [
+            0.0,
+            0.10975563966411171
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.26025761206761217,
+          "after": 0.267661759851379,
+          "delta": 0.007404147783766857,
+          "paired_game_95_interval": [
+            0.0011834651323676165,
+            0.01653572606686248
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.9598932419278874,
+          "after": 0.9288470929928304,
+          "delta": -0.031046148935056972,
+          "paired_game_95_interval": [
+            -0.17635626275847624,
+            0.07942717609453812
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.016042780748663103,
+          "after": 0.0196078431372549,
+          "delta": 0.0035650623885917984,
+          "paired_game_95_interval": [
+            0.0,
+            0.010510492141216477
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 6,
+        "before_zero_risk": 0,
+        "after_zero_risk": 0,
+        "newly_recognized": [],
+        "newly_missed": []
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 1
+      },
+      "after": {
+        "prior": 1,
+        "mode": 2
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.34402852049910876,
+          "after": 0.34402852049910876,
+          "delta": 0.0,
+          "paired_game_95_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.267661759851379,
+          "after": 0.2570718362551677,
+          "delta": -0.010589923596211304,
+          "paired_game_95_interval": [
+            -0.027221236705007996,
+            0.003782215807710515
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.9288470929928304,
+          "after": 0.918631011565231,
+          "delta": -0.010216081427599444,
+          "paired_game_95_interval": [
+            -0.15103460277473582,
+            0.1512172141475319
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.0196078431372549,
+          "after": 0.017825311942959002,
+          "delta": -0.0017825311942958992,
+          "paired_game_95_interval": [
+            -0.00505543095616625,
+            0.0
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 6,
+        "before_zero_risk": 0,
+        "after_zero_risk": 0,
+        "newly_recognized": [],
+        "newly_missed": []
+      }
+    },
+    {
+      "before": {
+        "prior": 2,
+        "mode": 0
+      },
+      "after": {
+        "prior": 2,
+        "mode": 1
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.5169340463458111,
+          "after": 0.44919786096256686,
+          "delta": -0.06773618538324422,
+          "paired_game_95_interval": [
+            -0.24596835788325147,
+            0.04007832572526113
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.2008342039876498,
+          "after": 0.2206054842220943,
+          "delta": 0.019771280234444494,
+          "paired_game_95_interval": [
+            0.006870344062866374,
+            0.039745730658766264
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.47924462609241714,
+          "after": 0.6489294075043173,
+          "delta": 0.16968478141190013,
+          "paired_game_95_interval": [
+            0.015247415560659776,
+            0.38850892699909906
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.0035650623885918,
+          "after": 0.0071301247771836,
+          "delta": 0.0035650623885918,
+          "paired_game_95_interval": [
+            0.0,
+            0.011873977086743023
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 6,
+        "before_zero_risk": 1,
+        "after_zero_risk": 0,
+        "newly_recognized": [
+          {
+            "game": "l5t1lxwd",
+            "side": 0,
+            "seed": 777,
+            "ply": 60,
+            "move": "b2c2",
+            "before_risk": 0.0,
+            "after_risk": 0.69873046875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": []
+      }
+    },
+    {
+      "before": {
+        "prior": 2,
+        "mode": 1
+      },
+      "after": {
+        "prior": 2,
+        "mode": 2
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.44919786096256686,
+          "after": 0.44919786096256686,
+          "delta": 0.0,
+          "paired_game_95_interval": [
+            0.0,
+            0.0
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.2206054842220943,
+          "after": 0.22055715620911612,
+          "delta": -4.832801297818823e-05,
+          "paired_game_95_interval": [
+            -0.0009917632022011832,
+            0.0008573169880850102
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.6489294075043173,
+          "after": 0.6968711940970224,
+          "delta": 0.04794178659270509,
+          "paired_game_95_interval": [
+            0.00997201918017888,
+            0.0959936205366563
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.0071301247771836,
+          "after": 0.008912655971479501,
+          "delta": 0.001782531194295901,
+          "paired_game_95_interval": [
+            0.0,
+            0.00593698854337151
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 6,
+        "before_zero_risk": 0,
+        "after_zero_risk": 0,
+        "newly_recognized": [],
+        "newly_missed": []
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 0
+      },
+      "after": {
+        "prior": 2,
+        "mode": 0
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.30124777183600715,
+          "after": 0.5169340463458111,
+          "delta": 0.21568627450980393,
+          "paired_game_95_interval": [
+            0.06124038290547818,
+            0.39940709368560995
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.26025761206761217,
+          "after": 0.2008342039876498,
+          "delta": -0.05942340807996235,
+          "paired_game_95_interval": [
+            -0.11596382323834904,
+            -0.021752977030843865
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.9598932419278874,
+          "after": 0.47924462609241714,
+          "delta": -0.48064861583547025,
+          "paired_game_95_interval": [
+            -0.9601826732078698,
+            -0.11715749239196245
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.016042780748663103,
+          "after": 0.0035650623885918,
+          "delta": -0.012477718360071303,
+          "paired_game_95_interval": [
+            -0.022754687896647592,
+            -0.005549042219232505
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 6,
+        "before_zero_risk": 0,
+        "after_zero_risk": 1,
+        "newly_recognized": [],
+        "newly_missed": [
+          {
+            "game": "l5t1lxwd",
+            "side": 0,
+            "seed": 777,
+            "ply": 60,
+            "move": "b2c2",
+            "before_risk": 0.59033203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 1
+      },
+      "after": {
+        "prior": 2,
+        "mode": 1
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.34402852049910876,
+          "after": 0.44919786096256686,
+          "delta": 0.1051693404634581,
+          "paired_game_95_interval": [
+            -0.0034092525244315925,
+            0.30682272089161006
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.267661759851379,
+          "after": 0.2206054842220943,
+          "delta": -0.047056275629284716,
+          "paired_game_95_interval": [
+            -0.11510261794064446,
+            -0.005225914563011934
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.9288470929928304,
+          "after": 0.6489294075043173,
+          "delta": -0.27991768548851315,
+          "paired_game_95_interval": [
+            -0.7934421032915603,
+            0.07884391019243196
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.0196078431372549,
+          "after": 0.0071301247771836,
+          "delta": -0.012477718360071301,
+          "paired_game_95_interval": [
+            -0.029913077786511456,
+            -0.001640172826877002
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 6,
+        "before_zero_risk": 0,
+        "after_zero_risk": 0,
+        "newly_recognized": [],
+        "newly_missed": []
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 2
+      },
+      "after": {
+        "prior": 2,
+        "mode": 2
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.34402852049910876,
+          "after": 0.44919786096256686,
+          "delta": 0.1051693404634581,
+          "paired_game_95_interval": [
+            -0.0034092525244315925,
+            0.30682272089161006
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.2570718362551677,
+          "after": 0.22055715620911612,
+          "delta": -0.0365146800460516,
+          "paired_game_95_interval": [
+            -0.09043017419909027,
+            0.0008502646545704305
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.918631011565231,
+          "after": 0.6968711940970224,
+          "delta": -0.2217598174682086,
+          "paired_game_95_interval": [
+            -0.6260071369855067,
+            0.06874989259787871
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.017825311942959002,
+          "after": 0.008912655971479501,
+          "delta": -0.008912655971479501,
+          "paired_game_95_interval": [
+            -0.02603466835284863,
+            0.004143219669505544
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 6,
+        "before_zero_risk": 0,
+        "after_zero_risk": 0,
+        "newly_recognized": [],
+        "newly_missed": []
+      }
+    }
+  ],
+  "by_opponent": {
+    "TA_Baseline_A": {
+      "prior1-mode0": {
+        "runs": 3,
+        "updates": 337,
+        "truth_held_updates": 122,
+        "hidden_squares": 12036,
+        "hidden_brier_sum": 2713.3727289999997,
+        "random_rebuilds": 5,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 3,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.3620178041543027,
+        "hidden_brier": 0.2254380798438019
+      },
+      "prior1-mode1": {
+        "runs": 3,
+        "updates": 337,
+        "truth_held_updates": 146,
+        "hidden_squares": 12036,
+        "hidden_brier_sum": 2751.170249,
+        "random_rebuilds": 5,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 3,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.4332344213649852,
+        "hidden_brier": 0.2285784520604852
+      },
+      "prior1-mode2": {
+        "runs": 3,
+        "updates": 337,
+        "truth_held_updates": 146,
+        "hidden_squares": 12036,
+        "hidden_brier_sum": 2701.447739,
+        "random_rebuilds": 4,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 3,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.4332344213649852,
+        "hidden_brier": 0.22444730300764376
+      },
+      "prior2-mode0": {
+        "runs": 3,
+        "updates": 337,
+        "truth_held_updates": 172,
+        "hidden_squares": 12036,
+        "hidden_brier_sum": 2387.964868,
+        "random_rebuilds": 2,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 3,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.5103857566765578,
+        "hidden_brier": 0.19840186673313392
+      },
+      "prior2-mode1": {
+        "runs": 3,
+        "updates": 337,
+        "truth_held_updates": 144,
+        "hidden_squares": 12036,
+        "hidden_brier_sum": 2675.733738,
+        "random_rebuilds": 4,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 3,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.42729970326409494,
+        "hidden_brier": 0.22231087886340975
+      },
+      "prior2-mode2": {
+        "runs": 3,
+        "updates": 337,
+        "truth_held_updates": 144,
+        "hidden_squares": 12036,
+        "hidden_brier_sum": 2674.810238,
+        "random_rebuilds": 5,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 3,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.42729970326409494,
+        "hidden_brier": 0.2222341507145231
+      }
+    },
+    "Greek_Gift": {
+      "prior1-mode0": {
+        "runs": 2,
+        "updates": 151,
+        "truth_held_updates": 35,
+        "hidden_squares": 4870,
+        "hidden_brier_sum": 1658.66793,
+        "random_rebuilds": 4,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 2,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.23178807947019867,
+        "hidden_brier": 0.3405888973305955
+      },
+      "prior1-mode1": {
+        "runs": 2,
+        "updates": 151,
+        "truth_held_updates": 35,
+        "hidden_squares": 4870,
+        "hidden_brier_sum": 1763.04464,
+        "random_rebuilds": 6,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 2,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.23178807947019867,
+        "hidden_brier": 0.36202148665297745
+      },
+      "prior1-mode2": {
+        "runs": 2,
+        "updates": 151,
+        "truth_held_updates": 35,
+        "hidden_squares": 4870,
+        "hidden_brier_sum": 1610.4043000000001,
+        "random_rebuilds": 6,
+        "history_rescues": 1,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 2,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.23178807947019867,
+        "hidden_brier": 0.33067850102669405
+      },
+      "prior2-mode0": {
+        "runs": 2,
+        "updates": 151,
+        "truth_held_updates": 92,
+        "hidden_squares": 4870,
+        "hidden_brier_sum": 907.332836,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 2,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.609271523178808,
+        "hidden_brier": 0.18631064394250516
+      },
+      "prior2-mode1": {
+        "runs": 2,
+        "updates": 151,
+        "truth_held_updates": 94,
+        "hidden_squares": 4870,
+        "hidden_brier_sum": 933.02473,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 2,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.6225165562913907,
+        "hidden_brier": 0.19158618685831622
+      },
+      "prior2-mode2": {
+        "runs": 2,
+        "updates": 151,
+        "truth_held_updates": 94,
+        "hidden_squares": 4870,
+        "hidden_brier_sum": 933.02473,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 2,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.6225165562913907,
+        "hidden_brier": 0.19158618685831622
+      }
+    },
+    "IAmAVirus": {
+      "prior1-mode0": {
+        "runs": 1,
+        "updates": 73,
+        "truth_held_updates": 12,
+        "hidden_squares": 2203,
+        "hidden_brier_sum": 601.22205,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.1643835616438356,
+        "hidden_brier": 0.27291059918293237
+      },
+      "prior1-mode1": {
+        "runs": 1,
+        "updates": 73,
+        "truth_held_updates": 12,
+        "hidden_squares": 2203,
+        "hidden_brier_sum": 600.53368,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.1643835616438356,
+        "hidden_brier": 0.27259812982296866
+      },
+      "prior1-mode2": {
+        "runs": 1,
+        "updates": 73,
+        "truth_held_updates": 12,
+        "hidden_squares": 2203,
+        "hidden_brier_sum": 600.53368,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.1643835616438356,
+        "hidden_brier": 0.27259812982296866
+      },
+      "prior2-mode0": {
+        "runs": 1,
+        "updates": 73,
+        "truth_held_updates": 26,
+        "hidden_squares": 2203,
+        "hidden_brier_sum": 542.4431,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.3561643835616438,
+        "hidden_brier": 0.24622927825692237
+      },
+      "prior2-mode1": {
+        "runs": 1,
+        "updates": 73,
+        "truth_held_updates": 14,
+        "hidden_squares": 2203,
+        "hidden_brier_sum": 606.79173,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.1917808219178082,
+        "hidden_brier": 0.27543882433045846
+      },
+      "prior2-mode2": {
+        "runs": 1,
+        "updates": 73,
+        "truth_held_updates": 14,
+        "hidden_squares": 2203,
+        "hidden_brier_sum": 606.79173,
+        "random_rebuilds": 0,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.1917808219178082,
+        "hidden_brier": 0.27543882433045846
+      }
+    }
+  },
+  "limitations": [
+    "Retrospective selected losing seats, not an all-outcome sample or Elo test.",
+    "Whole-game intervals do not cover independent training or filter seed variation.",
+    "Recognizing risk in a recorded fatal action is not choosing a safer action.",
+    "A zero-risk action with illegal-particle mass is not certified safe.",
+    "Multiple exploratory contrasts; no multiplicity-adjusted promotion claim.",
+    "Timing was collected on shared host CPU resources, not isolated arena hardware."
+  ]
+}

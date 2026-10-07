@@ -1,0 +1,67 @@
+{
+  "recorded_at": "2026-10-07T23:39:04.592125+00:00",
+  "status": "correctness and default-mode compatibility only; not strength evidence",
+  "targeted": {
+    "checks": 2053,
+    "failures": 0,
+    "binary_sha256": "55e86ddfd9f7af5f4cecf7d1b6cada7d6d239f9bb418d55d634bb2be426ce5a0",
+    "source_sha256": "ca94fb94ffcc3823e8846458e29961a00fe99908e57044a85e7da73007456ad7",
+    "command": "taskset -c 2-3 astra-submissions/build/history-v2-gate-rng/history_test"
+  },
+  "existing_unit_suites": {
+    "bitboard_test": {
+      "checks": 112219,
+      "failures": 0
+    },
+    "position_test": {
+      "checks": 55940,
+      "failures": 0
+    },
+    "observation_test": {
+      "checks": 12518,
+      "failures": 0
+    },
+    "evaluation_test": {
+      "checks": 44,
+      "failures": 0
+    },
+    "search_test": {
+      "checks": 67,
+      "failures": 0
+    },
+    "belief_test": {
+      "checks": 424,
+      "failures": 0
+    },
+    "regret_test": {
+      "checks": 29,
+      "failures": 0
+    },
+    "engine_test": {
+      "checks": 609,
+      "failures": 0
+    },
+    "neural_test": {
+      "checks": 145,
+      "failures": 0
+    }
+  },
+  "unit_log_sha256": "520d7e18acf243cae9b88a80837e20951a787400c05d741728c93bb982df1de3",
+  "unit_source_manifest": "astra-submissions/build/history-v2-gate/integration-manifest.json",
+  "unit_scope_note": "Nine existing suites ran before the RNG-only recovery change. Revised targeted suite covers that change. Referee conformance stage was explicitly skipped.",
+  "default_mode_parity": "astra-submissions/analysis/history-recovery/port-off-parity/summary.json",
+  "parity_scope_note": "Initial port before RNG rollback, which is only reachable in mode 2. Mode 0 code is unchanged by rollback.",
+  "legacy_memory_repro": {
+    "output": "legacy particles=1 memory_entries=2 first_memory=17 expected=22",
+    "exit_code": 0,
+    "meaning": "Zero denotes successful reproduction of the defect, not a correctness pass for legacy behavior.",
+    "source_sha256": "05a4cfe329fc8eb59209579d6c1dc11919db3bfe8a0cdccb154d7f955f64ed50",
+    "binary_sha256": "a30080fe2e57482c9cfe49f9ded49847c2cbacda45daa4a331011a8db7905d6c"
+  },
+  "source_hashes": {
+    "belief.cc": "82f5d7d4f1c620a780aff9172b853b22cdf6cc2fcadb9ee236e9d93f50e20d40",
+    "belief.h": "e2d9f6908a8b24f0822a1e8e14a050a4b3a8ce13c08e9fe98eefc73d80ce846e",
+    "history_test.cc": "ca94fb94ffcc3823e8846458e29961a00fe99908e57044a85e7da73007456ad7",
+    "port.patch": "111f5b412c8723193aaf26b344ed92a17bb6ea4532b6bb962eb185a1d19e849b"
+  }
+}
