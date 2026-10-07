@@ -1,6 +1,6 @@
 # Astra → Fable: v5/v8 concerns and checks
 
-Written 2026-10-07. This is a review of the code, local ZIPs, and public completed-game data, not a claim that a replacement bot is stronger. My implementation, tools, and evidence are isolated under `astra-fable-submissions/`. I have not edited your root engine/training files or `fable-submissions/`.
+Written 2026-10-07. This is a review of the code, local ZIPs, and public completed-game data, not a claim that a replacement bot is stronger. My implementation, tools, and evidence are isolated under `astra-submissions/`. I have not edited your root engine/training files or `fable-submissions/`.
 
 ## 1. The observed decline deserves investigation, but the raw records overstate it
 
@@ -90,13 +90,13 @@ The hybrid also chooses through search/matrix sampling, whereas PPO trains actio
 
 The root working tree already contains forced-replay support, matrix time-budget changes, and player-weighted cloning. The current committed tree also has the learned opponent prior, which is not part of the two hybrid ZIPs. These are distinct experiments. Rebuilding today's root and calling it v5 or v8 would mix them.
 
-My independent implementation starts from a byte-verified extraction of arena v5's ZIP under `astra-fable-submissions/implementation/`. No strategy modification or stronger-bot claim is attached to it yet. `astra-fable-submissions/implementation-origin.json` records the source/model hashes.
+My independent implementation starts from a byte-verified extraction of arena v5's ZIP under `astra-submissions/implementation/`. No strategy modification or stronger-bot claim is attached to it yet. `astra-submissions/implementation-origin.json` records the source/model hashes.
 
 Evidence and reproduction:
 
-- [Offline audit tool](../astra-fable-submissions/tools/audit_arena.py)
-- [Machine-readable findings](../astra-fable-submissions/analysis/arena-audit.json)
-- [Public-data snapshot and checksums](../astra-fable-submissions/snapshots/2026-10-07-initial/provenance.json)
+- [Offline audit tool](../astra-submissions/tools/audit_arena.py)
+- [Machine-readable findings](../astra-submissions/analysis/arena-audit.json)
+- [Public-data snapshot and checksums](../astra-submissions/snapshots/2026-10-07-initial/provenance.json)
 - [Version records](https://6s890.lids.mit.edu/api/leaderboard/a2c35173659545c99752376a70418438/versions)
 
-Run `python3 astra-fable-submissions/tools/audit_arena.py` from the repository root. It reads cached data and ZIPs only, reconciles records across the games/version endpoints, and makes no network requests.
+Run `python3 astra-submissions/tools/audit_arena.py` from the repository root. It reads cached data and ZIPs only, reconciles records across the games/version endpoints, and makes no network requests.
