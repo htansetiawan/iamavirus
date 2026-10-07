@@ -2,20 +2,24 @@
 
 ## Release numbering
 
-Before creating a new Astra archive, read the highest version in `../fable-submissions/` and use exactly that integer plus one. Recheck immediately before publication. Never overwrite an existing release. Record the Fable version used in each release manifest. The current target is **v10**, following Fable v9. This task publishes a ZIP to the repository; arena uploads and their server-assigned version numbers are separate.
+Use the [shared version table](../fable-submissions/README.md) to identify actual arena uploads by artifact hash. Before creating a new Astra release archive, read the highest version in `../fable-submissions/` and use exactly that integer plus one; recheck before publication and never overwrite a historical artifact. The existing Astra **v10/v11 labels are provisional safety candidates**, not arena version numbers or the output of the new 24-hour campaign. v11 was packaged when Fable's highest label was v10; its manifest preserves that fact. Repository checkpoints preserve these earlier artifacts without reserving an arena version. The human performs arena uploads.
 
 Independent analysis and implementation for IAmAVirus, established 2026-10-07 at the user's request. Shared root source files, existing uncommitted work, and `fable-submissions/` are owned by the existing workflow; edit Astra's copy here. Coordination lives in `../chatroom/`.
 
 | Path | Purpose |
 |---|---|
-| `implementation/` | Astra v10 candidate fork of the user's arena-v5 baseline. See `implementation/RELEASE.md`; the original README inside the source copy is historical. |
+| [specs/research-plan-24h.md](specs/research-plan-24h.md) | Research-based campaign, responsibilities, resource limits and fail-fast gates. |
+| [specs/technical-spec.md](specs/technical-spec.md) | Belief, simulation, evaluation and later training implementation contracts. |
+| [analysis/duck-bluqrpex/README.md](analysis/duck-bluqrpex/README.md) | Duck game diagnosis, 32-game snapshot and four-seed archived-belief probe. |
+| `tools/analyze_duck.py`, `tools/probe_belief.cc` | Reproducible offline diagnosis; no live truth input or arena upload. |
+| `implementation/` | Astra v11 candidate fork of the user's arena-v5 baseline. See `implementation/RELEASE.md`; the original README inside the source copy is historical. |
 | `implementation-origin.json` | ZIP and extracted-file hashes establishing the exact baseline. |
 | `tools/audit_arena.py` | Independent offline implementation of version comparison, archive comparison, and terminal hidden-attacker diagnosis. |
 | `snapshots/2026-10-07-initial/` | Public standings, 378 game listings, version records, relevant completed replays and diagnostics, with provenance/checksums. |
 | `analysis/arena-audit.json` | Reproducible audit output; includes limitations and per-game evidence. |
 | `analysis/baseline-smoke.json` | Build/protocol smoke results for the isolated baseline, once generated. |
-| `iamavirus-v10-hybrid.zip` | First independently modified Astra candidate, following Fable v9. Repository publication only. |
-| `v10-manifest.json` | Archive checksum, source/model hashes, and version provenance. |
+| `iamavirus-v11-hybrid.zip` | Independently modified Astra candidate, following Fable v10. Repository publication only. |
+| `v11-manifest.json` | Archive checksum, source/model hashes, and version provenance. |
 | `analysis/v10-tests.log` | Nine unit suites and differential rules validation. |
 | `analysis/v10-hybrid-corpus/summary.json` | Node-limited baseline/candidate comparison with the actual hybrid model. |
 | `analysis/v10-referee/summary.json` | Complete color-swapped protocol smoke games. |
@@ -38,15 +42,15 @@ The Python learning pipeline uses the C++ rules via `rules_capi.cc` and `learnin
 
 ## Current assessment
 
-The raw arena results show v5 ahead of v8, with a substantial opponent-mix difference. The two local hybrid archives have identical pretrained weights. Astra v10 implements one isolated final-shortlist safety repair using the same pretrained model. No replacement has passed a playing-strength gate; v10 is an experimental trial candidate.
+The raw arena results show v5 ahead of v8, with a substantial opponent-mix difference. The two local hybrid archives have identical pretrained weights. Astra v11 implements one isolated final-shortlist safety repair using the same pretrained model. No replacement has passed a playing-strength gate; v11 is an experimental trial candidate.
 
 Read [the detailed concerns sent to Fable](../chatroom/astra-concerns-2026-10-07.md) for verified numbers, code findings, uncertainties, and proposed checks. Several root README/handoff/version statements are historical; current API data and artifact hashes take precedence for this audit.
 
 ## Reproduce
 
 ```bash
-python3 astra-fable-submissions/tools/audit_arena.py
-cd astra-fable-submissions/implementation
+python3 astra-submissions/tools/audit_arena.py --archives fable-submissions
+cd astra-submissions/implementation
 ORT_HOME=/path/to/onnxruntime-sdk bash build.sh
 ```
 

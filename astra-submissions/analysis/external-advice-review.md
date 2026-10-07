@@ -1,0 +1,36 @@
+# Review of the user-supplied Kimi recommendations
+
+2026-10-07. Treat these as hypotheses to compare with source and measured results, not as authority for changing defaults.
+
+| Recommendation / premise | Repository evidence and decision |
+|---|---|
+| Add an invisible-king-attack reward; the engine has none | **Already present:** `engine.cc` defines a 500-centipawn invisible-attack bonus and a 40-centipawn visible-attack bonus, applied per attacker in sampled post-move positions. A king-region pressure term or longer hidden-attack setup is a distinct extension worth an isolated ablation. |
+| Defense is solved; the next 300 Elo comes from offense | Not established. The current Duck snapshot is 1–31 across versions, including 0–2 for arena v10. Small recent samples and a changed schedule do not establish either a defensive ceiling or a quantified Elo gain. Offense and defense should be separate experimental controls. |
+| An invisible threat is a win | It can be valuable because the opponent cannot immediately capture the hidden attacker. It is not a guaranteed win: the opponent can move the king, block the line incidentally, or create a stronger attack. This course adjudicates a **mover's king being capturable**, not exclusively an explicit king capture. |
+| Make learned prior 2 the default | Run a controlled arm first. Fable already measured better move likelihood (2.76 versus 3.09 NLL) without better king-loss frequency (6.66% versus 6.55%). Model fit and playing strength are separate gates. |
+| Capturers should persist | Useful statistical feature, owned by Fable. Astra found a stricter issue: recovery violates the *immediate* known capture occupancy in two of four Duck probes. Preserve that hard fact before tuning persistence after later unseen moves. |
+| Maximize truth-in-population | Useful offline support diagnostic, alongside observation consistency, effective/unique support and calibration. Exact-board coverage naturally shrinks as hidden histories multiply, and sampled truth absence alone is not a correctness bug. Exact support/backlog is promising when measured memory and time allow it. |
+| Select a per-opponent prior at game start | The current bot/referee greeting gives color and clock, not opponent ID. No oracle identity lookup is available to the submitted bot. A mixture of style priors inferred from its observation history is possible, but incurs uncertainty and must work without hidden opponent moves. |
+| Calibrate the danger head before using a veto | Agree. Calibrate on untouched natural-frequency data, select an operating point on development data and report false-positive cost and recall on locked tests. Calibration cannot create discriminative information absent from the model. Avoid selecting the threshold on the final test corpus. |
+| Give high-entropy positions 4–8× more nodes | Experiment, not a universal rule. More full-information alpha-beta nodes do not repair missing belief support. Allocate separately to belief expansion, additional hypotheses and deeper tactical search, using action uncertainty and measured value of computation. Honor hard clock limits and long games. |
+| Upload the offline-positive Fable v11 | The human owns arena upload. Fable is running paired real-clock tests; an offline-positive candidate can justify an explicitly experimental arena trial, but is not proven stronger. Use the shared artifact/version table and unchanged file hash. |
+
+A possible later offensive arm scores hidden pressure around plausible enemy king locations, weighted by posterior mass and penalized for our immediate king risk. Compute opponent visibility separately in each hypothesis; do not pretend it is known exactly or count attacks on arbitrary fog squares as attacks on the king. Compare current bonus, extended region pressure, and no bonus under the same search/time budget. A large static bonus can otherwise encourage attacks on imaginary kings.
+
+For time allocation, use an anytime schedule with a legal fallback, a hard deadline margin, and a few bounded stages. Spend more only when another stage can change the decision: close action values, conflicting plausible worlds, or a recently collapsed belief. Evaluate whole-game timeouts and score, not just depth on selected tactical examples.
+
+The earlier user-supplied prompt-injection advice describes a different task. This bot consumes chess observations and outputs UCI moves; payload stealth, jailbreaks and classifier evasion are not relevant implementation directions here.
+
+## Subsequent DeepSeek proposal
+
+Its useful priorities are belief calibration, observation-aware planning and mining opening patterns. They are already represented in the campaign, with opening mining added as a later small experiment. Several factual and statistical premises need correction before they guide implementation:
+
+- The deployed default is a non-uniform hand prior; a learned alternative exists. Systematic resampling with shuffled successor order is also implemented. Neither a resampler nor a larger particle count guarantees that every rare but important state survives; missing support, order-biased truncation and an incorrect move model are different failure mechanisms.
+- A piece being on e5 in the realized replay is not evidence that the correct pre-move probability was 100%. Assess likelihood, Brier/log scores and event-frequency calibration over held-out decisions with comparable information. A known capture occupancy, by contrast, can be a logical certainty from the observation history, making its violation a specific correctness defect.
+- Opponent visibility is computable **within a proposed full state**. The actual opponent's hidden pieces are unknown, so their true view is not known exactly by our actor. Average or otherwise reason over the uncertainty instead of passing replay truth into the evaluation.
+- Root CFR requires a defensible information-set construction, histories, opponent knowledge model and leaf semantics. Merely recursing over sampled boards can preserve strategy fusion while adding cost. Obscuro-style knowledge-limited subgames are a research direction, not an automatic correctness upgrade from calling a solver CFR.
+- The existing particle and neural trackers retain history; the bot does not treat each turn independently. Better planning over future information is still a real opportunity.
+- Neither improved calibration nor a particular offline blunder-rate delta implies a specified Elo gain. The proposed +100–200/+50–100/+50 figures are hypotheses without a measured effect size. A universal 50-game detection guarantee ignores variance, draws, paired seeds, test power and multiple comparisons.
+- A fog opening book must be keyed by **our observation/action history**, not full PGN prefixes containing hidden opponent moves. Group games by source and hold out opponents/versions. Win-rate mining must account for player strength and selection bias; common winning moves from strong teams are not automatically causal improvements.
+
+We will prioritize experiments with a plausible large effect, while allowing a small correctness fix when it removes a demonstrated defect. We will not infer that defense is solved, that all remaining weakness is strategic, or that a research-paper family guarantees a target Elo increase.

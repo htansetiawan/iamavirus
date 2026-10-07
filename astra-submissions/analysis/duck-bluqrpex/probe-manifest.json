@@ -1,0 +1,39 @@
+{
+  "archive": "fable-submissions/iamavirus-v10-hybrid.zip",
+  "archive_sha256": "6f57a44ec81424cb6ca7a21522191924007f2bd647c0424dd553a0ceece47567",
+  "probe_sha256": "e876eda65d228b2f49b4ea21dfab55bf283d50711e2a62dfa1d4e0c3412a84ea",
+  "binary_sha256": "9267fbc0c25307a405ee9b82c5e94567bf5aa04777fc6bb8690a0d79bf9b362c",
+  "seeds": [
+    1,
+    2,
+    3,
+    777
+  ],
+  "particles": 2048,
+  "opponent_prior": "hand prior (1)",
+  "compile_command": [
+    "g++",
+    "-O2",
+    "-std=c++20",
+    "-DNDEBUG",
+    "-mpopcnt",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/probe_belief.cc",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/belief.cc",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/bitboard.cc",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/observation.cc",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/position.cc",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/move.cc",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/evaluation.cc",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/opponent_model.cc",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/duck-bluqrpex/build/arena-v10/probe_belief"
+  ],
+  "limitations": [
+    "Arena seed and private stderr unavailable.",
+    "Replay truth renders observations and scores predictions only.",
+    "No engine choice or neural inference is performed.",
+    "Board matches do not include castling/EP/history; absence is not alone a bug."
+  ]
+}

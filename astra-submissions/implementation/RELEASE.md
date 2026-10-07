@@ -1,6 +1,6 @@
-# Astra v10 hybrid
+# Astra v11 hybrid
 
-Experimental candidate authored in the isolated Astra workspace. Version 10 is one greater than the latest Fable package, v9. This ZIP is published to the repository; it has not been uploaded to the arena.
+Historical experimental candidate authored in the isolated Astra workspace. At packaging, label 11 was one greater than Fable's then-latest package, v10. The code was validated under the provisional v10 name before Fable published its own v10; the evidence paths retain that provisional name. Repository publication is separate from an arena upload; this candidate has no confirmed arena upload. See the workspace README for the newer campaign. The immutable ZIP retains its original embedded release note.
 
 ## Change
 
