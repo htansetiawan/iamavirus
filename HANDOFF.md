@@ -263,6 +263,17 @@ opponents) is best explained by schedule and sample size. The cells-shrink /
 node-capped-fallback change in v9/v10 remains a robustness improvement, not a
 regression fix. The arbiter is the paired archived-v5 vs v9 run.
 
+**Exposure term (18:05 UTC).** The gold data (`gold/`, 369 games, 11,893
+decisions; `reports/IAmAVirus replay analysis.md`, `reports/Lessons from the
+duck games.md`) showed 90% of material lost goes to a hidden capturer, mostly
+not the moved piece, and the engine's material-risk term priced only the
+moved piece's destination. `Engine::ExpectedExposure` prices the opponent's
+best immediate net capture anywhere, averaged over a stride of particles.
+Offline benchmark, 634 real losing seats, same seed and node budget:
+**left ≥3 points en prise 7.83% (new) vs 10.10% (old)**, real players 7.75%;
+immediate king losses 6.55% in both; survival 58% in both. Candidate archive
+`fable-submissions/iamavirus-v11-hybrid.zip`.
+
 **What this means for the next step.** The engine's remaining weakness in the
 regression family is a *pricing* problem on a now-honest posterior, and the
 hybrid mode is where the learned signals meet it: neural danger is logged
