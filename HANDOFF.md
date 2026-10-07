@@ -278,6 +278,17 @@ Offline benchmark, 634 real losing seats, same seed and node budget:
 immediate king losses 6.55% in both; survival 58% in both. Candidate archive
 `fable-submissions/iamavirus-v11-hybrid.zip`.
 
+**Arena v10 losing streak (18:36–18:54 UTC): 7 losses in 8 games, five to
+duck.** Dissected: the same shapes (hidden far-half captures of the queen/rook;
+voluntary king walks into hidden attacks with 18/19 and 14/15 safe moves
+available). Replayed offline through the current build (deductions +
+exposure), the three decisive moves are avoided in 4 of 4 seeds each
+(`x31dyp8z` ply 89, `dlc6932d` ply 92, `i8cjpfmc` ply 38). Weight sweep with
+deductions so far: w=1.0 king losses 7.02%, en prise 6.76%, hidden piece mass
+0.540, attacker held 0.228; w=1.5 en prise 6.46%, king losses unchanged. The
+rise in immediate king losses from 6.55% (pre-deduction) to 7.02% is under
+investigation (verbose diff of flipped fatal positions running).
+
 **Visibility deductions (19:40 UTC).** The filter now enforces what the
 visibility rule proves about unseen squares (`DeduceFromObservation`): the
 first unseen square on a ray from our slider, and the unseen square in front
