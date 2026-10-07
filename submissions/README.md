@@ -19,11 +19,13 @@ Team id `a2c35173659545c99752376a70418438` (`IAmAVirus`). Public record:
 | 4 | 2026-10-07 05:47 | (pre-session) | — | `5e0ef63` | cpp | — | [v4](../versions/v4-king-safety.md) | 102W–6D–156L (264 games) |
 | 5 | 2026-10-07 14:44 | `iamavirus-v6-hybrid.zip` | `662a989aa56c` | `61d33f9` (tree; published in `e2dc3b2`) | **hybrid** | stage A release `v1` | [v6](../versions/v6-neural.md) | **active**, 0 games at upload |
 | 6 | 2026-10-07 14:46 | `iamavirus-v6-cpp.zip` | `6b6b1f338501` | `61d33f9` (tree; published in `e2dc3b2`) | cpp | — | [v6](../versions/v6-neural.md) | validated, inactive |
-| 7 | 2026-10-07 14:47 | *(unrecorded upload; fill in)* | | | | | | inactive |
+| 7 | 2026-10-07 14:47 | `iamavirus-cpp.zip` (committed upstream as "Add v5") | `eb994e3d89e4` | `f236ad7` (engine.cc identical) | cpp | — | [v5](../versions/v5-opponent-prior.md) + turn deadline | inactive; **confirm this is v7** |
 
-The design note "v5" ([versions/v5-opponent-prior.md](../versions/v5-opponent-prior.md),
-commit `ff87bb3`, the opponent-move prior) was **never uploaded**. Its code is
-inside both v6 archives, since v6 builds on it; it was not submitted on its own.
+So the design note "v5" ([versions/v5-opponent-prior.md](../versions/v5-opponent-prior.md):
+the opponent-move prior, plus the `f236ad7` turn deadline) is arena **v7**, and
+the design note "v6" is arena **v5** (hybrid) and **v6** (cpp). The v7 archive
+predates the v6 repairs: it still has the degenerate resampling and the
+castling-rights rebuild, and has no neural files.
 
 ## What is in the two v6 archives
 
@@ -85,7 +87,7 @@ include zero), so the pretrained graphs shipped.
 |---|---|
 | 2026-10-07 14:44 | v5 (hybrid archive) uploaded and activated |
 | 2026-10-07 14:46 | v6 (cpp archive) uploaded, inactive |
-| 2026-10-07 14:47 | v7 uploaded (contents unrecorded), inactive |
+| 2026-10-07 14:47 | v7 uploaded: `iamavirus-cpp.zip`, the design-v5 engine from `f236ad7`, inactive |
 | 2026-10-07 ~15:00 | team rating 1453 over 302 games before any v5/v6 game |
 
 ## How to add a row
