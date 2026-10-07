@@ -48,19 +48,25 @@ struct EngineOptions {
   // best response against the likeliest hypothesis, which is the comparison that
   // tells us whether the game solving is earning its clock.
   bool use_matrix_game = true;
-  // A move is discarded when it leaves our king capturable in at least this
-  // fraction of hypotheses, measured over the whole population.
+  // Price of the king, in centipawns, charged in proportion to the probability
+  // that a move leaves it capturable.
   //
-  // The threshold is low on purpose. Losing the king is not a cost to be traded
-  // against material, it is the end of the game, so even a small chance of it
-  // needs enormous compensation. A game was lost taking a bishop with the king
-  // when 8.2% of hypotheses said the square was defended.
-  double king_loss_tolerance = 0.04;
-  // When no move clears the tolerance, moves within this much of the safest are
-  // kept as a band. Picking the single least dangerous move would decide on risk
-  // alone and ignore material entirely, which in a sharp position can throw away
-  // a piece to shave a percent off a probability.
-  double king_risk_band = 0.02;
+  // This replaces an earlier threshold, which an offline benchmark against real
+  // games showed to be the wrong instrument: it declined the losing capture in
+  // only 8 of 15 seeds. A threshold is all-or-nothing, so in a position where
+  // every move carries some risk it rejected everything, and the fallback band
+  // then re-admitted the fatal move -- at which point nothing inside the
+  // surviving set could see the risk any more and a bishop won the argument.
+  //
+  // Charging the risk continuously is the honest statement of the trade. At this
+  // price a one-percent chance of dying costs three pawns, and the eight percent
+  // in that game costs far more than the bishop on offer, whatever the seed.
+  double king_risk_price = 30000.0;
+  // Moves above this probability of losing the king are dropped before the
+  // shortlist, purely to stop the search spending time on them. The price above
+  // is what actually decides; this only has to be loose enough never to discard
+  // the best move in a sharp position.
+  double king_loss_tolerance = 0.20;
   // Weight on the expected material a move hands over, measured across the
   // whole population rather than the sampled columns. Set to zero to disable.
   double piece_risk_weight = 1.0;
@@ -70,6 +76,12 @@ struct EngineOptions {
   double time_cap = 4.0;
   double increment_share = 0.8;
   int transposition_megabytes = 192;
+  // When non-zero, a decision is bounded by nodes rather than by the clock.
+  // Used for measurement, never in a rated game, where the clock is what counts.
+  uint64_t node_budget = 0;
+  // Weight the opponent's moves by plausibility when updating the belief, rather
+  // than treating them as uniformly likely.
+  bool use_opponent_prior = true;
   SearchOptions search;
 };
 
@@ -82,7 +94,8 @@ struct DecisionTrace {
   int shortlisted = 0;
   int hypotheses = 0;
   int rejected_unsafe = 0;
-  int king_risk_permille = 0;   // king-loss probability of the chosen move
+  int king_risk_permille = 0;   // king-loss probability of the CHOSEN move
+  int safest_risk_permille = 0; // ...and of the safest move available
   bool forced_risky = false;    // every move exceeded the tolerance
   int worst_risk = 0;
   double chosen_probability = 1.0;

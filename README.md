@@ -8,7 +8,14 @@ information**, so this is built as one: alpha-beta search over an explicit belie
 distribution, with the root move chosen by solving a matrix game rather than by
 taking a best response to a single guess.
 
-See **[ENGINE.md](ENGINE.md)** for the design and the reasoning behind it.
+See **[ENGINE.md](ENGINE.md)** for the design, **[versions/](versions/)** for what
+each version changed and what the measurements actually said, and
+**[harness/](harness/)** for how anything here is evaluated.
+
+Negative results are recorded deliberately. Most of what was tried did not work,
+and at Elo 1468 against leaders near 2100 the honest state is that the C++
+rewrite and the rules conformance are proven while the strategic heuristics are
+not.
 
 ## Quick start
 

@@ -40,6 +40,10 @@ inline constexpr int kMaxPly = 64;
 struct SearchLimits {
   double seconds = 1.0;
   int max_depth = kMaxPly - 2;
+  // Hard node ceiling, or zero for no limit. When set, this is what ends the
+  // search and the clock becomes only a safety net, which makes a result
+  // independent of how busy the machine is.
+  uint64_t max_nodes = 0;
 };
 
 struct RootMoveValue {
@@ -108,6 +112,7 @@ class Searcher {
   FogContext fog_;
 
   std::chrono::steady_clock::time_point deadline_;
+  uint64_t node_ceiling_ = 0;
   uint64_t nodes_ = 0;
   bool stopped_ = false;
 

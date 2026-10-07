@@ -46,6 +46,10 @@ void Searcher::SetContext(int our_side, bool enemy_king_confirmed,
 
 inline bool Searcher::OutOfTime() {
   if (stopped_) return true;
+  if (node_ceiling_ != 0 && nodes_ >= node_ceiling_) {
+    stopped_ = true;
+    return true;
+  }
   if ((nodes_ & (kClockCheckInterval - 1)) != 0) return false;
   if (std::chrono::steady_clock::now() >= deadline_) stopped_ = true;
   return stopped_;
@@ -271,6 +275,7 @@ SearchResult Searcher::Search(Position* root, const MoveList& root_moves,
               std::chrono::duration_cast<std::chrono::steady_clock::duration>(
                   std::chrono::duration<double>(limits.seconds));
   nodes_ = 0;
+  node_ceiling_ = limits.max_nodes;
   stopped_ = false;
   table_->NewGeneration();
 

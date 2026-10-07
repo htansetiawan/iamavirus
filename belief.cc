@@ -21,6 +21,18 @@ constexpr std::array<int, kNumPieceTypes> kInitialCensus = {8, 2, 2, 2, 1, 1};
 // around contributing nothing.
 constexpr double kNegligibleWeight = 1e-12;
 
+// Opponent-model priors, as multipliers on a move's plausibility.
+// Deliberately crude: the point is to be far better than uniform, not exact.
+constexpr double kBasePlausibility = 1.0;
+// Leaving a piece where we can take it for less than its worth. Opponents do
+// this occasionally by blunder or as a deliberate sacrifice, so it is unlikely
+// rather than impossible; the value sets how suspicious a free gift looks.
+constexpr double kGiveawayFactor = 0.06;
+// Captures are over-represented in the moves real opponents choose.
+constexpr double kCaptureFactor = 2.5;
+// Moving a piece to where it attacks our king is purposeful.
+constexpr double kAttacksOurKingFactor = 3.0;
+
 // Ceiling on the enumerated successor pool, so a position with an unusually
 // large number of consistent explanations cannot blow up memory or time.
 constexpr std::size_t kMaxPoolSize = 20000;
@@ -34,9 +46,11 @@ Position StartingPosition() {
 
 }  // namespace
 
-BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed)
+BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
+                         bool use_opponent_prior)
     : our_side_(our_side),
       target_count_(std::max(1, particle_count)),
+      use_opponent_prior_(use_opponent_prior),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
   // The opening position is common knowledge, so the belief starts certain.
@@ -80,6 +94,39 @@ bool BeliefState::AgreesAboutUs(const Position& position,
     if (position.pieces(type, color) != seen.by_type[type]) return false;
   }
   return true;
+}
+
+double BeliefState::MovePlausibility(Position* hypothesis, Move move) const {
+  if (!use_opponent_prior_) return kBasePlausibility;  // uniform over their moves
+  const int enemy_side = our_side_ ^ 1;
+  const int to = MoveTo(move);
+  double weight = kBasePlausibility;
+  const bool is_capture = hypothesis->piece_at(to) != kNoPiece ||
+                          MoveFlagOf(move) == kFlagEnPassant;
+  const int captured =
+      is_capture && hypothesis->piece_at(to) != kNoPiece
+          ? kPieceValue[hypothesis->piece_at(to)]
+          : (MoveFlagOf(move) == kFlagEnPassant ? kPieceValue[kPawn] : 0);
+  if (is_capture) weight *= kCaptureFactor;
+
+  UndoState undo;
+  hypothesis->MakeMove(move, &undo);
+  const int moved = hypothesis->piece_at(to);
+  const int value = moved == kNoPiece ? 0 : kPieceValue[moved];
+  // Can we take it, and would that trade favour us? Their own defence of the
+  // square is what makes an offer sensible rather than a gift.
+  const Bitboard our_attackers = hypothesis->AttackersTo(to, our_side_);
+  const bool defended = hypothesis->AttackersTo(to, enemy_side) != 0;
+  if (our_attackers != 0 && !defended && value > captured) {
+    weight *= kGiveawayFactor;
+  }
+  const int our_king = hypothesis->KingSquare(our_side_);
+  if (our_king >= 0 && (hypothesis->AttackersTo(our_king, enemy_side) &
+                        SquareBB(to))) {
+    weight *= kAttacksOurKingFactor;
+  }
+  hypothesis->UnmakeMove(move, undo);
+  return weight;
 }
 
 void BeliefState::ApplyOurMove(Move move) {
@@ -199,17 +246,28 @@ void BeliefState::PredictAndCondition(const Observation& view,
     particle.GenerateMoves(&moves);
     if (moves.empty()) continue;  // this hypothesis could not have moved at all
     ++considered;
-    // Probability of any one specific move under a uniform opponent policy.
-    const double move_probability = 1.0 / static_cast<double>(moves.size());
-    int consistent = 0;
+    // Prior over their moves, normalised per hypothesis so that a hypothesis
+    // offering many plausible continuations is not thereby favoured.
+    double prior_total = 0.0;
+    std::vector<double> prior;
+    prior.reserve(static_cast<std::size_t>(moves.size()));
     for (const Move move : moves) {
+      const double weight = MovePlausibility(&particle, move);
+      prior.push_back(weight);
+      prior_total += weight;
+    }
+    if (prior_total <= 0.0) continue;
+
+    int consistent = 0;
+    for (int index = 0; index < moves.size(); ++index) {
       if (pool.size() >= kMaxPoolSize) break;
+      const Move move = moves[index];
       UndoState undo;
       particle.MakeMove(move, &undo);
       if (AgreesAboutEnemy(particle, enemy, enemy_side) &&
           AgreesAboutUs(particle, ours, our_side_)) {
         pool.push_back(particle);
-        weights.push_back(move_probability);
+        weights.push_back(prior[static_cast<std::size_t>(index)] / prior_total);
         ++consistent;
       }
       particle.UnmakeMove(move, undo);

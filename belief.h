@@ -55,7 +55,13 @@ struct BeliefUpdateReport {
 
 class BeliefState {
  public:
-  BeliefState(int our_side, int particle_count, uint64_t seed);
+  // `use_opponent_prior` selects between weighting the opponent's moves by
+  // plausibility and treating them as uniformly likely. Exposed so the choice can
+  // be ablated rather than assumed: it is the filter's most consequential
+  // modelling assumption, and an earlier hand-tuned heuristic was kept for hours
+  // on the strength of a measurement too coarse to support it.
+  BeliefState(int our_side, int particle_count, uint64_t seed,
+              bool use_opponent_prior = true);
 
   // Absorbs an observation. `reflects_our_own_move` must be true for the
   // observation the arena sends immediately after our own move, since the only
@@ -118,6 +124,23 @@ class BeliefState {
   static bool AgreesAboutUs(const Position& position,
                             const ObservedPieces& seen, int color);
 
+  // Plausibility of an opponent move, used as the prior in the filter's
+  // reweighting. Replaces a uniform prior over their legal moves.
+  //
+  // The uniform assumption is the filter's weakest point and it is weakest
+  // exactly where it matters most: roughly twenty of the opponent's thirty moves
+  // are invisible to us, so for those the prior alone decides the posterior.
+  // Treating them as equally likely throws away the strongest evidence we have
+  // about a hidden board, which is that the opponent is trying to win.
+  //
+  // This is what refutes a bait. When a piece appears beside our king where we
+  // can take it, the hypotheses divide into ones where it is defended and ones
+  // where the opponent simply gave it away. Uniformly weighted, the giveaway
+  // hypotheses dominate because there are more of them, and the bait looks free.
+  // Weighted by plausibility, giving away a bishop for nothing is rare, so the
+  // mass moves onto the defended hypotheses -- which is the truth.
+  double MovePlausibility(Position* hypothesis, Move move) const;
+
   void Condition(const Observation& view, BeliefUpdateReport* report);
   void PredictAndCondition(const Observation& view, BeliefUpdateReport* report);
   void Resample(const std::vector<double>& weights,
@@ -128,6 +151,7 @@ class BeliefState {
 
   int our_side_;
   int target_count_;
+  bool use_opponent_prior_;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
   // Piece counts the opponent is believed to still own.

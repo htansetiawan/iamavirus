@@ -139,11 +139,14 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_REGRET_ITERATIONS", &options.regret_iterations);
   OverrideFlag("FOW_MATRIX_GAME", &options.use_matrix_game);
   Override("FOW_KING_LOSS_TOLERANCE", &options.king_loss_tolerance);
+  Override("FOW_KING_RISK_PRICE", &options.king_risk_price);
   Override("FOW_PIECE_RISK", &options.piece_risk_weight);
   Override("FOW_TIME_CAP", &options.time_cap);
   Override("FOW_TIME_RESERVE", &options.time_reserve);
   Override("FOW_TIME_DIVISOR", &options.time_divisor);
   Override("FOW_HASH_MB", &options.transposition_megabytes);
+  Override("FOW_NODE_BUDGET", &options.node_budget);
+  OverrideFlag("FOW_OPPONENT_PRIOR", &options.use_opponent_prior);
   Override("FOW_SPECULATIVE_WIN", &options.search.speculative_win_score);
   OverrideFlag("FOW_LMR", &options.search.use_late_move_reductions);
   OverrideFlag("FOW_ASPIRATION", &options.search.use_aspiration_windows);
@@ -198,7 +201,8 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       increment_(increment_seconds),
       options_(options),
       rng_(seed),
-      belief_(our_side, options.particle_count, seed ^ 0x9E3779B97F4A7C15ULL),
+      belief_(our_side, options.particle_count, seed ^ 0x9E3779B97F4A7C15ULL,
+              options.use_opponent_prior),
       searcher_(&table_) {
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);
@@ -260,9 +264,22 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   // is the only safe reply can be discarded by a search of one guessed board and
   // never considered again.
   const std::vector<double> king_risk = KingLossProbabilities(legal, en_passant);
+  // Records the chosen move's own risk, whichever path returns it. Without this
+  // the early returns left the field at zero, which reads as "perfectly safe".
+  const auto note_choice = [&](Move chosen) {
+    for (int i = 0; i < legal.size(); ++i) {
+      if (legal[i] == chosen) {
+        trace->king_risk_permille =
+            static_cast<int>(king_risk[static_cast<std::size_t>(i)] * 1000.0);
+        return chosen;
+      }
+    }
+    return chosen;
+  };
   MoveList safe;
   double lowest = 2.0;
   int safest = 0;
+  (void)safest;
   for (int i = 0; i < legal.size(); ++i) {
     const double risk = king_risk[static_cast<std::size_t>(i)];
     if (risk < options_.king_loss_tolerance) safe.Add(legal[i]);
@@ -272,18 +289,26 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     }
   }
   trace->rejected_unsafe = legal.size() - safe.size();
-  trace->king_risk_permille = static_cast<int>(lowest * 1000.0);
+  trace->safest_risk_permille = static_cast<int>(lowest * 1000.0);
   if (safe.empty()) {
-    // Nothing is comfortably safe, which happens in genuinely sharp positions.
-    // Keep the least dangerous band so the search still chooses on merit inside
-    // it, instead of letting a probability alone pick the move.
+    // Every move carries real risk. Keep them all and let the price below decide;
+    // discarding on a threshold here is what previously let the fatal move back
+    // in through a fallback.
     trace->forced_risky = true;
-    const double band = lowest + options_.king_risk_band;
-    for (int i = 0; i < legal.size(); ++i) {
-      if (king_risk[static_cast<std::size_t>(i)] <= band) safe.Add(legal[i]);
+    for (int i = 0; i < legal.size(); ++i) safe.Add(legal[i]);
+    trace->rejected_unsafe = 0;
+  }
+  // Risk of each surviving move, indexed alongside `safe`, so the payoff can be
+  // charged for it.
+  std::vector<double> safe_risk;
+  safe_risk.reserve(static_cast<std::size_t>(safe.size()));
+  for (int i = 0; i < safe.size(); ++i) {
+    for (int j = 0; j < legal.size(); ++j) {
+      if (legal[j] == safe[i]) {
+        safe_risk.push_back(king_risk[static_cast<std::size_t>(j)]);
+        break;
+      }
     }
-    if (safe.empty()) safe.Add(legal[safest]);
-    trace->rejected_unsafe = legal.size() - safe.size();
   }
 
   const FogContext fog = belief_.MakeFogContext(view);
@@ -295,6 +320,12 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   likely.set_en_passant_square(en_passant);
   SearchLimits shortlist_limits;
   shortlist_limits.seconds = trace->budget * kShortlistShare;
+  if (options_.node_budget > 0) {
+    // Measurement mode: bound by nodes, with a generous clock as a safety net.
+    shortlist_limits.seconds = 600.0;
+    shortlist_limits.max_nodes =
+        static_cast<uint64_t>(options_.node_budget * kShortlistShare);
+  }
   const SearchResult primary =
       searcher_.Search(&likely, safe, shortlist_limits);
   trace->depth = primary.depth;
@@ -315,7 +346,7 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   trace->shortlisted = shortlist;
 
   if (!options_.use_matrix_game || shortlist == 1) {
-    return ranked.front().move;
+    return note_choice(ranked.front().move);
   }
 
   // Step two: fill the payoff matrix by searching each shortlisted move against
@@ -333,13 +364,26 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   // Measured over the whole population, so a danger present in a small fraction
   // of hypotheses is still priced in.
   std::vector<double> risk(shortlist, 0.0);
+  for (int row = 0; row < shortlist; ++row) {
+    // The dominant term: probability of losing the king times the price of the
+    // king. Charged on every cell, so no later stage can be blind to it.
+    for (int i = 0; i < safe.size(); ++i) {
+      if (safe[i] == ranked[row].move && i < static_cast<int>(safe_risk.size())) {
+        risk[row] += safe_risk[static_cast<std::size_t>(i)] *
+                     options_.king_risk_price;
+        break;
+      }
+    }
+  }
   if (options_.piece_risk_weight > 0.0) {
     for (int row = 0; row < shortlist; ++row) {
-      risk[row] = options_.piece_risk_weight *
-                  ExpectedMaterialRisk(ranked[row].move, en_passant);
-      if (static_cast<int>(risk[row]) > trace->worst_risk) {
-        trace->worst_risk = static_cast<int>(risk[row]);
-      }
+      risk[row] += options_.piece_risk_weight *
+                   ExpectedMaterialRisk(ranked[row].move, en_passant);
+    }
+  }
+  for (int row = 0; row < shortlist; ++row) {
+    if (static_cast<int>(risk[row]) > trace->worst_risk) {
+      trace->worst_risk = static_cast<int>(risk[row]);
     }
   }
   const double cell_budget =
@@ -396,6 +440,15 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       single.Add(move);
       SearchLimits limits;
       limits.seconds = cell_budget;
+      if (options_.node_budget > 0) {
+        limits.seconds = 600.0;
+        const uint64_t cells =
+            static_cast<uint64_t>(shortlist) * static_cast<uint64_t>(columns);
+        limits.max_nodes = std::max<uint64_t>(
+            256, static_cast<uint64_t>(options_.node_budget *
+                                       (1.0 - kShortlistShare)) /
+                     std::max<uint64_t>(1, cells));
+      }
       const SearchResult result = searcher_.Search(&root, single, limits);
       trace->nodes += result.nodes;
       game.set(row, column,
@@ -437,7 +490,7 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     picked = row;
   }
   trace->chosen_probability = solution.row_probability[picked];
-  return ranked[safe_rows[picked]].move;
+  return note_choice(ranked[safe_rows[picked]].move);
 }
 
 }  // namespace fow
