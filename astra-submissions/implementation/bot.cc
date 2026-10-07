@@ -287,6 +287,11 @@ int Run() {
               << " skipped=" << trace.cells_skipped
               << " safety_replace=" << trace.safety_replacements
               << " shortlist_risk=" << trace.shortlist_risk_permille
+              << " collapsed=" << trace.collapsed
+              << " capture_sq=" << trace.capture_square
+              << " capture_kept=" << trace.capture_constraints_preserved
+              << " capture_conflict=" << trace.capture_evidence_conflict
+              << " capture_ep_ambiguous=" << trace.capture_en_passant_ambiguous
               << " p=" << trace.chosen_probability
               << " gv=" << trace.game_value << " fog=" << trace.unseen_squares
               << " budget=" << trace.budget << " spent=" << trace.spent

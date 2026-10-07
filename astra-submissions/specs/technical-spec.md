@@ -1,6 +1,6 @@
 # Astra experiment contracts
 
-2026-10-07. Proposed implementation, except the replay analyzer and archived-belief probe already in `tools/`. Implements the [24-hour plan](research-plan-24h.md). Prioritize a small deployable belief improvement; use the remaining specifications to prevent expensive, ambiguous experiments.
+2026-10-07. Experiment contracts for the [24-hour plan](research-plan-24h.md). Replay tools and the ordinary-capture subset of A1 are now implemented; see [A1 results and limits](../analysis/capture-recovery/README.md). The joint en-passant constraint, longer history recovery, coverage changes and simulator below remain proposed. Prioritize a small deployable belief improvement; use the remaining specifications to prevent expensive, ambiguous experiments.
 
 ## A1: preserve capture evidence through recovery
 

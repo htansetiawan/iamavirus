@@ -1,0 +1,35 @@
+{
+  "mode": "hybrid",
+  "node_budget": 100000,
+  "seed": 777,
+  "stride": 6,
+  "sampling": "each side's own decision index; terminal losses also included",
+  "corpus_sha256": "0eda94bd4705a6fb153e37e93949a0466b2770ce60ec53be45dc63ad8c7faeeb",
+  "binaries": {
+    "baseline": "ae99dc53c5872627adbe1c094e87970e9a39c0b05ad1a6032fea64d6a221b373",
+    "candidate": "c1a53569752c6fc2e0527cd90a5694631ae052cda34234bb1db5259137bd7f89"
+  },
+  "results": {
+    "baseline": {
+      "seats": 32,
+      "decisions": 218,
+      "king_losses": 21,
+      "terminal_positions": 31,
+      "terminal_survived": 11,
+      "king_loss_rate": 0.0963302752293578
+    },
+    "candidate": {
+      "seats": 32,
+      "decisions": 218,
+      "king_losses": 22,
+      "terminal_positions": 31,
+      "terminal_survived": 11,
+      "king_loss_rate": 0.10091743119266056
+    }
+  },
+  "limitations": [
+    "Forced public histories, not counterfactual matches or Elo evidence.",
+    "Per-side stride balances colors; terminal positions are an additional selected stratum.",
+    "Only decisions actually queried consume search RNG, identical in both arms."
+  ]
+}

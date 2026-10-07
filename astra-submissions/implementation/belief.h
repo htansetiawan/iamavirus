@@ -51,6 +51,10 @@ struct BeliefUpdateReport {
   int resampled_particles = 0;
   bool collapsed = false;  // nothing survived and the belief had to be rebuilt
   double mean_consistent_moves = 0.0;
+  int capture_square = -1;  // ordinary capture inferred from our own history
+  int capture_constraints_preserved = 0;  // rebuilt particles retaining it
+  bool capture_evidence_conflict = false;
+  bool capture_en_passant_ambiguous = false;
 };
 
 class BeliefState {
@@ -61,7 +65,8 @@ class BeliefState {
   // modelling assumption, and an earlier hand-tuned heuristic was kept for hours
   // on the strength of a measurement too coarse to support it.
   BeliefState(int our_side, int particle_count, uint64_t seed,
-              bool use_opponent_prior = true);
+              bool use_opponent_prior = true,
+              bool preserve_capture_evidence = true);
 
   // Absorbs an observation. `reflects_our_own_move` must be true for the
   // observation the arena sends immediately after our own move, since the only
@@ -77,6 +82,7 @@ class BeliefState {
   inline int our_side() const { return our_side_; }
   inline int particle_count() const { return static_cast<int>(particles_.size()); }
   inline const std::vector<Position>& particles() const { return particles_; }
+  inline const BeliefUpdateReport& last_report() const { return last_report_; }
 
   // The hypothesis that agrees most with all the others: a real, legal position
   // rather than a square-by-square average, which would often be illegal. This
@@ -148,10 +154,16 @@ class BeliefState {
   // Rebuilds a plausible population when every hypothesis has been contradicted,
   // which can happen if the opponent does something no particle anticipated.
   void Recover(const Observation& view, BeliefUpdateReport* report);
+  // A vanished own piece proves a capture, even if its square is now hidden.
+  // This first variant anchors ordinary captures only; an ambiguous double-
+  // pushed pawn is left to the existing legal-transition filter (EP can land
+  // off the victim square). The fact expires on the next opponent move.
+  void InferCaptureEvidence(const Observation& view, BeliefUpdateReport* report);
 
   int our_side_;
   int target_count_;
   bool use_opponent_prior_;
+  bool preserve_capture_evidence_;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
   // Piece counts the opponent is believed to still own.
@@ -172,6 +184,10 @@ class BeliefState {
   void UpdateOwnRights(const Observation& view);
   Bitboard own_rights_ = 0;
   bool seen_any_ = false;
+  Observation previous_view_;
+  int capture_square_ = -1;
+  int own_double_push_square_ = -1;
+  BeliefUpdateReport last_report_;
   mutable int representative_index_ = 0;
   mutable bool representative_valid_ = false;
 };

@@ -130,7 +130,9 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
     if (truth.side_to_move() == seat.side) {
       const bool is_fatal_ply =
           fatal_is_ours && static_cast<int>(ply) == last_own_ply;
-      const bool sampled = (ply % static_cast<size_t>(stride)) == 0;
+      // Sample each color by its own decision count. Global even-ply strides
+      // otherwise query White only, apart from the separately forced finals.
+      const bool sampled = ((ply / 2) % static_cast<size_t>(stride)) == 0;
       if (is_fatal_ply || sampled) {
         DecisionTrace trace;
         NeuralAdvice advice;
@@ -198,6 +200,10 @@ int main(int argc, char** argv) {
     return 2;
   }
   const int stride = argc > 2 ? std::atoi(argv[2]) : 6;
+  if (stride < 1) {
+    std::fprintf(stderr, "stride must be positive (measured in own decisions)\n");
+    return 2;
+  }
   const uint64_t nodes = argc > 3 ? std::strtoull(argv[3], nullptr, 10) : 1000000;
   const bool verbose = argc > 4;
 
@@ -238,7 +244,7 @@ int main(int argc, char** argv) {
     RunSeat(seat, options, stride, &tally, verbose, advisor);
   }
 
-  std::printf("\ncorpus: %s   stride %d   %llu nodes/decision\n", argv[1],
+  std::printf("\ncorpus: %s   own-decision stride %d   %llu nodes/decision\n", argv[1],
               stride, static_cast<unsigned long long>(nodes));
   std::printf("  seats replayed            : %d\n", tally.seats);
   std::printf("  decisions evaluated       : %d\n", tally.decisions);

@@ -1,0 +1,74 @@
+{
+  "game": "chccdlu3",
+  "white_version": 10,
+  "black_version": 4,
+  "result": "1-0",
+  "reason": "King capturable",
+  "source": "astra-submissions/snapshots/arena-monitor/20261007T183951Z/chccdlu3-replay.json",
+  "source_sha256": "7bb97f64267550b7d7170729605c11233c7e055ec73864319735bc2ac5fbe5e2",
+  "referee_verification": {
+    "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "frames": 49,
+    "all_legal_move_survival_checks": 1641
+  },
+  "final_decision": {
+    "ply": 47,
+    "side": "black",
+    "preceding_move": "e1e8",
+    "move": "f7f6",
+    "legal_moves": [
+      "d3b1",
+      "d3d1",
+      "d3f1",
+      "d3c2",
+      "d3d2",
+      "d3e2",
+      "d3a3",
+      "d3b3",
+      "d3c3",
+      "d3e3",
+      "d3f3",
+      "d3g3",
+      "d3h3",
+      "d3c4",
+      "d3d4",
+      "d3e4",
+      "d3b5",
+      "d3d5",
+      "d3f5",
+      "d3a6",
+      "d3d6",
+      "d3g6",
+      "d3d7",
+      "d3d8",
+      "g8g7",
+      "g8f8",
+      "g8h8",
+      "a7a6",
+      "a7a5",
+      "b7b6",
+      "b7b5",
+      "f7f6",
+      "f7f5",
+      "h7h6",
+      "h7h5"
+    ],
+    "immediate_survival_moves": [
+      "g8g7"
+    ],
+    "mover_loses_king": true,
+    "fatal_attackers": [
+      {
+        "square": "e8",
+        "piece": "R",
+        "hidden_at_decision": true
+      }
+    ]
+  },
+  "caveats": [
+    "Truth is an offline label, not an input to the live bot.",
+    "Survival means immediate adjudication, not a winning continuation.",
+    "A hidden attack does not establish which scoring term caused it.",
+    "One game is not a strength estimate or a controlled comparison."
+  ]
+}

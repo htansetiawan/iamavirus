@@ -49,6 +49,8 @@ def main():
         (args.output / f"{name}-{i}.log").write_text(completed.stdout + completed.stderr)
         if completed.stderr.strip():
             raise RuntimeError(f"Unexpected benchmark diagnostic: {completed.stderr[:300]}")
+        if "own-decision stride 6" not in completed.stdout:
+            raise RuntimeError("Both benchmark binaries must use the corrected per-side sampling")
         labels = {"seats replayed": "seats", "decisions evaluated": "decisions",
                   "immediate king losses": "king_losses", "real losing positions": "terminal_positions",
                   "...the engine survives": "terminal_survived"}
@@ -75,12 +77,13 @@ def main():
         summary[name] = counts
     assert summary["baseline"]["decisions"] == summary["candidate"]["decisions"]
     report = {"mode": args.mode, "node_budget": args.nodes, "seed": 777, "stride": 6,
+              "sampling": "each side's own decision index; terminal losses also included",
               "corpus_sha256": hashlib.sha256(args.corpus.read_bytes()).hexdigest(),
               "binaries": {name: hashlib.sha256(path.read_bytes()).hexdigest()
                            for name, path in [("baseline", args.baseline), ("candidate", args.candidate)]},
               "results": summary,
               "limitations": ["Forced public histories, not counterfactual matches or Elo evidence.",
-                               "Original stride semantics sample ply multiples of 6 (White) plus both sides' terminal losses.",
+                               "Per-side stride balances colors; terminal positions are an additional selected stratum.",
                                "Only decisions actually queried consume search RNG, identical in both arms."]}
     (args.output / "summary.json").write_text(json.dumps(report, indent=2) + "\n")
     print(json.dumps(report, indent=2))

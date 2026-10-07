@@ -47,10 +47,11 @@ Position StartingPosition() {
 }  // namespace
 
 BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
-                         bool use_opponent_prior)
+                         bool use_opponent_prior, bool preserve_capture_evidence)
     : our_side_(our_side),
       target_count_(std::max(1, particle_count)),
       use_opponent_prior_(use_opponent_prior),
+      preserve_capture_evidence_(preserve_capture_evidence),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
   const int home_rank = our_side == kWhite ? 0 : 7;
@@ -145,6 +146,11 @@ void BeliefState::UpdateOwnRights(const Observation& view) {
 }
 
 void BeliefState::ApplyOurMove(Move move) {
+  own_double_push_square_ = MoveFlagOf(move) == kFlagDoublePush ? MoveTo(move) : -1;
+  const int taken = MoveFlagOf(move) == kFlagEnPassant
+                        ? MoveTo(move) + (our_side_ == kWhite ? -8 : 8)
+                        : MoveTo(move);
+  if (taken == capture_square_) capture_square_ = -1;
   const int home_rank = our_side_ == kWhite ? 0 : 7;
   if (MoveFrom(move) == MakeSquare(4, home_rank) && !particles_.empty() &&
       particles_.front().piece_at(MoveFrom(move)) == kKing) {
@@ -196,6 +202,12 @@ void BeliefState::ApplyOurMove(Move move) {
 BeliefUpdateReport BeliefState::Observe(const Observation& view,
                                        bool reflects_our_own_move) {
   BeliefUpdateReport report;
+  if (seen_any_ && !reflects_our_own_move) {
+    capture_square_ = -1;  // an unseen opponent move may relocate the capturer
+    if (preserve_capture_evidence_) InferCaptureEvidence(view, &report);
+    own_double_push_square_ = -1;
+  }
+  report.capture_square = capture_square_;
   // The census is brought up to date first, before anything can consult it.
   // Rebuilding a contradicted population reads it to decide how much material to
   // scatter behind the fog, and a census that has not yet noticed a promotion
@@ -217,7 +229,38 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
     Recover(view, &report);
   }
   representative_valid_ = false;
+  previous_view_ = view;
+  last_report_ = report;
   return report;
+}
+
+void BeliefState::InferCaptureEvidence(const Observation& view,
+                                      BeliefUpdateReport* report) {
+  const Bitboard before = previous_view_.VisiblePieces(our_side_);
+  const Bitboard after = view.VisiblePieces(our_side_);
+  const Bitboard missing = before & ~after;
+  // One opponent move cannot relocate our pieces or capture two of them.
+  // Existing synthetic observations may be inconsistent; report, don't invent.
+  if (missing == 0) return;
+  if (PopCount(missing) != 1 || (after & ~before) != 0) {
+    report->capture_evidence_conflict = true;
+    return;
+  }
+  const int square = Lsb(missing);
+  const char now = view.at(square);
+  if (square == own_double_push_square_ &&
+      previous_view_.at(square) == PieceTypeToSymbol(kPawn, our_side_) &&
+      (now == kUnseen || now == kEmpty)) {
+    // It may have been taken en passant: never force a piece onto the victim's
+    // vacated square. Keeping a joint normal/EP recovery is a later variant.
+    report->capture_en_passant_ambiguous = true;
+    return;
+  }
+  if (now == kEmpty) {
+    report->capture_evidence_conflict = true;
+    return;
+  }
+  capture_square_ = square;
 }
 
 void BeliefState::Condition(const Observation& view,
@@ -413,6 +456,44 @@ void BeliefState::Recover(const Observation& view,
     // hidden enemy piece occupies a square we cannot see, so the pool is always
     // large enough when no square is wasted.
     std::vector<int> available = hidden;
+    std::array<int, kNumPieceTypes> remaining = missing;
+    if (capture_square_ >= 0 && view.IsUnseen(capture_square_)) {
+      // Allocate one of the existing unseen pieces to the known landing square
+      // before scattering the rest. Weight types by their remaining counts;
+      // this is a conservative recovery proposal, not a calibrated posterior.
+      const bool pawn_square = RankOf(capture_square_) != 0 && RankOf(capture_square_) != 7;
+      const int pawn_slots = static_cast<int>(std::count_if(
+          available.begin(), available.end(), [](int s) { return RankOf(s) != 0 && RankOf(s) != 7; }));
+      std::vector<int> types;
+      for (int type = 0; type < kNumPieceTypes; ++type) {
+        if (type == kPawn && !pawn_square) continue;
+        // Reserving a non-pawn must not deprive a remaining pawn of its only
+        // legal square. Keep the existing population-size/material invariant.
+        const int pawns_left = remaining[kPawn] - (type == kPawn ? 1 : 0);
+        if (pawns_left > pawn_slots - (pawn_square ? 1 : 0)) continue;
+        for (int n = 0; n < remaining[type]; ++n) types.push_back(type);
+      }
+      bool latent_promotion = false;
+      if (types.empty() && !pawn_square && remaining[kPawn] > 0) {
+        // If only unseen pawns remain, a capturer on a last rank must have
+        // promoted. Spend a pawn rather than inventing an extra enemy piece.
+        latent_promotion = true;
+        types = {kKnight, kBishop, kRook, kQueen};
+      }
+      if (!types.empty()) {
+        const int type = types[std::uniform_int_distribution<std::size_t>(0, types.size() - 1)(rng_)];
+        --remaining[latent_promotion ? kPawn : type];
+        particle.PutPiece(capture_square_, enemy_side, type);
+        available.erase(std::remove(available.begin(), available.end(), capture_square_), available.end());
+        ++report->capture_constraints_preserved;
+      } else {
+        // A contradictory synthetic observation/census can make placement
+        // impossible. Keep visibility intact and expose the inconsistency.
+        report->capture_evidence_conflict = true;
+      }
+    } else if (capture_square_ >= 0 && particle.color_at(capture_square_) == enemy_side) {
+      ++report->capture_constraints_preserved;
+    }
     // Pawns are placed first because they are the only constrained piece: they
     // cannot stand on a promotion rank. Placing the free-roaming pieces first
     // can leave a pawn with nothing but promotion-rank squares and so drop it
@@ -420,7 +501,7 @@ void BeliefState::Recover(const Observation& view,
     // Every hidden pawn really does sit on a non-promotion fog square, so
     // satisfying the constrained type first always succeeds.
     for (const int type : {kPawn, kKnight, kBishop, kRook, kQueen, kKing}) {
-      for (int placed = 0; placed < missing[type]; ++placed) {
+      for (int placed = 0; placed < remaining[type]; ++placed) {
         std::size_t chosen = available.size();
         for (std::size_t index = 0; index < available.size(); ++index) {
           const int square = available[index];

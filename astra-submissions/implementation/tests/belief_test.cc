@@ -13,6 +13,7 @@
 #include <cstdint>
 #include <cstdio>
 #include <random>
+#include <sstream>
 #include <string>
 #include <vector>
 
@@ -293,6 +294,121 @@ void CaptureOnASquareThatGoesUnseenIsStillInferred() {
   FOW_EXPECT_EQ(found_enemy, belief.particle_count());
 }
 
+// Public bluqrpex, through 29...Bxf1. Unlike the smaller capture tests, this
+// reaches recovery with a just-captured own piece now behind the fog. The live
+// tracker receives observations and our moves only, not Black's recorded moves.
+void RecoveryRetainsTheKnownCaptureSquare() {
+  const char* line =
+      "b1c3 d7d5 d2d4 g8f6 d1d2 c7c5 d4c5 e7e6 c3d5 d8d5 "
+      "d2d5 e6d5 e2e3 a7a5 g1h3 f8e7 f1d3 b8c6 e1g1 a5a4 "
+      "f1d1 e8g8 d3f1 f8d8 h3f4 c8f5 f4d5 d8d5 d1d5 f6d5 "
+      "a2a3 d5f6 c2c4 f5e6 f2f3 a8d8 g1h1 d8d7 c1d2 d7d2 "
+      "e3e4 d2d4 b2b4 a4b3 a1b1 b3b2 h2h3 d4d2 g2g4 e7c5 "
+      "f1d3 d2d3 b1f1 e6c4 h3h4 d3b3 g4g5 c4f1";
+  for (const uint64_t seed : {1ULL, 2ULL, 3ULL, 777ULL}) {
+    Position truth = StartPosition();
+    BeliefState belief(kWhite, 2048, seed ^ 0x9E3779B97F4A7C15ULL);
+    belief.Observe(Observation(RenderObservation(truth, kWhite)), false);
+    std::istringstream stream(line);
+    std::string uci;
+    while (stream >> uci) {
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      Move move = kNullMove;
+      for (Move candidate : legal) if (MoveToUci(candidate) == uci) move = candidate;
+      FOW_EXPECT_TRUE(move != kNullMove);
+      if (move == kNullMove) return;
+      const bool ours = truth.side_to_move() == kWhite;
+      if (ours) belief.ApplyOurMove(move);
+      UndoState undo;
+      truth.MakeMove(move, &undo);
+      belief.Observe(Observation(RenderObservation(truth, kWhite)), ours);
+    }
+    const int f1 = MakeSquare(5, 0);
+    FOW_EXPECT_TRUE(Observation(RenderObservation(truth, kWhite)).IsUnseen(f1));
+    int occupied_by_enemy = 0;
+    for (const Position& particle : belief.particles()) {
+      occupied_by_enemy += particle.color_at(f1) == kBlack;
+    }
+    // The type is unknown. Occupancy follows from the disappeared own rook.
+    FOW_EXPECT_EQ(occupied_by_enemy, belief.particle_count());
+  }
+}
+
+BeliefUpdateReport PlayObservedMove(Position* truth, BeliefState* belief,
+                                    const std::string& uci) {
+  MoveList legal;
+  truth->GenerateMoves(&legal);
+  Move move = kNullMove;
+  for (Move candidate : legal) if (MoveToUci(candidate) == uci) move = candidate;
+  FOW_EXPECT_TRUE(move != kNullMove);
+  if (move == kNullMove) return {};
+  const bool ours = truth->side_to_move() == belief->our_side();
+  if (ours) belief->ApplyOurMove(move);
+  UndoState undo;
+  truth->MakeMove(move, &undo);
+  const Observation view(RenderObservation(*truth, belief->our_side()));
+  const auto report = belief->Observe(view, ours);
+  FOW_EXPECT_TRUE(AllParticlesAgree(*belief, view));
+  return report;
+}
+
+void EnPassantDoesNotInventACapturerOnTheVictimSquare() {
+  const std::pair<int, const char*> cases[] = {
+      {kBlack, "e2e4 a7a6 e4e5 d7d5 e5d6"},
+      {kWhite, "a2a3 d7d5 a3a4 d5d4 e2e4 d4e3"},
+  };
+  for (const auto& [side, moves] : cases) {
+    Position truth = StartPosition();
+    BeliefState belief(side, 128, 19);
+    belief.Observe(Observation(RenderObservation(truth, side)), false);
+    std::istringstream stream(moves);
+    std::string uci;
+    BeliefUpdateReport report;
+    while (stream >> uci) report = PlayObservedMove(&truth, &belief, uci);
+    FOW_EXPECT_TRUE(report.capture_en_passant_ambiguous);
+    FOW_EXPECT_EQ(report.capture_square, -1);
+    FOW_EXPECT_TRUE(!report.capture_evidence_conflict);
+  }
+}
+
+void VisibleOrdinaryCaptureOfADoublePushedPawnIsRecognized() {
+  Position truth = StartPosition();
+  BeliefState belief(kBlack, 128, 31);
+  belief.Observe(Observation(RenderObservation(truth, kBlack)), false);
+  PlayObservedMove(&truth, &belief, "e2e4");
+  PlayObservedMove(&truth, &belief, "d7d5");
+  const auto report = PlayObservedMove(&truth, &belief, "e4d5");
+  FOW_EXPECT_EQ(report.capture_square, MakeSquare(3, 4));
+  FOW_EXPECT_TRUE(!report.capture_en_passant_ambiguous);
+}
+
+void CaptureEvidenceSurvivesOurMoveButExpiresOnTheirNextMove() {
+  Position truth;
+  FOW_EXPECT_TRUE(PositionFromFen("2k3r1/8/8/8/8/8/8/4K1R1 w - - 0 1", &truth));
+  BeliefState belief(kBlack, 256, 31);
+  belief.Observe(Observation(RenderObservation(truth, kBlack)), false);
+  auto report = PlayObservedMove(&truth, &belief, "g1g8");
+  FOW_EXPECT_EQ(report.capture_square, MakeSquare(6, 7));
+  report = PlayObservedMove(&truth, &belief, "c8c7");
+  FOW_EXPECT_EQ(report.capture_square, MakeSquare(6, 7));
+  report = PlayObservedMove(&truth, &belief, "g8g7");
+  FOW_EXPECT_EQ(report.capture_square, -1);
+  FOW_EXPECT_TRUE(!report.capture_evidence_conflict);
+}
+
+void OurCaptureClearsTheEvidenceConstraint() {
+  Position truth;
+  FOW_EXPECT_TRUE(PositionFromFen("1R1bk3/3p4/8/8/8/8/8/4K3 w - - 0 1", &truth));
+  BeliefState belief(kBlack, 128, 7);
+  belief.Observe(Observation(RenderObservation(truth, kBlack)), false);
+  auto report = PlayObservedMove(&truth, &belief, "b8d8");
+  FOW_EXPECT_EQ(report.capture_square, MakeSquare(3, 7));
+  report = PlayObservedMove(&truth, &belief, "e8d8");
+  FOW_EXPECT_EQ(report.capture_square, -1);
+  FOW_EXPECT_TRUE(!report.capture_evidence_conflict);
+}
+
 // A hypothesis contradicted by every observation must not survive; the filter
 // must rebuild rather than crash or go empty.
 void RecoversWhenEveryHypothesisIsContradicted() {
@@ -403,6 +519,11 @@ int main() {
   FOW_RUN_TEST(fow::FogContextReflectsTheRemainingEnemyArmy);
   FOW_RUN_TEST(fow::CaptureImpliesAnEnemyPieceOnThatSquare);
   FOW_RUN_TEST(fow::CaptureOnASquareThatGoesUnseenIsStillInferred);
+  FOW_RUN_TEST(fow::RecoveryRetainsTheKnownCaptureSquare);
+  FOW_RUN_TEST(fow::EnPassantDoesNotInventACapturerOnTheVictimSquare);
+  FOW_RUN_TEST(fow::VisibleOrdinaryCaptureOfADoublePushedPawnIsRecognized);
+  FOW_RUN_TEST(fow::CaptureEvidenceSurvivesOurMoveButExpiresOnTheirNextMove);
+  FOW_RUN_TEST(fow::OurCaptureClearsTheEvidenceConstraint);
   FOW_RUN_TEST(fow::RecoversWhenEveryHypothesisIsContradicted);
   FOW_RUN_TEST(fow::BeliefMaintainsItsInvariants);
   return fow::testing::Summarize("belief_test");

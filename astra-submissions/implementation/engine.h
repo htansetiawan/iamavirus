@@ -112,6 +112,7 @@ struct EngineOptions {
   // Weight the opponent's moves by plausibility when updating the belief, rather
   // than treating them as uniformly likely.
   bool use_opponent_prior = true;
+  bool preserve_capture_evidence = true;
   SearchOptions search;
 };
 
@@ -137,6 +138,10 @@ struct DecisionTrace {
   int cells_skipped = 0;   // matrix cells abandoned because the turn ran out
   int unseen_squares = 0;
   bool collapsed = false;
+  int capture_square = -1;
+  int capture_constraints_preserved = 0;
+  bool capture_evidence_conflict = false;
+  bool capture_en_passant_ambiguous = false;
   double pieces_located = 0.0;
   // Which procedure actually decided, and compact per-candidate estimates for
   // the log: "uci:policy/danger/particle" for the leading candidates.

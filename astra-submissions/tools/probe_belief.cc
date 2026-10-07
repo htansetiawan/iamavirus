@@ -17,6 +17,17 @@
 
 using namespace fow;
 
+template <class Report>
+static void CaptureDiagnostics(const Report& report) {
+  // Older immutable archives do not have Astra's new diagnostic fields.
+  if constexpr (requires { report.capture_square; }) {
+    std::cout << ",\"inferred_capture_square\":" << report.capture_square
+              << ",\"capture_constraints_preserved\":" << report.capture_constraints_preserved
+              << ",\"capture_evidence_conflict\":" << (report.capture_evidence_conflict ? "true" : "false")
+              << ",\"capture_ep_ambiguous\":" << (report.capture_en_passant_ambiguous ? "true" : "false");
+  }
+}
+
 static std::string BoardText(const Position& p) {
   std::string result(64, '-');
   for (int sq = 0; sq < 64; ++sq) {
@@ -53,19 +64,23 @@ int main(int argc, char** argv) {
   std::string move;
   while (file >> move) moves.push_back(move);
   bool own_move = false;
+  int capture_landing = -1;
+  bool capture_was_ep = false;
   for (std::size_t ply = 0; ply <= moves.size(); ++ply) {
     const Observation observation(RenderObservation(truth, side));
     const auto report = belief.Observe(observation, own_move);
     const auto& particles = belief.particles();
     const std::string true_board = BoardText(truth);
     std::set<std::string> unique_boards;
-    int matches = 0, f1_enemy = 0, b2_pawn = 0;
+    int matches = 0, f1_enemy = 0, b2_pawn = 0, renders_match = 0, capture_supported = 0;
     for (const Position& p : particles) {
       const auto board = BoardText(p);
       unique_boards.insert(board);
       matches += board == true_board;
       f1_enemy += board[5] >= 'a' && board[5] <= 'z';
       b2_pawn += board[9] == 'p';
+      renders_match += RenderObservation(p, side) == observation.squares();
+      capture_supported += capture_landing >= 0 && p.color_at(capture_landing) == (side ^ 1);
     }
     std::cout << "{\"seed\":" << seed << ",\"ply\":" << ply
               << ",\"collapsed\":" << (report.collapsed ? "true" : "false")
@@ -74,7 +89,12 @@ int main(int argc, char** argv) {
               << ",\"unique_boards\":" << unique_boards.size()
               << ",\"truth_board_matches\":" << matches
               << ",\"black_f1\":" << f1_enemy
-              << ",\"black_pawn_b2\":" << b2_pawn;
+              << ",\"black_pawn_b2\":" << b2_pawn
+              << ",\"exact_observation_matches\":" << renders_match
+              << ",\"true_capture_landing\":" << capture_landing
+              << ",\"true_capture_was_ep\":" << (capture_was_ep ? "true" : "false")
+              << ",\"true_capture_landing_support\":" << capture_supported;
+    CaptureDiagnostics(report);
     if (ply < moves.size() && truth.side_to_move() == side) {
       const Move actual = FindMove(truth, moves[ply]);
       int loses = 0;
@@ -97,5 +117,8 @@ int main(int argc, char** argv) {
     if (own_move) belief.ApplyOurMove(actual);
     UndoState undo;
     truth.MakeMove(actual, &undo);
+    // These are offline labels only. They are never passed to Observe().
+    capture_landing = !own_move && undo.captured_type != kNoPiece ? MoveTo(actual) : -1;
+    capture_was_ep = capture_landing >= 0 && MoveFlagOf(actual) == kFlagEnPassant;
   }
 }
