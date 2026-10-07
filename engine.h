@@ -214,7 +214,8 @@ struct EngineOptions {
   // Used for measurement, never in a rated game, where the clock is what counts.
   uint64_t node_budget = 0;
   // Prior over the opponent's moves in the belief update: 0 uniform, 1 the v5
-  // hand-set constants, 2 the learned conditional-logit prior (default).
+  // hand-set constants (default), 2 the learned conditional-logit prior
+  // (measured: no decision gain, so not the default).
   int opponent_prior = 1;
   SearchOptions search;
 };
