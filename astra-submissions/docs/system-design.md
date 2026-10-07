@@ -159,7 +159,8 @@ flowchart LR
 
 | Input channels | Contents |
 |---|---|
-| 0–13 | Current own/enemy piece classes, unknown and visible empty |
+| 0–11 | Current own/enemy piece classes |
+| 12–13 | Legacy v1 encoding: channel 12 combines unknown and visible empty; channel 13 is unused |
 | 14–26 | Last directly observed piece or empty square |
 | 27 | Ever observed |
 | 28 | Age since observation, capped at 100; never seen = 1 |

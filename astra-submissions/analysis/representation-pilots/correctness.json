@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "tests": 15,
+  "command": "PYTHONPATH=astra-submissions:. .venv/bin/python -m unittest learning_experiments.test_models learning_experiments.test_ssl learning_experiments.test_evaluate -v",
+  "scope": [
+    "unchanged CNN control",
+    "shapes and finite gradients",
+    "candidate permutation",
+    "bottleneck without bypass",
+    "lossless full-capacity rearrangement",
+    "teacher detached and EMA-only update",
+    "label-free actor loader",
+    "empty/fog self-targets from actual observations",
+    "both-color canonicalization",
+    "mask removes redundant square channels",
+    "padding preserves recurrence",
+    "collapse diagnostic",
+    "ROC ties",
+    "hidden-enemy metric isolation",
+    "each held-out decision counted once"
+  ],
+  "source_sha256": {
+    "astra-submissions/learning_experiments/quantize_audit.py": "1d670163d4d6bd7e1374540909f5e622043b2f72ac196b86a4a47ffe1045a949",
+    "astra-submissions/learning_experiments/evaluate.py": "a5c431e1df0b15a1d8e5705a171603df6e0d4bc4e37ba48cbc3d9819ceb51d93",
+    "astra-submissions/learning_experiments/__init__.py": "bd83efa0660d6325dd5a389be96dcbfb0583c568b365eff42d2c6ebda02630f2",
+    "astra-submissions/learning_experiments/run.py": "3007f8b2d1195365ee86d53ce91346f5e480bca53e1eabf9f5cdacdc32d637eb",
+    "astra-submissions/learning_experiments/ssl.py": "3126064acff03b0f0bd6d0cedd50989afa2ba8bafc97b2a4228dd014fffdbf4b",
+    "astra-submissions/learning_experiments/export_checkpoint.py": "b2a898b6bca38f0b1a9900c86161a6114fe31afca38c37b9ef8525856a7d774c",
+    "astra-submissions/learning_experiments/test_ssl.py": "43fca8f9bcab2427a835e9a008d49f6340648365b7af89006b6a62620e2fa748",
+    "astra-submissions/learning_experiments/profile_models.py": "84f37f345595260a0d9dbf106ab465663bab59f2ba469bf7e521aa4ec8bef6b9",
+    "astra-submissions/learning_experiments/models.py": "828a72f1a42483454f6cec0ed415407aad5e59da2921cc7140abe0416f570d66",
+    "astra-submissions/learning_experiments/test_models.py": "8f3233964020c94c39ce117aafc7563ab1c025b561b04013ed41ddc1de67f252",
+    "astra-submissions/learning_experiments/test_evaluate.py": "032e194933fc87c5a9bbd6551cc33d6176bc185bd1c54d2700122f5705aeeda7",
+    "astra-submissions/learning_experiments/compare_pilots.py": "653760a9568de7a8d663b0a07a3e3ef9a8a6868e8f68865770a035788e9cd60e"
+  }
+}

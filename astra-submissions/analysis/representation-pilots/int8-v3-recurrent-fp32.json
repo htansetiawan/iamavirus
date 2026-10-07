@@ -1,0 +1,287 @@
+{
+  "source_graph_directory": "/home/henrytan/git/iamavirus/releases/v3",
+  "shard_sha256": "47ff6ae6e9476bf75e2f92d5a45f8603659d7529a6ecf21a301fab00121ce65b",
+  "keep_recurrent_fp32": true,
+  "onnxruntime": "1.30.0",
+  "native": {
+    "sources": {
+      "rules_capi.cc": "26794cb3062e5bdd881ed07858e0821cfa5abd907707cc4f80b0e2c75c5cb31e",
+      "engine.cc": "8b7f117abae345286458d8bf496851ef264416ca71c9146f2efd804202d7c17a",
+      "belief.cc": "7966b3e2eb0e7f5e2b9ba029c48357515cce15c87e45900bbc1cca4d900a6325",
+      "search.cc": "fa8a64876248c695aebbeec504efa73e9d1a1040cb280f7e86ff6299fb3e153a",
+      "evaluation.cc": "c7ffc3e23fe0303121bf2c9885cdade0531706be6764ce1d5574d523258a179a",
+      "observation.cc": "cdf3a5316aedf4a764f9c94827816ab6bb87369cf8c3020c8af5a8ff5489c5ca",
+      "transposition.cc": "92467ff1857fb681c57e81a857b03dbd7bb22fe0b85cc8b17e95e2a8d51b466e",
+      "regret.cc": "6e166aa11721d718ddfdff9772228dc8e5acda5ecf00e8e52d8e02fc9d4e906a",
+      "position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+      "move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+      "bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+      "opponent_model.cc": "d9ef2083e3482af4ee4dbf642dff5a98ae75950730b660527b425530548c1597",
+      "bitboard.h": "8e44e16445d783bb10df53533d54039d345893fccd1b5b0e40a40c771fa5aa0d",
+      "move.h": "d9df0633b6449f6156b7ce5aeba762a11629834ffe8276a5a14336b5bda411fb",
+      "position.h": "4779d19bc65b7f083c9cb85cc08de760ba723dd17b3447b276ee9eef356e02a7",
+      "observation.h": "1a2c3499673f10426a30e1182af2c3cc0fa1e3ac88b1edbb3ec18f118fd3a9dd",
+      "evaluation.h": "58d68872baebedc8359bf85374bcdf4b12e46637e2015f3f1b9fe2c37ee8fa6a",
+      "transposition.h": "63e49121e2fcec3ee7ccc79c3680e98670ebe535359c314d70c08cc82267f295",
+      "search.h": "727cfce37e60e7d2aefa94c7f3b0528f4b564a01ebafe473c88adc69d0073687",
+      "belief.h": "801e096a5dd78373439e72d98ccdd3c7e308cdf70db1123e5505576e836088b4",
+      "regret.h": "6c4a1bfd814cf8ec8cd3c48cd6c473ce2bad0d9b60cf17af2af5d6ccdc004712",
+      "engine.h": "a243e12af8a84feffce642b948a1fee012a7ef0f97358286efe94b121929889d",
+      "piece_square.h": "2c7deec8b737fbd450ed8fdc0e456139f2dad564e5792c98b201e336aaef01dc",
+      "opponent_model.h": "1b3443eb9cd394b2897a71ed2daf3a0544ee41794f68cc0c8fe5de9b0ad9ff54",
+      "opponent_weights.h": "a93041d41ac93b79f85b2c138fd05da9add9c768ad5309d08368d7dc9b506c05"
+    },
+    "library_sha256": "74c433cf2974776d694b7eba2cf1f119bf29552a712bf13049c7577cd395dcfe"
+  },
+  "graphs": {
+    "observe": {
+      "source_sha256": "1580d6ea866ed1262cd917750a65899f964a69e76c04c44a2d465cea393e5646",
+      "int8_sha256": "c8b34e67dc4300e9feac4ae47b69a9885b20c436dea9152f9006762e357f486b",
+      "source_bytes": 7263348,
+      "int8_bytes": 3960466,
+      "excluded_nodes": [
+        "/gru/Gemm",
+        "/gru/Gemm_MatMul",
+        "/gru/Constant",
+        "/gru/Split",
+        "/gru/Gemm_1",
+        "/gru/Gemm_1_MatMul",
+        "/gru/Constant_1",
+        "/gru/Split_1",
+        "/gru/Add",
+        "/gru/Sigmoid",
+        "/gru/Add_1",
+        "/gru/Sigmoid_1",
+        "/gru/Mul",
+        "/gru/Add_2",
+        "/gru/Tanh",
+        "/gru/Sub",
+        "/gru/Mul_1",
+        "/gru/Add_3"
+      ],
+      "quantized_operators": {
+        "DynamicQuantizeLinear": 5,
+        "MatMulInteger": 5
+      },
+      "int8_weight_elements": 1104904
+    },
+    "score": {
+      "source_sha256": "1d448f7f9776d351db0693720758f601445670009a31ce2e869fc7014df81edb",
+      "int8_sha256": "f47bbe05ca74bee073eddadcd91b266027a805fa8abd502c6013d4e44cd006de",
+      "source_bytes": 244737,
+      "int8_bytes": 77595,
+      "excluded_nodes": [],
+      "quantized_operators": {
+        "DynamicQuantizeLinear": 3,
+        "MatMulInteger": 4
+      },
+      "int8_weight_elements": 58818
+    }
+  },
+  "episodes": 32,
+  "games": 16,
+  "counts": {
+    "observations": 2216,
+    "decisions": 1108,
+    "policy_top1_agree": 1090,
+    "danger_candidates": 35122,
+    "policy_fp32_fatal": 32,
+    "policy_int8_fatal": 33,
+    "policy_new_fatal": 1,
+    "policy_saved_fatal": 0
+  },
+  "worst": {
+    "hidden_max_abs": 0.0988551452755928,
+    "policy_logit_max_abs": 0.5895819664001465,
+    "danger_probability_max_abs": 0.059532493352890015
+  },
+  "policy_top1_agreement": 0.983754512635379,
+  "policy_top8_overlap": 0.9877030685920578,
+  "policy_kl_fp32_to_int8": 0.0004294927492161735,
+  "danger_brier": {
+    "fp32": 0.026700028371385295,
+    "int8": 0.026678644528253418
+  },
+  "root_observe_plus_score_ms": {
+    "fp32": {
+      "p50": 0.8872065,
+      "p95": 0.9934071999999997,
+      "p99": 1.10603559
+    },
+    "int8": {
+      "p50": 0.7262055,
+      "p95": 0.79378725,
+      "p99": 0.8529873699999998
+    }
+  },
+  "changes": [
+    {
+      "game": "kec2vj8n",
+      "side": 0,
+      "ply": 44,
+      "fp32_index": 2,
+      "int8_index": 15,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "18555eg9",
+      "side": 0,
+      "ply": 18,
+      "fp32_index": 11,
+      "int8_index": 27,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "18555eg9",
+      "side": 0,
+      "ply": 60,
+      "fp32_index": 28,
+      "int8_index": 9,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "ouadq3jg",
+      "side": 0,
+      "ply": 40,
+      "fp32_index": 9,
+      "int8_index": 6,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "ouadq3jg",
+      "side": 1,
+      "ply": 29,
+      "fp32_index": 32,
+      "int8_index": 24,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "ouadq3jg",
+      "side": 1,
+      "ply": 35,
+      "fp32_index": 4,
+      "int8_index": 16,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "u794llq9",
+      "side": 0,
+      "ply": 40,
+      "fp32_index": 38,
+      "int8_index": 33,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "u794llq9",
+      "side": 1,
+      "ply": 23,
+      "fp32_index": 0,
+      "int8_index": 5,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "i67u51z1",
+      "side": 1,
+      "ply": 3,
+      "fp32_index": 14,
+      "int8_index": 8,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "qh2jt5f3",
+      "side": 0,
+      "ply": 126,
+      "fp32_index": 25,
+      "int8_index": 29,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "qh2jt5f3",
+      "side": 1,
+      "ply": 3,
+      "fp32_index": 14,
+      "int8_index": 8,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "ul0vzkd7",
+      "side": 0,
+      "ply": 44,
+      "fp32_index": 7,
+      "int8_index": 17,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "ul0vzkd7",
+      "side": 1,
+      "ply": 35,
+      "fp32_index": 0,
+      "int8_index": 4,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "kjayczdg",
+      "side": 0,
+      "ply": 52,
+      "fp32_index": 0,
+      "int8_index": 12,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "kjayczdg",
+      "side": 1,
+      "ply": 3,
+      "fp32_index": 14,
+      "int8_index": 8,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "3uye9cpa",
+      "side": 1,
+      "ply": 31,
+      "fp32_index": 26,
+      "int8_index": 12,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "nhqo99ld",
+      "side": 1,
+      "ply": 51,
+      "fp32_index": 0,
+      "int8_index": 26,
+      "fp32_fatal": false,
+      "int8_fatal": false
+    },
+    {
+      "game": "ej29i7re",
+      "side": 1,
+      "ply": 69,
+      "fp32_index": 9,
+      "int8_index": 5,
+      "fp32_fatal": false,
+      "int8_fatal": true
+    }
+  ],
+  "limitations": [
+    "Partial INT8: unquantized operators remain FP32.",
+    "Policy-only argmax changes are not hybrid search decisions.",
+    "Shared-host timings with alternating order; no arena latency claim.",
+    "Quantization is lossy; numerical equality is not expected or asserted."
+  ]
+}

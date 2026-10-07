@@ -1,0 +1,142 @@
+{
+  "host": "Linux-6.17.0-35-generic-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu128",
+  "onnxruntime": "1.30.0",
+  "results": [
+    {
+      "model": {
+        "variant": "cnn",
+        "attention_blocks": 2,
+        "attention_heads": 4,
+        "latent_channels": 32
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "parameters": 1872394,
+      "trained": false,
+      "parity": {
+        "status": "passed",
+        "cases": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            37
+          ],
+          [
+            3,
+            96
+          ]
+        ],
+        "worst_absolute_error": 1.430511474609375e-06
+      },
+      "onnx": {
+        "observe": {
+          "bytes": 7263348,
+          "sha256": "4ef2bd7a723bf70e9c4c54f4be535fb4fcba729f672e30d580cb031ad8d1ff4e"
+        },
+        "score": {
+          "bytes": 244737,
+          "sha256": "652dc05fcaf401670bc3cbd9e12dca7226fe36e2c4a19823111290a0fbd5202a"
+        }
+      },
+      "observe_plus_score_96_candidates_ms": {
+        "p50": 0.8501375,
+        "p95": 1.05185645,
+        "p99": 1.3297030999999992
+      },
+      "timing_scope": "untrained random inputs, shared host CPU, one ORT thread; not an arena clock gate"
+    },
+    {
+      "model": {
+        "variant": "attention",
+        "attention_blocks": 2,
+        "attention_heads": 4,
+        "latent_channels": 32
+      },
+      "architecture": "astra-attn64x2h4-gru256-heads-v1",
+      "parameters": 1631826,
+      "trained": false,
+      "parity": {
+        "status": "passed",
+        "cases": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            37
+          ],
+          [
+            3,
+            96
+          ]
+        ],
+        "worst_absolute_error": 9.5367431640625e-07
+      },
+      "onnx": {
+        "observe": {
+          "bytes": 6459817,
+          "sha256": "5c7eebecf0720a3d2be49a425f1f72f87e0dceec89e7b2e8329671dad8ae1084"
+        },
+        "score": {
+          "bytes": 244737,
+          "sha256": "21ab9c255d0cc20b10ffe2fff4acd70f2e9f749c6b8b0fffdee5ceeb5454c3d5"
+        }
+      },
+      "observe_plus_score_96_candidates_ms": {
+        "p50": 0.7312375,
+        "p95": 0.9658197499999998,
+        "p99": 1.1286864899999995
+      },
+      "timing_scope": "untrained random inputs, shared host CPU, one ORT thread; not an arena clock gate"
+    },
+    {
+      "model": {
+        "variant": "compressed_attention",
+        "attention_blocks": 2,
+        "attention_heads": 4,
+        "latent_channels": 32
+      },
+      "architecture": "astra-attn64x2h4-residual-latent32x4x4-gru256-heads-v1",
+      "parameters": 730994,
+      "trained": false,
+      "parity": {
+        "status": "passed",
+        "cases": [
+          [
+            1,
+            1
+          ],
+          [
+            2,
+            37
+          ],
+          [
+            3,
+            96
+          ]
+        ],
+        "worst_absolute_error": 4.76837158203125e-07
+      },
+      "onnx": {
+        "observe": {
+          "bytes": 2861137,
+          "sha256": "e8adbcc6c54515c6c6ac43b186e17cb42a7c8f5da65660f0eb4dcdf51358ae95"
+        },
+        "score": {
+          "bytes": 244737,
+          "sha256": "ba37b9f86c405e72ebab09000ee5b56464381cb9fce40388769d2a637d165545"
+        }
+      },
+      "observe_plus_score_96_candidates_ms": {
+        "p50": 0.6098,
+        "p95": 0.6921358999999998,
+        "p99": 0.7557936599999995
+      },
+      "timing_scope": "untrained random inputs, shared host CPU, one ORT thread; not an arena clock gate"
+    }
+  ]
+}

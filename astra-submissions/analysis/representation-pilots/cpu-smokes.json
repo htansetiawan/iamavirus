@@ -1,0 +1,263 @@
+{
+  "attention": {
+    "status": {
+      "state": "complete",
+      "pid": 2,
+      "started_at": "2026-10-07T22:37:45.597237+00:00",
+      "phase": "supervised",
+      "variant": "attention",
+      "step": 3,
+      "target_steps": 3,
+      "elapsed_seconds": 0.737469645915553,
+      "completed_at": "2026-10-07T22:37:47.051665+00:00"
+    },
+    "identity": {
+      "phase": "supervised",
+      "model_config": {
+        "variant": "attention",
+        "attention_blocks": 2,
+        "attention_heads": 4,
+        "latent_channels": 32
+      },
+      "seed": 253,
+      "window": 8,
+      "batch": 2,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "manifest_sha256": "84ee446d494e9a54b1fe329f85fdaa3c9a431051c99f9ba8b03b321950603d38",
+      "shard_sha256": {
+        "train": "6fb4333ce9f22a0c2d8d9a754265931c1f19e3f6c73d590f6175255f35cf58e4",
+        "validation": "47ff6ae6e9476bf75e2f92d5a45f8603659d7529a6ecf21a301fab00121ce65b"
+      },
+      "train_games": 8,
+      "validation_games": 2,
+      "loss_weights": {
+        "policy": 1.0,
+        "belief": 1.0,
+        "danger": 1.0,
+        "value": 0.25
+      },
+      "player_weights": {
+        "default": 1.0,
+        "f394d843d970454f868c38c7f6963cc9": 4.0,
+        "knight-vision": 4.0,
+        "strongly-invisible": 3.0,
+        "db107815c3b14827a79ec9e3d12f4726": 3.0,
+        "8d775e234808489c815a4a9f6bbabfe4": 2.0,
+        "instructors": 2.0,
+        "a2c35173659545c99752376a70418438": 0.5
+      },
+      "mask_fraction": 0.4
+    },
+    "checkpoint_sha256": "2a9a60ba7756c9599059d6b70914215715d98d771fa1399c933e07b4a7cbac53",
+    "source_sha256": {
+      "astra-submissions/learning_experiments/__init__.py": "bd83efa0660d6325dd5a389be96dcbfb0583c568b365eff42d2c6ebda02630f2",
+      "astra-submissions/learning_experiments/evaluate.py": "a5c431e1df0b15a1d8e5705a171603df6e0d4bc4e37ba48cbc3d9819ceb51d93",
+      "astra-submissions/learning_experiments/models.py": "828a72f1a42483454f6cec0ed415407aad5e59da2921cc7140abe0416f570d66",
+      "astra-submissions/learning_experiments/profile_models.py": "84f37f345595260a0d9dbf106ab465663bab59f2ba469bf7e521aa4ec8bef6b9",
+      "astra-submissions/learning_experiments/run.py": "ec00e5d90ea81edd4187a06630f56b9f09d1efc82e130740fdf84bb7715fd012",
+      "astra-submissions/learning_experiments/ssl.py": "cd2a891f8a6c60d063e6b74ca72b024267b4bc346a3342924adcec6e1d6f085e",
+      "astra-submissions/learning_experiments/test_models.py": "8f3233964020c94c39ce117aafc7563ab1c025b561b04013ed41ddc1de67f252",
+      "astra-submissions/learning_experiments/test_ssl.py": "3b445e8d87d6f29dad7963aa030c1fca3b28a4d60bc7478a5f34a4a0a9ff0e6b",
+      "learning/__init__.py": "611d705dba1f1ed454590cd9406c1e42f3df122356c3e5b8afa19e7e421a4571",
+      "learning/_native.py": "af915a3247124654933c06b2d5e3e2717560df3a08a39f7ce65a0a4a4eace704",
+      "learning/action_codec.py": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+      "learning/api_client.py": "53420c369ec99fad4cac42eca20700d09adc328b3a70bb0f7aeab006b3c35b22",
+      "learning/book.py": "77f70515d8cbe0e6f5d926294b257ae6d9d734d2604d545bcc85afdbf6d709ff",
+      "learning/compare_archives.py": "015075e4ec4cb3d5ed5310cc6036efb12d4ba59a814b42a8a3519e6235c3a9af",
+      "learning/curate.py": "34b9053c691a2377a8891eecb211082b122bb63516b3bcbf92bc5b52591f16c0",
+      "learning/dataset.py": "8ee40cee5afbb978de21954b2f59deed9ecaf3599aee5d3b49b01e9b2f26b03f",
+      "learning/env.py": "23ef68b423364a8c2345d18419aaa988757211e5c967de46f6e11ff8807762da",
+      "learning/evaluate.py": "c5355f5a4d0bfecbcc5d97807a49b1f67e931417acc16a8515f098c9c9a1ee67",
+      "learning/export.py": "ddcb8c08112d0e01132f0d4ffcbf324f7842b2a3e55e31b321ad85f00ceff146",
+      "learning/features.py": "abbf3b0b5a344349d9f39f69f56901124bdf8960c21caf565382ebc979863077",
+      "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+      "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+      "learning/labels.py": "11f10cfdc1a4bc4e6b4823ef8502c192b83e1bfd7e168fe42e39ff4e4e1a6b92",
+      "learning/model.py": "78da59fb06a959920e108a4c0ff425bc8ed94ac8a5de4bc3d2fa766cc70a22ff",
+      "learning/opponent_model.py": "07448e0d6ec888545fd67e469a6c1bd92ed9fff06a8c02ecb5095cf2fca41497",
+      "learning/pretrain.py": "97ee5c455cbd3a690c56fb1e31a44a538ef8345ad35fb87d0169602ceac5cae6",
+      "learning/replay_bot.py": "801fe12709afbfa7fd6d516ec191be7669b97379edbca90ccba41aa447373a35",
+      "learning/rollouts.py": "44c844e2417d2534730c12d58cbdd5cd7d3a0937fc3536ecd82b1d3b69f92d41",
+      "learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+      "learning/train_ppo.py": "a5e72f7a06ebc908988d09fad8b459be49c4b810c513a65009ff665f5783d6cf"
+    },
+    "scope": "3-update CPU plumbing check only, not a quality comparison"
+  },
+  "ssl": {
+    "status": {
+      "state": "complete",
+      "pid": 2,
+      "started_at": "2026-10-07T22:37:43.994639+00:00",
+      "phase": "ssl",
+      "variant": "attention",
+      "step": 3,
+      "target_steps": 3,
+      "elapsed_seconds": 1.0741506959311664,
+      "completed_at": "2026-10-07T22:37:45.638423+00:00"
+    },
+    "identity": {
+      "phase": "ssl",
+      "model_config": {
+        "variant": "attention",
+        "attention_blocks": 2,
+        "attention_heads": 4,
+        "latent_channels": 32
+      },
+      "seed": 253,
+      "window": 8,
+      "batch": 2,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "manifest_sha256": "84ee446d494e9a54b1fe329f85fdaa3c9a431051c99f9ba8b03b321950603d38",
+      "shard_sha256": {
+        "train": "6fb4333ce9f22a0c2d8d9a754265931c1f19e3f6c73d590f6175255f35cf58e4",
+        "validation": "47ff6ae6e9476bf75e2f92d5a45f8603659d7529a6ecf21a301fab00121ce65b"
+      },
+      "train_games": 8,
+      "validation_games": 2,
+      "loss_weights": {
+        "policy": 1.0,
+        "belief": 1.0,
+        "danger": 1.0,
+        "value": 0.25
+      },
+      "player_weights": {
+        "default": 1.0,
+        "f394d843d970454f868c38c7f6963cc9": 4.0,
+        "knight-vision": 4.0,
+        "strongly-invisible": 3.0,
+        "db107815c3b14827a79ec9e3d12f4726": 3.0,
+        "8d775e234808489c815a4a9f6bbabfe4": 2.0,
+        "instructors": 2.0,
+        "a2c35173659545c99752376a70418438": 0.5
+      },
+      "mask_fraction": 0.4
+    },
+    "checkpoint_sha256": "c92e88ac7dc3937b71881a233cf56b274c1828fd041732ac79114220d70c5ddd",
+    "source_sha256": {
+      "astra-submissions/learning_experiments/__init__.py": "bd83efa0660d6325dd5a389be96dcbfb0583c568b365eff42d2c6ebda02630f2",
+      "astra-submissions/learning_experiments/evaluate.py": "a5c431e1df0b15a1d8e5705a171603df6e0d4bc4e37ba48cbc3d9819ceb51d93",
+      "astra-submissions/learning_experiments/models.py": "828a72f1a42483454f6cec0ed415407aad5e59da2921cc7140abe0416f570d66",
+      "astra-submissions/learning_experiments/profile_models.py": "84f37f345595260a0d9dbf106ab465663bab59f2ba469bf7e521aa4ec8bef6b9",
+      "astra-submissions/learning_experiments/run.py": "ec00e5d90ea81edd4187a06630f56b9f09d1efc82e130740fdf84bb7715fd012",
+      "astra-submissions/learning_experiments/ssl.py": "cd2a891f8a6c60d063e6b74ca72b024267b4bc346a3342924adcec6e1d6f085e",
+      "astra-submissions/learning_experiments/test_models.py": "8f3233964020c94c39ce117aafc7563ab1c025b561b04013ed41ddc1de67f252",
+      "astra-submissions/learning_experiments/test_ssl.py": "3b445e8d87d6f29dad7963aa030c1fca3b28a4d60bc7478a5f34a4a0a9ff0e6b",
+      "learning/__init__.py": "611d705dba1f1ed454590cd9406c1e42f3df122356c3e5b8afa19e7e421a4571",
+      "learning/_native.py": "af915a3247124654933c06b2d5e3e2717560df3a08a39f7ce65a0a4a4eace704",
+      "learning/action_codec.py": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+      "learning/api_client.py": "53420c369ec99fad4cac42eca20700d09adc328b3a70bb0f7aeab006b3c35b22",
+      "learning/book.py": "77f70515d8cbe0e6f5d926294b257ae6d9d734d2604d545bcc85afdbf6d709ff",
+      "learning/compare_archives.py": "015075e4ec4cb3d5ed5310cc6036efb12d4ba59a814b42a8a3519e6235c3a9af",
+      "learning/curate.py": "34b9053c691a2377a8891eecb211082b122bb63516b3bcbf92bc5b52591f16c0",
+      "learning/dataset.py": "8ee40cee5afbb978de21954b2f59deed9ecaf3599aee5d3b49b01e9b2f26b03f",
+      "learning/env.py": "23ef68b423364a8c2345d18419aaa988757211e5c967de46f6e11ff8807762da",
+      "learning/evaluate.py": "c5355f5a4d0bfecbcc5d97807a49b1f67e931417acc16a8515f098c9c9a1ee67",
+      "learning/export.py": "ddcb8c08112d0e01132f0d4ffcbf324f7842b2a3e55e31b321ad85f00ceff146",
+      "learning/features.py": "abbf3b0b5a344349d9f39f69f56901124bdf8960c21caf565382ebc979863077",
+      "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+      "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+      "learning/labels.py": "11f10cfdc1a4bc4e6b4823ef8502c192b83e1bfd7e168fe42e39ff4e4e1a6b92",
+      "learning/model.py": "78da59fb06a959920e108a4c0ff425bc8ed94ac8a5de4bc3d2fa766cc70a22ff",
+      "learning/opponent_model.py": "07448e0d6ec888545fd67e469a6c1bd92ed9fff06a8c02ecb5095cf2fca41497",
+      "learning/pretrain.py": "97ee5c455cbd3a690c56fb1e31a44a538ef8345ad35fb87d0169602ceac5cae6",
+      "learning/replay_bot.py": "801fe12709afbfa7fd6d516ec191be7669b97379edbca90ccba41aa447373a35",
+      "learning/rollouts.py": "44c844e2417d2534730c12d58cbdd5cd7d3a0937fc3536ecd82b1d3b69f92d41",
+      "learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+      "learning/train_ppo.py": "a5e72f7a06ebc908988d09fad8b459be49c4b810c513a65009ff665f5783d6cf"
+    },
+    "scope": "3-update CPU plumbing check only, not a quality comparison"
+  },
+  "ssl-transfer": {
+    "status": {
+      "state": "complete",
+      "pid": 2,
+      "started_at": "2026-10-07T22:44:13.184510+00:00",
+      "phase": "supervised",
+      "variant": "attention",
+      "step": 3,
+      "target_steps": 3,
+      "elapsed_seconds": 0.7094999190885574,
+      "completed_at": "2026-10-07T22:44:14.578083+00:00"
+    },
+    "identity": {
+      "phase": "supervised",
+      "model_config": {
+        "variant": "attention",
+        "attention_blocks": 2,
+        "attention_heads": 4,
+        "latent_channels": 32
+      },
+      "seed": 253,
+      "window": 8,
+      "batch": 2,
+      "learning_rate": 0.0003,
+      "weight_decay": 0.0001,
+      "grad_clip": 1.0,
+      "manifest_sha256": "84ee446d494e9a54b1fe329f85fdaa3c9a431051c99f9ba8b03b321950603d38",
+      "shard_sha256": {
+        "train": "6fb4333ce9f22a0c2d8d9a754265931c1f19e3f6c73d590f6175255f35cf58e4",
+        "validation": "47ff6ae6e9476bf75e2f92d5a45f8603659d7529a6ecf21a301fab00121ce65b"
+      },
+      "train_games": 8,
+      "validation_games": 2,
+      "loss_weights": {
+        "policy": 1.0,
+        "belief": 1.0,
+        "danger": 1.0,
+        "value": 0.25
+      },
+      "player_weights": {
+        "default": 1.0,
+        "f394d843d970454f868c38c7f6963cc9": 4.0,
+        "knight-vision": 4.0,
+        "strongly-invisible": 3.0,
+        "db107815c3b14827a79ec9e3d12f4726": 3.0,
+        "8d775e234808489c815a4a9f6bbabfe4": 2.0,
+        "instructors": 2.0,
+        "a2c35173659545c99752376a70418438": 0.5
+      },
+      "mask_fraction": 0.4
+    },
+    "checkpoint_sha256": "3a297867cdf638af3b95ba41ef81695427ef80cb8fcd3a29d5628a51daecd213",
+    "source_sha256": {
+      "astra-submissions/learning_experiments/__init__.py": "bd83efa0660d6325dd5a389be96dcbfb0583c568b365eff42d2c6ebda02630f2",
+      "astra-submissions/learning_experiments/evaluate.py": "a5c431e1df0b15a1d8e5705a171603df6e0d4bc4e37ba48cbc3d9819ceb51d93",
+      "astra-submissions/learning_experiments/models.py": "828a72f1a42483454f6cec0ed415407aad5e59da2921cc7140abe0416f570d66",
+      "astra-submissions/learning_experiments/profile_models.py": "84f37f345595260a0d9dbf106ab465663bab59f2ba469bf7e521aa4ec8bef6b9",
+      "astra-submissions/learning_experiments/quantize_audit.py": "2fced0ada05784ed002c0704458fd94e8a12bfb66d828136a163d27ea72769e9",
+      "astra-submissions/learning_experiments/run.py": "ec00e5d90ea81edd4187a06630f56b9f09d1efc82e130740fdf84bb7715fd012",
+      "astra-submissions/learning_experiments/ssl.py": "bc1d16330996f157b2c254e598966cbaf80c607557073369a1207cde917534b1",
+      "astra-submissions/learning_experiments/test_evaluate.py": "032e194933fc87c5a9bbd6551cc33d6176bc185bd1c54d2700122f5705aeeda7",
+      "astra-submissions/learning_experiments/test_models.py": "8f3233964020c94c39ce117aafc7563ab1c025b561b04013ed41ddc1de67f252",
+      "astra-submissions/learning_experiments/test_ssl.py": "3b445e8d87d6f29dad7963aa030c1fca3b28a4d60bc7478a5f34a4a0a9ff0e6b",
+      "learning/__init__.py": "611d705dba1f1ed454590cd9406c1e42f3df122356c3e5b8afa19e7e421a4571",
+      "learning/_native.py": "af915a3247124654933c06b2d5e3e2717560df3a08a39f7ce65a0a4a4eace704",
+      "learning/action_codec.py": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+      "learning/api_client.py": "53420c369ec99fad4cac42eca20700d09adc328b3a70bb0f7aeab006b3c35b22",
+      "learning/book.py": "77f70515d8cbe0e6f5d926294b257ae6d9d734d2604d545bcc85afdbf6d709ff",
+      "learning/compare_archives.py": "015075e4ec4cb3d5ed5310cc6036efb12d4ba59a814b42a8a3519e6235c3a9af",
+      "learning/curate.py": "34b9053c691a2377a8891eecb211082b122bb63516b3bcbf92bc5b52591f16c0",
+      "learning/dataset.py": "8ee40cee5afbb978de21954b2f59deed9ecaf3599aee5d3b49b01e9b2f26b03f",
+      "learning/env.py": "23ef68b423364a8c2345d18419aaa988757211e5c967de46f6e11ff8807762da",
+      "learning/evaluate.py": "c5355f5a4d0bfecbcc5d97807a49b1f67e931417acc16a8515f098c9c9a1ee67",
+      "learning/export.py": "ddcb8c08112d0e01132f0d4ffcbf324f7842b2a3e55e31b321ad85f00ceff146",
+      "learning/features.py": "abbf3b0b5a344349d9f39f69f56901124bdf8960c21caf565382ebc979863077",
+      "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+      "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+      "learning/labels.py": "11f10cfdc1a4bc4e6b4823ef8502c192b83e1bfd7e168fe42e39ff4e4e1a6b92",
+      "learning/model.py": "78da59fb06a959920e108a4c0ff425bc8ed94ac8a5de4bc3d2fa766cc70a22ff",
+      "learning/opponent_model.py": "07448e0d6ec888545fd67e469a6c1bd92ed9fff06a8c02ecb5095cf2fca41497",
+      "learning/pretrain.py": "97ee5c455cbd3a690c56fb1e31a44a538ef8345ad35fb87d0169602ceac5cae6",
+      "learning/replay_bot.py": "801fe12709afbfa7fd6d516ec191be7669b97379edbca90ccba41aa447373a35",
+      "learning/rollouts.py": "44c844e2417d2534730c12d58cbdd5cd7d3a0937fc3536ecd82b1d3b69f92d41",
+      "learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+      "learning/train_ppo.py": "a5e72f7a06ebc908988d09fad8b459be49c4b810c513a65009ff665f5783d6cf"
+    },
+    "scope": "3-update CPU plumbing check only, not a quality comparison"
+  },
+  "note": "SSL and SSL-transfer checks predate the observed-empty masking correction. They prove optimizer/checkpoint plumbing only; do not use their losses as evidence for the corrected SSL objective."
+}
