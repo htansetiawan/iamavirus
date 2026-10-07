@@ -1,0 +1,39 @@
+bitboard_test: 112219 checks, 0 failures
+position_test: 55940 checks, 0 failures
+observation_test: 31 checks, 0 failures
+evaluation_test: 44 checks, 0 failures
+search_test: 67 checks, 0 failures
+       1444 plies, truth in population 621, collapses 19, pieces correctly placed 77.5%, composition unknown in 9014
+belief_test: 424 checks, 0 failures
+regret_test: 29 checks, 0 failures
+ignoring malformed FOW_PARTICLES=not-a-number
+       seed 2026 chose g8e7 (d5 guarded in 37%, risk seen 672 cp)
+       seed 1 chose c6d4 (d5 guarded in 38%, risk seen 320 cp)
+       seed 2 chose c6d4 (d5 guarded in 29%, risk seen 250 cp)
+       seed 3 chose c6d4 (d5 guarded in 30%, risk seen 311 cp)
+       seed 4 chose c6d4 (d5 guarded in 46%, risk seen 389 cp)
+       seed 5 chose c6e7 (d5 guarded in 17%, risk seen 780 cp)
+       seed 6 chose g8e7 (d5 guarded in 22%, risk seen 567 cp)
+       seed 7 chose c6d4 (d5 guarded in 20%, risk seen 172 cp)
+       chose e8d7 (rejected 30 unsafe, king risk 156 permille)
+       chose d1c2 (rejected 23 of 25, risk 0 permille)
+       240 plies, worst budget overrun 0.001s
+       cap 6 seed 1 shortlist risk 291 minimum 291 replaced 1
+       cap 6 seed 2 shortlist risk 145 minimum 145 replaced 0
+       cap 6 seed 3 shortlist risk 129 minimum 129 replaced 0
+       cap 6 seed 4 shortlist risk 0 minimum 0 replaced 0
+       cap 12 seed 1 shortlist risk 291 minimum 291 replaced 1
+       cap 12 seed 2 shortlist risk 145 minimum 145 replaced 0
+       cap 12 seed 3 shortlist risk 129 minimum 129 replaced 0
+       cap 12 seed 4 shortlist risk 0 minimum 0 replaced 0
+engine_test: 575 checks, 0 failures
+neural_test: 145 checks, 0 failures
+  ep[0]      2911/2911 match
+  ep[1]      2981/2981 match
+  legal[0]   3061/3061 match
+  legal[1]   2981/2981 match
+  moves      6042/6042 match
+  perft3     40/40 match
+  visible[0] 6042/6042 match
+  visible[1] 6042/6042 match
+30100/30100 checks agree with referee.py  -- C++ rules conform exactly

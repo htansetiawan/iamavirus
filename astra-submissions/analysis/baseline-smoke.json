@@ -1,0 +1,21 @@
+{
+  "basis": "unmodified arena-v5 archive extraction",
+  "build": "g++ -O2 C++20, ONNX Runtime SDK 1.24.2",
+  "archive_files_hash_verified": 48,
+  "protocol": {
+    "exit_code": 0,
+    "stdout": [
+      "ready",
+      "move d2d4"
+    ],
+    "stderr": "model loaded in 0.0211575s checkpoint_sha256=cbda47a0ef03 training_step=3000 features=features-v1 actions=actions-v1\nseed=1 mode=hybrid\ns1 n=1 mode=hybrid depth=7 score=29 nodes=591874 legal=20 short=9 hyp=8 unsafe=0 skipped=59 p=0.696544 gv=19.2992 fog=32 budget=0.1 spent=0.101017 infer=0.000115864 clock=180 risk=0 nv=-0.00312923 cp=0.289206 cd=0.00610372 cands=d2d4:0.29/0.01/0.00,c2c4:0.22/0.01/0.00,g1f3:0.10/0.02/0.00,e2e3:0.09/0.01/0.00,e2e4:0.05/0.01/0.00 move=d2d4\n",
+    "opening_move_legal": true,
+    "onnx_loaded": true,
+    "hybrid_mode": true
+  },
+  "replay_attack_label_cross_checks": 3662,
+  "limitations": [
+    "One opening protocol smoke test, not a full match or strength evaluation.",
+    "No strategy modifications made."
+  ]
+}

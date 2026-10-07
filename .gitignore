@@ -1,0 +1,20 @@
+# Build output. The course compiles from source; a host binary must never be
+# committed or uploaded.
+bot
+*.o
+*.zip
+__pycache__/
+.venv/
+
+# Local learning artefacts: shared library, raw replays, datasets, checkpoints.
+build/
+data/
+checkpoints/
+releases/
+*.onnx
+.pytest_cache/
+model/
+
+# Submission archives are published here on purpose (package.sh output).
+!fable-submissions/*.zip
+checkpoints
