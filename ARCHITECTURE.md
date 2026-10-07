@@ -38,7 +38,7 @@ Pure function of what a bot receives: its colour, the ordered 64-character obser
 
 | planes | content |
 |---|---|
-| 0–13 | current observation, one-hot per square: own P N B R Q K, enemy P N B R Q K, unknown, visible empty |
+| 0–13 | current observation, one-hot per square: own P N B R Q K, enemy P N B R Q K, unknown, visible empty. **Known defect (features-v1, found by Astra 2026-10-07 22:58):** both unknown and visible-empty land on plane 12 in Python and in the C++ mirror alike, so plane 13 is unused; the two are still separable through plane 28 (age is 0 only on squares seen now). Fix = plane 13 for visible empty, feature version v2, retrain; not changed until the next retrain so the shipped models and the encoder stay matched |
 | 14–26 | last directly observed content of the square: 12 relative piece classes + empty |
 | 27 | ever directly observed |
 | 28 | age since direct observation, min(age, 100)/100; never seen = 1 |
