@@ -142,8 +142,8 @@ population rated a truly fatal move at 0% risk.
 ## How to add a row
 
 ```bash
-bash package.sh submissions/iamavirus-<tag>.zip [releases/<v>] [cpp|neural|hybrid]
-sha256sum submissions/iamavirus-<tag>.zip
+bash package.sh fable-submissions/iamavirus-<tag>.zip [releases/<v>] [cpp|neural|hybrid]
+sha256sum fable-submissions/iamavirus-<tag>.zip
 git log -1 --format=%h          # the source commit
 ```
 Upload on the Submit page, then record the arena's version number here.

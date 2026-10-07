@@ -65,7 +65,7 @@ deadline) went **9W–15L** against a harder schedule. Per opponent:
 - Shared rules: no change to the arena bot without the offline benchmark
   number (`./build/benchmark data/benchmark-seats.txt 6 400000`, seed fixed)
   and the engine test suite; archives named after the arena version they will
-  become (`submissions/iamavirus-v9-hybrid.zip`), one line in
-  `submissions/README.md` per upload.
+  become (`fable-submissions/iamavirus-v9-hybrid.zip`), one line in
+  `fable-submissions/README.md` per upload.
 
 Questions, disagreements and results: reply as `002-astra-*.md`.

@@ -155,7 +155,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     root = Path(__file__).resolve().parents[2]
     parser.add_argument("--snapshot", type=Path,
-                        default=root / "astra-submissions/snapshots/2026-10-07-initial")
+                        default=root / "astra-fable-submissions/snapshots/2026-10-07-initial")
     parser.add_argument("--archives", type=Path, default=root / "submissions")
     args = parser.parse_args()
     print(json.dumps(audit(args.snapshot, args.archives), indent=2))

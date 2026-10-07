@@ -288,7 +288,7 @@ entries **keyed by fog context** (v6 repair), en passant inferred across the
 Model failure of any kind falls back to `cpp` for the rest of the game.
 One recurrent update per real view; scoring only at the clock.
 
-**Measured.** 6.6 M nps; arena v6: see `submissions/README.md`. Offline replay
+**Measured.** 6.6 M nps; arena v6: see `fable-submissions/README.md`. Offline replay
 of arena loss `1sv22xki` at ply 40: before the fatal-cell repair one seed in
 four chose a 100%-risk move over a 33%-risk one; after it all four choose the
 safest move.
