@@ -20,6 +20,8 @@ Team id `a2c35173659545c99752376a70418438` (`IAmAVirus`). Public record:
 | 5 | 2026-10-07 14:44 | `iamavirus-v6-hybrid.zip` | `662a989aa56c` | `61d33f9` (tree; published in `e2dc3b2`) | **hybrid** | stage A release `v1` | [v6](../versions/v6-neural.md) | **active**, 0 games at upload |
 | 6 | 2026-10-07 14:46 | `iamavirus-v6-cpp.zip` | `6b6b1f338501` | `61d33f9` (tree; published in `e2dc3b2`) | cpp | — | [v6](../versions/v6-neural.md) | validated, inactive |
 | *(not yet uploaded)* | — | `iamavirus-v6.1-cpp.zip` | `ed79ce45b31e` | see `git log` (v6.1) | cpp | — | [v6](../versions/v6-neural.md) + two repairs below | built 15:30 UTC |
+| 9 (upload next) | — | `iamavirus-v9-hybrid.zip` | `3076b45fb01d` | `addfc98` | **hybrid** | stage A release `v1` | v5 behaviour (12 rows) + fatal-cell risk charge + safety rows + deadline made harmless (cells shrink, skipped cells get a one-ply verdict on their hypothesis) | built 17:05 UTC; clean-dir build + referee game OK, 0 cells skipped, max turn 4.001 s |
+| — | — | `iamavirus-v9-cpp.zip` | `7b8b4343dd79` | `addfc98` | cpp | — | same engine, no model | built 17:05 UTC |
 | 8 (assumed; confirm) | 2026-10-07 16:08 | `iamavirus-v6.1-hybrid.zip` | `0e4db2bf507b` | see `git log` (v6.1) | **hybrid** | stage A release `v1` | same | built 15:30 UTC |
 | 7 | 2026-10-07 14:47 | `iamavirus-cpp.zip` (committed upstream as "Add v5") | `eb994e3d89e4` | `f236ad7` (engine.cc identical) | cpp | — | [v5](../versions/v5-opponent-prior.md) + turn deadline | inactive; **confirm this is v7** |
 
@@ -92,6 +94,7 @@ include zero), so the pretrained graphs shipped.
 | 2026-10-07 14:47 | v7 uploaded: `iamavirus-cpp.zip`, the design-v5 engine from `f236ad7`, inactive |
 | 2026-10-07 ~15:00 | team rating 1453 over 302 games before any v5/v6 game |
 | 2026-10-07 15:05 | v7 (design-v5 engine): **2W–10L** vs the TA baselines, including an **illegal move** forfeit (`m6uovffl`: it sent `e8c8`, castling with a right the king had forfeited — the `Recover` rights-rebuild bug fixed in the v6 archives). Of its 10 king-capture losses, 9 were taken by a piece invisible to us at our last view, 5 of them king moves into the covered square: the failure family again. |
+| 2026-10-07 17:05 | v9 archives built (see rows). v8 ended 9W–15L; v5 re-activated at ~16:45 and immediately beat TA Baseline P twice (both colours). |
 | 2026-10-07 16:10 | v5 (hybrid) final record **22W–2D–6L** (score 0.77; opponents mostly baseline.py, Apricot Squad, TA Baseline A/S). Losses `wcfhi31w` and `mgm3sltv` share one shape: our king on h1 with a hidden bishop on b7 on the open long diagonal; the belief rated every move at ~10% risk, so the risk term could not separate the fatal move. v8 (v6.1-hybrid, assumed) uploaded and activated at 16:08. |
 | 2026-10-07 15:25 | v6 (cpp): 2W–6L (wins vs Apricot Squad ×2 incl. `rz1wn4kx`; losses vs TA Baseline S ×2, duck ×2, Instructors ×2). Analysis in "v6.1" below. v5 (hybrid) re-activated. |
 | 2026-10-07 15:05 | v5 (hybrid): 1W–1L vs TA Baseline P; the loss (`nn8dt0e9`, 108 plies) was `f7f6` exposing the king to an unseen piece on g2. v6 (cpp) was then made active. |
