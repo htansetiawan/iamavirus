@@ -331,6 +331,26 @@ in the stderr line), but it only orders and tie-breaks until a calibrator
 and a veto evaluation exist. Stage B needs a far longer run and the 200-pair
 evaluation before any mode other than `cpp` earns release.
 
+### 2026-10-07 19:55 UTC — balanced harness, deduction verdict, candidate for arena v11
+
+- **Harness fix.** `tools/benchmark_corpus.cc` sampled `ply % stride`, i.e. White's decisions only (Astra's review); it now samples `(ply/2) % stride`, every seat's own decisions, and takes `FOW_SEED`. Every percentage recorded before commit `fa61ad4` is a White-biased diagnostic.
+- **Both deduction arms from one binary** (634 real losing seats, stride 6, 400k nodes, seed 777, 5,322 decisions):
+
+| arm | immediate king losses | true attacker held at fatal ply | hidden piece mass | left ≥3 en prise (engine / real player) | survives the real fatal ply |
+|---|---|---|---|---|---|
+| deductions off (= exposure build) | 326 (6.13%) | 0.191 | 0.477 | 8.21% / 8.04% | 368 (58%) |
+| deductions on | 344 (6.46%) | 0.228 | 0.532 | 7.70% / 8.04% | 341 (54%) |
+| deductions on, `FOW_PIECE_RISK=2.0` | 342 (6.43%) | 0.228 | 0.532 | 7.20% / 8.04% | 341 (54%) |
+
+- **The survival drop is churn.** Fatal-ply-only runs (stride 1000) at seeds 777/778/779: off 368 / 345 / 343, on 341 / 365 / 347 (means 352 vs 351). Between arms the engine's move differs in 136 of the 634 fatal positions (80 flip to a loss, 56 to a survival at seed 777): near-tied decisions, no systematic effect. **Verdict: deductions ship on.** They buy belief honesty and fewer pieces left en prise at no measured cost. Material-risk weight stays 1.0 (2.0 cuts en prise further but is untested at real clocks).
+- **Option.** `EngineOptions::visibility_deductions` (default on); `FOW_VISIBILITY_DEDUCTIONS=0` disables (same name and semantics as Astra's copy). `DeduceFromObservation` keeps only the pawn rules; the slider-ray case cannot occur in a valid observation.
+- **qyzsbfdc trace** (duck, we were Black, lost in 52): the honest king-loss risk of 19...Kxc6 is zero (the light bishop is pinned by history to d1/c2/b3/e2/g4/h5) but the build priced it 0.00–0.63 across seeds, recovery scatter onto d5/e4; recaptured 1/4. Belief lane (Astra proposes a bounded history enumerator). The fatal 26...Kb8 is avoided 4/4; 17...Nc6 onto the open file is repeated 3/4, a two-ply threat no one-ply term sees.
+- **v10 loss sweep** (`data/reports/v10-loss-sweep.txt`): 19 losses, last three decisions × 4 seeds; the current build avoids the fatal move 49/76 times; the 0/4 games are lost endgames (down a queen or more).
+- **Arena context** (19:40 UTC): IAmAVirus 1525 Elo (v10 31W–1D–26L); TA Baseline A 1528, TA Baseline S 1708, duck 1909, Instructors 1915, Knight Vision 2065, Greek Gift 2165. v10's records vs TA-A (5–5), TA-S (1–5) and duck (1–9) match those gaps: overall strength, not one hole.
+- **Two-ply hidden-threat term** (`Engine::ExpectedHiddenThreat`, `FOW_HIDDEN_THREAT`, default 0 = off, stride `FOW_HIDDEN_THREAT_STRIDE`=16): after our move the opponent gets one quiet move to a square our post-move view does not show, and the best net capture that leaves them, beyond what they can already take, is charged. Unit test: after 1.e4 e5, 2.Qh5 ≫ 2.Nf3. Full-corpus arms at 0.5 and 1.0 running (`data/reports/bench-balanced-off-ht*.txt`).
+- **Candidate for the next upload:** `fable-submissions/iamavirus-v11-candidate-hybrid.zip` (sha `68a89006f6c2`): v10 + population-wide exposure term + pawn visibility deductions (on) + clock scaling by difficulty + underpromotion rule + per-particle move memory; hybrid, stage A release v1. Behaviourally identical to the former `v12-candidate-hybrid` (its extra slider deduction never fired), so that archive's paired lanes vs archived v5 are this candidate's evidence: 4–4 after 8 games at real clocks, 8 more in flight; a 2-pair smoke lane of the new bytes is running; clean-directory build verified.
+- **Process lesson.** `pgrep -f` / `pkill -f` with a pattern that appears in the calling shell's own command line match the caller: four queued lanes waited on themselves for an hour and one shell killed itself. Use `pgrep -x name` or flag files.
+
 ## GPU machine checklist
 
 - Clone this repository. Download the course starter kit separately and create its

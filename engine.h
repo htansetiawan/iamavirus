@@ -118,6 +118,21 @@ struct EngineOptions {
   // Particles sampled for the exposure term (stride over the population),
   // since it costs a move generation per particle and candidate.
   int exposure_stride = 4;
+  // Enforce in the belief what the visibility rule proves about unseen
+  // squares (pawn deductions). On the 634 real losing seats, balanced
+  // sampling, one binary: the population gets more honest (true attacker held
+  // at the fatal ply 0.191 -> 0.228) and less material is left en prise
+  // (8.2% -> 7.7%). Survival of the real fatal ply looked worse at one seed
+  // (368 -> 341) and better at the next (345 -> 365); three seeds average
+  // 352 off vs 351 on, so that was churn on near-tied decisions (HANDOFF.md).
+  bool visibility_deductions = true;
+  // Two plies deep: weight on the material a hidden quiet move could win on
+  // the opponent's next turn (ExpectedHiddenThreat). A rook sliding behind
+  // the fog onto the open file our knight sits on is invisible to the one-ply
+  // terms, and to the search, which lets us answer a move we would never
+  // observe. Off until measured.
+  double hidden_threat_weight = 0.0;
+  int hidden_threat_stride = 16;
   // Clock policy, in seconds. The per-move target is scaled by how hard the
   // decision looks once the king risks are known: a turn where the safest
   // move still carries real risk, or the fog is deep, gets up to
@@ -210,6 +225,10 @@ class Engine {
   double TimeBudget(double remaining_seconds) const;
 
   inline const BeliefState& belief() const { return belief_; }
+  // Expected best net capture the opponent can *prepare* with one quiet move
+  // to a square our post-move view would not show, beyond what they can
+  // already take; averaged over a stride of the population.
+  double ExpectedHiddenThreat(Move move, int en_passant) const;
 
  private:
   // Our own castling rights, read from the believed state where MakeMove has

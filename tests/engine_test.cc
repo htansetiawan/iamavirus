@@ -156,6 +156,57 @@ void TimeBudgetIsAlwaysAffordable() {
   FOW_EXPECT_TRUE(engine.TimeBudget(20.0) < engine.TimeBudget(180.0) + 1e-9);
 }
 
+// Two plies deep. After 1. e4 e5 the sortie 2. Qh5 can be hit by ...Nf6 from a
+// square we would not see, so leaving her there hands the opponent about a
+// queen on their next turn; 2. Nf3 hands them at most a pawn that way (...d5
+// or ...Nf6 against e4). The one-ply exposure term is blind to both, since
+// nothing attacks either square yet.
+void HiddenThreatPricesTheUnseenAttackOnTheQueen() {
+  EngineOptions options;
+  options.particle_count = 256;
+  options.transposition_megabytes = 8;
+  options.time_reserve = 0.0;
+  options.hidden_threat_stride = 1;
+  Engine engine(kWhite, 180.0, 2.0, options, 7);
+  Position truth;
+  PositionFromFen(kStartFen, &truth);
+  const char* line[] = {"e2e4", "e7e5"};
+  bool we_just_moved = false;
+  for (const char* uci : line) {
+    engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+    we_just_moved = false;
+    MoveList legal;
+    truth.GenerateMoves(&legal);
+    Move move = kNullMove;
+    for (const Move candidate : legal) {
+      if (MoveToUci(candidate) == uci) move = candidate;
+    }
+    FOW_EXPECT_TRUE(move != kNullMove);
+    if (truth.side_to_move() == kWhite) {
+      engine.NotifyMovePlayed(move);
+      we_just_moved = true;
+    }
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+  }
+  engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+  MoveList legal;
+  truth.GenerateMoves(&legal);
+  Move sortie = kNullMove;
+  Move develop = kNullMove;
+  for (const Move candidate : legal) {
+    if (MoveToUci(candidate) == "d1h5") sortie = candidate;
+    if (MoveToUci(candidate) == "g1f3") develop = candidate;
+  }
+  FOW_EXPECT_TRUE(sortie != kNullMove && develop != kNullMove);
+  const double sortie_threat = engine.ExpectedHiddenThreat(sortie, -1);
+  const double develop_threat = engine.ExpectedHiddenThreat(develop, -1);
+  std::printf("       hidden threat: Qh5 %.0f, Nf3 %.0f\n", sortie_threat,
+              develop_threat);
+  FOW_EXPECT_TRUE(sortie_threat > 500.0);
+  FOW_EXPECT_TRUE(develop_threat < 250.0);
+}
+
 // A position with exactly one legal move must be handled without any search.
 void ReturnsTheOnlyMoveWhenForced() {
   EngineOptions options = FastOptions();
@@ -248,6 +299,7 @@ void DoesNotRepeatTheQueenBlunderFromGame92of99z7() {
     // Node-limited, as upstream made it, so the verdict does not depend on
     // machine load or on which standard library's random sequence is drawn.
     EngineOptions options;
+    options.visibility_deductions = true;  // the contract below is the deduction build's
     options.particle_count = 1024;
     options.transposition_megabytes = 16;
     options.time_reserve = 0.0;
@@ -348,6 +400,7 @@ void DoesNotTakeTheGreekGiftFromGameQp6mfacx() {
   const int kSeeds = 6;
   for (uint64_t seed = 1; seed <= kSeeds; ++seed) {
     EngineOptions options;
+    options.visibility_deductions = true;  // the contract below is the deduction build's
     options.particle_count = 1024;
     options.transposition_megabytes = 16;
     options.time_reserve = 0.0;
@@ -742,5 +795,6 @@ int main() {
   FOW_RUN_TEST(fow::ShortlistKeepsTheSafestMovesThePopulationKnows);
   FOW_RUN_TEST(fow::HybridUnionKeepsTheSafestRows);
   FOW_RUN_TEST(fow::PromotesToAQueenUnlessSaferOtherwise);
+  FOW_RUN_TEST(fow::HiddenThreatPricesTheUnseenAttackOnTheQueen);
   return fow::testing::Summarize("engine_test");
 }

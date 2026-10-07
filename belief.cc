@@ -245,7 +245,8 @@ void BeliefState::Condition(const Observation& view,
                             BeliefUpdateReport* report) {
   ObservedPieces enemy = Summarize(view, our_side_ ^ 1);
   {
-    const Deductions deduced = DeduceFromObservation(view, our_side_);
+    const Deductions deduced =
+        deductions_ ? DeduceFromObservation(view, our_side_) : Deductions{};
     enemy.must_hold_enemy = deduced.must_hold_enemy;
     enemy.must_be_empty = deduced.must_be_empty;
   }
@@ -285,7 +286,8 @@ void BeliefState::PredictAndCondition(const Observation& view,
   const int enemy_side = our_side_ ^ 1;
   ObservedPieces enemy = Summarize(view, enemy_side);
   {
-    const Deductions deduced = DeduceFromObservation(view, our_side_);
+    const Deductions deduced =
+        deductions_ ? DeduceFromObservation(view, our_side_) : Deductions{};
     enemy.must_hold_enemy = deduced.must_hold_enemy;
     enemy.must_be_empty = deduced.must_be_empty;
   }
@@ -424,7 +426,8 @@ void BeliefState::Recover(const Observation& view,
         0, enemy_census_[type] - PopCount(visible.pieces(type, enemy_side)));
   }
 
-  const Deductions deduced = DeduceFromObservation(view, our_side_);
+  const Deductions deduced =
+        deductions_ ? DeduceFromObservation(view, our_side_) : Deductions{};
   std::vector<int> hidden;
   std::vector<int> required;  // unseen squares that must hold an enemy piece
   for (int square = 0; square < kNumSquares; ++square) {

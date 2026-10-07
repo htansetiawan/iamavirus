@@ -148,13 +148,13 @@ bool LosesKing(const Position& truth, Move move, int side) {
 }
 
 void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
-             Tally* tally, bool verbose) {
+             Tally* tally, bool verbose, uint64_t seed) {
   Position truth;
   if (!PositionFromFen(
           "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth)) {
     return;
   }
-  Engine engine(seat.side, 180.0, 2.0, options, 777);
+  Engine engine(seat.side, 180.0, 2.0, options, seed);
   ++tally->seats;
 
   // The last ply played by our seat is the one that ended the game when we lost.
@@ -246,6 +246,10 @@ int main(int argc, char** argv) {
   const int stride = argc > 2 ? std::atoi(argv[2]) : 6;
   const uint64_t nodes = argc > 3 ? std::strtoull(argv[3], nullptr, 10) : 1000000;
   const bool verbose = argc > 4;
+  // FOW_SEED varies the engine's RNG so two runs of one arm show how much of
+  // a difference between arms is churn on near-tied decisions.
+  uint64_t seed = 777;
+  if (const char* text = std::getenv("FOW_SEED")) seed = std::strtoull(text, nullptr, 10);
 
   InitializeAttackTables();
   InitializeZobrist();
@@ -270,11 +274,11 @@ int main(int argc, char** argv) {
     std::string uci;
     while (stream >> uci) seat.moves.push_back(uci);
     if (seat.moves.size() < 4) continue;
-    RunSeat(seat, options, stride, &tally, verbose);
+    RunSeat(seat, options, stride, &tally, verbose, seed);
   }
 
-  std::printf("\ncorpus: %s   stride %d   %llu nodes/decision\n", argv[1],
-              stride, static_cast<unsigned long long>(nodes));
+  std::printf("\ncorpus: %s   stride %d   %llu nodes/decision   seed %llu\n", argv[1],
+              stride, static_cast<unsigned long long>(nodes), static_cast<unsigned long long>(seed));
   std::printf("  seats replayed            : %d\n", tally.seats);
   std::printf("  decisions evaluated       : %d\n", tally.decisions);
   std::printf("  immediate king losses     : %d (%.2f%%)\n", tally.blunders,

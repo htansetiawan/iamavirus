@@ -1,6 +1,7 @@
 // Copyright 2026. Fog of War chess engine.
 
 #include "engine.h"
+#include "observation.h"
 
 #include <algorithm>
 #include <cmath>
@@ -169,6 +170,63 @@ double Engine::ExpectedExposure(Move move, int en_passant) const {
   return counted > 0 ? total / counted : 0.0;
 }
 
+// Two plies deep. qyzsbfdc: our knight went to c6 on an open file, the rook
+// came to c1 unseen, and took it. No one-ply term sees that, and the search
+// does not either: in a hypothesis it answers Rc1 with a knight move we would
+// never get to make, because we never see the rook arrive. So for each
+// hypothesis, after our move, the opponent is given one quiet move to a square
+// our post-move view does not show, and the best net capture that leaves them
+// is charged, beyond what they can already take (which the exposure term
+// prices). King moves are skipped; they rarely threaten material.
+double Engine::ExpectedHiddenThreat(Move move, int en_passant) const {
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return 0.0;
+  const int enemy_side = our_side_ ^ 1;
+  const int stride = std::max(1, options_.hidden_threat_stride);
+  double total = 0.0;
+  int counted = 0;
+  for (std::size_t i = 0; i < population.size(); i += static_cast<std::size_t>(stride)) {
+    Position hypothesis = population[i];
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    if (IsCastle(move)) {
+      MoveList available;
+      hypothesis.GenerateMoves(&available);
+      if (!ListContains(available, move)) continue;
+    }
+    UndoState undo;
+    hypothesis.MakeMove(move, &undo);
+    ++counted;
+    const int king = hypothesis.KingSquare(our_side_);
+    if (king >= 0 && !hypothesis.IsAttacked(king, enemy_side)) {
+      const int already = BestNetCapture(&hypothesis, our_side_);
+      const Bitboard seen = VisibleSquares(hypothesis, our_side_);
+      MoveList replies;
+      hypothesis.GenerateMoves(&replies);
+      int best = already;
+      for (const Move reply : replies) {
+        const int to = MoveTo(reply);
+        if (hypothesis.piece_at(to) != kNoPiece) continue;  // a capture: one-ply business
+        if (MoveFlagOf(reply) == kFlagEnPassant) continue;
+        if (hypothesis.piece_at(MoveFrom(reply)) == kKing) continue;
+        if (seen & (Bitboard{1} << to)) continue;  // we would see it arrive
+        UndoState quiet;
+        hypothesis.MakeMove(reply, &quiet);
+        // The threat is what they could take if we did nothing: hand them the
+        // move again, then restore the turn before unmaking.
+        hypothesis.set_side_to_move(enemy_side);
+        const int threat = BestNetCapture(&hypothesis, our_side_);
+        hypothesis.set_side_to_move(our_side_);
+        hypothesis.UnmakeMove(reply, quiet);
+        if (threat > best) best = threat;
+      }
+      total += best - already;
+    }
+    hypothesis.UnmakeMove(move, undo);
+  }
+  return counted > 0 ? total / counted : 0.0;
+}
+
 namespace {
 
 // Reads an override, leaving the default in place when the variable is absent or
@@ -226,6 +284,9 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_PIECE_RISK", &options.piece_risk_weight);
   Override("FOW_EXPOSURE_MODE", &options.exposure_mode);
   Override("FOW_EXPOSURE_STRIDE", &options.exposure_stride);
+  OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.visibility_deductions);
+  Override("FOW_HIDDEN_THREAT", &options.hidden_threat_weight);
+  Override("FOW_HIDDEN_THREAT_STRIDE", &options.hidden_threat_stride);
   Override("FOW_TIME_CAP", &options.time_cap);
   Override("FOW_HARD_TURN", &options.hard_turn_multiplier);
   Override("FOW_EASY_TURN", &options.easy_turn_multiplier);
@@ -346,6 +407,7 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       belief_(our_side, options.particle_count, seed ^ 0x9E3779B97F4A7C15ULL,
               options.opponent_prior),
       searcher_(&table_) {
+  belief_.set_visibility_deductions(options_.visibility_deductions);
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);
   searcher_.set_options(options.search);
@@ -740,6 +802,12 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                    (options_.exposure_mode == 1
                         ? ExpectedExposure(ranked[row].move, en_passant)
                         : ExpectedMaterialRisk(ranked[row].move, en_passant));
+    }
+  }
+  if (options_.hidden_threat_weight > 0.0) {
+    for (int row = 0; row < shortlist; ++row) {
+      risk[row] += options_.hidden_threat_weight *
+                   ExpectedHiddenThreat(ranked[row].move, en_passant);
     }
   }
   for (int row = 0; row < shortlist; ++row) {

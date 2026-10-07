@@ -77,6 +77,10 @@ class BeliefState {
   void ApplyOurMove(Move move);
 
   inline int our_side() const { return our_side_; }
+  // Whether Condition/Recover enforce what the visibility rule proves about
+  // unseen squares (observation.h, DeduceFromObservation). Off by default:
+  // see EngineOptions::visibility_deductions.
+  inline void set_visibility_deductions(bool on) { deductions_ = on; }
   inline int particle_count() const { return static_cast<int>(particles_.size()); }
   inline const std::vector<Position>& particles() const { return particles_; }
 
@@ -159,6 +163,7 @@ class BeliefState {
   void Recover(const Observation& view, BeliefUpdateReport* report);
 
   int our_side_;
+  bool deductions_ = false;
   int target_count_;
   int opponent_prior_;
   std::mt19937_64 rng_;
