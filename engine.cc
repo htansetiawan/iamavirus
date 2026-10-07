@@ -179,12 +179,13 @@ double Engine::ExpectedExposure(Move move, int en_passant) const {
 // our post-move view does not show, and the best net capture that leaves them
 // is charged, beyond what they can already take (which the exposure term
 // prices). King moves are skipped; they rarely threaten material.
-double Engine::ExpectedHiddenThreat(Move move, int en_passant) const {
+Engine::HiddenThreats Engine::ExpectedHiddenThreats(Move move, int en_passant) const {
   const std::vector<Position>& population = belief_.particles();
-  if (population.empty()) return 0.0;
+  if (population.empty()) return HiddenThreats{};
   const int enemy_side = our_side_ ^ 1;
   const int stride = std::max(1, options_.hidden_threat_stride);
   double total = 0.0;
+  int king_hits = 0;
   int counted = 0;
   for (std::size_t i = 0; i < population.size(); i += static_cast<std::size_t>(stride)) {
     Position hypothesis = population[i];
@@ -205,14 +206,20 @@ double Engine::ExpectedHiddenThreat(Move move, int en_passant) const {
       MoveList replies;
       hypothesis.GenerateMoves(&replies);
       int best = already;
+      bool king_hit = false;
       for (const Move reply : replies) {
         const int to = MoveTo(reply);
         if (hypothesis.piece_at(to) != kNoPiece) continue;  // a capture: one-ply business
         if (MoveFlagOf(reply) == kFlagEnPassant) continue;
         if (hypothesis.piece_at(MoveFrom(reply)) == kKing) continue;
-        if (seen & (Bitboard{1} << to)) continue;  // we would see it arrive
+        if (seen & SquareBB(to)) continue;  // we would see it arrive
         UndoState quiet;
         hypothesis.MakeMove(reply, &quiet);
+        // An attacker on our king from a square we cannot see: next turn we
+        // would not know to move away.
+        if (!king_hit && (hypothesis.AttackersTo(king, enemy_side) & ~seen) != 0) {
+          king_hit = true;
+        }
         // The threat is what they could take if we did nothing: hand them the
         // move again, then restore the turn before unmaking.
         hypothesis.set_side_to_move(enemy_side);
@@ -222,10 +229,16 @@ double Engine::ExpectedHiddenThreat(Move move, int en_passant) const {
         if (threat > best) best = threat;
       }
       total += best - already;
+      if (king_hit) ++king_hits;
     }
     hypothesis.UnmakeMove(move, undo);
   }
-  return counted > 0 ? total / counted : 0.0;
+  HiddenThreats result;
+  if (counted > 0) {
+    result.material = total / counted;
+    result.king = static_cast<double>(king_hits) / counted;
+  }
+  return result;
 }
 
 // Vision. Nothing else in the engine rewards seeing more squares or being
@@ -261,6 +274,92 @@ double Engine::ExpectedVision(Move move, int en_passant) const {
     score -= options_.vision_piece * static_cast<double>(PopCount(theirs & our_pieces));
     if (king >= 0 && (theirs & SquareBB(king))) score -= options_.vision_king;
     total += score;
+    hypothesis.UnmakeMove(move, undo);
+  }
+  return counted > 0 ? total / counted : 0.0;
+}
+
+// Unseen attack surface of the moved piece: the squares from which a piece
+// we cannot see could be attacking it right now. Particle-independent by
+// design, because the losses it targets are the ones where the population
+// did not hold the attacker.
+double Engine::ExpectedHiddenSurface(Move move, int en_passant) const {
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return 0.0;
+  const int enemy_side = our_side_ ^ 1;
+  const int stride = std::max(1, options_.surface_stride);
+  const int cap = std::max(1, options_.surface_ray_cap);
+  static constexpr int kOrthogonal[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+  static constexpr int kDiagonal[4][2] = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
+  static constexpr int kKnightJumps[8][2] = {{1, 2}, {2, 1}, {-1, 2}, {-2, 1},
+                                             {1, -2}, {2, -1}, {-1, -2}, {-2, -1}};
+  double total = 0.0;
+  int counted = 0;
+  for (std::size_t i = 0; i < population.size(); i += static_cast<std::size_t>(stride)) {
+    Position hypothesis = population[i];
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    if (IsCastle(move)) {
+      MoveList available;
+      hypothesis.GenerateMoves(&available);
+      if (!ListContains(available, move)) continue;
+    }
+    UndoState undo;
+    hypothesis.MakeMove(move, &undo);
+    ++counted;
+    const int to = MoveTo(move);
+    const int piece = hypothesis.piece_at(to);
+    if (piece == kNoPiece || piece == kKing) {
+      hypothesis.UnmakeMove(move, undo);
+      continue;
+    }
+    const Bitboard seen = VisibleSquares(hypothesis, our_side_);
+    const Bitboard occupied = hypothesis.pieces_of(our_side_) | hypothesis.pieces_of(enemy_side);
+    const bool rook_like = (hypothesis.pieces(kRook, enemy_side) | hypothesis.pieces(kQueen, enemy_side)) != 0;
+    const bool bishop_like = (hypothesis.pieces(kBishop, enemy_side) | hypothesis.pieces(kQueen, enemy_side)) != 0;
+    const bool knights = hypothesis.pieces(kKnight, enemy_side) != 0;
+    const bool pawns = hypothesis.pieces(kPawn, enemy_side) != 0;
+    const int file = to & 7;
+    const int rank = to >> 3;
+    double surface = 0.0;
+    auto walk = [&](const int (*dirs)[2], bool enabled) {
+      if (!enabled) return;
+      for (int d = 0; d < 4; ++d) {
+        int f = file + dirs[d][0];
+        int r = rank + dirs[d][1];
+        int unseen = 0;
+        while (f >= 0 && f < 8 && r >= 0 && r < 8 && unseen < cap) {
+          const int square = r * 8 + f;
+          if (occupied & SquareBB(square)) break;      // the hypothesis has a blocker
+          if (!(seen & SquareBB(square))) ++unseen;    // unseen and empty: a slider could be there
+          f += dirs[d][0];
+          r += dirs[d][1];
+        }
+        surface += unseen;
+      }
+    };
+    walk(kOrthogonal, rook_like);
+    walk(kDiagonal, bishop_like);
+    if (knights) {
+      for (const auto& jump : kKnightJumps) {
+        const int f = file + jump[0];
+        const int r = rank + jump[1];
+        if (f < 0 || f >= 8 || r < 0 || r >= 8) continue;
+        const int square = r * 8 + f;
+        if (!(occupied & SquareBB(square)) && !(seen & SquareBB(square))) surface += 1.0;
+      }
+    }
+    if (pawns) {
+      const int forward = (enemy_side == kWhite) ? -1 : 1;  // where their pawns attack from
+      for (const int df : {-1, 1}) {
+        const int f = file + df;
+        const int r = rank + forward;
+        if (f < 0 || f >= 8 || r < 0 || r >= 8) continue;
+        const int square = r * 8 + f;
+        if (!(occupied & SquareBB(square)) && !(seen & SquareBB(square))) surface += 0.5;
+      }
+    }
+    total += surface * static_cast<double>(kPieceValue[piece]) / static_cast<double>(kPieceValue[kQueen]);
     hypothesis.UnmakeMove(move, undo);
   }
   return counted > 0 ? total / counted : 0.0;
@@ -326,6 +425,12 @@ EngineOptions EngineOptionsFromEnvironment() {
   OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.visibility_deductions);
   Override("FOW_HIDDEN_THREAT", &options.hidden_threat_weight);
   Override("FOW_HIDDEN_THREAT_STRIDE", &options.hidden_threat_stride);
+  Override("FOW_HIDDEN_KING_THREAT", &options.hidden_king_threat_weight);
+  Override("FOW_SURFACE", &options.surface_charge);
+  Override("FOW_SURFACE_RAY_CAP", &options.surface_ray_cap);
+  Override("FOW_SURFACE_STRIDE", &options.surface_stride);
+  Override("FOW_REPETITION_PENALTY", &options.repetition_penalty);
+  Override("FOW_REPETITION_MARGIN", &options.repetition_losing_margin);
   Override("FOW_CELL_THREADS", &options.cell_threads);
   Override("FOW_VISION", &options.vision_weight);
   Override("FOW_VISION_SQUARE", &options.vision_square);
@@ -483,7 +588,10 @@ void Engine::Observe(const Observation& view, bool reflects_our_own_move) {
   ++views_seen_;
 }
 
-void Engine::NotifyMovePlayed(Move move) { belief_.ApplyOurMove(move); }
+void Engine::NotifyMovePlayed(Move move) {
+  history_.emplace_back(latest_view_.squares(), move);
+  belief_.ApplyOurMove(move);
+}
 
 Bitboard Engine::OurCastlingRights() const {
   // Position::MakeMove already clears a right when the king or rook moves, so
@@ -855,10 +963,38 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                         : ExpectedMaterialRisk(ranked[row].move, en_passant));
     }
   }
-  if (options_.hidden_threat_weight > 0.0) {
+  if (options_.hidden_threat_weight > 0.0 || options_.hidden_king_threat_weight > 0.0) {
     for (int row = 0; row < shortlist; ++row) {
-      risk[row] += options_.hidden_threat_weight *
-                   ExpectedHiddenThreat(ranked[row].move, en_passant);
+      const HiddenThreats threats = ExpectedHiddenThreats(ranked[row].move, en_passant);
+      risk[row] += options_.hidden_threat_weight * threats.material +
+                   options_.hidden_king_threat_weight * threats.king *
+                       options_.king_risk_price;
+    }
+  }
+  // Repetition: the moves we already played from this same view are charged,
+  // unless the shortlist search says we are losing and a draw is welcome.
+  if (options_.repetition_penalty > 0.0 &&
+      trace->score >= -options_.repetition_losing_margin) {
+    int seen_before = 0;
+    for (const auto& entry : history_) {
+      if (entry.first == view.squares()) ++seen_before;
+    }
+    if (seen_before > 0) {
+      for (int row = 0; row < shortlist; ++row) {
+        for (const auto& entry : history_) {
+          if (entry.first == view.squares() && entry.second == ranked[row].move) {
+            risk[row] += options_.repetition_penalty * seen_before;
+            ++trace->repetition_rows;
+            break;
+          }
+        }
+      }
+    }
+  }
+  if (options_.surface_charge > 0.0) {
+    for (int row = 0; row < shortlist; ++row) {
+      risk[row] += options_.surface_charge *
+                   ExpectedHiddenSurface(ranked[row].move, en_passant);
     }
   }
   if (options_.vision_weight > 0.0) {

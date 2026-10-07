@@ -28,6 +28,7 @@
 #include <cstdint>
 #include <random>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include "belief.h"
@@ -137,6 +138,32 @@ struct EngineOptions {
   // one-ply en prise and fatal-ply survival unchanged, at no measurable time
   // cost at stride 16.
   double hidden_threat_weight = 1.0;
+  // The king version of the same two-ply blindness (tr0gwrvf: our king went
+  // to g4 beside a queen last seen on e3; she moved to e4 unseen and the next
+  // move left the king en prise): the share of hypotheses in which one quiet
+  // enemy move to a square we would not see puts an unseen attacker on our
+  // king, charged at this weight times the king price. Off until measured.
+  double hidden_king_threat_weight = 0.0;
+  // Repetition. The referee calls threefold and the engine had no notion of
+  // it (eucmjl12: a knight for two pawns up, we shuffled to a draw). When the
+  // current view has been seen before at one of our decisions, the moves we
+  // played from it are charged this many centipawns per earlier occurrence,
+  // unless the shortlist search already says we are losing by more than
+  // `repetition_losing_margin` (then a draw is welcome).
+  // Unseen attack surface of the moved piece, scaled by its value. In 55 of
+  // v10's 69 arena games the queen was lost for less, 48 times to a capturer
+  // we could not see and 44 times by moving her onto the square; the
+  // particle terms only see that attacker when the population holds it
+  // there. This charges, per square, every unseen empty square along a ray
+  // from the destination that an enemy slider of the matching type could
+  // stand on (the hypothesis says empty, the view says unseen), plus unseen
+  // knight and pawn-attack squares, when the enemy still has such pieces.
+  // Centipawns per square for a queen; other pieces in proportion to value.
+  double surface_charge = 0.0;
+  int surface_ray_cap = 3;
+  int surface_stride = 4;
+  double repetition_penalty = 120.0;
+  double repetition_losing_margin = 100.0;
   int hidden_threat_stride = 16;
   // Matrix cells on more than one thread. The arena gives two cores and the
   // search is single-threaded, so one core idles through the cell phase; the
@@ -216,6 +243,7 @@ struct DecisionTrace {
   double chosen_danger = 0.0;
   double budget_multiplier = 1.0;  // hard/easy turn scaling applied this turn
   double cells_spent = 0.0;        // seconds in the matrix cells
+  int repetition_rows = 0;         // shortlist rows charged for repeating
   int cell_threads_used = 1;
 };
 
@@ -254,13 +282,26 @@ class Engine {
   double TimeBudget(double remaining_seconds) const;
 
   inline const BeliefState& belief() const { return belief_; }
-  // Expected best net capture the opponent can *prepare* with one quiet move
-  // to a square our post-move view would not show, beyond what they can
-  // already take; averaged over a stride of the population.
-  double ExpectedHiddenThreat(Move move, int en_passant) const;
+  // Two plies deep, over a stride of the population: `material` is the best
+  // net capture the opponent can *prepare* with one quiet move to a square
+  // our post-move view would not show, beyond what they can already take;
+  // `king` is the share of hypotheses in which such a move puts an unseen
+  // attacker on our king.
+  struct HiddenThreats {
+    double material = 0.0;
+    double king = 0.0;
+  };
+  HiddenThreats ExpectedHiddenThreats(Move move, int en_passant) const;
+  double ExpectedHiddenThreat(Move move, int en_passant) const {
+    return ExpectedHiddenThreats(move, en_passant).material;
+  }
   // Expected vision balance after `move` (see EngineOptions::vision_weight):
   // positive when we see more and they see less of us.
   double ExpectedVision(Move move, int en_passant) const;
+  // Unseen attack surface of the moved piece after `move`, in queen-weighted
+  // squares, averaged over a stride of the population (EngineOptions::
+  // surface_charge).
+  double ExpectedHiddenSurface(Move move, int en_passant) const;
 
  private:
   // Our own castling rights, read from the believed state where MakeMove has
@@ -302,6 +343,9 @@ class Engine {
   // identical strings and never found anything. Measured: 30 legal moves where
   // the referee had 31.
   Observation latest_view_;
+  // (view at our decision, move played) for every move we have made, for
+  // the repetition charge.
+  std::vector<std::pair<std::string, Move>> history_;
   Observation before_latest_view_;
   int views_seen_ = 0;
 };

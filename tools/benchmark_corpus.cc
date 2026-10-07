@@ -79,6 +79,13 @@ struct Tally {
   long vision_real = 0;
   long seen_pieces_engine = 0;
   long seen_pieces_real = 0;
+  // After the move, the opponent has a quiet move to a square the mover does
+  // not see that puts an unseen attacker on the mover's king (true board).
+  // Our queen capturable for a net loss of >= 5 points after the move (true board).
+  int queen_en_prise = 0;
+  int real_queen_en_prise = 0;
+  int king_threatened = 0;
+  int real_king_threatened = 0;
   // Belief calibration: over hidden squares holding an enemy piece on the
   // true board, the share of particles that hold that piece there (averaged
   // per decision); and, at the recorded fatal plies, the share of particles
@@ -192,6 +199,58 @@ std::pair<int, int> VisionOf(const Position& truth, Move move, int side) {
   return {PopCount(ours), PopCount(theirs & after.pieces_of(side))};
 }
 
+// The king version of HiddenThreatOf: can the opponent, with one quiet move
+// to a square the mover's post-move view does not show, put an attacker the
+// mover cannot see on the mover's king?
+bool HiddenKingThreatOf(const Position& truth, Move move, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(move, &undo);
+  const int king = after.KingSquare(side);
+  if (king < 0 || after.IsAttacked(king, side ^ 1)) return false;
+  const Bitboard seen = VisibleSquares(after, side);
+  MoveList replies;
+  after.GenerateMoves(&replies);
+  for (const Move reply : replies) {
+    const int to = MoveTo(reply);
+    if (after.piece_at(to) != kNoPiece) continue;
+    if (MoveFlagOf(reply) == kFlagEnPassant) continue;
+    if (after.piece_at(MoveFrom(reply)) == kKing) continue;
+    if (seen & SquareBB(to)) continue;
+    UndoState quiet;
+    after.MakeMove(reply, &quiet);
+    const bool hit = (after.AttackersTo(king, side ^ 1) & ~seen) != 0;
+    after.UnmakeMove(reply, quiet);
+    if (hit) return true;
+  }
+  return false;
+}
+
+// Is the mover's queen capturable for a net loss of at least five points after
+// `move`, on the true board?
+bool QueenEnPrise(const Position& truth, Move move, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(move, &undo);
+  if (after.PreviousMoverIsLost()) return false;
+  Bitboard queens = after.pieces(kQueen, side);
+  while (queens) {
+    const int square = PopLsb(&queens);
+    const Bitboard attackers = after.AttackersTo(square, side ^ 1);
+    if (attackers == 0) continue;
+    int cheapest = kPieceValue[kQueen] + 1;
+    Bitboard scan = attackers;
+    while (scan) {
+      const int value = kPieceValue[after.piece_at(PopLsb(&scan))];
+      if (value < cheapest) cheapest = value;
+    }
+    const bool defended = after.AttackersTo(square, side) != 0;
+    const int net = kPieceValue[kQueen] - (defended ? cheapest : 0);
+    if (net >= 500) return true;
+  }
+  return false;
+}
+
 Move FindMove(const Position& position, const std::string& uci) {
   MoveList legal;
   position.GenerateMoves(&legal);
@@ -290,6 +349,10 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
             tally->vision_real += vr.first;
             tally->seen_pieces_real += vr.second;
           }
+          if (QueenEnPrise(truth, choice, seat.side)) ++tally->queen_en_prise;
+          if (QueenEnPrise(truth, actual, seat.side)) ++tally->real_queen_en_prise;
+          if (HiddenKingThreatOf(truth, choice, seat.side)) ++tally->king_threatened;
+          if (HiddenKingThreatOf(truth, actual, seat.side)) ++tally->real_king_threatened;
           if (HiddenThreatOf(truth, choice, seat.side) >= 3) {
             ++tally->threatened;
             ++tally->side_threatened[seat.side];
@@ -390,6 +453,12 @@ int main(int argc, char** argv) {
   std::printf("  ...the engine survives    : %d (%.0f%%)\n", tally.fatal_saved,
               tally.fatal_positions
                   ? 100.0 * tally.fatal_saved / tally.fatal_positions : 0.0);
+  std::printf("  queen left en prise (net>=5): engine %d (%.2f%%), real player %d (%.2f%%)\n",
+              tally.queen_en_prise, tally.decisions ? 100.0 * tally.queen_en_prise / tally.decisions : 0.0,
+              tally.real_queen_en_prise, tally.decisions ? 100.0 * tally.real_queen_en_prise / tally.decisions : 0.0);
+  std::printf("  left a 2-ply hidden king threat: engine %d (%.2f%%), real player %d (%.2f%%)\n",
+              tally.king_threatened, tally.decisions ? 100.0 * tally.king_threatened / tally.decisions : 0.0,
+              tally.real_king_threatened, tally.decisions ? 100.0 * tally.real_king_threatened / tally.decisions : 0.0);
   std::printf("  vision after the move      : engine sees %.1f squares, %.2f of its pieces seen; real player %.1f squares, %.2f seen\n",
               tally.decisions ? static_cast<double>(tally.vision_engine) / tally.decisions : 0.0,
               tally.decisions ? static_cast<double>(tally.seen_pieces_engine) / tally.decisions : 0.0,

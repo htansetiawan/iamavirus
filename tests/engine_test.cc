@@ -267,6 +267,47 @@ void VisionPrefersTheOpenDiagonal() {
   FOW_EXPECT_TRUE(bishop_vision > pawn_vision + 8.0);
 }
 
+// Repetition: after 1. Nf3 Nf6 2. Ng1 Ng8 3. Nf3 Nf6 4. Ng1 Ng8 the start
+// view comes round for the third time; the knight move we played from it
+// twice must now be charged and not chosen.
+void AvoidsRepeatingWhenNotLosing() {
+  EngineOptions options;
+  options.particle_count = 128;
+  options.transposition_megabytes = 8;
+  options.time_reserve = 0.0;
+  options.node_budget = 40000;
+  Engine engine(kWhite, 180.0, 2.0, options, 5);
+  Position truth;
+  PositionFromFen(kStartFen, &truth);
+  const char* line[] = {"g1f3", "g8f6", "f3g1", "f6g8", "g1f3", "g8f6", "f3g1", "f6g8"};
+  bool we_just_moved = false;
+  for (const char* uci : line) {
+    engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+    we_just_moved = false;
+    MoveList legal;
+    truth.GenerateMoves(&legal);
+    Move move = kNullMove;
+    for (const Move candidate : legal) {
+      if (MoveToUci(candidate) == uci) move = candidate;
+    }
+    FOW_EXPECT_TRUE(move != kNullMove);
+    if (truth.side_to_move() == kWhite) {
+      engine.NotifyMovePlayed(move);
+      we_just_moved = true;
+    }
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+  }
+  const Observation view(RenderObservation(truth, kWhite));
+  engine.Observe(view, we_just_moved);
+  DecisionTrace trace;
+  const Move chosen = engine.ChooseMove(view, 10.0, &trace);
+  std::printf("       repetition: chose %s, rows charged %d\n", MoveToUci(chosen).c_str(),
+              trace.repetition_rows);
+  FOW_EXPECT_TRUE(chosen != kNullMove);
+  FOW_EXPECT_TRUE(MoveToUci(chosen) != "g1f3");
+}
+
 // A position with exactly one legal move must be handled without any search.
 void ReturnsTheOnlyMoveWhenForced() {
   EngineOptions options = FastOptions();
@@ -858,5 +899,6 @@ int main() {
   FOW_RUN_TEST(fow::HiddenThreatPricesTheUnseenAttackOnTheQueen);
   FOW_RUN_TEST(fow::CellThreadsPlayLegalMoves);
   FOW_RUN_TEST(fow::VisionPrefersTheOpenDiagonal);
+  FOW_RUN_TEST(fow::AvoidsRepeatingWhenNotLosing);
   return fow::testing::Summarize("engine_test");
 }
