@@ -89,6 +89,11 @@ bash package.sh /tmp/iamavirus.zip releases/v1      # bundles model/ into the ZI
 .venv/bin/python -m learning.evaluate --candidate releases/v1 --suite runtime
 ```
 
+Storage: the root disk is small, so large local artefacts live on the external
+drive and are symlinked into the repository: `checkpoints -> /media/henrytan/seagate/iamavirus/checkpoints`,
+and `data/` moves there the same way between runs (`rsync -a --remove-source-files data/ <drive>/data/ && ln -s`).
+Both are git-ignored either way.
+
 Artifacts:
 
 | path | content |
