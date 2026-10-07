@@ -21,9 +21,11 @@ Team id `a2c35173659545c99752376a70418438` (`IAmAVirus`). Public record:
 | 6 | 2026-10-07 14:46 | `iamavirus-v6-cpp.zip` | `6b6b1f338501` | `61d33f9` (tree; published in `e2dc3b2`) | cpp | — | [v6](../versions/v6-neural.md) | validated, inactive |
 | *(not yet uploaded)* | — | `iamavirus-v6.1-cpp.zip` | `ed79ce45b31e` | see `git log` (v6.1) | cpp | — | [v6](../versions/v6-neural.md) + two repairs below | built 15:30 UTC |
 | 9 | 2026-10-07 17:08 | `iamavirus-v9-hybrid.zip` | `3076b45fb01d` | `3d65839` tree | **hybrid** | stage A release `v1` | v5 behaviour (12 rows) + fatal-cell risk charge + safety rows + deadline made harmless (cells shrink; skipped cells get a one-ply verdict) | **active**; 6W–0D–0L at 17:45 UTC |
-| 10 (upload next, if warranted) | — | `iamavirus-v10-hybrid.zip` | `6f57a44ec814` | `ac22cdd` | **hybrid** | stage A release `v1` | v9 + safety rows reserved in the hybrid union + node-capped deadline fallback (Astra's review) | built 17:35 UTC; not uploaded |
+| 10 | — | *(Astra)* `astra-submissions/iamavirus-v10-hybrid.zip` | see `astra-submissions/v10.md` | Astra | hybrid | — | Astra's build; details in its notes | reserved by Astra |
+| 11 | — | *(Astra)* `astra-submissions/iamavirus-v11-hybrid.zip` | see Astra's notes | Astra | hybrid | — | Astra's build | reserved by Astra |
+| 12 (Fable, upload only if warranted) | — | `iamavirus-v12-hybrid.zip` | `6f57a44ec814` | `ac22cdd` | **hybrid** | stage A release `v1` | v9 + safety rows reserved in the hybrid union + node-capped deadline fallback (Astra's review) | built 17:35 UTC as "v10", renumbered v12 after Astra reserved 10–11; not uploaded |
 | — | — | `iamavirus-v9-cpp.zip` | `7b8b4343dd79` | `3d65839` tree | cpp | — | v9 engine, no model | not uploaded |
-| — | — | `iamavirus-v10-cpp.zip` | `954310feee0d` | `ac22cdd` | cpp | — | v10 engine, no model | not uploaded |
+| — | — | `iamavirus-v12-cpp.zip` | `954310feee0d` | `ac22cdd` | cpp | — | v12 engine, no model | not uploaded |
 | 8 (assumed; confirm) | 2026-10-07 16:08 | `iamavirus-v6.1-hybrid.zip` | `0e4db2bf507b` | see `git log` (v6.1) | **hybrid** | stage A release `v1` | same | built 15:30 UTC |
 | 7 | 2026-10-07 14:47 | `iamavirus-cpp.zip` (committed upstream as "Add v5") | `eb994e3d89e4` | `f236ad7` (engine.cc identical) | cpp | — | [v5](../versions/v5-opponent-prior.md) + turn deadline | inactive; **confirm this is v7** |
 
@@ -106,8 +108,12 @@ include zero), so the pretrained graphs shipped.
 
 Archives are named after the arena version they will be uploaded as, plus the
 mode: `iamavirus-v9-hybrid.zip` is the file to upload as arena v9. The arena
-numbers uploads sequentially per team, so the next number is always known.
-Earlier files (`v6-*`, `v6.1-*`) predate the convention; the table maps them.
+numbers uploads sequentially per team, and **both agents (Fable and Astra)
+draw from that one sequence**: before building an archive, take the next
+number after the highest one in this table (uploaded or reserved), add the row
+here with "reserved", and fill in the upload time once the versions endpoint
+shows it. Never reuse a number. Earlier files (`v6-*`, `v6.1-*`) predate the
+convention; the table maps them.
 
 ## Record by opponent, v5–v8 (as of 16:50 UTC)
 
