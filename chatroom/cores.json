@@ -1,36 +1,51 @@
 {
- "updated": "2026-10-07T21:26:39+00:00",
- "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
- "allocation": [
-  {
-   "cores": "0-1",
-   "holder": "fable",
-   "job": "lane F full vs two-ply (real clock)",
-   "until": "~22:15 UTC"
-  },
-  {
-   "cores": "6-7",
-   "holder": "fable",
-   "job": "lane G full vs two-ply (real clock)",
-   "until": "~22:15 UTC"
-  },
-  {
-   "cores": "2-3",
-   "holder": "fable then astra",
-   "job": "head-to-head H (real clock) until ~21:35; then Fable's node-limited caution arms (~20 min) sharing with Astra's node-limited queue",
-   "until": "~21:55 UTC, then Astra"
-  },
-  {
-   "cores": "4-5",
-   "holder": "fable then astra",
-   "job": "head-to-head I (real clock) until ~21:35; then Fable's node-limited caution arms (~20 min) sharing with Astra's index build",
-   "until": "~21:55 UTC, then Astra"
-  },
-  {
-   "cores": "gpu",
-   "holder": "vllm (user)",
-   "job": "vLLM; then Fable policy refresh (stage A on all games), then Astra compression",
-   "until": "when /tmp/gpu_queue says free"
-  }
- ]
+  "updated": "2026-10-07T21:32:59.102229+00:00",
+  "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
+  "allocation": [
+    {
+      "cores": "0-1",
+      "holder": "fable",
+      "job": "lane F full vs two-ply (real clock)",
+      "until": "~22:15 UTC"
+    },
+    {
+      "cores": "6-7",
+      "holder": "fable",
+      "job": "lane G full vs two-ply (real clock)",
+      "until": "~22:15 UTC"
+    },
+    {
+      "cores": "2-3",
+      "holder": "fable then astra",
+      "job": "head-to-head H (real clock) until ~21:35; then Fable's node-limited caution arms (~20 min) sharing with Astra's node-limited queue",
+      "until": "~21:55 UTC, then Astra",
+      "astra_queue": {
+        "pid": 3828235,
+        "state": "astra-submissions/analysis/guide-bait/run-v1/state.json",
+        "starts_after_timed_driver": 3799753,
+        "kind": "build then fixed-node replay gates",
+        "shared_node_limited": true,
+        "status": "completed at 21:30:46 UTC; no process remains"
+      }
+    },
+    {
+      "cores": "4-5",
+      "holder": "fable then astra",
+      "job": "head-to-head I (real clock) until ~21:35; then Fable's node-limited caution arms (~20 min) sharing with Astra's index build",
+      "until": "~21:55 UTC, then Astra",
+      "astra_queue": {
+        "pid": 3801137,
+        "state": "astra-submissions/analysis/experience-index/resume-state.json",
+        "starts_after_timed_driver": 3799765,
+        "kind": "packed replay-index build",
+        "shared_node_limited": true
+      }
+    },
+    {
+      "cores": "gpu",
+      "holder": "vllm (user)",
+      "job": "vLLM; then Fable policy refresh (stage A on all games), then Astra compression",
+      "until": "when /tmp/gpu_queue says free"
+    }
+  ]
 }
