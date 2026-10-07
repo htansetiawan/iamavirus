@@ -312,6 +312,41 @@ void RecoversWhenEveryHypothesisIsContradicted() {
   FOW_EXPECT_TRUE(AllParticlesAgree(belief, Observation(impossible)));
 }
 
+// A king that has left its home square and come back has no castling right,
+// and a population rebuilt after a collapse must not hand it one. This once
+// produced an illegal e1g1 in a simulator game.
+void RecoveryKeepsLostCastlingRightsLost() {
+  BeliefState belief(kWhite, 64, 5);
+  Position truth = StartPosition();
+  belief.Observe(Observation(RenderObservation(truth, kWhite)), false);
+  // 1. e3 ... 2. Ke2 ... 3. Ke1: the king returns home with no rights left.
+  const char* line[] = {"e2e3", "a7a6", "e1e2", "a6a5", "e2e1", "a5a4"};
+  bool ours = true;
+  for (const char* uci : line) {
+    MoveList legal;
+    truth.GenerateMoves(&legal);
+    Move move = kNullMove;
+    for (const Move candidate : legal) {
+      if (MoveToUci(candidate) == uci) move = candidate;
+    }
+    FOW_EXPECT_TRUE(move != kNullMove);
+    if (ours) belief.ApplyOurMove(move);
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+    belief.Observe(Observation(RenderObservation(truth, kWhite)), ours);
+    ours = !ours;
+  }
+  FOW_EXPECT_EQ(belief.Representative().castling_rights() & 0xFFULL, Bitboard{0});
+  // Now contradict every hypothesis so the population is rebuilt.
+  std::string impossible = RenderObservation(truth, kWhite);
+  impossible[MakeSquare(3, 3)] = 'q';
+  const BeliefUpdateReport report = belief.Observe(Observation(impossible), false);
+  FOW_EXPECT_TRUE(report.collapsed);
+  for (const Position& particle : belief.particles()) {
+    FOW_EXPECT_EQ(particle.castling_rights() & 0xFFULL, Bitboard{0});
+  }
+}
+
 void RepresentativeIsOneOfTheParticles() {
   const Position truth = StartPosition();
   BeliefState belief(kWhite, 48, 11);
@@ -362,6 +397,7 @@ int main() {
   fow::InitializeAttackTables();
   fow::InitializeZobrist();
   FOW_RUN_TEST(fow::BeliefStartsCertain);
+  FOW_RUN_TEST(fow::RecoveryKeepsLostCastlingRightsLost);
   FOW_RUN_TEST(fow::RepresentativeIsOneOfTheParticles);
   FOW_RUN_TEST(fow::SampleReturnsDistinctHypothesesIncludingTheRepresentative);
   FOW_RUN_TEST(fow::FogContextReflectsTheRemainingEnemyArmy);

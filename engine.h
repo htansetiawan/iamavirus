@@ -37,7 +37,37 @@
 
 namespace fow {
 
+// How a move is chosen once the legal list and the belief are in hand.
+//   cpp     the search and matrix game alone (the reviewed baseline)
+//   neural  a sample from the trained legal policy; no search
+//   hybrid  neural ordering and danger estimates feeding the repaired search
+enum class EngineMode : int { kCpp = 0, kNeural = 1, kHybrid = 2 };
+
+const char* EngineModeName(EngineMode mode);
+
+// What the neural adapter knows about the legal moves this turn. Aligned by
+// move, not by index, because the engine derives its own legal list. Particle
+// risk and neural danger are estimates kept separately; neither is a
+// certificate and they are never blended into one number.
+struct NeuralAdvice {
+  bool available = false;
+  std::vector<Move> moves;
+  std::vector<double> policy;   // probabilities over `moves`, sum to one
+  std::vector<double> danger;   // sigmoid probabilities of immediate king loss
+  double value = 0.0;           // the recurrent value head, for the log only
+};
+
 struct EngineOptions {
+  EngineMode mode = EngineMode::kCpp;
+  // Hybrid candidate budget: the union of these three sets, deduplicated, is
+  // what the matrix game considers.
+  int hybrid_policy_top = 8;
+  int hybrid_search_top = 6;
+  int hybrid_risk_top = 8;
+  // Rows the matrix game can afford; the union is trimmed to this in the
+  // order search, policy, lowest risk.
+  int hybrid_max_rows = 12;
+  double neural_temperature = 1.0;
   int particle_count = 2048;
   // Moves carried from the shortlist into the matrix game.
   int shortlist_size = 6;
@@ -106,6 +136,13 @@ struct DecisionTrace {
   int unseen_squares = 0;
   bool collapsed = false;
   double pieces_located = 0.0;
+  // Which procedure actually decided, and compact per-candidate estimates for
+  // the log: "uci:policy/danger/particle" for the leading candidates.
+  EngineMode mode_used = EngineMode::kCpp;
+  std::string candidates;
+  double neural_value = 0.0;
+  double chosen_policy = 0.0;
+  double chosen_danger = 0.0;
 };
 
 // Options with any overrides from the environment applied.
@@ -132,8 +169,10 @@ class Engine {
 
   // Chooses a move given the remaining clock. Returns kNullMove when we have no
   // legal move, which under the course rules means the game is already lost.
+  // `advice` carries the neural policy and danger estimates for this turn, or
+  // null; without it every mode reduces to `cpp`.
   Move ChooseMove(const Observation& view, double remaining_seconds,
-                  DecisionTrace* trace);
+                  DecisionTrace* trace, const NeuralAdvice* advice = nullptr);
 
   // Records the move actually played, so the belief follows it.
   void NotifyMovePlayed(Move move);
@@ -159,6 +198,10 @@ class Engine {
   std::vector<double> KingLossProbabilities(const MoveList& moves,
                                             int en_passant) const;
 
+  // A sample from the neural policy restricted to `legal`.
+  Move SampleNeural(const MoveList& legal, const NeuralAdvice& advice,
+                    DecisionTrace* trace);
+
   int our_side_;
   double increment_;
   EngineOptions options_;
@@ -166,10 +209,15 @@ class Engine {
   BeliefState belief_;
   TranspositionTable table_;
   Searcher searcher_;
-  // The previous observation, needed to infer en passant: it is the one piece of
-  // state a single observation cannot carry.
-  Observation previous_view_;
-  bool have_previous_ = false;
+  // The two most recent observations. En passant is inferred from the pair
+  // bracketing the opponent's move: the view after our own move and the view
+  // after theirs. An earlier version overwrote the previous view with the
+  // current one on every observation, so the inference always compared two
+  // identical strings and never found anything. Measured: 30 legal moves where
+  // the referee had 31.
+  Observation latest_view_;
+  Observation before_latest_view_;
+  int views_seen_ = 0;
 };
 
 }  // namespace fow

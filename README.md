@@ -20,10 +20,14 @@ not.
 ## Quick start
 
 ```bash
-bash build.sh     # compiles ./bot with g++ (C++20, no dependencies)
+bash build.sh     # compiles ./bot with g++ (C++20); picks up ONNX Runtime from /opt/onnxruntime or $ORT_HOME
 bash test.sh      # runs every unit test
-bash package.sh   # builds the submission archive
+bash package.sh   # builds the submission archive; `bash package.sh out.zip releases/v1` bundles a model
 ```
+
+The bot plays in one of three modes, chosen by `FOW_MODE` (`cpp`, the default;
+`neural`; `hybrid`) with a release directory in `FOW_MODEL_DIR`. The learning
+pipeline that produces releases lives in [learning/](learning/README.md).
 
 To play it locally, extract the course starter kit and point its referee at the
 binary:
@@ -73,9 +77,13 @@ Verified with both Clang 17 (libc++) and GCC 16 (libstdc++).
 | `belief.*` | particle filter over the opponent's position |
 | `regret.*` | regret matching for the root matrix game |
 | `engine.*` | the decision procedure |
-| `bot.cc` | the arena protocol |
+| `bot.cc` | the arena protocol; feeds the neural adapter and selects the mode |
+| `neural_observation.*` | observation-history features, in parity with `learning/features.py` |
+| `neural_inference.*` | ONNX Runtime adapter for the two exported graphs |
+| `rules_capi.cc` | C interface over the rules and the engine for `learning/rules.py` |
+| `learning/` | replay collection, datasets, the recurrent model, pretraining, PPO, export, evaluation |
 | `tests/` | unit suites and the differential test against `referee.py` |
-| `tools/` | conformance harness and benchmark |
+| `tools/` | conformance harness, feature-parity harness and benchmark |
 
 `referee.py` and the starter kit are course material under GPL-2.0 and are
 deliberately **not** vendored here; this repository is Apache-2.0 and depends on

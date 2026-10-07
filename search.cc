@@ -38,6 +38,23 @@ void Searcher::SetContext(int our_side, bool enemy_king_confirmed,
   win_magnitude_ =
       enemy_king_confirmed ? kWinConfirmed : options_.speculative_win_score;
   fog_ = fog;
+  // Mix every field the evaluation reads into one key. splitmix64 finalisers
+  // keep nearby contexts from colliding on low bits.
+  auto mix = [](uint64_t x) {
+    x += 0x9E3779B97F4A7C15ULL;
+    x = (x ^ (x >> 30)) * 0xBF58476D1CE4E5B9ULL;
+    x = (x ^ (x >> 27)) * 0x94D049BB133111EBULL;
+    return x ^ (x >> 31);
+  };
+  uint64_t key = mix(fog.unseen);
+  key = mix(key ^ static_cast<uint64_t>(fog.side));
+  key = mix(key ^ static_cast<uint64_t>(fog.rook_like));
+  key = mix(key ^ static_cast<uint64_t>(fog.bishop_like));
+  key = mix(key ^ static_cast<uint64_t>(fog.knights));
+  key = mix(key ^ static_cast<uint64_t>(fog.pawns));
+  key = mix(key ^ static_cast<uint64_t>(win_magnitude_));
+  key = mix(key ^ static_cast<uint64_t>(our_side_));
+  context_key_ = key;
   killers_ = {};
   for (auto& by_from : history_) {
     for (auto& by_to : by_from) by_to.fill(0);
@@ -143,21 +160,41 @@ int Searcher::Quiescence(Position* position, int alpha, int beta, int ply) {
   if (TerminalScore(*position, ply, &decided)) return decided;
   if (ply >= kMaxPly) return Evaluate(*position, position->side_to_move(), fog_);
 
-  const int standing = Evaluate(*position, position->side_to_move(), fog_);
-  if (standing >= beta) return standing;
-  if (standing > alpha) alpha = standing;
+  // A threatened king has no stand-pat option. Standing still would let the
+  // opponent capture it, which the terminal rule scores as a loss, so the only
+  // honest value of this node is the best of the moves that actually answer
+  // the threat. Treating "do nothing" as available here was measured to report
+  // +978 at the horizon for a position worth +28998 one ply deeper, and the
+  // error is symmetric: it also under-weighted threats against our own king.
+  const int side = position->side_to_move();
+  const int king = position->KingSquare(side);
+  const bool threatened = king < 0 || position->IsAttacked(king, side ^ 1);
 
-  MoveList captures;
-  position->GenerateCaptures(&captures);
-  std::array<int, MoveList::kCapacity> scores{};
-  for (int i = 0; i < captures.size(); ++i) {
-    scores[i] = CaptureGain(*position, captures[i]);
+  MoveList moves;
+  int best;
+  if (threatened) {
+    position->GenerateMoves(&moves);
+    if (moves.empty()) {
+      const int magnitude = side == our_side_ ? kLossMagnitude : win_magnitude_;
+      return -magnitude + ply;
+    }
+    best = -kInfinity;
+  } else {
+    const int standing = Evaluate(*position, side, fog_);
+    if (standing >= beta) return standing;
+    if (standing > alpha) alpha = standing;
+    position->GenerateCaptures(&moves);
+    best = standing;
   }
 
-  int best = standing;
-  for (int i = 0; i < captures.size(); ++i) {
-    SelectNext(&captures, &scores, i);
-    const Move move = captures[i];
+  std::array<int, MoveList::kCapacity> scores{};
+  for (int i = 0; i < moves.size(); ++i) {
+    scores[i] = CaptureGain(*position, moves[i]);
+  }
+
+  for (int i = 0; i < moves.size(); ++i) {
+    SelectNext(&moves, &scores, i);
+    const Move move = moves[i];
     UndoState undo;
     position->MakeMove(move, &undo);
     const int score = -Quiescence(position, -beta, -alpha, ply + 1);
@@ -190,7 +227,8 @@ int Searcher::Negamax(Position* position, int depth, int alpha, int beta,
   Move table_move = kNullMove;
   int table_score = 0;
   bool usable = false;
-  if (table_->Probe(position->key(), depth, alpha, beta, ply, &table_score,
+  if (table_->Probe(position->key() ^ context_key_, depth, alpha, beta, ply,
+                    &table_score,
                     &table_move, &usable) &&
       usable && ply > 0) {
     return table_score;
@@ -259,7 +297,8 @@ int Searcher::Negamax(Position* position, int depth, int alpha, int beta,
   const BoundType bound = best_score >= beta      ? kBoundLower
                           : best_score <= original_alpha ? kBoundUpper
                                                          : kBoundExact;
-  table_->Store(position->key(), depth, best_score, bound, best_move, ply);
+  table_->Store(position->key() ^ context_key_, depth, best_score, bound,
+                best_move, ply);
   return best_score;
 }
 

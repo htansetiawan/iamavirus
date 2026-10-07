@@ -110,6 +110,11 @@ class Searcher {
   int our_side_ = kWhite;
   int win_magnitude_ = kWinSpeculative;
   FogContext fog_;
+  // Hash of everything SetContext changes that affects a score. XORed into the
+  // transposition key so an entry written under one fog context is never read
+  // under another: the fog term changes the evaluation of the same board, so a
+  // board key alone identifies the position but not the score.
+  uint64_t context_key_ = 0;
 
   std::chrono::steady_clock::time_point deadline_;
   uint64_t node_ceiling_ = 0;

@@ -4,7 +4,8 @@
 set -euo pipefail
 
 SOURCES="bot.cc engine.cc belief.cc search.cc evaluation.cc observation.cc
-         transposition.cc regret.cc position.cc move.cc bitboard.cc"
+         transposition.cc regret.cc position.cc move.cc bitboard.cc
+         neural_observation.cc neural_inference.cc"
 BASE="-O2 -std=c++20 -Wall -Wextra -DNDEBUG"
 
 # POPCNT is used on nearly every line of the search. Without it the compiler
@@ -28,12 +29,26 @@ else
 fi
 rm -rf "$probe"
 
+# ONNX Runtime, for the neural and hybrid modes. The course runtime installs
+# the native SDK at /opt/onnxruntime; ORT_HOME overrides that for local builds.
+# Without it the bot still builds and plays in cpp mode, so a missing SDK can
+# never be the reason a submission fails.
+ORT="${ORT_HOME:-/opt/onnxruntime}"
+LINK=""
+if [ -f "$ORT/include/onnxruntime_cxx_api.h" ] && ls "$ORT"/lib/libonnxruntime.so* >/dev/null 2>&1; then
+  EXTRA="$EXTRA -DFOW_WITH_ONNX -I$ORT/include"
+  LINK="-L$ORT/lib -Wl,-rpath,$ORT/lib -lonnxruntime"
+  echo "build: ONNX Runtime found at $ORT"
+else
+  echo "build: no ONNX Runtime; neural and hybrid modes will fall back to cpp"
+fi
+
 # Warnings are deliberately not errors here. GCC at -O2 occasionally emits a
 # false positive for array bounds or maybe-uninitialized inside heavily inlined
 # bitboard loops, and a warning must never be the reason a submission fails to
 # build.
 # shellcheck disable=SC2086
-if g++ $BASE $EXTRA $SOURCES -o bot; then
+if g++ $BASE $EXTRA $SOURCES -o bot $LINK; then
   echo "build: done"
   exit 0
 fi
@@ -42,5 +57,6 @@ fi
 # problem rather than a real error. A slower bot still plays; no bot does not.
 echo "build: retrying at -O1" >&2
 # shellcheck disable=SC2086
-g++ -O1 -std=c++20 -DNDEBUG $SOURCES -o bot
+# shellcheck disable=SC2086
+g++ -O1 -std=c++20 -DNDEBUG $EXTRA $SOURCES -o bot $LINK
 echo "build: done at -O1"

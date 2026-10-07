@@ -23,9 +23,14 @@
 #include <sstream>
 #include <string>
 
+#include <cmath>
+#include <vector>
+
 #include "bitboard.h"
 #include "engine.h"
 #include "move.h"
+#include "neural_inference.h"
+#include "neural_observation.h"
 #include "observation.h"
 #include "position.h"
 
@@ -93,6 +98,33 @@ uint64_t SeedFromEnvironmentOrClock() {
       std::chrono::steady_clock::now().time_since_epoch().count());
 }
 
+// Softmax over policy logits and sigmoid over danger logits, aligned with the
+// candidate list. The mask is implicit: only real candidates are scored.
+NeuralAdvice MakeAdvice(const std::vector<NeuralCandidate>& candidates,
+                        const std::vector<float>& policy_logits,
+                        const std::vector<float>& danger_logits, float value) {
+  NeuralAdvice advice;
+  if (candidates.empty() || policy_logits.size() != candidates.size()) {
+    return advice;
+  }
+  float peak = policy_logits[0];
+  for (const float logit : policy_logits) peak = std::max(peak, logit);
+  double total = 0.0;
+  advice.policy.resize(candidates.size());
+  advice.danger.resize(candidates.size());
+  advice.moves.resize(candidates.size());
+  for (std::size_t i = 0; i < candidates.size(); ++i) {
+    advice.moves[i] = candidates[i].move;
+    advice.policy[i] = std::exp(static_cast<double>(policy_logits[i] - peak));
+    total += advice.policy[i];
+    advice.danger[i] = 1.0 / (1.0 + std::exp(-static_cast<double>(danger_logits[i])));
+  }
+  for (double& p : advice.policy) p /= total;
+  advice.value = value;
+  advice.available = true;
+  return advice;
+}
+
 int Run() {
   std::ios::sync_with_stdio(false);
 
@@ -116,15 +148,45 @@ int Run() {
 
   InitializeAttackTables();
   InitializeZobrist();
-  const EngineOptions options = EngineOptionsFromEnvironment();
-  Engine engine(side, base, increment, options,
-                SeedFromEnvironmentOrClock());
+  EngineOptions options = EngineOptionsFromEnvironment();
+  const uint64_t seed = SeedFromEnvironmentOrClock();
+  Engine engine(side, base, increment, options, seed);
+
+  // The neural adapter: loaded once, before "ready", and dropped for the rest
+  // of the game on any failure. Never plays with weights it did not load.
+  NeuralTracker tracker(side);
+  NeuralModel model;
+  if (options.mode != EngineMode::kCpp) {
+    const char* directory = std::getenv("FOW_MODEL_DIR");
+    std::string error;
+    int threads = 1;
+    if (const char* text = std::getenv("FOW_INFERENCE_THREADS")) {
+      threads = std::max(1, std::atoi(text));
+    }
+    const auto started = std::chrono::steady_clock::now();
+    if (!model.Load(directory != nullptr ? directory : "model", threads, &error)) {
+      std::cerr << "model unavailable (" << error << "); mode=cpp\n";
+      options.mode = EngineMode::kCpp;
+    } else {
+      std::cerr << "model loaded in "
+                << std::chrono::duration<double>(
+                       std::chrono::steady_clock::now() - started)
+                       .count()
+                << "s " << model.manifest_summary() << " features="
+                << kFeatureVersion << " actions=" << kActionVersion << "\n";
+    }
+  }
+  // The seed is repeated in a compact prefix on every decision line so it is
+  // recoverable from the retained log tail.
+  std::cerr << "seed=" << seed << " mode=" << EngineModeName(options.mode) << "\n";
 
   std::cout << "ready" << std::endl;
 
   bool reflects_our_own_move = false;
   Observation latest;
   bool have_observation = false;
+  int observations_seen = 0;
+  int decisions = 0;
 
   while (std::getline(std::cin, line)) {
     const std::string text = Trim(line);
@@ -137,6 +199,26 @@ int Run() {
       } catch (const std::exception& error) {
         std::cerr << "observe failed: " << error.what() << "\n";
       }
+      // One observation arrives per ply for both players, so the count of
+      // views received is the frame index. Each real view updates the tracker
+      // and the recurrent state exactly once.
+      const int ply = observations_seen++;
+      const int phase = ply == 0 ? kPhaseInitial
+                        : reflects_our_own_move ? kPhaseAfterOwnMove
+                                                : kPhaseAfterOpponentMove;
+      tracker.Observe(latest, phase, ply);
+      if (model.available()) {
+        float planes[kNeuralPlanes * kNumSquares];
+        float scalars[kNeuralScalars];
+        tracker.Planes(planes);
+        tracker.Scalars(scalars);
+        std::string error;
+        if (!model.Observe(planes, scalars, &error)) {
+          std::cerr << "inference failed (" << error << "); mode=cpp\n";
+          model.Disable();
+          options.mode = EngineMode::kCpp;
+        }
+      }
       reflects_our_own_move = false;
       continue;
     }
@@ -147,8 +229,31 @@ int Run() {
     Move move = kNullMove;
     DecisionTrace trace;
     const auto started = std::chrono::steady_clock::now();
+    // Scoring happens only here, from the state the last observation left;
+    // no recurrent update runs at the clock prompt.
+    NeuralAdvice advice;
+    double inference_seconds = 0.0;
+    if (model.available()) {
+      MoveList candidates;
+      tracker.LegalCandidates(&candidates);
+      const std::vector<NeuralCandidate> packed = tracker.MakeCandidates(candidates);
+      std::vector<float> policy_logits, danger_logits;
+      std::string error;
+      if (!packed.empty() &&
+          model.Score(packed, &policy_logits, &danger_logits, &error)) {
+        advice = MakeAdvice(packed, policy_logits, danger_logits, model.value());
+      } else if (!packed.empty()) {
+        std::cerr << "scoring failed (" << error << "); mode=cpp\n";
+        model.Disable();
+        options.mode = EngineMode::kCpp;
+      }
+      inference_seconds = std::chrono::duration<double>(
+                              std::chrono::steady_clock::now() - started)
+                              .count();
+    }
     try {
-      move = engine.ChooseMove(latest, remaining, &trace);
+      move = engine.ChooseMove(latest, remaining, &trace,
+                               advice.available ? &advice : nullptr);
     } catch (const std::exception& error) {
       std::cerr << "decision failed: " << error.what() << "\n";
       move = kNullMove;
@@ -168,9 +273,13 @@ int Run() {
     } catch (const std::exception& error) {
       std::cerr << "bookkeeping failed: " << error.what() << "\n";
     }
+    tracker.RecordOwnMove(move);
     reflects_our_own_move = true;
+    ++decisions;
 
-    std::cerr << "depth=" << trace.depth << " score=" << trace.score
+    std::cerr << "s" << (seed % 100000) << " n=" << decisions
+              << " mode=" << EngineModeName(trace.mode_used)
+              << " depth=" << trace.depth << " score=" << trace.score
               << " nodes=" << trace.nodes << " legal=" << trace.legal_moves
               << " short=" << trace.shortlisted
               << " hyp=" << trace.hypotheses
@@ -179,7 +288,11 @@ int Run() {
               << " p=" << trace.chosen_probability
               << " gv=" << trace.game_value << " fog=" << trace.unseen_squares
               << " budget=" << trace.budget << " spent=" << trace.spent
-              << " clock=" << remaining << " move=" << MoveToUci(move) << "\n";
+              << " infer=" << inference_seconds << " clock=" << remaining
+              << " risk=" << trace.king_risk_permille
+              << " nv=" << trace.neural_value << " cp=" << trace.chosen_policy
+              << " cd=" << trace.chosen_danger << " cands=" << trace.candidates
+              << " move=" << MoveToUci(move) << "\n";
 
     std::cout << "move " << MoveToUci(move) << std::endl;
   }

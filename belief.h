@@ -165,6 +165,12 @@ class BeliefState {
   // Raised when an observation shows more of a piece type than the census
   // allows, which is how a promotion behind the fog becomes visible to us.
   void ReconcileCensus(const Observation& view);
+  // Our own castling rights, tracked from our own history and never from the
+  // board: a king or rook that has left its home square and returned does not
+  // get its right back. A rebuilt population used to read the rights off the
+  // board, which once produced an illegal castle in a simulator game.
+  void UpdateOwnRights(const Observation& view);
+  Bitboard own_rights_ = 0;
   bool seen_any_ = false;
   mutable int representative_index_ = 0;
   mutable bool representative_valid_ = false;

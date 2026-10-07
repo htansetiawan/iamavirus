@@ -5,3 +5,12 @@ bot
 *.zip
 __pycache__/
 .venv/
+
+# Local learning artefacts: shared library, raw replays, datasets, checkpoints.
+build/
+data/
+checkpoints/
+releases/
+*.onnx
+.pytest_cache/
+model/

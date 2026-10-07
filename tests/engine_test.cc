@@ -224,16 +224,29 @@ void EnvironmentOverridesAreApplied() {
 // sampled hypotheses: some of them do place a knight on c3, because that is one
 // of the moves White could have made from a square we cannot observe.
 void DoesNotRepeatTheQueenBlunderFromGame92of99z7() {
-  // Swept across seeds on purpose. An earlier single-seed version of this test
-  // passed for a fix that was actually a coin flip, and a later assertion on an
-  // internal counter failed under a different standard library purely because
-  // its random sequence differs. What matters is the behaviour: the queen grab
-  // must be declined, whatever the sampling happens to do.
-  const char* line[] = {"b1c3", "b8c6", "g1f3", "e7e5",
-                        "e2e4", "d7d5", "e4d5"};
+  // Several seeds, because the belief is sampled: a single seed once passed a
+  // fix that was a coin flip.
+  //
+  // History of this test's contract. It first asserted that no seed plays the
+  // grab. That passed on a particle filter whose resampling was degenerate
+  // (every particle took the same hidden move, so the population was one
+  // trajectory), and the pass depended on which trajectory the seed drew.
+  // With the resampling repaired the posterior is real: the hidden knight
+  // stands on c3 in 5-22% of hypotheses and d5 is guarded in 17-46%. At 512
+  // particles with a 0.5 s clock the engine still took the pawn in two of
+  // eight seeds; at 1,024 particles with a 400k-node budget (upstream's
+  // parameters, used here) it declines in eight of eight. The margin is thin
+  // -- a ~20% chance of losing the queen priced against a pawn and a
+  // centralised queen -- and that is the open strategic problem recorded in
+  // HANDOFF.md. This test pins the measured contract: the posterior is not
+  // degenerate, the risk term fires, and every seed declines.
   int declined = 0;
-  const int kTrials = 6;
-  for (int trial = 0; trial < kTrials; ++trial) {
+  int risk_seen = 0;
+  int informative_posteriors = 0;
+  const uint64_t seeds[] = {2026ULL, 1ULL, 2ULL, 3ULL, 4ULL, 5ULL, 6ULL, 7ULL};
+  for (const uint64_t seed : seeds) {
+    // Node-limited, as upstream made it, so the verdict does not depend on
+    // machine load or on which standard library's random sequence is drawn.
     EngineOptions options;
     options.particle_count = 1024;
     options.transposition_megabytes = 16;
@@ -243,22 +256,25 @@ void DoesNotRepeatTheQueenBlunderFromGame92of99z7() {
     Position truth;
     FOW_EXPECT_TRUE(PositionFromFen(
         "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth));
-    Engine engine(kBlack, 180.0, 2.0, options,
-                  2026 + static_cast<uint64_t>(trial) * 9176);
+    Engine engine(kBlack, 180.0, 2.0, options, seed);
 
+    // The game as played, up to the move before the blunder.
+    const char* line[] = {"b1c3", "b8c6", "g1f3", "e7e5",
+                          "e2e4", "d7d5", "e4d5"};
     bool we_just_moved = false;
-    bool ok = true;
     for (const char* uci : line) {
       const Observation view(RenderObservation(truth, kBlack));
       engine.Observe(view, we_just_moved);
       we_just_moved = false;
+
       MoveList legal;
       truth.GenerateMoves(&legal);
       Move move = kNullMove;
       for (const Move candidate : legal) {
         if (MoveToUci(candidate) == uci) move = candidate;
       }
-      if (move == kNullMove) { ok = false; break; }
+      FOW_EXPECT_TRUE(move != kNullMove);
+      if (move == kNullMove) return;
       if (truth.side_to_move() == kBlack) {
         engine.NotifyMovePlayed(move);
         we_just_moved = true;
@@ -266,23 +282,34 @@ void DoesNotRepeatTheQueenBlunderFromGame92of99z7() {
       UndoState undo;
       truth.MakeMove(move, &undo);
     }
-    FOW_EXPECT_TRUE(ok);
-    if (!ok) return;
 
+    // Black to move, with a free pawn on d5 guarded by an unseen knight.
     const Observation view(RenderObservation(truth, kBlack));
     engine.Observe(view, we_just_moved);
     FOW_EXPECT_TRUE(view.IsUnseen(MakeSquare(2, 2)));  // c3 really is in fog
+    int guarded = 0;
+    for (const Position& particle : engine.belief().particles()) {
+      if (particle.IsAttacked(MakeSquare(3, 4), kWhite)) ++guarded;
+    }
+    const double guarded_share =
+        static_cast<double>(guarded) / engine.belief().particle_count();
+    if (guarded_share > 0.05) ++informative_posteriors;
 
     DecisionTrace trace;
     const Move choice = engine.ChooseMove(view, 170.0, &trace);
     FOW_EXPECT_TRUE(choice != kNullMove);
+    std::fprintf(stderr, "       seed %llu chose %s (d5 guarded in %.0f%%, risk seen %d cp)\n",
+                 static_cast<unsigned long long>(seed),
+                 MoveToUci(choice).c_str(), guarded_share * 100.0,
+                 trace.worst_risk);
     if (MoveToUci(choice) != "d8d5") ++declined;
+    if (trace.worst_risk > 0) ++risk_seen;
   }
-  std::fprintf(stderr, "       queen grab declined in %d/%d seeds\n", declined,
-               kTrials);
-  // Must hold for every seed: taking a pawn with the queen when a knight no
-  // hypothesis contains may be guarding it is the move that lost the game.
-  FOW_EXPECT_EQ(declined, kTrials);
+  // The posterior must carry the danger in every seed, the risk term must see
+  // it, and the grab must be declined in every seed.
+  FOW_EXPECT_EQ(informative_posteriors, 8);
+  FOW_EXPECT_EQ(risk_seen, 8);
+  FOW_EXPECT_EQ(declined, 8);
 }
 
 // Regression test from the nine-move loss to Greek Gift, game qp6mfacx.
@@ -417,6 +444,40 @@ void DoesNotTakeTheBaitFromGameZ6mbi981() {
   FOW_EXPECT_TRUE(MoveToUci(choice) != "d1e1");
 }
 
+// Regression for en passant lost in the engine integration. The helper passed
+// every conformance check while its caller compared an observation with itself,
+// so the capture was never generated. Here the opponent double-pushes beside
+// our pawn and the engine's legal move count must match the referee's.
+void InfersEnPassantAcrossTheOpponentsMove() {
+  Position truth;
+  PositionFromFen("4k3/3p4/8/4P3/8/8/8/4K3 w - - 0 1", &truth);
+  EngineOptions options = FastOptions();
+  Engine engine(kWhite, 10.0, 0.05, options, 7);
+
+  engine.Observe(Observation(RenderObservation(truth, kWhite)), false);
+  UndoState undo;
+  truth.MakeMove(EncodeMove(MakeSquare(4, 0), MakeSquare(4, 1)), &undo);  // Ke2
+  engine.NotifyMovePlayed(EncodeMove(MakeSquare(4, 0), MakeSquare(4, 1)));
+  engine.Observe(Observation(RenderObservation(truth, kWhite)), true);
+  truth.MakeMove(EncodeMove(MakeSquare(3, 6), MakeSquare(3, 4), kFlagDoublePush),
+                 &undo);  // ...d5, capturable en passant on d6
+  const Observation view(RenderObservation(truth, kWhite));
+  engine.Observe(view, false);
+
+  MoveList expected;
+  truth.GenerateMoves(&expected);
+  bool has_capture = false;
+  for (const Move move : expected) {
+    if (MoveToUci(move) == "e5d6") has_capture = true;
+  }
+  FOW_EXPECT_TRUE(has_capture);
+
+  DecisionTrace trace;
+  const Move chosen = engine.ChooseMove(view, 10.0, &trace);
+  FOW_EXPECT_TRUE(chosen != kNullMove);
+  FOW_EXPECT_EQ(trace.legal_moves, expected.size());
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -431,5 +492,6 @@ int main() {
   FOW_RUN_TEST(fow::DoesNotTakeTheGreekGiftFromGameQp6mfacx);
   FOW_RUN_TEST(fow::DoesNotTakeTheBaitFromGameZ6mbi981);
   FOW_RUN_TEST(fow::EveryMoveTheEngineReturnsIsLegal);
+  FOW_RUN_TEST(fow::InfersEnPassantAcrossTheOpponentsMove);
   return fow::testing::Summarize("engine_test");
 }

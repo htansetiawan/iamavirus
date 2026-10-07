@@ -26,9 +26,18 @@ KIT = os.environ.get(
                  'bot'))
 sys.path.insert(0, KIT)
 
+sys.path.insert(0, os.path.join(KIT, 'starters', 'python'))
+
 import chess  # noqa: E402
 from referee import FowBoard, fow_moves, observation  # noqa: E402
-from vision import infer_en_passant, legal_moves  # noqa: E402
+from uniform_random import candidates, infer_en_passant  # noqa: E402
+
+
+def legal_moves(view, side, rights, previous, ep):
+    # The current kit folds en passant inference into candidates(); it is
+    # recomputed there from the same two observations.
+    del ep
+    return candidates(view, side, rights, previous)
 
 HARNESS = os.environ.get('FOW_CONFORMANCE_BINARY', '/tmp/conformance')
 

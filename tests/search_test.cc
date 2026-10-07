@@ -182,6 +182,64 @@ void HandlesASingleLegalMove() {
   FOW_EXPECT_EQ(result.best_move, moves[0]);
 }
 
+// Regression for the quiescence stand-pat bug. After Qg7 in
+// 7k/8/5K2/8/8/8/8/6Q1 w, every Black reply loses the king, so a depth-1 search
+// must already see the win. The old code let Black "stand pat" at the
+// quiescence node with its king attacked and reported +978 instead of +28998.
+void ThreatenedKingHasNoStandPat() {
+  Position position = Parse("7k/8/5K2/8/8/8/8/6Q1 w - - 0 1");
+  const SearchResult result = Think(&position, 2.0, 1);
+  FOW_EXPECT_EQ(MoveToUci(result.best_move), std::string("g1g7"));
+  FOW_EXPECT_TRUE(result.score >= kWinConfirmed - 8);
+  // And symmetrically: with our own king attacked, standing still is not an
+  // option either, so the only surviving reply must be found at depth 1.
+  Position threatened = Parse("7K/6q1/5k2/8/8/8/8/8 w - - 0 1");
+  const SearchResult reply = Think(&threatened, 2.0, 1);
+  FOW_EXPECT_TRUE(reply.score <= -kLossMagnitude + 8);
+}
+
+// Regression for transposition entries shared across fog contexts. The fog
+// term changes the score of the same board, so a table filled under one
+// context must not answer probes under another. Measured before the fix: the
+// same table after a context change returned -26 where a fresh table gave -43.
+void TranspositionEntriesAreContextSpecific() {
+  Position position =
+      Parse("r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 0 1");
+  FogContext first;
+  first.side = kWhite;
+  first.unseen = 0;
+  FogContext second;
+  second.side = kWhite;
+  second.unseen = 0xFFFFFFFF00000000ULL;
+  second.rook_like = 3;
+  second.bishop_like = 3;
+  second.knights = 2;
+  second.pawns = 8;
+  SearchLimits limits;
+  limits.seconds = 600.0;
+  limits.max_depth = 4;
+  MoveList moves;
+  position.GenerateMoves(&moves);
+
+  TranspositionTable shared;
+  shared.Resize(16);
+  Searcher reused(&shared);
+  reused.SetContext(kWhite, true, first);
+  reused.Search(&position, moves, limits);
+  reused.SetContext(kWhite, true, second);
+  const SearchResult after_change = reused.Search(&position, moves, limits);
+
+  TranspositionTable clean;
+  clean.Resize(16);
+  Searcher fresh(&clean);
+  fresh.SetContext(kWhite, true, second);
+  const SearchResult from_scratch = fresh.Search(&position, moves, limits);
+
+  FOW_EXPECT_EQ(after_change.score, from_scratch.score);
+  FOW_EXPECT_EQ(MoveToUci(after_change.best_move),
+                MoveToUci(from_scratch.best_move));
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -198,5 +256,7 @@ int main() {
   FOW_RUN_TEST(fow::DeeperSearchesStayConsistent);
   FOW_RUN_TEST(fow::RespectsItsTimeBudget);
   FOW_RUN_TEST(fow::HandlesASingleLegalMove);
+  FOW_RUN_TEST(fow::ThreatenedKingHasNoStandPat);
+  FOW_RUN_TEST(fow::TranspositionEntriesAreContextSpecific);
   return fow::testing::Summarize("search_test");
 }

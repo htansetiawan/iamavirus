@@ -5,13 +5,14 @@ set -euo pipefail
 cd "$(dirname "$0")"
 
 LIB="engine.cc belief.cc search.cc evaluation.cc observation.cc
-     transposition.cc regret.cc position.cc move.cc bitboard.cc"
+     transposition.cc regret.cc position.cc move.cc bitboard.cc
+     neural_observation.cc neural_inference.cc"
 FLAGS="-O2 -std=c++20 -Wall -Wextra -Werror"
 OUT=$(mktemp -d)
 trap 'rm -rf "$OUT"' EXIT
 
 status=0
-for suite in bitboard position observation evaluation search belief regret engine; do
+for suite in bitboard position observation evaluation search belief regret engine neural; do
   test -f "tests/${suite}_test.cc" || continue
   # shellcheck disable=SC2086
   g++ $FLAGS "tests/${suite}_test.cc" $LIB -o "$OUT/${suite}_test"

@@ -12,6 +12,7 @@ of the record.
 | [v3](v3-belief-consistency.md) | `351ca0b` | own pieces as an exact belief constraint; full-population material risk | 0.479 ± 0.072 vs v2 (~−14 Elo) | 1W–4L observed |
 | [v4](v4-king-safety.md) | `5e0ef63` | king safety over the whole population, before shortlisting | 0.573 ± 0.069 vs v3 (~+51 Elo, 1.1σ) | submitted |
 | [v5](v5-opponent-prior.md) | candidate | plausibility prior over opponent moves; node-limited search; ablation knobs | trap declined 13/15 vs 3/15; aggregate unmoved | not submitted |
+| [v6](v6-neural.md) | candidate | three search/belief repairs; replay learning, recurrent PPO, ONNX deployment, hybrid mode | see HANDOFF.md "Measured" | not submitted |
 
 ## The honest summary
 

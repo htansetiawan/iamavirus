@@ -3,11 +3,13 @@
 #include "engine.h"
 
 #include <algorithm>
+#include <cmath>
 #include <cstdio>
 #include <cstdlib>
 #include <cstddef>
 #include <cstdint>
 #include <random>
+#include <string>
 #include <vector>
 
 #include "evaluation.h"
@@ -131,8 +133,28 @@ void OverrideFlag(const char* name, bool* value) {
 
 }  // namespace
 
+const char* EngineModeName(EngineMode mode) {
+  switch (mode) {
+    case EngineMode::kNeural: return "neural";
+    case EngineMode::kHybrid: return "hybrid";
+    default: return "cpp";
+  }
+}
+
 EngineOptions EngineOptionsFromEnvironment() {
   EngineOptions options;
+  if (const char* mode = std::getenv("FOW_MODE")) {
+    const std::string text(mode);
+    if (text == "neural") options.mode = EngineMode::kNeural;
+    else if (text == "hybrid") options.mode = EngineMode::kHybrid;
+    else if (text == "cpp" || text.empty()) options.mode = EngineMode::kCpp;
+    else std::fprintf(stderr, "ignoring unknown FOW_MODE=%s\n", mode);
+  }
+  Override("FOW_HYBRID_POLICY_TOP", &options.hybrid_policy_top);
+  Override("FOW_HYBRID_SEARCH_TOP", &options.hybrid_search_top);
+  Override("FOW_HYBRID_RISK_TOP", &options.hybrid_risk_top);
+  Override("FOW_HYBRID_MAX_ROWS", &options.hybrid_max_rows);
+  Override("FOW_NEURAL_TEMPERATURE", &options.neural_temperature);
   Override("FOW_PARTICLES", &options.particle_count);
   Override("FOW_SHORTLIST", &options.shortlist_size);
   Override("FOW_HYPOTHESES", &options.hypothesis_count);
@@ -155,7 +177,54 @@ EngineOptions EngineOptionsFromEnvironment() {
   if (options.shortlist_size < 1) options.shortlist_size = 1;
   if (options.hypothesis_count < 1) options.hypothesis_count = 1;
   if (options.transposition_megabytes < 1) options.transposition_megabytes = 1;
+  if (options.hybrid_max_rows < 1) options.hybrid_max_rows = 1;
+  if (options.neural_temperature <= 0.0) options.neural_temperature = 1.0;
   return options;
+}
+
+namespace {
+
+// Index of `move` in `advice.moves`, or -1.
+int AdviceIndex(const NeuralAdvice& advice, Move move) {
+  for (std::size_t i = 0; i < advice.moves.size(); ++i) {
+    if (advice.moves[i] == move) return static_cast<int>(i);
+  }
+  return -1;
+}
+
+}  // namespace
+
+Move Engine::SampleNeural(const MoveList& legal, const NeuralAdvice& advice,
+                          DecisionTrace* trace) {
+  // Probabilities for the legal moves only, renormalised; a legal move the
+  // adapter did not score gets nothing, which can only happen if the two
+  // candidate derivations disagree -- and that is logged by the caller.
+  std::vector<double> weights(static_cast<std::size_t>(legal.size()), 0.0);
+  double total = 0.0;
+  for (int i = 0; i < legal.size(); ++i) {
+    const int at = AdviceIndex(advice, legal[i]);
+    if (at < 0) continue;
+    double p = advice.policy[static_cast<std::size_t>(at)];
+    if (options_.neural_temperature != 1.0) {
+      p = std::pow(std::max(p, 1e-12), 1.0 / options_.neural_temperature);
+    }
+    weights[static_cast<std::size_t>(i)] = p;
+    total += p;
+  }
+  if (total <= 0.0) return kNullMove;
+  std::uniform_real_distribution<double> uniform(0.0, 1.0);
+  double draw = uniform(rng_) * total;
+  int picked = legal.size() - 1;
+  for (int i = 0; i < legal.size(); ++i) {
+    draw -= weights[static_cast<std::size_t>(i)];
+    if (draw <= 0.0) {
+      picked = i;
+      break;
+    }
+  }
+  trace->chosen_probability = weights[static_cast<std::size_t>(picked)] / total;
+  trace->mode_used = EngineMode::kNeural;
+  return legal[picked];
 }
 
 std::vector<double> Engine::KingLossProbabilities(const MoveList& moves,
@@ -224,8 +293,9 @@ double Engine::TimeBudget(double remaining_seconds) const {
 
 void Engine::Observe(const Observation& view, bool reflects_our_own_move) {
   belief_.Observe(view, reflects_our_own_move);
-  previous_view_ = view;
-  have_previous_ = true;
+  before_latest_view_ = latest_view_;
+  latest_view_ = view;
+  ++views_seen_;
 }
 
 void Engine::NotifyMovePlayed(Move move) { belief_.ApplyOurMove(move); }
@@ -239,7 +309,7 @@ Bitboard Engine::OurCastlingRights() const {
 }
 
 Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
-                        DecisionTrace* trace) {
+                        DecisionTrace* trace, const NeuralAdvice* advice) {
   // One deadline for the whole turn. The matrix game runs dozens of small
   // searches, and each one overshoots its own slice slightly by finishing an
   // iteration; summed over forty-eight cells that was half a second past the
@@ -247,8 +317,14 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   // used to pace the work, but this is what actually stops it.
   const auto turn_start = std::chrono::steady_clock::now();
   const int enemy_side = our_side_ ^ 1;
-  const int en_passant =
-      InferEnPassant(have_previous_ ? &previous_view_ : nullptr, view, our_side_);
+  const bool advised = advice != nullptr && advice->available;
+  if (advised) trace->neural_value = advice->value;
+  trace->mode_used = EngineMode::kCpp;
+  // The view before the latest one is the one taken after our own move, so the
+  // pair spans exactly the opponent's move. At White's first decision there is
+  // no earlier view and nothing to infer.
+  const int en_passant = InferEnPassant(
+      views_seen_ >= 2 ? &before_latest_view_ : nullptr, view, our_side_);
 
   Position visible;
   VisiblePositionFromObservation(view, our_side_, OurCastlingRights(),
@@ -282,6 +358,55 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     }
     return chosen;
   };
+  // Compact per-candidate estimates for the log: the leading moves by policy
+  // (or by particle risk without advice), each with policy, neural danger and
+  // particle king-loss probability, kept as separate numbers on purpose.
+  {
+    std::vector<int> order(static_cast<std::size_t>(legal.size()));
+    for (int i = 0; i < legal.size(); ++i) order[static_cast<std::size_t>(i)] = i;
+    auto policy_of = [&](int i) {
+      if (!advised) return 0.0;
+      const int at = AdviceIndex(*advice, legal[i]);
+      return at < 0 ? 0.0 : advice->policy[static_cast<std::size_t>(at)];
+    };
+    auto danger_of = [&](int i) {
+      if (!advised) return 0.0;
+      const int at = AdviceIndex(*advice, legal[i]);
+      return at < 0 ? 0.0 : advice->danger[static_cast<std::size_t>(at)];
+    };
+    std::stable_sort(order.begin(), order.end(), [&](int a, int b) {
+      if (advised) return policy_of(a) > policy_of(b);
+      return king_risk[static_cast<std::size_t>(a)] < king_risk[static_cast<std::size_t>(b)];
+    });
+    char buffer[64];
+    for (std::size_t k = 0; k < order.size() && k < 5; ++k) {
+      const int i = order[k];
+      std::snprintf(buffer, sizeof(buffer), "%s%s:%.2f/%.2f/%.2f",
+                    k > 0 ? "," : "", MoveToUci(legal[i]).c_str(), policy_of(i),
+                    danger_of(i), king_risk[static_cast<std::size_t>(i)]);
+      trace->candidates += buffer;
+    }
+    if (advised) {
+      for (const Move move : legal) {
+        if (AdviceIndex(*advice, move) < 0) {
+          trace->candidates += ",unscored:" + MoveToUci(move);
+          break;
+        }
+      }
+    }
+  }
+
+  if (advised && options_.mode == EngineMode::kNeural) {
+    const Move sampled = SampleNeural(legal, *advice, trace);
+    if (sampled != kNullMove) {
+      const int at = AdviceIndex(*advice, sampled);
+      trace->chosen_policy = at < 0 ? 0.0 : advice->policy[static_cast<std::size_t>(at)];
+      trace->chosen_danger = at < 0 ? 0.0 : advice->danger[static_cast<std::size_t>(at)];
+      trace->shortlisted = legal.size();
+      return note_choice(sampled);
+    }
+  }
+
   MoveList safe;
   double lowest = 2.0;
   int safest = 0;
@@ -346,8 +471,66 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                    [](const RootMoveValue& a, const RootMoveValue& b) {
                      return a.score > b.score;
                    });
-  const int shortlist =
+  int shortlist =
       std::min<int>(options_.shortlist_size, static_cast<int>(ranked.size()));
+  if (advised && options_.mode == EngineMode::kHybrid) {
+    // The union of the search's own top moves, the policy's top moves and the
+    // lowest particle-risk moves, so that a single representative board can
+    // never eliminate every defensive option. Trimmed to the affordable row
+    // count in that priority order; neural danger only breaks ties here.
+    trace->mode_used = EngineMode::kHybrid;
+    std::vector<RootMoveValue> chosen;
+    auto add = [&](Move move) {
+      for (const RootMoveValue& row : chosen) {
+        if (row.move == move) return;
+      }
+      if (static_cast<int>(chosen.size()) >= options_.hybrid_max_rows) return;
+      for (const RootMoveValue& row : ranked) {
+        if (row.move == move) {
+          chosen.push_back(row);
+          return;
+        }
+      }
+    };
+    const int search_top = std::min<int>(options_.hybrid_search_top,
+                                         static_cast<int>(ranked.size()));
+    for (int i = 0; i < search_top; ++i) add(ranked[static_cast<std::size_t>(i)].move);
+    std::vector<int> by_policy;
+    for (int i = 0; i < safe.size(); ++i) by_policy.push_back(i);
+    auto policy_of = [&](int i) {
+      const int at = AdviceIndex(*advice, safe[i]);
+      return at < 0 ? -1.0 : advice->policy[static_cast<std::size_t>(at)];
+    };
+    std::stable_sort(by_policy.begin(), by_policy.end(),
+                     [&](int a, int b) { return policy_of(a) > policy_of(b); });
+    for (int k = 0; k < options_.hybrid_policy_top && k < static_cast<int>(by_policy.size()); ++k) {
+      add(safe[by_policy[static_cast<std::size_t>(k)]]);
+    }
+    std::vector<int> by_risk;
+    for (int i = 0; i < safe.size(); ++i) by_risk.push_back(i);
+    auto danger_of = [&](int i) {
+      const int at = AdviceIndex(*advice, safe[i]);
+      return at < 0 ? 1.0 : advice->danger[static_cast<std::size_t>(at)];
+    };
+    const Position& reference = belief_.Representative();
+    auto is_king_move = [&](int i) {
+      return reference.piece_at(MoveFrom(safe[i])) == kKing;
+    };
+    std::stable_sort(by_risk.begin(), by_risk.end(), [&](int a, int b) {
+      const double ra = safe_risk[static_cast<std::size_t>(a)];
+      const double rb = safe_risk[static_cast<std::size_t>(b)];
+      if (ra != rb) return ra < rb;
+      // Ties at the minimum: king moves first, then the neural danger
+      // estimate, so defensive options survive the trim.
+      if (is_king_move(a) != is_king_move(b)) return is_king_move(a);
+      return danger_of(a) < danger_of(b);
+    });
+    for (int k = 0; k < options_.hybrid_risk_top && k < static_cast<int>(by_risk.size()); ++k) {
+      add(safe[by_risk[static_cast<std::size_t>(k)]]);
+    }
+    ranked = chosen;
+    shortlist = static_cast<int>(ranked.size());
+  }
   ranked.resize(shortlist);
   trace->shortlisted = shortlist;
 
@@ -513,7 +696,13 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     picked = row;
   }
   trace->chosen_probability = solution.row_probability[picked];
-  return note_choice(ranked[safe_rows[picked]].move);
+  const Move final_move = ranked[safe_rows[picked]].move;
+  if (advised) {
+    const int at = AdviceIndex(*advice, final_move);
+    trace->chosen_policy = at < 0 ? 0.0 : advice->policy[static_cast<std::size_t>(at)];
+    trace->chosen_danger = at < 0 ? 0.0 : advice->danger[static_cast<std::size_t>(at)];
+  }
+  return note_choice(final_move);
 }
 
 }  // namespace fow

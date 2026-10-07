@@ -53,6 +53,8 @@ BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
       use_opponent_prior_(use_opponent_prior),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
+  const int home_rank = our_side == kWhite ? 0 : 7;
+  own_rights_ = SquareBB(MakeSquare(0, home_rank)) | SquareBB(MakeSquare(7, home_rank));
   // The opening position is common knowledge, so the belief starts certain.
   particles_.assign(target_count_, StartingPosition());
   representative_valid_ = false;
@@ -129,7 +131,26 @@ double BeliefState::MovePlausibility(Position* hypothesis, Move move) const {
   return weight;
 }
 
+void BeliefState::UpdateOwnRights(const Observation& view) {
+  const int home_rank = our_side_ == kWhite ? 0 : 7;
+  if (view.at(MakeSquare(4, home_rank)) != PieceTypeToSymbol(kKing, our_side_)) {
+    own_rights_ = 0;
+  }
+  for (const int file : {0, 7}) {
+    const int rook = MakeSquare(file, home_rank);
+    if (view.at(rook) != PieceTypeToSymbol(kRook, our_side_)) {
+      own_rights_ &= ~SquareBB(rook);
+    }
+  }
+}
+
 void BeliefState::ApplyOurMove(Move move) {
+  const int home_rank = our_side_ == kWhite ? 0 : 7;
+  if (MoveFrom(move) == MakeSquare(4, home_rank) && !particles_.empty() &&
+      particles_.front().piece_at(MoveFrom(move)) == kKing) {
+    own_rights_ = 0;
+  }
+  own_rights_ &= ~SquareBB(MoveFrom(move));
   // Our move touches only squares we can see, and every hypothesis agrees with
   // the observation there, so it is normally legal in all of them. A hypothesis
   // rebuilt after a collapse can nevertheless disagree about castling rights, so
@@ -181,6 +202,7 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
   // still counts the pawn that was spent as well as the piece it became, handing
   // the opponent one more piece than they own.
   ReconcileCensus(view);
+  UpdateOwnRights(view);
 
   if (!seen_any_) {
     // Nothing has moved yet, so there is nothing to predict.
@@ -299,19 +321,30 @@ void BeliefState::Resample(const std::vector<double>& weights,
     report->resampled_particles = target_count_;
     return;
   }
+  // The pool is laid out particle-major: every successor of hypothesis 0, then
+  // every successor of hypothesis 1, and so on, and each block carries exactly
+  // one unit of mass. Systematic resampling with a stride of one unit then
+  // lands on the same offset inside every block -- with identical hypotheses
+  // it chose the same hidden move for every particle, and the population
+  // collapsed to a single guess that the next view contradicted. Visiting the
+  // pool in a random order breaks that correlation while keeping the low
+  // variance of the stratified draw.
+  std::vector<std::size_t> order(weights.size());
+  std::iota(order.begin(), order.end(), std::size_t{0});
+  std::shuffle(order.begin(), order.end(), rng_);
   // Systematic resampling: one uniform draw, then evenly spaced strata. This has
   // lower variance than drawing each particle independently and is O(n).
   std::uniform_real_distribution<double> uniform(0.0, 1.0);
   const double step = total / target_count_;
   double pointer = uniform(rng_) * step;
-  double cumulative = weights[0];
+  double cumulative = weights[order[0]];
   std::size_t index = 0;
   for (int i = 0; i < target_count_; ++i) {
-    while (pointer > cumulative && index + 1 < weights.size()) {
+    while (pointer > cumulative && index + 1 < order.size()) {
       ++index;
-      cumulative += weights[index];
+      cumulative += weights[order[index]];
     }
-    particles_.push_back(pool[index]);
+    particles_.push_back(pool[order[index]]);
     pointer += step;
   }
   report->resampled_particles = target_count_;
@@ -343,8 +376,9 @@ void BeliefState::Recover(const Observation& view,
   // whenever the king and that rook are still on their home squares. Ours is
   // directly observable; for the opponent an unseen home square is treated as
   // still holding the rook, which is the cautious reading.
-  Bitboard rebuilt_rights = 0;
+  Bitboard rebuilt_rights = own_rights_;
   for (const int color : {kWhite, kBlack}) {
+    if (color == our_side_) continue;  // ours come from our own history
     const int rank = color == kWhite ? 0 : 7;
     const int king_square = MakeSquare(4, rank);
     const char king_symbol = PieceTypeToSymbol(kKing, color);
