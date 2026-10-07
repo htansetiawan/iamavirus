@@ -22,7 +22,7 @@ fi
 
 STAGE=$(mktemp -d)
 trap 'rm -rf "$STAGE"' EXIT
-cp run.sh build.sh test.sh README.md \
+cp run.sh build.sh test.sh README.md book.txt \
   bot.cc engine.cc belief.cc search.cc evaluation.cc observation.cc \
   transposition.cc regret.cc position.cc move.cc bitboard.cc \
   neural_observation.cc neural_inference.cc opponent_model.cc \

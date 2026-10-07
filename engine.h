@@ -28,6 +28,7 @@
 #include <cstdint>
 #include <random>
 #include <string>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 
@@ -143,7 +144,7 @@ struct EngineOptions {
   // move left the king en prise): the share of hypotheses in which one quiet
   // enemy move to a square we would not see puts an unseen attacker on our
   // king, charged at this weight times the king price. Off until measured.
-  double hidden_king_threat_weight = 0.0;
+  double hidden_king_threat_weight = 0.6;
   // Repetition. The referee calls threefold and the engine had no notion of
   // it (eucmjl12: a knight for two pawns up, we shuffled to a draw). When the
   // current view has been seen before at one of our decisions, the moves we
@@ -162,6 +163,12 @@ struct EngineOptions {
   double surface_charge = 0.0;
   int surface_ray_cap = 3;
   int surface_stride = 4;
+  // Opening book: our decisions in the first `book_plies` plies of the game
+  // follow the strongest teams' most common move from the identical
+  // observation, when the book has one and it is legal. They open 1.d4 in 80%
+  // of their White games and answer 1...d5 or 1...c5; 18 of v10's 55 queen
+  // losses came before ply 30, theirs 4-9% of games.
+  int book_plies = 10;
   double repetition_penalty = 120.0;
   double repetition_losing_margin = 100.0;
   int hidden_threat_stride = 16;
@@ -244,6 +251,7 @@ struct DecisionTrace {
   double budget_multiplier = 1.0;  // hard/easy turn scaling applied this turn
   double cells_spent = 0.0;        // seconds in the matrix cells
   int repetition_rows = 0;         // shortlist rows charged for repeating
+  bool from_book = false;          // the move came from the opening book
   int cell_threads_used = 1;
 };
 
@@ -282,6 +290,11 @@ class Engine {
   double TimeBudget(double remaining_seconds) const;
 
   inline const BeliefState& belief() const { return belief_; }
+  // Opening book: (colour, observation) -> move, from the strongest teams'
+  // own choices (gold/opening-book.json, learning/book.py). Returns the number
+  // of entries loaded; an empty or missing file leaves the engine without one.
+  int LoadBook(const std::string& path);
+  inline int book_size() const { return static_cast<int>(book_.size()); }
   // Two plies deep, over a stride of the population: `material` is the best
   // net capture the opponent can *prepare* with one quiet move to a square
   // our post-move view would not show, beyond what they can already take;
@@ -346,6 +359,7 @@ class Engine {
   // (view at our decision, move played) for every move we have made, for
   // the repetition charge.
   std::vector<std::pair<std::string, Move>> history_;
+  std::unordered_map<std::string, std::string> book_;  // "colour|view" -> uci
   Observation before_latest_view_;
   int views_seen_ = 0;
 };

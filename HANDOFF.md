@@ -385,6 +385,35 @@ evaluation before any mode other than `cpp` earns release.
 | before ply 30 | 18 of 55 |
 
   v12 (15 games): captured in 7, 4 trades, 3 real losses (2 to unseen queens, 1 to a visible pawn). The particle terms only see the attacker when the population holds it; these are the cases where it did not. New: `surface_charge` (`FOW_SURFACE`, off until measured), a particle-independent charge per unseen empty square on every ray from the moved piece's destination that an enemy slider of the matching type could occupy, plus unseen knight and pawn-attack squares, scaled by the piece's value; and a benchmark metric "queen left en prise (net ≥ 5)". Arms at 0/10/20/40, and `hidden_king_threat_weight` 0.3/0.6, and 20+0.3, queued on cores 2–5.
+- **Queen balance across the arena** (every team, all its games in the raw store; "lost" = our queen captured for a net loss ≥ 2, "won" = theirs captured for a net gain ≥ 2):
+
+| team | games | win% | queen won % | queen lost % | balance | lost before ply 30 |
+|---|---|---|---|---|---|---|
+| Greek Gift | 1331 | 76 | 57 | 47 | +10 | 101 (8%) |
+| Knight Vision | 1339 | 63 | 51 | 46 | +5 | 120 (9%) |
+| Strongly Invisible | 751 | 58 | 55 | 45 | +10 | 58 (8%) |
+| Decent Chess Bot | 790 | 54 | 56 | 49 | +7 | 30 (4%) |
+| duck | 735 | 44 | 60 | 46 | +14 | 67 (9%) |
+| Instructors | 671 | 46 | 57 | 49 | +8 | 76 (11%) |
+| TA Baseline S | 679 | 43 | 52 | 62 | −10 | 135 (20%) |
+| **IAmAVirus** (all versions) | 651 | 35 | 51 | 55 | −4 | **117 (18%)** |
+| TA Baseline A | 644 | 40 | 48 | 59 | −11 | 116 (18%) |
+| TA Baseline P | 581 | 36 | 45 | 60 | −15 | 116 (20%) |
+| Apricot Squad | 530 | 32 | 36 | 42 | −6 | 91 (17%) |
+
+  Queen loss is endemic (the best lose theirs in nearly half their games, mostly to unseen capturers); the balance tracks the ratings, and the separator is *early* losses: 4–9% for the top six, 18% for us. We win queens as often as Knight Vision. So the target is early queen safety: the opening book (top-team lines, `gold/opening-book.json`, 39% coverage of our early decisions) and the surface charge, which bites hardest while most squares are unseen.
+- **Caution arms** (balanced 634 seats, deductions on, two-ply 1.0, repetition on, seed 777):
+
+| arm | king losses | en prise | queen en prise | 2-ply material | 2-ply king threat | survives fatal ply |
+|---|---|---|---|---|---|---|
+| base | 6.37% | 7.63% | 1.43% | 7.27% | 12.72% | 343 |
+| surface 10 / 20 / 40 | 6.39 / 6.43 / 6.43% | 7.44 / 7.37 / 7.42% | 1.41 / 1.39 / 1.47% | 7.25 / 7.16 / 7.25% | 12.8 / 13.4 / 13.4% | 343 / 343 / 343 |
+| king threat 0.3 / 0.6 | 6.18 / 6.01% | 8.00 / 8.19% | 1.65 / 1.71% | 7.55 / 7.61% | 9.24 / 9.34% | 351 / 362 |
+| surface 20 + king 0.3 | 6.20% | 7.80% | 1.58% | 7.46% | 9.28% | 351 |
+| real players | | 8.04% | 1.28% | 9.60% | 10.43% | |
+
+  The surface charge barely moves anything at the decision level and stays off (0). The two-ply king threat trades material for king safety; at 0.6 it becomes the default pending the real-clock lane (`iamavirus-v11-candidate-caution-hybrid.zip` = full candidate + repetition charge + king threat 0.6 + opening book).
+- **Opening book** (`book.txt`, 176 entries from `gold/opening-book.json` via `learning/book.py`): keyed by colour and the exact observation, first 10 plies, support ≥ 15 games and ≥ 25% share among the six strongest teams; the bot loads it at start-up (`FOW_BOOK=off` disables) and plays the entry when legal; 39% of our early decisions hit it. Unit test: the start view as White answers d2d4.
 - **Vision term: null.** At weight 1.0 the engine sees 30.9 squares after its move vs 30.8 at weight 0 (real players 31.1), and every decision metric is flat (king losses 6.41% vs 6.37%, en prise 7.76% vs 7.63%). Shelved at default 0.
 - **tr0gwrvf replay**: the current build repeats 42.Kg4 in 3/4 seeds (chosen-move risk 20–79 cp), 43.Rg2 in 4/4 (risk ~250–290) and 44.Re2 in 3/4 (risk 312–375 cp, i.e. it knowingly accepted roughly a 3% chance of losing the king to attack where it believed the queen stood); xidde3fz: the current build avoids 43...Kg7 in 4/4 seeds.
 - **Head-to-head, Fable v12 bytes vs Astra v11 bytes** (seeds 5100/5300, cores 2–3/4–5, 180+2): 9W–0D–7L over 16 games, paired 0.562 (0.375–0.750), as White 6/8, as Black 3/8. A modest edge for the fuller build, not significant.

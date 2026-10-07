@@ -151,6 +151,16 @@ int Run() {
   EngineOptions options = EngineOptionsFromEnvironment();
   const uint64_t seed = SeedFromEnvironmentOrClock();
   Engine engine(side, base, increment, options, seed);
+  {
+    // FOW_BOOK=off disables the opening book; otherwise FOW_BOOK names the
+    // file, defaulting to book.txt next to the launcher.
+    const char* book = std::getenv("FOW_BOOK");
+    const std::string path = book == nullptr ? std::string("book.txt") : std::string(book);
+    if (path != "off") {
+      const int entries = engine.LoadBook(path);
+      std::cerr << "book " << path << ": " << entries << " entries\n";
+    }
+  }
 
   // The neural adapter: loaded once, before "ready", and dropped for the rest
   // of the game on any failure. Never plays with weights it did not load.
@@ -314,6 +324,7 @@ int Run() {
               << " spent=" << trace.spent
               << " cells=" << trace.cells_spent << "/" << trace.cell_threads_used
               << " rep=" << trace.repetition_rows
+              << (trace.from_book ? " book=1" : "")
               << " infer=" << inference_seconds << " clock=" << remaining
               << " risk=" << trace.king_risk_permille
               << " nv=" << trace.neural_value << " cp=" << trace.chosen_policy

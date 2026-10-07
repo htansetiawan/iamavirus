@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cmath>
 #include <cstdio>
+#include <fstream>
 #include <cstdlib>
 #include <cstddef>
 #include <cstdint>
@@ -427,6 +428,7 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_HIDDEN_THREAT_STRIDE", &options.hidden_threat_stride);
   Override("FOW_HIDDEN_KING_THREAT", &options.hidden_king_threat_weight);
   Override("FOW_SURFACE", &options.surface_charge);
+  Override("FOW_BOOK_PLIES", &options.book_plies);
   Override("FOW_SURFACE_RAY_CAP", &options.surface_ray_cap);
   Override("FOW_SURFACE_STRIDE", &options.surface_stride);
   Override("FOW_REPETITION_PENALTY", &options.repetition_penalty);
@@ -588,6 +590,27 @@ void Engine::Observe(const Observation& view, bool reflects_our_own_move) {
   ++views_seen_;
 }
 
+int Engine::LoadBook(const std::string& path) {
+  book_.clear();
+  std::ifstream input(path);
+  std::string line;
+  while (std::getline(input, line)) {
+    // colour|view|move|games|win_rate
+    const std::size_t a = line.find('|');
+    if (a == std::string::npos) continue;
+    const std::size_t b = line.find('|', a + 1);
+    if (b == std::string::npos) continue;
+    const std::size_t c = line.find('|', b + 1);
+    const std::string key = line.substr(0, b);
+    const std::string move = c == std::string::npos ? line.substr(b + 1) : line.substr(b + 1, c - b - 1);
+    if (key.size() != 64 + 6 && key.size() != 64 + 6) {
+      // "white|" + 64 or "black|" + 64
+    }
+    book_[key] = move;
+  }
+  return static_cast<int>(book_.size());
+}
+
 void Engine::NotifyMovePlayed(Move move) {
   history_.emplace_back(latest_view_.squares(), move);
   belief_.ApplyOurMove(move);
@@ -638,6 +661,18 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   // before any shortlist exists. Doing it after the shortlist means a move that
   // is the only safe reply can be discarded by a search of one guessed board and
   // never considered again.
+  if (!book_.empty() && views_seen_ <= options_.book_plies) {
+    const auto hit = book_.find((our_side_ == kWhite ? "white|" : "black|") + view.squares());
+    if (hit != book_.end()) {
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == hit->second) {
+          trace->from_book = true;
+          trace->mode_used = options_.mode;
+          return candidate;
+        }
+      }
+    }
+  }
   const std::vector<double> king_risk = KingLossProbabilities(legal, en_passant);
   {
     // Scale the clock by the difficulty the population reports.

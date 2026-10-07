@@ -308,6 +308,25 @@ void AvoidsRepeatingWhenNotLosing() {
   FOW_EXPECT_TRUE(MoveToUci(chosen) != "g1f3");
 }
 
+// The opening book answers the start view as White with the strongest teams'
+// move (1. d4 in 80% of their games) without searching, and stays silent once
+// the book depth is passed.
+void OpeningBookAnswersTheStartView() {
+  EngineOptions options = FastOptions();
+  Engine engine(kWhite, 180.0, 2.0, options, 1);
+  const int entries = engine.LoadBook("book.txt");
+  std::printf("       book entries %d\n", entries);
+  FOW_EXPECT_TRUE(entries > 100);
+  Position truth;
+  PositionFromFen(kStartFen, &truth);
+  const Observation view(RenderObservation(truth, kWhite));
+  engine.Observe(view, false);
+  DecisionTrace trace;
+  const Move move = engine.ChooseMove(view, 10.0, &trace);
+  FOW_EXPECT_TRUE(trace.from_book);
+  FOW_EXPECT_TRUE(MoveToUci(move) == "d2d4");
+}
+
 // A position with exactly one legal move must be handled without any search.
 void ReturnsTheOnlyMoveWhenForced() {
   EngineOptions options = FastOptions();
@@ -900,5 +919,6 @@ int main() {
   FOW_RUN_TEST(fow::CellThreadsPlayLegalMoves);
   FOW_RUN_TEST(fow::VisionPrefersTheOpenDiagonal);
   FOW_RUN_TEST(fow::AvoidsRepeatingWhenNotLosing);
+  FOW_RUN_TEST(fow::OpeningBookAnswersTheStartView);
   return fow::testing::Summarize("engine_test");
 }
