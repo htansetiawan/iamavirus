@@ -1,0 +1,66 @@
+{
+  "probe_sha256": "f9d887f7463c224d46a91b921eb67ff0257a6ce616f92ff1cc914069736206da",
+  "deployed_archive_sha256": "68a89006f6c292cf9145ecf36078a0f381831f97ea478dc5ca80de924e6dd5a4",
+  "variants": {
+    "deployed": {
+      "binary": "astra-submissions/analysis/continuation-evidence/followup-probes/build/probe-deployed",
+      "binary_sha256": "54f1c02ab59fe8c8bf4bdd29d3108f62f8621f67abb970bd0b16397163a0a6e2",
+      "source_hashes": {
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/belief.cc": "7966b3e2eb0e7f5e2b9ba029c48357515cce15c87e45900bbc1cca4d900a6325",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/observation.cc": "cdf3a5316aedf4a764f9c94827816ab6bb87369cf8c3020c8af5a8ff5489c5ca",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/opponent_model.cc": "d9ef2083e3482af4ee4dbf642dff5a98ae75950730b660527b425530548c1597"
+      },
+      "compile_command": [
+        "g++",
+        "-O2",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-mpopcnt",
+        "-Iastra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/probe_belief.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/belief.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/position.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/move.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/bitboard.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/observation.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/opponent_model.cc",
+        "-o",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/probe-deployed"
+      ]
+    },
+    "experimental": {
+      "binary": "astra-submissions/analysis/continuation-evidence/followup-probes/build/probe-experimental",
+      "binary_sha256": "2e47a29b6f73b934760f567e02d4c6e23fe722632ad6008d3b734ab572a4e764",
+      "source_hashes": {
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/belief.cc": "bfff34f994e46277bbfdb45a3bed83619763bbcc21a75b5233b112d606a60afc",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/observation.cc": "041aa50dc04cd7a20c81978177ef2b97d916afcf9222c5eb4a2922b4a92ff3bf",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/opponent_model.cc": "3cc13b3aae88187f8e1e41e171d0130746524d4642b67aef8e5d74bcc6753f89"
+      },
+      "compile_command": [
+        "g++",
+        "-O2",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-mpopcnt",
+        "-Iastra-submissions/analysis/continuation-evidence/build/modern-runtime-v2",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/probe_belief.cc",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/belief.cc",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/position.cc",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/move.cc",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/bitboard.cc",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/observation.cc",
+        "astra-submissions/analysis/continuation-evidence/build/modern-runtime-v2/opponent_model.cc",
+        "-o",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/probe-experimental"
+      ]
+    }
+  }
+}

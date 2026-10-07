@@ -173,6 +173,7 @@ EngineOptions EngineOptionsFromEnvironment() {
   OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.use_visibility_deductions);
   OverrideFlag("FOW_GROUPED_PREDICTION", &options.use_grouped_prediction);
   OverrideFlag("FOW_CONTINUATION_EVIDENCE", &options.use_continuation_evidence);
+  OverrideFlag("FOW_HISTORY_RECOVERY", &options.use_history_recovery);
   Override("FOW_SPECULATIVE_WIN", &options.search.speculative_win_score);
   OverrideFlag("FOW_LMR", &options.search.use_late_move_reductions);
   OverrideFlag("FOW_ASPIRATION", &options.search.use_aspiration_windows);
@@ -277,7 +278,7 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       belief_(our_side, options.particle_count, seed ^ 0x9E3779B97F4A7C15ULL,
               options.use_opponent_prior, options.preserve_capture_evidence,
               options.use_visibility_deductions, options.use_grouped_prediction,
-              options.use_continuation_evidence),
+              options.use_continuation_evidence, options.use_history_recovery),
       searcher_(&table_) {
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);

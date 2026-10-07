@@ -117,6 +117,7 @@ struct EngineOptions {
   bool use_visibility_deductions = false;
   bool use_grouped_prediction = false;
   bool use_continuation_evidence = false;
+  bool use_history_recovery = false;
   SearchOptions search;
 };
 

@@ -52,7 +52,8 @@ def main():
   bool preserve_capture_evidence = false;
   bool use_visibility_deductions = false;
   bool use_grouped_prediction = false;
-  bool use_continuation_evidence = false;""")
+  bool use_continuation_evidence = false;
+  bool use_history_recovery = false;""")
     (output / "engine.h").write_text(header)
     engine = (output / "engine.cc").read_text()
     engine = replace_once(engine,
@@ -61,10 +62,11 @@ def main():
   OverrideFlag("FOW_CAPTURE_EVIDENCE", &options.preserve_capture_evidence);
   OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.use_visibility_deductions);
   OverrideFlag("FOW_GROUPED_PREDICTION", &options.use_grouped_prediction);
-  OverrideFlag("FOW_CONTINUATION_EVIDENCE", &options.use_continuation_evidence);''')
+  OverrideFlag("FOW_CONTINUATION_EVIDENCE", &options.use_continuation_evidence);
+  OverrideFlag("FOW_HISTORY_RECOVERY", &options.use_history_recovery);''')
     engine = replace_once(engine, "              options.opponent_prior),", """              options.opponent_prior == 1, options.preserve_capture_evidence,
               options.use_visibility_deductions, options.use_grouped_prediction,
-              options.use_continuation_evidence),""")
+              options.use_continuation_evidence, options.use_history_recovery),""")
     engine = replace_once(engine, "  (void)base_seconds;", """  (void)base_seconds;
   if (options.opponent_prior < 0 || options.opponent_prior > 1) {
     std::fprintf(stderr, "experimental belief gate supports only prior 0 or 1\\n");

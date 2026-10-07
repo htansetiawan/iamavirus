@@ -10,6 +10,7 @@
 #include <fstream>
 #include <iostream>
 #include <set>
+#include <sstream>
 #include <string>
 #include <type_traits>
 #include <vector>
@@ -47,12 +48,25 @@ static void CaptureDiagnostics(const Report& report) {
               << ",\"continuation_evidence_conflict\":"
               << (report.continuation_evidence_conflict ? "true" : "false");
   }
+  if constexpr (requires { report.history_attempted; }) {
+    std::cout << ",\"history_attempted\":" << (report.history_attempted ? "true" : "false")
+              << ",\"history_recovered\":" << (report.history_recovered ? "true" : "false")
+              << ",\"history_full_certified\":" << (report.history_full_certified ? "true" : "false")
+              << ",\"history_budget_exhausted\":" << (report.history_budget_exhausted ? "true" : "false")
+              << ",\"history_checkpoints_tried\":" << report.history_checkpoints_tried
+              << ",\"history_transitions\":" << report.history_transitions
+              << ",\"history_rewind_plies\":" << report.history_rewind_plies
+              << ",\"history_unique_support\":" << report.history_unique_support;
+  }
 }
 
 template <class Belief>
 static Belief MakeBelief(int side, int count, uint64_t seed,
-                         bool capture, bool deductions, bool grouped, bool continuation) {
-  if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool>) {
+                         bool capture, bool deductions, bool grouped, bool continuation,
+                         bool history) {
+  if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool, bool>) {
+    return Belief(side, count, seed, true, capture, deductions, grouped, continuation, history);
+  } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions, grouped, continuation);
   } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions, grouped);
@@ -60,7 +74,13 @@ static Belief MakeBelief(int side, int count, uint64_t seed,
     return Belief(side, count, seed, true, capture, deductions);
   } else {
     // Immutable earlier submissions expose only their original prior switch.
-    return Belief(side, count, seed, true);
+    Belief belief(side, count, seed, true);
+    // Fable's newer four-argument class enables deductions through Engine's
+    // setter, not the constructor. Reproduce that setting explicitly.
+    if constexpr (requires { belief.set_visibility_deductions(deductions); }) {
+      belief.set_visibility_deductions(deductions);
+    }
+    return belief;
   }
 }
 
@@ -81,9 +101,33 @@ static Move FindMove(const Position& p, const std::string& uci) {
   std::exit(2);
 }
 
+static void PrintAttackers(const Position& truth, int king_side,
+                           const Observation& before_view,
+                           const std::vector<Position>& particles) {
+  const int king = truth.KingSquare(king_side);
+  Bitboard attackers = king < 0 ? 0 : truth.AttackersTo(king, king_side ^ 1);
+  std::cout << '[';
+  bool first = true;
+  while (attackers) {
+    const int square = PopLsb(&attackers);
+    const int type = truth.piece_at(square);
+    int held = 0;
+    for (const Position& particle : particles) {
+      held += particle.piece_at(square) == type && particle.color_at(square) == (king_side ^ 1);
+    }
+    if (!first) std::cout << ',';
+    first = false;
+    std::cout << "{\"square\":" << square << ",\"piece\":\""
+              << PieceTypeToSymbol(type, king_side ^ 1) << "\",\"hidden_before\":"
+              << (before_view.IsUnseen(square) ? "true" : "false")
+              << ",\"held_particles\":" << held << '}';
+  }
+  std::cout << ']';
+}
+
 int main(int argc, char** argv) {
-  if (argc != 5 && argc != 7 && argc != 8 && argc != 9) {
-    std::cerr << "usage: probe_belief MOVES_FILE SIDE(0|1) SEED PARTICLES [CAPTURE DEDUCTIONS [GROUPED [CONTINUATION]]]\n";
+  if (argc != 5 && argc != 7 && argc != 8 && argc != 9 && argc != 10) {
+    std::cerr << "usage: probe_belief MOVES_FILE SIDE(0|1) SEED PARTICLES [CAPTURE DEDUCTIONS [GROUPED [CONTINUATION [HISTORY]]]]\n";
     return 2;
   }
   if (argc == 7 && !std::is_constructible_v<BeliefState, int, int, uint64_t, bool, bool, bool>) {
@@ -98,14 +142,31 @@ int main(int argc, char** argv) {
     std::cerr << "this source version does not expose continuation evidence\n";
     return 2;
   }
+  if (argc == 10 && !std::is_constructible_v<BeliefState, int, int, uint64_t, bool, bool, bool, bool, bool, bool>) {
+    std::cerr << "this source version does not expose history recovery\n";
+    return 2;
+  }
   InitializeAttackTables();
   InitializeZobrist();
   const int side = std::atoi(argv[2]);
+  if (side != kWhite && side != kBlack) return 2;
+  std::vector<int> tracked_squares;
+  if (const char* requested = std::getenv("ASTRA_PROBE_SQUARES")) {
+    std::istringstream stream(requested);
+    std::string item;
+    while (std::getline(stream, item, ',')) {
+      std::size_t used = 0;
+      const int square = std::stoi(item, &used);
+      if (used != item.size() || square < 0 || square >= 64) return 2;
+      tracked_squares.push_back(square);
+    }
+  }
   const uint64_t seed = std::strtoull(argv[3], nullptr, 10);
   auto belief = MakeBelief<BeliefState>(side, std::atoi(argv[4]),
       seed ^ 0x9E3779B97F4A7C15ULL,
       argc == 5 || std::atoi(argv[5]) != 0, argc == 5 || std::atoi(argv[6]) != 0,
-      argc >= 8 && std::atoi(argv[7]) != 0, argc >= 9 && std::atoi(argv[8]) != 0);
+      argc >= 8 && std::atoi(argv[7]) != 0, argc >= 9 && std::atoi(argv[8]) != 0,
+      argc >= 10 && std::atoi(argv[9]) != 0);
   Position truth;
   if (!PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth)) return 2;
   if (BoardText(truth) != "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr") return 2;
@@ -192,20 +253,47 @@ int main(int argc, char** argv) {
               << ",\"true_capture_was_ep\":" << (capture_was_ep ? "true" : "false")
               << ",\"true_capture_landing_support\":" << capture_supported;
     CaptureDiagnostics(report);
+    std::cout << ",\"true_attackers_before\":";
+    PrintAttackers(truth, side, observation, particles);
+    std::cout << ",\"tracked_squares\":[";
+    for (std::size_t i = 0; i < tracked_squares.size(); ++i) {
+      const int square = tracked_squares[i];
+      int held = 0;
+      for (const Position& particle : particles) {
+        held += particle.piece_at(square) == truth.piece_at(square) &&
+                (truth.piece_at(square) == kNoPiece || particle.color_at(square) == truth.color_at(square));
+      }
+      if (i) std::cout << ',';
+      std::cout << "{\"square\":" << square << ",\"truth\":\"" << true_board[square]
+                << "\",\"hidden\":" << (observation.IsUnseen(square) ? "true" : "false")
+                << ",\"held_particles\":" << held << '}';
+    }
+    std::cout << ']';
     if (ply < moves.size() && truth.side_to_move() == side) {
       const Move actual = FindMove(truth, moves[ply]);
-      int loses = 0;
+      int loses = 0, illegal = 0;
       for (Position p : particles) {
         p.set_side_to_move(side);
-        // Diagnostic scoring on replay truth's EP/right metadata is not needed:
-        // the tested game's critical moves are ordinary moves, not castling/EP.
+        // Do not apply a move unsupported by a rebuilt hypothesis. In
+        // particular its EP/rights metadata may differ from the actor's.
+        MoveList available;
+        p.GenerateMoves(&available);
+        bool allowed = false;
+        for (Move move : available) allowed |= move == actual;
+        if (!allowed) { ++illegal; continue; }
         UndoState undo;
         p.MakeMove(actual, &undo);
         const int king = p.KingSquare(side);
         loses += king < 0 || p.IsAttacked(king, side ^ 1);
       }
       std::cout << ",\"actual_move\":\"" << moves[ply]
-                << "\",\"actual_move_king_loss_particles\":" << loses;
+                << "\",\"actual_move_king_loss_particles\":" << loses
+                << ",\"actual_move_illegal_particles\":" << illegal;
+      Position after_truth = truth;
+      UndoState actual_undo;
+      after_truth.MakeMove(actual, &actual_undo);
+      std::cout << ",\"true_attackers_after_actual\":";
+      PrintAttackers(after_truth, side, observation, particles);
     }
     std::cout << "}\n";
     const Move actual = FindMove(truth, moves[ply]);

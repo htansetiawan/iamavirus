@@ -64,6 +64,14 @@ struct BeliefUpdateReport {
   int recovery_attempts = 0;
   int recovery_continuation_rejected = 0;
   bool continuation_evidence_conflict = false;
+  bool history_attempted = false;
+  bool history_recovered = false;
+  bool history_budget_exhausted = false;
+  bool history_full_certified = false;
+  int history_checkpoints_tried = 0;
+  int history_transitions = 0;
+  int history_rewind_plies = 0;
+  int history_unique_support = 0;
 };
 
 class BeliefState {
@@ -78,7 +86,8 @@ class BeliefState {
               bool preserve_capture_evidence = true,
               bool use_visibility_deductions = false,
               bool use_grouped_prediction = false,
-              bool use_continuation_evidence = false);
+              bool use_continuation_evidence = false,
+              bool use_history_recovery = false);
 
   // Absorbs an observation. `reflects_our_own_move` must be true for the
   // observation the arena sends immediately after our own move, since the only
@@ -177,6 +186,27 @@ class BeliefState {
   void PredictAndConditionGrouped(const Observation& view, BeliefUpdateReport* report);
   bool ConsistentWithContinuation(const Position& position) const;
 
+  // A bounded smoother: revisit earlier supports and replay only legal edges
+  // consistent with every observation since that checkpoint. No true board or
+  // opponent action enters this log. Checkpoints after random reconstruction
+  // certify only the retained window, never the complete game history.
+  struct WeightedState { Position position; double weight; };
+  struct HistoryFrame {
+    Observation view;
+    ObservedPieces ours;
+    ObservedPieces enemy;
+    int previous_mover = -1;
+    Move own_move = kNullMove;
+    bool full_certified = false;
+    std::vector<WeightedState> support;
+  };
+  void RememberHistory(const Observation& view);
+  bool RecoverFromHistory(const Observation& view, BeliefUpdateReport* report);
+  bool MatchesHistoryFrame(const Position& position, const HistoryFrame& frame) const;
+  std::vector<HistoryFrame> history_;
+  Move pending_history_move_ = kNullMove;
+  bool history_full_certified_ = true;
+
   int our_side_;
   int target_count_;
   bool use_opponent_prior_;
@@ -184,6 +214,7 @@ class BeliefState {
   bool use_visibility_deductions_;
   bool use_grouped_prediction_;
   bool use_continuation_evidence_;
+  bool use_history_recovery_;
   int previous_mover_ = -1;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;

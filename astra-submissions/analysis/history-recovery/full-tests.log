@@ -1,0 +1,37 @@
+bitboard_test: 112219 checks, 0 failures
+position_test: 55940 checks, 0 failures
+       1949 deduced enemy squares and 8587 deduced empty squares verified
+observation_test: 12518 checks, 0 failures
+evaluation_test: 44 checks, 0 failures
+search_test: 67 checks, 0 failures
+       grouped: 1444 plies, truth in population 835, collapses 13
+       1444 plies, truth in population 805, collapses 13, pieces correctly placed 79.6%, composition unknown in 3152
+belief_test: 2170 checks, 0 failures
+regret_test: 29 checks, 0 failures
+ignoring malformed FOW_PARTICLES=not-a-number
+       seed 2026 chose g8e7 (d5 guarded in 37%, risk seen 672 cp)
+       seed 1 chose c6d4 (d5 guarded in 38%, risk seen 320 cp)
+       seed 2 chose c6d4 (d5 guarded in 29%, risk seen 250 cp)
+       seed 3 chose c6d4 (d5 guarded in 30%, risk seen 311 cp)
+       seed 4 chose c6d4 (d5 guarded in 46%, risk seen 389 cp)
+       seed 5 chose c6e7 (d5 guarded in 17%, risk seen 780 cp)
+       seed 6 chose g8e7 (d5 guarded in 22%, risk seen 567 cp)
+       seed 7 chose c6d4 (d5 guarded in 20%, risk seen 172 cp)
+       chose e8d7 (rejected 30 unsafe, king risk 156 permille)
+       chose d1c2 (rejected 23 of 25, risk 0 permille)
+       212 plies, worst budget overrun 0.001s
+       cap 6 seed 1 shortlist risk 290 minimum 290 replaced 1
+       cap 6 seed 2 shortlist risk 145 minimum 145 replaced 0
+       cap 6 seed 3 shortlist risk 129 minimum 129 replaced 0
+       cap 6 seed 4 shortlist risk 0 minimum 0 replaced 0
+       cap 12 seed 1 shortlist risk 290 minimum 290 replaced 1
+       cap 12 seed 2 shortlist risk 145 minimum 145 replaced 0
+       cap 12 seed 3 shortlist risk 129 minimum 129 replaced 0
+       cap 12 seed 4 shortlist risk 0 minimum 0 replaced 0
+engine_test: 575 checks, 0 failures
+neural_test: 145 checks, 0 failures
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/implementation/tests/conformance_test.py", line 32, in <module>
+    from referee import FowBoard, fow_moves, observation  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'referee'

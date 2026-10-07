@@ -37,6 +37,9 @@ constexpr double kAttacksOurKingFactor = 3.0;
 // Ceiling on the enumerated successor pool, so a position with an unusually
 // large number of consistent explanations cannot blow up memory or time.
 constexpr std::size_t kMaxPoolSize = 20000;
+constexpr int kHistoryFrames = 16;
+constexpr int kHistoryTransitionsPerAttempt = 250000;
+constexpr std::size_t kHistoryPoolLimit = 65536;
 
 Position StartingPosition() {
   Position position;
@@ -103,7 +106,7 @@ std::vector<int> SystematicCounts(const std::vector<double>& weights, int draws,
 BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
                          bool use_opponent_prior, bool preserve_capture_evidence,
                          bool use_visibility_deductions, bool use_grouped_prediction,
-                         bool use_continuation_evidence)
+                         bool use_continuation_evidence, bool use_history_recovery)
     : our_side_(our_side),
       target_count_(std::max(1, particle_count)),
       use_opponent_prior_(use_opponent_prior),
@@ -111,6 +114,7 @@ BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
       use_visibility_deductions_(use_visibility_deductions),
       use_grouped_prediction_(use_grouped_prediction),
       use_continuation_evidence_(use_continuation_evidence),
+      use_history_recovery_(use_history_recovery),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
   const int home_rank = our_side == kWhite ? 0 : 7;
@@ -207,6 +211,7 @@ void BeliefState::UpdateOwnRights(const Observation& view) {
 }
 
 void BeliefState::ApplyOurMove(Move move) {
+  if (use_history_recovery_) pending_history_move_ = move;
   own_double_push_square_ = MoveFlagOf(move) == kFlagDoublePush ? MoveTo(move) : -1;
   const int taken = MoveFlagOf(move) == kFlagEnPassant
                         ? MoveTo(move) + (our_side_ == kWhite ? -8 : 8)
@@ -254,7 +259,7 @@ void BeliefState::ApplyOurMove(Move move) {
     particle.MakeMove(move, &undo);
     updated.push_back(particle);
   }
-  if (!updated.empty()) {
+  if (!updated.empty() || use_history_recovery_) {
     particles_.swap(updated);
   }
   representative_valid_ = false;
@@ -288,13 +293,184 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
   } else {
     PredictAndCondition(view, &report);
   }
+  if (use_history_recovery_) {
+    // Matching the visible contents alone does not prove that the visibility
+    // mask is possible. Certification checks the complete actor observation.
+    HistoryFrame frame;
+    frame.view = view;
+    frame.ours = Summarize(view, our_side_);
+    frame.enemy = Summarize(view, our_side_ ^ 1);
+    frame.previous_mover = previous_mover_;
+    particles_.erase(std::remove_if(particles_.begin(), particles_.end(),
+        [&](const Position& p) { return !MatchesHistoryFrame(p, frame); }),
+        particles_.end());
+  }
   if (particles_.empty()) {
-    Recover(view, &report);
+    report.collapsed = true;
+    if (!use_history_recovery_ || !RecoverFromHistory(view, &report)) {
+      Recover(view, &report);
+      history_full_certified_ = false;
+    }
+  }
+  if (use_history_recovery_) {
+    RememberHistory(view);
+    report.history_full_certified = history_full_certified_;
+    pending_history_move_ = kNullMove;
   }
   representative_valid_ = false;
   previous_view_ = view;
   last_report_ = report;
   return report;
+}
+
+bool BeliefState::MatchesHistoryFrame(const Position& position,
+                                       const HistoryFrame& frame) const {
+  // A legal live history must survive referee adjudication at every step.
+  // This is mandatory for history certification even if the separate
+  // continuation ablation is disabled on the ordinary filter path.
+  if (frame.previous_mover >= 0) {
+    const int king = position.KingSquare(frame.previous_mover);
+    if (king < 0 || position.IsAttacked(king, frame.previous_mover ^ 1)) return false;
+  }
+  // Cheap piece constraints before generating the full visibility mask.
+  if (!AgreesAboutUs(position, frame.ours, our_side_) ||
+      !AgreesAboutEnemy(position, frame.enemy, our_side_ ^ 1)) return false;
+  return RenderObservation(position, our_side_) == frame.view.squares();
+}
+
+void BeliefState::RememberHistory(const Observation& view) {
+  HistoryFrame frame;
+  frame.view = view;
+  frame.ours = Summarize(view, our_side_);
+  frame.enemy = Summarize(view, our_side_ ^ 1);
+  frame.previous_mover = previous_mover_;
+  frame.own_move = previous_mover_ == our_side_ ? pending_history_move_ : kNullMove;
+  frame.full_certified = history_full_certified_;
+  std::unordered_map<StateIdentity, std::size_t, StateIdentityHash> index;
+  index.reserve(particles_.size());
+  for (Position p : particles_) {
+    p.set_side_to_move(previous_mover_ < 0 ? kWhite : previous_mover_ ^ 1);
+    if (!MatchesHistoryFrame(p, frame)) continue;
+    auto [entry, added] = index.emplace(StateIdentity(p), frame.support.size());
+    if (added) frame.support.push_back({p, 1.0});
+    else frame.support[entry->second].weight += 1.0;
+  }
+  if (history_.size() == kHistoryFrames) history_.erase(history_.begin());
+  history_.push_back(std::move(frame));
+}
+
+bool BeliefState::RecoverFromHistory(const Observation& view,
+                                      BeliefUpdateReport* report) {
+  report->history_attempted = true;
+  HistoryFrame current;
+  current.view = view;
+  current.ours = Summarize(view, our_side_);
+  current.enemy = Summarize(view, our_side_ ^ 1);
+  current.previous_mover = previous_mover_;
+  current.own_move = previous_mover_ == our_side_ ? pending_history_move_ : kNullMove;
+  const int count = static_cast<int>(history_.size());
+  if (count == 0 || previous_mover_ < 0) return false;
+  const int width = std::clamp(2 * target_count_, 64, 8192);
+  std::vector<int> distances;
+  // Replaying one edge from the same support cannot restore discarded mass.
+  // Go back before the last resampling, and progressively farther if needed.
+  for (int distance : {2, 4, 8, 16}) if (distance <= count) distances.push_back(distance);
+  if (distances.empty() || distances.back() != count) distances.push_back(count);
+  for (const int distance : distances) {
+    const int anchor_index = count - distance;
+    const HistoryFrame& anchor = history_[anchor_index];
+    if (anchor.support.empty()) continue;
+    ++report->history_checkpoints_tried;
+    std::vector<WeightedState> support = anchor.support;
+    int remaining = kHistoryTransitionsPerAttempt;
+    bool failed = false;
+    for (int step = anchor_index + 1; step <= count && !failed; ++step) {
+      const HistoryFrame& frame = step == count ? current : history_[step];
+      const int mover = frame.previous_mover;
+      if (mover < 0 || (mover == our_side_ && frame.own_move == kNullMove)) {
+        failed = true;
+        break;
+      }
+      std::vector<WeightedState> next;
+      std::unordered_map<StateIdentity, std::size_t, StateIdentityHash> index;
+      index.reserve(std::min(kHistoryPoolLimit, support.size() * 16));
+      for (const auto& parent : support) {
+        Position p = parent.position;
+        // The recorded sequence, not a forced side override, determines whose
+        // move this is. A malformed history must not create a legal trajectory.
+        if (p.side_to_move() != mover) continue;
+        MoveList moves;
+        p.GenerateMoves(&moves);
+        const int cost = mover == our_side_ ? 1 : moves.size();
+        if (cost > remaining) {
+          report->history_budget_exhausted = failed = true;
+          break;  // do not return a population from a partially visited level
+        }
+        remaining -= cost;
+        report->history_transitions += cost;
+        std::vector<double> priors(moves.size(), 1.0);
+        double total = 1.0;
+        if (mover != our_side_) {
+          total = 0.0;
+          for (int i = 0; i < moves.size(); ++i) {
+            priors[i] = MovePlausibility(&p, moves[i]);
+            total += priors[i];
+          }
+        }
+        if (total <= 0.0) continue;
+        for (int i = 0; i < moves.size(); ++i) {
+          const Move move = moves[i];
+          if (mover == our_side_ && move != frame.own_move) continue;
+          UndoState undo;
+          p.MakeMove(move, &undo);
+          if (MatchesHistoryFrame(p, frame)) {
+            const double weight = parent.weight * priors[i] / total;
+            auto [entry, added] = index.emplace(StateIdentity(p), next.size());
+            if (added) next.push_back({p, weight});
+            else next[entry->second].weight += weight;
+          }
+          p.UnmakeMove(move, undo);
+          if (next.size() > kHistoryPoolLimit) {
+            report->history_budget_exhausted = failed = true;
+            break;
+          }
+        }
+        if (failed) break;
+      }
+      if (failed || next.empty()) { failed = true; break; }
+      double total = 0.0;
+      for (const auto& p : next) total += p.weight;
+      if (total <= 0.0) { failed = true; break; }
+      for (auto& p : next) p.weight /= total;
+      if (next.size() > static_cast<std::size_t>(width)) {
+        std::vector<double> weights;
+        for (const auto& p : next) weights.push_back(p.weight);
+        const auto copies = SystematicCounts(weights, width, &rng_);
+        support.clear();
+        for (std::size_t i = 0; i < next.size(); ++i) {
+          if (copies[i]) support.push_back({next[i].position, static_cast<double>(copies[i]) / width});
+        }
+      } else {
+        support.swap(next);  // keep the entire weighted set when small enough
+      }
+    }
+    if (failed) continue;
+    std::vector<double> weights;
+    std::vector<Position> pool;
+    for (const auto& p : support) { weights.push_back(p.weight); pool.push_back(p.position); }
+    Resample(weights, pool, report);
+    history_full_certified_ = anchor.full_certified;
+    report->history_recovered = true;
+    report->history_rewind_plies = distance;
+    report->history_unique_support = static_cast<int>(pool.size());
+    if (capture_square_ >= 0) {
+      for (const auto& p : particles_) {
+        report->capture_constraints_preserved += p.color_at(capture_square_) == (our_side_ ^ 1);
+      }
+    }
+    return true;
+  }
+  return false;
 }
 
 bool BeliefState::ConsistentWithContinuation(const Position& position) const {

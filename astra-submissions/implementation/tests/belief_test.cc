@@ -29,6 +29,16 @@ struct BeliefStateTestAccess {
     belief->particles_ = support;
     belief->representative_valid_ = false;
   }
+  static void ClearPopulation(BeliefState* belief) { belief->particles_.clear(); }
+  static void SeedLocalHistory(BeliefState* belief, const Position& position) {
+    belief->particles_.assign(belief->target_count_, position);
+    belief->seen_any_ = true;
+    belief->previous_mover_ = position.side_to_move() ^ 1;
+    belief->history_full_certified_ = false;  // synthetic root, not an opening trajectory
+    belief->previous_view_ = Observation(RenderObservation(position, belief->our_side_));
+    belief->history_.clear();
+    belief->RememberHistory(belief->previous_view_);
+  }
 };
 namespace {
 
@@ -694,6 +704,116 @@ void FogContextReflectsTheRemainingEnemyArmy() {
   FOW_EXPECT_TRUE(!belief.EnemyKingVisible(view));
 }
 
+Move HistoryMove(const Position& position, const char* uci) {
+  MoveList moves;
+  position.GenerateMoves(&moves);
+  for (Move move : moves) if (MoveToUci(move) == uci) return move;
+  FOW_EXPECT_TRUE(false);
+  return kNullMove;
+}
+
+void HistoryRecoveryReplaysAnOpeningWithoutInventingPieces() {
+  for (const int side : {kWhite, kBlack}) {
+    BeliefState belief(side, 32, 902 + side, true, true, true, true, true, true);
+    Position truth = StartPosition();
+    belief.Observe(Observation(RenderObservation(truth, side)), false);
+    for (const char* uci : {"e2e4", "e7e5", "g1f3", "b8c6"}) {
+      const bool ours = truth.side_to_move() == side;
+      const Move move = HistoryMove(truth, uci);
+      if (ours) belief.ApplyOurMove(move);
+      UndoState undo;
+      truth.MakeMove(move, &undo);
+      // Emulate particle extinction, not an impossible observation.
+      BeliefStateTestAccess::ClearPopulation(&belief);
+      const Observation view(RenderObservation(truth, side));
+      const auto report = belief.Observe(view, ours);
+      FOW_EXPECT_TRUE(report.collapsed);
+      FOW_EXPECT_TRUE(report.history_recovered);
+      FOW_EXPECT_TRUE(report.history_full_certified);
+      FOW_EXPECT_EQ(report.recovery_attempts, 0);
+      FOW_EXPECT_TRUE(report.history_transitions <= 1000000);
+      for (const auto& p : belief.particles()) {
+        FOW_EXPECT_EQ(RenderObservation(p, side), view.squares());
+        FOW_EXPECT_TRUE(!p.PreviousMoverIsLost());
+      }
+    }
+  }
+}
+
+void HistoryRecoveryPreservesAHiddenBishopAndAllowsItsMove() {
+  Position truth;
+  FOW_EXPECT_TRUE(PositionFromFen("8/7k/8/8/8/r1B5/8/7K b - - 0 1", &truth));
+  BeliefState belief(kBlack, 32, 404, true, true, true, true, true, true);
+  BeliefStateTestAccess::SeedLocalHistory(&belief, truth);
+  FOW_EXPECT_EQ(RenderObservation(truth, kBlack)[18], 'B');
+  for (const char* uci : {"a3a4", "c3b4"}) {
+    const bool ours = truth.side_to_move() == kBlack;
+    const Move move = HistoryMove(truth, uci);
+    if (ours) belief.ApplyOurMove(move);
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+    BeliefStateTestAccess::ClearPopulation(&belief);
+    const Observation view(RenderObservation(truth, kBlack));
+    const auto report = belief.Observe(view, ours);
+    FOW_EXPECT_TRUE(report.history_recovered);
+    FOW_EXPECT_TRUE(!report.history_full_certified);
+    const int bishop = ours ? 18 : 25;
+    if (ours) FOW_EXPECT_TRUE(view.IsUnseen(18));
+    for (const auto& p : belief.particles()) {
+      FOW_EXPECT_EQ(p.piece_at(bishop), kBishop);
+      FOW_EXPECT_EQ(p.color_at(bishop), kWhite);
+      FOW_EXPECT_EQ(RenderObservation(p, kBlack), view.squares());
+    }
+  }
+}
+
+void HistoryRecoveryRetainsSpecialMoveMetadata() {
+  struct Case { const char* fen; const char* uci; };
+  for (const Case fixture : {
+      Case{"4k3/8/8/8/8/8/8/4K2R w K - 0 1", "e1g1"},
+      Case{"4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 1", "e5d6"},
+      Case{"4k3/P7/8/8/8/8/8/4K3 w - - 0 1", "a7a8n"},
+      Case{"4k2r/8/8/8/8/8/8/4K3 b k - 0 1", "e8g8"},
+      Case{"4k3/8/8/8/3Pp3/8/8/4K3 b - d3 0 1", "e4d3"},
+      Case{"4k3/8/8/8/8/8/p7/4K3 b - - 0 1", "a2a1n"}}) {
+    Position truth;
+    FOW_EXPECT_TRUE(PositionFromFen(fixture.fen, &truth));
+    const int side = truth.side_to_move();
+    BeliefState belief(side, 8, 994, true, true, true, true, true, true);
+    BeliefStateTestAccess::SeedLocalHistory(&belief, truth);
+    const Move move = HistoryMove(truth, fixture.uci);
+    belief.ApplyOurMove(move);
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+    BeliefStateTestAccess::ClearPopulation(&belief);
+    const Observation view(RenderObservation(truth, side));
+    const auto report = belief.Observe(view, true);
+    FOW_EXPECT_TRUE(report.history_recovered);
+    FOW_EXPECT_TRUE(!report.history_full_certified);
+    for (const auto& p : belief.particles()) {
+      FOW_EXPECT_TRUE(SamePlacement(p, truth, kWhite));
+      FOW_EXPECT_TRUE(SamePlacement(p, truth, kBlack));
+      FOW_EXPECT_EQ(p.castling_rights(), truth.castling_rights());
+      FOW_EXPECT_EQ(p.en_passant_square(), truth.en_passant_square());
+      FOW_EXPECT_EQ(p.halfmove_clock(), truth.halfmove_clock());
+    }
+  }
+}
+
+void HistoryRecoveryRejectsAnImpossibleOwnTransition() {
+  BeliefState belief(kWhite, 8, 400, true, true, true, true, true, true);
+  Position truth = StartPosition();
+  belief.Observe(Observation(RenderObservation(truth, kWhite)), false);
+  // A successful own move cannot leave the opening board unchanged.
+  belief.ApplyOurMove(HistoryMove(truth, "e2e4"));
+  const auto report = belief.Observe(Observation(RenderObservation(truth, kWhite)), true);
+  FOW_EXPECT_TRUE(report.history_attempted);
+  FOW_EXPECT_TRUE(!report.history_recovered);
+  FOW_EXPECT_TRUE(!report.history_full_certified);
+  FOW_EXPECT_TRUE(report.recovery_attempts > 0);
+  FOW_EXPECT_TRUE(report.history_transitions <= 1000000);
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -718,6 +838,10 @@ int main() {
   FOW_RUN_TEST(fow::ContinuationAllowsAnInvisibleCheckByEitherMover);
   FOW_RUN_TEST(fow::RecoveryConditionsOnThePreviousMoversSurvival);
   FOW_RUN_TEST(fow::ImpossibleContinuationIsBoundedAndReported);
+  FOW_RUN_TEST(fow::HistoryRecoveryReplaysAnOpeningWithoutInventingPieces);
+  FOW_RUN_TEST(fow::HistoryRecoveryPreservesAHiddenBishopAndAllowsItsMove);
+  FOW_RUN_TEST(fow::HistoryRecoveryRetainsSpecialMoveMetadata);
+  FOW_RUN_TEST(fow::HistoryRecoveryRejectsAnImpossibleOwnTransition);
   FOW_RUN_TEST(fow::RecoversWhenEveryHypothesisIsContradicted);
   FOW_RUN_TEST(fow::BeliefMaintainsItsInvariants);
   return fow::testing::Summarize("belief_test");

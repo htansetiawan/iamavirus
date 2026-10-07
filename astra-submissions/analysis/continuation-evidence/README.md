@@ -53,6 +53,16 @@ all flags off selects **40/40 identical moves** to the archived v12 benchmark.
 stage resides in `build/modern-runtime-v2`; an earlier failed staging remains in
 `build/modern-runtime` and must not be used.
 
-The next action gate toggles continuation within the same modern binary, with
-capture/deductions/grouping enabled in both arms. It is pending while Fable's
-timed match lanes occupy the agreed CPU cores. No new strength claim is made.
+The completed action gate toggled continuation within the same modern binary,
+with capture/deductions/grouping enabled in both arms. At 400,000 nodes, seed
+777, over 37 target seats / 274 decisions, king losses stayed **16 -> 16**;
+avoidable losses stayed **4 -> 4**. Of 36 changed choices, one became safe
+(al0xlrqe, White, pre-ply 84) and one became fatal (ea9ds6vw, Black, pre-ply 133).
+Survival of the recorded losing terminal positions fell **11 -> 10 / 26**.
+See `action-gate-historical/summary.json`. Continuation stays off by default.
+
+Follow-up traces found that random reconstruction erases recently observed
+hidden-piece locations. The first deployed-source probe omitted Fable's
+visibility-deduction setter; its failed batch is preserved and explicitly
+invalid for release-configuration claims. Corrected deployed diagnostics and
+the bounded-history prototype are in `../history-recovery/`.

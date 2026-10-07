@@ -1,0 +1,84 @@
+{
+  "probe_sha256": "edbaa359fe6672a3000343843882ccec70b08e565034be51b1fab62497439b86",
+  "variants": {
+    "research": {
+      "binary_sha256": "8da2957b32eea6410749f9bc9827dbc768d690a2017dea255fc136341b454a39",
+      "command": [
+        "taskset",
+        "-c",
+        "2,3",
+        "g++",
+        "-O2",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-mpopcnt",
+        "-Iastra-submissions/implementation",
+        "astra-submissions/tools/probe_belief.cc",
+        "astra-submissions/implementation/belief.cc",
+        "astra-submissions/implementation/position.cc",
+        "astra-submissions/implementation/move.cc",
+        "astra-submissions/implementation/bitboard.cc",
+        "astra-submissions/implementation/observation.cc",
+        "-o",
+        "astra-submissions/analysis/history-recovery/build/probe-research"
+      ],
+      "sources": {
+        "astra-submissions/implementation/belief.cc": "1e576a2166345c3cefc5f858d8f59d646996e47185112b21b0ea36ac5c747289",
+        "astra-submissions/implementation/position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+        "astra-submissions/implementation/move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+        "astra-submissions/implementation/bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+        "astra-submissions/implementation/observation.cc": "041aa50dc04cd7a20c81978177ef2b97d916afcf9222c5eb4a2922b4a92ff3bf",
+        "astra-submissions/implementation/belief.h": "226a77ab6005480d5ebd6d48681f4bda1ba201ac21ef2a57c5aabcb63f122f0c",
+        "astra-submissions/implementation/position.h": "4779d19bc65b7f083c9cb85cc08de760ba723dd17b3447b276ee9eef356e02a7",
+        "astra-submissions/implementation/move.h": "d9df0633b6449f6156b7ce5aeba762a11629834ffe8276a5a14336b5bda411fb",
+        "astra-submissions/implementation/bitboard.h": "8e44e16445d783bb10df53533d54039d345893fccd1b5b0e40a40c771fa5aa0d",
+        "astra-submissions/implementation/observation.h": "a5459c881545c2523a6deb67d53480ec3aeb639772fd004d5682445dfa5c3706",
+        "astra-submissions/tools/probe_belief.cc": "edbaa359fe6672a3000343843882ccec70b08e565034be51b1fab62497439b86"
+      },
+      "deductions": true
+    },
+    "deployed": {
+      "binary_sha256": "617cc1a782792c7c87b887c6077fc7d090a789fbd89ec02356204cd193dadf3c",
+      "command": [
+        "taskset",
+        "-c",
+        "2,3",
+        "g++",
+        "-O2",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Werror",
+        "-mpopcnt",
+        "-Iastra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12",
+        "astra-submissions/tools/probe_belief.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/belief.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/position.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/move.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/bitboard.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/observation.cc",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/opponent_model.cc",
+        "-o",
+        "astra-submissions/analysis/history-recovery/build/probe-deployed"
+      ],
+      "sources": {
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/belief.cc": "7966b3e2eb0e7f5e2b9ba029c48357515cce15c87e45900bbc1cca4d900a6325",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/observation.cc": "cdf3a5316aedf4a764f9c94827816ab6bb87369cf8c3020c8af5a8ff5489c5ca",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/opponent_model.cc": "d9ef2083e3482af4ee4dbf642dff5a98ae75950730b660527b425530548c1597",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/belief.h": "801e096a5dd78373439e72d98ccdd3c7e308cdf70db1123e5505576e836088b4",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/position.h": "4779d19bc65b7f083c9cb85cc08de760ba723dd17b3447b276ee9eef356e02a7",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/move.h": "d9df0633b6449f6156b7ce5aeba762a11629834ffe8276a5a14336b5bda411fb",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/bitboard.h": "8e44e16445d783bb10df53533d54039d345893fccd1b5b0e40a40c771fa5aa0d",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/observation.h": "1a2c3499673f10426a30e1182af2c3cc0fa1e3ac88b1edbb3ec18f118fd3a9dd",
+        "astra-submissions/analysis/continuation-evidence/followup-probes/build/deployed-v12/opponent_model.h": "1b3443eb9cd394b2897a71ed2daf3a0544ee41794f68cc0c8fe5de9b0ad9ff54",
+        "astra-submissions/tools/probe_belief.cc": "edbaa359fe6672a3000343843882ccec70b08e565034be51b1fab62497439b86"
+      },
+      "deductions": true
+    }
+  }
+}
