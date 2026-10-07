@@ -27,6 +27,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <utility>
 #include <vector>
 
 #include "../belief.h"
@@ -72,6 +73,12 @@ struct Tally {
   int side_real_threatened[2] = {0, 0};
   int side_fatal[2] = {0, 0};
   int side_saved[2] = {0, 0};
+  // Vision after the move on the true board: squares we see, and our pieces
+  // they see; engine vs the real player.
+  long vision_engine = 0;
+  long vision_real = 0;
+  long seen_pieces_engine = 0;
+  long seen_pieces_real = 0;
   // Belief calibration: over hidden squares holding an enemy piece on the
   // true board, the share of particles that hold that piece there (averaged
   // per decision); and, at the recorded fatal plies, the share of particles
@@ -174,6 +181,17 @@ int HiddenThreatOf(const Position& truth, Move move, int side) {
   return (best - already) / 100;
 }
 
+// Vision after `move` on the true board: (our visible squares, our pieces
+// visible to them).
+std::pair<int, int> VisionOf(const Position& truth, Move move, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(move, &undo);
+  const Bitboard ours = VisibleSquares(after, side);
+  const Bitboard theirs = VisibleSquares(after, side ^ 1);
+  return {PopCount(ours), PopCount(theirs & after.pieces_of(side))};
+}
+
 Move FindMove(const Position& position, const std::string& uci) {
   MoveList legal;
   position.GenerateMoves(&legal);
@@ -263,6 +281,14 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
           if (ExposureOf(truth, actual, seat.side) >= 3) {
             ++tally->real_exposed;
             ++tally->side_real_exposed[seat.side];
+          }
+          {
+            const auto ve = VisionOf(truth, choice, seat.side);
+            const auto vr = VisionOf(truth, actual, seat.side);
+            tally->vision_engine += ve.first;
+            tally->seen_pieces_engine += ve.second;
+            tally->vision_real += vr.first;
+            tally->seen_pieces_real += vr.second;
           }
           if (HiddenThreatOf(truth, choice, seat.side) >= 3) {
             ++tally->threatened;
@@ -364,6 +390,11 @@ int main(int argc, char** argv) {
   std::printf("  ...the engine survives    : %d (%.0f%%)\n", tally.fatal_saved,
               tally.fatal_positions
                   ? 100.0 * tally.fatal_saved / tally.fatal_positions : 0.0);
+  std::printf("  vision after the move      : engine sees %.1f squares, %.2f of its pieces seen; real player %.1f squares, %.2f seen\n",
+              tally.decisions ? static_cast<double>(tally.vision_engine) / tally.decisions : 0.0,
+              tally.decisions ? static_cast<double>(tally.seen_pieces_engine) / tally.decisions : 0.0,
+              tally.decisions ? static_cast<double>(tally.vision_real) / tally.decisions : 0.0,
+              tally.decisions ? static_cast<double>(tally.seen_pieces_real) / tally.decisions : 0.0);
   for (int side = 0; side < 2; ++side) {
     const int n = tally.side_decisions[side];
     std::printf("  as %s: decisions %d, king losses %d (%.2f%%), en prise engine %.2f%% real %.2f%%, "

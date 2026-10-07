@@ -11,6 +11,7 @@
 #include <cstdint>
 #include <random>
 #include <string>
+#include <thread>
 #include <vector>
 
 #include "evaluation.h"
@@ -227,6 +228,44 @@ double Engine::ExpectedHiddenThreat(Move move, int en_passant) const {
   return counted > 0 ? total / counted : 0.0;
 }
 
+// Vision. Nothing else in the engine rewards seeing more squares or being
+// seen less, yet 90% of the material we lose goes to a capturer we could not
+// see (reports/IAmAVirus replay analysis.md). After our move: the squares we
+// see minus the squares they see, each of our pieces they can see, and
+// whether they see our king, averaged over a stride of the population.
+double Engine::ExpectedVision(Move move, int en_passant) const {
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return 0.0;
+  const int enemy_side = our_side_ ^ 1;
+  const int stride = std::max(1, options_.vision_stride);
+  double total = 0.0;
+  int counted = 0;
+  for (std::size_t i = 0; i < population.size(); i += static_cast<std::size_t>(stride)) {
+    Position hypothesis = population[i];
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    if (IsCastle(move)) {
+      MoveList available;
+      hypothesis.GenerateMoves(&available);
+      if (!ListContains(available, move)) continue;
+    }
+    UndoState undo;
+    hypothesis.MakeMove(move, &undo);
+    ++counted;
+    const Bitboard ours = VisibleSquares(hypothesis, our_side_);
+    const Bitboard theirs = VisibleSquares(hypothesis, enemy_side);
+    const Bitboard our_pieces = hypothesis.pieces_of(our_side_);
+    const int king = hypothesis.KingSquare(our_side_);
+    double score = options_.vision_square *
+                   (static_cast<double>(PopCount(ours)) - static_cast<double>(PopCount(theirs)));
+    score -= options_.vision_piece * static_cast<double>(PopCount(theirs & our_pieces));
+    if (king >= 0 && (theirs & SquareBB(king))) score -= options_.vision_king;
+    total += score;
+    hypothesis.UnmakeMove(move, undo);
+  }
+  return counted > 0 ? total / counted : 0.0;
+}
+
 namespace {
 
 // Reads an override, leaving the default in place when the variable is absent or
@@ -287,6 +326,12 @@ EngineOptions EngineOptionsFromEnvironment() {
   OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.visibility_deductions);
   Override("FOW_HIDDEN_THREAT", &options.hidden_threat_weight);
   Override("FOW_HIDDEN_THREAT_STRIDE", &options.hidden_threat_stride);
+  Override("FOW_CELL_THREADS", &options.cell_threads);
+  Override("FOW_VISION", &options.vision_weight);
+  Override("FOW_VISION_SQUARE", &options.vision_square);
+  Override("FOW_VISION_PIECE", &options.vision_piece);
+  Override("FOW_VISION_KING", &options.vision_king);
+  Override("FOW_VISION_STRIDE", &options.vision_stride);
   Override("FOW_TIME_CAP", &options.time_cap);
   Override("FOW_HARD_TURN", &options.hard_turn_multiplier);
   Override("FOW_EASY_TURN", &options.easy_turn_multiplier);
@@ -406,11 +451,16 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       rng_(seed),
       belief_(our_side, options.particle_count, seed ^ 0x9E3779B97F4A7C15ULL,
               options.opponent_prior),
-      searcher_(&table_) {
+      searcher_(&table_),
+      worker_searcher_(&worker_table_) {
   belief_.set_visibility_deductions(options_.visibility_deductions);
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);
   searcher_.set_options(options.search);
+  if (options.cell_threads > 1) {
+    worker_table_.Resize(options.transposition_megabytes);
+    worker_searcher_.set_options(options.search);
+  }
 }
 
 double Engine::TimeBudget(double remaining_seconds) const {
@@ -620,6 +670,7 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
 
   const FogContext fog = belief_.MakeFogContext(view);
   searcher_.SetContext(our_side_, belief_.EnemyKingVisible(view), fog);
+  worker_searcher_.SetContext(our_side_, belief_.EnemyKingVisible(view), fog);
 
   // Step one: a full search of the likeliest hypothesis, to shortlist.
   Position likely = belief_.Representative();
@@ -810,6 +861,13 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                    ExpectedHiddenThreat(ranked[row].move, en_passant);
     }
   }
+  if (options_.vision_weight > 0.0) {
+    // A credit, so it enters with the opposite sign of the risk terms.
+    for (int row = 0; row < shortlist; ++row) {
+      risk[row] -= options_.vision_weight *
+                   ExpectedVision(ranked[row].move, en_passant);
+    }
+  }
   for (int row = 0; row < shortlist; ++row) {
     if (static_cast<int>(risk[row]) > trace->worst_risk) {
       trace->worst_risk = static_cast<int>(risk[row]);
@@ -824,116 +882,142 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                                      std::chrono::steady_clock::now() - turn_start)
                                      .count();
   const double matrix_seconds = std::max(0.0, trace->budget - after_shortlist);
-  const double cell_budget =
-      std::max(0.002, matrix_seconds / std::max(1, shortlist * columns));
+  const int threads = std::max(1, std::min(2, options_.cell_threads));
+  const double cell_budget = std::max(
+      0.002, matrix_seconds * threads / std::max(1, shortlist * columns));
 
   const auto matrix_deadline =
       turn_start + std::chrono::duration_cast<std::chrono::steady_clock::duration>(
                        std::chrono::duration<double>(trace->budget));
-  bool out_of_time = false;
-  for (int column = 0; column < columns; ++column) {
-    for (int row = 0; row < shortlist; ++row) {
-      const Move move = ranked[row].move;
-      if (out_of_time || std::chrono::steady_clock::now() >= matrix_deadline) {
-        // Out of time for a real search of this cell. A verdict from the
-        // shortlist search would come from one guessed board and ignore this
-        // hypothesis entirely, which is how a queen walks next to a hidden
-        // knight; a one-ply search with quiescence on this hypothesis costs
-        // microseconds and still sees the capture.
-        out_of_time = true;
-        ++trace->cells_skipped;
-        Position quick = *hypotheses[column];
-        quick.set_side_to_move(our_side_);
-        quick.set_en_passant_square(en_passant);
+  // Each worker owns its node and skip counts and its own clock verdict; the
+  // matrix cells it writes are disjoint, so no synchronisation is needed.
+  struct CellWorker {
+    uint64_t nodes = 0;
+    int skipped = 0;
+    bool out_of_time = false;
+  };
+  const auto cells_start = std::chrono::steady_clock::now();
+  auto evaluate_columns = [&](int first_column, int step, Searcher* searcher,
+                              CellWorker* worker) {
+    for (int column = first_column; column < columns; column += step) {
+      for (int row = 0; row < shortlist; ++row) {
+        const Move move = ranked[row].move;
+        if (worker->out_of_time || std::chrono::steady_clock::now() >= matrix_deadline) {
+          // Out of time for a real search of this cell. A verdict from the
+          // shortlist search would come from one guessed board and ignore this
+          // hypothesis entirely, which is how a queen walks next to a hidden
+          // knight; a one-ply search with quiescence on this hypothesis costs
+          // microseconds and still sees the capture.
+          worker->out_of_time = true;
+          ++worker->skipped;
+          Position quick = *hypotheses[column];
+          quick.set_side_to_move(our_side_);
+          quick.set_en_passant_square(en_passant);
+          MoveList available;
+          quick.GenerateMoves(&available);
+          if (!ListContains(available, move)) {
+            game.set(row, column, kDisasterScore - risk[row]);
+            continue;
+          }
+          MoveList single;
+          single.Add(move);
+          SearchLimits shallow;
+          shallow.seconds = 0.01;
+          shallow.max_depth = 1;
+          shallow.max_nodes = 4000;  // one ply plus a bounded quiescence
+          const SearchResult verdict = searcher->Search(&quick, single, shallow);
+          worker->nodes += verdict.nodes;
+          game.set(row, column, static_cast<double>(verdict.score) - risk[row]);
+          continue;
+        }
+        Position hypothesis = *hypotheses[column];
+        hypothesis.set_side_to_move(our_side_);
+        hypothesis.set_en_passant_square(en_passant);
+
         MoveList available;
-        quick.GenerateMoves(&available);
+        hypothesis.GenerateMoves(&available);
         if (!ListContains(available, move)) {
+          // The move cannot be made in this hypothesis, which only happens when a
+          // rebuilt hypothesis disagrees about castling rights. Treat it as lost
+          // rather than silently corrupting the board.
           game.set(row, column, kDisasterScore - risk[row]);
           continue;
         }
-        MoveList single;
-        single.Add(move);
-        SearchLimits shallow;
-        shallow.seconds = 0.01;
-        shallow.max_depth = 1;
-        shallow.max_nodes = 4000;  // one ply plus a bounded quiescence
-        const SearchResult verdict = searcher_.Search(&quick, single, shallow);
-        trace->nodes += verdict.nodes;
-        game.set(row, column, static_cast<double>(verdict.score) - risk[row]);
-        continue;
-      }
-      Position hypothesis = *hypotheses[column];
-      hypothesis.set_side_to_move(our_side_);
-      hypothesis.set_en_passant_square(en_passant);
 
-      MoveList available;
-      hypothesis.GenerateMoves(&available);
-      if (!ListContains(available, move)) {
-        // The move cannot be made in this hypothesis, which only happens when a
-        // rebuilt hypothesis disagrees about castling rights. Treat it as lost
-        // rather than silently corrupting the board.
-        game.set(row, column, kDisasterScore - risk[row]);
-        continue;
-      }
-
-      UndoState undo;
-      hypothesis.MakeMove(move, &undo);
-      // If our king is capturable now, this move loses in this hypothesis.
-      const int our_king = hypothesis.KingSquare(our_side_);
-      const bool fatal =
-          our_king < 0 || hypothesis.IsAttacked(our_king, enemy_side);
-      double bonus = 0.0;
-      if (!fatal) {
-        const int target = hypothesis.KingSquare(enemy_side);
-        if (target >= 0) {
-          const Bitboard seen_by_them = VisibleSquares(hypothesis, enemy_side);
-          Bitboard attackers = hypothesis.AttackersTo(target, our_side_);
-          while (attackers) {
-            const int from = PopLsb(&attackers);
-            bonus += (seen_by_them & SquareBB(from)) ? kVisibleKingAttackBonus
-                                                    : kInvisibleKingAttackBonus;
+        UndoState undo;
+        hypothesis.MakeMove(move, &undo);
+        // If our king is capturable now, this move loses in this hypothesis.
+        const int our_king = hypothesis.KingSquare(our_side_);
+        const bool fatal =
+            our_king < 0 || hypothesis.IsAttacked(our_king, enemy_side);
+        double bonus = 0.0;
+        if (!fatal) {
+          const int target = hypothesis.KingSquare(enemy_side);
+          if (target >= 0) {
+            const Bitboard seen_by_them = VisibleSquares(hypothesis, enemy_side);
+            Bitboard attackers = hypothesis.AttackersTo(target, our_side_);
+            while (attackers) {
+              const int from = PopLsb(&attackers);
+              bonus += (seen_by_them & SquareBB(from)) ? kVisibleKingAttackBonus
+                                                      : kInvisibleKingAttackBonus;
+            }
           }
         }
-      }
-      hypothesis.UnmakeMove(move, undo);
+        hypothesis.UnmakeMove(move, undo);
 
-      if (fatal) {
-        // The risk charge applies here too. Without it a move that loses the
-        // king in every hypothesis scored a flat -30000 while a move that
-        // merely *might* lose it scored its search value minus its risk, which
-        // in a bad position is below -30000 -- so the certain loss looked
-        // better than the probable escape. Arena game 1sv22xki, ply 40: the
-        // bot chose a 100%-risk rook move over a 33%-risk king move.
-        game.set(row, column, kDisasterScore - risk[row]);
-        continue;
-      }
+        if (fatal) {
+          // The risk charge applies here too. Without it a move that loses the
+          // king in every hypothesis scored a flat -30000 while a move that
+          // merely *might* lose it scored its search value minus its risk, which
+          // in a bad position is below -30000 -- so the certain loss looked
+          // better than the probable escape. Arena game 1sv22xki, ply 40: the
+          // bot chose a 100%-risk rook move over a 33%-risk king move.
+          game.set(row, column, kDisasterScore - risk[row]);
+          continue;
+        }
 
-      Position root = *hypotheses[column];
-      root.set_side_to_move(our_side_);
-      root.set_en_passant_square(en_passant);
-      MoveList single;
-      single.Add(move);
-      SearchLimits limits;
-      // Never ask for more time than the turn has left.
-      const double left = std::chrono::duration<double>(
-                              matrix_deadline - std::chrono::steady_clock::now())
-                              .count();
-      limits.seconds = std::min(cell_budget, std::max(0.002, left));
-      if (options_.node_budget > 0) {
-        limits.seconds = 600.0;
-        const uint64_t cells =
-            static_cast<uint64_t>(shortlist) * static_cast<uint64_t>(columns);
-        limits.max_nodes = std::max<uint64_t>(
-            256, static_cast<uint64_t>(options_.node_budget *
-                                       (1.0 - kShortlistShare)) /
-                     std::max<uint64_t>(1, cells));
+        Position root = *hypotheses[column];
+        root.set_side_to_move(our_side_);
+        root.set_en_passant_square(en_passant);
+        MoveList single;
+        single.Add(move);
+        SearchLimits limits;
+        // Never ask for more time than the turn has left.
+        const double left = std::chrono::duration<double>(
+                                matrix_deadline - std::chrono::steady_clock::now())
+                                .count();
+        limits.seconds = std::min(cell_budget, std::max(0.002, left));
+        if (options_.node_budget > 0) {
+          limits.seconds = 600.0;
+          const uint64_t cells =
+              static_cast<uint64_t>(shortlist) * static_cast<uint64_t>(columns);
+          limits.max_nodes = std::max<uint64_t>(
+              256, static_cast<uint64_t>(options_.node_budget *
+                                         (1.0 - kShortlistShare)) /
+                       std::max<uint64_t>(1, cells));
+        }
+        const SearchResult result = searcher->Search(&root, single, limits);
+        worker->nodes += result.nodes;
+        game.set(row, column,
+                 static_cast<double>(result.score) + bonus - risk[row]);
       }
-      const SearchResult result = searcher_.Search(&root, single, limits);
-      trace->nodes += result.nodes;
-      game.set(row, column,
-               static_cast<double>(result.score) + bonus - risk[row]);
     }
+  };
+  CellWorker main_worker;
+  CellWorker side_worker;
+  if (threads > 1) {
+    std::thread side(evaluate_columns, 1, 2, &worker_searcher_, &side_worker);
+    evaluate_columns(0, 2, &searcher_, &main_worker);
+    side.join();
+  } else {
+    evaluate_columns(0, 1, &searcher_, &main_worker);
   }
+  trace->nodes += main_worker.nodes + side_worker.nodes;
+  trace->cells_skipped += main_worker.skipped + side_worker.skipped;
+  trace->cells_spent = std::chrono::duration<double>(
+                           std::chrono::steady_clock::now() - cells_start)
+                           .count();
+  trace->cell_threads_used = threads;
 
   // King safety was already settled over the whole population, so every row
   // here is one we are willing to play; the matrix decides between them.

@@ -138,6 +138,23 @@ struct EngineOptions {
   // cost at stride 16.
   double hidden_threat_weight = 1.0;
   int hidden_threat_stride = 16;
+  // Matrix cells on more than one thread. The arena gives two cores and the
+  // search is single-threaded, so one core idles through the cell phase; the
+  // cells are independent searches, so columns are split across threads, each
+  // with its own transposition table and searcher. Wall time is unchanged
+  // and every cell searches `cell_threads` times longer. Suite-checked for
+  // legality and overrun; real-clock lanes pending (2026-10-07 20:40 UTC).
+  int cell_threads = 2;
+  // Vision, the Fog of War guide's first rule: squares we would see after the
+  // move minus squares they would see, with extra weight on our pieces and
+  // king being invisible to them; averaged over a stride of the population
+  // and credited against the row's risk. Units are centipawns per square /
+  // per piece / for the king. Off until measured.
+  double vision_weight = 0.0;
+  double vision_square = 2.0;
+  double vision_piece = 10.0;
+  double vision_king = 30.0;
+  int vision_stride = 4;
   // Clock policy, in seconds. The per-move target is scaled by how hard the
   // decision looks once the king risks are known: a turn where the safest
   // move still carries real risk, or the fog is deep, gets up to
@@ -148,10 +165,15 @@ struct EngineOptions {
   double hard_turn_multiplier = 2.0;
   double easy_turn_multiplier = 0.4;
   double hard_risk_threshold = 0.03;   // safest move's king risk
-  double time_cap_hard = 8.0;
+  double time_cap_hard = 12.0;
   double time_reserve = 6.0;
-  double time_divisor = 30.0;
-  double time_cap = 4.0;
+  // Arena games (v5, v9, v10: 115 games) ended with a median 121 s unused on
+  // our clock and never below 40 s; every decision stopped at the old 4 s
+  // cap. With divisor 20 and cap 7 the budget formula spends about 6 s per
+  // move in a 60-ply game and 5 s in a 100-ply game, tapers with the clock,
+  // and still ends a 300-ply game with 14 s (simulation in HANDOFF.md).
+  double time_divisor = 20.0;
+  double time_cap = 7.0;
   double increment_share = 0.8;
   int transposition_megabytes = 192;
   // When non-zero, a decision is bounded by nodes rather than by the clock.
@@ -193,6 +215,8 @@ struct DecisionTrace {
   double chosen_policy = 0.0;
   double chosen_danger = 0.0;
   double budget_multiplier = 1.0;  // hard/easy turn scaling applied this turn
+  double cells_spent = 0.0;        // seconds in the matrix cells
+  int cell_threads_used = 1;
 };
 
 // Options with any overrides from the environment applied.
@@ -234,6 +258,9 @@ class Engine {
   // to a square our post-move view would not show, beyond what they can
   // already take; averaged over a stride of the population.
   double ExpectedHiddenThreat(Move move, int en_passant) const;
+  // Expected vision balance after `move` (see EngineOptions::vision_weight):
+  // positive when we see more and they see less of us.
+  double ExpectedVision(Move move, int en_passant) const;
 
  private:
   // Our own castling rights, read from the believed state where MakeMove has
@@ -266,6 +293,8 @@ class Engine {
   BeliefState belief_;
   TranspositionTable table_;
   Searcher searcher_;
+  TranspositionTable worker_table_;  // the second thread's, when cell_threads > 1
+  Searcher worker_searcher_;
   // The two most recent observations. En passant is inferred from the pair
   // bracketing the opponent's move: the view after our own move and the view
   // after theirs. An earlier version overwrote the previous view with the

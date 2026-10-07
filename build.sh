@@ -6,7 +6,7 @@ set -euo pipefail
 SOURCES="bot.cc engine.cc belief.cc search.cc evaluation.cc observation.cc
          transposition.cc regret.cc position.cc move.cc bitboard.cc
          neural_observation.cc neural_inference.cc opponent_model.cc"
-BASE="-O2 -std=c++20 -Wall -Wextra -DNDEBUG"
+BASE="-O2 -std=c++20 -Wall -Wextra -DNDEBUG -pthread"
 
 # POPCNT is used on nearly every line of the search. Without it the compiler
 # emits a software fallback, so it is worth enabling -- but only after proving
@@ -58,5 +58,5 @@ fi
 echo "build: retrying at -O1" >&2
 # shellcheck disable=SC2086
 # shellcheck disable=SC2086
-g++ -O1 -std=c++20 -DNDEBUG $EXTRA $SOURCES -o bot $LINK
+g++ -O1 -std=c++20 -DNDEBUG -pthread $EXTRA $SOURCES -o bot $LINK
 echo "build: done at -O1"

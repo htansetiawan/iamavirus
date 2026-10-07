@@ -312,6 +312,7 @@ int Run() {
               << " gv=" << trace.game_value << " fog=" << trace.unseen_squares
               << " budget=" << trace.budget << " x" << trace.budget_multiplier
               << " spent=" << trace.spent
+              << " cells=" << trace.cells_spent << "/" << trace.cell_threads_used
               << " infer=" << inference_seconds << " clock=" << remaining
               << " risk=" << trace.king_risk_permille
               << " nv=" << trace.neural_value << " cp=" << trace.chosen_policy

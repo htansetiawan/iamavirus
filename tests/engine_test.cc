@@ -207,6 +207,66 @@ void HiddenThreatPricesTheUnseenAttackOnTheQueen() {
   FOW_EXPECT_TRUE(develop_threat < 250.0);
 }
 
+// The matrix cells on two threads: every move must still be legal and the
+// turn must not overrun, over whole games against random play.
+void CellThreadsPlayLegalMoves() {
+  for (uint64_t seed = 21; seed <= 23; ++seed) {
+    EngineOptions options = FastOptions();
+    options.cell_threads = 2;
+    const GameOutcome outcome = PlayAgainstRandom(static_cast<int>(seed % 2), seed, 60, options);
+    FOW_EXPECT_TRUE(outcome.illegal_moves == 0);
+    FOW_EXPECT_TRUE(outcome.null_moves == 0);
+    FOW_EXPECT_TRUE(outcome.worst_overrun < 0.5);
+  }
+}
+
+// Vision: after 1. e4 e5 2. Nf3 Nc6, the bishop to c4 looks down two open
+// diagonals while a3 sees one more square at most, so the term must prefer
+// the bishop by a wide margin whatever the population thinks Black has done.
+void VisionPrefersTheOpenDiagonal() {
+  EngineOptions options;
+  options.particle_count = 256;
+  options.transposition_megabytes = 8;
+  options.time_reserve = 0.0;
+  options.vision_stride = 1;
+  Engine engine(kWhite, 180.0, 2.0, options, 9);
+  Position truth;
+  PositionFromFen(kStartFen, &truth);
+  const char* line[] = {"e2e4", "e7e5", "g1f3", "b8c6"};
+  bool we_just_moved = false;
+  for (const char* uci : line) {
+    engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+    we_just_moved = false;
+    MoveList legal;
+    truth.GenerateMoves(&legal);
+    Move move = kNullMove;
+    for (const Move candidate : legal) {
+      if (MoveToUci(candidate) == uci) move = candidate;
+    }
+    FOW_EXPECT_TRUE(move != kNullMove);
+    if (truth.side_to_move() == kWhite) {
+      engine.NotifyMovePlayed(move);
+      we_just_moved = true;
+    }
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+  }
+  engine.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+  MoveList legal;
+  truth.GenerateMoves(&legal);
+  Move bishop = kNullMove;
+  Move pawn = kNullMove;
+  for (const Move candidate : legal) {
+    if (MoveToUci(candidate) == "f1c4") bishop = candidate;
+    if (MoveToUci(candidate) == "a2a3") pawn = candidate;
+  }
+  FOW_EXPECT_TRUE(bishop != kNullMove && pawn != kNullMove);
+  const double bishop_vision = engine.ExpectedVision(bishop, -1);
+  const double pawn_vision = engine.ExpectedVision(pawn, -1);
+  std::printf("       vision: Bc4 %.1f, a3 %.1f\n", bishop_vision, pawn_vision);
+  FOW_EXPECT_TRUE(bishop_vision > pawn_vision + 8.0);
+}
+
 // A position with exactly one legal move must be handled without any search.
 void ReturnsTheOnlyMoveWhenForced() {
   EngineOptions options = FastOptions();
@@ -796,5 +856,7 @@ int main() {
   FOW_RUN_TEST(fow::HybridUnionKeepsTheSafestRows);
   FOW_RUN_TEST(fow::PromotesToAQueenUnlessSaferOtherwise);
   FOW_RUN_TEST(fow::HiddenThreatPricesTheUnseenAttackOnTheQueen);
+  FOW_RUN_TEST(fow::CellThreadsPlayLegalMoves);
+  FOW_RUN_TEST(fow::VisionPrefersTheOpenDiagonal);
   return fow::testing::Summarize("engine_test");
 }
