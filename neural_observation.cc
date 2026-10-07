@@ -123,7 +123,8 @@ void NeuralTracker::Planes(float* out) const {
     for (int raw = 0; raw < kNumSquares; ++raw) {
       const int c = CanonicalSquare(raw, side_);
       const int klass = RelativeClass(current_.at(raw));
-      plane(klass == kClassNever ? 12 : klass)[c] = 1.0f;
+      // features-v2: unknown on plane 12, visible empty on plane 13 (v1 put both on 12).
+      plane(klass == kClassNever ? 12 : (klass == kClassEmpty ? 13 : klass))[c] = 1.0f;
     }
   }
   for (int c = 0; c < kNumSquares; ++c) {

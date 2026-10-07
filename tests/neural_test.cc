@@ -40,6 +40,19 @@ void InitialPlanesHaveOneActiveChannelPerSquare() {
     FOW_EXPECT_EQ(scalars[1], side == kWhite ? 1.0f : 0.0f);
     FOW_EXPECT_EQ(scalars[4], 1.0f);
   }
+  // features-v2: e3 is visibly empty for White at the start (plane 13), a7 is
+  // fog (plane 12).
+  {
+    NeuralTracker tracker(kWhite);
+    const std::string start = "RNBQKBNRPPPPPPPP----------------????????????????????????????????";
+    tracker.Observe(Observation(start), 0, 0);
+    float planes[kNeuralPlanes * kNumSquares];
+    tracker.Planes(planes);
+    FOW_EXPECT_EQ(planes[13 * 64 + MakeSquare(4, 2)], 1.0f);
+    FOW_EXPECT_EQ(planes[12 * 64 + MakeSquare(4, 2)], 0.0f);
+    FOW_EXPECT_EQ(planes[12 * 64 + MakeSquare(0, 6)], 1.0f);
+    FOW_EXPECT_EQ(planes[13 * 64 + MakeSquare(0, 6)], 0.0f);
+  }
 }
 
 void CandidatesMatchTheRulesAndCarryEnPassant() {

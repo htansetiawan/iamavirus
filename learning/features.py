@@ -10,8 +10,9 @@ anything that is not derivable from that history cannot leak into the policy.
 Planes, shape [32, 8, 8], indexed by the side's canonical square (rank-reflected
 for Black so one network serves both colours):
 
-    0-13   current observation: own P N B R Q K, enemy P N B R Q K, unknown,
-           visible empty -- exactly one active channel per square
+    0-13   current observation: own P N B R Q K, enemy P N B R Q K, unknown (12),
+           visible empty (13) -- exactly one active channel per square
+           (features-v1 wrote both unknown and visible empty to plane 12)
     14-26  last directly observed content: twelve relative piece types + empty
     27     ever directly observed
     28     age since direct observation, min(age, 100) / 100; never seen = 1
@@ -27,7 +28,7 @@ import numpy as np
 
 from . import action_codec, rules
 
-FEATURE_VERSION = "features-v1"
+FEATURE_VERSION = "features-v2"  # v2: visible empty on plane 13, unknown on plane 12 (v1 put both on 12)
 ACTION_VERSION = "actions-v1"
 NUM_PLANES = 32
 NUM_SCALARS = 8
@@ -160,7 +161,8 @@ class FeatureTracker:
             for raw, symbol in enumerate(self.current):
                 c = self.canonical[raw]
                 klass = relative_class(symbol, self.side)
-                out[12 if klass == CLASS_NEVER else klass, c] = 1.0
+                # v1 wrote both unknown and visible-empty to plane 12; plane 13 was unused.
+                out[12 if klass == CLASS_NEVER else (13 if klass == CLASS_EMPTY else klass), c] = 1.0
         seen = self.ever_seen
         classes = self.last_seen
         idx = np.nonzero(seen)[0]

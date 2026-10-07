@@ -70,7 +70,26 @@ bool NeuralModel::Load(const std::string& directory, int threads,
         impl_->env, (directory + "/observe.onnx").c_str(), impl_->options);
     impl_->score = std::make_unique<Ort::Session>(
         impl_->env, (directory + "/score.onnx").c_str(), impl_->options);
-    manifest_summary_ = ManifestSummary(ReadFile(directory + "/model_manifest.json"));
+    const std::string manifest_text = ReadFile(directory + "/model_manifest.json");
+    manifest_summary_ = ManifestSummary(manifest_text);
+    {
+      // The graphs only make sense with the feature encoding they were trained
+      // on; a model exported for another version is refused, and the bot falls
+      // back to the pure engine with this reason in its log.
+      const std::string key = "\"feature_version\": \"";
+      const std::size_t at = manifest_text.find(key);
+      std::string exported = "(missing)";
+      if (at != std::string::npos) {
+        const std::size_t start = at + key.size();
+        const std::size_t end = manifest_text.find('"', start);
+        if (end != std::string::npos) exported = manifest_text.substr(start, end - start);
+      }
+      if (exported != kFeatureVersion) {
+        if (error) *error = "model exported for " + exported + ", this engine builds " + kFeatureVersion;
+        available_ = false;
+        return false;
+      }
+    }
     available_ = true;
     Reset();
     // Warm up both graphs so the first real inference is not the slow one.

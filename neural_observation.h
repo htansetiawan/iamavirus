@@ -26,7 +26,7 @@ inline constexpr int kNeuralPlanes = 32;
 inline constexpr int kNeuralScalars = 8;
 inline constexpr int kAgeCap = 100;
 inline constexpr int kPlyCap = 1000;
-inline constexpr const char* kFeatureVersion = "features-v1";
+inline constexpr const char* kFeatureVersion = "features-v2";  // v2: visible empty on plane 13, unknown on 12
 inline constexpr const char* kActionVersion = "actions-v1";
 
 enum ObservationPhase : int {

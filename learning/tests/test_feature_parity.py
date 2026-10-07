@@ -84,3 +84,17 @@ def test_parity_on_corpus_games(harness):
         assert not problems, problems
         for side in (0, 1):
             compare(harness, histories.build_episode(replay, states, side, "fow-v1"))
+
+
+def test_fog_and_visible_empty_are_separate_planes():
+    """features-v2: an unseen square lights plane 12, a visibly empty square plane 13."""
+    from learning import features, rules
+    tracker = features.FeatureTracker(rules.WHITE)
+    view = rules.START_BOARD.replace("p", "?").replace("r", "?").replace("n", "?").replace("b", "?").replace("q", "?").replace("k", "?")
+    tracker.observe(view, features.PHASE_INITIAL, 0)
+    planes = tracker.planes().reshape(features.NUM_PLANES, 64)
+    e3 = 2 * 8 + 4   # visibly empty for White at the start
+    a7 = 6 * 8 + 0   # unseen for White at the start
+    assert planes[13, e3] == 1.0 and planes[12, e3] == 0.0
+    assert planes[12, a7] == 1.0 and planes[13, a7] == 0.0
+    assert planes[0:14].sum(axis=0).max() == 1.0
