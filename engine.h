@@ -45,6 +45,12 @@ enum class EngineMode : int { kCpp = 0, kNeural = 1, kHybrid = 2 };
 
 const char* EngineModeName(EngineMode mode);
 
+// The opponent's best immediate net capture on `hypothesis` with the opponent
+// to move: victim value minus the capturer's value when `our_side` can
+// recapture. One-ply exchange arithmetic; used by the exposure term and, on
+// the true board, as the offline benchmark's material label.
+int BestNetCapture(Position* hypothesis, int our_side);
+
 // What the neural adapter knows about the legal moves this turn. Aligned by
 // move, not by index, because the engine derives its own legal list. Particle
 // risk and neural danger are estimates kept separately; neither is a
@@ -102,6 +108,16 @@ struct EngineOptions {
   // Weight on the expected material a move hands over, measured across the
   // whole population rather than the sampled columns. Set to zero to disable.
   double piece_risk_weight = 1.0;
+  // What that expectation covers: 0 = only the moved piece on its destination
+  // square (v2-v10); 1 = the opponent's best immediate net capture anywhere
+  // on the board after the move, so a piece left en prise to a hidden
+  // attacker, or a move that unblocks a line onto one, is priced too. The
+  // gold data (reports/IAmAVirus replay analysis.md) says 90% of the material
+  // we lose goes to a hidden capturer and most of it is not the moved piece.
+  int exposure_mode = 1;
+  // Particles sampled for the exposure term (stride over the population),
+  // since it costs a move generation per particle and candidate.
+  int exposure_stride = 4;
   // Clock policy, in seconds.
   double time_reserve = 6.0;
   double time_divisor = 30.0;
@@ -190,8 +206,11 @@ class Engine {
   Bitboard OurCastlingRights() const;
 
   // Expected material, in centipawns, that `move` hands over immediately,
-  // averaged over every hypothesis in the population.
+  // averaged over every hypothesis in the population (destination square only).
   double ExpectedMaterialRisk(Move move, int en_passant) const;
+  // Expected best immediate net capture the opponent has after `move`,
+  // anywhere on the board, averaged over a stride of the population.
+  double ExpectedExposure(Move move, int en_passant) const;
 
   // For each move, the share of hypotheses in which it leaves our king
   // capturable. Computed over the entire population rather than the sampled

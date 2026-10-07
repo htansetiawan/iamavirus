@@ -108,6 +108,67 @@ double Engine::ExpectedMaterialRisk(Move move, int en_passant) const {
   return counted > 0 ? total_loss / counted : 0.0;
 }
 
+// The opponent's best immediate net capture on `hypothesis` (opponent to move):
+// victim value minus the capturer's value when we can recapture the square.
+// One-ply exchange arithmetic, the same label the gold data uses.
+int BestNetCapture(Position* hypothesis, int our_side) {
+  const int enemy_side = our_side ^ 1;
+  MoveList replies;
+  hypothesis->GenerateMoves(&replies);
+  int best = 0;
+  for (const Move reply : replies) {
+    const int to = MoveTo(reply);
+    int victim = hypothesis->piece_at(to);
+    int victim_value;
+    if (victim != kNoPiece) {
+      victim_value = kPieceValue[victim];
+    } else if (MoveFlagOf(reply) == kFlagEnPassant) {
+      victim_value = kPieceValue[kPawn];
+    } else {
+      continue;
+    }
+    if (victim_value <= best) continue;  // cannot improve even if free
+    UndoState undo;
+    hypothesis->MakeMove(reply, &undo);
+    const int capturer_value = kPieceValue[hypothesis->piece_at(to)];
+    const bool recapture = hypothesis->AttackersTo(to, our_side) != 0;
+    hypothesis->UnmakeMove(reply, undo);
+    const int net = victim_value - (recapture ? capturer_value : 0);
+    if (net > best) best = net;
+  }
+  (void)enemy_side;
+  return best;
+}
+
+double Engine::ExpectedExposure(Move move, int en_passant) const {
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return 0.0;
+  const int enemy_side = our_side_ ^ 1;
+  const int stride = std::max(1, options_.exposure_stride);
+  double total = 0.0;
+  int counted = 0;
+  for (std::size_t i = 0; i < population.size(); i += static_cast<std::size_t>(stride)) {
+    Position hypothesis = population[i];
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    if (IsCastle(move)) {
+      MoveList available;
+      hypothesis.GenerateMoves(&available);
+      if (!ListContains(available, move)) continue;
+    }
+    UndoState undo;
+    hypothesis.MakeMove(move, &undo);
+    ++counted;
+    const int king = hypothesis.KingSquare(our_side_);
+    // A capturable king is the king-risk term's business, not this one's.
+    if (king >= 0 && !hypothesis.IsAttacked(king, enemy_side)) {
+      total += BestNetCapture(&hypothesis, our_side_);
+    }
+    hypothesis.UnmakeMove(move, undo);
+  }
+  return counted > 0 ? total / counted : 0.0;
+}
+
 namespace {
 
 // Reads an override, leaving the default in place when the variable is absent or
@@ -163,6 +224,8 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_KING_LOSS_TOLERANCE", &options.king_loss_tolerance);
   Override("FOW_KING_RISK_PRICE", &options.king_risk_price);
   Override("FOW_PIECE_RISK", &options.piece_risk_weight);
+  Override("FOW_EXPOSURE_MODE", &options.exposure_mode);
+  Override("FOW_EXPOSURE_STRIDE", &options.exposure_stride);
   Override("FOW_TIME_CAP", &options.time_cap);
   Override("FOW_TIME_RESERVE", &options.time_reserve);
   Override("FOW_TIME_DIVISOR", &options.time_divisor);
@@ -629,7 +692,9 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   if (options_.piece_risk_weight > 0.0) {
     for (int row = 0; row < shortlist; ++row) {
       risk[row] += options_.piece_risk_weight *
-                   ExpectedMaterialRisk(ranked[row].move, en_passant);
+                   (options_.exposure_mode == 1
+                        ? ExpectedExposure(ranked[row].move, en_passant)
+                        : ExpectedMaterialRisk(ranked[row].move, en_passant));
     }
   }
   for (int row = 0; row < shortlist; ++row) {

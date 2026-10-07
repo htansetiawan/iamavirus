@@ -55,7 +55,20 @@ struct Tally {
   int fatal_saved = 0;       // ...and the engine would not have
   int matched = 0;           // engine chose the same move as the real player
   int unsafe_rejected = 0;
+  int exposed = 0;           // engine's move leaves >= 3 points en prise (true board)
+  int real_exposed = 0;      // ...and the same for the move actually played
 };
+
+// Material the mover leaves to the opponent's best immediate capture after
+// `move` on the true board, in pawns; 0 when the move loses the king outright
+// (that is counted separately).
+int ExposureOf(const Position& truth, Move move, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(move, &undo);
+  if (after.PreviousMoverIsLost()) return 0;
+  return BestNetCapture(&after, side) / 100;
+}
 
 Move FindMove(const Position& position, const std::string& uci) {
   MoveList legal;
@@ -121,6 +134,8 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
           const bool bad = LosesKing(truth, choice, seat.side);
           if (bad) ++tally->blunders;
           if (choice == actual) ++tally->matched;
+          if (ExposureOf(truth, choice, seat.side) >= 3) ++tally->exposed;
+          if (ExposureOf(truth, actual, seat.side) >= 3) ++tally->real_exposed;
           if (is_fatal_ply) {
             ++tally->fatal_positions;
             if (!bad) ++tally->fatal_saved;
@@ -191,6 +206,9 @@ int main(int argc, char** argv) {
               tally.decisions ? 100.0 * tally.blunders / tally.decisions : 0.0);
   std::printf("  matched the real move     : %d (%.1f%%)\n", tally.matched,
               tally.decisions ? 100.0 * tally.matched / tally.decisions : 0.0);
+  std::printf("  left >=3 points en prise  : engine %d (%.2f%%), real player %d (%.2f%%)\n",
+              tally.exposed, tally.decisions ? 100.0 * tally.exposed / tally.decisions : 0.0,
+              tally.real_exposed, tally.decisions ? 100.0 * tally.real_exposed / tally.decisions : 0.0);
   std::printf("  real losing positions     : %d\n", tally.fatal_positions);
   std::printf("  ...the engine survives    : %d (%.0f%%)\n", tally.fatal_saved,
               tally.fatal_positions
