@@ -13,7 +13,7 @@
 
 | archive | sha | content | evidence |
 |---|---|---|---|
-| `iamavirus-v11-candidate-hybrid.zip` | `68a89006f6c2` | v10 + exposure term + pawn deductions + clock scaling + promotion rule | 10–10 over 20 real-clock games vs archived v5 (paired 0.500, 0.300–0.700); better on every offline instrument |
+| `iamavirus-v12-hybrid.zip` (arena v12) | `68a89006f6c2` | v10 + exposure term + pawn deductions + clock scaling + promotion rule | 10–10 over 20 real-clock games vs archived v5 (paired 0.500, 0.300–0.700); better on every offline instrument |
 | `iamavirus-v11-candidate-twoply-hybrid.zip` | `022fd76bb778` | + two-ply term | lanes D/E vs the first candidate running (cores 0–1, 6–7) |
 | `iamavirus-v11-candidate-full-hybrid.zip` | `022f45c3afa3` | + clock defaults + two-thread cells | suite with the new defaults queued; lanes F/G vs the two-ply archive queued |
 
