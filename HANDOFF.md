@@ -278,6 +278,12 @@ Offline benchmark, 634 real losing seats, same seed and node budget:
 immediate king losses 6.55% in both; survival 58% in both. Candidate archive
 `fable-submissions/iamavirus-v11-hybrid.zip`.
 
+**Learned prior with memory (19:10 UTC, same seats, exposure on):** king
+losses 6.72%, left ≥3 en prise 7.62%, survival 56% — against 6.55% / 7.83% /
+58% for the hand prior. Mixed and within noise; the hand prior stays the
+default. Whether the memory prior holds hidden pieces better is what the
+calibration runs will say.
+
 **Sensitivity (19:00 UTC, same 634 seats).** 4,096 particles: king losses
 6.53%, left ≥3 en prise 7.53% (vs 6.55% / 7.83% at 2,048): a small gain at
 twice the belief cost. Exposure stride 2 vs 4: identical. **Belief
