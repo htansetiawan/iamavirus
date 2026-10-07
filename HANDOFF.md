@@ -263,6 +263,10 @@ opponents) is best explained by schedule and sample size. The cells-shrink /
 node-capped-fallback change in v9/v10 remains a robustness improvement, not a
 regression fix. The arbiter is the paired archived-v5 vs v9 run.
 
+**Paired real-clock comparison, v9 vs archived v5 (18:30 UTC):** 8W–1D–9L over
+18 colour-swapped games on two pinned cores, score 0.472. No difference; the
+v5 → v8 → v9 arena swings were schedule and sample size.
+
 **Exposure term (18:05 UTC).** The gold data (`gold/`, 369 games, 11,893
 decisions; `reports/IAmAVirus replay analysis.md`, `reports/Lessons from the
 duck games.md`) showed 90% of material lost goes to a hidden capturer, mostly
