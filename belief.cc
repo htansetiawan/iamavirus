@@ -59,6 +59,8 @@ BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
   own_rights_ = SquareBB(MakeSquare(0, home_rank)) | SquareBB(MakeSquare(7, home_rank));
   // The opening position is common knowledge, so the belief starts certain.
   particles_.assign(target_count_, StartingPosition());
+  last_to_.assign(target_count_, -1);
+  last_capture_.assign(target_count_, false);
   representative_valid_ = false;
 }
 
@@ -100,9 +102,12 @@ bool BeliefState::AgreesAboutUs(const Position& position,
   return true;
 }
 
-double BeliefState::MovePlausibility(Position* hypothesis, Move move) const {
+double BeliefState::MovePlausibility(Position* hypothesis, Move move, int last_to,
+                                     bool last_capture) const {
   if (opponent_prior_ == 0) return kBasePlausibility;  // uniform over their moves
-  if (opponent_prior_ == 2) return LearnedMovePlausibility(hypothesis, move);
+  if (opponent_prior_ == 2) {
+    return LearnedMovePlausibility(hypothesis, move, last_to, last_capture);
+  }
   const int enemy_side = our_side_ ^ 1;
   const int to = MoveTo(move);
   double weight = kBasePlausibility;
@@ -228,11 +233,16 @@ void BeliefState::Condition(const Observation& view,
   const ObservedPieces enemy = Summarize(view, our_side_ ^ 1);
   const ObservedPieces ours = Summarize(view, our_side_);
   std::vector<Position> kept;
+  std::vector<int> kept_to;
+  std::vector<bool> kept_capture;
   kept.reserve(particles_.size());
-  for (const Position& particle : particles_) {
+  for (std::size_t i = 0; i < particles_.size(); ++i) {
+    const Position& particle = particles_[i];
     if (AgreesAboutEnemy(particle, enemy, our_side_ ^ 1) &&
         AgreesAboutUs(particle, ours, our_side_)) {
       kept.push_back(particle);
+      kept_to.push_back(i < last_to_.size() ? last_to_[i] : -1);
+      kept_capture.push_back(i < last_capture_.size() ? last_capture_[i] : false);
     }
   }
   report->surviving_particles = static_cast<int>(kept.size());
@@ -242,8 +252,12 @@ void BeliefState::Condition(const Observation& view,
   }
   // Survivors are equally likely, so refill by cycling through them.
   particles_.resize(target_count_);
+  last_to_.resize(target_count_);
+  last_capture_.resize(target_count_);
   for (int i = 0; i < target_count_; ++i) {
     particles_[i] = kept[i % kept.size()];
+    last_to_[i] = kept_to[i % kept.size()];
+    last_capture_[i] = kept_capture[i % kept.size()];
   }
   report->resampled_particles = target_count_;
 }
@@ -262,10 +276,15 @@ void BeliefState::PredictAndCondition(const Observation& view,
   // them per particle loses diversity far faster than it needs to.
   std::vector<Position> pool;
   std::vector<double> weights;
+  std::vector<int> pool_to;
+  std::vector<bool> pool_capture;
   int64_t consistent_total = 0;
   int considered = 0;
 
-  for (Position particle : particles_) {
+  for (std::size_t p = 0; p < particles_.size(); ++p) {
+    Position particle = particles_[p];
+    const int memory_to = p < last_to_.size() ? last_to_[p] : -1;
+    const bool memory_capture = p < last_capture_.size() ? last_capture_[p] : false;
     particle.set_side_to_move(enemy_side);
     MoveList moves;
     particle.GenerateMoves(&moves);
@@ -277,7 +296,7 @@ void BeliefState::PredictAndCondition(const Observation& view,
     std::vector<double> prior;
     prior.reserve(static_cast<std::size_t>(moves.size()));
     for (const Move move : moves) {
-      const double weight = MovePlausibility(&particle, move);
+      const double weight = MovePlausibility(&particle, move, memory_to, memory_capture);
       prior.push_back(weight);
       prior_total += weight;
     }
@@ -287,12 +306,16 @@ void BeliefState::PredictAndCondition(const Observation& view,
     for (int index = 0; index < moves.size(); ++index) {
       if (pool.size() >= kMaxPoolSize) break;
       const Move move = moves[index];
+      const bool captures = particle.piece_at(MoveTo(move)) != kNoPiece ||
+                            MoveFlagOf(move) == kFlagEnPassant;
       UndoState undo;
       particle.MakeMove(move, &undo);
       if (AgreesAboutEnemy(particle, enemy, enemy_side) &&
           AgreesAboutUs(particle, ours, our_side_)) {
         pool.push_back(particle);
         weights.push_back(prior[static_cast<std::size_t>(index)] / prior_total);
+        pool_to.push_back(MoveTo(move));
+        pool_capture.push_back(captures);
         ++consistent;
       }
       particle.UnmakeMove(move, undo);
@@ -307,19 +330,25 @@ void BeliefState::PredictAndCondition(const Observation& view,
     particles_.clear();
     return;
   }
-  Resample(weights, pool, report);
+  Resample(weights, pool, pool_to, pool_capture, report);
 }
 
 void BeliefState::Resample(const std::vector<double>& weights,
                            const std::vector<Position>& pool,
+                           const std::vector<int>& pool_to,
+                           const std::vector<bool>& pool_capture,
                            BeliefUpdateReport* report) {
   const double total = std::accumulate(weights.begin(), weights.end(), 0.0);
   particles_.clear();
   particles_.reserve(target_count_);
+  last_to_.clear();
+  last_capture_.clear();
   if (total <= kNegligibleWeight) {
     // Degenerate weights carry no information; fall back to uniform.
     for (int i = 0; i < target_count_; ++i) {
       particles_.push_back(pool[i % pool.size()]);
+      last_to_.push_back(pool_to[i % pool.size()]);
+      last_capture_.push_back(pool_capture[i % pool.size()]);
     }
     report->resampled_particles = target_count_;
     return;
@@ -348,6 +377,8 @@ void BeliefState::Resample(const std::vector<double>& weights,
       cumulative += weights[order[index]];
     }
     particles_.push_back(pool[order[index]]);
+    last_to_.push_back(pool_to[order[index]]);
+    last_capture_.push_back(pool_capture[order[index]]);
     pointer += step;
   }
   report->resampled_particles = target_count_;
@@ -443,6 +474,8 @@ void BeliefState::Recover(const Observation& view,
     particle.set_castling_rights(rebuilt_rights);
     particles_.push_back(particle);
   }
+  last_to_.assign(particles_.size(), -1);
+  last_capture_.assign(particles_.size(), false);
   report->resampled_particles = target_count_;
 }
 

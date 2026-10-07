@@ -56,9 +56,11 @@ def test_features_agree_on_random_play(harness):
             if state.outcome() is not None:
                 break
             legal = state.board.legal_moves()
+            last_to = rng.choice([-1] + [rules.square_index(m[:2]) for m in legal[:3]])
+            last_capture = rng.random() < 0.5
             for uci in legal:
-                requests.append(f"{fen_of(state.board)};{uci}")
-                expected.append(opponent_model.move_features(state.board, uci))
+                requests.append(f"{fen_of(state.board)};{uci};{last_to};{1 if last_capture else 0}")
+                expected.append(opponent_model.move_features(state.board, uci, last_to, last_capture))
             state.push(rng.choice(legal))
     out = subprocess.run([str(harness)], input="\n".join(requests) + "\n", capture_output=True, text=True, check=True)
     lines = out.stdout.splitlines()

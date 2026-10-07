@@ -33,14 +33,20 @@ FEATURE_NAMES = [
     "hanging_value", "exchange", "attacks_king", "escapes_attack", "king_escape",
     "pawn_advance", "centrality", "dest_visible_to_opponent", "from_visible_to_opponent",
     "invisible_king_attack", "mover_value", "king_distance",
+    # Persistence: does this move pick up the piece the player moved last ply,
+    # and was that last move a capture? (The gold data says the pieces that
+    # punish us are ones we saw capture a few plies earlier; the filter needs
+    # to know whether such a piece tends to stay or to move on.)
+    "moves_last_mover", "moves_last_capturer",
 ]
 NUM_FEATURES = len(FEATURE_NAMES)
 VALUE = [1.0, 3.0, 3.0, 5.0, 9.0, 0.0]
-MODEL_VERSION = "opponent-logit-v1"
+MODEL_VERSION = "opponent-logit-v2"
 
 
-def move_features(board: rules.Board, uci: str) -> np.ndarray:
-    """Features of `uci` for the side to move on `board` (the full board)."""
+def move_features(board: rules.Board, uci: str, last_to: int = -1, last_was_capture: bool = False) -> np.ndarray:
+    """Features of `uci` for the side to move on `board` (the full board).
+    `last_to` is the destination square of this player's previous move (-1 if none)."""
     side = board.side
     other = side ^ 1
     f = np.zeros(NUM_FEATURES, dtype=np.float32)
@@ -97,6 +103,8 @@ def move_features(board: rules.Board, uci: str) -> np.ndarray:
     f[22] = moved_value / 9.0
     if enemy_king >= 0:
         f[23] = max(abs((to & 7) - (enemy_king & 7)), abs((to >> 3) - (enemy_king >> 3))) / 7.0
+    f[24] = 1.0 if fr == last_to else 0.0
+    f[25] = 1.0 if (fr == last_to and last_was_capture) else 0.0
     return f
 
 
@@ -129,17 +137,23 @@ def build_examples(raw: Path, players: list[str], limit: int | None, seed: int =
         replay = json.loads((store.games / row["id"] / "replay.json").read_text())
         frames = replay["frames"]
         state = rules.GameState()
+        last_to = {0: -1, 1: -1}
+        last_capture = {0: False, 1: False}
         for t in range(len(frames) - 1):
             move = frames[t + 1]["move"]
             side = state.board.side
             if side in sides:
                 legal = state.board.legal_moves()
                 if move in legal and len(legal) > 1:
-                    feats = np.stack([move_features(state.board, m) for m in legal])
+                    feats = np.stack([move_features(state.board, m, last_to[side], last_capture[side]) for m in legal])
                     examples.append((feats, legal.index(move), row["id"]))
                     name = row["white"] if side == 0 else row["black"]
                     counts[name] = counts.get(name, 0) + 1
+            to = rules.square_index(move[2:4])
+            captured = state.board.piece_at(to) >= 0 or (state.board.en_passant == to and state.board.piece_at(rules.square_index(move[:2])) % 6 == 0)
             state.push(move)
+            last_to[side] = to
+            last_capture[side] = captured
         if limit and len(examples) >= limit:
             break
     random.Random(seed).shuffle(examples)

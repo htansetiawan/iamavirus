@@ -141,12 +141,16 @@ class BeliefState {
   // hypotheses dominate because there are more of them, and the bait looks free.
   // Weighted by plausibility, giving away a bishop for nothing is rare, so the
   // mass moves onto the defended hypotheses -- which is the truth.
-  double MovePlausibility(Position* hypothesis, Move move) const;
+  double MovePlausibility(Position* hypothesis, Move move, int last_to,
+                          bool last_capture) const;
 
   void Condition(const Observation& view, BeliefUpdateReport* report);
   void PredictAndCondition(const Observation& view, BeliefUpdateReport* report);
   void Resample(const std::vector<double>& weights,
-                const std::vector<Position>& pool, BeliefUpdateReport* report);
+                const std::vector<Position>& pool,
+                const std::vector<int>& pool_to,
+                const std::vector<bool>& pool_capture,
+                BeliefUpdateReport* report);
   // Rebuilds a plausible population when every hypothesis has been contradicted,
   // which can happen if the opponent does something no particle anticipated.
   void Recover(const Observation& view, BeliefUpdateReport* report);
@@ -156,6 +160,12 @@ class BeliefState {
   int opponent_prior_;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
+  // Per-particle memory of the opponent's last move in that hypothesis: the
+  // destination square and whether it captured. The learned prior uses it
+  // (strong players move the piece they just moved 1.5x more often); kept in
+  // step with `particles_` through prediction, resampling and rebuilds.
+  std::vector<int> last_to_;
+  std::vector<bool> last_capture_;
   // Piece counts the opponent is believed to still own.
   //
   // This is tracked authoritatively rather than read back from the particles.

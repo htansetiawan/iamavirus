@@ -6,32 +6,34 @@
 
 namespace fow {
 
-inline constexpr int kOpponentFeatures = 24;
+inline constexpr int kOpponentFeatures = 26;
 inline constexpr double kOpponentWeights[kOpponentFeatures] = {
-    +1.209863,  // capture
-    +4.019131,  // captured_value
-    -0.598210,  // mover_pawn
-    +0.586223,  // mover_knight
-    +0.520114,  // mover_bishop
-    +0.061353,  // mover_rook
-    -1.068400,  // mover_queen
-    +0.898855,  // mover_king
-    -0.435188,  // promotion
-    +2.887519,  // castle
-    +0.569590,  // dest_attacked
-    +0.420489,  // dest_defended
-    +0.221319,  // hanging_value
-    +3.508881,  // exchange
-    +0.581868,  // attacks_king
-    -0.184815,  // escapes_attack
-    +1.017401,  // king_escape
-    +3.978085,  // pawn_advance
-    +1.323311,  // centrality
-    -1.625186,  // dest_visible_to_opponent
-    +0.897807,  // from_visible_to_opponent
-    +0.405756,  // invisible_king_attack
-    +2.028375,  // mover_value
-    +0.606215,  // king_distance
+    +1.137642,  // capture
+    +4.007555,  // captured_value
+    -0.349960,  // mover_pawn
+    +0.490595,  // mover_knight
+    +0.484264,  // mover_bishop
+    -0.090595,  // mover_rook
+    -1.442737,  // mover_queen
+    +0.983123,  // mover_king
+    -1.102088,  // promotion
+    +3.019878,  // castle
+    +0.667671,  // dest_attacked
+    +0.541474,  // dest_defended
+    +0.317289,  // hanging_value
+    +3.584265,  // exchange
+    +0.458019,  // attacks_king
+    -0.226739,  // escapes_attack
+    +1.157952,  // king_escape
+    +3.783063,  // pawn_advance
+    +1.442608,  // centrality
+    -1.727444,  // dest_visible_to_opponent
+    +0.915944,  // from_visible_to_opponent
+    +0.494147,  // invisible_king_attack
+    +2.295611,  // mover_value
+    +0.666637,  // king_distance
+    +0.442542,  // moves_last_mover
+    +0.080959,  // moves_last_capturer
 };
 
 }  // namespace fow

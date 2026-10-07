@@ -19,15 +19,19 @@
 
 namespace fow {
 
-inline constexpr int kNumOpponentFeatures = 24;
+inline constexpr int kNumOpponentFeatures = 26;
 
 // Fills `out` with the features of `move` for the side to move on `board`,
-// which is the full (hypothesis) board. `board` is left unchanged.
-void OpponentMoveFeatures(Position* board, Move move,
-                          double out[kNumOpponentFeatures]);
+// which is the full (hypothesis) board. `last_to` is the destination of that
+// player's previous move in this hypothesis (-1 if unknown) and
+// `last_capture` whether it captured; both come from the particle's memory.
+// `board` is left unchanged.
+void OpponentMoveFeatures(Position* board, Move move, int last_to,
+                          bool last_capture, double out[kNumOpponentFeatures]);
 
 // exp(w . f): the unnormalised plausibility of `move`.
-double LearnedMovePlausibility(Position* board, Move move);
+double LearnedMovePlausibility(Position* board, Move move, int last_to,
+                               bool last_capture);
 
 }  // namespace fow
 

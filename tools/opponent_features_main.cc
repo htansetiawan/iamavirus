@@ -5,6 +5,7 @@
 // compare it with learning/opponent_model.move_features.
 
 #include <cstdio>
+#include <cstdlib>
 #include <iostream>
 #include <sstream>
 #include <string>
@@ -26,7 +27,18 @@ int main() {
       std::cout << "BADFEN\n";
       continue;
     }
-    const std::string uci = line.substr(split + 1);
+    std::string rest = line.substr(split + 1);
+    int last_to = -1;
+    bool last_capture = false;
+    const std::size_t second = rest.find(';');
+    if (second != std::string::npos) {
+      const std::string tail = rest.substr(second + 1);
+      rest = rest.substr(0, second);
+      const std::size_t third = tail.find(';');
+      last_to = std::atoi(tail.substr(0, third).c_str());
+      if (third != std::string::npos) last_capture = tail.substr(third + 1) == "1";
+    }
+    const std::string uci = rest;
     fow::MoveList legal;
     board.GenerateMoves(&legal);
     fow::Move move = fow::kNullMove;
@@ -38,7 +50,7 @@ int main() {
       continue;
     }
     double features[fow::kNumOpponentFeatures];
-    fow::OpponentMoveFeatures(&board, move, features);
+    fow::OpponentMoveFeatures(&board, move, last_to, last_capture, features);
     for (int i = 0; i < fow::kNumOpponentFeatures; ++i) {
       std::printf("%s%.6f", i ? " " : "", features[i]);
     }
