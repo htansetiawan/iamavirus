@@ -113,6 +113,8 @@ struct EngineOptions {
   // than treating them as uniformly likely.
   bool use_opponent_prior = true;
   bool preserve_capture_evidence = true;
+  // Experimental: better support has not yet passed the action-quality gate.
+  bool use_visibility_deductions = false;
   SearchOptions search;
 };
 
@@ -141,6 +143,7 @@ struct DecisionTrace {
   int capture_square = -1;
   int capture_constraints_preserved = 0;
   bool capture_evidence_conflict = false;
+  bool visibility_evidence_conflict = false;
   bool capture_en_passant_ambiguous = false;
   double pieces_located = 0.0;
   // Which procedure actually decided, and compact per-candidate estimates for
@@ -163,6 +166,7 @@ struct DecisionTrace {
 // FOW_REGRET_ITERATIONS, FOW_MATRIX_GAME, FOW_KING_LOSS_TOLERANCE,
 // FOW_PIECE_RISK, FOW_TIME_CAP, FOW_TIME_RESERVE, FOW_TIME_DIVISOR,
 // FOW_HASH_MB, FOW_SPECULATIVE_WIN, FOW_LMR, FOW_ASPIRATION.
+// Belief experiments: FOW_CAPTURE_EVIDENCE, FOW_VISIBILITY_DEDUCTIONS.
 EngineOptions EngineOptionsFromEnvironment();
 
 class Engine {

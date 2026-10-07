@@ -1,0 +1,95 @@
+{
+  "probe_sha256": "77ff6b72010d45554af21a78d8482f83f3cf2cbcc2200258b5dd818c79ce62ee",
+  "moves_sha256": "82d0dced68ebe1b3364832c2f2fc71bbf5a1549ecfa27ecdc2de58712f07b94e",
+  "side": 0,
+  "seeds": [
+    1,
+    2,
+    3,
+    777
+  ],
+  "particles": 2048,
+  "arms": {
+    "control": {
+      "capture": 0,
+      "deductions": 0
+    },
+    "capture": {
+      "capture": 1,
+      "deductions": 0
+    },
+    "deductions": {
+      "capture": 0,
+      "deductions": 1
+    },
+    "combined": {
+      "capture": 1,
+      "deductions": 1
+    }
+  },
+  "results": {
+    "control": {
+      "updates": 264,
+      "collapses": 12,
+      "truth_in_population": 74,
+      "ordinary_capture_events": 36,
+      "capture_violations": 3,
+      "mean_observation_consistency": 0.3619791666666667,
+      "visibility_conflicts": 0,
+      "mean_hidden_brier": 0.36010264826238053,
+      "mean_hidden_log_loss": 1.7022756028453518,
+      "mean_hidden_piece_mass": 0.49347918475529096,
+      "zero_true_mass_fraction": 0.04105125977410947,
+      "mean_observe_ms": 2.589160537878788
+    },
+    "capture": {
+      "updates": 264,
+      "collapses": 11,
+      "truth_in_population": 74,
+      "ordinary_capture_events": 36,
+      "capture_violations": 0,
+      "mean_observation_consistency": 0.3651104551373106,
+      "visibility_conflicts": 0,
+      "mean_hidden_brier": 0.36052043714161597,
+      "mean_hidden_log_loss": 1.7243248643570808,
+      "mean_hidden_piece_mass": 0.4948095228174603,
+      "zero_true_mass_fraction": 0.04202867072111208,
+      "mean_observe_ms": 2.710489170454545
+    },
+    "deductions": {
+      "updates": 264,
+      "collapses": 4,
+      "truth_in_population": 132,
+      "ordinary_capture_events": 36,
+      "capture_violations": 0,
+      "mean_observation_consistency": 1.0,
+      "visibility_conflicts": 0,
+      "mean_hidden_brier": 0.17718858496741965,
+      "mean_hidden_log_loss": 0.6699578430712424,
+      "mean_hidden_piece_mass": 0.7402518349867725,
+      "zero_true_mass_fraction": 0.014118158123370982,
+      "mean_observe_ms": 2.7152543901515154
+    },
+    "combined": {
+      "updates": 264,
+      "collapses": 4,
+      "truth_in_population": 132,
+      "ordinary_capture_events": 36,
+      "capture_violations": 0,
+      "mean_observation_consistency": 1.0,
+      "visibility_conflicts": 0,
+      "mean_hidden_brier": 0.17718858496741965,
+      "mean_hidden_log_loss": 0.6699578430712424,
+      "mean_hidden_piece_mass": 0.7402518349867725,
+      "zero_true_mass_fraction": 0.014118158123370982,
+      "mean_observe_ms": 2.631904837121212
+    }
+  },
+  "limits": [
+    "Single development trajectory, repeated across seeds; not independent games.",
+    "Truth labels never condition the belief update.",
+    "Mean probability on true hidden pieces is a placement diagnostic, not calibration by itself.",
+    "Categorical Brier/log loss include hidden empty squares; log loss floors mass at 1e-12.",
+    "Observe latency includes OS contention; no strength or Elo claim."
+  ]
+}

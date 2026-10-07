@@ -162,6 +162,31 @@ std::string RenderObservation(const Position& position, int color) {
   return view;
 }
 
+Deductions DeduceFromObservation(const Observation& observation, int side) {
+  Deductions out;
+  Bitboard pawns = observation.VisiblePieces(side, kPawn);
+  const int forward = side == kWhite ? 8 : -8;
+  const int start_rank = side == kWhite ? 1 : 6;
+  while (pawns) {
+    const int square = PopLsb(&pawns);
+    const int one = square + forward;
+    if (one < 0 || one >= kNumSquares) continue;
+    if (observation.IsUnseen(one)) {
+      out.must_hold_enemy |= SquareBB(one);
+    } else if (observation.IsVisibleEmpty(one) && RankOf(square) == start_rank) {
+      const int two = one + forward;
+      if (observation.IsUnseen(two)) out.must_hold_enemy |= SquareBB(two);
+    }
+    for (const int df : {-1, 1}) {
+      const int file = FileOf(square) + df;
+      if (file < 0 || file > 7) continue;
+      const int diagonal = MakeSquare(file, RankOf(one));
+      if (observation.IsUnseen(diagonal)) out.must_be_empty |= SquareBB(diagonal);
+    }
+  }
+  return out;
+}
+
 int InferEnPassant(const Observation* previous, const Observation& current,
                    int side) {
   if (previous == nullptr) return -1;

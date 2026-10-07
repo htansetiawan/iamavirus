@@ -5,6 +5,7 @@ Also validates every frame and all move/survival labels against the course
 referee. This is a diagnosis, not a counterfactual match or a strength estimate.
 """
 import argparse
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -18,7 +19,8 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--referee", type=Path, required=True)
     args = parser.parse_args()
-    raw = args.replay.read_bytes()
+    stored = args.replay.read_bytes()
+    raw = gzip.decompress(stored) if args.replay.suffix == ".gz" else stored
     replay = json.loads(raw)
     if len(replay["frames"]) < 2:
         parser.error("a final played move is required")
@@ -43,6 +45,7 @@ def main():
         black_version=replay.get("blackVersion"), result=replay["result"],
         reason=replay["reason"], source=str(args.replay),
         source_sha256=hashlib.sha256(raw).hexdigest(),
+        stored_file_sha256=hashlib.sha256(stored).hexdigest(),
         referee_verification=verify_with_referee(replay, args.referee),
         final_decision=dict(ply=before["ply"], side="white" if mover == 0 else "black",
                             preceding_move=before["move"], move=final["move"],

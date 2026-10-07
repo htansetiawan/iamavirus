@@ -55,6 +55,7 @@ struct BeliefUpdateReport {
   int capture_constraints_preserved = 0;  // rebuilt particles retaining it
   bool capture_evidence_conflict = false;
   bool capture_en_passant_ambiguous = false;
+  bool visibility_evidence_conflict = false;
 };
 
 class BeliefState {
@@ -66,7 +67,8 @@ class BeliefState {
   // on the strength of a measurement too coarse to support it.
   BeliefState(int our_side, int particle_count, uint64_t seed,
               bool use_opponent_prior = true,
-              bool preserve_capture_evidence = true);
+              bool preserve_capture_evidence = true,
+              bool use_visibility_deductions = false);
 
   // Absorbs an observation. `reflects_our_own_move` must be true for the
   // observation the arena sends immediately after our own move, since the only
@@ -106,6 +108,8 @@ class BeliefState {
   struct ObservedPieces {
     Bitboard visible = 0;
     std::array<Bitboard, kNumPieceTypes> by_type{};
+    Bitboard must_hold_enemy = 0;
+    Bitboard must_be_empty = 0;
   };
 
   static ObservedPieces Summarize(const Observation& view, int color);
@@ -164,6 +168,7 @@ class BeliefState {
   int target_count_;
   bool use_opponent_prior_;
   bool preserve_capture_evidence_;
+  bool use_visibility_deductions_;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
   // Piece counts the opponent is believed to still own.

@@ -170,6 +170,7 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_NODE_BUDGET", &options.node_budget);
   OverrideFlag("FOW_OPPONENT_PRIOR", &options.use_opponent_prior);
   OverrideFlag("FOW_CAPTURE_EVIDENCE", &options.preserve_capture_evidence);
+  OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.use_visibility_deductions);
   Override("FOW_SPECULATIVE_WIN", &options.search.speculative_win_score);
   OverrideFlag("FOW_LMR", &options.search.use_late_move_reductions);
   OverrideFlag("FOW_ASPIRATION", &options.search.use_aspiration_windows);
@@ -272,7 +273,8 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       options_(options),
       rng_(seed),
       belief_(our_side, options.particle_count, seed ^ 0x9E3779B97F4A7C15ULL,
-              options.use_opponent_prior, options.preserve_capture_evidence),
+              options.use_opponent_prior, options.preserve_capture_evidence,
+              options.use_visibility_deductions),
       searcher_(&table_) {
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);
@@ -322,6 +324,7 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   trace->capture_square = belief_report.capture_square;
   trace->capture_constraints_preserved = belief_report.capture_constraints_preserved;
   trace->capture_evidence_conflict = belief_report.capture_evidence_conflict;
+  trace->visibility_evidence_conflict = belief_report.visibility_evidence_conflict;
   trace->capture_en_passant_ambiguous = belief_report.capture_en_passant_ambiguous;
   const int enemy_side = our_side_ ^ 1;
   const bool advised = advice != nullptr && advice->available;

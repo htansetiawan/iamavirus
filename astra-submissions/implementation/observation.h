@@ -78,6 +78,16 @@ Bitboard VisibleSquares(const Position& position, int color);
 // observation() does: visible squares show the truth, the rest are unseen.
 std::string RenderObservation(const Position& position, int color);
 
+// Exact facts from hidden pawn destinations. Adapted from Fable's 8f6953c.
+// A hidden forward square is blocked by an enemy; a hidden capture diagonal
+// is empty. Our own pieces are always visible. A hidden square on an otherwise
+// open slider ray would be an invalid observation, not a hidden blocker.
+struct Deductions {
+  Bitboard must_hold_enemy = 0;
+  Bitboard must_be_empty = 0;
+};
+Deductions DeduceFromObservation(const Observation& observation, int side);
+
 // Infers the en passant target from the two observations bracketing the
 // opponent's move, which is the one piece of state a single observation cannot
 // carry. Returns -1 when nothing can be concluded. Ported from the course

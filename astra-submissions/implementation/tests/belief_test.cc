@@ -76,6 +76,7 @@ struct GameAudit {
   int plies = 0;
   int truth_present = 0;
   int agreement_failures = 0;
+  int deduction_failures = 0;
   int collapses = 0;
   // Total enemy piece count differing from reality. Strictly invariant: material
   // leaves the board only by a capture we can see.
@@ -96,7 +97,9 @@ GameAudit AuditRandomGame(int our_side, int particle_count, uint64_t seed,
                           int max_plies) {
   std::mt19937_64 rng(seed);
   Position truth = StartPosition();
-  BeliefState belief(our_side, particle_count, seed ^ 0x5DEECE66DULL);
+  // Exercise the combined opt-in deduction/capture variant here. The tactical
+  // engine default keeps deductions off pending the separate action gate.
+  BeliefState belief(our_side, particle_count, seed ^ 0x5DEECE66DULL, true, true, true);
   GameAudit audit;
   bool we_just_moved = false;
 
@@ -111,11 +114,14 @@ GameAudit AuditRandomGame(int our_side, int particle_count, uint64_t seed,
     if (!AllParticlesAgree(belief, view)) ++audit.agreement_failures;
 
     const int enemy = our_side ^ 1;
+    const Deductions facts = DeduceFromObservation(view, our_side);
     int true_total = 0;
     for (int type = 0; type < kNumPieceTypes; ++type) {
       true_total += PopCount(truth.pieces(type, enemy));
     }
     for (const Position& particle : belief.particles()) {
+      if ((particle.pieces_of(enemy) & facts.must_hold_enemy) != facts.must_hold_enemy ||
+          (particle.occupied() & facts.must_be_empty)) ++audit.deduction_failures;
       int total = 0;
       bool type_mismatch = false;
       for (int type = 0; type < kNumPieceTypes; ++type) {
@@ -181,6 +187,7 @@ void BeliefMaintainsItsInvariants() {
   int total_plies = 0;
   int total_truth = 0;
   int agreement_failures = 0;
+  int deduction_failures = 0;
   int total_count_failures = 0;
   int type_count_failures = 0;
   int collapses = 0;
@@ -193,6 +200,7 @@ void BeliefMaintainsItsInvariants() {
       total_plies += audit.plies;
       total_truth += audit.truth_present;
       agreement_failures += audit.agreement_failures;
+      deduction_failures += audit.deduction_failures;
       total_count_failures += audit.total_count_failures;
       type_count_failures += audit.type_count_failures;
       collapses += audit.collapses;
@@ -203,6 +211,7 @@ void BeliefMaintainsItsInvariants() {
   FOW_EXPECT_TRUE(total_plies > 200);
   // Hard invariants.
   FOW_EXPECT_EQ(agreement_failures, 0);
+  FOW_EXPECT_EQ(deduction_failures, 0);
   FOW_EXPECT_EQ(total_count_failures, 0);
   const double placement =
       total_pieces > 0

@@ -1,0 +1,61 @@
+{
+  "game": "qyzsbfdc",
+  "white_version": 4,
+  "black_version": 10,
+  "result": "1-0",
+  "reason": "King capturable",
+  "source": "/media/henrytan/seagate/iamavirus/astra/arena-monitor/replays/qyzsbfdc.json.gz",
+  "source_sha256": "3532fc983a7b8a9d9c24499092a2742fde11c2c55d34fe0b202f5af38f321e84",
+  "stored_file_sha256": "56a7cb350114a790f6baf23fd16f59afc817d076108b19773b32dfb034041ec2",
+  "referee_verification": {
+    "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "frames": 53,
+    "all_legal_move_survival_checks": 1630
+  },
+  "final_decision": {
+    "ply": 51,
+    "side": "black",
+    "preceding_move": "d4g7",
+    "move": "a7b8",
+    "legal_moves": [
+      "b4e1",
+      "b4d2",
+      "b4a3",
+      "b4c3",
+      "a7a6",
+      "a7b7",
+      "a7a8",
+      "a7b8",
+      "a5a4",
+      "c5c4",
+      "b6b5",
+      "h6h5"
+    ],
+    "immediate_survival_moves": [
+      "b4e1",
+      "b4d2",
+      "b4a3",
+      "b4c3",
+      "a7a6",
+      "a7b7",
+      "a5a4",
+      "c5c4",
+      "b6b5",
+      "h6h5"
+    ],
+    "mover_loses_king": true,
+    "fatal_attackers": [
+      {
+        "square": "h8",
+        "piece": "R",
+        "hidden_at_decision": true
+      }
+    ]
+  },
+  "caveats": [
+    "Truth is an offline label, not an input to the live bot.",
+    "Survival means immediate adjudication, not a winning continuation.",
+    "A hidden attack does not establish which scoring term caused it.",
+    "One game is not a strength estimate or a controlled comparison."
+  ]
+}

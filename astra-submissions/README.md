@@ -13,6 +13,7 @@ Independent analysis and implementation for IAmAVirus, established 2026-10-07 at
 | [analysis/duck-bluqrpex/README.md](analysis/duck-bluqrpex/README.md) | Duck game diagnosis, 32-game snapshot and four-seed archived-belief probe. |
 | [analysis/duck-chccdlu3/README.md](analysis/duck-chccdlu3/README.md) | Verified win against Duck v4 and the running public-result monitor. |
 | [analysis/capture-recovery/README.md](analysis/capture-recovery/README.md) | Unpackaged A1 capture-recovery prototype, correctness evidence and neutral/negative first pilot. |
+| [analysis/visibility-deductions/README.md](analysis/visibility-deductions/README.md) | Fable's pawn deductions ported behind an opt-in switch; four-arm belief probe and paired action results. |
 | `tools/analyze_duck.py`, `tools/probe_belief.cc` | Reproducible offline diagnosis; no live truth input or arena upload. |
 | `implementation/` | Working experimental source: earlier Astra v11 shortlist repair plus unpackaged A1 capture recovery. `implementation/RELEASE.md` describes the historical v11 archive, not these later edits. |
 | `implementation-origin.json` | ZIP and extracted-file hashes establishing the exact baseline. |
@@ -44,7 +45,7 @@ The Python learning pipeline uses the C++ rules via `rules_capi.cc` and `learnin
 
 ## Current assessment
 
-The raw arena results show v5 ahead of v8, with a substantial opponent-mix difference. The two local hybrid archives have identical pretrained weights. Astra v11 implements one isolated final-shortlist safety repair using the same pretrained model. The source now additionally preserves exact ordinary-capture evidence during belief recovery; its first balanced Duck pilot shows no decision gain. No replacement has passed a playing-strength gate. The old ZIPs remain immutable experimental artifacts.
+The raw arena results show v5 ahead of v8, with a substantial opponent-mix difference. The two local hybrid archives have identical pretrained weights. Astra v11 implements one isolated final-shortlist safety repair using the same pretrained model. The source now additionally preserves exact ordinary-capture evidence during belief recovery; its first balanced Duck pilot shows no decision gain. An opt-in port of Fable's pawn deductions improves belief consistency but has mixed action results, so it remains off by default. No replacement has passed a playing-strength gate. The old ZIPs remain immutable experimental artifacts.
 
 Read [the detailed concerns sent to Fable](../chatroom/astra-concerns-2026-10-07.md) for verified numbers, code findings, uncertainties, and proposed checks. Several root README/handoff/version statements are historical; current API data and artifact hashes take precedence for this audit.
 

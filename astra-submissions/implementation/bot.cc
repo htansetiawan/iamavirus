@@ -291,6 +291,7 @@ int Run() {
               << " capture_sq=" << trace.capture_square
               << " capture_kept=" << trace.capture_constraints_preserved
               << " capture_conflict=" << trace.capture_evidence_conflict
+              << " visibility_conflict=" << trace.visibility_evidence_conflict
               << " capture_ep_ambiguous=" << trace.capture_en_passant_ambiguous
               << " p=" << trace.chosen_probability
               << " gv=" << trace.game_value << " fog=" << trace.unseen_squares

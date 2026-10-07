@@ -1,0 +1,44 @@
+bitboard_test: 112219 checks, 0 failures
+position_test: 55940 checks, 0 failures
+       1949 deduced enemy squares and 8587 deduced empty squares verified
+observation_test: 12518 checks, 0 failures
+evaluation_test: 44 checks, 0 failures
+search_test: 67 checks, 0 failures
+       1444 plies, truth in population 805, collapses 13, pieces correctly placed 79.6%, composition unknown in 3152
+belief_test: 727 checks, 0 failures
+regret_test: 29 checks, 0 failures
+ignoring malformed FOW_PARTICLES=not-a-number
+       seed 2026 chose g8e7 (d5 guarded in 21%, risk seen 299 cp)
+       seed 1 chose d8d5 (d5 guarded in 18%, risk seen 185 cp)
+       seed 2 chose g8e7 (d5 guarded in 19%, risk seen 180 cp)
+       seed 3 chose d8d5 (d5 guarded in 15%, risk seen 187 cp)
+       seed 4 chose d8d5 (d5 guarded in 22%, risk seen 187 cp)
+       seed 5 chose g8e7 (d5 guarded in 21%, risk seen 219 cp)
+       seed 6 chose g8e7 (d5 guarded in 21%, risk seen 247 cp)
+       seed 7 chose g8e7 (d5 guarded in 19%, risk seen 243 cp)
+  FAIL tests/engine_test.cc:312 in fow::DoesNotRepeatTheQueenBlunderFromGame92of99z7
+       declined == 8 [actual=5 expected=8]
+       chose f5d4 (rejected 0 unsafe, king risk 1000 permille)
+  FAIL tests/engine_test.cc:378 in fow::DoesNotTakeTheGreekGiftFromGameQp6mfacx
+       trace.rejected_unsafe > 0
+       chose d1c2 (rejected 24 of 25, risk 0 permille)
+       173 plies, worst budget overrun 0.001s
+       cap 6 seed 1 shortlist risk 0 minimum 0 replaced 0
+       cap 6 seed 2 shortlist risk 0 minimum 0 replaced 0
+       cap 6 seed 3 shortlist risk 0 minimum 0 replaced 0
+       cap 6 seed 4 shortlist risk 264 minimum 264 replaced 1
+       cap 12 seed 1 shortlist risk 0 minimum 0 replaced 0
+       cap 12 seed 2 shortlist risk 0 minimum 0 replaced 0
+       cap 12 seed 3 shortlist risk 0 minimum 0 replaced 0
+       cap 12 seed 4 shortlist risk 264 minimum 264 replaced 1
+engine_test: 575 checks, 2 failures
+neural_test: 145 checks, 0 failures
+  ep[0]      1794/1794 match
+  ep[1]      1843/1843 match
+  legal[0]   1894/1894 match
+  legal[1]   1843/1843 match
+  moves      3737/3737 match
+  perft3     40/40 match
+  visible[0] 3737/3737 match
+  visible[1] 3737/3737 match
+18625/18625 checks agree with referee.py  -- C++ rules conform exactly

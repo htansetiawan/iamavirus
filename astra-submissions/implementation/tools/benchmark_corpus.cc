@@ -58,6 +58,8 @@ struct Tally {
   int fatal_saved = 0;       // ...and the engine would not have
   int matched = 0;           // engine chose the same move as the real player
   int unsafe_rejected = 0;
+  int decisions_with_safe_alternative = 0;
+  int avoidable_blunders = 0;
 };
 
 Move FindMove(const Position& position, const std::string& uci) {
@@ -124,7 +126,7 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
     if (actual == kNullMove) {
       std::fprintf(stderr, "  %s: illegal recorded move %s at ply %zu\n",
                    seat.id.c_str(), seat.moves[ply].c_str(), ply);
-      return;
+      std::exit(2);
     }
 
     if (truth.side_to_move() == seat.side) {
@@ -161,11 +163,36 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
         const Move choice = engine.ChooseMove(view, 150.0, &trace,
                                               advice.available ? &advice : nullptr);
         if (choice != kNullMove) {
+          if (FindMove(truth, MoveToUci(choice)) != choice) {
+            std::fprintf(stderr, "benchmark engine chose an illegal move\n");
+            std::exit(2);
+          }
           ++tally->decisions;
           tally->unsafe_rejected += trace.rejected_unsafe;
           const bool bad = LosesKing(truth, choice, seat.side);
+          MoveList true_legal;
+          truth.GenerateMoves(&true_legal);
+          int safe_alternatives = 0;
+          for (Move alternative : true_legal) {
+            safe_alternatives += !LosesKing(truth, alternative, seat.side);
+          }
+          tally->decisions_with_safe_alternative += safe_alternatives > 0;
+          tally->avoidable_blunders += bad && safe_alternatives > 0;
           if (bad) ++tally->blunders;
           if (choice == actual) ++tally->matched;
+          if (verbose) {
+            // Public game IDs and UCI strings contain no JSON quoting characters.
+            std::printf("DECISION {\"game\":\"%s\",\"side\":%d,\"ply\":%zu,"
+                        "\"sampled\":%s,\"terminal\":%s,\"move\":\"%s\","
+                        "\"king_loss\":%s,\"safe_alternatives\":%d,"
+                        "\"king_risk_permille\":%d,\"safest_risk_permille\":%d,"
+                        "\"legal_moves\":%d,\"collapsed\":%s}\n",
+                        seat.id.c_str(), seat.side, ply, sampled ? "true" : "false",
+                        is_fatal_ply ? "true" : "false", MoveToUci(choice).c_str(),
+                        bad ? "true" : "false", safe_alternatives,
+                        trace.king_risk_permille, trace.safest_risk_permille,
+                        trace.legal_moves, trace.collapsed ? "true" : "false");
+          }
           if (is_fatal_ply) {
             ++tally->fatal_positions;
             if (!bad) ++tally->fatal_saved;
@@ -250,6 +277,8 @@ int main(int argc, char** argv) {
   std::printf("  decisions evaluated       : %d\n", tally.decisions);
   std::printf("  immediate king losses     : %d (%.2f%%)\n", tally.blunders,
               tally.decisions ? 100.0 * tally.blunders / tally.decisions : 0.0);
+  std::printf("  safe-alternative decisions: %d\n", tally.decisions_with_safe_alternative);
+  std::printf("  avoidable king losses     : %d\n", tally.avoidable_blunders);
   std::printf("  matched the real move     : %d (%.1f%%)\n", tally.matched,
               tally.decisions ? 100.0 * tally.matched / tally.decisions : 0.0);
   std::printf("  real losing positions     : %d\n", tally.fatal_positions);

@@ -1,0 +1,19 @@
+{
+  "schema": "astra-prospective-game-gate-v1",
+  "declared_at": "2026-10-07T19:13:37.221887+00:00",
+  "eligible_completion_after": "2026-10-07T19:15:00Z",
+  "team_id": "a2c35173659545c99752376a70418438",
+  "assignment": "int(sha256(game_id UTF-8).hexdigest(), 16) % 2",
+  "development_parity": 0,
+  "gate_parity": 1,
+  "unit": "whole game, both seats and all frames",
+  "historical_data": "All games completed before the cutoff remain development/diagnostic data. A new hash split does not erase prior exposure to their benchmark results.",
+  "gate_policy": "Cache without inspecting gate replay moves or labels while developing the candidate. Public outcome/version/rating monitoring remains permitted. Freeze source/model/configuration hashes before opening the gate. Save the gate manifest and paired results; do not tune on the opened gate and continue calling it untouched.",
+  "stratification": [
+    "opponent",
+    "opponent version",
+    "our arena version",
+    "color"
+  ],
+  "limits": "This is a prospective offline replay gate, not a substitute for paired complete matches under 180+2 clocks. Shared openings and repeat opponents create dependence; report uncertainty by game."
+}

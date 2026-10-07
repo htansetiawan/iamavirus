@@ -47,11 +47,13 @@ Position StartingPosition() {
 }  // namespace
 
 BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
-                         bool use_opponent_prior, bool preserve_capture_evidence)
+                         bool use_opponent_prior, bool preserve_capture_evidence,
+                         bool use_visibility_deductions)
     : our_side_(our_side),
       target_count_(std::max(1, particle_count)),
       use_opponent_prior_(use_opponent_prior),
       preserve_capture_evidence_(preserve_capture_evidence),
+      use_visibility_deductions_(use_visibility_deductions),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
   const int home_rank = our_side == kWhite ? 0 : 7;
@@ -86,6 +88,8 @@ bool BeliefState::AgreesAboutEnemy(const Position& position,
       return false;
     }
   }
+  if ((position.pieces_of(color) & seen.must_hold_enemy) != seen.must_hold_enemy) return false;
+  if (position.pieces_of(color) & seen.must_be_empty) return false;
   return true;
 }
 
@@ -265,7 +269,12 @@ void BeliefState::InferCaptureEvidence(const Observation& view,
 
 void BeliefState::Condition(const Observation& view,
                             BeliefUpdateReport* report) {
-  const ObservedPieces enemy = Summarize(view, our_side_ ^ 1);
+  ObservedPieces enemy = Summarize(view, our_side_ ^ 1);
+  if (use_visibility_deductions_) {
+    const Deductions facts = DeduceFromObservation(view, our_side_);
+    enemy.must_hold_enemy = facts.must_hold_enemy;
+    enemy.must_be_empty = facts.must_be_empty;
+  }
   const ObservedPieces ours = Summarize(view, our_side_);
   std::vector<Position> kept;
   kept.reserve(particles_.size());
@@ -291,7 +300,12 @@ void BeliefState::Condition(const Observation& view,
 void BeliefState::PredictAndCondition(const Observation& view,
                                       BeliefUpdateReport* report) {
   const int enemy_side = our_side_ ^ 1;
-  const ObservedPieces enemy = Summarize(view, enemy_side);
+  ObservedPieces enemy = Summarize(view, enemy_side);
+  if (use_visibility_deductions_) {
+    const Deductions facts = DeduceFromObservation(view, our_side_);
+    enemy.must_hold_enemy = facts.must_hold_enemy;
+    enemy.must_be_empty = facts.must_be_empty;
+  }
   const ObservedPieces ours = Summarize(view, our_side_);
 
   // Enumerate every successor of every hypothesis that the new observation
@@ -410,9 +424,25 @@ void BeliefState::Recover(const Observation& view,
         0, enemy_census_[type] - PopCount(visible.pieces(type, enemy_side)));
   }
 
+  const Deductions facts = use_visibility_deductions_
+                                ? DeduceFromObservation(view, our_side_) : Deductions{};
+  Bitboard required_mask = facts.must_hold_enemy;
+  if (capture_square_ >= 0 && view.IsUnseen(capture_square_)) {
+    required_mask |= SquareBB(capture_square_);
+  }
+  if (required_mask & facts.must_be_empty) {
+    report->visibility_evidence_conflict = true;
+    report->capture_evidence_conflict = capture_square_ >= 0;
+    // A malformed history cannot override a current visibility fact.
+    required_mask &= ~facts.must_be_empty;
+  }
+  std::vector<int> required;
+  for (Bitboard scan = required_mask; scan;) required.push_back(PopLsb(&scan));
   std::vector<int> hidden;
   for (int square = 0; square < kNumSquares; ++square) {
-    if (view.IsUnseen(square)) hidden.push_back(square);
+    if (view.IsUnseen(square) && !(facts.must_be_empty & SquareBB(square))) {
+      hidden.push_back(square);
+    }
   }
 
   // Rebuild castling rights from what the board shows: a right is possible
@@ -457,13 +487,21 @@ void BeliefState::Recover(const Observation& view,
     // large enough when no square is wasted.
     std::vector<int> available = hidden;
     std::array<int, kNumPieceTypes> remaining = missing;
-    if (capture_square_ >= 0 && view.IsUnseen(capture_square_)) {
-      // Allocate one of the existing unseen pieces to the known landing square
-      // before scattering the rest. Weight types by their remaining counts;
-      // this is a conservative recovery proposal, not a calibrated posterior.
-      const bool pawn_square = RankOf(capture_square_) != 0 && RankOf(capture_square_) != 7;
+    Bitboard unplaced_required = required_mask;
+    for (const int required_square : required) {
+      unplaced_required &= ~SquareBB(required_square);
+      // Jointly place capture evidence and pawn deductions. Do not spend the
+      // last non-pawn on a middle rank if a required back-rank square needs it,
+      // or spend the last available pawn square on a non-pawn.
+      const bool pawn_square = RankOf(required_square) != 0 && RankOf(required_square) != 7;
       const int pawn_slots = static_cast<int>(std::count_if(
           available.begin(), available.end(), [](int s) { return RankOf(s) != 0 && RankOf(s) != 7; }));
+      int required_back_ranks = 0;
+      for (Bitboard scan = unplaced_required; scan;) {
+        const int rank = RankOf(PopLsb(&scan));
+        required_back_ranks += rank == 0 || rank == 7;
+      }
+      const int nonpawns = std::accumulate(remaining.begin() + 1, remaining.end(), 0);
       std::vector<int> types;
       for (int type = 0; type < kNumPieceTypes; ++type) {
         if (type == kPawn && !pawn_square) continue;
@@ -471,6 +509,7 @@ void BeliefState::Recover(const Observation& view,
         // legal square. Keep the existing population-size/material invariant.
         const int pawns_left = remaining[kPawn] - (type == kPawn ? 1 : 0);
         if (pawns_left > pawn_slots - (pawn_square ? 1 : 0)) continue;
+        if (nonpawns - (type != kPawn ? 1 : 0) < required_back_ranks) continue;
         for (int n = 0; n < remaining[type]; ++n) types.push_back(type);
       }
       bool latent_promotion = false;
@@ -483,15 +522,18 @@ void BeliefState::Recover(const Observation& view,
       if (!types.empty()) {
         const int type = types[std::uniform_int_distribution<std::size_t>(0, types.size() - 1)(rng_)];
         --remaining[latent_promotion ? kPawn : type];
-        particle.PutPiece(capture_square_, enemy_side, type);
-        available.erase(std::remove(available.begin(), available.end(), capture_square_), available.end());
-        ++report->capture_constraints_preserved;
+        particle.PutPiece(required_square, enemy_side, type);
+        available.erase(std::remove(available.begin(), available.end(), required_square), available.end());
+        if (required_square == capture_square_) ++report->capture_constraints_preserved;
       } else {
         // A contradictory synthetic observation/census can make placement
         // impossible. Keep visibility intact and expose the inconsistency.
-        report->capture_evidence_conflict = true;
+        if (required_square == capture_square_) report->capture_evidence_conflict = true;
+        if (facts.must_hold_enemy & SquareBB(required_square)) report->visibility_evidence_conflict = true;
       }
-    } else if (capture_square_ >= 0 && particle.color_at(capture_square_) == enemy_side) {
+    }
+    if (capture_square_ >= 0 && !view.IsUnseen(capture_square_) &&
+        particle.color_at(capture_square_) == enemy_side) {
       ++report->capture_constraints_preserved;
     }
     // Pawns are placed first because they are the only constrained piece: they
