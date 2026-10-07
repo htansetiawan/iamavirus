@@ -3,6 +3,8 @@
 #include "engine.h"
 
 #include <algorithm>
+#include <cstdio>
+#include <cstdlib>
 #include <cstddef>
 #include <cstdint>
 #include <random>
@@ -104,6 +106,92 @@ double Engine::ExpectedMaterialRisk(Move move, int en_passant) const {
   return counted > 0 ? total_loss / counted : 0.0;
 }
 
+namespace {
+
+// Reads an override, leaving the default in place when the variable is absent or
+// unparseable. A malformed value is reported rather than ignored silently.
+template <typename T>
+void Override(const char* name, T* value) {
+  const char* text = std::getenv(name);
+  if (text == nullptr || *text == '\0') return;
+  char* end = nullptr;
+  const double parsed = std::strtod(text, &end);
+  if (end == text || (end != nullptr && *end != '\0')) {
+    std::fprintf(stderr, "ignoring malformed %s=%s\n", name, text);
+    return;
+  }
+  *value = static_cast<T>(parsed);
+}
+
+void OverrideFlag(const char* name, bool* value) {
+  const char* text = std::getenv(name);
+  if (text == nullptr || *text == '\0') return;
+  *value = !(text[0] == '0' || text[0] == 'n' || text[0] == 'f');
+}
+
+}  // namespace
+
+EngineOptions EngineOptionsFromEnvironment() {
+  EngineOptions options;
+  Override("FOW_PARTICLES", &options.particle_count);
+  Override("FOW_SHORTLIST", &options.shortlist_size);
+  Override("FOW_HYPOTHESES", &options.hypothesis_count);
+  Override("FOW_REGRET_ITERATIONS", &options.regret_iterations);
+  OverrideFlag("FOW_MATRIX_GAME", &options.use_matrix_game);
+  Override("FOW_KING_LOSS_TOLERANCE", &options.king_loss_tolerance);
+  Override("FOW_PIECE_RISK", &options.piece_risk_weight);
+  Override("FOW_TIME_CAP", &options.time_cap);
+  Override("FOW_TIME_RESERVE", &options.time_reserve);
+  Override("FOW_TIME_DIVISOR", &options.time_divisor);
+  Override("FOW_HASH_MB", &options.transposition_megabytes);
+  Override("FOW_SPECULATIVE_WIN", &options.search.speculative_win_score);
+  OverrideFlag("FOW_LMR", &options.search.use_late_move_reductions);
+  OverrideFlag("FOW_ASPIRATION", &options.search.use_aspiration_windows);
+  // Guard against a value that would break the engine rather than tune it.
+  if (options.particle_count < 1) options.particle_count = 1;
+  if (options.shortlist_size < 1) options.shortlist_size = 1;
+  if (options.hypothesis_count < 1) options.hypothesis_count = 1;
+  if (options.transposition_megabytes < 1) options.transposition_megabytes = 1;
+  return options;
+}
+
+std::vector<double> Engine::KingLossProbabilities(const MoveList& moves,
+                                                 int en_passant) const {
+  std::vector<double> probability(static_cast<std::size_t>(moves.size()), 0.0);
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return probability;
+  const int enemy_side = our_side_ ^ 1;
+
+  std::vector<int> losses(static_cast<std::size_t>(moves.size()), 0);
+  std::vector<int> counted(static_cast<std::size_t>(moves.size()), 0);
+  // Hypothesis outside, move inside: each hypothesis is copied once and every
+  // candidate is tested on it with a make, one attack test and an unmake.
+  for (Position hypothesis : population) {
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    MoveList available;
+    hypothesis.GenerateMoves(&available);
+    for (int i = 0; i < moves.size(); ++i) {
+      if (!ListContains(available, moves[i])) continue;
+      UndoState undo;
+      hypothesis.MakeMove(moves[i], &undo);
+      const int king = hypothesis.KingSquare(our_side_);
+      if (king < 0 || hypothesis.IsAttacked(king, enemy_side)) {
+        ++losses[static_cast<std::size_t>(i)];
+      }
+      hypothesis.UnmakeMove(moves[i], undo);
+      ++counted[static_cast<std::size_t>(i)];
+    }
+  }
+  for (int i = 0; i < moves.size(); ++i) {
+    const std::size_t index = static_cast<std::size_t>(i);
+    probability[index] = counted[index] > 0
+        ? static_cast<double>(losses[index]) / counted[index]
+        : 1.0;  // a move no hypothesis can make is treated as unavailable
+  }
+  return probability;
+}
+
 Engine::Engine(int our_side, double base_seconds, double increment_seconds,
                const EngineOptions& options, uint64_t seed)
     : our_side_(our_side),
@@ -167,6 +255,37 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     return legal[0];
   }
 
+  // King safety is decided here, over every legal move and the whole population,
+  // before any shortlist exists. Doing it after the shortlist means a move that
+  // is the only safe reply can be discarded by a search of one guessed board and
+  // never considered again.
+  const std::vector<double> king_risk = KingLossProbabilities(legal, en_passant);
+  MoveList safe;
+  double lowest = 2.0;
+  int safest = 0;
+  for (int i = 0; i < legal.size(); ++i) {
+    const double risk = king_risk[static_cast<std::size_t>(i)];
+    if (risk < options_.king_loss_tolerance) safe.Add(legal[i]);
+    if (risk < lowest) {
+      lowest = risk;
+      safest = i;
+    }
+  }
+  trace->rejected_unsafe = legal.size() - safe.size();
+  trace->king_risk_permille = static_cast<int>(lowest * 1000.0);
+  if (safe.empty()) {
+    // Nothing is comfortably safe, which happens in genuinely sharp positions.
+    // Keep the least dangerous band so the search still chooses on merit inside
+    // it, instead of letting a probability alone pick the move.
+    trace->forced_risky = true;
+    const double band = lowest + options_.king_risk_band;
+    for (int i = 0; i < legal.size(); ++i) {
+      if (king_risk[static_cast<std::size_t>(i)] <= band) safe.Add(legal[i]);
+    }
+    if (safe.empty()) safe.Add(legal[safest]);
+    trace->rejected_unsafe = legal.size() - safe.size();
+  }
+
   const FogContext fog = belief_.MakeFogContext(view);
   searcher_.SetContext(our_side_, belief_.EnemyKingVisible(view), fog);
 
@@ -177,14 +296,14 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   SearchLimits shortlist_limits;
   shortlist_limits.seconds = trace->budget * kShortlistShare;
   const SearchResult primary =
-      searcher_.Search(&likely, legal, shortlist_limits);
+      searcher_.Search(&likely, safe, shortlist_limits);
   trace->depth = primary.depth;
   trace->score = primary.score;
   trace->nodes = primary.nodes;
 
   std::vector<RootMoveValue> ranked = primary.root_values;
   if (ranked.empty()) {
-    for (const Move move : legal) ranked.push_back({move, 0});
+    for (const Move move : safe) ranked.push_back({move, 0});
   }
   std::stable_sort(ranked.begin(), ranked.end(),
                    [](const RootMoveValue& a, const RootMoveValue& b) {
@@ -211,7 +330,6 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   game.columns = columns;
   game.payoff.assign(static_cast<std::size_t>(shortlist) * columns, 0.0);
 
-  std::vector<int> king_losses(shortlist, 0);
   // Measured over the whole population, so a danger present in a small fraction
   // of hypotheses is still priced in.
   std::vector<double> risk(shortlist, 0.0);
@@ -242,7 +360,6 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
         // rebuilt hypothesis disagrees about castling rights. Treat it as lost
         // rather than silently corrupting the board.
         game.set(row, column, kDisasterScore);
-        ++king_losses[row];
         continue;
       }
 
@@ -269,7 +386,6 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
 
       if (fatal) {
         game.set(row, column, kDisasterScore);
-        ++king_losses[row];
         continue;
       }
 
@@ -287,17 +403,10 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     }
   }
 
-  // Step three: discard moves that lose our king too often, then solve.
+  // King safety was already settled over the whole population, so every row
+  // here is one we are willing to play; the matrix decides between them.
   std::vector<int> safe_rows;
-  for (int row = 0; row < shortlist; ++row) {
-    const double share = static_cast<double>(king_losses[row]) / columns;
-    if (share <= options_.king_loss_tolerance) safe_rows.push_back(row);
-  }
-  trace->rejected_unsafe = shortlist - static_cast<int>(safe_rows.size());
-  if (safe_rows.empty()) {
-    // Every candidate is dangerous somewhere; fall back on the search's verdict.
-    return ranked.front().move;
-  }
+  for (int row = 0; row < shortlist; ++row) safe_rows.push_back(row);
 
   MatrixGame reduced;
   reduced.rows = static_cast<int>(safe_rows.size());

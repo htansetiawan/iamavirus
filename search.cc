@@ -35,7 +35,8 @@ constexpr int kSecondKillerScore = kFirstKillerScore - 1;
 void Searcher::SetContext(int our_side, bool enemy_king_confirmed,
                           const FogContext& fog) {
   our_side_ = our_side;
-  win_magnitude_ = enemy_king_confirmed ? kWinConfirmed : kWinSpeculative;
+  win_magnitude_ =
+      enemy_king_confirmed ? kWinConfirmed : options_.speculative_win_score;
   fog_ = fog;
   killers_ = {};
   for (auto& by_from : history_) {
@@ -352,7 +353,9 @@ SearchResult Searcher::Search(Position* root, const MoveList& root_moves,
     order.clear();
     for (const RootMoveValue& entry : values) order.push_back(entry.move);
 
-    if (std::abs(result.score) >= kWinSpeculative - kMaxPly) break;
+    if (std::abs(result.score) >= options_.speculative_win_score - kMaxPly) {
+      break;
+    }
     if (std::chrono::steady_clock::now() >= deadline_) break;
   }
 

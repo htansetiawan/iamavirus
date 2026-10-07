@@ -28,6 +28,7 @@
 #include <cstdint>
 #include <random>
 #include <string>
+#include <vector>
 
 #include "belief.h"
 #include "observation.h"
@@ -48,8 +49,18 @@ struct EngineOptions {
   // tells us whether the game solving is earning its clock.
   bool use_matrix_game = true;
   // A move is discarded when it leaves our king capturable in at least this
-  // fraction of hypotheses.
-  double king_loss_tolerance = 0.25;
+  // fraction of hypotheses, measured over the whole population.
+  //
+  // The threshold is low on purpose. Losing the king is not a cost to be traded
+  // against material, it is the end of the game, so even a small chance of it
+  // needs enormous compensation. A game was lost taking a bishop with the king
+  // when 8.2% of hypotheses said the square was defended.
+  double king_loss_tolerance = 0.04;
+  // When no move clears the tolerance, moves within this much of the safest are
+  // kept as a band. Picking the single least dangerous move would decide on risk
+  // alone and ignore material entirely, which in a sharp position can throw away
+  // a piece to shave a percent off a probability.
+  double king_risk_band = 0.02;
   // Weight on the expected material a move hands over, measured across the
   // whole population rather than the sampled columns. Set to zero to disable.
   double piece_risk_weight = 1.0;
@@ -71,6 +82,8 @@ struct DecisionTrace {
   int shortlisted = 0;
   int hypotheses = 0;
   int rejected_unsafe = 0;
+  int king_risk_permille = 0;   // king-loss probability of the chosen move
+  bool forced_risky = false;    // every move exceeded the tolerance
   int worst_risk = 0;
   double chosen_probability = 1.0;
   double game_value = 0.0;
@@ -80,6 +93,19 @@ struct DecisionTrace {
   bool collapsed = false;
   double pieces_located = 0.0;
 };
+
+// Options with any overrides from the environment applied.
+//
+// Every value here is a judgement call that local play can measure, and some of
+// them -- the risk weight above all -- have not been separated from one another
+// yet. Reading them from the environment means a configuration can be tested
+// head to head without recompiling, which is what the arena harness does.
+//
+// Recognised variables: FOW_PARTICLES, FOW_SHORTLIST, FOW_HYPOTHESES,
+// FOW_REGRET_ITERATIONS, FOW_MATRIX_GAME, FOW_KING_LOSS_TOLERANCE,
+// FOW_PIECE_RISK, FOW_TIME_CAP, FOW_TIME_RESERVE, FOW_TIME_DIVISOR,
+// FOW_HASH_MB, FOW_SPECULATIVE_WIN, FOW_LMR, FOW_ASPIRATION.
+EngineOptions EngineOptionsFromEnvironment();
 
 class Engine {
  public:
@@ -110,6 +136,14 @@ class Engine {
   // Expected material, in centipawns, that `move` hands over immediately,
   // averaged over every hypothesis in the population.
   double ExpectedMaterialRisk(Move move, int en_passant) const;
+
+  // For each move, the share of hypotheses in which it leaves our king
+  // capturable. Computed over the entire population rather than the sampled
+  // columns of the matrix game, because the thing being measured is rare by
+  // nature: a danger present in one hypothesis in twelve is usually absent from
+  // all eight samples, which reports zero risk for a move that loses outright.
+  std::vector<double> KingLossProbabilities(const MoveList& moves,
+                                            int en_passant) const;
 
   int our_side_;
   double increment_;

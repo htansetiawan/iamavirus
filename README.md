@@ -37,9 +37,15 @@ FOW_PYTHON=/path/to/.venv/bin/python FOW_KIT=/path/to/kit bash test.sh
 
 ## Results
 
+Measured locally. The baseline figure is against the downloadable `baseline.py`,
+which ranks captures with random tie-breaking; it is **not** evidence of strength
+against the arena's other opponents.
+
+
 | | |
 |---|---|
 | vs. the course `baseline.py` at 180+2 | **10W–0L**, both colours |
+| v4 vs v3 head to head, 48 paired games | 0.573 +/- 0.069 (~+51 Elo) |
 | search speed | ~11M nodes/sec |
 | depth | 11 at one second, 12 at four |
 | rules conformance | **47,875 / 47,875** checks agree with `referee.py` |

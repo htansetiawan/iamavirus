@@ -116,7 +116,7 @@ int Run() {
 
   InitializeAttackTables();
   InitializeZobrist();
-  EngineOptions options;
+  const EngineOptions options = EngineOptionsFromEnvironment();
   Engine engine(side, base, increment, options,
                 SeedFromEnvironmentOrClock());
 

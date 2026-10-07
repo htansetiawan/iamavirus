@@ -60,6 +60,11 @@ struct SearchResult {
 struct SearchOptions {
   bool use_late_move_reductions = true;
   bool use_aspiration_windows = true;
+  // Score for a winning line that rests on a guess about where the enemy king
+  // stands. Lowering it makes the engine more sceptical of king hunts; raising
+  // it towards kWinConfirmed makes it chase them. Exposed because it is the
+  // constant most likely to make a deeper search worse rather than better.
+  int speculative_win_score = kWinSpeculative;
 };
 
 class Searcher {

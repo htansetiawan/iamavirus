@@ -14,6 +14,7 @@
 #include <chrono>
 #include <cstdint>
 #include <cstdio>
+#include <cstdlib>
 #include <random>
 #include <string>
 
@@ -176,6 +177,40 @@ void ReturnsTheOnlyMoveWhenForced() {
   FOW_EXPECT_TRUE(allowed);
 }
 
+// Environment overrides exist so configurations can be measured head to head
+// without recompiling. If they silently failed, every such measurement would be
+// comparing a configuration against itself.
+void EnvironmentOverridesAreApplied() {
+  const EngineOptions defaults = EngineOptionsFromEnvironment();
+  FOW_EXPECT_TRUE(defaults.piece_risk_weight > 0.0);
+
+  setenv("FOW_PIECE_RISK", "0", 1);
+  setenv("FOW_PARTICLES", "77", 1);
+  setenv("FOW_HYPOTHESES", "3", 1);
+  setenv("FOW_MATRIX_GAME", "0", 1);
+  setenv("FOW_SPECULATIVE_WIN", "9000", 1);
+  const EngineOptions tuned = EngineOptionsFromEnvironment();
+  FOW_EXPECT_EQ(tuned.piece_risk_weight, 0.0);
+  FOW_EXPECT_EQ(tuned.particle_count, 77);
+  FOW_EXPECT_EQ(tuned.hypothesis_count, 3);
+  FOW_EXPECT_TRUE(!tuned.use_matrix_game);
+  FOW_EXPECT_EQ(tuned.search.speculative_win_score, 9000);
+
+  // A nonsense value must leave the default alone rather than zero it.
+  setenv("FOW_PARTICLES", "not-a-number", 1);
+  FOW_EXPECT_EQ(EngineOptionsFromEnvironment().particle_count,
+                defaults.particle_count);
+
+  // A value that would break the engine is clamped, not obeyed.
+  setenv("FOW_PARTICLES", "0", 1);
+  FOW_EXPECT_TRUE(EngineOptionsFromEnvironment().particle_count >= 1);
+
+  for (const char* name : {"FOW_PIECE_RISK", "FOW_PARTICLES", "FOW_HYPOTHESES",
+                           "FOW_MATRIX_GAME", "FOW_SPECULATIVE_WIN"}) {
+    unsetenv(name);
+  }
+}
+
 // Regression test taken from a lost rated game.
 //
 // Game 92of99z7 against TA Baseline S went 1. Nc3 Nc6 2. Nf3 e5 3. e4 d5
@@ -244,16 +279,151 @@ void DoesNotRepeatTheQueenBlunderFromGame92of99z7() {
   FOW_EXPECT_TRUE(trace.worst_risk > 0);
 }
 
+// Regression test from the nine-move loss to Greek Gift, game qp6mfacx.
+//
+// 1. d4 d5 2. Bf4 Nh6 3. c4 dxc4 4. Nf3 g6 5. Nc3 a6 6. e4 f5 7. Ne5 fxe4
+// 8. Bxc4 Nf5 9. Bf7 Kxf7?? and the knight on e5 -- never seen, and unseeable,
+// since no move of ours reaches e5 -- took the king. No material had been lost;
+// the game was thrown away by one king move onto a defended square.
+//
+// The information was not missing from the belief: 8.2% of hypotheses said the
+// square was covered. It was lost to sampling, because none of the eight columns
+// of the matrix game happened to contain an attacker, which reported the risk as
+// exactly zero. King safety is therefore decided over the whole population.
+void DoesNotTakeTheGreekGiftFromGameQp6mfacx() {
+  EngineOptions options;
+  options.particle_count = 2048;
+  options.transposition_megabytes = 32;
+  options.time_reserve = 0.0;
+  options.time_cap = 0.4;
+
+  Position truth;
+  FOW_EXPECT_TRUE(PositionFromFen(
+      "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth));
+  Engine engine(kBlack, 180.0, 2.0, options, 4242);
+
+  const char* line[] = {"d2d4", "d7d5", "c1f4", "g8h6", "c2c4", "d5c4",
+                        "g1f3", "g7g6", "b1c3", "a7a6", "e2e4", "f7f5",
+                        "f3e5", "f5e4", "f1c4", "h6f5", "c4f7"};
+  bool we_just_moved = false;
+  for (const char* uci : line) {
+    const Observation view(RenderObservation(truth, kBlack));
+    engine.Observe(view, we_just_moved);
+    we_just_moved = false;
+    MoveList legal;
+    truth.GenerateMoves(&legal);
+    Move move = kNullMove;
+    for (const Move candidate : legal) {
+      if (MoveToUci(candidate) == uci) move = candidate;
+    }
+    FOW_EXPECT_TRUE(move != kNullMove);
+    if (move == kNullMove) return;
+    if (truth.side_to_move() == kBlack) {
+      engine.NotifyMovePlayed(move);
+      we_just_moved = true;
+    }
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+  }
+
+  const Observation view(RenderObservation(truth, kBlack));
+  engine.Observe(view, we_just_moved);
+  // The bishop is sitting on f7 in plain sight; its defender is not.
+  FOW_EXPECT_TRUE(!view.IsUnseen(MakeSquare(5, 6)));
+  FOW_EXPECT_TRUE(view.IsUnseen(MakeSquare(4, 4)));
+
+  DecisionTrace trace;
+  const Move choice = engine.ChooseMove(view, 170.0, &trace);
+  FOW_EXPECT_TRUE(choice != kNullMove);
+  std::fprintf(stderr,
+               "       chose %s (rejected %d unsafe, king risk %d permille)\n",
+               MoveToUci(choice).c_str(), trace.rejected_unsafe,
+               trace.king_risk_permille);
+  // The move that lost the game.
+  FOW_EXPECT_TRUE(MoveToUci(choice) != "e8f7");
+  // And the filter must have actually thrown something away.
+  FOW_EXPECT_TRUE(trace.rejected_unsafe > 0);
+}
+
+// Regression test from the second loss to the same opponent, game z6mbi981,
+// playing White this time.
+//
+// 31...Qe1 placed the queen beside the king on d1; 32.Kxe1?? took it and the rook
+// on e8 -- unseen in all 63 observations -- took the king down the e-file. The
+// trick is the same as game qp6mfacx with the geometry changed: bait adjacent to
+// the king, guarded from a distance. Material was near level, so the game was
+// thrown away by this one capture.
+//
+// Note what the queen's own route proves: it travelled e7-e6-e1, so the e-file
+// was clear, which is exactly what makes a rook behind it the natural hypothesis.
+void DoesNotTakeTheBaitFromGameZ6mbi981() {
+  EngineOptions options;
+  options.particle_count = 2048;
+  options.transposition_megabytes = 32;
+  options.time_reserve = 0.0;
+  options.time_cap = 0.4;
+
+  Position truth;
+  FOW_EXPECT_TRUE(PositionFromFen(
+      "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth));
+  Engine engine(kWhite, 180.0, 2.0, options, 99);
+
+  const char* line[] = {
+      "e2e4", "c7c5", "d2d3", "b8c6", "c1e3", "e7e6", "b1d2", "g8f6", "a2a4",
+      "f8e7", "g1e2", "d7d5", "e4d5", "e6d5", "h2h4", "d5d4", "e3f4", "e8g8",
+      "h4h5", "f8e8", "d1b1", "e7d6", "f4d6", "d8d6", "a1a3", "h7h6", "a3a1",
+      "c8e6", "b1c1", "e6d5", "e1d1", "a7a6", "a1a3", "d6c7", "d2b3", "b7b6",
+      "a3a1", "d5b3", "c2b3", "a8d8", "a1a3", "c7d7", "h1h3", "c6b4", "a3a2",
+      "b4a2", "c1c4", "a2b4", "c4c1", "g8h8", "h3g3", "b4d5", "c1c4", "d7c7",
+      "c4a6", "h8g8", "g3f3", "c7e7", "a6c4", "e7e6", "e2c1", "e6e1"};
+
+  bool we_just_moved = false;
+  for (const char* uci : line) {
+    const Observation view(RenderObservation(truth, kWhite));
+    engine.Observe(view, we_just_moved);
+    we_just_moved = false;
+    MoveList legal;
+    truth.GenerateMoves(&legal);
+    Move move = kNullMove;
+    for (const Move candidate : legal) {
+      if (MoveToUci(candidate) == uci) move = candidate;
+    }
+    FOW_EXPECT_TRUE(move != kNullMove);
+    if (move == kNullMove) return;
+    if (truth.side_to_move() == kWhite) {
+      engine.NotifyMovePlayed(move);
+      we_just_moved = true;
+    }
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+  }
+
+  const Observation view(RenderObservation(truth, kWhite));
+  engine.Observe(view, we_just_moved);
+  FOW_EXPECT_TRUE(!view.IsUnseen(MakeSquare(4, 0)));  // the queen on e1 is seen
+  FOW_EXPECT_TRUE(view.IsUnseen(MakeSquare(4, 7)));   // the rook on e8 is not
+
+  DecisionTrace trace;
+  const Move choice = engine.ChooseMove(view, 150.0, &trace);
+  std::fprintf(stderr, "       chose %s (rejected %d of %d, risk %d permille)\n",
+               MoveToUci(choice).c_str(), trace.rejected_unsafe,
+               trace.legal_moves, trace.king_risk_permille);
+  FOW_EXPECT_TRUE(MoveToUci(choice) != "d1e1");
+}
+
 }  // namespace
 }  // namespace fow
 
 int main() {
   fow::InitializeAttackTables();
   fow::InitializeZobrist();
+  FOW_RUN_TEST(fow::EnvironmentOverridesAreApplied);
   FOW_RUN_TEST(fow::TimeBudgetIsAlwaysAffordable);
   FOW_RUN_TEST(fow::ReturnsTheOnlyMoveWhenForced);
   FOW_RUN_TEST(fow::WorksWithTheMatrixGameDisabled);
   FOW_RUN_TEST(fow::DoesNotRepeatTheQueenBlunderFromGame92of99z7);
+  FOW_RUN_TEST(fow::DoesNotTakeTheGreekGiftFromGameQp6mfacx);
+  FOW_RUN_TEST(fow::DoesNotTakeTheBaitFromGameZ6mbi981);
   FOW_RUN_TEST(fow::EveryMoveTheEngineReturnsIsLegal);
   return fow::testing::Summarize("engine_test");
 }
