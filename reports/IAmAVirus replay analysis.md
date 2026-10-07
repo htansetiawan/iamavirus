@@ -1,6 +1,6 @@
 # IAmAVirus replay analysis
 
-369 arena games of IAmAVirus (all versions), 11893 of our decisions, labelled from the true board offline (`learning/curate.py`; rows in `gold/`).
+380 arena games of IAmAVirus (all versions), 12227 of our decisions, labelled from the true board offline (`learning/curate.py`; rows in `gold/`).
 
 ## Record by version
 
@@ -14,7 +14,7 @@
 | 7 | 2 | 0 | 10 |
 | 8 | 9 | 0 | 15 |
 | 9 | 7 | 0 | 3 |
-| 10 | 3 | 0 | 0 |
+| 10 | 9 | 0 | 5 |
 
 ## How the losses end (terminal class, by version)
 
@@ -26,6 +26,7 @@
 | 7 | 1 | 2 | 1 | 5 | 1 |
 | 8 | 6 | 0 | 0 | 9 | 0 |
 | 9 | 1 | 0 | 0 | 2 | 0 |
+| 10 | 2 | 2 | 0 | 1 | 0 |
 
 ## Decision-level hazards, by version
 
@@ -39,25 +40,25 @@
 | 7 | 446 | 9 | 8 | 46 | 42 | 19 |
 | 8 | 886 | 15 | 9 | 80 | 76 | 33 |
 | 9 | 314 | 3 | 2 | 25 | 23 | 11 |
-| 10 | 31 | 0 | 0 | 1 | 1 | 0 |
+| 10 | 365 | 5 | 3 | 39 | 35 | 8 |
 
 ## Record by opponent (all versions)
 
 | opponent | W | D | L |
 |---|---|---|---|
-| TA Baseline S | 13 | 3 | 51 |
-| TA Baseline P | 35 | 3 | 23 |
-| Apricot Squad | 56 | 1 | 3 |
-| TA Baseline A | 15 | 1 | 34 |
+| TA Baseline S | 13 | 3 | 53 |
+| Apricot Squad | 59 | 1 | 3 |
+| TA Baseline P | 37 | 3 | 23 |
+| TA Baseline A | 16 | 1 | 35 |
 | baseline.py | 46 | 0 | 0 |
-| duck | 1 | 0 | 25 |
+| duck | 1 | 0 | 27 |
 | Greek Gift | 0 | 0 | 14 |
 | Instructors | 0 | 0 | 14 |
 | Decent Chess Bot | 0 | 0 | 13 |
 | Knight Vision | 0 | 0 | 10 |
 | Strongly Invisible | 0 | 0 | 8 |
 
-## Decisions that handed over 5+ points and were punished (197)
+## Decisions that handed over 5+ points and were punished (200)
 
 | game | ver | ply | move | exposure | capturer hidden | opponent reply | result |
 |---|---|---|---|---|---|---|---|
