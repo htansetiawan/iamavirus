@@ -170,28 +170,7 @@ Deductions DeduceFromObservation(const Observation& observation, int side) {
     if (symbol == kUnseen || symbol == kEmpty) continue;
     if (std::strchr(ours, symbol) == nullptr) continue;
     const int type = SymbolToPieceType(symbol);
-    if (type == kRook || type == kBishop || type == kQueen) {
-      for (int direction = 0; direction < kNumDirections; ++direction) {
-        const bool diagonal = direction == kNorthEast || direction == kNorthWest ||
-                              direction == kSouthEast || direction == kSouthWest;
-        if (type == kRook && diagonal) continue;
-        if (type == kBishop && !diagonal) continue;
-        int file = FileOf(square);
-        int rank = RankOf(square);
-        for (;;) {
-          file += internal::kFileStep[direction];
-          rank += internal::kRankStep[direction];
-          if (!OnBoard(file, rank)) break;
-          const int target = MakeSquare(file, rank);
-          const char seen = observation.at(target);
-          if (seen == kEmpty) continue;      // the ray carries on
-          if (seen == kUnseen) {             // would be a destination if empty
-            out.must_hold_enemy |= SquareBB(target);
-          }
-          break;                              // a piece, seen or deduced, ends the ray
-        }
-      }
-    } else if (type == kPawn) {
+    if (type == kPawn) {
       const int forward = side == kWhite ? 8 : -8;
       const int start_rank = side == kWhite ? 1 : 6;
       const int one = square + forward;

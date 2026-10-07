@@ -183,7 +183,11 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
     if (truth.side_to_move() == seat.side) {
       const bool is_fatal_ply =
           fatal_is_ours && static_cast<int>(ply) == last_own_ply;
-      const bool sampled = (ply % static_cast<size_t>(stride)) == 0;
+      // Sample every stride-th *decision of this seat*. The earlier
+      // `ply % stride` sampled even plies only, i.e. White's decisions, so
+      // Black seats contributed nothing but their terminal losses (Astra's
+      // review); counts from before this fix are White-biased diagnostics.
+      const bool sampled = ((ply / 2) % static_cast<size_t>(stride)) == 0;
       if (is_fatal_ply || sampled) {
         DecisionTrace trace;
         const Move choice = engine.ChooseMove(view, 150.0, &trace);

@@ -81,13 +81,16 @@ std::string RenderObservation(const Position& position, int color);
 // Facts the visibility rule proves about unseen squares, from one observation:
 // squares that must hold an enemy piece and squares that must be empty.
 //
-// A move's destination is always visible, so an unseen square that would be
-// a destination if it were empty cannot be empty: the first unseen square
-// along a ray from one of our sliders, and the square in front of one of our
-// pawns (or two in front, when the first is visibly empty and the pawn is on
-// its start rank), each hold an enemy piece. Conversely a pawn's capture
-// square that is unseen cannot hold an enemy piece (the capture would have
-// been a move), and our own pieces are always visible, so it is empty.
+// A move's destination is always visible, and pawn pushes are the only moves
+// that an enemy piece blocks without being capturable: so the unseen square
+// in front of one of our pawns (or two in front, when the first is visibly
+// empty and the pawn is on its start rank) holds an enemy piece. Conversely a
+// pawn's capture square that is unseen cannot hold an enemy piece (the
+// capture would have been a move), and our own pieces are always visible, so
+// it is empty. Nothing is deduced from sliders, knights or the king: every
+// square they could move to, empty or enemy-occupied, is a destination and
+// therefore visible (Astra's review of the first version, which wrongly
+// treated an unseen square on a slider ray as a hidden blocker).
 struct Deductions {
   Bitboard must_hold_enemy = 0;
   Bitboard must_be_empty = 0;
