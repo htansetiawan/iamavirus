@@ -3,6 +3,7 @@
 #include "observation.h"
 
 #include <cstddef>
+#include <cstdlib>
 #include <cstring>
 #include <string>
 
@@ -163,6 +164,13 @@ std::string RenderObservation(const Position& position, int color) {
 }
 
 Deductions DeduceFromObservation(const Observation& observation, int side) {
+  // Ablation switch shared with Astra's lane: FOW_VISIBILITY_DEDUCTIONS=0
+  // turns the deductions off, so both arms of a benchmark use one binary.
+  static const bool enabled = [] {
+    const char* text = std::getenv("FOW_VISIBILITY_DEDUCTIONS");
+    return text == nullptr || std::string(text) != "0";
+  }();
+  if (!enabled) return {};
   Deductions out;
   const char* ours = SymbolsFor(side);
   for (int square = 0; square < kNumSquares; ++square) {
