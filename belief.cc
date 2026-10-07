@@ -5,6 +5,7 @@
 #include "opponent_model.h"
 
 #include <algorithm>
+#include <cstdlib>
 #include <array>
 #include <cstddef>
 #include <cstdint>
@@ -167,6 +168,13 @@ void BeliefState::UpdateOwnRights(const Observation& view) {
 
 void BeliefState::ApplyOurMove(Move move) {
   const int home_rank = our_side_ == kWhite ? 0 : 7;
+  if (MoveTo(move) == capture_square_) capture_square_ = -1;
+  own_double_push_square_ = -1;
+  if (!particles_.empty() &&
+      particles_.front().piece_at(MoveFrom(move)) == kPawn &&
+      std::abs(RankOf(MoveTo(move)) - RankOf(MoveFrom(move))) == 2) {
+    own_double_push_square_ = MoveTo(move);
+  }
   if (MoveFrom(move) == MakeSquare(4, home_rank) && !particles_.empty() &&
       particles_.front().piece_at(MoveFrom(move)) == kKing) {
     own_rights_ = 0;
@@ -232,13 +240,52 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
   } else if (reflects_our_own_move) {
     Condition(view, &report);
   } else {
+    // The capturer of the last update may have moved on; infer afresh.
+    capture_square_ = -1;
+    if (capture_evidence_ && have_previous_view_) InferCaptureEvidence(view, &report);
     PredictAndCondition(view, &report);
   }
   if (particles_.empty()) {
     Recover(view, &report);
   }
+  report.capture_square = capture_square_;
+  previous_view_ = view;
+  have_previous_view_ = true;
   representative_valid_ = false;
   return report;
+}
+
+void BeliefState::InferCaptureEvidence(const Observation& view,
+                                       BeliefUpdateReport* report) {
+  (void)report;
+  // Our own pieces are always visible, so one of them missing from the view
+  // means it was captured. One opponent move captures at most one piece and
+  // moves none of ours.
+  auto own = [this](char symbol) {
+    if (symbol == kUnseen || symbol == kEmpty) return false;
+    return (our_side_ == kWhite) ? (symbol >= 'A' && symbol <= 'Z')
+                                 : (symbol >= 'a' && symbol <= 'z');
+  };
+  int missing = -1;
+  int missing_count = 0;
+  for (int square = 0; square < kNumSquares; ++square) {
+    const bool before = own(previous_view_.at(square));
+    const bool after = own(view.at(square));
+    if (before && !after) {
+      missing = square;
+      ++missing_count;
+    } else if (!before && after) {
+      return;  // our pieces cannot appear during their move: not a plain capture
+    }
+  }
+  if (missing_count != 1) return;
+  const char now = view.at(missing);
+  if (now != kUnseen) return;  // visible: the capturer is in the view already
+  if (missing == own_double_push_square_ &&
+      previous_view_.at(missing) == PieceTypeToSymbol(kPawn, our_side_)) {
+    return;  // may have been taken en passant: the capturer is not on this square
+  }
+  capture_square_ = missing;
 }
 
 void BeliefState::Condition(const Observation& view,
@@ -433,8 +480,9 @@ void BeliefState::Recover(const Observation& view,
   for (int square = 0; square < kNumSquares; ++square) {
     if (!view.IsUnseen(square)) continue;
     if (deduced.must_be_empty & SquareBB(square)) continue;
-    if (deduced.must_hold_enemy & SquareBB(square)) {
-      required.push_back(square);
+    if ((deduced.must_hold_enemy & SquareBB(square)) ||
+        (capture_evidence_ && square == capture_square_)) {
+      required.push_back(square);  // a pawn fact, or the capturer of our piece
     } else {
       hidden.push_back(square);
     }

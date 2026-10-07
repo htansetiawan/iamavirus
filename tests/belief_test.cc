@@ -393,6 +393,55 @@ void FogContextReflectsTheRemainingEnemyArmy() {
 }  // namespace
 }  // namespace fow
 
+namespace fow {
+namespace {
+
+// Capture evidence. 1. e4 e5 2. Nf3 Nc6 3. Nxe5 Nxe5: our knight vanishes from
+// e5, which nothing of ours can then see. With a one-particle population the
+// particle either predicted the recapture (and holds the capturer) or the
+// population collapsed and was rebuilt, where the capturer must be placed on
+// e5. Either way every particle holds an enemy piece on e5.
+void CaptureOnAnUnseenSquareKeepsTheCapturerThere() {
+  const char* line[] = {"e2e4", "e7e5", "g1f3", "b8c6", "f3e5", "c6e5"};
+  const int e5 = MakeSquare(4, 4);
+  for (uint64_t seed = 1; seed <= 8; ++seed) {
+    BeliefState belief(kWhite, 1, seed);
+    belief.set_capture_evidence(true);
+    Position truth;
+    FOW_EXPECT_TRUE(PositionFromFen(
+        "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth));
+    bool we_just_moved = false;
+    BeliefUpdateReport report;
+    for (const char* uci : line) {
+      report = belief.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+      we_just_moved = false;
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      Move move = kNullMove;
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == uci) move = candidate;
+      }
+      FOW_EXPECT_TRUE(move != kNullMove);
+      if (truth.side_to_move() == kWhite) {
+        belief.ApplyOurMove(move);
+        we_just_moved = true;
+      }
+      UndoState undo;
+      truth.MakeMove(move, &undo);
+    }
+    const Observation after(RenderObservation(truth, kWhite));
+    FOW_EXPECT_TRUE(after.IsUnseen(e5));
+    report = belief.Observe(after, we_just_moved);
+    FOW_EXPECT_TRUE(report.capture_square == e5);
+    for (const Position& particle : belief.particles()) {
+      FOW_EXPECT_TRUE(particle.piece_at(e5) != kNoPiece && particle.color_at(e5) == kBlack);
+    }
+  }
+}
+
+}  // namespace
+}  // namespace fow
+
 int main() {
   fow::InitializeAttackTables();
   fow::InitializeZobrist();
@@ -405,5 +454,6 @@ int main() {
   FOW_RUN_TEST(fow::CaptureOnASquareThatGoesUnseenIsStillInferred);
   FOW_RUN_TEST(fow::RecoversWhenEveryHypothesisIsContradicted);
   FOW_RUN_TEST(fow::BeliefMaintainsItsInvariants);
+  FOW_RUN_TEST(fow::CaptureOnAnUnseenSquareKeepsTheCapturerThere);
   return fow::testing::Summarize("belief_test");
 }

@@ -128,6 +128,10 @@ struct EngineOptions {
   // (368 -> 341) and better at the next (345 -> 365); three seeds average
   // 352 off vs 351 on, so that was churn on near-tied decisions (HANDOFF.md).
   bool visibility_deductions = true;
+  // Capture evidence in the belief (see BeliefState::set_capture_evidence):
+  // twlle83q lost a queen and a bishop to a knight standing on the square
+  // where it had just taken ours, unseen. FOW_CAPTURE_EVIDENCE=0 disables.
+  bool capture_evidence = true;
   // Two plies deep: weight on the material a hidden quiet move could win on
   // the opponent's next turn (ExpectedHiddenThreat). A rook sliding behind
   // the fog onto the open file our knight sits on is invisible to the one-ply

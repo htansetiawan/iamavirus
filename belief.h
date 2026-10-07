@@ -51,6 +51,7 @@ struct BeliefUpdateReport {
   int resampled_particles = 0;
   bool collapsed = false;  // nothing survived and the belief had to be rebuilt
   double mean_consistent_moves = 0.0;
+  int capture_square = -1;  // inferred this update, or -1
 };
 
 class BeliefState {
@@ -81,6 +82,12 @@ class BeliefState {
   // unseen squares (observation.h, DeduceFromObservation). Off by default:
   // see EngineOptions::visibility_deductions.
   inline void set_visibility_deductions(bool on) { deductions_ = on; }
+  // Capture evidence (ported from Astra's lane, 79564d0): when exactly one of
+  // our pieces has vanished since the previous view onto a square we cannot
+  // now see, the capturer is standing there until the opponent moves again,
+  // so a rebuilt population must put an enemy piece on it. Off with
+  // FOW_CAPTURE_EVIDENCE=0.
+  inline void set_capture_evidence(bool on) { capture_evidence_ = on; }
   inline int particle_count() const { return static_cast<int>(particles_.size()); }
   inline const std::vector<Position>& particles() const { return particles_; }
 
@@ -164,6 +171,12 @@ class BeliefState {
 
   int our_side_;
   bool deductions_ = false;
+  bool capture_evidence_ = true;
+  Observation previous_view_;
+  bool have_previous_view_ = false;
+  int capture_square_ = -1;          // where our piece just vanished unseen, or -1
+  int own_double_push_square_ = -1;  // our pawn's square after a double push, or -1
+  void InferCaptureEvidence(const Observation& view, BeliefUpdateReport* report);
   int target_count_;
   int opponent_prior_;
   std::mt19937_64 rng_;
