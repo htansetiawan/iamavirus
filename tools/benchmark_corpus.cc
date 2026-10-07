@@ -62,6 +62,16 @@ struct Tally {
   // post-move view does not show (true board).
   int threatened = 0;
   int real_threatened = 0;
+  // The same counts split by our seat colour, to test for a colour-specific
+  // defect (the arena record and the paired gate both look worse as Black).
+  int side_decisions[2] = {0, 0};
+  int side_blunders[2] = {0, 0};
+  int side_exposed[2] = {0, 0};
+  int side_real_exposed[2] = {0, 0};
+  int side_threatened[2] = {0, 0};
+  int side_real_threatened[2] = {0, 0};
+  int side_fatal[2] = {0, 0};
+  int side_saved[2] = {0, 0};
   // Belief calibration: over hidden squares holding an enemy piece on the
   // true board, the share of particles that hold that piece there (averaged
   // per decision); and, at the recorded fatal plies, the share of particles
@@ -228,9 +238,11 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
         const Move choice = engine.ChooseMove(view, 150.0, &trace);
         if (choice != kNullMove) {
           ++tally->decisions;
+          ++tally->side_decisions[seat.side];
           tally->unsafe_rejected += trace.rejected_unsafe;
           const bool bad = LosesKing(truth, choice, seat.side);
           if (bad) ++tally->blunders;
+          if (bad) ++tally->side_blunders[seat.side];
           const double mass = HiddenPieceMass(engine.belief(), truth, view, seat.side);
           if (mass >= 0.0) {
             tally->hidden_piece_mass += mass;
@@ -244,13 +256,29 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
             }
           }
           if (choice == actual) ++tally->matched;
-          if (ExposureOf(truth, choice, seat.side) >= 3) ++tally->exposed;
-          if (ExposureOf(truth, actual, seat.side) >= 3) ++tally->real_exposed;
-          if (HiddenThreatOf(truth, choice, seat.side) >= 3) ++tally->threatened;
-          if (HiddenThreatOf(truth, actual, seat.side) >= 3) ++tally->real_threatened;
+          if (ExposureOf(truth, choice, seat.side) >= 3) {
+            ++tally->exposed;
+            ++tally->side_exposed[seat.side];
+          }
+          if (ExposureOf(truth, actual, seat.side) >= 3) {
+            ++tally->real_exposed;
+            ++tally->side_real_exposed[seat.side];
+          }
+          if (HiddenThreatOf(truth, choice, seat.side) >= 3) {
+            ++tally->threatened;
+            ++tally->side_threatened[seat.side];
+          }
+          if (HiddenThreatOf(truth, actual, seat.side) >= 3) {
+            ++tally->real_threatened;
+            ++tally->side_real_threatened[seat.side];
+          }
           if (is_fatal_ply) {
             ++tally->fatal_positions;
-            if (!bad) ++tally->fatal_saved;
+            ++tally->side_fatal[seat.side];
+            if (!bad) {
+              ++tally->fatal_saved;
+              ++tally->side_saved[seat.side];
+            }
             if (verbose) {
               std::printf("  %-10s vs %-20s ply %3zu  real played %-6s (lost)  "
                           "engine plays %-6s  %s\n",
@@ -336,6 +364,18 @@ int main(int argc, char** argv) {
   std::printf("  ...the engine survives    : %d (%.0f%%)\n", tally.fatal_saved,
               tally.fatal_positions
                   ? 100.0 * tally.fatal_saved / tally.fatal_positions : 0.0);
+  for (int side = 0; side < 2; ++side) {
+    const int n = tally.side_decisions[side];
+    std::printf("  as %s: decisions %d, king losses %d (%.2f%%), en prise engine %.2f%% real %.2f%%, "
+                "2-ply threat engine %.2f%% real %.2f%%, survives %d/%d\n",
+                side == kWhite ? "White" : "Black", n, tally.side_blunders[side],
+                n ? 100.0 * tally.side_blunders[side] / n : 0.0,
+                n ? 100.0 * tally.side_exposed[side] / n : 0.0,
+                n ? 100.0 * tally.side_real_exposed[side] / n : 0.0,
+                n ? 100.0 * tally.side_threatened[side] / n : 0.0,
+                n ? 100.0 * tally.side_real_threatened[side] / n : 0.0,
+                tally.side_saved[side], tally.side_fatal[side]);
+  }
   std::printf("  unsafe moves rejected     : %d (%.1f per decision)\n",
               tally.unsafe_rejected,
               tally.decisions
