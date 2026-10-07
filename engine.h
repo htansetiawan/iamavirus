@@ -109,9 +109,9 @@ struct EngineOptions {
   // When non-zero, a decision is bounded by nodes rather than by the clock.
   // Used for measurement, never in a rated game, where the clock is what counts.
   uint64_t node_budget = 0;
-  // Weight the opponent's moves by plausibility when updating the belief, rather
-  // than treating them as uniformly likely.
-  bool use_opponent_prior = true;
+  // Prior over the opponent's moves in the belief update: 0 uniform, 1 the v5
+  // hand-set constants, 2 the learned conditional-logit prior (default).
+  int opponent_prior = 1;
   SearchOptions search;
 };
 

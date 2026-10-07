@@ -2,6 +2,8 @@
 
 #include "belief.h"
 
+#include "opponent_model.h"
+
 #include <algorithm>
 #include <array>
 #include <cstddef>
@@ -47,10 +49,10 @@ Position StartingPosition() {
 }  // namespace
 
 BeliefState::BeliefState(int our_side, int particle_count, uint64_t seed,
-                         bool use_opponent_prior)
+                         int opponent_prior)
     : our_side_(our_side),
       target_count_(std::max(1, particle_count)),
-      use_opponent_prior_(use_opponent_prior),
+      opponent_prior_(opponent_prior),
       rng_(seed) {
   enemy_census_ = kInitialCensus;
   const int home_rank = our_side == kWhite ? 0 : 7;
@@ -99,7 +101,8 @@ bool BeliefState::AgreesAboutUs(const Position& position,
 }
 
 double BeliefState::MovePlausibility(Position* hypothesis, Move move) const {
-  if (!use_opponent_prior_) return kBasePlausibility;  // uniform over their moves
+  if (opponent_prior_ == 0) return kBasePlausibility;  // uniform over their moves
+  if (opponent_prior_ == 2) return LearnedMovePlausibility(hypothesis, move);
   const int enemy_side = our_side_ ^ 1;
   const int to = MoveTo(move);
   double weight = kBasePlausibility;

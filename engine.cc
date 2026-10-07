@@ -168,7 +168,13 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_TIME_DIVISOR", &options.time_divisor);
   Override("FOW_HASH_MB", &options.transposition_megabytes);
   Override("FOW_NODE_BUDGET", &options.node_budget);
-  OverrideFlag("FOW_OPPONENT_PRIOR", &options.use_opponent_prior);
+  if (const char* text = std::getenv("FOW_OPPONENT_PRIOR")) {
+    const std::string value(text);
+    if (value == "uniform" || value == "0") options.opponent_prior = 0;
+    else if (value == "hand" || value == "1") options.opponent_prior = 1;
+    else if (value == "learned" || value == "2") options.opponent_prior = 2;
+    else std::fprintf(stderr, "ignoring unknown FOW_OPPONENT_PRIOR=%s\n", text);
+  }
   Override("FOW_SPECULATIVE_WIN", &options.search.speculative_win_score);
   OverrideFlag("FOW_LMR", &options.search.use_late_move_reductions);
   OverrideFlag("FOW_ASPIRATION", &options.search.use_aspiration_windows);
@@ -271,7 +277,7 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       options_(options),
       rng_(seed),
       belief_(our_side, options.particle_count, seed ^ 0x9E3779B97F4A7C15ULL,
-              options.use_opponent_prior),
+              options.opponent_prior),
       searcher_(&table_) {
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);

@@ -20,12 +20,12 @@ LIBRARY = BUILD_DIR / "librules.so"
 SOURCES = [
     "rules_capi.cc", "engine.cc", "belief.cc", "search.cc", "evaluation.cc",
     "observation.cc", "transposition.cc", "regret.cc", "position.cc",
-    "move.cc", "bitboard.cc",
+    "move.cc", "bitboard.cc", "opponent_model.cc",
 ]
 HEADERS = [
     "bitboard.h", "move.h", "position.h", "observation.h", "evaluation.h",
     "transposition.h", "search.h", "belief.h", "regret.h", "engine.h",
-    "piece_square.h",
+    "piece_square.h", "opponent_model.h", "opponent_weights.h",
 ]
 
 

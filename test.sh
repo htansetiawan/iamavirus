@@ -6,7 +6,7 @@ cd "$(dirname "$0")"
 
 LIB="engine.cc belief.cc search.cc evaluation.cc observation.cc
      transposition.cc regret.cc position.cc move.cc bitboard.cc
-     neural_observation.cc neural_inference.cc"
+     neural_observation.cc neural_inference.cc opponent_model.cc"
 FLAGS="-O2 -std=c++20 -Wall -Wextra -Werror"
 OUT=$(mktemp -d)
 trap 'rm -rf "$OUT"' EXIT

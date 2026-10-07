@@ -5,7 +5,7 @@ set -euo pipefail
 
 SOURCES="bot.cc engine.cc belief.cc search.cc evaluation.cc observation.cc
          transposition.cc regret.cc position.cc move.cc bitboard.cc
-         neural_observation.cc neural_inference.cc"
+         neural_observation.cc neural_inference.cc opponent_model.cc"
 BASE="-O2 -std=c++20 -Wall -Wextra -DNDEBUG"
 
 # POPCNT is used on nearly every line of the search. Without it the compiler

@@ -55,13 +55,15 @@ struct BeliefUpdateReport {
 
 class BeliefState {
  public:
-  // `use_opponent_prior` selects between weighting the opponent's moves by
+  // `opponent_prior` selects between weighting the opponent's moves by
   // plausibility and treating them as uniformly likely. Exposed so the choice can
   // be ablated rather than assumed: it is the filter's most consequential
   // modelling assumption, and an earlier hand-tuned heuristic was kept for hours
   // on the strength of a measurement too coarse to support it.
+  // `opponent_prior`: 0 uniform over their legal moves, 1 the v5 hand-set
+  // constants, 2 the learned conditional-logit prior (opponent_model.h).
   BeliefState(int our_side, int particle_count, uint64_t seed,
-              bool use_opponent_prior = true);
+              int opponent_prior = 1);
 
   // Absorbs an observation. `reflects_our_own_move` must be true for the
   // observation the arena sends immediately after our own move, since the only
@@ -151,7 +153,7 @@ class BeliefState {
 
   int our_side_;
   int target_count_;
-  bool use_opponent_prior_;
+  int opponent_prior_;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
   // Piece counts the opponent is believed to still own.

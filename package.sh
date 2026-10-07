@@ -25,10 +25,10 @@ trap 'rm -rf "$STAGE"' EXIT
 cp run.sh build.sh test.sh README.md \
   bot.cc engine.cc belief.cc search.cc evaluation.cc observation.cc \
   transposition.cc regret.cc position.cc move.cc bitboard.cc \
-  neural_observation.cc neural_inference.cc \
+  neural_observation.cc neural_inference.cc opponent_model.cc \
   bitboard.h move.h position.h observation.h evaluation.h transposition.h \
   search.h belief.h regret.h engine.h piece_square.h \
-  neural_observation.h neural_inference.h "$STAGE/"
+  neural_observation.h neural_inference.h opponent_model.h opponent_weights.h "$STAGE/"
 mkdir -p "$STAGE/tests" "$STAGE/tools"
 cp tests/*.cc tests/*.h tests/*.py "$STAGE/tests/"
 cp tools/*.cc "$STAGE/tools/"
