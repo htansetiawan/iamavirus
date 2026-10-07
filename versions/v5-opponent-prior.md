@@ -73,6 +73,33 @@ That is why this version is a candidate and not a submission: every tuning
 decision in it was made below the resolution of the instrument measuring it. A
 larger corpus sweep is in progress.
 
+## Two defects found by the pre-ship gate
+
+Both were caught between committing v5 and packaging it, which is the argument for
+running the gate rather than trusting a green test run.
+
+**A test that passed on clang and failed on GCC.** `engine_test` asserted on an
+internal counter (`worst_risk > 0`) whose value depends on which moves reach the
+shortlist, and libstdc++'s random sequence differs from libc++'s. The behavioural
+assertion -- do not play the queen grab -- passed on both. Rewritten to sweep six
+seeds and assert behaviour: 6/6 declined under both compilers. This is the same
+single-seed brittleness recorded above for the Greek Gift test, reproduced again
+one hour later.
+
+**A clock regression, and not where it was first assumed.** The archive overran
+its budget: `max_spent` 4.50 s against 4.0 s, where v4 managed 4.015 s. The
+opponent prior was the obvious suspect and was measured first: 10-25 ms per ply,
+not the cause. The cause was structural -- the matrix game runs forty-eight small
+cell searches, each overshooting its own slice by finishing an iteration, which
+sums to about half a second.
+
+Fixed with a single deadline for the whole turn; cells past it fall back to the
+shortlist search's verdict. Worst overrun **0.173 s -> 0.002 s**, and across two
+full games at 180+2 the worst was +0.011 s with 132 s and 156 s of clock left.
+
+Half a second per move is roughly a 25% higher net drain, which loses on the clock
+rather than on the board in a long game. It would have shipped unnoticed.
+
 ## Hand-tuned constants in this version
 
 `0.06`, `2.5`, `3.0`, `30000`, `0.20`. All five are estimating quantities that

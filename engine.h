@@ -102,6 +102,7 @@ struct DecisionTrace {
   double game_value = 0.0;
   double budget = 0.0;
   double spent = 0.0;
+  int cells_skipped = 0;   // matrix cells abandoned because the turn ran out
   int unseen_squares = 0;
   bool collapsed = false;
   double pieces_located = 0.0;

@@ -240,6 +240,12 @@ Bitboard Engine::OurCastlingRights() const {
 
 Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                         DecisionTrace* trace) {
+  // One deadline for the whole turn. The matrix game runs dozens of small
+  // searches, and each one overshoots its own slice slightly by finishing an
+  // iteration; summed over forty-eight cells that was half a second past the
+  // budget, which in a long game is how a bot flags. Individual slices are still
+  // used to pace the work, but this is what actually stops it.
+  const auto turn_start = std::chrono::steady_clock::now();
   const int enemy_side = our_side_ ^ 1;
   const int en_passant =
       InferEnPassant(have_previous_ ? &previous_view_ : nullptr, view, our_side_);
@@ -390,9 +396,22 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       std::max(0.004, trace->budget * (1.0 - kShortlistShare) /
                           std::max(1, shortlist * columns));
 
+  const auto matrix_deadline =
+      turn_start + std::chrono::duration_cast<std::chrono::steady_clock::duration>(
+                       std::chrono::duration<double>(trace->budget));
+  bool out_of_time = false;
   for (int column = 0; column < columns; ++column) {
     for (int row = 0; row < shortlist; ++row) {
       const Move move = ranked[row].move;
+      if (out_of_time || std::chrono::steady_clock::now() >= matrix_deadline) {
+        // Fall back on the shortlist search's own verdict for this cell rather
+        // than spending time we no longer have.
+        out_of_time = true;
+        ++trace->cells_skipped;
+        game.set(row, column,
+                 static_cast<double>(ranked[row].score) - risk[row]);
+        continue;
+      }
       Position hypothesis = *hypotheses[column];
       hypothesis.set_side_to_move(our_side_);
       hypothesis.set_en_passant_square(en_passant);
@@ -439,7 +458,11 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       MoveList single;
       single.Add(move);
       SearchLimits limits;
-      limits.seconds = cell_budget;
+      // Never ask for more time than the turn has left.
+      const double left = std::chrono::duration<double>(
+                              matrix_deadline - std::chrono::steady_clock::now())
+                              .count();
+      limits.seconds = std::min(cell_budget, std::max(0.002, left));
       if (options_.node_budget > 0) {
         limits.seconds = 600.0;
         const uint64_t cells =

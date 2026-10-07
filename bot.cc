@@ -175,6 +175,7 @@ int Run() {
               << " short=" << trace.shortlisted
               << " hyp=" << trace.hypotheses
               << " unsafe=" << trace.rejected_unsafe
+              << " skipped=" << trace.cells_skipped
               << " p=" << trace.chosen_probability
               << " gv=" << trace.game_value << " fog=" << trace.unseen_squares
               << " budget=" << trace.budget << " spent=" << trace.spent
