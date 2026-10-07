@@ -98,10 +98,25 @@ class BeliefState {
 
   static ObservedPieces Summarize(const Observation& view, int color);
 
-  // The core test: does this hypothesis agree with everything we can see?
+  // Does this hypothesis agree with the observation about the opponent? Only
+  // visible squares can be compared, since the fog hides the rest.
   // O(number of piece types) bitwise comparisons.
-  static bool Agrees(const Position& position, const ObservedPieces& seen,
-                     int color);
+  static bool AgreesAboutEnemy(const Position& position,
+                               const ObservedPieces& seen, int color);
+
+  // Does this hypothesis agree about *our own* pieces? This is a strictly
+  // stronger test, and the distinction matters enormously.
+  //
+  // Our pieces are always visible, so the squares the observation shows them on
+  // are all of them -- a hypothesis placing one of ours anywhere else is
+  // impossible, because that square would then have been visible too. Comparing
+  // only visible squares, as for the opponent, silently permits a hypothesis to
+  // keep a piece of ours that has just been captured on a square that has since
+  // gone dark. It then never concludes that an enemy piece is standing there,
+  // which is the one inference that matters most: the piece that just took
+  // something of ours is the piece most likely to take our king next.
+  static bool AgreesAboutUs(const Position& position,
+                            const ObservedPieces& seen, int color);
 
   void Condition(const Observation& view, BeliefUpdateReport* report);
   void PredictAndCondition(const Observation& view, BeliefUpdateReport* report);

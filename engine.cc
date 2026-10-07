@@ -33,6 +33,12 @@ constexpr double kVisibleKingAttackBonus = 40.0;
 // legally be made in a hypothesis or leaves our king capturable in it.
 constexpr double kDisasterScore = -static_cast<double>(kLossMagnitude);
 
+// Value of the piece standing on `square`, or zero for an empty square.
+int ValueAt(const Position& position, int square) {
+  const int piece = position.piece_at(square);
+  return piece == kNoPiece ? 0 : kPieceValue[piece];
+}
+
 bool ListContains(const MoveList& list, Move move) {
   for (const Move candidate : list) {
     if (candidate == move) return true;
@@ -41,6 +47,62 @@ bool ListContains(const MoveList& list, Move move) {
 }
 
 }  // namespace
+
+// Expected material handed over by a move, judged across every hypothesis.
+//
+// The sampled columns of the matrix game cannot see a danger that only a small
+// share of hypotheses contain: with eight columns, a threat present in one
+// hypothesis in twenty is usually absent from all of them. That is exactly how
+// three rated games were lost -- a queen captured by a knight that no sampled
+// hypothesis had placed on the board. This scans the whole population instead,
+// which is affordable because it needs no search: one attack test per hypothesis.
+//
+// The exchange is evaluated one capture deep. If the opponent can take on the
+// destination square, they will use their cheapest attacker; we recapture if we
+// can. What is left over, when it is a loss, is averaged over the population.
+double Engine::ExpectedMaterialRisk(Move move, int en_passant) const {
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return 0.0;
+  const int enemy_side = our_side_ ^ 1;
+  const int to = MoveTo(move);
+
+  double total_loss = 0.0;
+  int counted = 0;
+  for (Position hypothesis : population) {
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    if (IsCastle(move)) {
+      // Only castling can be illegal in a hypothesis, when a rebuilt one
+      // disagrees about rights.
+      MoveList available;
+      hypothesis.GenerateMoves(&available);
+      if (!ListContains(available, move)) continue;
+    }
+    const int gained = MoveFlagOf(move) == kFlagEnPassant ? kPieceValue[kPawn]
+                                                        : ValueAt(hypothesis, to);
+    UndoState undo;
+    hypothesis.MakeMove(move, &undo);
+    ++counted;
+
+    const Bitboard attackers = hypothesis.AttackersTo(to, enemy_side);
+    if (attackers != 0) {
+      // Cheapest attacker: the one they would actually use.
+      int cheapest = kPieceValue[kQueen] + 1;
+      Bitboard scan = attackers;
+      while (scan) {
+        const int value = kPieceValue[hypothesis.piece_at(PopLsb(&scan))];
+        if (value < cheapest) cheapest = value;
+      }
+      const int exposed = kPieceValue[hypothesis.piece_at(to)];
+      const bool can_recapture =
+          hypothesis.AttackersTo(to, our_side_) != 0;
+      const int net = gained + (can_recapture ? cheapest : 0) - exposed;
+      if (net < 0) total_loss += -net;
+    }
+    hypothesis.UnmakeMove(move, undo);
+  }
+  return counted > 0 ? total_loss / counted : 0.0;
+}
 
 Engine::Engine(int our_side, double base_seconds, double increment_seconds,
                const EngineOptions& options, uint64_t seed)
@@ -150,6 +212,18 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   game.payoff.assign(static_cast<std::size_t>(shortlist) * columns, 0.0);
 
   std::vector<int> king_losses(shortlist, 0);
+  // Measured over the whole population, so a danger present in a small fraction
+  // of hypotheses is still priced in.
+  std::vector<double> risk(shortlist, 0.0);
+  if (options_.piece_risk_weight > 0.0) {
+    for (int row = 0; row < shortlist; ++row) {
+      risk[row] = options_.piece_risk_weight *
+                  ExpectedMaterialRisk(ranked[row].move, en_passant);
+      if (static_cast<int>(risk[row]) > trace->worst_risk) {
+        trace->worst_risk = static_cast<int>(risk[row]);
+      }
+    }
+  }
   const double cell_budget =
       std::max(0.004, trace->budget * (1.0 - kShortlistShare) /
                           std::max(1, shortlist * columns));
@@ -208,7 +282,8 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       limits.seconds = cell_budget;
       const SearchResult result = searcher_.Search(&root, single, limits);
       trace->nodes += result.nodes;
-      game.set(row, column, static_cast<double>(result.score) + bonus);
+      game.set(row, column,
+               static_cast<double>(result.score) + bonus - risk[row]);
     }
   }
 

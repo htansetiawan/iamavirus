@@ -44,6 +44,17 @@ anything that touches an unseen square discards nothing legal and admits nothing
 illegal. An illegal-move forfeit is therefore *structurally impossible*, not
 merely unlikely.
 
+**Our own pieces are a hard constraint, not a soft one.** A hypothesis is checked
+against the opponent only on squares we can see, because the fog hides the rest.
+But our own pieces are *always* visible, so the squares the observation shows
+them on are all of them: a hypothesis placing one of ours anywhere else is
+impossible, since that square would then have been visible too. Applying the
+opponent's weaker test to our own pieces lets a hypothesis keep a piece of ours
+that has just been captured on a square that has since gone dark -- and it then
+never concludes that an enemy piece is standing there. That single asymmetry cost
+three rated games: in each one, the piece that took our king was the piece that
+had just captured something of ours on exactly that square.
+
 **The opponent is a distribution, not a board.** Each particle is a complete legal
 game state. On the opponent's move, every particle's legal moves are enumerated,
 those incompatible with the new observation are dropped, each particle is
@@ -54,6 +65,14 @@ observe. Several inferences then fall out for free that hand-written rules get
 wrong — if one of our pieces vanishes, only hypotheses containing a piece that
 could have captured it survive, so the capturer's identity is *inferred*; piece
 counts stay exact; a piece that walks out of view is still somewhere.
+
+**Tail risk is measured over the whole population, not the sampled columns.** The
+matrix game samples a handful of hypotheses, and a danger present in one
+hypothesis in twenty is usually absent from all of them. So before the game is
+solved, each candidate move is also priced against *every* hypothesis for the
+material it hands over, one capture deep. This needs no search -- one attack test
+per hypothesis -- and it is what stops a queen taking a pawn that an unseen knight
+is guarding, which is how all three losses began.
 
 **The root is a game, not an optimisation.** Rows are our candidate moves, columns
 are hypotheses about the hidden position, payoffs come from searching each pair.
@@ -86,6 +105,9 @@ guess. Pricing the win lower makes the engine decline speculative king hunts.
 * Regret matching checked against closed-form equilibria.
 * Every move the engine returns in whole games is verified legal, and the clock
   budget is never overrun.
+* Two regression tests taken from lost rated games: that a capture on a square
+  which afterwards falls into fog is still inferred, and that the engine declines
+  the queen grab from game `92of99z7`.
 
 One caveat the tests make explicit: **exact state tracking is impossible here, not
 merely hard.** Measurement showed roughly twenty of the opponent's thirty moves

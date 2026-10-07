@@ -176,6 +176,74 @@ void ReturnsTheOnlyMoveWhenForced() {
   FOW_EXPECT_TRUE(allowed);
 }
 
+// Regression test taken from a lost rated game.
+//
+// Game 92of99z7 against TA Baseline S went 1. Nc3 Nc6 2. Nf3 e5 3. e4 d5
+// 4. exd5 Qxd5?? and the knight on c3 -- which we had never seen and could not
+// see, since no move of ours reaches c3 -- took the queen. Material went from
+// level to minus nine at move four and the game was effectively over.
+//
+// Taking a pawn with the queen is attractive to a search that does not happen to
+// have a knight on c3 in the hypothesis it is looking at. What must stop it is
+// the risk term, which asks the whole population rather than a handful of
+// sampled hypotheses: some of them do place a knight on c3, because that is one
+// of the moves White could have made from a square we cannot observe.
+void DoesNotRepeatTheQueenBlunderFromGame92of99z7() {
+  EngineOptions options;
+  options.particle_count = 512;
+  options.shortlist_size = 6;
+  options.hypothesis_count = 8;
+  options.regret_iterations = 600;
+  options.transposition_megabytes = 32;
+  options.time_reserve = 0.0;
+  options.time_cap = 0.5;
+
+  Position truth;
+  FOW_EXPECT_TRUE(PositionFromFen(
+      "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth));
+  Engine engine(kBlack, 180.0, 2.0, options, 2026);
+
+  // The game as played, up to the move before the blunder.
+  const char* line[] = {"b1c3", "b8c6", "g1f3", "e7e5",
+                        "e2e4", "d7d5", "e4d5"};
+  bool we_just_moved = false;
+  for (const char* uci : line) {
+    const Observation view(RenderObservation(truth, kBlack));
+    engine.Observe(view, we_just_moved);
+    we_just_moved = false;
+
+    MoveList legal;
+    truth.GenerateMoves(&legal);
+    Move move = kNullMove;
+    for (const Move candidate : legal) {
+      if (MoveToUci(candidate) == uci) move = candidate;
+    }
+    FOW_EXPECT_TRUE(move != kNullMove);
+    if (move == kNullMove) return;
+    if (truth.side_to_move() == kBlack) {
+      engine.NotifyMovePlayed(move);
+      we_just_moved = true;
+    }
+    UndoState undo;
+    truth.MakeMove(move, &undo);
+  }
+
+  // Black to move, with a free pawn on d5 guarded by an unseen knight.
+  const Observation view(RenderObservation(truth, kBlack));
+  engine.Observe(view, we_just_moved);
+  FOW_EXPECT_TRUE(view.IsUnseen(MakeSquare(2, 2)));  // c3 really is in fog
+
+  DecisionTrace trace;
+  const Move choice = engine.ChooseMove(view, 170.0, &trace);
+  FOW_EXPECT_TRUE(choice != kNullMove);
+  std::fprintf(stderr, "       chose %s (risk seen %d cp)\n",
+               MoveToUci(choice).c_str(), trace.worst_risk);
+  // The whole point: not the queen grab that lost the game.
+  FOW_EXPECT_TRUE(MoveToUci(choice) != "d8d5");
+  // And the risk term must actually have noticed something.
+  FOW_EXPECT_TRUE(trace.worst_risk > 0);
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -185,6 +253,7 @@ int main() {
   FOW_RUN_TEST(fow::TimeBudgetIsAlwaysAffordable);
   FOW_RUN_TEST(fow::ReturnsTheOnlyMoveWhenForced);
   FOW_RUN_TEST(fow::WorksWithTheMatrixGameDisabled);
+  FOW_RUN_TEST(fow::DoesNotRepeatTheQueenBlunderFromGame92of99z7);
   FOW_RUN_TEST(fow::EveryMoveTheEngineReturnsIsLegal);
   return fow::testing::Summarize("engine_test");
 }

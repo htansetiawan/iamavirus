@@ -50,6 +50,9 @@ struct EngineOptions {
   // A move is discarded when it leaves our king capturable in at least this
   // fraction of hypotheses.
   double king_loss_tolerance = 0.25;
+  // Weight on the expected material a move hands over, measured across the
+  // whole population rather than the sampled columns. Set to zero to disable.
+  double piece_risk_weight = 1.0;
   // Clock policy, in seconds.
   double time_reserve = 6.0;
   double time_divisor = 30.0;
@@ -68,6 +71,7 @@ struct DecisionTrace {
   int shortlisted = 0;
   int hypotheses = 0;
   int rejected_unsafe = 0;
+  int worst_risk = 0;
   double chosen_probability = 1.0;
   double game_value = 0.0;
   double budget = 0.0;
@@ -102,6 +106,10 @@ class Engine {
   // Our own castling rights, read from the believed state where MakeMove has
   // been maintaining them.
   Bitboard OurCastlingRights() const;
+
+  // Expected material, in centipawns, that `move` hands over immediately,
+  // averaged over every hypothesis in the population.
+  double ExpectedMaterialRisk(Move move, int en_passant) const;
 
   int our_side_;
   double increment_;

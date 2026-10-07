@@ -59,15 +59,25 @@ BeliefState::ObservedPieces BeliefState::Summarize(const Observation& view,
   return seen;
 }
 
-bool BeliefState::Agrees(const Position& position, const ObservedPieces& seen,
-                         int color) {
-  // Restricted to what we can see, the hypothesis must match observation
-  // exactly, piece type by piece type. Equality per type also forces the
-  // visible empty squares to be empty, so no separate check is needed.
+bool BeliefState::AgreesAboutEnemy(const Position& position,
+                                   const ObservedPieces& seen, int color) {
+  // Restricted to what we can see, the hypothesis must match the observation
+  // exactly, piece type by piece type. Equality per type also forces the visible
+  // empty squares to be empty, so no separate check is needed.
   for (int type = 0; type < kNumPieceTypes; ++type) {
     if ((position.pieces(type, color) & seen.visible) != seen.by_type[type]) {
       return false;
     }
+  }
+  return true;
+}
+
+bool BeliefState::AgreesAboutUs(const Position& position,
+                                const ObservedPieces& seen, int color) {
+  // No visibility mask: every piece of ours is observed, so the observation
+  // lists all of them and the hypothesis must match it everywhere.
+  for (int type = 0; type < kNumPieceTypes; ++type) {
+    if (position.pieces(type, color) != seen.by_type[type]) return false;
   }
   return true;
 }
@@ -148,8 +158,8 @@ void BeliefState::Condition(const Observation& view,
   std::vector<Position> kept;
   kept.reserve(particles_.size());
   for (const Position& particle : particles_) {
-    if (Agrees(particle, enemy, our_side_ ^ 1) &&
-        Agrees(particle, ours, our_side_)) {
+    if (AgreesAboutEnemy(particle, enemy, our_side_ ^ 1) &&
+        AgreesAboutUs(particle, ours, our_side_)) {
       kept.push_back(particle);
     }
   }
@@ -196,8 +206,8 @@ void BeliefState::PredictAndCondition(const Observation& view,
       if (pool.size() >= kMaxPoolSize) break;
       UndoState undo;
       particle.MakeMove(move, &undo);
-      if (Agrees(particle, enemy, enemy_side) &&
-          Agrees(particle, ours, our_side_)) {
+      if (AgreesAboutEnemy(particle, enemy, enemy_side) &&
+          AgreesAboutUs(particle, ours, our_side_)) {
         pool.push_back(particle);
         weights.push_back(move_probability);
         ++consistent;

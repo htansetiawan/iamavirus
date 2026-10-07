@@ -248,6 +248,51 @@ void CaptureImpliesAnEnemyPieceOnThatSquare() {
   }
 }
 
+// The case that lost three rated games.
+//
+// When one of our pieces is captured on a square we cannot afterwards see, the
+// observation still proves the capture happened: our own pieces are always
+// visible, so a square that has gone unseen cannot be holding one. A
+// consistency check that only compares visible squares misses this entirely --
+// it lets hypotheses keep a phantom friendly piece on the square, and so never
+// concludes that an enemy piece is standing there. In all three losses the piece
+// that took our king was the piece that had just captured something of ours on
+// exactly that square.
+void CaptureOnASquareThatGoesUnseenIsStillInferred() {
+  // We are Black: a rook on g8 and a king far away on c8, so once the rook is
+  // gone nothing of ours can reach g8 and the square falls into fog.
+  Position truth;
+  FOW_EXPECT_TRUE(PositionFromFen("2k3r1/8/8/8/8/8/8/4K1R1 w - - 0 1", &truth));
+  BeliefState belief(kBlack, 256, 31);
+  belief.Observe(Observation(RenderObservation(truth, kBlack)), false);
+
+  // White's rook takes ours on g8.
+  const Move capture = EncodeMove(MakeSquare(6, 0), MakeSquare(6, 7));
+  UndoState undo;
+  truth.MakeMove(capture, &undo);
+  const Observation after(RenderObservation(truth, kBlack));
+
+  // Precondition for the test to be meaningful: g8 really is unseen now.
+  FOW_EXPECT_TRUE(after.IsUnseen(MakeSquare(6, 7)));
+
+  belief.Observe(after, false);
+  FOW_EXPECT_TRUE(belief.particle_count() > 0);
+
+  // No hypothesis may still believe we own a rook on g8, and every one of them
+  // must place a white piece there.
+  int phantom_friend = 0;
+  int found_enemy = 0;
+  for (const Position& particle : belief.particles()) {
+    if (particle.piece_at(MakeSquare(6, 7)) == kRook &&
+        particle.color_at(MakeSquare(6, 7)) == kBlack) {
+      ++phantom_friend;
+    }
+    if (particle.color_at(MakeSquare(6, 7)) == kWhite) ++found_enemy;
+  }
+  FOW_EXPECT_EQ(phantom_friend, 0);
+  FOW_EXPECT_EQ(found_enemy, belief.particle_count());
+}
+
 // A hypothesis contradicted by every observation must not survive; the filter
 // must rebuild rather than crash or go empty.
 void RecoversWhenEveryHypothesisIsContradicted() {
@@ -321,6 +366,7 @@ int main() {
   FOW_RUN_TEST(fow::SampleReturnsDistinctHypothesesIncludingTheRepresentative);
   FOW_RUN_TEST(fow::FogContextReflectsTheRemainingEnemyArmy);
   FOW_RUN_TEST(fow::CaptureImpliesAnEnemyPieceOnThatSquare);
+  FOW_RUN_TEST(fow::CaptureOnASquareThatGoesUnseenIsStillInferred);
   FOW_RUN_TEST(fow::RecoversWhenEveryHypothesisIsContradicted);
   FOW_RUN_TEST(fow::BeliefMaintainsItsInvariants);
   return fow::testing::Summarize("belief_test");
