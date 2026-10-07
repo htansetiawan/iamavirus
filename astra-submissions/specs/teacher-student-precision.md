@@ -18,8 +18,25 @@ For an initial larger teacher, keep the same legal-candidate output interface
 but allow a wider/deeper attention encoder and longer history context offline.
 Then distill a compact encoder with policy-distribution, hidden-piece and danger
 objectives. Compare against directly training the student using the same total
-compute. Larger-teacher implementation/training remains pending the first
-CNN/attention comparison; it has not been silently folded into that comparison.
+compute. The first CNN/attention comparison is complete and mixed: attention
+improved danger ranking but worsened policy likelihood. A larger teacher has
+not yet been implemented or trained, and was not folded into that comparison.
+
+There are two deployment paths to compare: run the larger model directly at
+lower precision, or distill it to a smaller model and then quantize the student.
+Quantization lowers numerical precision; it does not remove layers or reduce
+the number of mathematical operations. Distillation can reduce network size
+and work as well. A larger model must first improve held-out predictions under
+the same information boundary before it earns either deployment experiment.
+The original [knowledge-distillation paper](https://arxiv.org/abs/1503.02531)
+motivates transfer from a more expensive teacher; it does not establish an
+improvement for our bot.
+
+Our current FP32 graphs already occupy only 7.51 MB, so weight storage is not
+the binding arena constraint. A useful result buys better decisions within the
+CPU time budget, not merely a smaller ZIP. Report full hybrid move latency and
+clocked results in addition to neural inference time. Distillation and direct
+larger-model inference remain research paths, not completed releases.
 
 ## Precision choices
 

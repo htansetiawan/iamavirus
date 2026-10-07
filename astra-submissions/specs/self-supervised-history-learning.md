@@ -91,3 +91,18 @@ Promotion uses the same natural-frequency hidden-piece/danger metrics, trained
 CPU export checks, tactical replays and clock-matched games as the attention
 experiment. SSL is a way to use more histories efficiently, not evidence that
 labels, belief consistency, search, or competitive evaluation can be skipped.
+
+## First completed pilot
+
+The corrected 1,000-update run completed successfully. On eight held-out games,
+masked observed-piece reconstruction accuracy reached 43.05%, but the
+projection's effective covariance rank fell to 2.89 out of 64 dimensions, with
+75.3% of variance in the leading component. The collapse alarm did not fire;
+that is not a representation-quality endorsement. Measure diversity in the
+encoder and recurrent state as well as the training-only projection before
+diagnosing encoder collapse. The next comparison must test downstream transfer
+and sensitivity to observation history, with an equal-total-compute supervised
+control. No SSL-initialized model has passed a playing-strength gate.
+
+The full result and immutable hashes are in
+`../analysis/representation-pilots/ssl-attention-1000.json`.

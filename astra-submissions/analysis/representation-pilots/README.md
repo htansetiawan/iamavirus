@@ -85,8 +85,25 @@ That SSL run was interrupted and marked invalid for the intended objective
 (`ssl-first-run-invalid.json`). Self-targets now come directly from literal
 actor observation symbols, rank-reflected for Black, never from true boards or
 outcomes. Regression tests include the actual existing feature builder. The
-corrected run is `attention-ssl-pilot-v2`; it must finish and pass downstream
-fine-tuning comparisons before any useful-representation claim.
+corrected run is `attention-ssl-pilot-v2`. It completed 1,000 updates in 409
+seconds through the final update. Its fixed held-out windows cover 8 games,
+16 player histories, 512 observation events and 7,336 masked observed squares.
+Overall reconstruction accuracy is 73.88%; accuracy on the 2,734 masked pieces
+is 43.05%. These are observation-reconstruction measurements, not hidden-state
+accuracy or playing strength.
+
+One concern remains: the 64-dimensional projection's effective covariance rank
+fell from 9.74 at update 250 to 2.89 at update 1,000, with 75.3% of variance in
+the leading component. The conservative collapse alarm did not trigger, but
+this concentration deserves investigation. It does not by itself establish
+that the underlying encoder collapsed. Preserve this checkpoint as an honest
+control; measure encoder/recurrent-state diversity, downstream transfer and
+history ablations before extending this objective. Equal-total-compute
+supervised controls are still required. See `ssl-attention-1000.json`.
+
+The completed process exited and the GPU was released to Fable for feature-v2
+training at 23:12:58 UTC. The detached `/tmp/iamavirus-astra-063e87d` checkout
+preserves the legacy feature code for comparable downstream experiments.
 
 The paired supervised CNN/attention comparison uses the same existing feature
 contract on both sides and is unaffected by the SSL masking error. Production

@@ -1,0 +1,133 @@
+{
+  "status": "completed pretraining pilot; downstream benefit not measured; not an arena release",
+  "run_directory": "/media/henrytan/seagate/iamavirus/astra/representations/v3-seed253/attention-ssl-pilot-v2",
+  "completion": {
+    "state": "complete",
+    "pid": 3905779,
+    "started_at": "2026-10-07T23:02:49.793940+00:00",
+    "phase": "ssl",
+    "variant": "attention",
+    "step": 1000,
+    "target_steps": 1000,
+    "elapsed_seconds": 408.97350422502495,
+    "completed_at": "2026-10-07T23:09:39.340706+00:00"
+  },
+  "source_checkpoint_commit": "063e87d",
+  "architecture": "astra-attn64x2h4-gru256-heads-v1",
+  "model_parameters": 1631826,
+  "identity": {
+    "phase": "ssl",
+    "model_config": {
+      "variant": "attention",
+      "attention_blocks": 2,
+      "attention_heads": 4,
+      "latent_channels": 32
+    },
+    "seed": 253,
+    "window": 32,
+    "batch": 4,
+    "learning_rate": 0.0003,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "manifest_sha256": "84ee446d494e9a54b1fe329f85fdaa3c9a431051c99f9ba8b03b321950603d38",
+    "shard_sha256": {
+      "train": "6fb4333ce9f22a0c2d8d9a754265931c1f19e3f6c73d590f6175255f35cf58e4",
+      "validation": "47ff6ae6e9476bf75e2f92d5a45f8603659d7529a6ecf21a301fab00121ce65b"
+    },
+    "train_games": null,
+    "validation_games": 64,
+    "loss_weights": {
+      "policy": 1.0,
+      "belief": 1.0,
+      "danger": 1.0,
+      "value": 0.25
+    },
+    "player_weights": {
+      "default": 1.0,
+      "f394d843d970454f868c38c7f6963cc9": 4.0,
+      "knight-vision": 4.0,
+      "strongly-invisible": 3.0,
+      "db107815c3b14827a79ec9e3d12f4726": 3.0,
+      "8d775e234808489c815a4a9f6bbabfe4": 2.0,
+      "instructors": 2.0,
+      "a2c35173659545c99752376a70418438": 0.5
+    },
+    "mask_fraction": 0.4
+  },
+  "hashes": {
+    "run_json": "53043490b29553738eed19e9d665165993bea68e7d3231e83a05ad6198850130",
+    "dataset_manifest": "2e6c292235a41a692d390597f6b06880f9ba747ec37adb3f83934402b7294655",
+    "checkpoint": "fa2ce2a17bbc37d3ecff77f81b3a773f48b041bb91f22dd785ff80e2dcbb87e9",
+    "training_log": "28ff3aeff8d9121056f53088e706e800ed97def61da297efa0c580f1d3a37cc5"
+  },
+  "validation": {
+    "games": 8,
+    "player_histories": 16,
+    "events": 512,
+    "masked_observed_squares": 7336,
+    "masked_observed_pieces": 2734,
+    "checkpoints": {
+      "250": {
+        "loss": 0.9175221920013428,
+        "alignment_loss": 0.0032999056857079268,
+        "observed_reconstruction_loss": 0.9142223000526428,
+        "observed_reconstruction_accuracy": 0.6977917121046892,
+        "observed_piece_accuracy": 0.3880760790051207,
+        "masked_observed_pieces": 2734,
+        "events": 512,
+        "masked_observed_squares": 7336,
+        "normalized_projection_std": 0.01054227165877819,
+        "effective_covariance_rank": 9.736824989318848,
+        "largest_variance_share": 0.3983484208583832
+      },
+      "500": {
+        "loss": 0.8383172154426575,
+        "alignment_loss": 0.0024839069228619337,
+        "observed_reconstruction_loss": 0.8358333110809326,
+        "observed_reconstruction_accuracy": 0.7220556161395856,
+        "observed_piece_accuracy": 0.4180687637161668,
+        "masked_observed_pieces": 2734,
+        "events": 512,
+        "masked_observed_squares": 7336,
+        "normalized_projection_std": 0.014560965821146965,
+        "effective_covariance_rank": 6.172591209411621,
+        "largest_variance_share": 0.61357182264328
+      },
+      "750": {
+        "loss": 0.8242664933204651,
+        "alignment_loss": 0.00574599439278245,
+        "observed_reconstruction_loss": 0.8185204863548279,
+        "observed_reconstruction_accuracy": 0.7171483097055616,
+        "observed_piece_accuracy": 0.45062179956108267,
+        "masked_observed_pieces": 2734,
+        "events": 512,
+        "masked_observed_squares": 7336,
+        "normalized_projection_std": 0.020164135843515396,
+        "effective_covariance_rank": 3.15417742729187,
+        "largest_variance_share": 0.7800194025039673
+      },
+      "1000": {
+        "loss": 0.778559684753418,
+        "alignment_loss": 0.010486530140042305,
+        "observed_reconstruction_loss": 0.7680731415748596,
+        "observed_reconstruction_accuracy": 0.7388222464558343,
+        "observed_piece_accuracy": 0.43050475493782003,
+        "masked_observed_pieces": 2734,
+        "events": 512,
+        "masked_observed_squares": 7336,
+        "normalized_projection_std": 0.038572996854782104,
+        "effective_covariance_rank": 2.885768175125122,
+        "largest_variance_share": 0.7528964877128601
+      }
+    }
+  },
+  "interpretation": [
+    "All reconstruction targets are literal actor observations; hidden true boards, outcomes, expert policy and danger labels are excluded.",
+    "Observed-piece accuracy is 43.05%; this is a pretext task, not hidden-piece prediction or playing strength.",
+    "The 64-dimensional projection has effective covariance rank 2.89 and leading variance share 75.3% at step 1000. This concentration warrants investigation; it does not alone prove the underlying encoder collapsed.",
+    "The conservative collapse stop was not triggered. Passing it is not evidence of useful downstream representations.",
+    "Matched downstream fine-tuning, full-history ablations and an equal-total-compute supervised control remain outstanding."
+  ],
+  "test_shard_used": false,
+  "gpu_released_at": "2026-10-07T23:12:58.057793+00:00"
+}

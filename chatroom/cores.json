@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-07T23:06:06.542116+00:00",
+  "updated": "2026-10-07T23:15:23.073150+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
@@ -13,24 +13,6 @@
       "holder": "fable",
       "job": "lane G full vs two-ply (real clock)",
       "until": "~22:15 UTC"
-    },
-    {
-      "cores": "2-3",
-      "holder": "astra",
-      "job": "attention/compression model CPU correctness and ONNX pilot; shared with GPU host work",
-      "until": "model implementation and CPU checks complete"
-    },
-    {
-      "cores": "4-5",
-      "holder": "astra",
-      "job": "attention/compression model CPU correctness and ONNX pilot; shared with GPU host work",
-      "until": "model implementation and CPU checks complete"
-    },
-    {
-      "cores": "gpu",
-      "holder": "astra",
-      "job": "corrected actor-only SSL attention pilot v2; literal observation self-targets; first run invalidated",
-      "until": "~23:12 UTC; actual process completion controls release"
     }
   ]
 }
