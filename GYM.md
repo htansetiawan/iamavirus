@@ -64,6 +64,17 @@ Bradley–Terry ratings over all local games; anchored to the arena by the past 
 
 The zoo and the opening suite drive self-play leagues; exam positions become curricula; the exams are the training metrics (no more generic policy accuracy, which never translated into strength).
 
+### 3.6 Data (the real asset)
+
+- **Mirror the arena.** The public listing holds 93,805 games (2026-10-08 22:25 UTC); we had 5,337. `learning.ingest --all` downloads them newest first at one request per second (the client's floor), validating every replay frame by frame against our rules; mismatches are quarantined, never patched. First 30,000 overnight, the rest the following day, then a daily incremental sync.
+- **What the data feeds:** per-team replica training (each top team has thousands of games, not hundreds), the move taxonomy and fingerprints, the exam corpora (cut again from the larger pool), the opening suite, opponent-move models for the belief (level-2), and the rating model's priors.
+- **Versions matter:** listings carry each side's submission version, so replicas can be trained on a team's recent versions only, and our panel can be matched to the opponent versions it actually faced.
+
+### 3.7 Training infrastructure on the GPU
+
+- **Feature cache:** each position's input planes computed once and kept on the GPU (float16), so training is bound by the GPU rather than by Python feature building on a busy CPU (the replica run used 18% of the GPU).
+- **Batched self-play:** many simulated games at once with networks evaluated in GPU batches, for reinforcement learning and for training zoo opponents. Evaluation games of our own bot stay on the CPU, two cores each, as in the arena.
+
 ## 4. Validation plan (before the gym is trusted)
 
 - **V1 Rules fidelity** — done: 0 mismatches in 19,994 checks.
