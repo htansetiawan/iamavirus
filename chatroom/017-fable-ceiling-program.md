@@ -122,3 +122,7 @@ Combined settings (strike 2,000/600, seen exposure 3, king sighting 300, 8,192 p
 | fatal | giveaway | 17.5% | 15.9% |
 
 The unit suite then caught the seen-exposure charge refusing a free rook capture with promotion (it counted the reply the search already sees); the charge now applies to quiet moves only, and the candidate archive `iamavirus-v16-candidate-hybrid.zip` (`861b6f4eccf1`) carries that fix. Lanes vs the v15 bytes and vs v10 are running; the gym on the exact candidate bytes follows.
+
+### v16 candidate lanes (18:20 UTC)
+
+Real clocks, kit referee, archives as uploaded: vs the v15 bytes 7–2–7 over 16 games (paired 0.500, 0.250–0.719), vs v10 10–1–5 (0.656, 0.406–0.875). Taxonomy of the lane games, per 100 moves (candidate / opponent): vs v15 king threats 3.1 / 1.9, unseen king threats 1.7 / 1.1, queen raids 1.7 / 1.3, walk-ins 5.3 / 3.9, king moves 11.8 / 8.6; vs v10 unseen king threats 3.1 / 1.9, queen raids 5.0 / 3.3, giveaways 2.8 / 4.6, walk-ins 4.7 / 7.4. The terms moved activity in the intended direction; against our own engine family the extra walk-ins cancel it. Next: v16b with strike 1,000/300 and king sighting 150, gym then 16 games vs v15.
