@@ -165,6 +165,23 @@ struct EngineOptions {
   // stand on (the hypothesis says empty, the view says unseen), plus unseen
   // knight and pawn-attack squares, when the enemy still has such pieces.
   // Centipawns per square for a queen; other pieces in proportion to value.
+  // Opponent vision (v16): what they can see under each hypothesis after our
+  // move, from VisibleSquares(hypothesis, enemy). Three terms on the shortlist,
+  // all off by default until the gym says otherwise (chatroom/016, section 6):
+  //   strike_weight       bonus in cp times the share of hypotheses in which we
+  //                       attack their king from a square they cannot see;
+  //   strike_major_weight the same for attacks on their queen or rook;
+  //   stealth_weight      bonus per cp of our non-king material standing on
+  //                       squares they cannot see (expected over hypotheses);
+  //   seen_exposure_weight extra charge per cp of a gift they can see: one of
+  //                       our pieces both visible to them and capturable for a
+  //                       net gain, priced at the net value, expected over
+  //                       hypotheses (the particle-mean exposure term under-
+  //                       prices gifts the opponent is certain about).
+  double strike_weight = 0.0;
+  double strike_major_weight = 0.0;
+  double stealth_weight = 0.0;
+  double seen_exposure_weight = 0.0;  // the particle stride is the existing `vision_stride`
   double surface_charge = 0.0;
   int surface_ray_cap = 3;
   int surface_stride = 4;
@@ -343,6 +360,13 @@ class Engine {
   // squares, averaged over a stride of the population (EngineOptions::
   // surface_charge).
   double ExpectedHiddenSurface(Move move, int en_passant) const;
+  struct OpponentVision {
+    double strike_king = 0.0;    // share of hypotheses with an unseen attack on their king
+    double strike_major = 0.0;   // share with an unseen attack on their queen or a rook
+    double hidden_value = 0.0;   // expected cp of our non-king material they cannot see
+    double seen_gift = 0.0;      // expected cp they can see and win for free
+  };
+  OpponentVision ExpectedOpponentVision(Move move, int en_passant) const;
 
  private:
   // Our own castling rights, read from the believed state where MakeMove has

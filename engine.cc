@@ -284,6 +284,72 @@ double Engine::ExpectedVision(Move move, int en_passant) const {
 // we cannot see could be attacking it right now. Particle-independent by
 // design, because the losses it targets are the ones where the population
 // did not hold the attacker.
+Engine::OpponentVision Engine::ExpectedOpponentVision(Move move, int en_passant) const {
+  OpponentVision out;
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return out;
+  const int enemy_side = our_side_ ^ 1;
+  const int stride = std::max(1, options_.vision_stride);
+  int counted = 0;
+  for (std::size_t i = 0; i < population.size(); i += static_cast<std::size_t>(stride)) {
+    Position hypothesis = population[i];
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    if (IsCastle(move)) {
+      MoveList available;
+      hypothesis.GenerateMoves(&available);
+      if (!ListContains(available, move)) continue;
+    }
+    UndoState undo;
+    hypothesis.MakeMove(move, &undo);
+    ++counted;
+    if (hypothesis.PreviousMoverIsLost()) {
+      hypothesis.UnmakeMove(move, undo);
+      continue;
+    }
+    const Bitboard they_see = VisibleSquares(hypothesis, enemy_side);
+    // Strikes: our attackers of their king / queen / rooks standing where they cannot see.
+    const int their_king = hypothesis.KingSquare(enemy_side);
+    if (their_king >= 0 && (hypothesis.AttackersTo(their_king, our_side_) & ~they_see)) out.strike_king += 1.0;
+    Bitboard majors = hypothesis.pieces(kQueen, enemy_side) | hypothesis.pieces(kRook, enemy_side);
+    bool major_hit = false;
+    while (majors && !major_hit) {
+      const int square = PopLsb(&majors);
+      if (hypothesis.AttackersTo(square, our_side_) & ~they_see) major_hit = true;
+    }
+    if (major_hit) out.strike_major += 1.0;
+    // Stealth and seen gifts over our non-king pieces.
+    Bitboard ours = hypothesis.pieces_of(our_side_) & ~hypothesis.pieces(kKing, our_side_);
+    while (ours) {
+      const int square = PopLsb(&ours);
+      const int value = kPieceValue[hypothesis.piece_at(square)];
+      if (!(they_see & SquareBB(square))) {
+        out.hidden_value += value;
+        continue;
+      }
+      const Bitboard attackers = hypothesis.AttackersTo(square, enemy_side);
+      if (attackers == 0) continue;
+      int cheapest = kPieceValue[kQueen] + 1;
+      Bitboard scan = attackers;
+      while (scan) {
+        const int v = kPieceValue[hypothesis.piece_at(PopLsb(&scan))];
+        if (v < cheapest) cheapest = v;
+      }
+      const bool defended = hypothesis.AttackersTo(square, our_side_) != 0;
+      const int net = value - (defended ? cheapest : 0);
+      if (net > 0) out.seen_gift += net;
+    }
+    hypothesis.UnmakeMove(move, undo);
+  }
+  if (counted > 0) {
+    out.strike_king /= counted;
+    out.strike_major /= counted;
+    out.hidden_value /= counted;
+    out.seen_gift /= counted;
+  }
+  return out;
+}
+
 double Engine::ExpectedHiddenSurface(Move move, int en_passant) const {
   const std::vector<Position>& population = belief_.particles();
   if (population.empty()) return 0.0;
@@ -431,6 +497,10 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_HIDDEN_THREAT_STRIDE", &options.hidden_threat_stride);
   Override("FOW_HIDDEN_KING_THREAT", &options.hidden_king_threat_weight);
   Override("FOW_SURFACE", &options.surface_charge);
+  Override("FOW_STRIKE", &options.strike_weight);
+  Override("FOW_STRIKE_MAJOR", &options.strike_major_weight);
+  Override("FOW_STEALTH", &options.stealth_weight);
+  Override("FOW_SEEN_EXPOSURE", &options.seen_exposure_weight);
   Override("FOW_BOOK_PLIES", &options.book_plies);
   Override("FOW_SURFACE_RAY_CAP", &options.surface_ray_cap);
   Override("FOW_SURFACE_STRIDE", &options.surface_stride);
@@ -1080,6 +1150,16 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
           }
         }
       }
+    }
+  }
+  if (options_.strike_weight > 0.0 || options_.strike_major_weight > 0.0 ||
+      options_.stealth_weight > 0.0 || options_.seen_exposure_weight > 0.0) {
+    for (int row = 0; row < shortlist; ++row) {
+      const OpponentVision ov = ExpectedOpponentVision(ranked[row].move, en_passant);
+      risk[row] -= options_.strike_weight * ov.strike_king;
+      risk[row] -= options_.strike_major_weight * ov.strike_major;
+      risk[row] -= options_.stealth_weight * ov.hidden_value;
+      risk[row] += options_.seen_exposure_weight * ov.seen_gift;
     }
   }
   if (options_.surface_charge > 0.0) {
