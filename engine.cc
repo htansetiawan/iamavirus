@@ -563,7 +563,12 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       searcher_(&table_),
       worker_searcher_(&worker_table_) {
   belief_.set_visibility_deductions(options_.visibility_deductions);
-  if (options_.history_mode < 0 || options_.history_mode > 2) std::abort();
+  if (options_.history_mode < 0 || options_.history_mode > 2) {
+    // An arena process must not die on a bad environment value.
+    std::fprintf(stderr, "ignoring FOW_HISTORY_MODE=%d (expected 0-2); using 0\n",
+                 options_.history_mode);
+    options_.history_mode = 0;
+  }
   belief_.set_history_mode(options_.history_mode);
   belief_.set_capture_evidence(options_.capture_evidence);
   (void)base_seconds;
