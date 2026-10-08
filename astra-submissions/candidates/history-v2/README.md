@@ -100,8 +100,17 @@ pairings satisfy the transactional RNG invariant.
 Two strict-mode conflicts were traced to lost en passant metadata at the same
 real replay position. The repaired binary keeps the correct view and available
 capture in all 16 strict/history cases across four seeds and both priors. This
-is a regression check, not an improvement estimate. A fresh full-corpus run of
-the four strict/history arms is required because recovery changes later states.
+is a regression check, not an improvement estimate. The fresh full-corpus run
+of the four strict/history arms also completed: **2,536/2,536 successful runs**,
+zero view mismatches, zero continuation violations, zero evidence conflicts,
+and all 823 zero-rescue pairings equal. Learned-prior retention remains
+38.94% → 41.56%; fatal moves assigned zero risk remain 29 → 33.
+
+A subsequent action diagnostic on the 20 histories whose terminal recognition
+changed evaluates 168 actual hybrid choices at 400,000 nodes. History recovery
+saves five choices and introduces six fatalities (11 → 12 total). This selected
+test does not estimate overall strength, but it confirms that the support loss
+can affect actions. The mode stays experimental.
 
 The first full run's result journal and per-observation traces are at
 `/media/henrytan/seagate/iamavirus/astra/belief/history-v2-corpus-20261007/`.
@@ -111,3 +120,6 @@ retain both positive and negative results. The en passant
 [receipt](../../analysis/history-recovery/port-ep-fix/correctness.json) pins
 the updated sources and binary. Clocked paired games remain necessary before a
 playing-strength claim or archive. No history mode has earned a release default.
+The final [four-arm analysis](../../analysis/history-recovery/port-corpus-after-ep.json)
+and [selected action comparison](../../analysis/history-recovery/port-tail-action-gate/summary.json)
+are recorded separately from the earlier binary.

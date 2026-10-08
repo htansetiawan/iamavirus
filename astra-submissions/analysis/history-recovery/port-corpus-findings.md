@@ -75,11 +75,28 @@ passes 2,229 checks. See the [receipt](port-ep-fix/correctness.json).
 
 The corrected four-arm full run is recorded at
 `/media/henrytan/seagate/iamavirus/astra/belief/history-v2-ep-corpus-r1-20261008/`.
-Its results must stay separate from the table above. A first launch used an
+It completed all 2,536 runs with unchanged inputs, zero view mismatches, zero
+continuation violations, zero evidence conflicts, and all 823 transactional
+pairings equal. Its results stay separate from the table above. A first launch used an
 incorrect binary filename and stopped before running any probes; its preparation
 directory is `history-v2-ep-corpus-20261008` and contains no experiment results.
 
 ## Next decision
+
+The [corrected full run](port-corpus-after-ep.json) preserves the central
+conclusion. Learned-prior strict → history retention is 38.942% → 41.563%,
+Brier 0.237185 → 0.228452, and random rebuilds 1,223 → 911. Zero-risk terminal
+fatalities are still 29 → 33. With the hand prior they remain 39 → 49. The en
+passant defect is repaired; uncertainty concentration remains unresolved.
+
+The next [action diagnostic](port-tail-action-gate/summary.json) is complete,
+using the corrected binary on the 20 histories selected by changed terminal
+recognition in the earlier learned-prior run. Both arms use the same archived
+hybrid model, seed 777, 400,000 nodes and one search thread; only history mode
+changes. Across 168 sampled/terminal decisions, 42 moves change, five become
+safe and six become fatal. Total king losses are 11 → 12; avoidable losses are
+7 → 8. This selected sample is a mechanism check, not an overall strength
+estimate. It confirms that the lost warnings can reach the final action.
 
 Post-hoc inspection of the twelve newly missed learned-prior fatalities shows
 the concentration problem directly. In eleven, the most recent history rescue
@@ -92,9 +109,7 @@ consistency property, not calibrated certainty. These selected cases motivate
 the next experiment; they do not estimate a population-wide failure rate. See
 [the retained diagnostic](port-tail-before-ep.json).
 
-Keep history recovery experimental. After the corrected corpus finishes,
-inspect the newly missed threats and test actual chosen actions on those
-complete histories. Recovery needs calibrated uncertainty or preserved tactical
+Keep history recovery experimental. Recovery needs calibrated uncertainty or preserved tactical
 support if coherent histories become too concentrated; simply increasing the
 penalty on an absent attacker cannot help. A compact learned representation
 has the same burden: improve actionable uncertainty, not just reconstruction.
