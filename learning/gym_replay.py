@@ -143,7 +143,20 @@ def run_seat(line: str, args, cores: str) -> dict:
     forced = [moves[i] for i in range(k - 1) if i % 2 == side]
     script = ["fow", f"{'w' if side == 0 else 'b'} 180 2"]
     for t in range(k):
-        script.append(frames[t]["board"] if args.oracle else frames[t][key])
+        if args.oracle:
+            script.append(frames[t]["board"])
+        elif args.reveal:
+            # Partial oracle: the side's own view, plus the true squares of the enemy
+            # piece types named in --reveal (e.g. "k", "rbq", "np"); empty unseen
+            # squares stay unseen.
+            view = list(frames[t][key])
+            board = frames[t]["board"]
+            for sq, c in enumerate(board):
+                if c != "-" and (c.islower() if side == 0 else c.isupper()) and c.lower() in args.reveal:
+                    view[sq] = c
+            script.append("".join(view))
+        else:
+            script.append(frames[t][key])
         if t % 2 == side:
             decision = t // 2 + 1
             if args.clock == "replay" and "clocks" in frames[t]:
@@ -220,6 +233,7 @@ def main() -> None:
     ap.add_argument("--cores", default="0-7")
     ap.add_argument("--clock", default="model", help="model (our v15 clock at that decision) | replay | fixed:SECONDS")
     ap.add_argument("--oracle", action="store_true")
+    ap.add_argument("--reveal", default="", help="enemy piece letters to reveal on top of the fogged view, e.g. k, rbq, np")
     ap.add_argument("--inject-real", action="store_true",
                     help="give the recorded move a guaranteed matrix row (needs a bot with FOW_INJECT_MOVE)")
     ap.add_argument("--env", nargs="*")
