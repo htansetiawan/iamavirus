@@ -105,6 +105,10 @@ class BeliefState {
   // so a rebuilt population must put an enemy piece on it. Off with
   // FOW_CAPTURE_EVIDENCE=0.
   inline void set_capture_evidence(bool on) { capture_evidence_ = on; }
+  // Hand-prior multiplier for an enemy move whose moved piece attacks our queen
+  // afterwards (1.0 = off). The king has such a factor (3.0, fixed); the queen
+  // is the piece the arena shows us losing to unseen attackers.
+  inline void set_queen_attack_factor(double f) { queen_attack_factor_ = f; }
   inline int particle_count() const { return static_cast<int>(particles_.size()); }
   inline const std::vector<Position>& particles() const { return particles_; }
 
@@ -232,6 +236,7 @@ class BeliefState {
   void InferCaptureEvidence(const Observation& view, BeliefUpdateReport* report);
   int target_count_;
   int opponent_prior_;
+  double queen_attack_factor_ = 1.0;
   std::mt19937_64 rng_;
   std::vector<Position> particles_;
   // Per-particle memory of the opponent's last move in that hypothesis: the

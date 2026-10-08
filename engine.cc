@@ -426,6 +426,7 @@ EngineOptions EngineOptionsFromEnvironment() {
   OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.visibility_deductions);
   Override("FOW_HISTORY_MODE", &options.history_mode);
   OverrideFlag("FOW_CAPTURE_EVIDENCE", &options.capture_evidence);
+  Override("FOW_PRIOR_QUEEN_ATTACK", &options.prior_queen_attack);
   Override("FOW_HIDDEN_THREAT", &options.hidden_threat_weight);
   Override("FOW_HIDDEN_THREAT_STRIDE", &options.hidden_threat_stride);
   Override("FOW_HIDDEN_KING_THREAT", &options.hidden_king_threat_weight);
@@ -574,6 +575,7 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
   }
   belief_.set_history_mode(options_.history_mode);
   belief_.set_capture_evidence(options_.capture_evidence);
+  belief_.set_queen_attack_factor(options_.prior_queen_attack);
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);
   searcher_.set_options(options.search);

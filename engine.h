@@ -239,6 +239,9 @@ struct EngineOptions {
   // hand-set constants (default), 2 the learned conditional-logit prior
   // (measured: no decision gain, so not the default).
   int opponent_prior = 1;
+  // Hand-prior multiplier for enemy moves that attack our queen (1.0 = off);
+  // FOW_PRIOR_QUEEN_ATTACK. Under test on the queen-loss corpus, 2026-10-08.
+  double prior_queen_attack = 1.0;
   SearchOptions search;
 };
 

@@ -207,6 +207,16 @@ double BeliefState::MovePlausibility(Position* hypothesis, Move move, int last_t
                         SquareBB(to))) {
     weight *= kAttacksOurKingFactor;
   }
+  if (queen_attack_factor_ != 1.0) {
+    Bitboard our_queens = hypothesis->pieces(kQueen, our_side_);
+    while (our_queens) {
+      const int queen = PopLsb(&our_queens);
+      if (hypothesis->AttackersTo(queen, enemy_side) & SquareBB(to)) {
+        weight *= queen_attack_factor_;
+        break;
+      }
+    }
+  }
   hypothesis->UnmakeMove(move, undo);
   return weight;
 }
