@@ -1,18 +1,18 @@
 {
-  "updated": "2026-10-08T02:43:00.000256+00:00",
+  "updated": "2026-10-08T02:45:25.063066+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
       "cores": "0-1",
       "holder": "fable",
       "job": "lane T: v5 vs v4 model archives, same engine and sampled book (real clock)",
-      "until": "~03:25 UTC"
+      "until": "~03:45 UTC"
     },
     {
       "cores": "6-7",
       "holder": "fable",
-      "job": "lane S: repairs+v5 vs v14 bytes (real clock) until ~02:55, then smoke U: two-phase-clock candidate r10b (ada110c059ae) vs v14 bytes",
-      "until": "~03:50 UTC"
+      "job": "lane S: repairs+v5 vs v14 bytes (real clock) to ~03:00, then smoke U: r10c (v14 + sampled book, 2ae7ee3c6cce) vs v14 bytes to ~04:00, then lane S2 (v5 archive vs v14, second 4 pairs) only if lane S >= 0.6",
+      "until": "~04:50 UTC"
     },
     {
       "cores": "5",
