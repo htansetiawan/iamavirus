@@ -90,3 +90,54 @@ Discipline for the gym: the taxonomy runs on every new arena game per version (`
 2. Cut the giveaway corpus (C4) from our own games and record the repeat rate, as with the queen corpus.
 3. Ask Astra (assistant mode) to run its prediction suite with a game-disjoint split for C3 and report top-4 hit rate on the top six.
 4. Keep `data/reports/v15-watch.md` running; the TA-P record is the first style number to watch.
+
+## 8. The bigger canvas: all 4,902 games, all versions (added 08:55 UTC)
+
+Raw tables are in `data/reports/taxonomy-canvas.txt`; the per-move labels in `data/reports/taxonomy-all-teams.json` (38 MB, kept locally; regenerate with `--all-games --by-team --json`).
+
+### 8a. Winners and losers look the same everywhere, and we look like a loser
+
+Across all 4,735 decisive games, per 100 moves (the mover's own rates):
+
+| | visible | captures | long strikes | fog routes | king threats | unseen king threats | giveaways | king moves | queen raids | walked into unseen | bare back rank |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| winners | 35.9 | 25.4 | 5.5 | 18.2 | 5.2 | 2.9 | 1.1 | 8.8 | 4.5 | 2.1 | 3.1 |
+| losers | 31.5 | 20.5 | 4.2 | 13.6 | 2.3 | 0.5 | 3.9 | 16.9 | 1.9 | 3.9 | 6.1 |
+| us when we win (313) | 37.1 | 26.3 | 5.2 | 18.2 | 5.4 | 3.5 | 2.0 | 8.3 | 4.4 | 2.0 | 1.7 |
+| us when we lose (524) | 31.3 | 18.6 | 3.3 | 12.5 | 1.6 | 0.4 | 4.9 | 18.2 | 1.4 | 4.1 | 5.1 |
+
+The tags predict outcomes on their own: a side above the median in king threats wins 70% of decisive games, above the median in fog routes 66%, in queen raids 62%; above the median in giveaways 30%, in walk-ins 38%. The winner row is therefore the target vector for the gym, not a style preference.
+
+### 8b. Our versions moved the wrong way
+
+Our own side, all opponents, per 100 moves:
+
+| version | games | captures | long strikes | fog routes | king threats | unseen king threats | giveaways | queen raids | walked into unseen | king moves |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| v4 | 260 | 21.4 | 4.3 | 14.4 | 2.9 | 1.4 | 4.8 | 2.7 | 3.5 | 14.9 |
+| v10 | 144 | 22.7 | 4.8 | 15.4 | 3.0 | 1.5 | 3.4 | 2.8 | 3.3 | 14.0 |
+| v13 | 119 | 18.5 | 2.4 | 12.7 | 2.1 | 1.4 | 3.5 | 1.5 | 2.9 | 14.6 |
+| v14 | 48 | 18.6 | 2.4 | 13.2 | 1.5 | 0.9 | 4.7 | 1.8 | 2.9 | 14.4 |
+
+From v10 to v13/v14 the activity tags halved (long strikes 4.8 → 2.4, king threats 3.0 → 1.5, queen raids 2.8 → 1.8, captures 22.7 → 18.6) while the discipline tags did not improve (giveaways 3.4 → 4.7, walk-ins 3.3 → 2.9). The caution package made the bot timid, not safe. That is the TA Baseline P story: v10 beat it 14–0–2, v13–v15 are 17–2–13, and the all-time head-to-head is 63–6–37; a greedy bot does not punish caution, it simply never loses to a side that creates no threats. Lanes against our own archives could not see this because both sides shared the timidity.
+
+### 8c. What the top six do to each other, and what they do to us
+
+| the mover → the opponent | visible | captures | fog routes | king threats | unseen king threats | giveaways | king moves | queen raids |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| top six → top six | 33.0 | 21.4 | 15.3 | 3.6 | 1.7 | 1.8 | 15.1 | 3.2 |
+| top six → others | 36.5 | 26.6 | 19.7 | 4.8 | 2.9 | 1.3 | 8.5 | 4.0 |
+| top six → us | 37.0 | 24.2 | 16.7 | 5.5 | 3.0 | 0.9 | 8.6 | 4.5 |
+| us → top six | 31.4 | 17.9 | 11.9 | 1.8 | 0.5 | 4.4 | 18.0 | 1.3 |
+
+Against each other the leaders are careful (their kings move 15 times per 100, like ours) because each side threatens the other. Against us their king rests (8.6), they raid with the queen (4.5) and strike our king (5.5, 3.0 unseen) because we threaten nothing (1.8 king threats, 0.5 unseen). The asymmetry is mutual: we are the opponent that lets them play their best game. All-time head-to-head: 0–0–67 vs Greek Gift, 0–0–48 vs Knight Vision, 0–0–60 vs Decent Chess Bot, 2–0–62 vs Strongly Invisible, 3–1–60 vs duck, 2–0–24 vs Instructors — 7 wins in 326 games. Among themselves: Greek Gift beats Knight Vision 139–11–104 and duck 136–11–14; Knight Vision beats TA Baseline S 104–2–22; the TA baselines beat us (S 78–7–22, A 82–5–35).
+
+### 8d. By phase
+
+King threats per 100 moves, opening / middlegame / endgame: top six 1.8 / 4.7 / 5.5, us 2.4 / 2.7 / 2.4. Giveaways: top six 0.6 / 2.2 / 2.0, us 2.0 / 5.3 / 5.3. Fog routes: top six 13.8 / 19.9 / 10.9, us 12.9 / 16.5 / 8.6. The gap opens after ply 30 and never closes: our middlegame gives away material at 2.4× their rate and threatens the king at half their rate; the endgame is where they strike from the fog most (2.9 unseen king threats per 100) and we do not.
+
+### 8e. What this changes in the capability list and the gym
+
+- **C9 Activity (new, and the first priority).** Every post-v10 engine term bought caution with activity. The winner profile says the opposite trade is right: more captures, more long strikes, more fog routes, more king threats, more queen raids, with giveaways and walk-ins cut by a model of what the opponent cannot see. Targets: long strikes ≥ 4.5, king threats ≥ 4, queen raids ≥ 3.5, captures ≥ 23 — the v10 level or above — while giveaways ≤ 2 and walk-ins ≤ 2.5.
+- The gym's reference is the winner row of 8a; every candidate is scored against it on a fixed set of sparring games before any lane, and its per-phase profile must not fall below v10's in the middlegame.
+- The first experiment when the observation window closes is the obvious one from 8b: the v10 engine with only the book-safety gate and the sampled book, measured on the taxonomy and in a 16-game lane against v15 and a greedy style archive.
