@@ -1,25 +1,25 @@
 # Arena v15 watch
 
-Updated 2026-10-08 17:23 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-08 17:54 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 110W-8D-156L over 274 games** (42%).
-As White: 66.0/137.
-As Black: 48.0/137.
+**Record: 111W-8D-161L over 280 games** (41%).
+As White: 66.0/140.
+As Black: 49.0/140.
 
-Queen lost for less: 111 games (85 to a capturer unseen when we moved, 12 before ply 30); losses with the queen lost: 93 of 156.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 38. Mean length 78 plies.
+Queen lost for less: 112 games (85 to a capturer unseen when we moved, 12 before ply 30); losses with the queen lost: 94 of 161.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 40. Mean length 78 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 26-3-29 |
-| TA Baseline S | 8-5-25 |
+| TA Baseline P | 27-3-30 |
+| TA Baseline S | 8-5-27 |
 | baseline.py | 36-0-0 |
 | TA Baseline A | 15-0-21 |
 | Apricot Squad | 24-0-2 |
 | duck | 1-0-19 |
 | Instructors | 0-0-20 |
-| Decent Chess Bot | 0-0-18 |
+| Decent Chess Bot | 0-0-20 |
 | Strongly Invisible | 0-0-8 |
 | Knight Vision | 0-0-8 |
 | Greek Gift | 0-0-6 |
@@ -300,3 +300,9 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-08 17:15 | yp8b3cml | W | baseline.py | 16 | win |  | 168 s | 36-30 |
 | 2026-10-08 17:15 | 69jomb8y | B | baseline.py | 19 | win |  | 149 s | 32-35 |
 | 2026-10-08 17:16 | bd1xxvb3 | W | TA Baseline P | 115 | loss | ply 74 by n | 15 s | 1-18 |
+| 2026-10-08 17:23 | dw01kxly | W | TA Baseline S | 57 | loss |  | 41 s | 3-11 |
+| 2026-10-08 17:26 | vw5dgbsa | B | TA Baseline S | 114 | loss |  | 14 s | 1-23 |
+| 2026-10-08 17:39 | 1aw4ug5p | W | TA Baseline P | 61 | loss |  | 47 s | 12-35 |
+| 2026-10-08 17:39 | 8kgqwm1t | B | TA Baseline P | 101 | win |  | 27 s | 12-23 |
+| 2026-10-08 17:50 | abdsipak | W | Decent Chess Bot | 85 | loss | ply 68 by r | 32 s | 5-12 |
+| 2026-10-08 17:53 | m8mepy92 | B | Decent Chess Bot | 148 | loss |  | 14 s | 2-18 |
