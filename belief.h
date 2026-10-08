@@ -175,6 +175,12 @@ class BeliefState {
   Observation previous_view_;
   bool have_previous_view_ = false;
   int capture_square_ = -1;          // where our piece just vanished unseen, or -1
+  // Recent capture squares with their age in opponent updates (1 = the update
+  // before last). A capturer rarely moves away at once, so a rebuild places a
+  // piece on such a square with probability `capture_persistence_[age]` while
+  // the view still has it unseen, instead of treating it as any fog square.
+  std::vector<std::pair<int, int>> recent_captures_;
+  std::array<double, 3> capture_persistence_ = {1.0, 0.85, 0.7};  // index = age
   int own_double_push_square_ = -1;  // our pawn's square after a double push, or -1
   void InferCaptureEvidence(const Observation& view, BeliefUpdateReport* report);
   int target_count_;

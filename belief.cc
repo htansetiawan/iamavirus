@@ -169,6 +169,10 @@ void BeliefState::UpdateOwnRights(const Observation& view) {
 void BeliefState::ApplyOurMove(Move move) {
   const int home_rank = our_side_ == kWhite ? 0 : 7;
   if (MoveTo(move) == capture_square_) capture_square_ = -1;
+  recent_captures_.erase(
+      std::remove_if(recent_captures_.begin(), recent_captures_.end(),
+                     [&](const std::pair<int, int>& e) { return e.first == MoveTo(move); }),
+      recent_captures_.end());
   own_double_push_square_ = -1;
   if (!particles_.empty() &&
       particles_.front().piece_at(MoveFrom(move)) == kPawn &&
@@ -240,8 +244,15 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
   } else if (reflects_our_own_move) {
     Condition(view, &report);
   } else {
-    // The capturer of the last update may have moved on; infer afresh.
+    // The capturer of the last update may have moved on; infer afresh, and
+    // age the squares inferred at earlier updates.
+    if (capture_square_ >= 0) recent_captures_.emplace_back(capture_square_, 0);
     capture_square_ = -1;
+    for (auto& entry : recent_captures_) ++entry.second;
+    recent_captures_.erase(
+        std::remove_if(recent_captures_.begin(), recent_captures_.end(),
+                       [](const std::pair<int, int>& e) { return e.second > 2; }),
+        recent_captures_.end());
     if (capture_evidence_ && have_previous_view_) InferCaptureEvidence(view, &report);
     PredictAndCondition(view, &report);
   }
@@ -477,6 +488,7 @@ void BeliefState::Recover(const Observation& view,
         deductions_ ? DeduceFromObservation(view, our_side_) : Deductions{};
   std::vector<int> hidden;
   std::vector<int> required;  // unseen squares that must hold an enemy piece
+  std::vector<std::pair<int, double>> likely;  // recent capture squares, by probability
   for (int square = 0; square < kNumSquares; ++square) {
     if (!view.IsUnseen(square)) continue;
     if (deduced.must_be_empty & SquareBB(square)) continue;
@@ -485,6 +497,13 @@ void BeliefState::Recover(const Observation& view,
       required.push_back(square);  // a pawn fact, or the capturer of our piece
     } else {
       hidden.push_back(square);
+      if (capture_evidence_) {
+        for (const auto& entry : recent_captures_) {
+          if (entry.first == square && entry.second < static_cast<int>(capture_persistence_.size())) {
+            likely.emplace_back(square, capture_persistence_[static_cast<std::size_t>(entry.second)]);
+          }
+        }
+      }
     }
   }
 
@@ -533,6 +552,13 @@ void BeliefState::Recover(const Observation& view,
     // missing from the census (a pawn only off the promotion ranks), chosen
     // at random so the rebuilt population stays diverse.
     std::vector<int> must = required;
+    for (const auto& entry : likely) {
+      // A recently inferred capturer: keep it there in most hypotheses.
+      if (std::uniform_real_distribution<double>(0.0, 1.0)(rng_) < entry.second) {
+        must.push_back(entry.first);
+        available.erase(std::remove(available.begin(), available.end(), entry.first), available.end());
+      }
+    }
     std::shuffle(must.begin(), must.end(), rng_);
     std::array<int, kNumPieceTypes> remaining = missing;
     for (const int square : must) {

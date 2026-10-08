@@ -439,6 +439,51 @@ void CaptureOnAnUnseenSquareKeepsTheCapturerThere() {
   }
 }
 
+
+// Persistence of the capturer. After 3...Nxe5 we play 4. d3 and Black 4...d6
+// (neither touches e5, which stays unseen): with capture evidence the knight
+// should still be held on e5 by most of a rebuilt or resampled population two
+// updates later, not scattered like any fog square.
+void RecentCapturerPersistsForAFewUpdates() {
+  const char* line[] = {"e2e4", "e7e5", "g1f3", "b8c6", "f3e5", "c6e5", "d2d3", "d7d6"};
+  const int e5 = MakeSquare(4, 4);
+  int held = 0;
+  int total = 0;
+  for (uint64_t seed = 1; seed <= 4; ++seed) {
+    BeliefState belief(kWhite, 64, seed);
+    belief.set_capture_evidence(true);
+    Position truth;
+    PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth);
+    bool we_just_moved = false;
+    for (const char* uci : line) {
+      belief.Observe(Observation(RenderObservation(truth, kWhite)), we_just_moved);
+      we_just_moved = false;
+      MoveList legal;
+      truth.GenerateMoves(&legal);
+      Move move = kNullMove;
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == uci) move = candidate;
+      }
+      FOW_EXPECT_TRUE(move != kNullMove);
+      if (truth.side_to_move() == kWhite) {
+        belief.ApplyOurMove(move);
+        we_just_moved = true;
+      }
+      UndoState undo;
+      truth.MakeMove(move, &undo);
+    }
+    const Observation after(RenderObservation(truth, kWhite));
+    FOW_EXPECT_TRUE(after.IsUnseen(e5));
+    belief.Observe(after, we_just_moved);
+    for (const Position& particle : belief.particles()) {
+      ++total;
+      held += particle.piece_at(e5) != kNoPiece && particle.color_at(e5) == kBlack;
+    }
+  }
+  std::printf("       capturer still on e5 two updates later: %d/%d particles\n", held, total);
+  FOW_EXPECT_TRUE(held * 2 >= total);
+}
+
 }  // namespace
 }  // namespace fow
 
@@ -455,5 +500,6 @@ int main() {
   FOW_RUN_TEST(fow::RecoversWhenEveryHypothesisIsContradicted);
   FOW_RUN_TEST(fow::BeliefMaintainsItsInvariants);
   FOW_RUN_TEST(fow::CaptureOnAnUnseenSquareKeepsTheCapturerThere);
+  FOW_RUN_TEST(fow::RecentCapturerPersistsForAFewUpdates);
   return fow::testing::Summarize("belief_test");
 }
