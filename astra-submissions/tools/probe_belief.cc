@@ -26,10 +26,16 @@ template <class Report>
 static void CaptureDiagnostics(const Report& report) {
   // Older immutable archives do not have Astra's new diagnostic fields.
   if constexpr (requires { report.capture_square; }) {
-    std::cout << ",\"inferred_capture_square\":" << report.capture_square
-              << ",\"capture_constraints_preserved\":" << report.capture_constraints_preserved
-              << ",\"capture_evidence_conflict\":" << (report.capture_evidence_conflict ? "true" : "false")
-              << ",\"capture_ep_ambiguous\":" << (report.capture_en_passant_ambiguous ? "true" : "false");
+    std::cout << ",\"inferred_capture_square\":" << report.capture_square;
+  }
+  if constexpr (requires { report.capture_constraints_preserved; }) {
+    std::cout << ",\"capture_constraints_preserved\":" << report.capture_constraints_preserved;
+  }
+  if constexpr (requires { report.capture_evidence_conflict; }) {
+    std::cout << ",\"capture_evidence_conflict\":" << (report.capture_evidence_conflict ? "true" : "false");
+  }
+  if constexpr (requires { report.capture_en_passant_ambiguous; }) {
+    std::cout << ",\"capture_ep_ambiguous\":" << (report.capture_en_passant_ambiguous ? "true" : "false");
   }
   if constexpr (requires { report.visibility_evidence_conflict; }) {
     std::cout << ",\"visibility_evidence_conflict\":"

@@ -1,0 +1,40 @@
+{
+  "recorded_at": "2026-10-08T00:32:23.003103+00:00",
+  "tests": {
+    "belief_test": {
+      "returncode": 0,
+      "binary_sha256": "34231ff5678cafc0555a7be4f2c931dab530bf7f0d60b91745261658cc2f33b7",
+      "log_sha256": "2d2feb861d37e7a18d18bdf4f5227df6d28402050ddb0293515de9f94c8dcd44"
+    },
+    "engine_test": {
+      "returncode": 0,
+      "binary_sha256": "34c71beb9a506cc8b9f5959c93b88c9f8ed748571cb5f9acdf623227c154dd1c",
+      "log_sha256": "dfeb7e175c0eb466a32a5603fd79b04b137d4c071cf2e54464ec28384e18e8f5"
+    },
+    "history_test": {
+      "returncode": 0,
+      "binary_sha256": "1908369e5fc50e50ed0204f71914b171f319e4e98ce9b50287526ee9c1ebe692",
+      "log_sha256": "9f7149ae9faf3500c002c4ab310e3c0f89260df892e38649681b530b4506f1d3"
+    }
+  },
+  "build_manifest_sha256": "1d1a037ebd06d72e17ed20cfbc54100702c21f2a3130f2c0950dff4013fb6f4a",
+  "basis_revision": "097eaecb56b31af1b26bab76587640e35859ac6b",
+  "patch_sha256": "d303d07b505a78b0e8527268d8b00830af7ea9ecd41510ce99c77d41fd6084f4",
+  "apply_check": {
+    "returncode": 0,
+    "checked_head": "461c353e0f472239e9c87152b178f955b77ed8f3",
+    "mutated_root": false
+  },
+  "source_hashes": {
+    "belief.h": "18f6f2d73c397552f0265899fa642293913e458427336e7a39a664409813481b",
+    "belief.cc": "3dc0fb5a6a4c897dfa87c686d255470a303442f70f66cd10bc7cb42864a83f40",
+    "engine.h": "2e3fafd513e817de8e13e1bbb8fbf3bf669b066f0cbcf2e968f45f9400c5d646",
+    "engine.cc": "5e9351fbac61855227a617eefacba1207c52f7213ba456fab4961da45043a13c",
+    "history_test.cc": "85e89a0fed9d1e6c19852c260008cc5ad22eadc89bc37f9c1876630d14c4c1ae"
+  },
+  "checks": {
+    "belief": 541,
+    "engine": 622,
+    "history": 3129
+  }
+}
