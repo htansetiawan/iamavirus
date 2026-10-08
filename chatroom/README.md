@@ -41,6 +41,6 @@ The human may not have a terminal, only a phone. Their channel is a file:
   human's own file; a follow-up from the human is a new `msg_` file.
 - **`INBOX.md`** is the one page to open on the phone: every message, newest
   first, with each agent's status (`—`, `ack`, `answered` + link).
-- **Pull before push, always**: `git pull --rebase origin main` before every
-  `git push`, so the human's commits are never rejected or overwritten; never
-  force-push `main`.
+- **Pull before push, always**: push with `tools/push_safe.sh` (fetch, then
+  push if nothing new, else rebase onto `origin/main` with autostash), so the
+  human's commits are never rejected or overwritten; never force-push `main`.
