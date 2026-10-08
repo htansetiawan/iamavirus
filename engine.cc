@@ -442,6 +442,9 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_VISION_KING", &options.vision_king);
   Override("FOW_VISION_STRIDE", &options.vision_stride);
   Override("FOW_TIME_CAP", &options.time_cap);
+  Override("FOW_LATE_MOVE", &options.late_move);
+  Override("FOW_TIME_CAP_LATE", &options.time_cap_late);
+  Override("FOW_TIME_DIVISOR_LATE", &options.time_divisor_late);
   Override("FOW_HARD_TURN", &options.hard_turn_multiplier);
   Override("FOW_EASY_TURN", &options.easy_turn_multiplier);
   Override("FOW_HARD_RISK", &options.hard_risk_threshold);
@@ -588,9 +591,11 @@ double Engine::TimeBudget(double remaining_seconds) const {
   if (spare <= 0.5) {
     return std::max(0.02, std::max(0.0, remaining_seconds) * 0.15);
   }
-  const double target =
-      spare / options_.time_divisor + increment_ * options_.increment_share;
-  return std::max(0.05, std::min({target, options_.time_cap, spare * 0.5}));
+  const bool late = options_.late_move > 0 && decisions_made_ >= options_.late_move;
+  const double divisor = late ? options_.time_divisor_late : options_.time_divisor;
+  const double cap = late ? options_.time_cap_late : options_.time_cap;
+  const double target = spare / divisor + increment_ * options_.increment_share;
+  return std::max(0.05, std::min({target, cap, spare * 0.5}));
 }
 
 void Engine::Observe(const Observation& view, bool reflects_our_own_move) {
@@ -647,6 +652,8 @@ Bitboard Engine::OurCastlingRights() const {
 
 Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
                         DecisionTrace* trace, const NeuralAdvice* advice) {
+  ++decisions_made_;
+  trace->decision_index = decisions_made_;
   // One deadline for the whole turn. The matrix game runs dozens of small
   // searches, and each one overshoots its own slice slightly by finishing an
   // iteration; summed over forty-eight cells that was half a second past the

@@ -216,6 +216,15 @@ struct EngineOptions {
   // and still ends a 300-ply game with 14 s (simulation in HANDOFF.md).
   double time_divisor = 20.0;
   double time_cap = 7.0;
+  // Two-phase schedule. v13 (cap 7 s, divisor 20) reached a clock of 15 s or
+  // less in 15 of 94 arena games (won 3) where v10 (cap 4, divisor 30) never
+  // did, and v13 won fewer long games (19% vs 33% at 90-120 plies). After our
+  // `late_move`-th decision the cap drops to `time_cap_late` and the horizon
+  // widens to `time_divisor_late`, so the endgame is not played on the
+  // increment alone. Set late_move to 0 to disable.
+  int late_move = 20;
+  double time_cap_late = 5.0;
+  double time_divisor_late = 30.0;
   double increment_share = 0.8;
   int transposition_megabytes = 192;
   // When non-zero, a decision is bounded by nodes rather than by the clock.
@@ -262,6 +271,7 @@ struct DecisionTrace {
   int repetition_rows = 0;         // shortlist rows charged for repeating
   bool from_book = false;          // the move came from the opening book
   int cell_threads_used = 1;
+  int decision_index = 0;          // our decisions so far in this game (1-based)
 };
 
 // Options with any overrides from the environment applied.
@@ -364,6 +374,7 @@ class Engine {
   // current one on every observation, so the inference always compared two
   // identical strings and never found anything. Measured: 30 legal moves where
   // the referee had 31.
+  int decisions_made_ = 0;  // ChooseMove calls this game, for the clock schedule
   Observation latest_view_;
   // (view at our decision, move played) for every move we have made, for
   // the repetition charge.
