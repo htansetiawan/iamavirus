@@ -58,8 +58,11 @@ sequential on reserved core 2 of a shared host, not a clean hardware speed test.
 - All 5,508 native correctness checks pass, plus 10 queen-threat checks.
 - With frontier capacity zero, all old diagnostic fields match the previous
   frozen grouped runtime across 240 games, 10,379 observations and 145,546
-  field checks. Only elapsed time is excluded. This is belief parity, not yet
-  full engine decision parity.
+  field checks. Only elapsed time is excluded.
+- The complete action control also matches all 1,338 previous grouped-control
+  decisions in every logged JSON field, including 158 fatal choices among 432
+  terminal positions. `action-control-parity.json` records that check; the
+  frontier action arm is still running.
 - All 480 full diagnostic runs completed, with immutable input hashes checked.
 - `comparison.json`, `runtime-parity.json`, `correctness.json`, and both build
   receipts retain the results and source/binary provenance.
