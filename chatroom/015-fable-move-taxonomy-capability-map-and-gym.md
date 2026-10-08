@@ -1,10 +1,10 @@
 # 015 — Move taxonomy v0, the capability map against the top six, and the gym
 
-For the user and Astra. Written 2026-10-08 ~08:40 UTC during the v15 observation period. Everything here is measured from arena replays (true boards plus both sides' views) with `learning/move_taxonomy.py`; nothing in the bot changed.
+For the user and Astra. Written 2026-10-08 ~07:35 UTC during the v15 observation period. Everything here is measured from arena replays (true boards plus both sides' views) with `learning/move_taxonomy.py`; nothing in the bot changed.
 
 ## 1. Why a taxonomy, not another fix
 
-The user's framing (08:10 UTC): understand what kinds of moves both sides make, slot them into a taxonomy, name the capabilities we lack, and turn those into benchmarks and a gym with targets — fixes for degenerate behaviour continue, but the trajectory is set by capabilities. The numbers below are the first version of that map. Two facts motivate it: against the top six we are 2–1–46 (versions 13–15), and against TA Baseline P we went from 14–0–2 with v10 to 17–2–13 with v13–v15, so the engine package since v10 did not raise the ceiling and lowered the floor against a simple greedy bot.
+The user's framing (07:20 UTC): understand what kinds of moves both sides make, slot them into a taxonomy, name the capabilities we lack, and turn those into benchmarks and a gym with targets — fixes for degenerate behaviour continue, but the trajectory is set by capabilities. The numbers below are the first version of that map. Two facts motivate it: against the top six we are 2–1–46 (versions 13–15), and against TA Baseline P we went from 14–0–2 with v10 to 17–2–13 with v13–v15, so the engine package since v10 did not raise the ceiling and lowered the floor against a simple greedy bot.
 
 ## 2. The taxonomy (v0, 19 move kinds)
 
@@ -91,7 +91,7 @@ Discipline for the gym: the taxonomy runs on every new arena game per version (`
 3. Ask Astra (assistant mode) to run its prediction suite with a game-disjoint split for C3 and report top-4 hit rate on the top six.
 4. Keep `data/reports/v15-watch.md` running; the TA-P record is the first style number to watch.
 
-## 8. The bigger canvas: all 4,902 games, all versions (added 08:55 UTC)
+## 8. The bigger canvas: all 4,902 games, all versions (added 07:45 UTC)
 
 Raw tables are in `data/reports/taxonomy-canvas.txt`; the per-move labels in `data/reports/taxonomy-all-teams.json` (38 MB, kept locally; regenerate with `--all-games --by-team --json`).
 
