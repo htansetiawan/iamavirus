@@ -325,6 +325,7 @@ int Run() {
               << " cells=" << trace.cells_spent << "/" << trace.cell_threads_used
               << " rep=" << trace.repetition_rows
               << " dec=" << trace.decision_index
+              << " bref=" << trace.book_refused
               << (trace.from_book ? " book=1" : "")
               << " infer=" << inference_seconds << " clock=" << remaining
               << " risk=" << trace.king_risk_permille

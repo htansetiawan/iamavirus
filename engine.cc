@@ -689,19 +689,30 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   // before any shortlist exists. Doing it after the shortlist means a move that
   // is the only safe reply can be discarded by a search of one guessed board and
   // never considered again.
+  // The book is keyed on the view, and the view cannot see an enemy piece on
+  // an unseen square: after 1.c4 d5 2.Qa4 c6 3.cxd5 Black's view is the one the
+  // strongest teams answered with ...cxd5, but here that recapture reopens the
+  // a4-e8 diagonal and the king falls on ply 7 (four lane games lost in six
+  // plies, 2026-10-08). So a booked move is still a move: it is refused when
+  // any particle shows the king capturable after it, and the search decides.
+  const std::vector<double> king_risk = KingLossProbabilities(legal, en_passant);
   if (!book_.empty() && views_seen_ <= options_.book_plies) {
     const auto hit = book_.find((our_side_ == kWhite ? "white|" : "black|") + view.squares());
     if (hit != book_.end()) {
       // Sample among the alternatives in proportion to how often the strongest
-      // teams played them, restricted to moves legal here.
+      // teams played them, restricted to moves legal and king-safe here.
       std::vector<std::pair<Move, int>> playable;
       int total = 0;
       for (const auto& alternative : hit->second) {
-        for (const Move candidate : legal) {
-          if (MoveToUci(candidate) == alternative.first) {
-            playable.emplace_back(candidate, std::max(1, alternative.second));
-            total += std::max(1, alternative.second);
+        for (int i = 0; i < legal.size(); ++i) {
+          const Move candidate = legal[i];
+          if (MoveToUci(candidate) != alternative.first) continue;
+          if (king_risk[static_cast<std::size_t>(i)] > 0.0) {
+            ++trace->book_refused;
+            continue;
           }
+          playable.emplace_back(candidate, std::max(1, alternative.second));
+          total += std::max(1, alternative.second);
         }
       }
       if (!playable.empty()) {
@@ -717,7 +728,6 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       }
     }
   }
-  const std::vector<double> king_risk = KingLossProbabilities(legal, en_passant);
   {
     // Scale the clock by the difficulty the population reports.
     double lowest_risk = 2.0;

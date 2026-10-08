@@ -311,6 +311,66 @@ void AvoidsRepeatingWhenNotLosing() {
 // The opening book answers the start view as White with the strongest teams'
 // move (1. d4 in 80% of their games) without searching, and stays silent once
 // the book depth is passed.
+// The legal move of `position` whose UCI text is `uci`, or kNullMove.
+Move UciMove(const Position& position, const std::string& uci) {
+  MoveList legal;
+  Position copy = position;
+  copy.GenerateMoves(&legal);
+  for (const Move move : legal) {
+    if (MoveToUci(move) == uci) return move;
+  }
+  return kNullMove;
+}
+
+// 1.c4 d5 2.Qa4 c6 3.cxd5: Black's view after 3.cxd5 is a book view (the
+// strongest teams recaptured), but the recapture reopens the a4-e8 diagonal to
+// the unseen queen and loses the king on the next ply. The booked move must be
+// refused whenever a particle shows the king capturable after it.
+void OpeningBookRefusesTheRecaptureThatOpensTheKing() {
+  int avoided = 0;
+  int refused = 0;
+  int held = 0;
+  const int seeds = 8;
+  for (int seed = 1; seed <= seeds; ++seed) {
+    EngineOptions options;
+    Engine engine(kBlack, 180.0, 2.0, options, static_cast<uint64_t>(seed));
+    const int entries = engine.LoadBook("book.txt");
+    FOW_EXPECT_TRUE(entries > 0);
+    Position truth;
+    PositionFromFen(kStartFen, &truth);
+    // The referee sends both sides the start view before White's first move.
+    engine.Observe(Observation(RenderObservation(truth, kBlack)), false);
+    const char* white_moves[] = {"c2c4", "d1a4", "c4d5"};
+    const char* black_moves[] = {"d7d5", "c7c6"};
+    for (int ply = 0; ply < 3; ++ply) {
+      UndoState undo;
+      truth.MakeMove(UciMove(truth, white_moves[ply]), &undo);
+      const Observation view(RenderObservation(truth, kBlack));
+      engine.Observe(view, false);
+      if (ply < 2) {
+        const Move reply = UciMove(truth, black_moves[ply]);
+        engine.NotifyMovePlayed(reply);
+        truth.MakeMove(reply, &undo);
+      } else {
+        DecisionTrace trace;
+        const Move move = engine.ChooseMove(view, 10.0, &trace);
+        FOW_EXPECT_TRUE(move != kNullMove);
+        int queen_a4 = 0;
+        for (const Position& particle : engine.belief().particles()) {
+          if (particle.piece_at(24) == kQueen && particle.color_at(24) == kWhite) ++queen_a4;
+        }
+        if (queen_a4 > 0) ++held;
+        if (MoveToUci(move) != "c6d5") ++avoided;
+        if (trace.book_refused > 0) ++refused;
+      }
+    }
+  }
+  std::printf("       book trap: queen on a4 held in %d/%d seeds, booked move refused in %d, recapture avoided in %d\n", held, seeds, refused, avoided);
+  FOW_EXPECT_TRUE(held >= 6);
+  FOW_EXPECT_TRUE(refused >= 6);
+  FOW_EXPECT_TRUE(avoided >= 6);
+}
+
 void OpeningBookAnswersTheStartView() {
   EngineOptions options = FastOptions();
   Engine engine(kWhite, 180.0, 2.0, options, 1);
@@ -934,5 +994,6 @@ int main() {
   FOW_RUN_TEST(fow::VisionPrefersTheOpenDiagonal);
   FOW_RUN_TEST(fow::AvoidsRepeatingWhenNotLosing);
   FOW_RUN_TEST(fow::OpeningBookAnswersTheStartView);
+  FOW_RUN_TEST(fow::OpeningBookRefusesTheRecaptureThatOpensTheKing);
   return fow::testing::Summarize("engine_test");
 }
