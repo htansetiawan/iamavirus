@@ -1,0 +1,3984 @@
+{
+  "status": "complete",
+  "source_state": "/media/henrytan/seagate/iamavirus/astra/belief/history-v2-corpus-20261007/state.json",
+  "state_sha256": "a1d1d6bf24e276b096e862634eab7c1633b2087b16be0afcf3801529ea96f945",
+  "probe_sha256": "9a1ab62e870a9d2ae3b7c909a3f0d86242183ded1ee6980daa17e2771b2e6e2f",
+  "corpus_sha256": "724a772e17201afbf3c709e25212a515258b6f10a04b9495dd3ea038d1076b96",
+  "unique_games": 634,
+  "runs": 3804,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 253,
+  "aggregates": {
+    "prior1-mode0": {
+      "runs": 634,
+      "failed_runs": 0,
+      "updates": 54116,
+      "view_mismatch_updates": 1192,
+      "continuation_invalid_updates": 4708,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 1471,
+      "random_rebuilds": 1471,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 17075,
+      "hidden_squares": 1736715,
+      "hidden_brier_sum": 446753.8737404269,
+      "hidden_log_loss_sum": 1802821.1226994998,
+      "max_observe_ms": 66.2821,
+      "hidden_brier": 0.25724075265108376,
+      "hidden_log_loss": 1.0380638865326204
+    },
+    "prior1-mode1": {
+      "runs": 634,
+      "failed_runs": 0,
+      "updates": 54116,
+      "view_mismatch_updates": 0,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 1518,
+      "random_rebuilds": 1518,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 17042,
+      "hidden_squares": 1736715,
+      "hidden_brier_sum": 447038.2352951069,
+      "hidden_log_loss_sum": 1780111.6452155001,
+      "max_observe_ms": 28.6767,
+      "hidden_brier": 0.25740448795289206,
+      "hidden_log_loss": 1.0249877758961603
+    },
+    "prior1-mode2": {
+      "runs": 634,
+      "failed_runs": 0,
+      "updates": 54116,
+      "view_mismatch_updates": 1,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 1,
+      "collapsed_updates": 1470,
+      "random_rebuilds": 1160,
+      "history_rescues": 310,
+      "history_budget_exhausted_updates": 412,
+      "history_transitions": 298882423,
+      "full_certified_updates": 34687,
+      "truth_held_updates": 18783,
+      "hidden_squares": 1736715,
+      "hidden_brier_sum": 431559.7520721456,
+      "hidden_log_loss_sum": 1777547.8559161997,
+      "max_observe_ms": 432.534,
+      "hidden_brier": 0.2484919817426265,
+      "hidden_log_loss": 1.0235115467513092
+    },
+    "prior2-mode0": {
+      "runs": 634,
+      "failed_runs": 0,
+      "updates": 54116,
+      "view_mismatch_updates": 1103,
+      "continuation_invalid_updates": 4266,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 1220,
+      "random_rebuilds": 1220,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 21139,
+      "hidden_squares": 1736715,
+      "hidden_brier_sum": 411111.35461417434,
+      "hidden_log_loss_sum": 1558485.769242699,
+      "max_observe_ms": 145.752,
+      "hidden_brier": 0.2367178003380948,
+      "hidden_log_loss": 0.8973756599342431
+    },
+    "prior2-mode2": {
+      "runs": 634,
+      "failed_runs": 0,
+      "updates": 54116,
+      "view_mismatch_updates": 0,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 0,
+      "collapsed_updates": 1179,
+      "random_rebuilds": 914,
+      "history_rescues": 265,
+      "history_budget_exhausted_updates": 309,
+      "history_transitions": 224830838,
+      "full_certified_updates": 38406,
+      "truth_held_updates": 22492,
+      "hidden_squares": 1736715,
+      "hidden_brier_sum": 396790.77348250436,
+      "hidden_log_loss_sum": 1552995.7798156007,
+      "max_observe_ms": 545.097,
+      "hidden_brier": 0.22847201382063514,
+      "hidden_log_loss": 0.8942145255932037
+    },
+    "prior2-mode1": {
+      "runs": 634,
+      "failed_runs": 0,
+      "updates": 54116,
+      "view_mismatch_updates": 1,
+      "continuation_invalid_updates": 0,
+      "evidence_conflicts": 1,
+      "collapsed_updates": 1225,
+      "random_rebuilds": 1225,
+      "history_rescues": 0,
+      "history_budget_exhausted_updates": 0,
+      "history_transitions": 0,
+      "full_certified_updates": 0,
+      "truth_held_updates": 21071,
+      "hidden_squares": 1736715,
+      "hidden_brier_sum": 411922.172011966,
+      "hidden_log_loss_sum": 1571309.208552701,
+      "max_observe_ms": 127.127,
+      "hidden_brier": 0.23718466876370964,
+      "hidden_log_loss": 0.9047593926192271
+    }
+  },
+  "zero_rescue_coupling_checks": 823,
+  "zero_rescue_coupling_failures": [],
+  "comparisons": [
+    {
+      "before": {
+        "prior": 1,
+        "mode": 0
+      },
+      "after": {
+        "prior": 1,
+        "mode": 1
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.3155259073102225,
+          "after": 0.3149161061423609,
+          "delta": -0.0006098011678616344,
+          "paired_game_95_interval": [
+            -0.009891480915880952,
+            0.008716833945265645
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.2572407526510839,
+          "after": 0.257404487952892,
+          "delta": 0.00016373530180807672,
+          "paired_game_95_interval": [
+            -0.001780918940109026,
+            0.0020824481048447342
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 1.0380638865326206,
+          "after": 1.024987775896161,
+          "delta": -0.013076110636459637,
+          "paired_game_95_interval": [
+            -0.036483208465859486,
+            0.00927886554600662
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.027182349028013895,
+          "after": 0.028050853721635006,
+          "delta": 0.000868504693621111,
+          "paired_game_95_interval": [
+            5.6453244693966366e-05,
+            0.0016930059323434128
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 634,
+        "before_zero_risk": 33,
+        "after_zero_risk": 39,
+        "newly_recognized": [
+          {
+            "game": "1r0v4gz2",
+            "side": 1,
+            "seed": 777,
+            "ply": 63,
+            "move": "f8e8",
+            "before_risk": 0.0,
+            "after_risk": 0.06636271529888552,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "1yv0jcqr",
+            "side": 1,
+            "seed": 777,
+            "ply": 199,
+            "move": "d7c6",
+            "before_risk": 0.0,
+            "after_risk": 0.04296875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "2hmlhkhd",
+            "side": 1,
+            "seed": 777,
+            "ply": 89,
+            "move": "a5b6",
+            "before_risk": 0.0,
+            "after_risk": 0.197265625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3byhi86j",
+            "side": 0,
+            "seed": 777,
+            "ply": 72,
+            "move": "g1h2",
+            "before_risk": 0.0,
+            "after_risk": 0.0517578125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8nqhdfkb",
+            "side": 1,
+            "seed": 777,
+            "ply": 119,
+            "move": "c6c7",
+            "before_risk": 0.0,
+            "after_risk": 0.02734375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8qz3mhp8",
+            "side": 1,
+            "seed": 777,
+            "ply": 95,
+            "move": "d6d7",
+            "before_risk": 0.0,
+            "after_risk": 0.00732421875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "brxuvkwu",
+            "side": 1,
+            "seed": 777,
+            "ply": 87,
+            "move": "g6h5",
+            "before_risk": 0.0,
+            "after_risk": 0.158203125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "dnzyyn7f",
+            "side": 0,
+            "seed": 777,
+            "ply": 88,
+            "move": "c5c6",
+            "before_risk": 0.0,
+            "after_risk": 0.86083984375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "hhxd9zk2",
+            "side": 0,
+            "seed": 777,
+            "ply": 36,
+            "move": "d1b1",
+            "before_risk": 0.0,
+            "after_risk": 0.54052734375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "hvp4cobc",
+            "side": 1,
+            "seed": 777,
+            "ply": 49,
+            "move": "e8d8",
+            "before_risk": 0.0,
+            "after_risk": 0.47412109375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "lx2r2qlg",
+            "side": 0,
+            "seed": 777,
+            "ply": 124,
+            "move": "f6f7",
+            "before_risk": 0.0,
+            "after_risk": 0.0009765625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "tiwzzqzu",
+            "side": 0,
+            "seed": 777,
+            "ply": 90,
+            "move": "a5d2",
+            "before_risk": 0.0,
+            "after_risk": 0.30908203125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ubjz5inb",
+            "side": 1,
+            "seed": 777,
+            "ply": 125,
+            "move": "h7g8",
+            "before_risk": 0.0,
+            "after_risk": 0.39306640625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": [
+          {
+            "game": "18mnut7w",
+            "side": 1,
+            "seed": 777,
+            "ply": 141,
+            "move": "h6h7",
+            "before_risk": 0.267578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3o8ctsy9",
+            "side": 1,
+            "seed": 777,
+            "ply": 61,
+            "move": "g8g7",
+            "before_risk": 0.228515625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3vqy0vb6",
+            "side": 0,
+            "seed": 777,
+            "ply": 94,
+            "move": "f6e7",
+            "before_risk": 0.8173828125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "61gfu6y8",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "c8b7",
+            "before_risk": 0.529296875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "718zb8yt",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "e6f6",
+            "before_risk": 0.14599609375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "7ep21csm",
+            "side": 1,
+            "seed": 777,
+            "ply": 149,
+            "move": "h7h8",
+            "before_risk": 0.03662109375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "9wjuag25",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "g1h1",
+            "before_risk": 0.623046875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "c3exzubh",
+            "side": 1,
+            "seed": 777,
+            "ply": 89,
+            "move": "h5g5",
+            "before_risk": 0.7060546875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ifjzz8lb",
+            "side": 1,
+            "seed": 777,
+            "ply": 105,
+            "move": "c4b3",
+            "before_risk": 0.0400390625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "jfd3j3i2",
+            "side": 0,
+            "seed": 777,
+            "ply": 42,
+            "move": "b2c2",
+            "before_risk": 0.30615234375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "k08dfcbw",
+            "side": 0,
+            "seed": 777,
+            "ply": 102,
+            "move": "g1f1",
+            "before_risk": 0.173828125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "lcve4xlp",
+            "side": 1,
+            "seed": 777,
+            "ply": 99,
+            "move": "g5h6",
+            "before_risk": 0.080078125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "s4ygu0hf",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "f1e3",
+            "before_risk": 0.0263671875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "sye3dz3z",
+            "side": 0,
+            "seed": 777,
+            "ply": 96,
+            "move": "h2g2",
+            "before_risk": 0.60400390625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vei59ltn",
+            "side": 1,
+            "seed": 777,
+            "ply": 75,
+            "move": "h8g7",
+            "before_risk": 0.31689453125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "xdtk45p3",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "a5b6",
+            "before_risk": 0.06201171875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "y4dzi3fx",
+            "side": 0,
+            "seed": 777,
+            "ply": 96,
+            "move": "f2e1",
+            "before_risk": 0.55712890625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "yfoig6vm",
+            "side": 1,
+            "seed": 777,
+            "ply": 97,
+            "move": "g7f7",
+            "before_risk": 0.2607421875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "yhsb1vgt",
+            "side": 0,
+            "seed": 777,
+            "ply": 38,
+            "move": "f1e1",
+            "before_risk": 0.330078125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 1
+      },
+      "after": {
+        "prior": 1,
+        "mode": 2
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.3149161061423609,
+          "after": 0.347087737452879,
+          "delta": 0.032171631310518145,
+          "paired_game_95_interval": [
+            0.020860250765827405,
+            0.04392715056150825
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.257404487952892,
+          "after": 0.2484919817426268,
+          "delta": -0.008912506210265209,
+          "paired_game_95_interval": [
+            -0.011651958700103061,
+            -0.0062207487026703185
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 1.024987775896161,
+          "after": 1.0235115467513094,
+          "delta": -0.0014762291448515708,
+          "paired_game_95_interval": [
+            -0.028039813471076584,
+            0.025002403404150123
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.028050853721635006,
+          "after": 0.02143543499149974,
+          "delta": -0.006615418730135266,
+          "paired_game_95_interval": [
+            -0.007732231906173012,
+            -0.0055370244966157596
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 634,
+        "before_zero_risk": 39,
+        "after_zero_risk": 49,
+        "newly_recognized": [
+          {
+            "game": "0qjaakk7",
+            "side": 1,
+            "seed": 777,
+            "ply": 51,
+            "move": "a8b8",
+            "before_risk": 0.0,
+            "after_risk": 0.00244140625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "18mnut7w",
+            "side": 1,
+            "seed": 777,
+            "ply": 141,
+            "move": "h6h7",
+            "before_risk": 0.0,
+            "after_risk": 0.001953125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "bbnb02qi",
+            "side": 1,
+            "seed": 777,
+            "ply": 73,
+            "move": "g8f7",
+            "before_risk": 0.0,
+            "after_risk": 0.06640625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ifjzz8lb",
+            "side": 1,
+            "seed": 777,
+            "ply": 105,
+            "move": "c4b3",
+            "before_risk": 0.0,
+            "after_risk": 0.14345114345114346,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "m6hhfwiq",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "c5c8",
+            "before_risk": 0.0,
+            "after_risk": 0.2724609375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": [
+          {
+            "game": "2m54eijt",
+            "side": 0,
+            "seed": 777,
+            "ply": 72,
+            "move": "h1h2",
+            "before_risk": 0.05810546875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3jiah1g5",
+            "side": 0,
+            "seed": 777,
+            "ply": 52,
+            "move": "g5d8",
+            "before_risk": 0.2587890625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "84q4l0jl",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "g8h7",
+            "before_risk": 0.54248046875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8qz3mhp8",
+            "side": 1,
+            "seed": 777,
+            "ply": 95,
+            "move": "d6d7",
+            "before_risk": 0.00732421875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "9efanqy3",
+            "side": 0,
+            "seed": 777,
+            "ply": 74,
+            "move": "g1f2",
+            "before_risk": 0.2509765625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "fn8rdii1",
+            "side": 1,
+            "seed": 777,
+            "ply": 139,
+            "move": "h4g5",
+            "before_risk": 0.0625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "gk4ph55z",
+            "side": 0,
+            "seed": 777,
+            "ply": 82,
+            "move": "e1c1",
+            "before_risk": 0.05712890625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "jwqdhhpn",
+            "side": 0,
+            "seed": 777,
+            "ply": 72,
+            "move": "e2d3",
+            "before_risk": 0.0107421875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "loj1qacr",
+            "side": 1,
+            "seed": 777,
+            "ply": 59,
+            "move": "c8f5",
+            "before_risk": 0.009825327510917031,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "lrxtdp6f",
+            "side": 1,
+            "seed": 777,
+            "ply": 117,
+            "move": "b7c7",
+            "before_risk": 0.15087890625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "onzkcrjz",
+            "side": 1,
+            "seed": 777,
+            "ply": 43,
+            "move": "h8h7",
+            "before_risk": 0.25048828125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "pst6n3wk",
+            "side": 0,
+            "seed": 777,
+            "ply": 118,
+            "move": "b2a3",
+            "before_risk": 0.041015625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "qaenkzdi",
+            "side": 1,
+            "seed": 777,
+            "ply": 45,
+            "move": "g7h6",
+            "before_risk": 0.1298828125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "upx7dnip",
+            "side": 1,
+            "seed": 777,
+            "ply": 87,
+            "move": "h7g7",
+            "before_risk": 0.908203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wnd1fu1l",
+            "side": 0,
+            "seed": 777,
+            "ply": 144,
+            "move": "g1f2",
+            "before_risk": 0.08837890625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "prior": 2,
+        "mode": 0
+      },
+      "after": {
+        "prior": 2,
+        "mode": 1
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.3906238450735457,
+          "after": 0.3893672850912854,
+          "delta": -0.001256559982260319,
+          "paired_game_95_interval": [
+            -0.009631225392420454,
+            0.00725885392550814
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.2367178003380948,
+          "after": 0.23718466876370978,
+          "delta": 0.0004668684256149691,
+          "paired_game_95_interval": [
+            -0.0013968981004776225,
+            0.002286887565752023
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.897375659934243,
+          "after": 0.904759392619226,
+          "delta": 0.0073837326849830465,
+          "paired_game_95_interval": [
+            -0.014474465414350607,
+            0.029239819112563813
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.022544164387611795,
+          "after": 0.02263655850395447,
+          "delta": 9.239411634267419e-05,
+          "paired_game_95_interval": [
+            -0.0006144527396616839,
+            0.0007800015727989731
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 634,
+        "before_zero_risk": 24,
+        "after_zero_risk": 29,
+        "newly_recognized": [
+          {
+            "game": "0ei2s66e",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "c8h3",
+            "before_risk": 0.0,
+            "after_risk": 0.0234375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "84q4l0jl",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "g8h7",
+            "before_risk": 0.0,
+            "after_risk": 0.064453125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "9wjuag25",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "g1h1",
+            "before_risk": 0.0,
+            "after_risk": 0.78515625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "bk3b8i22",
+            "side": 1,
+            "seed": 777,
+            "ply": 83,
+            "move": "h2h1n",
+            "before_risk": 0.0,
+            "after_risk": 0.52880859375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "k08dfcbw",
+            "side": 0,
+            "seed": 777,
+            "ply": 102,
+            "move": "g1f1",
+            "before_risk": 0.0,
+            "after_risk": 0.00341796875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "l5t1lxwd",
+            "side": 0,
+            "seed": 777,
+            "ply": 60,
+            "move": "b2c2",
+            "before_risk": 0.0,
+            "after_risk": 0.69873046875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "le2jernc",
+            "side": 1,
+            "seed": 777,
+            "ply": 79,
+            "move": "b5c5",
+            "before_risk": 0.0,
+            "after_risk": 0.181640625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": [
+          {
+            "game": "5i2p0lfp",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "g7f6",
+            "before_risk": 1.0,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "5qahahyz",
+            "side": 0,
+            "seed": 777,
+            "ply": 108,
+            "move": "h3g3",
+            "before_risk": 0.24072265625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "eqljce7e",
+            "side": 0,
+            "seed": 777,
+            "ply": 68,
+            "move": "b3c4",
+            "before_risk": 0.22509765625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "g6qrtm3q",
+            "side": 0,
+            "seed": 777,
+            "ply": 58,
+            "move": "g2h3",
+            "before_risk": 0.01953125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "gibxa67j",
+            "side": 1,
+            "seed": 777,
+            "ply": 119,
+            "move": "d7d6",
+            "before_risk": 0.81689453125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "i0mtnqws",
+            "side": 1,
+            "seed": 777,
+            "ply": 73,
+            "move": "f7f6",
+            "before_risk": 0.1318359375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "jfd3j3i2",
+            "side": 0,
+            "seed": 777,
+            "ply": 42,
+            "move": "b2c2",
+            "before_risk": 0.2861328125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nrr5s8tf",
+            "side": 1,
+            "seed": 777,
+            "ply": 103,
+            "move": "a7a8",
+            "before_risk": 0.66650390625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "pamui3j9",
+            "side": 1,
+            "seed": 777,
+            "ply": 129,
+            "move": "g5g6",
+            "before_risk": 0.697265625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "r5pqxnyc",
+            "side": 1,
+            "seed": 777,
+            "ply": 93,
+            "move": "a1b2",
+            "before_risk": 0.001953125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "yfoig6vm",
+            "side": 1,
+            "seed": 777,
+            "ply": 97,
+            "move": "g7f7",
+            "before_risk": 0.41650390625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "zq83o5q0",
+            "side": 0,
+            "seed": 777,
+            "ply": 60,
+            "move": "h4h5",
+            "before_risk": 0.2470703125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "prior": 2,
+        "mode": 1
+      },
+      "after": {
+        "prior": 2,
+        "mode": 2
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.3893672850912854,
+          "after": 0.4156256929558726,
+          "delta": 0.02625840786458722,
+          "paired_game_95_interval": [
+            0.017794248690229462,
+            0.03582946916693352
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.23718466876370978,
+          "after": 0.22847201382063514,
+          "delta": -0.008712654943074633,
+          "paired_game_95_interval": [
+            -0.011405365249252493,
+            -0.006231428928401813
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 0.904759392619226,
+          "after": 0.8942145255932026,
+          "delta": -0.010544867026023419,
+          "paired_game_95_interval": [
+            -0.03734910120341179,
+            0.014550089487584015
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.02263655850395447,
+          "after": 0.016889644467440314,
+          "delta": -0.005746914036514155,
+          "paired_game_95_interval": [
+            -0.0068250845342068866,
+            -0.004736542589755295
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 634,
+        "before_zero_risk": 29,
+        "after_zero_risk": 33,
+        "newly_recognized": [
+          {
+            "game": "2t51kudi",
+            "side": 0,
+            "seed": 777,
+            "ply": 74,
+            "move": "f1e2",
+            "before_risk": 0.0,
+            "after_risk": 0.02978515625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "5qahahyz",
+            "side": 0,
+            "seed": 777,
+            "ply": 108,
+            "move": "h3g3",
+            "before_risk": 0.0,
+            "after_risk": 0.01025390625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ew7j9ayc",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "g7f8",
+            "before_risk": 0.0,
+            "after_risk": 0.9560546875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "gibxa67j",
+            "side": 1,
+            "seed": 777,
+            "ply": 119,
+            "move": "d7d6",
+            "before_risk": 0.0,
+            "after_risk": 0.39208984375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "jfd3j3i2",
+            "side": 0,
+            "seed": 777,
+            "ply": 42,
+            "move": "b2c2",
+            "before_risk": 0.0,
+            "after_risk": 0.28759765625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "p1gjpzcc",
+            "side": 0,
+            "seed": 777,
+            "ply": 48,
+            "move": "h2g2",
+            "before_risk": 0.0,
+            "after_risk": 0.5419921875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "tiwzzqzu",
+            "side": 0,
+            "seed": 777,
+            "ply": 90,
+            "move": "a5d2",
+            "before_risk": 0.0,
+            "after_risk": 0.236328125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "yfoig6vm",
+            "side": 1,
+            "seed": 777,
+            "ply": 97,
+            "move": "g7f7",
+            "before_risk": 0.0,
+            "after_risk": 0.8271484375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": [
+          {
+            "game": "3o8ctsy9",
+            "side": 1,
+            "seed": 777,
+            "ply": 61,
+            "move": "g8g7",
+            "before_risk": 0.333984375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "6nj5ls6k",
+            "side": 1,
+            "seed": 777,
+            "ply": 49,
+            "move": "g8f8",
+            "before_risk": 0.94091796875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "7e19wfwy",
+            "side": 0,
+            "seed": 777,
+            "ply": 98,
+            "move": "b1c2",
+            "before_risk": 0.03515625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8ynj35vw",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "g7h6",
+            "before_risk": 0.203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "h1tve7pb",
+            "side": 1,
+            "seed": 777,
+            "ply": 93,
+            "move": "g7f7",
+            "before_risk": 0.4697265625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "k08dfcbw",
+            "side": 0,
+            "seed": 777,
+            "ply": 102,
+            "move": "g1f1",
+            "before_risk": 0.00341796875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "le2jernc",
+            "side": 1,
+            "seed": 777,
+            "ply": 79,
+            "move": "b5c5",
+            "before_risk": 0.181640625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "q6grdejt",
+            "side": 1,
+            "seed": 777,
+            "ply": 71,
+            "move": "d5g2",
+            "before_risk": 1.0,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "sye3dz3z",
+            "side": 0,
+            "seed": 777,
+            "ply": 96,
+            "move": "h2g2",
+            "before_risk": 0.69775390625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vv3xjhml",
+            "side": 0,
+            "seed": 777,
+            "ply": 94,
+            "move": "f4e5",
+            "before_risk": 0.3818359375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vzcd28d3",
+            "side": 0,
+            "seed": 777,
+            "ply": 106,
+            "move": "h2h3",
+            "before_risk": 0.1376953125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wnd1fu1l",
+            "side": 0,
+            "seed": 777,
+            "ply": 144,
+            "move": "g1f2",
+            "before_risk": 0.33642578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 0
+      },
+      "after": {
+        "prior": 2,
+        "mode": 0
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.3155259073102225,
+          "after": 0.3906238450735457,
+          "delta": 0.07509793776332319,
+          "paired_game_95_interval": [
+            0.05801999552894201,
+            0.09312375370164577
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.2572407526510839,
+          "after": 0.2367178003380948,
+          "delta": -0.020522952312989118,
+          "paired_game_95_interval": [
+            -0.02458794716357741,
+            -0.016610572648962103
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 1.0380638865326206,
+          "after": 0.897375659934243,
+          "delta": -0.14068822659837765,
+          "paired_game_95_interval": [
+            -0.1833175535268197,
+            -0.09813466359549199
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.027182349028013895,
+          "after": 0.022544164387611795,
+          "delta": -0.0046381846404020995,
+          "paired_game_95_interval": [
+            -0.00600359291897927,
+            -0.003303486889637676
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 634,
+        "before_zero_risk": 33,
+        "after_zero_risk": 24,
+        "newly_recognized": [
+          {
+            "game": "0qjaakk7",
+            "side": 1,
+            "seed": 777,
+            "ply": 51,
+            "move": "a8b8",
+            "before_risk": 0.0,
+            "after_risk": 0.0029296875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "1r0v4gz2",
+            "side": 1,
+            "seed": 777,
+            "ply": 63,
+            "move": "f8e8",
+            "before_risk": 0.0,
+            "after_risk": 0.0166015625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "1yv0jcqr",
+            "side": 1,
+            "seed": 777,
+            "ply": 199,
+            "move": "d7c6",
+            "before_risk": 0.0,
+            "after_risk": 0.01220703125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "2hmlhkhd",
+            "side": 1,
+            "seed": 777,
+            "ply": 89,
+            "move": "a5b6",
+            "before_risk": 0.0,
+            "after_risk": 0.162109375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3byhi86j",
+            "side": 0,
+            "seed": 777,
+            "ply": 72,
+            "move": "g1h2",
+            "before_risk": 0.0,
+            "after_risk": 1.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8nqhdfkb",
+            "side": 1,
+            "seed": 777,
+            "ply": 119,
+            "move": "c6c7",
+            "before_risk": 0.0,
+            "after_risk": 0.02685546875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8qz3mhp8",
+            "side": 1,
+            "seed": 777,
+            "ply": 95,
+            "move": "d6d7",
+            "before_risk": 0.0,
+            "after_risk": 0.0361328125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "brxuvkwu",
+            "side": 1,
+            "seed": 777,
+            "ply": 87,
+            "move": "g6h5",
+            "before_risk": 0.0,
+            "after_risk": 0.287109375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "c2p91rkq",
+            "side": 1,
+            "seed": 777,
+            "ply": 59,
+            "move": "g8h7",
+            "before_risk": 0.0,
+            "after_risk": 0.02001953125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "dnzyyn7f",
+            "side": 0,
+            "seed": 777,
+            "ply": 88,
+            "move": "c5c6",
+            "before_risk": 0.0,
+            "after_risk": 0.28125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "fqfz0qwi",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "f8e8",
+            "before_risk": 0.0,
+            "after_risk": 0.21337890625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "g6qrtm3q",
+            "side": 0,
+            "seed": 777,
+            "ply": 58,
+            "move": "g2h3",
+            "before_risk": 0.0,
+            "after_risk": 0.01953125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "gibxa67j",
+            "side": 1,
+            "seed": 777,
+            "ply": 119,
+            "move": "d7d6",
+            "before_risk": 0.0,
+            "after_risk": 0.81689453125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "hhxd9zk2",
+            "side": 0,
+            "seed": 777,
+            "ply": 36,
+            "move": "d1b1",
+            "before_risk": 0.0,
+            "after_risk": 0.779296875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "hvp4cobc",
+            "side": 1,
+            "seed": 777,
+            "ply": 49,
+            "move": "e8d8",
+            "before_risk": 0.0,
+            "after_risk": 0.2861328125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "kr4c9lxz",
+            "side": 0,
+            "seed": 777,
+            "ply": 130,
+            "move": "b4c2",
+            "before_risk": 0.0,
+            "after_risk": 0.00048828125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "lx2r2qlg",
+            "side": 0,
+            "seed": 777,
+            "ply": 124,
+            "move": "f6f7",
+            "before_risk": 0.0,
+            "after_risk": 0.23291015625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "m6hhfwiq",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "c5c8",
+            "before_risk": 0.0,
+            "after_risk": 0.20849609375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "o9vajn3v",
+            "side": 0,
+            "seed": 777,
+            "ply": 28,
+            "move": "e3d4",
+            "before_risk": 0.0,
+            "after_risk": 0.1767578125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "r5pqxnyc",
+            "side": 1,
+            "seed": 777,
+            "ply": 93,
+            "move": "a1b2",
+            "before_risk": 0.0,
+            "after_risk": 0.001953125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "tsegl5x3",
+            "side": 1,
+            "seed": 777,
+            "ply": 53,
+            "move": "e7e8",
+            "before_risk": 0.0,
+            "after_risk": 0.21728515625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "txcq0d7n",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "e7d6",
+            "before_risk": 0.0,
+            "after_risk": 0.09423828125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ubjz5inb",
+            "side": 1,
+            "seed": 777,
+            "ply": 125,
+            "move": "h7g8",
+            "before_risk": 0.0,
+            "after_risk": 0.44873046875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vzcd28d3",
+            "side": 0,
+            "seed": 777,
+            "ply": 106,
+            "move": "h2h3",
+            "before_risk": 0.0,
+            "after_risk": 0.06201171875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": [
+          {
+            "game": "0ei2s66e",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "c8h3",
+            "before_risk": 0.12353515625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "2t51kudi",
+            "side": 0,
+            "seed": 777,
+            "ply": 74,
+            "move": "f1e2",
+            "before_risk": 0.068359375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "84q4l0jl",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "g8h7",
+            "before_risk": 0.57666015625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "9wjuag25",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "g1h1",
+            "before_risk": 0.623046875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "bk3b8i22",
+            "side": 1,
+            "seed": 777,
+            "ply": 83,
+            "move": "h2h1n",
+            "before_risk": 0.44873046875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "egrj0916",
+            "side": 1,
+            "seed": 777,
+            "ply": 53,
+            "move": "a8b7",
+            "before_risk": 0.3203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ew7j9ayc",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "g7f8",
+            "before_risk": 0.88818359375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "fn8rdii1",
+            "side": 1,
+            "seed": 777,
+            "ply": 139,
+            "move": "h4g5",
+            "before_risk": 0.09375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "k08dfcbw",
+            "side": 0,
+            "seed": 777,
+            "ply": 102,
+            "move": "g1f1",
+            "before_risk": 0.173828125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "l5t1lxwd",
+            "side": 0,
+            "seed": 777,
+            "ply": 60,
+            "move": "b2c2",
+            "before_risk": 0.59033203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nh4xyxr3",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "h6g6",
+            "before_risk": 1.0,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nrp1rvjy",
+            "side": 1,
+            "seed": 777,
+            "ply": 113,
+            "move": "d8c7",
+            "before_risk": 0.02001953125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "p1gjpzcc",
+            "side": 0,
+            "seed": 777,
+            "ply": 48,
+            "move": "h2g2",
+            "before_risk": 0.58642578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wf3blior",
+            "side": 1,
+            "seed": 777,
+            "ply": 101,
+            "move": "c7c6",
+            "before_risk": 0.0908203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wrzf83bo",
+            "side": 1,
+            "seed": 777,
+            "ply": 115,
+            "move": "g8f8",
+            "before_risk": 0.2626953125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 1
+      },
+      "after": {
+        "prior": 2,
+        "mode": 1
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.3149161061423609,
+          "after": 0.3893672850912854,
+          "delta": 0.0744511789489245,
+          "paired_game_95_interval": [
+            0.05659604133872857,
+            0.09312362504253721
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.257404487952892,
+          "after": 0.23718466876370978,
+          "delta": -0.020219819189182225,
+          "paired_game_95_interval": [
+            -0.024433139393971737,
+            -0.01612173186748315
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 1.024987775896161,
+          "after": 0.904759392619226,
+          "delta": -0.12022838327693497,
+          "paired_game_95_interval": [
+            -0.1641417037652626,
+            -0.07662375149658393
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.028050853721635006,
+          "after": 0.02263655850395447,
+          "delta": -0.005414295217680536,
+          "paired_game_95_interval": [
+            -0.006787401371063298,
+            -0.004045196274748496
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 634,
+        "before_zero_risk": 39,
+        "after_zero_risk": 29,
+        "newly_recognized": [
+          {
+            "game": "0qjaakk7",
+            "side": 1,
+            "seed": 777,
+            "ply": 51,
+            "move": "a8b8",
+            "before_risk": 0.0,
+            "after_risk": 0.00048828125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "18mnut7w",
+            "side": 1,
+            "seed": 777,
+            "ply": 141,
+            "move": "h6h7",
+            "before_risk": 0.0,
+            "after_risk": 0.0205078125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3o8ctsy9",
+            "side": 1,
+            "seed": 777,
+            "ply": 61,
+            "move": "g8g7",
+            "before_risk": 0.0,
+            "after_risk": 0.333984375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3vqy0vb6",
+            "side": 0,
+            "seed": 777,
+            "ply": 94,
+            "move": "f6e7",
+            "before_risk": 0.0,
+            "after_risk": 0.6572265625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "61gfu6y8",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "c8b7",
+            "before_risk": 0.0,
+            "after_risk": 0.97119140625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "718zb8yt",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "e6f6",
+            "before_risk": 0.0,
+            "after_risk": 0.98486328125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "7ep21csm",
+            "side": 1,
+            "seed": 777,
+            "ply": 149,
+            "move": "h7h8",
+            "before_risk": 0.0,
+            "after_risk": 0.052734375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "9wjuag25",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "g1h1",
+            "before_risk": 0.0,
+            "after_risk": 0.78515625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "c2p91rkq",
+            "side": 1,
+            "seed": 777,
+            "ply": 59,
+            "move": "g8h7",
+            "before_risk": 0.0,
+            "after_risk": 0.0205078125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "c3exzubh",
+            "side": 1,
+            "seed": 777,
+            "ply": 89,
+            "move": "h5g5",
+            "before_risk": 0.0,
+            "after_risk": 0.271484375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "fqfz0qwi",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "f8e8",
+            "before_risk": 0.0,
+            "after_risk": 0.21337890625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ifjzz8lb",
+            "side": 1,
+            "seed": 777,
+            "ply": 105,
+            "move": "c4b3",
+            "before_risk": 0.0,
+            "after_risk": 0.0576171875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "k08dfcbw",
+            "side": 0,
+            "seed": 777,
+            "ply": 102,
+            "move": "g1f1",
+            "before_risk": 0.0,
+            "after_risk": 0.00341796875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "kr4c9lxz",
+            "side": 0,
+            "seed": 777,
+            "ply": 130,
+            "move": "b4c2",
+            "before_risk": 0.0,
+            "after_risk": 0.0009765625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "lcve4xlp",
+            "side": 1,
+            "seed": 777,
+            "ply": 99,
+            "move": "g5h6",
+            "before_risk": 0.0,
+            "after_risk": 0.0234375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "le2jernc",
+            "side": 1,
+            "seed": 777,
+            "ply": 79,
+            "move": "b5c5",
+            "before_risk": 0.0,
+            "after_risk": 0.181640625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "m6hhfwiq",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "c5c8",
+            "before_risk": 0.0,
+            "after_risk": 0.240234375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "o9vajn3v",
+            "side": 0,
+            "seed": 777,
+            "ply": 28,
+            "move": "e3d4",
+            "before_risk": 0.0,
+            "after_risk": 0.1767578125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "s4ygu0hf",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "f1e3",
+            "before_risk": 0.0,
+            "after_risk": 0.15869140625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "sye3dz3z",
+            "side": 0,
+            "seed": 777,
+            "ply": 96,
+            "move": "h2g2",
+            "before_risk": 0.0,
+            "after_risk": 0.69775390625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "tsegl5x3",
+            "side": 1,
+            "seed": 777,
+            "ply": 53,
+            "move": "e7e8",
+            "before_risk": 0.0,
+            "after_risk": 0.03955078125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "txcq0d7n",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "e7d6",
+            "before_risk": 0.0,
+            "after_risk": 0.09423828125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vei59ltn",
+            "side": 1,
+            "seed": 777,
+            "ply": 75,
+            "move": "h8g7",
+            "before_risk": 0.0,
+            "after_risk": 0.75439453125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vzcd28d3",
+            "side": 0,
+            "seed": 777,
+            "ply": 106,
+            "move": "h2h3",
+            "before_risk": 0.0,
+            "after_risk": 0.1376953125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "xdtk45p3",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "a5b6",
+            "before_risk": 0.0,
+            "after_risk": 0.0927734375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "y4dzi3fx",
+            "side": 0,
+            "seed": 777,
+            "ply": 96,
+            "move": "f2e1",
+            "before_risk": 0.0,
+            "after_risk": 0.65966796875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "yhsb1vgt",
+            "side": 0,
+            "seed": 777,
+            "ply": 38,
+            "move": "f1e1",
+            "before_risk": 0.0,
+            "after_risk": 0.103515625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": [
+          {
+            "game": "2t51kudi",
+            "side": 0,
+            "seed": 777,
+            "ply": 74,
+            "move": "f1e2",
+            "before_risk": 0.01025390625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "5i2p0lfp",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "g7f6",
+            "before_risk": 0.998046875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "5qahahyz",
+            "side": 0,
+            "seed": 777,
+            "ply": 108,
+            "move": "h3g3",
+            "before_risk": 0.36865234375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "egrj0916",
+            "side": 1,
+            "seed": 777,
+            "ply": 53,
+            "move": "a8b7",
+            "before_risk": 0.11767578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "eqljce7e",
+            "side": 0,
+            "seed": 777,
+            "ply": 68,
+            "move": "b3c4",
+            "before_risk": 0.83984375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "ew7j9ayc",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "g7f8",
+            "before_risk": 0.892578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "fn8rdii1",
+            "side": 1,
+            "seed": 777,
+            "ply": 139,
+            "move": "h4g5",
+            "before_risk": 0.0625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "i0mtnqws",
+            "side": 1,
+            "seed": 777,
+            "ply": 73,
+            "move": "f7f6",
+            "before_risk": 0.1328125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nh4xyxr3",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "h6g6",
+            "before_risk": 1.0,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nrp1rvjy",
+            "side": 1,
+            "seed": 777,
+            "ply": 113,
+            "move": "d8c7",
+            "before_risk": 0.00634765625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nrr5s8tf",
+            "side": 1,
+            "seed": 777,
+            "ply": 103,
+            "move": "a7a8",
+            "before_risk": 0.349609375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "p1gjpzcc",
+            "side": 0,
+            "seed": 777,
+            "ply": 48,
+            "move": "h2g2",
+            "before_risk": 0.58642578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "pamui3j9",
+            "side": 1,
+            "seed": 777,
+            "ply": 129,
+            "move": "g5g6",
+            "before_risk": 0.11328125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "tiwzzqzu",
+            "side": 0,
+            "seed": 777,
+            "ply": 90,
+            "move": "a5d2",
+            "before_risk": 0.30908203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wf3blior",
+            "side": 1,
+            "seed": 777,
+            "ply": 101,
+            "move": "c7c6",
+            "before_risk": 0.068359375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wrzf83bo",
+            "side": 1,
+            "seed": 777,
+            "ply": 115,
+            "move": "g8f8",
+            "before_risk": 0.07177734375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "zq83o5q0",
+            "side": 0,
+            "seed": 777,
+            "ply": 60,
+            "move": "h4h5",
+            "before_risk": 0.1259765625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "before": {
+        "prior": 1,
+        "mode": 2
+      },
+      "after": {
+        "prior": 2,
+        "mode": 2
+      },
+      "metrics": {
+        "truth_held_fraction": {
+          "before": 0.347087737452879,
+          "after": 0.4156256929558726,
+          "delta": 0.06853795550299357,
+          "paired_game_95_interval": [
+            0.052545489448636136,
+            0.08518236502776565
+          ]
+        },
+        "hidden_brier": {
+          "before": 0.2484919817426268,
+          "after": 0.22847201382063514,
+          "delta": -0.02001996792199165,
+          "paired_game_95_interval": [
+            -0.02374335021791038,
+            -0.016506777078460287
+          ]
+        },
+        "hidden_log_loss": {
+          "before": 1.0235115467513094,
+          "after": 0.8942145255932026,
+          "delta": -0.12929702115810682,
+          "paired_game_95_interval": [
+            -0.16789890020719994,
+            -0.09221634971249419
+          ]
+        },
+        "random_rebuilds_per_update": {
+          "before": 0.02143543499149974,
+          "after": 0.016889644467440314,
+          "delta": -0.004545790524059425,
+          "paired_game_95_interval": [
+            -0.0058277199588251324,
+            -0.0032644543788849707
+          ]
+        }
+      },
+      "fatal_move_recognition": {
+        "fatal_recorded_moves": 634,
+        "before_zero_risk": 49,
+        "after_zero_risk": 33,
+        "newly_recognized": [
+          {
+            "game": "2m54eijt",
+            "side": 0,
+            "seed": 777,
+            "ply": 72,
+            "move": "h1h2",
+            "before_risk": 0.0,
+            "after_risk": 0.0712890625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3jiah1g5",
+            "side": 0,
+            "seed": 777,
+            "ply": 52,
+            "move": "g5d8",
+            "before_risk": 0.0,
+            "after_risk": 0.078125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "3vqy0vb6",
+            "side": 0,
+            "seed": 777,
+            "ply": 94,
+            "move": "f6e7",
+            "before_risk": 0.0,
+            "after_risk": 0.6572265625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "61gfu6y8",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "c8b7",
+            "before_risk": 0.0,
+            "after_risk": 0.97119140625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "718zb8yt",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "e6f6",
+            "before_risk": 0.0,
+            "after_risk": 0.98486328125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "7ep21csm",
+            "side": 1,
+            "seed": 777,
+            "ply": 149,
+            "move": "h7h8",
+            "before_risk": 0.0,
+            "after_risk": 0.05615234375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "84q4l0jl",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "g8h7",
+            "before_risk": 0.0,
+            "after_risk": 0.064453125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8qz3mhp8",
+            "side": 1,
+            "seed": 777,
+            "ply": 95,
+            "move": "d6d7",
+            "before_risk": 0.0,
+            "after_risk": 0.0380859375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "9efanqy3",
+            "side": 0,
+            "seed": 777,
+            "ply": 74,
+            "move": "g1f2",
+            "before_risk": 0.0,
+            "after_risk": 0.64306640625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "9wjuag25",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "g1h1",
+            "before_risk": 0.0,
+            "after_risk": 0.78515625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "c2p91rkq",
+            "side": 1,
+            "seed": 777,
+            "ply": 59,
+            "move": "g8h7",
+            "before_risk": 0.0,
+            "after_risk": 0.0205078125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "c3exzubh",
+            "side": 1,
+            "seed": 777,
+            "ply": 89,
+            "move": "h5g5",
+            "before_risk": 0.0,
+            "after_risk": 0.1328125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "fqfz0qwi",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "f8e8",
+            "before_risk": 0.0,
+            "after_risk": 0.16650390625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "gibxa67j",
+            "side": 1,
+            "seed": 777,
+            "ply": 119,
+            "move": "d7d6",
+            "before_risk": 0.0,
+            "after_risk": 0.39208984375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "gk4ph55z",
+            "side": 0,
+            "seed": 777,
+            "ply": 82,
+            "move": "e1c1",
+            "before_risk": 0.0,
+            "after_risk": 0.013671875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "jfd3j3i2",
+            "side": 0,
+            "seed": 777,
+            "ply": 42,
+            "move": "b2c2",
+            "before_risk": 0.0,
+            "after_risk": 0.28759765625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "jwqdhhpn",
+            "side": 0,
+            "seed": 777,
+            "ply": 72,
+            "move": "e2d3",
+            "before_risk": 0.0,
+            "after_risk": 0.033203125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "kr4c9lxz",
+            "side": 0,
+            "seed": 777,
+            "ply": 130,
+            "move": "b4c2",
+            "before_risk": 0.0,
+            "after_risk": 0.0009765625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "lcve4xlp",
+            "side": 1,
+            "seed": 777,
+            "ply": 99,
+            "move": "g5h6",
+            "before_risk": 0.0,
+            "after_risk": 0.03955078125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "loj1qacr",
+            "side": 1,
+            "seed": 777,
+            "ply": 59,
+            "move": "c8f5",
+            "before_risk": 0.0,
+            "after_risk": 0.04865938430983118,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "lrxtdp6f",
+            "side": 1,
+            "seed": 777,
+            "ply": 117,
+            "move": "b7c7",
+            "before_risk": 0.0,
+            "after_risk": 0.666015625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "o9vajn3v",
+            "side": 0,
+            "seed": 777,
+            "ply": 28,
+            "move": "e3d4",
+            "before_risk": 0.0,
+            "after_risk": 0.1767578125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "onzkcrjz",
+            "side": 1,
+            "seed": 777,
+            "ply": 43,
+            "move": "h8h7",
+            "before_risk": 0.0,
+            "after_risk": 0.095703125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "pst6n3wk",
+            "side": 0,
+            "seed": 777,
+            "ply": 118,
+            "move": "b2a3",
+            "before_risk": 0.0,
+            "after_risk": 0.00244140625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "qaenkzdi",
+            "side": 1,
+            "seed": 777,
+            "ply": 45,
+            "move": "g7h6",
+            "before_risk": 0.0,
+            "after_risk": 0.1171875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "s4ygu0hf",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "f1e3",
+            "before_risk": 0.0,
+            "after_risk": 0.15869140625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "tsegl5x3",
+            "side": 1,
+            "seed": 777,
+            "ply": 53,
+            "move": "e7e8",
+            "before_risk": 0.0,
+            "after_risk": 0.03955078125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "txcq0d7n",
+            "side": 1,
+            "seed": 777,
+            "ply": 39,
+            "move": "e7d6",
+            "before_risk": 0.0,
+            "after_risk": 0.09423828125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "upx7dnip",
+            "side": 1,
+            "seed": 777,
+            "ply": 87,
+            "move": "h7g7",
+            "before_risk": 0.0,
+            "after_risk": 0.96630859375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vei59ltn",
+            "side": 1,
+            "seed": 777,
+            "ply": 75,
+            "move": "h8g7",
+            "before_risk": 0.0,
+            "after_risk": 0.75439453125,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "xdtk45p3",
+            "side": 0,
+            "seed": 777,
+            "ply": 64,
+            "move": "a5b6",
+            "before_risk": 0.0,
+            "after_risk": 0.0927734375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "y4dzi3fx",
+            "side": 0,
+            "seed": 777,
+            "ply": 96,
+            "move": "f2e1",
+            "before_risk": 0.0,
+            "after_risk": 0.65966796875,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "yfoig6vm",
+            "side": 1,
+            "seed": 777,
+            "ply": 97,
+            "move": "g7f7",
+            "before_risk": 0.0,
+            "after_risk": 0.8271484375,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "yhsb1vgt",
+            "side": 0,
+            "seed": 777,
+            "ply": 38,
+            "move": "f1e1",
+            "before_risk": 0.0,
+            "after_risk": 0.103515625,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ],
+        "newly_missed": [
+          {
+            "game": "5i2p0lfp",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "g7f6",
+            "before_risk": 0.6376953125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "6nj5ls6k",
+            "side": 1,
+            "seed": 777,
+            "ply": 49,
+            "move": "g8f8",
+            "before_risk": 0.98681640625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "7e19wfwy",
+            "side": 0,
+            "seed": 777,
+            "ply": 98,
+            "move": "b1c2",
+            "before_risk": 0.02978515625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "8ynj35vw",
+            "side": 1,
+            "seed": 777,
+            "ply": 85,
+            "move": "g7h6",
+            "before_risk": 0.14892578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "bbnb02qi",
+            "side": 1,
+            "seed": 777,
+            "ply": 73,
+            "move": "g8f7",
+            "before_risk": 0.06640625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "egrj0916",
+            "side": 1,
+            "seed": 777,
+            "ply": 53,
+            "move": "a8b7",
+            "before_risk": 0.11767578125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "eqljce7e",
+            "side": 0,
+            "seed": 777,
+            "ply": 68,
+            "move": "b3c4",
+            "before_risk": 0.83984375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "h1tve7pb",
+            "side": 1,
+            "seed": 777,
+            "ply": 93,
+            "move": "g7f7",
+            "before_risk": 0.076171875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "i0mtnqws",
+            "side": 1,
+            "seed": 777,
+            "ply": 73,
+            "move": "f7f6",
+            "before_risk": 0.14013671875,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nh4xyxr3",
+            "side": 1,
+            "seed": 777,
+            "ply": 65,
+            "move": "h6g6",
+            "before_risk": 1.0,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nrp1rvjy",
+            "side": 1,
+            "seed": 777,
+            "ply": 113,
+            "move": "d8c7",
+            "before_risk": 0.00634765625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "nrr5s8tf",
+            "side": 1,
+            "seed": 777,
+            "ply": 103,
+            "move": "a7a8",
+            "before_risk": 0.4658203125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "pamui3j9",
+            "side": 1,
+            "seed": 777,
+            "ply": 129,
+            "move": "g5g6",
+            "before_risk": 0.11328125,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "q6grdejt",
+            "side": 1,
+            "seed": 777,
+            "ply": 71,
+            "move": "d5g2",
+            "before_risk": 1.0,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "vv3xjhml",
+            "side": 0,
+            "seed": 777,
+            "ply": 94,
+            "move": "f4e5",
+            "before_risk": 0.32958984375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wf3blior",
+            "side": 1,
+            "seed": 777,
+            "ply": 101,
+            "move": "c7c6",
+            "before_risk": 0.068359375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "wrzf83bo",
+            "side": 1,
+            "seed": 777,
+            "ply": 115,
+            "move": "g8f8",
+            "before_risk": 0.07177734375,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          },
+          {
+            "game": "zq83o5q0",
+            "side": 0,
+            "seed": 777,
+            "ply": 60,
+            "move": "h4h5",
+            "before_risk": 0.1259765625,
+            "after_risk": 0.0,
+            "before_illegal_mass": 0.0,
+            "after_illegal_mass": 0.0
+          }
+        ]
+      }
+    }
+  ],
+  "by_opponent": {
+    "TA_Baseline_A": {
+      "prior1-mode0": {
+        "runs": 11,
+        "updates": 1024,
+        "truth_held_updates": 249,
+        "hidden_squares": 34323,
+        "hidden_brier_sum": 9659.922622000002,
+        "random_rebuilds": 26,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 11,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.2431640625,
+        "hidden_brier": 0.2814416753197565
+      },
+      "prior1-mode1": {
+        "runs": 11,
+        "updates": 1024,
+        "truth_held_updates": 275,
+        "hidden_squares": 34323,
+        "hidden_brier_sum": 9643.990212,
+        "random_rebuilds": 26,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 11,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.2685546875,
+        "hidden_brier": 0.2809774848352417
+      },
+      "prior1-mode2": {
+        "runs": 11,
+        "updates": 1024,
+        "truth_held_updates": 275,
+        "hidden_squares": 34323,
+        "hidden_brier_sum": 9728.749641999999,
+        "random_rebuilds": 23,
+        "history_rescues": 5,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 11,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.2685546875,
+        "hidden_brier": 0.2834469493342656
+      },
+      "prior2-mode0": {
+        "runs": 11,
+        "updates": 1024,
+        "truth_held_updates": 357,
+        "hidden_squares": 34323,
+        "hidden_brier_sum": 8981.032802,
+        "random_rebuilds": 25,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 11,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.3486328125,
+        "hidden_brier": 0.2616622323806194
+      },
+      "prior2-mode2": {
+        "runs": 11,
+        "updates": 1024,
+        "truth_held_updates": 395,
+        "hidden_squares": 34323,
+        "hidden_brier_sum": 8892.785749999997,
+        "random_rebuilds": 18,
+        "history_rescues": 5,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 11,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.3857421875,
+        "hidden_brier": 0.2590911560761005
+      },
+      "prior2-mode1": {
+        "runs": 11,
+        "updates": 1024,
+        "truth_held_updates": 351,
+        "hidden_squares": 34323,
+        "hidden_brier_sum": 9357.328832,
+        "random_rebuilds": 28,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 11,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.3427734375,
+        "hidden_brier": 0.27262561058182555
+      }
+    },
+    "Greek_Gift": {
+      "prior1-mode0": {
+        "runs": 96,
+        "updates": 7565,
+        "truth_held_updates": 2647,
+        "hidden_squares": 238447,
+        "hidden_brier_sum": 60804.63373902701,
+        "random_rebuilds": 196,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 96,
+        "fatal_moves_given_zero_risk": 4,
+        "truth_held_fraction": 0.3499008592200925,
+        "hidden_brier": 0.25500272068437435
+      },
+      "prior1-mode1": {
+        "runs": 96,
+        "updates": 7565,
+        "truth_held_updates": 2588,
+        "hidden_squares": 238447,
+        "hidden_brier_sum": 61216.07928702703,
+        "random_rebuilds": 200,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 96,
+        "fatal_moves_given_zero_risk": 5,
+        "truth_held_fraction": 0.34210178453403833,
+        "hidden_brier": 0.2567282426997489
+      },
+      "prior1-mode2": {
+        "runs": 96,
+        "updates": 7565,
+        "truth_held_updates": 2693,
+        "hidden_squares": 238447,
+        "hidden_brier_sum": 59154.05395209406,
+        "random_rebuilds": 158,
+        "history_rescues": 39,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 96,
+        "fatal_moves_given_zero_risk": 8,
+        "truth_held_fraction": 0.35598149372108395,
+        "hidden_brier": 0.24808051244970186
+      },
+      "prior2-mode0": {
+        "runs": 96,
+        "updates": 7565,
+        "truth_held_updates": 3781,
+        "hidden_squares": 238447,
+        "hidden_brier_sum": 51446.470036035986,
+        "random_rebuilds": 127,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 96,
+        "fatal_moves_given_zero_risk": 4,
+        "truth_held_fraction": 0.49980171844018506,
+        "hidden_brier": 0.21575641562290984
+      },
+      "prior2-mode1": {
+        "runs": 96,
+        "updates": 7565,
+        "truth_held_updates": 3812,
+        "hidden_squares": 238447,
+        "hidden_brier_sum": 51613.29377134399,
+        "random_rebuilds": 127,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 96,
+        "fatal_moves_given_zero_risk": 3,
+        "truth_held_fraction": 0.5038995373430271,
+        "hidden_brier": 0.2164560416836613
+      },
+      "prior2-mode2": {
+        "runs": 96,
+        "updates": 7565,
+        "truth_held_updates": 3882,
+        "hidden_squares": 238447,
+        "hidden_brier_sum": 50692.12895424398,
+        "random_rebuilds": 99,
+        "history_rescues": 28,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 96,
+        "fatal_moves_given_zero_risk": 3,
+        "truth_held_fraction": 0.5131526768010575,
+        "hidden_brier": 0.2125928569210096
+      }
+    },
+    "IAmAVirus": {
+      "prior1-mode0": {
+        "runs": 48,
+        "updates": 2447,
+        "truth_held_updates": 934,
+        "hidden_squares": 76168,
+        "hidden_brier_sum": 20396.2905285,
+        "random_rebuilds": 43,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 48,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.38169186759297097,
+        "hidden_brier": 0.2677803083775339
+      },
+      "prior1-mode1": {
+        "runs": 48,
+        "updates": 2447,
+        "truth_held_updates": 1004,
+        "hidden_squares": 76168,
+        "hidden_brier_sum": 20092.204652000008,
+        "random_rebuilds": 47,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 48,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.4102983244789538,
+        "hidden_brier": 0.2637880035185381
+      },
+      "prior1-mode2": {
+        "runs": 48,
+        "updates": 2447,
+        "truth_held_updates": 1038,
+        "hidden_squares": 76168,
+        "hidden_brier_sum": 19455.483311000004,
+        "random_rebuilds": 35,
+        "history_rescues": 11,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 48,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.4241928892521455,
+        "hidden_brier": 0.25542856988499113
+      },
+      "prior2-mode0": {
+        "runs": 48,
+        "updates": 2447,
+        "truth_held_updates": 1224,
+        "hidden_squares": 76168,
+        "hidden_brier_sum": 17779.05134196,
+        "random_rebuilds": 29,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 48,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.5002043318348999,
+        "hidden_brier": 0.23341890744092006
+      },
+      "prior2-mode1": {
+        "runs": 48,
+        "updates": 2447,
+        "truth_held_updates": 1157,
+        "hidden_squares": 76168,
+        "hidden_brier_sum": 18137.725695360008,
+        "random_rebuilds": 31,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 48,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.4728238659583163,
+        "hidden_brier": 0.2381278974813571
+      },
+      "prior2-mode2": {
+        "runs": 48,
+        "updates": 2447,
+        "truth_held_updates": 1204,
+        "hidden_squares": 76168,
+        "hidden_brier_sum": 17830.866341360004,
+        "random_rebuilds": 24,
+        "history_rescues": 8,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 48,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.49203105843890477,
+        "hidden_brier": 0.23409917998844665
+      }
+    },
+    "TA_Baseline_P": {
+      "prior1-mode0": {
+        "runs": 7,
+        "updates": 512,
+        "truth_held_updates": 113,
+        "hidden_squares": 15769,
+        "hidden_brier_sum": 5357.992429999999,
+        "random_rebuilds": 15,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 7,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.220703125,
+        "hidden_brier": 0.33978010209905507
+      },
+      "prior1-mode1": {
+        "runs": 7,
+        "updates": 512,
+        "truth_held_updates": 115,
+        "hidden_squares": 15769,
+        "hidden_brier_sum": 5406.50029,
+        "random_rebuilds": 17,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 7,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.224609375,
+        "hidden_brier": 0.34285625531105335
+      },
+      "prior1-mode2": {
+        "runs": 7,
+        "updates": 512,
+        "truth_held_updates": 158,
+        "hidden_squares": 15769,
+        "hidden_brier_sum": 4743.200428,
+        "random_rebuilds": 7,
+        "history_rescues": 6,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 7,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.30859375,
+        "hidden_brier": 0.3007927216690976
+      },
+      "prior2-mode1": {
+        "runs": 7,
+        "updates": 512,
+        "truth_held_updates": 150,
+        "hidden_squares": 15769,
+        "hidden_brier_sum": 4506.902086,
+        "random_rebuilds": 9,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 7,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.29296875,
+        "hidden_brier": 0.28580772946921174
+      },
+      "prior2-mode0": {
+        "runs": 7,
+        "updates": 512,
+        "truth_held_updates": 144,
+        "hidden_squares": 15769,
+        "hidden_brier_sum": 4523.368545,
+        "random_rebuilds": 9,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 7,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.28125,
+        "hidden_brier": 0.28685195922379353
+      },
+      "prior2-mode2": {
+        "runs": 7,
+        "updates": 512,
+        "truth_held_updates": 150,
+        "hidden_squares": 15769,
+        "hidden_brier_sum": 4559.029486,
+        "random_rebuilds": 9,
+        "history_rescues": 1,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 7,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.29296875,
+        "hidden_brier": 0.2891134178451392
+      }
+    },
+    "Knight_Vision": {
+      "prior1-mode0": {
+        "runs": 204,
+        "updates": 19946,
+        "truth_held_updates": 5273,
+        "hidden_squares": 653772,
+        "hidden_brier_sum": 172777.83440000017,
+        "random_rebuilds": 584,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 204,
+        "fatal_moves_given_zero_risk": 12,
+        "truth_held_fraction": 0.2643637822119723,
+        "hidden_brier": 0.2642784248943059
+      },
+      "prior1-mode1": {
+        "runs": 204,
+        "updates": 19946,
+        "truth_held_updates": 5264,
+        "hidden_squares": 653772,
+        "hidden_brier_sum": 172812.48307129997,
+        "random_rebuilds": 601,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 204,
+        "fatal_moves_given_zero_risk": 15,
+        "truth_held_fraction": 0.263912563922591,
+        "hidden_brier": 0.2643314229904309
+      },
+      "prior1-mode2": {
+        "runs": 204,
+        "updates": 19946,
+        "truth_held_updates": 5685,
+        "hidden_squares": 653772,
+        "hidden_brier_sum": 168684.35911719996,
+        "random_rebuilds": 463,
+        "history_rescues": 130,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 204,
+        "fatal_moves_given_zero_risk": 21,
+        "truth_held_fraction": 0.2850195527925399,
+        "hidden_brier": 0.2580171055309802
+      },
+      "prior2-mode0": {
+        "runs": 204,
+        "updates": 19946,
+        "truth_held_updates": 5805,
+        "hidden_squares": 653772,
+        "hidden_brier_sum": 168125.75956413004,
+        "random_rebuilds": 541,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 204,
+        "fatal_moves_given_zero_risk": 11,
+        "truth_held_fraction": 0.2910357966509576,
+        "hidden_brier": 0.2571626799008371
+      },
+      "prior2-mode1": {
+        "runs": 204,
+        "updates": 19946,
+        "truth_held_updates": 5771,
+        "hidden_squares": 653772,
+        "hidden_brier_sum": 167267.95069402186,
+        "random_rebuilds": 533,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 204,
+        "fatal_moves_given_zero_risk": 14,
+        "truth_held_fraction": 0.2893311942244059,
+        "hidden_brier": 0.2558505881163798
+      },
+      "prior2-mode2": {
+        "runs": 204,
+        "updates": 19946,
+        "truth_held_updates": 6146,
+        "hidden_squares": 653772,
+        "hidden_brier_sum": 161857.4700719599,
+        "random_rebuilds": 422,
+        "history_rescues": 109,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 204,
+        "fatal_moves_given_zero_risk": 15,
+        "truth_held_fraction": 0.3081319562819613,
+        "hidden_brier": 0.2475747968281907
+      }
+    },
+    "Decent_Chess_Bot": {
+      "prior1-mode0": {
+        "runs": 67,
+        "updates": 5855,
+        "truth_held_updates": 2036,
+        "hidden_squares": 181421,
+        "hidden_brier_sum": 45217.303152399974,
+        "random_rebuilds": 150,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 67,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.34773697694278394,
+        "hidden_brier": 0.2492396313128027
+      },
+      "prior1-mode1": {
+        "runs": 67,
+        "updates": 5855,
+        "truth_held_updates": 2099,
+        "hidden_squares": 181421,
+        "hidden_brier_sum": 45179.06857440001,
+        "random_rebuilds": 142,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 67,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.3584970111016225,
+        "hidden_brier": 0.24902888074919666
+      },
+      "prior1-mode2": {
+        "runs": 67,
+        "updates": 5855,
+        "truth_held_updates": 2334,
+        "hidden_squares": 181421,
+        "hidden_brier_sum": 43450.28951816,
+        "random_rebuilds": 107,
+        "history_rescues": 24,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 67,
+        "fatal_moves_given_zero_risk": 3,
+        "truth_held_fraction": 0.3986336464560205,
+        "hidden_brier": 0.23949977961845653
+      },
+      "prior2-mode1": {
+        "runs": 67,
+        "updates": 5855,
+        "truth_held_updates": 2372,
+        "hidden_squares": 181421,
+        "hidden_brier_sum": 41458.49108346999,
+        "random_rebuilds": 132,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 67,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.4051238257899231,
+        "hidden_brier": 0.2285209048757861
+      },
+      "prior2-mode2": {
+        "runs": 67,
+        "updates": 5855,
+        "truth_held_updates": 2566,
+        "hidden_squares": 181421,
+        "hidden_brier_sum": 39059.92122216999,
+        "random_rebuilds": 89,
+        "history_rescues": 24,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 67,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.4382578992314261,
+        "hidden_brier": 0.21529988933017674
+      },
+      "prior2-mode0": {
+        "runs": 67,
+        "updates": 5855,
+        "truth_held_updates": 2316,
+        "hidden_squares": 181421,
+        "hidden_brier_sum": 40982.253740069995,
+        "random_rebuilds": 119,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 67,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.3955593509820666,
+        "hidden_brier": 0.22589586508766898
+      }
+    },
+    "Instructors": {
+      "prior1-mode0": {
+        "runs": 51,
+        "updates": 4509,
+        "truth_held_updates": 1520,
+        "hidden_squares": 145919,
+        "hidden_brier_sum": 34708.15300819999,
+        "random_rebuilds": 96,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 51,
+        "fatal_moves_given_zero_risk": 4,
+        "truth_held_fraction": 0.33710357063650476,
+        "hidden_brier": 0.237859038289736
+      },
+      "prior1-mode1": {
+        "runs": 51,
+        "updates": 4509,
+        "truth_held_updates": 1514,
+        "hidden_squares": 145919,
+        "hidden_brier_sum": 34992.417009200006,
+        "random_rebuilds": 109,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 51,
+        "fatal_moves_given_zero_risk": 4,
+        "truth_held_fraction": 0.33577289864715015,
+        "hidden_brier": 0.23980713278736837
+      },
+      "prior1-mode2": {
+        "runs": 51,
+        "updates": 4509,
+        "truth_held_updates": 1988,
+        "hidden_squares": 145919,
+        "hidden_brier_sum": 31807.797363772,
+        "random_rebuilds": 66,
+        "history_rescues": 24,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 51,
+        "fatal_moves_given_zero_risk": 4,
+        "truth_held_fraction": 0.44089598580616546,
+        "hidden_brier": 0.21798256130984997
+      },
+      "prior2-mode0": {
+        "runs": 51,
+        "updates": 4509,
+        "truth_held_updates": 2117,
+        "hidden_squares": 145919,
+        "hidden_brier_sum": 31496.918287499997,
+        "random_rebuilds": 83,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 51,
+        "fatal_moves_given_zero_risk": 5,
+        "truth_held_fraction": 0.46950543357728985,
+        "hidden_brier": 0.21585207058367997
+      },
+      "prior2-mode1": {
+        "runs": 51,
+        "updates": 4509,
+        "truth_held_updates": 2204,
+        "hidden_squares": 145919,
+        "hidden_brier_sum": 30977.914156409992,
+        "random_rebuilds": 82,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 51,
+        "fatal_moves_given_zero_risk": 6,
+        "truth_held_fraction": 0.4888001774229319,
+        "hidden_brier": 0.2122952744770043
+      },
+      "prior2-mode2": {
+        "runs": 51,
+        "updates": 4509,
+        "truth_held_updates": 2386,
+        "hidden_squares": 145919,
+        "hidden_brier_sum": 29004.837940799986,
+        "random_rebuilds": 47,
+        "history_rescues": 20,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 51,
+        "fatal_moves_given_zero_risk": 6,
+        "truth_held_fraction": 0.5291638944333555,
+        "hidden_brier": 0.1987735520446274
+      }
+    },
+    "duck": {
+      "prior1-mode0": {
+        "runs": 47,
+        "updates": 3307,
+        "truth_held_updates": 1644,
+        "hidden_squares": 104863,
+        "hidden_brier_sum": 23557.313952899996,
+        "random_rebuilds": 79,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 47,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.4971273057151497,
+        "hidden_brier": 0.2246484837635772
+      },
+      "prior1-mode1": {
+        "runs": 47,
+        "updates": 3307,
+        "truth_held_updates": 1559,
+        "hidden_squares": 104863,
+        "hidden_brier_sum": 23959.464000699994,
+        "random_rebuilds": 84,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 47,
+        "fatal_moves_given_zero_risk": 3,
+        "truth_held_fraction": 0.4714242515875416,
+        "hidden_brier": 0.2284834879862296
+      },
+      "prior1-mode2": {
+        "runs": 47,
+        "updates": 3307,
+        "truth_held_updates": 1679,
+        "hidden_squares": 104863,
+        "hidden_brier_sum": 23052.090510439997,
+        "random_rebuilds": 64,
+        "history_rescues": 19,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 47,
+        "fatal_moves_given_zero_risk": 3,
+        "truth_held_fraction": 0.5077109162382825,
+        "hidden_brier": 0.21983054566853893
+      },
+      "prior2-mode0": {
+        "runs": 47,
+        "updates": 3307,
+        "truth_held_updates": 1815,
+        "hidden_squares": 104863,
+        "hidden_brier_sum": 21236.98868342,
+        "random_rebuilds": 57,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 47,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.5488358028424554,
+        "hidden_brier": 0.20252127712749016
+      },
+      "prior2-mode1": {
+        "runs": 47,
+        "updates": 3307,
+        "truth_held_updates": 1762,
+        "hidden_squares": 104863,
+        "hidden_brier_sum": 21673.477753120005,
+        "random_rebuilds": 58,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 47,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.5328091926217116,
+        "hidden_brier": 0.20668374691855093
+      },
+      "prior2-mode2": {
+        "runs": 47,
+        "updates": 3307,
+        "truth_held_updates": 1946,
+        "hidden_squares": 104863,
+        "hidden_brier_sum": 20303.395432120004,
+        "random_rebuilds": 36,
+        "history_rescues": 13,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 47,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.5884487450861808,
+        "hidden_brier": 0.19361829655951102
+      }
+    },
+    "Strongly_Invisible": {
+      "prior1-mode0": {
+        "runs": 77,
+        "updates": 7298,
+        "truth_held_updates": 1854,
+        "hidden_squares": 233714,
+        "hidden_brier_sum": 62648.17112210001,
+        "random_rebuilds": 237,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 77,
+        "fatal_moves_given_zero_risk": 5,
+        "truth_held_fraction": 0.25404220334338173,
+        "hidden_brier": 0.268054849611491
+      },
+      "prior1-mode1": {
+        "runs": 77,
+        "updates": 7298,
+        "truth_held_updates": 1841,
+        "hidden_squares": 233714,
+        "hidden_brier_sum": 62062.47470838001,
+        "random_rebuilds": 243,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 77,
+        "fatal_moves_given_zero_risk": 6,
+        "truth_held_fraction": 0.2522608933954508,
+        "hidden_brier": 0.2655488105478491
+      },
+      "prior1-mode2": {
+        "runs": 77,
+        "updates": 7298,
+        "truth_held_updates": 1997,
+        "hidden_squares": 233714,
+        "hidden_brier_sum": 61194.19319138,
+        "random_rebuilds": 209,
+        "history_rescues": 44,
+        "evidence_conflicts": 1,
+        "fatal_recorded_moves": 77,
+        "fatal_moves_given_zero_risk": 5,
+        "truth_held_fraction": 0.27363661277062207,
+        "hidden_brier": 0.26183366504094746
+      },
+      "prior2-mode1": {
+        "runs": 77,
+        "updates": 7298,
+        "truth_held_updates": 2422,
+        "hidden_squares": 233714,
+        "hidden_brier_sum": 57678.4804265,
+        "random_rebuilds": 200,
+        "history_rescues": 0,
+        "evidence_conflicts": 1,
+        "fatal_recorded_moves": 77,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.331871745683749,
+        "hidden_brier": 0.24679086587239105
+      },
+      "prior2-mode0": {
+        "runs": 77,
+        "updates": 7298,
+        "truth_held_updates": 2469,
+        "hidden_squares": 233714,
+        "hidden_brier_sum": 57326.98635078001,
+        "random_rebuilds": 206,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 77,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.3383118662647301,
+        "hidden_brier": 0.24528691627707375
+      },
+      "prior2-mode2": {
+        "runs": 77,
+        "updates": 7298,
+        "truth_held_updates": 2679,
+        "hidden_squares": 233714,
+        "hidden_brier_sum": 56158.63959511,
+        "random_rebuilds": 159,
+        "history_rescues": 47,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 77,
+        "fatal_moves_given_zero_risk": 3,
+        "truth_held_fraction": 0.3670868731159222,
+        "hidden_brier": 0.24028787148014238
+      }
+    },
+    "TA_Baseline_S": {
+      "prior1-mode0": {
+        "runs": 25,
+        "updates": 1536,
+        "truth_held_updates": 783,
+        "hidden_squares": 47873,
+        "hidden_brier_sum": 10610.2162953,
+        "random_rebuilds": 38,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 25,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.509765625,
+        "hidden_brier": 0.22163257567522404
+      },
+      "prior1-mode1": {
+        "runs": 25,
+        "updates": 1536,
+        "truth_held_updates": 773,
+        "hidden_squares": 47873,
+        "hidden_brier_sum": 10642.3611901,
+        "random_rebuilds": 41,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 25,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.5032552083333334,
+        "hidden_brier": 0.22230403755979364
+      },
+      "prior1-mode2": {
+        "runs": 25,
+        "updates": 1536,
+        "truth_held_updates": 844,
+        "hidden_squares": 47873,
+        "hidden_brier_sum": 9801.679858099998,
+        "random_rebuilds": 28,
+        "history_rescues": 7,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 25,
+        "fatal_moves_given_zero_risk": 4,
+        "truth_held_fraction": 0.5494791666666666,
+        "hidden_brier": 0.2047433805715121
+      },
+      "prior2-mode0": {
+        "runs": 25,
+        "updates": 1536,
+        "truth_held_updates": 1044,
+        "hidden_squares": 47873,
+        "hidden_brier_sum": 8647.981793277999,
+        "random_rebuilds": 23,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 25,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.6796875,
+        "hidden_brier": 0.18064424191669623
+      },
+      "prior2-mode2": {
+        "runs": 25,
+        "updates": 1536,
+        "truth_held_updates": 1063,
+        "hidden_squares": 47873,
+        "hidden_brier_sum": 7901.5006887399995,
+        "random_rebuilds": 11,
+        "history_rescues": 9,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 25,
+        "fatal_moves_given_zero_risk": 2,
+        "truth_held_fraction": 0.6920572916666666,
+        "hidden_brier": 0.165051295902492
+      },
+      "prior2-mode1": {
+        "runs": 25,
+        "updates": 1536,
+        "truth_held_updates": 1005,
+        "hidden_squares": 47873,
+        "hidden_brier_sum": 8687.173493740002,
+        "random_rebuilds": 24,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 25,
+        "fatal_moves_given_zero_risk": 1,
+        "truth_held_fraction": 0.654296875,
+        "hidden_brier": 0.18146290171370086
+      }
+    },
+    "Apricot_Squad": {
+      "prior1-mode0": {
+        "runs": 1,
+        "updates": 117,
+        "truth_held_updates": 22,
+        "hidden_squares": 4446,
+        "hidden_brier_sum": 1016.04249,
+        "random_rebuilds": 7,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.18803418803418803,
+        "hidden_brier": 0.22852957489878545
+      },
+      "prior1-mode2": {
+        "runs": 1,
+        "updates": 117,
+        "truth_held_updates": 92,
+        "hidden_squares": 4446,
+        "hidden_brier_sum": 487.85518,
+        "random_rebuilds": 0,
+        "history_rescues": 1,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.7863247863247863,
+        "hidden_brier": 0.10972901034637877
+      },
+      "prior1-mode1": {
+        "runs": 1,
+        "updates": 117,
+        "truth_held_updates": 10,
+        "hidden_squares": 4446,
+        "hidden_brier_sum": 1031.1923,
+        "random_rebuilds": 8,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.08547008547008547,
+        "hidden_brier": 0.23193708951866845
+      },
+      "prior2-mode1": {
+        "runs": 1,
+        "updates": 117,
+        "truth_held_updates": 65,
+        "hidden_squares": 4446,
+        "hidden_brier_sum": 563.43402,
+        "random_rebuilds": 1,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.5555555555555556,
+        "hidden_brier": 0.1267282995951417
+      },
+      "prior2-mode0": {
+        "runs": 1,
+        "updates": 117,
+        "truth_held_updates": 67,
+        "hidden_squares": 4446,
+        "hidden_brier_sum": 564.54347,
+        "random_rebuilds": 1,
+        "history_rescues": 0,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.5726495726495726,
+        "hidden_brier": 0.1269778385065227
+      },
+      "prior2-mode2": {
+        "runs": 1,
+        "updates": 117,
+        "truth_held_updates": 75,
+        "hidden_squares": 4446,
+        "hidden_brier_sum": 530.198,
+        "random_rebuilds": 0,
+        "history_rescues": 1,
+        "evidence_conflicts": 0,
+        "fatal_recorded_moves": 1,
+        "fatal_moves_given_zero_risk": 0,
+        "truth_held_fraction": 0.6410256410256411,
+        "hidden_brier": 0.1192528115159694
+      }
+    }
+  },
+  "limitations": [
+    "Retrospective selected losing seats, not an all-outcome sample or Elo test.",
+    "Whole-game intervals do not cover independent training or filter seed variation.",
+    "Recognizing risk in a recorded fatal action is not choosing a safer action.",
+    "A zero-risk action with illegal-particle mass is not certified safe.",
+    "Multiple exploratory contrasts; no multiplicity-adjusted promotion claim.",
+    "Timing was collected on shared host CPU resources, not isolated arena hardware."
+  ]
+}

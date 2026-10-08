@@ -28,6 +28,7 @@ struct BeliefStateTestAccess {
     b->seen_any_ = true;
     b->previous_mover_ = p.side_to_move() ^ 1;
     b->history_full_certified_ = false;
+    b->previous_view_ = Observation(RenderObservation(p, b->our_side_));
     b->history_.clear();
     b->RememberHistory(Observation(RenderObservation(p, b->our_side_)));
   }
@@ -233,6 +234,55 @@ void FailedReplayDoesNotPerturbFallbackRandomness() {
   FOW_EXPECT_TRUE(!report.history_recovered);
   FOW_EXPECT_TRUE(report.history_transitions>64);
 }
+
+void RandomRecoveryKeepsInferredEnPassantForBothColors() {
+  struct Case { const char* fen; const char* double_push; int side; int target; };
+  for (const Case c : {
+      Case{"7k/8/8/8/p7/8/1P6/7K w - - 0 1","b2b4",kBlack,17},
+      Case{"7k/1p6/8/2P5/8/8/8/7K b - - 0 1","b7b5",kWhite,41}}) {
+    Position truth=Fen(c.fen);
+    BeliefState b(c.side,16,731,1); b.set_history_mode(1); b.set_visibility_deductions(true);
+    BeliefStateTestAccess::Seed(&b,truth);
+    const Observation previous(RenderObservation(truth,c.side));
+    const Move move=Find(truth,c.double_push);
+    UndoState undo; truth.MakeMove(move,&undo);
+    const Observation current(RenderObservation(truth,c.side));
+    FOW_EXPECT_EQ(InferEnPassant(&previous,current,c.side),c.target);
+    BeliefStateTestAccess::Clear(&b);
+    const auto report=b.Observe(current,false);
+    FOW_EXPECT_TRUE(report.collapsed);
+    FOW_EXPECT_TRUE(!report.history_evidence_conflict);
+    FOW_EXPECT_EQ(report.recovery_rejected,0);
+    for (const auto& p : b.particles()) {
+      FOW_EXPECT_EQ(p.en_passant_square(),c.target);
+      FOW_EXPECT_EQ(RenderObservation(p,c.side),current.squares());
+      MoveList moves; p.GenerateMoves(&moves);
+      bool ep=false; for (Move m:moves) ep|=MoveFlagOf(m)==kFlagEnPassant;
+      FOW_EXPECT_TRUE(ep);
+    }
+  }
+}
+
+void RandomRecoveryKeepsKnownOwnDoublePush() {
+  struct Case { const char* fen; const char* move; int target; };
+  for (const Case c : {
+      Case{"7k/8/8/8/1p6/8/P7/7K w - - 0 1","a2a4",16},
+      Case{"7k/4p3/8/5P2/8/8/8/7K b - - 0 1","e7e5",44}}) {
+    Position truth=Fen(c.fen); const int side=truth.side_to_move();
+    BeliefState b(side,16,733,1); b.set_history_mode(1); b.set_visibility_deductions(true);
+    BeliefStateTestAccess::Seed(&b,truth);
+    const Move move=Find(truth,c.move); b.ApplyOurMove(move);
+    UndoState undo; truth.MakeMove(move,&undo);
+    BeliefStateTestAccess::Clear(&b);
+    const auto report=b.Observe(Observation(RenderObservation(truth,side)),true);
+    FOW_EXPECT_TRUE(report.collapsed);
+    FOW_EXPECT_TRUE(!report.history_evidence_conflict);
+    for (const auto& p : b.particles()) {
+      FOW_EXPECT_EQ(p.en_passant_square(),c.target);
+      FOW_EXPECT_EQ(p.side_to_move(),side^1);
+    }
+  }
+}
 }  // namespace
 }  // namespace fow
 
@@ -247,5 +297,7 @@ int main() {
   FOW_RUN_TEST(fow::RecoveryRetainsRuleMetadata);
   FOW_RUN_TEST(fow::ImpossibleOwnHistoryIsNotCertified);
   FOW_RUN_TEST(fow::FailedReplayDoesNotPerturbFallbackRandomness);
+  FOW_RUN_TEST(fow::RandomRecoveryKeepsInferredEnPassantForBothColors);
+  FOW_RUN_TEST(fow::RandomRecoveryKeepsKnownOwnDoublePush);
   return fow::testing::Summarize("history_v2");
 }

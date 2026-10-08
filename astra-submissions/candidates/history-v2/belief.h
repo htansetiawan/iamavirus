@@ -205,6 +205,9 @@ class BeliefState {
   bool history_full_certified_ = true;
   int history_mode_ = 0;
   int previous_mover_ = -1;
+  Observation previous_view_;
+  int observation_en_passant_ = -1;
+  int own_move_en_passant_ = -1;
   BeliefUpdateReport last_report_;
 
   int our_side_;

@@ -1,3 +1,4 @@
+diff --git a/belief.h b/belief.h
 --- a/belief.h
 +++ b/belief.h
 @@ -51,6 +51,18 @@
@@ -39,7 +40,7 @@
    // Squares where `view` shows a piece of `color`, per piece type.
    struct ObservedPieces {
      Bitboard visible = 0;
-@@ -161,6 +179,33 @@
+@@ -161,6 +179,36 @@
    // Rebuilds a plausible population when every hypothesis has been contradicted,
    // which can happen if the opponent does something no particle anticipated.
    void Recover(const Observation& view, BeliefUpdateReport* report);
@@ -69,10 +70,14 @@
 +  bool history_full_certified_ = true;
 +  int history_mode_ = 0;
 +  int previous_mover_ = -1;
++  Observation previous_view_;
++  int observation_en_passant_ = -1;
++  int own_move_en_passant_ = -1;
 +  BeliefUpdateReport last_report_;
  
    int our_side_;
    bool deductions_ = false;
+diff --git a/belief.cc b/belief.cc
 --- a/belief.cc
 +++ b/belief.cc
 @@ -11,6 +11,7 @@
@@ -153,15 +158,17 @@
  }
  
  }  // namespace
-@@ -166,6 +224,7 @@
+@@ -166,6 +224,9 @@
  }
  
  void BeliefState::ApplyOurMove(Move move) {
 +  if (history_mode_ == 2) pending_history_move_ = move;
++  own_move_en_passant_ = MoveFlagOf(move) == kFlagDoublePush
++                            ? (MoveFrom(move) + MoveTo(move)) / 2 : -1;
    const int home_rank = our_side_ == kWhite ? 0 : 7;
    if (MoveFrom(move) == MakeSquare(4, home_rank) && !particles_.empty() &&
        particles_.front().piece_at(MoveFrom(move)) == kKing) {
-@@ -191,8 +250,11 @@
+@@ -191,8 +252,11 @@
    }
  
    std::vector<Position> updated;
@@ -174,7 +181,7 @@
      particle.set_side_to_move(our_side_);
      MoveList legal;
      particle.GenerateMoves(&legal);
-@@ -207,16 +269,21 @@
+@@ -207,16 +271,23 @@
      UndoState undo;
      particle.MakeMove(move, &undo);
      updated.push_back(particle);
@@ -197,10 +204,12 @@
                                         bool reflects_our_own_move) {
    BeliefUpdateReport report;
 +  previous_mover_ = seen_any_ ? (reflects_our_own_move ? our_side_ : our_side_ ^ 1) : -1;
++  observation_en_passant_ = !seen_any_ ? -1 : reflects_our_own_move
++      ? own_move_en_passant_ : InferEnPassant(&previous_view_, view, our_side_);
    // The census is brought up to date first, before anything can consult it.
    // Rebuilding a contradicted population reads it to decide how much material to
    // scatter behind the fog, and a census that has not yet noticed a promotion
-@@ -234,11 +301,218 @@
+@@ -234,11 +305,219 @@
    } else {
      PredictAndCondition(view, &report);
    }
@@ -219,6 +228,7 @@
 +    pending_history_move_ = kNullMove;
    }
    representative_valid_ = false;
++  previous_view_ = view;
 +  last_report_ = report;
    return report;
 +}
@@ -420,7 +430,19 @@
  }
  
  void BeliefState::Condition(const Observation& view,
-@@ -467,7 +741,14 @@
+@@ -418,7 +697,10 @@
+   report->collapsed = true;
+   const int enemy_side = our_side_ ^ 1;
+   Position visible;
+-  VisiblePositionFromObservation(view, our_side_, 0, -1, &visible);
++  // An EP target can be necessary to explain the visibility mask. Scattering
++  // more boards with no EP right cannot repair that missing rule metadata.
++  VisiblePositionFromObservation(view, our_side_, 0,
++      history_mode_ != 0 ? observation_en_passant_ : -1, &visible);
+ 
+   std::array<int, kNumPieceTypes> missing{};
+   for (int type = 0; type < kNumPieceTypes; ++type) {
+@@ -467,7 +749,14 @@
    }
  
    particles_.clear();
@@ -436,7 +458,7 @@
      Position particle = visible;
      std::shuffle(hidden.begin(), hidden.end(), rng_);
  
-@@ -523,9 +804,26 @@
+@@ -523,9 +812,26 @@
          available.erase(available.begin() + static_cast<std::ptrdiff_t>(chosen));
        }
      }

@@ -225,6 +225,8 @@ void BeliefState::UpdateOwnRights(const Observation& view) {
 
 void BeliefState::ApplyOurMove(Move move) {
   if (history_mode_ == 2) pending_history_move_ = move;
+  own_move_en_passant_ = MoveFlagOf(move) == kFlagDoublePush
+                            ? (MoveFrom(move) + MoveTo(move)) / 2 : -1;
   const int home_rank = our_side_ == kWhite ? 0 : 7;
   if (MoveFrom(move) == MakeSquare(4, home_rank) && !particles_.empty() &&
       particles_.front().piece_at(MoveFrom(move)) == kKing) {
@@ -284,6 +286,8 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
                                        bool reflects_our_own_move) {
   BeliefUpdateReport report;
   previous_mover_ = seen_any_ ? (reflects_our_own_move ? our_side_ : our_side_ ^ 1) : -1;
+  observation_en_passant_ = !seen_any_ ? -1 : reflects_our_own_move
+      ? own_move_en_passant_ : InferEnPassant(&previous_view_, view, our_side_);
   // The census is brought up to date first, before anything can consult it.
   // Rebuilding a contradicted population reads it to decide how much material to
   // scatter behind the fog, and a census that has not yet noticed a promotion
@@ -315,6 +319,7 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
     pending_history_move_ = kNullMove;
   }
   representative_valid_ = false;
+  previous_view_ = view;
   last_report_ = report;
   return report;
 }
@@ -692,7 +697,10 @@ void BeliefState::Recover(const Observation& view,
   report->collapsed = true;
   const int enemy_side = our_side_ ^ 1;
   Position visible;
-  VisiblePositionFromObservation(view, our_side_, 0, -1, &visible);
+  // An EP target can be necessary to explain the visibility mask. Scattering
+  // more boards with no EP right cannot repair that missing rule metadata.
+  VisiblePositionFromObservation(view, our_side_, 0,
+      history_mode_ != 0 ? observation_en_passant_ : -1, &visible);
 
   std::array<int, kNumPieceTypes> missing{};
   for (int type = 0; type < kNumPieceTypes; ++type) {

@@ -1,0 +1,262 @@
+{
+  "recorded_at": "2026-10-07T23:58:25.816887+00:00",
+  "status": "correctness regression; not a strength estimate",
+  "basis_archive_sha256": "39fb4480e0b7ceaaf1746ca5fc783d65d8247d936190edfbc76a13fc667da1d5",
+  "source_hashes": {
+    "belief.cc": "f358bb14742b27b0d53f9bb8084d99e54470a160c0b5b0c79d7cf84c2cd9f529",
+    "belief.h": "4d9f1538db5cbbcab24700cb76d791281da0371d64454701fd71cdbd47f85a5e",
+    "history_test.cc": "dc4ad9fe3823eada79f31bc03c2210f74edea518de2dd86e953a33bfb133585d",
+    "port.patch": "57d37d3719ef840222ef5f544eff2599b37f330bd448b22930acb19165510d87"
+  },
+  "build_manifest_sha256": "e7da4d49938df0cabfae00c59993c602c3112c150accf740a1a671d8917c039b",
+  "binaries": {
+    "benchmark": "c43aaf8f30d8a82d70e3bf83b231dc7d7d944a32a5d4cc955e5d6b1d6320b1e9",
+    "probe": "e8815006e4b2edff83877bf1f6f5c35db79d8109cae7e3cabcb59f6c7bf18cfb",
+    "history_test": "1d9a45970c8d62d03316c30526703bc8beb7ac469a7145d868546078031fc963"
+  },
+  "targeted_checks": 2229,
+  "targeted_failures": 0,
+  "regression": {
+    "game": "y06kx1q2",
+    "side": "black",
+    "ply": 63,
+    "preceding_move": "b2b4",
+    "next_recorded_move": "a4b3",
+    "probe_sha256": "e8815006e4b2edff83877bf1f6f5c35db79d8109cae7e3cabcb59f6c7bf18cfb",
+    "runs": 24,
+    "strict_history_cases": 16,
+    "all_keep_valid_ep_move": true,
+    "cases": [
+      {
+        "prior": 1,
+        "mode": 1,
+        "seed": 2,
+        "trace_sha256": "98b60431f8727ffcbbd6c09ce80f5fc33341d057ecd46c5d0afd77c185dbc4ea",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 1,
+        "mode": 1,
+        "seed": 1,
+        "trace_sha256": "d405cd1e2160b26a17539fb98aa07abdfee483f55b661be4b0d6a402262cf21d",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 1,
+        "mode": 1,
+        "seed": 3,
+        "trace_sha256": "71d5d35e0ca87a0de7f7b2eec23d4fc05b3e84890add5615185df683231fff82",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 1,
+        "mode": 1,
+        "seed": 777,
+        "trace_sha256": "aa00a9bcc02788cfe2669ade391bad952b09d31646b2927f42c9dcf7e75aeaf0",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 1,
+        "mode": 2,
+        "seed": 1,
+        "trace_sha256": "38d2cea983de3d08e1ce6d44ed288c359daed2fd605e1a233aa1f3fb6b7a5c25",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 1,
+        "mode": 2,
+        "seed": 2,
+        "trace_sha256": "e7bef49a8124ba5867d259fd5d89b539faf9222042079636eb43336709e6e905",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 1,
+        "mode": 2,
+        "seed": 3,
+        "trace_sha256": "4de83f02fb308aa3a65b521098ef61cd2d122634ca89cb59d545a1c113446532",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 1,
+        "mode": 2,
+        "seed": 777,
+        "trace_sha256": "4ddda1edd3d3efdc84006ed96817600a26156034a6f56bdf10676d43bc2712fa",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 2048,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 1,
+        "seed": 1,
+        "trace_sha256": "de307ca8aa81b6c4d1542d35966f80877e61fcd6a42e17a53279b104014b5720",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 1,
+        "seed": 2,
+        "trace_sha256": "86ee279a3394676110e7c0e17485c89c9f45ac7e99ed77785ca0ec81e5acfa12",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 1,
+        "seed": 3,
+        "trace_sha256": "361248e97416567f7d0bb119ebc08face27aa5831231b38bd40e4ed49f6c61cb",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 1,
+        "seed": 777,
+        "trace_sha256": "5604ea8e5364c30efe6ef74733d990fd511ca874340c97fdbc2b602a911bf0eb",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 2048,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 2,
+        "seed": 1,
+        "trace_sha256": "9ddfb5616487593351914691a9082c16675c15cd7e8a93f400badde021c93906",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 2,
+        "seed": 2,
+        "trace_sha256": "82f5f8889ec6f92763a47ea3f7a61902e47b7ac5c6acd71278f252b9eb976717",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 2,
+        "seed": 3,
+        "trace_sha256": "3723ee2f136c05a7a674f4c9c6e54713d7edb082181d071a0f64c22139671174",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      },
+      {
+        "prior": 2,
+        "mode": 2,
+        "seed": 777,
+        "trace_sha256": "6d95f69c9ee8465e8662c3286f438f2c3c85532954d25e2d59ae6f4e5db55f59",
+        "particles": 2048,
+        "exact_observation_matches": 2048,
+        "actual_move": "a4b3",
+        "actual_move_illegal_particles": 0,
+        "history_evidence_conflict": false,
+        "recovery_attempts": 0,
+        "recovery_rejected": 0
+      }
+    ]
+  },
+  "prior_failure": {
+    "source_state": "/media/henrytan/seagate/iamavirus/astra/belief/history-v2-corpus-20261007/state.json",
+    "probe_sha256": "9a1ab62e870a9d2ae3b7c909a3f0d86242183ded1ee6980daa17e2771b2e6e2f",
+    "cases": [
+      {
+        "prior": 1,
+        "mode": 2,
+        "seed": 777
+      },
+      {
+        "prior": 2,
+        "mode": 1,
+        "seed": 777
+      }
+    ],
+    "attempts": 65536,
+    "rejected": 65536,
+    "ep_move_illegal_particles": 2048
+  },
+  "broader_recheck": "/media/henrytan/seagate/iamavirus/astra/belief/history-v2-ep-corpus-r1-20261008/state.json",
+  "scope": "Modes 1 and 2 preserve inferred/known en passant metadata in random recovery. Mode 0 preserves original recovery behavior.",
+  "targeted_result_source": "Observed history_test executable output in the preceding work segment; stdout was not saved. Empty build.log is not a test receipt."
+}
