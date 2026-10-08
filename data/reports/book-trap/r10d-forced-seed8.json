@@ -1,0 +1,388 @@
+{
+  "id": "4c1f72fa-cc79-46d5-93d9-9012110dbee4",
+  "white": "forced",
+  "black": "r10d",
+  "result": "1/2-1/2",
+  "reason": "Move limit reached",
+  "timeControl": {
+    "baseSeconds": 180,
+    "incrementSeconds": 2
+  },
+  "frames": [
+    {
+      "ply": 0,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": null,
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    {
+      "ply": 1,
+      "board": "RNBQKBNRPP-PPPPP----------P---------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPP-PPPPP----------P-----??-?????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "c2c4",
+      "clocks": [
+        181.998365,
+        180.0
+      ]
+    },
+    {
+      "ply": 2,
+      "board": "RNBQKBNRPP-PPPPP----------P--------p------------ppp-pppprnbqkbnr",
+      "white": "RNBQKBNRPP-PPPPP----------P-----??-p????????????????????????????",
+      "black": "???????????????????????-??P-??-?---p------------ppp-pppprnbqkbnr",
+      "move": "d7d5",
+      "clocks": [
+        181.998365,
+        181.991964
+      ]
+    },
+    {
+      "ply": 3,
+      "board": "RNB-KBNRPP-PPPPP--------Q-P--------p------------ppp-pppprnbqkbnr",
+      "white": "RNB-KBNRPP-PPPPP--------Q-P--------p????-?-?????p??-????????k???",
+      "black": "???????????????????????-??P-??-?---p------------ppp-pppprnbqkbnr",
+      "move": "d1a4",
+      "clocks": [
+        176.995039,
+        181.991964
+      ]
+    },
+    {
+      "ply": 4,
+      "board": "RNB-KBNRPP-PPPPP--------Q-P--------p------p-----pp--pppprnbqkbnr",
+      "white": "RNB-KBNRPP-PPPPP--------Q-P--------p????-?p?????p???????????????",
+      "black": "???????????????????????-??P-??-?---p------p-----pp--pppprnbqkbnr",
+      "move": "c7c6",
+      "clocks": [
+        176.995039,
+        183.984257
+      ]
+    },
+    {
+      "ply": 5,
+      "board": "RNB-KBNRPP-PPPPP--------Q----------P------p-----pp--pppprnbqkbnr",
+      "white": "RNB-KBNRPP-PPPPP--------Q---------?P????-?p-????p???????????????",
+      "black": "???????????????????????-??????-?---P------p-----pp--pppprnbqkbnr",
+      "move": "c4d5",
+      "clocks": [
+        171.989904,
+        183.984257
+      ]
+    },
+    {
+      "ply": 6,
+      "board": "RNB-KBNRPP-PPPPP--------Q----------P------p-----pp-bpppprn-qkbnr",
+      "white": "RNB-KBNRPP-PPPPP--------Q---------?P????-?p-????p???????????????",
+      "black": "???????????????????????-??????-?---P------p?----pp-bpppprn-qkbnr",
+      "move": "c8d7",
+      "clocks": [
+        171.989904,
+        185.978395
+      ]
+    },
+    {
+      "ply": 7,
+      "board": "R-B-KBNRPP-PPPPP--N-----Q----------P------p-----pp-bpppprn-qkbnr",
+      "white": "R-B-KBNRPP-PPPPP--N-----Q---------?P????-?p-????p???????????????",
+      "black": "???????????????????????-??????-?---P------p?----pp-bpppprn-qkbnr",
+      "move": "b1c3",
+      "clocks": [
+        166.981567,
+        185.978395
+      ]
+    },
+    {
+      "ply": 8,
+      "board": "R-B-KBNRPP-PPPPP--N-----Q----------p------------pp-bpppprn-qkbnr",
+      "white": "R-B-KBNRPP-PPPPP--N-----Q---------?p????-?-?????p??b????????????",
+      "black": "???????????????????????-Q??-??-?--?p-------?----pp-bpppprn-qkbnr",
+      "move": "c6d5",
+      "clocks": [
+        166.981567,
+        187.971787
+      ]
+    }
+  ],
+  "protocol": {
+    "events": [
+      {
+        "atMs": 0,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 0,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "w 180 2"
+      },
+      {
+        "atMs": 340,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 341,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 341,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "b 180 2"
+      },
+      {
+        "atMs": 704,
+        "ply": 0,
+        "side": "black",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 705,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 705,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 705,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 706,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "move c2c4"
+      },
+      {
+        "atMs": 707,
+        "ply": 1,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPP-PPPPP----------P-----??-?????????????????????????????"
+      },
+      {
+        "atMs": 707,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 707,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 715,
+        "ply": 1,
+        "side": "black",
+        "direction": "output",
+        "text": "move d7d5"
+      },
+      {
+        "atMs": 716,
+        "ply": 2,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPP-PPPPP----------P-----??-p????????????????????????????"
+      },
+      {
+        "atMs": 716,
+        "ply": 2,
+        "side": "black",
+        "direction": "input",
+        "text": "???????????????????????-??P-??-?---p------------ppp-pppprnbqkbnr"
+      },
+      {
+        "atMs": 716,
+        "ply": 2,
+        "side": "white",
+        "direction": "input",
+        "text": "181.998364643"
+      },
+      {
+        "atMs": 7719,
+        "ply": 2,
+        "side": "white",
+        "direction": "output",
+        "text": "move d1a4"
+      },
+      {
+        "atMs": 7720,
+        "ply": 3,
+        "side": "white",
+        "direction": "input",
+        "text": "RNB-KBNRPP-PPPPP--------Q-P--------p????-?-?????p??-????????k???"
+      },
+      {
+        "atMs": 7720,
+        "ply": 3,
+        "side": "black",
+        "direction": "input",
+        "text": "???????????????????????-??P-??-?---p------------ppp-pppprnbqkbnr"
+      },
+      {
+        "atMs": 7720,
+        "ply": 3,
+        "side": "black",
+        "direction": "input",
+        "text": "181.991963885"
+      },
+      {
+        "atMs": 7728,
+        "ply": 3,
+        "side": "black",
+        "direction": "output",
+        "text": "move c7c6"
+      },
+      {
+        "atMs": 7728,
+        "ply": 4,
+        "side": "white",
+        "direction": "input",
+        "text": "RNB-KBNRPP-PPPPP--------Q-P--------p????-?p?????p???????????????"
+      },
+      {
+        "atMs": 7728,
+        "ply": 4,
+        "side": "black",
+        "direction": "input",
+        "text": "???????????????????????-??P-??-?---p------p-----pp--pppprnbqkbnr"
+      },
+      {
+        "atMs": 7728,
+        "ply": 4,
+        "side": "white",
+        "direction": "input",
+        "text": "176.995038919"
+      },
+      {
+        "atMs": 14733,
+        "ply": 4,
+        "side": "white",
+        "direction": "output",
+        "text": "move c4d5"
+      },
+      {
+        "atMs": 14734,
+        "ply": 5,
+        "side": "white",
+        "direction": "input",
+        "text": "RNB-KBNRPP-PPPPP--------Q---------?P????-?p-????p???????????????"
+      },
+      {
+        "atMs": 14734,
+        "ply": 5,
+        "side": "black",
+        "direction": "input",
+        "text": "???????????????????????-??????-?---P------p-----pp--pppprnbqkbnr"
+      },
+      {
+        "atMs": 14734,
+        "ply": 5,
+        "side": "black",
+        "direction": "input",
+        "text": "183.984257030"
+      },
+      {
+        "atMs": 14740,
+        "ply": 5,
+        "side": "black",
+        "direction": "output",
+        "text": "move c8d7"
+      },
+      {
+        "atMs": 14740,
+        "ply": 6,
+        "side": "white",
+        "direction": "input",
+        "text": "RNB-KBNRPP-PPPPP--------Q---------?P????-?p-????p???????????????"
+      },
+      {
+        "atMs": 14740,
+        "ply": 6,
+        "side": "black",
+        "direction": "input",
+        "text": "???????????????????????-??????-?---P------p?----pp-bpppprn-qkbnr"
+      },
+      {
+        "atMs": 14740,
+        "ply": 6,
+        "side": "white",
+        "direction": "input",
+        "text": "171.989903992"
+      },
+      {
+        "atMs": 21749,
+        "ply": 6,
+        "side": "white",
+        "direction": "output",
+        "text": "move b1c3"
+      },
+      {
+        "atMs": 21749,
+        "ply": 7,
+        "side": "white",
+        "direction": "input",
+        "text": "R-B-KBNRPP-PPPPP--N-----Q---------?P????-?p-????p???????????????"
+      },
+      {
+        "atMs": 21749,
+        "ply": 7,
+        "side": "black",
+        "direction": "input",
+        "text": "???????????????????????-??????-?---P------p?----pp-bpppprn-qkbnr"
+      },
+      {
+        "atMs": 21749,
+        "ply": 7,
+        "side": "black",
+        "direction": "input",
+        "text": "185.978395148"
+      },
+      {
+        "atMs": 21756,
+        "ply": 7,
+        "side": "black",
+        "direction": "output",
+        "text": "move c6d5"
+      }
+    ],
+    "truncated": false
+  },
+  "warnings": [],
+  "privateDiagnostics": {
+    "white": "book book.txt: 176 entries\nseed=2037085534750515 mode=cpp\ns50515 n=1 mode=cpp depth=0 score=0 nodes=0 legal=20 short=0 hyp=0 unsafe=0 skipped=0 safe_rows=0 p=1 gv=0 fog=32 budget=7 x1 spent=0.00111123 cells=0/1 rep=0 dec=1 bref=0 book=1 infer=0 clock=180 risk=0 nv=0 cp=0 cd=0 cands= chose=d2d4 move=c2c4\ns50515 n=2 mode=cpp depth=11 score=20 nodes=46964768 legal=23 short=6 hyp=8 unsafe=0 skipped=0 safe_rows=0 p=0.99969 gv=-83.0193 fog=30 budget=7 x1 spent=7.00061 cells=3.84459/2 rep=0 dec=2 bref=0 infer=0 clock=181.998 risk=0 nv=0 cp=0 cd=0 cands=b1a3:0.00/0.00/0.00,b1c3:0.00/0.00/0.00,d1c2:0.00/0.00/0.00,d1b3:0.00/0.00/0.00,d1a4:0.00/0.00/0.00 chose=c4d5 move=d1a4\ns50515 n=3 mode=cpp depth=11 score=49 nodes=46309403 legal=30 short=6 hyp=8 unsafe=0 skipped=0 safe_rows=0 p=0.999722 gv=-59.0122 fog=25 budget=7 x1 spent=7.00073 cells=3.8456/2 rep=0 dec=3 bref=0 infer=0 clock=176.995 risk=0 nv=0 cp=0 cd=0 cands=b1a3:0.00/0.00/0.00,b1c3:0.00/0.00/0.00,e1d1:0.00/0.00/0.00,g1f3:0.00/0.00/0.00,g1h3:0.00/0.00/0.00 chose=c4d5 move=c4d5\ns50515 n=4 mode=cpp depth=10 score=103 nodes=46311472 legal=36 short=6 hyp=8 unsafe=0 skipped=0 safe_rows=0 p=0.736802 gv=-106.74 fog=25 budget=7 x1 spent=7.00067 cells=3.84406/2 rep=0 dec=4 bref=0 infer=0 clock=171.99 risk=0 nv=0 cp=0 cd=0 cands=b1a3:0.00/0.00/0.00,b1c3:0.00/0.00/0.00,e1d1:0.00/0.00/0.00,g1f3:0.00/0.00/0.00,g1h3:0.00/0.00/0.00 move=b1c3\n",
+    "black": "book book.txt: 176 entries\nmodel loaded in 0.0208371s checkpoint_sha256=cbda47a0ef03 training_step=3000 features=features-v1 actions=actions-v1\nseed=8 mode=hybrid\ns8 n=1 mode=hybrid depth=0 score=0 nodes=0 legal=20 short=0 hyp=0 unsafe=0 skipped=0 safe_rows=0 p=1 gv=0 fog=32 budget=7 x1 spent=0.00125234 cells=0/1 rep=0 bref=0 book=1 infer=0.00014098 clock=180 risk=0 nv=-0.00312943 cp=0 cd=0 cands= chose=d7d5 move=d7d5\ns8 n=2 mode=hybrid depth=0 score=0 nodes=0 legal=29 short=0 hyp=0 unsafe=0 skipped=0 safe_rows=0 p=1 gv=0 fog=28 budget=7 x1 spent=0.00174138 cells=0/1 rep=0 bref=0 book=1 infer=0.000138821 clock=181.992 risk=0 nv=-0.003129 cp=0 cd=0 cands= chose=c8d7 move=c7c6\ns8 n=3 mode=hybrid depth=0 score=0 nodes=0 legal=30 short=0 hyp=0 unsafe=0 skipped=0 safe_rows=0 p=1 gv=0 fog=30 budget=7 x1 spent=0.00178006 cells=0/1 rep=0 bref=1 book=1 infer=0.000137227 clock=183.984 risk=0 nv=-0.00312573 cp=0 cd=0 cands= move=c8d7\ns8 n=4 mode=hybrid depth=0 score=0 nodes=0 legal=26 short=0 hyp=0 unsafe=0 skipped=0 safe_rows=0 p=1 gv=0 fog=31 budget=7 x1 spent=0.00154573 cells=0/1 rep=0 bref=0 book=1 infer=0.000129959 clock=185.978 risk=0 nv=-0.00312201 cp=0 cd=0 cands= move=c6d5\n"
+  }
+}
