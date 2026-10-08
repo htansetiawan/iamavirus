@@ -206,6 +206,7 @@ def main() -> None:
     ap.add_argument("--cores", default="0-7")
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--max-plies", type=int, default=10000)
+    ap.add_argument("--legacy-seeding", action="store_true", help="seed A with SEED and B with SEED+1000 (the original scheme)")
     ap.add_argument("--shared-cores", action="store_true", help="pin both bots of a game to the same cores")
     ap.add_argument("--immediate", action="store_true",
                     help="deliver observations at once, as referee.py --trusted-local does; the default holds them until the "
@@ -250,8 +251,12 @@ def main() -> None:
             a = side_spec(args, "a", slots[slot][0])
             b = side_spec(args, "b", slots[slot][1])
             white, black = (a, b) if a_white else (b, a)
-            white["env"]["FOW_SEED"] = str(seed)       # as compare_archives seeds the referee's bots
-            black["env"]["FOW_SEED"] = str(seed + 1)
+            if args.legacy_seeding:
+                a["env"]["FOW_SEED"] = str(seed)       # the runner's original scheme, kept to replicate old results
+                b["env"]["FOW_SEED"] = str(seed + 1000)
+            else:
+                white["env"]["FOW_SEED"] = str(seed)   # as compare_archives seeds the referee's bots
+                black["env"]["FOW_SEED"] = str(seed + 1)
             futures[pool.submit(play, gid, white, black, args.max_plies)] = (i, slot)
 
         for _ in slots:
