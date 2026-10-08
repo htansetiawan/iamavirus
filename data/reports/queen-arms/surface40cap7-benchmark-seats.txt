@@ -1,0 +1,18 @@
+
+corpus: data/benchmark-seats.txt   stride 1000   400000 nodes/decision   seed 1
+  seats replayed            : 634
+  decisions evaluated       : 1268
+  immediate king losses     : 277 (21.85%)
+  matched the real move     : 340 (26.8%)
+  belief: hidden enemy piece mass 0.674 (1268 decisions); true attacker held at fatal plies 0.227 (634 plies)
+  left >=3 points en prise  : engine 66 (5.21%), real player 0 (0.00%)
+  left a 2-ply hidden threat>=3: engine 23 (1.81%), real player 0 (0.00%)
+  real losing positions     : 634
+  ...the engine survives    : 357 (56%)
+  opening (ply<30): 661 decisions, book moves 0; queen en prise engine 0.00% real 0.00%; en prise engine 0.45% real 0.00%
+  queen left en prise (net>=5): engine 9 (0.71%), real player 0 (0.00%)
+  left a 2-ply hidden king threat: engine 178 (14.04%), real player 19 (1.50%)
+  vision after the move      : engine sees 27.4 squares, 0.93 of its pieces seen; real player 27.7 squares, 1.20 seen
+  as White: decisions 548, king losses 114 (20.80%), en prise engine 4.93% real 0.00%, 2-ply threat engine 1.28% real 0.00%, survives 160/274
+  as Black: decisions 720, king losses 163 (22.64%), en prise engine 5.42% real 0.00%, 2-ply threat engine 2.22% real 0.00%, survives 197/360
+  unsafe moves rejected     : 4971 (3.9 per decision)
