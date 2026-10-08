@@ -1,0 +1,4886 @@
+{
+  "recorded_at": "2026-10-08T01:08:17.561449+00:00",
+  "root": "/media/henrytan/seagate/iamavirus/astra/belief/grouped-current-recent24-20261008",
+  "inputs": {
+    "control": {
+      "state_sha256": "4e90a346de918af0761bc8009c3489df3e73193905c6ff649bb248eed75b958f",
+      "runs_sha256": "55b72c5509b1ac9aea63d017ef60fc2dfd258285ca072058df1af234abccae21",
+      "binary_sha256": "51a5449a42742cd458e2c417455b7d323b2a821c57b848258ff41cc9d7b936bf",
+      "corpus_sha256": "b388fb31997288bc1dd2ce9dcd05713c2362915d76e2e59755b29d91075bf721",
+      "runner_sha256": "b24b544dea54d1a12712b7f6bfe2186bc84c2039c65bf767cf33290c5e48ad4b"
+    },
+    "grouped": {
+      "state_sha256": "aebce4a4725b63cf0875ee2df7be8728e5e19dbb62fa36a14b06fdd795f2152e",
+      "runs_sha256": "1915c1f280ea53ef8e5326278e99bae94e439719f828cd7a2cf09bf7f719aee4",
+      "binary_sha256": "51a5449a42742cd458e2c417455b7d323b2a821c57b848258ff41cc9d7b936bf",
+      "corpus_sha256": "b388fb31997288bc1dd2ce9dcd05713c2362915d76e2e59755b29d91075bf721",
+      "runner_sha256": "b24b544dea54d1a12712b7f6bfe2186bc84c2039c65bf767cf33290c5e48ad4b"
+    },
+    "strict": {
+      "state_sha256": "bbba8f8a344009d9e6c4b00cebf89b31110b60af1baa65b3b5b702b15a087491",
+      "runs_sha256": "7008397695ffe2908e0d6ff8d3b251b8ffba86b17ff980e04faa47f95760a553",
+      "binary_sha256": "51a5449a42742cd458e2c417455b7d323b2a821c57b848258ff41cc9d7b936bf",
+      "corpus_sha256": "b388fb31997288bc1dd2ce9dcd05713c2362915d76e2e59755b29d91075bf721",
+      "runner_sha256": "b24b544dea54d1a12712b7f6bfe2186bc84c2039c65bf767cf33290c5e48ad4b"
+    },
+    "grouped-strict": {
+      "state_sha256": "aba3f08278c423f98c618cab6de1783520f75104a79f1b5b974085fd461e4683",
+      "runs_sha256": "b78953198fa2622fad10401dec263b3e401bc280a6283c60eb4b425f115c3ec9",
+      "binary_sha256": "51a5449a42742cd458e2c417455b7d323b2a821c57b848258ff41cc9d7b936bf",
+      "corpus_sha256": "b388fb31997288bc1dd2ce9dcd05713c2362915d76e2e59755b29d91075bf721",
+      "runner_sha256": "b24b544dea54d1a12712b7f6bfe2186bc84c2039c65bf767cf33290c5e48ad4b"
+    },
+    "adapted-strict": {
+      "state_sha256": "7ea2a09634099fc898289c3588d9a5363246782e99216bd4680548a520f7436e",
+      "runs_sha256": "ac15af8bbb259c6d362a4b225b3c92728eb0d31eb930dc3c3f7d898d92111a55",
+      "binary_sha256": "51a5449a42742cd458e2c417455b7d323b2a821c57b848258ff41cc9d7b936bf",
+      "corpus_sha256": "b388fb31997288bc1dd2ce9dcd05713c2362915d76e2e59755b29d91075bf721",
+      "runner_sha256": "b24b544dea54d1a12712b7f6bfe2186bc84c2039c65bf767cf33290c5e48ad4b"
+    }
+  },
+  "aggregates": {
+    "control": {
+      "1": {
+        "updates": 3364,
+        "truth_held": 1416,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 23755.088484109998,
+        "hidden_log_loss_sum": 77801.85156129999,
+        "rebuilds": 57,
+        "view_mismatches": 82,
+        "continuation_invalid": 214,
+        "prefix_capped": 769,
+        "expanded_predecessors": 3395584,
+        "enumerated_transitions": 78287960,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 7369.8119080000015,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 20,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.42092746730083236,
+        "hidden_brier": 0.2298486563662664,
+        "hidden_log_loss": 0.752792440917843
+      },
+      "2": {
+        "updates": 3364,
+        "truth_held": 1728,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 22584.240245000005,
+        "hidden_log_loss_sum": 71630.36485000001,
+        "rebuilds": 41,
+        "view_mismatches": 63,
+        "continuation_invalid": 192,
+        "prefix_capped": 754,
+        "expanded_predecessors": 3395584,
+        "enumerated_transitions": 79083685,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 32192.106729000003,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 3,
+        "terminal_attacker_held": 18,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.5136741973840666,
+        "hidden_brier": 0.2185198038238624,
+        "hidden_log_loss": 0.6930785851128679
+      }
+    },
+    "grouped": {
+      "1": {
+        "updates": 3364,
+        "truth_held": 1587,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 23653.035170999996,
+        "hidden_log_loss_sum": 84725.34850399998,
+        "rebuilds": 51,
+        "view_mismatches": 71,
+        "continuation_invalid": 212,
+        "prefix_capped": 0,
+        "expanded_predecessors": 875182,
+        "enumerated_transitions": 26569743,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 2398.8177969999992,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 19,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.47175980975029724,
+        "hidden_brier": 0.2288612124798018,
+        "hidden_log_loss": 0.8197825710830082
+      },
+      "2": {
+        "updates": 3364,
+        "truth_held": 1877,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 22003.474942299996,
+        "hidden_log_loss_sum": 67668.13839100001,
+        "rebuilds": 41,
+        "view_mismatches": 59,
+        "continuation_invalid": 210,
+        "prefix_capped": 0,
+        "expanded_predecessors": 879573,
+        "enumerated_transitions": 26722489,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 8783.639979,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 20,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.5579667063020214,
+        "hidden_brier": 0.21290045517024506,
+        "hidden_log_loss": 0.6547410125784948
+      }
+    },
+    "strict": {
+      "1": {
+        "updates": 3364,
+        "truth_held": 1451,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 23653.5218756,
+        "hidden_log_loss_sum": 76972.83267400002,
+        "rebuilds": 59,
+        "view_mismatches": 0,
+        "continuation_invalid": 0,
+        "prefix_capped": 760,
+        "expanded_predecessors": 3373688,
+        "enumerated_transitions": 77678969,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 12889.902827,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 18,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.43133174791914386,
+        "hidden_brier": 0.22886592171918993,
+        "hidden_log_loss": 0.7447710488916413
+      },
+      "2": {
+        "updates": 3364,
+        "truth_held": 1707,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 22739.923718,
+        "hidden_log_loss_sum": 72726.93748999998,
+        "rebuilds": 52,
+        "view_mismatches": 0,
+        "continuation_invalid": 0,
+        "prefix_capped": 748,
+        "expanded_predecessors": 3372984,
+        "enumerated_transitions": 78552538,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 50951.87336,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 3,
+        "terminal_attacker_held": 19,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.5074316290130797,
+        "hidden_brier": 0.2200261605402947,
+        "hidden_log_loss": 0.7036887644047951
+      }
+    },
+    "grouped-strict": {
+      "1": {
+        "updates": 3364,
+        "truth_held": 1571,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 23279.5812646,
+        "hidden_log_loss_sum": 80723.29778000001,
+        "rebuilds": 48,
+        "view_mismatches": 0,
+        "continuation_invalid": 0,
+        "prefix_capped": 0,
+        "expanded_predecessors": 861866,
+        "enumerated_transitions": 26096339,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 3971.2146270000007,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 20,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.46700356718192626,
+        "hidden_brier": 0.22524776020164297,
+        "hidden_log_loss": 0.781059668314772
+      },
+      "2": {
+        "updates": 3364,
+        "truth_held": 1904,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 21854.7085423,
+        "hidden_log_loss_sum": 66756.86270400001,
+        "rebuilds": 38,
+        "view_mismatches": 0,
+        "continuation_invalid": 0,
+        "prefix_capped": 0,
+        "expanded_predecessors": 834654,
+        "enumerated_transitions": 25130117,
+        "prediction_constraint_rejected": 0,
+        "observe_ms_sum": 10522.635645000002,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 19,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.5659928656361475,
+        "hidden_brier": 0.21146102642741724,
+        "hidden_log_loss": 0.6459237230796027
+      }
+    },
+    "adapted-strict": {
+      "1": {
+        "updates": 3364,
+        "truth_held": 1562,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 23361.242277399997,
+        "hidden_log_loss_sum": 82384.19719899999,
+        "rebuilds": 50,
+        "view_mismatches": 0,
+        "continuation_invalid": 0,
+        "prefix_capped": 0,
+        "expanded_predecessors": 860861,
+        "enumerated_transitions": 25894518,
+        "prediction_constraint_rejected": 42965,
+        "observe_ms_sum": 5053.429777999999,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 19,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.4643281807372176,
+        "hidden_brier": 0.22603789298023239,
+        "hidden_log_loss": 0.7971301409662218
+      },
+      "2": {
+        "updates": 3364,
+        "truth_held": 1831,
+        "hidden_squares": 103351,
+        "hidden_brier_sum": 21962.703415300002,
+        "hidden_log_loss_sum": 68787.150516,
+        "rebuilds": 40,
+        "view_mismatches": 0,
+        "continuation_invalid": 0,
+        "prefix_capped": 0,
+        "expanded_predecessors": 838653,
+        "enumerated_transitions": 25351442,
+        "prediction_constraint_rejected": 41591,
+        "observe_ms_sum": 11093.094246999997,
+        "terminal_losses": 22,
+        "terminal_zero_risk": 1,
+        "terminal_attacker_held": 19,
+        "terminal_unsupported_move": 0,
+        "truth_held_fraction": 0.5442925089179548,
+        "hidden_brier": 0.21250595945177117,
+        "hidden_log_loss": 0.6655683110564967
+      }
+    }
+  },
+  "comparisons_to_control": {
+    "grouped": {
+      "1": {
+        "truth_held_fraction": {
+          "candidate_minus_control": 0.05083234244946492,
+          "paired_game_bootstrap_95": [
+            -0.05417761245719349,
+            0.14034618740659854
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": -0.0009874438864646126,
+          "paired_game_bootstrap_95": [
+            -0.016455364428102345,
+            0.012396709378305795
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": 0.0,
+          "paired_game_bootstrap_95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "2": {
+        "truth_held_fraction": {
+          "candidate_minus_control": 0.04429250891795482,
+          "paired_game_bootstrap_95": [
+            -0.0007117979601679667,
+            0.09326976775028067
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": -0.005619348653617305,
+          "paired_game_bootstrap_95": [
+            -0.017334461576920767,
+            0.006547593601620733
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": -0.09090909090909091,
+          "paired_game_bootstrap_95": [
+            -0.22727272727272727,
+            0.0
+          ]
+        }
+      }
+    },
+    "strict": {
+      "1": {
+        "truth_held_fraction": {
+          "candidate_minus_control": 0.010404280618311534,
+          "paired_game_bootstrap_95": [
+            -0.0006694002335736498,
+            0.026397539927620818
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": -0.000982734647076534,
+          "paired_game_bootstrap_95": [
+            -0.00518844947150706,
+            0.002427154692698754
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": 0.0,
+          "paired_game_bootstrap_95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "2": {
+        "truth_held_fraction": {
+          "candidate_minus_control": -0.00624256837098692,
+          "paired_game_bootstrap_95": [
+            -0.03717274549995522,
+            0.02317736929782049
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": 0.0015063567164323337,
+          "paired_game_bootstrap_95": [
+            -0.006817842178443804,
+            0.012876900215722985
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": 0.0,
+          "paired_game_bootstrap_95": [
+            0.0,
+            0.0
+          ]
+        }
+      }
+    },
+    "grouped-strict": {
+      "1": {
+        "truth_held_fraction": {
+          "candidate_minus_control": 0.046076099881093936,
+          "paired_game_bootstrap_95": [
+            -0.0537862790509925,
+            0.1320469602266076
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": -0.0046008961646235155,
+          "paired_game_bootstrap_95": [
+            -0.017274029887051307,
+            0.0062299333003649655
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": 0.0,
+          "paired_game_bootstrap_95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "2": {
+        "truth_held_fraction": {
+          "candidate_minus_control": 0.052318668252080855,
+          "paired_game_bootstrap_95": [
+            0.014179720577093538,
+            0.09467801297734284
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": -0.007058777396445153,
+          "paired_game_bootstrap_95": [
+            -0.016593741938120576,
+            0.0036184152965245643
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": -0.09090909090909091,
+          "paired_game_bootstrap_95": [
+            -0.22727272727272727,
+            0.0
+          ]
+        }
+      }
+    },
+    "adapted-strict": {
+      "1": {
+        "truth_held_fraction": {
+          "candidate_minus_control": 0.043400713436385255,
+          "paired_game_bootstrap_95": [
+            -0.05901430976430976,
+            0.13102134608160346
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": -0.003810763386034078,
+          "paired_game_bootstrap_95": [
+            -0.01683580319656065,
+            0.007271471394584829
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": 0.0,
+          "paired_game_bootstrap_95": [
+            0.0,
+            0.0
+          ]
+        }
+      },
+      "2": {
+        "truth_held_fraction": {
+          "candidate_minus_control": 0.030618311533888228,
+          "paired_game_bootstrap_95": [
+            0.0032013288508602813,
+            0.06237163841271703
+          ]
+        },
+        "hidden_brier": {
+          "candidate_minus_control": -0.006013844372091266,
+          "paired_game_bootstrap_95": [
+            -0.01568197879598129,
+            0.004717245711093425
+          ]
+        },
+        "terminal_zero_risk_fraction": {
+          "candidate_minus_control": -0.09090909090909091,
+          "paired_game_bootstrap_95": [
+            -0.22727272727272727,
+            0.0
+          ]
+        }
+      }
+    }
+  },
+  "terminal_losses": {
+    "control": [
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 609,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 13
+          }
+        ]
+      },
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 408,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 24
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 928,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 928
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 256,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 256
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 623,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 426
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2041,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 299,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 24
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 140,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 6
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 961,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 105
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 823,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 11
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 1848
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 1702,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 364
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 1713,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 431,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 257
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 647,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 615
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 277,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 30
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 190,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 29
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 680,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 588
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 338,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 210
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 200,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 7
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 386,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 17
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 55,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 55
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 930,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 930
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 330,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 330
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 527,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 527
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 648,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 648
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 17,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 1
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 264,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 14
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 1216,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 1216
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 772,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 772
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": false,
+        "risk_particles": 785,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 281
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 304,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 697,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 82
+          }
+        ]
+      }
+    ],
+    "grouped": [
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 574,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 18
+          }
+        ]
+      },
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 468,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 18
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 958,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 958
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 316,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 316
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2019,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 276,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 26
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 172,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 11
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 914,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 65
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 781,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 1711
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 1864,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 296
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 1420,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 209
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 1486,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 1486
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 884,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 650
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 312,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 29
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 494,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 50
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 699,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 619
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 365,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 237
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 209,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 8
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 413,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 20
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 168,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 168
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 95,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 95
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 916,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 916
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 308,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 308
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 556,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 556
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 600,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 600
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 1702,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 1702
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 179,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 237,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 10
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 931,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 931
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 742,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 742
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": false,
+        "risk_particles": 799,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 242
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 270,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 704,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 84
+          }
+        ]
+      }
+    ],
+    "strict": [
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 443,
+        "illegal_particles": 0,
+        "particles": 1979,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 13
+          }
+        ]
+      },
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 294,
+        "illegal_particles": 0,
+        "particles": 2033,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 16
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 928,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 928
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 256,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 256
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 182,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 30
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 88,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 23
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 883,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 100
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 738,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 8
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 1461
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 963
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 854,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 1205,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 287
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 1370,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 1312
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 609,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 590
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 240,
+        "illegal_particles": 0,
+        "particles": 1955,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 25
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 432,
+        "illegal_particles": 0,
+        "particles": 2015,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 51
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 662,
+        "illegal_particles": 0,
+        "particles": 2009,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 578
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 330,
+        "illegal_particles": 0,
+        "particles": 2040,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 206
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 9,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 116,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 6
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 55,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 55
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 954,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 954
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 331,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 331
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 282,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 282
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 355,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 355
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 87,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 2
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 230,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 6
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 620,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 620
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 1307,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 1307
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": false,
+        "risk_particles": 248,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 384
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 259,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 698,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 84
+          }
+        ]
+      }
+    ],
+    "grouped-strict": [
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 497,
+        "illegal_particles": 0,
+        "particles": 1983,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 15
+          }
+        ]
+      },
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 305,
+        "illegal_particles": 0,
+        "particles": 2033,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 12
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 958,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 958
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 316,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 316
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2012,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2039,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 183,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 32
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 82,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 20
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 838,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 72
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 693,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 2026
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 1372
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 1503,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 208
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 911,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 911
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 824,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 808
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 218,
+        "illegal_particles": 0,
+        "particles": 1959,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 29
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 133,
+        "illegal_particles": 0,
+        "particles": 1996,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 15
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 645,
+        "illegal_particles": 0,
+        "particles": 2012,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 565
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 366,
+        "illegal_particles": 0,
+        "particles": 2043,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 215
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 44,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 1
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 150,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 14
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 123,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 123
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 95,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 95
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 916,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 916
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 295,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 295
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 234,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 234
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 357,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 357
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 1702,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 1702
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 279,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 23
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 243,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 13
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 1136,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 1136
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 686,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 686
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": false,
+        "risk_particles": 436,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 314
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 270,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 717,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 86
+          }
+        ]
+      }
+    ],
+    "adapted-strict": [
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 485,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 14
+          }
+        ]
+      },
+      {
+        "game": "npgjlm2z",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 75,
+        "move": "h6h7",
+        "zero_risk": false,
+        "risk_particles": 285,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 11
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 958,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 958
+          }
+        ]
+      },
+      {
+        "game": "pbx6h5nj",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 20,
+        "move": "e1f2",
+        "zero_risk": false,
+        "risk_particles": 316,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 41,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 316
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 2030,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "p9l39kyz",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "g5h6",
+        "zero_risk": false,
+        "risk_particles": 1974,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 46,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 183,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 32
+          }
+        ]
+      },
+      {
+        "game": "7l6fzaws",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 52,
+        "move": "e2e4",
+        "zero_risk": false,
+        "risk_particles": 82,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 15,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 20
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 838,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 72
+          }
+        ]
+      },
+      {
+        "game": "rgkgc5fm",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 33,
+        "move": "f8f7",
+        "zero_risk": false,
+        "risk_particles": 693,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 8,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 2026
+          }
+        ]
+      },
+      {
+        "game": "2rqboxgr",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 78,
+        "move": "d1h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 1372
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 1503,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 208
+          }
+        ]
+      },
+      {
+        "game": "ygxh7p9g",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 69,
+        "move": "a6a5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 30,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 647,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 647
+          }
+        ]
+      },
+      {
+        "game": "0a8e7e7j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 73,
+        "move": "a8b7",
+        "zero_risk": false,
+        "risk_particles": 824,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 32,
+            "piece": "N",
+            "hidden_before": true,
+            "held_particles": 808
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 205,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 25
+          }
+        ]
+      },
+      {
+        "game": "wi8o7pgn",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 145,
+        "move": "h7g8",
+        "zero_risk": false,
+        "risk_particles": 163,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 61,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 22
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 645,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 572
+          }
+        ]
+      },
+      {
+        "game": "2lfluqoi",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 72,
+        "move": "b1a1",
+        "zero_risk": false,
+        "risk_particles": 360,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 215
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "1p6dgpp6",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 22,
+        "move": "h4h5",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 21,
+            "piece": "p",
+            "hidden_before": false,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "qea6xrbl",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 55,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 17,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "pvjdzh58",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 119,
+        "move": "g6h7",
+        "zero_risk": false,
+        "risk_particles": 153,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 52,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 10
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 123,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 123
+          }
+        ]
+      },
+      {
+        "game": "gzbi50j4",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 57,
+        "move": "d5d8",
+        "zero_risk": false,
+        "risk_particles": 95,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 95
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 916,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 916
+          }
+        ]
+      },
+      {
+        "game": "o3z99fug",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 29,
+        "move": "g7g5",
+        "zero_risk": false,
+        "risk_particles": 295,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 56,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 295
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 234,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 234
+          }
+        ]
+      },
+      {
+        "game": "k0eo5bl1",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 30,
+        "move": "c1b2",
+        "zero_risk": false,
+        "risk_particles": 357,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 28,
+            "piece": "n",
+            "hidden_before": true,
+            "held_particles": 357
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "mutyxz6j",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 55,
+        "move": "e8e7",
+        "zero_risk": false,
+        "risk_particles": 1702,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 4,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 1702
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 261,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 17
+          }
+        ]
+      },
+      {
+        "game": "c2bwks13",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 109,
+        "move": "b6a5",
+        "zero_risk": false,
+        "risk_particles": 243,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 0,
+            "piece": "Q",
+            "hidden_before": true,
+            "held_particles": 13
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "6y10mmqi",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 43,
+        "move": "g8g7",
+        "zero_risk": false,
+        "risk_particles": 2048,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 45,
+            "piece": "B",
+            "hidden_before": true,
+            "held_particles": 2048
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 1,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 1136,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 1136
+          }
+        ]
+      },
+      {
+        "game": "dccs5tsk",
+        "side": 1,
+        "prior": 2,
+        "seed": 777,
+        "ply": 49,
+        "move": "f7f6",
+        "zero_risk": false,
+        "risk_particles": 686,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 36,
+            "piece": "R",
+            "hidden_before": true,
+            "held_particles": 686
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": false,
+        "risk_particles": 436,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 314
+          }
+        ]
+      },
+      {
+        "game": "mwixva2o",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 38,
+        "move": "c1h6",
+        "zero_risk": true,
+        "risk_particles": 0,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 60,
+            "piece": "r",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 1,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 270,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 0
+          }
+        ]
+      },
+      {
+        "game": "hs4xqxfk",
+        "side": 0,
+        "prior": 2,
+        "seed": 777,
+        "ply": 112,
+        "move": "f2e2",
+        "zero_risk": false,
+        "risk_particles": 717,
+        "illegal_particles": 0,
+        "particles": 2048,
+        "attackers": [
+          {
+            "square": 3,
+            "piece": "q",
+            "hidden_before": true,
+            "held_particles": 86
+          }
+        ]
+      }
+    ]
+  },
+  "limitations": [
+    "Single seed and 24 games; validation of belief diagnostics, not strength or Elo.",
+    "Both seats of a game are clustered together for paired resampling.",
+    "Only arena-labelled terminal king-capturable losses define the fatal tail.",
+    "Unsupported actual moves can yield zero risk; their counts are reported separately.",
+    "Observe timing shares a CPU with compilation and is not an isolated speed comparison."
+  ]
+}

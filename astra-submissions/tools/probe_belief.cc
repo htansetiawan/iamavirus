@@ -46,6 +46,9 @@ static void CaptureDiagnostics(const Report& report) {
               << ",\"enumerated_transitions\":" << report.enumerated_transitions
               << ",\"successor_prefix_capped\":" << (report.successor_prefix_capped ? "true" : "false");
   }
+  if constexpr (requires { report.prediction_constraint_rejected; }) {
+    std::cout << ",\"prediction_constraint_rejected\":" << report.prediction_constraint_rejected;
+  }
   if constexpr (requires { report.continuation_previous_mover; }) {
     std::cout << ",\"continuation_previous_mover\":" << report.continuation_previous_mover
               << ",\"continuation_rejected\":" << report.continuation_rejected
@@ -86,6 +89,15 @@ static Belief MakeBelief(int side, int count, uint64_t seed,
     Belief belief(side, count, seed, prior);
     belief.set_visibility_deductions(deductions);
     belief.set_history_mode(mode);
+    if constexpr (requires { belief.set_capture_evidence(capture); }) {
+      belief.set_capture_evidence(capture);
+    }
+    if constexpr (requires { belief.set_prediction_mode(0); }) {
+      const char* text = std::getenv("ASTRA_PREDICTION_MODE");
+      const int prediction = text ? std::stoi(text) : (grouped ? 1 : 0);
+      if (prediction < 0 || prediction > 2) std::exit(2);
+      belief.set_prediction_mode(prediction);
+    }
     return belief;
   } else if constexpr (std::is_constructible_v<Belief, int, int, uint64_t, bool, bool, bool, bool, bool, bool>) {
     return Belief(side, count, seed, true, capture, deductions, grouped, continuation, history);

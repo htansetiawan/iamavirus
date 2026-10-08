@@ -29,6 +29,8 @@ def main():
     parser.add_argument("--seeds", type=int, nargs="+", default=[777])
     parser.add_argument("--modes", type=int, choices=[0, 1, 2], nargs="+", default=[0, 1, 2])
     parser.add_argument("--priors", type=int, choices=[0, 1, 2], nargs="+", default=[1])
+    parser.add_argument("--prediction-mode", type=int, choices=[0, 1, 2], default=0,
+                        help="grouped prediction ablation when supported by the probe")
     parser.add_argument("--limit", type=int, help="First N seats; explicit pilot only")
     args = parser.parse_args()
     if min(args.workers, args.particles) < 1:
@@ -60,7 +62,7 @@ def main():
             for mode in args.modes:
                 for seed in args.seeds:
                     jobs.append({**{k: v for k, v in seat.items() if k != "moves"},
-                                 "prior": prior, "mode": mode, "seed": seed,
+                                 "prior": prior, "mode": mode, "prediction_mode": args.prediction_mode, "seed": seed,
                                  "expected_updates": len(seat["moves"]),
                                  "moves_sha256": sha(moves), "moves_path": str(moves.resolve())})
     probe = args.probe.resolve()
@@ -91,6 +93,7 @@ def main():
         command = [str(probe), job["moves_path"], str(job["side"]), str(job["seed"]), str(args.particles)]
         env = {k: v for k, v in os.environ.items() if not k.startswith(("FOW_", "ASTRA_"))}
         env.update(ASTRA_HISTORY_MODE=str(job["mode"]), ASTRA_OPPONENT_PRIOR=str(job["prior"]),
+                   ASTRA_PREDICTION_MODE=str(job["prediction_mode"]),
                    ASTRA_PROBE_SQUARES="18")
         started = time.monotonic()
         with trace.open("w") as out, errors.open("w") as err:
