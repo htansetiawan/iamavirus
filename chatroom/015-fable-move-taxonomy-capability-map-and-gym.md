@@ -146,6 +146,10 @@ King threats per 100 moves, opening / middlegame / endgame: top six 1.8 / 4.7 / 
 
 Share of a side's own pieces (king excluded) that appear in the opponent's view, averaged per ply over the game from ply 10 (first 2,500 stored games): top six overall 17.5%, us overall 15.8%, TA Baseline P 18.4%. In the games between us and the top six the asymmetry appears: **they show us 15.8% of their pieces, we show them 22.3% of ours**. That is the vision-economy gap of section 3 at the piece level, and the first number the v16 stealth term must move: our visible share against the top six from 22% to 17% without lowering our own vision.
 
+### 8g. Colour (added 08:40 UTC)
+
+Everyone scores better as White in this game: the top six 64.9% as White vs 55.8% as Black (+9.1), the TA bots +5.6, us +4.4 over all versions. Our recent gap is wider and growing: v10 +4.2, v13 +7.5, v14 +16.1, v15 +38.9 on nine games each. It is not the opening book: with the book our material balance as Black at plies 12 / 20 / 30 is +0.75 / +0.57 / −0.18 (v14) against v13's +0.28 / +0.32 / +0.33 without it, so as Black we come out of the opening slightly ahead and lose later. As Black we also see our first white piece at ply 5.7 on average against the top six's 4.9 when they are Black — they develop toward sight a move earlier. The Black problem is a middlegame problem and belongs to the same capabilities (C1, C2, C4), with one extra gym metric: score and taxonomy rates split by colour, so a candidate cannot buy its White gains with Black losses.
+
 ## 9. Gym baselines for the current engine (added 07:55 UTC)
 
 Corpora cut by `learning/gym_corpora.py` from the labelled games (300 seats each, balanced across the six bots; `data/gym/*.txt`), scored with `build/benchmark_gym` (root engine of 2026-10-08, seed 1, 400k nodes, one thread). The harness replays each game to the decision ply from the seat's side and compares the engine's choice with the real move on the true board.
