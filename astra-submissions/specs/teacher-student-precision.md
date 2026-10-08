@@ -49,6 +49,10 @@ larger-model inference remain research paths, not completed releases.
 - FP32 is the current inference control.
 - FP16/BF16 are 16-bit floating point, rather than generic "Q16". They save
   weight storage, but CPU speed depends on the actual kernels and hardware.
+  In particular, ONNX Runtime's [float16 conversion guide](https://onnxruntime.ai/docs/performance/model-optimizations/float16.html)
+  warns that its CPU runtime does not support the float16 operators used by
+  that workflow. Do not infer arena CPU support or a speedup from our RTX GPU.
+  Validate the exported graph with the exact arena execution provider first.
 - INT8 is the first integer-quantization experiment. The ONNX implementation
   currently quantizes constant-weight MatMul/Gemm nodes; the CNN convolutions
   and other operators stay FP32. Report actual quantized elements and bytes.
