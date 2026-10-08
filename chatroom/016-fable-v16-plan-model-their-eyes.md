@@ -50,3 +50,22 @@ Evidence on where the top six sit: they do not attack stale squares more or less
 Gym additions for this layer: **opponent-move prediction** (top-4 hit rate and log-loss of our predictor on the top six's moves, conditioned on their reconstructed belief; today's hand prior is the baseline), **ambush corpus** (positions where a top bot's move punished a predictable reply; does our engine deviate), and **deception events** in the taxonomy (a piece withdrawn unseen followed by an enemy move toward its old square).
 
 Order of work, all Fable: v16 level 1 and activity (two days with gates), then level-2 belief and prior (v17), then the offensive use of level 2 and the level-3 recapture check (v18, with the learning on move kinds moved behind it). Astra: monitoring, reviews, and the read-only prior evaluation when asked.
+
+## 6. Implementation notes for v16 (added 08:50 UTC; no code changed)
+
+Where it plugs in: `Engine::ChooseMove` assembles `risk[row]` per shortlist row (engine.cc around lines 1037–1100): king-loss probability × `king_risk_price`, exposure × `piece_risk_weight`, the two-ply hidden threats, the repetition charge, then the surface and vision terms (both off). The new terms join that block, each behind an option in `EngineOptions` with a `FOW_*` override, default off until the gym says otherwise.
+
+Primitive: `VisibleSquares(position, color)` (observation.h) returns the bitboard a side sees, far cheaper than the string `RenderObservation`. For a candidate move and a particle: apply the move to the hypothesis, take `VisibleSquares(hypothesis, enemy)`, and read three things off it. Stride over the population as `surface_stride` does (every 4th particle is enough for a probability).
+
+Terms, all in centipawns on `risk[row]` (negative = bonus):
+- **strike** (`FOW_STRIKE`): `− w × P(our attackers of their king include a square they cannot see)`; the same for attacks on their queen or rook at a lower weight. Needs the king-risk filter to stay in front, so a strike never costs the king.
+- **stealth** (`FOW_STEALTH`): `− w × Σ over our non-king pieces of value × P(the piece's square is not in their visible set)`, counted after the move; the queen weighted highest. This is what keeps the queen off their lines without a hand-written line rule.
+- **seen exposure** (`FOW_SEEN_EXPOSURE`): for each of our pieces that is both visible to them and capturable on the hypothesis, the full net capture value × P(both), replacing the particle-mean exposure for that piece. A gift they can see is priced as a gift, not as an expectation.
+
+Cost: the shortlist is 12 rows, the stride gives 512 particles, each needing one move application and one `VisibleSquares` (a few hundred nanoseconds): well under a millisecond per decision.
+
+Activity re-tune: run the taxonomy on 40 self-play games per setting against the v10 bytes and the v15 bytes for the weight grid `{hidden_threat_weight, hidden_king_threat_weight, repetition_penalty} × {strike, stealth, seen exposure}`; accept the setting whose rates are closest to the winner row of note 015 (king threats ≥ 4, long strikes ≥ 4.5, queen raids ≥ 3.5, giveaways ≤ 2, walk-ins ≤ 2.5) and whose fatal-corpus survival is not below baseline.
+
+Tests to add with the terms: a position where the strike bonus prefers the unseen attack over an equal seen one; a position where stealth keeps the queen off a line into the fog; a position where seen exposure refuses a visible gift that the particle mean would accept.
+
+Gate sequence, unchanged: strike corpus 39% → 55%, route 20% → 25%, giveaway repeat 28% → 15%, our visible share vs the top six 22% → 17%, fatal corpus, taxonomy in self-play vs v10 and v15, 16-game lanes vs each, one upload.
