@@ -64,8 +64,16 @@ class BotProcess:
                 if line.strip():
                     return line
 
+    immediate = True  # set by main(): True mirrors referee.py --trusted-local (observations delivered at once)
+
     def observe(self, observation: str) -> None:
-        self.pending.append(observation)
+        if BotProcess.immediate:
+            # referee.py with no turn control sends each observation the moment the
+            # ply is played, so the waiting bot updates its belief during the other
+            # side's turn; the mover's clock starts at the clock prompt.
+            self.send(observation)
+        else:
+            self.pending.append(observation)
 
     def move(self, clock: float):
         started = time.monotonic()
@@ -178,8 +186,11 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--max-plies", type=int, default=10000)
     ap.add_argument("--shared-cores", action="store_true", help="pin both bots of a game to the same cores")
+    ap.add_argument("--buffered", action="store_true",
+                    help="buffer observations until the clock prompt (the sandboxed referee); default delivers them at once as --trusted-local does")
     ap.add_argument("--output", required=True)
     args = ap.parse_args()
+    BotProcess.immediate = not args.buffered
     cores = parse_cores(args.cores)
     slots = []
     if args.shared_cores:
@@ -216,9 +227,9 @@ def main() -> None:
             slot = free.pop(0)
             a = side_spec(args, "a", slots[slot][0])
             b = side_spec(args, "b", slots[slot][1])
-            a["env"]["FOW_SEED"] = str(seed)
-            b["env"]["FOW_SEED"] = str(seed + 1000)
             white, black = (a, b) if a_white else (b, a)
+            white["env"]["FOW_SEED"] = str(seed)       # as compare_archives seeds the referee's bots
+            black["env"]["FOW_SEED"] = str(seed + 1)
             futures[pool.submit(play, gid, white, black, args.max_plies)] = (i, slot)
 
         for _ in slots:

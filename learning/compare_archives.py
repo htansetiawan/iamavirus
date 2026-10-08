@@ -41,12 +41,13 @@ def build(archive: Path, workdir: Path) -> Path:
     return target
 
 
-def play(white: Path, black: Path, seed: int, kit: Path, out: Path, cores: str | None) -> dict:
+def play(white: Path, black: Path, seed: int, kit: Path, out: Path, cores: str | None,
+         white_env: str = "", black_env: str = "") -> dict:
     python = kit / ".venv" / "bin" / "python"
     prefix = ["taskset", "-c", cores] if cores else []
     cmd = prefix + [str(python), str(kit / "referee.py"), "--trusted-local",
-                    "--white", f"env FOW_SEED={seed} bash {white / 'run.sh'}",
-                    "--black", f"env FOW_SEED={seed + 1} bash {black / 'run.sh'}",
+                    "--white", f"env FOW_SEED={seed} {white_env} bash {white / 'run.sh'}".replace("  ", " "),
+                    "--black", f"env FOW_SEED={seed + 1} {black_env} bash {black / 'run.sh'}".replace("  ", " "),
                     "--white-name", white.name, "--black-name", black.name,
                     "--base-time", "180", "--increment", "2", "--max-plies", "1000", "--output", str(out)]
     started = time.time()
@@ -66,6 +67,8 @@ def main(argv=None):
     parser.add_argument("--kit", type=Path, default=Path.home() / "git" / "fow-starter")
     parser.add_argument("--workdir", type=Path, default=ROOT / "data" / "compare")
     parser.add_argument("--output", type=Path, default=None)
+    parser.add_argument("--a-env", nargs="*", help="FOW_* settings for A, e.g. FOW_STRIKE=0 (offline variants only)")
+    parser.add_argument("--b-env", nargs="*", help="FOW_* settings for B")
     args = parser.parse_args(argv)
     args.workdir.mkdir(parents=True, exist_ok=True)
     a = build(args.a, args.workdir)
@@ -73,8 +76,10 @@ def main(argv=None):
     games, pair_scores = [], []
     for p in range(args.pairs):
         s = args.seed + 2 * p
-        g1 = play(a, b, s, args.kit, args.workdir / f"pair{p}-a-white.json", args.cores)
-        g2 = play(b, a, s, args.kit, args.workdir / f"pair{p}-b-white.json", args.cores)
+        a_env = " ".join(args.a_env or [])
+        b_env = " ".join(args.b_env or [])
+        g1 = play(a, b, s, args.kit, args.workdir / f"pair{p}-a-white.json", args.cores, a_env, b_env)
+        g2 = play(b, a, s, args.kit, args.workdir / f"pair{p}-b-white.json", args.cores, b_env, a_env)
         a1 = 0.5 + 0.5 * labels.terminal_return(g1["result"], 0)
         a2 = 0.5 + 0.5 * labels.terminal_return(g2["result"], 1)
         pair_scores.append((a1 + a2) / 2)
@@ -82,6 +87,7 @@ def main(argv=None):
         print(f"  pair {p}: A as white {g1['result']} ({g1['reason']}, {g1['plies']} plies); "
               f"A as black {g2['result']} ({g2['reason']}, {g2['plies']} plies)", file=sys.stderr, flush=True)
     report = {"a": str(args.a), "b": str(args.b), "pairs": args.pairs, "cores": args.cores,
+              "a_env": args.a_env or [], "b_env": args.b_env or [],
               "a_score_rate": float(np.mean([g["a_score"] for g in games])),
               "paired": paired_bootstrap(pair_scores), "games": games}
     text = json.dumps(report, indent=1)
