@@ -544,6 +544,7 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_STRIKE_MAJOR", &options.strike_major_weight);
   Override("FOW_STEALTH", &options.stealth_weight);
   Override("FOW_SEEN_EXPOSURE", &options.seen_exposure_weight);
+  OverrideFlag("FOW_SEEN_EXPOSURE_QUIET", &options.seen_exposure_quiet_only);
   Override("FOW_KING_SIGHT", &options.king_sight_weight);
   Override("FOW_BOOK_PLIES", &options.book_plies);
   Override("FOW_SURFACE_RAY_CAP", &options.surface_ray_cap);
@@ -1225,7 +1226,16 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
       risk[row] -= options_.strike_weight * ov.strike_king;
       risk[row] -= options_.strike_major_weight * ov.strike_major;
       risk[row] -= options_.stealth_weight * ov.hidden_value;
-      risk[row] += options_.seen_exposure_weight * ov.seen_gift;
+      // Captures and promotions are left to the search's own material accounting:
+      // charging the reply it already sees counts the gift twice (a free rook
+      // capture with promotion was refused to save a knight the search had
+      // already priced; engine_test PromotesToAQueenUnlessSaferOtherwise).
+      const Move row_move = ranked[row].move;
+      const bool quiet = !IsPromotion(row_move) &&
+                         belief_.Representative().piece_at(MoveTo(row_move)) == kNoPiece;
+      if (quiet || !options_.seen_exposure_quiet_only) {
+        risk[row] += options_.seen_exposure_weight * ov.seen_gift;
+      }
     }
   }
   if (options_.surface_charge > 0.0) {

@@ -188,6 +188,7 @@ struct EngineOptions {
   // of hypotheses in which the enemy king becomes visible after our move,
   // scaled by how diffuse the king belief is (1 - share of its modal square),
   // applied only while the king is not visible. 0 = off.
+  bool seen_exposure_quiet_only = true;  // charge seen gifts only for quiet moves
   double king_sight_weight = 0.0;
   double surface_charge = 0.0;
   int surface_ray_cap = 3;
