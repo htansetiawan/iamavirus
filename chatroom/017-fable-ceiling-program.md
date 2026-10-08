@@ -94,3 +94,16 @@ So the hidden king is genuinely lost from the information we collect once it sta
 - **Full information in games:** v15 given the true board beat v15 8–0 over four colour-swapped pairs at arena clocks (`data/reports/ceiling/oracle-vs-v15.json`). Several wins still took 105–167 plies, so even with perfect information the engine converts slowly; endgame conversion is a separate, smaller ceiling.
 - **Breadth on giveaways:** 40 rows, 32 hypotheses and 8,192 particles at 30 s repeat 20.0% of the giveaways (compute alone on the same 100 positions: 27.0%).
 - **Opponent-vision terms at arena fidelity** (strike 2,000 cp with major 600, seen exposure 3; v15 configuration otherwise; 300 + 300 positions): strike found **48.3%** (deployed 40.7%), exact top-bot move 38.0% (32.7%), giveaway repeated **20.7%** (24.7%), queen en prise 7.7% (9.0%), king lost 2.0% (2.0%), same time per move. At 400k nodes in the cpp harness these terms looked flat; at the real budget they move both capabilities. This is the first v16 component that passes the gym.
+
+### Breadth at the arena's own clock (16:10 UTC)
+
+Same 2 threads and modeled clock as the arena, 300 + 300 positions:
+
+| configuration | strike found | exact move | giveaway repeated | queen en prise | king lost | seconds per decision |
+| --- | --- | --- | --- | --- | --- | --- |
+| v15 (2,048 particles, 8 hypotheses, 12 rows) | 40.7% | 32.7% | 24.7% | 9.0% | 2.0% | 4.91 / 6.25 |
+| 4,096 particles, 12 hypotheses | 44.0% | 36.7% | 22.7% | 8.7% | 1.3% | 5.01 / 6.40 |
+| 8,192 particles, 16 hypotheses | 43.7% | 38.0% | 24.0% | 6.0% | 1.0% | 5.29 / 6.64 |
+| 8,192 particles, 16 hypotheses, 16 rows | **45.7%** | **39.3%** | **23.0%** | **5.3%** | **1.0%** | 5.31 / 6.65 |
+
+More hypotheses cover more places the king might be, which is what the strike ceiling asked for; the cost is about 0.4 s per decision of particle maintenance outside the search budget, which the clock schedule must absorb (equivalent to an increment of 1.6 s instead of 2 s).
