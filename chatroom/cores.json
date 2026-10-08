@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-08T02:45:25.063066+00:00",
+  "updated": "2026-10-08T03:13:43.666091+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
       "cores": "0-1",
       "holder": "fable",
-      "job": "lane T: v5 vs v4 model archives, same engine and sampled book (real clock)",
-      "until": "~03:45 UTC"
+      "job": "lane T: v5 vs v4 model archives (real clock) to ~03:45, then lane V: r10c + surface charge 40/cap 7 vs r10c (real clock)",
+      "until": "~04:40 UTC"
     },
     {
       "cores": "6-7",
@@ -28,9 +28,9 @@
     },
     {
       "cores": "2",
-      "holder": "astra",
-      "job": "Posterior-root isolated build, contract tests and three-arm node-limited replay gate",
-      "until": "explicit release"
+      "holder": "available",
+      "job": "Astra posterior-root gate complete; released for node-limited work",
+      "until": "unclaimed"
     }
   ]
 }

@@ -101,6 +101,14 @@ struct Tally {
   int hidden_piece_decisions = 0;
   double attacker_mass = 0.0;
   int attacker_plies = 0;
+  // Queen-loss seats: belief mass on the true capturer of our queen after the real move,
+  // in bands, and how often the engine's own choice also leaves the queen en prise.
+  double qc_mass = 0.0;
+  int qc_plies = 0;
+  int qc_band[3] = {0, 0, 0};
+  int qc_band_repeat[3] = {0, 0, 0};
+  int qc_avoidable[3] = {0, 0, 0};         // a true-board alternative kept the queen, the king and >=3 points safe
+  int qc_avoidable_repeat[3] = {0, 0, 0};
 };
 
 // Average over the true board's hidden enemy pieces of the particle share
@@ -148,6 +156,34 @@ double AttackerMass(const BeliefState& belief, const Position& truth, Move fatal
       const int square = PopLsb(&scan);
       if (particle.piece_at(square) == after.piece_at(square) &&
           particle.color_at(square) == side ^ 1) holds = true;
+    }
+    if (holds) ++holders;
+  }
+  return static_cast<double>(holders) / population.size();
+}
+
+// At a fatal ply of a queen-loss seat: after the real move, the share of
+// particles that hold at least one of the pieces which actually attack our
+// queen, on its true square. -1 when no queen is attacked.
+double QueenCapturerMass(const BeliefState& belief, const Position& truth, Move fatal, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(fatal, &undo);
+  if (after.PreviousMoverIsLost()) return -1.0;
+  Bitboard queens = after.pieces(kQueen, side);
+  Bitboard attackers = 0;
+  while (queens) attackers |= after.AttackersTo(PopLsb(&queens), side ^ 1);
+  if (attackers == 0) return -1.0;
+  const std::vector<Position>& population = belief.particles();
+  if (population.empty()) return 0.0;
+  int holders = 0;
+  for (const Position& particle : population) {
+    Bitboard scan = attackers;
+    bool holds = false;
+    while (scan) {
+      const int square = PopLsb(&scan);
+      if (particle.piece_at(square) == after.piece_at(square) &&
+          particle.color_at(square) == (side ^ 1)) holds = true;
     }
     if (holds) ++holders;
   }
@@ -341,6 +377,36 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
               tally->attacker_mass += held;
               ++tally->attacker_plies;
             }
+            const double qheld = QueenCapturerMass(engine.belief(), truth, actual, seat.side);
+            if (qheld >= 0.0) {
+              tally->qc_mass += qheld;
+              ++tally->qc_plies;
+              const int band = qheld < 0.05 ? 0 : (qheld < 0.3 ? 1 : 2);
+              ++tally->qc_band[band];
+              const bool repeat = QueenEnPrise(truth, choice, seat.side);
+              if (repeat) ++tally->qc_band_repeat[band];
+              bool safe_alternative = false;
+              {
+                MoveList legal;
+                truth.GenerateMoves(&legal);
+                for (int i = 0; i < legal.size() && !safe_alternative; ++i) {
+                  const Move m = legal[i];
+                  if (!LosesKing(truth, m, seat.side) && !QueenEnPrise(truth, m, seat.side) &&
+                      ExposureOf(truth, m, seat.side) < 3) safe_alternative = true;
+                }
+              }
+              if (safe_alternative) {
+                ++tally->qc_avoidable[band];
+                if (repeat) ++tally->qc_avoidable_repeat[band];
+              }
+              if (verbose) {
+                const int actual_capture = kPieceValue[truth.piece_at(MoveTo(actual))];
+                const int choice_capture = kPieceValue[truth.piece_at(MoveTo(choice))];
+                std::printf("  QL %s ply %zu mass %.3f real %s(x%d) engine %s(x%d) %s\n", seat.id.c_str(), ply, qheld,
+                            MoveToUci(actual).c_str(), actual_capture, MoveToUci(choice).c_str(), choice_capture,
+                            repeat ? (safe_alternative ? "REPEAT-avoidable" : "REPEAT-forced") : "avoided");
+              }
+            }
           }
           if (choice == actual) ++tally->matched;
           if (ExposureOf(truth, choice, seat.side) >= 3) {
@@ -461,6 +527,14 @@ int main(int argc, char** argv) {
               tally.hidden_piece_decisions ? tally.hidden_piece_mass / tally.hidden_piece_decisions : 0.0,
               tally.hidden_piece_decisions,
               tally.attacker_plies ? tally.attacker_mass / tally.attacker_plies : 0.0, tally.attacker_plies);
+  if (tally.qc_plies > 0) {
+    std::printf("  queen capturer held at fatal plies: %.3f (%d plies); mass <0.05: %d plies, engine repeats %d; 0.05-0.3: %d, repeats %d; >=0.3: %d, repeats %d\n",
+                tally.qc_mass / tally.qc_plies, tally.qc_plies, tally.qc_band[0], tally.qc_band_repeat[0],
+                tally.qc_band[1], tally.qc_band_repeat[1], tally.qc_band[2], tally.qc_band_repeat[2]);
+    std::printf("  ... with a safe alternative on the true board: <0.05: %d plies, engine repeats %d; 0.05-0.3: %d, repeats %d; >=0.3: %d, repeats %d\n",
+                tally.qc_avoidable[0], tally.qc_avoidable_repeat[0], tally.qc_avoidable[1], tally.qc_avoidable_repeat[1],
+                tally.qc_avoidable[2], tally.qc_avoidable_repeat[2]);
+  }
   std::printf("  left >=3 points en prise  : engine %d (%.2f%%), real player %d (%.2f%%)\n",
               tally.exposed, tally.decisions ? 100.0 * tally.exposed / tally.decisions : 0.0,
               tally.real_exposed, tally.decisions ? 100.0 * tally.real_exposed / tally.decisions : 0.0);
