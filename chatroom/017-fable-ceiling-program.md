@@ -80,3 +80,11 @@ Reading: on this data (3,766 training games) size buys about one point of top-1 
 1. Put the effort into **information about their king**, then about their sliders. Concretely: (a) track castling and king walks in the belief (where can their king be, given every square we have seen), measured by king mass on the strike corpus (47.7% → 75%); (b) value moves that locate the king (a scouting term: expected reduction in king-square entropy), measured by the same; (c) slider tracking for discipline (the line-of-sight work), measured by the giveaway corpus.
 2. **Do not spend on compute or model size.** Compress instead: the same strength at less search is available now.
 3. The learned policy predicts top-six moves at 62–64% top-4 from the mover's own view, against 36% for the hand prior on the true board; run from the opponent's seat it is the natural level-2 opponent model for the belief's prediction step.
+
+### Where the king belief fails (14:50 UTC)
+
+- At the 120 strike positions where our particles put less than 20% on the true enemy king square, the king had walked off its back rank in 85 (median ply 74); castling confusion explains only 5.
+- The prior is not the problem: a uniform move prior expects king moves in 4.5% / 12.1% / 36.0% of opening / middlegame / endgame moves and players make them 6.3% / 11.1% / 34.0% of the time.
+- The network's belief head is no better than the particles: on the 36,038 test decisions with a hidden enemy king (`learning/king_belief_eval.py`), the v4 network puts 0.437 of its mass on the true square (opening 0.694, middlegame 0.339, endgame 0.131); the 8.5M and 21.7M models score 0.424 and 0.433.
+
+So the hidden king is genuinely lost from the information we collect once it starts walking. Neither more particles of the same prior nor a bigger network recovers it; **we have to go and look**. That makes the first v16 term a **king-sighting value**: for each candidate move, the probability over hypotheses that the enemy king becomes visible after it, weighted by how diffuse the king belief is (entropy of the king-square distribution), so scouting is bought when we do not know where the king is and not otherwise. Measurement: king mass at decision time in self-play and on the strike corpus, then the strike rate, then games.
