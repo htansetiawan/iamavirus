@@ -220,6 +220,35 @@ def evaluate(model, episodes, config, device, rng, limit: int | None = None) -> 
     return {k: v / max(count, 1) for k, v in totals.items()} | {"decisions": count}
 
 
+def evaluate_cached(model, split, indices, config, device, limit: int | None = None) -> dict:
+    """evaluate() over a feature cache: the same deterministic windows from each episode's first event."""
+    model.eval()
+    totals: dict = {}
+    count = 0
+    window = config["window"]
+    batch_size = config["sequences_per_batch"]
+    chosen = indices[:limit] if limit else indices
+    rng = random.Random(0)
+    with torch.no_grad():
+        for start in range(0, len(chosen), batch_size):
+            group = chosen[start:start + batch_size]
+            longest = max(split.length(i) for i in group)
+            for ws in range(0, longest, window):
+                starts = [min(ws, max(split.length(i) - 1, 0)) for i in group]
+                batch = to_device(split.make_batch(group, window, rng, starts), device)
+                if batch["decision_seq"].shape[0] == 0:
+                    continue
+                _, metrics = compute_losses(model, batch, config["loss_weights"])
+                n = metrics["decisions"]
+                for key, value in metrics.items():
+                    if key == "decisions":
+                        continue
+                    totals[key] = totals.get(key, 0.0) + value * n
+                count += n
+    model.train()
+    return {k: v / max(count, 1) for k, v in totals.items()} | {"decisions": count}
+
+
 def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int | None = None,
           resume: Path | None = None, limit_episodes: int | None = None) -> Path:
     config = load_config(config_path)["pretrain"]
@@ -227,14 +256,29 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(config["seed"])
     rng = random.Random(config["seed"])
-    train_episodes = ds.load_episodes(Path(manifest["shards"]["train"]), limit_episodes)
-    val_episodes = ds.load_episodes(Path(manifest["shards"]["validation"]), limit_episodes)
-    train_episodes = [e for e in train_episodes if e.num_decisions > 0]
-    if config.get("players"):
-        # Replica training: only the named team's own games, from its seat.
-        keep = set(config["players"])
-        train_episodes = [e for e in train_episodes if e.metadata.player_id in keep]
-        val_episodes = [e for e in val_episodes if e.metadata.player_id in keep]
+    cache = None
+    if config.get("feature_cache"):
+        from .feature_cache import CachedSplit
+        cache = {"train": CachedSplit(Path(config["feature_cache"]) / "train"),
+                 "validation": CachedSplit(Path(config["feature_cache"]) / "validation")}
+        keep = set(config["players"]) if config.get("players") else None
+        has_decisions = np.bincount(cache["train"].d["ep"], minlength=len(cache["train"])) > 0
+        train_index = [i for i in range(len(cache["train"])) if has_decisions[i]
+                       and (keep is None or cache["train"].players[i] in keep)]
+        val_index = [i for i in range(len(cache["validation"]))
+                     if keep is None or cache["validation"].players[i] in keep]
+        if limit_episodes:
+            train_index, val_index = train_index[:limit_episodes], val_index[:limit_episodes]
+        train_episodes, val_episodes = train_index, val_index
+    else:
+        train_episodes = ds.load_episodes(Path(manifest["shards"]["train"]), limit_episodes)
+        val_episodes = ds.load_episodes(Path(manifest["shards"]["validation"]), limit_episodes)
+        train_episodes = [e for e in train_episodes if e.num_decisions > 0]
+        if config.get("players"):
+            # Replica training: only the named team's own games, from its seat.
+            keep = set(config["players"])
+            train_episodes = [e for e in train_episodes if e.metadata.player_id in keep]
+            val_episodes = [e for e in val_episodes if e.metadata.player_id in keep]
     print(f"train episodes {len(train_episodes)}, validation {len(val_episodes)}, device {device}", file=sys.stderr)
 
     model = FogPolicy(**config.get("model", {})).to(device)
@@ -270,9 +314,14 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
         order = list(range(len(train_episodes)))
         rng.shuffle(order)
         for start in range(0, len(order), batch_size):
-            group = [train_episodes[i] for i in order[start:start + batch_size]]
-            batch = to_device(ds.make_batch(group, config["window"], rng,
-                                            player_weights=config.get("player_weights")), device)
+            if cache is not None:
+                group = [train_episodes[i] for i in order[start:start + batch_size]]
+                batch = to_device(cache["train"].make_batch(group, config["window"], rng,
+                                                            player_weights=config.get("player_weights")), device)
+            else:
+                group = [train_episodes[i] for i in order[start:start + batch_size]]
+                batch = to_device(ds.make_batch(group, config["window"], rng,
+                                                player_weights=config.get("player_weights")), device)
             with torch.autocast(device_type=device.type, dtype=torch.bfloat16, enabled=use_amp):
                 loss, metrics = compute_losses(model, batch, config["loss_weights"])
             if metrics.get("decisions", 0) == 0:
@@ -298,8 +347,12 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
                 done = True
                 break
         epoch += 1
-        validation = evaluate(model, val_episodes, config, device, random.Random(0),
-                              config.get("validation_sequences"))
+        if cache is not None:
+            validation = evaluate_cached(model, cache["validation"], val_episodes, config, device,
+                                         config.get("validation_sequences"))
+        else:
+            validation = evaluate(model, val_episodes, config, device, random.Random(0),
+                                  config.get("validation_sequences"))
         validation.update({"step": step, "epoch": epoch, "validation": True})
         log.write(json.dumps(validation) + "\n")
         log.flush()

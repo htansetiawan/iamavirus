@@ -45,7 +45,8 @@ def group_of(player_id: str, tops: set) -> str:
     return "top6" if player_id in tops else "others"
 
 
-def evaluate(path: Path, manifest_path: Path, window: int = 64, batch_size: int = 16, limit: int | None = None) -> dict:
+def evaluate(path: Path, manifest_path: Path, window: int = 64, batch_size: int = 16, limit: int | None = None,
+             players: set | None = None) -> dict:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     model, payload = load_model(path, device)
     model.eval()
@@ -53,6 +54,8 @@ def evaluate(path: Path, manifest_path: Path, window: int = 64, batch_size: int 
     if payload.get("feature_version") and payload["feature_version"] != manifest.get("feature_version"):
         raise SystemExit(f"feature version mismatch: model {payload['feature_version']} vs shard {manifest.get('feature_version')}")
     episodes = ds.load_episodes(Path(manifest["shards"]["test"]), limit)
+    if players:
+        episodes = [e for e in episodes if e.metadata.player_id in players]
     tops = top_ids()
     stats = collections.defaultdict(lambda: collections.Counter())
     other = collections.Counter()
@@ -111,10 +114,11 @@ def main() -> None:
     ap.add_argument("--manifest", type=Path, default=Path("data/manifests/v4.json"))
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--output", type=Path, default=None)
+    ap.add_argument("--players", nargs="*", help="only these player ids or names (a team's own games)")
     args = ap.parse_args()
     results = []
     for path in args.checkpoints:
-        r = evaluate(path, args.manifest, limit=args.limit)
+        r = evaluate(path, args.manifest, limit=args.limit, players=set(args.players) if args.players else None)
         results.append(r)
         line = f"{r['architecture']} ({r['parameters']:,} params, step {r['step']}): "
         line += " | ".join(f"{g} n={r[g]['decisions']} nll {r[g]['policy_nll']} top1 {r[g]['top1']}% top4 {r[g]['top4']}%"
