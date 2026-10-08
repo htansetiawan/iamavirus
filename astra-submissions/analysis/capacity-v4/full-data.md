@@ -2,8 +2,8 @@
 
 Expanding the training pool improves both completed models' held-out metrics.
 The full CNN's actual hybrid decisions are nevertheless tied with the existing
-v4 model. Small attention has a promising policy-safety result and is undergoing
-the same engine comparison. Large attention is still training. None is an
+v4 model. Small attention improves policy safety but is also tied in the
+completed engine comparison. Large attention is still training. None is an
 arena release, a demonstrated stronger teacher, or an Elo gain.
 
 The [predeclared design](full-data-design.json) expands 512 training games to
@@ -73,6 +73,32 @@ model. Full report: [cnn-hybrid-comparison.json](cnn-hybrid-comparison.json).
 The r10d archive has a features-v1 observation tracker. Swapping these
 features-v2 graphs into that archive would violate the input contract. Any
 later clocked integration needs a matching tracker and input-parity checks.
+
+## Small attention inside the same hybrid
+
+The small-attention export also passes all 321 recurrent decisions, maximum
+absolute difference 4.89e-6. Its two graphs total 6,706,328 bytes. The
+[attention design](attention-hybrid-design.json) uses the same frozen binary,
+corpus and settings as the CNN comparison; the existing control is reused with
+every input hash verified.
+
+Small attention makes 164 terminal fatal choices and 96 avoidable ones: the
+same counts as full-data CNN. Relative to Fable v4, 26 terminal moves change,
+including 13 avoidable positions; two fatalities are saved and one introduced.
+Its rate difference and interval are therefore the same inconclusive values
+as the CNN comparison. Relative to full-data CNN, 24 terminal moves change,
+one fatality is saved and one introduced; the rate difference is zero with
+interval [-0.69, +0.69] percentage points. All 906 initial moves still match.
+Receipts are [attention-hybrid-comparison.json](attention-hybrid-comparison.json)
+and [full3766-cnn-vs-attention-hybrid.json](full3766-cnn-vs-attention-hybrid.json).
+
+The policy-only safety improvement has not transferred to fewer fatal engine
+choices in this gate. This does not test offensive play over complete games
+or ordinary middlegame decisions: terminal positions and initial moves are a
+limited sample. It does mean neither completed model has demonstrated the
+downstream advantage required to promote it or start compressing it for release.
+Training larger models remains a measured experiment; using their belief/value
+heads in search would require a separate design and evaluation.
 
 ## Implications for larger teachers and INT8
 

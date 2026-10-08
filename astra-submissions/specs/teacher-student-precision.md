@@ -209,8 +209,9 @@ completed models' prediction metrics. Small attention makes 137 avoidable
 fatal top-1 proposals versus full-data CNN's 157 on the same 5,167 validation
 decisions, while its imitation likelihood is worse. The actual CNN hybrid gate
 is tied with the existing v4 model: 165 versus 164 terminal fatal decisions,
-two saved and one newly fatal. Small attention is being exported for that same
-gate. This is why the deployment sequence remains: establish a useful model,
+two saved and one newly fatal. Small attention passes export parity and the
+same completed hybrid gate also produces 164 terminal fatal decisions, tied
+with full-data CNN. This is why the deployment sequence remains: establish a useful model,
 then compare direct inference with distillation and INT8. Larger training
 capacity and lower numerical precision cannot substitute for a better decision
 rule or a demonstrated downstream model benefit.

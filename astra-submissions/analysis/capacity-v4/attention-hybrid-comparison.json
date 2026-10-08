@@ -1,0 +1,323 @@
+{
+  "recorded_at": "2026-10-08T06:20:19.521378+00:00",
+  "root": "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4",
+  "candidate_root": "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000",
+  "campaign_state_at_read": "complete",
+  "control": "fable-v4-prediction0-prior1",
+  "candidate": "full-data-attention-small6000-prediction0-prior1",
+  "candidate_campaign_state_at_read": "complete",
+  "model_change_permitted": true,
+  "arms": {
+    "fable-v4-prediction0-prior1": {
+      "state": "complete",
+      "command": [
+        "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/benchmark",
+        "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "0",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_ROOT_MODE": "0",
+        "FOW_FRONTIER_CAPACITY": "0",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0"
+      },
+      "returncode": 0,
+      "elapsed_seconds": 321.3609014239628,
+      "decisions": 1338,
+      "king_losses": 165,
+      "avoidable_losses": 97,
+      "terminal_decisions": 432,
+      "terminal_survived": 267,
+      "log_sha256": "645a5ccb6fea08fd6802a3b4641e711bd9ed16c5b431660c2aec7a47977c6558"
+    },
+    "full-data-attention-small6000-prediction0-prior1": {
+      "state": "complete",
+      "command": [
+        "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/benchmark",
+        "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "0",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_ROOT_MODE": "0",
+        "FOW_FRONTIER_CAPACITY": "0",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0"
+      },
+      "returncode": 0,
+      "elapsed_seconds": 352.0659040429164,
+      "decisions": 1338,
+      "king_losses": 164,
+      "avoidable_losses": 96,
+      "terminal_decisions": 432,
+      "terminal_survived": 268,
+      "log_sha256": "abcbcab74d5b49a74b3ccf5a924745b51df20329f0a1eedf95c0eccbedb24018"
+    }
+  },
+  "inputs": {
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/benchmark": "7581bc5cc35b4043f41273405660ac00c21f871d29e9eb074916ae462309c434",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/seats.txt": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/model/model_manifest.json": "01c27622491dfb58800a7185d8dfbed06e80637fa90b4955bfb15d5b1fc2fdc5",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/model/observe.onnx": "5ca694718cc33ab9867d1a532a8b43d694fa0fd2024f9a3f1069b44f0390f84e",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-cnn-vs-v4-action453-20261008/fable-v4/model/score.onnx": "9aa00c39233cc1960d555738496feaedf887ab7ca440447c1efdf95cc279df53"
+  },
+  "candidate_inputs": {
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/benchmark": "7581bc5cc35b4043f41273405660ac00c21f871d29e9eb074916ae462309c434",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/seats.txt": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/model/model_manifest.json": "c36c6fb5d468dc0e6bc2ddc00283153918042fe07d311a513d3e66eb47180ed9",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/model/observe.onnx": "fcf413ec4593b655b45f2a9e344e280f9524440c43acea21b700a12b86f12c2d",
+    "/media/henrytan/seagate/iamavirus/astra/belief/full-attention-vs-v4-action453-20261008/attention-small6000/model/score.onnx": "f66cca490da210d0465f731029936024255fa555c6816b4f8dd5d3630097e201"
+  },
+  "game_metadata_sha256": {},
+  "groups": {
+    "all": {
+      "decisions": 1338,
+      "games": 453,
+      "control_fatal": 165,
+      "candidate_fatal": 164,
+      "changed_moves": 479,
+      "saved": 2,
+      "new_fatal": 1,
+      "fatal_rate_candidate_minus_control": -0.0007473841554559044,
+      "paired_game_bootstrap_95": [
+        -0.0037257824143070045,
+        0.0014992503748125937
+      ]
+    },
+    "sampled_nonterminal": {
+      "decisions": 906,
+      "games": 453,
+      "control_fatal": 0,
+      "candidate_fatal": 0,
+      "changed_moves": 453,
+      "saved": 0,
+      "new_fatal": 0,
+      "fatal_rate_candidate_minus_control": 0.0,
+      "paired_game_bootstrap_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "sampled_nonterminal_white": {
+      "decisions": 453,
+      "games": 453,
+      "control_fatal": 0,
+      "candidate_fatal": 0,
+      "changed_moves": 0,
+      "saved": 0,
+      "new_fatal": 0,
+      "fatal_rate_candidate_minus_control": 0.0,
+      "paired_game_bootstrap_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "sampled_nonterminal_avoidable": {
+      "decisions": 906,
+      "games": 453,
+      "control_fatal": 0,
+      "candidate_fatal": 0,
+      "changed_moves": 453,
+      "saved": 0,
+      "new_fatal": 0,
+      "fatal_rate_candidate_minus_control": 0.0,
+      "paired_game_bootstrap_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "terminal": {
+      "decisions": 432,
+      "games": 432,
+      "control_fatal": 165,
+      "candidate_fatal": 164,
+      "changed_moves": 26,
+      "saved": 2,
+      "new_fatal": 1,
+      "fatal_rate_candidate_minus_control": -0.0023148148148148147,
+      "paired_game_bootstrap_95": [
+        -0.011574074074074073,
+        0.004629629629629629
+      ]
+    },
+    "terminal_white": {
+      "decisions": 196,
+      "games": 196,
+      "control_fatal": 70,
+      "candidate_fatal": 70,
+      "changed_moves": 9,
+      "saved": 1,
+      "new_fatal": 1,
+      "fatal_rate_candidate_minus_control": 0.0,
+      "paired_game_bootstrap_95": [
+        -0.015306122448979591,
+        0.015306122448979591
+      ]
+    },
+    "terminal_avoidable": {
+      "decisions": 364,
+      "games": 364,
+      "control_fatal": 97,
+      "candidate_fatal": 96,
+      "changed_moves": 13,
+      "saved": 2,
+      "new_fatal": 1,
+      "fatal_rate_candidate_minus_control": -0.0027472527472527475,
+      "paired_game_bootstrap_95": [
+        -0.013736263736263736,
+        0.005494505494505495
+      ]
+    },
+    "sampled_nonterminal_black": {
+      "decisions": 453,
+      "games": 453,
+      "control_fatal": 0,
+      "candidate_fatal": 0,
+      "changed_moves": 453,
+      "saved": 0,
+      "new_fatal": 0,
+      "fatal_rate_candidate_minus_control": 0.0,
+      "paired_game_bootstrap_95": [
+        0.0,
+        0.0
+      ]
+    },
+    "terminal_black": {
+      "decisions": 236,
+      "games": 236,
+      "control_fatal": 95,
+      "candidate_fatal": 94,
+      "changed_moves": 17,
+      "saved": 1,
+      "new_fatal": 0,
+      "fatal_rate_candidate_minus_control": -0.00423728813559322,
+      "paired_game_bootstrap_95": [
+        -0.012711864406779662,
+        0.0
+      ]
+    }
+  },
+  "fatal_changes": [
+    {
+      "game": "0urlpzmw",
+      "side": 0,
+      "ply": 32,
+      "control": {
+        "game": "0urlpzmw",
+        "side": 0,
+        "ply": 32,
+        "sampled": false,
+        "terminal": true,
+        "move": "f2g4",
+        "king_loss": false,
+        "safe_alternatives": 3,
+        "king_risk_permille": 0,
+        "safest_risk_permille": 0,
+        "legal_moves": 31,
+        "collapsed": false
+      },
+      "candidate": {
+        "game": "0urlpzmw",
+        "side": 0,
+        "ply": 32,
+        "sampled": false,
+        "terminal": true,
+        "move": "f4f5",
+        "king_loss": true,
+        "safe_alternatives": 3,
+        "king_risk_permille": 6,
+        "safest_risk_permille": 0,
+        "legal_moves": 31,
+        "collapsed": false
+      }
+    },
+    {
+      "game": "fj3af3mp",
+      "side": 1,
+      "ply": 77,
+      "control": {
+        "game": "fj3af3mp",
+        "side": 1,
+        "ply": 77,
+        "sampled": false,
+        "terminal": true,
+        "move": "h4g4",
+        "king_loss": true,
+        "safe_alternatives": 2,
+        "king_risk_permille": 634,
+        "safest_risk_permille": 449,
+        "legal_moves": 28,
+        "collapsed": false
+      },
+      "candidate": {
+        "game": "fj3af3mp",
+        "side": 1,
+        "ply": 77,
+        "sampled": false,
+        "terminal": true,
+        "move": "c8b8",
+        "king_loss": false,
+        "safe_alternatives": 2,
+        "king_risk_permille": 449,
+        "safest_risk_permille": 449,
+        "legal_moves": 28,
+        "collapsed": false
+      }
+    },
+    {
+      "game": "o88zvvao",
+      "side": 0,
+      "ply": 90,
+      "control": {
+        "game": "o88zvvao",
+        "side": 0,
+        "ply": 90,
+        "sampled": false,
+        "terminal": true,
+        "move": "h2h3",
+        "king_loss": true,
+        "safe_alternatives": 17,
+        "king_risk_permille": 185,
+        "safest_risk_permille": 0,
+        "legal_moves": 20,
+        "collapsed": false
+      },
+      "candidate": {
+        "game": "o88zvvao",
+        "side": 0,
+        "ply": 90,
+        "sampled": false,
+        "terminal": true,
+        "move": "a1h1",
+        "king_loss": false,
+        "safe_alternatives": 17,
+        "king_risk_permille": 0,
+        "safest_risk_permille": 0,
+        "legal_moves": 20,
+        "collapsed": false
+      }
+    }
+  ],
+  "limitations": [
+    "Only requested completed arms are compared; other campaign arms may still run.",
+    "One seed; intervals cover games, not seed variability. Subgroups are exploratory.",
+    "Terminal decision is primary; repeated initial positions do not add terminal evidence.",
+    "Forced-history move safety, not a game outcome or Elo estimate.",
+    "Recorded wall times are not isolated CPU performance measurements."
+  ]
+}

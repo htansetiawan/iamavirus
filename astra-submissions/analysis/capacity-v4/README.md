@@ -127,7 +127,8 @@ every 1,000. See `full-data-design.json` for the predeclared comparison. Its
 outputs are in `capacity-v4-full3766-20261008/` on the same drive. CNN and small
 attention are complete; large attention is still running. Broader data improves
 both completed models. Small attention has 137 avoidable fatal policy proposals
-versus CNN's 157, but worse imitation likelihood. The CNN hybrid gate is tied,
-165 versus 164 terminal fatalities. See the [broader-data report](full-data.md)
+versus CNN's 157, but worse imitation likelihood. Both actual hybrid gates are
+tied: v4/CNN/small attention make 165/164/164 terminal fatal choices. See the
+[broader-data report](full-data.md)
 for comparisons, limitations and next gates. No model has been selected for
 deployment.
