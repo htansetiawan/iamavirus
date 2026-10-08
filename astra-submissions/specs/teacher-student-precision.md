@@ -19,8 +19,12 @@ but allow a wider/deeper attention encoder and longer history context offline.
 Then distill a compact encoder with policy-distribution, hidden-piece and danger
 objectives. Compare against directly training the student using the same total
 compute. The first CNN/attention comparison is complete and mixed: attention
-improved danger ranking but worsened policy likelihood. A larger teacher has
-not yet been implemented or trained, and was not folded into that comparison.
+improved danger ranking but worsened policy likelihood. A larger attention
+encoder is now implemented separately: width 256, six blocks, eight heads,
+4,763,322 parameters versus 1,631,826 in the small attention control. A learned
+projection preserves the existing 64-channel spatial and 256-state recurrent
+interface. Shape/gradient checks and one CPU training update pass; it has not
+been trained into a useful teacher or folded into the earlier comparison.
 
 There are two deployment paths to compare: run the larger model directly at
 lower precision, or distill it to a smaller model and then quantize the student.
@@ -79,3 +83,42 @@ and top-1 agreement was 98.38%; the same extra fatal proposal remained. Neither
 arm passes promotion. Any promising precision variant still needs a larger
 held-out tactical set and a hybrid decision comparison. Current artifacts are
 experiments, not arena releases.
+
+## Capacity experiment before distillation
+
+The next training comparison uses the same frozen features-v2 game split and
+observation interface in three arms: unchanged CNN, small attention, and the
+larger attention encoder above. Keep full observation prefixes when cutting
+training windows. Use paired seeds and the same training decisions, and record
+wall time and examples as separate budgets. Give the small control an additional
+equal-compute comparison so a longer teacher run is not mistaken for an
+architecture gain. The test split stays sealed during architecture selection.
+
+Measure policy likelihood, hidden-piece log loss, per-piece recall, and danger
+recall at a fixed false-positive rate. Average Brier alone is insufficient:
+the history-recovery experiment improved it while missing more terminal
+threats. Inspect actual fatal candidate changes and run the hybrid decision
+gate before complete clocked games. A teacher must improve a downstream task
+before it supplies targets to a student.
+
+If it earns that step, compare direct larger-model FP32/INT8 inference with
+distillation into the existing small model. The first distillation targets are
+legal-candidate soft probabilities, hidden-square distributions and candidate
+danger probabilities; both models reconstruct their own recurrent states from
+the same actor history. Retain real replay targets so teacher errors are not
+the only supervision. A supervised teacher's soft labels are **not** the same
+experiment as label-free EMA self-supervision. Larger-teacher distillation is
+specified here but not implemented or trained yet.
+
+The untrained large export is 19.24 MB and passes tensor parity with maximum
+absolute error 1.44e-6. Shared-host p95 observation plus scoring 96 candidates
+was 9.69 ms in a short synthetic profile. This is an engineering feasibility
+measurement, not a playing-strength result, and it cannot be compared as an
+isolated speed ratio with timings from earlier host loads. It suggests we can
+test the larger model directly first; distillation is useful only if it retains
+better decisions at a worthwhile reduction in whole-move cost.
+
+Training, checkpoint initialization, export and precision audits now reject
+feature-version mismatches. Legacy features-v1 runs remain in their frozen
+checkout. The large-model CPU smoke and export are kept separately from
+selection runs and will not seed a claimed strength comparison.

@@ -22,14 +22,15 @@ class ModelConfig:
     attention_blocks: int = 2
     attention_heads: int = 4
     latent_channels: int = 32
+    attention_channels: int = CHANNELS
 
     def validate(self):
         if self.variant not in ("cnn", "attention", "compressed_attention"):
             raise ValueError(f"unknown variant {self.variant!r}")
         if self.attention_blocks < 1 or self.attention_heads < 1:
             raise ValueError("attention blocks/heads must be positive")
-        if CHANNELS % self.attention_heads:
-            raise ValueError("attention heads must divide 64")
+        if self.attention_channels < 1 or self.attention_channels % self.attention_heads:
+            raise ValueError("attention heads must divide the positive encoder width")
         if self.latent_channels < 1 or (4 * CHANNELS) % self.latent_channels:
             raise ValueError("latent channels must be a positive divisor of 256")
 
@@ -37,7 +38,7 @@ class ModelConfig:
     def architecture(self):
         if self.variant == "cnn":
             return ARCHITECTURE
-        stem = f"astra-attn64x{self.attention_blocks}h{self.attention_heads}"
+        stem = f"astra-attn{self.attention_channels}x{self.attention_blocks}h{self.attention_heads}"
         if self.variant == "compressed_attention":
             stem += f"-residual-latent{self.latent_channels}x4x4"
         return stem + "-gru256-heads-v1"
@@ -59,15 +60,15 @@ def geometry_features():
 
 class SquareAttention(nn.Module):
     """Pre-norm attention, explicit matmuls for stable CPU ONNX export."""
-    def __init__(self, heads=4):
+    def __init__(self, heads=4, channels=CHANNELS):
         super().__init__()
-        self.heads, self.head_width = heads, CHANNELS // heads
-        self.norm1 = nn.LayerNorm(CHANNELS)
-        self.qkv = nn.Linear(CHANNELS, CHANNELS * 3)
-        self.out = nn.Linear(CHANNELS, CHANNELS)
-        self.norm2 = nn.LayerNorm(CHANNELS)
-        self.ff1 = nn.Linear(CHANNELS, CHANNELS * 2)
-        self.ff2 = nn.Linear(CHANNELS * 2, CHANNELS)
+        self.heads, self.head_width, self.channels = heads, channels // heads, channels
+        self.norm1 = nn.LayerNorm(channels)
+        self.qkv = nn.Linear(channels, channels * 3)
+        self.out = nn.Linear(channels, channels)
+        self.norm2 = nn.LayerNorm(channels)
+        self.ff1 = nn.Linear(channels, channels * 2)
+        self.ff2 = nn.Linear(channels * 2, channels)
         self.register_buffer("geometry", geometry_features().flatten(1))
         self.geometry_weights = nn.Parameter(torch.zeros(heads, 9))
 
@@ -77,7 +78,7 @@ class SquareAttention(nn.Module):
         q, k, v = qkv.permute(2, 0, 3, 1, 4).unbind(0)
         bias = (self.geometry_weights @ self.geometry).reshape(self.heads, 64, 64)
         attention = torch.softmax((q @ k.transpose(-2, -1)) * (self.head_width ** -0.5) + bias, dim=-1)
-        update = (attention @ v).transpose(1, 2).reshape(batch, 64, CHANNELS)
+        update = (attention @ v).transpose(1, 2).reshape(batch, 64, self.channels)
         x = x + self.out(update)
         return x + self.ff2(F.gelu(self.ff1(self.norm2(x))))
 
@@ -125,12 +126,17 @@ class AttentionFogPolicy(FogPolicy):
         self.config = config
         # Delete the CNN rather than carrying unused trainable parameters.
         del self.stem, self.blocks
-        self.token_embed = nn.Linear(NUM_PLANES, CHANNELS)
-        self.position = nn.Parameter(torch.empty(1, 64, CHANNELS))
+        width = config.attention_channels
+        self.token_embed = nn.Linear(NUM_PLANES, width)
+        self.position = nn.Parameter(torch.empty(1, 64, width))
         nn.init.normal_(self.position, std=0.02)
-        self.attention = nn.ModuleList([SquareAttention(config.attention_heads)
+        self.attention = nn.ModuleList([SquareAttention(config.attention_heads, width)
                                         for _ in range(config.attention_blocks)])
-        self.final_norm = nn.LayerNorm(CHANNELS)
+        self.final_norm = nn.LayerNorm(width)
+        # Keep the same 64-channel output / 256-state runtime ABI. The teacher
+        # can have a larger internal encoder without changing legal-move heads.
+        # Identity preserves every existing 64-wide checkpoint parameter key.
+        self.spatial_adapter = nn.Identity() if width == CHANNELS else nn.Linear(width, CHANNELS)
         self.bottleneck = None
         if config.variant == "compressed_attention":
             self.bottleneck = ResidualBottleneck(config.latent_channels)
@@ -140,7 +146,7 @@ class AttentionFogPolicy(FogPolicy):
         tokens = self.token_embed(planes.flatten(2).transpose(1, 2)) + self.position
         for block in self.attention:
             tokens = block(tokens)
-        spatial = self.final_norm(tokens).transpose(1, 2).reshape(-1, CHANNELS, 8, 8)
+        spatial = self.spatial_adapter(self.final_norm(tokens)).transpose(1, 2).reshape(-1, CHANNELS, 8, 8)
         if self.bottleneck is None:
             return spatial.flatten(1), spatial
         latent, decoded = self.bottleneck(spatial)

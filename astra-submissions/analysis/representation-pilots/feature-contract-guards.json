@@ -1,0 +1,24 @@
+{
+  "feature_version": "features-v2",
+  "cases": [
+    {
+      "module": "learning_experiments.run",
+      "expected_message": "dataset feature version differs",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "module": "learning_experiments.export_checkpoint",
+      "expected_message": "checkpoint feature contract differs",
+      "exit_code": 1,
+      "passed": true
+    },
+    {
+      "module": "learning_experiments.quantize_audit",
+      "expected_message": "graph feature contract differs",
+      "exit_code": 1,
+      "passed": true
+    }
+  ],
+  "rejected_before_native_build_or_graph_export": true
+}

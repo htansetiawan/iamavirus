@@ -1,7 +1,7 @@
 """Bounded, resumable representation pilots on a frozen replay split.
 
 PYTHONPATH=astra-submissions:. .venv/bin/python -m learning_experiments.run \
-  --manifest data/manifests/v3.json --variant attention --phase supervised \
+  --manifest data/manifests/v4.json --variant attention --phase supervised \
   --output /media/henrytan/seagate/iamavirus/astra/representations/attention-pilot
 
 CUDA requires an explicit --device cuda and an Astra GPU lease. Test data is
@@ -24,6 +24,7 @@ import torch
 import yaml
 
 from learning import _native, dataset as ds
+from learning.features import FEATURE_VERSION
 from learning.model import parameter_count
 from learning.pretrain import compute_losses, to_device
 from learning_experiments.evaluate import evaluate
@@ -108,7 +109,10 @@ def train(args):
     metadata_path = output / "run.json"
     if metadata_path.exists() and not args.resume:
         raise ValueError("run already exists; --resume it or use a new output directory")
-    config = ModelConfig(args.variant)
+    config = ModelConfig(args.variant, attention_blocks=args.attention_blocks,
+                         attention_heads=args.attention_heads,
+                         latent_channels=args.latent_channels,
+                         attention_channels=args.attention_channels)
     config.validate()
     torch.set_num_threads(args.threads)
     torch.manual_seed(args.seed)
@@ -120,6 +124,8 @@ def train(args):
             raise RuntimeError("CUDA requested but unavailable")
     device = torch.device(args.device)
     manifest = json.loads(args.manifest.read_text())
+    if manifest.get("feature_version") != FEATURE_VERSION:
+        raise ValueError("dataset feature version differs from the imported feature implementation")
     manifest_sha = file_hash(args.manifest)
     shards = {name: Path(manifest["shards"][name]) for name in ("train", "validation")}
     shards = {name: path if path.is_absolute() else ROOT / path for name, path in shards.items()}
@@ -151,6 +157,8 @@ def train(args):
     source_files = list((ROOT / "learning").glob("*.py")) + list(Path(__file__).parent.glob("*.py"))
     source_hashes = {str(p.relative_to(ROOT)): file_hash(p) for p in sorted(source_files)}
     metadata = {**model_metadata(config), "identity": identity, "native": native,
+                "feature_version": FEATURE_VERSION, "action_version": manifest.get("action_version"),
+                "rules_fingerprint": manifest.get("rules_fingerprint"),
                 "source_sha256": source_hashes, "torch": torch.__version__, "device": str(device),
                 "train_episodes": len(train_episodes), "validation_episodes": len(validation),
                 "model_parameters": parameter_count(module.student if args.phase == "ssl" else module),
@@ -166,6 +174,8 @@ def train(args):
         first_step = checkpoint["step"]
     elif args.initialize:
         checkpoint = torch.load(args.initialize, map_location=device, weights_only=False)
+        if checkpoint.get("feature_version") != FEATURE_VERSION:
+            raise ValueError("initialization feature version differs; migrate explicitly or use the frozen implementation")
         if checkpoint["architecture"] != config.architecture:
             raise ValueError("initialization architecture differs")
         target = module.student if args.phase == "ssl" else module
@@ -254,6 +264,10 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--variant", choices=["cnn", "attention", "compressed_attention"], required=True)
     parser.add_argument("--phase", choices=["supervised", "ssl"], default="supervised")
+    parser.add_argument("--attention-channels", type=int, default=64)
+    parser.add_argument("--attention-blocks", type=int, default=2)
+    parser.add_argument("--attention-heads", type=int, default=4)
+    parser.add_argument("--latent-channels", type=int, default=32)
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
     parser.add_argument("--steps", type=int, default=1000)
     parser.add_argument("--seed", type=int, default=253)

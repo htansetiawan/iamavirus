@@ -1,0 +1,133 @@
+{
+  "recorded_at": "2026-10-08T00:07:24.532501+00:00",
+  "scope": "Larger-model engineering feasibility only; one training update is not a teacher-quality or strength experiment",
+  "configuration": {
+    "variant": "attention",
+    "attention_blocks": 6,
+    "attention_heads": 8,
+    "latent_channels": 32,
+    "attention_channels": 256
+  },
+  "architecture": "astra-attn256x6h8-gru256-heads-v1",
+  "parameters": 4763322,
+  "feature_version": "features-v2",
+  "model_tests": {
+    "tests": 7,
+    "failures": 0,
+    "command": "taskset -c 2-3 env PYTHONPATH=astra-submissions:. .venv/bin/python -m unittest learning_experiments.test_models"
+  },
+  "training_smoke": {
+    "path": "/media/henrytan/seagate/iamavirus/astra/representations/attention-large-cpu-smoke-20261008",
+    "device": "cpu",
+    "state": "complete",
+    "updates": 1,
+    "training_decisions": 4,
+    "validation_decisions": 192,
+    "train_games": 2,
+    "validation_games": 2,
+    "manifest_sha256": "2bb5d869bf74293ff2c7eec06899492280f69e8cf3d4b4bade676d554759b4ee",
+    "checkpoint_sha256": "8e365029e16d792d468e27448443c847d7c80471d26af889e3f74afb06220681",
+    "run_metadata_sha256": "4a89489d18e075193036af014f157b7555c11765d015b42cb42e7ee2517d38f9",
+    "source_sha256": {
+      "astra-submissions/learning_experiments/__init__.py": "bd83efa0660d6325dd5a389be96dcbfb0583c568b365eff42d2c6ebda02630f2",
+      "astra-submissions/learning_experiments/compare_pilots.py": "653760a9568de7a8d663b0a07a3e3ef9a8a6868e8f68865770a035788e9cd60e",
+      "astra-submissions/learning_experiments/evaluate.py": "a5c431e1df0b15a1d8e5705a171603df6e0d4bc4e37ba48cbc3d9819ceb51d93",
+      "astra-submissions/learning_experiments/export_checkpoint.py": "adf530cf86280ad47c278f61e4fe8f8a1f9701ba8ea15f491ca2856aa3320ffa",
+      "astra-submissions/learning_experiments/models.py": "af4ac0de050a4db11d5fcdbfa41a84128a0668f91f591ba0ce6756630b1e15c6",
+      "astra-submissions/learning_experiments/profile_models.py": "84f37f345595260a0d9dbf106ab465663bab59f2ba469bf7e521aa4ec8bef6b9",
+      "astra-submissions/learning_experiments/quantize_audit.py": "1d670163d4d6bd7e1374540909f5e622043b2f72ac196b86a4a47ffe1045a949",
+      "astra-submissions/learning_experiments/run.py": "1d86e4afac751975e4920c7bfbf274ac0c8682ffffa7525964589cfd882b04e8",
+      "astra-submissions/learning_experiments/ssl.py": "3126064acff03b0f0bd6d0cedd50989afa2ba8bafc97b2a4228dd014fffdbf4b",
+      "astra-submissions/learning_experiments/test_evaluate.py": "032e194933fc87c5a9bbd6551cc33d6176bc185bd1c54d2700122f5705aeeda7",
+      "astra-submissions/learning_experiments/test_models.py": "bc7b6272fab6ac0c896bc5f84578f41fe7c0570b2d9d84bf317f2667a2f4b864",
+      "astra-submissions/learning_experiments/test_ssl.py": "43fca8f9bcab2427a835e9a008d49f6340648365b7af89006b6a62620e2fa748",
+      "learning/__init__.py": "611d705dba1f1ed454590cd9406c1e42f3df122356c3e5b8afa19e7e421a4571",
+      "learning/_native.py": "af915a3247124654933c06b2d5e3e2717560df3a08a39f7ce65a0a4a4eace704",
+      "learning/action_codec.py": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+      "learning/api_client.py": "53420c369ec99fad4cac42eca20700d09adc328b3a70bb0f7aeab006b3c35b22",
+      "learning/book.py": "77f70515d8cbe0e6f5d926294b257ae6d9d734d2604d545bcc85afdbf6d709ff",
+      "learning/compare_archives.py": "015075e4ec4cb3d5ed5310cc6036efb12d4ba59a814b42a8a3519e6235c3a9af",
+      "learning/curate.py": "34b9053c691a2377a8891eecb211082b122bb63516b3bcbf92bc5b52591f16c0",
+      "learning/dataset.py": "8ee40cee5afbb978de21954b2f59deed9ecaf3599aee5d3b49b01e9b2f26b03f",
+      "learning/env.py": "23ef68b423364a8c2345d18419aaa988757211e5c967de46f6e11ff8807762da",
+      "learning/evaluate.py": "c5355f5a4d0bfecbcc5d97807a49b1f67e931417acc16a8515f098c9c9a1ee67",
+      "learning/export.py": "ddcb8c08112d0e01132f0d4ffcbf324f7842b2a3e55e31b321ad85f00ceff146",
+      "learning/features.py": "4b4a0a9893c7751d13a4e6b9d00da74093b873e142ae39e9a35d1bcb9014d88c",
+      "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+      "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+      "learning/labels.py": "11f10cfdc1a4bc4e6b4823ef8502c192b83e1bfd7e168fe42e39ff4e4e1a6b92",
+      "learning/model.py": "78da59fb06a959920e108a4c0ff425bc8ed94ac8a5de4bc3d2fa766cc70a22ff",
+      "learning/opponent_model.py": "07448e0d6ec888545fd67e469a6c1bd92ed9fff06a8c02ecb5095cf2fca41497",
+      "learning/pretrain.py": "97ee5c455cbd3a690c56fb1e31a44a538ef8345ad35fb87d0169602ceac5cae6",
+      "learning/replay_bot.py": "801fe12709afbfa7fd6d516ec191be7669b97379edbca90ccba41aa447373a35",
+      "learning/rollouts.py": "44c844e2417d2534730c12d58cbdd5cd7d3a0937fc3536ecd82b1d3b69f92d41",
+      "learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+      "learning/train_ppo.py": "a5e72f7a06ebc908988d09fad8b459be49c4b810c513a65009ff665f5783d6cf"
+    }
+  },
+  "export_parity": {
+    "decisions": 192,
+    "worst_abs_difference": {
+      "hidden": 3.5762786865234375e-07,
+      "policy": 9.685754776000977e-08,
+      "danger": 1.341104507446289e-07,
+      "belief": 2.980232238769531e-07,
+      "value": 1.0710209608078003e-07
+    },
+    "failures": [],
+    "failure_count": 0,
+    "rtol": 0.0001,
+    "atol": 1e-05
+  },
+  "export_metadata_sha256": "c0db2938773f4d2b53a7b2c5b6e6857b10267826994707755050e52939dc25ed",
+  "untrained_synthetic_profile": {
+    "model": {
+      "variant": "attention",
+      "attention_blocks": 6,
+      "attention_heads": 8,
+      "latent_channels": 32,
+      "attention_channels": 256
+    },
+    "architecture": "astra-attn256x6h8-gru256-heads-v1",
+    "parameters": 4763322,
+    "trained": false,
+    "parity": {
+      "status": "passed",
+      "cases": [
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          37
+        ],
+        [
+          3,
+          96
+        ]
+      ],
+      "worst_absolute_error": 1.430511474609375e-06
+    },
+    "onnx": {
+      "observe": {
+        "bytes": 18993810,
+        "sha256": "1d3a6fc9393d96449f2f36e4d2bcdc1f04ad44f6716cdafd4dfeb70f021ffd89"
+      },
+      "score": {
+        "bytes": 244737,
+        "sha256": "fccc7bf190f2cfd113a3774f2c46315ec8cf41fb1bc01862afe36d8b7e98028b"
+      }
+    },
+    "observe_plus_score_96_candidates_ms": {
+      "p50": 9.0046275,
+      "p95": 9.686988249999997,
+      "p99": 11.380790849999999
+    },
+    "timing_scope": "untrained random inputs, shared host CPU, one ORT thread; not an arena clock gate"
+  },
+  "gpu_used": false,
+  "large_teacher_trained": false,
+  "distillation_implemented": false,
+  "promoted": false
+}

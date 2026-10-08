@@ -19,6 +19,7 @@ from onnxruntime.quantization import QuantType, quantize_dynamic
 from onnxruntime.quantization.shape_inference import quant_pre_process
 
 from learning import dataset as ds
+from learning.features import FEATURE_VERSION
 from learning_experiments.run import file_hash, isolate_rules, select_games, write_json
 
 
@@ -37,6 +38,9 @@ def probabilities(logits):
 
 
 def audit(graphs, shard, output, games, keep_recurrent_fp32=False):
+    manifest = json.loads((graphs / 'model_manifest.json').read_text())
+    if manifest.get('feature_version') != FEATURE_VERSION:
+        raise ValueError('graph feature contract differs; audit with its frozen feature implementation')
     if (output / "audit.json").exists():
         raise ValueError("audit already exists; use a new output directory")
     output.mkdir(parents=True, exist_ok=True)
@@ -140,6 +144,8 @@ def audit(graphs, shard, output, games, keep_recurrent_fp32=False):
                                 'int8_fatal': bool(d['danger'][b]) if d['danger_valid'] else None})
     n = counts['decisions']
     report = {'source_graph_directory': str(graphs), 'shard_sha256': file_hash(shard),
+              'feature_version': FEATURE_VERSION,
+              'source_manifest_sha256': file_hash(graphs / 'model_manifest.json'),
               'keep_recurrent_fp32': keep_recurrent_fp32,
               'onnxruntime': ort.__version__, 'native': native, 'graphs': graph_stats,
               'episodes': len(episodes), 'games': len({e.metadata.game_id for e in episodes}),

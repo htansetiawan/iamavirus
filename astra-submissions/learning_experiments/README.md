@@ -17,7 +17,7 @@ PYTHONPATH=astra-submissions:. taskset -c 2,3 .venv/bin/python \
   -m learning_experiments.profile_models --output build/astra-model-profile
 
 PYTHONPATH=astra-submissions:. taskset -c 2,3 .venv/bin/python \
-  -m learning_experiments.run --manifest data/manifests/v3.json \
+  -m learning_experiments.run --manifest data/manifests/v4.json \
   --variant attention --phase supervised --device cuda --steps 1000 \
   --output /media/henrytan/seagate/iamavirus/astra/representations/attention-pilot
 ```
@@ -26,6 +26,19 @@ PYTHONPATH=astra-submissions:. taskset -c 2,3 .venv/bin/python \
 512-value intermediate bottleneck with no spatial bypass. All three models
 export the existing observation/scoring tensor interface. Graph compatibility
 does not by itself prove that a packaged C++ submission is correct.
+
+The larger encoder uses `--variant attention --attention-channels 256
+--attention-blocks 6 --attention-heads 8`. Its 4,763,322 parameters are about
+2.9 times the small attention model; a learned adapter preserves the same
+64-channel spatial map and 256-element recurrent interface. This is an
+implemented research model, not a trained teacher or a playing-strength claim.
+The default 64-wide model preserves existing parameter names and shapes.
+
+Current training/export/audit commands enforce `features-v2`. Historical v1
+checkpoints and audits must use their frozen v1 implementation, including the
+SSL fine-tuning control. A model with the right tensor shapes but the wrong
+meaning for its observation channels is not compatible. Initialization and
+export reject missing feature metadata too; migrate deliberately, never guess.
 
 `--phase ssl` uses the actor-only EMA teacher/student and masked-observation
 objectives. A subsequent `--phase supervised --initialize SSL_CHECKPOINT` starts
@@ -47,9 +60,11 @@ PYTHONPATH=astra-submissions:. .venv/bin/python -m learning_experiments.compare_
   --control /path/to/cnn-pilot --candidate /path/to/attention-pilot \
   --step 1000 --output /path/to/comparison.json
 
+# Once a matching features-v2 export exists (for example, releases/v4):
+
 PYTHONPATH=astra-submissions:. taskset -c 4,5 .venv/bin/python \
-  -m learning_experiments.quantize_audit --graphs releases/v3 \
-  --shard data/manifests/v3/validation.jsonl.gz --games 16 \
+  -m learning_experiments.quantize_audit --graphs releases/v4 \
+  --shard data/manifests/v4/validation.jsonl.gz --games 16 \
   --output build/astra-int8-audit
 ```
 

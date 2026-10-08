@@ -71,6 +71,38 @@ class ModelTests(unittest.TestCase):
         for a, b in zip(first, second):
             torch.testing.assert_close(a, b, atol=0, rtol=0)
 
+    def test_larger_encoder_keeps_runtime_interface(self):
+        config = ModelConfig("attention", attention_blocks=6,
+                             attention_heads=8, attention_channels=256)
+        model = make_model(config)
+        small = make_model(ModelConfig("attention"))
+        self.assertGreater(parameter_count(model), 2 * parameter_count(small))
+        planes, scalars, hidden, src, dst, promo = self.inputs(batch=1)
+        h, spatial, belief, value = model.observe(planes, scalars, hidden)
+        self.assertEqual(h.shape, (1, 256))
+        self.assertEqual(spatial.shape, (1, 64, 8, 8))
+        policy, danger = model.score(h, spatial, src, dst, promo)
+        self.assertEqual(policy.shape, src.shape)
+        (policy.square().mean() + danger.square().mean() + belief.square().mean() + value.square().mean()).backward()
+        for name, p in model.named_parameters():
+            self.assertIsNotNone(p.grad, name)
+            self.assertTrue(torch.isfinite(p.grad).all(), name)
+
+    def test_old_attention_checkpoints_keep_parameter_contract(self):
+        model = make_model(ModelConfig("attention"))
+        self.assertFalse(any(k.startswith('spatial_adapter.') for k in model.state_dict()))
+        # Older metadata omitted the width. Loading it must reconstruct the
+        # exact old shape, including all recurrence and scoring parameters.
+        old = ModelConfig(**dict(variant='attention', attention_blocks=2,
+                                 attention_heads=4, latent_channels=32))
+        restored = make_model(old)
+        restored.load_state_dict(model.state_dict(), strict=True)
+        args = self.inputs()
+        with torch.no_grad():
+            a, b = model.observe(*args[:3]), restored.observe(*args[:3])
+        for x, y in zip(a, b):
+            torch.testing.assert_close(x, y, rtol=0, atol=0)
+
     def test_residual_base_at_full_capacity_is_lossless(self):
         # With no channel reduction, the fixed rearrangement must be invertible.
         codec = ResidualBottleneck(256)
