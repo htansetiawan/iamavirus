@@ -157,3 +157,15 @@ Corpora cut by `learning/gym_corpora.py` from the labelled games (300 seats each
 | giveaway (300 plies): our own move that gave 3+ points for nothing | 66% leave 3+ en prise on the one-ply check, 25% the queen | **28%** still leave 3+ en prise (the identical move in 18%), 9% the queen |
 
 Reading: when a top bot found a strike from the fog, our engine finds one in two positions out of five; it starts their multi-move fog maneuvers one time in five; and it still repeats more than a quarter of our historical giveaways. These three numbers, with the taxonomy rates of section 8, are the gym's starting line. Targets for the first cycle: strike 55%, route first move 25%, giveaway repeat 15%, without the 634-seat fatal corpus losing survival.
+
+### 9b. Opponent-move prediction baseline (added 08:25 UTC)
+
+`learning/opponent_prediction.py` scores every legal move of the mover with the engine's hand prior (uniform base, capture ×2.5, giveaway ×0.06, attacks-the-king ×3.0) on the true board — the best case for a level-0 prior — and checks where the real move ranks. On 400 games per group:
+
+| mover | moves | legal per move | top-1 | top-4 | log-loss | uniform log-loss |
+| --- | --- | --- | --- | --- | --- | --- |
+| top six | 25,724 | 31.9 | 14.7% | 36.0% | 3.11 | 3.39 |
+| us | 13,485 | 29.9 | 13.5% | 36.1% | 3.08 | 3.31 |
+| TA baselines | 14,476 | 28.6 | 15.8% | 38.6% | 3.05 | 3.26 |
+
+The belief predicts their next move with a prior that is barely better than uniform (log-loss 3.11 vs 3.39; top-4 36% vs 12.5% by chance, most of it from "captures are likelier"). This is the C3 gym metric; the v17 level-2 model is measured on the same moves. Candidate with a known number: the stage A policy head already reaches about 55% top-4 on held-out decisions from the mover's own view, so the same network run from the opponent's seat under each hypothesis (their view is computable) is the first thing to test as the opponent prior.
