@@ -10,6 +10,7 @@ import hashlib
 import json
 import os
 from pathlib import Path
+import re
 import shutil
 import subprocess
 import time
@@ -38,9 +39,17 @@ def main():
     parser.add_argument('--lease-token', required=True)
     parser.add_argument('--steps', type=int, default=1000)
     parser.add_argument('--seed', type=int, default=253)
+    parser.add_argument('--revision', help='Full committed source hash; defaults to current HEAD')
+    parser.add_argument('--train-games', type=int, default=512)
+    parser.add_argument('--validation-games', type=int, default=64)
+    parser.add_argument('--evaluate-every', type=int)
     args = parser.parse_args()
-    if args.steps < 1:
-        parser.error('steps must be positive')
+    if args.evaluate_every is not None and args.evaluate_every < 1:
+        parser.error('evaluation interval must be positive')
+    if min(args.steps, args.train_games, args.validation_games, args.evaluate_every or args.steps) < 1:
+        parser.error('steps, game limits and evaluation interval must be positive')
+    if args.revision and not re.fullmatch('[a-f0-9]{40}', args.revision):
+        parser.error('revision must be a full committed Git hash')
     lease = Path('/tmp/gpu_queue/claimed_by')
     owner = lease.read_text()
     if not owner.lower().startswith('astra') or args.lease_token not in owner:
@@ -50,10 +59,14 @@ def main():
         parser.error('Seagate is not mounted')
     output.mkdir(parents=True, exist_ok=False)
     state = {'state': 'preparing', 'pid': os.getpid(), 'started_at': datetime.now(timezone.utc).isoformat(),
-             'seed': args.seed, 'steps': args.steps, 'arms': {}, 'test_shard_used': False}
+             'seed': args.seed, 'steps': args.steps, 'train_games': args.train_games,
+             'validation_games': args.validation_games,
+             'evaluate_every': args.evaluate_every or args.steps,
+             'arms': {}, 'test_shard_used': False, 'runner_sha256': sha(Path(__file__))}
     write(output / 'campaign.json', state)
     try:
-        revision = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
+        revision = subprocess.check_output(['git', 'rev-parse', '--verify',
+                                           (args.revision or 'HEAD')+'^{commit}'], cwd=ROOT, text=True).strip()
         names = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', revision], cwd=ROOT, text=True).splitlines()
         source = output / 'source'
         source.mkdir()
@@ -105,9 +118,9 @@ def main():
                 raise RuntimeError('GPU lease changed before next arm')
             command = [python, '-m', 'learning_experiments.run', '--manifest', str(data / 'manifest.json'),
                        '--output', str(output / name), '--phase', 'supervised', '--device', 'cuda',
-                       '--steps', str(args.steps), '--evaluate-every', str(args.steps), '--threads', '1',
+                       '--steps', str(args.steps), '--evaluate-every', str(args.evaluate_every or args.steps), '--threads', '1',
                        '--seed', str(args.seed), '--batch', '4', '--window', '32',
-                       '--train-games', '512', '--validation-games', '64', *flags]
+                       '--train-games', str(args.train_games), '--validation-games', str(args.validation_games), *flags]
             state.update(state='running', current_arm=name)
             state['arms'][name] = {'command': command, 'state': 'running'}
             write(output / 'campaign.json', state)

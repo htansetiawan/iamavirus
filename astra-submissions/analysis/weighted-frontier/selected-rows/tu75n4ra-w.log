@@ -1,0 +1,35 @@
+row b1c3 risk=100 cells: -95 -95 -95 -95 -95 -95 -95 -95
+row g1f3 risk=100 cells: -87 -100 -100 -100 -71 -71 -71 -71
+row d2d4 risk=100 cells: -97 -97 -97 -97 -71 -71 -71 -71
+row e2e4 risk=100 cells: -102 -88 -88 -88 -88 -88 -108 -108
+row e2e3 risk=100 cells: -119 -72 -72 -72 -118 -118 -118 -118
+row d2d3 risk=100 cells: -124 -72 -72 -72 -118 -118 -118 -118
+row c2c4 risk=100 cells: -177 -177 -125 -125 -125 -125 -125 -152
+row c2c3 risk=100 cells: -169 -122 -122 -122 -168 -168 -168 -168
+row b2b4 risk=100 cells: -179 -173 -173 -173 -173 -173 -173 -173
+row b2b3 risk=100 cells: -164 -113 -113 -159 -159 -159 -159 -159
+row b1a3 risk=100 cells: -144 -101 -101 -147 -152 -152 -152 -152
+row g2g4 risk=100 cells: -181 -170 -170 -170 -170 -197 -197 -197
+DECISION {"game":"tu75n4ra","side":0,"ply":0,"sampled":true,"terminal":false,"move":"g1f3","king_loss":false,"safe_alternatives":20,"king_risk_permille":0,"safest_risk_permille":0,"legal_moves":20,"collapsed":false}
+row a1a2 risk=17217 cells: -20232 -47214 -20305 -19692 -19976 -20069 -19629 -47214
+row b4b5 risk=14011 cells: -17017 -44011 -44004 -16890 -16927 -17064 -16383 -44011
+row b2c1 risk=18324 cells: -21553 -48319 -21666 -21227 -21260 -21352 -20749 -48319
+row a3a4 risk=14011 cells: -44006 -44011 -17631 -16891 -44006 -44006 -44006 -44011
+row b2g7 risk=14491 cells: -44488 -44491 -17606 -17020 -44488 -44488 -44488 -44491
+row b2d4 risk=6764 cells: -36761 -36764 -10015 -9643 -36761 -36761 -36761 -36764
+row b2c3 risk=14026 cells: -44023 -44026 -44021 -16912 -44023 -44023 -44023 -44026
+row b2h8 risk=14490 cells: -44487 -44490 -44483 -17376 -44487 -44487 -44487 -44490
+row b2e5 risk=14498 cells: -44495 -44498 -44491 -17168 -44495 -44495 -44495 -44498
+DECISION {"game":"tu75n4ra","side":0,"ply":58,"sampled":false,"terminal":true,"move":"b2d4","king_loss":true,"safe_alternatives":1,"king_risk_permille":154,"safest_risk_permille":0,"legal_moves":11,"collapsed":false}
+  tu75n4ra   vs Decent_Chess_Bot     ply  58  real played b2d4   (lost)  engine plays b2d4    ALSO LOSES
+
+corpus: /home/henrytan/git/iamavirus/astra-submissions/analysis/weighted-frontier/selected-rows/tu75n4ra-w.txt   own-decision stride 1000   400000 nodes/decision
+  seats replayed            : 1
+  decisions evaluated       : 2
+  immediate king losses     : 1 (50.00%)
+  safe-alternative decisions: 2
+  avoidable king losses     : 1
+  matched the real move     : 2 (100.0%)
+  real losing positions     : 1
+  ...the engine survives    : 0 (0%)
+  unsafe moves rejected     : 1 (0.5 per decision)

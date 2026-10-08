@@ -29,6 +29,11 @@ static void CaptureDiagnostics(const Report& report) {
   if constexpr (requires { report.capture_square; }) {
     std::cout << ",\"inferred_capture_square\":" << report.capture_square;
   }
+  if constexpr (requires { report.frontier_states; }) {
+    std::cout << ",\"frontier_states\":" << report.frontier_states
+              << ",\"frontier_effective_states\":" << report.frontier_effective_states
+              << ",\"frontier_reduced\":" << (report.frontier_reduced ? "true" : "false");
+  }
   if constexpr (requires { report.capture_constraints_preserved; }) {
     std::cout << ",\"capture_constraints_preserved\":" << report.capture_constraints_preserved;
   }
@@ -74,6 +79,18 @@ static void CaptureDiagnostics(const Report& report) {
               << ",\"recovery_rejected\":" << report.recovery_rejected
               << ",\"history_evidence_conflict\":"
               << (report.history_evidence_conflict ? "true" : "false");
+  }
+}
+
+template <class Belief>
+static void ConfigureFrontier(Belief* belief) {
+  const char* value = std::getenv("ASTRA_FRONTIER_CAPACITY");
+  const int capacity = value ? std::stoi(value) : 0;
+  if constexpr (requires { belief->set_frontier_capacity(capacity); }) {
+    belief->set_frontier_capacity(capacity);
+  } else if (capacity != 0) {
+    std::cerr << "This frozen belief does not support a frontier\n";
+    std::exit(2);
   }
 }
 
@@ -240,6 +257,7 @@ int main(int argc, char** argv) {
       argc == 5 || std::atoi(argv[5]) != 0, argc == 5 || std::atoi(argv[6]) != 0,
       argc >= 8 && std::atoi(argv[7]) != 0, argc >= 9 && std::atoi(argv[8]) != 0,
       argc >= 10 && std::atoi(argv[9]) != 0);
+  ConfigureFrontier(&belief);
   Position truth;
   if (!PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", &truth)) return 2;
   if (BoardText(truth) != "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr") return 2;

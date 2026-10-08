@@ -62,20 +62,55 @@ sequential on reserved core 2 of a shared host, not a clean hardware speed test.
 - The complete action control also matches all 1,338 previous grouped-control
   decisions in every logged JSON field, including 158 fatal choices among 432
   terminal positions. `action-control-parity.json` records that check; the
-  frontier action arm is still running.
+  frontier action arm has also completed.
 - All 480 full diagnostic runs completed, with immutable input hashes checked.
 - `comparison.json`, `runtime-parity.json`, `correctness.json`, and both build
   receipts retain the results and source/binary provenance.
 
-The actual hybrid action gate is now running with the predeclared
+The actual hybrid action gate completed with the predeclared
 [`action-design.json`](action-design.json): cap 0 versus 8,192, same frozen
 453-game development set, both seats, 400,000 nodes, one thread, seed 777,
-the same repairs-v4 neural graphs and no opening book. It is expected to
-evaluate 1,338 decisions, including 432 terminal positions; 906 initial
-positions must not dilute the reported terminal fatality rate. Compare every
-control decision with the previous grouped control before interpreting the
-candidate. More data about retained possibilities is useful only if it helps
-the decisions that consume them.
+the same repairs-v4 neural graphs and no opening book. It evaluated 1,338
+decisions, including 432 terminal positions. The 906 initial positions are
+excluded from the reported terminal fatality rate.
+
+Terminal fatal choices increased **158→164**, with 26 saved and 32 newly fatal
+decisions. The paired rate difference is +1.39 percentage points, 95% interval
+−2.08 to +4.86. Among 364 terminal positions with an escape, avoidable fatal
+choices increased 90→96. This is inconclusive evidence, not a successful
+action gate. The candidate remains default-off and is not promoted to a
+clocked strength test on these results. Total process time increased
+219.1→320.6 seconds on the shared host. These are forced-history decisions,
+not complete games or an Elo estimate. See `action-comparison.json`.
+
+A follow-up diagnostic replayed the 58 changed-fatality cases under both
+beliefs, measuring both selected moves: 116 probes. Their risk counts agree
+exactly with the engine's logged risk permille, and their truth labels agree
+with the action comparison. Under the candidate belief, **19 of the 32 newly
+fatal choices have higher predicted king-loss risk than the safe move chosen
+by the control**. Eleven instead rank the fatal move safer, and two see no risk
+in it. Thus posterior support is only part of the problem; selection can also
+override useful risk evidence. This selected-case diagnosis does not establish
+that always choosing minimum risk is a stronger policy. The next diagnostic
+checks whether those safe alternatives reached the matrix and what caused the
+final choice. `choice-risk.json` and `choice-probe-build.json` retain provenance.
+
+That row trace is now complete for the three largest risk disagreements:
+`hilbnfl9` Black ply 29, `fj3af3mp` Black ply 77 and `tu75n4ra` White ply 58.
+Every safe comparator was present in the matrix, and all six reproduced
+decisions match the original binary's records. `selected-rows/report.json`
+contains the existing rounded trace. A separate diagnostic build preserves
+those decisions and prints exact strategy probabilities: `e8d7` receives
+51.37% versus 10.76% for the selected fatal `a8b8` in the first case; the last
+case assigns 99.93% to fatal `b2d4` and only 0.012% to safe `b2c1`. The row's
+combined risk charge is not its immediate king-loss probability: hidden-threat,
+material and repetition terms also enter. Search payoffs include future threats.
+
+The [frontier/posterior experiment](../../candidates/frontier-posterior/README.md)
+now tests the interaction between retained belief support and chance-weighted
+root selection without changing those safety prices. The three inspected cases
+remain mixed under the new selectors. They are correctness/diagnostic examples,
+not an improvement claim or evidence that immediate survival always wins later.
 
 Large immutable outputs remain on the authorized Seagate drive:
 

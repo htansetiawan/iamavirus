@@ -50,6 +50,7 @@ def main():
                 env.update(ASTRA_HISTORY_MODE=settings['FOW_HISTORY_MODE'],
                            ASTRA_OPPONENT_PRIOR=settings['FOW_OPPONENT_PRIOR'],
                            ASTRA_PREDICTION_MODE=settings['FOW_PREDICTION_MODE'],
+                           ASTRA_FRONTIER_CAPACITY=settings.get('FOW_FRONTIER_CAPACITY', '0'),
                            ASTRA_PROBE_CANDIDATES=str(requested))
                 command = [str(probe), str(moves), str(side), '777', settings['FOW_PARTICLES']]
                 stem = f'{game}-{side}-{name}'

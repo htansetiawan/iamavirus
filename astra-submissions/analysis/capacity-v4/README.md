@@ -119,3 +119,10 @@ in `PNBRQK` order. `convergence-provenance.json` pins all three completed
 checkpoints and their recorded validation curves; the earlier partial manifest
 is retained as history. Intervals cover held-out games, not training-seed
 variation. The test split remains untouched.
+
+A new, separately stored comparison started at 05:16 UTC on 2026-10-08 using
+all 3,766 training games, the same 64 validation games and the same frozen
+source. It trains each architecture from scratch for 6,000 updates, with curves
+every 1,000. See `full-data-design.json` for the predeclared comparison. Its
+outputs are in `capacity-v4-full3766-20261008/` on the same drive. This run is
+in progress; none of its models has been selected for deployment.

@@ -1,0 +1,4464 @@
+{
+  "state": "complete",
+  "pid": 4090050,
+  "started_at": "2026-10-08T05:06:26.079757+00:00",
+  "comparison_sha256": "7fb34ab2aaf8869ec8670c962cde22ea182a408f76425d0bd702d76af147e18a",
+  "corpus_sha256": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+  "probe_sha256": "684282d5d7904bc7d926cad8748d54149227d13ea44bdab1d9a1d5cae00090fb",
+  "runner_sha256": "a340dc340afe9d0ed24ec76d64c9cc269f6fd82351cf01077f0ce3a20f9d7f6b",
+  "planned_changes": 58,
+  "runs": [
+    {
+      "game": "01bnd1io",
+      "side": 0,
+      "ply": 216,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "b4a5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b4a5": {
+          "move": "b4a5",
+          "legal_particles": 2048,
+          "risk_particles": 762,
+          "risk_permille": 372,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 4,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 39
+            }
+          ]
+        },
+        "b4a4": {
+          "move": "b4a4",
+          "legal_particles": 2048,
+          "risk_particles": 575,
+          "risk_permille": 280,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "5e652436ddf719f999d18cc4a133f871a5dae10f164706b3fd2bec76cdf032fa"
+    },
+    {
+      "game": "01bnd1io",
+      "side": 0,
+      "ply": 216,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "b4a4",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b4a5": {
+          "move": "b4a5",
+          "legal_particles": 2048,
+          "risk_particles": 550,
+          "risk_permille": 268,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 4,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 19
+            }
+          ]
+        },
+        "b4a4": {
+          "move": "b4a4",
+          "legal_particles": 2048,
+          "risk_particles": 400,
+          "risk_permille": 195,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "30baec9d71a7c95f60a91e5ef5cdc10f3eb1fe31f7b386a5942a2ea7b57585d4"
+    },
+    {
+      "game": "0cg7saci",
+      "side": 1,
+      "ply": 115,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "e8d7",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "e8d7": {
+          "move": "e8d7",
+          "legal_particles": 2048,
+          "risk_particles": 396,
+          "risk_permille": 193,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 274,
+          "risk_permille": 133,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 62,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 15
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "0caa8d866dea904f600d5efc8d8e53724b225bf8294a9ebd62ef3ab1f214cfb0"
+    },
+    {
+      "game": "0cg7saci",
+      "side": 1,
+      "ply": 115,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "h4g3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "e8d7": {
+          "move": "e8d7",
+          "legal_particles": 2048,
+          "risk_particles": 65,
+          "risk_permille": 31,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 3,
+          "risk_permille": 1,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 62,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 1
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 1,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "2aa390afeaa886c19b8da6ae61d39c524900603188127d0f1dfbb7e10bc1cbca"
+    },
+    {
+      "game": "0g0bievf",
+      "side": 0,
+      "ply": 74,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h3h4",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h3h4": {
+          "move": "h3h4",
+          "legal_particles": 2048,
+          "risk_particles": 131,
+          "risk_permille": 63,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c4c5": {
+          "move": "c4c5",
+          "legal_particles": 2048,
+          "risk_particles": 235,
+          "risk_permille": 114,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 37,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 235
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "683cf9640eed2ed9a546e495d893674d5fb3f5cf6ec9783b3340db573bcaeebf"
+    },
+    {
+      "game": "0g0bievf",
+      "side": 0,
+      "ply": 74,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "c4c5",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h3h4": {
+          "move": "h3h4",
+          "legal_particles": 2048,
+          "risk_particles": 86,
+          "risk_permille": 41,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c4c5": {
+          "move": "c4c5",
+          "legal_particles": 2048,
+          "risk_particles": 44,
+          "risk_permille": 21,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 37,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 44
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "b1183563b72924d5853d331e062313e1cb6d0607ebc2e1502a1be1de94564603"
+    },
+    {
+      "game": "0hrrs4me",
+      "side": 0,
+      "ply": 88,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "h3g3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h3g3": {
+          "move": "h3g3",
+          "legal_particles": 2048,
+          "risk_particles": 8,
+          "risk_permille": 3,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 6,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 8
+            }
+          ]
+        },
+        "a3a4": {
+          "move": "a3a4",
+          "legal_particles": 2048,
+          "risk_particles": 19,
+          "risk_permille": 9,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "55245a3815ca5e1deda0b9351ccd23dcdade270c7f155fdb42b5034ca0485500"
+    },
+    {
+      "game": "0hrrs4me",
+      "side": 0,
+      "ply": 88,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "a3a4",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h3g3": {
+          "move": "h3g3",
+          "legal_particles": 2048,
+          "risk_particles": 131,
+          "risk_permille": 63,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 6,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 46
+            }
+          ]
+        },
+        "a3a4": {
+          "move": "a3a4",
+          "legal_particles": 2048,
+          "risk_particles": 125,
+          "risk_permille": 61,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "62c78b7393c16127eea150f20a0956bfd7bef279df309508ca1566acc4e014ab"
+    },
+    {
+      "game": "0s70cdjw",
+      "side": 1,
+      "ply": 101,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "d7e8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "d7e8": {
+          "move": "d7e8",
+          "legal_particles": 2048,
+          "risk_particles": 131,
+          "risk_permille": 63,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "d7c7": {
+          "move": "d7c7",
+          "legal_particles": 2048,
+          "risk_particles": 148,
+          "risk_permille": 72,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 54,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 26
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "4cbcd0de3f97060d6d6e93dc3efbec73ad46fc70d788f774f461f2b366238759"
+    },
+    {
+      "game": "0s70cdjw",
+      "side": 1,
+      "ply": 101,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "d7c7",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "d7e8": {
+          "move": "d7e8",
+          "legal_particles": 2048,
+          "risk_particles": 106,
+          "risk_permille": 51,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "d7c7": {
+          "move": "d7c7",
+          "legal_particles": 2048,
+          "risk_particles": 38,
+          "risk_permille": 18,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 54,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 8
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "f0b8e8c0e3b94459167c1ef6746c7fd882716f897574fed9f02f701289c7d6ad"
+    },
+    {
+      "game": "0urlpzmw",
+      "side": 0,
+      "ply": 32,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "f4f5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f4f5": {
+          "move": "f4f5",
+          "legal_particles": 2048,
+          "risk_particles": 9,
+          "risk_permille": 4,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 39,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 9
+            }
+          ]
+        },
+        "f2g4": {
+          "move": "f2g4",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "5320bac7661a22ff3206bd90a04ca550d690ec2443f589c7dcfc7449e358f367"
+    },
+    {
+      "game": "0urlpzmw",
+      "side": 0,
+      "ply": 32,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "f2g4",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f4f5": {
+          "move": "f4f5",
+          "legal_particles": 2048,
+          "risk_particles": 8,
+          "risk_permille": 3,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 39,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 8
+            }
+          ]
+        },
+        "f2g4": {
+          "move": "f2g4",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "fd11dbae265928010f041c0912ae3ef2c3a2cf5209d9cd50daeec5973c02fba8"
+    },
+    {
+      "game": "1g689y64",
+      "side": 0,
+      "ply": 82,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "d4d3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "d4d3": {
+          "move": "d4d3",
+          "legal_particles": 2048,
+          "risk_particles": 539,
+          "risk_permille": 263,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 10,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 19
+            }
+          ]
+        },
+        "d4e3": {
+          "move": "d4e3",
+          "legal_particles": 2048,
+          "risk_particles": 875,
+          "risk_permille": 427,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "6c86f395aaced5cf1bd368913f8c6661048af775cecfcc7ac882cd8610eb0764"
+    },
+    {
+      "game": "1g689y64",
+      "side": 0,
+      "ply": 82,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "d4e3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "d4d3": {
+          "move": "d4d3",
+          "legal_particles": 2048,
+          "risk_particles": 495,
+          "risk_permille": 241,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 10,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 25
+            }
+          ]
+        },
+        "d4e3": {
+          "move": "d4e3",
+          "legal_particles": 2048,
+          "risk_particles": 1035,
+          "risk_permille": 505,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "cf07c4e11b8277d32d775bffabf61fdb57f489f699f886c975d7436019134b96"
+    },
+    {
+      "game": "30v9acbe",
+      "side": 1,
+      "ply": 101,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "c6d7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "c6d7": {
+          "move": "c6d7",
+          "legal_particles": 2048,
+          "risk_particles": 103,
+          "risk_permille": 50,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c6c7": {
+          "move": "c6c7",
+          "legal_particles": 2048,
+          "risk_particles": 319,
+          "risk_permille": 155,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "R",
+              "hidden_before": true,
+              "held_particles": 30
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "87dbf4aef781324d7af6feb0df8f03473ed70867f42cce3596e6ae3e1dcdd33f"
+    },
+    {
+      "game": "30v9acbe",
+      "side": 1,
+      "ply": 101,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "c6c7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "c6d7": {
+          "move": "c6d7",
+          "legal_particles": 2048,
+          "risk_particles": 117,
+          "risk_permille": 57,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c6c7": {
+          "move": "c6c7",
+          "legal_particles": 2048,
+          "risk_particles": 342,
+          "risk_permille": 166,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "R",
+              "hidden_before": true,
+              "held_particles": 37
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "3b31431a0bcf556d5c8552410eef22405a43d8f1fccf858fbc57078cc6bc8689"
+    },
+    {
+      "game": "4mgta685",
+      "side": 1,
+      "ply": 43,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "e5b8",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "e5b8": {
+          "move": "e5b8",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 41,
+              "piece": "N",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "c8c7": {
+          "move": "c8c7",
+          "legal_particles": 2048,
+          "risk_particles": 43,
+          "risk_permille": 20,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "06896410eb3746762dca5e21255e0c9870da0b3e316141164d98d3f46d3e6c44"
+    },
+    {
+      "game": "4mgta685",
+      "side": 1,
+      "ply": 43,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "c8c7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e5b8": {
+          "move": "e5b8",
+          "legal_particles": 2048,
+          "risk_particles": 492,
+          "risk_permille": 240,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 41,
+              "piece": "N",
+              "hidden_before": true,
+              "held_particles": 492
+            }
+          ]
+        },
+        "c8c7": {
+          "move": "c8c7",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "f9f759224839e12491a496262c33137ea657306ea5ff4205417890c3ea9069b5"
+    },
+    {
+      "game": "58wwoq7u",
+      "side": 0,
+      "ply": 132,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h1g2",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "h1g2": {
+          "move": "h1g2",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "e4e1": {
+          "move": "e4e1",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 49,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "5aaf40d819c59a16a4b57f2b3b9b78910d708826ffad0ac749f2d817338f7e7c"
+    },
+    {
+      "game": "58wwoq7u",
+      "side": 0,
+      "ply": 132,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "e4e1",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "h1g2": {
+          "move": "h1g2",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "e4e1": {
+          "move": "e4e1",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 49,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e47b740a75ed6bafdc55efa37cde316c69fce1425d18fcd3b93218408812b1d1"
+    },
+    {
+      "game": "5cp573hl",
+      "side": 1,
+      "ply": 101,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "b4a3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b4a3": {
+          "move": "b4a3",
+          "legal_particles": 2048,
+          "risk_particles": 148,
+          "risk_permille": 72,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "b4c3": {
+          "move": "b4c3",
+          "legal_particles": 2048,
+          "risk_particles": 314,
+          "risk_permille": 153,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 42,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 5
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "11284bc8ba4c5535e1334a177d302d99f2b6fc0cebc6b37543a7c6146ae795a6"
+    },
+    {
+      "game": "5cp573hl",
+      "side": 1,
+      "ply": 101,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "b4c3",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "b4a3": {
+          "move": "b4a3",
+          "legal_particles": 2048,
+          "risk_particles": 24,
+          "risk_permille": 11,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "b4c3": {
+          "move": "b4c3",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 42,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "0b6a9b41fd641a65f73ed84855bafcee53d3d8a364452ace37cf542c0f8e2faa"
+    },
+    {
+      "game": "697nla0i",
+      "side": 0,
+      "ply": 90,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g4g5",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g4g5": {
+          "move": "g4g5",
+          "legal_particles": 2048,
+          "risk_particles": 512,
+          "risk_permille": 250,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g4h3": {
+          "move": "g4h3",
+          "legal_particles": 2048,
+          "risk_particles": 472,
+          "risk_permille": 230,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 33
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "04a17758d14026e3049f283958eea50a6ab60129b678cd6c48bf727780a20112"
+    },
+    {
+      "game": "697nla0i",
+      "side": 0,
+      "ply": 90,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g4h3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g4g5": {
+          "move": "g4g5",
+          "legal_particles": 2048,
+          "risk_particles": 89,
+          "risk_permille": 43,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g4h3": {
+          "move": "g4h3",
+          "legal_particles": 2048,
+          "risk_particles": 206,
+          "risk_permille": 100,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 2
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "24ff90a90cb92360b528d304af65f5e0ddf20c7eed23fc17cc079436902ae77c"
+    },
+    {
+      "game": "6qmzs9y4",
+      "side": 0,
+      "ply": 82,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "e2f3",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "e2f3": {
+          "move": "e2f3",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 28,
+              "piece": "b",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "a4a5": {
+          "move": "a4a5",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "1bbcd18f07f4135a98b268855363ee06ba11f88aeb26debcbd3f0e457fc4ed99"
+    },
+    {
+      "game": "6qmzs9y4",
+      "side": 0,
+      "ply": 82,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "a4a5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e2f3": {
+          "move": "e2f3",
+          "legal_particles": 2048,
+          "risk_particles": 730,
+          "risk_permille": 356,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 28,
+              "piece": "b",
+              "hidden_before": true,
+              "held_particles": 14
+            }
+          ]
+        },
+        "a4a5": {
+          "move": "a4a5",
+          "legal_particles": 2048,
+          "risk_particles": 48,
+          "risk_permille": 23,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "09ad41411bea08d015ef0a50dc322b2616e60501468c0829224309e3e6f14b1b"
+    },
+    {
+      "game": "7bsq2wpb",
+      "side": 1,
+      "ply": 49,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "g8h7",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g8h7": {
+          "move": "g8h7",
+          "legal_particles": 2048,
+          "risk_particles": 101,
+          "risk_permille": 49,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 1,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 26
+            }
+          ]
+        },
+        "f7f6": {
+          "move": "f7f6",
+          "legal_particles": 2048,
+          "risk_particles": 240,
+          "risk_permille": 117,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "51d5801d67b4b7ffff2ec7731056d249fd1e752196e72664a17c60c738392ffe"
+    },
+    {
+      "game": "7bsq2wpb",
+      "side": 1,
+      "ply": 49,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "f7f6",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g8h7": {
+          "move": "g8h7",
+          "legal_particles": 2048,
+          "risk_particles": 114,
+          "risk_permille": 55,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 1,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 47
+            }
+          ]
+        },
+        "f7f6": {
+          "move": "f7f6",
+          "legal_particles": 2048,
+          "risk_particles": 239,
+          "risk_permille": 116,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "0038c86e997c6d7b4231d172a9b8e44df6f8d83e539099a2f24cf9d0d747f914"
+    },
+    {
+      "game": "7pyjvkdl",
+      "side": 1,
+      "ply": 69,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "a1a8",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "a1a8": {
+          "move": "a1a8",
+          "legal_particles": 2048,
+          "risk_particles": 1228,
+          "risk_permille": 599,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "f7f8": {
+          "move": "f7f8",
+          "legal_particles": 2048,
+          "risk_particles": 1067,
+          "risk_permille": 520,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 26,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 52
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "ae1fab6048c8024593f213fa332501269b231be89e864aebb9edd41e964c521f"
+    },
+    {
+      "game": "7pyjvkdl",
+      "side": 1,
+      "ply": 69,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "f7f8",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "a1a8": {
+          "move": "a1a8",
+          "legal_particles": 2048,
+          "risk_particles": 710,
+          "risk_permille": 346,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "f7f8": {
+          "move": "f7f8",
+          "legal_particles": 2048,
+          "risk_particles": 274,
+          "risk_permille": 133,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 26,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 108
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "d92d44e86f2acd3776eb4dd79bb1a4fa941b30085bda3df954c9f67c9965eae7"
+    },
+    {
+      "game": "8987eyap",
+      "side": 0,
+      "ply": 86,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "e3d2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e3d2": {
+          "move": "e3d2",
+          "legal_particles": 2048,
+          "risk_particles": 33,
+          "risk_permille": 16,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "d4d5": {
+          "move": "d4d5",
+          "legal_particles": 2048,
+          "risk_particles": 205,
+          "risk_permille": 100,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 10,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 99
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "6495fcf286357b334804546c709b1531d4f85d29c1f02aa10707254298952f82"
+    },
+    {
+      "game": "8987eyap",
+      "side": 0,
+      "ply": 86,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "d4d5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e3d2": {
+          "move": "e3d2",
+          "legal_particles": 2048,
+          "risk_particles": 21,
+          "risk_permille": 10,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "d4d5": {
+          "move": "d4d5",
+          "legal_particles": 2048,
+          "risk_particles": 186,
+          "risk_permille": 90,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 10,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 96
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "fe15fd054cc8765d4cd6f60a73fb546fd260d7a38648e7065a5074ce5121c321"
+    },
+    {
+      "game": "954ludad",
+      "side": 0,
+      "ply": 108,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h4g3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 149,
+          "risk_permille": 72,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h4h3": {
+          "move": "h4h3",
+          "legal_particles": 2048,
+          "risk_particles": 297,
+          "risk_permille": 145,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 63,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 49
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "429155a80569184032f05bfd8e44c73dbb2691f47a5ab9d638dccfa22d90e841"
+    },
+    {
+      "game": "954ludad",
+      "side": 0,
+      "ply": 108,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "h4h3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 170,
+          "risk_permille": 83,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h4h3": {
+          "move": "h4h3",
+          "legal_particles": 2048,
+          "risk_particles": 328,
+          "risk_permille": 160,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 63,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 55
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e6a900930e44a62b99c87e4d004b86ebabf033862f73c78fac0756d6bfe2ddcd"
+    },
+    {
+      "game": "ahs6bbgy",
+      "side": 0,
+      "ply": 72,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g2h2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g2h2": {
+          "move": "g2h2",
+          "legal_particles": 2048,
+          "risk_particles": 317,
+          "risk_permille": 154,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2g3": {
+          "move": "g2g3",
+          "legal_particles": 2048,
+          "risk_particles": 388,
+          "risk_permille": 189,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 4,
+              "piece": "b",
+              "hidden_before": true,
+              "held_particles": 173
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 10,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "f5debfb098c402d0b6c0aa68b1176a93f3e84c6ce52a29139278f6aa6a415b67"
+    },
+    {
+      "game": "ahs6bbgy",
+      "side": 0,
+      "ply": 72,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g2g3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g2h2": {
+          "move": "g2h2",
+          "legal_particles": 2048,
+          "risk_particles": 354,
+          "risk_permille": 172,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2g3": {
+          "move": "g2g3",
+          "legal_particles": 2048,
+          "risk_particles": 371,
+          "risk_permille": 181,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 4,
+              "piece": "b",
+              "hidden_before": true,
+              "held_particles": 139
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 4,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "3e4e9e2f270173e02d58ce28e1fceb9b398558079c1da8f5913c6cf3584ee228"
+    },
+    {
+      "game": "c65sf6te",
+      "side": 0,
+      "ply": 76,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g2h2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g2h2": {
+          "move": "g2h2",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2f2": {
+          "move": "g2f2",
+          "legal_particles": 2048,
+          "risk_particles": 245,
+          "risk_permille": 119,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 4,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 70
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 3,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "eca32fd61ec03dcaa1be34b218c565bb942e0a77fb00a7b9a62389024aa3683e"
+    },
+    {
+      "game": "c65sf6te",
+      "side": 0,
+      "ply": 76,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g2f2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g2h2": {
+          "move": "g2h2",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2f2": {
+          "move": "g2f2",
+          "legal_particles": 2048,
+          "risk_particles": 219,
+          "risk_permille": 106,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 4,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 72
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "b5dd886905a1ff69f6abcf75065470618a2525d2caf689479b6e8d9a88333b8f"
+    },
+    {
+      "game": "ci0vyrwq",
+      "side": 0,
+      "ply": 98,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "c2c3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "c2c3": {
+          "move": "c2c3",
+          "legal_particles": 2048,
+          "risk_particles": 231,
+          "risk_permille": 112,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 12,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 40
+            }
+          ]
+        },
+        "h2h3": {
+          "move": "h2h3",
+          "legal_particles": 2048,
+          "risk_particles": 252,
+          "risk_permille": 123,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "a5cd9ddd1060ded004ea29a538de623813d0a20e6a20544d8fbb5fe6ab269e9b"
+    },
+    {
+      "game": "ci0vyrwq",
+      "side": 0,
+      "ply": 98,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "h2h3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "c2c3": {
+          "move": "c2c3",
+          "legal_particles": 2048,
+          "risk_particles": 421,
+          "risk_permille": 205,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 12,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 181
+            }
+          ]
+        },
+        "h2h3": {
+          "move": "h2h3",
+          "legal_particles": 2048,
+          "risk_particles": 181,
+          "risk_permille": 88,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "24ba035ee1af0de14eb9985f841a079999e0a9c60451a4744bb4b0bcea2bbd9f"
+    },
+    {
+      "game": "cj0rxekd",
+      "side": 0,
+      "ply": 86,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "h3g4",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h3g4": {
+          "move": "h3g4",
+          "legal_particles": 2048,
+          "risk_particles": 1006,
+          "risk_permille": 491,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 21,
+              "piece": "n",
+              "hidden_before": true,
+              "held_particles": 1006
+            },
+            {
+              "square": 47,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "h2g2": {
+          "move": "h2g2",
+          "legal_particles": 2048,
+          "risk_particles": 1042,
+          "risk_permille": 508,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "1afc6796ccd8f9f33af6e742ea75f9b6bffd4ce7f32df6b06530deec029a9035"
+    },
+    {
+      "game": "cj0rxekd",
+      "side": 0,
+      "ply": 86,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "h2g2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h3g4": {
+          "move": "h3g4",
+          "legal_particles": 2048,
+          "risk_particles": 930,
+          "risk_permille": 454,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 21,
+              "piece": "n",
+              "hidden_before": true,
+              "held_particles": 930
+            },
+            {
+              "square": 47,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 6
+            }
+          ]
+        },
+        "h2g2": {
+          "move": "h2g2",
+          "legal_particles": 2048,
+          "risk_particles": 1118,
+          "risk_permille": 545,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "5bea5a2097a6d06addf606f8eb1611635d5d80769edf04c30ed08d6a6bd50407"
+    },
+    {
+      "game": "cjkrznxt",
+      "side": 1,
+      "ply": 91,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "e4f3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e4f3": {
+          "move": "e4f3",
+          "legal_particles": 2048,
+          "risk_particles": 345,
+          "risk_permille": 168,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 12,
+              "piece": "K",
+              "hidden_before": true,
+              "held_particles": 79
+            }
+          ]
+        },
+        "e4e5": {
+          "move": "e4e5",
+          "legal_particles": 2048,
+          "risk_particles": 299,
+          "risk_permille": 145,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e5a17de0e9bbde2b72a77dd5183eff13770f46dc7410eb1471657987936a34fd"
+    },
+    {
+      "game": "cjkrznxt",
+      "side": 1,
+      "ply": 91,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "e4e5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e4f3": {
+          "move": "e4f3",
+          "legal_particles": 2048,
+          "risk_particles": 337,
+          "risk_permille": 164,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 12,
+              "piece": "K",
+              "hidden_before": true,
+              "held_particles": 74
+            }
+          ]
+        },
+        "e4e5": {
+          "move": "e4e5",
+          "legal_particles": 2048,
+          "risk_particles": 312,
+          "risk_permille": 152,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "6b2638e76b3f935e46a611b5765bc1d187ffcc85605017c9cbe7b1822ebc1960"
+    },
+    {
+      "game": "ckviakch",
+      "side": 0,
+      "ply": 116,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "b4b5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b4b5": {
+          "move": "b4b5",
+          "legal_particles": 2048,
+          "risk_particles": 238,
+          "risk_permille": 116,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 10,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 26
+            }
+          ]
+        },
+        "g2g3": {
+          "move": "g2g3",
+          "legal_particles": 2048,
+          "risk_particles": 237,
+          "risk_permille": 115,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "d8c988649050ad50577a9f535052ecff39ef4ef5f21d54ea896110c78bef54dc"
+    },
+    {
+      "game": "ckviakch",
+      "side": 0,
+      "ply": 116,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "g2g3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b4b5": {
+          "move": "b4b5",
+          "legal_particles": 2048,
+          "risk_particles": 238,
+          "risk_permille": 116,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 10,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 31
+            }
+          ]
+        },
+        "g2g3": {
+          "move": "g2g3",
+          "legal_particles": 2048,
+          "risk_particles": 218,
+          "risk_permille": 106,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "bd33e92a932d1a1f378bb5bda17eb09c70bc5e85bf0b54f1f475a8eb80624dbc"
+    },
+    {
+      "game": "dct52nw2",
+      "side": 0,
+      "ply": 70,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h2g3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h2g3": {
+          "move": "h2g3",
+          "legal_particles": 2048,
+          "risk_particles": 566,
+          "risk_permille": 276,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "e3e4": {
+          "move": "e3e4",
+          "legal_particles": 2048,
+          "risk_particles": 485,
+          "risk_permille": 236,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 55,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 126
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "ca4d623ffd0275def0c9b69b98d0965016ae338757135e925bcd7afc5785c9c9"
+    },
+    {
+      "game": "dct52nw2",
+      "side": 0,
+      "ply": 70,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "e3e4",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h2g3": {
+          "move": "h2g3",
+          "legal_particles": 2048,
+          "risk_particles": 692,
+          "risk_permille": 337,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "e3e4": {
+          "move": "e3e4",
+          "legal_particles": 2048,
+          "risk_particles": 372,
+          "risk_permille": 181,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 55,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 91
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "602393882bb5d0420286c1f2f4915090e5380d547326bc047fbc0b36a7899b37"
+    },
+    {
+      "game": "dityx05w",
+      "side": 1,
+      "ply": 61,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "g8h7",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "g8h7": {
+          "move": "g8h7",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 19,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "g8h8": {
+          "move": "g8h8",
+          "legal_particles": 2048,
+          "risk_particles": 33,
+          "risk_permille": 16,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e8acbfdf17df4992f23a7d66436e1ee2346d2716de0d79eaac6e50dee3ef8af5"
+    },
+    {
+      "game": "dityx05w",
+      "side": 1,
+      "ply": 61,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "g8h8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g8h7": {
+          "move": "g8h7",
+          "legal_particles": 2048,
+          "risk_particles": 118,
+          "risk_permille": 57,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 19,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 32
+            }
+          ]
+        },
+        "g8h8": {
+          "move": "g8h8",
+          "legal_particles": 2048,
+          "risk_particles": 28,
+          "risk_permille": 13,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "028cbc9d019a62f3914182ed024f8fb4cfcdfbaaefb8cb531c66594b85179c1d"
+    },
+    {
+      "game": "eqoy6ofn",
+      "side": 0,
+      "ply": 94,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "f1g2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "f1g2": {
+          "move": "f1g2",
+          "legal_particles": 2048,
+          "risk_particles": 133,
+          "risk_permille": 64,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 46,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 42
+            }
+          ]
+        },
+        "f1e2": {
+          "move": "f1e2",
+          "legal_particles": 2048,
+          "risk_particles": 367,
+          "risk_permille": 179,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "2660e394133e88a3e2c63bd67f232f8c87b21c56637a4a7917e66e5a2fd87315"
+    },
+    {
+      "game": "eqoy6ofn",
+      "side": 0,
+      "ply": 94,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "f1e2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "f1g2": {
+          "move": "f1g2",
+          "legal_particles": 2048,
+          "risk_particles": 147,
+          "risk_permille": 71,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 46,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 36
+            }
+          ]
+        },
+        "f1e2": {
+          "move": "f1e2",
+          "legal_particles": 2048,
+          "risk_particles": 364,
+          "risk_permille": 177,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "8ac04030fb0cac098174b47765cb4fe038da655d6b3955d4b49a42b55f11ce93"
+    },
+    {
+      "game": "fj3af3mp",
+      "side": 1,
+      "ply": 77,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "c8b8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "c8b8": {
+          "move": "c8b8",
+          "legal_particles": 2048,
+          "risk_particles": 858,
+          "risk_permille": 418,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c8d7": {
+          "move": "c8d7",
+          "legal_particles": 2048,
+          "risk_particles": 1156,
+          "risk_permille": 564,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 44,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 0
+            },
+            {
+              "square": 53,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 75
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "71e4e0ea2e39376c9513e12c6e02344f2da7ace4df1e2a08d97c04cfd8255439"
+    },
+    {
+      "game": "fj3af3mp",
+      "side": 1,
+      "ply": 77,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "c8d7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "c8b8": {
+          "move": "c8b8",
+          "legal_particles": 2048,
+          "risk_particles": 966,
+          "risk_permille": 471,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c8d7": {
+          "move": "c8d7",
+          "legal_particles": 2048,
+          "risk_particles": 1293,
+          "risk_permille": 631,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 44,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 178
+            },
+            {
+              "square": 53,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 80
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 3,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "5a1cf5216b271fa4f53900ea8203eddd5dbb4751aee778747dc1fab5a992d552"
+    },
+    {
+      "game": "fs00h4yg",
+      "side": 1,
+      "ply": 113,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "e6e7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e6e7": {
+          "move": "e6e7",
+          "legal_particles": 2048,
+          "risk_particles": 389,
+          "risk_permille": 189,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "e6f6": {
+          "move": "e6f6",
+          "legal_particles": 2048,
+          "risk_particles": 1040,
+          "risk_permille": 507,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 38,
+              "piece": "K",
+              "hidden_before": true,
+              "held_particles": 2
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "22a76d5e8d6107915b6d335135fdf2427f3b5d50cad15cd12c0bf9cde35c7032"
+    },
+    {
+      "game": "fs00h4yg",
+      "side": 1,
+      "ply": 113,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "e6f6",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "e6e7": {
+          "move": "e6e7",
+          "legal_particles": 2048,
+          "risk_particles": 381,
+          "risk_permille": 186,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "e6f6": {
+          "move": "e6f6",
+          "legal_particles": 2048,
+          "risk_particles": 11,
+          "risk_permille": 5,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 38,
+              "piece": "K",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "8314495f2e328e1562837299db83d9ef89922730a7c0542b99b7b92f5ad09a79"
+    },
+    {
+      "game": "g3tocvua",
+      "side": 1,
+      "ply": 91,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "a7b6",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "a7b6": {
+          "move": "a7b6",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 20,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "c7b6": {
+          "move": "c7b6",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e12fbeeda1d212344067d8028dbf8b2ef521e03d3214bae9ecbe87159c9d5f15"
+    },
+    {
+      "game": "g3tocvua",
+      "side": 1,
+      "ply": 91,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "c7b6",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "a7b6": {
+          "move": "a7b6",
+          "legal_particles": 2048,
+          "risk_particles": 341,
+          "risk_permille": 166,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 20,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 253
+            }
+          ]
+        },
+        "c7b6": {
+          "move": "c7b6",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "c82ea46dc7ed3b61ad93d065d0e8f969dfb07125b267449811bd63039cda29c2"
+    },
+    {
+      "game": "h3vopotf",
+      "side": 1,
+      "ply": 87,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "f7e8",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "f7e8": {
+          "move": "f7e8",
+          "legal_particles": 2048,
+          "risk_particles": 156,
+          "risk_permille": 76,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 22,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 158
+            }
+          ]
+        },
+        "g8f8": {
+          "move": "g8f8",
+          "legal_particles": 2048,
+          "risk_particles": 300,
+          "risk_permille": 146,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 26,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "46e19804ec89138fc1e74d95309c4c93e3fa69fe746158e620791943462fae21"
+    },
+    {
+      "game": "h3vopotf",
+      "side": 1,
+      "ply": 87,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "g8f8",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "f7e8": {
+          "move": "f7e8",
+          "legal_particles": 2048,
+          "risk_particles": 168,
+          "risk_permille": 82,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 22,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 171
+            }
+          ]
+        },
+        "g8f8": {
+          "move": "g8f8",
+          "legal_particles": 2048,
+          "risk_particles": 317,
+          "risk_permille": 154,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 25,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "866edac27e9b9df24e68c48ad07ef5d1bcfd604f5d3958acf8e59c33fe448021"
+    },
+    {
+      "game": "hhhorq9e",
+      "side": 0,
+      "ply": 114,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "e2f2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "e2f2": {
+          "move": "e2f2",
+          "legal_particles": 2048,
+          "risk_particles": 2,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 8,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "e2f1": {
+          "move": "e2f1",
+          "legal_particles": 2048,
+          "risk_particles": 3,
+          "risk_permille": 1,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "86330a5c7f14baec9b7f2e496a3e130deacb0ffd6ca3f0526723782f7e2f233a"
+    },
+    {
+      "game": "hhhorq9e",
+      "side": 0,
+      "ply": 114,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "e2f1",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "e2f2": {
+          "move": "e2f2",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 8,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "e2f1": {
+          "move": "e2f1",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "4146913b575687ce1a6a0a07650aeebe9356a235e72e335b5dd1a0a563f3714c"
+    },
+    {
+      "game": "hilbnfl9",
+      "side": 1,
+      "ply": 29,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "e8d7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e8d7": {
+          "move": "e8d7",
+          "legal_particles": 2048,
+          "risk_particles": 481,
+          "risk_permille": 234,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "a8b8": {
+          "move": "a8b8",
+          "legal_particles": 2048,
+          "risk_particles": 1566,
+          "risk_permille": 764,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 50,
+              "piece": "N",
+              "hidden_before": true,
+              "held_particles": 1566
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "951b20e922d6df13df6026f4eae3ba63a0450eafc47aeeb2d2d9ae49730cb4f0"
+    },
+    {
+      "game": "hilbnfl9",
+      "side": 1,
+      "ply": 29,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "a8b8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e8d7": {
+          "move": "e8d7",
+          "legal_particles": 2048,
+          "risk_particles": 418,
+          "risk_permille": 204,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "a8b8": {
+          "move": "a8b8",
+          "legal_particles": 2048,
+          "risk_particles": 1601,
+          "risk_permille": 781,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 50,
+              "piece": "N",
+              "hidden_before": true,
+              "held_particles": 1601
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "7b9c97719859031043986afdb047154a0b74bc511d012080a6310899f69f3897"
+    },
+    {
+      "game": "i17nw5ri",
+      "side": 1,
+      "ply": 131,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g5g4",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g5g4": {
+          "move": "g5g4",
+          "legal_particles": 2048,
+          "risk_particles": 98,
+          "risk_permille": 47,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "b8a7": {
+          "move": "b8a7",
+          "legal_particles": 2048,
+          "risk_particles": 312,
+          "risk_permille": 152,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 40,
+              "piece": "K",
+              "hidden_before": true,
+              "held_particles": 31
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": true,
+      "trace_sha256": "5b23a7cc0dd182668d6d132e14204528094baefb2d93c6eb88f04dfcc623aece"
+    },
+    {
+      "game": "i17nw5ri",
+      "side": 1,
+      "ply": 131,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "b8a7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g5g4": {
+          "move": "g5g4",
+          "legal_particles": 2048,
+          "risk_particles": 115,
+          "risk_permille": 56,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "b8a7": {
+          "move": "b8a7",
+          "legal_particles": 2048,
+          "risk_particles": 300,
+          "risk_permille": 146,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 40,
+              "piece": "K",
+              "hidden_before": true,
+              "held_particles": 35
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": true,
+      "trace_sha256": "b3f493d5ff75d77fc701063aa1e5efcbe7b14d6936765640e84125b535cef6ee"
+    },
+    {
+      "game": "kpfd7jx7",
+      "side": 1,
+      "ply": 117,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "g6h6",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g6h6": {
+          "move": "g6h6",
+          "legal_particles": 2048,
+          "risk_particles": 308,
+          "risk_permille": 150,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 7,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "f6f5": {
+          "move": "f6f5",
+          "legal_particles": 2048,
+          "risk_particles": 252,
+          "risk_permille": 123,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "399daa71735accc9289bb0797c591d35d0f1707111f839c23f08337fffb84d34"
+    },
+    {
+      "game": "kpfd7jx7",
+      "side": 1,
+      "ply": 117,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "f6f5",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g6h6": {
+          "move": "g6h6",
+          "legal_particles": 2048,
+          "risk_particles": 199,
+          "risk_permille": 97,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 7,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "f6f5": {
+          "move": "f6f5",
+          "legal_particles": 2048,
+          "risk_particles": 280,
+          "risk_permille": 136,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "cc350784f5afdedef946757172b3ba34bd5de50dc81d5e212e1fb51e5741524f"
+    },
+    {
+      "game": "m3uwi6ui",
+      "side": 0,
+      "ply": 116,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "g2f2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g2f2": {
+          "move": "g2f2",
+          "legal_particles": 2048,
+          "risk_particles": 287,
+          "risk_permille": 140,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 55,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 18
+            }
+          ]
+        },
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 639,
+          "risk_permille": 312,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "632384472218dd0550f8f4cf1dd69ffe2d134999e94078c5fb409888e0593a5f"
+    },
+    {
+      "game": "m3uwi6ui",
+      "side": 0,
+      "ply": 116,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "h4g3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g2f2": {
+          "move": "g2f2",
+          "legal_particles": 2048,
+          "risk_particles": 208,
+          "risk_permille": 101,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 55,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 26
+            }
+          ]
+        },
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 14,
+          "risk_permille": 6,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "d42c72f21fc31ea5c5c92493eb025c18cb010981a6336d1bb098114ca9241415"
+    },
+    {
+      "game": "meiqud35",
+      "side": 1,
+      "ply": 117,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g6h6",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g6h6": {
+          "move": "g6h6",
+          "legal_particles": 2048,
+          "risk_particles": 269,
+          "risk_permille": 131,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g6h5": {
+          "move": "g6h5",
+          "legal_particles": 2048,
+          "risk_particles": 380,
+          "risk_permille": 185,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 30,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 80
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "05c9e81b060a81562125df5382b80b460fbd138c9c9860878fbd8eccae0cc803"
+    },
+    {
+      "game": "meiqud35",
+      "side": 1,
+      "ply": 117,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g6h5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g6h6": {
+          "move": "g6h6",
+          "legal_particles": 2048,
+          "risk_particles": 315,
+          "risk_permille": 153,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g6h5": {
+          "move": "g6h5",
+          "legal_particles": 2048,
+          "risk_particles": 342,
+          "risk_permille": 166,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 30,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 55
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "aaf5101bd30e73d67c9734ea36506de65ed236a13f9c2e6931ad0823dd2d9f51"
+    },
+    {
+      "game": "ni0i2cfr",
+      "side": 0,
+      "ply": 90,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "f2g2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f2g2": {
+          "move": "f2g2",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "f2e3": {
+          "move": "f2e3",
+          "legal_particles": 2048,
+          "risk_particles": 114,
+          "risk_permille": 55,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 29,
+              "piece": "p",
+              "hidden_before": true,
+              "held_particles": 95
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "15da6acd489bb1e5a27c0a1bf706fec5ce379739091d7fa596b75600714b5f7c"
+    },
+    {
+      "game": "ni0i2cfr",
+      "side": 0,
+      "ply": 90,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "f2e3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f2g2": {
+          "move": "f2g2",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "f2e3": {
+          "move": "f2e3",
+          "legal_particles": 2048,
+          "risk_particles": 119,
+          "risk_permille": 58,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 29,
+              "piece": "p",
+              "hidden_before": true,
+              "held_particles": 99
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "61cced580d99f12fbf6483a94038ea8e250932a43c2dfd5b04278f1657916265"
+    },
+    {
+      "game": "nkk8hfg6",
+      "side": 0,
+      "ply": 68,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "a3a2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "a3a2": {
+          "move": "a3a2",
+          "legal_particles": 2048,
+          "risk_particles": 791,
+          "risk_permille": 386,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 11,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 16
+            }
+          ]
+        },
+        "a3a4": {
+          "move": "a3a4",
+          "legal_particles": 2048,
+          "risk_particles": 867,
+          "risk_permille": 423,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "cb6646700f726cfe5ff05b8618801cdaf895a9ef48630552637db9d5eb23c04e"
+    },
+    {
+      "game": "nkk8hfg6",
+      "side": 0,
+      "ply": 68,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "a3a4",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "a3a2": {
+          "move": "a3a2",
+          "legal_particles": 2048,
+          "risk_particles": 925,
+          "risk_permille": 451,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 11,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 32
+            }
+          ]
+        },
+        "a3a4": {
+          "move": "a3a4",
+          "legal_particles": 2048,
+          "risk_particles": 1012,
+          "risk_permille": 494,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "dd2ef58887df55cdfd75ebb031b545cf88ae82b5d18735b01e74dc076fd1cdb8"
+    },
+    {
+      "game": "ok4dgfwc",
+      "side": 1,
+      "ply": 117,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h8g7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h8g7": {
+          "move": "h8g7",
+          "legal_particles": 2048,
+          "risk_particles": 636,
+          "risk_permille": 310,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c1c8": {
+          "move": "c1c8",
+          "legal_particles": 2048,
+          "risk_particles": 952,
+          "risk_permille": 464,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 60,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 160
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "184841d70abfc59df0a4bccee65cf02302df95c3e40938c8de71c0f11a51f9a7"
+    },
+    {
+      "game": "ok4dgfwc",
+      "side": 1,
+      "ply": 117,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "c1c8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h8g7": {
+          "move": "h8g7",
+          "legal_particles": 2048,
+          "risk_particles": 649,
+          "risk_permille": 316,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "c1c8": {
+          "move": "c1c8",
+          "legal_particles": 2048,
+          "risk_particles": 965,
+          "risk_permille": 471,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 60,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 164
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "21b4e24a2e21c687705f4ede5b842c3c96cbf97bcef967819b97f058585af9c3"
+    },
+    {
+      "game": "p9vohw1x",
+      "side": 1,
+      "ply": 83,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h7h6",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h7h6": {
+          "move": "h7h6",
+          "legal_particles": 2048,
+          "risk_particles": 362,
+          "risk_permille": 176,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h7g7": {
+          "move": "h7g7",
+          "legal_particles": 2048,
+          "risk_particles": 1322,
+          "risk_permille": 645,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 52,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 13
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "caca27b87973cb487acbe91056fd09b9240385f62d416ee78a3a419ee7975f35"
+    },
+    {
+      "game": "p9vohw1x",
+      "side": 1,
+      "ply": 83,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "h7g7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h7h6": {
+          "move": "h7h6",
+          "legal_particles": 2048,
+          "risk_particles": 478,
+          "risk_permille": 233,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h7g7": {
+          "move": "h7g7",
+          "legal_particles": 2048,
+          "risk_particles": 591,
+          "risk_permille": 288,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 52,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 13
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "b721bf2484156ad3cdcf129224be97a083b806970fa7acb667d17fc48882f8db"
+    },
+    {
+      "game": "qwyg23dz",
+      "side": 0,
+      "ply": 72,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "b3a3",
+      "diagnosis": "blind_to_fatal_move",
+      "risks": {
+        "b3a3": {
+          "move": "b3a3",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 21,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "b3a2": {
+          "move": "b3a2",
+          "legal_particles": 2048,
+          "risk_particles": 1,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "ee1d3d3088617ae2673ded063fd5b7b7c31c7c3241293f55839a0317537bd4d8"
+    },
+    {
+      "game": "qwyg23dz",
+      "side": 0,
+      "ply": 72,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "b3a2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b3a3": {
+          "move": "b3a3",
+          "legal_particles": 2048,
+          "risk_particles": 2,
+          "risk_permille": 0,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 21,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "b3a2": {
+          "move": "b3a2",
+          "legal_particles": 2048,
+          "risk_particles": 1,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "7746ab79c6d4b1b5040f8b1fcdf8eb7ccd417d2802004af7ce09fc78679bea89"
+    },
+    {
+      "game": "qxdhg4d4",
+      "side": 1,
+      "ply": 75,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h8g8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h8g8": {
+          "move": "h8g8",
+          "legal_particles": 2048,
+          "risk_particles": 23,
+          "risk_permille": 11,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "a8g8": {
+          "move": "a8g8",
+          "legal_particles": 2048,
+          "risk_particles": 1874,
+          "risk_permille": 915,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 36,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "6377baf8ec815e1406592006f90532be9fc3fce6ad65773eecbaac6a413be2bf"
+    },
+    {
+      "game": "qxdhg4d4",
+      "side": 1,
+      "ply": 75,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "a8g8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h8g8": {
+          "move": "h8g8",
+          "legal_particles": 2048,
+          "risk_particles": 42,
+          "risk_permille": 20,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "a8g8": {
+          "move": "a8g8",
+          "legal_particles": 2048,
+          "risk_particles": 69,
+          "risk_permille": 33,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 36,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 30
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "eeb197f74429391052e52a5bd9a349a7508058d36c1abda63d3afee67ef145eb"
+    },
+    {
+      "game": "rganjcok",
+      "side": 1,
+      "ply": 127,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "e8e7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e8e7": {
+          "move": "e8e7",
+          "legal_particles": 2048,
+          "risk_particles": 355,
+          "risk_permille": 173,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 28,
+              "piece": "R",
+              "hidden_before": true,
+              "held_particles": 22
+            }
+          ]
+        },
+        "e8d7": {
+          "move": "e8d7",
+          "legal_particles": 2048,
+          "risk_particles": 190,
+          "risk_permille": 92,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "4cf8b82e5356917daa8959a2127a3f15df6bef798c6f74af40604d0feaf7a778"
+    },
+    {
+      "game": "rganjcok",
+      "side": 1,
+      "ply": 127,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "e8d7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "e8e7": {
+          "move": "e8e7",
+          "legal_particles": 2048,
+          "risk_particles": 356,
+          "risk_permille": 173,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 28,
+              "piece": "R",
+              "hidden_before": true,
+              "held_particles": 17
+            }
+          ]
+        },
+        "e8d7": {
+          "move": "e8d7",
+          "legal_particles": 2048,
+          "risk_particles": 205,
+          "risk_permille": 100,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "94ed385c8f9bb936058bae4e918533e00d82d653e10ebf8ad4e5cb7770b8a385"
+    },
+    {
+      "game": "rmcr32fp",
+      "side": 1,
+      "ply": 83,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g7g8",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g7g8": {
+          "move": "g7g8",
+          "legal_particles": 2048,
+          "risk_particles": 292,
+          "risk_permille": 142,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h6h5": {
+          "move": "h6h5",
+          "legal_particles": 2048,
+          "risk_particles": 420,
+          "risk_permille": 205,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 27,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 26
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "6da0f2c1be8c2c3df2c969f0efdca0d785d7b1552ff9b6ea71d07e0bb8686493"
+    },
+    {
+      "game": "rmcr32fp",
+      "side": 1,
+      "ply": 83,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "h6h5",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g7g8": {
+          "move": "g7g8",
+          "legal_particles": 2048,
+          "risk_particles": 552,
+          "risk_permille": 269,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h6h5": {
+          "move": "h6h5",
+          "legal_particles": 2048,
+          "risk_particles": 338,
+          "risk_permille": 165,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 27,
+              "piece": "B",
+              "hidden_before": true,
+              "held_particles": 48
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "7b0d2ffbb0b1ca466d157eac630882fe010846ab44036f926b6ccf7679b89778"
+    },
+    {
+      "game": "rpsuewak",
+      "side": 0,
+      "ply": 106,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h3g2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h3g2": {
+          "move": "h3g2",
+          "legal_particles": 2048,
+          "risk_particles": 46,
+          "risk_permille": 22,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h3h2": {
+          "move": "h3h2",
+          "legal_particles": 2048,
+          "risk_particles": 45,
+          "risk_permille": 21,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 7,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 36
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "77effcde91f717bda85c0f5e7c9e4b5587e805ae29bb35305bfca64ab11153c8"
+    },
+    {
+      "game": "rpsuewak",
+      "side": 0,
+      "ply": 106,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "h3h2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h3g2": {
+          "move": "h3g2",
+          "legal_particles": 2048,
+          "risk_particles": 18,
+          "risk_permille": 8,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h3h2": {
+          "move": "h3h2",
+          "legal_particles": 2048,
+          "risk_particles": 43,
+          "risk_permille": 20,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 7,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 42
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 1,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "8880200b52ed33f15723c81d1ee93f28e236b12122559ba082a108cf1e1e337a"
+    },
+    {
+      "game": "rsgsf64n",
+      "side": 0,
+      "ply": 84,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "f1g1",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f1g1": {
+          "move": "f1g1",
+          "legal_particles": 2048,
+          "risk_particles": 293,
+          "risk_permille": 143,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 20,
+              "piece": "b",
+              "hidden_before": true,
+              "held_particles": 58
+            }
+          ]
+        },
+        "f1e2": {
+          "move": "f1e2",
+          "legal_particles": 2048,
+          "risk_particles": 109,
+          "risk_permille": 53,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 22,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "cec84cae49146b003dcb02e2461c24c30c62ff4bd67c4a03eaeaf8bb998fbc2e"
+    },
+    {
+      "game": "rsgsf64n",
+      "side": 0,
+      "ply": 84,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "f1e2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f1g1": {
+          "move": "f1g1",
+          "legal_particles": 2048,
+          "risk_particles": 296,
+          "risk_permille": 144,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 20,
+              "piece": "b",
+              "hidden_before": true,
+              "held_particles": 55
+            }
+          ]
+        },
+        "f1e2": {
+          "move": "f1e2",
+          "legal_particles": 2048,
+          "risk_particles": 84,
+          "risk_permille": 41,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 15,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "d6a48bcc410512d5c561cf47caa66066dc173c37f6032984665cd68c0e6d9672"
+    },
+    {
+      "game": "sjpohn9o",
+      "side": 0,
+      "ply": 72,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g3h3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g3h3": {
+          "move": "g3h3",
+          "legal_particles": 2048,
+          "risk_particles": 123,
+          "risk_permille": 60,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h6g7": {
+          "move": "h6g7",
+          "legal_particles": 2048,
+          "risk_particles": 477,
+          "risk_permille": 232,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 6,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 203
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e021bf98e0064aaf94cd8cce0fd6c6a42a673d58a4d4b741f300f7400579451a"
+    },
+    {
+      "game": "sjpohn9o",
+      "side": 0,
+      "ply": 72,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "h6g7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g3h3": {
+          "move": "g3h3",
+          "legal_particles": 2048,
+          "risk_particles": 53,
+          "risk_permille": 25,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "h6g7": {
+          "move": "h6g7",
+          "legal_particles": 2048,
+          "risk_particles": 73,
+          "risk_permille": 35,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 6,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 73
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 5,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "08d3f8850082074e5e19c42f6f7f591c40eec47837a8590a2064a0491171eb08"
+    },
+    {
+      "game": "taiiouru",
+      "side": 0,
+      "ply": 102,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g2f1",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g2f1": {
+          "move": "g2f1",
+          "legal_particles": 2048,
+          "risk_particles": 349,
+          "risk_permille": 170,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2h3": {
+          "move": "g2h3",
+          "legal_particles": 2048,
+          "risk_particles": 489,
+          "risk_permille": 238,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 20
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "54ff5dad749007c624bf05aa9e36465c64350f89a60b69f5ce9a7fc3b4fdbc81"
+    },
+    {
+      "game": "taiiouru",
+      "side": 0,
+      "ply": 102,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g2h3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g2f1": {
+          "move": "g2f1",
+          "legal_particles": 2048,
+          "risk_particles": 517,
+          "risk_permille": 252,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2h3": {
+          "move": "g2h3",
+          "legal_particles": 2048,
+          "risk_particles": 461,
+          "risk_permille": 225,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 38
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "ad9ae0669d6a23b3eccc3ceaafe0d33267b7b3942fea78497f97aaa522314df1"
+    },
+    {
+      "game": "tu75n4ra",
+      "side": 0,
+      "ply": 58,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "b2c1",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b2c1": {
+          "move": "b2c1",
+          "legal_particles": 2048,
+          "risk_particles": 4,
+          "risk_permille": 1,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "b2d4": {
+          "move": "b2d4",
+          "legal_particles": 2048,
+          "risk_particles": 426,
+          "risk_permille": 208,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 5,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 46
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "afdb0544ce21e09fa163d40a74ab61b949a32867a3687f4644d42bbd26f2ca19"
+    },
+    {
+      "game": "tu75n4ra",
+      "side": 0,
+      "ply": 58,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "b2d4",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "b2c1": {
+          "move": "b2c1",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "b2d4": {
+          "move": "b2d4",
+          "legal_particles": 2048,
+          "risk_particles": 317,
+          "risk_permille": 154,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 5,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "7f3778d79be48a68b4b71f3e98610ca07f146910747712c3bb4b96bfcbb3b594"
+    },
+    {
+      "game": "twlle83q",
+      "side": 0,
+      "ply": 72,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g2h2",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g2h2": {
+          "move": "g2h2",
+          "legal_particles": 2048,
+          "risk_particles": 234,
+          "risk_permille": 114,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2f1": {
+          "move": "g2f1",
+          "legal_particles": 2048,
+          "risk_particles": 442,
+          "risk_permille": 215,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 3,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 8
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "1cc24a0c09288363690b3a2f66b1283ad46c4f74e481ec6783765f2e4a1e79f3"
+    },
+    {
+      "game": "twlle83q",
+      "side": 0,
+      "ply": 72,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g2f1",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g2h2": {
+          "move": "g2h2",
+          "legal_particles": 2048,
+          "risk_particles": 1286,
+          "risk_permille": 627,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2f1": {
+          "move": "g2f1",
+          "legal_particles": 2048,
+          "risk_particles": 53,
+          "risk_permille": 25,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 3,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "f47cfd29fee80b52d3f25a91889db3fc35be67c41454a504e12ce14058496f86"
+    },
+    {
+      "game": "u1swqaed",
+      "side": 0,
+      "ply": 108,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "g4f5",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "g4f5": {
+          "move": "g4f5",
+          "legal_particles": 2048,
+          "risk_particles": 398,
+          "risk_permille": 194,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g4f3": {
+          "move": "g4f3",
+          "legal_particles": 2048,
+          "risk_particles": 323,
+          "risk_permille": 157,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 7,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 2
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e3a2c78ca75061a7bab155d826d3dc4f502d85ab191d427ecd3f19182c56a7de"
+    },
+    {
+      "game": "u1swqaed",
+      "side": 0,
+      "ply": 108,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g4f3",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g4f5": {
+          "move": "g4f5",
+          "legal_particles": 2048,
+          "risk_particles": 358,
+          "risk_permille": 174,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g4f3": {
+          "move": "g4f3",
+          "legal_particles": 2048,
+          "risk_particles": 385,
+          "risk_permille": 187,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 7,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 3
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "17db5c210ee73e1695ee9dd37372fdab2f878a476cca002b66f49212c0a2bb15"
+    },
+    {
+      "game": "ua1n3ok7",
+      "side": 1,
+      "ply": 89,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "h6g5",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h6g5": {
+          "move": "h6g5",
+          "legal_particles": 2048,
+          "risk_particles": 393,
+          "risk_permille": 191,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g6g5": {
+          "move": "g6g5",
+          "legal_particles": 2048,
+          "risk_particles": 314,
+          "risk_permille": 153,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 61,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 236
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "4732c5b61e60055bcf36b88881286fdf86bbd79b943b39b6d963b893ce3fbd83"
+    },
+    {
+      "game": "ua1n3ok7",
+      "side": 1,
+      "ply": 89,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g6g5",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h6g5": {
+          "move": "h6g5",
+          "legal_particles": 2048,
+          "risk_particles": 514,
+          "risk_permille": 250,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g6g5": {
+          "move": "g6g5",
+          "legal_particles": 2048,
+          "risk_particles": 397,
+          "risk_permille": 193,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 61,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 298
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "960cde9dbeb9f176ce50d394a3d452e818939e624d729d5926d5dd9146c02da1"
+    },
+    {
+      "game": "w1swfnwj",
+      "side": 1,
+      "ply": 111,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "h7g7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h7g7": {
+          "move": "h7g7",
+          "legal_particles": 2048,
+          "risk_particles": 403,
+          "risk_permille": 196,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 50,
+              "piece": "R",
+              "hidden_before": true,
+              "held_particles": 15
+            }
+          ]
+        },
+        "h7h6": {
+          "move": "h7h6",
+          "legal_particles": 2048,
+          "risk_particles": 307,
+          "risk_permille": 149,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e654ca26065fec8e987c254cc676b27a86d6986bfc70c993c19d58e15a9a032b"
+    },
+    {
+      "game": "w1swfnwj",
+      "side": 1,
+      "ply": 111,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "h7h6",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h7g7": {
+          "move": "h7g7",
+          "legal_particles": 2048,
+          "risk_particles": 304,
+          "risk_permille": 148,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 50,
+              "piece": "R",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "h7h6": {
+          "move": "h7h6",
+          "legal_particles": 2048,
+          "risk_particles": 221,
+          "risk_permille": 107,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "b0a52632076273096c832d36d51ad8d65f0f9c998b1795b260e8a7c6cc5e2b0c"
+    },
+    {
+      "game": "wqlwbuoy",
+      "side": 1,
+      "ply": 83,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "g7f6",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g7f6": {
+          "move": "g7f6",
+          "legal_particles": 2048,
+          "risk_particles": 74,
+          "risk_permille": 36,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "g7h7": {
+          "move": "g7h7",
+          "legal_particles": 2048,
+          "risk_particles": 24,
+          "risk_permille": 11,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "e2fab6302011bae8737063fd58840e9f8b08865616f3b66d84a4a1550d993973"
+    },
+    {
+      "game": "wqlwbuoy",
+      "side": 1,
+      "ply": 83,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "g7h7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g7f6": {
+          "move": "g7f6",
+          "legal_particles": 2048,
+          "risk_particles": 550,
+          "risk_permille": 268,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 18,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 10
+            }
+          ]
+        },
+        "g7h7": {
+          "move": "g7h7",
+          "legal_particles": 2048,
+          "risk_particles": 72,
+          "risk_permille": 35,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": true,
+      "trace_sha256": "e287aa15ad3b8f91eb5110664497434374f5a0feeefedff4314c8c052bfb4cc3"
+    },
+    {
+      "game": "y7w9lvuu",
+      "side": 0,
+      "ply": 68,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "f4f5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f4f5": {
+          "move": "f4f5",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2g1": {
+          "move": "g2g1",
+          "legal_particles": 2048,
+          "risk_particles": 703,
+          "risk_permille": 343,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 28,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 401
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "ae6073cae64c2e9a8e9a02dcd8ac846b8742a92979ea240b45d250b334568d4e"
+    },
+    {
+      "game": "y7w9lvuu",
+      "side": 0,
+      "ply": 68,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "g2g1",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "f4f5": {
+          "move": "f4f5",
+          "legal_particles": 2048,
+          "risk_particles": 0,
+          "risk_permille": 0,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "g2g1": {
+          "move": "g2g1",
+          "legal_particles": 2048,
+          "risk_particles": 285,
+          "risk_permille": 139,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 28,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 147
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "a46a782b424edfc78e6d1d3f008c0fcd3e387f2a8512eff995c669e2f497ed74"
+    },
+    {
+      "game": "yukss8xp",
+      "side": 0,
+      "ply": 130,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "g6h7",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g6h7": {
+          "move": "g6h7",
+          "legal_particles": 2048,
+          "risk_particles": 68,
+          "risk_permille": 33,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 1,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "g6h5": {
+          "move": "g6h5",
+          "legal_particles": 2048,
+          "risk_particles": 39,
+          "risk_permille": 19,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "9941cc05915207d14fa0486b4d5a9df46bef06ac1ed77ae0303fb08558dcb324"
+    },
+    {
+      "game": "yukss8xp",
+      "side": 0,
+      "ply": 130,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "g6h5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "g6h7": {
+          "move": "g6h7",
+          "legal_particles": 2048,
+          "risk_particles": 82,
+          "risk_permille": 40,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 1,
+              "piece": "q",
+              "hidden_before": true,
+              "held_particles": 0
+            }
+          ]
+        },
+        "g6h5": {
+          "move": "g6h5",
+          "legal_particles": 2048,
+          "risk_particles": 44,
+          "risk_permille": 21,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "a4a0dfb4354d898c5118676afbaa855072064a50fa8970841e0cbe0d05f25fd2"
+    },
+    {
+      "game": "zakeirbj",
+      "side": 1,
+      "ply": 105,
+      "belief": "control",
+      "direction": "new_fatal",
+      "selected_move": "a4b4",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "a4b4": {
+          "move": "a4b4",
+          "legal_particles": 2048,
+          "risk_particles": 1102,
+          "risk_permille": 538,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "a3a2": {
+          "move": "a3a2",
+          "legal_particles": 2048,
+          "risk_particles": 633,
+          "risk_permille": 309,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 40,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 210
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 11,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "d1bb8f2572db29b8e1bf2b88961b1b792ab85259c2c0d05824d4d68598fcb70e"
+    },
+    {
+      "game": "zakeirbj",
+      "side": 1,
+      "ply": 105,
+      "belief": "candidate",
+      "direction": "new_fatal",
+      "selected_move": "a3a2",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "a4b4": {
+          "move": "a4b4",
+          "legal_particles": 2048,
+          "risk_particles": 1099,
+          "risk_permille": 536,
+          "truth_fatal": false,
+          "true_attackers": []
+        },
+        "a3a2": {
+          "move": "a3a2",
+          "legal_particles": 2048,
+          "risk_particles": 637,
+          "risk_permille": 311,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 40,
+              "piece": "Q",
+              "hidden_before": true,
+              "held_particles": 215
+            }
+          ]
+        }
+      },
+      "truth_board_matches": 12,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "7344c7d0875b954abf70160ad15f93d7e26f2e106ddfb7c24f0676979b75a111"
+    },
+    {
+      "game": "zc57aikd",
+      "side": 0,
+      "ply": 86,
+      "belief": "control",
+      "direction": "saved",
+      "selected_move": "h4g3",
+      "diagnosis": "risk_favors_fatal_move",
+      "risks": {
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 331,
+          "risk_permille": 161,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 19,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 105
+            }
+          ]
+        },
+        "h4g5": {
+          "move": "h4g5",
+          "legal_particles": 2048,
+          "risk_particles": 665,
+          "risk_permille": 324,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 0,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "2acc64d9a85db59f69cf057b8592a9d4b99ad7e39705aac5b39b8323be9271dd"
+    },
+    {
+      "game": "zc57aikd",
+      "side": 0,
+      "ply": 86,
+      "belief": "candidate",
+      "direction": "saved",
+      "selected_move": "h4g5",
+      "diagnosis": "risk_favors_safe_move",
+      "risks": {
+        "h4g3": {
+          "move": "h4g3",
+          "legal_particles": 2048,
+          "risk_particles": 216,
+          "risk_permille": 105,
+          "truth_fatal": true,
+          "true_attackers": [
+            {
+              "square": 19,
+              "piece": "r",
+              "hidden_before": true,
+              "held_particles": 129
+            }
+          ]
+        },
+        "h4g5": {
+          "move": "h4g5",
+          "legal_particles": 2048,
+          "risk_particles": 81,
+          "risk_permille": 39,
+          "truth_fatal": false,
+          "true_attackers": []
+        }
+      },
+      "truth_board_matches": 9,
+      "particles": 2048,
+      "collapsed": false,
+      "trace_sha256": "964e25e96bf0aaaf3eeefece4f45abf81d633b92e50177e5ac994385a0f18adf"
+    }
+  ],
+  "completed_at": "2026-10-08T05:07:27.503302+00:00",
+  "counts": {
+    "saved/control/risk_favors_safe_move": 10,
+    "saved/candidate/risk_favors_safe_move": 18,
+    "new_fatal/control/risk_favors_fatal_move": 8,
+    "new_fatal/candidate/risk_favors_fatal_move": 11,
+    "new_fatal/control/risk_favors_safe_move": 23,
+    "saved/control/risk_favors_fatal_move": 11,
+    "saved/candidate/risk_favors_fatal_move": 7,
+    "new_fatal/candidate/risk_favors_safe_move": 19,
+    "saved/control/blind_to_fatal_move": 5,
+    "new_fatal/control/blind_to_fatal_move": 1,
+    "new_fatal/candidate/blind_to_fatal_move": 2,
+    "saved/candidate/blind_to_fatal_move": 1
+  },
+  "limitations": [
+    "Selected changed-fatal cases only; diagnosis, not a new promotion sample.",
+    "Risk-favors-safe means this safe comparator had lower model risk; it does not establish optimal play.",
+    "Probe probabilities are checked exactly against the original engine risk trace."
+  ]
+}

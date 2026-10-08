@@ -164,3 +164,14 @@ actual attacker coverage and downstream decisions, not a result already won.
 The GPU was released after this comparison. Detailed curves, paired intervals
 and checkpoint hashes are in the linked capacity report; the test shard remains
 sealed. Larger-teacher distillation has not been implemented or trained.
+
+At 05:16 UTC on 2026-10-08, a subsequent comparison started after verifying
+the GPU was idle. It expands the training pool from 512 to all 3,766 v4 training
+games, preserving the source revision, architecture definitions, seed and the
+same 64 validation games. All three arms start fresh and run 6,000 updates,
+with evaluation every 1,000. The CNN has completed its first evaluation; the
+campaign is still running. The test shard is not copied or used. The
+[full-data design](../analysis/capacity-v4/full-data-design.json) fixes the
+primary comparison and requires comparison with earlier-stopped controls as
+well. This tests whether broader training data makes extra capacity useful
+before spending resources on teacher distillation or another precision audit.

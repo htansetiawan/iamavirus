@@ -36,3 +36,27 @@ The [compact repository receipt](recent-20261008T0023.json) pins the full output
 `tools/collect_recent.py` collects sequentially with API backoff and validates
 each replay. `tools/curate_snapshot.py` reuses its isolated native library and
 checks every generated actor candidate list against the true legal list.
+
+## Second refresh — 2026-10-08 05:06 UTC
+
+The subsequent 1,000-game snapshot completed at 05:22 UTC. It contains
+**77,165 validated board frames**, 693 public downloads and 307 cache hits;
+zero games were quarantined. There are 515 White wins, 444 Black wins and
+41 draws. Two games share a complete move sequence, leaving 999 distinct
+sequences. Collection remained sequential at no more than one request/second.
+
+Curation produced **2,000 histories, 76,165 decisions and 152,344 observation
+events**. Of the 1,000 games, 994 are absent by game ID and complete move hash
+from every listed v1–v4 split. Five overlap existing training and one existing
+validation; none overlaps their test memberships. The earlier 500-game snapshot
+overlaps 237 games. After excluding both it and the existing splits, **757
+games / 57,694 decisions** remain, all with distinct complete move sequences.
+These counts do not establish independence of shared openings or positions.
+
+The same artifact layout is stored in
+`/media/henrytan/seagate/iamavirus/astra/corpus/recent-20261008T0504-curated/`;
+raw replays and fetch/validation receipts are in `recent-20261008T0504/`.
+The [repository receipt](recent-20261008T0504.json) records the hashes, counts
+and overlap audit. The actor-only file excludes offline labels but still
+requires the per-game overlap index before SSL training. No existing split
+or running capacity experiment was changed by this refresh.

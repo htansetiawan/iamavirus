@@ -1,0 +1,255 @@
+{
+  "started_at": "2026-10-08T05:30:34.160948+00:00",
+  "state": "complete",
+  "binary_sha256": "fc633df648478dfceaf4f9a288f644d8792e7284cdb99e3df7de3208fa9f68db",
+  "seats_sha256": "c3d57857100116c624eb163f2da4ed1cacb09537ebb732a462b66974bf1a6ccf",
+  "reference_inputs": {
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/benchmark": "7581bc5cc35b4043f41273405660ac00c21f871d29e9eb074916ae462309c434",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/seats.txt": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model/model_manifest.json": "01c27622491dfb58800a7185d8dfbed06e80637fa90b4955bfb15d5b1fc2fdc5",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model/observe.onnx": "5ca694718cc33ab9867d1a532a8b43d694fa0fd2024f9a3f1069b44f0390f84e",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model/score.onnx": "9aa00c39233cc1960d555738496feaedf887ab7ca440447c1efdf95cc279df53"
+  },
+  "reference_log_sha256": "70d9a554d9006dbcc85da458fcd5204f2da31a976e6c622b590717be76faa212",
+  "runner_sha256": "e3c1289621ec2a67a9a277a9f75d6f97f8ca23f4a78d51b9be4a86f138756366",
+  "reference_arm": "frontier8192-prediction1-prior1",
+  "runs": {
+    "0": {
+      "command": [
+        "stdbuf",
+        "-oL",
+        "-eL",
+        "/home/henrytan/git/iamavirus/astra-submissions/build/frontier-posterior-verify-r1/benchmark",
+        "/home/henrytan/git/iamavirus/astra-submissions/build/frontier-posterior-verify-r1/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "1",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_ROOT_MODE": "0",
+        "FOW_FRONTIER_CAPACITY": "8192",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0",
+        "FOW_DEBUG_ROOT": "1"
+      },
+      "log_sha256": "90c24cf52f4486f1443a27120610f668d8d51f2a0bc278a5e25b0ccaa18cd84d",
+      "decisions": 6
+    },
+    "1": {
+      "command": [
+        "stdbuf",
+        "-oL",
+        "-eL",
+        "/home/henrytan/git/iamavirus/astra-submissions/build/frontier-posterior-verify-r1/benchmark",
+        "/home/henrytan/git/iamavirus/astra-submissions/build/frontier-posterior-verify-r1/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "1",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_ROOT_MODE": "1",
+        "FOW_FRONTIER_CAPACITY": "8192",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0",
+        "FOW_DEBUG_ROOT": "1"
+      },
+      "log_sha256": "33f7e3bb2c153ec6981d8b4dffd8ce14ad7ebf077648b8ca56738a102e14df5a",
+      "decisions": 6
+    },
+    "2": {
+      "command": [
+        "stdbuf",
+        "-oL",
+        "-eL",
+        "/home/henrytan/git/iamavirus/astra-submissions/build/frontier-posterior-verify-r1/benchmark",
+        "/home/henrytan/git/iamavirus/astra-submissions/build/frontier-posterior-verify-r1/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "1",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_ROOT_MODE": "2",
+        "FOW_FRONTIER_CAPACITY": "8192",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0",
+        "FOW_DEBUG_ROOT": "1"
+      },
+      "log_sha256": "6ec97fc993ec21b8496ea169a801af55ad562e1d3cf1320dfdb73eeafc7e9606",
+      "decisions": 6
+    }
+  },
+  "control_decisions_equal": 6,
+  "exact_matched_matrices": 6,
+  "exact_matched_payoff_cells": 552,
+  "terminal": [
+    {
+      "game": "fj3af3mp",
+      "side": 1,
+      "ply": 77,
+      "choices": {
+        "0": {
+          "game": "fj3af3mp",
+          "side": 1,
+          "ply": 77,
+          "sampled": false,
+          "terminal": true,
+          "move": "c8d7",
+          "king_loss": true,
+          "safe_alternatives": 2,
+          "king_risk_permille": 631,
+          "safest_risk_permille": 397,
+          "legal_moves": 28,
+          "collapsed": false
+        },
+        "1": {
+          "game": "fj3af3mp",
+          "side": 1,
+          "ply": 77,
+          "sampled": false,
+          "terminal": true,
+          "move": "c8d8",
+          "king_loss": false,
+          "safe_alternatives": 2,
+          "king_risk_permille": 490,
+          "safest_risk_permille": 397,
+          "legal_moves": 28,
+          "collapsed": false
+        },
+        "2": {
+          "game": "fj3af3mp",
+          "side": 1,
+          "ply": 77,
+          "sampled": false,
+          "terminal": true,
+          "move": "c8c7",
+          "king_loss": true,
+          "safe_alternatives": 2,
+          "king_risk_permille": 397,
+          "safest_risk_permille": 397,
+          "legal_moves": 28,
+          "collapsed": false
+        }
+      }
+    },
+    {
+      "game": "tu75n4ra",
+      "side": 0,
+      "ply": 58,
+      "choices": {
+        "0": {
+          "game": "tu75n4ra",
+          "side": 0,
+          "ply": 58,
+          "sampled": false,
+          "terminal": true,
+          "move": "b2d4",
+          "king_loss": true,
+          "safe_alternatives": 1,
+          "king_risk_permille": 154,
+          "safest_risk_permille": 0,
+          "legal_moves": 11,
+          "collapsed": false
+        },
+        "1": {
+          "game": "tu75n4ra",
+          "side": 0,
+          "ply": 58,
+          "sampled": false,
+          "terminal": true,
+          "move": "b2d4",
+          "king_loss": true,
+          "safe_alternatives": 1,
+          "king_risk_permille": 154,
+          "safest_risk_permille": 0,
+          "legal_moves": 11,
+          "collapsed": false
+        },
+        "2": {
+          "game": "tu75n4ra",
+          "side": 0,
+          "ply": 58,
+          "sampled": false,
+          "terminal": true,
+          "move": "b2d4",
+          "king_loss": true,
+          "safe_alternatives": 1,
+          "king_risk_permille": 154,
+          "safest_risk_permille": 0,
+          "legal_moves": 11,
+          "collapsed": false
+        }
+      }
+    },
+    {
+      "game": "hilbnfl9",
+      "side": 1,
+      "ply": 29,
+      "choices": {
+        "0": {
+          "game": "hilbnfl9",
+          "side": 1,
+          "ply": 29,
+          "sampled": false,
+          "terminal": true,
+          "move": "a8b8",
+          "king_loss": true,
+          "safe_alternatives": 1,
+          "king_risk_permille": 781,
+          "safest_risk_permille": 204,
+          "legal_moves": 26,
+          "collapsed": false
+        },
+        "1": {
+          "game": "hilbnfl9",
+          "side": 1,
+          "ply": 29,
+          "sampled": false,
+          "terminal": true,
+          "move": "a8b8",
+          "king_loss": true,
+          "safe_alternatives": 1,
+          "king_risk_permille": 781,
+          "safest_risk_permille": 204,
+          "legal_moves": 26,
+          "collapsed": false
+        },
+        "2": {
+          "game": "hilbnfl9",
+          "side": 1,
+          "ply": 29,
+          "sampled": false,
+          "terminal": true,
+          "move": "e8d7",
+          "king_loss": false,
+          "safe_alternatives": 1,
+          "king_risk_permille": 204,
+          "safest_risk_permille": 204,
+          "legal_moves": 26,
+          "collapsed": false
+        }
+      }
+    }
+  ],
+  "completed_at": "2026-10-08T05:30:38.419893+00:00",
+  "limitations": [
+    "Selected diagnostic histories; correctness, not a strength sample."
+  ]
+}

@@ -1,0 +1,194 @@
+{
+  "collection": {
+    "state": "complete",
+    "started_at": "2026-10-08T05:06:05.850592+00:00",
+    "pid": 4089810,
+    "identity": {
+      "limit": 1000,
+      "cache": "/home/henrytan/git/iamavirus/data/raw/games",
+      "extra_caches": [
+        "/media/henrytan/seagate/iamavirus/astra/corpus/recent-20261008T0023/raw/games"
+      ],
+      "source_sha256": {
+        "astra-submissions/tools/collect_recent.py": "bb074ed4aa8b8dda80b138b6402e4151bf2688e541b38369a3110c54683fb88c",
+        "astra-submissions/tools/monitor_arena.py": "4fa8bb286c9e83eea098aeee80bc2aa2b8835ef0a0d6b75fe2a84d37e36548e8",
+        "astra-submissions/learning_experiments/run.py": "43f11eb4dfb6478ff70e27f1e05b49df75c23e5e05b88a7ef51cd57ea44ba3ad",
+        "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+        "learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+        "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+        "learning/_native.py": "af915a3247124654933c06b2d5e3e2717560df3a08a39f7ce65a0a4a4eace704"
+      }
+    },
+    "native": {
+      "sources": {
+        "rules_capi.cc": "26794cb3062e5bdd881ed07858e0821cfa5abd907707cc4f80b0e2c75c5cb31e",
+        "engine.cc": "ca65ebeb7b9bd97d0dff43944c9870732d2e3067563eb5492d018acd4046554e",
+        "belief.cc": "3dc0fb5a6a4c897dfa87c686d255470a303442f70f66cd10bc7cb42864a83f40",
+        "search.cc": "fa8a64876248c695aebbeec504efa73e9d1a1040cb280f7e86ff6299fb3e153a",
+        "evaluation.cc": "c7ffc3e23fe0303121bf2c9885cdade0531706be6764ce1d5574d523258a179a",
+        "observation.cc": "cdf3a5316aedf4a764f9c94827816ab6bb87369cf8c3020c8af5a8ff5489c5ca",
+        "transposition.cc": "92467ff1857fb681c57e81a857b03dbd7bb22fe0b85cc8b17e95e2a8d51b466e",
+        "regret.cc": "6e166aa11721d718ddfdff9772228dc8e5acda5ecf00e8e52d8e02fc9d4e906a",
+        "position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+        "move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+        "bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+        "opponent_model.cc": "d9ef2083e3482af4ee4dbf642dff5a98ae75950730b660527b425530548c1597",
+        "bitboard.h": "8e44e16445d783bb10df53533d54039d345893fccd1b5b0e40a40c771fa5aa0d",
+        "move.h": "d9df0633b6449f6156b7ce5aeba762a11629834ffe8276a5a14336b5bda411fb",
+        "position.h": "4779d19bc65b7f083c9cb85cc08de760ba723dd17b3447b276ee9eef356e02a7",
+        "observation.h": "1a2c3499673f10426a30e1182af2c3cc0fa1e3ac88b1edbb3ec18f118fd3a9dd",
+        "evaluation.h": "58d68872baebedc8359bf85374bcdf4b12e46637e2015f3f1b9fe2c37ee8fa6a",
+        "transposition.h": "63e49121e2fcec3ee7ccc79c3680e98670ebe535359c314d70c08cc82267f295",
+        "search.h": "727cfce37e60e7d2aefa94c7f3b0528f4b564a01ebafe473c88adc69d0073687",
+        "belief.h": "18f6f2d73c397552f0265899fa642293913e458427336e7a39a664409813481b",
+        "regret.h": "6c4a1bfd814cf8ec8cd3c48cd6c473ce2bad0d9b60cf17af2af5d6ccdc004712",
+        "engine.h": "9f4e492b60cdc723ee3bb6c3948c913127fa8217244c65025db922ef0a6415f9",
+        "piece_square.h": "2c7deec8b737fbd450ed8fdc0e456139f2dad564e5792c98b201e336aaef01dc",
+        "opponent_model.h": "1b3443eb9cd394b2897a71ed2daf3a0544ee41794f68cc0c8fe5de9b0ad9ff54",
+        "opponent_weights.h": "a93041d41ac93b79f85b2c138fd05da9add9c768ad5309d08368d7dc9b506c05"
+      },
+      "library_sha256": "280f8584c1c4d9785dc5b64b545682a8f94d54ea6b537b58f502aa45ff83e8d1"
+    },
+    "selection": "newest completed games, all teams and outcomes",
+    "training_split_changed": false,
+    "requests_paced": "sequential, at least one second apart",
+    "completed": 1000,
+    "accepted": 1000,
+    "quarantined": 0,
+    "completed_at": "2026-10-08T05:22:34.784379+00:00",
+    "listing_sha256": "370bd788cf666202c5b8e876f0458336798d8345a15d77ac7177a06b8fe472a6",
+    "validation_sha256": "8ae088e4c8729184e0cd67db00c49c4cffb920f6092a841b5e4e25842fd14df7",
+    "sources": {
+      "public API": 693,
+      "shared cache": 307
+    },
+    "outcomes": {
+      "1-0": 515,
+      "0-1": 444,
+      "1/2-1/2": 41
+    },
+    "frames_checked": 77165,
+    "unique_move_sequences": 999,
+    "limitations": [
+      "Recent all-outcome snapshot, not uniform sampling across opponents.",
+      "Train/validation overlap not yet audited; no held-out strength claim.",
+      "Accepted means exact replay agreement with pinned rules, not good play."
+    ]
+  },
+  "curation": {
+    "completed_at": "2026-10-08T05:26:28.232922+00:00",
+    "state": "complete",
+    "snapshot": "/media/henrytan/seagate/iamavirus/astra/corpus/recent-20261008T0504",
+    "collection_sha256": "1a51d79217f20fb171cf0f9aa205710714e05b4a79081c9f4c069ed955ca58c2",
+    "feature_version": "features-v2",
+    "native_library_sha256": "280f8584c1c4d9785dc5b64b545682a8f94d54ea6b537b58f502aa45ff83e8d1",
+    "source_sha256": {
+      "astra-submissions/tools/curate_snapshot.py": "b1e8a38d9409e4e49b3787c38d78297b785f8e223f2f14e461e21440a4341079",
+      "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+      "learning/features.py": "4b4a0a9893c7751d13a4e6b9d00da74093b873e142ae39e9a35d1bcb9014d88c",
+      "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+      "learning/labels.py": "11f10cfdc1a4bc4e6b4823ef8502c192b83e1bfd7e168fe42e39ff4e4e1a6b92"
+    },
+    "counts": {
+      "episodes": 2000,
+      "decisions": 76165,
+      "observation_events": 152344,
+      "new_game_decisions": 76096,
+      "games": 1000,
+      "new_games": 994
+    },
+    "overlap_games": {
+      "v1:train": 4,
+      "v2:validation": 1,
+      "v3:train": 5,
+      "v4:train": 5,
+      "v2:train": 4,
+      "v4:validation": 1,
+      "v3:validation": 1
+    },
+    "existing_splits": {
+      "v1:test": {
+        "games": 149,
+        "shard_sha256": "f1758437c70ca881e94179ef4f0d8606101c4d11bfeebbf866828615a435c00c",
+        "manifest_sha256": "1c89ed4710428e4b2de66ca25837be957d9ce1bde2aac24dd0eeb41ed892872d"
+      },
+      "v1:train": {
+        "games": 1201,
+        "shard_sha256": "a7c0abe3b2e9fed3db9a788e76bbaaf332f81b0edda46fc2e63002a1c26467a2",
+        "manifest_sha256": "1c89ed4710428e4b2de66ca25837be957d9ce1bde2aac24dd0eeb41ed892872d"
+      },
+      "v1:validation": {
+        "games": 150,
+        "shard_sha256": "ed2e41e0d9d7849f2677eddbc63c824bd188c11af412c9018ddb2e87ae7044d8",
+        "manifest_sha256": "1c89ed4710428e4b2de66ca25837be957d9ce1bde2aac24dd0eeb41ed892872d"
+      },
+      "v2:test": {
+        "games": 325,
+        "shard_sha256": "7153a6319177a2d24366698b9337290c485328a3caa4152f24f30e444d1fb176",
+        "manifest_sha256": "d96b67ba7863af1974927db7d8cd9052158f81894ee0e540114f5cba25619ad3"
+      },
+      "v2:train": {
+        "games": 2607,
+        "shard_sha256": "05e77392889254438021008d12215b3d608d8ead815515ec39465c830a14a92b",
+        "manifest_sha256": "d96b67ba7863af1974927db7d8cd9052158f81894ee0e540114f5cba25619ad3"
+      },
+      "v2:validation": {
+        "games": 326,
+        "shard_sha256": "14e42d54744e9a002f3e15c8cc3bb6eda9d3ccc98f00fa6d14c514e58bc4aaed",
+        "manifest_sha256": "d96b67ba7863af1974927db7d8cd9052158f81894ee0e540114f5cba25619ad3"
+      },
+      "v3:test": {
+        "games": 469,
+        "shard_sha256": "257830820ce3367b87787be9dd84c666fe785d65115c95591759b7bf5318bf25",
+        "manifest_sha256": "84ee446d494e9a54b1fe329f85fdaa3c9a431051c99f9ba8b03b321950603d38"
+      },
+      "v3:train": {
+        "games": 3766,
+        "shard_sha256": "6fb4333ce9f22a0c2d8d9a754265931c1f19e3f6c73d590f6175255f35cf58e4",
+        "manifest_sha256": "84ee446d494e9a54b1fe329f85fdaa3c9a431051c99f9ba8b03b321950603d38"
+      },
+      "v3:validation": {
+        "games": 472,
+        "shard_sha256": "47ff6ae6e9476bf75e2f92d5a45f8603659d7529a6ecf21a301fab00121ce65b",
+        "manifest_sha256": "84ee446d494e9a54b1fe329f85fdaa3c9a431051c99f9ba8b03b321950603d38"
+      },
+      "v4:test": {
+        "games": 469,
+        "shard_sha256": "547d8e436c6e30bfac3d40063080e2dbe1e46a70748cfd4644234b2bc7541a4a",
+        "manifest_sha256": "2bb5d869bf74293ff2c7eec06899492280f69e8cf3d4b4bade676d554759b4ee"
+      },
+      "v4:train": {
+        "games": 3766,
+        "shard_sha256": "dff01e26e8d0bf959b8e08d179e901493308f51da78f25f9e289dbc9c45cf426",
+        "manifest_sha256": "2bb5d869bf74293ff2c7eec06899492280f69e8cf3d4b4bade676d554759b4ee"
+      },
+      "v4:validation": {
+        "games": 472,
+        "shard_sha256": "499f4454f517994f7ba93bc888a41cd9420522103d5ad1af714f7631043e1b15",
+        "manifest_sha256": "2bb5d869bf74293ff2c7eec06899492280f69e8cf3d4b4bade676d554759b4ee"
+      }
+    },
+    "artifacts_sha256": {
+      "episodes.jsonl.gz": "3e086dd7c6bf50d6f08b01e42394590be278eb2037e4d0748c495412580e40c2",
+      "actor-observations.jsonl.gz": "f6818bc610f89ddff7cb6ec3e59c36113261e364e69767902038a19c4edf1a43",
+      "new-games.jsonl.gz": "96fd5dbd64496ee6445c64f2aaa095c01ec7d260b464b1d7773e04e5bd682b10",
+      "index.jsonl": "90b6f611d16e75b0c690010e8679e216be39be3a9a1e43e7dcfaa86c64eb1f01"
+    },
+    "test_membership_metadata_read": true,
+    "test_targets_deserialized": false,
+    "training_split_changed": false,
+    "limitations": [
+      "New means absent by game ID and complete move hash from the listed manifests.",
+      "Shared openings and partial histories can still overlap.",
+      "All pools are development data; no sealed performance test or Elo claim.",
+      "Keep the game index when assigning splits, including for actor-only SSL."
+    ]
+  },
+  "previous_snapshot_overlap_by_id": 237,
+  "fresh_vs_previous_and_v1_v4": {
+    "games": 757,
+    "decisions": 57694,
+    "unique_move_sequences": 757
+  },
+  "novelty_audit": "Complete-move hashes and game IDs, not independence of openings or partial histories."
+}

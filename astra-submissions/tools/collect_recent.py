@@ -34,6 +34,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--output', type=Path, required=True)
     parser.add_argument('--cache', type=Path, default=ROOT / 'data/raw/games')
+    parser.add_argument('--extra-cache', type=Path, action='append', default=[])
     parser.add_argument('--limit', type=int, default=500)
     parser.add_argument('--resume', action='store_true')
     args = parser.parse_args()
@@ -48,7 +49,9 @@ def main():
                     ROOT / 'learning/ingest.py', ROOT / 'learning/rules.py',
                     ROOT / 'learning/histories.py', ROOT / 'learning/_native.py']
     source_hashes = {str(p.relative_to(ROOT)): sha(p) for p in source_paths}
-    identity = {'limit': args.limit, 'cache': str(args.cache.resolve()), 'source_sha256': source_hashes}
+    caches = [args.cache.resolve(), *(p.resolve() for p in args.extra_cache)]
+    identity = {'limit': args.limit, 'cache': str(args.cache.resolve()),
+                'extra_caches': [str(p) for p in caches[1:]], 'source_sha256': source_hashes}
     receipt_path = output / 'collection.json'
     if receipt_path.exists():
         previous = json.loads(receipt_path.read_text())
@@ -102,11 +105,12 @@ def main():
             if game in processed:
                 continue
             saved = store.games / game / 'replay.json'
-            cached = args.cache / game / 'replay.json'
+            cached = next((root / game / 'replay.json' for root in caches
+                           if (root / game / 'replay.json').exists()), None)
             if saved.exists():
                 replay = json.loads(saved.read_text())
                 fetch = {'source': 'resumed snapshot', 'path': str(saved), 'sha256': sha(saved)}
-            elif cached.exists():
+            elif cached is not None:
                 replay = json.loads(cached.read_text())
                 fetch = {'source': 'shared cache', 'path': str(cached), 'sha256': sha(cached)}
             else:

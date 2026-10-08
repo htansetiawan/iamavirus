@@ -39,24 +39,49 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--binary', type=Path, required=True)
     parser.add_argument('--reference-campaign', type=Path, required=True)
-    parser.add_argument('--cases', type=Path, required=True)
+    cases = parser.add_mutually_exclusive_group(required=True)
+    cases.add_argument('--cases', type=Path,
+                       help='Legacy case directory with its own manifest and prediction0.log')
+    cases.add_argument('--corpus', type=Path,
+                       help='Selected seats to compare against the completed campaign log')
+    parser.add_argument('--reference-arm', default='prediction0-prior1')
     parser.add_argument('--output', type=Path, required=True)
     args = parser.parse_args()
     reference = json.loads((args.reference_campaign / 'campaign.json').read_text())
-    case_manifest = json.loads((args.cases / 'manifest.json').read_text())
     for name, digest in reference['inputs'].items():
         if sha(Path(name)) != digest:
             raise ValueError('reference input changed: ' + name)
-    reference_log = args.cases / 'prediction0.log'
-    if sha(reference_log) != case_manifest['arms']['0']['log_sha256']:
-        raise ValueError('reference case log changed')
+    if args.cases is not None:
+        case_manifest = json.loads((args.cases / 'manifest.json').read_text())
+        reference_log = args.cases / 'prediction0.log'
+        expected_log_hash = case_manifest['arms']['0']['log_sha256']
+        source_seats = args.cases / 'seats.txt'
+    else:
+        arm = reference['arms'][args.reference_arm]
+        if reference['state'] != 'complete' or arm['state'] != 'complete':
+            raise ValueError('reference campaign must have completed')
+        reference_log = args.reference_campaign / (args.reference_arm + '.log')
+        expected_log_hash = arm['log_sha256']
+        source_seats = args.corpus
+    if sha(reference_log) != expected_log_hash:
+        raise ValueError('reference log changed')
     out = args.output.resolve(); out.mkdir(parents=True, exist_ok=False)
     binary = out / 'benchmark'; binary.write_bytes(args.binary.read_bytes()); binary.chmod(0o755)
-    seats = out / 'seats.txt'; seats.write_bytes((args.cases / 'seats.txt').read_bytes())
+    seats = out / 'seats.txt'; seats.write_bytes(source_seats.read_bytes())
+    wanted = set()
+    for line in seats.read_text().splitlines():
+        fields = line.split()
+        if len(fields) < 5 or fields[1] not in ('w', 'b'):
+            raise ValueError('invalid selected seat')
+        key = (fields[0], int(fields[1] == 'b'))
+        if key in wanted:
+            raise ValueError('duplicate selected seat')
+        wanted.add(key)
     report = {'started_at': datetime.now(timezone.utc).isoformat(), 'state': 'running',
               'binary_sha256': sha(binary), 'seats_sha256': sha(seats),
               'reference_inputs': reference['inputs'], 'reference_log_sha256': sha(reference_log),
-              'runner_sha256': sha(Path(__file__)), 'runs': {}}
+              'runner_sha256': sha(Path(__file__)), 'reference_arm': args.reference_arm,
+              'runs': {}}
     def save():
         (out / 'report.json').write_text(json.dumps(report, indent=2) + '\n')
     save()
@@ -64,7 +89,7 @@ def main():
         outputs = {}
         for mode in (0, 1, 2):
             env = {k: v for k, v in os.environ.items() if not k.startswith(('FOW_', 'ASTRA_'))}
-            env.update(reference['arms']['prediction0-prior1']['settings'])
+            env.update(reference['arms'][args.reference_arm]['settings'])
             env.update(FOW_ROOT_MODE=str(mode), FOW_DEBUG_ROOT='1')
             command = ['stdbuf', '-oL', '-eL', str(binary), str(seats),
                        str(reference['stride']), str(reference['nodes']), 'verbose']
@@ -79,6 +104,9 @@ def main():
                                         'log_sha256': sha(log), 'decisions': len(outputs[mode][0])}
             save()
         original, _ = parse(reference_log)
+        original = {key: value for key, value in original.items() if key[:2] in wanted}
+        if {key[:2] for key in original} != wanted:
+            raise ValueError('some selected seats are absent from the reference log')
         if not original or outputs[0][0] != original:
             raise ValueError('root0 does not reproduce the original control decisions')
         if outputs[1][0].keys() != outputs[2][0].keys():
@@ -96,7 +124,7 @@ def main():
                                  'choices':{str(mode):outputs[mode][0][k] for mode in outputs}}
                                 for k,v in original.items() if v['terminal']],
                       completed_at=datetime.now(timezone.utc).isoformat(),
-                      limitations=['Three selected diagnostic histories; correctness, not a strength sample.'])
+                      limitations=['Selected diagnostic histories; correctness, not a strength sample.'])
     except BaseException as error:
         report.update(state='failed', error=repr(error)); raise
     finally:

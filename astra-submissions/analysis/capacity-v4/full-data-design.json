@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-08T05:15:13.231790+00:00",
+  "hypothesis": "The 512-game pool limited generalization; broaden only training data before assessing larger-model capacity.",
+  "source_revision": "09fd15f83f7b1cb4ccd7d0aae2d7e6bec7773a82",
+  "manifest_sha256": "2bb5d869bf74293ff2c7eec06899492280f69e8cf3d4b4bade676d554759b4ee",
+  "shard_sha256": {
+    "train": "dff01e26e8d0bf959b8e08d179e901493308f51da78f25f9e289dbc9c45cf426",
+    "validation": "499f4454f517994f7ba93bc888a41cd9420522103d5ad1af714f7631043e1b15"
+  },
+  "train_games": 3766,
+  "previous_train_games": 512,
+  "validation_games": 64,
+  "validation_selection": "Same hash-sorted 64 games as the previous capacity experiment; neither selected examples nor split changes.",
+  "test_shard_used": false,
+  "arms": [
+    "cnn",
+    "attention-small",
+    "attention-large"
+  ],
+  "initialization": "Fresh same architecture and seed 253 as previous experiment, not resumed on a changed dataset.",
+  "steps": 6000,
+  "evaluate_every": 1000,
+  "batch": 4,
+  "window": 32,
+  "learning_rate": 0.0003,
+  "seed": 253,
+  "budget_comparison": "Same optimizer updates across dataset-size arms; report actual training decisions and wall time separately. Different episode lengths mean decision counts need not match.",
+  "primary_evaluation_step": 6000,
+  "primary_questions": [
+    "Within each architecture, does full-pool training improve policy likelihood and avoidable-fatal proposals versus its 512-game run?",
+    "With the full pool, does large attention beat small attention on hidden enemy-piece likelihood and the tactical tail?"
+  ],
+  "secondary": "Predeclared learning curves at every 1000 updates; report against the earlier-stopped small-pool controls as well. No model is promoted by beating an overfit last checkpoint.",
+  "follow_up": "Second seed, model export, actual hybrid decision gate and clocked games for any promising model. No distillation or quantization until a stronger teacher is demonstrated.",
+  "output": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008",
+  "estimated_gpu_time": "about 90-120 minutes; no preemption of other services"
+}

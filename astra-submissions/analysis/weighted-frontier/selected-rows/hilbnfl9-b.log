@@ -1,0 +1,38 @@
+row b8c6 risk=100 cells: -65 -97 -91 -65 -71 -97 -85 -51
+row g8f6 risk=100 cells: -65 -51 -45 -66 -50 -97 -48 -51
+row d7d5 risk=2069 cells: -2052 -2071 -2065 -2052 -2020 -2070 -2017 -2020
+row d7d6 risk=2069 cells: -2071 -2090 -2084 -2038 -2058 -2088 -2035 -2038
+row e7e6 risk=100 cells: -97 -116 -110 -97 -70 -116 -111 -69
+row f7f5 risk=97 cells: -135 -154 -148 -135 -122 -154 -184 -103
+row c7c5 risk=101 cells: -158 -175 -166 -136 -185 -175 -147 -175
+row c7c6 risk=100 cells: -147 -166 -160 -147 -133 -166 -153 -119
+row e7e5 risk=100 cells: -80 -99 -161 -70 -52 -99 -94 -85
+row b7b5 risk=153 cells: -212 -229 -222 -190 -204 -220 -207 -220
+row b7b6 risk=156 cells: -198 -217 -211 -198 -185 -217 -208 -166
+row b8a6 risk=100 cells: -122 -141 -135 -83 -64 -141 -132 -92
+DECISION {"game":"hilbnfl9","side":1,"ply":1,"sampled":true,"terminal":false,"move":"b8c6","king_loss":false,"safe_alternatives":20,"king_risk_permille":0,"safest_risk_permille":0,"legal_moves":20,"collapsed":false}
+row e8d7 risk=13826 cells: -15654 -43826 -15595 -43826 -15532 -15504 -43826 -15449
+row a8a6 risk=23525 cells: -53525 -25289 -53525 -25045 -53525 -53525 -25048 -53525
+row a8a7 risk=23563 cells: -53563 -25773 -53563 -25187 -53563 -53563 -25234 -53563
+row a8b8 risk=23516 cells: -53516 -24769 -53516 -25157 -53516 -53516 -25160 -53516
+row c8h3 risk=23546 cells: -53546 -25574 -53546 -24838 -53546 -53546 -25108 -53546
+row c8g4 risk=23531 cells: -53531 -25002 -53531 -24807 -53531 -53531 -24712 -53531
+row f8g7 risk=23512 cells: -53512 -24789 -53512 -53509 -53512 -53512 -53509 -53512
+row f8h6 risk=23516 cells: -53516 -24756 -53516 -53513 -53516 -53516 -53513 -53516
+row e7e6 risk=23508 cells: -53508 -25327 -53508 -53505 -53508 -53508 -53505 -53508
+row d8e6 risk=24798 cells: -54798 -26133 -54798 -26464 -54798 -54798 -26480 -54798
+row a5a4 risk=23512 cells: -53512 -25326 -53512 -24681 -53512 -53512 -24729 -53512
+row d8b7 risk=24764 cells: -54764 -26109 -54764 -26132 -54764 -54764 -26137 -54764
+DECISION {"game":"hilbnfl9","side":1,"ply":29,"sampled":false,"terminal":true,"move":"a8b8","king_loss":true,"safe_alternatives":1,"king_risk_permille":781,"safest_risk_permille":204,"legal_moves":26,"collapsed":false}
+  hilbnfl9   vs Knight_Vision        ply  29  real played f8h6   (lost)  engine plays a8b8    ALSO LOSES
+
+corpus: /home/henrytan/git/iamavirus/astra-submissions/analysis/weighted-frontier/selected-rows/hilbnfl9-b.txt   own-decision stride 1000   400000 nodes/decision
+  seats replayed            : 1
+  decisions evaluated       : 2
+  immediate king losses     : 1 (50.00%)
+  safe-alternative decisions: 2
+  avoidable king losses     : 1
+  matched the real move     : 0 (0.0%)
+  real losing positions     : 1
+  ...the engine survives    : 0 (0%)
+  unsafe moves rejected     : 0 (0.0 per decision)

@@ -1,0 +1,37 @@
+{
+  "recorded_at": "2026-10-08T05:28:30.954344+00:00",
+  "question": "Does chance-weighted root selection use the improved weighted-frontier support more effectively than adversarial board selection?",
+  "motivation": "Three preselected fatal-choice traces retain the safe comparator in the matrix. Full-population risk can be overridden by the sampled board payoffs and additional row charges.",
+  "prior_findings": "Root expectation without this frontier was inconclusive (165/160/166 terminal fatalities). Frontier alone improved support but not decisions (158/164). This tests their interaction, not a new validation set.",
+  "arms": {
+    "0": "Legacy representative/strided columns plus minimax",
+    "1": "Posterior-distributed columns plus minimax",
+    "2": "Same posterior-distributed columns plus maximum mean"
+  },
+  "primary_comparison": "mode2 minus mode1 terminal fatality and paired saved/new counts",
+  "secondary": "mode1 minus mode0 column-sampling effect; mode2 minus mode0 overall change",
+  "settings": {
+    "frontier_capacity": 8192,
+    "prediction_mode": 1,
+    "opponent_prior": 1,
+    "history_mode": 0,
+    "particles": 2048,
+    "nodes": 400000,
+    "seed": 777,
+    "threads": 1,
+    "book": false
+  },
+  "corpus": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/seats.txt",
+  "corpus_sha256": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+  "model": "same frozen repairs-v4 graphs from frontier action comparison",
+  "correctness": [
+    "Original root mode0 must match all1338 frontier decisions.",
+    "Modes1/2 must use identical columns, nodes and payoff cells on the three diagnostic histories.",
+    "Run original engine and posterior selector tests."
+  ],
+  "limits": [
+    "Reused development positions, not independent strength evidence.",
+    "Prior selection of this interaction follows negative results; no multiple-testing-adjusted claim.",
+    "No automatic release or constant tuning."
+  ]
+}

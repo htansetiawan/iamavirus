@@ -1,0 +1,41 @@
+{
+  "recorded_at": "2026-10-08T05:23:53.213391+00:00",
+  "purpose": "Repeat learned-prior clock screen on corrected opening-book safety code, using independent seed pairs.",
+  "archive": "fable-submissions/iamavirus-v11-candidate-caution-r10d-hybrid.zip",
+  "archive_sha256": "381451613375e7984b19f063b8e0aaddb0d4a4e2e9ab28e81028fa4a37c865cc",
+  "control_prior": 1,
+  "candidate_prior": 2,
+  "pairs": 4,
+  "seed_by_pair": [
+    [
+      22000,
+      22001
+    ],
+    [
+      22002,
+      22003
+    ],
+    [
+      22004,
+      22005
+    ],
+    [
+      22006,
+      22007
+    ]
+  ],
+  "time_control": {
+    "base": 180,
+    "increment": 2
+  },
+  "cores": "3,4",
+  "runtime": "astra-submissions/build/prior-clock-r10d-r1",
+  "output": "/media/henrytan/seagate/iamavirus/astra/matches/prior2-vs-prior1-r10d-20261008",
+  "primary": "Paired complete-game score over all eight planned games, paired bootstrap interval; report failures, reasons, plies and clocks. No stopping for an early lead.",
+  "unchanged": "Same archive, compiled binary, neural graphs, book and settings in both arms, except FOW_OPPONENT_PRIOR=2 vs1. Seeds are fixed by color within each pair.",
+  "limitations": [
+    "One self-opponent family; not an Elo estimate or sufficient for promotion.",
+    "Do not pool with old-r10c outcomes without identifying the changed book implementation.",
+    "No arena or deployed default changes."
+  ]
+}

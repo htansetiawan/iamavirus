@@ -1,0 +1,1162 @@
+{
+  "recorded_at": "2026-10-08T05:25:19.424515+00:00",
+  "campaign": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008",
+  "arm": "frontier8192-prediction1-prior1",
+  "campaign_sha256": "a60f571499f81d2d7af5c1610de204db2d2540c623b7a20736289d1de9674843",
+  "inputs": {
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/benchmark": "7581bc5cc35b4043f41273405660ac00c21f871d29e9eb074916ae462309c434",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/seats.txt": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model/model_manifest.json": "01c27622491dfb58800a7185d8dfbed06e80637fa90b4955bfb15d5b1fc2fdc5",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model/observe.onnx": "5ca694718cc33ab9867d1a532a8b43d694fa0fd2024f9a3f1069b44f0390f84e",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model/score.onnx": "9aa00c39233cc1960d555738496feaedf887ab7ca440447c1efdf95cc279df53"
+  },
+  "settings": {
+    "FOW_MODE": "hybrid",
+    "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/model",
+    "FOW_HISTORY_MODE": "0",
+    "FOW_PREDICTION_MODE": "1",
+    "FOW_OPPONENT_PRIOR": "1",
+    "FOW_ROOT_MODE": "0",
+    "FOW_FRONTIER_CAPACITY": "8192",
+    "FOW_PARTICLES": "2048",
+    "FOW_CELL_THREADS": "1",
+    "FOW_BOOK_PLIES": "0"
+  },
+  "runner_sha256": "51772284def51edf90a0ac0dd3245f2e785181b0d18816ef2d4841d622001323",
+  "seats": [
+    {
+      "game": "hilbnfl9",
+      "side": "b",
+      "command": [
+        "stdbuf",
+        "-oL",
+        "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/benchmark",
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/weighted-frontier/selected-rows/hilbnfl9-b.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "corpus_sha256": "351cba47b876e0c616729e45b5d8e7846ec29906f4b0350df4a3206165b61b90",
+      "log_sha256": "8215321e631e8525dab3b5d2976e782fa7c136bf555d4f662869940115da014c",
+      "all_decisions_match_original": true,
+      "decisions": [
+        {
+          "decision": {
+            "game": "hilbnfl9",
+            "side": 1,
+            "ply": 1,
+            "sampled": true,
+            "terminal": false,
+            "move": "b8c6",
+            "king_loss": false,
+            "safe_alternatives": 20,
+            "king_risk_permille": 0,
+            "safest_risk_permille": 0,
+            "legal_moves": 20,
+            "collapsed": false
+          },
+          "rows": [
+            {
+              "move": "b8c6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -65,
+                -97,
+                -91,
+                -65,
+                -71,
+                -97,
+                -85,
+                -51
+              ]
+            },
+            {
+              "move": "g8f6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -65,
+                -51,
+                -45,
+                -66,
+                -50,
+                -97,
+                -48,
+                -51
+              ]
+            },
+            {
+              "move": "d7d5",
+              "risk_charge_rounded": 2069,
+              "payoffs_rounded": [
+                -2052,
+                -2071,
+                -2065,
+                -2052,
+                -2020,
+                -2070,
+                -2017,
+                -2020
+              ]
+            },
+            {
+              "move": "d7d6",
+              "risk_charge_rounded": 2069,
+              "payoffs_rounded": [
+                -2071,
+                -2090,
+                -2084,
+                -2038,
+                -2058,
+                -2088,
+                -2035,
+                -2038
+              ]
+            },
+            {
+              "move": "e7e6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -97,
+                -116,
+                -110,
+                -97,
+                -70,
+                -116,
+                -111,
+                -69
+              ]
+            },
+            {
+              "move": "f7f5",
+              "risk_charge_rounded": 97,
+              "payoffs_rounded": [
+                -135,
+                -154,
+                -148,
+                -135,
+                -122,
+                -154,
+                -184,
+                -103
+              ]
+            },
+            {
+              "move": "c7c5",
+              "risk_charge_rounded": 101,
+              "payoffs_rounded": [
+                -158,
+                -175,
+                -166,
+                -136,
+                -185,
+                -175,
+                -147,
+                -175
+              ]
+            },
+            {
+              "move": "c7c6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -147,
+                -166,
+                -160,
+                -147,
+                -133,
+                -166,
+                -153,
+                -119
+              ]
+            },
+            {
+              "move": "e7e5",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -80,
+                -99,
+                -161,
+                -70,
+                -52,
+                -99,
+                -94,
+                -85
+              ]
+            },
+            {
+              "move": "b7b5",
+              "risk_charge_rounded": 153,
+              "payoffs_rounded": [
+                -212,
+                -229,
+                -222,
+                -190,
+                -204,
+                -220,
+                -207,
+                -220
+              ]
+            },
+            {
+              "move": "b7b6",
+              "risk_charge_rounded": 156,
+              "payoffs_rounded": [
+                -198,
+                -217,
+                -211,
+                -198,
+                -185,
+                -217,
+                -208,
+                -166
+              ]
+            },
+            {
+              "move": "b8a6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -122,
+                -141,
+                -135,
+                -83,
+                -64,
+                -141,
+                -132,
+                -92
+              ]
+            }
+          ]
+        },
+        {
+          "decision": {
+            "game": "hilbnfl9",
+            "side": 1,
+            "ply": 29,
+            "sampled": false,
+            "terminal": true,
+            "move": "a8b8",
+            "king_loss": true,
+            "safe_alternatives": 1,
+            "king_risk_permille": 781,
+            "safest_risk_permille": 204,
+            "legal_moves": 26,
+            "collapsed": false
+          },
+          "rows": [
+            {
+              "move": "e8d7",
+              "risk_charge_rounded": 13826,
+              "payoffs_rounded": [
+                -15654,
+                -43826,
+                -15595,
+                -43826,
+                -15532,
+                -15504,
+                -43826,
+                -15449
+              ]
+            },
+            {
+              "move": "a8a6",
+              "risk_charge_rounded": 23525,
+              "payoffs_rounded": [
+                -53525,
+                -25289,
+                -53525,
+                -25045,
+                -53525,
+                -53525,
+                -25048,
+                -53525
+              ]
+            },
+            {
+              "move": "a8a7",
+              "risk_charge_rounded": 23563,
+              "payoffs_rounded": [
+                -53563,
+                -25773,
+                -53563,
+                -25187,
+                -53563,
+                -53563,
+                -25234,
+                -53563
+              ]
+            },
+            {
+              "move": "a8b8",
+              "risk_charge_rounded": 23516,
+              "payoffs_rounded": [
+                -53516,
+                -24769,
+                -53516,
+                -25157,
+                -53516,
+                -53516,
+                -25160,
+                -53516
+              ]
+            },
+            {
+              "move": "c8h3",
+              "risk_charge_rounded": 23546,
+              "payoffs_rounded": [
+                -53546,
+                -25574,
+                -53546,
+                -24838,
+                -53546,
+                -53546,
+                -25108,
+                -53546
+              ]
+            },
+            {
+              "move": "c8g4",
+              "risk_charge_rounded": 23531,
+              "payoffs_rounded": [
+                -53531,
+                -25002,
+                -53531,
+                -24807,
+                -53531,
+                -53531,
+                -24712,
+                -53531
+              ]
+            },
+            {
+              "move": "f8g7",
+              "risk_charge_rounded": 23512,
+              "payoffs_rounded": [
+                -53512,
+                -24789,
+                -53512,
+                -53509,
+                -53512,
+                -53512,
+                -53509,
+                -53512
+              ]
+            },
+            {
+              "move": "f8h6",
+              "risk_charge_rounded": 23516,
+              "payoffs_rounded": [
+                -53516,
+                -24756,
+                -53516,
+                -53513,
+                -53516,
+                -53516,
+                -53513,
+                -53516
+              ]
+            },
+            {
+              "move": "e7e6",
+              "risk_charge_rounded": 23508,
+              "payoffs_rounded": [
+                -53508,
+                -25327,
+                -53508,
+                -53505,
+                -53508,
+                -53508,
+                -53505,
+                -53508
+              ]
+            },
+            {
+              "move": "d8e6",
+              "risk_charge_rounded": 24798,
+              "payoffs_rounded": [
+                -54798,
+                -26133,
+                -54798,
+                -26464,
+                -54798,
+                -54798,
+                -26480,
+                -54798
+              ]
+            },
+            {
+              "move": "a5a4",
+              "risk_charge_rounded": 23512,
+              "payoffs_rounded": [
+                -53512,
+                -25326,
+                -53512,
+                -24681,
+                -53512,
+                -53512,
+                -24729,
+                -53512
+              ]
+            },
+            {
+              "move": "d8b7",
+              "risk_charge_rounded": 24764,
+              "payoffs_rounded": [
+                -54764,
+                -26109,
+                -54764,
+                -26132,
+                -54764,
+                -54764,
+                -26137,
+                -54764
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game": "fj3af3mp",
+      "side": "b",
+      "command": [
+        "stdbuf",
+        "-oL",
+        "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/benchmark",
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/weighted-frontier/selected-rows/fj3af3mp-b.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "corpus_sha256": "9988b4e69c54271ceaf7ac39207590e55fdbb210debd04807fae5e16fd408e74",
+      "log_sha256": "794703e4d55ff8a4a4fe82993edfcc0b24ee61eb66c3304d5c25b13fbcefea9e",
+      "all_decisions_match_original": true,
+      "decisions": [
+        {
+          "decision": {
+            "game": "fj3af3mp",
+            "side": 1,
+            "ply": 1,
+            "sampled": true,
+            "terminal": false,
+            "move": "b8c6",
+            "king_loss": false,
+            "safe_alternatives": 20,
+            "king_risk_permille": 0,
+            "safest_risk_permille": 0,
+            "legal_moves": 20,
+            "collapsed": false
+          },
+          "rows": [
+            {
+              "move": "b8c6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -65,
+                -97,
+                -91,
+                -65,
+                -71,
+                -97,
+                -85,
+                -51
+              ]
+            },
+            {
+              "move": "g8f6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -65,
+                -51,
+                -45,
+                -66,
+                -50,
+                -97,
+                -48,
+                -51
+              ]
+            },
+            {
+              "move": "d7d5",
+              "risk_charge_rounded": 2069,
+              "payoffs_rounded": [
+                -2052,
+                -2071,
+                -2065,
+                -2052,
+                -2020,
+                -2070,
+                -2017,
+                -2020
+              ]
+            },
+            {
+              "move": "d7d6",
+              "risk_charge_rounded": 2069,
+              "payoffs_rounded": [
+                -2071,
+                -2090,
+                -2084,
+                -2038,
+                -2058,
+                -2088,
+                -2035,
+                -2038
+              ]
+            },
+            {
+              "move": "e7e6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -97,
+                -116,
+                -110,
+                -97,
+                -70,
+                -116,
+                -111,
+                -69
+              ]
+            },
+            {
+              "move": "f7f5",
+              "risk_charge_rounded": 97,
+              "payoffs_rounded": [
+                -135,
+                -154,
+                -148,
+                -135,
+                -122,
+                -154,
+                -184,
+                -103
+              ]
+            },
+            {
+              "move": "c7c5",
+              "risk_charge_rounded": 101,
+              "payoffs_rounded": [
+                -158,
+                -175,
+                -166,
+                -136,
+                -185,
+                -175,
+                -147,
+                -175
+              ]
+            },
+            {
+              "move": "c7c6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -147,
+                -166,
+                -160,
+                -147,
+                -133,
+                -166,
+                -153,
+                -119
+              ]
+            },
+            {
+              "move": "e7e5",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -80,
+                -99,
+                -161,
+                -70,
+                -52,
+                -99,
+                -94,
+                -85
+              ]
+            },
+            {
+              "move": "b7b5",
+              "risk_charge_rounded": 153,
+              "payoffs_rounded": [
+                -212,
+                -229,
+                -222,
+                -190,
+                -204,
+                -220,
+                -207,
+                -220
+              ]
+            },
+            {
+              "move": "b7b6",
+              "risk_charge_rounded": 156,
+              "payoffs_rounded": [
+                -198,
+                -217,
+                -211,
+                -198,
+                -185,
+                -217,
+                -208,
+                -166
+              ]
+            },
+            {
+              "move": "b8a6",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -122,
+                -141,
+                -135,
+                -83,
+                -64,
+                -141,
+                -132,
+                -92
+              ]
+            }
+          ]
+        },
+        {
+          "decision": {
+            "game": "fj3af3mp",
+            "side": 1,
+            "ply": 77,
+            "sampled": false,
+            "terminal": true,
+            "move": "c8d7",
+            "king_loss": true,
+            "safe_alternatives": 2,
+            "king_risk_permille": 631,
+            "safest_risk_permille": 397,
+            "legal_moves": 28,
+            "collapsed": false
+          },
+          "rows": [
+            {
+              "move": "c8d8",
+              "risk_charge_rounded": 21555,
+              "payoffs_rounded": [
+                -23077,
+                -23014,
+                -51555,
+                -51555,
+                -23030,
+                -51555,
+                -51555,
+                -51555
+              ]
+            },
+            {
+              "move": "c8c7",
+              "risk_charge_rounded": 24182,
+              "payoffs_rounded": [
+                -25704,
+                -54182,
+                -54182,
+                -25298,
+                -25293,
+                -54182,
+                -54182,
+                -25297
+              ]
+            },
+            {
+              "move": "c8b8",
+              "risk_charge_rounded": 23521,
+              "payoffs_rounded": [
+                -53516,
+                -53518,
+                -53521,
+                -53521,
+                -24434,
+                -53518,
+                -53521,
+                -53518
+              ]
+            },
+            {
+              "move": "a3a2",
+              "risk_charge_rounded": 25779,
+              "payoffs_rounded": [
+                -55779,
+                -55779,
+                -55776,
+                -55779,
+                -55779,
+                -55774,
+                -55776,
+                -27147
+              ]
+            },
+            {
+              "move": "a3b3",
+              "risk_charge_rounded": 25985,
+              "payoffs_rounded": [
+                -55985,
+                -55985,
+                -55982,
+                -55985,
+                -55985,
+                -55980,
+                -55982,
+                -27495
+              ]
+            },
+            {
+              "move": "a3c3",
+              "risk_charge_rounded": 25930,
+              "payoffs_rounded": [
+                -55930,
+                -55930,
+                -55927,
+                -55930,
+                -55930,
+                -26996,
+                -55927,
+                -26962
+              ]
+            },
+            {
+              "move": "h4g4",
+              "risk_charge_rounded": 25866,
+              "payoffs_rounded": [
+                -55866,
+                -55866,
+                -55863,
+                -55866,
+                -55866,
+                -27429,
+                -55863,
+                -27138
+              ]
+            },
+            {
+              "move": "h4h2",
+              "risk_charge_rounded": 25835,
+              "payoffs_rounded": [
+                -55835,
+                -55835,
+                -27089,
+                -55835,
+                -55835,
+                -55830,
+                -55832,
+                -26919
+              ]
+            },
+            {
+              "move": "h4h6",
+              "risk_charge_rounded": 25873,
+              "payoffs_rounded": [
+                -55873,
+                -55873,
+                -55870,
+                -55873,
+                -55873,
+                -27072,
+                -55870,
+                -26988
+              ]
+            },
+            {
+              "move": "b4b3",
+              "risk_charge_rounded": 25874,
+              "payoffs_rounded": [
+                -55874,
+                -55874,
+                -55871,
+                -55874,
+                -55874,
+                -27005,
+                -55871,
+                -27004
+              ]
+            },
+            {
+              "move": "c8d7",
+              "risk_charge_rounded": 25381,
+              "payoffs_rounded": [
+                -55381,
+                -55381,
+                -26474,
+                -26525,
+                -55381,
+                -55381,
+                -26450,
+                -55381
+              ]
+            },
+            {
+              "move": "h4h1",
+              "risk_charge_rounded": 25871,
+              "payoffs_rounded": [
+                -55871,
+                -55871,
+                -55868,
+                -55871,
+                -55871,
+                -27345,
+                -55868,
+                -27194
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "game": "tu75n4ra",
+      "side": "w",
+      "command": [
+        "stdbuf",
+        "-oL",
+        "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/benchmark",
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/weighted-frontier/selected-rows/tu75n4ra-w.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "corpus_sha256": "ed3a70bdc5d7167e4458022a3a7666a52174a06a6758bf1cce5e79c08cfbaab4",
+      "log_sha256": "71fe5417c5c1510fb692d9b7d2cdeb2a4f84901821e97f44eb3f992759e0edf4",
+      "all_decisions_match_original": true,
+      "decisions": [
+        {
+          "decision": {
+            "game": "tu75n4ra",
+            "side": 0,
+            "ply": 0,
+            "sampled": true,
+            "terminal": false,
+            "move": "g1f3",
+            "king_loss": false,
+            "safe_alternatives": 20,
+            "king_risk_permille": 0,
+            "safest_risk_permille": 0,
+            "legal_moves": 20,
+            "collapsed": false
+          },
+          "rows": [
+            {
+              "move": "b1c3",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -95,
+                -95,
+                -95,
+                -95,
+                -95,
+                -95,
+                -95,
+                -95
+              ]
+            },
+            {
+              "move": "g1f3",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -87,
+                -100,
+                -100,
+                -100,
+                -71,
+                -71,
+                -71,
+                -71
+              ]
+            },
+            {
+              "move": "d2d4",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -97,
+                -97,
+                -97,
+                -97,
+                -71,
+                -71,
+                -71,
+                -71
+              ]
+            },
+            {
+              "move": "e2e4",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -102,
+                -88,
+                -88,
+                -88,
+                -88,
+                -88,
+                -108,
+                -108
+              ]
+            },
+            {
+              "move": "e2e3",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -119,
+                -72,
+                -72,
+                -72,
+                -118,
+                -118,
+                -118,
+                -118
+              ]
+            },
+            {
+              "move": "d2d3",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -124,
+                -72,
+                -72,
+                -72,
+                -118,
+                -118,
+                -118,
+                -118
+              ]
+            },
+            {
+              "move": "c2c4",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -177,
+                -177,
+                -125,
+                -125,
+                -125,
+                -125,
+                -125,
+                -152
+              ]
+            },
+            {
+              "move": "c2c3",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -169,
+                -122,
+                -122,
+                -122,
+                -168,
+                -168,
+                -168,
+                -168
+              ]
+            },
+            {
+              "move": "b2b4",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -179,
+                -173,
+                -173,
+                -173,
+                -173,
+                -173,
+                -173,
+                -173
+              ]
+            },
+            {
+              "move": "b2b3",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -164,
+                -113,
+                -113,
+                -159,
+                -159,
+                -159,
+                -159,
+                -159
+              ]
+            },
+            {
+              "move": "b1a3",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -144,
+                -101,
+                -101,
+                -147,
+                -152,
+                -152,
+                -152,
+                -152
+              ]
+            },
+            {
+              "move": "g2g4",
+              "risk_charge_rounded": 100,
+              "payoffs_rounded": [
+                -181,
+                -170,
+                -170,
+                -170,
+                -170,
+                -197,
+                -197,
+                -197
+              ]
+            }
+          ]
+        },
+        {
+          "decision": {
+            "game": "tu75n4ra",
+            "side": 0,
+            "ply": 58,
+            "sampled": false,
+            "terminal": true,
+            "move": "b2d4",
+            "king_loss": true,
+            "safe_alternatives": 1,
+            "king_risk_permille": 154,
+            "safest_risk_permille": 0,
+            "legal_moves": 11,
+            "collapsed": false
+          },
+          "rows": [
+            {
+              "move": "a1a2",
+              "risk_charge_rounded": 17217,
+              "payoffs_rounded": [
+                -20232,
+                -47214,
+                -20305,
+                -19692,
+                -19976,
+                -20069,
+                -19629,
+                -47214
+              ]
+            },
+            {
+              "move": "b4b5",
+              "risk_charge_rounded": 14011,
+              "payoffs_rounded": [
+                -17017,
+                -44011,
+                -44004,
+                -16890,
+                -16927,
+                -17064,
+                -16383,
+                -44011
+              ]
+            },
+            {
+              "move": "b2c1",
+              "risk_charge_rounded": 18324,
+              "payoffs_rounded": [
+                -21553,
+                -48319,
+                -21666,
+                -21227,
+                -21260,
+                -21352,
+                -20749,
+                -48319
+              ]
+            },
+            {
+              "move": "a3a4",
+              "risk_charge_rounded": 14011,
+              "payoffs_rounded": [
+                -44006,
+                -44011,
+                -17631,
+                -16891,
+                -44006,
+                -44006,
+                -44006,
+                -44011
+              ]
+            },
+            {
+              "move": "b2g7",
+              "risk_charge_rounded": 14491,
+              "payoffs_rounded": [
+                -44488,
+                -44491,
+                -17606,
+                -17020,
+                -44488,
+                -44488,
+                -44488,
+                -44491
+              ]
+            },
+            {
+              "move": "b2d4",
+              "risk_charge_rounded": 6764,
+              "payoffs_rounded": [
+                -36761,
+                -36764,
+                -10015,
+                -9643,
+                -36761,
+                -36761,
+                -36761,
+                -36764
+              ]
+            },
+            {
+              "move": "b2c3",
+              "risk_charge_rounded": 14026,
+              "payoffs_rounded": [
+                -44023,
+                -44026,
+                -44021,
+                -16912,
+                -44023,
+                -44023,
+                -44023,
+                -44026
+              ]
+            },
+            {
+              "move": "b2h8",
+              "risk_charge_rounded": 14490,
+              "payoffs_rounded": [
+                -44487,
+                -44490,
+                -44483,
+                -17376,
+                -44487,
+                -44487,
+                -44487,
+                -44490
+              ]
+            },
+            {
+              "move": "b2e5",
+              "risk_charge_rounded": 14498,
+              "payoffs_rounded": [
+                -44495,
+                -44498,
+                -44491,
+                -17168,
+                -44495,
+                -44495,
+                -44495,
+                -44498
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Selected diagnostic cases, not new validation.",
+    "Existing debug output rounds risks and cells to integers.",
+    "Risk is the combined evaluation charge, not a probability."
+  ],
+  "inputs_unchanged": true
+}

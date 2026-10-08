@@ -1,0 +1,38 @@
+row b8c6 risk=100 cells: -65 -97 -91 -65 -71 -97 -85 -51
+row g8f6 risk=100 cells: -65 -51 -45 -66 -50 -97 -48 -51
+row d7d5 risk=2069 cells: -2052 -2071 -2065 -2052 -2020 -2070 -2017 -2020
+row d7d6 risk=2069 cells: -2071 -2090 -2084 -2038 -2058 -2088 -2035 -2038
+row e7e6 risk=100 cells: -97 -116 -110 -97 -70 -116 -111 -69
+row f7f5 risk=97 cells: -135 -154 -148 -135 -122 -154 -184 -103
+row c7c5 risk=101 cells: -158 -175 -166 -136 -185 -175 -147 -175
+row c7c6 risk=100 cells: -147 -166 -160 -147 -133 -166 -153 -119
+row e7e5 risk=100 cells: -80 -99 -161 -70 -52 -99 -94 -85
+row b7b5 risk=153 cells: -212 -229 -222 -190 -204 -220 -207 -220
+row b7b6 risk=156 cells: -198 -217 -211 -198 -185 -217 -208 -166
+row b8a6 risk=100 cells: -122 -141 -135 -83 -64 -141 -132 -92
+DECISION {"game":"fj3af3mp","side":1,"ply":1,"sampled":true,"terminal":false,"move":"b8c6","king_loss":false,"safe_alternatives":20,"king_risk_permille":0,"safest_risk_permille":0,"legal_moves":20,"collapsed":false}
+row c8d8 risk=21555 cells: -23077 -23014 -51555 -51555 -23030 -51555 -51555 -51555
+row c8c7 risk=24182 cells: -25704 -54182 -54182 -25298 -25293 -54182 -54182 -25297
+row c8b8 risk=23521 cells: -53516 -53518 -53521 -53521 -24434 -53518 -53521 -53518
+row a3a2 risk=25779 cells: -55779 -55779 -55776 -55779 -55779 -55774 -55776 -27147
+row a3b3 risk=25985 cells: -55985 -55985 -55982 -55985 -55985 -55980 -55982 -27495
+row a3c3 risk=25930 cells: -55930 -55930 -55927 -55930 -55930 -26996 -55927 -26962
+row h4g4 risk=25866 cells: -55866 -55866 -55863 -55866 -55866 -27429 -55863 -27138
+row h4h2 risk=25835 cells: -55835 -55835 -27089 -55835 -55835 -55830 -55832 -26919
+row h4h6 risk=25873 cells: -55873 -55873 -55870 -55873 -55873 -27072 -55870 -26988
+row b4b3 risk=25874 cells: -55874 -55874 -55871 -55874 -55874 -27005 -55871 -27004
+row c8d7 risk=25381 cells: -55381 -55381 -26474 -26525 -55381 -55381 -26450 -55381
+row h4h1 risk=25871 cells: -55871 -55871 -55868 -55871 -55871 -27345 -55868 -27194
+DECISION {"game":"fj3af3mp","side":1,"ply":77,"sampled":false,"terminal":true,"move":"c8d7","king_loss":true,"safe_alternatives":2,"king_risk_permille":631,"safest_risk_permille":397,"legal_moves":28,"collapsed":false}
+  fj3af3mp   vs duck                 ply  77  real played a3a6   (lost)  engine plays c8d7    ALSO LOSES
+
+corpus: /home/henrytan/git/iamavirus/astra-submissions/analysis/weighted-frontier/selected-rows/fj3af3mp-b.txt   own-decision stride 1000   400000 nodes/decision
+  seats replayed            : 1
+  decisions evaluated       : 2
+  immediate king losses     : 1 (50.00%)
+  safe-alternative decisions: 2
+  avoidable king losses     : 1
+  matched the real move     : 0 (0.0%)
+  real losing positions     : 1
+  ...the engine survives    : 0 (0%)
+  unsafe moves rejected     : 0 (0.0 per decision)
