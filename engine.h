@@ -220,9 +220,14 @@ struct EngineOptions {
   // less in 15 of 94 arena games (won 3) where v10 (cap 4, divisor 30) never
   // did, and v13 won fewer long games (19% vs 33% at 90-120 plies). After our
   // `late_move`-th decision the cap drops to `time_cap_late` and the horizon
-  // widens to `time_divisor_late`, so the endgame is not played on the
-  // increment alone. Set late_move to 0 to disable.
-  int late_move = 20;
+  // widens to `time_divisor_late`. Off by default (late_move 0): a simulation
+  // under the arena's 180 s + 2 s control, with the book answering the first
+  // five decisions, showed the switch (20 decisions, then cap 5 / divisor 30)
+  // only banks clock: the budget from decision 45 on is the same 3.4 s as
+  // with one phase, the floor rises from ~23 s to ~35 s at decision 80, and
+  // decisions 21-40 lose ~15 s of thinking. v14's book plus the 10 s reserve
+  // already lifts v13's observed floor (10 s). Kept as an experiment knob.
+  int late_move = 0;
   double time_cap_late = 5.0;
   double time_divisor_late = 30.0;
   double increment_share = 0.8;
