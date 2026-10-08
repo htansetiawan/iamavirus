@@ -62,9 +62,12 @@ Large checkpoints and full reports:
 Use `learning_experiments.compare_pilots` with `--control-step` and
 `--candidate-step` to reproduce comparisons with different update budgets.
 
-The longer rung is prepared in `continuation-design.json`: continue all three
+The longer rung in `continuation-design.json` **started at 02:10 UTC on
+2026-10-08**, after Fable released the GPU and cores 3–4. It continues all three
 models to 6,000 total updates, preserving optimizer state and original outputs,
-with evaluation every 2,000 updates. Source/data preflight passed. It is waiting
-for Fable's v5 GPU lease to end; **it has not started**. The launch tool checks
-the lease before each arm and releases only its own lease afterward. Its
-training code remains the same frozen revision as the first pilot.
+with evaluation every 2,000 updates. Source/data preflight passed. The launch
+tool checks the lease before each arm and releases only its own lease afterward.
+Its training code remains the same frozen revision as the first pilot. Live
+status and checkpoints are under
+`/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/`.
+Starting this run is not evidence that the larger model is better.

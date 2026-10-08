@@ -1,0 +1,1059 @@
+{
+  "manifest": {
+    "state": "complete",
+    "games": [
+      [
+        "0urlpzmw",
+        "w"
+      ],
+      [
+        "ah9jp69c",
+        "b"
+      ],
+      [
+        "wqlwbuoy",
+        "b"
+      ]
+    ],
+    "purpose": "Post-hoc shortlist/matrix diagnosis on three new fatalities where another arm chose a safe lower-risk move; no promotion inference.",
+    "arms": {
+      "0": {
+        "command": [
+          "stdbuf",
+          "-oL",
+          "-eL",
+          "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/benchmark",
+          "/media/henrytan/seagate/iamavirus/astra/belief/grouped-choice-risk-65-20261008/matrix-three/seats.txt",
+          "1000",
+          "400000",
+          "verbose"
+        ],
+        "env": {
+          "FOW_MODE": "hybrid",
+          "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model",
+          "FOW_HISTORY_MODE": "0",
+          "FOW_PREDICTION_MODE": "0",
+          "FOW_OPPONENT_PRIOR": "1",
+          "FOW_PARTICLES": "2048",
+          "FOW_CELL_THREADS": "1",
+          "FOW_BOOK_PLIES": "0",
+          "FOW_DEBUG_ROWS": "1"
+        },
+        "returncode": 0,
+        "log_sha256": "a9fdb96e24fe67f47cb843ed90087fb8e862886d144968fe8d1d40b9d3a786b5"
+      },
+      "1": {
+        "command": [
+          "stdbuf",
+          "-oL",
+          "-eL",
+          "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/benchmark",
+          "/media/henrytan/seagate/iamavirus/astra/belief/grouped-choice-risk-65-20261008/matrix-three/seats.txt",
+          "1000",
+          "400000",
+          "verbose"
+        ],
+        "env": {
+          "FOW_MODE": "hybrid",
+          "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model",
+          "FOW_HISTORY_MODE": "0",
+          "FOW_PREDICTION_MODE": "1",
+          "FOW_OPPONENT_PRIOR": "1",
+          "FOW_PARTICLES": "2048",
+          "FOW_CELL_THREADS": "1",
+          "FOW_BOOK_PLIES": "0",
+          "FOW_DEBUG_ROWS": "1"
+        },
+        "returncode": 0,
+        "log_sha256": "ae4405bd5c46576ca54135c3720b9e53471ea5fb9131f121d87db2d66b0eee22"
+      }
+    }
+  },
+  "manifest_sha256": "0286f662a99aa2ef57fb4d96f1ba997ec1dfa2b1ba00809345f864473502c896",
+  "records": [
+    {
+      "prediction": 0,
+      "decision": {
+        "game": "0urlpzmw",
+        "side": 0,
+        "ply": 32,
+        "sampled": false,
+        "terminal": true,
+        "move": "f2g4",
+        "king_loss": false,
+        "safe_alternatives": 3,
+        "king_risk_permille": 0,
+        "safest_risk_permille": 0,
+        "legal_moves": 31,
+        "collapsed": false
+      },
+      "rows": [
+        {
+          "move": "c3d4",
+          "rounded_risk_charge": 1567.0,
+          "rounded_payoffs": [
+            -1572.0,
+            -1685.0,
+            -1482.0,
+            -1603.0,
+            -1540.0,
+            -1605.0,
+            -1641.0,
+            -1557.0
+          ],
+          "arithmetic_mean": -1585.625,
+          "minimum": -1685.0
+        },
+        {
+          "move": "f3g2",
+          "rounded_risk_charge": 8545.0,
+          "rounded_payoffs": [
+            -8618.0,
+            -8717.0,
+            -8582.0,
+            -8601.0,
+            -8675.0,
+            -8579.0,
+            -8679.0,
+            -8577.0
+          ],
+          "arithmetic_mean": -8628.5,
+          "minimum": -8717.0
+        },
+        {
+          "move": "f2g4",
+          "rounded_risk_charge": 359.0,
+          "rounded_payoffs": [
+            -414.0,
+            -826.0,
+            -398.0,
+            -745.0,
+            -735.0,
+            -726.0,
+            -402.0,
+            -668.0
+          ],
+          "arithmetic_mean": -614.25,
+          "minimum": -826.0
+        },
+        {
+          "move": "d1b3",
+          "rounded_risk_charge": 1884.0,
+          "rounded_payoffs": [
+            -1881.0,
+            -1965.0,
+            -1840.0,
+            -1955.0,
+            -1941.0,
+            -1973.0,
+            -1968.0,
+            -1925.0
+          ],
+          "arithmetic_mean": -1931.0,
+          "minimum": -1973.0
+        },
+        {
+          "move": "c3c4",
+          "rounded_risk_charge": 1561.0,
+          "rounded_payoffs": [
+            -1698.0,
+            -1695.0,
+            -1638.0,
+            -1646.0,
+            -1705.0,
+            -1710.0,
+            -1679.0,
+            -1654.0
+          ],
+          "arithmetic_mean": -1678.125,
+          "minimum": -1710.0
+        },
+        {
+          "move": "h1g1",
+          "rounded_risk_charge": 1415.0,
+          "rounded_payoffs": [
+            -1478.0,
+            -1550.0,
+            -1424.0,
+            -1470.0,
+            -1506.0,
+            -1521.0,
+            -1544.0,
+            -1506.0
+          ],
+          "arithmetic_mean": -1499.875,
+          "minimum": -1550.0
+        },
+        {
+          "move": "h1e1",
+          "rounded_risk_charge": 1562.0,
+          "rounded_payoffs": [
+            -1661.0,
+            -1696.0,
+            -1630.0,
+            -1634.0,
+            -1648.0,
+            -1667.0,
+            -1670.0,
+            -1606.0
+          ],
+          "arithmetic_mean": -1651.5,
+          "minimum": -1696.0
+        },
+        {
+          "move": "d1d2",
+          "rounded_risk_charge": 1561.0,
+          "rounded_payoffs": [
+            -1616.0,
+            -1679.0,
+            -1589.0,
+            -1605.0,
+            -1664.0,
+            -1598.0,
+            -1607.0,
+            -1592.0
+          ],
+          "arithmetic_mean": -1618.75,
+          "minimum": -1679.0
+        },
+        {
+          "move": "a2a4",
+          "rounded_risk_charge": 1560.0,
+          "rounded_payoffs": [
+            -1669.0,
+            -1704.0,
+            -1638.0,
+            -1641.0,
+            -1659.0,
+            -1639.0,
+            -1677.0,
+            -1640.0
+          ],
+          "arithmetic_mean": -1658.375,
+          "minimum": -1704.0
+        },
+        {
+          "move": "e2f1",
+          "rounded_risk_charge": 1560.0,
+          "rounded_payoffs": [
+            -1675.0,
+            -1710.0,
+            -1644.0,
+            -1653.0,
+            -1665.0,
+            -1635.0,
+            -1683.0,
+            -1611.0
+          ],
+          "arithmetic_mean": -1659.5,
+          "minimum": -1710.0
+        },
+        {
+          "move": "f3g3",
+          "rounded_risk_charge": 8558.0,
+          "rounded_payoffs": [
+            -8690.0,
+            -8698.0,
+            -8654.0,
+            -8677.0,
+            -8708.0,
+            -8656.0,
+            -8669.0,
+            -8604.0
+          ],
+          "arithmetic_mean": -8669.5,
+          "minimum": -8708.0
+        },
+        {
+          "move": "d1f1",
+          "rounded_risk_charge": 1560.0,
+          "rounded_payoffs": [
+            -1671.0,
+            -1697.0,
+            -1640.0,
+            -1650.0,
+            -1661.0,
+            -1637.0,
+            -1679.0,
+            -1645.0
+          ],
+          "arithmetic_mean": -1660.0,
+          "minimum": -1697.0
+        }
+      ]
+    },
+    {
+      "prediction": 0,
+      "decision": {
+        "game": "wqlwbuoy",
+        "side": 1,
+        "ply": 83,
+        "sampled": false,
+        "terminal": true,
+        "move": "g7h6",
+        "king_loss": false,
+        "safe_alternatives": 6,
+        "king_risk_permille": 0,
+        "safest_risk_permille": 0,
+        "legal_moves": 12,
+        "collapsed": false
+      },
+      "rows": [
+        {
+          "move": "f7e6",
+          "rounded_risk_charge": 16053.0,
+          "rounded_payoffs": [
+            -17882.0,
+            -18815.0,
+            -18207.0,
+            -18603.0,
+            -19150.0,
+            -17831.0,
+            -19281.0,
+            -18339.0
+          ],
+          "arithmetic_mean": -18513.5,
+          "minimum": -19281.0
+        },
+        {
+          "move": "g5g4",
+          "rounded_risk_charge": 13370.0,
+          "rounded_payoffs": [
+            -15598.0,
+            -16205.0,
+            -15738.0,
+            -16044.0,
+            -16155.0,
+            -15239.0,
+            -16679.0,
+            -15784.0
+          ],
+          "arithmetic_mean": -15930.25,
+          "minimum": -16679.0
+        },
+        {
+          "move": "f7f6",
+          "rounded_risk_charge": 10511.0,
+          "rounded_payoffs": [
+            -12392.0,
+            -13272.0,
+            -12979.0,
+            -13217.0,
+            -13236.0,
+            -12940.0,
+            -13921.0,
+            -12991.0
+          ],
+          "arithmetic_mean": -13118.5,
+          "minimum": -13921.0
+        },
+        {
+          "move": "g7h8",
+          "rounded_risk_charge": 18362.0,
+          "rounded_payoffs": [
+            -20715.0,
+            -48362.0,
+            -20816.0,
+            -21153.0,
+            -48362.0,
+            -20718.0,
+            -21676.0,
+            -20862.0
+          ],
+          "arithmetic_mean": -27833.0,
+          "minimum": -48362.0
+        },
+        {
+          "move": "g7h7",
+          "rounded_risk_charge": 11306.0,
+          "rounded_payoffs": [
+            -13592.0,
+            -14051.0,
+            -13867.0,
+            -14012.0,
+            -14834.0,
+            -13818.0,
+            -14445.0,
+            -13752.0
+          ],
+          "arithmetic_mean": -14046.375,
+          "minimum": -14834.0
+        },
+        {
+          "move": "g5h4",
+          "rounded_risk_charge": 16350.0,
+          "rounded_payoffs": [
+            -18702.0,
+            -19079.0,
+            -18665.0,
+            -18925.0,
+            -19151.0,
+            -18587.0,
+            -19489.0,
+            -18707.0
+          ],
+          "arithmetic_mean": -18913.125,
+          "minimum": -19489.0
+        },
+        {
+          "move": "g7h6",
+          "rounded_risk_charge": 3334.0,
+          "rounded_payoffs": [
+            -5691.0,
+            -6219.0,
+            -5895.0,
+            -6125.0,
+            -6204.0,
+            -5965.0,
+            -6490.0,
+            -5761.0
+          ],
+          "arithmetic_mean": -6043.75,
+          "minimum": -6490.0
+        },
+        {
+          "move": "g7g6",
+          "rounded_risk_charge": 13689.0,
+          "rounded_payoffs": [
+            -16136.0,
+            -16682.0,
+            -16171.0,
+            -16463.0,
+            -16786.0,
+            -16164.0,
+            -16965.0,
+            -16244.0
+          ],
+          "arithmetic_mean": -16451.375,
+          "minimum": -16965.0
+        },
+        {
+          "move": "f7f5",
+          "rounded_risk_charge": 16194.0,
+          "rounded_payoffs": [
+            -18062.0,
+            -19164.0,
+            -18688.0,
+            -18942.0,
+            -19160.0,
+            -18596.0,
+            -19608.0,
+            -18689.0
+          ],
+          "arithmetic_mean": -18863.625,
+          "minimum": -19608.0
+        },
+        {
+          "move": "g7g8",
+          "rounded_risk_charge": 15087.0,
+          "rounded_payoffs": [
+            -17548.0,
+            -45087.0,
+            -17574.0,
+            -17918.0,
+            -45087.0,
+            -17581.0,
+            -18401.0,
+            -17657.0
+          ],
+          "arithmetic_mean": -24606.625,
+          "minimum": -45087.0
+        }
+      ]
+    },
+    {
+      "prediction": 0,
+      "decision": {
+        "game": "ah9jp69c",
+        "side": 1,
+        "ply": 87,
+        "sampled": false,
+        "terminal": true,
+        "move": "g6h6",
+        "king_loss": false,
+        "safe_alternatives": 3,
+        "king_risk_permille": 0,
+        "safest_risk_permille": 0,
+        "legal_moves": 8,
+        "collapsed": false
+      },
+      "rows": [
+        {
+          "move": "g6f5",
+          "rounded_risk_charge": 6476.0,
+          "rounded_payoffs": [
+            -7303.0,
+            -7303.0,
+            -7300.0,
+            -7907.0,
+            -7144.0,
+            -7301.0,
+            -7303.0,
+            -36476.0
+          ],
+          "arithmetic_mean": -11004.625,
+          "minimum": -36476.0
+        },
+        {
+          "move": "g6h6",
+          "rounded_risk_charge": 18095.0,
+          "rounded_payoffs": [
+            -19392.0,
+            -19472.0,
+            -19528.0,
+            -19952.0,
+            -19340.0,
+            -19483.0,
+            -19472.0,
+            -19341.0
+          ],
+          "arithmetic_mean": -19497.5,
+          "minimum": -19952.0
+        },
+        {
+          "move": "g6g7",
+          "rounded_risk_charge": 18363.0,
+          "rounded_payoffs": [
+            -19740.0,
+            -19740.0,
+            -19679.0,
+            -20223.0,
+            -19727.0,
+            -19735.0,
+            -19740.0,
+            -19987.0
+          ],
+          "arithmetic_mean": -19821.375,
+          "minimum": -20223.0
+        },
+        {
+          "move": "g6h7",
+          "rounded_risk_charge": 18095.0,
+          "rounded_payoffs": [
+            -19472.0,
+            -19472.0,
+            -19528.0,
+            -19994.0,
+            -19459.0,
+            -48088.0,
+            -19472.0,
+            -19334.0
+          ],
+          "arithmetic_mean": -23102.375,
+          "minimum": -48088.0
+        }
+      ]
+    },
+    {
+      "prediction": 1,
+      "decision": {
+        "game": "0urlpzmw",
+        "side": 0,
+        "ply": 32,
+        "sampled": false,
+        "terminal": true,
+        "move": "f4f5",
+        "king_loss": true,
+        "safe_alternatives": 3,
+        "king_risk_permille": 4,
+        "safest_risk_permille": 0,
+        "legal_moves": 31,
+        "collapsed": false
+      },
+      "rows": [
+        {
+          "move": "c3d4",
+          "rounded_risk_charge": 1071.0,
+          "rounded_payoffs": [
+            -1016.0,
+            -1000.0,
+            -1081.0,
+            -978.0,
+            -1108.0,
+            -1184.0,
+            -981.0,
+            -1019.0
+          ],
+          "arithmetic_mean": -1045.875,
+          "minimum": -1184.0
+        },
+        {
+          "move": "h1g1",
+          "rounded_risk_charge": 780.0,
+          "rounded_payoffs": [
+            -835.0,
+            -806.0,
+            -775.0,
+            -793.0,
+            -818.0,
+            -857.0,
+            -846.0,
+            -833.0
+          ],
+          "arithmetic_mean": -820.375,
+          "minimum": -857.0
+        },
+        {
+          "move": "d1b1",
+          "rounded_risk_charge": 1067.0,
+          "rounded_payoffs": [
+            -1162.0,
+            -1109.0,
+            -1137.0,
+            -1091.0,
+            -1154.0,
+            -1204.0,
+            -1145.0,
+            -1144.0
+          ],
+          "arithmetic_mean": -1143.25,
+          "minimum": -1204.0
+        },
+        {
+          "move": "a1b1",
+          "rounded_risk_charge": 1076.0,
+          "rounded_payoffs": [
+            -1138.0,
+            -1108.0,
+            -1121.0,
+            -1083.0,
+            -1158.0,
+            -1159.0,
+            -1168.0,
+            -1136.0
+          ],
+          "arithmetic_mean": -1133.875,
+          "minimum": -1168.0
+        },
+        {
+          "move": "d1b3",
+          "rounded_risk_charge": 1383.0,
+          "rounded_payoffs": [
+            -1408.0,
+            -1323.0,
+            -1356.0,
+            -2063.0,
+            -1398.0,
+            -1465.0,
+            -1503.0,
+            -1407.0
+          ],
+          "arithmetic_mean": -1490.375,
+          "minimum": -2063.0
+        },
+        {
+          "move": "f4f5",
+          "rounded_risk_charge": 639.0,
+          "rounded_payoffs": [
+            -730.0,
+            -609.0,
+            -682.0,
+            -692.0,
+            -720.0,
+            -759.0,
+            -689.0,
+            -727.0
+          ],
+          "arithmetic_mean": -701.0,
+          "minimum": -759.0
+        },
+        {
+          "move": "f2g4",
+          "rounded_risk_charge": 505.0,
+          "rounded_payoffs": [
+            -550.0,
+            -502.0,
+            -845.0,
+            -823.0,
+            -530.0,
+            -592.0,
+            -829.0,
+            -739.0
+          ],
+          "arithmetic_mean": -676.25,
+          "minimum": -845.0
+        },
+        {
+          "move": "h1e1",
+          "rounded_risk_charge": 1068.0,
+          "rounded_payoffs": [
+            -1157.0,
+            -1093.0,
+            -1125.0,
+            -1092.0,
+            -1144.0,
+            -1184.0,
+            -1134.0,
+            -1177.0
+          ],
+          "arithmetic_mean": -1138.25,
+          "minimum": -1184.0
+        },
+        {
+          "move": "c3c4",
+          "rounded_risk_charge": 1068.0,
+          "rounded_payoffs": [
+            -1196.0,
+            -1147.0,
+            -1132.0,
+            -1104.0,
+            -1132.0,
+            -1179.0,
+            -1179.0,
+            -1195.0
+          ],
+          "arithmetic_mean": -1158.0,
+          "minimum": -1196.0
+        },
+        {
+          "move": "f3g2",
+          "rounded_risk_charge": 5760.0,
+          "rounded_payoffs": [
+            -5823.0,
+            -5715.0,
+            -5758.0,
+            -5777.0,
+            -5807.0,
+            -5867.0,
+            -5768.0,
+            -5815.0
+          ],
+          "arithmetic_mean": -5791.25,
+          "minimum": -5867.0
+        },
+        {
+          "move": "d1d2",
+          "rounded_risk_charge": 1067.0,
+          "rounded_payoffs": [
+            -1111.0,
+            -1072.0,
+            -1118.0,
+            -1060.0,
+            -1136.0,
+            -1176.0,
+            -1132.0,
+            -1125.0
+          ],
+          "arithmetic_mean": -1116.25,
+          "minimum": -1176.0
+        },
+        {
+          "move": "a2a4",
+          "rounded_risk_charge": 1067.0,
+          "rounded_payoffs": [
+            -1104.0,
+            -1101.0,
+            -1135.0,
+            -1038.0,
+            -1152.0,
+            -1152.0,
+            -1179.0,
+            -1168.0
+          ],
+          "arithmetic_mean": -1128.625,
+          "minimum": -1179.0
+        }
+      ]
+    },
+    {
+      "prediction": 1,
+      "decision": {
+        "game": "wqlwbuoy",
+        "side": 1,
+        "ply": 83,
+        "sampled": false,
+        "terminal": true,
+        "move": "g7f6",
+        "king_loss": true,
+        "safe_alternatives": 6,
+        "king_risk_permille": 36,
+        "safest_risk_permille": 0,
+        "legal_moves": 12,
+        "collapsed": false
+      },
+      "rows": [
+        {
+          "move": "g7f8",
+          "rounded_risk_charge": 19331.0,
+          "rounded_payoffs": [
+            -21687.0,
+            -49331.0,
+            -21607.0,
+            -21546.0,
+            -49331.0,
+            -49331.0,
+            -22331.0,
+            -49328.0
+          ],
+          "arithmetic_mean": -35561.5,
+          "minimum": -49331.0
+        },
+        {
+          "move": "g7f6",
+          "rounded_risk_charge": 18759.0,
+          "rounded_payoffs": [
+            -21413.0,
+            -21893.0,
+            -21814.0,
+            -20974.0,
+            -21754.0,
+            -21914.0,
+            -21634.0,
+            -21326.0
+          ],
+          "arithmetic_mean": -21590.25,
+          "minimum": -21914.0
+        },
+        {
+          "move": "g7g6",
+          "rounded_risk_charge": 17891.0,
+          "rounded_payoffs": [
+            -20462.0,
+            -21252.0,
+            -20891.0,
+            -20541.0,
+            -20722.0,
+            -21252.0,
+            -20742.0,
+            -47886.0
+          ],
+          "arithmetic_mean": -24218.5,
+          "minimum": -47886.0
+        },
+        {
+          "move": "g7g8",
+          "rounded_risk_charge": 15801.0,
+          "rounded_payoffs": [
+            -18809.0,
+            -45801.0,
+            -18809.0,
+            -18689.0,
+            -18632.0,
+            -45801.0,
+            -18652.0,
+            -18689.0
+          ],
+          "arithmetic_mean": -25485.25,
+          "minimum": -45801.0
+        },
+        {
+          "move": "g7h8",
+          "rounded_risk_charge": 18242.0,
+          "rounded_payoffs": [
+            -48229.0,
+            -48242.0,
+            -48229.0,
+            -21022.0,
+            -21242.0,
+            -48242.0,
+            -21097.0,
+            -21130.0
+          ],
+          "arithmetic_mean": -34679.125,
+          "minimum": -48242.0
+        },
+        {
+          "move": "f7f6",
+          "rounded_risk_charge": 15221.0,
+          "rounded_payoffs": [
+            -17916.0,
+            -18550.0,
+            -45208.0,
+            -17733.0,
+            -17947.0,
+            -45216.0,
+            -17978.0,
+            -45221.0
+          ],
+          "arithmetic_mean": -28221.125,
+          "minimum": -45221.0
+        },
+        {
+          "move": "g7h6",
+          "rounded_risk_charge": 4178.0,
+          "rounded_payoffs": [
+            -34165.0,
+            -34169.0,
+            -34165.0,
+            -6828.0,
+            -7178.0,
+            -34169.0,
+            -7033.0,
+            -6647.0
+          ],
+          "arithmetic_mean": -20544.25,
+          "minimum": -34169.0
+        },
+        {
+          "move": "f7e6",
+          "rounded_risk_charge": 20195.0,
+          "rounded_payoffs": [
+            -50186.0,
+            -23007.0,
+            -50186.0,
+            -22126.0,
+            -23035.0,
+            -23394.0,
+            -22828.0,
+            -50195.0
+          ],
+          "arithmetic_mean": -33119.625,
+          "minimum": -50195.0
+        },
+        {
+          "move": "g5h4",
+          "rounded_risk_charge": 18431.0,
+          "rounded_payoffs": [
+            -48420.0,
+            -21518.0,
+            -48420.0,
+            -21075.0,
+            -21158.0,
+            -21678.0,
+            -21077.0,
+            -48422.0
+          ],
+          "arithmetic_mean": -31471.0,
+          "minimum": -48422.0
+        },
+        {
+          "move": "g5g4",
+          "rounded_risk_charge": 18433.0,
+          "rounded_payoffs": [
+            -48420.0,
+            -21522.0,
+            -48420.0,
+            -20890.0,
+            -21258.0,
+            -21864.0,
+            -21280.0,
+            -20715.0
+          ],
+          "arithmetic_mean": -28046.125,
+          "minimum": -48420.0
+        },
+        {
+          "move": "f7f5",
+          "rounded_risk_charge": 20195.0,
+          "rounded_payoffs": [
+            -50182.0,
+            -23589.0,
+            -50182.0,
+            -22702.0,
+            -23239.0,
+            -23838.0,
+            -22975.0,
+            -50195.0
+          ],
+          "arithmetic_mean": -33362.75,
+          "minimum": -50195.0
+        },
+        {
+          "move": "g7h7",
+          "rounded_risk_charge": 10295.0,
+          "rounded_payoffs": [
+            -40282.0,
+            -13862.0,
+            -40282.0,
+            -12974.0,
+            -13067.0,
+            -40290.0,
+            -13067.0,
+            -40286.0
+          ],
+          "arithmetic_mean": -26763.75,
+          "minimum": -40290.0
+        }
+      ]
+    },
+    {
+      "prediction": 1,
+      "decision": {
+        "game": "ah9jp69c",
+        "side": 1,
+        "ply": 87,
+        "sampled": false,
+        "terminal": true,
+        "move": "g6f5",
+        "king_loss": true,
+        "safe_alternatives": 3,
+        "king_risk_permille": 95,
+        "safest_risk_permille": 0,
+        "legal_moves": 8,
+        "collapsed": false
+      },
+      "rows": [
+        {
+          "move": "g6f5",
+          "rounded_risk_charge": 6191.0,
+          "rounded_payoffs": [
+            -6931.0,
+            -36191.0,
+            -6802.0,
+            -6819.0,
+            -7704.0,
+            -7015.0,
+            -36191.0,
+            -6798.0
+          ],
+          "arithmetic_mean": -14306.375,
+          "minimum": -36191.0
+        },
+        {
+          "move": "g6h7",
+          "rounded_risk_charge": 18091.0,
+          "rounded_payoffs": [
+            -19394.0,
+            -19584.0,
+            -19317.0,
+            -19367.0,
+            -20011.0,
+            -19457.0,
+            -48084.0,
+            -19357.0
+          ],
+          "arithmetic_mean": -23071.375,
+          "minimum": -48084.0
+        },
+        {
+          "move": "g6h6",
+          "rounded_risk_charge": 18091.0,
+          "rounded_payoffs": [
+            -19394.0,
+            -19576.0,
+            -19316.0,
+            -19363.0,
+            -20011.0,
+            -19457.0,
+            -48088.0,
+            -19446.0
+          ],
+          "arithmetic_mean": -23081.375,
+          "minimum": -48088.0
+        },
+        {
+          "move": "g6g7",
+          "rounded_risk_charge": 18150.0,
+          "rounded_payoffs": [
+            -19453.0,
+            -19574.0,
+            -19514.0,
+            -19428.0,
+            -20070.0,
+            -19529.0,
+            -48143.0,
+            -19505.0
+          ],
+          "arithmetic_mean": -23152.0,
+          "minimum": -48143.0
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Post-hoc selected cases; not a promotion sample.",
+    "Payoffs and charges are rounded by the engine debug formatter.",
+    "Arithmetic means are descriptive only; legacy column selection is representative-biased.",
+    "Risk charge includes more than immediate king-loss probability."
+  ]
+}

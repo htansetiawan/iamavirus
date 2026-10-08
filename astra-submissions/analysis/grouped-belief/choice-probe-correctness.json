@@ -1,0 +1,37 @@
+{
+  "unchanged_observation_rows": 116,
+  "fixture": [
+    "0cg7saci",
+    1
+  ],
+  "ignored_fields": [
+    "observe_ms"
+  ],
+  "probe_build": {
+    "basis": "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3",
+    "basis_manifest_sha256": "2c704962ad6ef0f74ecee7120e2210b1a1909ead6937343ec3ac14f8f33ef941",
+    "source_sha256": "f4d4118fcec779f6f586a13cdc2c1c32012ed5dfb9dc54df9f3fc5d27de6f317",
+    "binary_sha256": "a1c963a81c59567d177166642b781508e82e44a973240ad1306b4f37c91a9ec7",
+    "command": [
+      "g++",
+      "-O2",
+      "-std=c++20",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-pthread",
+      "-mpopcnt",
+      "-I/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-choice-probe-r1/probe.cc",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3/belief.cc",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3/opponent_model.cc",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3/observation.cc",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3/position.cc",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3/move.cc",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-belief-r3/bitboard.cc",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/grouped-choice-probe-r1/probe"
+    ]
+  },
+  "note": "New optional requests disabled: every deterministic diagnostic equals the original r3 probe."
+}

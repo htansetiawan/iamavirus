@@ -23,9 +23,17 @@ def main():
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--stride', type=int, default=1000)
     p.add_argument('--nodes', type=int, default=400000)
+    p.add_argument('--particles', type=int, default=2048)
+    p.add_argument('--priors', type=int, choices=(1, 2), nargs='+', default=[1, 2])
+    p.add_argument('--prediction-modes', type=int, choices=(0, 1), nargs='+', default=[0, 1])
+    p.add_argument('--arm-prefix', default='')
     args = p.parse_args()
-    if min(args.stride, args.nodes) <= 0:
-        p.error('stride and nodes must be positive')
+    if min(args.stride, args.nodes, args.particles) <= 0:
+        p.error('stride, nodes and particles must be positive')
+    if any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.arm_prefix):
+        p.error('arm prefix must contain lowercase ASCII letters, digits, hyphens or underscores')
+    if len(set(args.priors)) != len(args.priors) or len(set(args.prediction_modes)) != len(args.prediction_modes):
+        p.error('duplicate configurations')
     out = args.output.resolve()
     out.mkdir(parents=True, exist_ok=False)
     binary = out / 'benchmark'
@@ -39,19 +47,19 @@ def main():
     state = {'state': 'running', 'pid': os.getpid(), 'started_at': datetime.now(timezone.utc).isoformat(),
              'inputs': inputs, 'model_archive': str(args.model_archive.resolve()),
              'model_archive_sha256': sha(args.model_archive), 'runner_sha256': sha(Path(__file__)),
-             'nodes': args.nodes, 'stride': args.stride, 'arms': {},
-             'design': '2x2 grouped prediction and opponent prior; history0, book0, seed777, one search thread, same hybrid model.',
+             'nodes': args.nodes, 'stride': args.stride, 'particles': args.particles, 'arms': {},
+             'design': 'Requested grouped prediction/opponent prior arms; history0, book0, seed777, one search thread, same hybrid model.',
              'limitations': ['Forced-history decisions, not games or Elo.',
                              'Stride1000 samples initial moves as well as terminal losing moves; report separately.']}
     def save():
         tmp = out / 'campaign.tmp'; tmp.write_text(json.dumps(state, indent=2) + '\n')
         tmp.replace(out / 'campaign.json')
     save()
-    for prediction, prior in ((0, 1), (1, 1), (0, 2), (1, 2)):
-        name = f'prediction{prediction}-prior{prior}'
+    for prediction, prior in ((m, p) for p in args.priors for m in args.prediction_modes):
+        name = args.arm_prefix + f'prediction{prediction}-prior{prior}'
         settings = dict(FOW_MODE='hybrid', FOW_MODEL_DIR=str(model), FOW_HISTORY_MODE='0',
                         FOW_PREDICTION_MODE=str(prediction), FOW_OPPONENT_PRIOR=str(prior),
-                        FOW_PARTICLES='2048', FOW_CELL_THREADS='1', FOW_BOOK_PLIES='0')
+                        FOW_PARTICLES=str(args.particles), FOW_CELL_THREADS='1', FOW_BOOK_PLIES='0')
         env = {k: v for k, v in os.environ.items() if not k.startswith(('FOW_', 'ASTRA_'))}
         env.update(settings)
         command = [str(binary), str(corpus), str(args.stride), str(args.nodes), 'verbose']

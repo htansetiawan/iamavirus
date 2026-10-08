@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <fstream>
 #include <iostream>
+#include <map>
 #include <set>
 #include <sstream>
 #include <string>
@@ -163,6 +164,40 @@ static void PrintAttackers(const Position& truth, int king_side,
   std::cout << ']';
 }
 
+// Optional offline audit of alternative engine choices. Copy every hypothesis;
+// these truth-labelled requests never affect the belief or its RNG. Match the
+// engine's EP override and normalization over supporting legal hypotheses.
+static void PrintCandidateRisk(const Position& truth, const Observation& view,
+                               const std::vector<Position>& particles, int side,
+                               int en_passant, const std::string& uci) {
+  const Move move = FindMove(truth, uci);
+  int losses = 0, legal = 0;
+  for (Position p : particles) {
+    p.set_side_to_move(side);
+    p.set_en_passant_square(en_passant);
+    MoveList moves;
+    p.GenerateMoves(&moves);
+    bool allowed = false;
+    for (Move candidate : moves) allowed |= candidate == move;
+    if (!allowed) continue;
+    ++legal;
+    UndoState undo;
+    p.MakeMove(move, &undo);
+    losses += p.PreviousMoverIsLost();
+  }
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(move, &undo);
+  const double probability = legal ? static_cast<double>(losses) / legal : 1.0;
+  std::cout << "{\"move\":\"" << uci << "\",\"legal_particles\":" << legal
+            << ",\"risk_particles\":" << losses << ",\"risk_permille\":"
+            << static_cast<int>(probability * 1000.0) << ",\"truth_fatal\":"
+            << (after.PreviousMoverIsLost() ? "true" : "false")
+            << ",\"true_attackers\":";
+  PrintAttackers(after, side, view, particles);
+  std::cout << '}';
+}
+
 int main(int argc, char** argv) {
   if (argc != 5 && argc != 7 && argc != 8 && argc != 9 && argc != 10) {
     std::cerr << "usage: probe_belief MOVES_FILE SIDE(0|1) SEED PARTICLES [CAPTURE DEDUCTIONS [GROUPED [CONTINUATION [HISTORY]]]]\n";
@@ -213,6 +248,23 @@ int main(int argc, char** argv) {
   std::vector<std::string> moves;
   std::string move;
   while (file >> move) moves.push_back(move);
+  std::map<std::size_t, std::vector<std::string>> candidate_requests;
+  if (const char* path = std::getenv("ASTRA_PROBE_CANDIDATES")) {
+    std::ifstream requests(path);
+    if (!requests) return 2;
+    std::string line;
+    while (std::getline(requests, line)) {
+      std::istringstream fields(line);
+      std::size_t ply;
+      std::string uci, extra;
+      if (!(fields >> ply >> uci) || fields >> extra || ply >= moves.size() || ply % 2 != static_cast<std::size_t>(side)) {
+        std::cerr << "Malformed candidate probe request\n";
+        return 2;
+      }
+      candidate_requests[ply].push_back(uci);
+    }
+  }
+  std::string previous_view;
   bool own_move = false;
   int capture_landing = -1;
   bool capture_was_ep = false;
@@ -333,7 +385,18 @@ int main(int argc, char** argv) {
       std::cout << ",\"true_attackers_after_actual\":";
       PrintAttackers(after_truth, side, observation, particles);
     }
+    if (const auto request = candidate_requests.find(ply); request != candidate_requests.end()) {
+      const Observation previous(previous_view.empty() ? observation.squares() : previous_view);
+      const int en_passant = InferEnPassant(previous_view.empty() ? nullptr : &previous, observation, side);
+      std::cout << ",\"candidate_risks\":[";
+      for (std::size_t i = 0; i < request->second.size(); ++i) {
+        if (i) std::cout << ',';
+        PrintCandidateRisk(truth, observation, particles, side, en_passant, request->second[i]);
+      }
+      std::cout << ']';
+    }
     std::cout << "}\n";
+    previous_view = observation.squares();
     const Move actual = FindMove(truth, moves[ply]);
     own_move = truth.side_to_move() == side;
     if (own_move) belief.ApplyOurMove(actual);

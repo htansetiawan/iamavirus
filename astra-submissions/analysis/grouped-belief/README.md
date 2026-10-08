@@ -78,8 +78,45 @@ on this small sample. Improved truth coverage alone therefore does not justify
 switching the default to the learned prior.
 
 `recent-action-results.json` pins inputs and contains every compared decision.
-The broader gate is now running on all **453 remaining novel games / 906
-seats**, excluding these first 24 games. Its selection is frozen in
-`remaining-453-design.json`; it retains the same four configurations and
-reports terminal and initial decisions separately. No new arena artifact has
-been produced.
+The broader gate completed on all **453 remaining novel games / 906 seats**,
+excluding these first 24 games. Its selection is frozen in
+`remaining-453-design.json`. There are 1,338 evaluated decisions: 906 initial
+positions and **432 terminal positions**, of which 68 have no safe legal move.
+
+| Opponent prior | Prediction | Terminal fatal choices / 432 | Avoidable fatal choices / 364 |
+| --- | --- | ---: | ---: |
+| Hand | Legacy | 165 | 97 |
+| Hand | Grouped | 158 | 90 |
+| Learned | Legacy | 160 | 92 |
+| Learned | Grouped | 162 | 94 |
+
+With the hand prior, grouping saves 36 positions and introduces 29 fatalities.
+The paired fatal-rate change is −1.62 percentage points, with a game-bootstrap
+95% interval of **−5.32 to +2.08**. With the learned prior, it saves 32 and
+introduces 34: +0.46 points, interval **−3.24 to +4.17**. Switching between
+priors is also inconclusive under either prediction method. All four reports
+are saved as `remaining453-*-comparison.json`.
+
+This larger decision gate does not establish an improvement. The hand-grouped
+IAmAVirus-only subset improves 20→17 fatalities, but contains only 33 terminal
+positions and its interval crosses zero. There are only two Duck terminal
+positions in that subset; neither changed outcome. It cannot support a claim
+about beating Duck. Wall times were recorded under shared host load, so they
+do not establish an isolated speedup.
+
+[The choice audit](choice-audit.md) separates missed threats from cases where
+the engine knowingly trades immediate risk for its estimated future value.
+A single predeclared follow-up doubled grouped particles to 4,096 while keeping
+the model and search budget fixed (`density4096-design.json`). It completed with
+**174 fatal terminal choices versus 158** at 2,048 particles: 21 saves and 37 new
+fatalities. The paired change is +3.70 percentage points, 95% interval
+**+0.23 to +7.18**. Avoidable losses rose 90→106/364. The corresponding report is
+`density4096-comparison.json`; its cross-campaign comparison verifies identical
+binary, model graphs, corpus, node budget and decision sampling.
+
+This density arm fails the replay gate. Increasing the population changes the
+belief and the sampled search worlds together, so the result does not isolate
+a single mechanism or prove that a larger population is inherently worse.
+These 453 games are now development data; reuse is explicitly not another
+independent holdout. One seed does not cover resampling variance. No new arena
+artifact has been produced, and the defaults remain unchanged.
