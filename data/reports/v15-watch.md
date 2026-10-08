@@ -1,23 +1,23 @@
 # Arena v15 watch
 
-Updated 2026-10-08 17:54 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-08 18:24 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 111W-8D-161L over 280 games** (41%).
-As White: 66.0/140.
-As Black: 49.0/140.
+**Record: 116W-8D-164L over 288 games** (42%).
+As White: 68.0/144.
+As Black: 52.0/144.
 
-Queen lost for less: 112 games (85 to a capturer unseen when we moved, 12 before ply 30); losses with the queen lost: 94 of 161.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 40. Mean length 78 plies.
+Queen lost for less: 114 games (86 to a capturer unseen when we moved, 13 before ply 30); losses with the queen lost: 96 of 164.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 43. Mean length 78 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 27-3-30 |
+| TA Baseline P | 30-3-31 |
 | TA Baseline S | 8-5-27 |
 | baseline.py | 36-0-0 |
 | TA Baseline A | 15-0-21 |
-| Apricot Squad | 24-0-2 |
-| duck | 1-0-19 |
+| Apricot Squad | 26-0-2 |
+| duck | 1-0-21 |
 | Instructors | 0-0-20 |
 | Decent Chess Bot | 0-0-20 |
 | Strongly Invisible | 0-0-8 |
@@ -306,3 +306,11 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-08 17:39 | 8kgqwm1t | B | TA Baseline P | 101 | win |  | 27 s | 12-23 |
 | 2026-10-08 17:50 | abdsipak | W | Decent Chess Bot | 85 | loss | ply 68 by r | 32 s | 5-12 |
 | 2026-10-08 17:53 | m8mepy92 | B | Decent Chess Bot | 148 | loss |  | 14 s | 2-18 |
+| 2026-10-08 17:56 | 5xgaokku | W | Apricot Squad | 38 | win |  | 100 s | 39-34 |
+| 2026-10-08 17:57 | 3zq4e0kb | B | Apricot Squad | 43 | win |  | 92 s | 34-26 |
+| 2026-10-08 18:03 | x9u2vgxf | B | TA Baseline P | 87 | win |  | 46 s | 11-3 |
+| 2026-10-08 18:06 | d19glouv | B | duck | 54 | loss | ply 29 by n | 82 s | 4-26 |
+| 2026-10-08 18:06 | 7f92tzas | W | TA Baseline P | 131 | loss |  | 14 s | 1-15 |
+| 2026-10-08 18:08 | 2lpzei5o | W | duck | 77 | loss | ply 56 by n unseen | 53 s | 11-26 |
+| 2026-10-08 18:19 | 001rx5b2 | B | TA Baseline P | 135 | win |  | 14 s | 6-3 |
+| 2026-10-08 18:19 | 614k2zao | W | TA Baseline P | 114 | win |  | 14 s | 9-2 |
