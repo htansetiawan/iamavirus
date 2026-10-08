@@ -102,6 +102,8 @@ Read [versions/MEASUREMENT.md](versions/MEASUREMENT.md) first. The short version
   ~2,100. At 650 Elo behind, chase structural changes, not constants.
 - **Sweep seeds.** A single-seed regression test passed by luck for a fix that was
   a coin flip (7/15 across seed and population combinations).
+- **Corpora are tracked (force-added under the ignored `data/`)**: `data/benchmark-seats.txt` (634 real losing seats, the fatal-ply corpus every gate uses; one line per seat: `id side result reason opponent moves…`) and `data/queen-loss-seats.txt` (240 arena decisions after which our queen was captured for less, each game truncated after our move and marked as our fatal ply, so `build/benchmark_queen data/queen-loss-seats.txt 1000 400000` evaluates exactly those decisions plus each seat's first move). Neither has a generator script in the repo; the queen corpus was built from `data/raw/games/*/replay.json` true boards with the rule in the 02:50 UTC HANDOFF entry. Rebuild `benchmark_queen` from `tools/benchmark_corpus.cc` after engine edits.
+
 
 ## The failure family that matters
 
