@@ -23,3 +23,19 @@ The gym baselines of note 015 were taken with the benchmark harness in cpp mode 
 ## Results
 
 (Filled in as the runs finish; summaries in `data/reports/gym/arena/summary.txt`, `data/reports/ceiling/`, `checkpoints/ceiling-*/`.)
+
+### Information ceiling, decision level (12:20 UTC)
+
+The real v15 configuration (hybrid, v1 model, modeled arena clock, 2 threads) at each of the 900 gym positions, once with its fogged view and once with the true board:
+
+| corpus | metric | v15 as deployed | v15 given the true board |
+| --- | --- | --- | --- |
+| strike (300) | creates an unseen king threat | 40.7% | **80.0%** |
+| strike | plays the top bot's exact move | 32.7% | 61.0% |
+| strike | leaves 3+ points en prise | 8.7% | 5.7% |
+| route (300) | plays the top bot's first fog-route move | 29.7% | 21.3% |
+| giveaway (300) | repeats our old giveaway (3+ en prise) | 24.7% | **11.0%** |
+| giveaway | leaves the queen en prise | 9.0% | 2.0% |
+| giveaway | king lost | 2.0% | 0.0% |
+
+Reading: the search and evaluation are good enough when they know the board; perfect information doubles the strike rate and halves the giveaways at the same budget. Information is the dominant ceiling on the capabilities that decide our games. The route corpus moves the other way because a fog maneuver is a move made under uncertainty; with the board known the engine plays more directly. Next (running): which hidden pieces carry that value (revealing only the king, only rooks/bishops/queens, only knights/pawns), whether the engine would choose the top bot's move if it were offered as a candidate, compute ×8, breadth, and the oracle in full games.
