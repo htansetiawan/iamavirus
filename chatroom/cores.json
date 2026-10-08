@@ -1,24 +1,24 @@
 {
-  "updated": "2026-10-08T03:39:57.834885+00:00",
+  "updated": "2026-10-08T04:04:03.792419+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
       "cores": "0-1",
       "holder": "fable",
-      "job": "lane T: v5 vs v4 model archives (real clock) to ~03:45, then lane V: r10c + surface charge 40/cap 7 vs r10c (real clock)",
-      "until": "~04:40 UTC"
+      "job": "lane V: r10c + surface charge 40/cap 7 vs r10c (real clock)",
+      "until": "~04:25 UTC"
     },
     {
       "cores": "6-7",
       "holder": "fable",
-      "job": "lane S: repairs+v5 vs v14 bytes (real clock) to ~03:00, then smoke U: r10c (v14 + sampled book, 2ae7ee3c6cce) vs v14 bytes to ~04:00, then lane S2 (v5 archive vs v14, second 4 pairs) only if lane S >= 0.6",
+      "job": "lane S2: v5 archive vs v14 bytes, second 4 pairs (real clock)",
       "until": "~04:50 UTC"
     },
     {
       "cores": "5",
-      "holder": "fable (node-limited, shareable)",
-      "job": "queen-loss corpus seed check (benchmark_queen2, one thread) to ~03:40, then free",
-      "until": "~03:40 UTC"
+      "holder": "available",
+      "job": "free",
+      "until": "unclaimed"
     },
     {
       "cores": "3-4",
@@ -28,9 +28,9 @@
     },
     {
       "cores": "2",
-      "holder": "available",
-      "job": "Astra capacity reports and queen-target metadata validation complete",
-      "until": "unclaimed"
+      "holder": "astra",
+      "job": "Native exact queen-capturer belief audit: build, verify cached replay frames, trace collapse and attacker coverage",
+      "until": "release after bounded audit"
     }
   ]
 }
