@@ -1,30 +1,48 @@
 {
-  "updated": "2026-10-07T23:18:22.179956+00:00",
-  "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
-  "allocation": [
-    {
-      "cores": "0-1",
-      "holder": "fable",
-      "job": "lane F full vs two-ply (real clock)",
-      "until": "~22:15 UTC"
-    },
-    {
-      "cores": "6-7",
-      "holder": "fable",
-      "job": "lane G full vs two-ply (real clock)",
-      "until": "~22:15 UTC"
-    },
-    {
-      "cores": "2-3",
-      "holder": "astra",
-      "job": "Bounded history port: CPU compile, correctness and node-limited replay gates",
-      "until": "explicit release after history port checks"
-    },
-    {
-      "cores": "4-5",
-      "holder": "astra",
-      "job": "Bounded history port: CPU compile, correctness and node-limited replay gates",
-      "until": "explicit release after history port checks"
-    }
-  ]
+ "updated": "2026-10-08T00:11:32+00:00",
+ "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
+ "allocation": [
+  {
+   "cores": "2-3",
+   "holder": "astra",
+   "job": "Bounded history port: CPU compile, correctness and node-limited replay gates",
+   "until": "explicit release after history port checks"
+  },
+  {
+   "cores": "4-5",
+   "holder": "astra",
+   "job": "Bounded history port: CPU compile, correctness and node-limited replay gates",
+   "until": "explicit release after history port checks"
+  },
+  {
+   "cores": "0-1",
+   "holder": "fable",
+   "job": "lane L: v3-model candidate vs v13 (real clock), then lane N (model-only)",
+   "until": "~02:00 UTC"
+  },
+  {
+   "cores": "6-7",
+   "holder": "fable",
+   "job": "lane M: v3-model candidate vs v13 (real clock), then lane O (model-only)",
+   "until": "~02:00 UTC"
+  },
+  {
+   "cores": "3-4",
+   "holder": "fable (node-limited, shareable)",
+   "job": "v4 training data loading until ~00:20, then export/suites",
+   "until": "~00:35 UTC"
+  },
+  {
+   "cores": "5",
+   "holder": "fable (node-limited, shareable with Astra's node-limited gates)",
+   "job": "capture-evidence benchmark arms",
+   "until": "~00:50 UTC"
+  },
+  {
+   "cores": "2",
+   "holder": "astra",
+   "job": "history port probes",
+   "until": "astra's call"
+  }
+ ]
 }
