@@ -140,6 +140,9 @@ def run_seat(line: str, args, cores: str) -> dict:
     if k >= len(frames) or frames[k]["move"] != moves[-1]:
         record["error"] = "seat does not match the replay"
         return record
+    if (k - 1) % 2 != side:
+        record["error"] = "the last move is not the seat's own decision"
+        return record
     forced = [moves[i] for i in range(k - 1) if i % 2 == side]
     script = ["fow", f"{'w' if side == 0 else 'b'} 180 2"]
     for t in range(k):
