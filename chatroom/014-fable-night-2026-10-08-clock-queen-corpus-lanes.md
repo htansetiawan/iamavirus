@@ -4,9 +4,11 @@ For the user and Astra. Everything below is measured; the commands and files are
 
 ## 1. Recommendation for the morning
 
-Upload `fable-submissions/iamavirus-v11-candidate-caution-r10c-hybrid.zip` (sha `2ae7ee3c6cce`) as the next arena version and activate it. It replaces the cleared v14 candidate (`93f4ccdf03d5`): same engine, same v1 model, one change — the opening book samples among the strongest teams' moves by frequency instead of playing one fixed ten-ply line as each colour.
+Upload `fable-submissions/iamavirus-v11-candidate-caution-r10d-hybrid.zip` (sha `381451613375`) as the next arena version and activate it. It is the cleared v14 candidate (`93f4ccdf03d5`) with two changes: the opening book samples among the strongest teams' moves by frequency instead of one fixed line, and a booked move is refused whenever any particle shows our king capturable after it (the search decides instead).
 
-Evidence chain: caution engine vs v13 bytes 12–1–3 over 16 (paired 0.781); the v14 bytes' smoke vs v13 2.5/4; r10c vs the v14 bytes 5–0–3 over 8 (paired 0.625, 0.25–1.0), games 68–166 plies, no overruns, final clocks ≥ 31 s. After upload: rename the file to the arena number and update the map in `fable-submissions/README.md`; one upload per ~40 games.
+Why the second change exists: four lane games tonight ended in six plies with the v14 bytes as Black: 1.c4 d5 2.Qa4 (unseen) c6 3.cxd5 cxd5?? 4.Qxe8. The book is keyed on the view, the view cannot see a4, and the booked recapture bypassed every safety term. The belief does hold the queen on a4 (about 12% of particles) — the book just never asked it. Root carries the fix (`2e3df9d`, regression test on the exact line, suite 721 checks). Scripted referee games with White forced into that line: the v14 bytes lose in 6 plies; r10d refuses the recapture at both seeds and survives. **Do not upload v14 or r10c; they carry the trap.**
+
+Evidence chain for the engine: caution engine vs v13 bytes 12–1–3 over 16 (paired 0.781); the v14 bytes' smoke vs v13 2.5/4; r10c (same engine, sampled book) vs the v14 bytes 5–0–3 over 8; r10d smoke vs the v14 bytes (2 pairs) running at 05:00, result in the README log. After upload: rename the file to the arena number and update the map in `fable-submissions/README.md`; one upload per ~40 games.
 
 ## 2. Arena and the clock
 
@@ -18,7 +20,7 @@ Evidence chain: caution engine vs v13 bytes 12–1–3 over 16 (paired 0.781); t
 ## 3. Models at real clocks (all vs the v14 bytes unless stated)
 
 - v4 (features-v2): 9–5–10 over 24 (lanes P, Q, R), paired 0.479 (0.312–0.646). Not promoted.
-- v5 (features-v2, unweighted): lane S 5–0–3 over 8 (0.625, 0.5–0.875); lane T vs the v4 archive with the same engine and book 2–0–6 (0.25, 0.0–0.5625). Lane S2 (4 more pairs vs v14) is running on cores 6–7 (started 04:02); unless the 16-game union clears ~0.6 with a lower bound above 0.5, the v1 model stays.
+- v5 (features-v2, unweighted): lane S 5–0–3 over 8 (0.625, 0.5–0.875) and lane S2 again 0.625; union over 16 games 10–0–6, paired 0.625 (0.500–0.812), White 7/8, Black 3/8. Four of those ten wins were the six-ply book trap against the v14 bytes, so the edge is partly the trap. Lane T vs the v4 archive with the same engine and book: 2–0–6 (0.25, 0.0–0.5625).
 - Verdict so far: v1, v4 and v5 are indistinguishable at eight-game resolution. Offline suite gains (policy 32.7% → 35.9%, danger false negatives 87% → 59%) do not show up as strength.
 
 ## 4. Queen-loss corpus (the finding of the night)
@@ -39,7 +41,7 @@ Root engine and belief, seed 1, 400k nodes: capturer mass mean 0.398; bands < 0.
 
 ## 5. What runs now and what the day should do
 
-Running: lane S2 (6–7, to ~04:55). Cores 0–1 and 5 are free; Astra holds core 2 (queen-belief audit).
+Running: smoke W (r10d vs v14 bytes, 2 pairs, cores 0–1, to ~05:25). Cores 5 and 6–7 are free; Astra holds core 2 (queen-belief audit).
 
 For the 2000-rating trajectory, honestly: the current family sits around 1500–1550 and the top three are 1900–2165. The two measured levers are the belief on long lines (a third of our games are lost with the queen, and the engine already avoids two thirds of the corpus decisions where the belief holds the capturer) and more lane games per decision (eight-game lanes cannot order changes worth a few points of win rate; 40-game lanes can). Engine-side, no term tried tonight (two-ply weight 2, surface charge, late clock phase) moves the residual, so the next engine work should wait for a belief that holds the far-end slider, then re-measure the same corpus.
 
