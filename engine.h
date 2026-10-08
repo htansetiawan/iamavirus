@@ -182,6 +182,13 @@ struct EngineOptions {
   double strike_major_weight = 0.0;
   double stealth_weight = 0.0;
   double seen_exposure_weight = 0.0;  // the particle stride is the existing `vision_stride`
+  // King sighting (v16): the hidden enemy king is the strike ceiling (note 017:
+  // revealing only it lifts unseen strikes from 41% to 69%), and once it walks
+  // neither the particles nor the network track it. Bonus in cp for the share
+  // of hypotheses in which the enemy king becomes visible after our move,
+  // scaled by how diffuse the king belief is (1 - share of its modal square),
+  // applied only while the king is not visible. 0 = off.
+  double king_sight_weight = 0.0;
   double surface_charge = 0.0;
   int surface_ray_cap = 3;
   int surface_stride = 4;
@@ -368,6 +375,8 @@ class Engine {
     double seen_gift = 0.0;      // expected cp they can see and win for free
   };
   OpponentVision ExpectedOpponentVision(Move move, int en_passant) const;
+  double ExpectedKingSighting(Move move, int en_passant) const;
+  double KingBeliefDiffuseness() const;
 
  private:
   // Our own castling rights, read from the believed state where MakeMove has

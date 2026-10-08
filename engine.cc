@@ -284,6 +284,49 @@ double Engine::ExpectedVision(Move move, int en_passant) const {
 // we cannot see could be attacking it right now. Particle-independent by
 // design, because the losses it targets are the ones where the population
 // did not hold the attacker.
+double Engine::KingBeliefDiffuseness() const {
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return 0.0;
+  int counts[64] = {0};
+  int total = 0;
+  for (const Position& particle : population) {
+    const int k = particle.KingSquare(our_side_ ^ 1);
+    if (k >= 0) {
+      ++counts[k];
+      ++total;
+    }
+  }
+  if (total == 0) return 0.0;
+  int best = 0;
+  for (int sq = 0; sq < 64; ++sq) best = std::max(best, counts[sq]);
+  return 1.0 - static_cast<double>(best) / total;
+}
+
+double Engine::ExpectedKingSighting(Move move, int en_passant) const {
+  const std::vector<Position>& population = belief_.particles();
+  if (population.empty()) return 0.0;
+  const int stride = std::max(1, options_.vision_stride);
+  int counted = 0;
+  int sighted = 0;
+  for (std::size_t i = 0; i < population.size(); i += static_cast<std::size_t>(stride)) {
+    Position hypothesis = population[i];
+    hypothesis.set_side_to_move(our_side_);
+    hypothesis.set_en_passant_square(en_passant);
+    if (IsCastle(move)) {
+      MoveList available;
+      hypothesis.GenerateMoves(&available);
+      if (!ListContains(available, move)) continue;
+    }
+    UndoState undo;
+    hypothesis.MakeMove(move, &undo);
+    ++counted;
+    const int king = hypothesis.KingSquare(our_side_ ^ 1);
+    if (king >= 0 && (VisibleSquares(hypothesis, our_side_) & SquareBB(king))) ++sighted;
+    hypothesis.UnmakeMove(move, undo);
+  }
+  return counted > 0 ? static_cast<double>(sighted) / counted : 0.0;
+}
+
 Engine::OpponentVision Engine::ExpectedOpponentVision(Move move, int en_passant) const {
   OpponentVision out;
   const std::vector<Position>& population = belief_.particles();
@@ -501,6 +544,7 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_STRIKE_MAJOR", &options.strike_major_weight);
   Override("FOW_STEALTH", &options.stealth_weight);
   Override("FOW_SEEN_EXPOSURE", &options.seen_exposure_weight);
+  Override("FOW_KING_SIGHT", &options.king_sight_weight);
   Override("FOW_BOOK_PLIES", &options.book_plies);
   Override("FOW_SURFACE_RAY_CAP", &options.surface_ray_cap);
   Override("FOW_SURFACE_STRIDE", &options.surface_stride);
@@ -1162,6 +1206,15 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
             break;
           }
         }
+      }
+    }
+  }
+  if (options_.king_sight_weight > 0.0 && !belief_.EnemyKingVisible(view)) {
+    const double diffuse = KingBeliefDiffuseness();
+    if (diffuse > 0.0) {
+      for (int row = 0; row < shortlist; ++row) {
+        risk[row] -= options_.king_sight_weight * diffuse *
+                     ExpectedKingSighting(ranked[row].move, en_passant);
       }
     }
   }
