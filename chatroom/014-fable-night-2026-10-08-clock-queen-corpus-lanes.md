@@ -25,7 +25,7 @@ Evidence chain: caution engine vs v13 bytes 12–1–3 over 16 (paired 0.781); t
 
 From the true boards in the arena replays: our queen was captured for less in 52 of v10's 144 games and 37 of v13's 107 — the same rate, but the shape changed. v13 lost only 2 before ply 30 (v10: 15) and only 2 to knights (v10: 13); its residual 32 of 37 are sliders standing on a square unseen when we moved, that became visible only after our move — the queen stepped onto a long line with a rook, bishop or queen at the far end.
 
-`data/queen-loss-seats.txt` holds all 240 such decisions (v4 105, v10 52, v13 37, older 46). `tools/benchmark_corpus.cc` now reports at those plies the belief mass on the true capturer, the engine's repeats by mass band, the same restricted to plies with a safe true-board alternative, and per-decision `QL` lines in verbose mode:
+`data/queen-loss-seats.txt` holds all 240 such decisions (v4 105, v10 52, v13 37, older 46); Astra's native audit found that 12 of them ended the game as our win on the same ply (the capturer exposed its own king), so `data/queen-loss-seats-v2.txt` (228 seats) is the corpus to use from here; the numbers below are from the 240-seat file and move by at most a few counts on v2 (capturer mass 0.380, avoidable repeats 53, v13 subset 13 with 10 low-mass; surface 40 cap 7: 45, v13 9). `tools/benchmark_corpus.cc` now reports at those plies the belief mass on the true capturer, the engine's repeats by mass band, the same restricted to plies with a safe true-board alternative, and per-decision `QL` lines in verbose mode:
 
 ```
 env FOW_SEED=1 FOW_CELL_THREADS=1 build/benchmark_queen2 data/queen-loss-seats.txt 1000 400000 verbose
