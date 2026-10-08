@@ -612,11 +612,22 @@ int Engine::LoadBook(const std::string& path) {
     if (b == std::string::npos) continue;
     const std::size_t c = line.find('|', b + 1);
     const std::string key = line.substr(0, b);
-    const std::string move = c == std::string::npos ? line.substr(b + 1) : line.substr(b + 1, c - b - 1);
-    if (key.size() != 64 + 6 && key.size() != 64 + 6) {
-      // "white|" + 64 or "black|" + 64
+    const std::string field = c == std::string::npos ? line.substr(b + 1) : line.substr(b + 1, c - b - 1);
+    // "e2e4:120,d2d4:30" or, from an older file, a bare "e2e4".
+    std::vector<std::pair<std::string, int>> alternatives;
+    std::size_t start = 0;
+    while (start <= field.size()) {
+      const std::size_t comma = field.find(',', start);
+      const std::string item = field.substr(start, comma == std::string::npos ? std::string::npos : comma - start);
+      if (!item.empty()) {
+        const std::size_t colon = item.find(':');
+        if (colon == std::string::npos) alternatives.emplace_back(item, 1);
+        else alternatives.emplace_back(item.substr(0, colon), std::atoi(item.c_str() + colon + 1));
+      }
+      if (comma == std::string::npos) break;
+      start = comma + 1;
     }
-    book_[key] = move;
+    if (!alternatives.empty()) book_[key] = alternatives;
   }
   return static_cast<int>(book_.size());
 }
@@ -674,11 +685,27 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
   if (!book_.empty() && views_seen_ <= options_.book_plies) {
     const auto hit = book_.find((our_side_ == kWhite ? "white|" : "black|") + view.squares());
     if (hit != book_.end()) {
-      for (const Move candidate : legal) {
-        if (MoveToUci(candidate) == hit->second) {
-          trace->from_book = true;
-          trace->mode_used = options_.mode;
-          return candidate;
+      // Sample among the alternatives in proportion to how often the strongest
+      // teams played them, restricted to moves legal here.
+      std::vector<std::pair<Move, int>> playable;
+      int total = 0;
+      for (const auto& alternative : hit->second) {
+        for (const Move candidate : legal) {
+          if (MoveToUci(candidate) == alternative.first) {
+            playable.emplace_back(candidate, std::max(1, alternative.second));
+            total += std::max(1, alternative.second);
+          }
+        }
+      }
+      if (!playable.empty()) {
+        int draw = std::uniform_int_distribution<int>(0, total - 1)(rng_);
+        for (const auto& option : playable) {
+          draw -= option.second;
+          if (draw < 0) {
+            trace->from_book = true;
+            trace->mode_used = options_.mode;
+            return option.first;
+          }
         }
       }
     }

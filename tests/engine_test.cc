@@ -324,7 +324,21 @@ void OpeningBookAnswersTheStartView() {
   DecisionTrace trace;
   const Move move = engine.ChooseMove(view, 10.0, &trace);
   FOW_EXPECT_TRUE(trace.from_book);
-  FOW_EXPECT_TRUE(MoveToUci(move) == "d2d4");
+  // The book samples by frequency: over many seeds the start view yields the
+  // strongest teams' mix (1. d4 about 80%), never a move outside it.
+  int d4 = 0;
+  for (uint64_t seed = 1; seed <= 40; ++seed) {
+    Engine fresh(kWhite, 180.0, 2.0, options, seed);
+    fresh.LoadBook("book.txt");
+    fresh.Observe(view, false);
+    DecisionTrace t;
+    const std::string uci = MoveToUci(fresh.ChooseMove(view, 10.0, &t));
+    FOW_EXPECT_TRUE(t.from_book);
+    FOW_EXPECT_TRUE(uci == "d2d4" || uci == "c2c4" || uci == "e2e4" || uci == "b1c3");
+    d4 += uci == "d2d4";
+  }
+  std::printf("       book start view: d2d4 in %d of 40 seeds (first seed played %s)\n", d4, MoveToUci(move).c_str());
+  FOW_EXPECT_TRUE(d4 >= 20);
 }
 
 // A position with exactly one legal move must be handled without any search.

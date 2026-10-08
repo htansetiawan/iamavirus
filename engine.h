@@ -368,7 +368,9 @@ class Engine {
   // (view at our decision, move played) for every move we have made, for
   // the repetition charge.
   std::vector<std::pair<std::string, Move>> history_;
-  std::unordered_map<std::string, std::string> book_;  // "colour|view" -> uci
+  // "colour|view" -> (uci, games) alternatives, most played first; a move is
+  // sampled in proportion to games so the opening is not a fixed line.
+  std::unordered_map<std::string, std::vector<std::pair<std::string, int>>> book_;
   Observation before_latest_view_;
   int views_seen_ = 0;
 };

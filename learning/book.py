@@ -2,7 +2,7 @@
 
     python -m learning.book --input gold/opening-book.json --output book.txt
 
-One line per entry: colour|observation|move|games|win_rate. The observation is
+One line per entry: colour|observation|move:games,move:games,...|games|win_rate (the first move is the most played). The observation is
 the 64-character view string the referee sends (rank 1 first), so the bot can
 look up its own current view directly.
 """
@@ -23,7 +23,9 @@ def main(argv=None):
         colour, view = key.split("|", 1)
         if entry["games"] < args.min_games:
             continue
-        lines.append(f"{colour}|{view}|{entry['move']}|{entry['games']}|{entry['win_rate']:.3f}")
+        # move:games pairs, most played first, so the bot can sample by frequency
+        alts = ",".join(f"{m}:{g}" for m, g in sorted(entry["alternatives"].items(), key=lambda kv: -kv[1]) if g >= args.min_games)
+        lines.append(f"{colour}|{view}|{alts}|{entry['games']}|{entry['win_rate']:.3f}")
     args.output.write_text("\n".join(lines) + "\n")
     print(f"wrote {len(lines)} book entries to {args.output}")
 
