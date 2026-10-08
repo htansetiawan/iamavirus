@@ -202,6 +202,7 @@ int Run() {
   // what it would have chosen. This replays a recorded game through the full
   // arena decision procedure (any mode) with the belief following the real
   // moves. Never set in the arena.
+  const bool force_fast = std::getenv("FOW_FORCE_FAST") != nullptr;
   std::vector<std::string> forced;
   if (const char* text = std::getenv("FOW_FORCE_MOVES")) {
     std::istringstream stream(text);
@@ -247,6 +248,30 @@ int Run() {
     if (!have_observation) continue;
 
     const double remaining = std::strtod(text.c_str(), nullptr);
+    // Offline replay speed-up: with FOW_FORCE_FAST set, a decision covered by
+    // FOW_FORCE_MOVES plays the forced move without scoring or searching, so
+    // a recorded game can be replayed to a target ply at the cost of belief
+    // updates only (learning/gym_replay.py). Never set in the arena.
+    if (force_fast && static_cast<std::size_t>(decisions) < forced.size()) {
+      Move forced_move = kNullMove;
+      MoveList legal;
+      tracker.LegalCandidates(&legal);
+      for (const Move candidate : legal) {
+        if (MoveToUci(candidate) == forced[static_cast<std::size_t>(decisions)]) forced_move = candidate;
+      }
+      if (forced_move != kNullMove) {
+        try {
+          engine.NotifyMovePlayed(forced_move);
+        } catch (const std::exception& error) {
+          std::cerr << "bookkeeping failed: " << error.what() << "\n";
+        }
+        tracker.RecordOwnMove(forced_move);
+        reflects_our_own_move = true;
+        ++decisions;
+        std::cout << "move " << MoveToUci(forced_move) << std::endl;
+        continue;
+      }
+    }
     Move move = kNullMove;
     DecisionTrace trace;
     const auto started = std::chrono::steady_clock::now();
