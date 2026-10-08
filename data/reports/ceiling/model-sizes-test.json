@@ -1,0 +1,138 @@
+[
+ {
+  "checkpoint": "checkpoints/ceiling-s/best.pt",
+  "architecture": "cnn64x4-gru256-heads-v1",
+  "parameters": 1872394,
+  "step": 3525,
+  "epoch": 15,
+  "top6": {
+   "decisions": 24420,
+   "policy_nll": 2.3686,
+   "top1": 33.79,
+   "top4": 61.06
+  },
+  "all": {
+   "decisions": 35795,
+   "policy_nll": 2.3483,
+   "top1": 34.38,
+   "top4": 61.65
+  },
+  "us": {
+   "decisions": 2189,
+   "policy_nll": 2.4661,
+   "top1": 29.37,
+   "top4": 58.84
+  },
+  "others": {
+   "decisions": 9186,
+   "policy_nll": 2.2665,
+   "top1": 37.14,
+   "top4": 63.86
+  },
+  "belief_loss": 0.5283,
+  "danger_loss": 0.1765,
+  "danger_brier": 0.04188
+ },
+ {
+  "checkpoint": "checkpoints/ceiling-m/best.pt",
+  "architecture": "cnn128x8-gru512-heads-v1",
+  "parameters": 8512778,
+  "step": 3525,
+  "epoch": 15,
+  "top6": {
+   "decisions": 24420,
+   "policy_nll": 2.3155,
+   "top1": 35.11,
+   "top4": 62.63
+  },
+  "all": {
+   "decisions": 35795,
+   "policy_nll": 2.2962,
+   "top1": 35.62,
+   "top4": 63.11
+  },
+  "us": {
+   "decisions": 2189,
+   "policy_nll": 2.5104,
+   "top1": 29.74,
+   "top4": 59.57
+  },
+  "others": {
+   "decisions": 9186,
+   "policy_nll": 2.194,
+   "top1": 38.4,
+   "top4": 65.23
+  },
+  "belief_loss": 0.491,
+  "danger_loss": 0.1433,
+  "danger_brier": 0.03271
+ },
+ {
+  "checkpoint": "checkpoints/ceiling-l/best.pt",
+  "architecture": "cnn192x12-gru768-heads-v1",
+  "parameters": 21691402,
+  "step": 1880,
+  "epoch": 8,
+  "top6": {
+   "decisions": 24420,
+   "policy_nll": 2.3111,
+   "top1": 34.61,
+   "top4": 62.6
+  },
+  "all": {
+   "decisions": 35795,
+   "policy_nll": 2.2939,
+   "top1": 35.16,
+   "top4": 62.92
+  },
+  "us": {
+   "decisions": 2189,
+   "policy_nll": 2.4863,
+   "top1": 30.15,
+   "top4": 58.98
+  },
+  "others": {
+   "decisions": 9186,
+   "policy_nll": 2.2024,
+   "top1": 37.8,
+   "top4": 64.72
+  },
+  "belief_loss": 0.4869,
+  "danger_loss": 0.1434,
+  "danger_brier": 0.0324
+ },
+ {
+  "checkpoint": "checkpoints/pretrain-v4/best.pt",
+  "architecture": "cnn64x4-gru256-heads-v1",
+  "parameters": 1872394,
+  "step": 8451,
+  "epoch": 9,
+  "top6": {
+   "decisions": 24420,
+   "policy_nll": 2.2539,
+   "top1": 35.58,
+   "top4": 63.88
+  },
+  "all": {
+   "decisions": 35795,
+   "policy_nll": 2.2736,
+   "top1": 35.44,
+   "top4": 63.62
+  },
+  "us": {
+   "decisions": 2189,
+   "policy_nll": 2.4886,
+   "top1": 29.24,
+   "top4": 58.93
+  },
+  "others": {
+   "decisions": 9186,
+   "policy_nll": 2.2746,
+   "top1": 36.57,
+   "top4": 64.04
+  },
+  "belief_loss": 0.4739,
+  "danger_loss": 0.1281,
+  "danger_brier": 0.02879
+ }
+]

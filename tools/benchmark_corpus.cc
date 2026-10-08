@@ -111,6 +111,10 @@ struct Tally {
   int qc_avoidable_repeat[3] = {0, 0, 0};
   // Gym: unseen king threats created by the engine's choice vs the real move, at the fatal plies.
   int strike_unseen = 0;
+  double ek_mass = 0.0;         // belief mass on the true enemy king square at fatal plies
+  int ek_plies = 0;
+  int ek_low = 0;              // plies with < 20% mass on the true square
+  double ek_distinct = 0.0;
   int real_strike_unseen = 0;
   int fatal_decisions = 0;
 };
@@ -211,6 +215,28 @@ bool KingThreatUnseen(const Position& truth, Move move, int side) {
     if (enemy_view.IsUnseen(PopLsb(&attackers))) return true;
   }
   return false;
+}
+
+// Belief about the enemy king at a decision: the share of particles that put
+// the enemy king on its true square, and the number of distinct king squares
+// the population entertains. The strike corpus showed that revealing only the
+// enemy king lifts unseen strikes from 41% to 69% (full information: 80%).
+void EnemyKingBelief(const BeliefState& belief, const Position& truth, int side, double* mass, int* distinct) {
+  const int enemy = side ^ 1;
+  const int king = truth.KingSquare(enemy);
+  const std::vector<Position>& population = belief.particles();
+  *mass = 0.0;
+  *distinct = 0;
+  if (king < 0 || population.empty()) return;
+  Bitboard squares = 0;
+  int hits = 0;
+  for (const Position& particle : population) {
+    const int k = particle.KingSquare(enemy);
+    if (k >= 0) squares |= SquareBB(k);
+    if (k == king) ++hits;
+  }
+  *mass = static_cast<double>(hits) / population.size();
+  *distinct = PopCount(squares);
 }
 
 // Material the mover leaves to the opponent's best immediate capture after
@@ -401,6 +427,19 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
               ++tally->attacker_plies;
             }
             ++tally->fatal_decisions;
+            {
+              double mass = 0.0;
+              int distinct = 0;
+              EnemyKingBelief(engine.belief(), truth, seat.side, &mass, &distinct);
+              tally->ek_mass += mass;
+              tally->ek_distinct += distinct;
+              ++tally->ek_plies;
+              if (mass < 0.2) ++tally->ek_low;
+              if (verbose) {
+                std::printf("  EK %s ply %zu kingmass %.3f distinct %d strike %d\n", seat.id.c_str(), ply, mass, distinct,
+                            KingThreatUnseen(truth, choice, seat.side) ? 1 : 0);
+              }
+            }
             if (KingThreatUnseen(truth, choice, seat.side)) ++tally->strike_unseen;
             if (KingThreatUnseen(truth, actual, seat.side)) ++tally->real_strike_unseen;
             const double qheld = QueenCapturerMass(engine.belief(), truth, actual, seat.side);
@@ -553,6 +592,10 @@ int main(int argc, char** argv) {
               tally.hidden_piece_decisions ? tally.hidden_piece_mass / tally.hidden_piece_decisions : 0.0,
               tally.hidden_piece_decisions,
               tally.attacker_plies ? tally.attacker_mass / tally.attacker_plies : 0.0, tally.attacker_plies);
+  if (tally.ek_plies > 0) {
+    std::printf("  enemy king belief at fatal plies: mass on the true square %.3f; plies with < 20%% mass %d of %d; distinct king squares in the population %.1f\n",
+                tally.ek_mass / tally.ek_plies, tally.ek_low, tally.ek_plies, tally.ek_distinct / tally.ek_plies);
+  }
   if (tally.fatal_decisions > 0) {
     std::printf("  unseen king threat created at fatal plies: engine %d (%.1f%%), real move %d (%.1f%%) of %d\n",
                 tally.strike_unseen, 100.0 * tally.strike_unseen / tally.fatal_decisions,
