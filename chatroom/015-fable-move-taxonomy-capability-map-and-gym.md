@@ -141,3 +141,15 @@ King threats per 100 moves, opening / middlegame / endgame: top six 1.8 / 4.7 / 
 - **C9 Activity (new, and the first priority).** Every post-v10 engine term bought caution with activity. The winner profile says the opposite trade is right: more captures, more long strikes, more fog routes, more king threats, more queen raids, with giveaways and walk-ins cut by a model of what the opponent cannot see. Targets: long strikes ≥ 4.5, king threats ≥ 4, queen raids ≥ 3.5, captures ≥ 23 — the v10 level or above — while giveaways ≤ 2 and walk-ins ≤ 2.5.
 - The gym's reference is the winner row of 8a; every candidate is scored against it on a fixed set of sparring games before any lane, and its per-phase profile must not fall below v10's in the middlegame.
 - The first experiment when the observation window closes is the obvious one from 8b: the v10 engine with only the book-safety gate and the sampled book, measured on the taxonomy and in a 16-game lane against v15 and a greedy style archive.
+
+## 9. Gym baselines for the current engine (added 07:55 UTC)
+
+Corpora cut by `learning/gym_corpora.py` from the labelled games (300 seats each, balanced across the six bots; `data/gym/*.txt`), scored with `build/benchmark_gym` (root engine of 2026-10-08, seed 1, 400k nodes, one thread). The harness replays each game to the decision ply from the seat's side and compares the engine's choice with the real move on the true board.
+
+| corpus | what the real move did | the current engine at the same ply |
+| --- | --- | --- |
+| strike (297 plies): a top-six move that attacked the king from a square the victim could not see | 100% unseen king threats | **39.1%** create an unseen king threat; 5.4% leave 3+ points en prise (real 3.2%) |
+| route (260 plies): the first move of a top-six maneuver of 2+ unseen moves ending in a capture | — | exact first move matched in about one position in nine (fatal-ply count in the verbose rerun) |
+| giveaway (300 plies): our own move that gave 3+ points for nothing | 66% leave 3+ en prise on the one-ply check, 25% the queen | **28%** still leave 3+ en prise, 9% the queen |
+
+Reading: when a top bot found a strike from the fog, our engine finds one in two positions out of five; it starts their multi-move fog maneuvers about one time in nine; and it still repeats more than a quarter of our historical giveaways. These three numbers, with the taxonomy rates of section 8, are the gym's starting line. Targets for the first cycle: strike 55%, route first move 25%, giveaway repeat 15%, without the 634-seat fatal corpus losing survival.

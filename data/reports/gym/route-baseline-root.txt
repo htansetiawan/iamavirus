@@ -1,0 +1,21 @@
+
+corpus: data/gym/route-seats.txt   stride 1000   400000 nodes/decision   seed 1
+  seats replayed            : 260
+  decisions evaluated       : 520
+  immediate king losses     : 0 (0.00%)
+  matched the real move     : 56 (10.8%)
+  belief: hidden enemy piece mass 0.786 (520 decisions); true attacker held at fatal plies 0.000 (0 plies)
+  unseen king threat created at fatal plies: engine 7 (2.7%), real move 6 (2.3%) of 260
+  queen capturer held at fatal plies: 0.045 (1 plies); mass <0.05: 1 plies, engine repeats 0; 0.05-0.3: 0, repeats 0; >=0.3: 0, repeats 0
+  ... with a safe alternative on the true board: <0.05: 1 plies, engine repeats 0; 0.05-0.3: 0, repeats 0; >=0.3: 0, repeats 0
+  left >=3 points en prise  : engine 14 (2.69%), real player 5 (0.96%)
+  left a 2-ply hidden threat>=3: engine 16 (3.08%), real player 34 (6.54%)
+  real losing positions     : 260
+  ...the engine survives    : 260 (100%)
+  opening (ply<30): 436 decisions, book moves 0; queen en prise engine 0.00% real 0.00%; en prise engine 0.69% real 0.69%
+  queen left en prise (net>=5): engine 0 (0.00%), real player 0 (0.00%)
+  left a 2-ply hidden king threat: engine 5 (0.96%), real player 19 (3.65%)
+  vision after the move      : engine sees 35.0 squares, 0.77 of its pieces seen; real player 35.8 squares, 0.77 seen
+  as White: decisions 250, king losses 0 (0.00%), en prise engine 2.40% real 0.40%, 2-ply threat engine 3.60% real 8.80%, survives 125/125
+  as Black: decisions 270, king losses 0 (0.00%), en prise engine 2.96% real 1.48%, 2-ply threat engine 2.59% real 4.44%, survives 135/135
+  unsafe moves rejected     : 427 (0.8 per decision)
