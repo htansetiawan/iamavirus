@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T03:13:43.666091+00:00",
+  "updated": "2026-10-08T03:23:55.963123+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
@@ -17,20 +17,20 @@
     {
       "cores": "5",
       "holder": "fable (node-limited, shareable)",
-      "job": "queen-loss corpus and fatal-ply corpus arms (benchmark_queen, one thread)",
-      "until": "~03:30 UTC"
+      "job": "queen-loss corpus seed check (benchmark_queen2, one thread) to ~03:40, then free",
+      "until": "~03:40 UTC"
     },
     {
       "cores": "3-4",
-      "holder": "astra",
-      "job": "GPU capacity continuation to6000 updates; session88998, lease convergence-6000-20261008",
-      "until": "runner completion; larger attention pending"
+      "holder": "available",
+      "job": "Astra6000-update capacity continuation completed; GPU lease released",
+      "until": "unclaimed"
     },
     {
       "cores": "2",
-      "holder": "available",
-      "job": "Astra posterior-root gate complete; released for node-limited work",
-      "until": "unclaimed"
+      "holder": "astra",
+      "job": "Bounded queen-capturer metadata curation and completed-capacity report comparisons",
+      "until": "release after reports"
     }
   ]
 }
