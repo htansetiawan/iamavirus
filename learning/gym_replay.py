@@ -195,6 +195,8 @@ def run_seat(line: str, args, cores: str) -> dict:
         fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
         record["engine"] = {k2: fields.get(k2) for k2 in ("mode", "nodes", "spent", "short", "hyp", "budget", "book", "inj")}
     record["match"] = choice == moves[-1]
+    pos = position_at(frames[k - 1]["board"], side, moves[:-1])
+    record["position"] = [frames[k - 1]["board"], side, pos.castling, pos.en_passant]
     record.update({f"choice_{k2}": v for k2, v in score_move(frames[k - 1]["board"], moves[:-1], choice, side).items()})
     record.update({f"real_{k2}": v for k2, v in score_move(frames[k - 1]["board"], moves[:-1], moves[-1], side).items()})
     return record
@@ -211,6 +213,36 @@ def parse_cores(text: str) -> list[int]:
     return out
 
 
+def add_regrets(records: list[dict], nodes: int, cores: list[int]) -> None:
+    """Perfect-information regret of the bot's choice and of the recorded move
+    (build/oracle_regret), in parallel over the given cores."""
+    tool = ROOT / "build" / "oracle_regret"
+    chunks = [records[i::len(cores)] for i in range(len(cores))]
+
+    def work(chunk, core):
+        lines = []
+        for r in chunk:
+            board, side, castling, ep = r["position"]
+            lines.append(f"{board} {side} {castling} {ep} {r['choice']} {r['real']}")
+        out = subprocess.run(["taskset", "-c", str(core), str(tool), str(nodes)], input="\n".join(lines) + "\n",
+                             capture_output=True, text=True, timeout=36000)
+        for r, line in zip(chunk, out.stdout.splitlines()):
+            parts = line.split()
+            if len(parts) < 4 or parts[0] == "error":
+                continue
+            r["oracle_best"] = parts[0]
+            vals = {}
+            for item in parts[2:]:
+                uci, _, value = item.partition(":")
+                if value.isdigit():
+                    vals.setdefault(uci, int(value))
+            r["choice_regret"] = vals.get(r["choice"])
+            r["real_regret"] = vals.get(r["real"])
+
+    with cf.ThreadPoolExecutor(max_workers=len(cores)) as pool:
+        list(pool.map(work, chunks, cores))
+
+
 def summarize(records: list[dict]) -> dict:
     ok = [r for r in records if "choice" in r]
     n = len(ok) or 1
@@ -221,7 +253,21 @@ def summarize(records: list[dict]) -> dict:
             "queen_en_prise": rate("choice_queen_en_prise"), "king_lost": rate("choice_king_lost"),
             "real_strike": rate("real_strike"), "real_giveaway": rate("real_giveaway"),
             "injected": round(100.0 * sum(1 for r in ok if (r.get("engine") or {}).get("inj") == "1") / n, 1),
-            "mean_seconds": round(sum(r.get("seconds", 0) for r in ok) / n, 2)}
+            "mean_seconds": round(sum(r.get("seconds", 0) for r in ok) / n, 2),
+            **regret_summary(ok)}
+
+
+def regret_summary(ok: list[dict]) -> dict:
+    have = [r for r in ok if r.get("choice_regret") is not None and r.get("real_regret") is not None]
+    if not have:
+        return {}
+    n = len(have)
+    return {"regret_n": n,
+            "choice_regret_mean": round(sum(r["choice_regret"] for r in have) / n, 1),
+            "real_regret_mean": round(sum(r["real_regret"] for r in have) / n, 1),
+            "choice_blunder300": round(100.0 * sum(r["choice_regret"] >= 300 for r in have) / n, 1),
+            "real_blunder300": round(100.0 * sum(r["real_regret"] >= 300 for r in have) / n, 1),
+            "choice_best": round(100.0 * sum(r["choice_regret"] == 0 for r in have) / n, 1)}
 
 
 def main() -> None:
@@ -243,6 +289,8 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--limit", type=int, default=0)
     ap.add_argument("--timeout", type=float, default=300.0)
+    ap.add_argument("--regret-nodes", type=int, default=0,
+                    help="score choices and recorded moves by perfect-information regret (build/oracle_regret) at this node budget")
     ap.add_argument("--output", required=True)
     args = ap.parse_args()
     lines = [l for l in Path(args.seats).read_text().splitlines() if l.strip()]
@@ -278,6 +326,8 @@ def main() -> None:
                     records[i] = {"line": lines[i][:60], "error": repr(error)}
                 free.append(slot)
                 submit_next()
+    if args.regret_nodes:
+        add_regrets([r for r in records if r is not None and "position" in r], args.regret_nodes, cores)
     summary = summarize([r for r in records if r is not None])
     summary["wall_seconds"] = round(time.time() - started, 1)
     summary["config"] = {k: v for k, v in vars(args).items() if k not in ("output",)}

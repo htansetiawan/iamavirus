@@ -77,7 +77,20 @@ def main() -> None:
                     route.append((g["id"], side, m["ply"], team))
                 if (g["id"], side) and team == "IAmAVirus" and "sacrifice" in m["tags"] and "king_hunt_sacrifice" not in m["tags"]:
                     giveaway.append((g["id"], side, m["ply"], team))
-    print(f"candidates: strikes {len(strike)}, routes {len(route)}, giveaways {len(giveaway)}")
+    # Broad corpus: ordinary decisions from ply 10 on, by the top six and by us, for the
+    # perfect-information regret score (every kind of move, not one capability).
+    broad_top, broad_us = [], []
+    for g in games:
+        for side_name, side in (("white", 0), ("black", 1)):
+            team = g[side_name]
+            for m in g["moves"]:
+                if m["side"] != side or m["ply"] < 10 or m["ply"] >= g["plies"]:
+                    continue
+                if team in TOP:
+                    broad_top.append((g["id"], side, m["ply"], team))
+                elif team == "IAmAVirus":
+                    broad_us.append((g["id"], side, m["ply"], team))
+    print(f"candidates: strikes {len(strike)}, routes {len(route)}, giveaways {len(giveaway)}, broad top {len(broad_top)}, broad us {len(broad_us)}")
 
     def balanced_sample(items, n):
         by = collections.defaultdict(list)
@@ -93,7 +106,8 @@ def main() -> None:
 
     os.makedirs(args.out, exist_ok=True)
     counts = collections.Counter()
-    for name, items, kind in (("strike", strike, "strike"), ("route", route, "route"), ("giveaway", giveaway, "giveaway")):
+    for name, items, kind in (("strike", strike, "strike"), ("route", route, "route"), ("giveaway", giveaway, "giveaway"),
+                              ("broad-top", broad_top, "broad"), ("broad-us", broad_us, "broad")):
         chosen = balanced_sample(items, args.per_corpus * (2 if kind == "route" else 1))
         lines = []
         for gid, side, ply, team in chosen:
@@ -115,8 +129,8 @@ def main() -> None:
             if any(mv is None for mv in moves):
                 continue
             lines.append(seat_line(r, side, moves, f"{kind}-{team.replace(' ', '_')}"))
-            counts[kind] += 1
-            if counts[kind] >= args.per_corpus:
+            counts[name] += 1
+            if counts[name] >= args.per_corpus:
                 break
         open(os.path.join(args.out, f"{name}-seats.txt"), "w").write("\n".join(lines) + "\n")
         print(f"wrote {name}-seats.txt: {len(lines)} seats")
