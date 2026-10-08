@@ -23,8 +23,10 @@ improved danger ranking but worsened policy likelihood. A larger attention
 encoder is now implemented separately: width 256, six blocks, eight heads,
 4,763,322 parameters versus 1,631,826 in the small attention control. A learned
 projection preserves the existing 64-channel spatial and 256-state recurrent
-interface. Shape/gradient checks and one CPU training update pass; it has not
-been trained into a useful teacher or folded into the earlier comparison.
+interface. The matched GPU capacity pilot is now complete; the larger encoder
+has not yet earned a useful teacher role. See the
+[capacity report](../analysis/capacity-v4/README.md) for the new features-v2
+comparison, which is separate from the earlier features-v1 pilot.
 
 There are two deployment paths to compare: run the larger model directly at
 lower precision, or distill it to a smaller model and then quantize the student.
@@ -86,7 +88,7 @@ experiments, not arena releases.
 
 ## Capacity experiment before distillation
 
-The next training comparison uses the same frozen features-v2 game split and
+The completed training comparison uses the same frozen features-v2 game split and
 observation interface in three arms: unchanged CNN, small attention, and the
 larger attention encoder above. Keep full observation prefixes when cutting
 training windows. Use paired seeds and the same training decisions, and record
@@ -138,3 +140,14 @@ Training, checkpoint initialization, export and precision audits now reject
 feature-version mismatches. Legacy features-v1 runs remain in their frozen
 checkout. The large-model CPU smoke and export are kept separately from
 selection runs and will not seed a claimed strength comparison.
+
+The new capacity pilot trained CNN/small/large attention for 1,000 matched
+updates, then continued CNN to 3,000 and small attention to 2,000 updates for a
+roughly equal training-time comparison. On 5,179 validation decisions, the
+continued CNN produced 174 avoidable fatal top-1 proposals, continued small
+attention 193, and large attention at 1,000 updates 215. Hidden-enemy likelihood
+also favored the longer-trained controls; small attention retained a better
+danger Brier than CNN. These policy diagnostics do not measure the hybrid's
+strength. One short run cannot settle the capacity question: the next useful
+experiment is a longer matched learning curve before precision conversion,
+followed by a second seed and an actual decision gate for any promising arm.

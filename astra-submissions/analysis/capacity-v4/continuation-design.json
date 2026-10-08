@@ -1,0 +1,157 @@
+{
+  "source_revision": "09fd15f83f7b1cb4ccd7d0aae2d7e6bec7773a82",
+  "plans": [
+    {
+      "arm": "cnn",
+      "parent": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-equal-compute-20261008/cnn",
+      "first_step": 3000,
+      "target_step": 6000,
+      "parent_checkpoint_sha256": "3a7ef9aa8eb4296309765f11546cc7cefccec10bd18bbe1e7685da7e4c4101f1",
+      "identity": {
+        "phase": "supervised",
+        "model_config": {
+          "variant": "cnn",
+          "attention_blocks": 2,
+          "attention_heads": 4,
+          "latent_channels": 32,
+          "attention_channels": 64
+        },
+        "seed": 253,
+        "window": 32,
+        "batch": 4,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0001,
+        "grad_clip": 1.0,
+        "manifest_sha256": "cc16bb720b817a71daf7905c29b115ec76e5e65f74954b8bd60b3a4e27749017",
+        "shard_sha256": {
+          "train": "dff01e26e8d0bf959b8e08d179e901493308f51da78f25f9e289dbc9c45cf426",
+          "validation": "499f4454f517994f7ba93bc888a41cd9420522103d5ad1af714f7631043e1b15"
+        },
+        "train_games": 512,
+        "validation_games": 64,
+        "loss_weights": {
+          "policy": 1.0,
+          "belief": 1.0,
+          "danger": 1.0,
+          "value": 0.25
+        },
+        "player_weights": {
+          "default": 1.0,
+          "f394d843d970454f868c38c7f6963cc9": 4.0,
+          "knight-vision": 4.0,
+          "strongly-invisible": 3.0,
+          "db107815c3b14827a79ec9e3d12f4726": 3.0,
+          "8d775e234808489c815a4a9f6bbabfe4": 2.0,
+          "instructors": 2.0,
+          "a2c35173659545c99752376a70418438": 0.5
+        },
+        "mask_fraction": 0.4
+      }
+    },
+    {
+      "arm": "attention-small",
+      "parent": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-equal-compute-20261008/attention-small",
+      "first_step": 2000,
+      "target_step": 6000,
+      "parent_checkpoint_sha256": "13e37122fa60344671ef907f65ba92f6e34a28dbbbf4fa5740373fdd885cc7d0",
+      "identity": {
+        "phase": "supervised",
+        "model_config": {
+          "variant": "attention",
+          "attention_blocks": 2,
+          "attention_heads": 4,
+          "latent_channels": 32,
+          "attention_channels": 64
+        },
+        "seed": 253,
+        "window": 32,
+        "batch": 4,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0001,
+        "grad_clip": 1.0,
+        "manifest_sha256": "cc16bb720b817a71daf7905c29b115ec76e5e65f74954b8bd60b3a4e27749017",
+        "shard_sha256": {
+          "train": "dff01e26e8d0bf959b8e08d179e901493308f51da78f25f9e289dbc9c45cf426",
+          "validation": "499f4454f517994f7ba93bc888a41cd9420522103d5ad1af714f7631043e1b15"
+        },
+        "train_games": 512,
+        "validation_games": 64,
+        "loss_weights": {
+          "policy": 1.0,
+          "belief": 1.0,
+          "danger": 1.0,
+          "value": 0.25
+        },
+        "player_weights": {
+          "default": 1.0,
+          "f394d843d970454f868c38c7f6963cc9": 4.0,
+          "knight-vision": 4.0,
+          "strongly-invisible": 3.0,
+          "db107815c3b14827a79ec9e3d12f4726": 3.0,
+          "8d775e234808489c815a4a9f6bbabfe4": 2.0,
+          "instructors": 2.0,
+          "a2c35173659545c99752376a70418438": 0.5
+        },
+        "mask_fraction": 0.4
+      }
+    },
+    {
+      "arm": "attention-large",
+      "parent": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-seed253-20261008/attention-large",
+      "first_step": 1000,
+      "target_step": 6000,
+      "parent_checkpoint_sha256": "5e0afde432155b8d0d1cc083b6246655ee8429cdda8e479c6c20f3df12ef0ed5",
+      "identity": {
+        "phase": "supervised",
+        "model_config": {
+          "variant": "attention",
+          "attention_blocks": 6,
+          "attention_heads": 8,
+          "latent_channels": 32,
+          "attention_channels": 256
+        },
+        "seed": 253,
+        "window": 32,
+        "batch": 4,
+        "learning_rate": 0.0003,
+        "weight_decay": 0.0001,
+        "grad_clip": 1.0,
+        "manifest_sha256": "cc16bb720b817a71daf7905c29b115ec76e5e65f74954b8bd60b3a4e27749017",
+        "shard_sha256": {
+          "train": "dff01e26e8d0bf959b8e08d179e901493308f51da78f25f9e289dbc9c45cf426",
+          "validation": "499f4454f517994f7ba93bc888a41cd9420522103d5ad1af714f7631043e1b15"
+        },
+        "train_games": 512,
+        "validation_games": 64,
+        "loss_weights": {
+          "policy": 1.0,
+          "belief": 1.0,
+          "danger": 1.0,
+          "value": 0.25
+        },
+        "player_weights": {
+          "default": 1.0,
+          "f394d843d970454f868c38c7f6963cc9": 4.0,
+          "knight-vision": 4.0,
+          "strongly-invisible": 3.0,
+          "db107815c3b14827a79ec9e3d12f4726": 3.0,
+          "8d775e234808489c815a4a9f6bbabfe4": 2.0,
+          "instructors": 2.0,
+          "a2c35173659545c99752376a70418438": 0.5
+        },
+        "mask_fraction": 0.4
+      }
+    }
+  ],
+  "test_shard_used": false,
+  "state": "prepared-waiting-for-GPU",
+  "recorded_at": "2026-10-08T01:19:37.733575+00:00",
+  "holder": "fable (hedge v5: features-v2, unweighted cloning, warm init from v4 init), started 01:09Z, ~45 min",
+  "evaluate_every": 2000,
+  "primary_comparisons": [
+    "CNN vs small attention, all at6000 updates",
+    "Small vs large attention, all at6000 updates"
+  ],
+  "release_gate": "Second seed plus held-out tactical and hybrid/clocked gates after a useful downstream improvement; no automatic promotion",
+  "command": "taskset -c 3,4 python3 astra-submissions/tools/continue_capacity_pilot.py --initial /media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-seed253-20261008 --controls /media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-equal-compute-20261008 --output /media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008 --lease-token convergence-6000-20261008"
+}
