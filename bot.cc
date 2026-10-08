@@ -351,6 +351,7 @@ int Run() {
               << " rep=" << trace.repetition_rows
               << " dec=" << trace.decision_index
               << " bref=" << trace.book_refused
+              << " inj=" << trace.injected
               << (trace.from_book ? " book=1" : "")
               << " infer=" << inference_seconds << " clock=" << remaining
               << " risk=" << trace.king_risk_permille

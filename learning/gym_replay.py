@@ -157,6 +157,8 @@ def run_seat(line: str, args, cores: str) -> dict:
     for kv in args.env or []:
         name, value = kv.split("=", 1)
         env[name] = value
+    if args.inject_real:
+        env["FOW_INJECT_MOVE"] = moves[-1]
     started = time.time()
     try:
         out = subprocess.run(["taskset", "-c", cores, str(Path(args.bot).resolve())], input="\n".join(script) + "\n",
@@ -175,7 +177,7 @@ def run_seat(line: str, args, cores: str) -> dict:
     decision_lines = [l for l in out.stderr.splitlines() if " n=" in l and " mode=" in l]
     if decision_lines:
         fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
-        record["engine"] = {k2: fields.get(k2) for k2 in ("mode", "nodes", "spent", "short", "hyp", "budget", "book")}
+        record["engine"] = {k2: fields.get(k2) for k2 in ("mode", "nodes", "spent", "short", "hyp", "budget", "book", "inj")}
     record["match"] = choice == moves[-1]
     record.update({f"choice_{k2}": v for k2, v in score_move(frames[k - 1]["board"], moves[:-1], choice, side).items()})
     record.update({f"real_{k2}": v for k2, v in score_move(frames[k - 1]["board"], moves[:-1], moves[-1], side).items()})
@@ -202,6 +204,7 @@ def summarize(records: list[dict]) -> dict:
             "match": rate("match"), "strike": rate("choice_strike"), "giveaway": rate("choice_giveaway"),
             "queen_en_prise": rate("choice_queen_en_prise"), "king_lost": rate("choice_king_lost"),
             "real_strike": rate("real_strike"), "real_giveaway": rate("real_giveaway"),
+            "injected": round(100.0 * sum(1 for r in ok if (r.get("engine") or {}).get("inj") == "1") / n, 1),
             "mean_seconds": round(sum(r.get("seconds", 0) for r in ok) / n, 2)}
 
 
@@ -217,6 +220,8 @@ def main() -> None:
     ap.add_argument("--cores", default="0-7")
     ap.add_argument("--clock", default="model", help="model (our v15 clock at that decision) | replay | fixed:SECONDS")
     ap.add_argument("--oracle", action="store_true")
+    ap.add_argument("--inject-real", action="store_true",
+                    help="give the recorded move a guaranteed matrix row (needs a bot with FOW_INJECT_MOVE)")
     ap.add_argument("--env", nargs="*")
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--limit", type=int, default=0)

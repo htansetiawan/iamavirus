@@ -1044,6 +1044,19 @@ Move Engine::ChooseMove(const Observation& view, double remaining_seconds,
     // sit at indices hybrid_search_top..shortlist), so a full policy slate can
     // never push a population-safest move out of the matrix. Astra's review
     // found the earlier version took only the first six ranked rows here.
+    // Offline ceiling measurement only: FOW_INJECT_MOVE=<uci> guarantees that
+    // move a matrix row (when it passed the king filter), to test whether the
+    // engine would choose a strong player's move if its candidate generation
+    // offered it (learning/gym_replay.py --inject-real). Never set in the arena.
+    if (const char* inject = std::getenv("FOW_INJECT_MOVE")) {
+      for (const Move candidate : safe) {
+        if (MoveToUci(candidate) == inject) {
+          add(candidate);
+          trace->injected = 1;
+        }
+      }
+      if (trace->injected == 0) trace->injected = -1;  // not legal-and-king-safe here
+    }
     const int search_rows = std::min<int>(std::max(options_.hybrid_search_top, shortlist),
                                           static_cast<int>(ranked.size()));
     for (int i = 0; i < search_rows; ++i) add(ranked[static_cast<std::size_t>(i)].move);

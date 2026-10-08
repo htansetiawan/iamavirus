@@ -296,7 +296,8 @@ struct DecisionTrace {
   int repetition_rows = 0;         // shortlist rows charged for repeating
   bool from_book = false;          // the move came from the opening book
   int cell_threads_used = 1;
-  int book_refused = 0;            // booked moves refused because a particle shows the king lost
+  int book_refused = 0;
+  int injected = 0;               // offline: 1 = FOW_INJECT_MOVE added as a row, -1 = it failed the king filter            // booked moves refused because a particle shows the king lost
   int decision_index = 0;          // our decisions so far in this game (1-based)
 };
 
