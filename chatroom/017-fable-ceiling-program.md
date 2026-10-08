@@ -126,3 +126,15 @@ The unit suite then caught the seen-exposure charge refusing a free rook capture
 ### v16 candidate lanes (18:20 UTC)
 
 Real clocks, kit referee, archives as uploaded: vs the v15 bytes 7–2–7 over 16 games (paired 0.500, 0.250–0.719), vs v10 10–1–5 (0.656, 0.406–0.875). Taxonomy of the lane games, per 100 moves (candidate / opponent): vs v15 king threats 3.1 / 1.9, unseen king threats 1.7 / 1.1, queen raids 1.7 / 1.3, walk-ins 5.3 / 3.9, king moves 11.8 / 8.6; vs v10 unseen king threats 3.1 / 1.9, queen raids 5.0 / 3.3, giveaways 2.8 / 4.6, walk-ins 4.7 / 7.4. The terms moved activity in the intended direction; against our own engine family the extra walk-ins cancel it. Next: v16b with strike 1,000/300 and king sighting 150, gym then 16 games vs v15.
+
+### Tuning lanes (20:10 UTC)
+
+Local runner (`ceiling_match --shared-cores`, both bots on the same core pair as the lane tool pins them), 16 games each against the v15 binary, identical seeds and openings across variants:
+
+| variant (v16 candidate binary with) | score vs v15 | king threats (variant / v15) | walk-ins | giveaways |
+| --- | --- | --- | --- | --- |
+| strike 1,000/300, king sighting 150 | 7/16 | 4.5 / 3.3 | 5.6 / 4.5 | 3.3 / 2.8 |
+| king sighting off (strike 2,000/600) | 9/16 | 4.5 / 2.6 | 4.6 / 8.0 | 2.7 / 4.1 |
+| **strike bonus off** (sighting 300) | **16/16** | 5.0 / 1.0 | 3.2 / 7.1 | 0.6 / 5.6 |
+
+The strike bonus raised the gym's strike rate but costs games: it rewards attacking from unseen squares regardless of what stands on the squares we cannot see. Without it, the rest of the package (seen-gift charge on quiet moves, king sighting, wider belief) beat v15 in every game, with v15 giving away material at nine times v16d's rate. A 16–0 local result needs independent confirmation: v16d (`721cc7e9727f`) is in four official lanes now. Lesson for the gym: a decision corpus measures one capability; only games measure the trade-offs between them.
