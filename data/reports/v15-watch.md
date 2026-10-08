@@ -1,23 +1,23 @@
 # Arena v15 watch
 
-Updated 2026-10-08 12:19 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-08 12:49 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 52W-4D-60L over 116 games** (47%).
-As White: 33.0/58.
-As Black: 21.0/58.
+**Record: 54W-4D-66L over 124 games** (45%).
+As White: 34.0/62.
+As Black: 22.0/62.
 
-Queen lost for less: 48 games (41 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 38 of 60.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 17. Mean length 77 plies.
+Queen lost for less: 52 games (45 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 42 of 66.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 18. Mean length 78 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 14-2-10 |
+| TA Baseline P | 16-2-12 |
 | TA Baseline S | 5-2-11 |
+| TA Baseline A | 6-0-10 |
 | Apricot Squad | 14-0-0 |
-| TA Baseline A | 6-0-8 |
 | baseline.py | 12-0-0 |
-| Instructors | 0-0-8 |
+| Instructors | 0-0-10 |
 | duck | 1-0-5 |
 | Knight Vision | 0-0-6 |
 | Strongly Invisible | 0-0-4 |
@@ -142,3 +142,11 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-08 11:26 | yd7v5ktf | W | Decent Chess Bot | 91 | loss | ply 80 by q unseen | 27 s | 5-16 |
 | 2026-10-08 11:29 | 6xs0gqw3 | B | duck | 88 | loss | ply 77 by k unseen | 33 s | 2-10 |
 | 2026-10-08 11:30 | o1u9ipf3 | W | duck | 93 | loss |  | 20 s | 3-16 |
+| 2026-10-08 12:31 | o0yh9zw9 | W | TA Baseline P | 24 | win |  | 148 s | 37-35 |
+| 2026-10-08 12:35 | agp50w7l | B | TA Baseline P | 103 | win |  | 38 s | 17-2 |
+| 2026-10-08 12:37 | er9d2dkd | W | TA Baseline A | 81 | loss | ply 36 by r unseen | 17 s | 3-11 |
+| 2026-10-08 12:37 | fomhtowf | B | TA Baseline A | 92 | loss |  | 31 s | 2-19 |
+| 2026-10-08 12:37 | q7k2mvgp | B | Instructors | 62 | loss | ply 55 by q unseen | 62 s | 9-23 |
+| 2026-10-08 12:39 | kxwyx8gq | W | TA Baseline P | 121 | loss |  | 23 s | 1-14 |
+| 2026-10-08 12:40 | q1u7i0za | W | Instructors | 97 | loss | ply 58 by b unseen | 22 s | 2-10 |
+| 2026-10-08 12:40 | pa3vryhp | B | TA Baseline P | 138 | loss | ply 31 by r unseen | 14 s | 0-16 |
