@@ -1,0 +1,50 @@
+# Starting configuration for replay pretraining (stage A) and recurrent PPO
+# (stage B). Every number here is an initial value from the specification, to
+# be tuned on validation data, not a measured optimum.
+
+pretrain:
+  window: 64                 # observation events per sequence
+  sequences_per_batch: 8
+  accumulation_steps: 1
+  learning_rate: 3.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  epochs: 10
+  loss_weights:
+    policy: 1.0
+    belief: 1.0
+    danger: 1.0
+    value: 0.25
+  mixed_precision: false     # enable only after full-precision correctness passes
+  seed: 1
+  validation_sequences: 256  # episodes evaluated at each validation pass
+  # Per-player weight on the policy cloning loss, keyed by the arena player id
+  # (name for corpus-built replays). Belief, danger and value targets are not
+  # weighted: they are facts about hidden pieces whoever played.
+  player_weights:
+    default: 1.0
+
+ppo:
+  learning_rate: 1.0e-4
+  clip_ratio: 0.2
+  grad_clip: 0.5
+  epochs_per_batch: 2
+  rollout_decisions: 8192
+  gamma: 1.0
+  gae_lambda: 0.95
+  value_coefficient: 0.5
+  entropy_coefficient: 0.01
+  belief_coefficient: 0.1
+  danger_coefficient: 0.1
+  target_kl: 0.02
+  window: 64
+  sequences_per_minibatch: 8
+  games_in_flight: 32        # simultaneous simulator games (CPU) batched on the GPU
+  max_plies: 1000
+  league:
+    recent_share: 0.5
+    older_share: 0.25
+    fixed_share: 0.25
+    fixed_opponents: ["capture-greedy", "uniform-random", "cpp:20000"]
+  evaluation_interval_decisions: 1000000
+  smoke_evaluation_games: 40
