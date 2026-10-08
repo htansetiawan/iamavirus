@@ -1,0 +1,34 @@
+{
+  "recorded_at": "2026-10-08T02:24:18.641065+00:00",
+  "status": "specified before new selector results",
+  "hypothesis": "Adversarial hidden-board aggregation can prefer immediate risk over an escape with better posterior expected utility. Separate sampling from aggregation.",
+  "arms": {
+    "root0": "existing representative-first sampling, matrix regret matching",
+    "root1": "posterior-distributed columns, unchanged matrix regret matching",
+    "root2": "identical posterior columns, maximum mean utility"
+  },
+  "sampling": "If population fits the column budget, enumerate all entries; otherwise iid uniform indices with replacement from the resampled population. Duplicate boards retain probability mass. Independent seeded RNG, separate from belief and move-choice streams.",
+  "primary_comparison": "root2 versus root1; root1 versus root0 is sampling control",
+  "configuration": {
+    "particles": 2048,
+    "prediction": 0,
+    "opponent_prior": 1,
+    "history": 0,
+    "book_plies": 0,
+    "nodes": 400000,
+    "hypotheses": 8,
+    "cell_threads": 1,
+    "seed": 777
+  },
+  "data": "All453 games in grouped-belief remaining-453-design.json, now development data; initial/terminal decisions separate. No independent-holdout claim.",
+  "frozen_model": "same repairs-plus-v4 model graphs as the prior campaign",
+  "correctness": [
+    "analytical expected-payoff and minimax-disagreement cases",
+    "posterior multiplicity and no deduplication",
+    "deterministic sampling with no cross-stream RNG mutation",
+    "sampled root1/root2 payoff and node parity on selected cases",
+    "root0 decision parity against original frozen runtime",
+    "original engine contract suite and new-mode game legality"
+  ],
+  "promotion": "No promotion on these development replays. Positive signal needs additional seeds, fresh reserved games and complete clocked games; no safety-price sweep."
+}

@@ -21,6 +21,8 @@ experiment or teacher-to-student distillation.
 | Large attention | 4.76 M | 1,000 | 499.6 | 2.7249 | 1.2937 | 215 | 46 |
 | CNN continuation | 1.87 M | 3,000 | 530.9 | 2.5311 | 1.1940 | 174 | 37 |
 | Small attention continuation | 1.63 M | 2,000 | 487.8 | 2.6065 | 1.2175 | 193 | 45 |
+| CNN longer continuation | 1.87 M | 6,000 | 1,067.5 | 2.6979 | 1.2476 | 170 | 41 |
+| Small attention longer continuation | 1.63 M | 6,000 | 1,466.5 | 2.6277 | 1.1644 | 163 | 39 |
 
 Avoidable-fatal denominators are 5,167. These are **unfiltered policy proposals**;
 the hybrid's particle risk filter, search union and final decision can change
@@ -71,3 +73,25 @@ Its training code remains the same frozen revision as the first pilot. Live
 status and checkpoints are under
 `/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/`.
 Starting this run is not evidence that the larger model is better.
+
+The CNN and small attention arms have now completed 6,000 updates and each saw
+374,435 training decisions. The larger attention arm is still running. At the
+same update count, small attention has lower policy NLL by .0703 (paired
+game-bootstrap 95% interval −.1155 to −.0279) and lower hidden-enemy NLL by
+.0832 (−.1138 to −.0505). Its 163 versus 170 avoidable fatal proposals give an
+inconclusive rate difference of −.135 percentage points (−.524 to +.253).
+The danger-Brier and all-top-four-fatal differences are also inconclusive.
+These are the predeclared equal-update results, not equal training-time results.
+
+The learning curves matter: CNN policy NLL was 2.5202 at 2,000 updates and rose
+to 2.6979 at 6,000; small attention was 2.5603 at 4,000 and rose to 2.6277 at
+6,000. This is consistent with overfitting or increasing overconfidence on the
+512-game training pool. Beating the CNN's last checkpoint does not establish
+beating an earlier-stopped CNN. Nor do these curves prove which checkpoint
+plays stronger games; the different heads and tactical tails peak at different
+times. The next allocation decision should consider more distinct training
+games and a specified stopping/selection rule, after the large arm completes.
+
+`cnn-vs-attention-6000.json` contains the paired comparison.
+`convergence-partial-provenance.json` pins the two completed checkpoints and
+their complete recorded validation curves. The test split remains untouched.

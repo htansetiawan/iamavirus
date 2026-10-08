@@ -1,0 +1,62 @@
+{
+  "root_revision": "097eaecb56b31af1b26bab76587640e35859ac6b",
+  "overlay_revision": "b78174837a0dfefab03b6e0d6eeeb43381153308",
+  "overlay_files": {
+    "belief.cc": "astra-submissions/candidates/grouped-belief/belief.cc",
+    "belief.h": "astra-submissions/candidates/grouped-belief/belief.h",
+    "engine.cc": "astra-submissions/candidates/grouped-belief/engine.cc",
+    "engine.h": "astra-submissions/candidates/grouped-belief/engine.h"
+  },
+  "benchmark_source": "astra-submissions/implementation/tools/benchmark_corpus.cc",
+  "baseline_source_sha256": {
+    "belief.cc": "ee5a065a9fd25c59b069204db25be3623e62d4e4b767ed6d54dadf180062c40b",
+    "belief.h": "4111e92a1809f45c0e27c7f95dce9f07a668c6ae36a00ff5ba435e6a9405608f",
+    "benchmark.cc": "483570a0d9a69f9a2c618b86245c0ec61c091828f5add4281d4830dbe8b39629",
+    "bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+    "bitboard.h": "8e44e16445d783bb10df53533d54039d345893fccd1b5b0e40a40c771fa5aa0d",
+    "bot.cc": "79f716690216ca5c9648694c5e5f9ec41c71124f95b29be4bfbe1f399cfa36d2",
+    "engine.cc": "1464eee2b9d2f6cf8d5dad77771e95b6aaedba031bcf56c5a53da0bbc7ac5e9c",
+    "engine.h": "197ee098c597f24412ff7715317aadf58ec19bb1083f6bac9356777510f72daa",
+    "evaluation.cc": "c7ffc3e23fe0303121bf2c9885cdade0531706be6764ce1d5574d523258a179a",
+    "evaluation.h": "58d68872baebedc8359bf85374bcdf4b12e46637e2015f3f1b9fe2c37ee8fa6a",
+    "move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+    "move.h": "d9df0633b6449f6156b7ce5aeba762a11629834ffe8276a5a14336b5bda411fb",
+    "neural_inference.cc": "e434bf314c8f430a45889537fa21942a472800becc2724110cd1e2253b4388e8",
+    "neural_inference.h": "cfc18bc9cf0394f5b3fb8f0a690d80036461b10c0fef4830191249163d668c08",
+    "neural_observation.cc": "7abb02336b2e262e1f37a907c35164663b8bafb4da1795be88a792dc26aa9ba2",
+    "neural_observation.h": "f39ec7924043609b253b63436e06ce6c49bbe5d66014fad8db22f9ee7d321802",
+    "observation.cc": "cdf3a5316aedf4a764f9c94827816ab6bb87369cf8c3020c8af5a8ff5489c5ca",
+    "observation.h": "1a2c3499673f10426a30e1182af2c3cc0fa1e3ac88b1edbb3ec18f118fd3a9dd",
+    "opponent_model.cc": "d9ef2083e3482af4ee4dbf642dff5a98ae75950730b660527b425530548c1597",
+    "opponent_model.h": "1b3443eb9cd394b2897a71ed2daf3a0544ee41794f68cc0c8fe5de9b0ad9ff54",
+    "opponent_weights.h": "a93041d41ac93b79f85b2c138fd05da9add9c768ad5309d08368d7dc9b506c05",
+    "piece_square.h": "2c7deec8b737fbd450ed8fdc0e456139f2dad564e5792c98b201e336aaef01dc",
+    "position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+    "position.h": "4779d19bc65b7f083c9cb85cc08de760ba723dd17b3447b276ee9eef356e02a7",
+    "regret.cc": "6e166aa11721d718ddfdff9772228dc8e5acda5ecf00e8e52d8e02fc9d4e906a",
+    "regret.h": "6c4a1bfd814cf8ec8cd3c48cd6c473ce2bad0d9b60cf17af2af5d6ccdc004712",
+    "rules_capi.cc": "26794cb3062e5bdd881ed07858e0821cfa5abd907707cc4f80b0e2c75c5cb31e",
+    "search.cc": "fa8a64876248c695aebbeec504efa73e9d1a1040cb280f7e86ff6299fb3e153a",
+    "search.h": "727cfce37e60e7d2aefa94c7f3b0528f4b564a01ebafe473c88adc69d0073687",
+    "tests/belief_test.cc": "30875dc03e2ca56b08e5f37764d0c9e3667c26aaf7b41913d70f520501dc51a4",
+    "tests/bitboard_test.cc": "32cc9d8bf70a5fa1d8a346b045107fe27bd2a670f992ea9a2518c5ab5496f64e",
+    "tests/engine_test.cc": "a09d7c1d6d943c21e29807dc5bddfbbacfaa2aee7359d7c72833b309e86edcca",
+    "tests/evaluation_test.cc": "e1c999dadd59e8a61ea0188b02c57a966c62122ffda349f93987fb81c5650adc",
+    "tests/neural_test.cc": "db0c4170f90dc73d94cfc9c599a2cbe2a31d7f1d967c58cdb49c57e3f9dedf3e",
+    "tests/observation_test.cc": "1a13ede91324e12f61d985927f38af45aa1bdf143b581e63315ceeb66ad5ddbe",
+    "tests/position_test.cc": "10e9c7627471206cba3afa3d906c27bf430b560d6088d00b113c728ee0dbf11a",
+    "tests/regret_test.cc": "7d3abc3158a446d753bd8cdfdff562691d578eaf3af90509ca4446a95b43d19e",
+    "tests/search_test.cc": "27c1abf9be291a1ea2fa23f7dab27b482585e230319f5a1cf6b53f3494bfd3c6",
+    "tests/testing.h": "5b5a6a171c7a4f3a5eef357e4c0b1567a8e659d4dfe45174048cf1d1e7ab3b74",
+    "transposition.cc": "92467ff1857fb681c57e81a857b03dbd7bb22fe0b85cc8b17e95e2a8d51b466e",
+    "transposition.h": "63e49121e2fcec3ee7ccc79c3680e98670ebe535359c314d70c08cc82267f295"
+  },
+  "base_runtime_manifest_sha256": "2c704962ad6ef0f74ecee7120e2210b1a1909ead6937343ec3ac14f8f33ef941",
+  "fixture_files": {
+    "book.txt": {
+      "revision": "097eaecb56b31af1b26bab76587640e35859ac6b",
+      "source": "book.txt",
+      "sha256": "ce54990c774d9306a7bd31834783b083b64ecafee2e4836ce75d93a6d9ed64f6"
+    }
+  }
+}

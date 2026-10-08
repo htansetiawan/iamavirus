@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Freeze a model and compare grouped belief prediction in the actual hybrid."""
+"""Freeze a model and compare requested belief/root configurations in the hybrid."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -26,13 +26,15 @@ def main():
     p.add_argument('--particles', type=int, default=2048)
     p.add_argument('--priors', type=int, choices=(1, 2), nargs='+', default=[1, 2])
     p.add_argument('--prediction-modes', type=int, choices=(0, 1), nargs='+', default=[0, 1])
+    p.add_argument('--root-modes', type=int, choices=(0, 1, 2), nargs='+', default=[0])
     p.add_argument('--arm-prefix', default='')
     args = p.parse_args()
     if min(args.stride, args.nodes, args.particles) <= 0:
         p.error('stride, nodes and particles must be positive')
     if any(c not in 'abcdefghijklmnopqrstuvwxyz0123456789-_' for c in args.arm_prefix):
         p.error('arm prefix must contain lowercase ASCII letters, digits, hyphens or underscores')
-    if len(set(args.priors)) != len(args.priors) or len(set(args.prediction_modes)) != len(args.prediction_modes):
+    if any(len(set(values)) != len(values) for values in
+           (args.priors, args.prediction_modes, args.root_modes)):
         p.error('duplicate configurations')
     out = args.output.resolve()
     out.mkdir(parents=True, exist_ok=False)
@@ -48,17 +50,20 @@ def main():
              'inputs': inputs, 'model_archive': str(args.model_archive.resolve()),
              'model_archive_sha256': sha(args.model_archive), 'runner_sha256': sha(Path(__file__)),
              'nodes': args.nodes, 'stride': args.stride, 'particles': args.particles, 'arms': {},
-             'design': 'Requested grouped prediction/opponent prior arms; history0, book0, seed777, one search thread, same hybrid model.',
+             'design': 'Requested root/prediction/opponent prior arms; history0, book0, seed777, one search thread, same hybrid model.',
              'limitations': ['Forced-history decisions, not games or Elo.',
                              'Stride1000 samples initial moves as well as terminal losing moves; report separately.']}
     def save():
         tmp = out / 'campaign.tmp'; tmp.write_text(json.dumps(state, indent=2) + '\n')
         tmp.replace(out / 'campaign.json')
     save()
-    for prediction, prior in ((m, p) for p in args.priors for m in args.prediction_modes):
-        name = args.arm_prefix + f'prediction{prediction}-prior{prior}'
+    for prediction, prior, root_mode in ((m, p, r) for p in args.priors
+                                         for m in args.prediction_modes for r in args.root_modes):
+        root_label = '' if args.root_modes == [0] else f'root{root_mode}-'
+        name = args.arm_prefix + root_label + f'prediction{prediction}-prior{prior}'
         settings = dict(FOW_MODE='hybrid', FOW_MODEL_DIR=str(model), FOW_HISTORY_MODE='0',
                         FOW_PREDICTION_MODE=str(prediction), FOW_OPPONENT_PRIOR=str(prior),
+                        FOW_ROOT_MODE=str(root_mode),
                         FOW_PARTICLES=str(args.particles), FOW_CELL_THREADS='1', FOW_BOOK_PLIES='0')
         env = {k: v for k, v in os.environ.items() if not k.startswith(('FOW_', 'ASTRA_'))}
         env.update(settings)

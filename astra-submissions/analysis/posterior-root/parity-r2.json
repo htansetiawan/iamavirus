@@ -1,0 +1,251 @@
+{
+  "started_at": "2026-10-08T02:40:22.893934+00:00",
+  "state": "complete",
+  "binary_sha256": "30c5ac61e9739c4f5520a2587ee2e72d357e9eca6728a6382c5b4133f2706a93",
+  "seats_sha256": "0a5368d9ab102b23c95af45c178abd286143e24c3f9a6eebdecf357f5df70405",
+  "reference_inputs": {
+    "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/benchmark": "f36cf748048d1ba4f6b6d31ee17352e082a26e28a2f0f238bd59d9c93609530d",
+    "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/seats.txt": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+    "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model/model_manifest.json": "01c27622491dfb58800a7185d8dfbed06e80637fa90b4955bfb15d5b1fc2fdc5",
+    "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model/observe.onnx": "5ca694718cc33ab9867d1a532a8b43d694fa0fd2024f9a3f1069b44f0390f84e",
+    "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model/score.onnx": "9aa00c39233cc1960d555738496feaedf887ab7ca440447c1efdf95cc279df53"
+  },
+  "reference_log_sha256": "a9fdb96e24fe67f47cb843ed90087fb8e862886d144968fe8d1d40b9d3a786b5",
+  "runner_sha256": "c45b5c48ff927645c285de1e2f2bed63399209bb4e8f720ab91d4e19d6265884",
+  "runs": {
+    "0": {
+      "command": [
+        "stdbuf",
+        "-oL",
+        "-eL",
+        "/media/henrytan/seagate/iamavirus/astra/belief/posterior-root-parity-r2-20261008/benchmark",
+        "/media/henrytan/seagate/iamavirus/astra/belief/posterior-root-parity-r2-20261008/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "0",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0",
+        "FOW_ROOT_MODE": "0",
+        "FOW_DEBUG_ROOT": "1"
+      },
+      "log_sha256": "493fc59737d0359b0427b1e01f36bc0720a6e9957150981d84bdead2621dbfc3",
+      "decisions": 6
+    },
+    "1": {
+      "command": [
+        "stdbuf",
+        "-oL",
+        "-eL",
+        "/media/henrytan/seagate/iamavirus/astra/belief/posterior-root-parity-r2-20261008/benchmark",
+        "/media/henrytan/seagate/iamavirus/astra/belief/posterior-root-parity-r2-20261008/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "0",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0",
+        "FOW_ROOT_MODE": "1",
+        "FOW_DEBUG_ROOT": "1"
+      },
+      "log_sha256": "e8407b49601c8f2cda9ad4eab7ea5c9ffee9b92e4a465b8d7cb1e687b7a3a585",
+      "decisions": 6
+    },
+    "2": {
+      "command": [
+        "stdbuf",
+        "-oL",
+        "-eL",
+        "/media/henrytan/seagate/iamavirus/astra/belief/posterior-root-parity-r2-20261008/benchmark",
+        "/media/henrytan/seagate/iamavirus/astra/belief/posterior-root-parity-r2-20261008/seats.txt",
+        "1000",
+        "400000",
+        "verbose"
+      ],
+      "settings": {
+        "FOW_MODE": "hybrid",
+        "FOW_MODEL_DIR": "/media/henrytan/seagate/iamavirus/astra/belief/grouped-action-remaining453-20261008/model",
+        "FOW_HISTORY_MODE": "0",
+        "FOW_PREDICTION_MODE": "0",
+        "FOW_OPPONENT_PRIOR": "1",
+        "FOW_PARTICLES": "2048",
+        "FOW_CELL_THREADS": "1",
+        "FOW_BOOK_PLIES": "0",
+        "FOW_ROOT_MODE": "2",
+        "FOW_DEBUG_ROOT": "1"
+      },
+      "log_sha256": "0d68ce07aaeabbdc4594eca5f896282a29b3e5c3a7541529786a4ae89a9224f4",
+      "decisions": 6
+    }
+  },
+  "control_decisions_equal": 6,
+  "exact_matched_matrices": 6,
+  "exact_matched_payoff_cells": 496,
+  "terminal": [
+    {
+      "game": "0urlpzmw",
+      "side": 0,
+      "ply": 32,
+      "choices": {
+        "0": {
+          "game": "0urlpzmw",
+          "side": 0,
+          "ply": 32,
+          "sampled": false,
+          "terminal": true,
+          "move": "f2g4",
+          "king_loss": false,
+          "safe_alternatives": 3,
+          "king_risk_permille": 0,
+          "safest_risk_permille": 0,
+          "legal_moves": 31,
+          "collapsed": false
+        },
+        "1": {
+          "game": "0urlpzmw",
+          "side": 0,
+          "ply": 32,
+          "sampled": false,
+          "terminal": true,
+          "move": "f2g4",
+          "king_loss": false,
+          "safe_alternatives": 3,
+          "king_risk_permille": 0,
+          "safest_risk_permille": 0,
+          "legal_moves": 31,
+          "collapsed": false
+        },
+        "2": {
+          "game": "0urlpzmw",
+          "side": 0,
+          "ply": 32,
+          "sampled": false,
+          "terminal": true,
+          "move": "f2g4",
+          "king_loss": false,
+          "safe_alternatives": 3,
+          "king_risk_permille": 0,
+          "safest_risk_permille": 0,
+          "legal_moves": 31,
+          "collapsed": false
+        }
+      }
+    },
+    {
+      "game": "wqlwbuoy",
+      "side": 1,
+      "ply": 83,
+      "choices": {
+        "0": {
+          "game": "wqlwbuoy",
+          "side": 1,
+          "ply": 83,
+          "sampled": false,
+          "terminal": true,
+          "move": "g7h6",
+          "king_loss": false,
+          "safe_alternatives": 6,
+          "king_risk_permille": 0,
+          "safest_risk_permille": 0,
+          "legal_moves": 12,
+          "collapsed": false
+        },
+        "1": {
+          "game": "wqlwbuoy",
+          "side": 1,
+          "ply": 83,
+          "sampled": false,
+          "terminal": true,
+          "move": "f7f6",
+          "king_loss": false,
+          "safe_alternatives": 6,
+          "king_risk_permille": 56,
+          "safest_risk_permille": 0,
+          "legal_moves": 12,
+          "collapsed": false
+        },
+        "2": {
+          "game": "wqlwbuoy",
+          "side": 1,
+          "ply": 83,
+          "sampled": false,
+          "terminal": true,
+          "move": "f7f6",
+          "king_loss": false,
+          "safe_alternatives": 6,
+          "king_risk_permille": 56,
+          "safest_risk_permille": 0,
+          "legal_moves": 12,
+          "collapsed": false
+        }
+      }
+    },
+    {
+      "game": "ah9jp69c",
+      "side": 1,
+      "ply": 87,
+      "choices": {
+        "0": {
+          "game": "ah9jp69c",
+          "side": 1,
+          "ply": 87,
+          "sampled": false,
+          "terminal": true,
+          "move": "g6h6",
+          "king_loss": false,
+          "safe_alternatives": 3,
+          "king_risk_permille": 0,
+          "safest_risk_permille": 0,
+          "legal_moves": 8,
+          "collapsed": false
+        },
+        "1": {
+          "game": "ah9jp69c",
+          "side": 1,
+          "ply": 87,
+          "sampled": false,
+          "terminal": true,
+          "move": "g6f5",
+          "king_loss": true,
+          "safe_alternatives": 3,
+          "king_risk_permille": 124,
+          "safest_risk_permille": 0,
+          "legal_moves": 8,
+          "collapsed": false
+        },
+        "2": {
+          "game": "ah9jp69c",
+          "side": 1,
+          "ply": 87,
+          "sampled": false,
+          "terminal": true,
+          "move": "g6f5",
+          "king_loss": true,
+          "safe_alternatives": 3,
+          "king_risk_permille": 124,
+          "safest_risk_permille": 0,
+          "legal_moves": 8,
+          "collapsed": false
+        }
+      }
+    }
+  ],
+  "completed_at": "2026-10-08T02:40:27.145767+00:00",
+  "limitations": [
+    "Three selected diagnostic histories; correctness, not a strength sample."
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "recorded_at": "2026-10-08T02:48:08.362744+00:00",
+  "state": "CNN and small attention complete; large attention still running",
+  "source_revision": "09fd15f83f7b1cb4ccd7d0aae2d7e6bec7773a82",
+  "arms": {
+    "cnn": {
+      "curve": [
+        {
+          "step": 1000,
+          "metrics": {
+            "policy_nll": 2.6061631582738864,
+            "policy_accuracy": 0.2859625410310871,
+            "hidden_enemy_nll": 1.4615086635529766,
+            "danger_brier": 0.04408866192991535
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 192.0,
+            "policy_top4_all_fatal_when_escape_exists": 46.0
+          },
+          "report_sha256": "96eb6551a68af866008f88e71528f6e91bdec2440c6148a422487035a0244e5c"
+        },
+        {
+          "step": 2000,
+          "metrics": {
+            "policy_nll": 2.5202050773062923,
+            "policy_accuracy": 0.3072021625796486,
+            "hidden_enemy_nll": 1.317653095358505,
+            "danger_brier": 0.042863710942940544
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 182.0,
+            "policy_top4_all_fatal_when_escape_exists": 41.0
+          },
+          "report_sha256": "9cb9003fef805ce2531201a509e66ad6f8b7c12d544c883dbe78926520193445"
+        },
+        {
+          "step": 3000,
+          "metrics": {
+            "policy_nll": 2.5310945709462414,
+            "policy_accuracy": 0.30874686232863485,
+            "hidden_enemy_nll": 1.1939763435649504,
+            "danger_brier": 0.04059559465803428
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 174.0,
+            "policy_top4_all_fatal_when_escape_exists": 37.0
+          },
+          "report_sha256": "57eea2c71e4a9d608f0ba27bd800dabad0018ae181566e66c7cd6dbe429b463a"
+        },
+        {
+          "step": 4000,
+          "metrics": {
+            "policy_nll": 2.5398140814065586,
+            "policy_accuracy": 0.30218188839544313,
+            "hidden_enemy_nll": 1.1950722756297356,
+            "danger_brier": 0.042163095023006615
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 166.0,
+            "policy_top4_all_fatal_when_escape_exists": 43.0
+          },
+          "report_sha256": "7f190800117b1fa1f28ec17644032dba637d495d0fa4bb294f7ae1bf422d6511"
+        },
+        {
+          "step": 6000,
+          "metrics": {
+            "policy_nll": 2.6979226681491024,
+            "policy_accuracy": 0.30198880092681984,
+            "hidden_enemy_nll": 1.2476251580055215,
+            "danger_brier": 0.03741491399214876
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 170.0,
+            "policy_top4_all_fatal_when_escape_exists": 41.0
+          },
+          "report_sha256": "41fdd3819581bc8d0af38cd84a921d64d2f7c79be9f2ac2c891311d087ecc868"
+        }
+      ],
+      "files_sha256": {
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/cnn/run.json": "5895059f3913afbed8fb57b171e1c2e055a7eb05c68d4f74a2a6c0a11f8378b3",
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/cnn/latest.pt": "0458e56cfbbc1aa6627764aaa8c0091e92dedb7c696fe36ee617144cb2c6c10e",
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/cnn/train.jsonl": "f78be704643ec3d184c3c59e1f64e38539390fe1576fc8f82d5689f2e40f6222",
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/cnn/validation-006000.json": "41fdd3819581bc8d0af38cd84a921d64d2f7c79be9f2ac2c891311d087ecc868"
+      }
+    },
+    "attention-small": {
+      "curve": [
+        {
+          "step": 1000,
+          "metrics": {
+            "policy_nll": 2.695967327143769,
+            "policy_accuracy": 0.265688356825642,
+            "hidden_enemy_nll": 1.2725496415770032,
+            "danger_brier": 0.04126082357124008
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 204.0,
+            "policy_top4_all_fatal_when_escape_exists": 57.0
+          },
+          "report_sha256": "860d2080df8c0d6fdd96d5d54fac429ceb2a9dd888dadb27b8e5c218e68cedf2"
+        },
+        {
+          "step": 2000,
+          "metrics": {
+            "policy_nll": 2.6064890653238804,
+            "policy_accuracy": 0.29851322649160067,
+            "hidden_enemy_nll": 1.217511030177956,
+            "danger_brier": 0.038394656055397096
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 193.0,
+            "policy_top4_all_fatal_when_escape_exists": 45.0
+          },
+          "report_sha256": "569403bdaf604560dc66918485c656e41a490c106f64b72e0c607322d0fc8f68"
+        },
+        {
+          "step": 4000,
+          "metrics": {
+            "policy_nll": 2.5602740016568983,
+            "policy_accuracy": 0.3043058505502993,
+            "hidden_enemy_nll": 1.2150544118294,
+            "danger_brier": 0.03833495717914296
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 181.0,
+            "policy_top4_all_fatal_when_escape_exists": 43.0
+          },
+          "report_sha256": "e5976516dc80bc75e2f283c2763ed998b724ef7fcc9371de40b9e68c0b6a786e"
+        },
+        {
+          "step": 6000,
+          "metrics": {
+            "policy_nll": 2.6276683770718856,
+            "policy_accuracy": 0.3072021625796486,
+            "hidden_enemy_nll": 1.164385035167039,
+            "danger_brier": 0.03559579590580253
+          },
+          "tactical_counts": {
+            "policy_top1_avoidable_fatal": 163.0,
+            "policy_top4_all_fatal_when_escape_exists": 39.0
+          },
+          "report_sha256": "3c8ed958952da9ed3949c965ae8e7961913a1418ab3a7a9ccb8a58ce8b8505c8"
+        }
+      ],
+      "files_sha256": {
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/attention-small/run.json": "f42b26ff3450d223abcedab13c92bcfccb233af0ffb51494c7cdc6ef486ba1ba",
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/attention-small/latest.pt": "e765ca09b7299eab18d263fc7ef87e25dc8ac9e0344a0098fb3602fd8a4575dc",
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/attention-small/train.jsonl": "76c42bcd3aca7d451c2ec13ee09fcd842bcde2010c3092b56437dedce4c1b7bc",
+        "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/attention-small/validation-006000.json": "3c8ed958952da9ed3949c965ae8e7961913a1418ab3a7a9ccb8a58ce8b8505c8"
+      }
+    }
+  }
+}
