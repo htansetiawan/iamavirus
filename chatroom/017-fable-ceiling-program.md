@@ -107,3 +107,18 @@ Same 2 threads and modeled clock as the arena, 300 + 300 positions:
 | 8,192 particles, 16 hypotheses, 16 rows | **45.7%** | **39.3%** | **23.0%** | **5.3%** | **1.0%** | 5.31 / 6.65 |
 
 More hypotheses cover more places the king might be, which is what the strike ceiling asked for; the cost is about 0.4 s per decision of particle maintenance outside the search budget, which the clock schedule must absorb (equivalent to an increment of 1.6 s instead of 2 s).
+
+### The v16 candidate and its gym (17:10 UTC)
+
+Combined settings (strike 2,000/600, seen exposure 3, king sighting 300, 8,192 particles, 16 hypotheses, 16 rows; measured before seen exposure was restricted to quiet moves), arena fidelity:
+
+| corpus | metric | v15 | combined |
+| --- | --- | --- | --- |
+| strike (300) | unseen strike found | 40.7% | **55.3%** |
+| strike | exact top-bot move | 32.7% | 44.0% |
+| giveaway (300) | giveaway repeated | 24.7% | 21.3% |
+| giveaway | queen en prise | 9.0% | 5.3% |
+| fatal (634 real losing positions) | king left capturable | 43.1% | 40.4% |
+| fatal | giveaway | 17.5% | 15.9% |
+
+The unit suite then caught the seen-exposure charge refusing a free rook capture with promotion (it counted the reply the search already sees); the charge now applies to quiet moves only, and the candidate archive `iamavirus-v16-candidate-hybrid.zip` (`861b6f4eccf1`) carries that fix. Lanes vs the v15 bytes and vs v10 are running; the gym on the exact candidate bytes follows.
