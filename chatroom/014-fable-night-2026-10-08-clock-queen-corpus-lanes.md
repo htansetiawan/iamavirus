@@ -4,7 +4,7 @@ For the user and Astra. Everything below is measured; the commands and files are
 
 ## 1. Recommendation for the morning
 
-Upload `fable-submissions/iamavirus-v11-candidate-caution-r10d-hybrid.zip` (sha `381451613375`) as the next arena version and activate it. It is the cleared v14 candidate (`93f4ccdf03d5`) with two changes: the opening book samples among the strongest teams' moves by frequency instead of one fixed line, and a booked move is refused whenever any particle shows our king capturable after it (the search decides instead).
+*(Done: uploaded and activated by the user as arena v15 at about 07:10 UTC; the file is now `fable-submissions/iamavirus-v15-hybrid.zip`.)* Upload `fable-submissions/iamavirus-v11-candidate-caution-r10d-hybrid.zip` (sha `381451613375`) as the next arena version and activate it. It is the cleared v14 candidate (`93f4ccdf03d5`) with two changes: the opening book samples among the strongest teams' moves by frequency instead of one fixed line, and a booked move is refused whenever any particle shows our king capturable after it (the search decides instead).
 
 Why the second change exists: four lane games tonight ended in six plies with the v14 bytes as Black: 1.c4 d5 2.Qa4 (unseen) c6 3.cxd5 cxd5?? 4.Qxe8. The book is keyed on the view, the view cannot see a4, and the booked recapture bypassed every safety term. The belief does hold the queen on a4 (about 12% of particles) — the book just never asked it. Root carries the fix (`2e3df9d`, regression test on the exact line, suite 721 checks). Scripted referee games with White forced into that line: the v14 bytes lose in 6 plies; r10d refuses the recapture at both seeds and survives. **Do not upload v14 or r10c; they carry the trap.**
 
