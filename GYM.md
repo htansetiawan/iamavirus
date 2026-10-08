@@ -94,6 +94,18 @@ The zoo and the opening suite drive self-play leagues; exam positions become cur
 
 A real-clock game averages about 8 minutes (≈100 plies at ≈5 s per move); four at a time on 8 cores gives ≈30 games per hour, ≈700 per day. Detecting a 5-point score difference at 95% takes ≈400 games without pairing, fewer with paired openings and SPRT; screening at 60 s + 1 s roughly triples throughput once validated. More machines multiply all of this; the scheduler is written to add workers.
 
+**Measured on the scheduler's SPRT** (`learning/arena_local.py`: H0 = +0 Elo, H1 = +35 Elo, α = β = 0.05, minimum 20 games, variance shrunk to 0.22 over 20 pseudo-games; 400 simulated runs per row, ~6% draws, capped at 1,000 games):
+
+| true difference | accepts "A stronger" | median games | 90th percentile |
+| --- | --- | --- | --- |
+| −35 Elo | 0% | 157 | 295 |
+| 0 Elo | 5.2% | 405 | 950 |
+| +17 Elo | 33.5% | 635 | 1,000 |
+| +35 Elo | 83.5% | 398 | 1,000 |
+| +70 Elo | 100% | 165 | 326 |
+
+At ≈30 real-clock games per hour on this machine, a +35 Elo question takes about 13 hours and a +70 Elo question about 5.5 hours. The levers, in order: a fast screening control validated against the arena control (×3), paired opening suites (lower variance), more machines (×n), and candidates with larger effects (the ceiling program's job).
+
 ## 7. Track record
 
 | date | candidate | gym prediction | arena result |

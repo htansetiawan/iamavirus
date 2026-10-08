@@ -1,0 +1,186 @@
+"""The local arena's scheduler: matchups played on the course referee in colour-swapped
+pairs across core pairs, every game appended to a ledger, each matchup stopped by a
+sequential probability ratio test (SPRT) once its answer is clear (GYM.md 3.1, R3/R4).
+
+    python -m learning.arena_local run queue.json --slots 0,1 2,3 4,5 6,7
+    python -m learning.arena_local status queue.json
+
+queue.json: {"matchups": [{"id": "v16d-vs-v15", "a": "path/to/a.zip", "b": "path/to/b.zip",
+             "a_env": ["FOW_X=1"], "b_env": [], "max_games": 400,
+             "sprt": {"elo0": 0, "elo1": 35, "alpha": 0.05, "beta": 0.05}}]}
+
+Ledger: data/arena_local/games.jsonl, one line per game. A restart resumes from it.
+"""
+from __future__ import annotations
+
+import argparse
+import concurrent.futures as cf
+import hashlib
+import json
+import math
+import threading
+import time
+from pathlib import Path
+
+from . import compare_archives as ca
+
+ROOT = Path(__file__).resolve().parents[1]
+LEDGER = ROOT / "data" / "arena_local" / "games.jsonl"
+KIT = Path.home() / "git" / "fow-starter"
+_lock = threading.Lock()
+
+
+def elo_to_score(elo: float) -> float:
+    return 1.0 / (1.0 + 10 ** (-elo / 400.0))
+
+
+MIN_GAMES = 20          # no verdict before ten colour-swapped pairs
+PRIOR_GAMES = 20        # pseudo-games of variance PRIOR_VAR blended into the sample variance
+PRIOR_VAR = 0.22        # per-game score variance of a near-even match with a few draws
+
+
+def sprt_llr(scores: list[float], elo0: float, elo1: float) -> float:
+    """Log-likelihood ratio of H1 (elo1) against H0 (elo0) under the normal approximation used
+    by engine-testing frameworks, on per-game scores (1, 0.5, 0) from the candidate's side.
+    The variance is shrunk towards PRIOR_VAR so a short run of identical results cannot end
+    the test; no verdict before MIN_GAMES (checked by the caller via `sprt_verdict`)."""
+    n = len(scores)
+    if n < 2:
+        return 0.0
+    mean = sum(scores) / n
+    sample_var = sum((x - mean) ** 2 for x in scores) / n
+    var = (n * sample_var + PRIOR_GAMES * PRIOR_VAR) / (n + PRIOR_GAMES)
+    s0, s1 = elo_to_score(elo0), elo_to_score(elo1)
+    return 0.5 * n * ((mean - s0) ** 2 - (mean - s1) ** 2) / var
+
+
+def sprt_verdict(scores: list[float], elo0: float, elo1: float, alpha: float, beta: float) -> str:
+    lo, hi = sprt_bounds(alpha, beta)
+    if len(scores) < MIN_GAMES:
+        return "running"
+    llr = sprt_llr(scores, elo0, elo1)
+    return "H1 (A stronger)" if llr >= hi else ("H0 (A not stronger)" if llr <= lo else "running")
+
+
+def sprt_bounds(alpha: float, beta: float) -> tuple[float, float]:
+    return math.log(beta / (1 - alpha)), math.log((1 - beta) / alpha)
+
+
+def sha12(path: Path) -> str:
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()[:12]
+
+
+def ledger_games(matchup_id: str) -> list[dict]:
+    if not LEDGER.exists():
+        return []
+    return [g for g in (json.loads(l) for l in LEDGER.read_text().splitlines() if l.strip()) if g["matchup"] == matchup_id]
+
+
+def summary(m: dict) -> dict:
+    games = ledger_games(m["id"])
+    scores = [g["a_score"] for g in games]
+    sp = m.get("sprt", {"elo0": 0, "elo1": 35, "alpha": 0.05, "beta": 0.05})
+    llr = sprt_llr(scores, sp["elo0"], sp["elo1"])
+    lo, hi = sprt_bounds(sp["alpha"], sp["beta"])
+    verdict = sprt_verdict(scores, sp["elo0"], sp["elo1"], sp["alpha"], sp["beta"])
+    if len(games) >= m.get("max_games", 400) and verdict == "running":
+        verdict = "max games reached"
+    n = len(scores)
+    mean = sum(scores) / n if n else 0.0
+    w = sum(1 for x in scores if x == 1.0)
+    d = sum(1 for x in scores if x == 0.5)
+    elo = -400 * math.log10(1 / mean - 1) if 0 < mean < 1 else float("nan")
+    return {"id": m["id"], "games": n, "w-d-l": f"{w}-{d}-{n - w - d}", "score": round(mean, 3),
+            "elo_diff": round(elo, 1) if elo == elo else None, "llr": round(llr, 2), "bounds": [round(lo, 2), round(hi, 2)],
+            "verdict": verdict}
+
+
+def run(queue_path: Path, slots: list[str]) -> None:
+    queue = json.loads(queue_path.read_text())
+    LEDGER.parent.mkdir(parents=True, exist_ok=True)
+    workdir = ROOT / "data" / "arena_local" / "builds"
+    built = {}
+    for m in queue["matchups"]:
+        for side in ("a", "b"):
+            path = Path(m[side])
+            if path not in built:
+                built[path] = ca.build(path, workdir)
+    stop = threading.Event()
+
+    def next_job():
+        """The matchup with the fewest games that is still running; its next pair index."""
+        with _lock:
+            best = None
+            for m in queue["matchups"]:
+                s = summary(m)
+                if s["verdict"] != "running":
+                    continue
+                inflight = m.setdefault("_inflight", 0)
+                n = s["games"] + 2 * inflight
+                if n >= m.get("max_games", 400):
+                    continue
+                if best is None or n < best[1]:
+                    best = (m, n)
+            if best is None:
+                return None
+            m, n = best
+            m["_inflight"] += 1
+            pair = n // 2
+            return m, pair
+
+    def worker(slot: str):
+        while not stop.is_set():
+            job = next_job()
+            if job is None:
+                return
+            m, pair = job
+            seed = int(m.get("seed", 20000)) + 2 * pair
+            a, b = built[Path(m["a"])], built[Path(m["b"])]
+            a_env, b_env = " ".join(m.get("a_env", [])), " ".join(m.get("b_env", []))
+            for a_white in (True, False):
+                out = workdir / f"{m['id']}-p{pair}-{'a' if a_white else 'b'}-white.json"
+                white, black = (a, b) if a_white else (b, a)
+                wenv, benv = (a_env, b_env) if a_white else (b_env, a_env)
+                try:
+                    g = ca.play(white, black, seed, KIT, out, slot, wenv, benv)
+                except Exception as error:  # keep the arena running; record the failure
+                    g = {"result": "*", "reason": f"runner error {error!r}", "plies": 0, "seconds": 0, "clocks": None}
+                score = {"1-0": 1.0, "0-1": 0.0, "1/2-1/2": 0.5}.get(g["result"])
+                if score is None:
+                    continue
+                a_score = score if a_white else 1 - score
+                rec = {"matchup": m["id"], "pair": pair, "seed": seed, "a_colour": "white" if a_white else "black",
+                       "a_score": a_score, "result": g["result"], "reason": g["reason"], "plies": g["plies"],
+                       "seconds": round(g["seconds"], 1), "clocks": g["clocks"], "slot": slot,
+                       "a": str(m["a"]), "b": str(m["b"]), "a_sha": sha12(Path(m["a"])), "b_sha": sha12(Path(m["b"])),
+                       "a_env": m.get("a_env", []), "b_env": m.get("b_env", []), "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                       "replay": str(out.relative_to(ROOT))}
+                with _lock:
+                    with LEDGER.open("a") as f:
+                        f.write(json.dumps(rec) + "\n")
+            with _lock:
+                m["_inflight"] -= 1
+                s = summary(m)
+            print(f"[{slot}] {s['id']}: {s['games']} games {s['w-d-l']} score {s['score']} llr {s['llr']} {s['verdict']}", flush=True)
+
+    with cf.ThreadPoolExecutor(max_workers=len(slots)) as pool:
+        list(pool.map(worker, slots))
+    for m in queue["matchups"]:
+        print(json.dumps(summary(m)))
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+    ap.add_argument("command", choices=["run", "status"])
+    ap.add_argument("queue", type=Path)
+    ap.add_argument("--slots", nargs="*", default=["0,1", "2,3", "4,5", "6,7"])
+    args = ap.parse_args()
+    if args.command == "run":
+        run(args.queue, args.slots)
+    else:
+        for m in json.loads(args.queue.read_text())["matchups"]:
+            print(json.dumps(summary(m)))
+
+
+if __name__ == "__main__":
+    main()
