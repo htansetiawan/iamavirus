@@ -54,6 +54,9 @@ def main():
         for name in ('belief.h', 'belief.cc', 'engine.h', 'engine.cc', 'history_test.cc'):
             (output / name).write_bytes((args.source / name).read_bytes())
             overlays[name] = sha(output / name)
+        if (args.source / 'frontier_test.cc').exists():
+            (output / 'frontier_test.cc').write_bytes((args.source / 'frontier_test.cc').read_bytes())
+            overlays['frontier_test.cc'] = sha(output / 'frontier_test.cc')
     benchmark = ASTRA / 'implementation/tools/benchmark_corpus.cc'
     (output / 'benchmark.cc').write_text(re.sub(r'#include "\.\./([^"\n]+)"', r'#include "\1"', benchmark.read_text()))
     (output / 'probe.cc').write_bytes((ASTRA / 'tools/probe_belief.cc').read_bytes())
@@ -66,6 +69,8 @@ def main():
              ('benchmark', ['benchmark', *engine], True)]
     if not args.control:
         tasks.append(('history_test', ['history_test', *belief], False))
+        if 'frontier_test.cc' in overlays:
+            tasks.append(('frontier_test', ['frontier_test', *belief], False))
     commands = []
     with (output / 'build.log').open('w') as log:
         for name, sources, neural in tasks:

@@ -1,0 +1,138 @@
+{
+  "control": {
+    "events": 240,
+    "updates": 10379,
+    "process_seconds": 67.30071856058203,
+    "observe_ms": {
+      "median": 0.173923,
+      "p95": 4.270527,
+      "maximum": 7.871293,
+      "sum": 7150.969637
+    },
+    "frontier_states": {
+      "median": 0,
+      "maximum": 0
+    },
+    "effective_states": {
+      "median": 0,
+      "maximum": 0
+    },
+    "capacity_reductions": 0,
+    "collapses": 142,
+    "updates_with_true_board_in_engine_samples": 4757,
+    "target_zero_support": 34
+  },
+  "frontier": {
+    "events": 240,
+    "updates": 10379,
+    "process_seconds": 83.87728197150864,
+    "observe_ms": {
+      "median": 0.122746,
+      "p95": 14.034335,
+      "maximum": 29.685185,
+      "sum": 20798.396717
+    },
+    "frontier_states": {
+      "median": 204,
+      "maximum": 8192
+    },
+    "effective_states": {
+      "median": 113.8069194927568,
+      "maximum": 8192
+    },
+    "capacity_reductions": 925,
+    "collapses": 69,
+    "updates_with_true_board_in_engine_samples": 5676,
+    "target_zero_support": 17
+  },
+  "parity": {
+    "status": "passed",
+    "games": 240,
+    "frames": 10379,
+    "field_checks": 145546,
+    "excluded": [
+      "observe_ms"
+    ],
+    "reference_probe_sha256": "0f0cf1877016a4b42b8283e6cbae2e91a404e2a93a891031991af1f8fd13cbc3"
+  },
+  "states": [
+    {
+      "started_at": "2026-10-08T04:38:52.345540+00:00",
+      "state": "complete",
+      "pid": 4074475,
+      "probe": "/home/henrytan/git/iamavirus/astra-submissions/build/weighted-frontier-queen-r1/probe_queen_belief",
+      "probe_sha256": "b1c25e73c05b1bd68ed41bda5e26c76112c0728e16336566971dc69f79e00d14",
+      "runner_sha256": "3ed938cc24a9dcec20e1bd6f6bf9db80504edb8129b29dc16c5b16745c4638e3",
+      "targets_sha256": "0b1355db8ea271f5176cce6d8a5f073bf007119011a5bf514bf8667bd6df47b3",
+      "seats": 240,
+      "prediction_modes": [
+        1
+      ],
+      "history": 0,
+      "prior": 1,
+      "particles": 2048,
+      "frontier_capacity": 0,
+      "seed": 1,
+      "limit": null,
+      "completed_runs": 240,
+      "failed_runs": 0,
+      "interpretation": "Forced-history selected-loss belief diagnosis; not calibration, move selection or strength.",
+      "inputs_unchanged": true,
+      "completed_at": "2026-10-08T04:39:59.875399+00:00"
+    },
+    {
+      "started_at": "2026-10-08T04:40:00.009389+00:00",
+      "state": "complete",
+      "pid": 4075070,
+      "probe": "/home/henrytan/git/iamavirus/astra-submissions/build/weighted-frontier-queen-r1/probe_queen_belief",
+      "probe_sha256": "b1c25e73c05b1bd68ed41bda5e26c76112c0728e16336566971dc69f79e00d14",
+      "runner_sha256": "3ed938cc24a9dcec20e1bd6f6bf9db80504edb8129b29dc16c5b16745c4638e3",
+      "targets_sha256": "0b1355db8ea271f5176cce6d8a5f073bf007119011a5bf514bf8667bd6df47b3",
+      "seats": 240,
+      "prediction_modes": [
+        1
+      ],
+      "history": 0,
+      "prior": 1,
+      "particles": 2048,
+      "frontier_capacity": 8192,
+      "seed": 1,
+      "limit": null,
+      "completed_runs": 240,
+      "failed_runs": 0,
+      "interpretation": "Forced-history selected-loss belief diagnosis; not calibration, move selection or strength.",
+      "inputs_unchanged": true,
+      "completed_at": "2026-10-08T04:41:24.130512+00:00"
+    },
+    {
+      "started_at": "2026-10-08T03:50:58.319334+00:00",
+      "state": "complete",
+      "pid": 4054928,
+      "probe": "/home/henrytan/git/iamavirus/astra-submissions/build/queen-belief-probe-r1/probe_queen_belief",
+      "probe_sha256": "0f0cf1877016a4b42b8283e6cbae2e91a404e2a93a891031991af1f8fd13cbc3",
+      "runner_sha256": "a7e871cfcf21d8511e66cabb3fcdafe75c0e9e2efd34cc8daa73df594001621b",
+      "targets_sha256": "0b1355db8ea271f5176cce6d8a5f073bf007119011a5bf514bf8667bd6df47b3",
+      "seats": 240,
+      "prediction_modes": [
+        0,
+        1
+      ],
+      "history": 0,
+      "prior": 1,
+      "particles": 2048,
+      "seed": 1,
+      "limit": null,
+      "completed_runs": 480,
+      "failed_runs": 0,
+      "interpretation": "Forced-history selected-loss belief diagnosis; not calibration, move selection or strength.",
+      "inputs_unchanged": true,
+      "completed_at": "2026-10-08T03:53:30.382410+00:00"
+    }
+  ],
+  "runs_sha256": {
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-full-20261008/cap0": "c5b728691fa1eda531c1481fb6a62f65c5d16a72b89cba1b4100f32dec43f90b",
+    "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-full-20261008/cap8192": "7be6eb1837cf640c6977d4afaeb67cb6724ccc050ab5c09082a757afaeceb60c",
+    "/media/henrytan/seagate/iamavirus/astra/belief/queen-belief-audit-r1-20261008": "dcf901c3779a0136fadcadfd62c5b0dab3c74ffb4c34e939b938676843d17db5"
+  },
+  "interpretation": "Support and shared-host timings over forced replay prefixes, not decisions or Elo. Observe timing excludes ApplyOurMove; process time includes it."
+}

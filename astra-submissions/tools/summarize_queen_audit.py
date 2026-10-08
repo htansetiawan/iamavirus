@@ -93,7 +93,7 @@ def main():
     result={'provenance':provenance,'groups':groups,
             'denominators':'All mean masses divide raw counts by the full equal-weight particle population. Own-move support and immediate king loss are reported separately. No conditional denominator is silently substituted.',
             'limitations':['Selected/inspected queen-capture events; not natural-frequency calibration, move selection, or Elo.',
-                           'Primary comparison retains all 240 preselected events; surviving-opponent and arena-v13 breakdowns are diagnostic.',
+                           'Primary comparison retains every event selected for this run; surviving-opponent and arena-v13 breakdowns are diagnostic.',
                            'One belief seed. Bootstrap intervals reflect sampled games, not particle-seed variation.',
                            'A geometric or allowed capture may lose the capturing king. Surviving captures exclude worlds already terminal after our move.',
                            'After-own-move low support combines ApplyOurMove and subsequent observation conditioning; this audit does not separate them.']}

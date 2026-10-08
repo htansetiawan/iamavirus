@@ -120,11 +120,14 @@ def main():
     parser.add_argument('--history', type=int, choices=[0, 1, 2], default=0)
     parser.add_argument('--prior', type=int, choices=[0, 1, 2], default=1)
     parser.add_argument('--particles', type=int, default=2048)
+    parser.add_argument('--frontier-capacity', type=int, default=0)
     parser.add_argument('--seed', type=int, default=1)
     parser.add_argument('--limit', type=int)
     args = parser.parse_args()
     if args.particles < 1 or (args.limit is not None and args.limit < 1):
         parser.error('positive particle count and limit required')
+    if not 0 <= args.frontier_capacity <= 32768 or (args.frontier_capacity and args.history == 2):
+        parser.error('frontier capacity must be 0..32768 and cannot combine with history recovery')
     probe = args.probe.resolve(); out = args.output.resolve()
     out.mkdir(parents=True, exist_ok=False)
     (out / 'inputs').mkdir()
@@ -136,7 +139,7 @@ def main():
     if args.limit:
         targets = targets[:args.limit]
     for target in targets:
-        path = out / 'inputs' / (target['game'] + '.txt')
+        path = out / 'inputs' / f"{target['game']}-{target['side']}-{target['ply']}.txt"
         prepare(target, args.cache, path)
         target['input_path'] = str(path)
         target['input_sha256'] = sha(path)
@@ -145,6 +148,7 @@ def main():
              'runner_sha256': sha(Path(__file__)), 'targets_sha256': sha(args.targets),
              'seats': len(targets), 'prediction_modes': args.prediction_modes,
              'history': args.history, 'prior': args.prior, 'particles': args.particles,
+             'frontier_capacity': args.frontier_capacity,
              'seed': args.seed, 'limit': args.limit, 'completed_runs': 0, 'failed_runs': 0,
              'interpretation': 'Forced-history selected-loss belief diagnosis; not calibration, move selection or strength.'}
     def save():
@@ -152,11 +156,12 @@ def main():
     save()
     for mode in args.prediction_modes:
         for target in targets:
-            stem = f"{target['game']}-{target['side']}-p{mode}"
+            stem = f"{target['game']}-{target['side']}-{target['ply']}-p{mode}"
             trace, errors = out / (stem + '.jsonl'), out / (stem + '.stderr')
             command = [str(probe), target['input_path'], str(target['side']), str(args.seed),
                        str(args.particles), str(args.prior), str(args.history), str(mode)]
             env = {k:v for k,v in os.environ.items() if not k.startswith(('ASTRA_', 'FOW_'))}
+            env['ASTRA_FRONTIER_CAPACITY'] = str(args.frontier_capacity)
             started = time.monotonic()
             result = {'target': target, 'prediction': mode, 'trace': str(trace)}
             try:

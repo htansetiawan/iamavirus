@@ -1,0 +1,41 @@
+{
+  "book_sha256": "ce54990c774d9306a7bd31834783b083b64ecafee2e4836ce75d93a6d9ed64f6",
+  "tests": [
+    {
+      "name": "frontier_test",
+      "returncode": 0,
+      "output_sha256": "7224538328142c4f21e5846964a11599d88fada908fa2460b0b5ae92ebcace77",
+      "last_lines": [
+        "weighted_frontier: 514 checks, 0 failures"
+      ]
+    },
+    {
+      "name": "belief_test",
+      "returncode": 0,
+      "output_sha256": "ebf0eaee5db38d215b57f2d45482cb34165b6caaa164200f2fb848ca0a1dcc0a",
+      "last_lines": [
+        "       1444 plies, truth in population 621, collapses 19, pieces correctly placed 77.6%, composition unknown in 15013",
+        "belief_test: 541 checks, 0 failures",
+        "       capturer still on e5 two updates later: 227/256 particles"
+      ]
+    },
+    {
+      "name": "history_test",
+      "returncode": 0,
+      "output_sha256": "3e1543855927683201b370f183acf32c194a429358b5c003b48f85d9d122f199",
+      "last_lines": [
+        "history_v2: 3831 checks, 0 failures"
+      ]
+    },
+    {
+      "name": "engine_test",
+      "returncode": 0,
+      "output_sha256": "667b918d44eb62a186b41d80d62619f0eda74339d38900c29e69202df49da677",
+      "last_lines": [
+        "       vision: Bc4 4.6, a3 -9.4",
+        "       repetition: chose e2e3, rows charged 1",
+        "       book entries 176"
+      ]
+    }
+  ]
+}

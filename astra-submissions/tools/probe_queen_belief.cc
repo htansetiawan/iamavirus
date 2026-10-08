@@ -45,6 +45,29 @@ static Move RecordedMove(const Position& p, const std::string& uci) {
   return move;
 }
 
+template <class Belief>
+static void ConfigureFrontier(Belief* belief) {
+  const char* value = std::getenv("ASTRA_FRONTIER_CAPACITY");
+  const int capacity = value ? std::stoi(value) : 0;
+  if constexpr (requires { belief->set_frontier_capacity(capacity); }) {
+    belief->set_frontier_capacity(capacity);
+  } else if (capacity != 0) {
+    throw std::runtime_error("this frozen belief does not support a frontier");
+  }
+}
+
+template <class Report>
+static void PrintFrontier(const Report& report) {
+  if constexpr (requires { report.frontier_states; }) {
+    std::cout << ",\"frontier_states\":" << report.frontier_states
+              << ",\"expanded_predecessors\":" << report.expanded_predecessors
+              << ",\"enumerated_transitions\":" << report.enumerated_transitions
+              << ",\"frontier_accepted_transitions\":" << report.frontier_accepted_transitions
+              << ",\"frontier_reduced\":" << (report.frontier_reduced ? "true" : "false")
+              << ",\"frontier_effective_states\":" << report.frontier_effective_states;
+  }
+}
+
 static int Run(int argc, char** argv) {
   if (argc != 8) throw std::runtime_error("usage: probe FRAMES SIDE SEED PARTICLES PRIOR HISTORY PREDICTION");
   const int side = std::stoi(argv[2]), count = std::stoi(argv[4]);
@@ -73,6 +96,7 @@ static int Run(int argc, char** argv) {
   belief.set_capture_evidence(true);
   belief.set_history_mode(history);
   belief.set_prediction_mode(prediction);
+  ConfigureFrontier(&belief);
   bool previous_own = false;
   std::string previous_view;
   std::cout << std::setprecision(17);
@@ -103,6 +127,7 @@ static int Run(int argc, char** argv) {
               << ",\"history_budget_exhausted\":" << (report.history_budget_exhausted ? "true" : "false")
               << ",\"history_conflict\":" << (report.history_evidence_conflict ? "true" : "false")
               << ",\"observe_ms\":" << elapsed;
+    PrintFrontier(report);
     const Move own_or_opponent = RecordedMove(truth, frames[ply + 1].move);
     if (ply == target_ply) {
       const Observation previous(previous_view.empty() ? view.squares() : previous_view);

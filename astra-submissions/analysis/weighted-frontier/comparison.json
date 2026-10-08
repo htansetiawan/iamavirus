@@ -1,0 +1,408 @@
+{
+  "provenance": [
+    {
+      "run": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-full-20261008/cap0",
+      "prediction": 1,
+      "state": {
+        "started_at": "2026-10-08T04:38:52.345540+00:00",
+        "state": "complete",
+        "pid": 4074475,
+        "probe": "/home/henrytan/git/iamavirus/astra-submissions/build/weighted-frontier-queen-r1/probe_queen_belief",
+        "probe_sha256": "b1c25e73c05b1bd68ed41bda5e26c76112c0728e16336566971dc69f79e00d14",
+        "runner_sha256": "3ed938cc24a9dcec20e1bd6f6bf9db80504edb8129b29dc16c5b16745c4638e3",
+        "targets_sha256": "0b1355db8ea271f5176cce6d8a5f073bf007119011a5bf514bf8667bd6df47b3",
+        "seats": 240,
+        "prediction_modes": [
+          1
+        ],
+        "history": 0,
+        "prior": 1,
+        "particles": 2048,
+        "frontier_capacity": 0,
+        "seed": 1,
+        "limit": null,
+        "completed_runs": 240,
+        "failed_runs": 0,
+        "interpretation": "Forced-history selected-loss belief diagnosis; not calibration, move selection or strength.",
+        "inputs_unchanged": true,
+        "completed_at": "2026-10-08T04:39:59.875399+00:00"
+      },
+      "runs_sha256": "c5b728691fa1eda531c1481fb6a62f65c5d16a72b89cba1b4100f32dec43f90b"
+    },
+    {
+      "run": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-full-20261008/cap8192",
+      "prediction": 1,
+      "state": {
+        "started_at": "2026-10-08T04:40:00.009389+00:00",
+        "state": "complete",
+        "pid": 4075070,
+        "probe": "/home/henrytan/git/iamavirus/astra-submissions/build/weighted-frontier-queen-r1/probe_queen_belief",
+        "probe_sha256": "b1c25e73c05b1bd68ed41bda5e26c76112c0728e16336566971dc69f79e00d14",
+        "runner_sha256": "3ed938cc24a9dcec20e1bd6f6bf9db80504edb8129b29dc16c5b16745c4638e3",
+        "targets_sha256": "0b1355db8ea271f5176cce6d8a5f073bf007119011a5bf514bf8667bd6df47b3",
+        "seats": 240,
+        "prediction_modes": [
+          1
+        ],
+        "history": 0,
+        "prior": 1,
+        "particles": 2048,
+        "frontier_capacity": 8192,
+        "seed": 1,
+        "limit": null,
+        "completed_runs": 240,
+        "failed_runs": 0,
+        "interpretation": "Forced-history selected-loss belief diagnosis; not calibration, move selection or strength.",
+        "inputs_unchanged": true,
+        "completed_at": "2026-10-08T04:41:24.130512+00:00"
+      },
+      "runs_sha256": "7be6eb1837cf640c6977d4afaeb67cb6724ccc050ab5c09082a757afaeceb60c"
+    }
+  ],
+  "groups": {
+    "all_selected": {
+      "control": {
+        "events": 240,
+        "mean_population_mass": {
+          "exact_capturer_occupancy": 0.37816162109375,
+          "true_attacker_union_occupancy": 0.4058736165364583,
+          "own_move_allowed": 1.0,
+          "own_move_loses_king": 0.006284586588541667,
+          "geometric_threat": 0.5246297200520833,
+          "queen_capture_allowed": 0.5209696451822917,
+          "queen_capture_survives": 0.46588134765625,
+          "actual_capture_allowed": 0.3571044921875,
+          "actual_capture_survives": 0.30745849609375
+        },
+        "exact_mass_bands": {
+          "at_least_0.3": 97,
+          "below_0.05": 86,
+          "0.05_to_below_0.3": 57
+        },
+        "true_capture_loses_opponent_king": 12,
+        "low_mass_diagnosis": {
+          "events": 86,
+          "never_seen": 64,
+          "any_collapse": 32,
+          "zero_mass": 34,
+          "seen_then_collapsed": 14,
+          "capturer_never_moved": 1,
+          "capturer_stationary_at_least_10_plies": 32,
+          "last_low_crossing_was_collapse": 10,
+          "last_low_crossing_after_own_move": 21,
+          "capturer_types": {
+            "Q": 12,
+            "N": 18,
+            "R": 26,
+            "B": 24,
+            "K": 4,
+            "P": 2
+          }
+        }
+      },
+      "candidate": {
+        "events": 240,
+        "mean_population_mass": {
+          "exact_capturer_occupancy": 0.3941162109375,
+          "true_attacker_union_occupancy": 0.42352294921875,
+          "own_move_allowed": 1.0,
+          "own_move_loses_king": 0.0025390625,
+          "geometric_threat": 0.5342508951822916,
+          "queen_capture_allowed": 0.5336385091145833,
+          "queen_capture_survives": 0.4733174641927083,
+          "actual_capture_allowed": 0.38431193033854166,
+          "actual_capture_survives": 0.33505655924479166
+        },
+        "exact_mass_bands": {
+          "at_least_0.3": 103,
+          "below_0.05": 73,
+          "0.05_to_below_0.3": 64
+        },
+        "true_capture_loses_opponent_king": 12,
+        "low_mass_diagnosis": {
+          "events": 73,
+          "never_seen": 54,
+          "any_collapse": 21,
+          "zero_mass": 17,
+          "seen_then_collapsed": 11,
+          "capturer_never_moved": 0,
+          "capturer_stationary_at_least_10_plies": 22,
+          "last_low_crossing_was_collapse": 10,
+          "last_low_crossing_after_own_move": 17,
+          "capturer_types": {
+            "N": 17,
+            "R": 21,
+            "B": 23,
+            "K": 4,
+            "Q": 8
+          }
+        }
+      },
+      "paired": {
+        "games": 240,
+        "metrics": {
+          "exact_capturer_occupancy": {
+            "candidate_minus_control": 0.01595458984375,
+            "paired_game_bootstrap_95": [
+              -0.008335367838541666,
+              0.04159749348958333
+            ]
+          },
+          "true_attacker_union_occupancy": {
+            "candidate_minus_control": 0.017649332682291668,
+            "paired_game_bootstrap_95": [
+              -0.00684814453125,
+              0.04312540690104167
+            ]
+          },
+          "queen_capture_survives": {
+            "candidate_minus_control": 0.007436116536458333,
+            "paired_game_bootstrap_95": [
+              -0.017319742838541666,
+              0.032792154947916666
+            ]
+          },
+          "mass_below_0.05": {
+            "candidate_minus_control": -0.05416666666666667,
+            "paired_game_bootstrap_95": [
+              -0.09583333333333334,
+              -0.0125
+            ]
+          }
+        }
+      }
+    },
+    "opponent_survives_actual_capture": {
+      "control": {
+        "events": 228,
+        "mean_population_mass": {
+          "exact_capturer_occupancy": 0.3588524533991228,
+          "true_attacker_union_occupancy": 0.38802297491776316,
+          "own_move_allowed": 1.0,
+          "own_move_loses_king": 0.00661535430372807,
+          "geometric_threat": 0.5056966145833334,
+          "queen_capture_allowed": 0.501843904194079,
+          "queen_capture_survives": 0.4820706551535088,
+          "actual_capture_allowed": 0.33668705455043857,
+          "actual_capture_survives": 0.32232344777960525
+        },
+        "exact_mass_bands": {
+          "at_least_0.3": 88,
+          "below_0.05": 83,
+          "0.05_to_below_0.3": 57
+        },
+        "true_capture_loses_opponent_king": 0,
+        "low_mass_diagnosis": {
+          "events": 83,
+          "never_seen": 61,
+          "any_collapse": 31,
+          "zero_mass": 32,
+          "seen_then_collapsed": 14,
+          "capturer_never_moved": 1,
+          "capturer_stationary_at_least_10_plies": 32,
+          "last_low_crossing_was_collapse": 10,
+          "last_low_crossing_after_own_move": 21,
+          "capturer_types": {
+            "Q": 12,
+            "N": 18,
+            "R": 26,
+            "B": 24,
+            "K": 1,
+            "P": 2
+          }
+        }
+      },
+      "candidate": {
+        "events": 228,
+        "mean_population_mass": {
+          "exact_capturer_occupancy": 0.37692314281798245,
+          "true_attacker_union_occupancy": 0.4078776041666667,
+          "own_move_allowed": 1.0,
+          "own_move_loses_king": 0.0026726973684210527,
+          "geometric_threat": 0.5157791940789473,
+          "queen_capture_allowed": 0.5151345771655702,
+          "queen_capture_survives": 0.4867885656524123,
+          "actual_capture_allowed": 0.3666028474506579,
+          "actual_capture_survives": 0.3494680304276316
+        },
+        "exact_mass_bands": {
+          "at_least_0.3": 94,
+          "below_0.05": 70,
+          "0.05_to_below_0.3": 64
+        },
+        "true_capture_loses_opponent_king": 0,
+        "low_mass_diagnosis": {
+          "events": 70,
+          "never_seen": 51,
+          "any_collapse": 20,
+          "zero_mass": 16,
+          "seen_then_collapsed": 11,
+          "capturer_never_moved": 0,
+          "capturer_stationary_at_least_10_plies": 22,
+          "last_low_crossing_was_collapse": 10,
+          "last_low_crossing_after_own_move": 16,
+          "capturer_types": {
+            "N": 17,
+            "R": 21,
+            "B": 23,
+            "K": 1,
+            "Q": 8
+          }
+        }
+      },
+      "paired": {
+        "games": 228,
+        "metrics": {
+          "exact_capturer_occupancy": {
+            "candidate_minus_control": 0.01807068941885965,
+            "paired_game_bootstrap_95": [
+              -0.007229989035087719,
+              0.045369466145833336
+            ]
+          },
+          "true_attacker_union_occupancy": {
+            "candidate_minus_control": 0.019854629248903508,
+            "paired_game_bootstrap_95": [
+              -0.005356102658991228,
+              0.04725406044407895
+            ]
+          },
+          "queen_capture_survives": {
+            "candidate_minus_control": 0.004717910498903508,
+            "paired_game_bootstrap_95": [
+              -0.021030359100877194,
+              0.031342088130482455
+            ]
+          },
+          "mass_below_0.05": {
+            "candidate_minus_control": -0.05701754385964912,
+            "paired_game_bootstrap_95": [
+              -0.10087719298245613,
+              -0.013157894736842105
+            ]
+          }
+        }
+      }
+    },
+    "arena_v13": {
+      "control": {
+        "events": 37,
+        "mean_population_mass": {
+          "exact_capturer_occupancy": 0.20437869510135134,
+          "true_attacker_union_occupancy": 0.21930426520270271,
+          "own_move_allowed": 1.0,
+          "own_move_loses_king": 0.0035763302364864866,
+          "geometric_threat": 0.29917124155405406,
+          "queen_capture_allowed": 0.29745565878378377,
+          "queen_capture_survives": 0.29106841216216217,
+          "actual_capture_allowed": 0.1785789695945946,
+          "actual_capture_survives": 0.17297033361486486
+        },
+        "exact_mass_bands": {
+          "below_0.05": 22,
+          "at_least_0.3": 7,
+          "0.05_to_below_0.3": 8
+        },
+        "true_capture_loses_opponent_king": 1,
+        "low_mass_diagnosis": {
+          "events": 22,
+          "never_seen": 16,
+          "any_collapse": 9,
+          "zero_mass": 10,
+          "seen_then_collapsed": 4,
+          "capturer_never_moved": 0,
+          "capturer_stationary_at_least_10_plies": 10,
+          "last_low_crossing_was_collapse": 2,
+          "last_low_crossing_after_own_move": 5,
+          "capturer_types": {
+            "N": 2,
+            "R": 9,
+            "B": 6,
+            "K": 2,
+            "Q": 2,
+            "P": 1
+          }
+        }
+      },
+      "candidate": {
+        "events": 37,
+        "mean_population_mass": {
+          "exact_capturer_occupancy": 0.22889833192567569,
+          "true_attacker_union_occupancy": 0.2603198902027027,
+          "own_move_allowed": 1.0,
+          "own_move_loses_king": 0.0020718961148648647,
+          "geometric_threat": 0.3691670185810811,
+          "queen_capture_allowed": 0.36857316300675674,
+          "queen_capture_survives": 0.3351192989864865,
+          "actual_capture_allowed": 0.20313819679054054,
+          "actual_capture_survives": 0.19174936655405406
+        },
+        "exact_mass_bands": {
+          "below_0.05": 18,
+          "at_least_0.3": 9,
+          "0.05_to_below_0.3": 10
+        },
+        "true_capture_loses_opponent_king": 1,
+        "low_mass_diagnosis": {
+          "events": 18,
+          "never_seen": 14,
+          "any_collapse": 5,
+          "zero_mass": 6,
+          "seen_then_collapsed": 2,
+          "capturer_never_moved": 0,
+          "capturer_stationary_at_least_10_plies": 6,
+          "last_low_crossing_was_collapse": 3,
+          "last_low_crossing_after_own_move": 6,
+          "capturer_types": {
+            "N": 2,
+            "R": 6,
+            "B": 6,
+            "K": 2,
+            "Q": 2
+          }
+        }
+      },
+      "paired": {
+        "games": 37,
+        "metrics": {
+          "exact_capturer_occupancy": {
+            "candidate_minus_control": 0.024519636824324325,
+            "paired_game_bootstrap_95": [
+              -0.04265202702702703,
+              0.09274704391891891
+            ]
+          },
+          "true_attacker_union_occupancy": {
+            "candidate_minus_control": 0.041015625,
+            "paired_game_bootstrap_95": [
+              -0.03263566300675676,
+              0.11687077702702703
+            ]
+          },
+          "queen_capture_survives": {
+            "candidate_minus_control": 0.04405088682432432,
+            "paired_game_bootstrap_95": [
+              -0.02172191722972973,
+              0.11845439189189189
+            ]
+          },
+          "mass_below_0.05": {
+            "candidate_minus_control": -0.10810810810810811,
+            "paired_game_bootstrap_95": [
+              -0.21621621621621623,
+              -0.02702702702702703
+            ]
+          }
+        }
+      }
+    }
+  },
+  "denominators": "All mean masses divide raw counts by the full equal-weight particle population. Own-move support and immediate king loss are reported separately. No conditional denominator is silently substituted.",
+  "limitations": [
+    "Selected/inspected queen-capture events; not natural-frequency calibration, move selection, or Elo.",
+    "Primary comparison retains every event selected for this run; surviving-opponent and arena-v13 breakdowns are diagnostic.",
+    "One belief seed. Bootstrap intervals reflect sampled games, not particle-seed variation.",
+    "A geometric or allowed capture may lose the capturing king. Surviving captures exclude worlds already terminal after our move.",
+    "After-own-move low support combines ApplyOurMove and subsequent observation conditioning; this audit does not separate them."
+  ]
+}
