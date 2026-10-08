@@ -1,0 +1,53 @@
+{
+  "recorded_at": "2026-10-08T05:48:05.139860+00:00",
+  "purpose": "Compare the full-data CNN against the existing Fable v4 model inside the same frozen hybrid engine.",
+  "binary": "/home/henrytan/git/iamavirus/astra-submissions/build/weighted-frontier-r1/benchmark",
+  "binary_sha256": "7581bc5cc35b4043f41273405660ac00c21f871d29e9eb074916ae462309c434",
+  "runtime_source_receipt": "/home/henrytan/git/iamavirus/astra-submissions/build/weighted-frontier-r1/integration-manifest.json",
+  "runtime_feature": "features-v2",
+  "control_archive": "/home/henrytan/git/iamavirus/fable-submissions/iamavirus-v11-candidate-repairs-v4-hybrid.zip",
+  "control_archive_sha256": "135fd46301a8da587eeeaf75e06b9b3976dbe57aacf68bdb2ea0940a1d8e839b",
+  "candidate_export": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008/cnn-export",
+  "candidate_checkpoint_sha256": "6220caa3034ffeb77408e75ec1fbf9e3def5c4b4472d7193753cea6e7382748a",
+  "candidate_graphs": {
+    "observe": {
+      "sha256": "a440043c4a0123a80abd9d95174ac8d099d50b3c0d8830f6d3f02f2c08359e6b",
+      "bytes": 7263348
+    },
+    "score": {
+      "sha256": "a42480b74914b2be991f7a5df345e3dcb9fa78885a813e1e53698327f36a5fa8",
+      "bytes": 244737
+    }
+  },
+  "corpus": "/media/henrytan/seagate/iamavirus/astra/belief/weighted-frontier-action453-20261008/seats.txt",
+  "corpus_sha256": "ca5f5f81ed35da4de39936b3f7ecb469c95bf740b2ca44083672d244fcc268e6",
+  "settings": {
+    "prior": 1,
+    "prediction": 0,
+    "history": 0,
+    "frontier": 0,
+    "root": 0,
+    "particles": 2048,
+    "nodes": 400000,
+    "threads": 1,
+    "seed": 777,
+    "book": false
+  },
+  "arms": [
+    "fable-v4",
+    "full-data-cnn6000"
+  ],
+  "primary": "Terminal fatal decisions and paired saved/new fatal changes across432 terminal positions; separately report364 positions with an escape.",
+  "guardrails": [
+    "All1338 decision keys and legality must match; include the906 initial positions only as diagnostics.",
+    "Same binary, settings and corpus; only model differs.",
+    "Preserve input hashes and inspect both completed arm states before comparison.",
+    "No king-danger veto or quantization introduced."
+  ],
+  "limitations": [
+    "Reused453-game development set; not a sealed test or an Elo estimate.",
+    "This is a comparison with Fable v4, not the features-v1 arena model.",
+    "r10d ships a features-v1 tracker; these features-v2 weights must never be swapped into it without a matching tracker.",
+    "A positive result still requires independent data/seeds and complete clocked matches."
+  ]
+}

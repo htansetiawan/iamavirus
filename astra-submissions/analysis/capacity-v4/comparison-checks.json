@@ -1,0 +1,22 @@
+{
+  "recorded_at": "2026-10-08T06:11:51.503798+00:00",
+  "checks": [
+    {
+      "command": "taskset -c 5 .venv/bin/python -m unittest discover -s astra-submissions/tools -p test_compare_action_campaign.py",
+      "tests_passed": 4,
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONPATH=astra-submissions taskset -c 2 .venv/bin/python -m unittest learning_experiments.test_compare_pilots",
+      "tests_passed": 4,
+      "exit_code": 0
+    }
+  ],
+  "source_sha256": {
+    "astra-submissions/learning_experiments/compare_pilots.py": "8e2d759cbeec92f4ea35cd35599d8b0dc8b7aa0aa5a7928cd428384020453119",
+    "astra-submissions/learning_experiments/test_compare_pilots.py": "589eb2961635dafb47e5afb370d7c93d2778b00313a839daa3fd1254b340d991",
+    "astra-submissions/tools/compare_action_campaign.py": "5866824fb747b9c1785dfbb3ba10c6a4f1339b3603052088e1a122b5bff60a36",
+    "astra-submissions/tools/test_compare_action_campaign.py": "b1b1e3c4b7bf34947762a97509dd779559ac22c51fe78cc2d55cfc83a0b4aa6c"
+  },
+  "purpose": "Reject unintended data, source, rules, model-contract, budget and settings changes in paired experiments; not a playing-strength test."
+}

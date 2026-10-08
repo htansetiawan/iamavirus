@@ -35,23 +35,43 @@ def recorded_update_time(rows):
     return completed + previous
 
 
-def compare(control, candidate, step, bootstrap=10000, control_step=None, candidate_step=None):
+def validate_run_identity(runs, allow_training_pool_change=False):
+    """Allow a declared pool-size experiment without weakening split checks."""
+    a, b = (dict(r['identity']) for r in runs)
+    model_a, model_b = a.pop('model_config'), b.pop('model_config')
+    if allow_training_pool_change:
+        if model_a != model_b:
+            raise ValueError('a training-pool comparison must keep the architecture unchanged')
+        # The frozen manifest includes its absolute shard paths. Its hash may
+        # change across output directories; both complete shard hashes must
+        # still agree. Only the number of selected training games may change.
+        for identity in (a, b):
+            identity.pop('manifest_sha256')
+            identity.pop('train_games')
+    if a != b:
+        raise ValueError('training data or schedule differs between arms')
+    for field in ('feature_version', 'action_version', 'rules_fingerprint', 'source_sha256'):
+        if runs[0][field] != runs[1][field]:
+            raise ValueError('feature, action, rules or training source differs: ' + field)
+    if runs[0]['native']['sources'] != runs[1]['native']['sources']:
+        raise ValueError('native feature rules snapshot differs between arms')
+    return runs[0]['identity']['train_games'] != runs[1]['identity']['train_games']
+
+
+def compare(control, candidate, step, bootstrap=10000, control_step=None, candidate_step=None,
+            allow_training_pool_change=False):
     steps = [step if control_step is None else control_step,
              step if candidate_step is None else candidate_step]
     runs = [json.loads((p / 'run.json').read_text()) for p in (control, candidate)]
-    a, b = (dict(r['identity']) for r in runs)
-    a.pop('model_config'); b.pop('model_config')
-    if a != b:
-        raise ValueError('training data or schedule differs between arms')
-    if runs[0]['native']['sources'] != runs[1]['native']['sources']:
-        raise ValueError('native feature rules snapshot differs between arms')
+    pool_changed = validate_run_identity(runs, allow_training_pool_change)
     logs = [[json.loads(line) for line in (p / 'train.jsonl').read_text().splitlines()] for p in (control, candidate)]
     logs = [[r for r in rows if r['step'] <= end] for rows, end in zip(logs, steps)]
     if any(len(rows) != end or [r['step'] for r in rows] != list(range(1, end + 1))
            for rows, end in zip(logs, steps)):
         raise ValueError('missing or duplicated training updates')
     common_steps = min(steps)
-    if [r['decisions'] for r in logs[0][:common_steps]] != [r['decisions'] for r in logs[1][:common_steps]]:
+    if not pool_changed and ([r['decisions'] for r in logs[0][:common_steps]] !=
+                             [r['decisions'] for r in logs[1][:common_steps]]):
         raise ValueError('per-step valid decision counts differ within shared training prefix')
     reports = [json.loads((p / f'validation-{end:06d}.json').read_text())
                for p, end in zip((control, candidate), steps)]
@@ -86,10 +106,14 @@ def compare(control, candidate, step, bootstrap=10000, control_step=None, candid
                            'bootstrap_samples_with_nonzero_denominator': int(valid.sum())}
     return {'step': steps[0] if steps[0] == steps[1] else None,
             'control_step': steps[0], 'candidate_step': steps[1],
-            'seed': a['seed'], 'games': len(games),
+            'seed': runs[0]['identity']['seed'], 'games': len(games),
             'validation_decisions': reports[0]['unique_decisions'],
-            'training_decisions_each': sum(r['decisions'] for r in logs[0]) if steps[0] == steps[1] else None,
+            'training_decisions_each': (sum(r['decisions'] for r in logs[0])
+                                        if steps[0] == steps[1] and not pool_changed else None),
             'training_decisions': [sum(r['decisions'] for r in rows) for rows in logs],
+            'training_pool_games': [r['identity']['train_games'] for r in runs],
+            'training_pool_change_permitted': allow_training_pool_change,
+            'training_pool_changed': pool_changed,
             'control': str(control), 'candidate': str(candidate),
             'parameters': [r['model_parameters'] for r in runs],
             'elapsed_through_last_update_seconds': [recorded_update_time(rows) for rows in logs],
@@ -97,8 +121,10 @@ def compare(control, candidate, step, bootstrap=10000, control_step=None, candid
             'legacy_metrics_unavailable': omitted,
             'danger_recall_at_fpr': [r['groups']['all']['danger_recall_at_fpr'] for r in reports],
             'limitations': ['One initialization seed; intervals cover held-out games, not training-seed variation.',
-                            ('Same optimizer updates and decisions, not equal elapsed compute.' if steps[0] == steps[1]
-                             else 'Different update budgets; observed training-loop wall times are reported, including intermediate validation.'),
+                            ('Different training pool sizes: report actual training decisions and elapsed time separately.'
+                             if pool_changed else 'Same training pool and per-step decision counts.'),
+                            ('Same optimizer updates, not necessarily equal decisions or elapsed compute.' if steps[0] == steps[1]
+                             else 'Different update budgets; observed training-loop wall times include intermediate validation.'),
                             'Pilot allocation evidence, not an Elo estimate or a release gate.']}
 
 
@@ -109,10 +135,13 @@ def main():
     p.add_argument('--step', type=int, default=1000)
     p.add_argument('--control-step', type=int)
     p.add_argument('--candidate-step', type=int)
+    p.add_argument('--allow-training-pool-change', action='store_true',
+                   help='Same architecture and source/shard hashes, different selected training-game counts')
     p.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
     result = compare(args.control, args.candidate, args.step,
-                     control_step=args.control_step, candidate_step=args.candidate_step)
+                     control_step=args.control_step, candidate_step=args.candidate_step,
+                     allow_training_pool_change=args.allow_training_pool_change)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     write_json(args.output, result)
     print(json.dumps(result, indent=2))

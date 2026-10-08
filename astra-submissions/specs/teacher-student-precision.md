@@ -145,6 +145,34 @@ feature-version mismatches. Legacy features-v1 runs remain in their frozen
 checkout. The large-model CPU smoke and export are kept separately from
 selection runs and will not seed a claimed strength comparison.
 
+```mermaid
+flowchart LR
+  H[Actor observation histories] --> T[Larger GPU training model]
+  T --> G[Held-out prediction and engine decision gates]
+  G --> D[Direct model deployment candidate]
+  G --> S[Distill into a smaller student]
+  D --> Q[FP32 versus INT8 comparison]
+  S --> Q
+  Q --> R[Recurrent parity and tactical decisions]
+  R --> C[Whole-move CPU latency and clocked games]
+```
+
+Quantization reduces bytes per parameter; distillation can reduce parameter
+count and computation. A 4.76-million-parameter model has roughly 19 MB of
+FP32 weights versus 4.8 MB if every weight were INT8, before graph overhead,
+scales, activations and operators retained in floating point. Those arithmetic
+sizes are not promised export sizes or CPU speedups.
+
+The model-to-search connection also limits what extra training capacity can
+deliver. In the frozen hybrid used for these experiments, policy supplies root
+candidate rankings after the particle-risk filter; neural danger breaks ties
+among some risk proposals. The value head is logged, and the hidden-board head
+does not update the particle posterior. Lower hidden-piece NLL therefore does
+not automatically produce a more accurate runtime belief. Any proposed use of
+those heads is a separate integration experiment, with calibrated uncertainty
+and actual decision checks, rather than a reason to assume a larger checkpoint
+already improves play.
+
 The capacity comparison is now complete through 6,000 updates in all three
 arms, following the earlier roughly equal-time comparison. Each arm saw the
 same 374,435 training decisions; the validation set contains 5,179 decisions.
@@ -169,9 +197,20 @@ At 05:16 UTC on 2026-10-08, a subsequent comparison started after verifying
 the GPU was idle. It expands the training pool from 512 to all 3,766 v4 training
 games, preserving the source revision, architecture definitions, seed and the
 same 64 validation games. All three arms start fresh and run 6,000 updates,
-with evaluation every 1,000. The CNN has completed its first evaluation; the
-campaign is still running. The test shard is not copied or used. The
+with evaluation every 1,000. CNN and small attention have completed; large
+attention is still running. The test shard is not copied or used. The
 [full-data design](../analysis/capacity-v4/full-data-design.json) fixes the
 primary comparison and requires comparison with earlier-stopped controls as
 well. This tests whether broader training data makes extra capacity useful
 before spending resources on teacher distillation or another precision audit.
+
+The [broader-data results](../analysis/capacity-v4/full-data.md) improve both
+completed models' prediction metrics. Small attention makes 137 avoidable
+fatal top-1 proposals versus full-data CNN's 157 on the same 5,167 validation
+decisions, while its imitation likelihood is worse. The actual CNN hybrid gate
+is tied with the existing v4 model: 165 versus 164 terminal fatal decisions,
+two saved and one newly fatal. Small attention is being exported for that same
+gate. This is why the deployment sequence remains: establish a useful model,
+then compare direct inference with distillation and INT8. Larger training
+capacity and lower numerical precision cannot substitute for a better decision
+rule or a demonstrated downstream model benefit.

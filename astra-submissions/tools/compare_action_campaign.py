@@ -14,17 +14,41 @@ def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def compare(root, control, candidate, replays=None, candidate_root=None):
+def validate_cross_campaign(campaign, other_campaign, control, candidate,
+                            allow_model_change=False):
+    """A model-only comparison keeps engine, corpus and every other option fixed."""
+    for key in ('nodes', 'stride', 'particles'):
+        if campaign[key] != other_campaign[key]:
+            raise ValueError('budget, population or decision sampling differs: ' + key)
+    model_names = ('model_manifest.json', 'observe.onnx', 'score.onnx')
+    for name in ('benchmark', 'seats.txt', *model_names):
+        identities = [[v for k, v in c['inputs'].items() if Path(k).name == name]
+                      for c in (campaign, other_campaign)]
+        if any(len(v) != 1 for v in identities):
+            raise ValueError('missing or ambiguous frozen input: ' + name)
+        if identities[0] != identities[1] and not (allow_model_change and name in model_names):
+            raise ValueError('cross-campaign frozen input differs: ' + name)
+    if allow_model_change:
+        settings = [dict(c['arms'][name]['settings']) for c, name in
+                    ((campaign, control), (other_campaign, candidate))]
+        for value in settings:
+            value.pop('FOW_MODEL_DIR')
+        if settings[0] != settings[1]:
+            raise ValueError('model comparison also changes engine settings')
+        manifests = [json.loads(Path(next(k for k in c['inputs']
+                                          if Path(k).name == 'model_manifest.json')).read_text())
+                     for c in (campaign, other_campaign)]
+        for key in ('feature_version', 'action_version', 'rules_fingerprint'):
+            if key not in manifests[0] or key not in manifests[1] or manifests[0][key] != manifests[1][key]:
+                raise ValueError('model input/label contract differs: ' + key)
+
+
+def compare(root, control, candidate, replays=None, candidate_root=None,
+            allow_model_change=False):
     campaign = json.loads((root / 'campaign.json').read_text())
     candidate_root = root if candidate_root is None else candidate_root
     other_campaign = json.loads((candidate_root / 'campaign.json').read_text())
-    if any(campaign[k] != other_campaign[k] for k in ('nodes', 'stride')):
-        raise ValueError('node budget or decision sampling differs')
-    for name in ('benchmark', 'seats.txt', 'model_manifest.json', 'observe.onnx', 'score.onnx'):
-        identities = [[v for k, v in c['inputs'].items() if Path(k).name == name]
-                      for c in (campaign, other_campaign)]
-        if any(len(v) != 1 for v in identities) or identities[0] != identities[1]:
-            raise ValueError('cross-campaign frozen input differs: ' + name)
+    validate_cross_campaign(campaign, other_campaign, control, candidate, allow_model_change)
     arms = []
     for name, directory, c in ((control, root, campaign), (candidate, candidate_root, other_campaign)):
         state = c['arms'][name]
@@ -94,6 +118,7 @@ def compare(root, control, candidate, replays=None, candidate_root=None):
             'candidate_root': str(candidate_root),
             'campaign_state_at_read': campaign['state'], 'control': control, 'candidate': candidate,
             'candidate_campaign_state_at_read': other_campaign['state'],
+            'model_change_permitted': allow_model_change,
             'arms': {control: campaign['arms'][control], candidate: other_campaign['arms'][candidate]},
             'inputs': campaign['inputs'], 'candidate_inputs': other_campaign['inputs'],
             'game_metadata_sha256': replay_hashes, 'groups': results, 'fatal_changes': changes,
@@ -110,10 +135,13 @@ def main():
     p.add_argument('--control', required=True)
     p.add_argument('--candidate', required=True)
     p.add_argument('--candidate-root', type=Path)
+    p.add_argument('--allow-model-change', action='store_true',
+                   help='Compare model weights with identical binary, corpus, settings and feature contract')
     p.add_argument('--replays', type=Path)
     p.add_argument('--output', type=Path, required=True)
     args = p.parse_args()
-    report = compare(args.root, args.control, args.candidate, args.replays, args.candidate_root)
+    report = compare(args.root, args.control, args.candidate, args.replays, args.candidate_root,
+                     args.allow_model_change)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + '\n')
     print(json.dumps(report['groups'], indent=2))

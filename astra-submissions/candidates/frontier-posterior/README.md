@@ -53,4 +53,9 @@ Mode 0 reproduces all six selected control decisions. Modes 1 and 2 share all
 with no clock fallback. Each alternative selector saves one of the three
 fatal positions, but a different one; two remain fatal in each arm. This
 does not establish a better selector. Receipts are in
-`../../analysis/frontier-posterior/`. The full three-arm comparison is running.
+`../../analysis/frontier-posterior/`. The full three-arm comparison is complete:
+mode 0/1/2 made 164/163/170 fatal choices among 432 terminal positions. All
+paired intervals include zero. Mode 0 reproduces every one of the original
+frontier control's 1,338 decisions. This branch is closed for promotion unless
+new evidence motivates a different experiment; neither option becomes a
+default. See the [completed analysis](../../analysis/frontier-posterior/README.md).

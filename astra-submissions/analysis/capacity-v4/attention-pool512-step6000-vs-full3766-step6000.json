@@ -1,0 +1,214 @@
+{
+  "step": 6000,
+  "control_step": 6000,
+  "candidate_step": 6000,
+  "seed": 253,
+  "games": 64,
+  "validation_decisions": 5179,
+  "training_decisions_each": null,
+  "training_decisions": [
+    374435,
+    372874
+  ],
+  "training_pool_games": [
+    512,
+    3766
+  ],
+  "training_pool_change_permitted": true,
+  "training_pool_changed": true,
+  "control": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-convergence-6000-20261008/attention-small",
+  "candidate": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008/attention-small",
+  "parameters": [
+    1631826,
+    1631826
+  ],
+  "elapsed_through_last_update_seconds": [
+    1466.5456477780826,
+    1578.4663211200386
+  ],
+  "metrics": {
+    "policy_nll": {
+      "control": 2.6276683770718856,
+      "candidate": 2.4656518917532755,
+      "candidate_minus_control": -0.16201648531861013,
+      "paired_game_bootstrap_95": [
+        -0.20091245735708185,
+        -0.1265040101591258
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_accuracy": {
+      "control": 0.3072021625796486,
+      "candidate": 0.31878741069704575,
+      "candidate_minus_control": 0.01158524811739714,
+      "paired_game_bootstrap_95": [
+        -0.0007310746580106653,
+        0.024000545950864413
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "hidden_nll": {
+      "control": 0.499463419402332,
+      "candidate": 0.485901073693148,
+      "candidate_minus_control": -0.01356234570918402,
+      "paired_game_bootstrap_95": [
+        -0.01768890735372971,
+        -0.009267696641590393
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "hidden_enemy_nll": {
+      "control": 1.164385035167039,
+      "candidate": 1.1310001115129078,
+      "candidate_minus_control": -0.03338492365413126,
+      "paired_game_bootstrap_95": [
+        -0.048753063797130465,
+        -0.017396496416171997
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "danger_brier": {
+      "control": 0.03559579590580253,
+      "candidate": 0.03302501285183597,
+      "candidate_minus_control": -0.0025707830539665605,
+      "paired_game_bootstrap_95": [
+        -0.004369099892321139,
+        -0.0008080608584594401
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "value_mse": {
+      "control": 1.1737260073935105,
+      "candidate": 0.8039905418507074,
+      "candidate_minus_control": -0.3697354655428031,
+      "paired_game_bootstrap_95": [
+        -0.5859369531298517,
+        -0.17428849121083437
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_entropy": {
+      "control": 2.1297947144108678,
+      "candidate": 2.3934334503714414,
+      "candidate_minus_control": 0.26363873596057363,
+      "paired_game_bootstrap_95": [
+        0.23558004491448506,
+        0.2918378591267175
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_hit4": {
+      "control": 0.5539679474802085,
+      "candidate": 0.5757868314346399,
+      "candidate_minus_control": 0.021818883954431434,
+      "paired_game_bootstrap_95": [
+        0.011091355129965525,
+        0.03305629356496622
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_hit8": {
+      "control": 0.7014867735083993,
+      "candidate": 0.7345047306429813,
+      "candidate_minus_control": 0.033017957134582,
+      "paired_game_bootstrap_95": [
+        0.023020981510868815,
+        0.043181508090837484
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_hit16": {
+      "control": 0.8650318594323229,
+      "candidate": 0.8770032824869666,
+      "candidate_minus_control": 0.011971423054643715,
+      "paired_game_bootstrap_95": [
+        0.0030568959331605796,
+        0.02164593984446924
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_top1_fatal": {
+      "control": 0.033790307009075114,
+      "candidate": 0.028770032824869667,
+      "candidate_minus_control": -0.005020274184205448,
+      "paired_game_bootstrap_95": [
+        -0.008326812902437815,
+        -0.0018240501170032235
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_top1_avoidable_fatal": {
+      "control": 0.03154635184826785,
+      "candidate": 0.026514418424617766,
+      "candidate_minus_control": -0.005031933423650086,
+      "paired_game_bootstrap_95": [
+        -0.008345249068316393,
+        -0.0018273796501948516
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_top4_all_fatal_when_escape_exists": {
+      "control": 0.007547900135475131,
+      "candidate": 0.007741436036384749,
+      "candidate_minus_control": 0.0001935359009096185,
+      "paired_game_bootstrap_95": [
+        -0.0020383204239706482,
+        0.002770774019205712
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    },
+    "policy_top4_fatal_fraction": {
+      "control": 0.050016897600540726,
+      "candidate": 0.046251146622893834,
+      "candidate_minus_control": -0.0037657509776468923,
+      "paired_game_bootstrap_95": [
+        -0.0066924347816378306,
+        -0.0011628022454580394
+      ],
+      "bootstrap_samples_with_nonzero_denominator": 10000
+    }
+  },
+  "legacy_metrics_unavailable": [],
+  "danger_recall_at_fpr": [
+    {
+      "0.01": {
+        "recall": 0.23125845737483086,
+        "actual_fpr": 0.009999004744053346,
+        "threshold": 0.3987795114517212
+      },
+      "0.05": {
+        "recall": 0.5282814614343708,
+        "actual_fpr": 0.04999502372026673,
+        "threshold": 0.16448192298412323
+      },
+      "0.1": {
+        "recall": 0.7016238159675237,
+        "actual_fpr": 0.09999668248017782,
+        "threshold": 0.06318726390600204
+      }
+    },
+    {
+      "0.01": {
+        "recall": 0.28633288227334236,
+        "actual_fpr": 0.009999004744053346,
+        "threshold": 0.43078485131263733
+      },
+      "0.05": {
+        "recall": 0.5990527740189445,
+        "actual_fpr": 0.04999502372026673,
+        "threshold": 0.2096693068742752
+      },
+      "0.1": {
+        "recall": 0.7552097428958051,
+        "actual_fpr": 0.09999668248017782,
+        "threshold": 0.1116383895277977
+      }
+    }
+  ],
+  "limitations": [
+    "One initialization seed; intervals cover held-out games, not training-seed variation.",
+    "Different training pool sizes: report actual training decisions and elapsed time separately.",
+    "Same optimizer updates, not necessarily equal decisions or elapsed compute.",
+    "Pilot allocation evidence, not an Elo estimate or a release gate."
+  ]
+}
