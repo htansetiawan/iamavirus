@@ -148,8 +148,8 @@ Corpora cut by `learning/gym_corpora.py` from the labelled games (300 seats each
 
 | corpus | what the real move did | the current engine at the same ply |
 | --- | --- | --- |
-| strike (297 plies): a top-six move that attacked the king from a square the victim could not see | 100% unseen king threats | **39.1%** create an unseen king threat; 5.4% leave 3+ points en prise (real 3.2%) |
-| route (260 plies): the first move of a top-six maneuver of 2+ unseen moves ending in a capture | — | exact first move matched in about one position in nine (fatal-ply count in the verbose rerun) |
-| giveaway (300 plies): our own move that gave 3+ points for nothing | 66% leave 3+ en prise on the one-ply check, 25% the queen | **28%** still leave 3+ en prise, 9% the queen |
+| strike (297 plies): a top-six move that attacked the king from a square the victim could not see | 100% unseen king threats | **39.1%** create an unseen king threat (the exact move in 34.3%); 5.4% leave 3+ points en prise (real 3.2%) |
+| route (260 plies): the first move of a top-six maneuver of 2+ unseen moves ending in a capture | — | exact first move matched in **19.6%** (51 of 260) |
+| giveaway (300 plies): our own move that gave 3+ points for nothing | 66% leave 3+ en prise on the one-ply check, 25% the queen | **28%** still leave 3+ en prise (the identical move in 18%), 9% the queen |
 
-Reading: when a top bot found a strike from the fog, our engine finds one in two positions out of five; it starts their multi-move fog maneuvers about one time in nine; and it still repeats more than a quarter of our historical giveaways. These three numbers, with the taxonomy rates of section 8, are the gym's starting line. Targets for the first cycle: strike 55%, route first move 25%, giveaway repeat 15%, without the 634-seat fatal corpus losing survival.
+Reading: when a top bot found a strike from the fog, our engine finds one in two positions out of five; it starts their multi-move fog maneuvers one time in five; and it still repeats more than a quarter of our historical giveaways. These three numbers, with the taxonomy rates of section 8, are the gym's starting line. Targets for the first cycle: strike 55%, route first move 25%, giveaway repeat 15%, without the 634-seat fatal corpus losing survival.
