@@ -424,6 +424,7 @@ EngineOptions EngineOptionsFromEnvironment() {
   Override("FOW_EXPOSURE_MODE", &options.exposure_mode);
   Override("FOW_EXPOSURE_STRIDE", &options.exposure_stride);
   OverrideFlag("FOW_VISIBILITY_DEDUCTIONS", &options.visibility_deductions);
+  Override("FOW_HISTORY_MODE", &options.history_mode);
   OverrideFlag("FOW_CAPTURE_EVIDENCE", &options.capture_evidence);
   Override("FOW_HIDDEN_THREAT", &options.hidden_threat_weight);
   Override("FOW_HIDDEN_THREAT_STRIDE", &options.hidden_threat_stride);
@@ -562,6 +563,8 @@ Engine::Engine(int our_side, double base_seconds, double increment_seconds,
       searcher_(&table_),
       worker_searcher_(&worker_table_) {
   belief_.set_visibility_deductions(options_.visibility_deductions);
+  if (options_.history_mode < 0 || options_.history_mode > 2) std::abort();
+  belief_.set_history_mode(options_.history_mode);
   belief_.set_capture_evidence(options_.capture_evidence);
   (void)base_seconds;
   table_.Resize(options.transposition_megabytes);

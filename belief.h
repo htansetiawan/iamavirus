@@ -51,6 +51,18 @@ struct BeliefUpdateReport {
   int resampled_particles = 0;
   bool collapsed = false;  // nothing survived and the belief had to be rebuilt
   double mean_consistent_moves = 0.0;
+  int strict_rejected = 0;
+  int recovery_attempts = 0;
+  int recovery_rejected = 0;
+  bool history_evidence_conflict = false;
+  bool history_attempted = false;
+  bool history_recovered = false;
+  bool history_budget_exhausted = false;
+  bool history_full_certified = false;
+  int history_checkpoints_tried = 0;
+  int history_transitions = 0;
+  int history_rewind_plies = 0;
+  int history_unique_support = 0;
   int capture_square = -1;  // inferred this update, or -1
 };
 
@@ -82,6 +94,11 @@ class BeliefState {
   // unseen squares (observation.h, DeduceFromObservation). Off by default:
   // see EngineOptions::visibility_deductions.
   inline void set_visibility_deductions(bool on) { deductions_ = on; }
+  // Set before the first observation: 0 legacy filter, 1 exact live-observation
+  // filtering, 2 the same filter plus bounded history recovery. The split makes
+  // the contribution of recovery independently measurable.
+  inline void set_history_mode(int mode) { history_mode_ = mode; }
+  inline const BeliefUpdateReport& last_report() const { return last_report_; }
   // Capture evidence (ported from Astra's lane, 79564d0): when exactly one of
   // our pieces has vanished since the previous view onto a square we cannot
   // now see, the capturer is standing there until the opponent moves again,
@@ -109,6 +126,7 @@ class BeliefState {
   bool EnemyKingVisible(const Observation& view) const;
 
  private:
+  friend struct BeliefStateTestAccess;
   // Squares where `view` shows a piece of `color`, per piece type.
   struct ObservedPieces {
     Bitboard visible = 0;
@@ -168,6 +186,35 @@ class BeliefState {
   // Rebuilds a plausible population when every hypothesis has been contradicted,
   // which can happen if the opponent does something no particle anticipated.
   void Recover(const Observation& view, BeliefUpdateReport* report);
+
+  struct WeightedState {
+    Position position;
+    double weight;
+    int last_to = -1;
+    bool last_capture = false;
+  };
+  struct HistoryFrame {
+    Observation view;
+    ObservedPieces ours;
+    ObservedPieces enemy;
+    int previous_mover = -1;
+    Move own_move = kNullMove;
+    bool full_certified = false;
+    std::vector<WeightedState> support;
+  };
+  HistoryFrame CurrentFrame(const Observation& view) const;
+  void FilterLiveObservation(const Observation& view, BeliefUpdateReport* report);
+  void RememberHistory(const Observation& view);
+  bool RecoverFromHistory(const Observation& view, BeliefUpdateReport* report);
+  bool MatchesHistoryFrame(const Position& position, const HistoryFrame& frame) const;
+  std::vector<HistoryFrame> history_;
+  Move pending_history_move_ = kNullMove;
+  bool history_full_certified_ = true;
+  int history_mode_ = 0;
+  int previous_mover_ = -1;
+  int observation_en_passant_ = -1;
+  int own_move_en_passant_ = -1;
+  BeliefUpdateReport last_report_;
 
   int our_side_;
   bool deductions_ = false;

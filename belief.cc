@@ -12,6 +12,7 @@
 #include <numeric>
 #include <random>
 #include <vector>
+#include <unordered_map>
 
 namespace fow {
 namespace {
@@ -39,12 +40,69 @@ constexpr double kAttacksOurKingFactor = 3.0;
 // Ceiling on the enumerated successor pool, so a position with an unusually
 // large number of consistent explanations cannot blow up memory or time.
 constexpr std::size_t kMaxPoolSize = 20000;
+constexpr int kHistoryFrames = 16;
+constexpr int kHistoryTransitionsPerAttempt = 250000;
+constexpr std::size_t kHistoryPoolLimit = 65536;
 
 Position StartingPosition() {
   Position position;
   PositionFromFen("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
                   &position);
   return position;
+}
+
+// Equality includes board/rule state AND opponent-prior memory. Identical
+// boards reached by different opponent moves cannot be merged when those
+// moves affect the next prior. Hash collisions are resolved by full equality.
+struct StateIdentity {
+  std::array<uint64_t, 10> fields{};
+  StateIdentity(const Position& p, int last_to, bool last_capture) {
+    for (int type = 0; type < kNumPieceTypes; ++type) fields[type] = p.pieces(type);
+    fields[6] = p.pieces_of(kWhite);
+    fields[7] = p.castling_rights();
+    fields[8] = (static_cast<uint64_t>(p.halfmove_clock()) << 8) |
+                (static_cast<uint64_t>(p.en_passant_square() + 1) << 1) |
+                static_cast<uint64_t>(p.side_to_move());
+    fields[9] = (static_cast<uint64_t>(last_to + 1) << 1) | last_capture;
+  }
+  bool operator==(const StateIdentity&) const = default;
+};
+
+struct StateIdentityHash {
+  std::size_t operator()(const StateIdentity& key) const {
+    uint64_t hash = 0x9e3779b97f4a7c15ULL;
+    for (uint64_t value : key.fields) {
+      value = (value ^ (value >> 30)) * 0xbf58476d1ce4e5b9ULL;
+      value = (value ^ (value >> 27)) * 0x94d049bb133111ebULL;
+      hash ^= value ^ (value >> 31);
+      hash = (hash << 27) | (hash >> 37);
+    }
+    return static_cast<std::size_t>(hash);
+  }
+};
+
+// An unbiased allocation of `draws` offspring with low marginal variance.
+// Zero-weight entries cannot receive an offspring, even on an exact zero draw.
+std::vector<int> SystematicCounts(const std::vector<double>& weights, int draws,
+                                  std::mt19937_64* rng) {
+  std::vector<int> counts(weights.size(), 0);
+  std::vector<std::size_t> order;
+  double total = 0.0;
+  for (std::size_t i = 0; i < weights.size(); ++i) {
+    if (weights[i] > 0.0) { order.push_back(i); total += weights[i]; }
+  }
+  if (draws <= 0 || total <= kNegligibleWeight || order.empty()) return counts;
+  std::shuffle(order.begin(), order.end(), *rng);
+  const double step = total / draws;
+  double pointer = std::uniform_real_distribution<double>(0.0, 1.0)(*rng) * step;
+  std::size_t at = 0;
+  double cumulative = weights[order[0]];
+  for (int i = 0; i < draws; ++i) {
+    while (pointer > cumulative && at + 1 < order.size()) cumulative += weights[order[++at]];
+    ++counts[order[at]];
+    pointer += step;
+  }
+  return counts;
 }
 
 }  // namespace
@@ -167,6 +225,9 @@ void BeliefState::UpdateOwnRights(const Observation& view) {
 }
 
 void BeliefState::ApplyOurMove(Move move) {
+  if (history_mode_ == 2) pending_history_move_ = move;
+  own_move_en_passant_ = MoveFlagOf(move) == kFlagDoublePush
+                            ? (MoveFrom(move) + MoveTo(move)) / 2 : -1;
   const int home_rank = our_side_ == kWhite ? 0 : 7;
   if (MoveTo(move) == capture_square_) capture_square_ = -1;
   recent_captures_.erase(
@@ -203,8 +264,11 @@ void BeliefState::ApplyOurMove(Move move) {
   }
 
   std::vector<Position> updated;
+  std::vector<int> updated_to;
+  std::vector<bool> updated_capture;
   updated.reserve(particles_.size());
-  for (Position particle : particles_) {
+  for (std::size_t i = 0; i < particles_.size(); ++i) {
+    Position particle = particles_[i];
     particle.set_side_to_move(our_side_);
     MoveList legal;
     particle.GenerateMoves(&legal);
@@ -219,16 +283,23 @@ void BeliefState::ApplyOurMove(Move move) {
     UndoState undo;
     particle.MakeMove(move, &undo);
     updated.push_back(particle);
+    updated_to.push_back(last_to_[i]);
+    updated_capture.push_back(last_capture_[i]);
   }
-  if (!updated.empty()) {
-    particles_.swap(updated);
-  }
+  // Filtering one position must filter its opponent-prior memory with it.
+  // An impossible own action leaves no successor; Observe then recovers.
+  particles_.swap(updated);
+  last_to_.swap(updated_to);
+  last_capture_.swap(updated_capture);
   representative_valid_ = false;
 }
 
 BeliefUpdateReport BeliefState::Observe(const Observation& view,
                                        bool reflects_our_own_move) {
   BeliefUpdateReport report;
+  previous_mover_ = seen_any_ ? (reflects_our_own_move ? our_side_ : our_side_ ^ 1) : -1;
+  observation_en_passant_ = !seen_any_ ? -1 : reflects_our_own_move
+      ? own_move_en_passant_ : InferEnPassant(&previous_view_, view, our_side_);
   // The census is brought up to date first, before anything can consult it.
   // Rebuilding a contradicted population reads it to decide how much material to
   // scatter behind the fog, and a census that has not yet noticed a promotion
@@ -256,14 +327,214 @@ BeliefUpdateReport BeliefState::Observe(const Observation& view,
     if (capture_evidence_ && have_previous_view_) InferCaptureEvidence(view, &report);
     PredictAndCondition(view, &report);
   }
+  if (history_mode_ != 0) FilterLiveObservation(view, &report);
   if (particles_.empty()) {
-    Recover(view, &report);
+    report.collapsed = true;
+    if (history_mode_ != 2 || !RecoverFromHistory(view, &report)) {
+      Recover(view, &report);
+      history_full_certified_ = false;
+    }
+  }
+  if (history_mode_ == 2) {
+    RememberHistory(view);
+    report.history_full_certified = history_full_certified_;
+    pending_history_move_ = kNullMove;
   }
   report.capture_square = capture_square_;
   previous_view_ = view;
   have_previous_view_ = true;
   representative_valid_ = false;
+  last_report_ = report;
   return report;
+}
+
+BeliefState::HistoryFrame BeliefState::CurrentFrame(const Observation& view) const {
+  HistoryFrame frame;
+  frame.view = view;
+  frame.ours = Summarize(view, our_side_);
+  frame.enemy = Summarize(view, our_side_ ^ 1);
+  if (capture_evidence_ && capture_square_ >= 0 && view.IsUnseen(capture_square_)) {
+    frame.enemy.must_hold_enemy |= SquareBB(capture_square_);
+  }
+  frame.previous_mover = previous_mover_;
+  frame.own_move = previous_mover_ == our_side_ ? pending_history_move_ : kNullMove;
+  return frame;
+}
+
+void BeliefState::FilterLiveObservation(const Observation& view,
+                                       BeliefUpdateReport* report) {
+  const HistoryFrame frame = CurrentFrame(view);
+  std::size_t kept = 0;
+  for (std::size_t i = 0; i < particles_.size(); ++i) {
+    if (!MatchesHistoryFrame(particles_[i], frame)) {
+      ++report->strict_rejected;
+      continue;
+    }
+    particles_[kept] = particles_[i];
+    last_to_[kept] = last_to_[i];
+    last_capture_[kept] = last_capture_[i];
+    ++kept;
+  }
+  particles_.resize(kept);
+  last_to_.resize(kept);
+  last_capture_.resize(kept);
+}
+
+bool BeliefState::MatchesHistoryFrame(const Position& position,
+                                       const HistoryFrame& frame) const {
+  // A legal live history must survive referee adjudication at every step.
+  // This is mandatory for history certification even if the separate
+  // continuation ablation is disabled on the ordinary filter path.
+  if (frame.previous_mover >= 0) {
+    const int king = position.KingSquare(frame.previous_mover);
+    if (king < 0 || position.IsAttacked(king, frame.previous_mover ^ 1)) return false;
+  }
+  // Cheap piece constraints before generating the full visibility mask.
+  if (!AgreesAboutUs(position, frame.ours, our_side_) ||
+      !AgreesAboutEnemy(position, frame.enemy, our_side_ ^ 1)) return false;
+  return RenderObservation(position, our_side_) == frame.view.squares();
+}
+
+void BeliefState::RememberHistory(const Observation& view) {
+  HistoryFrame frame = CurrentFrame(view);
+  frame.full_certified = history_full_certified_;
+  std::unordered_map<StateIdentity, std::size_t, StateIdentityHash> index;
+  index.reserve(particles_.size());
+  for (std::size_t i = 0; i < particles_.size(); ++i) {
+    Position p = particles_[i];
+    const int memory_to = last_to_[i];
+    const bool memory_capture = last_capture_[i];
+    p.set_side_to_move(previous_mover_ < 0 ? kWhite : previous_mover_ ^ 1);
+    if (!MatchesHistoryFrame(p, frame)) continue;
+    auto [entry, added] = index.emplace(StateIdentity(p, memory_to, memory_capture), frame.support.size());
+    if (added) frame.support.push_back({p, 1.0, memory_to, memory_capture});
+    else frame.support[entry->second].weight += 1.0;
+  }
+  if (history_.size() == kHistoryFrames) history_.erase(history_.begin());
+  history_.push_back(std::move(frame));
+}
+
+bool BeliefState::RecoverFromHistory(const Observation& view,
+                                      BeliefUpdateReport* report) {
+  report->history_attempted = true;
+  HistoryFrame current = CurrentFrame(view);
+  const int count = static_cast<int>(history_.size());
+  if (count == 0 || previous_mover_ < 0) return false;
+  // A failed speculative search must not change the random reconstruction or
+  // later filter draws. This also keeps the strict-only comparison paired when
+  // history replay finds no additional support.
+  const auto rng_before = rng_;
+  const int width = std::clamp(2 * target_count_, 64, 8192);
+  std::vector<int> distances;
+  // Replaying one edge from the same support cannot restore discarded mass.
+  // Go back before the last resampling, and progressively farther if needed.
+  for (int distance : {2, 4, 8, 16}) if (distance <= count) distances.push_back(distance);
+  if (distances.empty() || distances.back() != count) distances.push_back(count);
+  for (const int distance : distances) {
+    const int anchor_index = count - distance;
+    const HistoryFrame& anchor = history_[anchor_index];
+    if (anchor.support.empty()) continue;
+    ++report->history_checkpoints_tried;
+    std::vector<WeightedState> support = anchor.support;
+    int remaining = kHistoryTransitionsPerAttempt;
+    bool failed = false;
+    for (int step = anchor_index + 1; step <= count && !failed; ++step) {
+      const HistoryFrame& frame = step == count ? current : history_[step];
+      const int mover = frame.previous_mover;
+      if (mover < 0 || (mover == our_side_ && frame.own_move == kNullMove)) {
+        failed = true;
+        break;
+      }
+      std::vector<WeightedState> next;
+      std::unordered_map<StateIdentity, std::size_t, StateIdentityHash> index;
+      index.reserve(std::min(kHistoryPoolLimit, support.size() * 16));
+      for (const auto& parent : support) {
+        Position p = parent.position;
+        // The recorded sequence, not a forced side override, determines whose
+        // move this is. A malformed history must not create a legal trajectory.
+        if (p.side_to_move() != mover) continue;
+        MoveList moves;
+        p.GenerateMoves(&moves);
+        const int cost = mover == our_side_ ? 1 : moves.size();
+        if (cost > remaining) {
+          report->history_budget_exhausted = failed = true;
+          break;  // do not return a population from a partially visited level
+        }
+        remaining -= cost;
+        report->history_transitions += cost;
+        std::vector<double> priors(moves.size(), 1.0);
+        double total = 1.0;
+        if (mover != our_side_) {
+          total = 0.0;
+          for (int i = 0; i < moves.size(); ++i) {
+            priors[i] = MovePlausibility(&p, moves[i], parent.last_to, parent.last_capture);
+            total += priors[i];
+          }
+        }
+        if (total <= 0.0) continue;
+        for (int i = 0; i < moves.size(); ++i) {
+          const Move move = moves[i];
+          if (mover == our_side_ && move != frame.own_move) continue;
+          const int memory_to = mover == our_side_ ? parent.last_to : MoveTo(move);
+          const bool memory_capture = mover == our_side_ ? parent.last_capture
+              : p.piece_at(MoveTo(move)) != kNoPiece || MoveFlagOf(move) == kFlagEnPassant;
+          UndoState undo;
+          p.MakeMove(move, &undo);
+          if (MatchesHistoryFrame(p, frame)) {
+            const double weight = parent.weight * priors[i] / total;
+            auto [entry, added] = index.emplace(StateIdentity(p, memory_to, memory_capture), next.size());
+            if (added) next.push_back({p, weight, memory_to, memory_capture});
+            else next[entry->second].weight += weight;
+          }
+          p.UnmakeMove(move, undo);
+          if (next.size() > kHistoryPoolLimit) {
+            report->history_budget_exhausted = failed = true;
+            break;
+          }
+        }
+        if (failed) break;
+      }
+      if (failed || next.empty()) { failed = true; break; }
+      double total = 0.0;
+      for (const auto& p : next) total += p.weight;
+      if (total <= 0.0) { failed = true; break; }
+      for (auto& p : next) p.weight /= total;
+      if (next.size() > static_cast<std::size_t>(width)) {
+        std::vector<double> weights;
+        for (const auto& p : next) weights.push_back(p.weight);
+        const auto copies = SystematicCounts(weights, width, &rng_);
+        support.clear();
+        for (std::size_t i = 0; i < next.size(); ++i) {
+          if (copies[i]) {
+            WeightedState kept = next[i];
+            kept.weight = static_cast<double>(copies[i]) / width;
+            support.push_back(kept);
+          }
+        }
+      } else {
+        support.swap(next);  // keep the entire weighted set when small enough
+      }
+    }
+    if (failed) continue;
+    std::vector<double> weights;
+    std::vector<Position> pool;
+    std::vector<int> pool_to;
+    std::vector<bool> pool_capture;
+    for (const auto& p : support) {
+      weights.push_back(p.weight);
+      pool.push_back(p.position);
+      pool_to.push_back(p.last_to);
+      pool_capture.push_back(p.last_capture);
+    }
+    Resample(weights, pool, pool_to, pool_capture, report);
+    history_full_certified_ = anchor.full_certified;
+    report->history_recovered = true;
+    report->history_rewind_plies = distance;
+    report->history_unique_support = static_cast<int>(pool.size());
+    return true;
+  }
+  rng_ = rng_before;
+  return false;
 }
 
 void BeliefState::InferCaptureEvidence(const Observation& view,
@@ -476,7 +747,10 @@ void BeliefState::Recover(const Observation& view,
   report->collapsed = true;
   const int enemy_side = our_side_ ^ 1;
   Position visible;
-  VisiblePositionFromObservation(view, our_side_, 0, -1, &visible);
+  // An EP target can be necessary to explain the visibility mask. Scattering
+  // more boards with no EP right cannot repair that missing rule metadata.
+  VisiblePositionFromObservation(view, our_side_, 0,
+      history_mode_ != 0 ? observation_en_passant_ : -1, &visible);
 
   std::array<int, kNumPieceTypes> missing{};
   for (int type = 0; type < kNumPieceTypes; ++type) {
@@ -534,7 +808,14 @@ void BeliefState::Recover(const Observation& view,
   }
 
   particles_.clear();
-  for (int i = 0; i < target_count_; ++i) {
+  const HistoryFrame frame = CurrentFrame(view);
+  const int64_t attempt_limit = static_cast<int64_t>(target_count_) *
+                                (history_mode_ != 0 ? 32 : 1);
+  Position first_rejected;
+  bool have_rejected = false;
+  for (int64_t i = 0; i < attempt_limit &&
+       static_cast<int>(particles_.size()) < target_count_; ++i) {
+    ++report->recovery_attempts;
     Position particle = visible;
     std::shuffle(hidden.begin(), hidden.end(), rng_);
 
@@ -597,9 +878,26 @@ void BeliefState::Recover(const Observation& view,
         available.erase(available.begin() + static_cast<std::ptrdiff_t>(chosen));
       }
     }
-    particle.set_side_to_move(our_side_);
+    particle.set_side_to_move(history_mode_ != 0
+                                 ? (previous_mover_ < 0 ? kWhite : previous_mover_ ^ 1)
+                                 : our_side_);
     particle.set_castling_rights(rebuilt_rights);
+    if (history_mode_ != 0 && !MatchesHistoryFrame(particle, frame)) {
+      ++report->recovery_rejected;
+      if (!have_rejected) { first_rejected = particle; have_rejected = true; }
+      continue;
+    }
     particles_.push_back(particle);
+  }
+  if (particles_.empty()) {
+    // Bounded degraded fallback: never certify a guess that failed the view or
+    // live-game constraints. This conflict must be counted in every gate.
+    report->history_evidence_conflict = true;
+    particles_.push_back(first_rejected);
+  }
+  const std::size_t kept = particles_.size();
+  while (static_cast<int>(particles_.size()) < target_count_) {
+    particles_.push_back(particles_[particles_.size() % kept]);
   }
   last_to_.assign(particles_.size(), -1);
   last_capture_.assign(particles_.size(), false);
