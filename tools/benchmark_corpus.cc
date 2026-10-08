@@ -109,6 +109,10 @@ struct Tally {
   int qc_band_repeat[3] = {0, 0, 0};
   int qc_avoidable[3] = {0, 0, 0};         // a true-board alternative kept the queen, the king and >=3 points safe
   int qc_avoidable_repeat[3] = {0, 0, 0};
+  // Gym: unseen king threats created by the engine's choice vs the real move, at the fatal plies.
+  int strike_unseen = 0;
+  int real_strike_unseen = 0;
+  int fatal_decisions = 0;
 };
 
 // Average over the true board's hidden enemy pieces of the particle share
@@ -188,6 +192,25 @@ double QueenCapturerMass(const BeliefState& belief, const Position& truth, Move 
     if (holds) ++holders;
   }
   return static_cast<double>(holders) / population.size();
+}
+
+// After `move` on the true board, does the mover attack the enemy king from a
+// square the enemy's own view of the new position does not show? The gym's
+// "strike from the fog" test: the kind of move that decides most games.
+bool KingThreatUnseen(const Position& truth, Move move, int side) {
+  Position after = truth;
+  UndoState undo;
+  after.MakeMove(move, &undo);
+  if (after.PreviousMoverIsLost()) return false;
+  const int king = after.KingSquare(side ^ 1);
+  if (king < 0) return false;
+  Bitboard attackers = after.AttackersTo(king, side);
+  if (attackers == 0) return false;
+  const Observation enemy_view(RenderObservation(after, side ^ 1));
+  while (attackers) {
+    if (enemy_view.IsUnseen(PopLsb(&attackers))) return true;
+  }
+  return false;
 }
 
 // Material the mover leaves to the opponent's best immediate capture after
@@ -377,6 +400,9 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
               tally->attacker_mass += held;
               ++tally->attacker_plies;
             }
+            ++tally->fatal_decisions;
+            if (KingThreatUnseen(truth, choice, seat.side)) ++tally->strike_unseen;
+            if (KingThreatUnseen(truth, actual, seat.side)) ++tally->real_strike_unseen;
             const double qheld = QueenCapturerMass(engine.belief(), truth, actual, seat.side);
             if (qheld >= 0.0) {
               tally->qc_mass += qheld;
@@ -527,6 +553,11 @@ int main(int argc, char** argv) {
               tally.hidden_piece_decisions ? tally.hidden_piece_mass / tally.hidden_piece_decisions : 0.0,
               tally.hidden_piece_decisions,
               tally.attacker_plies ? tally.attacker_mass / tally.attacker_plies : 0.0, tally.attacker_plies);
+  if (tally.fatal_decisions > 0) {
+    std::printf("  unseen king threat created at fatal plies: engine %d (%.1f%%), real move %d (%.1f%%) of %d\n",
+                tally.strike_unseen, 100.0 * tally.strike_unseen / tally.fatal_decisions,
+                tally.real_strike_unseen, 100.0 * tally.real_strike_unseen / tally.fatal_decisions, tally.fatal_decisions);
+  }
   if (tally.qc_plies > 0) {
     std::printf("  queen capturer held at fatal plies: %.3f (%d plies); mass <0.05: %d plies, engine repeats %d; 0.05-0.3: %d, repeats %d; >=0.3: %d, repeats %d\n",
                 tally.qc_mass / tally.qc_plies, tally.qc_plies, tally.qc_band[0], tally.qc_band_repeat[0],
