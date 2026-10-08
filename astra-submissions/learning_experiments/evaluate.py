@@ -46,17 +46,32 @@ class Totals:
 
     def add(self, d, log_policy, danger, belief, value):
         self.counts["decisions"] += 1
+        # Use the emitted candidate order to break ties, as the runtime's stable
+        # policy sort does. These are pre-filter policy slates, not search moves.
+        ranked = np.argsort(-log_policy, kind="stable")
+        self.sums["policy_entropy"] -= float((np.exp(log_policy) * log_policy).sum())
         if d["policy_valid"]:
             self.counts["policy"] += 1
             self.sums["policy_nll"] -= float(log_policy[d["demonstrated"]])
             self.sums["policy_accuracy"] += int(log_policy.argmax() == d["demonstrated"])
+            for k in (4, 8, 16):
+                self.sums[f"policy_hit{k}"] += int(d["demonstrated"] in ranked[:k])
         if d["value_valid"]:
             self.counts["value"] += 1
             self.sums["value_mse"] += float((value - d["return"]) ** 2)
         if d["danger_valid"]:
             y = d["danger"]
+            fatal = y > 0.5
+            self.counts["danger_decisions"] += 1
             self.counts["danger_candidates"] += len(y)
             self.counts["danger_positives"] += int(y.sum())
+            self.sums["policy_top1_fatal"] += int(fatal[ranked[0]])
+            self.counts["policy_top4_candidates"] += min(4, len(y))
+            self.sums["policy_top4_fatal_fraction"] += int(fatal[ranked[:4]].sum())
+            if not fatal.all():
+                self.counts["avoidable_danger_decisions"] += 1
+                self.sums["policy_top1_avoidable_fatal"] += int(fatal[ranked[0]])
+                self.sums["policy_top4_all_fatal_when_escape_exists"] += int(fatal[ranked[:4]].all())
             self.sums["danger_brier"] += float(np.square(danger - y).sum())
             self.sums["danger_false_negatives_at_0.5"] += int(((danger < 0.5) & (y > 0.5)).sum())
             self.danger.append(danger)
@@ -83,6 +98,12 @@ class Totals:
 
     def summary(self, include_roc=True):
         denominator = {"policy_nll": "policy", "policy_accuracy": "policy", "value_mse": "value",
+                       "policy_entropy": "decisions", "policy_hit4": "policy",
+                       "policy_hit8": "policy", "policy_hit16": "policy",
+                       "policy_top1_fatal": "danger_decisions",
+                       "policy_top1_avoidable_fatal": "avoidable_danger_decisions",
+                       "policy_top4_all_fatal_when_escape_exists": "avoidable_danger_decisions",
+                       "policy_top4_fatal_fraction": "policy_top4_candidates",
                        "danger_brier": "danger_candidates", "danger_false_negatives_at_0.5": "danger_positives",
                        "hidden_nll": "hidden_squares", "hidden_enemy_nll": "hidden_enemy_squares",
                        "hidden_brier": "hidden_squares"}
@@ -138,4 +159,6 @@ def evaluate(model, episodes, device):
             "groups": {k: v.summary() for k, v in groups.items()},
             "by_game": {k: v.summary(include_roc=False) for k, v in games.items()},
             "limitations": ["Empirical ROC points are descriptive, not a calibrated veto.",
+                            "Policy slate metrics precede the hybrid's particle-risk filter and search union.",
+                            "Demonstration hit rates measure imitation, not optimal moves or wins.",
                             "Replay task metrics do not establish an Elo improvement."]}

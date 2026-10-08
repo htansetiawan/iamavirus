@@ -101,6 +101,22 @@ threats. Inspect actual fatal candidate changes and run the hybrid decision
 gate before complete clocked games. A teacher must improve a downstream task
 before it supplies targets to a student.
 
+Fable's v3 model provides a concrete caution: its better imitation and danger
+scores did not survive the small clocked gate (3.5/8 against arena-v13 bytes on
+the caution engine; `data/reports/v3model-vs-v13-lane2.json`). Earlier v1 results
+used different seeds, so that comparison is not a paired estimate of the model
+effect. The current hybrid takes a deterministic policy top-k after its particle
+risk filter, then unions those moves with search and risk proposals. Merely
+softening probabilities with temperature preserves policy rank and cannot repair
+missing proposals in that path. Changed rankings, risk tie-breaks, and the
+interaction with the row limit need direct measurement.
+
+The representation evaluator now reports demonstration hit@4/8/16, policy
+entropy, top-1 fatal and avoidable-fatal choices, and cases where every top-four
+proposal is fatal despite an available escape. It separates forced-loss seats
+and invalid tactical labels. These are unfiltered policy diagnostics; the
+hybrid's actual shortlist and selected move remain the promotion instrument.
+
 If it earns that step, compare direct larger-model FP32/INT8 inference with
 distillation into the existing small model. The first distillation targets are
 legal-candidate soft probabilities, hidden-square distributions and candidate

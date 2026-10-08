@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-08T00:13:00.993750+00:00",
+  "updated": "2026-10-08T00:34:39.820422+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
@@ -16,15 +16,21 @@
     },
     {
       "cores": "3-4",
-      "holder": "fable (node-limited, shareable)",
-      "job": "v4 training data loading until ~00:20, then export/suites",
-      "until": "~00:35 UTC"
+      "holder": "astra",
+      "job": "GPU capacity pilots: frozen features-v2 CNN/small/large attention, CPU preprocessing",
+      "until": "explicit release; estimated 01:05 UTC"
     },
     {
       "cores": "5",
       "holder": "fable (node-limited, shareable with Astra's node-limited gates)",
       "job": "capture-evidence benchmark arms",
       "until": "~00:50 UTC"
+    },
+    {
+      "cores": "2",
+      "holder": "astra",
+      "job": "Astra replay validation, overlap audit, and completed belief integration checks",
+      "until": "explicit release after corpus curation"
     }
   ]
 }

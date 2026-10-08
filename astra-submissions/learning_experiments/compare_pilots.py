@@ -11,6 +11,12 @@ from learning_experiments.run import write_json
 METRICS = {"policy_nll": "policy", "policy_accuracy": "policy", "hidden_nll": "hidden_squares",
            "hidden_enemy_nll": "hidden_enemy_squares", "danger_brier": "danger_candidates",
            "value_mse": "value"}
+SLATE_METRICS = {"policy_entropy": "decisions", "policy_hit4": "policy",
+                 "policy_hit8": "policy", "policy_hit16": "policy",
+                 "policy_top1_fatal": "danger_decisions",
+                 "policy_top1_avoidable_fatal": "avoidable_danger_decisions",
+                 "policy_top4_all_fatal_when_escape_exists": "avoidable_danger_decisions",
+                 "policy_top4_fatal_fraction": "policy_top4_candidates"}
 
 
 def compare(control, candidate, step, bootstrap=10000):
@@ -34,17 +40,29 @@ def compare(control, candidate, step, bootstrap=10000):
     rng = np.random.default_rng(253)
     draws = rng.integers(len(games), size=(bootstrap, len(games)))
     results = {}
-    for metric, denominator in METRICS.items():
+    omitted = []
+    for metric, denominator in (METRICS | SLATE_METRICS).items():
+        if metric in SLATE_METRICS and not all(
+                metric in report['by_game'][g]['sums'] for report in reports for g in games):
+            omitted.append(metric)  # Preserve comparisons of legacy reports.
+            continue
         sums, counts = [], []
         for report in reports:
             sums.append(np.array([report['by_game'][g]['sums'][metric] for g in games]))
             counts.append(np.array([report['by_game'][g]['counts'][denominator] for g in games]))
         np.testing.assert_array_equal(counts[0], counts[1])
+        if counts[0].sum() == 0:
+            results[metric] = {'control': None, 'candidate': None,
+                               'candidate_minus_control': None, 'paired_game_bootstrap_95': None}
+            continue
         values = [float(s.sum() / c.sum()) for s, c in zip(sums, counts)]
-        deltas = ((sums[1][draws].sum(1) - sums[0][draws].sum(1)) / counts[0][draws].sum(1))
+        bootstrap_counts = counts[0][draws].sum(1)
+        valid = bootstrap_counts > 0
+        deltas = ((sums[1][draws].sum(1) - sums[0][draws].sum(1))[valid] / bootstrap_counts[valid])
         results[metric] = {'control': values[0], 'candidate': values[1],
                            'candidate_minus_control': values[1] - values[0],
-                           'paired_game_bootstrap_95': np.percentile(deltas, [2.5, 97.5]).tolist()}
+                           'paired_game_bootstrap_95': np.percentile(deltas, [2.5, 97.5]).tolist(),
+                           'bootstrap_samples_with_nonzero_denominator': int(valid.sum())}
     return {'step': step, 'seed': a['seed'], 'games': len(games),
             'validation_decisions': reports[0]['unique_decisions'],
             'training_decisions_each': sum(r['decisions'] for r in logs[0]),
@@ -52,6 +70,7 @@ def compare(control, candidate, step, bootstrap=10000):
             'parameters': [r['model_parameters'] for r in runs],
             'elapsed_through_last_update_seconds': [rows[-1]['elapsed_seconds'] for rows in logs],
             'metrics': results,
+            'legacy_metrics_unavailable': omitted,
             'danger_recall_at_fpr': [r['groups']['all']['danger_recall_at_fpr'] for r in reports],
             'limitations': ['One initialization seed; intervals cover held-out games, not training-seed variation.',
                             'Same optimizer updates and decisions, not equal elapsed compute.',

@@ -52,6 +52,45 @@ class EvaluationTests(unittest.TestCase):
         self.assertGreater(summary['metrics']['hidden_enemy_nll'], 6)
         self.assertEqual(summary['metrics']['hidden_piece_2_recall'], 0)
 
+    def test_policy_slate_distinguishes_forced_and_avoidable_fatalities(self):
+        stats = Totals()
+        d = decision(0)
+        d.update(policy_valid=False, value_valid=False, belief_valid=False,
+                 danger=np.array([1., 1., 1., 1., 0.]))
+        # A tied top four are all fatal; a fifth available move escapes.
+        stats.add(d, np.log(np.full(5, 0.2)), np.full(5, 0.1), None, 0.)
+        d['danger'] = np.ones(2)
+        stats.add(d, np.log([0.6, 0.4]), np.full(2, 0.9), None, 0.)
+        report = stats.summary()
+        self.assertEqual(report['counts']['danger_decisions'], 2)
+        self.assertEqual(report['counts']['avoidable_danger_decisions'], 1)
+        self.assertEqual(report['metrics']['policy_top1_fatal'], 1.)
+        self.assertEqual(report['metrics']['policy_top1_avoidable_fatal'], 1.)
+        self.assertEqual(report['metrics']['policy_top4_all_fatal_when_escape_exists'], 1.)
+        self.assertEqual(report['counts']['policy_top4_candidates'], 6)
+        self.assertEqual(report['metrics']['policy_top4_fatal_fraction'], 1.)
+        self.assertIsNone(report['metrics']['policy_hit4'])
+
+    def test_policy_slate_masks_ties_and_short_candidate_lists(self):
+        stats = Totals()
+        d = decision(0)
+        d.update(value_valid=False, belief_valid=False, demonstrated=1)
+        stats.add(d, np.log([0.5, 0.5]), np.array([0.9, 0.1]), None, 0.)
+        report = stats.summary()
+        self.assertEqual(report['metrics']['policy_top1_fatal'], 0.)
+        self.assertEqual(report['metrics']['policy_top4_fatal_fraction'], 0.5)
+        self.assertEqual(report['metrics']['policy_hit4'], 1.)
+        self.assertEqual(report['metrics']['policy_accuracy'], 0.)
+        self.assertAlmostEqual(report['metrics']['policy_entropy'], np.log(2))
+        # A protocol failure can invalidate danger targets while a legal
+        # demonstrated move still contributes to policy coverage.
+        d.update(danger_valid=False, danger=np.ones(2))
+        stats.add(d, np.log([0.1, 0.9]), np.ones(2), None, 0.)
+        report = stats.summary()
+        self.assertEqual(report['counts']['danger_decisions'], 1)
+        self.assertEqual(report['counts']['policy'], 2)
+        self.assertEqual(report['metrics']['policy_top1_fatal'], 0.)
+
     def test_each_decision_once_in_unequal_length_episodes(self):
         def episode(game, length):
             return SimpleNamespace(metadata=SimpleNamespace(game_id=game, player_id='a', opponent_id='b'),
