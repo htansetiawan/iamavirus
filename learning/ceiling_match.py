@@ -177,16 +177,28 @@ def main() -> None:
     ap.add_argument("--cores", default="0-7")
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--max-plies", type=int, default=10000)
+    ap.add_argument("--shared-cores", action="store_true", help="pin both bots of a game to the same cores")
     ap.add_argument("--output", required=True)
     args = ap.parse_args()
     cores = parse_cores(args.cores)
-    need = args.a_threads + args.b_threads
     slots = []
-    for i in range(args.parallel):
-        chunk = cores[i * need:(i + 1) * need]
-        if len(chunk) < need:
-            raise SystemExit(f"not enough cores for {args.parallel} parallel games of {need} cores")
-        slots.append((",".join(map(str, chunk[:args.a_threads])), ",".join(map(str, chunk[args.a_threads:]))))
+    if args.shared_cores:
+        # Both bots on the same cores, as compare_archives pins them: only the side
+        # to move thinks, so each gets the whole set while it decides.
+        need = max(args.a_threads, args.b_threads)
+        for i in range(args.parallel):
+            chunk = cores[i * need:(i + 1) * need]
+            if len(chunk) < need:
+                raise SystemExit(f"not enough cores for {args.parallel} parallel games of {need} cores")
+            text = ",".join(map(str, chunk))
+            slots.append((text, text))
+    else:
+        need = args.a_threads + args.b_threads
+        for i in range(args.parallel):
+            chunk = cores[i * need:(i + 1) * need]
+            if len(chunk) < need:
+                raise SystemExit(f"not enough cores for {args.parallel} parallel games of {need} cores")
+            slots.append((",".join(map(str, chunk[:args.a_threads])), ",".join(map(str, chunk[args.a_threads:]))))
     jobs = []
     for p in range(args.pairs):
         jobs.append((f"pair{p}-a-white", True, args.seed + 2 * p))
