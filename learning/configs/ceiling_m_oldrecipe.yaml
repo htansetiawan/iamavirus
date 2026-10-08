@@ -1,0 +1,27 @@
+# Same as ceiling_m.yaml but with the recipe of the v4 release (batch 8, ~9.4k steps, weight decay 1e-4),
+# to separate model size from training recipe (note 017).
+# Ceiling study (2026-10-08): model size with one shared recipe on manifest v4
+# (features-v2, 3,766 training games). Size m: 128 channels, 8 blocks,
+# GRU 512. Selection on validation policy loss; belief/danger/value logged.
+pretrain:
+  feature_cache: /media/henrytan/seagate/iamavirus/feature-cache/v4
+  model: {channels: 128, blocks: 8, hidden: 512, cand_width: 256}
+  window: 64
+  sequences_per_batch: 8
+  accumulation_steps: 1
+  learning_rate: 3.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  epochs: 10
+  cosine_steps: 9500
+  select_on: policy
+  loss_weights:
+    policy: 1.0
+    belief: 1.0
+    danger: 1.0
+    value: 0.25
+  mixed_precision: true
+  seed: 1
+  validation_sequences: 512
+  player_weights:
+    default: 1.0
