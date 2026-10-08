@@ -24,6 +24,7 @@ import json
 import os
 import random
 import select
+import signal
 import subprocess
 import time
 from pathlib import Path
@@ -38,7 +39,9 @@ class BotProcess:
                  startup: float = 15.0):
         self.side = side
         self.proc = subprocess.Popen(["taskset", "-c", cores, binary], stdin=subprocess.PIPE, stdout=subprocess.PIPE,
-                                     stderr=subprocess.DEVNULL, text=True, bufsize=1, env=env, cwd=str(ROOT))
+                                     stderr=subprocess.DEVNULL, text=True, bufsize=1, env=env, cwd=str(ROOT),
+                                     start_new_session=True)
+        self.paused = False
         self.pending: list[str] = []
         self.send("fow")
         self.send(f"{'w' if side == 0 else 'b'} {base:g} {increment:g}")
@@ -66,6 +69,18 @@ class BotProcess:
 
     immediate = False  # set by main(); False mirrors the sandboxed referee (the arena): observations held until the turn
 
+    pause = True  # set by main(): freeze the side not to move, as the arena does
+
+    def freeze(self) -> None:
+        if BotProcess.pause and not self.paused and self.proc.poll() is None:
+            os.killpg(self.proc.pid, signal.SIGSTOP)
+            self.paused = True
+
+    def thaw(self) -> None:
+        if self.paused and self.proc.poll() is None:
+            os.killpg(self.proc.pid, signal.SIGCONT)
+        self.paused = False
+
     def observe(self, observation: str) -> None:
         if BotProcess.immediate:
             # referee.py with no turn control sends each observation the moment the
@@ -76,6 +91,7 @@ class BotProcess:
             self.pending.append(observation)
 
     def move(self, clock: float):
+        self.thaw()
         started = time.monotonic()
         for observation in self.pending:
             self.send(observation)
@@ -83,12 +99,15 @@ class BotProcess:
         self.send(f"{clock:.9f}")
         line = self.readline(clock - (time.monotonic() - started))
         elapsed = time.monotonic() - started
+        if not BotProcess.immediate:
+            self.freeze()
         if line is None or not line.startswith("move "):
             return None, elapsed
         return line.split()[1], elapsed
 
     def close(self) -> None:
         try:
+            self.thaw()
             self.proc.kill()
         except Exception:
             pass
@@ -110,6 +129,8 @@ def play(game_id: str, white: dict, black: dict, max_plies: int = 10000) -> dict
     try:
         for index, spec in enumerate(sides):
             bots.append(BotProcess(spec["binary"], spec["env"], spec["cores"], index, spec["base"], spec["increment"]))
+            if not BotProcess.immediate:
+                bots[-1].freeze()
         frames.append(frame())
         while True:
             outcome = state.outcome()
