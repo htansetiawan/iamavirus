@@ -1,13 +1,13 @@
 # Arena v15 watch
 
-Updated 2026-10-08 07:45 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-08 08:16 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 4W-1D-5L over 10 games** (45%).
-As White: 3.5/5.
-As Black: 1.0/5.
+**Record: 7W-1D-10L over 18 games** (42%).
+As White: 5.5/9.
+As Black: 2.0/9.
 
-Queen lost for less: 3 games (3 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 3 of 5.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 2. Mean length 87 plies.
+Queen lost for less: 8 games (6 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 7 of 10.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 4. Mean length 82 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -16,6 +16,10 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | TA Baseline S | 0-1-1 |
 | Apricot Squad | 2-0-0 |
 | Strongly Invisible | 0-0-2 |
+| Greek Gift | 0-0-2 |
+| duck | 0-0-2 |
+| baseline.py | 2-0-0 |
+| TA Baseline A | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -29,3 +33,11 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-08 07:41 | quxgjviv | W | Apricot Squad | 42 | win |  | 87 s | 33-28 |
 | 2026-10-08 07:41 | 4svhfryu | W | Strongly Invisible | 83 | loss | ply 72 by r unseen | 37 s | 6-25 |
 | 2026-10-08 07:44 | vo19iee6 | B | Strongly Invisible | 154 | loss |  | 23 s | 4-21 |
+| 2026-10-08 07:49 | l8ulwi9t | B | Greek Gift | 54 | loss | ply 35 by q | 80 s | 5-29 |
+| 2026-10-08 07:49 | 596x2oc9 | W | duck | 71 | loss | ply 54 by r unseen | 57 s | 7-16 |
+| 2026-10-08 07:51 | 7dx3zp5q | B | baseline.py | 31 | win |  | 133 s | 34-38 |
+| 2026-10-08 07:51 | 8gwzu8aw | W | baseline.py | 36 | win |  | 104 s | 19-17 |
+| 2026-10-08 07:52 | mzel4pgx | B | duck | 108 | loss |  | 27 s | 3-13 |
+| 2026-10-08 07:53 | nflqt4og | W | TA Baseline A | 94 | win | ply 58 by r unseen | 14 s | 10-9 |
+| 2026-10-08 07:53 | 1v218qo1 | B | TA Baseline A | 98 | loss | ply 63 by r | 18 s | 6-12 |
+| 2026-10-08 07:53 | 2z3cgmj8 | W | Greek Gift | 111 | loss | ply 32 by r unseen | 14 s | 3-29 |
