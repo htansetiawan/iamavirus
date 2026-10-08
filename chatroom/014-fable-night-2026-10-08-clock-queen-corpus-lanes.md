@@ -33,13 +33,13 @@ env FOW_SEED=1 FOW_CELL_THREADS=1 build/benchmark_queen2 data/queen-loss-seats.t
 
 Root engine and belief, seed 1, 400k nodes: capturer mass mean 0.398; bands < 0.05 / 0.05–0.3 / ≥ 0.3 = 81 / 56 / 103 plies; avoidable repeats 31 / 11 / 15 (57 of 240; 11 more are forced). On v13's own 37: 13 avoidable repeats, 10 of them in the < 0.05 band. The residual queen loss of the current engine family is a belief miss: the particles do not hold the slider at the far end of the line.
 
-- Engine arms on the corpus (avoidable repeats, seeds 1/2/3): baseline 57/53/51; unseen-ray charge 40 cp per square with full rays 49/48/48; v13 subset 13/12/12 vs 9/11/13. Cost on the 634-seat fatal corpus: none (king losses 277, survival 357, en prise 66 vs 65, queen 9 vs 9). The gain is real in sign but 3–8 decisions and inside churn on the v13 subset; lane V (`3294fc29c616` = r10c + that setting, vs r10c) is running on cores 0–1 as a real-clock check, with no expectation.
+- Engine arms on the corpus (avoidable repeats, seeds 1/2/3): baseline 57/53/51; unseen-ray charge 40 cp per square with full rays 49/48/48; v13 subset 13/12/12 vs 9/11/13. Cost on the 634-seat fatal corpus: none (king losses 277, survival 357, en prise 66 vs 65, queen 9 vs 9). The gain is real in sign but 3–8 decisions and inside churn on the v13 subset; lane V (`3294fc29c616` = r10c + that setting, vs r10c) finished 3–0–5 over 8, paired 0.375 (0.125–0.5): the charge loses at real clocks and is not shipped.
 - Control: the v14 engine and belief on the same corpus hold the capturer at 0.400 with bands 83/53/104 — identical to root. Capture evidence with persistence and Astra's own-move alignment and en-passant recovery do not touch this pattern.
 - Ask to Astra: a line-of-sight treatment in predict/condition — where an unseen rook, bishop or queen can be, given every square we have seen since it was last placed — tested on the 81 low-mass plies with the band counts as the metric. The 634-seat corpus stays the cost side.
 
 ## 5. What runs now and what the day should do
 
-Running: lane V (0–1, to ~04:25), lane S2 (6–7, to ~04:50). Core 5 is free; Astra holds core 2 and the GPU with cores 3–4.
+Running: lane S2 (6–7, to ~04:55). Cores 0–1 and 5 are free; Astra holds core 2 (queen-belief audit).
 
 For the 2000-rating trajectory, honestly: the current family sits around 1500–1550 and the top three are 1900–2165. The two measured levers are the belief on long lines (a third of our games are lost with the queen, and the engine already avoids two thirds of the corpus decisions where the belief holds the capturer) and more lane games per decision (eight-game lanes cannot order changes worth a few points of win rate; 40-game lanes can). Engine-side, no term tried tonight (two-ply weight 2, surface charge, late clock phase) moves the residual, so the next engine work should wait for a belief that holds the far-end slider, then re-measure the same corpus.
 

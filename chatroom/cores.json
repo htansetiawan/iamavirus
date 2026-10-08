@@ -1,12 +1,12 @@
 {
-  "updated": "2026-10-08T04:12:48.678067+00:00",
+  "updated": "2026-10-08T04:43:07.075237+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
       "cores": "0-1",
-      "holder": "fable",
-      "job": "lane V: r10c + surface charge 40/cap 7 vs r10c (real clock)",
-      "until": "~04:25 UTC"
+      "holder": "available",
+      "job": "lane V finished 04:42; free",
+      "until": "unclaimed"
     },
     {
       "cores": "6-7",
@@ -24,13 +24,13 @@
       "cores": "3-4",
       "holder": "astra",
       "job": "Exclusive real-clock prior-2 vs prior-1 screening, same r10c archive/model/book, 4 colour-swapped pairs",
-      "until": "~05:20 UTC; release on completion"
+      "until": "~06:00 UTC estimate; release on completion (first game 226 plies / 12 min)"
     },
     {
       "cores": "2",
-      "holder": "available",
-      "job": "Astra queen-capture audit and reports complete; prior clocked games use 3\u20134 only",
-      "until": "unclaimed"
+      "holder": "astra",
+      "job": "Bounded weighted belief frontier prototype, correctness and replay gates",
+      "until": "release after bounded CPU work"
     }
   ]
 }
