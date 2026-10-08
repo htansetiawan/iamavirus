@@ -38,7 +38,7 @@ The original [knowledge-distillation paper](https://arxiv.org/abs/1503.02531)
 motivates transfer from a more expensive teacher; it does not establish an
 improvement for our bot.
 
-Our current FP32 graphs already occupy only 7.51 MB, so weight storage is not
+The audited v3 FP32 graphs occupy only 7.51 MB, so weight storage is not
 the binding arena constraint. A useful result buys better decisions within the
 CPU time budget, not merely a smaller ZIP. Report full hybrid move latency and
 clocked results in addition to neural inference time. Distillation and direct
@@ -141,13 +141,22 @@ feature-version mismatches. Legacy features-v1 runs remain in their frozen
 checkout. The large-model CPU smoke and export are kept separately from
 selection runs and will not seed a claimed strength comparison.
 
-The new capacity pilot trained CNN/small/large attention for 1,000 matched
-updates, then continued CNN to 3,000 and small attention to 2,000 updates for a
-roughly equal training-time comparison. On 5,179 validation decisions, the
-continued CNN produced 174 avoidable fatal top-1 proposals, continued small
-attention 193, and large attention at 1,000 updates 215. Hidden-enemy likelihood
-also favored the longer-trained controls; small attention retained a better
-danger Brier than CNN. These policy diagnostics do not measure the hybrid's
-strength. One short run cannot settle the capacity question: the next useful
-experiment is a longer matched learning curve before precision conversion,
-followed by a second seed and an actual decision gate for any promising arm.
+The capacity comparison is now complete through 6,000 updates in all three
+arms, following the earlier roughly equal-time comparison. Each arm saw the
+same 374,435 training decisions; the validation set contains 5,179 decisions.
+CNN/small/large attention produced 170/163/181 avoidable fatal top-1 proposals
+among 5,167 decisions with an available escape. The large-versus-small tactical
+difference is inconclusive. Large attention improves hidden-enemy NLL from
+1.1644 to 1.1399, but all-hidden-square NLL and demonstration hit@4 worsen.
+An exploratory piece breakdown also finds worse rook NLL. Aggregate belief
+likelihood therefore does not establish a useful teacher for hidden slider
+threats. No model from this comparison has passed the actual hybrid/game gate.
+
+All three policy-loss curves worsen after earlier checkpoints. The next
+capacity experiment should expand the number of distinct training games and
+specify checkpoint selection in advance, with a second seed for any promising
+result. A belief-specialized larger teacher is a hypothesis to test against
+actual attacker coverage and downstream decisions, not a result already won.
+The GPU was released after this comparison. Detailed curves, paired intervals
+and checkpoint hashes are in the linked capacity report; the test shard remains
+sealed. Larger-teacher distillation has not been implemented or trained.
