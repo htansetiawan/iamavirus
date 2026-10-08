@@ -142,6 +142,10 @@ King threats per 100 moves, opening / middlegame / endgame: top six 1.8 / 4.7 / 
 - The gym's reference is the winner row of 8a; every candidate is scored against it on a fixed set of sparring games before any lane, and its per-phase profile must not fall below v10's in the middlegame.
 - The first experiment when the observation window closes is the obvious one from 8b: the v10 engine with only the book-safety gate and the sampled book, measured on the taxonomy and in a 16-game lane against v15 and a greedy style archive.
 
+### 8f. Stealth, measured at the piece level (added 08:05 UTC)
+
+Share of a side's own pieces (king excluded) that appear in the opponent's view, averaged per ply over the game from ply 10 (first 2,500 stored games): top six overall 17.5%, us overall 15.8%, TA Baseline P 18.4%. In the games between us and the top six the asymmetry appears: **they show us 15.8% of their pieces, we show them 22.3% of ours**. That is the vision-economy gap of section 3 at the piece level, and the first number the v16 stealth term must move: our visible share against the top six from 22% to 17% without lowering our own vision.
+
 ## 9. Gym baselines for the current engine (added 07:55 UTC)
 
 Corpora cut by `learning/gym_corpora.py` from the labelled games (300 seats each, balanced across the six bots; `data/gym/*.txt`), scored with `build/benchmark_gym` (root engine of 2026-10-08, seed 1, 400k nodes, one thread). The harness replays each game to the decision ply from the seat's side and compares the engine's choice with the real move on the true board.
