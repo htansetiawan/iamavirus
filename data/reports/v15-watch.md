@@ -1,28 +1,28 @@
 # Arena v15 watch
 
-Updated 2026-10-08 13:50 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-08 14:21 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 67W-5D-85L over 157 games** (44%).
-As White: 41.5/79.
-As Black: 28.0/78.
+**Record: 73W-6D-95L over 174 games** (44%).
+As White: 45.0/87.
+As Black: 31.0/87.
 
-Queen lost for less: 62 games (54 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 51 of 85.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 21. Mean length 77 plies.
+Queen lost for less: 69 games (59 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 58 of 95.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 25. Mean length 77 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 18-2-21 |
-| TA Baseline S | 5-3-14 |
-| baseline.py | 20-0-0 |
+| TA Baseline P | 21-2-25 |
+| TA Baseline S | 6-4-14 |
+| baseline.py | 22-0-0 |
 | TA Baseline A | 6-0-14 |
 | Apricot Squad | 17-0-1 |
 | Instructors | 0-0-12 |
-| duck | 1-0-5 |
+| duck | 1-0-7 |
+| Decent Chess Bot | 0-0-8 |
 | Knight Vision | 0-0-6 |
 | Strongly Invisible | 0-0-4 |
 | Greek Gift | 0-0-4 |
-| Decent Chess Bot | 0-0-4 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -183,3 +183,20 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-08 13:43 | h830ud2x | W | TA Baseline P | 111 | loss | ply 72 by r unseen | 15 s | 2-20 |
 | 2026-10-08 13:44 | rdorqpau | W | Instructors | 129 | loss |  | 14 s | 3-16 |
 | 2026-10-08 13:49 | bv2k56rf | W | TA Baseline P | 103 | loss |  | 29 s | 8-7 |
+| 2026-10-08 13:50 | 2499655r | B | TA Baseline P | 146 | loss |  | 15 s | 9-24 |
+| 2026-10-08 13:54 | wjiofxws | W | Decent Chess Bot | 67 | loss | ply 58 by q unseen | 68 s | 14-22 |
+| 2026-10-08 13:55 | t33u5rb2 | B | Decent Chess Bot | 78 | loss | ply 43 by q unseen | 41 s | 12-23 |
+| 2026-10-08 13:57 | lipk4jfk | B | Decent Chess Bot | 108 | loss |  | 20 s | 7-21 |
+| 2026-10-08 13:57 | p5ts3d5h | W | TA Baseline P | 112 | win |  | 14 s | 11-2 |
+| 2026-10-08 13:58 | emsc3508 | B | TA Baseline P | 140 | loss | ply 61 by b unseen | 14 s | 1-14 |
+| 2026-10-08 13:59 | mki5e3an | W | Decent Chess Bot | 155 | loss | ply 86 by b unseen | 14 s | 7-11 |
+| 2026-10-08 14:01 | lvpsmu80 | W | TA Baseline P | 20 | win |  | 151 s | 37-35 |
+| 2026-10-08 14:04 | dv99u8ty | B | TA Baseline P | 66 | loss | ply 49 by b | 75 s | 4-34 |
+| 2026-10-08 14:11 | jfodmsoi | W | baseline.py | 8 | win |  | 180 s | 36-39 |
+| 2026-10-08 14:11 | l2gwg031 | B | baseline.py | 17 | win |  | 147 s | 36-27 |
+| 2026-10-08 14:12 | yw5x9k3l | B | TA Baseline S | 83 | win |  | 47 s | 15-18 |
+| 2026-10-08 14:13 | tp3b2jh8 | W | TA Baseline S | 109 | draw |  | 56 s | 17-2 |
+| 2026-10-08 14:15 | hb25yfd9 | B | duck | 60 | loss | ply 31 by r unseen | 77 s | 2-29 |
+| 2026-10-08 14:16 | 7tt6ba4i | B | TA Baseline P | 29 | win |  | 124 s | 34-32 |
+| 2026-10-08 14:18 | n5gymxnn | W | duck | 107 | loss | ply 62 by n | 18 s | 4-28 |
+| 2026-10-08 14:19 | 80001v8g | W | TA Baseline P | 107 | loss |  | 20 s | 7-13 |
