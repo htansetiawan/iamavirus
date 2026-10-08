@@ -35,22 +35,40 @@ class ResidualBlock(nn.Module):
         return F.relu(x + y)
 
 
+def architecture_name(channels: int = CHANNELS, blocks: int = BLOCKS, hidden: int = HIDDEN) -> str:
+    return f"cnn{channels}x{blocks}-gru{hidden}-heads-v1"
+
+
 class FogPolicy(nn.Module):
-    def __init__(self):
+    """Sizes default to the deployed v1 network (64 channels, 4 blocks, GRU 256);
+    larger instances are for the ceiling study and keep the same interface."""
+
+    def __init__(self, channels: int = CHANNELS, blocks: int = BLOCKS, hidden: int = HIDDEN,
+                 cand_width: int = 128):
         super().__init__()
-        self.stem = nn.Conv2d(NUM_PLANES, CHANNELS, 3, padding=1)
-        self.blocks = nn.ModuleList([ResidualBlock(CHANNELS) for _ in range(BLOCKS)])
-        self.project = nn.Linear(CHANNELS * 64 + NUM_SCALARS, HIDDEN)
-        self.gru = nn.GRUCell(HIDDEN, HIDDEN)
+        self.channels, self.num_blocks, self.hidden, self.cand_width = channels, blocks, hidden, cand_width
+        self.stem = nn.Conv2d(NUM_PLANES, channels, 3, padding=1)
+        self.blocks = nn.ModuleList([ResidualBlock(channels) for _ in range(blocks)])
+        self.project = nn.Linear(channels * 64 + NUM_SCALARS, hidden)
+        self.gru = nn.GRUCell(hidden, hidden)
         # Candidate trunk shared by the policy and danger heads.
-        self.cand1 = nn.Linear(CANDIDATE_FEATURES, 128)
-        self.cand2 = nn.Linear(128, 64)
-        self.policy_out = nn.Linear(64, 1)
-        self.danger_out = nn.Linear(64, 1)
-        self.value1 = nn.Linear(HIDDEN, 128)
+        self.cand1 = nn.Linear(hidden + 2 * channels + 4 + 5, cand_width)
+        self.cand2 = nn.Linear(cand_width, cand_width // 2)
+        self.policy_out = nn.Linear(cand_width // 2, 1)
+        self.danger_out = nn.Linear(cand_width // 2, 1)
+        self.value1 = nn.Linear(hidden, 128)
         self.value2 = nn.Linear(128, 1)
-        self.belief1 = nn.Linear(CHANNELS + HIDDEN, 64)
+        self.belief1 = nn.Linear(channels + hidden, 64)
         self.belief2 = nn.Linear(64, BELIEF_CLASSES)
+
+    @property
+    def size_config(self) -> dict:
+        return {"channels": self.channels, "blocks": self.num_blocks, "hidden": self.hidden,
+                "cand_width": self.cand_width}
+
+    @property
+    def architecture(self) -> str:
+        return architecture_name(self.channels, self.num_blocks, self.hidden)
 
     # -- one observation event --------------------------------------------
     def observe(self, planes, scalars, hidden):
@@ -76,8 +94,8 @@ class FogPolicy(nn.Module):
         Padding is masked by the caller."""
         B, M = cand_from.shape
         per_square = spatial.flatten(2).transpose(1, 2)              # [B,64,C]
-        src = torch.gather(per_square, 1, cand_from.unsqueeze(-1).expand(-1, -1, CHANNELS))
-        dst = torch.gather(per_square, 1, cand_to.unsqueeze(-1).expand(-1, -1, CHANNELS))
+        src = torch.gather(per_square, 1, cand_from.unsqueeze(-1).expand(-1, -1, self.channels))
+        dst = torch.gather(per_square, 1, cand_to.unsqueeze(-1).expand(-1, -1, self.channels))
         coords = torch.stack([
             (cand_from % 8).float() / 7.0, (cand_from // 8).float() / 7.0,
             (cand_to % 8).float() / 7.0, (cand_to // 8).float() / 7.0], dim=-1)
@@ -88,7 +106,7 @@ class FogPolicy(nn.Module):
         return self.policy_out(t).squeeze(-1), self.danger_out(t).squeeze(-1)
 
     def initial_hidden(self, batch: int, device=None):
-        return torch.zeros(batch, HIDDEN, device=device)
+        return torch.zeros(batch, self.hidden, device=device)
 
 
 def parameter_count(model: nn.Module) -> int:

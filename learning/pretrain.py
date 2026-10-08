@@ -172,7 +172,8 @@ class Checkpointer:
     def save(self, model, optimizer, step, epoch, config, manifest, name="latest", extra=None) -> Path:
         path = self.output / f"{name}.pt"
         payload = {"state_dict": model.state_dict(), "optimizer": optimizer.state_dict() if optimizer else None,
-                   "step": step, "epoch": epoch, "config": config, "architecture": ARCHITECTURE,
+                   "step": step, "epoch": epoch, "config": config, "architecture": getattr(model, "architecture", ARCHITECTURE),
+                   "model_config": getattr(model, "size_config", None),
                    "parameters": parameter_count(model), "dataset_manifest_sha256": manifest.get("content_sha256"),
                    "feature_version": manifest.get("feature_version"), "action_version": manifest.get("action_version"),
                    "rules_fingerprint": manifest.get("rules_fingerprint"), "extra": extra or {}}
@@ -186,7 +187,7 @@ def checkpoint_hash(path: Path) -> str:
 
 def load_model(path: Path, device="cpu") -> tuple[FogPolicy, dict]:
     payload = torch.load(path, map_location=device, weights_only=False)
-    model = FogPolicy().to(device)
+    model = FogPolicy(**(payload.get("model_config") or {})).to(device)
     model.load_state_dict(payload["state_dict"])
     return model, payload
 
@@ -231,9 +232,14 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
     train_episodes = [e for e in train_episodes if e.num_decisions > 0]
     print(f"train episodes {len(train_episodes)}, validation {len(val_episodes)}, device {device}", file=sys.stderr)
 
-    model = FogPolicy().to(device)
+    model = FogPolicy(**config.get("model", {})).to(device)
+    print(f"model {model.architecture}: {parameter_count(model):,} parameters", file=sys.stderr)
     optimizer = torch.optim.AdamW(model.parameters(), lr=config["learning_rate"],
                                   weight_decay=config["weight_decay"])
+    schedule = None
+    if config.get("cosine_steps"):
+        schedule = torch.optim.lr_scheduler.LambdaLR(
+            optimizer, lambda s: max(0.05, 0.5 * (1 + math.cos(math.pi * min(1.0, s / config["cosine_steps"])))))
     step = epoch = 0
     if resume:
         payload = torch.load(resume, map_location=device, weights_only=False)
@@ -269,6 +275,8 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
                 scaler.step(optimizer)
                 scaler.update()
                 optimizer.zero_grad(set_to_none=True)
+                if schedule is not None:
+                    schedule.step()
                 metrics["grad_norm"] = float(grad_norm)
             step += 1
             metrics.update({"step": step, "epoch": epoch, "elapsed": time.time() - started})
@@ -291,7 +299,10 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
         checkpointer.save(model, optimizer, step, epoch, config, manifest, "latest", validation)
         # Early-stopping signal: belief + danger losses, as the specification asks,
         # rather than imitation accuracy alone.
-        score = validation.get("belief_loss", 0.0) + validation.get("danger_loss", 0.0)
+        if config.get("select_on") == "policy":
+            score = validation.get("policy_loss", 0.0)
+        else:
+            score = validation.get("belief_loss", 0.0) + validation.get("danger_loss", 0.0)
         if score < best_val:
             best_val = score
             checkpointer.save(model, optimizer, step, epoch, config, manifest, "best", validation)

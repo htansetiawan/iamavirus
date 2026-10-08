@@ -1,0 +1,24 @@
+# Ceiling study (2026-10-08): model size with one shared recipe on manifest v4
+# (features-v2, 3,766 training games). Size s: 64 channels, 4 blocks,
+# GRU 256. Selection on validation policy loss; belief/danger/value logged.
+pretrain:
+  model: {channels: 64, blocks: 4, hidden: 256, cand_width: 128}
+  window: 64
+  sequences_per_batch: 32
+  accumulation_steps: 1
+  learning_rate: 3.0e-4
+  weight_decay: 1.0e-2
+  grad_clip: 1.0
+  epochs: 16
+  cosine_steps: 3800
+  select_on: policy
+  loss_weights:
+    policy: 1.0
+    belief: 1.0
+    danger: 1.0
+    value: 0.25
+  mixed_precision: true
+  seed: 1
+  validation_sequences: 512
+  player_weights:
+    default: 1.0
