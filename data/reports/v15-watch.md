@@ -1,28 +1,28 @@
 # Arena v15 watch
 
-Updated 2026-10-08 15:21 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-08 15:52 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 84W-6D-106L over 196 games** (44%).
-As White: 51.0/98.
-As Black: 36.0/98.
+**Record: 95W-7D-119L over 221 games** (45%).
+As White: 56.5/109.
+As Black: 42.0/112.
 
-Queen lost for less: 79 games (64 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 67 of 106.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 28. Mean length 78 plies.
+Queen lost for less: 90 games (73 to a capturer unseen when we moved, 9 before ply 30); losses with the queen lost: 76 of 119.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 31. Mean length 77 plies.
 Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 21-2-25 |
-| TA Baseline S | 6-4-18 |
-| baseline.py | 28-0-0 |
-| TA Baseline A | 11-0-15 |
-| Apricot Squad | 17-0-1 |
+| TA Baseline P | 24-3-25 |
+| TA Baseline S | 6-4-21 |
+| baseline.py | 30-0-0 |
+| TA Baseline A | 13-0-17 |
+| Apricot Squad | 21-0-1 |
 | Instructors | 0-0-16 |
+| duck | 1-0-10 |
 | Decent Chess Bot | 0-0-10 |
-| duck | 1-0-7 |
-| Knight Vision | 0-0-6 |
-| Strongly Invisible | 0-0-4 |
-| Greek Gift | 0-0-4 |
+| Knight Vision | 0-0-8 |
+| Strongly Invisible | 0-0-6 |
+| Greek Gift | 0-0-5 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -222,3 +222,28 @@ Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate re
 | 2026-10-08 15:17 | kvrekmy3 | B | baseline.py | 81 | win |  | 56 s | 18-3 |
 | 2026-10-08 15:18 | u0b0ygsj | B | Decent Chess Bot | 116 | loss | ply 59 by n unseen | 14 s | 2-16 |
 | 2026-10-08 15:19 | z1wb8f5a | W | Decent Chess Bot | 111 | loss | ply 74 by q unseen | 15 s | 1-14 |
+| 2026-10-08 15:23 | wl5iqaip | B | duck | 100 | loss | ply 39 by q unseen | 25 s | 7-24 |
+| 2026-10-08 15:23 | 03tr9nzb | W | duck | 97 | loss |  | 24 s | 4-20 |
+| 2026-10-08 15:24 | 2itpf2fm | B | Apricot Squad | 45 | win |  | 94 s | 37-22 |
+| 2026-10-08 15:24 | e0vgx6tk | W | Apricot Squad | 50 | win |  | 83 s | 25-13 |
+| 2026-10-08 15:31 | 1vwlacvg | B | TA Baseline P | 93 | win |  | 31 s | 12-7 |
+| 2026-10-08 15:31 | xzsv0ked | W | TA Baseline S | 63 | loss |  | 62 s | 18-16 |
+| 2026-10-08 15:31 | i89jq0wh | W | TA Baseline P | 58 | win |  | 72 s | 22-14 |
+| 2026-10-08 15:31 | hvl3p3qz | W | TA Baseline P | 103 | draw | ply 50 by b unseen | 14 s | 4-5 |
+| 2026-10-08 15:32 | kogc1j3k | W | Strongly Invisible | 109 | loss |  | 22 s | 2-19 |
+| 2026-10-08 15:32 | wfpyr0wi | B | Strongly Invisible | 102 | loss | ply 55 by q | 37 s | 0-15 |
+| 2026-10-08 15:32 | 3bi9592d | B | TA Baseline P | 101 | win |  | 39 s | 15-5 |
+| 2026-10-08 15:34 | u4vj5t3w | B | baseline.py | 39 | win |  | 113 s | 32-18 |
+| 2026-10-08 15:34 | kazuxy1j | B | TA Baseline S | 108 | loss |  | 15 s | 6-10 |
+| 2026-10-08 15:35 | z07vtn1v | W | baseline.py | 38 | win |  | 96 s | 34-10 |
+| 2026-10-08 15:35 | qgf8tra3 | W | Knight Vision | 59 | loss | ply 48 by q unseen | 94 s | 6-30 |
+| 2026-10-08 15:37 | 6sn734yn | B | Knight Vision | 76 | loss | ply 29 by n unseen | 17 s | 1-14 |
+| 2026-10-08 15:39 | ni6078nz | W | TA Baseline A | 51 | loss | ply 38 by r unseen | 79 s | 18-25 |
+| 2026-10-08 15:40 | k8p0opm5 | W | TA Baseline A | 38 | win |  | 113 s | 31-29 |
+| 2026-10-08 15:40 | imsmajyd | B | TA Baseline A | 65 | win | ply 55 by n unseen | 65 s | 10-6 |
+| 2026-10-08 15:41 | qrnwy0se | B | Apricot Squad | 37 | win |  | 104 s | 32-26 |
+| 2026-10-08 15:42 | 0dlv61ob | W | Apricot Squad | 38 | win |  | 100 s | 37-26 |
+| 2026-10-08 15:44 | ujky1taz | B | TA Baseline A | 106 | loss | ply 65 by n unseen | 15 s | 0-20 |
+| 2026-10-08 15:48 | 2109j6do | B | TA Baseline S | 42 | loss | ply 17 by q | 110 s | 10-23 |
+| 2026-10-08 15:51 | laux1wqs | B | Greek Gift | 42 | loss | ply 23 by n unseen | 102 s | 21-19 |
+| 2026-10-08 15:51 | xt9pd53g | B | duck | 70 | loss | ply 27 by n unseen | 37 s | 10-25 |
