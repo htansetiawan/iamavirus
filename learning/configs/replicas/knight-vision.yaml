@@ -1,0 +1,23 @@
+# Replica of the arena team "Knight Vision" (GYM.md section 3.2, tier 2): the v4 network
+# fine-tuned on that team's own games only, from its seat. Validated before use (GYM.md V4).
+pretrain:
+  init_checkpoint: checkpoints/pretrain-v4/best.pt
+  players: ["knight-vision", "Knight Vision"]
+  window: 64
+  sequences_per_batch: 8
+  accumulation_steps: 1
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  epochs: 6
+  select_on: policy
+  loss_weights:
+    policy: 1.0
+    belief: 0.5
+    danger: 0.5
+    value: 0.25
+  mixed_precision: true
+  seed: 1
+  validation_sequences: 256
+  player_weights:
+    default: 1.0

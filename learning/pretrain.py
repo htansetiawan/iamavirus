@@ -230,9 +230,18 @@ def train(config_path: Path, manifest_path: Path, output: Path, max_steps: int |
     train_episodes = ds.load_episodes(Path(manifest["shards"]["train"]), limit_episodes)
     val_episodes = ds.load_episodes(Path(manifest["shards"]["validation"]), limit_episodes)
     train_episodes = [e for e in train_episodes if e.num_decisions > 0]
+    if config.get("players"):
+        # Replica training: only the named team's own games, from its seat.
+        keep = set(config["players"])
+        train_episodes = [e for e in train_episodes if e.metadata.player_id in keep]
+        val_episodes = [e for e in val_episodes if e.metadata.player_id in keep]
     print(f"train episodes {len(train_episodes)}, validation {len(val_episodes)}, device {device}", file=sys.stderr)
 
     model = FogPolicy(**config.get("model", {})).to(device)
+    if config.get("init_checkpoint"):
+        payload0 = torch.load(config["init_checkpoint"], map_location=device, weights_only=False)
+        model.load_state_dict(payload0["state_dict"])
+        print(f"initialised from {config['init_checkpoint']}", file=sys.stderr)
     print(f"model {model.architecture}: {parameter_count(model):,} parameters", file=sys.stderr)
     optimizer = torch.optim.AdamW(model.parameters(), lr=config["learning_rate"],
                                   weight_decay=config["weight_decay"])

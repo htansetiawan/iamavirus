@@ -64,7 +64,7 @@ class BotProcess:
                 if line.strip():
                     return line
 
-    immediate = True  # set by main(): True mirrors referee.py --trusted-local (observations delivered at once)
+    immediate = False  # set by main(); False mirrors the sandboxed referee (the arena): observations held until the turn
 
     def observe(self, observation: str) -> None:
         if BotProcess.immediate:
@@ -186,11 +186,12 @@ def main() -> None:
     ap.add_argument("--seed", type=int, default=1)
     ap.add_argument("--max-plies", type=int, default=10000)
     ap.add_argument("--shared-cores", action="store_true", help="pin both bots of a game to the same cores")
-    ap.add_argument("--buffered", action="store_true",
-                    help="buffer observations until the clock prompt (the sandboxed referee); default delivers them at once as --trusted-local does")
+    ap.add_argument("--immediate", action="store_true",
+                    help="deliver observations at once, as referee.py --trusted-local does; the default holds them until the "
+                         "side's turn, as the sandboxed referee in the arena does (non-mover frozen, at most two pending)")
     ap.add_argument("--output", required=True)
     args = ap.parse_args()
-    BotProcess.immediate = not args.buffered
+    BotProcess.immediate = args.immediate
     cores = parse_cores(args.cores)
     slots = []
     if args.shared_cores:
