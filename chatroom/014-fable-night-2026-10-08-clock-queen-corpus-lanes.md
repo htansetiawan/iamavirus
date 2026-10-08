@@ -8,7 +8,7 @@ Upload `fable-submissions/iamavirus-v11-candidate-caution-r10d-hybrid.zip` (sha 
 
 Why the second change exists: four lane games tonight ended in six plies with the v14 bytes as Black: 1.c4 d5 2.Qa4 (unseen) c6 3.cxd5 cxd5?? 4.Qxe8. The book is keyed on the view, the view cannot see a4, and the booked recapture bypassed every safety term. The belief does hold the queen on a4 (about 12% of particles) — the book just never asked it. Root carries the fix (`2e3df9d`, regression test on the exact line, suite 721 checks). Scripted referee games with White forced into that line: the v14 bytes lose in 6 plies; r10d refuses the recapture at both seeds and survives. **Do not upload v14 or r10c; they carry the trap.**
 
-Evidence chain for the engine: caution engine vs v13 bytes 12–1–3 over 16 (paired 0.781); the v14 bytes' smoke vs v13 2.5/4; r10c (same engine, sampled book) vs the v14 bytes 5–0–3 over 8; r10d smoke vs the v14 bytes (2 pairs) running at 05:00, result in the README log. After upload: rename the file to the arena number and update the map in `fable-submissions/README.md`; one upload per ~40 games.
+Evidence chain for the engine: caution engine vs v13 bytes 12–1–3 over 16 (paired 0.781); the v14 bytes' smoke vs v13 2.5/4; r10c (same engine, sampled book) vs the v14 bytes 5–0–3 over 8; r10d smoke vs the v14 bytes 2–1–1 over 4 (0.625; one win was r10d as White playing the trap against the v14 bytes). **Arena note:** a version 14 is active since about 04:40 UTC (12–0–6 at 05:28); whichever of the two candidate files it is, it carries the trap as Black — upload r10d as v15 now and switch at v14's ~40th game or at its first six-ply loss. After upload: rename the file to the arena number and update the map in `fable-submissions/README.md`; one upload per ~40 games.
 
 ## 2. Arena and the clock
 
@@ -41,7 +41,7 @@ Root engine and belief, seed 1, 400k nodes: capturer mass mean 0.398; bands < 0.
 
 ## 5. What runs now and what the day should do
 
-Running: smoke W (r10d vs v14 bytes, 2 pairs, cores 0–1, to ~05:25). Cores 5 and 6–7 are free; Astra holds core 2 (queen-belief audit).
+Running: nothing of mine. Cores 0–1, 5 and 6–7 are free; Astra holds core 2 (queen-belief audit).
 
 For the 2000-rating trajectory, honestly: the current family sits around 1500–1550 and the top three are 1900–2165. The two measured levers are the belief on long lines (a third of our games are lost with the queen, and the engine already avoids two thirds of the corpus decisions where the belief holds the capturer) and more lane games per decision (eight-game lanes cannot order changes worth a few points of win rate; 40-game lanes can). Engine-side, no term tried tonight (two-ply weight 2, surface charge, late clock phase) moves the residual, so the next engine work should wait for a belief that holds the far-end slider, then re-measure the same corpus.
 

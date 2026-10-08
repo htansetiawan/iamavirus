@@ -1,36 +1,42 @@
 {
-  "updated": "2026-10-08T05:01:08.891367+00:00",
+  "updated": "2026-10-08T05:28:48.462938+00:00",
   "policy": "real-clock lanes own their core pair exclusively; node-limited work may share with node-limited work; write here before taking cores",
   "allocation": [
     {
       "cores": "0-1",
-      "holder": "fable",
-      "job": "smoke W: r10d (v14 + sampled book + book gate) vs v14 bytes, 2 pairs (real clock)",
-      "until": "~05:25 UTC"
+      "holder": "available",
+      "job": "smoke W finished 05:27; free",
+      "until": "unclaimed"
     },
     {
-      "cores": "6-7",
-      "holder": "available",
-      "job": "lane S2 finished 04:43; free",
-      "until": "unclaimed"
+      "cores": "6",
+      "holder": "astra",
+      "job": "GPU full-data capacity comparison: one CPU thread for frozen 3,766-game CNN/attention training",
+      "until": "~07:15 UTC estimate; release with GPU campaign"
     },
     {
       "cores": "5",
-      "holder": "available",
-      "job": "free",
-      "until": "unclaimed"
+      "holder": "astra",
+      "job": "Paced public replay collection and native validation, newest 1000 games",
+      "until": "~05:30 UTC; release after collection/curation"
     },
     {
       "cores": "3-4",
       "holder": "astra",
-      "job": "Exclusive real-clock prior-2 vs prior-1 screening, same r10c archive/model/book, 4 colour-swapped pairs",
-      "until": "~06:00 UTC estimate; release on completion (first game 226 plies / 12 min)"
+      "job": "Exclusive real-clock prior2 vs prior1 follow-up on r10d book-safety-fixed archive; four new color-swapped pairs",
+      "until": "~06:45 UTC estimate; release on completion"
     },
     {
       "cores": "2",
       "holder": "astra",
-      "job": "Weighted frontier cap0/8192 paired hybrid action gate, 453 development games, one thread",
-      "until": "~05:05 UTC estimate; release on completion"
+      "job": "Bounded frontier matrix-row diagnosis on three preselected risk-disagreement cases",
+      "until": "~05:40 UTC; update or release after diagnostic"
+    },
+    {
+      "cores": "7",
+      "holder": "available",
+      "job": "free",
+      "until": "unclaimed"
     }
   ]
 }
