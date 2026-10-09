@@ -35,3 +35,19 @@ Readings so far:
 - **Arena v18** is the archive the user uploaded, `iamavirus-v18-hybrid.zip` (was `iamavirus-v18-candidate-rl120-hybrid.zip`): the RL network proposing rows only, 7–6–5 vs v17 locally. Prediction (GYM.md §7): 0.49 (0.42–0.56) over its first 50 arena games.
 - **The best variant is packaged:** `fable-submissions/iamavirus-v19-candidate-rl120-prior100-hybrid.zip` (`fb7449edded5`), the same network with the prior on by default. Unpacked, built and smoke-tested in hybrid mode.
 - Gates now also run these exact bytes against the v18 bytes and against the TA Baseline P replica.
+
+## Update 10:20 UTC — v19 live; v20 candidate built
+
+- **Arena v19** = `iamavirus-v19-hybrid.zip` (`fb7449edded5`), the RL policy as matrix prior. Prediction (GYM.md §7): 0.60 (0.48–0.72) over its first 50 arena games. Watch report: `data/reports/v19-watch.md`, every 30 minutes.
+- **RL continued** from iteration 120 to 240 with the same recipe (35 minutes on the GPU). Pooled over each run's last 40 iterations, against the same fixed opponents:
+
+| opponent | v19's network (it 81–120) | new network (it 201–240) |
+| --- | --- | --- |
+| imitation start | 0.857 | 0.900 |
+| TA Baseline P replica | 0.586 | 0.657 |
+| TA Baseline A replica | 0.588 | 0.630 |
+| TA Baseline S replica | 0.755 | 0.833 |
+| v19's network | — | 0.568 (518 games) |
+
+- **v20 candidate** = `iamavirus-v20-candidate-rl240-prior100-hybrid.zip` (`522f1d99d0f5`): v19's engine and prior, only the network changed. Gate against the v19 bytes is running.
+- Early and small: the imitation network with the same prior has won its first 3 games against v17, so the prior itself may carry much of the gain. That gate keeps running.
