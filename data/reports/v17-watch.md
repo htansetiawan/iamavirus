@@ -1,24 +1,27 @@
 # Arena v17 watch
 
-Updated 2026-10-09 05:23 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 05:53 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 9W-1D-8L over 18 games** (53%).
-As White: 4.5/9.
-As Black: 5.0/9.
+**Record: 16W-2D-21L over 39 games** (44%).
+As White: 8.0/19.
+As Black: 9.0/20.
 
-Queen lost for less: 5 games (5 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 2 of 8.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 3. Mean length 78 plies.
+Queen lost for less: 14 games (11 to a capturer unseen when we moved, 4 before ply 30); losses with the queen lost: 10 of 21.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 7. Mean length 76 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 2-1-1 |
-| Apricot Squad | 4-0-0 |
-| Instructors | 1-0-1 |
+| Apricot Squad | 7-0-0 |
+| TA Baseline P | 3-1-2 |
+| TA Baseline S | 0-1-5 |
+| Instructors | 1-0-3 |
+| TA Baseline A | 2-0-2 |
+| Greek Gift | 0-0-4 |
 | duck | 1-0-1 |
-| TA Baseline S | 0-0-2 |
 | Knight Vision | 0-0-2 |
-| TA Baseline A | 1-0-1 |
+| Decent Chess Bot | 0-0-2 |
+| baseline.py | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -40,3 +43,24 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-09 05:13 | 4zrhxpgg | W | Knight Vision | 79 | loss |  | 19 s | 3-21 |
 | 2026-10-09 05:14 | 0pasxphf | W | TA Baseline A | 18 | win |  | 163 s | 34-30 |
 | 2026-10-09 05:21 | p32rqsdb | B | TA Baseline A | 118 | loss |  | 26 s | 2-18 |
+| 2026-10-09 05:25 | 7ykcbzcw | B | TA Baseline S | 58 | loss | ply 39 by n | 55 s | 13-17 |
+| 2026-10-09 05:28 | xe2jfljy | W | TA Baseline S | 105 | draw | ply 22 by r unseen | 14 s | 3-1 |
+| 2026-10-09 05:29 | mamgxne0 | B | TA Baseline S | 36 | loss |  | 115 s | 27-28 |
+| 2026-10-09 05:29 | akgjtjeb | W | Instructors | 63 | loss | ply 54 by b unseen | 73 s | 9-22 |
+| 2026-10-09 05:31 | 2zf3toaw | B | Apricot Squad | 47 | win |  | 90 s | 44-14 |
+| 2026-10-09 05:31 | odpy95tk | B | Decent Chess Bot | 78 | loss | ply 67 by r unseen | 38 s | 14-24 |
+| 2026-10-09 05:31 | us1qmiif | W | Decent Chess Bot | 93 | loss | ply 52 by n | 50 s | 3-17 |
+| 2026-10-09 05:33 | 7n0i1x42 | W | TA Baseline S | 93 | loss |  | 15 s | 1-15 |
+| 2026-10-09 05:34 | q92btks2 | W | Apricot Squad | 76 | win |  | 46 s | 22-16 |
+| 2026-10-09 05:35 | 1z7a95aa | B | Instructors | 152 | loss |  | 14 s | 0-15 |
+| 2026-10-09 05:36 | 0g90prr5 | B | Greek Gift | 68 | loss | ply 25 by n unseen | 48 s | 3-24 |
+| 2026-10-09 05:39 | fcmfijeq | W | Greek Gift | 113 | loss | ply 54 by r unseen | 15 s | 1-13 |
+| 2026-10-09 05:39 | fxd4t1k8 | B | TA Baseline P | 82 | loss |  | 43 s | 1-10 |
+| 2026-10-09 05:40 | bc90cn6d | W | TA Baseline P | 98 | win |  | 27 s | 9-5 |
+| 2026-10-09 05:41 | masa3wnx | W | baseline.py | 20 | win |  | 137 s | 38-37 |
+| 2026-10-09 05:41 | euc43oaa | B | baseline.py | 31 | win |  | 118 s | 35-23 |
+| 2026-10-09 05:41 | v93bppkl | W | Greek Gift | 55 | loss | ply 32 by r unseen | 64 s | 5-24 |
+| 2026-10-09 05:41 | od9lrblk | W | TA Baseline A | 85 | loss |  | 44 s | 5-24 |
+| 2026-10-09 05:42 | 1f1nsug2 | B | TA Baseline A | 113 | win |  | 30 s | 14-4 |
+| 2026-10-09 05:42 | 6fta43o4 | B | Greek Gift | 76 | loss | ply 57 by r | 60 s | 15-24 |
+| 2026-10-09 05:45 | oag56tz9 | B | Apricot Squad | 31 | win |  | 126 s | 38-21 |
