@@ -1,0 +1,73 @@
+{
+ "matchups": [
+  {
+   "id": "rlL-vs-v20",
+   "a": "data/candidates/iamavirus-rlL-hybrid.zip",
+   "b": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "max_games": 60,
+   "seed": 38000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "rlLkf-vs-v20",
+   "a": "data/candidates/iamavirus-rlL-hybrid.zip",
+   "a_env": [
+    "FOW_BELIEF_FUSION=1",
+    "FOW_BELIEF_FUSION_MASK=32"
+   ],
+   "b": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "max_games": 60,
+   "seed": 39000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "rlL-vs-tap-neural-cal",
+   "a": "data/candidates/iamavirus-rlL-hybrid.zip",
+   "b": "data/zoo/replica-ta-baseline-p-neural.zip",
+   "max_games": 16,
+   "seed": 15000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "rlL-vs-duckrep",
+   "a": "data/candidates/iamavirus-rlL-hybrid.zip",
+   "b": "data/zoo/replica-duck-hybrid.zip",
+   "max_games": 24,
+   "seed": 33000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "rlL-vs-mistrep",
+   "a": "data/candidates/iamavirus-rlL-hybrid.zip",
+   "b": "data/zoo/replica-mist-hybrid.zip",
+   "max_games": 24,
+   "seed": 36000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  }
+ ]
+}

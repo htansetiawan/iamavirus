@@ -129,6 +129,103 @@
     "alpha": 1e-12,
     "beta": 1e-12
    }
+  },
+  {
+   "id": "v20-vs-mistrep",
+   "a": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "b": "data/zoo/replica-mist-hybrid.zip",
+   "max_games": 24,
+   "seed": 36000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "v20storm-vs-mistrep",
+   "a": "data/candidates/iamavirus-storm-hybrid.zip",
+   "a_env": [
+    "FOW_STORM=60"
+   ],
+   "b": "data/zoo/replica-mist-hybrid.zip",
+   "max_games": 24,
+   "seed": 36000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "kfus-vs-v20",
+   "a": "data/candidates/iamavirus-fusion2-hybrid.zip",
+   "a_env": [
+    "FOW_BELIEF_FUSION=1",
+    "FOW_BELIEF_FUSION_MASK=32"
+   ],
+   "b": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "max_games": 60,
+   "seed": 37000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "kfus-vs-tap-neural-cal",
+   "a": "data/candidates/iamavirus-fusion2-hybrid.zip",
+   "a_env": [
+    "FOW_BELIEF_FUSION=1",
+    "FOW_BELIEF_FUSION_MASK=32"
+   ],
+   "b": "data/zoo/replica-ta-baseline-p-neural.zip",
+   "max_games": 16,
+   "seed": 15000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "kfus-vs-duckrep",
+   "a": "data/candidates/iamavirus-fusion2-hybrid.zip",
+   "a_env": [
+    "FOW_BELIEF_FUSION=1",
+    "FOW_BELIEF_FUSION_MASK=32"
+   ],
+   "b": "data/zoo/replica-duck-hybrid.zip",
+   "max_games": 24,
+   "seed": 33000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "kfus-vs-mistrep",
+   "a": "data/candidates/iamavirus-fusion2-hybrid.zip",
+   "a_env": [
+    "FOW_BELIEF_FUSION=1",
+    "FOW_BELIEF_FUSION_MASK=32"
+   ],
+   "b": "data/zoo/replica-mist-hybrid.zip",
+   "max_games": 24,
+   "seed": 36000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
   }
  ]
 }
