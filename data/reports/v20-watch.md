@@ -1,26 +1,26 @@
 # Arena v20 watch
 
-Updated 2026-10-09 13:41 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 14:11 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 48W-5D-55L over 108 games** (47%).
-As White: 28.0/53.
-As Black: 22.5/55.
+**Record: 58W-7D-63L over 128 games** (48%).
+As White: 34.0/64.
+As Black: 27.5/64.
 
-Queen lost for less: 34 games (28 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 29 of 55.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 23. Mean length 79 plies.
-Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 40 games (33 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 34 of 63.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 24. Mean length 79 plies.
+Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 7-1-8 |
-| TA Baseline P | 12-0-3 |
-| duck | 2-1-9 |
+| TA Baseline A | 11-2-11 |
+| TA Baseline P | 15-0-3 |
+| duck | 3-1-10 |
+| TA Baseline S | 5-2-5 |
 | baseline.py | 12-0-0 |
 | Strongly Invisible | 0-2-10 |
-| TA Baseline S | 5-1-4 |
-| Apricot Squad | 8-0-0 |
-| Decent Chess Bot | 0-0-8 |
-| Instructors | 2-0-5 |
+| Apricot Squad | 10-0-0 |
+| Decent Chess Bot | 0-0-10 |
+| Instructors | 2-0-6 |
 | Knight Vision | 0-0-6 |
 | Greek Gift | 0-0-2 |
 
@@ -134,3 +134,23 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-09 13:37 | ei1w3le2 | W | Strongly Invisible | 101 | draw |  | 32 s | 13-13 |
 | 2026-10-09 13:39 | jd3xt0qs | B | TA Baseline P | 40 | loss |  | 100 s | 34-21 |
 | 2026-10-09 13:39 | t39wfnjp | B | Instructors | 48 | loss |  | 91 s | 17-10 |
+| 2026-10-09 13:41 | rxo74fkr | W | TA Baseline P | 82 | win |  | 44 s | 26-22 |
+| 2026-10-09 13:41 | zvok48zl | W | Instructors | 69 | loss | ply 38 by r unseen | 46 s | 9-14 |
+| 2026-10-09 13:44 | rjmrxv7u | W | duck | 99 | loss | ply 70 by r | 43 s | 3-28 |
+| 2026-10-09 13:45 | dbabc0gq | B | duck | 117 | win |  | 30 s | 26-11 |
+| 2026-10-09 13:46 | ugergx2c | B | Apricot Squad | 17 | win |  | 161 s | 47-31 |
+| 2026-10-09 13:49 | yx8b9i2z | W | Apricot Squad | 42 | win |  | 105 s | 46-4 |
+| 2026-10-09 13:54 | f1yo2xjl | B | Decent Chess Bot | 92 | loss |  | 47 s | 7-21 |
+| 2026-10-09 13:54 | 706o7jeq | W | Decent Chess Bot | 89 | loss | ply 62 by q unseen | 22 s | 3-14 |
+| 2026-10-09 13:55 | 2nmlsvxq | W | TA Baseline S | 107 | draw | ply 50 by r unseen | 37 s | 13-0 |
+| 2026-10-09 13:56 | karinub9 | B | TA Baseline S | 114 | loss |  | 20 s | 5-15 |
+| 2026-10-09 13:56 | 0udbcw8v | B | TA Baseline A | 93 | win |  | 40 s | 12-1 |
+| 2026-10-09 13:57 | kklhbhvh | W | TA Baseline A | 97 | draw |  | 27 s | 11-2 |
+| 2026-10-09 14:00 | ps7pustm | B | TA Baseline A | 43 | win |  | 92 s | 27-18 |
+| 2026-10-09 14:02 | 2xfts17m | W | TA Baseline A | 84 | win |  | 43 s | 11-9 |
+| 2026-10-09 14:04 | nxb6e4l4 | B | TA Baseline A | 56 | loss |  | 80 s | 31-12 |
+| 2026-10-09 14:05 | jr2gfr4z | W | TA Baseline A | 78 | win |  | 46 s | 11-3 |
+| 2026-10-09 14:06 | eb6kwtzt | B | TA Baseline P | 65 | win |  | 60 s | 23-4 |
+| 2026-10-09 14:08 | xh1qikus | W | TA Baseline P | 132 | win |  | 14 s | 8-2 |
+| 2026-10-09 14:09 | fuxom37i | W | TA Baseline A | 85 | loss | ply 82 by r unseen | 32 s | 2-13 |
+| 2026-10-09 14:09 | dsoo39ez | B | TA Baseline A | 72 | loss | ply 43 by r unseen | 57 s | 2-17 |
