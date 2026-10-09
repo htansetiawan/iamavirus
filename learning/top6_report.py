@@ -142,36 +142,33 @@ def loss_anatomy(r: dict, us_side: str) -> dict:
         attackers = list(after.attackers(tcol, king_after)) if king_after is not None else []
         seen_after = [frames[n][view][a] != "?" for a in attackers]
         kinds = sorted({after.piece_at(a).symbol().lower() for a in attackers if after.piece_at(a)})
+        moved = frames[n]["move"]
+        mover = before.piece_at(chess.parse_square(moved[:2])) if moved else None
+        king_moved = mover is not None and mover.piece_type == chess.KING
+        took = moved and before.piece_at(chess.parse_square(moved[2:4])) is not None
+        decision_view = frames[n - 1][view]
+        visible = any(decision_view[a] != "?" for a in attackers)
+        escape = False
+        b = before.copy(stack=False)
+        b.turn = ucol
+        for m in b.pseudo_legal_moves:
+            b.push(m)
+            k = b.king(ucol)
+            if k is not None and not b.attackers(tcol, k):
+                escape = True
+            b.pop()
+            if escape:
+                break
         if not last_mover_us:
             how = "unusual: game ended after their move"
+        elif visible:
+            how = "king left to an attacker we could see" + ("" if escape else " (no safe move existed)")
+        elif king_moved:
+            how = "king walked into an unseen attacker" + (" after taking the bait (king capture)" if took else "")
         elif attacked_before:
-            prev_att = list(before.attackers(tcol, king_before))
-            seen_before = any(frames[n - 1][view][a] != "?" for a in prev_att)
-            escape = False
-            b = before.copy(stack=False)
-            b.turn = ucol
-            for m in b.pseudo_legal_moves:
-                b.push(m)
-                k = b.king(ucol)
-                if k is not None and not b.attackers(tcol, k):
-                    escape = True
-                b.pop()
-                if escape:
-                    break
-            if not seen_before:
-                how = "king already attacked by an unseen piece" + ("" if escape else "; no escape existed")
-            else:
-                how = "king attacked in plain sight and not saved" + ("" if escape else " (no escape existed)")
+            how = "king already attacked by an unseen piece" + ("" if escape else " (no safe move existed)")
         else:
-            moved = frames[n]["move"]
-            king_moved = moved and before.piece_at(chess.parse_square(moved[:2])) and \
-                before.piece_at(chess.parse_square(moved[:2])).piece_type == chess.KING
-            # what the bot could see when it chose the move (the view before it)
-            seen = any(frames[n - 1][view][a] != "?" for a in attackers)
-            if king_moved:
-                how = "our king walked into an attack" + (" we could see" if seen else " from an unseen piece")
-            else:
-                how = "our move opened a line to our king" + (" (attacker visible)" if seen else " (attacker unseen)")
+            how = "our move opened a line from an unseen attacker"
         out["king_fell"] = how
         out["king_attackers"] = "".join(kinds)
     return out
