@@ -1,27 +1,27 @@
 # Arena v15 watch
 
-Updated 2026-10-08 23:58 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 00:28 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 186W-13D-231L over 430 games** (45%).
-As White: 105.5/215.
-As Black: 87.0/215.
+**Record: 191W-13D-241L over 445 games** (44%).
+As White: 108.5/222.
+As Black: 89.0/223.
 
-Queen lost for less: 150 games (113 to a capturer unseen when we moved, 21 before ply 30); losses with the queen lost: 128 of 231.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 54. Mean length 77 plies.
-Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 157 games (120 to a capturer unseen when we moved, 21 before ply 30); losses with the queen lost: 135 of 241.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 55. Mean length 77 plies.
+Games as Black where White opened 1.c4: 13 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline P | 47-4-41 |
-| TA Baseline S | 13-7-34 |
-| baseline.py | 52-0-0 |
-| TA Baseline A | 25-1-26 |
-| Apricot Squad | 44-0-2 |
+| TA Baseline S | 14-7-35 |
+| baseline.py | 54-0-0 |
+| TA Baseline A | 25-1-28 |
+| Apricot Squad | 46-0-2 |
 | Instructors | 3-0-33 |
-| duck | 2-0-28 |
+| duck | 2-0-29 |
 | Decent Chess Bot | 0-0-26 |
-| Knight Vision | 0-1-17 |
-| Strongly Invisible | 0-0-16 |
+| Knight Vision | 0-1-21 |
+| Strongly Invisible | 0-0-18 |
 | Greek Gift | 0-0-8 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -456,3 +456,18 @@ Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate r
 | 2026-10-08 23:46 | ye09sxdy | W | Strongly Invisible | 105 | loss |  | 27 s | 2-13 |
 | 2026-10-08 23:51 | twrw9pth | B | Greek Gift | 100 | loss | ply 97 by q unseen | 31 s | 4-24 |
 | 2026-10-08 23:51 | n2k8g1c8 | W | Greek Gift | 87 | loss | ply 84 by b unseen | 45 s | 12-26 |
+| 2026-10-09 00:10 | p6oq4q0j | B | Knight Vision | 56 | loss | ply 43 by r unseen | 74 s | 16-23 |
+| 2026-10-09 00:12 | 33jzyagq | W | Knight Vision | 73 | loss | ply 52 by b unseen | 43 s | 7-17 |
+| 2026-10-09 00:17 | s2k2jo90 | B | baseline.py | 29 | win |  | 117 s | 18-23 |
+| 2026-10-09 00:17 | 8h4xf4p3 | B | Strongly Invisible | 152 | loss |  | 14 s | 1-16 |
+| 2026-10-09 00:17 | me5y9ipp | W | Strongly Invisible | 121 | loss | ply 116 by q unseen | 24 s | 4-20 |
+| 2026-10-09 00:18 | nskyv47j | W | baseline.py | 40 | win |  | 96 s | 24-12 |
+| 2026-10-09 00:20 | tp5qjdp1 | W | Apricot Squad | 36 | win |  | 118 s | 38-24 |
+| 2026-10-09 00:21 | d7l1clp0 | B | Apricot Squad | 47 | win |  | 85 s | 34-17 |
+| 2026-10-09 00:24 | mra362ev | B | Knight Vision | 72 | loss | ply 63 by q unseen | 52 s | 17-30 |
+| 2026-10-09 00:24 | ax3pfzd2 | W | TA Baseline A | 95 | loss | ply 64 by b unseen | 34 s | 3-27 |
+| 2026-10-09 00:25 | dhhejbcn | B | duck | 42 | loss |  | 108 s | 19-21 |
+| 2026-10-09 00:25 | 9qxdh0uz | B | TA Baseline A | 114 | loss | ply 59 by q unseen | 19 s | 0-17 |
+| 2026-10-09 00:25 | ob1fxbm1 | B | TA Baseline S | 64 | loss |  | 45 s | 2-18 |
+| 2026-10-09 00:26 | 0uc6toqh | W | TA Baseline S | 76 | win |  | 66 s | 19-4 |
+| 2026-10-09 00:26 | lwdgev2k | W | Knight Vision | 91 | loss | ply 58 by r unseen | 31 s | 3-29 |
