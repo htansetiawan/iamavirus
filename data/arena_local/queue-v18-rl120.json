@@ -7,7 +7,7 @@
     "FOW_MODE=neural"
    ],
    "b": "fable-submissions/iamavirus-v17-hybrid.zip",
-   "max_games": 60,
+   "max_games": 18,
    "seed": 23000,
    "sprt": {
     "elo0": 0,
@@ -36,7 +36,7 @@
    "id": "v18rl120-vs-v17",
    "a": "fable-submissions/iamavirus-v18-candidate-rl120-hybrid.zip",
    "b": "fable-submissions/iamavirus-v17-hybrid.zip",
-   "max_games": 60,
+   "max_games": 18,
    "seed": 21000,
    "sprt": {
     "elo0": 0,
@@ -53,7 +53,7 @@
     "FOW_NEURAL_GUARD=0.02"
    ],
    "b": "fable-submissions/iamavirus-v17-hybrid.zip",
-   "max_games": 60,
+   "max_games": 17,
    "seed": 24000,
    "sprt": {
     "elo0": 0,
@@ -85,6 +85,112 @@
     "FOW_MODE=neural",
     "FOW_NEURAL_GUARD=0.02"
    ],
+   "b": "data/zoo/replica-ta-baseline-p-neural.zip",
+   "max_games": 18,
+   "seed": 15000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "v18rl120f70-vs-v17",
+   "a": "data/candidates/iamavirus-v18-rl120-opts2-hybrid.zip",
+   "a_env": [
+    "FOW_NATURE_FLOOR=0.7"
+   ],
+   "b": "fable-submissions/iamavirus-v17-hybrid.zip",
+   "max_games": 16,
+   "seed": 26000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "v18c4p100-vs-v17",
+   "a": "data/candidates/iamavirus-v18-control-v4-opts2-hybrid.zip",
+   "a_env": [
+    "FOW_POLICY_PRIOR=100"
+   ],
+   "b": "fable-submissions/iamavirus-v17-hybrid.zip",
+   "max_games": 60,
+   "seed": 25000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "v18rl120p100-vs-tap-neural-cal",
+   "a": "data/candidates/iamavirus-v18-rl120-opts2-hybrid.zip",
+   "a_env": [
+    "FOW_POLICY_PRIOR=100"
+   ],
+   "b": "data/zoo/replica-ta-baseline-p-neural.zip",
+   "max_games": 0,
+   "seed": 15000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "v18rl120p200-vs-v17",
+   "a": "data/candidates/iamavirus-v18-rl120-opts2-hybrid.zip",
+   "a_env": [
+    "FOW_POLICY_PRIOR=200"
+   ],
+   "b": "fable-submissions/iamavirus-v17-hybrid.zip",
+   "max_games": 60,
+   "seed": 27000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "v18rl120p50-vs-v17",
+   "a": "data/candidates/iamavirus-v18-rl120-opts2-hybrid.zip",
+   "a_env": [
+    "FOW_POLICY_PRIOR=50"
+   ],
+   "b": "fable-submissions/iamavirus-v17-hybrid.zip",
+   "max_games": 60,
+   "seed": 28000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "v19c-vs-v18",
+   "a": "fable-submissions/iamavirus-v19-candidate-rl120-prior100-hybrid.zip",
+   "b": "fable-submissions/iamavirus-v18-hybrid.zip",
+   "max_games": 60,
+   "seed": 29000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "v19c-vs-tap-neural-cal",
+   "a": "fable-submissions/iamavirus-v19-candidate-rl120-prior100-hybrid.zip",
    "b": "data/zoo/replica-ta-baseline-p-neural.zip",
    "max_games": 32,
    "seed": 15000,
