@@ -1,0 +1,23 @@
+# Replica of the arena team "Mist Opportunities" (new 2026-10-09; 26 games, so a style replica) (GYM.md section 3.2, tier 2): the v4 network
+# fine-tuned on that team's own games only, from its seat. Validated before use (GYM.md V4).
+pretrain:
+  init_checkpoint: checkpoints/pretrain-v4/best.pt
+  players: ["d0335ee36a454199b847210e1e94d5ee", "Mist Opportunities"]
+  window: 64
+  sequences_per_batch: 8
+  accumulation_steps: 1
+  learning_rate: 1.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  epochs: 6
+  select_on: policy
+  loss_weights:
+    policy: 1.0
+    belief: 0.5
+    danger: 0.5
+    value: 0.25
+  mixed_precision: true
+  seed: 1
+  validation_sequences: 64
+  player_weights:
+    default: 1.0
