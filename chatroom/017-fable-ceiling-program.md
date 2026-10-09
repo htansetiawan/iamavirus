@@ -138,3 +138,7 @@ Local runner (`ceiling_match --shared-cores`, both bots on the same core pair as
 | **strike bonus off** (sighting 300) | **16/16** | 5.0 / 1.0 | 3.2 / 7.1 | 0.6 / 5.6 |
 
 The strike bonus raised the gym's strike rate but costs games: it rewards attacking from unseen squares regardless of what stands on the squares we cannot see. Without it, the rest of the package (seen-gift charge on quiet moves, king sighting, wider belief) beat v15 in every game, with v15 giving away material at nine times v16d's rate. A 16–0 local result needs independent confirmation: v16d (`721cc7e9727f`) is in four official lanes now. Lesson for the gym: a decision corpus measures one capability; only games measure the trade-offs between them.
+
+### Model size with the recipe held fixed (00:05 UTC, 2026-10-09)
+
+The 8.5M network trained with the v4 release's recipe (batch 8, 6,573 steps to its best epoch, weight decay 1e-4; feature cache) against the 1.9M v4 release on the same test shard: all decisions top-1 35.85% vs 35.44%, top-4 63.76% vs 63.62%, policy NLL 2.266 vs 2.274; top six top-1 35.32% vs 35.58%; belief loss 0.481 vs 0.474; danger loss 0.131 vs 0.128. A tie. With 3,766 training games, capacity is not what limits the network; the size question is reopened when the arena mirror multiplies the data (30,000 more games by morning).
