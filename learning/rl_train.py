@@ -319,12 +319,14 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(cfg.get("seed", 1))
     rng = random.Random(cfg.get("seed", 1))
-    learner, payload = load_model(Path(cfg["init"]), device)
+    learner, payload = load_model(Path(cfg.get("resume") or cfg["init"]), device)
     learner.train()
-    reference = load_policy(cfg["init"], device)
+    reference = load_policy(cfg["init"], device)     # the KL magnet stays the imitation policy
     league = [Member("reference", reference, cfg["league"].get("reference", 1.0))]
     for name, path in (cfg["league"].get("replicas") or {}).items():
         league.append(Member(name, load_policy(path, device), cfg["league"].get("replica_weight", 1.0)))
+    for path in cfg["league"].get("snapshots") or []:
+        league.append(Member(Path(path).stem, load_policy(path, device), cfg["league"].get("snapshot_weight", 1.0)))
     critic = Critic().to(device)
     critic.load_state_dict(torch.load(cfg["critic_init"], map_location=device, weights_only=False)["state_dict"])
     opt_a = torch.optim.Adam(learner.parameters(), lr=cfg["lr"])
@@ -335,7 +337,8 @@ def main() -> None:
     log = open(args.output / "rl_log.jsonl", "a")
     iterations = args.iterations or cfg["iterations"]
     snapshot_every = cfg["league"].get("snapshot_every", 5)
-    for it in range(1, iterations + 1):
+    start = int(cfg.get("start_iteration", 0))
+    for it in range(start + 1, start + iterations + 1):
         t0 = time.time()
         trans, results = roll.collect(cfg["rollout_decisions"], cfg.get("temperature", 1.0))
         t1 = time.time()
