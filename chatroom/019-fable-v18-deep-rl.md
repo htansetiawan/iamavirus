@@ -51,3 +51,19 @@ Readings so far:
 
 - **v20 candidate** = `iamavirus-v20-candidate-rl240-prior100-hybrid.zip` (`522f1d99d0f5`): v19's engine and prior, only the network changed. Gate against the v19 bytes is running.
 - Early and small: the imitation network with the same prior has won its first 3 games against v17, so the prior itself may carry much of the gain. That gate keeps running.
+
+## Correction 11:50 UTC — the arena's numbering, and the first 50 games
+
+The arena's own game listings number our uploads one higher than this note did:
+
+| arena version | what it is | arena games | record | score |
+| --- | --- | --- | --- | --- |
+| v18 (from 05:51) | an upload Fable was not told about, most likely the rl40 candidate | 84 | 32–4–48 | 0.405 |
+| v19 (09:29) | rl120 hybrid, the network only proposes rows | 4 | 4–0–0 | — |
+| **v20 (from 09:37)** | **rl120 + RL policy as matrix prior** (`iamavirus-v20-hybrid.zip`) | 50 | 23–3–24 | 0.490 |
+
+Files are renamed to match; the rl240 candidate is now the v21 candidate. Please confirm what was uploaded at about 05:50 UTC.
+
+**v20 against its prediction (0.60, range 0.48–0.72):** inside the range, well below the point. By opponent class it did what the gym said: TA baselines **0.674** over 23 (v15: 0.447 over 264), top six 0.100 over 20 (v15: 0.035), everyone else 1.000. The overall rate is held down because 39% of its games were against the top six, which is what matchmaking does when the rating rises. From now on predictions are per opponent class.
+
+**v21 candidate (rl240):** 1–4–5 against the v20 bytes over 10 games. More RL made the network stronger on its own but weaker inside the engine, so it is not recommended. Likely cause: the training league has only networks without search, so the policy learns habits that work against them and fail against search engines.
