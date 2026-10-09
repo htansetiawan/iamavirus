@@ -95,8 +95,10 @@ def summary(m: dict) -> dict:
             "verdict": verdict}
 
 
-def run(queue_path: Path, slots: list[str]) -> None:
+def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
     queue = json.loads(queue_path.read_text())
+    state = {"mtime": queue_path.stat().st_mtime}
+    linger_until = time.time() + 3600 * linger_hours
     LEDGER.parent.mkdir(parents=True, exist_ok=True)
     workdir = ROOT / "data" / "arena_local" / "builds"
     built = {}
@@ -107,9 +109,45 @@ def run(queue_path: Path, slots: list[str]) -> None:
                 built[path] = ca.build(path, workdir)
     stop = threading.Event()
 
+    def reload_queue():
+        """Pick up matchups added to or changed in the queue file (caller holds _lock).
+
+        A matchup that stays keeps its dict, so the workers' in-flight counts stay
+        right; one removed from the file gets no new games."""
+        try:
+            mtime = queue_path.stat().st_mtime
+        except OSError:
+            return
+        if mtime == state["mtime"]:
+            return
+        try:
+            fresh = json.loads(queue_path.read_text())
+        except (OSError, ValueError):
+            return  # caught mid-write; the next job looks again
+        state["mtime"] = mtime
+        old = {m["id"]: m for m in queue["matchups"]}
+        merged = []
+        for m in fresh["matchups"]:
+            for side in ("a", "b"):
+                path = Path(m[side])
+                if path not in built:
+                    built[path] = ca.build(path, workdir)
+            if m["id"] in old:
+                kept = old[m["id"]]
+                inflight = kept.get("_inflight", 0)
+                kept.clear()
+                kept.update(m)
+                kept["_inflight"] = inflight
+                merged.append(kept)
+            else:
+                merged.append(m)
+        queue["matchups"] = merged
+        print(f"queue reloaded: {[m['id'] for m in merged]}", flush=True)
+
     def next_job():
         """The matchup with the fewest games that is still running; its next pair index."""
         with _lock:
+            reload_queue()
             best = None
             for m in queue["matchups"]:
                 s = summary(m)
@@ -132,6 +170,9 @@ def run(queue_path: Path, slots: list[str]) -> None:
         while not stop.is_set():
             job = next_job()
             if job is None:
+                if time.time() < linger_until:
+                    time.sleep(60)  # idle: wait for matchups to be added to the queue file
+                    continue
                 return
             m, pair = job
             seed = int(m.get("seed", 20000)) + 2 * pair
@@ -174,9 +215,11 @@ def main() -> None:
     ap.add_argument("command", choices=["run", "status"])
     ap.add_argument("queue", type=Path)
     ap.add_argument("--slots", nargs="*", default=["0,1", "2,3", "4,5", "6,7"])
+    ap.add_argument("--linger-hours", type=float, default=0.0,
+                    help="when nothing is left to play, keep watching the queue file this long")
     args = ap.parse_args()
     if args.command == "run":
-        run(args.queue, args.slots)
+        run(args.queue, args.slots, args.linger_hours)
     else:
         for m in json.loads(args.queue.read_text())["matchups"]:
             print(json.dumps(summary(m)))
