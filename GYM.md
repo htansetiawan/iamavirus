@@ -111,3 +111,9 @@ At ≈30 real-clock games per hour on this machine, a +35 Elo question takes abo
 | date | candidate | gym prediction | arena result |
 | --- | --- | --- | --- |
 | *(first entry at the next upload)* | | | |
+
+## 8. Validation log
+
+- **V1 rules fidelity (2026-10-08):** pass — 0 mismatches in 19,994 views and legal-move sets over 300 random games; and every ingested arena replay (11,000+) is replayed frame by frame by our rules before acceptance.
+- **V2 runner fidelity (2026-10-08):** pass — at the official lane's seeds the runner reproduced the lane's openings and score (5/8 = 5/8); held vs immediate observations made no difference (5/8 each); an earlier 16/16 did not replicate (10/16).
+- **V4 replica validity, TA Baseline P (network-only replica, 16 games per version):** style pass — captures 23.9 vs 25.5 per 100 moves, long strikes 5.4 vs 5.6, fog routes 14.8 vs 16.0, king threats 3.1 vs 3.1, unseen king threats 0.8 vs 1.0, giveaways 2.5 vs 3.4, walk-ins 4.2 vs 3.7, king moves 7.6 vs 10.7. Strength partial — our versions score v10 0.625, v13 0.438, v14 0.531, v15 0.531 against the replica vs 0.875, 0.594, 0.542, 0.577 against the real bot: v10 correctly on top, the replica about 0.1 stronger than the real bot, the rest of the order within the ±0.2 intervals of 16 games. Extended overnight to 48 games per version, plus the TA Baseline A replica (`data/arena_local/queue-v4-calibration.json`, ledger `data/arena_local/games.jsonl`). Held-out move prediction for all nine replicas: TA-A 57.8%, TA-P 56.4%, TA-S 41.3%, duck 40.9%, Decent 38.8%, Greek Gift 38.6%, Knight Vision 38.0%, Strongly Invisible 33.4%, Instructors 31.2% top-1 (general model: 48.2 / 46.8 / 36.6 / 39.6 / 36.5 / 37.3 / 36.2 / 32.6 / 29.9).
