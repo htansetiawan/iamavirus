@@ -90,6 +90,45 @@
     "alpha": 1e-12,
     "beta": 1e-12
    }
+  },
+  {
+   "id": "limit-vs-v20",
+   "a": "fable-submissions/iamavirus-v22-candidate-l-imitation-prior100-hybrid.zip",
+   "b": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "max_games": 60,
+   "seed": 35000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "limit-vs-duckrep",
+   "a": "fable-submissions/iamavirus-v22-candidate-l-imitation-prior100-hybrid.zip",
+   "b": "data/zoo/replica-duck-hybrid.zip",
+   "max_games": 24,
+   "seed": 33000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "limit-vs-tap-neural-cal",
+   "a": "fable-submissions/iamavirus-v22-candidate-l-imitation-prior100-hybrid.zip",
+   "b": "data/zoo/replica-ta-baseline-p-neural.zip",
+   "max_games": 16,
+   "seed": 15000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
   }
  ]
 }
