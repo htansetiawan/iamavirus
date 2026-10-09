@@ -60,6 +60,38 @@ int ClassOfPiece(int piece_type) {
   }
 }
 
+// The enemy king's shelter (pawn shield), classed as in note 027:
+// 0 center (uncastled), 1 intact (three shield pawns home), 2 fianchetto (middle
+// pawn one up), 3 luft (edge pawn one up), 4 one shield pawn gone, 5 open (two
+// or more gone), 6 shield advanced two or more, 7 king walked out, 8 no king.
+const char* kShelterNames[9] = {"center", "intact", "fianchetto", "luft", "one-gone", "open", "advanced", "walked-out", "no-king"};
+int ShelterClass(const Position& b, int color) {
+  const int k = b.KingSquare(color);
+  if (k < 0) return 8;
+  const int f = FileOf(k), r = RankOf(k), home = color == kWhite ? 0 : 7, fwd = color == kWhite ? 1 : -1;
+  if (std::abs(r - home) > 1) return 7;
+  if (f >= 2 && f <= 5) return 0;
+  const int files[3] = {f >= 5 ? 5 : 2, f >= 5 ? 6 : 1, f >= 5 ? 7 : 0};  // inner, middle, edge
+  int advance[3];
+  int missing = 0;
+  for (int i = 0; i < 3; ++i) {
+    advance[i] = 99;
+    for (Bitboard pawns = b.pieces(kPawn, color); pawns;) {
+      const int sq = PopLsb(&pawns);
+      if (FileOf(sq) == files[i]) advance[i] = std::min(advance[i], (RankOf(sq) - home) * fwd);
+    }
+    if (advance[i] == 99) ++missing;
+  }
+  if (advance[0] == 1 && advance[1] == 1 && advance[2] == 1) return 1;
+  if (advance[0] == 1 && advance[1] == 2 && advance[2] == 1) return 2;
+  if (advance[0] == 1 && advance[1] == 1 && advance[2] == 2) return 3;
+  if (missing >= 2) return 5;
+  if (missing == 1) return 4;
+  return 6;
+}
+
+struct ShelterTally { double p_true = 0; long count = 0, correct = 0; };
+
 struct Tally {
   double particle = 0.0, network = 0.0, fused[kNumBetas] = {0, 0, 0};
   long count = 0, lost = 0;
@@ -83,6 +115,7 @@ int main(int argc, char** argv) {
   std::ifstream seats(seats_path);
   std::string line;
   std::map<std::string, Tally> tally;  // key: phase|type
+  std::map<std::string, ShelterTally> shelter;  // key: phase|true class
   int seat_count = 0;
   long decisions = 0;
   while (std::getline(seats, line) && seat_count < max_seats) {
@@ -170,6 +203,20 @@ int main(int argc, char** argv) {
           }
         }
         const char* phase = ply < 30 ? "opening" : ply < 70 ? "middle" : "late";
+        {
+          // How well does the (possibly fused) population know the enemy king's shelter?
+          const int truth_class = ShelterClass(truth, side ^ 1);
+          double hist[9] = {0};
+          for (const Position& particle : population) hist[ShelterClass(particle, side ^ 1)] += 1.0;
+          int best = 0;
+          for (int c = 1; c < 9; ++c) if (hist[c] > hist[best]) best = c;
+          for (const std::string key : {std::string(phase) + "|" + kShelterNames[truth_class], std::string(phase) + "|all"}) {
+            ShelterTally& t = shelter[key];
+            t.p_true += hist[truth_class] / static_cast<double>(population.size());
+            t.count += 1;
+            t.correct += best == truth_class ? 1 : 0;
+          }
+        }
         for (Bitboard scan = unseen; scan;) {
           const int square = PopLsb(&scan);
           if (truth.color_at(square) != enemy) continue;
@@ -223,6 +270,13 @@ int main(int argc, char** argv) {
     std::printf("%-8s %-7s %7ld %9.3f %8.3f %8.3f %8.3f %8.3f %6.1f%%\n", key.substr(0, bar).c_str(),
                 key.substr(bar + 1).c_str(), t.count, t.particle / t.count, t.network / t.count,
                 t.fused[0] / t.count, t.fused[1] / t.count, t.fused[2] / t.count, 100.0 * t.lost / t.count);
+  }
+  std::printf("\nenemy king shelter: probability the population puts on the true class, and top-class accuracy\n");
+  std::printf("%-8s %-11s %7s %8s %8s\n", "phase", "true class", "count", "p(true)", "top1");
+  for (const auto& [key, t] : shelter) {
+    const std::size_t bar = key.find('|');
+    std::printf("%-8s %-11s %7ld %8.3f %7.1f%%\n", key.substr(0, bar).c_str(), key.substr(bar + 1).c_str(), t.count,
+                t.p_true / t.count, 100.0 * t.correct / t.count);
   }
   return 0;
 }

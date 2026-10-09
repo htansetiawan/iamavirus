@@ -1,0 +1,54 @@
+seats 66, our decisions 3070, online fusion beta 1.00 mask 33; probability on the true square of each hidden enemy piece
+phase    piece     count particles  network fused.25  fused.5   fused1    lost
+all      bishop     3109     0.492    0.448    0.520    0.544    0.571   11.4%
+all      king       3070     0.484    0.517    0.516    0.537    0.551   12.8%
+all      knight     2774     0.427    0.471    0.494    0.548    0.598    6.9%
+all      pawn      14745     0.795    0.762    0.818    0.829    0.834    4.7%
+all      queen      2188     0.357    0.348    0.398    0.425    0.442   12.6%
+all      rook       4167     0.467    0.437    0.498    0.517    0.534    9.0%
+late     bishop      330     0.171    0.081    0.182    0.195    0.218   34.2%
+late     king        836     0.257    0.181    0.267    0.275    0.283   15.4%
+late     knight      360     0.249    0.115    0.265    0.279    0.290   16.9%
+late     pawn       2834     0.677    0.644    0.692    0.701    0.706   11.8%
+late     queen       406     0.147    0.040    0.144    0.143    0.146   25.9%
+late     rook        523     0.137    0.080    0.145    0.152    0.158   17.2%
+middle   bishop     1051     0.331    0.251    0.368    0.401    0.431   19.0%
+middle   king       1244     0.474    0.556    0.516    0.544    0.562   17.8%
+middle   knight      730     0.365    0.326    0.414    0.456    0.499   13.0%
+middle   pawn       5651     0.749    0.731    0.778    0.791    0.797    5.7%
+middle   queen       830     0.196    0.140    0.214    0.231    0.247   18.0%
+middle   rook       1690     0.258    0.223    0.284    0.303    0.327   13.6%
+opening  bishop     1728     0.651    0.638    0.676    0.698    0.723    2.4%
+opening  king        990     0.688    0.754    0.726    0.747    0.764    4.3%
+opening  knight     1684     0.492    0.610    0.578    0.646    0.707    2.1%
+opening  pawn       6260     0.890    0.843    0.912    0.921    0.926    0.6%
+opening  queen       952     0.588    0.661    0.666    0.714    0.739    2.3%
+opening  rook       1954     0.736    0.718    0.778    0.799    0.813    2.9%
+
+enemy king shelter: probability the population puts on the true class, and top-class accuracy
+phase    true class    count  p(true)     top1
+late     advanced        157    0.563    59.2%
+late     all             836    0.474    48.9%
+late     center          177    0.266    20.9%
+late     fianchetto        6    0.009     0.0%
+late     intact           16    0.379    43.8%
+late     luft             22    0.284    31.8%
+late     one-gone        212    0.622    65.1%
+late     open            114    0.638    71.1%
+late     walked-out      132    0.334    34.8%
+middle   advanced        306    0.288    27.1%
+middle   all            1244    0.422    42.9%
+middle   center          165    0.442    44.2%
+middle   fianchetto       45    0.360    37.8%
+middle   intact          285    0.450    48.4%
+middle   luft            136    0.193    20.6%
+middle   one-gone        275    0.660    66.9%
+middle   open             25    0.439    40.0%
+middle   walked-out        7    0.059    14.3%
+opening  advanced         22    0.067     4.5%
+opening  all             990    0.732    73.6%
+opening  center          681    0.982    99.0%
+opening  fianchetto       18    0.124    16.7%
+opening  intact          224    0.203    20.1%
+opening  luft             22    0.059     4.5%
+opening  one-gone         23    0.246    21.7%
