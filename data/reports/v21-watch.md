@@ -1,25 +1,26 @@
 # Arena v21 watch
 
-Updated 2026-10-09 15:42 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 16:13 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 11W-4D-19L over 34 games** (38%).
-As White: 7.0/17.
-As Black: 6.0/17.
+**Record: 18W-6D-24L over 48 games** (44%).
+As White: 11.0/24.
+As Black: 10.0/24.
 
-Queen lost for less: 13 games (11 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 9 of 19.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 7. Mean length 87 plies.
+Queen lost for less: 16 games (14 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 11 of 24.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 8. Mean length 81 plies.
 Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Decent Chess Bot | 0-1-7 |
 | Instructors | 2-1-5 |
+| TA Baseline A | 3-2-1 |
+| baseline.py | 6-0-0 |
 | duck | 0-2-4 |
+| Knight Vision | 0-0-6 |
 | TA Baseline P | 4-0-0 |
-| Decent Chess Bot | 0-0-4 |
-| TA Baseline A | 2-1-1 |
-| Knight Vision | 0-0-4 |
-| baseline.py | 2-0-0 |
 | TA Baseline S | 1-0-1 |
+| Apricot Squad | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -57,3 +58,17 @@ Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate re
 | 2026-10-09 15:35 | 4kt9a2tg | B | Knight Vision | 114 | loss |  | 14 s | 1-20 |
 | 2026-10-09 15:39 | m2fa627l | B | TA Baseline P | 77 | win |  | 48 s | 16-8 |
 | 2026-10-09 15:39 | x3zwz3mo | W | TA Baseline P | 86 | win |  | 45 s | 13-5 |
+| 2026-10-09 15:42 | vdzgfrb1 | W | Apricot Squad | 24 | win |  | 134 s | 38-30 |
+| 2026-10-09 15:44 | r6lcngta | B | baseline.py | 41 | win |  | 96 s | 37-27 |
+| 2026-10-09 15:44 | 9hmq24h1 | B | Apricot Squad | 55 | win |  | 68 s | 38-15 |
+| 2026-10-09 15:45 | e282i5f2 | W | baseline.py | 48 | win |  | 84 s | 36-18 |
+| 2026-10-09 15:45 | 4ydu7zlc | B | Decent Chess Bot | 96 | loss | ply 81 by r unseen | 36 s | 2-13 |
+| 2026-10-09 15:46 | vn1itbni | W | Decent Chess Bot | 103 | loss |  | 15 s | 4-10 |
+| 2026-10-09 15:55 | xb677r0q | B | Knight Vision | 86 | loss |  | 24 s | 3-16 |
+| 2026-10-09 15:55 | hsafi1c9 | W | Knight Vision | 89 | loss |  | 39 s | 1-20 |
+| 2026-10-09 16:03 | yq3oxrfa | W | TA Baseline A | 58 | draw | ply 48 by r unseen | 70 s | 20-20 |
+| 2026-10-09 16:04 | 0fcdj8xa | B | TA Baseline A | 71 | win |  | 59 s | 21-3 |
+| 2026-10-09 16:07 | ws27f3sg | W | Decent Chess Bot | 81 | draw |  | 45 s | 18-20 |
+| 2026-10-09 16:08 | rth58gq6 | B | Decent Chess Bot | 96 | loss | ply 85 by q unseen | 47 s | 2-19 |
+| 2026-10-09 16:11 | 0pencda0 | B | baseline.py | 43 | win |  | 96 s | 29-7 |
+| 2026-10-09 16:12 | n96racb9 | W | baseline.py | 46 | win |  | 80 s | 29-13 |
