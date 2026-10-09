@@ -36,3 +36,12 @@ The first three are defensive and cost us games directly; 4–6 are why we rarel
 3. **RL against opponents that ambush.** The RL league has only networks without search; it needs search-based and ambushing opponents (this needs the RL trainer, which the session cannot currently read).
 
 Predictions will be made per opponent class: TA baselines, top six, everyone else.
+
+## Update 16:00 UTC — first fix tested in the gym
+
+Replaying our own fatal decisions with the real bot:
+
+- **King floor: no effect.** At the king moves that lost, the engine already rated them 6–90% risky; it played them because every alternative was worse. The king was lost earlier, so the last king move is the wrong place to fix it.
+- **Queen charge: works.** Charging queen moves the arena rate for their open lines into the fog cut "queen left en prise" on our 56 fatal queen decisions from 48.2% to 39.3%, while on 120 queen moves that had been fine it changed the move more often but kept strikes (10.8% → 10.0%) and giveaways (unchanged) about the same.
+
+**v22 candidate** = v20 + that queen charge: `iamavirus-v22-candidate-queenfog-hybrid.zip`. Gates running: against the v20 bytes, against the duck replica (v20 on the same seeds, to compare queen losses), and against the TA Baseline P replica. Not cleared yet; the king problem needs the earlier decisions (shelter, open lines, bait) and the belief about hidden sliders.
