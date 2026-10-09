@@ -76,6 +76,19 @@ The zoo and the opening suite drive self-play leagues; exam positions become cur
 - **Feature cache:** each position's input planes computed once and kept on the GPU (float16), so training is bound by the GPU rather than by Python feature building on a busy CPU (the replica run used 18% of the GPU).
 - **Batched self-play:** many simulated games at once with networks evaluated in GPU batches, for reinforcement learning and for training zoo opponents. Evaluation games of our own bot stay on the CPU, two cores each, as in the arena.
 
+### 3.8 Reinforcement learning, on a date (user asked "when is later", 2026-10-09 05:00 UTC)
+
+Imitation copies what strong players show; RL can discover what they never show explicitly (going to look for a hidden king). Three prerequisites, from `reports/Deep RL for Fog of War chess.md`, then the run:
+
+| when | step | done when |
+| --- | --- | --- |
+| Oct 9 (running) | **True-board critic** (`learning/critic.py`, memo experiment 1, first step): a training-only value network that sees the true board | its held-out error is well below the observation-only head's 0.94 |
+| Oct 9–10 | **Batched simulator** (memo experiment 5): N games stepped in one C++ call, features from the bot's own C++ tracker, GPU batch inference | ≥ 10× the current 800 decisions/s end to end, then the memo's 2×10⁴ |
+| Oct 10 | **First RL run:** PPO with the memo's regularisation (reverse-KL step control plus a KL pull to the imitation policy, MMD style) and the true-board critic; league = our past versions + the validated TA Baseline P replica + self-play snapshots | the gym grades every checkpoint: exams, then SPRT against v17 in hybrid mode |
+| Oct 11 onward | scale with the simulator; target the belief side too (opponent-move model, scouting) | gym-predicted gain ≥ 90% before any upload |
+
+The network never picks moves unaided in the arena (memo risk 5); an RL policy enters through the hybrid's candidate rows.
+
 ## 4. Validation plan (before the gym is trusted)
 
 - **V1 Rules fidelity** — done: 0 mismatches in 19,994 checks.
