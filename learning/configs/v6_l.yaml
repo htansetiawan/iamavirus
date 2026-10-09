@@ -1,0 +1,23 @@
+# Dataset v6 (the arena mirror, ~25,000 games, 2026-10-09) — model size l (scaling sweep above 8.5M, 2026-10-09) with the recipe that
+# won on v4 (small batches, long schedule), via the feature cache. Size question reopened with 5x data.
+pretrain:
+  feature_cache: /media/henrytan/seagate/iamavirus/feature-cache/v6
+  model: {channels: 192, blocks: 10, hidden: 768, cand_width: 384}
+  window: 64
+  sequences_per_batch: 16
+  accumulation_steps: 1
+  learning_rate: 3.0e-4
+  weight_decay: 1.0e-4
+  grad_clip: 1.0
+  epochs: 6
+  select_on: policy
+  loss_weights:
+    policy: 1.0
+    belief: 1.0
+    danger: 1.0
+    value: 0.25
+  mixed_precision: true
+  seed: 1
+  validation_sequences: 1024
+  player_weights:
+    default: 1.0
