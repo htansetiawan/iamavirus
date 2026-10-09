@@ -95,6 +95,9 @@ class Rollout:
         trans = []          # dicts per learner decision
         results = []        # (opponent index, learner score)
         decisions = 0
+        # Games continue across iterations; their earlier decisions were bootstrapped by the
+        # critic at the end of the last batch, so only this batch's indices are tracked.
+        self.open_index = [[] for _ in range(env.n)]
         while decisions < target:
             movers = np.array([env.side_to_move(i) for i in range(env.n)])
             learner_games = [i for i in range(env.n) if movers[i] == self.learner_side[i]]
