@@ -193,7 +193,7 @@ def run_seat(line: str, args, cores: str) -> dict:
     decision_lines = [l for l in out.stderr.splitlines() if " n=" in l and " mode=" in l]
     if decision_lines:
         fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
-        record["engine"] = {k2: fields.get(k2) for k2 in ("mode", "nodes", "spent", "short", "hyp", "budget", "book", "inj")}
+        record["engine"] = {k2: fields.get(k2) for k2 in ("mode", "nodes", "spent", "short", "hyp", "budget", "book", "inj", "kfog", "risk", "safe_rows", "unsafe")}
     record["match"] = choice == moves[-1]
     pos = position_at(frames[k - 1]["board"], side, moves[:-1])
     record["position"] = [frames[k - 1]["board"], side, pos.castling, pos.en_passant]
