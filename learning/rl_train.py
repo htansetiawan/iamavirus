@@ -61,10 +61,12 @@ class Rollout:
     def __init__(self, env: BatchEnv, learner: FogPolicy, reference: FogPolicy, league: list[Member], device, rng):
         self.env, self.learner, self.reference, self.league, self.device, self.rng = env, learner, reference, league, device, rng
         G = env.n
-        H = learner.hidden
-        self.h_learner = torch.zeros(G, H, device=device)       # learner's state for its side
-        self.h_ref = torch.zeros(G, H, device=device)           # reference's state for the learner's side
-        self.h_opp = torch.zeros(G, H, device=device)           # opponent's state for its side
+        self.h_learner = torch.zeros(G, learner.hidden, device=device)
+        self.h_ref = torch.zeros(G, reference.hidden, device=device)
+        # Each league member may have a different GRU width. Allocate lazily,
+        # including for snapshots appended after this collector was created.
+        self.h_opp: dict[int, torch.Tensor] = {}
+        self.bootstrap_states: dict[int, dict] = {}
         self.learner_side = np.zeros(G, np.int64)
         self.opponent = [None] * G
         self.open_index = [[] for _ in range(G)]                # indices of this game's transitions
@@ -77,8 +79,14 @@ class Rollout:
         self.opponent[i] = self.rng.choices(range(len(self.league)), weights=weights)[0]
         self.h_learner[i].zero_()
         self.h_ref[i].zero_()
-        self.h_opp[i].zero_()
+        self._opponent_memory(self.opponent[i])[i].zero_()
         self.open_index[i] = []
+
+    def _opponent_memory(self, member_index):
+        if member_index not in self.h_opp:
+            self.h_opp[member_index] = torch.zeros(
+                self.env.n, self.league[member_index].model.hidden, device=self.device)
+        return self.h_opp[member_index]
 
     @torch.no_grad()
     def _advance(self, model, h, games, side_of):
@@ -91,6 +99,10 @@ class Rollout:
         return events
 
     def collect(self, target: int, temperature: float = 1.0):
+        if target <= 0:
+            raise ValueError("rollout decision target must be positive")
+        if not math.isfinite(temperature) or temperature <= 0:
+            raise ValueError("temperature must be positive and finite")
         env, dev = self.env, self.device
         trans = []          # dicts per learner decision
         results = []        # (opponent index, learner score)
@@ -98,10 +110,20 @@ class Rollout:
         # Games continue across iterations; their earlier decisions were bootstrapped by the
         # critic at the end of the last batch, so only this batch's indices are tracked.
         self.open_index = [[] for _ in range(env.n)]
-        while decisions < target:
+        self.bootstrap_states = {}
+        while True:
             movers = np.array([env.side_to_move(i) for i in range(env.n)])
-            learner_games = [i for i in range(env.n) if movers[i] == self.learner_side[i]]
-            opp_games = [i for i in range(env.n) if movers[i] != self.learner_side[i]]
+            collecting = decisions < target
+            learner_games = [i for i in range(env.n)
+                             if collecting and movers[i] == self.learner_side[i]]
+            opp_games = [i for i in range(env.n)
+                         if movers[i] != self.learner_side[i] and
+                         (collecting or self.open_index[i])]
+            # Once the batch is full, finish only pending opponent replies.
+            # This captures terminal rewards and leaves every unfinished tail
+            # at a learner-to-move state, which is what the critic evaluates.
+            if not collecting and not opp_games:
+                break
             actions = np.full(env.n, -1, np.int32)
             # --- learner (and the reference shadowing it) ---
             if learner_games:
@@ -117,7 +139,7 @@ class Rollout:
                     ref_logits, _ = self.reference.score(hr, spr, cf, ct, cp)
                     logp = masked_log_softmax(logits / temperature, mask)
                     ref_logp = masked_log_softmax(ref_logits, mask)
-                    choice = torch.multinomial(logp.exp().nan_to_num(0.0) + 1e-12 * mask, 1).squeeze(1)
+                    choice = torch.multinomial(logp.exp(), 1).squeeze(1)
                 for k, i in enumerate(learner_games):
                     n = int(mask[k].sum())
                     a = int(choice[k])
@@ -125,6 +147,7 @@ class Rollout:
                     board = env.board(i)
                     trans.append({"game": i, "h": h_before[k].cpu(), "events": evs[k], "cand": (cands[k][0], cands[k][1], cands[k][2]),
                                   "action": a, "old_logp": float(logp[k, a]), "ref_logp": ref_logp[k, :n].cpu(),
+                                  "temperature": temperature,
                                   "board": board, "side": int(self.learner_side[i]), "reward": 0.0, "done": False})
                     self.open_index[i].append(len(trans) - 1)
                 decisions += len(learner_games)
@@ -136,13 +159,13 @@ class Rollout:
                 evs = [env.take_events(i, int(movers[i])) for i in games]
                 idx = torch.tensor(games, device=dev)
                 member = self.league[mi].model
-                ho, spo = self._run_events(member, self.h_opp, idx, evs)
+                ho, spo = self._run_events(member, self._opponent_memory(mi), idx, evs)
                 cands = [env.candidates(i) for i in games]
                 cf, ct, cp, mask = self._pack(cands)
                 with torch.no_grad():
                     logits, _ = member.score(ho, spo, cf, ct, cp)
                     logp = masked_log_softmax(logits, mask)
-                    choice = torch.multinomial(logp.exp().nan_to_num(0.0) + 1e-12 * mask, 1).squeeze(1)
+                    choice = torch.multinomial(logp.exp(), 1).squeeze(1)
                 for k, i in enumerate(games):
                     actions[i] = int(choice[k])
             status = env.step_all(actions)
@@ -157,6 +180,14 @@ class Rollout:
                     results.append((self.opponent[i], score))
                     env.reset(i)
                     self._assign(i)
+        for i, indices in enumerate(self.open_index):
+            if indices:
+                side = int(self.learner_side[i])
+                if env.side_to_move(i) != side:
+                    raise RuntimeError("unfinished rollout did not reach a learner bootstrap state")
+                # Do not consume its observation events: the next collect()
+                # needs to deliver those to the recurrent actor exactly once.
+                self.bootstrap_states[i] = {"board": env.board(i), "side": side}
         return trans, results
 
     def _run_events(self, model, H, idx, evs):
@@ -196,13 +227,13 @@ class Rollout:
         return cf.to(dev), ct.to(dev), cp.to(dev), mask.to(dev)
 
 
-def gae(trans, values, gamma, lam):
-    """Per game: advantages and lambda-returns over the learner's decisions (reward only at the end)."""
+def gae(trans, values, gamma, lam, bootstrap_values=None):
+    """Same-player GAE; unfinished tails require explicit successor values by slot."""
+    if len(values) != len(trans):
+        raise ValueError("one critic value is required per transition")
+    bootstrap_values = {} if bootstrap_values is None else bootstrap_values
     adv = np.zeros(len(trans), np.float32)
     ret = np.zeros(len(trans), np.float32)
-    by_game = {}
-    for k, t in enumerate(trans):
-        by_game.setdefault((t["game"], id(t.get("episode", None))), []).append(k)
     # episodes: split each game's sequence at done flags
     episodes, current = [], {}
     for k, t in enumerate(trans):
@@ -214,7 +245,12 @@ def gae(trans, values, gamma, lam):
         next_value, running = 0.0, 0.0
         last_done = trans[seq[-1]]["done"]
         if not last_done:
-            next_value = float(values[seq[-1]])
+            slot = trans[seq[-1]]["game"]
+            if slot not in bootstrap_values:
+                raise ValueError(f"missing successor bootstrap value for game slot {slot}")
+            next_value = float(bootstrap_values[slot])
+            if not np.isfinite(next_value):
+                raise ValueError(f"nonfinite bootstrap value for game slot {slot}")
         for pos in range(len(seq) - 1, -1, -1):
             k = seq[pos]
             r = trans[k]["reward"]
@@ -235,6 +271,15 @@ def critic_values(critic, trans, device):
         for i in range(0, len(xs), 8192):
             out.append(critic(torch.from_numpy(xs[i:i + 8192]).to(device)).float().cpu())
     return torch.cat(out).numpy(), xs
+
+
+def critic_bootstraps(critic, states, device):
+    """Evaluate actual same-player successor boards; the actor never sees truth."""
+    if not states:
+        return {}
+    slots = list(states)
+    values, _ = critic_values(critic, [states[i] for i in slots], device)
+    return {i: float(v) for i, v in zip(slots, values)}
 
 
 def update(learner, critic, opt_a, opt_c, trans, adv, ret, xs, cfg, device):
@@ -277,7 +322,9 @@ def update(learner, critic, opt_a, opt_c, trans, adv, ret, xs, cfg, device):
                 ref[k, :m] = t["ref_logp"]
             cf, ct, cp, mask, ref = cf.to(device), ct.to(device), cp.to(device), mask.to(device), ref.to(device)
             logits, _ = learner.score(h, spatial, cf, ct, cp)
-            logp_all = masked_log_softmax(logits, mask)
+            temperatures = torch.tensor([t.get("temperature", cfg.get("temperature", 1.0))
+                                         for t in batch], device=device).unsqueeze(1)
+            logp_all = masked_log_softmax(logits / temperatures, mask)
             act = torch.tensor([t["action"] for t in batch], device=device)
             logp = logp_all.gather(1, act.unsqueeze(1)).squeeze(1)
             old = torch.tensor([t["old_logp"] for t in batch], device=device)
@@ -318,6 +365,7 @@ def main() -> None:
     cfg = yaml.safe_load(args.config.read_text())["rl"]
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     torch.manual_seed(cfg.get("seed", 1))
+    np.random.seed(cfg.get("seed", 1))
     rng = random.Random(cfg.get("seed", 1))
     learner, payload = load_model(Path(cfg.get("resume") or cfg["init"]), device)
     learner.train()
@@ -343,13 +391,15 @@ def main() -> None:
         trans, results = roll.collect(cfg["rollout_decisions"], cfg.get("temperature", 1.0))
         t1 = time.time()
         values, xs = critic_values(critic, trans, device)
-        adv, ret = gae(trans, values, cfg["gamma"], cfg["lambda"])
+        bootstraps = critic_bootstraps(critic, roll.bootstrap_states, device)
+        adv, ret = gae(trans, values, cfg["gamma"], cfg["lambda"], bootstraps)
         stats = update(learner, critic, opt_a, opt_c, trans, adv, ret, xs, cfg, device)
         t2 = time.time()
         by = {}
         for mi, sc in results:
             by.setdefault(league[mi].name, []).append(sc)
         record = {"iteration": it, "decisions": len(trans), "games_finished": len(results),
+                  "bootstrapped_games": len(bootstraps),
                   "rollout_seconds": round(t1 - t0, 1), "update_seconds": round(t2 - t1, 1),
                   "decisions_per_second": round(len(trans) / max(t1 - t0, 1e-6), 1),
                   "score_vs": {k: [round(float(np.mean(v)), 3), len(v)] for k, v in by.items()}, **stats}

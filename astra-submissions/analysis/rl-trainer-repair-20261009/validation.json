@@ -1,0 +1,226 @@
+{
+  "created_at": "2026-10-09T20:15:37.084301+00:00",
+  "kind": "correctness_and_training_entrypoint_smoke_not_playing_strength",
+  "device": "cpu",
+  "gpu_disabled_by": "CUDA_VISIBLE_DEVICES empty",
+  "source_sha256": "a106621127a0986c73f8cdf84c80eb5b1ba60799f8899ef9fdfeb9ef27509d51",
+  "tests": {
+    "command": "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 .venv/bin/python -m pytest -q astra-submissions/tools/test_rl_trainer.py learning/tests/test_ppo_accounting.py",
+    "passed": 17,
+    "failed": 0
+  },
+  "synthetic_gae_cases": {
+    "passed": 6,
+    "failed": 0
+  },
+  "smoke": {
+    "config": {
+      "rl": {
+        "init": "checkpoints/v6-l/best.pt",
+        "critic_init": "checkpoints/critic-vs/best.pt",
+        "games": 4,
+        "max_plies": 8,
+        "env_threads": 1,
+        "rollout_decisions": 10,
+        "iterations": 2,
+        "lr": 1e-05,
+        "critic_lr": 0.0001,
+        "clip": 0.2,
+        "epochs": 1,
+        "minibatch": 4,
+        "kl_ref_coef": 0.05,
+        "entropy_coef": 0.003,
+        "grad_clip": 1.0,
+        "gamma": 1.0,
+        "lambda": 0.95,
+        "temperature": 1.0,
+        "seed": 1,
+        "league": {
+          "reference": 2.0,
+          "replica_weight": 1.0,
+          "snapshot_weight": 0.25,
+          "snapshot_every": 1,
+          "replicas": {
+            "duck": "checkpoints/replica-duck/best.pt",
+            "duck-b": "checkpoints/replica-duck/best.pt",
+            "instructors": "checkpoints/replica-instructors/best.pt",
+            "instructors-b": "checkpoints/replica-instructors/best.pt",
+            "ta-baseline-p": "checkpoints/replica-ta-baseline-p/best.pt",
+            "ta-baseline-a": "checkpoints/replica-ta-baseline-a/best.pt",
+            "ta-baseline-s": "checkpoints/replica-ta-baseline-s/best.pt",
+            "greek-gift": "checkpoints/replica-greek-gift/best.pt",
+            "knight-vision": "checkpoints/replica-knight-vision/best.pt",
+            "decent-chess-bot": "checkpoints/replica-decent-chess-bot/best.pt",
+            "strongly-invisible": "checkpoints/replica-strongly-invisible/best.pt"
+          },
+          "snapshots": []
+        }
+      },
+      "_comment": "RL from the 20.4M network (size sweep, 2026-10-09). League tilted toward the targets through the config: duck and Instructors listed twice (4 of 11 replica units), snapshots at a quarter weight. Requires the mixed-width recurrent-memory and successor-bootstrap fixes in learning/rl_train.py (Astra, 2026-10-09)."
+    },
+    "iterations": [
+      {
+        "iteration": 1,
+        "decisions": 10,
+        "games_finished": 0,
+        "bootstrapped_games": 4,
+        "rollout_seconds": 0.5,
+        "update_seconds": 1.3,
+        "decisions_per_second": 19.9,
+        "score_vs": {},
+        "kl_ref": 0.0002,
+        "entropy": 2.4334,
+        "clip_frac": 0.0,
+        "approx_kl": 0.0012,
+        "value_loss": 0.1119
+      },
+      {
+        "iteration": 2,
+        "decisions": 12,
+        "games_finished": 4,
+        "bootstrapped_games": 4,
+        "rollout_seconds": 0.5,
+        "update_seconds": 1.3,
+        "decisions_per_second": 21.9,
+        "score_vs": {
+          "ta-baseline-a": [
+            0.5,
+            1
+          ],
+          "duck-b": [
+            0.5,
+            1
+          ],
+          "greek-gift": [
+            0.5,
+            1
+          ],
+          "ta-baseline-s": [
+            0.5,
+            1
+          ]
+        },
+        "kl_ref": 0.0007,
+        "entropy": 2.1856,
+        "clip_frac": 0.0,
+        "approx_kl": -0.0005,
+        "value_loss": 0.1673
+      }
+    ],
+    "saved_model_config": {
+      "channels": 192,
+      "blocks": 10,
+      "hidden": 768,
+      "cand_width": 384
+    },
+    "saved_parameters_finite": true,
+    "snapshots_saved": [
+      1,
+      2
+    ],
+    "checkpoint_path": "/tmp/astra-rl-fix-smoke-20261009/run/latest.pt",
+    "checkpoint_sha256": "decc5382de9b70a622a00fc224919e0e25cce30b4bd4cc70ac559edf407d6794"
+  },
+  "input_models": {
+    "checkpoints/v6-l/best.pt": {
+      "model_config": {
+        "channels": 192,
+        "blocks": 10,
+        "hidden": 768,
+        "cand_width": 384
+      },
+      "architecture": "cnn192x10-gru768-heads-v1",
+      "sha256": "ba8cdcee1c743b6fc0cda838f940eeb8e1ad46b3e2877aeb8b3c8a066bf24197"
+    },
+    "checkpoints/replica-duck/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "b1bc21ca1ace43c4074e9e6901f54cb9c2deeeea9baecfc57c0e66e7e1785717"
+    },
+    "checkpoints/replica-instructors/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "5fbe92f7242d3d9e4c1d4c6307001eb1ace206088d7a4fa7e26cabbd0c9a412b"
+    },
+    "checkpoints/replica-ta-baseline-p/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "bad1d6c373d58c13c7734a5a18accfe694da1e5aaaa5ec17658de53cfbb0784b"
+    },
+    "checkpoints/replica-ta-baseline-a/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "0a053216237d488e840f81ef3c89524cf5f02aa1df58092c68f75211528562e5"
+    },
+    "checkpoints/replica-ta-baseline-s/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "cf4aacb343070b1ad0bc2226980df3b3617d83615a92d0f65e04517c9605b1de"
+    },
+    "checkpoints/replica-greek-gift/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "b398d047b0493a0fc55ded4d546383586ccdb3d2e6fb9135c71ba21e95aa64e5"
+    },
+    "checkpoints/replica-knight-vision/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "dbda57ba9f7a8b99f4e5fcea5d91d38fcd064d732170f5f719238359a06eff12"
+    },
+    "checkpoints/replica-decent-chess-bot/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "8df7dac60f381b3aa60968d63503efacc6c65de3603711c5c5f25f7c996f677f"
+    },
+    "checkpoints/replica-strongly-invisible/best.pt": {
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "sha256": "101a086867f4a46203f7cb096e09a541e90f39e71311a2bbaea0eba9f0bbf21b"
+    }
+  }
+}

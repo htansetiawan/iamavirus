@@ -65,7 +65,9 @@ def cutoff_cases(source: Path):
     results = []
     for name, trans, values, successor in cases:
         v = np.array(values)
-        actual_a, actual_r = namespace["gae"](trans, v, 1.0, 0.95)
+        kwargs = {"bootstrap_values": successor} if any(
+            arg.arg == "bootstrap_values" for arg in fn.args.args) else {}
+        actual_a, actual_r = namespace["gae"](trans, v, 1.0, 0.95, **kwargs)
         expected_a, expected_r = expected_gae(trans, v, successor)
         results.append({"case": name, "transitions": trans, "pre_action_values": values,
                         "successor_values": successor,

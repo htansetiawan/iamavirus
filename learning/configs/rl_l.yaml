@@ -38,5 +38,5 @@ rl:
     snapshots: []
 _comment: 'RL from the 20.4M network (size sweep, 2026-10-09). League tilted toward
   the targets through the config: duck and Instructors listed twice (4 of 11 replica
-  units), snapshots at a quarter weight. The trainer''s cut-off bootstrap bug (Astra''s
-  audit) is NOT fixed in this run.'
+  units), snapshots at a quarter weight. Requires the mixed-width recurrent-memory
+  and successor-bootstrap fixes in learning/rl_train.py (Astra, 2026-10-09).'

@@ -1,0 +1,465 @@
+{
+  "created_at": "2026-10-09T20:14:49.312442+00:00",
+  "head": "04a85342caf55e1b9efbf79fb7292559e98c2809",
+  "source": {
+    "path": "learning/rl_train.py",
+    "sha256": "a106621127a0986c73f8cdf84c80eb5b1ba60799f8899ef9fdfeb9ef27509d51"
+  },
+  "cutoff_cases": [
+    {
+      "case": "unfinished_single",
+      "transitions": [
+        {
+          "game": 0,
+          "done": false,
+          "reward": 0.0
+        }
+      ],
+      "pre_action_values": [
+        0.2
+      ],
+      "successor_values": {
+        "0": 0.8
+      },
+      "actual_advantage": [
+        0.6000000238418579
+      ],
+      "expected_advantage": [
+        0.6000000000000001
+      ],
+      "actual_return": [
+        0.800000011920929
+      ],
+      "expected_return": [
+        0.8
+      ],
+      "matches_contract": true
+    },
+    {
+      "case": "unfinished_two_steps",
+      "transitions": [
+        {
+          "game": 0,
+          "done": false,
+          "reward": 0.0
+        },
+        {
+          "game": 0,
+          "done": false,
+          "reward": 0.0
+        }
+      ],
+      "pre_action_values": [
+        0.1,
+        0.2
+      ],
+      "successor_values": {
+        "0": 0.8
+      },
+      "actual_advantage": [
+        0.6700000166893005,
+        0.6000000238418579
+      ],
+      "expected_advantage": [
+        0.67,
+        0.6000000000000001
+      ],
+      "actual_return": [
+        0.7699999809265137,
+        0.800000011920929
+      ],
+      "expected_return": [
+        0.77,
+        0.8
+      ],
+      "matches_contract": true
+    },
+    {
+      "case": "terminal_win_control",
+      "transitions": [
+        {
+          "game": 0,
+          "done": true,
+          "reward": 1.0
+        }
+      ],
+      "pre_action_values": [
+        0.2
+      ],
+      "successor_values": {},
+      "actual_advantage": [
+        0.800000011920929
+      ],
+      "expected_advantage": [
+        0.8
+      ],
+      "actual_return": [
+        1.0
+      ],
+      "expected_return": [
+        1.0
+      ],
+      "matches_contract": true
+    },
+    {
+      "case": "terminal_loss_control",
+      "transitions": [
+        {
+          "game": 0,
+          "done": true,
+          "reward": -1.0
+        }
+      ],
+      "pre_action_values": [
+        0.2
+      ],
+      "successor_values": {},
+      "actual_advantage": [
+        -1.2000000476837158
+      ],
+      "expected_advantage": [
+        -1.2
+      ],
+      "actual_return": [
+        -1.0
+      ],
+      "expected_return": [
+        -1.0
+      ],
+      "matches_contract": true
+    },
+    {
+      "case": "interleaved_games",
+      "transitions": [
+        {
+          "game": 0,
+          "done": false,
+          "reward": 0.0
+        },
+        {
+          "game": 1,
+          "done": true,
+          "reward": 1.0
+        },
+        {
+          "game": 0,
+          "done": false,
+          "reward": 0.0
+        }
+      ],
+      "pre_action_values": [
+        0.1,
+        0.2,
+        0.2
+      ],
+      "successor_values": {
+        "0": 0.8
+      },
+      "actual_advantage": [
+        0.6700000166893005,
+        0.800000011920929,
+        0.6000000238418579
+      ],
+      "expected_advantage": [
+        0.67,
+        0.8,
+        0.6000000000000001
+      ],
+      "actual_return": [
+        0.7699999809265137,
+        1.0,
+        0.800000011920929
+      ],
+      "expected_return": [
+        0.77,
+        1.0,
+        0.8
+      ],
+      "matches_contract": true
+    },
+    {
+      "case": "reset_same_slot",
+      "transitions": [
+        {
+          "game": 0,
+          "done": true,
+          "reward": 1.0
+        },
+        {
+          "game": 0,
+          "done": false,
+          "reward": 0.0
+        }
+      ],
+      "pre_action_values": [
+        0.2,
+        0.2
+      ],
+      "successor_values": {
+        "0": 0.8
+      },
+      "actual_advantage": [
+        0.800000011920929,
+        0.6000000238418579
+      ],
+      "expected_advantage": [
+        0.8,
+        0.6000000000000001
+      ],
+      "actual_return": [
+        1.0,
+        0.800000011920929
+      ],
+      "expected_return": [
+        1.0,
+        0.8
+      ],
+      "matches_contract": true
+    }
+  ],
+  "league_configs": [
+    {
+      "source": {
+        "path": "learning/configs/rl_v18.yaml",
+        "sha256": "3a084e4e844f0a7b95fddea6e5cd03ca8d4c305941aa7eb6cb382b9bc91501a8"
+      },
+      "league": {
+        "reference": 2.0,
+        "replica_weight": 1.0,
+        "snapshot_weight": 1.0,
+        "snapshot_every": 5,
+        "replicas": {
+          "ta-baseline-p": "checkpoints/replica-ta-baseline-p/best.pt",
+          "ta-baseline-a": "checkpoints/replica-ta-baseline-a/best.pt",
+          "ta-baseline-s": "checkpoints/replica-ta-baseline-s/best.pt",
+          "duck": "checkpoints/replica-duck/best.pt",
+          "greek-gift": "checkpoints/replica-greek-gift/best.pt",
+          "knight-vision": "checkpoints/replica-knight-vision/best.pt"
+        }
+      },
+      "resume": null,
+      "critic_init": "checkpoints/critic-vs/best.pt"
+    },
+    {
+      "source": {
+        "path": "learning/configs/rl_v18_cont.yaml",
+        "sha256": "ad8d41d3e221d118f79e08287e98e1ee8fbc490c84e06c861ea97742173a69aa"
+      },
+      "league": {
+        "reference": 2.0,
+        "replica_weight": 1.0,
+        "snapshot_weight": 1.0,
+        "snapshot_every": 5,
+        "replicas": {
+          "ta-baseline-p": "checkpoints/replica-ta-baseline-p/best.pt",
+          "ta-baseline-a": "checkpoints/replica-ta-baseline-a/best.pt",
+          "ta-baseline-s": "checkpoints/replica-ta-baseline-s/best.pt",
+          "duck": "checkpoints/replica-duck/best.pt",
+          "greek-gift": "checkpoints/replica-greek-gift/best.pt",
+          "knight-vision": "checkpoints/replica-knight-vision/best.pt"
+        },
+        "snapshots": [
+          "checkpoints/rl-v18/snapshot-10.pt",
+          "checkpoints/rl-v18/snapshot-20.pt",
+          "checkpoints/rl-v18/snapshot-30.pt",
+          "checkpoints/rl-v18/snapshot-40.pt"
+        ]
+      },
+      "resume": "checkpoints/rl-v18/snapshot-40.pt",
+      "critic_init": "checkpoints/critic-vs/best.pt"
+    },
+    {
+      "source": {
+        "path": "learning/configs/rl_v20.yaml",
+        "sha256": "b6294e5604c613d073d4cab106bf777003f45f9335606af47387f9634d7aaa2c"
+      },
+      "league": {
+        "reference": 2.0,
+        "replica_weight": 1.0,
+        "snapshot_weight": 1.0,
+        "snapshot_every": 5,
+        "replicas": {
+          "ta-baseline-p": "checkpoints/replica-ta-baseline-p/best.pt",
+          "ta-baseline-a": "checkpoints/replica-ta-baseline-a/best.pt",
+          "ta-baseline-s": "checkpoints/replica-ta-baseline-s/best.pt",
+          "duck": "checkpoints/replica-duck/best.pt",
+          "greek-gift": "checkpoints/replica-greek-gift/best.pt",
+          "knight-vision": "checkpoints/replica-knight-vision/best.pt"
+        },
+        "snapshots": [
+          "checkpoints/rl-v18/snapshot-20.pt",
+          "checkpoints/rl-v18/snapshot-40.pt",
+          "checkpoints/rl-v18/snapshot-60.pt",
+          "checkpoints/rl-v18/snapshot-80.pt",
+          "checkpoints/rl-v18/snapshot-100.pt",
+          "checkpoints/rl-v18/snapshot-120.pt"
+        ]
+      },
+      "resume": "checkpoints/rl-v18/snapshot-120.pt",
+      "critic_init": "checkpoints/critic-vs/best.pt"
+    }
+  ],
+  "exposure": [
+    {
+      "source": {
+        "path": "checkpoints/rl-v18/rl_log.jsonl",
+        "sha256": "be76f7c5f5fdb9011b62010778d61b9945f19bc23eaf861ee0e61002383a1b32"
+      },
+      "windows": [
+        {
+          "window": "first20",
+          "iterations": [
+            1,
+            20
+          ],
+          "completed_games": 10359,
+          "by_member": {
+            "reference": 2340,
+            "duck": 1041,
+            "ta-baseline-a": 1142,
+            "knight-vision": 1050,
+            "ta-baseline-s": 1172,
+            "ta-baseline-p": 1097,
+            "greek-gift": 1149,
+            "snapshot-5": 737,
+            "snapshot-10": 425,
+            "snapshot-15": 206
+          },
+          "duck_share": 0.10049232551404576,
+          "instructors_games": 0,
+          "snapshot_share": 0.13205907906168549
+        },
+        {
+          "window": "last40",
+          "iterations": [
+            81,
+            120
+          ],
+          "completed_games": 19277,
+          "by_member": {
+            "snapshot-50": 855,
+            "snapshot-10": 866,
+            "duck": 845,
+            "snapshot-30": 868,
+            "snapshot-55": 828,
+            "ta-baseline-a": 822,
+            "snapshot-65": 849,
+            "ta-baseline-p": 833,
+            "knight-vision": 842,
+            "snapshot-70": 759,
+            "reference": 1635,
+            "snapshot-40": 876,
+            "ta-baseline-s": 836,
+            "snapshot-60": 854,
+            "snapshot-20": 818,
+            "snapshot-75": 854,
+            "greek-gift": 815,
+            "snapshot-45": 793,
+            "snapshot-80": 810,
+            "snapshot-85": 700,
+            "snapshot-90": 606,
+            "snapshot-95": 448,
+            "snapshot-100": 366,
+            "snapshot-105": 256,
+            "snapshot-110": 165,
+            "snapshot-115": 78
+          },
+          "duck_share": 0.04383462156974633,
+          "instructors_games": 0,
+          "snapshot_share": 0.6561705659594336
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "checkpoints/rl-v20/rl_log.jsonl",
+        "sha256": "8f6b50e60ed4c00fc15cd30377d57f05761e243f54baeadd284868e2de2c900c"
+      },
+      "windows": [
+        {
+          "window": "first20",
+          "iterations": [
+            121,
+            140
+          ],
+          "completed_games": 9933,
+          "by_member": {
+            "snapshot-60": 641,
+            "greek-gift": 673,
+            "duck": 681,
+            "snapshot-80": 631,
+            "reference": 1345,
+            "ta-baseline-p": 669,
+            "ta-baseline-s": 620,
+            "knight-vision": 675,
+            "snapshot-20": 633,
+            "snapshot-40": 631,
+            "ta-baseline-a": 676,
+            "snapshot-120": 592,
+            "snapshot-100": 627,
+            "snapshot-125": 445,
+            "snapshot-130": 264,
+            "snapshot-135": 130
+          },
+          "duck_share": 0.06855934762911507,
+          "instructors_games": 0,
+          "snapshot_share": 0.462498741568509
+        },
+        {
+          "window": "last40",
+          "iterations": [
+            201,
+            240
+          ],
+          "completed_games": 17848,
+          "by_member": {
+            "snapshot-165": 539,
+            "snapshot-160": 489,
+            "snapshot-180": 520,
+            "snapshot-130": 498,
+            "ta-baseline-p": 569,
+            "snapshot-150": 529,
+            "snapshot-145": 571,
+            "snapshot-135": 533,
+            "snapshot-60": 502,
+            "snapshot-175": 559,
+            "snapshot-40": 588,
+            "ta-baseline-s": 578,
+            "snapshot-80": 547,
+            "snapshot-120": 518,
+            "greek-gift": 509,
+            "snapshot-100": 527,
+            "snapshot-190": 542,
+            "ta-baseline-a": 535,
+            "snapshot-155": 517,
+            "duck": 574,
+            "snapshot-20": 505,
+            "snapshot-170": 549,
+            "reference": 1067,
+            "snapshot-125": 520,
+            "knight-vision": 559,
+            "snapshot-185": 517,
+            "snapshot-140": 532,
+            "snapshot-195": 556,
+            "snapshot-200": 548,
+            "snapshot-205": 472,
+            "snapshot-210": 381,
+            "snapshot-215": 303,
+            "snapshot-220": 247,
+            "snapshot-225": 198,
+            "snapshot-230": 103,
+            "snapshot-235": 47
+          },
+          "duck_share": 0.03216046615867324,
+          "instructors_games": 0,
+          "snapshot_share": 0.7539780367548184
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Synthetic correctness evidence, not an Elo estimate.",
+    "Completed-game shares differ from assignment and decision shares.",
+    "No training, GPU work, root-source changes, or candidate build."
+  ]
+}
