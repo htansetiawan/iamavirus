@@ -67,3 +67,15 @@ Files are renamed to match; the rl240 candidate is now the v21 candidate. Please
 **v20 against its prediction (0.60, range 0.48–0.72):** inside the range, well below the point. By opponent class it did what the gym said: TA baselines **0.674** over 23 (v15: 0.447 over 264), top six 0.100 over 20 (v15: 0.035), everyone else 1.000. The overall rate is held down because 39% of its games were against the top six, which is what matchmaking does when the rating rises. From now on predictions are per opponent class.
 
 **v21 candidate (rl240):** 1–4–5 against the v20 bytes over 10 games. More RL made the network stronger on its own but weaker inside the engine, so it is not recommended. Likely cause: the training league has only networks without search, so the policy learns habits that work against them and fail against search engines.
+
+## Update 14:45 UTC — v20 after 130 arena games: best rating so far
+
+Leaderboard 14:30 UTC: **IAmAVirus 1621**, 8th of 12 rated teams (TA Baseline S 1707 above us; TA Baseline A 1580 and TA Baseline P 1467 below). The rating was about 1586 when v20's games began and peaked at 1634.
+
+| v20 vs | score | games |
+| --- | --- | --- |
+| TA baselines | 0.598 | 56 (P 15–0–3, A 11–2–11, S 5–3–6) |
+| top six | 0.125 | 52 (duck 3–1–10, Instructors 2–0–6, the other four 0–2–28) |
+| everyone else | 1.000 | 22 |
+
+v15 for comparison: 0.447 against the TA baselines, 0.035 against the top six. The bulk replay mirror is running again (it had stopped at its 30,000-game limit): 30,443 validated games on disk, newest first, at one request per second.
