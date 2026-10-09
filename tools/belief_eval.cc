@@ -15,7 +15,11 @@
 // "lost" = the particles put no mass at all there (the truth fell out of the
 // population, which no reweighting can repair).
 //
-//   belief_eval SEATS MODEL_DIR [max_seats] [particles]
+//   belief_eval SEATS MODEL_DIR [max_seats] [particles] [online_beta]
+//
+// With online_beta > 0 the engine's own fusion (Engine::FuseNetworkBelief) is
+// applied after every scored decision, as in play, so "particles" then measures
+// the fused population that the search would have used.
 //
 // Seat lines as for benchmark_corpus (id w|b result reason label moves...); the
 // whole move list is replayed and every own decision is scored.
@@ -73,6 +77,7 @@ int main(int argc, char** argv) {
   const std::string seats_path = argv[1], model_dir = argv[2];
   const int max_seats = argc > 3 ? std::atoi(argv[3]) : 1000000;
   const int particles = argc > 4 ? std::atoi(argv[4]) : 8192;
+  const double online_beta = argc > 5 ? std::atof(argv[5]) : 0.0;
 
   std::ifstream seats(seats_path);
   std::string line;
@@ -187,6 +192,17 @@ int main(int argc, char** argv) {
             t.lost += particle_mass == 0.0 ? 1 : 0;
           }
         }
+        if (online_beta > 0.0) {
+          std::vector<float> belief_log(64 * 7);
+          for (int square = 0; square < 64; ++square) {
+            for (int c = 0; c < 7; ++c) {
+              // log_net is per raw square; the engine expects canonical squares
+              const int canonical = side == kBlack ? (square ^ 56) : square;
+              belief_log[static_cast<std::size_t>(canonical * 7 + c)] = static_cast<float>(log_net[square][c]);
+            }
+          }
+          engine.FuseNetworkBelief(belief_log, view, online_beta);
+        }
         engine.NotifyMovePlayed(move);
         tracker.RecordOwnMove(move);
         reflects_own = true;
@@ -197,7 +213,8 @@ int main(int argc, char** argv) {
       truth.MakeMove(move, &undo);
     }
   }
-  std::printf("seats %d, our decisions %ld; probability on the true square of each hidden enemy piece\n", seat_count, decisions);
+  std::printf("seats %d, our decisions %ld, online fusion beta %.2f; probability on the true square of each hidden enemy piece\n",
+              seat_count, decisions, online_beta);
   std::printf("%-8s %-7s %7s %9s %8s %8s %8s %8s %7s\n", "phase", "piece", "count", "particles", "network",
               "fused.25", "fused.5", "fused1", "lost");
   for (const auto& [key, t] : tally) {
