@@ -1,25 +1,25 @@
 # Arena v21 watch
 
-Updated 2026-10-09 20:48 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 21:19 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 67W-19D-102L over 188 games** (41%).
-As White: 37.0/94.
-As Black: 39.5/94.
+**Record: 77W-19D-106L over 202 games** (43%).
+As White: 42.0/101.
+As Black: 44.5/101.
 
-Queen lost for less: 72 games (61 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 53 of 102.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 34. Mean length 87 plies.
+Queen lost for less: 76 games (65 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 57 of 106.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 34. Mean length 86 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 27-5-6 |
+| TA Baseline P | 29-5-6 |
 | TA Baseline A | 14-4-12 |
 | Decent Chess Bot | 1-1-24 |
-| TA Baseline S | 8-3-7 |
-| Knight Vision | 0-0-14 |
+| TA Baseline S | 9-3-8 |
+| Knight Vision | 0-0-16 |
+| Apricot Squad | 15-0-1 |
+| Instructors | 3-1-10 |
 | Strongly Invisible | 0-1-13 |
-| Instructors | 2-1-9 |
-| Apricot Squad | 9-0-1 |
 | Mist Opportunities | 0-2-8 |
 | duck | 0-2-6 |
 | baseline.py | 6-0-0 |
@@ -215,3 +215,17 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-09 20:44 | s8p7ue0x | W | Mist Opportunities | 73 | loss | ply 48 by b unseen | 53 s | 9-18 |
 | 2026-10-09 20:45 | bpum3jjw | B | Mist Opportunities | 78 | loss | ply 39 by q unseen | 47 s | 8-17 |
 | 2026-10-09 20:46 | amw0ekek | W | Mist Opportunities | 99 | loss | ply 98 by q unseen | 36 s | 8-16 |
+| 2026-10-09 20:52 | xc7dz5zl | W | Knight Vision | 67 | loss | ply 42 by b unseen | 42 s | 5-18 |
+| 2026-10-09 20:52 | 3922q2li | B | Knight Vision | 74 | loss | ply 59 by q unseen | 62 s | 3-23 |
+| 2026-10-09 20:55 | 8uyrp11e | W | Apricot Squad | 32 | win |  | 120 s | 33-29 |
+| 2026-10-09 20:56 | y8shn519 | B | Apricot Squad | 51 | win |  | 78 s | 35-5 |
+| 2026-10-09 21:05 | 24581iwu | W | Instructors | 76 | win |  | 35 s | 17-3 |
+| 2026-10-09 21:05 | z0y32wtb | B | Instructors | 82 | loss | ply 71 by r unseen | 37 s | 2-14 |
+| 2026-10-09 21:07 | g94qn2c4 | W | TA Baseline S | 87 | loss | ply 74 by q unseen | 37 s | 3-19 |
+| 2026-10-09 21:08 | 92ahmpse | B | TA Baseline S | 99 | win |  | 22 s | 13-2 |
+| 2026-10-09 21:13 | 8ub8srw1 | W | Apricot Squad | 6 | win |  | 172 s | 39-38 |
+| 2026-10-09 21:15 | kkeusfm4 | B | Apricot Squad | 47 | win |  | 90 s | 32-6 |
+| 2026-10-09 21:16 | gw0f90xn | W | Apricot Squad | 62 | win |  | 66 s | 34-10 |
+| 2026-10-09 21:16 | 0d4sot5g | B | Apricot Squad | 65 | win |  | 60 s | 24-10 |
+| 2026-10-09 21:17 | ffnh153z | B | TA Baseline P | 83 | win |  | 38 s | 12-7 |
+| 2026-10-09 21:17 | laf8zk6j | W | TA Baseline P | 92 | win |  | 38 s | 19-5 |
