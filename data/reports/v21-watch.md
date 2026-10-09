@@ -1,28 +1,28 @@
 # Arena v21 watch
 
-Updated 2026-10-09 21:19 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 21:49 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 77W-19D-106L over 202 games** (43%).
-As White: 42.0/101.
-As Black: 44.5/101.
+**Record: 79W-21D-112L over 212 games** (42%).
+As White: 43.0/106.
+As Black: 46.5/106.
 
-Queen lost for less: 76 games (65 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 57 of 106.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 34. Mean length 86 plies.
+Queen lost for less: 79 games (67 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 60 of 112.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 34. Mean length 85 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 29-5-6 |
-| TA Baseline A | 14-4-12 |
-| Decent Chess Bot | 1-1-24 |
-| TA Baseline S | 9-3-8 |
+| TA Baseline P | 29-5-8 |
+| TA Baseline A | 14-5-13 |
+| Decent Chess Bot | 1-1-26 |
+| TA Baseline S | 9-4-9 |
 | Knight Vision | 0-0-16 |
 | Apricot Squad | 15-0-1 |
 | Instructors | 3-1-10 |
 | Strongly Invisible | 0-1-13 |
 | Mist Opportunities | 0-2-8 |
+| baseline.py | 8-0-0 |
 | duck | 0-2-6 |
-| baseline.py | 6-0-0 |
 | Greek Gift | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -229,3 +229,13 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-09 21:16 | 0d4sot5g | B | Apricot Squad | 65 | win |  | 60 s | 24-10 |
 | 2026-10-09 21:17 | ffnh153z | B | TA Baseline P | 83 | win |  | 38 s | 12-7 |
 | 2026-10-09 21:17 | laf8zk6j | W | TA Baseline P | 92 | win |  | 38 s | 19-5 |
+| 2026-10-09 21:21 | ceb0w9zw | W | TA Baseline A | 53 | loss |  | 67 s | 4-13 |
+| 2026-10-09 21:23 | ebye4uhm | B | TA Baseline A | 74 | draw |  | 52 s | 22-20 |
+| 2026-10-09 21:23 | x7v87y10 | W | baseline.py | 24 | win |  | 134 s | 34-31 |
+| 2026-10-09 21:24 | 24h496u0 | B | baseline.py | 45 | win |  | 99 s | 24-15 |
+| 2026-10-09 21:25 | qf7mr084 | W | TA Baseline P | 71 | loss |  | 33 s | 3-12 |
+| 2026-10-09 21:25 | mbjfc3k2 | B | TA Baseline P | 92 | loss | ply 67 by b unseen | 32 s | 3-21 |
+| 2026-10-09 21:35 | x29nb7wc | B | TA Baseline S | 77 | draw |  | 48 s | 15-11 |
+| 2026-10-09 21:36 | xp1cbejo | W | TA Baseline S | 95 | loss |  | 29 s | 1-8 |
+| 2026-10-09 21:41 | u348trmp | W | Decent Chess Bot | 69 | loss | ply 52 by q unseen | 50 s | 9-6 |
+| 2026-10-09 21:44 | 2wkvudos | B | Decent Chess Bot | 124 | loss | ply 119 by r | 27 s | 2-6 |
