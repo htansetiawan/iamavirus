@@ -1,13 +1,13 @@
 # Arena v21 watch
 
-Updated 2026-10-09 22:20 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 22:33 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 83W-21D-112L over 216 games** (43%).
-As White: 45.0/108.
-As Black: 48.5/108.
+**Record: 85W-21D-112L over 218 games** (44%).
+As White: 46.0/109.
+As Black: 49.5/109.
 
 Queen lost for less: 80 games (68 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 60 of 112.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 34. Mean length 85 plies.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 34. Mean length 84 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -20,7 +20,7 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | Apricot Squad | 15-0-1 |
 | Instructors | 3-1-10 |
 | Strongly Invisible | 0-1-13 |
-| baseline.py | 10-0-0 |
+| baseline.py | 12-0-0 |
 | Mist Opportunities | 0-2-8 |
 | duck | 0-2-6 |
 | Greek Gift | 0-0-2 |
@@ -243,3 +243,5 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-09 22:13 | 6ijo26tx | B | baseline.py | 51 | win |  | 74 s | 33-13 |
 | 2026-10-09 22:16 | 31ndykr1 | W | TA Baseline S | 76 | win | ply 60 by r unseen | 54 s | 13-11 |
 | 2026-10-09 22:16 | lv221t6v | B | TA Baseline S | 97 | win |  | 33 s | 19-1 |
+| 2026-10-09 22:26 | 7ktnsp2c | W | baseline.py | 36 | win |  | 104 s | 28-10 |
+| 2026-10-09 22:26 | h30g0m1l | B | baseline.py | 51 | win |  | 88 s | 26-10 |
