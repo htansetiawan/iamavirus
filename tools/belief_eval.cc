@@ -68,6 +68,8 @@ int main(int argc, char** argv) {
     std::fprintf(stderr, "usage: belief_eval SEATS MODEL_DIR [max_seats] [particles]\n");
     return 2;
   }
+  InitializeAttackTables();
+  InitializeZobrist();
   const std::string seats_path = argv[1], model_dir = argv[2];
   const int max_seats = argc > 3 ? std::atoi(argv[3]) : 1000000;
   const int particles = argc > 4 ? std::atoi(argv[4]) : 8192;
@@ -176,7 +178,7 @@ int main(int argc, char** argv) {
             }
           }
           particle_mass /= static_cast<double>(population.size());
-          for (const std::string key : {std::string(phase) + "|" + kTypeNames[cls], std::string("all|") + kTypeNames[cls]}) {
+          for (const std::string& key : {std::string(phase) + "|" + kTypeNames[cls], std::string("all|") + kTypeNames[cls]}) {
             Tally& t = tally[key];
             t.particle += particle_mass;
             t.network += std::exp(log_net[square][cls]);
