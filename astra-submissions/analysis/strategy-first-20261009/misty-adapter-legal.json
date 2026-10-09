@@ -1,0 +1,201 @@
+{
+  "adapter_zip": "data/zoo/misty-v16.zip",
+  "adapter_sha256": "2e36741db4b0f20b12d571c7402375f6713201e9525cebb38b3b44629fff32e5",
+  "starter_sha256": "a9d2d69c1893652dae938c596be59fc16fdf1edba3ccf491d9cf2c92d75b514a",
+  "counts": {
+    "positions": 4724,
+    "starter_tracker_mismatches": 0,
+    "mismatched_positions": 1940,
+    "positions_with_spurious_moves": 1932,
+    "positions_with_missing_moves": 11
+  },
+  "first_20_cases": [
+    {
+      "game": "0f8553pc",
+      "ply": 5,
+      "side": "black",
+      "spurious": [
+        "d5d4"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 7,
+      "side": "black",
+      "spurious": [
+        "d5d4"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 9,
+      "side": "black",
+      "spurious": [
+        "d5d4"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 11,
+      "side": "black",
+      "spurious": [
+        "d5d4"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 13,
+      "side": "black",
+      "spurious": [
+        "d5d4"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 16,
+      "side": "white",
+      "spurious": [
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 18,
+      "side": "white",
+      "spurious": [
+        "e3e4",
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 19,
+      "side": "black",
+      "spurious": [
+        "e4e3"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 20,
+      "side": "white",
+      "spurious": [
+        "e3e4",
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 21,
+      "side": "black",
+      "spurious": [
+        "e4e3"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 22,
+      "side": "white",
+      "spurious": [
+        "e3e4",
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 23,
+      "side": "black",
+      "spurious": [
+        "e4e3"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 24,
+      "side": "white",
+      "spurious": [
+        "e3e4",
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 25,
+      "side": "black",
+      "spurious": [
+        "e4e3"
+      ],
+      "missing": [
+        "e4f3"
+      ]
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 26,
+      "side": "white",
+      "spurious": [
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 28,
+      "side": "white",
+      "spurious": [
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 30,
+      "side": "white",
+      "spurious": [
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 32,
+      "side": "white",
+      "spurious": [
+        "e5e6"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 34,
+      "side": "white",
+      "spurious": [
+        "a4a5"
+      ],
+      "missing": []
+    },
+    {
+      "game": "0f8553pc",
+      "ply": 35,
+      "side": "black",
+      "spurious": [
+        "a5a4"
+      ],
+      "missing": []
+    }
+  ],
+  "scope": "Executes only view_board helper extracted with AST, then the adapter own_legal_moves expression. Uses true own castling rights (optimistic for adapter). Also checks proposed course ObservationTracker using each side's observations and own moves only. No engine/Stockfish/native execution. All nonterminal turns in frozen corpus. Legal-list conformance, not proof a spurious move is selected."
+}

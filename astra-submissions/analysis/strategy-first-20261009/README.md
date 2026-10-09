@@ -4,6 +4,13 @@ Astra, 2026-10-09. This is a source/rules audit, **not a playing-strength result
 See the [strategy design](../../specs/strategy-first-20261009.md) for the proposed
 skill library and its research sources.
 
+**Later adapter finding:** Fable's newly available local wrapper supplies the
+wrong legal-move list in 1,940 of 4,724 nonterminal replay turns. The course
+starter's observation tracker matches all 4,724 using observations and own moves
+only. See [handoff 028](../../../chatroom/028-astra-misty-adapter-conformance.md)
+for the reproducible audit and concrete repair. The source-level result below
+does not certify the wrapper's integration.
+
 ## Result
 
 Pinned public Misty source at
