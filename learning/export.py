@@ -59,7 +59,7 @@ def export_graphs(model: FogPolicy, output: Path) -> dict[str, Path]:
                "belief_logits": {0: "batch"}, "value": {0: "batch"}}
     torch.onnx.export(
         ObserveGraph(model),
-        (torch.zeros(1, features.NUM_PLANES, 8, 8), torch.zeros(1, features.NUM_SCALARS), torch.zeros(1, HIDDEN)),
+        (torch.zeros(1, features.NUM_PLANES, 8, 8), torch.zeros(1, features.NUM_SCALARS), torch.zeros(1, model.hidden)),
         str(observe_path), input_names=["planes", "scalars", "hidden"],
         output_names=["next_hidden", "spatial", "belief_logits", "value"],
         dynamic_axes=dynamic, opset_version=17, dynamo=False)
@@ -71,7 +71,7 @@ def export_graphs(model: FogPolicy, output: Path) -> dict[str, Path]:
                      "danger_logits": {0: "batch", 1: "candidates"}}
     torch.onnx.export(
         ScoreGraph(model),
-        (torch.zeros(1, HIDDEN), torch.zeros(1, CHANNELS, 8, 8),
+        (torch.zeros(1, model.hidden), torch.zeros(1, model.channels, 8, 8),
          torch.zeros(1, 3, dtype=torch.int64), torch.ones(1, 3, dtype=torch.int64), torch.zeros(1, 3, dtype=torch.int64)),
         str(score_path), input_names=["next_hidden", "spatial", "candidate_from", "candidate_to", "promotion"],
         output_names=["policy_logits", "danger_logits"], dynamic_axes=dynamic_score,
@@ -100,8 +100,8 @@ def parity_check(model: FogPolicy, graphs: dict[str, Path], episodes, rtol=1e-4,
     for episode in episodes[:max_episodes]:
         planes, scalars, decision_list = ds.episode_tensors(episode)
         by_event = {d["event"]: d for d in decision_list}
-        hidden_t = torch.zeros(1, HIDDEN)
-        hidden_o = np.zeros((1, HIDDEN), dtype=np.float32)
+        hidden_t = torch.zeros(1, model.hidden)
+        hidden_o = np.zeros((1, model.hidden), dtype=np.float32)
         for event in range(planes.shape[0]):
             p = planes[event:event + 1]
             s = scalars[event:event + 1]
@@ -134,11 +134,13 @@ def parity_check(model: FogPolicy, graphs: dict[str, Path], episodes, rtol=1e-4,
 
 
 def write_manifest(output: Path, checkpoint: Path, payload: dict, graphs: dict[str, Path],
-                   parity: dict | None, evaluation_report: str | None) -> Path:
+                   parity: dict | None, evaluation_report: str | None, model: FogPolicy | None = None) -> Path:
     manifest = {
         "checkpoint": str(checkpoint), "checkpoint_sha256": checkpoint_hash(checkpoint),
         "graphs": {name: {"path": path.name, "sha256": file_hash(path)} for name, path in graphs.items()},
-        "architecture": payload.get("architecture", ARCHITECTURE), "parameters": payload.get("parameters"),
+        # the loaded network's own architecture: the engine sizes its buffers from it
+        "architecture": model.architecture if model is not None else payload.get("architecture", ARCHITECTURE),
+        "parameters": parameter_count(model) if model is not None else payload.get("parameters"),
         "feature_version": payload.get("feature_version", features.FEATURE_VERSION),
         "action_version": payload.get("action_version", features.ACTION_VERSION),
         "coordinate_transform": "canonical_square = raw ^ 56 for Black; identity for White",
@@ -147,7 +149,7 @@ def write_manifest(output: Path, checkpoint: Path, payload: dict, graphs: dict[s
         "normalization": {"age_cap": features.AGE_CAP, "ply_cap": features.PLY_CAP,
                           "coordinates": "file/7, rank/7"},
         "danger_calibrator": {"type": "identity-sigmoid", "note": "fit a calibrator on validation before trusting as a probability"},
-        "hidden_size": HIDDEN, "planes": features.NUM_PLANES, "scalars": features.NUM_SCALARS,
+        "hidden_size": model.hidden if model is not None else HIDDEN, "planes": features.NUM_PLANES, "scalars": features.NUM_SCALARS,
         "parity": parity, "evaluation_report": evaluation_report,
         "training_step": payload.get("step"), "training_extra": payload.get("extra"),
     }
@@ -172,7 +174,7 @@ def main(argv=None):
         parity = parity_check(model, graphs, episodes, max_episodes=args.parity_episodes)
         status = "PASS" if parity["failure_count"] == 0 else "FAIL"
         print(f"parity {status}: {parity['decisions']} decisions, worst {parity['worst_abs_difference']}", file=sys.stderr)
-    path = write_manifest(args.output, args.checkpoint, payload, graphs, parity, args.evaluation_report)
+    path = write_manifest(args.output, args.checkpoint, payload, graphs, parity, args.evaluation_report, model)
     print(f"wrote {path}")
     return 0 if not parity or parity["failure_count"] == 0 else 1
 

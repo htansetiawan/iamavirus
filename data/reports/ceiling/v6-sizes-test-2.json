@@ -1,0 +1,172 @@
+[
+ {
+  "checkpoint": "checkpoints/v6-s/best.pt",
+  "architecture": "cnn64x4-gru256-heads-v1",
+  "parameters": 1872394,
+  "step": 15030,
+  "epoch": 6,
+  "us": {
+   "decisions": 6394,
+   "policy_nll": 2.4206,
+   "top1": 28.84,
+   "top4": 61.03
+  },
+  "all": {
+   "decisions": 186101,
+   "policy_nll": 2.2121,
+   "top1": 36.37,
+   "top4": 65.1
+  },
+  "top6": {
+   "decisions": 115207,
+   "policy_nll": 2.267,
+   "top1": 33.91,
+   "top4": 64.06
+  },
+  "others": {
+   "decisions": 64500,
+   "policy_nll": 2.0933,
+   "top1": 41.51,
+   "top4": 67.34
+  },
+  "belief_loss": 0.4688,
+  "danger_loss": 0.124,
+  "danger_brier": 0.02795
+ },
+ {
+  "checkpoint": "checkpoints/v6-m/best.pt",
+  "architecture": "cnn128x8-gru512-heads-v1",
+  "parameters": 8512778,
+  "step": 15030,
+  "epoch": 6,
+  "us": {
+   "decisions": 6394,
+   "policy_nll": 2.438,
+   "top1": 30.81,
+   "top4": 62.21
+  },
+  "all": {
+   "decisions": 186101,
+   "policy_nll": 2.1073,
+   "top1": 38.96,
+   "top4": 67.4
+  },
+  "top6": {
+   "decisions": 115207,
+   "policy_nll": 2.1724,
+   "top1": 36.97,
+   "top4": 66.41
+  },
+  "others": {
+   "decisions": 64500,
+   "policy_nll": 1.9582,
+   "top1": 43.31,
+   "top4": 69.69
+  },
+  "belief_loss": 0.4417,
+  "danger_loss": 0.1059,
+  "danger_brier": 0.02401
+ },
+ {
+  "checkpoint": "checkpoints/v6-l/best.pt",
+  "architecture": "cnn192x10-gru768-heads-v1",
+  "parameters": 20363530,
+  "step": 15030,
+  "epoch": 6,
+  "us": {
+   "decisions": 6394,
+   "policy_nll": 2.4404,
+   "top1": 31.17,
+   "top4": 62.57
+  },
+  "all": {
+   "decisions": 186101,
+   "policy_nll": 2.0916,
+   "top1": 39.35,
+   "top4": 67.79
+  },
+  "top6": {
+   "decisions": 115207,
+   "policy_nll": 2.1608,
+   "top1": 37.46,
+   "top4": 66.85
+  },
+  "others": {
+   "decisions": 64500,
+   "policy_nll": 1.9335,
+   "top1": 43.54,
+   "top4": 69.98
+  },
+  "belief_loss": 0.4305,
+  "danger_loss": 0.1026,
+  "danger_brier": 0.02323
+ },
+ {
+  "checkpoint": "checkpoints/v6-xl/best.pt",
+  "architecture": "cnn256x14-gru1024-heads-v1",
+  "parameters": 40817418,
+  "step": 12525,
+  "epoch": 5,
+  "us": {
+   "decisions": 6394,
+   "policy_nll": 2.3907,
+   "top1": 31.48,
+   "top4": 62.95
+  },
+  "all": {
+   "decisions": 186101,
+   "policy_nll": 2.0982,
+   "top1": 39.09,
+   "top4": 67.76
+  },
+  "top6": {
+   "decisions": 115207,
+   "policy_nll": 2.159,
+   "top1": 37.15,
+   "top4": 67.15
+  },
+  "others": {
+   "decisions": 64500,
+   "policy_nll": 1.9605,
+   "top1": 43.32,
+   "top4": 69.33
+  },
+  "belief_loss": 0.4341,
+  "danger_loss": 0.1079,
+  "danger_brier": 0.02435
+ },
+ {
+  "checkpoint": "checkpoints/pretrain-v4/best.pt",
+  "architecture": "cnn64x4-gru256-heads-v1",
+  "parameters": 1872394,
+  "step": 8451,
+  "epoch": 9,
+  "us": {
+   "decisions": 6394,
+   "policy_nll": 2.4735,
+   "top1": 29.89,
+   "top4": 60.04
+  },
+  "all": {
+   "decisions": 186101,
+   "policy_nll": 2.2787,
+   "top1": 35.39,
+   "top4": 63.77
+  },
+  "top6": {
+   "decisions": 115207,
+   "policy_nll": 2.2466,
+   "top1": 35.4,
+   "top4": 64.43
+  },
+  "others": {
+   "decisions": 64500,
+   "policy_nll": 2.3169,
+   "top1": 35.92,
+   "top4": 62.95
+  },
+  "belief_loss": 0.4805,
+  "danger_loss": 0.1259,
+  "danger_brier": 0.02898
+ }
+]
