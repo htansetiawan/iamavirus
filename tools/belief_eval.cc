@@ -15,7 +15,7 @@
 // "lost" = the particles put no mass at all there (the truth fell out of the
 // population, which no reweighting can repair).
 //
-//   belief_eval SEATS MODEL_DIR [max_seats] [particles] [online_beta]
+//   belief_eval SEATS MODEL_DIR [max_seats] [particles] [online_beta] [class_mask]
 //
 // With online_beta > 0 the engine's own fusion (Engine::FuseNetworkBelief) is
 // applied after every scored decision, as in play, so "particles" then measures
@@ -78,6 +78,7 @@ int main(int argc, char** argv) {
   const int max_seats = argc > 3 ? std::atoi(argv[3]) : 1000000;
   const int particles = argc > 4 ? std::atoi(argv[4]) : 8192;
   const double online_beta = argc > 5 ? std::atof(argv[5]) : 0.0;
+  const int online_mask = argc > 6 ? std::atoi(argv[6]) : 127;
 
   std::ifstream seats(seats_path);
   std::string line;
@@ -201,7 +202,7 @@ int main(int argc, char** argv) {
               belief_log[static_cast<std::size_t>(canonical * 7 + c)] = static_cast<float>(log_net[square][c]);
             }
           }
-          engine.FuseNetworkBelief(belief_log, view, online_beta);
+          engine.FuseNetworkBelief(belief_log, view, online_beta, online_mask);
         }
         engine.NotifyMovePlayed(move);
         tracker.RecordOwnMove(move);
@@ -213,8 +214,8 @@ int main(int argc, char** argv) {
       truth.MakeMove(move, &undo);
     }
   }
-  std::printf("seats %d, our decisions %ld, online fusion beta %.2f; probability on the true square of each hidden enemy piece\n",
-              seat_count, decisions, online_beta);
+  std::printf("seats %d, our decisions %ld, online fusion beta %.2f mask %d; probability on the true square of each hidden enemy piece\n",
+              seat_count, decisions, online_beta, online_mask);
   std::printf("%-8s %-7s %7s %9s %8s %8s %8s %8s %7s\n", "phase", "piece", "count", "particles", "network",
               "fused.25", "fused.5", "fused1", "lost");
   for (const auto& [key, t] : tally) {
