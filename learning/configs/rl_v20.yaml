@@ -1,0 +1,41 @@
+rl:
+  init: checkpoints/pretrain-v4/best.pt
+  critic_init: checkpoints/critic-vs/best.pt
+  games: 256
+  max_plies: 300
+  env_threads: 1
+  rollout_decisions: 16384
+  iterations: 120
+  lr: 1.0e-05
+  critic_lr: 0.0001
+  clip: 0.2
+  epochs: 2
+  minibatch: 2048
+  kl_ref_coef: 0.05
+  entropy_coef: 0.003
+  grad_clip: 1.0
+  gamma: 1.0
+  lambda: 0.95
+  temperature: 1.0
+  seed: 1
+  league:
+    reference: 2.0
+    replica_weight: 1.0
+    snapshot_weight: 1.0
+    snapshot_every: 5
+    replicas:
+      ta-baseline-p: checkpoints/replica-ta-baseline-p/best.pt
+      ta-baseline-a: checkpoints/replica-ta-baseline-a/best.pt
+      ta-baseline-s: checkpoints/replica-ta-baseline-s/best.pt
+      duck: checkpoints/replica-duck/best.pt
+      greek-gift: checkpoints/replica-greek-gift/best.pt
+      knight-vision: checkpoints/replica-knight-vision/best.pt
+    snapshots:
+    - checkpoints/rl-v18/snapshot-20.pt
+    - checkpoints/rl-v18/snapshot-40.pt
+    - checkpoints/rl-v18/snapshot-60.pt
+    - checkpoints/rl-v18/snapshot-80.pt
+    - checkpoints/rl-v18/snapshot-100.pt
+    - checkpoints/rl-v18/snapshot-120.pt
+  resume: checkpoints/rl-v18/snapshot-120.pt
+  start_iteration: 120
