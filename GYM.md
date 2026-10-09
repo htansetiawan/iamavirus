@@ -82,8 +82,8 @@ Imitation copies what strong players show; RL can discover what they never show 
 
 | when | step | done when |
 | --- | --- | --- |
-| Oct 9 (running) | **True-board critic** (`learning/critic.py`, memo experiment 1, first step): a training-only value network that sees the true board | its held-out error is well below the observation-only head's 0.94 |
-| Oct 9–10 | **Batched simulator** (memo experiment 5): N games stepped in one C++ call, features from the bot's own C++ tracker, GPU batch inference | ≥ 10× the current 800 decisions/s end to end, then the memo's 2×10⁴ |
+| Oct 9 — **done 05:00 UTC** | **True-board critic** (`learning/critic.py`, memo experiment 1, first step): a training-only value network that sees the true board | met: held-out MSE 0.608 vs 0.94 (always 0) on 183,856 positions; explained variance 0.355; winner of decisive games 76.8% (`checkpoints/critic-vs/best.pt`) |
+| Oct 9–10 — **environment done 05:15 UTC** | **Batched simulator** (memo experiment 5): N games stepped in one C++ call (`batch_env.cc`, `learning/batch_env.py`), features from the bot's own C++ tracker, GPU batch inference | environment alone: **204,440 decisions/s** on one thread (rules + input planes, random play; Python simulator ≈ 800); planes identical to `features.py` (684 events, worst difference 0.0, `tools/batch_env_parity.py`); next: end-to-end with the network in the loop, target ≥ 2×10⁴ |
 | Oct 10 | **First RL run:** PPO with the memo's regularisation (reverse-KL step control plus a KL pull to the imitation policy, MMD style) and the true-board critic; league = our past versions + the validated TA Baseline P replica + self-play snapshots | the gym grades every checkpoint: exams, then SPRT against v17 in hybrid mode |
 | Oct 11 onward | scale with the simulator; target the belief side too (opponent-move model, scouting) | gym-predicted gain ≥ 90% before any upload |
 
