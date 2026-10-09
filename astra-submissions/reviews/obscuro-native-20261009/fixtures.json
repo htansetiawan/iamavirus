@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "payoff_perspective": "player0; player1 is the negative",
+  "scope": "Tiny fixed-tree and arithmetic oracles; not a production solver or full algorithm certification.",
+  "games": [
+    {
+      "name": "hidden_coin",
+      "root": {
+        "type": "chance",
+        "outcomes": [
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "guess",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": 1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": -1
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "fog"
+              ]
+            }
+          },
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "guess",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": -1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": 1
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "fog"
+              ]
+            }
+          }
+        ]
+      },
+      "expected_value": 0.0,
+      "reference_policy": {
+        "guess": {
+          "H": 1.0,
+          "T": 0.0
+        }
+      }
+    },
+    {
+      "name": "biased_chance",
+      "root": {
+        "type": "chance",
+        "outcomes": [
+          {
+            "probability": 0.8,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "guess",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": 1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": -1
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "fog"
+              ]
+            }
+          },
+          {
+            "probability": 0.19999999999999996,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "guess",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": -1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": 1
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "fog"
+              ]
+            }
+          }
+        ]
+      },
+      "expected_value": 0.6000000000000001,
+      "reference_policy": {
+        "guess": {
+          "H": 1.0,
+          "T": 0.0
+        }
+      }
+    },
+    {
+      "name": "revealed_coin",
+      "root": {
+        "type": "chance",
+        "outcomes": [
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "seen:H",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": 1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": -1
+                }
+              },
+              "current_observation": "H",
+              "observation_history": [
+                "H"
+              ]
+            }
+          },
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "seen:T",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": -1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": 1
+                }
+              },
+              "current_observation": "T",
+              "observation_history": [
+                "T"
+              ]
+            }
+          }
+        ]
+      },
+      "expected_value": 1.0,
+      "reference_policy": {
+        "seen:H": {
+          "H": 1.0,
+          "T": 0.0
+        },
+        "seen:T": {
+          "H": 0.0,
+          "T": 1.0
+        }
+      }
+    },
+    {
+      "name": "remembered_signal",
+      "root": {
+        "type": "chance",
+        "outcomes": [
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "remember:H",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": 1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": -1
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "H",
+                "fog"
+              ]
+            }
+          },
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "remember:T",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": -1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": 1
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "T",
+                "fog"
+              ]
+            }
+          }
+        ]
+      },
+      "expected_value": 1.0,
+      "reference_policy": {
+        "remember:H": {
+          "H": 1.0,
+          "T": 0.0
+        },
+        "remember:T": {
+          "H": 0.0,
+          "T": 1.0
+        }
+      }
+    },
+    {
+      "name": "valuable_scout",
+      "root": {
+        "type": "chance",
+        "outcomes": [
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "guess",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": 1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": -1
+                },
+                "scout": {
+                  "type": "decision",
+                  "player": 0,
+                  "infoset": "scouted:H",
+                  "actions": {
+                    "H": {
+                      "type": "terminal",
+                      "utility0": 0.9
+                    },
+                    "T": {
+                      "type": "terminal",
+                      "utility0": -1.1
+                    }
+                  }
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "fog"
+              ]
+            }
+          },
+          {
+            "probability": 0.5,
+            "child": {
+              "type": "decision",
+              "player": 0,
+              "infoset": "guess",
+              "actions": {
+                "H": {
+                  "type": "terminal",
+                  "utility0": -1
+                },
+                "T": {
+                  "type": "terminal",
+                  "utility0": 1
+                },
+                "scout": {
+                  "type": "decision",
+                  "player": 0,
+                  "infoset": "scouted:T",
+                  "actions": {
+                    "H": {
+                      "type": "terminal",
+                      "utility0": -1.1
+                    },
+                    "T": {
+                      "type": "terminal",
+                      "utility0": 0.9
+                    }
+                  }
+                }
+              },
+              "current_observation": "fog",
+              "observation_history": [
+                "fog"
+              ]
+            }
+          }
+        ]
+      },
+      "expected_value": 0.9,
+      "reference_policy": {
+        "scouted:H": {
+          "H": 1.0,
+          "T": 0.0
+        },
+        "guess": {
+          "H": 0.0,
+          "T": 0.0,
+          "scout": 1.0
+        },
+        "scouted:T": {
+          "H": 0.0,
+          "T": 1.0
+        }
+      }
+    },
+    {
+      "name": "hidden_matching_pennies",
+      "expected_value": 0.0,
+      "root": {
+        "type": "decision",
+        "player": 0,
+        "infoset": "p0",
+        "actions": {
+          "H": {
+            "type": "decision",
+            "player": 1,
+            "infoset": "p1_uninformed",
+            "actions": {
+              "H": {
+                "type": "terminal",
+                "utility0": 1
+              },
+              "T": {
+                "type": "terminal",
+                "utility0": -1
+              }
+            }
+          },
+          "T": {
+            "type": "decision",
+            "player": 1,
+            "infoset": "p1_uninformed",
+            "actions": {
+              "H": {
+                "type": "terminal",
+                "utility0": -1
+              },
+              "T": {
+                "type": "terminal",
+                "utility0": 1
+              }
+            }
+          }
+        }
+      },
+      "reference_policy": {
+        "p0": {
+          "H": 0.5,
+          "T": 0.5
+        },
+        "p1_uninformed": {
+          "H": 0.5,
+          "T": 0.5
+        }
+      }
+    }
+  ],
+  "kernels": {
+    "counterfactual_reach": {
+      "own_reach": 0.0,
+      "chance_reach": [
+        0.25,
+        0.75
+      ],
+      "opponent_reach": [
+        0.2,
+        0.6
+      ],
+      "strategy": [
+        0.5,
+        0.5
+      ],
+      "action_values": [
+        [
+          1.0,
+          -1.0
+        ],
+        [
+          0.0,
+          2.0
+        ]
+      ],
+      "expected_regret_increment": [
+        -0.4,
+        0.4
+      ]
+    },
+    "aggregate_then_clip_rm_plus": {
+      "old_regret": [
+        0.0,
+        0.0
+      ],
+      "history_regret_contributions": [
+        [
+          -2.0,
+          2.0
+        ],
+        [
+          1.0,
+          -1.0
+        ]
+      ],
+      "expected_regret": [
+        0.0,
+        1.0
+      ]
+    },
+    "predictive_rm_plus": {
+      "source": "Farina/Kroer/Sandholm AAAI2021 Algorithm5; utility convention (negative loss)",
+      "old_z": [
+        1.0,
+        2.0
+      ],
+      "previous_strategy": [
+        0.5,
+        0.5
+      ],
+      "predicted_utility": [
+        2.0,
+        0.0
+      ],
+      "realized_utility": [
+        -1.0,
+        3.0
+      ],
+      "expected_theta": [
+        2.0,
+        1.0
+      ],
+      "expected_strategy": [
+        0.6666666666666666,
+        0.3333333333333333
+      ],
+      "expected_new_z": [
+        0.0,
+        4.666666666666667
+      ]
+    },
+    "sequence_average": {
+      "own_reach": [
+        0.0,
+        0.25,
+        0.75
+      ],
+      "iteration_weight": [
+        1.0,
+        2.0,
+        3.0
+      ],
+      "strategies": [
+        [
+          0.9,
+          0.1
+        ],
+        [
+          0.8,
+          0.2
+        ],
+        [
+          0.2,
+          0.8
+        ]
+      ],
+      "expected_average": [
+        0.3090909090909091,
+        0.6909090909090909
+      ]
+    }
+  }
+}
