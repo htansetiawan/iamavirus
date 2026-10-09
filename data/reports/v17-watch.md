@@ -1,20 +1,20 @@
 # Arena v17 watch
 
-Updated 2026-10-09 05:53 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 06:24 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 16W-2D-21L over 39 games** (44%).
-As White: 8.0/19.
-As Black: 9.0/20.
+**Record: 19W-2D-21L over 42 games** (48%).
+As White: 10.0/21.
+As Black: 10.0/21.
 
-Queen lost for less: 14 games (11 to a capturer unseen when we moved, 4 before ply 30); losses with the queen lost: 10 of 21.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 7. Mean length 76 plies.
+Queen lost for less: 15 games (12 to a capturer unseen when we moved, 4 before ply 30); losses with the queen lost: 10 of 21.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 8. Mean length 79 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Apricot Squad | 7-0-0 |
+| TA Baseline S | 2-1-5 |
+| Apricot Squad | 8-0-0 |
 | TA Baseline P | 3-1-2 |
-| TA Baseline S | 0-1-5 |
 | Instructors | 1-0-3 |
 | TA Baseline A | 2-0-2 |
 | Greek Gift | 0-0-4 |
@@ -64,3 +64,6 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-09 05:42 | 1f1nsug2 | B | TA Baseline A | 113 | win |  | 30 s | 14-4 |
 | 2026-10-09 05:42 | 6fta43o4 | B | Greek Gift | 76 | loss | ply 57 by r | 60 s | 15-24 |
 | 2026-10-09 05:45 | oag56tz9 | B | Apricot Squad | 31 | win |  | 126 s | 38-21 |
+| 2026-10-09 05:54 | eqbxuwb8 | W | Apricot Squad | 149 | win | ply 62 by q unseen | 14 s | 8-11 |
+| 2026-10-09 05:55 | ehr5p1o6 | W | TA Baseline S | 94 | win |  | 43 s | 25-9 |
+| 2026-10-09 05:56 | rcluf3df | B | TA Baseline S | 95 | win |  | 40 s | 16-1 |
