@@ -56,7 +56,7 @@
    "id": "p200-vs-v20",
    "a": "fable-submissions/iamavirus-v22-candidate-prior200-hybrid.zip",
    "b": "fable-submissions/iamavirus-v20-hybrid.zip",
-   "max_games": 60,
+   "max_games": 28,
    "seed": 34000,
    "sprt": {
     "elo0": 0,
@@ -95,7 +95,7 @@
    "id": "limit-vs-v20",
    "a": "fable-submissions/iamavirus-v22-candidate-l-imitation-prior100-hybrid.zip",
    "b": "fable-submissions/iamavirus-v20-hybrid.zip",
-   "max_games": 60,
+   "max_games": 8,
    "seed": 35000,
    "sprt": {
     "elo0": 0,
@@ -108,7 +108,7 @@
    "id": "limit-vs-duckrep",
    "a": "fable-submissions/iamavirus-v22-candidate-l-imitation-prior100-hybrid.zip",
    "b": "data/zoo/replica-duck-hybrid.zip",
-   "max_games": 24,
+   "max_games": 6,
    "seed": 33000,
    "sprt": {
     "elo0": 0,
@@ -121,7 +121,7 @@
    "id": "limit-vs-tap-neural-cal",
    "a": "fable-submissions/iamavirus-v22-candidate-l-imitation-prior100-hybrid.zip",
    "b": "data/zoo/replica-ta-baseline-p-neural.zip",
-   "max_games": 16,
+   "max_games": 9,
    "seed": 15000,
    "sprt": {
     "elo0": 0,
@@ -134,7 +134,7 @@
    "id": "v20-vs-mistrep",
    "a": "fable-submissions/iamavirus-v20-hybrid.zip",
    "b": "data/zoo/replica-mist-hybrid.zip",
-   "max_games": 24,
+   "max_games": 6,
    "seed": 36000,
    "sprt": {
     "elo0": 0,
@@ -150,7 +150,7 @@
     "FOW_STORM=60"
    ],
    "b": "data/zoo/replica-mist-hybrid.zip",
-   "max_games": 24,
+   "max_games": 6,
    "seed": 36000,
    "sprt": {
     "elo0": 0,
@@ -220,6 +220,73 @@
    "b": "data/zoo/replica-mist-hybrid.zip",
    "max_games": 24,
    "seed": 36000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "v20-vs-mist2n",
+   "a": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "b": "data/zoo/replica-mist2-hybrid.zip",
+   "b_env": [
+    "FOW_MODE=neural"
+   ],
+   "max_games": 24,
+   "seed": 40000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "bait30-vs-mist2n",
+   "a": "data/candidates/iamavirus-deception-hybrid.zip",
+   "a_env": [
+    "FOW_BAIT_P=0.3"
+   ],
+   "b": "data/zoo/replica-mist2-hybrid.zip",
+   "b_env": [
+    "FOW_MODE=neural"
+   ],
+   "max_games": 24,
+   "seed": 40000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "bait30-vs-v20",
+   "a": "data/candidates/iamavirus-deception-hybrid.zip",
+   "a_env": [
+    "FOW_BAIT_P=0.3"
+   ],
+   "b": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "max_games": 60,
+   "seed": 41000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "bait30-vs-tap-neural-cal",
+   "a": "data/candidates/iamavirus-deception-hybrid.zip",
+   "a_env": [
+    "FOW_BAIT_P=0.3"
+   ],
+   "b": "data/zoo/replica-ta-baseline-p-neural.zip",
+   "max_games": 16,
+   "seed": 15000,
    "sprt": {
     "elo0": 0,
     "elo1": 35,
