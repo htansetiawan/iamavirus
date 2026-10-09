@@ -1,24 +1,25 @@
 # Arena v21 watch
 
-Updated 2026-10-09 16:13 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 16:43 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 18W-6D-24L over 48 games** (44%).
-As White: 11.0/24.
-As Black: 10.0/24.
+**Record: 20W-7D-31L over 58 games** (41%).
+As White: 12.0/29.
+As Black: 11.5/29.
 
-Queen lost for less: 16 games (14 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 11 of 24.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 8. Mean length 81 plies.
-Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 20 games (18 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 15 of 31.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 10. Mean length 85 plies.
+Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline A | 5-2-3 |
 | Decent Chess Bot | 0-1-7 |
 | Instructors | 2-1-5 |
-| TA Baseline A | 3-2-1 |
+| Knight Vision | 0-0-8 |
 | baseline.py | 6-0-0 |
 | duck | 0-2-4 |
-| Knight Vision | 0-0-6 |
 | TA Baseline P | 4-0-0 |
+| Strongly Invisible | 0-1-3 |
 | TA Baseline S | 1-0-1 |
 | Apricot Squad | 2-0-0 |
 
@@ -72,3 +73,13 @@ Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate re
 | 2026-10-09 16:08 | rth58gq6 | B | Decent Chess Bot | 96 | loss | ply 85 by q unseen | 47 s | 2-19 |
 | 2026-10-09 16:11 | 0pencda0 | B | baseline.py | 43 | win |  | 96 s | 29-7 |
 | 2026-10-09 16:12 | n96racb9 | W | baseline.py | 46 | win |  | 80 s | 29-13 |
+| 2026-10-09 16:19 | 80az0jli | W | TA Baseline A | 77 | loss |  | 35 s | 1-26 |
+| 2026-10-09 16:20 | 4g6idat7 | B | TA Baseline A | 103 | win |  | 40 s | 26-1 |
+| 2026-10-09 16:24 | nzbpmeek | W | TA Baseline A | 64 | win |  | 63 s | 17-6 |
+| 2026-10-09 16:26 | 33tnifk0 | B | TA Baseline A | 86 | loss | ply 47 by b unseen | 24 s | 3-11 |
+| 2026-10-09 16:30 | 7nhrsle2 | B | Strongly Invisible | 156 | loss |  | 14 s | 1-10 |
+| 2026-10-09 16:31 | kt40ywxg | W | Strongly Invisible | 187 | loss |  | 14 s | 0-19 |
+| 2026-10-09 16:33 | 3wf7byum | B | Strongly Invisible | 60 | draw |  | 75 s | 16-16 |
+| 2026-10-09 16:36 | g79ehclh | W | Strongly Invisible | 107 | loss | ply 30 by r unseen | 31 s | 4-15 |
+| 2026-10-09 16:37 | xub2sy0m | B | Knight Vision | 94 | loss | ply 67 by q unseen | 54 s | 1-33 |
+| 2026-10-09 16:37 | v8h7zoxw | W | Knight Vision | 87 | loss | ply 66 by r unseen | 41 s | 2-17 |
