@@ -1,12 +1,12 @@
 # Arena v21 watch
 
-Updated 2026-10-09 21:49 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 22:20 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 79W-21D-112L over 212 games** (42%).
-As White: 43.0/106.
-As Black: 46.5/106.
+**Record: 83W-21D-112L over 216 games** (43%).
+As White: 45.0/108.
+As Black: 48.5/108.
 
-Queen lost for less: 79 games (67 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 60 of 112.
+Queen lost for less: 80 games (68 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 60 of 112.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 34. Mean length 85 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -15,13 +15,13 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | TA Baseline P | 29-5-8 |
 | TA Baseline A | 14-5-13 |
 | Decent Chess Bot | 1-1-26 |
-| TA Baseline S | 9-4-9 |
+| TA Baseline S | 11-4-9 |
 | Knight Vision | 0-0-16 |
 | Apricot Squad | 15-0-1 |
 | Instructors | 3-1-10 |
 | Strongly Invisible | 0-1-13 |
+| baseline.py | 10-0-0 |
 | Mist Opportunities | 0-2-8 |
-| baseline.py | 8-0-0 |
 | duck | 0-2-6 |
 | Greek Gift | 0-0-2 |
 
@@ -239,3 +239,7 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-09 21:36 | xp1cbejo | W | TA Baseline S | 95 | loss |  | 29 s | 1-8 |
 | 2026-10-09 21:41 | u348trmp | W | Decent Chess Bot | 69 | loss | ply 52 by q unseen | 50 s | 9-6 |
 | 2026-10-09 21:44 | 2wkvudos | B | Decent Chess Bot | 124 | loss | ply 119 by r | 27 s | 2-6 |
+| 2026-10-09 22:12 | wpmbjgwf | W | baseline.py | 22 | win |  | 139 s | 36-17 |
+| 2026-10-09 22:13 | 6ijo26tx | B | baseline.py | 51 | win |  | 74 s | 33-13 |
+| 2026-10-09 22:16 | 31ndykr1 | W | TA Baseline S | 76 | win | ply 60 by r unseen | 54 s | 13-11 |
+| 2026-10-09 22:16 | lv221t6v | B | TA Baseline S | 97 | win |  | 33 s | 19-1 |
