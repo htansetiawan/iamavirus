@@ -1,23 +1,25 @@
 # Arena v21 watch
 
-Updated 2026-10-09 15:11 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 15:42 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 8W-1D-4L over 13 games** (65%).
-As White: 4.0/6.
-As Black: 4.5/7.
+**Record: 11W-4D-19L over 34 games** (38%).
+As White: 7.0/17.
+As Black: 6.0/17.
 
-Queen lost for less: 5 games (3 to a capturer unseen when we moved, 0 before ply 30); losses with the queen lost: 3 of 4.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 73 plies.
-Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 13 games (11 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 9 of 19.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 7. Mean length 87 plies.
+Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Instructors | 2-1-5 |
+| duck | 0-2-4 |
+| TA Baseline P | 4-0-0 |
+| Decent Chess Bot | 0-0-4 |
 | TA Baseline A | 2-1-1 |
-| TA Baseline P | 2-0-0 |
-| Decent Chess Bot | 0-0-2 |
-| Instructors | 2-0-0 |
+| Knight Vision | 0-0-4 |
 | baseline.py | 2-0-0 |
-| duck | 0-0-1 |
+| TA Baseline S | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -34,3 +36,24 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-09 14:59 | uh6gye0b | B | baseline.py | 29 | win |  | 130 s | 31-27 |
 | 2026-10-09 15:00 | oudiuotb | W | baseline.py | 54 | win |  | 81 s | 23-6 |
 | 2026-10-09 15:08 | ixkh3osi | B | duck | 38 | loss |  | 106 s | 27-27 |
+| 2026-10-09 15:11 | 8cevua8y | W | duck | 107 | draw |  | 15 s | 9-4 |
+| 2026-10-09 15:11 | 2u7788z6 | W | duck | 73 | loss |  | 39 s | 5-15 |
+| 2026-10-09 15:12 | g9rfhvzo | B | duck | 134 | loss |  | 20 s | 2-8 |
+| 2026-10-09 15:16 | s7ieucrm | B | Instructors | 82 | loss | ply 49 by b unseen | 32 s | 7-20 |
+| 2026-10-09 15:16 | vyannbh9 | B | Decent Chess Bot | 68 | loss | ply 13 by n unseen | 43 s | 7-19 |
+| 2026-10-09 15:16 | xpt852bh | W | Decent Chess Bot | 79 | loss | ply 22 by n unseen | 38 s | 11-14 |
+| 2026-10-09 15:19 | f601xf1q | W | Instructors | 129 | loss |  | 14 s | 2-7 |
+| 2026-10-09 15:19 | yzoe37g7 | W | Instructors | 101 | loss |  | 29 s | 11-15 |
+| 2026-10-09 15:20 | xg5iuc9j | B | Instructors | 93 | draw |  | 19 s | 12-6 |
+| 2026-10-09 15:25 | e4oighno | B | duck | 68 | loss | ply 51 by q unseen | 53 s | 5-18 |
+| 2026-10-09 15:25 | l0o1cl4y | B | Knight Vision | 86 | loss |  | 33 s | 4-13 |
+| 2026-10-09 15:27 | acsu2aew | W | Knight Vision | 131 | loss |  | 14 s | 0-17 |
+| 2026-10-09 15:29 | y5ficigq | W | duck | 120 | draw | ply 44 by n unseen | 14 s | 8-10 |
+| 2026-10-09 15:29 | kz6ogji3 | W | TA Baseline S | 96 | win | ply 44 by r unseen | 66 s | 25-1 |
+| 2026-10-09 15:29 | qe1jnnu6 | B | TA Baseline S | 74 | loss | ply 51 by r unseen | 43 s | 5-31 |
+| 2026-10-09 15:32 | 51obl25v | W | Knight Vision | 77 | loss | ply 50 by q unseen | 55 s | 2-16 |
+| 2026-10-09 15:34 | jrxq2spd | W | Instructors | 109 | loss |  | 14 s | 2-9 |
+| 2026-10-09 15:35 | u8ntia1j | B | Instructors | 126 | loss |  | 14 s | 1-14 |
+| 2026-10-09 15:35 | 4kt9a2tg | B | Knight Vision | 114 | loss |  | 14 s | 1-20 |
+| 2026-10-09 15:39 | m2fa627l | B | TA Baseline P | 77 | win |  | 48 s | 16-8 |
+| 2026-10-09 15:39 | x3zwz3mo | W | TA Baseline P | 86 | win |  | 45 s | 13-5 |
