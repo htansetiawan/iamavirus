@@ -1,0 +1,910 @@
+{
+  "snapshot_at": "2026-10-09T21:43:26.911721+00:00",
+  "usage": "Replay diagnostics, not an independent evaluation set for models trained on these games. Load full observation/action history; do not initialize a recurrent policy at the final board. decision_ply is the move being chosen; the decision frame is ply-1. True boards, hidden cover and safe alternatives are audit/training labels only. Bait offers include repeated turns: split and weight by whole game.",
+  "cases": [
+    {
+      "game": "9nvh23tj",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 25,
+      "side": "white",
+      "chosen": "d2f2",
+      "fatal_options": [
+        {
+          "move": "g1f2",
+          "cover": [
+            {
+              "piece": "n",
+              "square": "g4",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "w23syovy",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 52,
+      "side": "black",
+      "chosen": "f8g7",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "Q",
+              "square": "g2",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "amw0ekek",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 99,
+      "side": "white",
+      "chosen": "g1h1",
+      "surviving_alternatives": [
+        "g1h2",
+        "g1f1"
+      ],
+      "attackers": [
+        {
+          "piece": "b",
+          "square": "e4",
+          "hidden": true,
+          "stationary_since_ply": 96,
+          "last_visible_while_stationary": 96
+        }
+      ]
+    },
+    {
+      "game": "bpum3jjw",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 78,
+      "side": "black",
+      "chosen": "g8f8",
+      "surviving_alternatives": [
+        "g8h8",
+        "e8g7",
+        "e8c7",
+        "e8f6",
+        "e8d6",
+        "g6g5",
+        "a6a5",
+        "b5b4"
+      ],
+      "attackers": [
+        {
+          "piece": "Q",
+          "square": "e7",
+          "hidden": true,
+          "stationary_since_ply": 71,
+          "last_visible_while_stationary": null
+        }
+      ]
+    },
+    {
+      "game": "s8p7ue0x",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 73,
+      "side": "white",
+      "chosen": "g2e1",
+      "surviving_alternatives": [
+        "h2h3"
+      ],
+      "attackers": [
+        {
+          "piece": "n",
+          "square": "g4",
+          "hidden": true,
+          "stationary_since_ply": 72,
+          "last_visible_while_stationary": null
+        }
+      ]
+    },
+    {
+      "game": "gjmn6za2",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 54,
+      "side": "black",
+      "chosen": "f8g8",
+      "surviving_alternatives": [
+        "f8e8",
+        "f8e7",
+        "c8e8",
+        "c8d8",
+        "c8b8",
+        "c8a8",
+        "c8c7",
+        "c8c6",
+        "c8c5",
+        "c8c4",
+        "c8c3",
+        "c8c2",
+        "c8c1",
+        "h6h5",
+        "g6g5",
+        "a6a5",
+        "f5f4",
+        "b5b4"
+      ],
+      "attackers": [
+        {
+          "piece": "Q",
+          "square": "b3",
+          "hidden": true,
+          "stationary_since_ply": 41,
+          "last_visible_while_stationary": 42
+        }
+      ]
+    },
+    {
+      "game": "5c710zu5",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 41,
+      "side": "white",
+      "chosen": "b4b5",
+      "fatal_options": [
+        {
+          "move": "g1g2",
+          "cover": [
+            {
+              "piece": "q",
+              "square": "c6",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "5c710zu5",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 43,
+      "side": "white",
+      "chosen": "h4g2",
+      "fatal_options": [
+        {
+          "move": "g1g2",
+          "cover": [
+            {
+              "piece": "q",
+              "square": "d5",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 67,
+      "side": "white",
+      "chosen": "c3d3",
+      "fatal_options": [
+        {
+          "move": "c3c4",
+          "cover": [
+            {
+              "piece": "p",
+              "square": "b5",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 69,
+      "side": "white",
+      "chosen": "e2e3",
+      "fatal_options": [
+        {
+          "move": "d3c4",
+          "cover": [
+            {
+              "piece": "p",
+              "square": "b5",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 71,
+      "side": "white",
+      "chosen": "e3d4",
+      "fatal_options": [
+        {
+          "move": "d3c4",
+          "cover": [
+            {
+              "piece": "p",
+              "square": "b5",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 73,
+      "side": "white",
+      "chosen": "f4d2",
+      "fatal_options": [
+        {
+          "move": "d3c4",
+          "cover": [
+            {
+              "piece": "p",
+              "square": "b5",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 75,
+      "side": "white",
+      "chosen": "d3e2",
+      "fatal_options": [
+        {
+          "move": "d3c4",
+          "cover": [
+            {
+              "piece": "p",
+              "square": "b5",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 79,
+      "side": "white",
+      "chosen": "d3d2",
+      "fatal_options": [
+        {
+          "move": "d3c4",
+          "cover": [
+            {
+              "piece": "p",
+              "square": "b5",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 87,
+      "side": "white",
+      "chosen": "g3g4",
+      "fatal_options": [
+        {
+          "move": "a4b4",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "b8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 89,
+      "side": "white",
+      "chosen": "a4a3",
+      "fatal_options": [
+        {
+          "move": "a4b3",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "b8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 91,
+      "side": "white",
+      "chosen": "a3a2",
+      "fatal_options": [
+        {
+          "move": "a3b2",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "b8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ucrmeu8z",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 93,
+      "side": "white",
+      "chosen": "a2a3",
+      "fatal_options": [
+        {
+          "move": "a2b1",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "b8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "7hrv61xz",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 60,
+      "side": "black",
+      "chosen": "g8h7",
+      "fatal_options": [
+        {
+          "move": "g8h7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "h1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": true
+    },
+    {
+      "game": "vjpcef4g",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 61,
+      "side": "white",
+      "chosen": "h2h1",
+      "fatal_options": [
+        {
+          "move": "h2h1",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "c1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": true
+    },
+    {
+      "game": "ih7rql2x",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 51,
+      "side": "white",
+      "chosen": "e2h5",
+      "fatal_options": [
+        {
+          "move": "g1g2",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "g8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "ih7rql2x",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 53,
+      "side": "white",
+      "chosen": "d5b6",
+      "fatal_options": [
+        {
+          "move": "g1g2",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "g8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 48,
+      "side": "black",
+      "chosen": "e6g7",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            },
+            {
+              "piece": "P",
+              "square": "h6",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 50,
+      "side": "black",
+      "chosen": "d7e6",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 52,
+      "side": "black",
+      "chosen": "e8e7",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 54,
+      "side": "black",
+      "chosen": "d6f4",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 56,
+      "side": "black",
+      "chosen": "e7d7",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 58,
+      "side": "black",
+      "chosen": "c6c5",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 60,
+      "side": "black",
+      "chosen": "c5d4",
+      "fatal_options": [
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            },
+            {
+              "piece": "P",
+              "square": "h6",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "o7pac9wt",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 62,
+      "side": "black",
+      "chosen": "g8g7",
+      "fatal_options": [
+        {
+          "move": "g8h7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "h1",
+              "hidden": true
+            },
+            {
+              "piece": "B",
+              "square": "d3",
+              "hidden": true
+            }
+          ]
+        },
+        {
+          "move": "g8g7",
+          "cover": [
+            {
+              "piece": "R",
+              "square": "g1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": true
+    },
+    {
+      "game": "mtk8dhat",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 39,
+      "side": "white",
+      "chosen": "c3d5",
+      "fatal_options": [
+        {
+          "move": "g2f1",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "e1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "mtk8dhat",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 41,
+      "side": "white",
+      "chosen": "d5c7",
+      "fatal_options": [
+        {
+          "move": "g2f1",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "e1",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "xk8hbj3f",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 61,
+      "side": "white",
+      "chosen": "h1g1",
+      "fatal_options": [
+        {
+          "move": "h1g2",
+          "cover": [
+            {
+              "piece": "b",
+              "square": "a8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "a3bxckvx",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 167,
+      "side": "white",
+      "chosen": "d1e2",
+      "surviving_alternatives": [
+        "d7d8",
+        "d7h7",
+        "d7g7",
+        "d7f7",
+        "d7e7",
+        "d7c7",
+        "d7b7",
+        "d7a7",
+        "d7d6",
+        "d7d5",
+        "d7d4",
+        "d7d3",
+        "d7d2",
+        "d1c2",
+        "e5e6"
+      ],
+      "attackers": [
+        {
+          "piece": "q",
+          "square": "e3",
+          "hidden": true,
+          "stationary_since_ply": 162,
+          "last_visible_while_stationary": null
+        }
+      ]
+    },
+    {
+      "game": "y1xb1w3u",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 124,
+      "side": "black",
+      "chosen": "h6h7",
+      "surviving_alternatives": [
+        "h6g7",
+        "h6h5",
+        "h6g5",
+        "g2b7",
+        "g2c6",
+        "g2d5",
+        "g2e4",
+        "g2h3",
+        "g2f3",
+        "g2h1",
+        "g2f1"
+      ],
+      "attackers": [
+        {
+          "piece": "N",
+          "square": "f8",
+          "hidden": true,
+          "stationary_since_ply": 117,
+          "last_visible_while_stationary": null
+        }
+      ]
+    },
+    {
+      "game": "fafyfxee",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 69,
+      "side": "white",
+      "chosen": "f1e1",
+      "surviving_alternatives": [
+        "h1g1",
+        "f1f3"
+      ],
+      "attackers": [
+        {
+          "piece": "q",
+          "square": "c6",
+          "hidden": true,
+          "stationary_since_ply": 68,
+          "last_visible_while_stationary": null
+        }
+      ]
+    },
+    {
+      "game": "otvh21ol",
+      "kind": "our_hidden_king_failure",
+      "decision_ply": 74,
+      "side": "black",
+      "chosen": "g8h7",
+      "surviving_alternatives": [
+        "g8h8",
+        "g8f8",
+        "g8g7",
+        "f7f8",
+        "f7h7",
+        "f7g7",
+        "f7e7",
+        "f7d7",
+        "f7c7",
+        "f7b7",
+        "f7a7",
+        "f7f6",
+        "f7f5",
+        "f7f4",
+        "f7f3",
+        "f7f2",
+        "f7f1",
+        "e5e4"
+      ],
+      "attackers": [
+        {
+          "piece": "B",
+          "square": "g6",
+          "hidden": true,
+          "stationary_since_ply": 73,
+          "last_visible_while_stationary": null
+        }
+      ]
+    },
+    {
+      "game": "otvh21ol",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 63,
+      "side": "white",
+      "chosen": "g5d5",
+      "fatal_options": [
+        {
+          "move": "g1f2",
+          "cover": [
+            {
+              "piece": "r",
+              "square": "f8",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "s9xsynu5",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 67,
+      "side": "white",
+      "chosen": "e2f1",
+      "fatal_options": [
+        {
+          "move": "e2d2",
+          "cover": [
+            {
+              "piece": "n",
+              "square": "c4",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "s9xsynu5",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 73,
+      "side": "white",
+      "chosen": "e2f1",
+      "fatal_options": [
+        {
+          "move": "e2d2",
+          "cover": [
+            {
+              "piece": "n",
+              "square": "c4",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    },
+    {
+      "game": "xb654seu",
+      "kind": "mist_hidden_bait_opportunity",
+      "decision_ply": 19,
+      "side": "white",
+      "chosen": "f1f2",
+      "fatal_options": [
+        {
+          "move": "g1f2",
+          "cover": [
+            {
+              "piece": "q",
+              "square": "b6",
+              "hidden": true
+            }
+          ]
+        }
+      ],
+      "accepted_fatal_bait": false
+    }
+  ]
+}
