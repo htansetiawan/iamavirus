@@ -1,26 +1,26 @@
 # Arena v15 watch
 
-Updated 2026-10-09 01:29 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 02:00 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 206W-13D-257L over 476 games** (45%).
-As White: 114.5/238.
-As Black: 98.0/238.
+**Record: 210W-13D-267L over 490 games** (44%).
+As White: 116.5/245.
+As Black: 100.0/245.
 
-Queen lost for less: 171 games (134 to a capturer unseen when we moved, 23 before ply 30); losses with the queen lost: 145 of 257.
+Queen lost for less: 180 games (141 to a capturer unseen when we moved, 23 before ply 30); losses with the queen lost: 154 of 267.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 58. Mean length 77 plies.
-Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 53-4-43 |
+| TA Baseline P | 53-4-45 |
 | TA Baseline S | 17-7-38 |
-| baseline.py | 60-0-0 |
-| TA Baseline A | 25-1-30 |
-| Apricot Squad | 46-0-2 |
-| duck | 2-0-34 |
+| baseline.py | 62-0-0 |
+| TA Baseline A | 25-1-32 |
+| Apricot Squad | 48-0-2 |
+| duck | 2-0-38 |
 | Instructors | 3-0-33 |
 | Decent Chess Bot | 0-0-28 |
-| Knight Vision | 0-1-23 |
+| Knight Vision | 0-1-25 |
 | Strongly Invisible | 0-0-18 |
 | Greek Gift | 0-0-8 |
 
@@ -502,3 +502,17 @@ Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate r
 | 2026-10-09 01:20 | nwphuakh | B | TA Baseline S | 121 | win |  | 31 s | 15-5 |
 | 2026-10-09 01:22 | grtd99l1 | W | baseline.py | 32 | win |  | 114 s | 30-34 |
 | 2026-10-09 01:22 | 25earo1q | B | baseline.py | 41 | win |  | 108 s | 29-20 |
+| 2026-10-09 01:36 | q6x0cyq9 | B | Apricot Squad | 43 | win |  | 93 s | 43-14 |
+| 2026-10-09 01:37 | wo0i8p6r | W | Apricot Squad | 62 | win |  | 69 s | 37-22 |
+| 2026-10-09 01:43 | qgom0nlu | W | Knight Vision | 95 | loss | ply 44 by r unseen | 40 s | 3-19 |
+| 2026-10-09 01:43 | dms4ly3o | B | Knight Vision | 92 | loss | ply 53 by q unseen | 36 s | 1-30 |
+| 2026-10-09 01:45 | mb662rah | W | baseline.py | 22 | win |  | 153 s | 36-38 |
+| 2026-10-09 01:46 | 624d6lnx | B | duck | 102 | loss | ply 95 by r | 36 s | 5-15 |
+| 2026-10-09 01:46 | at79ddf5 | B | baseline.py | 19 | win |  | 149 s | 36-23 |
+| 2026-10-09 01:46 | 3i645spx | B | duck | 46 | loss |  | 108 s | 22-29 |
+| 2026-10-09 01:47 | 8xhcg7y2 | B | TA Baseline A | 92 | loss | ply 67 by r unseen | 29 s | 1-22 |
+| 2026-10-09 01:47 | t0vtit3a | W | TA Baseline A | 97 | loss | ply 58 by n | 36 s | 3-13 |
+| 2026-10-09 01:49 | h037oxd1 | W | duck | 161 | loss | ply 140 by q unseen | 18 s | 8-22 |
+| 2026-10-09 01:50 | cvfgrrdg | W | duck | 71 | loss | ply 68 by r unseen | 42 s | 4-29 |
+| 2026-10-09 01:54 | 1oeyl70d | B | TA Baseline P | 132 | loss | ply 93 by q unseen | 21 s | 0-24 |
+| 2026-10-09 01:55 | okzj29rl | W | TA Baseline P | 119 | loss | ply 84 by r unseen | 18 s | 1-16 |
