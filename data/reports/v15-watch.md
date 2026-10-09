@@ -1,28 +1,28 @@
 # Arena v15 watch
 
-Updated 2026-10-09 02:00 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-09 02:30 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 210W-13D-267L over 490 games** (44%).
-As White: 116.5/245.
-As Black: 100.0/245.
+**Record: 212W-14D-279L over 505 games** (43%).
+As White: 117.0/252.
+As Black: 102.0/253.
 
-Queen lost for less: 180 games (141 to a capturer unseen when we moved, 23 before ply 30); losses with the queen lost: 154 of 267.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 58. Mean length 77 plies.
+Queen lost for less: 187 games (147 to a capturer unseen when we moved, 26 before ply 30); losses with the queen lost: 160 of 279.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 59. Mean length 77 plies.
 Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 53-4-45 |
+| TA Baseline P | 55-5-46 |
 | TA Baseline S | 17-7-38 |
 | baseline.py | 62-0-0 |
-| TA Baseline A | 25-1-32 |
+| TA Baseline A | 25-1-33 |
 | Apricot Squad | 48-0-2 |
 | duck | 2-0-38 |
-| Instructors | 3-0-33 |
-| Decent Chess Bot | 0-0-28 |
-| Knight Vision | 0-1-25 |
+| Instructors | 3-0-37 |
+| Decent Chess Bot | 0-0-30 |
+| Knight Vision | 0-1-27 |
 | Strongly Invisible | 0-0-18 |
-| Greek Gift | 0-0-8 |
+| Greek Gift | 0-0-10 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -516,3 +516,18 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-09 01:50 | cvfgrrdg | W | duck | 71 | loss | ply 68 by r unseen | 42 s | 4-29 |
 | 2026-10-09 01:54 | 1oeyl70d | B | TA Baseline P | 132 | loss | ply 93 by q unseen | 21 s | 0-24 |
 | 2026-10-09 01:55 | okzj29rl | W | TA Baseline P | 119 | loss | ply 84 by r unseen | 18 s | 1-16 |
+| 2026-10-09 02:00 | b4z9u3fv | W | Instructors | 91 | loss |  | 16 s | 2-12 |
+| 2026-10-09 02:03 | bchzq3dv | B | Greek Gift | 68 | loss | ply 25 by n unseen | 56 s | 12-29 |
+| 2026-10-09 02:03 | o15fogqp | W | Greek Gift | 63 | loss | ply 36 by r unseen | 43 s | 5-14 |
+| 2026-10-09 02:03 | w7yh49o4 | B | Instructors | 148 | loss |  | 14 s | 1-11 |
+| 2026-10-09 02:04 | 4d0fj3td | W | TA Baseline P | 54 | draw | ply 26 by p | 78 s | 21-22 |
+| 2026-10-09 02:05 | ni3c1d32 | W | Instructors | 75 | loss | ply 70 by q unseen | 64 s | 7-29 |
+| 2026-10-09 02:06 | 2ph43727 | B | TA Baseline P | 89 | win |  | 45 s | 7-8 |
+| 2026-10-09 02:06 | 8z58p6po | B | Instructors | 76 | loss | ply 63 by r unseen | 43 s | 4-15 |
+| 2026-10-09 02:08 | h0t4bto7 | B | TA Baseline P | 77 | win |  | 31 s | 5-6 |
+| 2026-10-09 02:09 | c5f5o5m6 | W | TA Baseline P | 107 | loss |  | 25 s | 10-9 |
+| 2026-10-09 02:14 | 3fu4bm6k | W | Decent Chess Bot | 65 | loss |  | 65 s | 16-15 |
+| 2026-10-09 02:14 | abdvm9fo | W | Knight Vision | 53 | loss |  | 85 s | 5-19 |
+| 2026-10-09 02:15 | 5q1imyu0 | B | Knight Vision | 74 | loss | ply 29 by n unseen | 59 s | 2-23 |
+| 2026-10-09 02:17 | gnu2ab8x | B | Decent Chess Bot | 106 | loss | ply 65 by r unseen | 37 s | 3-15 |
+| 2026-10-09 02:30 | 1hj726x0 | B | TA Baseline A | 84 | loss |  | 60 s | 1-28 |
