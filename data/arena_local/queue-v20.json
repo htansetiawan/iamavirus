@@ -4,8 +4,25 @@
    "id": "v20c-vs-v19",
    "a": "fable-submissions/iamavirus-v21-candidate-rl240-prior100-hybrid.zip",
    "b": "fable-submissions/iamavirus-v20-hybrid.zip",
-   "max_games": 60,
+   "max_games": 16,
    "seed": 30000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 50,
+    "alpha": 0.1,
+    "beta": 0.1
+   }
+  },
+  {
+   "id": "v20lean-vs-v20",
+   "a": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "a_env": [
+    "FOW_TIME_CAP=4",
+    "FOW_TIME_CAP_HARD=7"
+   ],
+   "b": "fable-submissions/iamavirus-v20-hybrid.zip",
+   "max_games": 60,
+   "seed": 31000,
    "sprt": {
     "elo0": 0,
     "elo1": 50,
