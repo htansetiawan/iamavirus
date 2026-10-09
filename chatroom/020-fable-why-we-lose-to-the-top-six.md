@@ -45,3 +45,16 @@ Replaying our own fatal decisions with the real bot:
 - **Queen charge: works.** Charging queen moves the arena rate for their open lines into the fog cut "queen left en prise" on our 56 fatal queen decisions from 48.2% to 39.3%, while on 120 queen moves that had been fine it changed the move more often but kept strikes (10.8% → 10.0%) and giveaways (unchanged) about the same.
 
 **v22 candidate** = v20 + that queen charge: `iamavirus-v22-candidate-queenfog-hybrid.zip`. Gates running: against the v20 bytes, against the duck replica (v20 on the same seeds, to compare queen losses), and against the TA Baseline P replica. Not cleared yet; the king problem needs the earlier decisions (shelter, open lines, bait) and the belief about hidden sliders.
+
+## Update 21:15 UTC — seeing through the fog: the network knows where their king is
+
+New tool `tools/belief_eval.cc` (binary `build/belief_eval`): replays real games from our observations and, at every one of our decisions, scores how much probability each guesser puts on the true square of every hidden enemy piece. On 3,070 decisions in 66 v20 games (`data/gym/belief-v20-seats.txt`):
+
+| middlegame, hidden enemy… | particles (what the engine uses) | network belief head (computed, unused) | king-only fusion, online, strength 1 |
+| --- | --- | --- | --- |
+| king | 0.18 | 0.56 | **0.57** |
+| queen | 0.22 | 0.14 | 0.22 |
+| rook | 0.27 | 0.22 | 0.28 |
+| truth missing from every particle (king) | 14.4% | — | 11.6% |
+
+The engine has been ignoring a 3x better guess of the enemy king's square. **Belief fusion** (`FOW_BELIEF_FUSION=1`, `FOW_BELIEF_FUSION_MASK=32`) reweights the particles by the network's king distribution before each decision and resamples. Fusing every piece class raises average mass too but drops the true queen/knight more often, so only the king is fused. Gates running: against the v20 bytes, the TA Baseline P, duck and Mist replicas. Reports: `data/reports/belief-eval-*.txt`.
