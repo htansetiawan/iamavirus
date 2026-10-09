@@ -221,6 +221,22 @@ bool KingThreatUnseen(const Position& truth, Move move, int side) {
 // the enemy king on its true square, and the number of distinct king squares
 // the population entertains. The strike corpus showed that revealing only the
 // enemy king lifts unseen strikes from 41% to 69% (full information: 80%).
+int EnemyKingMode(const BeliefState& belief, int side, double* share) {
+  const int enemy = side ^ 1;
+  int counts[64] = {0};
+  const std::vector<Position>& population = belief.particles();
+  for (const Position& particle : population) {
+    const int k = particle.KingSquare(enemy);
+    if (k >= 0) ++counts[k];
+  }
+  int best = -1;
+  for (int sq = 0; sq < 64; ++sq) {
+    if (best < 0 || counts[sq] > counts[best]) best = sq;
+  }
+  *share = population.empty() ? 0.0 : static_cast<double>(counts[best]) / population.size();
+  return best;
+}
+
 void EnemyKingBelief(const BeliefState& belief, const Position& truth, int side, double* mass, int* distinct) {
   const int enemy = side ^ 1;
   const int king = truth.KingSquare(enemy);
@@ -436,8 +452,10 @@ void RunSeat(const Seat& seat, const EngineOptions& options, int stride,
               ++tally->ek_plies;
               if (mass < 0.2) ++tally->ek_low;
               if (verbose) {
-                std::printf("  EK %s ply %zu kingmass %.3f distinct %d strike %d\n", seat.id.c_str(), ply, mass, distinct,
-                            KingThreatUnseen(truth, choice, seat.side) ? 1 : 0);
+                double mode_share = 0.0;
+                const int mode = EnemyKingMode(engine.belief(), seat.side, &mode_share);
+                std::printf("  EK %s ply %zu kingmass %.3f distinct %d strike %d true %d mode %d modeshare %.3f\n", seat.id.c_str(), ply, mass,
+                            distinct, KingThreatUnseen(truth, choice, seat.side) ? 1 : 0, truth.KingSquare(seat.side ^ 1), mode, mode_share);
               }
             }
             if (KingThreatUnseen(truth, choice, seat.side)) ++tally->strike_unseen;

@@ -31,6 +31,9 @@ _lib.fow_batch_take_events.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.c_i
 _lib.fow_batch_take_events.restype = ctypes.c_int
 _lib.fow_batch_candidates.argtypes = [ctypes.c_void_p, ctypes.c_int, _IP, _IP, _IP, ctypes.c_int]
 _lib.fow_batch_candidates.restype = ctypes.c_int
+_lib.fow_batch_danger.argtypes = [ctypes.c_void_p, ctypes.c_int, _IP, ctypes.c_int]
+_lib.fow_batch_danger.restype = ctypes.c_int
+_lib.fow_batch_view.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.c_int, ctypes.c_char_p]
 _lib.fow_batch_step_all.argtypes = [ctypes.c_void_p, _IP, _IP, ctypes.c_int]
 _lib.fow_batch_step_all.restype = ctypes.c_int
 _lib.fow_batch_random_rollout.argtypes = [ctypes.c_void_p, ctypes.c_int, ctypes.c_ulonglong, ctypes.c_int]
@@ -77,6 +80,17 @@ class BatchEnv:
     def candidates(self, i: int):
         k = _lib.fow_batch_candidates(self.h, i, self._from, self._to, self._promo, MAX_CANDIDATES)
         return self._from[:k].copy(), self._to[:k].copy(), self._promo[:k].copy()
+
+    def danger(self, i: int) -> np.ndarray:
+        """1 per candidate (candidate order) that leaves the mover's king capturable on the true board."""
+        out = np.zeros(MAX_CANDIDATES, np.int32)
+        k = _lib.fow_batch_danger(self.h, i, out, MAX_CANDIDATES)
+        return out[:k].copy()
+
+    def view(self, i: int, side: int) -> str:
+        buf = ctypes.create_string_buffer(66)
+        _lib.fow_batch_view(self.h, i, side, buf)
+        return buf.value.decode()
 
     def step_all(self, actions: np.ndarray) -> np.ndarray:
         status = np.zeros(self.n, np.int32)

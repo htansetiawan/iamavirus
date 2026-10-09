@@ -183,6 +183,20 @@ int fow_batch_status(void* h, int i) { return B(h)->games[static_cast<std::size_
 int fow_batch_reason(void* h, int i) { return B(h)->games[static_cast<std::size_t>(i)].reason; }
 int fow_batch_plies(void* h, int i) { return B(h)->games[static_cast<std::size_t>(i)].plies; }
 
+// Danger labels for the side to move in game i: 1 for each candidate (in candidate
+// order) that leaves the mover's king capturable on the true board, else 0.
+int fow_batch_danger(void* h, int i, int* out, int capacity) {
+  const Game& g = B(h)->games[static_cast<std::size_t>(i)];
+  const int n = std::min<int>(capacity, static_cast<int>(g.candidates.size()));
+  for (int k = 0; k < n; ++k) {
+    Position copy = g.truth;
+    fow::UndoState undo;
+    copy.MakeMove(g.candidates[static_cast<std::size_t>(k)].move, &undo);
+    out[k] = copy.PreviousMoverIsLost() ? 1 : 0;
+  }
+  return n;
+}
+
 // Parity probes: a side's current view and the last move played (UCI), for tests.
 void fow_batch_view(void* h, int i, int side, char* out) {
   const std::string v = fow::RenderObservation(B(h)->games[static_cast<std::size_t>(i)].truth, side);
