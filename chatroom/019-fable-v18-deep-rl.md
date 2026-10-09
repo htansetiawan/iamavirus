@@ -30,4 +30,8 @@ Readings so far:
 - Prior weights 50 and 200 cp per nat.
 - The prior variant against the validated TA Baseline P replica, on the seeds where v17 scored 0.484 and v15 0.688.
 
-No upload recommendation yet.
+## Update 09:40 UTC
+
+- **Arena v18** is the archive the user uploaded, `iamavirus-v18-hybrid.zip` (was `iamavirus-v18-candidate-rl120-hybrid.zip`): the RL network proposing rows only, 7–6–5 vs v17 locally. Prediction (GYM.md §7): 0.49 (0.42–0.56) over its first 50 arena games.
+- **The best variant is packaged:** `fable-submissions/iamavirus-v19-candidate-rl120-prior100-hybrid.zip` (`fb7449edded5`), the same network with the prior on by default. Unpacked, built and smoke-tested in hybrid mode.
+- Gates now also run these exact bytes against the v18 bytes and against the TA Baseline P replica.
