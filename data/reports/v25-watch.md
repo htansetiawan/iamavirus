@@ -1,22 +1,22 @@
 # Arena v25 watch
 
-Updated 2026-10-10 13:16 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 13:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 134W-29D-133L over 296 games** (50%).
-As White: 76.5/148.
-As Black: 72.0/148.
+**Record: 135W-32D-137L over 304 games** (50%).
+As White: 78.5/152.
+As Black: 72.5/152.
 
-Queen lost for less: 101 games (88 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 67 of 133.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 53. Mean length 86 plies.
+Queen lost for less: 102 games (89 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 68 of 137.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 56. Mean length 86 plies.
 Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 35-9-12 |
+| Mist Opportunities | 5-9-24 |
+| Instructors | 9-3-24 |
+| TA Baseline S | 18-5-13 |
 | TA Baseline P | 27-3-4 |
-| Instructors | 8-3-23 |
-| Mist Opportunities | 5-7-22 |
-| TA Baseline S | 18-4-12 |
 | duck | 4-3-25 |
 | Strongly Invisible | 1-0-17 |
 | Apricot Squad | 18-0-0 |
@@ -323,3 +323,11 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-10 13:11 | 508nzcbe | B | TA Baseline S | 169 | win | ply 49 by q unseen | 14 s | 6-1 |
 | 2026-10-10 13:13 | ptl8f2fd | B | Instructors | 95 | win | ply 63 by k unseen | 42 s | 15-2 |
 | 2026-10-10 13:14 | nl99qgca | W | Instructors | 125 | loss |  | 14 s | 3-15 |
+| 2026-10-10 13:21 | ec4b4sw0 | B | TA Baseline S | 68 | loss |  | 45 s | 3-15 |
+| 2026-10-10 13:22 | l7gll5zx | B | Instructors | 88 | loss |  | 47 s | 3-16 |
+| 2026-10-10 13:23 | dh3nxxbt | W | Instructors | 78 | win |  | 62 s | 22-1 |
+| 2026-10-10 13:24 | 9vy2xo05 | W | TA Baseline S | 136 | draw |  | 14 s | 6-7 |
+| 2026-10-10 13:29 | wgv045iw | B | Mist Opportunities | 64 | loss | ply 49 by n unseen | 49 s | 9-21 |
+| 2026-10-10 13:29 | 2of5hdkp | W | Mist Opportunities | 45 | draw |  | 95 s | 35-35 |
+| 2026-10-10 13:33 | czirm445 | B | Mist Opportunities | 125 | draw |  | 14 s | 14-14 |
+| 2026-10-10 13:34 | 5p4lu88u | W | Mist Opportunities | 179 | loss |  | 14 s | 3-20 |
