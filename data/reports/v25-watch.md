@@ -1,28 +1,28 @@
 # Arena v25 watch
 
-Updated 2026-10-10 16:21 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 16:42 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 176W-39D-181L over 396 games** (49%).
-As White: 104.0/198.
-As Black: 91.5/198.
+**Record: 180W-39D-188L over 407 games** (49%).
+As White: 106.0/204.
+As Black: 93.5/203.
 
-Queen lost for less: 131 games (112 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 90 of 181.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 71. Mean length 86 plies.
+Queen lost for less: 136 games (117 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 95 of 188.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 72. Mean length 86 plies.
 Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 41-10-19 |
 | Instructors | 11-4-33 |
+| Mist Opportunities | 6-11-30 |
 | TA Baseline P | 39-3-4 |
-| Mist Opportunities | 6-11-27 |
+| duck | 7-5-32 |
 | TA Baseline S | 22-5-17 |
-| duck | 7-5-30 |
-| Strongly Invisible | 2-0-24 |
+| Strongly Invisible | 2-0-26 |
 | Apricot Squad | 22-0-0 |
 | Decent Chess Bot | 0-1-17 |
+| Knight Vision | 16-0-0 |
 | baseline.py | 14-0-0 |
-| Knight Vision | 12-0-0 |
 | Greek Gift | 0-0-10 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -423,3 +423,14 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-10 16:18 | ghzj4e5y | W | TA Baseline A | 54 | win |  | 91 s | 12-14 |
 | 2026-10-10 16:18 | jrgnqz49 | B | duck | 97 | draw |  | 39 s | 15-3 |
 | 2026-10-10 16:19 | aq1q53sj | B | TA Baseline A | 71 | win |  | 74 s | 20-1 |
+| 2026-10-10 16:21 | kjfh37ei | W | duck | 51 | loss |  | 77 s | 23-28 |
+| 2026-10-10 16:23 | f0cnr5aq | B | Strongly Invisible | 48 | loss | ply 43 by r unseen | 93 s | 9-11 |
+| 2026-10-10 16:24 | bqi20pq7 | B | duck | 98 | loss | ply 79 by q unseen | 24 s | 2-5 |
+| 2026-10-10 16:26 | tvlwy0d9 | W | Strongly Invisible | 87 | loss | ply 76 by q unseen | 48 s | 6-15 |
+| 2026-10-10 16:28 | fnuab72w | W | Knight Vision | 22 | win |  | 180 s | 32-21 |
+| 2026-10-10 16:28 | ybf862oz | W | Knight Vision | 22 | win |  | 180 s | 32-21 |
+| 2026-10-10 16:28 | bnlf82l8 | B | Knight Vision | 35 | win |  | 180 s | 16-15 |
+| 2026-10-10 16:29 | ipyppoos | B | Knight Vision | 35 | win |  | 180 s | 16-15 |
+| 2026-10-10 16:31 | 27ub6lnu | W | Mist Opportunities | 149 | loss | ply 128 by q unseen | 20 s | 1-16 |
+| 2026-10-10 16:31 | sjp6iin4 | B | Mist Opportunities | 142 | loss | ply 61 by n unseen | 14 s | 2-17 |
+| 2026-10-10 16:40 | gyfrah9b | W | Mist Opportunities | 87 | loss |  | 24 s | 6-18 |
