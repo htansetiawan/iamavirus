@@ -1,26 +1,26 @@
 # Arena v25 watch
 
-Updated 2026-10-10 05:44 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 06:04 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 49W-7D-52L over 108 games** (49%).
-As White: 29.5/54.
-As Black: 23.0/54.
+**Record: 53W-7D-54L over 114 games** (50%).
+As White: 31.5/57.
+As Black: 25.0/57.
 
-Queen lost for less: 45 games (37 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 29 of 52.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 15. Mean length 88 plies.
+Queen lost for less: 45 games (37 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 29 of 54.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 17. Mean length 87 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 14-3-5 |
+| TA Baseline A | 16-3-5 |
 | TA Baseline P | 11-0-3 |
 | Mist Opportunities | 4-2-8 |
 | duck | 1-2-11 |
 | TA Baseline S | 8-0-6 |
-| Strongly Invisible | 1-0-7 |
+| Strongly Invisible | 1-0-9 |
 | Instructors | 2-0-6 |
+| Apricot Squad | 6-0-0 |
 | Decent Chess Bot | 0-0-4 |
-| Apricot Squad | 4-0-0 |
 | Knight Vision | 2-0-0 |
 | baseline.py | 2-0-0 |
 | Greek Gift | 0-0-2 |
@@ -135,3 +135,9 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-10 05:36 | 8t08ycqj | B | Greek Gift | 80 | loss | ply 63 by n unseen | 48 s | 5-10 |
 | 2026-10-10 05:36 | wnimuvbp | W | duck | 61 | loss |  | 68 s | 9-12 |
 | 2026-10-10 05:37 | efp6mbvi | B | TA Baseline S | 118 | loss |  | 14 s | 0-21 |
+| 2026-10-10 05:53 | 2ojn8ipm | B | TA Baseline A | 65 | win |  | 70 s | 26-4 |
+| 2026-10-10 05:56 | v2xm2pna | W | TA Baseline A | 108 | win |  | 37 s | 11-1 |
+| 2026-10-10 05:58 | 45adbk95 | W | Strongly Invisible | 101 | loss |  | 14 s | 3-4 |
+| 2026-10-10 05:58 | xm2u5lkl | B | Strongly Invisible | 102 | loss |  | 14 s | 2-12 |
+| 2026-10-10 06:00 | c8025dk3 | B | Apricot Squad | 29 | win |  | 130 s | 35-23 |
+| 2026-10-10 06:01 | x0uilylp | W | Apricot Squad | 40 | win |  | 96 s | 36-21 |
