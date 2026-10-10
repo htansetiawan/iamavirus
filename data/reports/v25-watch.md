@@ -1,13 +1,13 @@
 # Arena v25 watch
 
-Updated 2026-10-10 11:54 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 12:14 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 123W-27D-122L over 272 games** (50%).
-As White: 73.0/137.
-As Black: 63.5/135.
+**Record: 125W-28D-125L over 278 games** (50%).
+As White: 73.0/139.
+As Black: 66.0/139.
 
-Queen lost for less: 93 games (80 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 63 of 122.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 45. Mean length 85 plies.
+Queen lost for less: 93 games (80 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 63 of 125.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 47. Mean length 85 plies.
 Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -15,12 +15,12 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | TA Baseline A | 34-8-12 |
 | TA Baseline P | 27-3-4 |
 | Mist Opportunities | 5-7-22 |
-| duck | 3-3-25 |
-| Instructors | 7-3-20 |
-| TA Baseline S | 13-3-10 |
+| Instructors | 7-3-22 |
+| duck | 4-3-25 |
+| TA Baseline S | 13-4-11 |
 | Strongly Invisible | 1-0-15 |
 | Apricot Squad | 16-0-0 |
-| baseline.py | 9-0-0 |
+| baseline.py | 10-0-0 |
 | Decent Chess Bot | 0-0-8 |
 | Knight Vision | 8-0-0 |
 | Greek Gift | 0-0-6 |
@@ -299,3 +299,9 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-10 11:48 | 3tr97sh4 | B | Greek Gift | 94 | loss | ply 37 by n unseen | 21 s | 7-10 |
 | 2026-10-10 11:49 | 7okwmsbo | W | duck | 39 | loss | ply 32 by b unseen | 112 s | 15-31 |
 | 2026-10-10 11:51 | bkfh1uu8 | W | baseline.py | 16 | win |  | 167 s | 38-37 |
+| 2026-10-10 11:54 | he6ontb7 | B | baseline.py | 53 | win |  | 71 s | 32-6 |
+| 2026-10-10 11:55 | uc8t62cs | B | duck | 117 | win |  | 17 s | 21-2 |
+| 2026-10-10 12:07 | 6ixax4cz | B | TA Baseline S | 100 | draw |  | 55 s | 13-0 |
+| 2026-10-10 12:08 | e1rx69b9 | W | TA Baseline S | 97 | loss |  | 14 s | 1-16 |
+| 2026-10-10 12:08 | g6c7c8gi | W | Instructors | 65 | loss |  | 33 s | 12-21 |
+| 2026-10-10 12:10 | gzeqcgr0 | B | Instructors | 94 | loss |  | 14 s | 3-9 |
