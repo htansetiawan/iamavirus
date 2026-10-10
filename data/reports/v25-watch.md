@@ -1,26 +1,26 @@
 # Arena v25 watch
 
-Updated 2026-10-10 06:45 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 07:06 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 64W-9D-61L over 134 games** (51%).
-As White: 38.0/67.
-As Black: 30.5/67.
+**Record: 66W-9D-63L over 138 games** (51%).
+As White: 39.0/69.
+As Black: 31.5/69.
 
-Queen lost for less: 49 games (40 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 32 of 61.
+Queen lost for less: 50 games (41 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 33 of 63.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 19. Mean length 85 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 19-3-8 |
+| Mist Opportunities | 4-3-11 |
 | TA Baseline S | 10-1-7 |
 | TA Baseline P | 12-0-4 |
-| Mist Opportunities | 4-3-9 |
 | duck | 1-2-11 |
 | Strongly Invisible | 1-0-9 |
 | Instructors | 3-0-7 |
+| Apricot Squad | 8-0-0 |
 | Knight Vision | 6-0-0 |
-| Apricot Squad | 6-0-0 |
 | Decent Chess Bot | 0-0-4 |
 | baseline.py | 2-0-0 |
 | Greek Gift | 0-0-2 |
@@ -161,3 +161,7 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-10 06:23 | d4upetvi | W | Instructors | 115 | loss |  | 14 s | 6-11 |
 | 2026-10-10 06:36 | p0sga160 | B | TA Baseline A | 87 | win |  | 45 s | 11-3 |
 | 2026-10-10 06:37 | rgtytb12 | W | TA Baseline A | 118 | win |  | 29 s | 15-1 |
+| 2026-10-10 06:52 | euqth7af | W | Apricot Squad | 22 | win |  | 132 s | 47-21 |
+| 2026-10-10 06:58 | bquf15bc | B | Apricot Squad | 101 | win |  | 38 s | 37-4 |
+| 2026-10-10 07:05 | gj2zcil0 | W | Mist Opportunities | 115 | loss | ply 48 by n unseen | 16 s | 2-17 |
+| 2026-10-10 07:05 | on185qmj | B | Mist Opportunities | 112 | loss |  | 19 s | 1-12 |
