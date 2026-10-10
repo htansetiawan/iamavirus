@@ -1,22 +1,22 @@
 # Arena v25 watch
 
-Updated 2026-10-10 02:59 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 03:20 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 8W-1D-9L over 18 games** (47%).
-As White: 4.5/9.
-As Black: 4.0/9.
+**Record: 13W-1D-13L over 27 games** (50%).
+As White: 6.5/14.
+As Black: 7.0/13.
 
-Queen lost for less: 10 games (8 to a capturer unseen when we moved, 0 before ply 30); losses with the queen lost: 7 of 9.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 91 plies.
+Queen lost for less: 12 games (9 to a capturer unseen when we moved, 0 before ply 30); losses with the queen lost: 8 of 13.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 89 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline P | 4-0-0 |
+| TA Baseline P | 8-0-2 |
+| Instructors | 1-0-4 |
 | TA Baseline A | 3-1-0 |
 | Decent Chess Bot | 0-0-2 |
 | Strongly Invisible | 1-0-1 |
-| Instructors | 0-0-2 |
 | Mist Opportunities | 0-0-2 |
 | duck | 0-0-2 |
 
@@ -40,3 +40,12 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-10 02:47 | f534l4sm | B | duck | 122 | loss | ply 115 by q unseen | 20 s | 4-17 |
 | 2026-10-10 02:54 | r6geg5k9 | B | TA Baseline A | 53 | win |  | 84 s | 17-16 |
 | 2026-10-10 02:57 | lil6dvd0 | W | TA Baseline A | 93 | draw |  | 44 s | 12-2 |
+| 2026-10-10 03:00 | iu4mtfk0 | B | TA Baseline P | 51 | win |  | 78 s | 23-16 |
+| 2026-10-10 03:00 | gmeigqws | W | TA Baseline P | 53 | loss |  | 81 s | 14-11 |
+| 2026-10-10 03:01 | x9712p6s | B | TA Baseline P | 50 | loss |  | 84 s | 34-29 |
+| 2026-10-10 03:01 | fs5gclsc | W | TA Baseline P | 108 | win |  | 33 s | 12-1 |
+| 2026-10-10 03:07 | 7he7y2og | B | Instructors | 83 | win | ply 57 by r | 52 s | 17-1 |
+| 2026-10-10 03:09 | 297npdcr | W | Instructors | 109 | loss | ply 38 by r unseen | 26 s | 16-14 |
+| 2026-10-10 03:17 | whkdhphz | W | Instructors | 117 | loss |  | 24 s | 3-15 |
+| 2026-10-10 03:18 | 1jnpnnnn | W | TA Baseline P | 96 | win |  | 49 s | 16-3 |
+| 2026-10-10 03:19 | 8ditwdlt | B | TA Baseline P | 101 | win |  | 26 s | 17-3 |
