@@ -1,10 +1,10 @@
 # Arena v25 watch
 
-Updated 2026-10-10 06:25 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 06:45 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 62W-9D-61L over 132 games** (50%).
-As White: 37.0/66.
-As Black: 29.5/66.
+**Record: 64W-9D-61L over 134 games** (51%).
+As White: 38.0/67.
+As Black: 30.5/67.
 
 Queen lost for less: 49 games (40 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 32 of 61.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 19. Mean length 85 plies.
@@ -12,7 +12,7 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 17-3-8 |
+| TA Baseline A | 19-3-8 |
 | TA Baseline S | 10-1-7 |
 | TA Baseline P | 12-0-4 |
 | Mist Opportunities | 4-3-9 |
@@ -159,3 +159,5 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-10 06:22 | 2ijp6h22 | W | TA Baseline P | 78 | win |  | 52 s | 22-1 |
 | 2026-10-10 06:22 | uj9eyk4z | B | TA Baseline P | 86 | loss |  | 30 s | 1-13 |
 | 2026-10-10 06:23 | d4upetvi | W | Instructors | 115 | loss |  | 14 s | 6-11 |
+| 2026-10-10 06:36 | p0sga160 | B | TA Baseline A | 87 | win |  | 45 s | 11-3 |
+| 2026-10-10 06:37 | rgtytb12 | W | TA Baseline A | 118 | win |  | 29 s | 15-1 |
