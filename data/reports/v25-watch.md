@@ -1,21 +1,21 @@
 # Arena v25 watch
 
-Updated 2026-10-10 18:04 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 18:25 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 196W-42D-207L over 445 games** (49%).
-As White: 116.5/223.
-As Black: 100.5/222.
+**Record: 198W-43D-209L over 450 games** (49%).
+As White: 118.0/225.
+As Black: 101.5/225.
 
-Queen lost for less: 145 games (125 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 103 of 207.
+Queen lost for less: 147 games (126 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 104 of 209.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 79. Mean length 85 plies.
 Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 44-10-20 |
-| Mist Opportunities | 6-12-37 |
+| Mist Opportunities | 6-12-38 |
+| TA Baseline S | 26-6-24 |
 | TA Baseline P | 41-4-7 |
-| TA Baseline S | 24-5-23 |
 | Instructors | 11-4-33 |
 | duck | 8-6-34 |
 | Strongly Invisible | 2-0-26 |
@@ -472,3 +472,8 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-10 17:52 | iui6gixj | B | TA Baseline S | 98 | loss | ply 59 by r unseen | 14 s | 4-10 |
 | 2026-10-10 17:53 | qs70v61z | B | TA Baseline A | 126 | loss |  | 14 s | 2-12 |
 | 2026-10-10 18:03 | 10vcyogw | W | Mist Opportunities | 67 | loss | ply 44 by q unseen | 48 s | 3-15 |
+| 2026-10-10 18:04 | eck8p6j3 | B | Mist Opportunities | 86 | loss | ply 79 by n | 44 s | 4-9 |
+| 2026-10-10 18:05 | oy26ta55 | W | TA Baseline S | 66 | draw | ply 22 by r unseen | 67 s | 21-14 |
+| 2026-10-10 18:05 | e7xu9ho9 | B | TA Baseline S | 78 | loss |  | 44 s | 4-8 |
+| 2026-10-10 18:10 | ghh18ibn | W | TA Baseline S | 76 | win |  | 72 s | 31-0 |
+| 2026-10-10 18:11 | 5sto7ybc | B | TA Baseline S | 87 | win |  | 15 s | 7-5 |
