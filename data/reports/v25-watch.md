@@ -1,23 +1,23 @@
 # Arena v25 watch
 
-Updated 2026-10-10 10:11 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 10:31 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 100W-20D-94L over 214 games** (51%).
-As White: 59.5/107.
-As Black: 50.5/107.
+**Record: 105W-20D-98L over 223 games** (52%).
+As White: 62.5/112.
+As Black: 52.5/111.
 
-Queen lost for less: 73 games (63 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 51 of 94.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 30. Mean length 84 plies.
+Queen lost for less: 77 games (66 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 52 of 98.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 31. Mean length 84 plies.
 Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 27-7-10 |
-| TA Baseline P | 22-2-4 |
+| TA Baseline A | 30-7-10 |
+| TA Baseline P | 24-2-4 |
+| duck | 2-3-21 |
 | Mist Opportunities | 4-5-15 |
 | TA Baseline S | 12-2-10 |
 | Instructors | 6-1-15 |
-| duck | 2-3-17 |
 | Strongly Invisible | 1-0-13 |
 | Apricot Squad | 14-0-0 |
 | Knight Vision | 8-0-0 |
@@ -241,3 +241,12 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | 2026-10-10 09:47 | zle0t440 | B | Knight Vision | 35 | win |  | 180 s | 16-15 |
 | 2026-10-10 09:49 | pj89p8tw | W | duck | 73 | loss |  | 34 s | 4-12 |
 | 2026-10-10 09:51 | o753ocbp | B | duck | 112 | loss |  | 27 s | 17-9 |
+| 2026-10-10 10:19 | mhy004bi | B | duck | 94 | loss | ply 27 by b unseen | 14 s | 5-6 |
+| 2026-10-10 10:20 | x5z25kwr | W | duck | 109 | loss |  | 32 s | 4-21 |
+| 2026-10-10 10:24 | vde4q4ur | W | TA Baseline P | 94 | win |  | 39 s | 14-3 |
+| 2026-10-10 10:24 | r8geizz8 | B | TA Baseline P | 145 | win | ply 65 by r unseen | 17 s | 17-0 |
+| 2026-10-10 10:27 | oma3qd0l | W | duck | 75 | loss |  | 55 s | 5-17 |
+| 2026-10-10 10:27 | kxgc8rva | B | duck | 68 | loss |  | 52 s | 13-19 |
+| 2026-10-10 10:30 | z5z7djnw | B | TA Baseline A | 81 | win | ply 71 by b unseen | 50 s | 18-2 |
+| 2026-10-10 10:30 | cjbd81l1 | W | TA Baseline A | 90 | win | ply 44 by n | 47 s | 19-2 |
+| 2026-10-10 10:30 | zaup8qph | W | TA Baseline A | 54 | win |  | 86 s | 24-15 |
