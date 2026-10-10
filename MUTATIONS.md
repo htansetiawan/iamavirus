@@ -13,7 +13,7 @@ Each **mutation** is one heritable change (a *gene*): an engine option, a networ
   - **shelved**: tested, no gain;
   - **extinct**: replaced.
 
-Arena records are computed from our replays (`data/raw`), last updated 2026-10-10 00:05 UTC. Classes: **TA** = TA Baselines P/A/S, **top six** = Greek Gift, Knight Vision, Decent Chess Bot, Strongly Invisible, duck, Instructors, **rest** = everyone else (Apricot, baseline.py, Mist, ...). Scores are points per game. The upload-by-upload detail stays in [`fable-submissions/README.md`](fable-submissions/README.md); the design notes are in [`versions/`](versions/).
+Arena records are computed from our replays (`data/raw`), last updated 2026-10-10 00:25 UTC. Classes: **TA** = TA Baselines P/A/S, **top six** = Greek Gift, Knight Vision, Decent Chess Bot, Strongly Invisible, duck, Instructors, **rest** = everyone else (Apricot, baseline.py, Mist, ...). Scores are points per game. The upload-by-upload detail stays in [`fable-submissions/README.md`](fable-submissions/README.md); the design notes are in [`versions/`](versions/).
 
 ## Lineage
 
@@ -37,11 +37,12 @@ flowchart TD
   v20 --> v21[v21 = v20 bytes again]
   v20 --> v22[v22 RL network rl240]
   v20 --> v23[v23 king-only belief fusion]
-  v23 --> v24[v24 candidate: Knight Vision replay book]
+  v23 --> v24[v24 Knight Vision replay book]
   classDef alive fill:#2e7d32,color:#fff;
   classDef cand fill:#f9a825,color:#000;
   class v23 alive;
   class v24 cand;
+  %% v24 uploaded 00:20 UTC; it turns green when the arena activates it
 ```
 
 ## Arena variants
@@ -69,11 +70,12 @@ flowchart TD
 | 20 | v19 | **RL policy as the matrix-game prior**, 100 cp per nat | `iamavirus-v20-hybrid.zip` (`fb7449edded5`) | 140 | 61-10-69 | 0.471 | 0.57/60 | 0.13/56 | 1.00/24 | extinct |
 | 21 | v20 | the same bytes, uploaded again | `iamavirus-v20-hybrid.zip` (`fb7449edded5`) | 222 | 85-21-116 | 0.430 | 0.60/102 | 0.08/82 | 0.74/38 | extinct |
 | 22 | v20 | RL network after 240 iterations | `iamavirus-v22-hybrid.zip` (`522f1d99d0f5`) | 24 | 16-5-3 | 0.771 | 0.75/12 | 0.50/2 | 0.85/10 | extinct (dormant bytes) |
-| **23** | v20 | **king-only belief fusion** (network belief reweights the enemy-king squares of the particles) | `iamavirus-v23-hybrid.zip` (`384d51dd0730`) | 12 | 4-0-8 | 0.333 | — | 0.25/8 | 0.50/4 | **alive** |
+| **23** | v20 | **king-only belief fusion** (network belief reweights the enemy-king squares of the particles) | `iamavirus-v23-hybrid.zip` (`384d51dd0730`) | 24 | 11-1-12 | 0.479 | 0.70/10 | 0.25/8 | 0.42/6 | **alive** until v24 activates |
+| **24** | v23 | **Knight Vision replay book**: the winners' moves of KV v29's recorded losses, played while our view matches (KV v29 is a pure strategy: 1,336 of 1,336 repeated histories answered identically) | `iamavirus-v24-hybrid.zip` (`36d793297602`) | 0 | — | — | — | — | — | uploaded 2026-10-10 00:20 UTC; activation pending |
 
 Notes on the table:
 
-- **v22 vs v23 cannot be compared yet.** v22 met mostly TA baselines and the rest. v23's first 12 games were 8 against the top six and 2 against Mist. On the shared opponents v23 is level with v22 against Instructors (2-0-2 vs 1-0-1), and ahead of v20/v21 there (0.50 vs 0.23).
+- **v22 vs v23 cannot be compared yet.** v22 met mostly TA baselines and the rest. v23's first 12 games were 8 against the top six and 2 against Mist; then it went 6–0 against the TA baselines (0.70 over 10 in all). On the shared opponents v23 is level with v22 against Instructors (2-0-2 vs 1-0-1), and ahead of v20/v21 there (0.50 vs 0.23).
 - **v23 shows its gene at work.** Against the top six, its attacks on the enemy king from unseen squares run at 1.32 per 100 moves, against v20/v21's 0.50.
 
 ## Candidate mutations (local only)
@@ -82,7 +84,7 @@ Local gates are colour-swapped pairs on the course referee, 180+2, two cores per
 
 | mutation | gene (option) | parent | archive / branch | local evidence | fate |
 | --- | --- | --- | --- | --- | --- |
-| **Knight Vision replay book** | `replay.txt` + `FOW_REPLAY`, `FOW_REPLAY_RISK` (0.5) | v23 | `data/candidates/iamavirus-v24-candidate-kvreplay-hybrid.zip` (`36d793297602`); branch `v24-replay` | KV v29 answered 1,336 of 1,336 repeated histories identically. Book: 7,338 views from KV v29's 275 recorded losses; shortest lines 11 plies (as Black) and 22 (as White). End-to-end test against a KV v29 stand-in: pending | candidate |
+| **Knight Vision replay book** | `replay.txt` + `FOW_REPLAY`, `FOW_REPLAY_RISK` (0.5) | v23 | branch `v24-replay` (`f127d8c`) | KV v29 answered 1,336 of 1,336 repeated histories identically. Book: 7,338 views from KV v29's 275 recorded losses; shortest lines 11 plies (as Black) and 22 (as White). Packaged test on the course referee against a KV v29 stand-in: **2 of 2 won** on the recorded lines | **became arena v24** |
 | king fusion + deception | `FOW_BELIEF_FUSION` 1.0, mask 32, `FOW_BAIT_P` 0.3 | v20 | `iamavirus-v22-candidate-kingfusion-deception-hybrid.zip` (`3bc21e465ca6`); branch `v22-kfd` | vs real Misty 2-1-5 (v20: 1-2-5) | dormant |
 | deception (hidden-cover bait) | `FOW_BAIT_P` 0.3 | v20 | branch `deception` | vs Mist replica 10-0-0; vs v20 1-5-3; vs TA-P replica 9-1-0 | shelved (only pays against Mist-like play, and the bot cannot tell who it faces) |
 | queen fog charge | `FOW_FOG_QUEEN` 1.0 | v20 | `iamavirus-v22-candidate-queenfog-hybrid.zip` (`7f96c024fc7a`); branch `v22-candidate` | vs v20 11-11-8 (0.55 over 30); queen given away 48% → 39% on the fatal corpus; duck replica 15-5-4 vs v20's 16-5-3 | shelved |
