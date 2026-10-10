@@ -1,22 +1,22 @@
 # Arena v25 watch
 
-Updated 2026-10-10 15:40 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 16:01 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 162W-37D-171L over 370 games** (49%).
-As White: 94.5/185.
-As Black: 86.0/185.
+**Record: 168W-37D-175L over 380 games** (49%).
+As White: 97.5/190.
+As Black: 89.0/190.
 
-Queen lost for less: 127 games (110 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 86 of 171.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 67. Mean length 86 plies.
+Queen lost for less: 128 games (110 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 87 of 175.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 69. Mean length 87 plies.
 Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 37-10-17 |
-| Instructors | 10-4-30 |
-| TA Baseline P | 35-3-4 |
-| TA Baseline S | 21-5-16 |
-| Mist Opportunities | 5-10-25 |
+| TA Baseline P | 39-3-4 |
+| Instructors | 10-4-32 |
+| TA Baseline S | 22-5-17 |
+| Mist Opportunities | 6-10-26 |
 | duck | 6-4-28 |
 | Strongly Invisible | 2-0-24 |
 | Apricot Squad | 20-0-0 |
@@ -397,3 +397,13 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | 2026-10-10 15:32 | ina50sic | W | duck | 116 | win | ply 32 by r | 14 s | 15-1 |
 | 2026-10-10 15:35 | szrs9cth | B | Apricot Squad | 33 | win |  | 113 s | 38-18 |
 | 2026-10-10 15:37 | mveklb40 | W | Apricot Squad | 48 | win |  | 96 s | 32-18 |
+| 2026-10-10 15:42 | 97i00liy | B | Instructors | 98 | loss | ply 43 by n | 41 s | 9-24 |
+| 2026-10-10 15:42 | vaae4wb4 | W | TA Baseline S | 74 | win |  | 53 s | 18-5 |
+| 2026-10-10 15:42 | kyrc3bjn | B | TA Baseline S | 82 | loss |  | 65 s | 3-18 |
+| 2026-10-10 15:43 | 1lhxp93f | W | Instructors | 109 | loss |  | 14 s | 0-13 |
+| 2026-10-10 15:44 | 0u0y2d97 | B | TA Baseline P | 77 | win |  | 45 s | 10-10 |
+| 2026-10-10 15:45 | x5cb31go | W | TA Baseline P | 76 | win |  | 48 s | 19-10 |
+| 2026-10-10 15:56 | ig9aqq14 | B | Mist Opportunities | 95 | win |  | 17 s | 11-0 |
+| 2026-10-10 15:57 | usst11i6 | W | Mist Opportunities | 127 | loss |  | 14 s | 0-4 |
+| 2026-10-10 15:58 | ganq2xx1 | W | TA Baseline P | 72 | win |  | 55 s | 11-9 |
+| 2026-10-10 15:59 | h4p07zwr | B | TA Baseline P | 91 | win |  | 49 s | 15-1 |
