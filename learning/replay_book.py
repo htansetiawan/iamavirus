@@ -63,6 +63,10 @@ def main(argv=None) -> None:
     ap.add_argument("--output", default="replay.txt")
     ap.add_argument("--max-plies", type=int, default=400)
     ap.add_argument("--check", action="store_true", help="print the determinism measurement and stop")
+    ap.add_argument("--first-move", action="append", default=[], metavar="COLOUR:UCI",
+                    help="keep only lines whose first move for COLOUR (white/black) is UCI, e.g. black:d7d5. In the opening "
+                         "our view cannot tell opponents apart (Black sees none of White's quiet first moves), so a book "
+                         "move there is played against everyone; it must be the move our own book plays anyway.")
     args = ap.parse_args(argv)
     games = load(args.raw, args.team, args.version)
     same, total = determinism(games, args.team)
@@ -77,7 +81,11 @@ def main(argv=None) -> None:
         frames = r["frames"]
         if len(frames) - 1 > args.max_plies:
             continue
-        lines.append((len(frames) - 1, l["id"], "black" if team_white else "white", frames))
+        colour = "black" if team_white else "white"
+        first = frames[1 if colour == "white" else 2]["move"] if len(frames) > 2 else ""
+        if any(rule.split(":")[0] == colour and rule.split(":")[1] != first for rule in args.first_move):
+            continue
+        lines.append((len(frames) - 1, l["id"], colour, frames))
     lines.sort(key=lambda x: (x[0], x[1]))
     entries = {}
     for plies, gid, colour, frames in lines:

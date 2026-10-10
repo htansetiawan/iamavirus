@@ -69,7 +69,7 @@ flowchart TD
 | 21 | v20 | the same bytes, uploaded again | `iamavirus-v20-hybrid.zip` (`fb7449edded5`) | 222 | 85-21-116 | 0.430 | 0.60/102 | 0.08/82 | 0.74/38 | extinct |
 | 22 | v20 | RL network after 240 iterations | `iamavirus-v22-hybrid.zip` (`522f1d99d0f5`) | 24 | 16-5-3 | 0.771 | 0.75/12 | 0.50/2 | 0.85/10 | extinct (dormant bytes) |
 | **23** | v20 | **king-only belief fusion** (network belief reweights the enemy-king squares of the particles) | `iamavirus-v23-hybrid.zip` (`384d51dd0730`) | 27 | 11-2-14 | 0.444 | 0.70/10 | 0.23/11 | 0.42/6 | extinct (replaced by v24 at 00:25 UTC) |
-| **24** | v23 | **Knight Vision replay book**: the winners' moves of KV v29's recorded losses, played while our view matches (KV v29 is a pure strategy: 1,336 of 1,336 repeated histories answered identically) | `iamavirus-v24-hybrid.zip` (`36d793297602`) | 0 | 6 | 4-0-2 | 0.667 | 0.50/4 | 1.00/2 (KV, both replays) | — | **alive** from 2026-10-10 00:25 UTC |
+| **24** | v23 | **Knight Vision replay book**: the winners' moves of KV v29's recorded losses, played while our view matches (KV v29 is a pure strategy: 1,336 of 1,336 repeated histories answered identically) | `iamavirus-v24-hybrid.zip` (`36d793297602`) | 0 | 42 | 13-2-27 | 0.333 | 0.28/9 | KV 8/8; top five 0.15/13 | Mist 0.04/12 | extinct: its Black replay line hijacked our opening against everyone (0/17 as Black without KV); the v23 control is back, the fix is v24b |
 
 Notes on the table:
 
@@ -117,5 +117,7 @@ All genes are environment overrides of `EngineOptions` (`engine.cc`, `Override(.
 2. **Local gates against our own bytes mislead.** The rl240 network lost 1-4-5 to v20 locally, then went 16-5-3 in the arena. Gates against faithful replicas (TA-P) predict better; gates against unfaithful ones (duck) do not.
 3. **Offence genes work; defence is the open wound.** King fusion more than doubled hidden attacks on the enemy king. But every one of v23's 8 losses was our own king taken by a piece we could not see, 7 of them on our own king move (note 030).
 4. **Pure strategies are exploitable.** Knight Vision v29 answers every history identically, so a recorded loss replays as a forced win. Every other top team randomises. That is the course's lesson on mixed strategies, turned into a weapon. **Confirmed in the arena:** v24's first two games against KV v29 were won move for move on the recorded lines (`12j9j4qe`, 11 plies; `da7pinqq`, 22 plies).
+
+5. **A view-keyed book is played against everyone until the view separates opponents.** v24's Knight Vision line as Black (1...e6 2...c5) fired in every game, because Black sees none of White's quiet first moves: 0 of 17 as Black against everyone else. The fix (v24b) only forces moves our own book plays anyway.
 
 Maintenance: add a row when a variant is built or uploaded, and update the arena columns from `data/raw` (the numbers above came from the listings). Every archive name and sha also lives in `fable-submissions/README.md`.
