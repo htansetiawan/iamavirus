@@ -1,21 +1,21 @@
 # Arena v25 watch
 
-Updated 2026-10-10 17:44 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 18:04 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 195W-42D-201L over 438 games** (49%).
-As White: 115.5/219.
-As Black: 100.5/219.
+**Record: 196W-42D-207L over 445 games** (49%).
+As White: 116.5/223.
+As Black: 100.5/222.
 
-Queen lost for less: 141 games (121 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 100 of 201.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 77. Mean length 85 plies.
+Queen lost for less: 145 games (125 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 103 of 207.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 79. Mean length 85 plies.
 Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 43-10-19 |
-| Mist Opportunities | 6-12-36 |
-| TA Baseline P | 41-4-5 |
-| TA Baseline S | 24-5-21 |
+| TA Baseline A | 44-10-20 |
+| Mist Opportunities | 6-12-37 |
+| TA Baseline P | 41-4-7 |
+| TA Baseline S | 24-5-23 |
 | Instructors | 11-4-33 |
 | duck | 8-6-34 |
 | Strongly Invisible | 2-0-26 |
@@ -465,3 +465,10 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-10 17:34 | ny2nrja0 | W | duck | 93 | loss | ply 30 by p unseen | 39 s | 4-18 |
 | 2026-10-10 17:36 | eaa19yy2 | W | baseline.py | 28 | win |  | 131 s | 34-20 |
 | 2026-10-10 17:36 | 3q64r4q6 | B | baseline.py | 35 | win |  | 115 s | 34-20 |
+| 2026-10-10 17:45 | yxqucxro | W | TA Baseline P | 69 | loss |  | 34 s | 8-3 |
+| 2026-10-10 17:45 | hqgwphcj | B | TA Baseline P | 88 | loss | ply 73 by n unseen | 39 s | 4-16 |
+| 2026-10-10 17:50 | sbj9xr67 | W | TA Baseline A | 78 | win | ply 56 by r unseen | 60 s | 14-0 |
+| 2026-10-10 17:51 | fz730d9d | W | TA Baseline S | 75 | loss |  | 23 s | 2-13 |
+| 2026-10-10 17:52 | iui6gixj | B | TA Baseline S | 98 | loss | ply 59 by r unseen | 14 s | 4-10 |
+| 2026-10-10 17:53 | qs70v61z | B | TA Baseline A | 126 | loss |  | 14 s | 2-12 |
+| 2026-10-10 18:03 | 10vcyogw | W | Mist Opportunities | 67 | loss | ply 44 by q unseen | 48 s | 3-15 |
