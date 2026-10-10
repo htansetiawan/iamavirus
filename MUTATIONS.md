@@ -70,7 +70,7 @@ flowchart TD
 | 22 | v20 | RL network after 240 iterations | `iamavirus-v22-hybrid.zip` (`522f1d99d0f5`) | 24 | 16-5-3 | 0.771 | 0.75/12 | 0.50/2 | 0.85/10 | extinct (dormant bytes) |
 | **23** | v20 | **king-only belief fusion** (network belief reweights the enemy-king squares of the particles) | `iamavirus-v23-hybrid.zip` (`384d51dd0730`) | 27 | 11-2-14 | 0.444 | 0.70/10 | 0.23/11 | 0.42/6 | extinct (replaced by v24 at 00:25 UTC) |
 | **24** | v23 | **Knight Vision replay book**: the winners' moves of KV v29's recorded losses, played while our view matches (KV v29 is a pure strategy: 1,336 of 1,336 repeated histories answered identically) | `iamavirus-v24-hybrid.zip` (`36d793297602`) | 0 | 44 | 9-2-33 | 0.227 | 0.28/9 | KV 8/8; top five 0.15/13 | Mist 0.04/12 | extinct: its Black replay line hijacked our opening against everyone (0/17 as Black without KV); the v23 control is back, the fix is arena v25 |
-| **25** | v23 | **safe Knight Vision replay** (v24b): the book forces only our own main first moves (1.d4 / 1...d5); 22-ply White and 35-ply Black KV lines | `iamavirus-v25-hybrid.zip` (`491a65b4e986`) | 0 | — | — | — | — | — | uploaded 2026-10-10 01:54 UTC; activation pending |
+| **25** | v23 | **safe Knight Vision replay** (v24b): the book forces only our own main first moves (1.d4 / 1...d5); 22-ply White and 35-ply Black KV lines | `iamavirus-v25-hybrid.zip` (`491a65b4e986`) | 68 | 32-5-31 | 0.507 | 0.77/28 | KV 2/2; top five 0.18/22 | Mist 0.36/14; rest 2/2 | **alive** (best record so far, 04:30 UTC) |
 
 Notes on the table:
 
