@@ -1,27 +1,27 @@
 # Arena v25 watch
 
-Updated 2026-10-10 22:12 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 22:33 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 235W-48D-249L over 532 games** (49%).
-As White: 138.0/266.
-As Black: 121.0/266.
+**Record: 237W-49D-255L over 541 games** (48%).
+As White: 140.0/270.
+As Black: 121.5/271.
 
-Queen lost for less: 173 games (149 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 123 of 249.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 94. Mean length 84 plies.
-Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 177 games (153 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 127 of 255.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 96. Mean length 84 plies.
+Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 53-11-24 |
-| TA Baseline S | 28-7-27 |
-| Mist Opportunities | 6-13-41 |
+| TA Baseline S | 29-7-28 |
+| Mist Opportunities | 7-13-42 |
 | TA Baseline P | 47-4-7 |
-| Instructors | 12-4-40 |
+| Instructors | 12-5-41 |
 | duck | 9-8-39 |
-| Strongly Invisible | 2-0-32 |
+| Strongly Invisible | 2-0-34 |
 | Apricot Squad | 34-0-0 |
 | Knight Vision | 26-0-2 |
-| Decent Chess Bot | 0-1-19 |
+| Decent Chess Bot | 0-1-20 |
 | baseline.py | 18-0-0 |
 | Greek Gift | 0-0-18 |
 
@@ -559,3 +559,12 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | 2026-10-10 21:23 | 3g5istua | W | Greek Gift | 75 | loss |  | 52 s | 4-12 |
 | 2026-10-10 21:24 | gjpfmn6q | W | Strongly Invisible | 123 | loss | ply 100 by b unseen | 14 s | 2-15 |
 | 2026-10-10 21:27 | dl05wlqw | B | Greek Gift | 152 | loss |  | 14 s | 1-12 |
+| 2026-10-10 22:17 | rsl1v90k | W | Mist Opportunities | 94 | win |  | 44 s | 24-4 |
+| 2026-10-10 22:17 | rel092gy | B | Mist Opportunities | 86 | loss | ply 79 by p unseen | 51 s | 17-26 |
+| 2026-10-10 22:21 | rfmb7qcf | B | Strongly Invisible | 84 | loss | ply 53 by b unseen | 52 s | 6-28 |
+| 2026-10-10 22:24 | 4aph2ssj | W | Strongly Invisible | 135 | loss | ply 132 by q unseen | 15 s | 3-7 |
+| 2026-10-10 22:27 | 5zusryic | W | TA Baseline S | 70 | win |  | 82 s | 23-1 |
+| 2026-10-10 22:28 | 2avylj76 | B | TA Baseline S | 74 | loss | ply 53 by n unseen | 33 s | 5-19 |
+| 2026-10-10 22:28 | ht1mu1id | B | Instructors | 104 | draw |  | 14 s | 9-9 |
+| 2026-10-10 22:28 | y3je2f7z | W | Instructors | 121 | loss |  | 14 s | 1-4 |
+| 2026-10-10 22:32 | venn9ays | B | Decent Chess Bot | 36 | loss |  | 116 s | 30-28 |
