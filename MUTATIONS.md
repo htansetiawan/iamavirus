@@ -68,7 +68,7 @@ flowchart TD
 | 20 | v19 | **RL policy as the matrix-game prior**, 100 cp per nat | `iamavirus-v20-hybrid.zip` (`fb7449edded5`) | 140 | 61-10-69 | 0.471 | 0.57/60 | 0.13/56 | 1.00/24 | extinct |
 | 21 | v20 | the same bytes, uploaded again | `iamavirus-v20-hybrid.zip` (`fb7449edded5`) | 222 | 85-21-116 | 0.430 | 0.60/102 | 0.08/82 | 0.74/38 | extinct |
 | 22 | v20 | RL network after 240 iterations | `iamavirus-v22-hybrid.zip` (`522f1d99d0f5`) | 24 | 16-5-3 | 0.771 | 0.75/12 | 0.50/2 | 0.85/10 | extinct (dormant bytes) |
-| **23** | v20 | **king-only belief fusion** (network belief reweights the enemy-king squares of the particles) | `iamavirus-v23-hybrid.zip` (`384d51dd0730`) | 27 | 11-2-14 | 0.444 | 0.70/10 (first 24) | 0.25/8 (first 24) | 0.42/6 (first 24) | extinct (replaced by v24 at 00:25 UTC) |
+| **23** | v20 | **king-only belief fusion** (network belief reweights the enemy-king squares of the particles) | `iamavirus-v23-hybrid.zip` (`384d51dd0730`) | 27 | 11-2-14 | 0.444 | 0.70/10 | 0.23/11 | 0.42/6 | extinct (replaced by v24 at 00:25 UTC) |
 | **24** | v23 | **Knight Vision replay book**: the winners' moves of KV v29's recorded losses, played while our view matches (KV v29 is a pure strategy: 1,336 of 1,336 repeated histories answered identically) | `iamavirus-v24-hybrid.zip` (`36d793297602`) | 0 | — | — | — | — | — | **alive** from 2026-10-10 00:25 UTC |
 
 Notes on the table:
