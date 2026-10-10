@@ -1,24 +1,26 @@
 # Arena v24 watch
 
-Updated 2026-10-10 01:17 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 01:37 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 6W-1D-16L over 23 games** (28%).
-As White: 5.5/11.
-As Black: 1.0/12.
+**Record: 8W-2D-22L over 32 games** (28%).
+As White: 7.0/16.
+As Black: 2.0/16.
 
-Queen lost for less: 4 games (4 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 16.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 5. Mean length 84 plies.
-Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 7 games (7 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 22.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 7. Mean length 86 plies.
+Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Mist Opportunities | 0-1-6 |
+| Mist Opportunities | 0-1-7 |
 | Strongly Invisible | 1-0-5 |
-| TA Baseline P | 1-0-1 |
+| TA Baseline P | 1-1-2 |
+| Knight Vision | 4-0-0 |
 | TA Baseline A | 1-0-1 |
-| Knight Vision | 2-0-0 |
 | duck | 1-0-1 |
 | Decent Chess Bot | 0-0-2 |
+| TA Baseline S | 0-0-2 |
+| Instructors | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -45,3 +47,12 @@ Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate re
 | 2026-10-10 01:10 | rjzzoq88 | B | Strongly Invisible | 82 | loss |  | 28 s | 4-14 |
 | 2026-10-10 01:13 | qiauv8o7 | W | Strongly Invisible | 162 | win |  | 15 s | 14-7 |
 | 2026-10-10 01:15 | rmlsi1h2 | B | Mist Opportunities | 116 | loss |  | 15 s | 0-11 |
+| 2026-10-10 01:19 | xos8m58y | W | Mist Opportunities | 219 | loss |  | 14 s | 4-25 |
+| 2026-10-10 01:20 | srailjlc | B | TA Baseline S | 84 | loss | ply 73 by q unseen | 41 s | 2-13 |
+| 2026-10-10 01:20 | j2pxqwtd | W | TA Baseline S | 79 | loss |  | 35 s | 1-23 |
+| 2026-10-10 01:21 | ibb0zz53 | B | Knight Vision | 11 | win |  | 180 s | 35-37 |
+| 2026-10-10 01:22 | 8ogubg7q | W | Knight Vision | 22 | win |  | 180 s | 32-21 |
+| 2026-10-10 01:33 | 82p40xqk | W | Instructors | 101 | loss | ply 58 by r unseen | 34 s | 8-21 |
+| 2026-10-10 01:33 | gahtp4il | B | Instructors | 96 | loss |  | 14 s | 2-7 |
+| 2026-10-10 01:35 | vg15o9s3 | B | TA Baseline P | 82 | loss |  | 34 s | 12-18 |
+| 2026-10-10 01:36 | m62jwcn1 | W | TA Baseline P | 112 | draw | ply 58 by r unseen | 17 s | 2-13 |
