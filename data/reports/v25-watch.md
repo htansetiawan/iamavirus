@@ -1,13 +1,13 @@
 # Arena v25 watch
 
-Updated 2026-10-10 21:10 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 22:12 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 234W-47D-242L over 523 games** (49%).
-As White: 137.5/262.
-As Black: 120.0/261.
+**Record: 235W-48D-249L over 532 games** (49%).
+As White: 138.0/266.
+As Black: 121.0/266.
 
-Queen lost for less: 171 games (147 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 121 of 242.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 92. Mean length 84 plies.
+Queen lost for less: 173 games (149 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 123 of 249.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 94. Mean length 84 plies.
 Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -17,13 +17,13 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | Mist Opportunities | 6-13-41 |
 | TA Baseline P | 47-4-7 |
 | Instructors | 12-4-40 |
-| duck | 8-7-38 |
+| duck | 9-8-39 |
+| Strongly Invisible | 2-0-32 |
 | Apricot Squad | 34-0-0 |
-| Strongly Invisible | 2-0-30 |
 | Knight Vision | 26-0-2 |
 | Decent Chess Bot | 0-1-19 |
 | baseline.py | 18-0-0 |
-| Greek Gift | 0-0-14 |
+| Greek Gift | 0-0-18 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -550,3 +550,12 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | 2026-10-10 20:56 | 93l979tv | B | Apricot Squad | 31 | win |  | 132 s | 47-24 |
 | 2026-10-10 20:59 | 700wyaaa | W | Apricot Squad | 76 | win |  | 57 s | 35-1 |
 | 2026-10-10 21:08 | 1thx7r9u | W | duck | 79 | draw |  | 52 s | 17-21 |
+| 2026-10-10 21:10 | e65c5ayc | B | duck | 96 | loss |  | 27 s | 2-10 |
+| 2026-10-10 21:15 | nl7pm9be | W | Greek Gift | 81 | loss | ply 72 by r unseen | 52 s | 7-12 |
+| 2026-10-10 21:16 | 5c46juz6 | B | Greek Gift | 82 | loss |  | 47 s | 3-11 |
+| 2026-10-10 21:16 | feko1vw4 | B | duck | 79 | win |  | 50 s | 20-2 |
+| 2026-10-10 21:17 | n8n5sd4u | W | duck | 89 | draw |  | 33 s | 19-19 |
+| 2026-10-10 21:22 | p6jl4agq | B | Strongly Invisible | 80 | loss |  | 54 s | 15-16 |
+| 2026-10-10 21:23 | 3g5istua | W | Greek Gift | 75 | loss |  | 52 s | 4-12 |
+| 2026-10-10 21:24 | gjpfmn6q | W | Strongly Invisible | 123 | loss | ply 100 by b unseen | 14 s | 2-15 |
+| 2026-10-10 21:27 | dl05wlqw | B | Greek Gift | 152 | loss |  | 14 s | 1-12 |
