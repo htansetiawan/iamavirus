@@ -1,13 +1,13 @@
 # Arena v25 watch
 
-Updated 2026-10-10 09:09 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 09:30 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 92W-19D-88L over 199 games** (51%).
-As White: 55.0/100.
-As Black: 46.5/99.
+**Record: 96W-19D-91L over 206 games** (51%).
+As White: 57.0/103.
+As Black: 48.5/103.
 
-Queen lost for less: 69 games (60 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 48 of 88.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 29. Mean length 85 plies.
+Queen lost for less: 72 games (62 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 50 of 91.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 30. Mean length 84 plies.
 Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -16,10 +16,10 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | TA Baseline P | 20-2-4 |
 | Mist Opportunities | 4-5-15 |
 | TA Baseline S | 12-2-10 |
-| Instructors | 5-0-13 |
-| duck | 2-3-13 |
+| Instructors | 6-0-14 |
+| duck | 2-3-15 |
 | Strongly Invisible | 1-0-13 |
-| Apricot Squad | 11-0-0 |
+| Apricot Squad | 14-0-0 |
 | Decent Chess Bot | 0-0-6 |
 | Knight Vision | 6-0-0 |
 | baseline.py | 4-0-0 |
@@ -226,3 +226,10 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-10 09:05 | 9lgknava | B | TA Baseline P | 74 | draw |  | 50 s | 22-15 |
 | 2026-10-10 09:05 | 2n2nnki9 | W | TA Baseline P | 72 | win |  | 25 s | 11-8 |
 | 2026-10-10 09:08 | pf55bwsb | W | Apricot Squad | 36 | win |  | 110 s | 29-20 |
+| 2026-10-10 09:10 | j8twxkqk | B | Apricot Squad | 43 | win |  | 97 s | 28-17 |
+| 2026-10-10 09:10 | z6xviuoi | B | Apricot Squad | 55 | win |  | 76 s | 34-12 |
+| 2026-10-10 09:12 | qcecswmm | W | Apricot Squad | 50 | win |  | 82 s | 31-21 |
+| 2026-10-10 09:13 | 6xgtmvrt | B | Instructors | 66 | loss | ply 41 by n unseen | 45 s | 9-16 |
+| 2026-10-10 09:14 | y32l71dj | W | Instructors | 92 | win | ply 80 by b unseen | 42 s | 18-6 |
+| 2026-10-10 09:16 | ixyqhm05 | B | duck | 68 | loss | ply 43 by q | 36 s | 5-25 |
+| 2026-10-10 09:19 | dnfowmxu | W | duck | 121 | loss |  | 14 s | 3-25 |
