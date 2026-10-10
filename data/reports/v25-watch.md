@@ -1,21 +1,21 @@
 # Arena v25 watch
 
-Updated 2026-10-10 08:07 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 08:28 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 76W-16D-76L over 168 games** (50%).
-As White: 46.5/84.
-As Black: 37.5/84.
+**Record: 82W-16D-77L over 175 games** (51%).
+As White: 48.5/87.
+As Black: 41.5/88.
 
-Queen lost for less: 62 games (53 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 42 of 76.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 23. Mean length 85 plies.
+Queen lost for less: 63 games (54 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 43 of 77.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 24. Mean length 85 plies.
 Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 21-6-9 |
+| TA Baseline A | 23-6-9 |
+| TA Baseline P | 18-1-4 |
 | Mist Opportunities | 4-4-14 |
-| TA Baseline P | 15-1-4 |
-| TA Baseline S | 10-2-8 |
+| TA Baseline S | 11-2-9 |
 | duck | 2-3-11 |
 | Strongly Invisible | 1-0-13 |
 | Instructors | 3-0-7 |
@@ -195,3 +195,10 @@ Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate re
 | 2026-10-10 08:02 | 5kqx745e | W | Mist Opportunities | 97 | loss | ply 76 by r unseen | 56 s | 5-20 |
 | 2026-10-10 08:05 | imj690y9 | B | Decent Chess Bot | 86 | loss | ply 65 by r unseen | 37 s | 2-11 |
 | 2026-10-10 08:06 | 5ajck9ez | W | Decent Chess Bot | 83 | loss | ply 38 by r unseen | 31 s | 3-13 |
+| 2026-10-10 08:12 | vf3zbpv3 | W | TA Baseline P | 12 | win |  | 178 s | 37-37 |
+| 2026-10-10 08:15 | 2ifi0a97 | B | TA Baseline P | 65 | win |  | 66 s | 18-10 |
+| 2026-10-10 08:21 | xo0c3efq | W | TA Baseline S | 99 | loss | ply 32 by r unseen | 15 s | 5-13 |
+| 2026-10-10 08:23 | m8r31l8x | B | TA Baseline S | 159 | win |  | 33 s | 15-2 |
+| 2026-10-10 08:25 | p19r6i1v | B | TA Baseline P | 53 | win |  | 85 s | 26-8 |
+| 2026-10-10 08:26 | wazrnva7 | B | TA Baseline A | 81 | win |  | 51 s | 22-3 |
+| 2026-10-10 08:27 | 71pam3ps | W | TA Baseline A | 78 | win |  | 52 s | 21-2 |
