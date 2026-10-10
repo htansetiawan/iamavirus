@@ -63,7 +63,7 @@ flowchart TD
 | 15 | v14 | booked moves gated by the king-safety filter (closes the 6-ply Qa4 trap) | `iamavirus-v15-hybrid.zip` (`381451613375`) | 574 | 241-15-318 | 0.433 | 0.45/264 | 0.04/184 | 0.98/126 | extinct |
 | 16 | ? | unknown upload | — | 24 | 8-1-15 | 0.354 | 0.45/10 | 0.00/10 | 1.00/4 | extinct |
 | 17 | v15 | seen-gift charge x3, king sighting 300, 8,192 particles, 16 hypotheses x 16 rows | `iamavirus-v17-hybrid.zip` (`721cc7e9727f`) | 42 | 19-2-21 | 0.476 | 0.44/18 | 0.14/14 | 1.00/10 | extinct |
-| 18 | v17 | **deep RL network** (regularised PPO, 40 iterations) proposes rows *(most likely; unconfirmed)* | `iamavirus-v18-candidate-rl40-hybrid.zip` (`7cafb58b0cc2`) | 84 | 32-4-48 | 0.405 | 0.49/42 | 0.11/32 | 1.00/10 | extinct |
+| 18 | v17 | **deep RL network** (regularised PPO, 40 iterations) proposes rows *(inferred from upload timing)* | `iamavirus-v18-hybrid.zip` (`7cafb58b0cc2`) | 84 | 32-4-48 | 0.405 | 0.49/42 | 0.11/32 | 1.00/10 | extinct |
 | 19 | v17 | RL network after 120 iterations | `iamavirus-v19-hybrid.zip` (`852a902a2f2e`) | 4 | 4-0-0 | 1.00 | 1.00/2 | — | 1.00/2 | extinct |
 | 20 | v19 | **RL policy as the matrix-game prior**, 100 cp per nat | `iamavirus-v20-hybrid.zip` (`fb7449edded5`) | 140 | 61-10-69 | 0.471 | 0.57/60 | 0.13/56 | 1.00/24 | extinct |
 | 21 | v20 | the same bytes, uploaded again | `iamavirus-v20-hybrid.zip` (`fb7449edded5`) | 222 | 85-21-116 | 0.430 | 0.60/102 | 0.08/82 | 0.74/38 | extinct |
