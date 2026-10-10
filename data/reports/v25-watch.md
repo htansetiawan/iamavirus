@@ -1,13 +1,13 @@
 # Arena v25 watch
 
-Updated 2026-10-10 20:09 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 20:29 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 232W-46D-230L over 508 games** (50%).
-As White: 136.0/254.
-As Black: 119.0/254.
+**Record: 232W-46D-236L over 514 games** (50%).
+As White: 136.0/257.
+As Black: 119.0/257.
 
-Queen lost for less: 167 games (145 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 117 of 230.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 87. Mean length 84 plies.
+Queen lost for less: 169 games (145 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 119 of 236.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 89. Mean length 84 plies.
 Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -16,14 +16,14 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | TA Baseline S | 28-7-27 |
 | Mist Opportunities | 6-13-41 |
 | TA Baseline P | 47-4-7 |
-| Instructors | 12-4-38 |
+| Instructors | 12-4-40 |
 | duck | 8-6-38 |
+| Strongly Invisible | 2-0-30 |
 | Apricot Squad | 32-0-0 |
-| Strongly Invisible | 2-0-28 |
 | Knight Vision | 26-0-0 |
 | Decent Chess Bot | 0-1-19 |
 | baseline.py | 18-0-0 |
-| Greek Gift | 0-0-10 |
+| Greek Gift | 0-0-12 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -535,3 +535,9 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | 2026-10-10 20:04 | kpktj142 | W | Mist Opportunities | 77 | loss |  | 48 s | 27-27 |
 | 2026-10-10 20:05 | 0389yf0d | B | Mist Opportunities | 88 | loss | ply 53 by q unseen | 33 s | 14-17 |
 | 2026-10-10 20:05 | i8kfe9fi | B | TA Baseline A | 93 | win | ply 89 by k unseen | 34 s | 8-3 |
+| 2026-10-10 20:11 | lbtuityh | B | Strongly Invisible | 98 | loss | ply 71 by b | 32 s | 2-10 |
+| 2026-10-10 20:14 | xwb6zqhp | W | Strongly Invisible | 123 | loss |  | 14 s | 3-6 |
+| 2026-10-10 20:15 | zxa4uptx | B | Greek Gift | 108 | loss | ply 93 by r | 36 s | 4-18 |
+| 2026-10-10 20:17 | ixzcu1nw | W | Greek Gift | 131 | loss |  | 14 s | 2-15 |
+| 2026-10-10 20:20 | t5j02tyd | B | Instructors | 78 | loss |  | 40 s | 3-17 |
+| 2026-10-10 20:22 | tv8hnm0y | W | Instructors | 79 | loss |  | 19 s | 1-13 |
