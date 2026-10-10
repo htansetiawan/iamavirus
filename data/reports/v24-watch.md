@@ -1,18 +1,19 @@
 # Arena v24 watch
 
-Updated 2026-10-10 00:56 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 01:17 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 5W-1D-9L over 15 games** (37%).
-As White: 4.5/7.
-As Black: 1.0/8.
+**Record: 6W-1D-16L over 23 games** (28%).
+As White: 5.5/11.
+As Black: 1.0/12.
 
-Queen lost for less: 4 games (4 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 9.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 2. Mean length 72 plies.
-Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 4 games (4 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 16.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 5. Mean length 84 plies.
+Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Mist Opportunities | 0-1-4 |
+| Mist Opportunities | 0-1-6 |
+| Strongly Invisible | 1-0-5 |
 | TA Baseline P | 1-0-1 |
 | TA Baseline A | 1-0-1 |
 | Knight Vision | 2-0-0 |
@@ -36,3 +37,11 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-10 00:52 | m17o2k6w | B | Mist Opportunities | 36 | loss | ply 31 by b unseen | 117 s | 15-30 |
 | 2026-10-10 00:54 | kzaf315m | B | Mist Opportunities | 78 | loss | ply 47 by n unseen | 46 s | 11-17 |
 | 2026-10-10 00:55 | cx7y3oyr | B | Decent Chess Bot | 116 | loss |  | 14 s | 3-18 |
+| 2026-10-10 00:57 | hw79t87t | B | Strongly Invisible | 36 | loss |  | 121 s | 22-27 |
+| 2026-10-10 01:01 | j2dpee0u | W | Mist Opportunities | 191 | loss |  | 14 s | 5-6 |
+| 2026-10-10 01:01 | tv79p5y0 | B | Strongly Invisible | 74 | loss |  | 36 s | 4-18 |
+| 2026-10-10 01:01 | kp1pt2qe | W | Strongly Invisible | 77 | loss |  | 41 s | 3-14 |
+| 2026-10-10 01:02 | kzf1y2r9 | W | Strongly Invisible | 117 | loss |  | 14 s | 0-11 |
+| 2026-10-10 01:10 | rjzzoq88 | B | Strongly Invisible | 82 | loss |  | 28 s | 4-14 |
+| 2026-10-10 01:13 | qiauv8o7 | W | Strongly Invisible | 162 | win |  | 15 s | 14-7 |
+| 2026-10-10 01:15 | rmlsi1h2 | B | Mist Opportunities | 116 | loss |  | 15 s | 0-11 |
