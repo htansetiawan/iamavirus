@@ -1,0 +1,197 @@
+{
+  "archive": "fable-submissions/iamavirus-v24-hybrid.zip",
+  "archive_sha256": "36d7932976026875b667c980ef4be3dc0199f736661d0f1b63d17a22c5ffc2b7",
+  "book_sha256": "627b4f3f64aae5bd7e78cca28c9ed0aa734291ac374ba9552a6ce2652aa8d3a5",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "scope": "Exact rules/board/observations/outcomes plus archived book lookup. Matching moves do not expose internal runtime branch telemetry. Two games do not prove universal determinism.",
+  "games": [
+    {
+      "id": "da7pinqq",
+      "source": "https://6s890.lids.mit.edu/api/games/da7pinqq",
+      "replay_sha256": "1aa7cc0c27d469f2e84bab7cc79290dc59ea83eb4268501dba78e076f4dd8cfa",
+      "createdAt": "2026-10-10T00:40:32.206032253+00:00",
+      "our_color": "white",
+      "our_version": 24,
+      "opponent_version": 29,
+      "result": "1-0",
+      "plies": 22,
+      "validated_frames": 23,
+      "book_moves": [
+        {
+          "ply": 1,
+          "played": "d2d4",
+          "book": "d2d4",
+          "matches": true
+        },
+        {
+          "ply": 3,
+          "played": "d4c5",
+          "book": "d4c5",
+          "matches": true
+        },
+        {
+          "ply": 5,
+          "played": "b1c3",
+          "book": "b1c3",
+          "matches": true
+        },
+        {
+          "ply": 7,
+          "played": "c1e3",
+          "book": "c1e3",
+          "matches": true
+        },
+        {
+          "ply": 9,
+          "played": "e3c5",
+          "book": "e3c5",
+          "matches": true
+        },
+        {
+          "ply": 11,
+          "played": "e2e4",
+          "book": "e2e4",
+          "matches": true
+        },
+        {
+          "ply": 13,
+          "played": "g1f3",
+          "book": "g1f3",
+          "matches": true
+        },
+        {
+          "ply": 15,
+          "played": "f3d2",
+          "book": "f3d2",
+          "matches": true
+        },
+        {
+          "ply": 17,
+          "played": "d2b3",
+          "book": "d2b3",
+          "matches": true
+        },
+        {
+          "ply": 19,
+          "played": "b3c5",
+          "book": "b3c5",
+          "matches": true
+        },
+        {
+          "ply": 21,
+          "played": "d1d8",
+          "book": "d1d8",
+          "matches": true
+        }
+      ],
+      "all_our_moves_match_book": true,
+      "total_our_clock_spend_seconds": 0.5426769999999976,
+      "max_our_move_seconds": 0.07567099999999982,
+      "terminal": {
+        "ply": 22,
+        "loser": "black",
+        "move": "b8c6",
+        "piece": "n",
+        "capture": null,
+        "king_capture": false,
+        "king_already_attacked": true,
+        "attackers_before": [
+          {
+            "piece": "Q",
+            "square": "d8",
+            "hidden": true
+          }
+        ],
+        "attackers_after": [
+          {
+            "piece": "Q",
+            "square": "d8",
+            "hidden": true,
+            "stationary_since_ply": 21,
+            "last_visible_while_stationary": null
+          }
+        ],
+        "safe_alternatives": [
+          "f6e8"
+        ],
+        "knight_vision_material_margin": -11
+      }
+    },
+    {
+      "id": "12j9j4qe",
+      "source": "https://6s890.lids.mit.edu/api/games/12j9j4qe",
+      "replay_sha256": "af9951b7d28b78550cdffb4270144ab162c9446d59ff054251038e1c27d42add",
+      "createdAt": "2026-10-10T00:40:26.080896498+00:00",
+      "our_color": "black",
+      "our_version": 24,
+      "opponent_version": 29,
+      "result": "0-1",
+      "plies": 11,
+      "validated_frames": 12,
+      "book_moves": [
+        {
+          "ply": 2,
+          "played": "e7e6",
+          "book": "e7e6",
+          "matches": true
+        },
+        {
+          "ply": 4,
+          "played": "c7c5",
+          "book": "c7c5",
+          "matches": true
+        },
+        {
+          "ply": 6,
+          "played": "f8c5",
+          "book": "f8c5",
+          "matches": true
+        },
+        {
+          "ply": 8,
+          "played": "d8b6",
+          "book": "d8b6",
+          "matches": true
+        },
+        {
+          "ply": 10,
+          "played": "c5f2",
+          "book": "c5f2",
+          "matches": true
+        }
+      ],
+      "all_our_moves_match_book": true,
+      "total_our_clock_spend_seconds": 0.24089000000000738,
+      "max_our_move_seconds": 0.05670100000000389,
+      "terminal": {
+        "ply": 11,
+        "loser": "white",
+        "move": "e1f2",
+        "piece": "K",
+        "capture": "b",
+        "king_capture": true,
+        "king_already_attacked": true,
+        "attackers_before": [
+          {
+            "piece": "b",
+            "square": "f2",
+            "hidden": false
+          }
+        ],
+        "attackers_after": [
+          {
+            "piece": "q",
+            "square": "b6",
+            "hidden": true,
+            "stationary_since_ply": 8,
+            "last_visible_while_stationary": null
+          }
+        ],
+        "safe_alternatives": [
+          "e1e2"
+        ],
+        "knight_vision_material_margin": 2
+      }
+    }
+  ]
+}
