@@ -1,13 +1,13 @@
 # Arena v25 watch
 
-Updated 2026-10-10 12:14 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 12:35 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 125W-28D-125L over 278 games** (50%).
-As White: 73.0/139.
-As Black: 66.0/139.
+**Record: 125W-28D-129L over 282 games** (49%).
+As White: 73.0/141.
+As Black: 66.0/141.
 
-Queen lost for less: 93 games (80 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 63 of 125.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 47. Mean length 85 plies.
+Queen lost for less: 95 games (82 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 65 of 129.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 48. Mean length 85 plies.
 Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -20,8 +20,8 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | TA Baseline S | 13-4-11 |
 | Strongly Invisible | 1-0-15 |
 | Apricot Squad | 16-0-0 |
+| Decent Chess Bot | 0-0-12 |
 | baseline.py | 10-0-0 |
-| Decent Chess Bot | 0-0-8 |
 | Knight Vision | 8-0-0 |
 | Greek Gift | 0-0-6 |
 
@@ -305,3 +305,7 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-10 12:08 | e1rx69b9 | W | TA Baseline S | 97 | loss |  | 14 s | 1-16 |
 | 2026-10-10 12:08 | g6c7c8gi | W | Instructors | 65 | loss |  | 33 s | 12-21 |
 | 2026-10-10 12:10 | gzeqcgr0 | B | Instructors | 94 | loss |  | 14 s | 3-9 |
+| 2026-10-10 12:16 | rnwhscaf | W | Decent Chess Bot | 99 | loss | ply 82 by q unseen | 33 s | 5-6 |
+| 2026-10-10 12:17 | gq256wig | B | Decent Chess Bot | 108 | loss |  | 14 s | 6-7 |
+| 2026-10-10 12:31 | nq1vyhe6 | W | Decent Chess Bot | 77 | loss | ply 50 by b unseen | 48 s | 3-16 |
+| 2026-10-10 12:32 | k277yeg2 | B | Decent Chess Bot | 112 | loss |  | 20 s | 2-8 |
