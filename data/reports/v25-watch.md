@@ -1,27 +1,27 @@
 # Arena v25 watch
 
-Updated 2026-10-10 09:30 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 09:50 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 96W-19D-91L over 206 games** (51%).
-As White: 57.0/103.
-As Black: 48.5/103.
+**Record: 100W-20D-93L over 213 games** (52%).
+As White: 59.5/107.
+As Black: 50.5/106.
 
-Queen lost for less: 72 games (62 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 50 of 91.
+Queen lost for less: 73 games (63 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 51 of 93.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 30. Mean length 84 plies.
-Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 27-7-10 |
-| TA Baseline P | 20-2-4 |
+| TA Baseline P | 22-2-4 |
 | Mist Opportunities | 4-5-15 |
 | TA Baseline S | 12-2-10 |
-| Instructors | 6-0-14 |
-| duck | 2-3-15 |
+| Instructors | 6-1-15 |
+| duck | 2-3-16 |
 | Strongly Invisible | 1-0-13 |
 | Apricot Squad | 14-0-0 |
+| Knight Vision | 8-0-0 |
 | Decent Chess Bot | 0-0-6 |
-| Knight Vision | 6-0-0 |
 | baseline.py | 4-0-0 |
 | Greek Gift | 0-0-4 |
 
@@ -233,3 +233,10 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-10 09:14 | y32l71dj | W | Instructors | 92 | win | ply 80 by b unseen | 42 s | 18-6 |
 | 2026-10-10 09:16 | ixyqhm05 | B | duck | 68 | loss | ply 43 by q | 36 s | 5-25 |
 | 2026-10-10 09:19 | dnfowmxu | W | duck | 121 | loss |  | 14 s | 3-25 |
+| 2026-10-10 09:36 | bpzzpjix | W | Instructors | 106 | draw |  | 16 s | 12-12 |
+| 2026-10-10 09:37 | k0b2r4k3 | B | Instructors | 124 | loss | ply 119 by q unseen | 30 s | 8-12 |
+| 2026-10-10 09:45 | kiqavn1v | W | TA Baseline P | 40 | win |  | 102 s | 27-21 |
+| 2026-10-10 09:46 | djx2vikq | B | TA Baseline P | 53 | win |  | 75 s | 24-23 |
+| 2026-10-10 09:47 | tjvquuy6 | W | Knight Vision | 22 | win |  | 180 s | 32-21 |
+| 2026-10-10 09:47 | zle0t440 | B | Knight Vision | 35 | win |  | 180 s | 16-15 |
+| 2026-10-10 09:49 | pj89p8tw | W | duck | 73 | loss |  | 34 s | 4-12 |
