@@ -1,28 +1,28 @@
 # Arena v25 watch
 
-Updated 2026-10-10 18:46 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 19:06 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 212W-43D-211L over 466 games** (50%).
-As White: 125.0/233.
-As Black: 108.5/233.
+**Record: 216W-43D-215L over 474 games** (50%).
+As White: 127.0/237.
+As Black: 110.5/237.
 
-Queen lost for less: 148 games (127 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 105 of 211.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 79. Mean length 84 plies.
+Queen lost for less: 152 games (131 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 108 of 215.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 80. Mean length 84 plies.
 Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 44-10-20 |
-| TA Baseline S | 28-6-24 |
+| TA Baseline A | 45-10-21 |
+| TA Baseline S | 28-6-26 |
 | TA Baseline P | 45-4-7 |
 | Mist Opportunities | 6-12-38 |
-| Instructors | 11-4-33 |
+| Instructors | 12-4-34 |
 | duck | 8-6-34 |
 | Strongly Invisible | 2-0-28 |
 | Apricot Squad | 30-0-0 |
 | Knight Vision | 22-0-0 |
 | Decent Chess Bot | 0-1-17 |
-| baseline.py | 16-0-0 |
+| baseline.py | 18-0-0 |
 | Greek Gift | 0-0-10 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -493,3 +493,11 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | 2026-10-10 18:41 | 3khkyv25 | B | TA Baseline P | 55 | win |  | 75 s | 22-8 |
 | 2026-10-10 18:41 | vaw2sn80 | W | TA Baseline P | 68 | win |  | 67 s | 20-4 |
 | 2026-10-10 18:43 | 77s4uddk | B | Apricot Squad | 49 | win |  | 91 s | 47-9 |
+| 2026-10-10 18:53 | 4kap27db | W | Instructors | 92 | win |  | 32 s | 13-16 |
+| 2026-10-10 18:53 | ixoghprn | B | TA Baseline S | 90 | loss | ply 55 by r unseen | 26 s | 0-10 |
+| 2026-10-10 18:55 | 14tq8d1g | W | TA Baseline S | 101 | loss | ply 46 by r unseen | 41 s | 2-13 |
+| 2026-10-10 18:55 | dhjyb6q0 | B | Instructors | 154 | loss |  | 14 s | 3-16 |
+| 2026-10-10 18:56 | cy8ehklp | B | baseline.py | 25 | win |  | 128 s | 31-14 |
+| 2026-10-10 18:57 | 2muvoji6 | W | TA Baseline A | 109 | loss | ply 106 by p unseen | 29 s | 3-20 |
+| 2026-10-10 18:57 | 14tkxm0h | B | TA Baseline A | 85 | win | ply 75 by k unseen | 44 s | 7-0 |
+| 2026-10-10 18:57 | j1oswljd | W | baseline.py | 56 | win |  | 62 s | 16-3 |
