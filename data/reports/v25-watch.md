@@ -1,12 +1,12 @@
 # Arena v25 watch
 
-Updated 2026-10-10 09:50 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 10:11 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 100W-20D-93L over 213 games** (52%).
+**Record: 100W-20D-94L over 214 games** (51%).
 As White: 59.5/107.
-As Black: 50.5/106.
+As Black: 50.5/107.
 
-Queen lost for less: 73 games (63 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 51 of 93.
+Queen lost for less: 73 games (63 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 51 of 94.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 30. Mean length 84 plies.
 Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -17,7 +17,7 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | Mist Opportunities | 4-5-15 |
 | TA Baseline S | 12-2-10 |
 | Instructors | 6-1-15 |
-| duck | 2-3-16 |
+| duck | 2-3-17 |
 | Strongly Invisible | 1-0-13 |
 | Apricot Squad | 14-0-0 |
 | Knight Vision | 8-0-0 |
@@ -240,3 +240,4 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | 2026-10-10 09:47 | tjvquuy6 | W | Knight Vision | 22 | win |  | 180 s | 32-21 |
 | 2026-10-10 09:47 | zle0t440 | B | Knight Vision | 35 | win |  | 180 s | 16-15 |
 | 2026-10-10 09:49 | pj89p8tw | W | duck | 73 | loss |  | 34 s | 4-12 |
+| 2026-10-10 09:51 | o753ocbp | B | duck | 112 | loss |  | 27 s | 17-9 |
