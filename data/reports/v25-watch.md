@@ -1,23 +1,23 @@
 # Arena v25 watch
 
-Updated 2026-10-10 12:55 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-10 13:16 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 131W-29D-132L over 292 games** (50%).
-As White: 75.5/146.
-As Black: 70.0/146.
+**Record: 134W-29D-133L over 296 games** (50%).
+As White: 76.5/148.
+As Black: 72.0/148.
 
-Queen lost for less: 99 games (86 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 67 of 132.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 51. Mean length 85 plies.
+Queen lost for less: 101 games (88 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 67 of 133.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 53. Mean length 86 plies.
 Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 35-9-12 |
 | TA Baseline P | 27-3-4 |
+| Instructors | 8-3-23 |
 | Mist Opportunities | 5-7-22 |
-| Instructors | 7-3-22 |
+| TA Baseline S | 18-4-12 |
 | duck | 4-3-25 |
-| TA Baseline S | 16-4-12 |
 | Strongly Invisible | 1-0-17 |
 | Apricot Squad | 18-0-0 |
 | Decent Chess Bot | 0-0-12 |
@@ -319,3 +319,7 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-10 12:49 | s45ub0rk | W | Strongly Invisible | 127 | loss | ply 70 by r unseen | 14 s | 4-15 |
 | 2026-10-10 12:50 | qw5o0q7a | W | TA Baseline S | 94 | win |  | 31 s | 14-8 |
 | 2026-10-10 12:52 | vpj2xid5 | B | TA Baseline S | 127 | win | ply 79 by k unseen | 14 s | 10-1 |
+| 2026-10-10 13:08 | d40ctugo | W | TA Baseline S | 132 | win |  | 30 s | 27-1 |
+| 2026-10-10 13:11 | 508nzcbe | B | TA Baseline S | 169 | win | ply 49 by q unseen | 14 s | 6-1 |
+| 2026-10-10 13:13 | ptl8f2fd | B | Instructors | 95 | win | ply 63 by k unseen | 42 s | 15-2 |
+| 2026-10-10 13:14 | nl99qgca | W | Instructors | 125 | loss |  | 14 s | 3-15 |
