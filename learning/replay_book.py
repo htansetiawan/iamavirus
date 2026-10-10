@@ -63,6 +63,10 @@ def main(argv=None) -> None:
     ap.add_argument("--output", default="replay.txt")
     ap.add_argument("--max-plies", type=int, default=400)
     ap.add_argument("--check", action="store_true", help="print the determinism measurement and stop")
+    ap.add_argument("--book", default=None, help="our opening book (book.txt): keep only lines whose every move at a "
+                    "view the book also covers is one of the book's own alternatives")
+    ap.add_argument("--lines-per-colour", type=int, default=1, help="lines kept per colour (the opponent is deterministic, "
+                    "so one line suffices; every extra line only adds views where the book can fire against someone else)")
     ap.add_argument("--first-move", action="append", default=[], metavar="COLOUR:UCI",
                     help="keep only lines whose first move for COLOUR (white/black) is UCI, e.g. black:d7d5. In the opening "
                          "our view cannot tell opponents apart (Black sees none of White's quiet first moves), so a book "
@@ -87,6 +91,25 @@ def main(argv=None) -> None:
             continue
         lines.append((len(frames) - 1, l["id"], colour, frames))
     lines.sort(key=lambda x: (x[0], x[1]))
+    if args.book:
+        ours = {}
+        for row in open(args.book):
+            parts = row.rstrip("\n").split("|")
+            if len(parts) >= 3:
+                ours[(parts[0], parts[1])] = {a.split(":")[0] for a in parts[2].split(",") if a}
+        def consistent(colour, frames):
+            for k in range(1, len(frames)):
+                if ("white" if frames[k]["ply"] % 2 == 1 else "black") != colour: continue
+                alts = ours.get((colour, frames[k - 1][colour]))
+                if alts is not None and frames[k]["move"] not in alts: return False
+            return True
+        before = len(lines)
+        lines = [x for x in lines if consistent(x[2], x[3])]
+        print(f"  lines consistent with our opening book: {len(lines)} of {before}")
+    kept, per = [], collections.Counter()
+    for x in lines:
+        if per[x[2]] < args.lines_per_colour: kept.append(x); per[x[2]] += 1
+    lines = kept
     entries = {}
     for plies, gid, colour, frames in lines:
         for k in range(1, len(frames)):
