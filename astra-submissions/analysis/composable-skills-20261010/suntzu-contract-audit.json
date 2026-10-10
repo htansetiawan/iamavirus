@@ -1,0 +1,47 @@
+{
+  "pairs_file": "data/suntzu2/pairs-v1.npz",
+  "pairs_sha256": "eb302b40e46e40cf04fc3c4d278c64f521de0438dcdb913f7351dcf7381657a9",
+  "rows": 1115952,
+  "games": 14913,
+  "strategy_test_games": 2982,
+  "strategy_test_seen_in_tokenizer_training": 1491,
+  "strategy_test_unseen_in_tokenizer_training": 1491,
+  "strategy_groups": 27895,
+  "valid_positions_with_maxlen60": 997404,
+  "padded_positions_with_maxlen60": 676296,
+  "padded_fraction": 0.4040724144111848,
+  "terminal_opponent_events_in_strategy_source": 13289,
+  "terminal_events_with_positive_opportunity": 13289,
+  "positive_opportunity_events_in_strategy_source": 79582,
+  "positive_danger_events_in_strategy_source": 67375,
+  "terminal_events_kept_in_first60": 12077,
+  "missing_listings": [],
+  "auc_tie_probe": {
+    "scores": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "labels": [
+      0,
+      0,
+      1,
+      1
+    ],
+    "current_ordinal_auc": 1.0,
+    "correct_tie_aware_auc": 0.5
+  },
+  "source_sha256": {
+    "learning/suntzu2/extract.py": "b11978b049a76520673bbab7890fbdf330cf101e79b9e5aac88b2748d109eae6",
+    "learning/suntzu2/tokenizer.py": "c48410791295ff7d854d091862b478e0c03329a32368e6283c9d808c3f928153",
+    "learning/suntzu2/strategy.py": "459fb5e40cb0279bb9606d7db571fce81c80e18764a1ef7d64bc43c90203de96"
+  },
+  "interpretation": [
+    "Overlapping unsupervised tokenizer training makes the downstream split transductive; it is not a fully held-out pipeline test.",
+    "RVQ.forward currently computes MSE over padded positions; supervised heads alone use the valid mask.",
+    "Terminal rows are valid for retrospective representation learning, but must be excluded from future-opportunity evaluation at actionable decision states.",
+    "The current rank AUC does not average tied ranks. Quantized scores can tie often.",
+    "Two RVQ residual books at one timescale do not by themselves implement a move/sequence/strategy control hierarchy."
+  ]
+}

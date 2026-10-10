@@ -1,0 +1,1057 @@
+{
+  "schema_version": 1,
+  "status": "human-reviewed probe annotations, not a learned codebook or complete training corpus",
+  "scope": "Player-independent relationships; exact coordinates are example bindings, not pattern definitions. Runtime hidden relations must be marginalized over causal belief.",
+  "patterns": [
+    {
+      "id": "concealed_pin_release",
+      "roles": [
+        "our_slider",
+        "enemy_blocker",
+        "enemy_king",
+        "optional_bait"
+      ],
+      "relations": [
+        "slider, blocker and king lie on one ray",
+        "blocker is the only occupied square between slider and king",
+        "slider is concealed from the defender"
+      ],
+      "composition": [
+        "locate_target",
+        "preserve_concealment",
+        "align_ray",
+        "induce_blocker_move",
+        "observe_and_replan"
+      ],
+      "on_decline": [
+        "maintain_pin",
+        "develop_another_attack",
+        "switch_plan"
+      ],
+      "examples": [
+        "78owlz0l",
+        "abwr9sih",
+        "8dxevoco",
+        "snhhclno"
+      ]
+    },
+    {
+      "id": "concealed_check",
+      "roles": [
+        "our_attacker",
+        "enemy_king"
+      ],
+      "relations": [
+        "our move attacks likely king square",
+        "attacker is concealed from defender"
+      ],
+      "composition": [
+        "locate_target",
+        "preserve_concealment",
+        "create_threat",
+        "observe_and_replan"
+      ],
+      "on_decline": [
+        "cover_escape",
+        "retain_useful_placement",
+        "switch_plan"
+      ],
+      "examples": [
+        "bna3uywf",
+        "1juiieje"
+      ]
+    },
+    {
+      "id": "covered_capture_offer",
+      "roles": [
+        "bait_piece",
+        "hidden_cover",
+        "enemy_capturer"
+      ],
+      "relations": [
+        "enemy can capture offered piece",
+        "capture destination remains covered by our concealed piece"
+      ],
+      "composition": [
+        "locate_target",
+        "preserve_concealment",
+        "establish_cover",
+        "offer_capture",
+        "observe_and_replan"
+      ],
+      "on_decline": [
+        "retain_cover",
+        "recover_bait",
+        "switch_plan"
+      ],
+      "examples": [
+        "s09udc3w",
+        "a42albev"
+      ]
+    },
+    {
+      "id": "covered_escape",
+      "roles": [
+        "our_hidden_attacker",
+        "enemy_king",
+        "escape_region"
+      ],
+      "relations": [
+        "likely enemy escape destinations remain attacked",
+        "attackers are concealed in defender observation"
+      ],
+      "composition": [
+        "locate_target",
+        "preserve_concealment",
+        "create_threat",
+        "cover_escape",
+        "observe_and_replan"
+      ],
+      "on_decline": [
+        "update_king_belief",
+        "reposition_attacker",
+        "switch_plan"
+      ],
+      "examples": [
+        "3ahocdlr"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "game_id": "78owlz0l",
+      "probe_pattern": "concealed_pin_release",
+      "actor_color": "black",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 2,
+            "own_observation": "????????????????????????????????----------------pppppppprnbqkbnr",
+            "own_move": "g8f6"
+          },
+          {
+            "ply": 4,
+            "own_observation": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r",
+            "own_move": "c7c5"
+          },
+          {
+            "ply": 6,
+            "own_observation": "??????????????????????????-?-?-?--pP-?-------n--pp-ppppprnbqkb-r",
+            "own_move": "d8a5"
+          }
+        ],
+        "current_observation": "????????P???????-?N?????---?P?-?q-pP-?-------n--pp-ppppprnb-kb-r",
+        "current_ply": 8
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "c3e4",
+        "counterfactual_safe_replies": [
+          "g1h3",
+          "g1f3",
+          "g1e2",
+          "f1a6",
+          "f1b5",
+          "f1c4",
+          "f1d3",
+          "f1e2",
+          "e1e2",
+          "d1h5",
+          "d1g4",
+          "d1d4",
+          "d1f3",
+          "d1d3",
+          "d1e2",
+          "d1d2",
+          "c1h6",
+          "c1g5",
+          "c1f4",
+          "c1e3",
+          "c1d2",
+          "a1b1",
+          "d5d6",
+          "h2h3",
+          "g2g3",
+          "f2f3",
+          "b2b3",
+          "a2a3",
+          "h2h4",
+          "g2g4",
+          "f2f4",
+          "b2b4",
+          "a2a4"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "q",
+            "square": "a5",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "f6e4"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "be157a22b00fc0dc2d2d6016aeaac405443c3630946eaacd7698c0f5b51f444b"
+      }
+    },
+    {
+      "game_id": "abwr9sih",
+      "probe_pattern": "concealed_pin_release",
+      "actor_color": "black",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 2,
+            "own_observation": "????????????????????????????????----------------pppppppprnbqkbnr",
+            "own_move": "g8f6"
+          },
+          {
+            "ply": 4,
+            "own_observation": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r",
+            "own_move": "c7c5"
+          },
+          {
+            "ply": 6,
+            "own_observation": "??????????????????????????-?-?-?--pP-?-------n--pp-ppppprnbqkb-r",
+            "own_move": "d8a5"
+          }
+        ],
+        "current_observation": "????????P???????-?N?????---?P?-?q-pP-?-------n--pp-ppppprnb-kb-r",
+        "current_ply": 8
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "c3e4",
+        "counterfactual_safe_replies": [
+          "g1h3",
+          "g1f3",
+          "g1e2",
+          "f1a6",
+          "f1b5",
+          "f1c4",
+          "f1d3",
+          "f1e2",
+          "e1e2",
+          "d1h5",
+          "d1g4",
+          "d1d4",
+          "d1f3",
+          "d1d3",
+          "d1e2",
+          "d1d2",
+          "c1h6",
+          "c1g5",
+          "c1f4",
+          "c1e3",
+          "c1d2",
+          "a1b1",
+          "d5d6",
+          "h2h3",
+          "g2g3",
+          "f2f3",
+          "b2b3",
+          "a2a3",
+          "h2h4",
+          "g2g4",
+          "f2f4",
+          "b2b4",
+          "a2a4"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "q",
+            "square": "a5",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "f6e4"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "b63d3263a0e43f4c13c9f84791aaa39f15c0eb1a4f7fe360b7cb243a04707b74"
+      }
+    },
+    {
+      "game_id": "8dxevoco",
+      "probe_pattern": "concealed_pin_release",
+      "actor_color": "white",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 1,
+            "own_observation": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+            "own_move": "c2c4"
+          },
+          {
+            "ply": 3,
+            "own_observation": "RNBQKBNRPP-PPPPP----------P-----??-?????????????????????????????",
+            "own_move": "d1a4"
+          }
+        ],
+        "current_observation": "RNB-KBNRPP-PPPPP--------Q-P--------p????-?p?????p???????????????",
+        "current_ply": 5
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "c6d5",
+        "counterfactual_safe_replies": [
+          "g8h6",
+          "g8f6",
+          "e8d7",
+          "d8d7",
+          "d8c7",
+          "d8d6",
+          "d8b6",
+          "d8d5",
+          "d8a5",
+          "c8d7",
+          "c8e6",
+          "c8f5",
+          "c8g4",
+          "c8h3",
+          "b8d7",
+          "b8a6",
+          "h7h6",
+          "g7g6",
+          "f7f6",
+          "e7e6",
+          "b7b6",
+          "a7a6",
+          "h7h5",
+          "g7g5",
+          "f7f5",
+          "e7e5",
+          "b7b5",
+          "a7a5"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "Q",
+            "square": "a4",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "c4d5"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "42abeadb89ad8c0dc1f67a28258420a719db60e4b169f04c2f5f3b0b66c46c54"
+      }
+    },
+    {
+      "game_id": "snhhclno",
+      "probe_pattern": "concealed_pin_release",
+      "actor_color": "white",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 1,
+            "own_observation": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+            "own_move": "c2c4"
+          }
+        ],
+        "current_observation": "RNBQKBNRPP-PPPPP----------P-----??-?????????????????????????????",
+        "current_ply": 3
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "d7d5",
+        "counterfactual_safe_replies": [
+          "g8e7",
+          "g8h6",
+          "g8f6",
+          "f8e7",
+          "f8d6",
+          "f8c5",
+          "f8b4",
+          "f8a3",
+          "e8e7",
+          "d8e7",
+          "d8f6",
+          "d8g5",
+          "d8h4",
+          "b8c6",
+          "b8a6",
+          "h7h6",
+          "g7g6",
+          "f7f6",
+          "c7c6",
+          "b7b6",
+          "a7a6",
+          "e6e5",
+          "h7h5",
+          "g7g5",
+          "f7f5",
+          "c7c5",
+          "b7b5",
+          "a7a5"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "Q",
+            "square": "a4",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "d1a4"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "c96877238bc2d4972078a0e5651c1a205e957739024f8b4fa0dfd996a60c40ad"
+      }
+    },
+    {
+      "game_id": "bna3uywf",
+      "probe_pattern": "concealed_check",
+      "actor_color": "white",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 1,
+            "own_observation": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+            "own_move": "d2d4"
+          },
+          {
+            "ply": 3,
+            "own_observation": "RNBQKBNRPPP-PPPP-----------P----??????-????????-????????????????",
+            "own_move": "c2c3"
+          }
+        ],
+        "current_observation": "RNBQKBNRPP--PPPP--P--------P----??????-????????-????????????????",
+        "current_ply": 5
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "c7c5",
+        "counterfactual_safe_replies": [
+          "d8d7",
+          "c8d7",
+          "b8d7",
+          "b8c6",
+          "f6d7",
+          "c7c6",
+          "b7b5"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "Q",
+            "square": "a4",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "d1a4"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "7319edbe2ad7d758459e7e1a7c5ce8caca3b2e35047b95dc3bc466ee74288e29"
+      }
+    },
+    {
+      "game_id": "1juiieje",
+      "probe_pattern": "concealed_check",
+      "actor_color": "black",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 2,
+            "own_observation": "????????????????????????????????----------------pppppppprnbqkbnr",
+            "own_move": "c7c5"
+          },
+          {
+            "ply": 4,
+            "own_observation": "????????????????????????????????--p-------------pp-ppppprnbqkbnr",
+            "own_move": "d8c7"
+          },
+          {
+            "ply": 6,
+            "own_observation": "???????????????P??????-??????-??--p-------------ppqppppprnb-kbnr",
+            "own_move": "e7e6"
+          },
+          {
+            "ply": 8,
+            "own_observation": "???????????????P??????-????P?-??--p---------p---ppqp-ppprnb-kbnr",
+            "own_move": "c5d4"
+          },
+          {
+            "ply": 10,
+            "own_observation": "???????????????P-?????-??-P??-??------------p---ppqp-ppprnb-kbnr",
+            "own_move": "g8e7"
+          }
+        ],
+        "current_observation": "???????????????P??????-???P??-??---P--------p---ppqpnppprnb-kb-r",
+        "current_ply": 12
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "g1f3",
+        "counterfactual_safe_replies": [
+          "c3e4",
+          "c3e2",
+          "g1e2",
+          "f1e2",
+          "e1d2",
+          "d1e2",
+          "c1e3"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "q",
+            "square": "e5",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "c7e5"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "b6df4e23901a6aaa13083519b5c1db77d7f3477d0164b4f227f2a46e2d573997"
+      }
+    },
+    {
+      "game_id": "s09udc3w",
+      "probe_pattern": "covered_capture_offer",
+      "actor_color": "white",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 1,
+            "own_observation": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+            "own_move": "d2d4"
+          },
+          {
+            "ply": 3,
+            "own_observation": "RNBQKBNRPPP-PPPP-----------P----??????-????????-????????????????",
+            "own_move": "c2c4"
+          },
+          {
+            "ply": 5,
+            "own_observation": "RNBQKBNRPP--PPPP----------PP----??-p??-????????-????????????????",
+            "own_move": "b1c3"
+          },
+          {
+            "ply": 7,
+            "own_observation": "R-BQKBNRPP--PPPP--N-------PP----?--p??-????????-????????????????",
+            "own_move": "c4d5"
+          },
+          {
+            "ply": 9,
+            "own_observation": "R-BQKBNRPP--PPPP--N-------?P----?-?p??-????????-????????????????",
+            "own_move": "c1f4"
+          },
+          {
+            "ply": 11,
+            "own_observation": "R--QKBNRPP--PPPP--N-------?P-B--?-?p-?-????-???-??p?????????????",
+            "own_move": "e2e3"
+          },
+          {
+            "ply": 13,
+            "own_observation": "R--QKBNRPP---PPP--N-P------P-B--?-?p-?---??b???-????????????????",
+            "own_move": "g1f3"
+          },
+          {
+            "ply": 15,
+            "own_observation": "R--QKB-RPP---PPP--N-PN-----P-B--?-?p-?-?-??b???-????????????????",
+            "own_move": "f1b5"
+          },
+          {
+            "ply": 17,
+            "own_observation": "R--QK--RPP---PPP--N-PN---?-P-B--?B?p-?-?-?n-???-??p?????????????",
+            "own_move": "e1g1"
+          },
+          {
+            "ply": 19,
+            "own_observation": "R--Q-RK-PP---PPP--N-PN---?-P-B--?B?p-?-?-?n-???-??p?????????????",
+            "own_move": "a2a3"
+          },
+          {
+            "ply": 21,
+            "own_observation": "R--Q-RK--P---PPPP-N-PN-----P-B--?B?p-?-?-?nb???-????????????????",
+            "own_move": "a1c1"
+          },
+          {
+            "ply": 23,
+            "own_observation": "--RQ-RK--P---PPPP-N-PN-----P-B--?B?p-?-?-?nb???-????????????????",
+            "own_move": "c3e2"
+          },
+          {
+            "ply": 25,
+            "own_observation": "--RQ-RK-?P--NPPPP---PN-----P-B--?B-?-?-?-?nb???-????????????????",
+            "own_move": "b5c6"
+          },
+          {
+            "ply": 27,
+            "own_observation": "--RQ-RK-?P--NPPPP---PN-----P-B--??-?-?-???pb???-????????????????",
+            "own_move": "b2b4"
+          },
+          {
+            "ply": 29,
+            "own_observation": "--RQ-RK-??--NPPPP---PN---P-P-B--?--?-?-???pb???-????????????????",
+            "own_move": "h2h3"
+          },
+          {
+            "ply": 31,
+            "own_observation": "--RQ-RK-??--NPP-P---PN-P-P-P-B--?--?-?-???pb???-????????????????",
+            "own_move": "f4h2"
+          },
+          {
+            "ply": 33,
+            "own_observation": "--RQ-RK-??--NPPBP---PN-P-P-P----?--?-?-???pb????????????????????",
+            "own_move": "g1h1"
+          },
+          {
+            "ply": 35,
+            "own_observation": "--RQ-R-K??--NPPBP---PN-P-P-P----?--?-?-???pb????????????????????",
+            "own_move": "f1g1"
+          },
+          {
+            "ply": 37,
+            "own_observation": "--RQ--RK??--NPPBP---PN-P-P-P----?--?-?-???pb????????????????????",
+            "own_move": "d1f1"
+          },
+          {
+            "ply": 39,
+            "own_observation": "--R--QRK??--NPPbP?-?PN-P-P-P----?--?-?-???p?????????????????????",
+            "own_move": "f3h2"
+          },
+          {
+            "ply": 41,
+            "own_observation": "--R--QRK??-?NPPNP?-?P--P-PbP----?-??????????????????????????????",
+            "own_move": "h2f3"
+          },
+          {
+            "ply": 43,
+            "own_observation": "--R--QRK??--NPP-P?-?PN-P-PbP----?-??-?-?????????????????????????",
+            "own_move": "f1e1"
+          },
+          {
+            "ply": 45,
+            "own_observation": "--R-Q-RK??--bPP-P?-?PN-P-P-P-?--?--?-?-???p?????????????????????",
+            "own_move": "e1e2"
+          },
+          {
+            "ply": 47,
+            "own_observation": "--R---RK----QPP-P?--PN-P-P-P-?--?--?-?-?-?p?????????????????????",
+            "own_move": "e2e1"
+          },
+          {
+            "ply": 49,
+            "own_observation": "--R-Q-RK??---PP-P?-?PN-P-P-P-?--?--?-?-???p?????????????????????",
+            "own_move": "a3a4"
+          },
+          {
+            "ply": 51,
+            "own_observation": "--R-Q-RK??---PP-??-?PN-PPP-P-?-----?-?-???p?????????????????????",
+            "own_move": "a4a5"
+          },
+          {
+            "ply": 53,
+            "own_observation": "--R-Q-RK??---PP-??-?PN-P?P-P-?--P--?-?-?-?p?????????????????????",
+            "own_move": "a5a6"
+          },
+          {
+            "ply": 55,
+            "own_observation": "--R-Q-RK??---PP-??-?PN-P?P-P-?--?--?-?-?P?p?????????????????????",
+            "own_move": "c1b1"
+          },
+          {
+            "ply": 57,
+            "own_observation": "-R--Q-RK?-?--PP-?--?PN-P?r?P-?--????-?-?P???????????????????????",
+            "own_move": "e1b4"
+          },
+          {
+            "ply": 59,
+            "own_observation": "-R----RK?-?-?PP----?PN-P-Q-P-?-----?-?-?P-?-?????-??-????-???q??",
+            "own_move": "b4b7"
+          },
+          {
+            "ply": 61,
+            "own_observation": "-R----RK?-?-?PP-?-??PN-P?-?P-p--?-??-?-?P-p?????pQp?????---?????",
+            "own_move": "b7a7"
+          },
+          {
+            "ply": 63,
+            "own_observation": "-R----RK?-?-?PP-?-??pN-P?-?P??--?--?-?-?P-??????Q-p?????--??????",
+            "own_move": "f2e3"
+          },
+          {
+            "ply": 65,
+            "own_observation": "-R----RK?-????P-?-??Pr-P?-?P-?--?--?????P-??????Q-p?????--??????",
+            "own_move": "e3e4"
+          },
+          {
+            "ply": 67,
+            "own_observation": "-R----RK?-????P-?-????-r?-?PP?-??--p-???P-??????Q-p?????--??????",
+            "own_move": "g2h3"
+          },
+          {
+            "ply": 69,
+            "own_observation": "-R----RK?-????--?-????-P?-?PP?--?--p-?-?P-????n?Q-p?????--??????",
+            "own_move": "h1h2"
+          },
+          {
+            "ply": 71,
+            "own_observation": "-R----R-?-????-K?-????qP?-?PP??-?--p-???P-??????Q-p?????--??????",
+            "own_move": "g1g3"
+          },
+          {
+            "ply": 73,
+            "own_observation": "-R------?-????-K------RP?-?PP?--?--p-?-?P-????n?Q-p?????--??????",
+            "own_move": "b1g1"
+          }
+        ],
+        "current_observation": "------R-??????-K------RP???PP?--??-p-?-?P-????n?Q-p?????--??????",
+        "current_ply": 75
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "h7g6",
+        "counterfactual_safe_replies": [
+          "h7h8",
+          "h7g8",
+          "d5e4",
+          "c6c5",
+          "h5h4"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "R",
+            "square": "g1",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "g3g6"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "41ab1bc9f5467bea8cf63ef204a07610d0319f93443dfbb029c5fa224bd3c0d8"
+      }
+    },
+    {
+      "game_id": "a42albev",
+      "probe_pattern": "covered_capture_offer",
+      "actor_color": "black",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 2,
+            "own_observation": "????????????????????????????????----------------pppppppprnbqkbnr",
+            "own_move": "d7d5"
+          },
+          {
+            "ply": 4,
+            "own_observation": "???????????????????????-??P-??-?---p------------ppp-pppprnbqkbnr",
+            "own_move": "c8d7"
+          },
+          {
+            "ply": 6,
+            "own_observation": "???????????????????????--?????-?---?-------?----pppbpppprn-qkbnr",
+            "own_move": "c7c6"
+          },
+          {
+            "ply": 8,
+            "own_observation": "???????????????????????-??????-?--??------P?----pp-bpppprn-qkbnr",
+            "own_move": "b8c6"
+          },
+          {
+            "ply": 10,
+            "own_observation": "???????????????????????-?-?P??-?--??------n?----pp-bppppr--qkbnr",
+            "own_move": "e7e5"
+          },
+          {
+            "ply": 12,
+            "own_observation": "????????????????-??????-?-?--?-----?p-----n-----pp-b-pppr--qkbnr",
+            "own_move": "c6d4"
+          },
+          {
+            "ply": 14,
+            "own_observation": "??????????-?-???--???N?---?n??-----?p-----------pp-b-pppr--qkbnr",
+            "own_move": "g8f6"
+          },
+          {
+            "ply": 16,
+            "own_observation": "??????????-?-???--???N?---?nP?-?---Pp--------n--pp-b-pppr--qkb-r",
+            "own_move": "f8c5"
+          },
+          {
+            "ply": 18,
+            "own_observation": "??????????-?-???--???N?---?nP?-?--bPp--------n--pp-b-pppr--qk--r",
+            "own_move": "f6g4"
+          },
+          {
+            "ply": 20,
+            "own_observation": "??????????-?BP?P--??-N??--?n??n---b?p-----------pp-b-pppr--qk--r",
+            "own_move": "d4f3"
+          }
+        ],
+        "current_observation": "?????????????P?P-???-???--?-??n---b?p-----------pp-b-pppr--qk--r",
+        "current_ply": 22
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "e1f2",
+        "counterfactual_safe_replies": [
+          "f3h5",
+          "f3g4",
+          "f3e2",
+          "c3b5",
+          "c3a4",
+          "c3e2",
+          "c3b1",
+          "d2h6",
+          "d2g5",
+          "d2f4",
+          "d2e3",
+          "d2c1",
+          "h1g1",
+          "h1f1",
+          "e1e2",
+          "e1f1",
+          "d1a4",
+          "d1b3",
+          "d1e2",
+          "d1c2",
+          "d1c1",
+          "d1b1",
+          "a1c1",
+          "a1b1",
+          "e1g1",
+          "d5d6",
+          "h2h3",
+          "g2g3",
+          "b2b3",
+          "a2a3",
+          "h2h4",
+          "g2g4",
+          "b2b4",
+          "a2a4"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "b",
+            "square": "c5",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "g4f2"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "3932839929dd165cb996791c42dbac532789ba456ffeaea6084c89412c64a6ab"
+      }
+    },
+    {
+      "game_id": "3ahocdlr",
+      "probe_pattern": "covered_escape",
+      "actor_color": "white",
+      "actor_inputs": {
+        "past_own_decisions": [
+          {
+            "ply": 1,
+            "own_observation": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+            "own_move": "d2d4"
+          },
+          {
+            "ply": 3,
+            "own_observation": "RNBQKBNRPPP-PPPP-----------P----???-??-????????-????????????????",
+            "own_move": "c1d2"
+          },
+          {
+            "ply": 5,
+            "own_observation": "RN-QKBNRPPPBPPPP---?-------P-----??-??-????????-????????????????",
+            "own_move": "e2e4"
+          },
+          {
+            "ply": 7,
+            "own_observation": "RN-QKBNRPPPB-PPP-----------PP-----?p-?---??????-????????????????",
+            "own_move": "e4e5"
+          },
+          {
+            "ply": 9,
+            "own_observation": "RN-QKBNRPPPB-PPP-----------P?-----p?P?---??????-????????????????",
+            "own_move": "c2c3"
+          },
+          {
+            "ply": 11,
+            "own_observation": "RN-QKBNRPP-B-PPP--P--------p?---?-??P?---??????-????????????????",
+            "own_move": "c3d4"
+          },
+          {
+            "ply": 13,
+            "own_observation": "RN-QKBNRPP-B-PPP-----------P?-----??P?---??????-????????????????",
+            "own_move": "b1c3"
+          },
+          {
+            "ply": 15,
+            "own_observation": "R--QKBNRPP-B-PPP--N--------P----?-?pP?---??????-????????????????",
+            "own_move": "a1c1"
+          },
+          {
+            "ply": 17,
+            "own_observation": "--RQKBNRPP-B-PPP--N--------P----?-?pP?---??????-????????????????",
+            "own_move": "c3a4"
+          },
+          {
+            "ply": 19,
+            "own_observation": "--RQKBNRPP-B-PPP--------Nn-P?---?--?P?-----????-??-???????r?????",
+            "own_move": "a4c5"
+          },
+          {
+            "ply": 21,
+            "own_observation": "--RQKBNRPP-B-PPP---------n-P?---?-b?P?---??????-????????????????",
+            "own_move": "d4c5"
+          },
+          {
+            "ply": 23,
+            "own_observation": "--RQKBNRPP-B-PPP---------n-??---?-P?P?---?-????-????????????????",
+            "own_move": "a2a3"
+          },
+          {
+            "ply": 25,
+            "own_observation": "--RQKBNR?P-B-PPPP----------??---p-P?P?---??????-????????????????",
+            "own_move": "f1d3"
+          },
+          {
+            "ply": 27,
+            "own_observation": "--RQK-NR?P-B-PPPP--B-------?----p-P?P----?????--???????p????????",
+            "own_move": "f2f4"
+          },
+          {
+            "ply": 29,
+            "own_observation": "--RQK-NR?P-B--PPP--B-------?-P--p-P?P-?--?????n?????????????????",
+            "own_move": "g1e2"
+          },
+          {
+            "ply": 31,
+            "own_observation": "--RQK--R?P-BN-PPP--B-?-------P--p-P?P-??-?????n?????????????????",
+            "own_move": "e1g1"
+          },
+          {
+            "ply": 33,
+            "own_observation": "--RQ-RK-?P-BN-PPP--B---------P--p-P?P-??-????pn?????????????????",
+            "own_move": "e5f6"
+          },
+          {
+            "ply": 35,
+            "own_observation": "--RQ-RK-?P-BN-PPP--B---------P--p-P??-??-?????n?????????????????",
+            "own_move": "d2c3"
+          },
+          {
+            "ply": 37,
+            "own_observation": "--RQ-RK-?P--N-PPP-BB?--------P--p-P?p-??-?????n?????????????????",
+            "own_move": "d3g6"
+          },
+          {
+            "ply": 39,
+            "own_observation": "--RQ-RK-?P--N-PPP-B-?-----?-?P--p?Ppp-??????????????????????????",
+            "own_move": "f4e5"
+          },
+          {
+            "ply": 41,
+            "own_observation": "--RQ-RK-?P--N-PPP-B-?-----?-?-?-p?PpP-??????--???????-???????-??",
+            "own_move": "d1d2"
+          },
+          {
+            "ply": 43,
+            "own_observation": "--R--RK-?P-Qb-PPP-B-------?-?---p?PpP--?????--?-?????-???????-??",
+            "own_move": "d2e2"
+          },
+          {
+            "ply": 45,
+            "own_observation": "--R--RK-?P--Q-PPP-B-------------p-P?P-?--???--???????-???????-??",
+            "own_move": "c1e1"
+          },
+          {
+            "ply": 47,
+            "own_observation": "----RRK-?P--Q-PPP-B-------------p-P?P-?--???--???????-???????-??",
+            "own_move": "e2f2"
+          },
+          {
+            "ply": 49,
+            "own_observation": "----RRK-?P---QPPP-B?------?-----p?P?P-???????-???????-???????-??",
+            "own_move": "h2h4"
+          },
+          {
+            "ply": 51,
+            "own_observation": "----RRK-?P---QP-P-B?---?--?p---Pp?P?P-?-?????-???????-???????-??",
+            "own_move": "c3d2"
+          },
+          {
+            "ply": 53,
+            "own_observation": "----RRK-?P?B-QP-P--?---?--?p---Pp?P?n---??-??-?-?????-???????-??",
+            "own_move": "e1e4"
+          },
+          {
+            "ply": 55,
+            "own_observation": "-----RK-?P?B-QP-P--?---?----R--Pp?P?n---??-??-?-?????-???????-??",
+            "own_move": "f1e1"
+          },
+          {
+            "ply": 57,
+            "own_observation": "----R-K-?P?B-QP-P--?---?----R--Pp?P?n---??-??r?-????????????????",
+            "own_move": "f2e3"
+          },
+          {
+            "ply": 59,
+            "own_observation": "----R-K-?P?B--P-P--pQ-------R--Pp?P?n?--??-????-????????????????",
+            "own_move": "d2c3"
+          },
+          {
+            "ply": 61,
+            "own_observation": "----R-K-?P?---P-P-BpQ-------R--Pp?P?n?--??-????-????????????????",
+            "own_move": "e4e5"
+          },
+          {
+            "ply": 63,
+            "own_observation": "----R-K-?P?---P-P-BpQ-----?----Pp?P?r?--??-????-????????????????",
+            "own_move": "c3e5"
+          },
+          {
+            "ply": 65,
+            "own_observation": "----R-K-?P?---P-P-?pQ-----?----P??P?r?--??-????-????????????????",
+            "own_move": "e3e5"
+          },
+          {
+            "ply": 67,
+            "own_observation": "----R-K-?P??--P-P-??-?-?--??-?-P??P?q??-??-?????????????????????",
+            "own_move": "e1e5"
+          },
+          {
+            "ply": 69,
+            "own_observation": "????--K-?P??--P-P-??-?-?--??-?-P??P-R---??-?-???????-???????-???",
+            "own_move": "e5d5"
+          },
+          {
+            "ply": 71,
+            "own_observation": "?????-K-?P???-P-P-?p??-?--?-??-P??PR----??--???????-???????-????",
+            "own_move": "d5d3"
+          }
+        ],
+        "current_observation": "???-?-K-?P?-?-P-P--R------?-??-P??P-???-??--???????-???????-????",
+        "current_ply": 73
+      },
+      "retrospective_targets": {
+        "observed_losing_reply": "f6f5",
+        "counterfactual_safe_replies": [
+          "f6g7",
+          "f6e7",
+          "f6e6",
+          "f6e5"
+        ],
+        "counterfactual_status": "referee one-ply survival only; not observed acceptance rates or full-game wins",
+        "terminal_hidden_attackers": [
+          {
+            "piece": "R",
+            "square": "f3",
+            "hidden": true
+          }
+        ],
+        "demonstrated_move": "d3f3"
+      },
+      "provenance": {
+        "source_card": "../top6-exploits-20261010/exploit-cards.json",
+        "source_sha256": "7a3fd4edc4091f2cdcd1569f5bb1c08fd08e91773a5eb777d2ae2728f07beb18"
+      }
+    }
+  ]
+}
