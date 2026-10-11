@@ -1,27 +1,27 @@
 # Arena v30 watch
 
-Updated 2026-10-11 05:47 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 06:07 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 29W-8D-33L over 70 games** (47%).
-As White: 20.0/35.
-As Black: 13.0/35.
+**Record: 32W-9D-35L over 76 games** (48%).
+As White: 22.0/38.
+As Black: 14.5/38.
 
-Queen lost for less: 11 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 5 of 33.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
+Queen lost for less: 12 games (11 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 35.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| duck | 3-2-9 |
 | TA Baseline A | 8-3-1 |
-| duck | 3-2-7 |
 | TA Baseline S | 6-1-3 |
 | Decent Chess Bot | 2-0-6 |
+| TA Baseline P | 6-0-0 |
 | Mist Opportunities | 2-0-4 |
 | Strongly Invisible | 1-1-4 |
-| TA Baseline P | 4-0-0 |
+| Knight Vision | 1-1-2 |
 | Instructors | 1-0-3 |
 | Greek Gift | 0-1-3 |
-| Knight Vision | 0-0-2 |
 | Apricot Squad | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -96,3 +96,9 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-11 04:20 | ks0fqbab | B | TA Baseline A | 92 | draw |  | 66 s | 15-9 |
 | 2026-10-11 04:29 | wkyjv18f | W | Instructors | 77 | loss |  | 80 s | 7-26 |
 | 2026-10-11 04:32 | g7xzrx7g | B | Instructors | 104 | loss |  | 52 s | 1-17 |
+| 2026-10-11 05:58 | 9pl31sez | W | duck | 7 | loss |  | 172 s | 38-38 |
+| 2026-10-11 05:59 | ijyg65r0 | W | TA Baseline P | 38 | win |  | 134 s | 11-15 |
+| 2026-10-11 06:01 | i2lcep6s | B | TA Baseline P | 95 | win |  | 60 s | 17-6 |
+| 2026-10-11 06:03 | 2i8lre9b | B | duck | 60 | loss | ply 53 by r unseen | 93 s | 15-9 |
+| 2026-10-11 06:07 | gr6iofmo | W | Knight Vision | 114 | win |  | 69 s | 9-4 |
+| 2026-10-11 06:07 | ee7u7ywy | B | Knight Vision | 99 | draw |  | 59 s | 11-13 |
