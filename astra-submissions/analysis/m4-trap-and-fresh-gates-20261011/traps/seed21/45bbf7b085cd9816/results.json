@@ -1,0 +1,840 @@
+{
+  "binary": "/media/henrytan/seagate/iamavirus/astra/m4-dilemma-search-20261011/candidate",
+  "sha256": "5892c2a9015395de2f541f954d3d3edc06b9217d9c7291913fd01d9d23949ab0",
+  "seconds": 1.0,
+  "iteration_cap": 100000,
+  "seed": 21,
+  "fixed_parent_cap": 20000,
+  "sample_target": 32,
+  "tactical_witnesses": false,
+  "tactical_closure": false,
+  "trace_continuation": true,
+  "leaf_scale": 1.0,
+  "root_dominance": false,
+  "fast_roots": true,
+  "settle_fraction": 0,
+  "trace_moves": [],
+  "stockfish": "/media/henrytan/seagate/iamavirus/astra/m4-dilemma-search-20261011/stockfish",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "eynqrj2j",
+      "side": "white",
+      "decision": 4,
+      "ply": 6,
+      "mode": "cold",
+      "played": "b1c3",
+      "returncode": 0,
+      "true_legal_count": 36,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "e1d2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1d3",
+        "d1e2",
+        "d1d2",
+        "c1h6",
+        "c1g5",
+        "c1f4",
+        "c1e3",
+        "c1d2",
+        "b1c3",
+        "b1a3",
+        "b1d2",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 1.0749286659993231,
+      "prefix_exact": true,
+      "outputs": 4,
+      "chosen": "b1c3",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 6,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "groups": 1,
+          "expand": 810,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.0014,
+          "solve": 0.7487,
+          "save": 0.0024,
+          "total": 0.7526,
+          "over": 0,
+          "active": 1.0,
+          "enter": 1.0,
+          "current": 1.0,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 1,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 1.0,
+      "all_root_reach": 1.0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_share": 0.0,
+      "action_profiles": [
+        {
+          "move": "b1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0466275514
+        },
+        {
+          "move": "b1a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0419745073
+        },
+        {
+          "move": "b1c3",
+          "policy": 0.497764989,
+          "played": 1.0,
+          "fatal": 0.0,
+          "raw": 0.127307267
+        },
+        {
+          "move": "c1d2",
+          "policy": 0.192504081,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0766833729
+        },
+        {
+          "move": "c1e3",
+          "policy": 0.165841926,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0341750543
+        },
+        {
+          "move": "c1f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0653766694
+        },
+        {
+          "move": "c1g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.638122414
+        },
+        {
+          "move": "c1h6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.790527786
+        },
+        {
+          "move": "d1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0661074414
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.149443763
+        },
+        {
+          "move": "d1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.00753685773
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.334156554
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.874642077
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.965919836
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.324487204
+        },
+        {
+          "move": "e1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.213806673
+        },
+        {
+          "move": "f1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0953711662
+        },
+        {
+          "move": "f1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0848224008
+        },
+        {
+          "move": "f1c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.67913134
+        },
+        {
+          "move": "f1b5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0452124243
+        },
+        {
+          "move": "f1a6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.176748878
+        },
+        {
+          "move": "g1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.00269048191
+        },
+        {
+          "move": "g1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.355110341
+        },
+        {
+          "move": "g1h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.428044454
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.285944185
+        },
+        {
+          "move": "a2a4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.39270986
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0866450362
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.277289988
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.143889005,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0516293153
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.32635182
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.373513453
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0370035779
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.853797653
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.849679781
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.426948498
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0330797694
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 6,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 1.0,
+        "ready": 1.0,
+        "scored": 23403.0,
+        "calls": 658.0,
+        "failed": 0.0,
+        "seconds": 0.668118,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-dilemma-search-20261011/seed21/45bbf7b085cd9816/eynqrj2j-white-d4-cold.trace.jsonl",
+        "sha256": "4127aff44cab95af3691b133f32448973837d74a8d950d582cd0d27cd5b951ec",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 49,
+          "roots": 1,
+          "ply": 6
+        },
+        "seconds": 0.000947
+      },
+      "alternative_traces": {},
+      "closure_metrics": [],
+      "belief_count": 1,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 1.0,
+      "belief_truth_share": 1.0,
+      "legal": true,
+      "true_outcome": null,
+      "immediate_loss": false
+    },
+    {
+      "game": "eynqrj2j",
+      "side": "white",
+      "decision": 4,
+      "ply": 6,
+      "mode": "warm",
+      "played": "b1c3",
+      "returncode": 0,
+      "true_legal_count": 36,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "e1d2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1d3",
+        "d1e2",
+        "d1d2",
+        "c1h6",
+        "c1g5",
+        "c1f4",
+        "c1e3",
+        "c1d2",
+        "b1c3",
+        "b1a3",
+        "b1d2",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 3.336297426998499,
+      "prefix_exact": true,
+      "outputs": 4,
+      "chosen": "c1e3",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.7539,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 2,
+          "carry": 14,
+          "offI": 227,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.7556,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 4,
+          "carry": 6,
+          "offI": 2,
+          "fresh": 3,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.7527,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 6,
+          "found": 1,
+          "positive": 1,
+          "carry": 1,
+          "offI": 0,
+          "fresh": 0,
+          "groups": 1,
+          "expand": 793,
+          "fallback": 0,
+          "snapshot": 1,
+          "setup": 0.0013,
+          "solve": 0.7487,
+          "save": 0.0016,
+          "total": 0.7517,
+          "over": 0,
+          "active": 1.0,
+          "enter": 1.0,
+          "current": 1.0,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 1,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 1.0,
+      "all_root_reach": 1.0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_share": 0.0,
+      "action_profiles": [
+        {
+          "move": "b1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0514301255
+        },
+        {
+          "move": "b1a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.00051075845
+        },
+        {
+          "move": "b1c3",
+          "policy": 0.12454339,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0984903009
+        },
+        {
+          "move": "c1d2",
+          "policy": 0.110147092,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0540895293
+        },
+        {
+          "move": "c1e3",
+          "policy": 0.208870571,
+          "played": 1.0,
+          "fatal": 0.0,
+          "raw": 0.0742088268
+        },
+        {
+          "move": "c1f4",
+          "policy": 0.00796411975,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0585727674
+        },
+        {
+          "move": "c1g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.668208828
+        },
+        {
+          "move": "c1h6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.68844832
+        },
+        {
+          "move": "d1d2",
+          "policy": 0.20540727,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0689681355
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.00650268985
+        },
+        {
+          "move": "d1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0859266126
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.196130071
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.975571562
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.961089831
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.403232629
+        },
+        {
+          "move": "e1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.353305864
+        },
+        {
+          "move": "f1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.00616915879
+        },
+        {
+          "move": "f1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0500212471
+        },
+        {
+          "move": "f1c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.692373272
+        },
+        {
+          "move": "f1b5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.826661669
+        },
+        {
+          "move": "f1a6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.712626334
+        },
+        {
+          "move": "g1e2",
+          "policy": 0.133066483,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0557536829
+        },
+        {
+          "move": "g1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0190244797
+        },
+        {
+          "move": "g1h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.43617715
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.315907365
+        },
+        {
+          "move": "a2a4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.320060473
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.148549878
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.293598785
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.199457953,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0569982874
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0152771021
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.401134285
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0599096371
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.849679781
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.846875605
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.11987963
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.010543122,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.167197571
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 6,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 0.0,
+        "ready": 1.0,
+        "scored": 23639.0,
+        "calls": 655.0,
+        "failed": 0.0,
+        "seconds": 0.66293,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 34497.0,
+          "calls": 1463.0,
+          "failed": 0.0,
+          "seconds": 0.628767,
+          "scale": 1.0
+        },
+        {
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 31527.0,
+          "calls": 1295.0,
+          "failed": 0.0,
+          "seconds": 0.594338,
+          "scale": 1.0
+        },
+        {
+          "ply": 4.0,
+          "ready": 1.0,
+          "scored": 21139.0,
+          "calls": 618.0,
+          "failed": 0.0,
+          "seconds": 0.67344,
+          "scale": 1.0
+        }
+      ],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-dilemma-search-20261011/seed21/45bbf7b085cd9816/eynqrj2j-white-d4-warm.trace.jsonl",
+        "sha256": "f32e6819dd716bbda16e5a1fefd5750cbcc9deac2f90f61253ab11b9c6a4733f",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 49,
+          "roots": 1,
+          "ply": 6
+        },
+        "seconds": 0.000749
+      },
+      "alternative_traces": {},
+      "closure_metrics": [],
+      "belief_count": 1,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 1.0,
+      "belief_truth_share": 1.0,
+      "legal": true,
+      "true_outcome": null,
+      "immediate_loss": false
+    }
+  ]
+}

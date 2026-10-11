@@ -1,0 +1,209 @@
+{
+  "binary": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/candidate",
+  "sha256": "5892c2a9015395de2f541f954d3d3edc06b9217d9c7291913fd01d9d23949ab0",
+  "seconds": 1.0,
+  "iteration_cap": 100000,
+  "seed": 21,
+  "fixed_parent_cap": 20000,
+  "sample_target": 32,
+  "tactical_witnesses": true,
+  "tactical_closure": false,
+  "trace_continuation": true,
+  "leaf_scale": 1.0,
+  "root_dominance": false,
+  "fast_roots": true,
+  "settle_fraction": 0,
+  "trace_moves": [
+    "f1f2"
+  ],
+  "stockfish": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/stockfish",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "gf2qssqu",
+      "side": "white",
+      "decision": 42,
+      "ply": 82,
+      "mode": "cold",
+      "played": "d6c7",
+      "returncode": 0,
+      "true_legal_count": 10,
+      "true_safe_moves": [
+        "f1e2"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 2.2933819430036237,
+      "prefix_exact": true,
+      "outputs": 42,
+      "chosen": "d6d7",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 82,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 32,
+          "groups": 32,
+          "expand": 2444,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.0065,
+          "solve": 0.7438,
+          "save": 0.002,
+          "total": 0.7523,
+          "over": 0,
+          "active": 0.9654,
+          "enter": 1.0,
+          "current": 0.9654,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 32,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 0.03125,
+      "all_root_reach": 0.9654013061798199,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_reach": 0.03125,
+      "chosen_fatal_share": 0.03236995827534051,
+      "action_profiles": [
+        {
+          "move": "f1e1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.162527162,
+          "raw": -0.879724897
+        },
+        {
+          "move": "f1g1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0323699583,
+          "raw": -0.869207723
+        },
+        {
+          "move": "f1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.162527162,
+          "raw": -0.882884677
+        },
+        {
+          "move": "f1f2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 1.0,
+          "raw": -1.0
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0323699583,
+          "raw": -0.886848677
+        },
+        {
+          "move": "a2a4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0323699583,
+          "raw": -0.884991326
+        },
+        {
+          "move": "c3c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0323699583,
+          "raw": -0.883445123
+        },
+        {
+          "move": "h4h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0323699583,
+          "raw": -0.878964471
+        },
+        {
+          "move": "d6d7",
+          "policy": 0.541643056,
+          "played": 1.0,
+          "fatal": 0.0323699583,
+          "raw": -0.849529382
+        },
+        {
+          "move": "d6c7",
+          "policy": 0.458356944,
+          "played": 0.0,
+          "fatal": 0.0323699583,
+          "raw": -0.844260175
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 82,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 32.0,
+        "ready": 1.0,
+        "scored": 27197.0,
+        "calls": 2301.0,
+        "failed": 0.0,
+        "seconds": 0.549455,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-fresh-20261011-1544/coverage/gf2qssqu-witness32/gf2qssqu-white-d42-cold.trace.jsonl",
+        "sha256": "b6c43866d90924f8777bafe2cace1b7eb4105a608dba1c807b8927ac3a6df60b",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 560,
+          "roots": 32,
+          "ply": 82
+        },
+        "seconds": 0.001935
+      },
+      "alternative_traces": {
+        "f1f2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-fresh-20261011-1544/coverage/gf2qssqu-witness32/gf2qssqu-white-d42-cold.trace.jsonl.f1f2",
+          "sha256": "a73b9c98d1d7ccd5c942c3677d973a7df36130df7e869c9d3f620236520048c8",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 96,
+            "roots": 32,
+            "ply": 82
+          },
+          "seconds": 0.000752,
+          "same_root_states_and_values": true
+        }
+      },
+      "closure_metrics": [],
+      "witness_metrics": {
+        "scanned": 119,
+        "complete": 1,
+        "added": 3,
+        "candidate_moves": 10
+      },
+      "belief_count": 119,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 0.012661523639564767,
+      "belief_truth_share": 0.012661523639564767,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    }
+  ]
+}

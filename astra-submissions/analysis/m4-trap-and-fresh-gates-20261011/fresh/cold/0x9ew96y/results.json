@@ -1,0 +1,174 @@
+{
+  "binary": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/candidate",
+  "sha256": "5892c2a9015395de2f541f954d3d3edc06b9217d9c7291913fd01d9d23949ab0",
+  "seconds": 1.0,
+  "iteration_cap": 100000,
+  "seed": 21,
+  "fixed_parent_cap": 20000,
+  "sample_target": 32,
+  "tactical_witnesses": false,
+  "tactical_closure": false,
+  "trace_continuation": true,
+  "leaf_scale": 1.0,
+  "root_dominance": false,
+  "fast_roots": true,
+  "settle_fraction": 0,
+  "trace_moves": [],
+  "stockfish": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/stockfish",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "0x9ew96y",
+      "side": "white",
+      "decision": 52,
+      "ply": 102,
+      "mode": "cold",
+      "played": "b2a1",
+      "returncode": 0,
+      "true_legal_count": 8,
+      "true_safe_moves": [
+        "b2c3",
+        "b2a3"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 5.2287984210051945,
+      "prefix_exact": true,
+      "outputs": 52,
+      "chosen": "b2c1",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 102,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 32,
+          "groups": 32,
+          "expand": 2755,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.0088,
+          "solve": 0.7415,
+          "save": 0.0021,
+          "total": 0.7524,
+          "over": 0,
+          "active": 1.0,
+          "enter": 1.0,
+          "current": 1.0,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 32,
+      "true_board_roots": 0,
+      "true_state_roots": 0,
+      "true_state_reach": 0,
+      "all_root_reach": 1.0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_share": 0.0,
+      "action_profiles": [
+        {
+          "move": "b2a1",
+          "policy": 0.11705278,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.982077518
+        },
+        {
+          "move": "b2b1",
+          "policy": 0.240370277,
+          "played": 0.0,
+          "fatal": 0.0625,
+          "raw": -0.981665615
+        },
+        {
+          "move": "b2c1",
+          "policy": 0.266093896,
+          "played": 1.0,
+          "fatal": 0.0,
+          "raw": -0.982079969
+        },
+        {
+          "move": "b2a2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 1.0,
+          "raw": -1.0
+        },
+        {
+          "move": "b2c2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 1.0,
+          "raw": -1.0
+        },
+        {
+          "move": "b2a3",
+          "policy": 0.208093599,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.982142985
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.71875,
+          "raw": -0.986843624
+        },
+        {
+          "move": "b2c3",
+          "policy": 0.168389447,
+          "played": 0.0,
+          "fatal": 0.03125,
+          "raw": -0.981878752
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 102,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 32.0,
+        "ready": 1.0,
+        "scored": 28724.0,
+        "calls": 2587.0,
+        "failed": 0.0,
+        "seconds": 0.520715,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-fresh-20261011-1544/cold/0x9ew96y/0x9ew96y-white-d52-cold.trace.jsonl",
+        "sha256": "09739e9fd49472d103d9b7915ad7ed67f0113fadd0aaa0acb0f01aa0fd084f4a",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 864,
+          "roots": 32,
+          "ply": 102
+        },
+        "seconds": 0.002531
+      },
+      "alternative_traces": {},
+      "closure_metrics": [],
+      "belief_count": 137962,
+      "belief_true_states": 0,
+      "belief_true_boards": 0,
+      "belief_tactical_states": 0,
+      "belief_tactical_share": 0.0,
+      "belief_truth_share": 0.0,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    }
+  ]
+}
