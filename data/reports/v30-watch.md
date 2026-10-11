@@ -1,20 +1,20 @@
 # Arena v30 watch
 
-Updated 2026-10-11 14:22 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 14:42 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 129W-22D-149L over 300 games** (47%).
-As White: 79.5/150.
-As Black: 60.5/150.
+**Record: 131W-22D-151L over 304 games** (47%).
+As White: 81.5/152.
+As Black: 60.5/152.
 
-Queen lost for less: 40 games (35 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 32 of 149.
+Queen lost for less: 41 games (36 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 33 of 151.
 Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 2. Mean length 76 plies.
 Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 7-5-30 |
+| duck | 8-5-31 |
+| Mist Opportunities | 12-2-27 |
 | TA Baseline A | 29-7-4 |
-| Mist Opportunities | 11-2-27 |
 | TA Baseline P | 27-0-1 |
 | Strongly Invisible | 3-1-22 |
 | TA Baseline S | 18-1-7 |
@@ -22,7 +22,7 @@ Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate r
 | Knight Vision | 4-2-16 |
 | Instructors | 4-1-13 |
 | Apricot Squad | 14-0-0 |
-| Greek Gift | 0-2-10 |
+| Greek Gift | 0-2-11 |
 | baseline.py | 8-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -327,3 +327,7 @@ Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate r
 | 2026-10-11 14:15 | 09cimj6w | W | Strongly Invisible | 49 | loss |  | 123 s | 14-13 |
 | 2026-10-11 14:15 | oet00i8p | B | Strongly Invisible | 50 | loss | ply 43 by r unseen | 101 s | 8-20 |
 | 2026-10-11 14:18 | h9vzq0gu | B | Instructors | 106 | loss |  | 59 s | 1-17 |
+| 2026-10-11 14:30 | h21bwry5 | W | duck | 84 | win |  | 84 s | 13-7 |
+| 2026-10-11 14:31 | 8o4ca1q8 | B | duck | 88 | loss |  | 79 s | 3-9 |
+| 2026-10-11 14:38 | 8bw7go5c | W | Mist Opportunities | 104 | win |  | 64 s | 8-6 |
+| 2026-10-11 14:40 | 0cdckmv0 | B | Greek Gift | 46 | loss | ply 31 by q unseen | 123 s | 17-16 |
