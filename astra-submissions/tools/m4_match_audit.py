@@ -59,7 +59,10 @@ def audit(game, side, referee):
                 decisions.append({'ply': index-1, 'move': move.uci(), 'fen': before.fen(),
                     'safe_moves': safe, 'immediate_loss': move.uci() not in safe,
                     'material_cp': material(before, own), 'attackers_before': attackers(before, own, view),
-                    'opponent_move_changed_view': index < 3 or game['frames'][index-3][side] != view})
+                    # frame[index-1] is after the opponent's move; index-2
+                    # is immediately before it. index-3 includes our own last
+                    # move and would falsely label its visibility change as theirs.
+                    'opponent_move_changed_view': index < 2 or game['frames'][index-2][side] != view})
             board.push(move)
         encoded = ''.join(board.piece_at(sq).symbol() if board.piece_at(sq) else '-' for sq in range(64))
         assert encoded == frame['board'], (game['id'], index, 'board')

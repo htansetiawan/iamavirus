@@ -47,3 +47,9 @@ being stopped between requests. Its files are retained on Seagate. The repaired
 call reused 1,220 shared cached replays and made 32 public reads. The monitor
 now rejects nonexistent cache paths and publishes gzip files atomically;
 three regression checks cover reuse, interruption and invalid paths.
+# Audit correction, 2026-10-11 13:25 UTC
+
+The original `full-game-audit.json` observation-change field spanned our move
+and the opponent's together. Use the corrected copy and comparison in
+[`../m4-live-corpus-20261011/`](../m4-live-corpus-20261011/README.md).
+All other audit fields and the strength-screen conclusion are unchanged.

@@ -46,6 +46,8 @@ def prepare(args):
         raise ValueError('Invalid scales')
     if not args.settle_fractions or len(set(args.settle_fractions))!=len(args.settle_fractions) or not all(0<=x<=.5 for x in args.settle_fractions):
         raise ValueError('Invalid settling fractions')
+    if not args.dominance or len(set(args.dominance))!=len(args.dominance) or not all(x in (0,1) for x in args.dominance):
+        raise ValueError('Invalid dominance arms')
     sources={'candidate':args.binary,'opponent':args.opponent,'stockfish':args.stockfish,
              'runner.py':Path(__file__),'local_turn_control.py':Path(__file__).with_name('local_turn_control.py'),
              'referee.py':args.kit/'referee.py'}
@@ -56,12 +58,14 @@ def prepare(args):
     jobs=[]
     for i,seed in enumerate(args.seeds):
         for j,side in enumerate(['white','black']):
-            variants=[(scale,settle) for scale in args.scales for settle in args.settle_fractions]
-            for scale,settle in variants[::1 if (i+j)%2==0 else -1]:
+            variants=[(scale,settle,dominance) for scale in args.scales for settle in args.settle_fractions for dominance in args.dominance]
+            for scale,settle,dominance in variants[::1 if (i+j)%2==0 else -1]:
                 arm=f'scale{scale:g}-settle{settle:g}'
                 suffix=f'-settle{settle:g}' if args.settle_fractions!=[0] else ''
+                if args.dominance!=[0]:
+                    arm+=f'-dominance{dominance}';suffix+=f'-dominance{dominance}'
                 jobs.append({'id':f'seed{seed}-{side}-scale{scale:g}{suffix}','seed':seed,'side':side,
-                             'scale':scale,'settle_fraction':settle,'arm':arm})
+                             'scale':scale,'settle_fraction':settle,'root_dominance':dominance,'arm':arm})
     excluded=set(args.exclude_job)
     if excluded-{j['id'] for j in jobs}:raise ValueError('Unknown excluded job')
     jobs=[j for j in jobs if j['id'] not in excluded]
@@ -73,6 +77,7 @@ def prepare(args):
             'samples':args.samples,'iterations':1000000,'cpus':args.cpus,'jobs':jobs,'excluded_jobs':sorted(excluded),'opponent_name':args.opponent_name,
             'fast_roots':args.fast_roots,
             'settle_fractions':args.settle_fractions,
+            'dominance':args.dominance,
             'classification':'small paired on-policy screening set; not an Elo estimate',
             'turn_control':'buffered observations and owned process-group SIGSTOP/SIGCONT',
             'security_sandbox':False,'failure_policy':'retain all attempts; halt on infrastructure, protocol or M4 instrumentation faults'}
@@ -110,6 +115,7 @@ def worker(run,job_id):
                f'MIST_M4_LEAF_SCALE={job["scale"]}','MIST_M4_CLOSURE=0','MIST_M4_WITNESSES=0',str(run/'candidate')]
     candidate.insert(-1,f'MIST_M4_FAST_ROOTS={int(config.get("fast_roots",False))}')
     candidate.insert(-1,f'MIST_M4_SETTLE={job.get("settle_fraction",0)}')
+    candidate.insert(-1,f'MIST_M4_DOMINANCE={job.get("root_dominance",0)}')
     opponent=[*common,str(run/'opponent')]
     white,black=(candidate,opponent) if job['side']=='white' else (opponent,candidate)
     def terminate(_signum,_frame):raise KeyboardInterrupt('Owned worker terminated')
@@ -145,6 +151,15 @@ def inspect_game(path,job,config=None):
         if any(m.get('prefix')!='0' or abs(float(m.get('fraction',-1))-fraction)>1e-6 for m in settling):
             faults.append('wrong_settling_configuration')
     elif settling:faults.append('unexpected_settling_diagnostics')
+    dominance=[dict(re.findall(r'(\w+)=([^ ]+)',line)) for line in stderr.splitlines() if line.startswith('m4-dominance:')]
+    if job.get('root_dominance',0):
+        if [int(m.get('ply',-1)) for m in dominance]!=own_plies:faults.append('missing_dominance_diagnostics')
+        for row in dominance:
+            if (row.get('complete') not in ('0','1') or row.get('changed') not in ('0','1')
+                    or row.get('skipped') not in ('0','1') or int(row.get('redirected',-1))<0
+                    or (row.get('changed')=='1' and (row.get('complete')!='1' or int(row.get('redirected',0))==0))):
+                faults.append('dominance_profile_failure')
+    elif dominance:faults.append('unexpected_dominance_diagnostics')
     for row in metrics:
         if row.get('ok')!='1' or row.get('snapshot')!='1':faults.append('m4_snapshot_or_search_failure')
         if row.get('over')!='0':faults.append('m4_reported_overrun')
@@ -157,6 +172,9 @@ def inspect_game(path,job,config=None):
             'cheap_carried_roots':sum(int(m.get('cheap_carried_roots',0)) for m in setups),
             'settled_decisions':sum(int(m.get('iterations',0))>0 for m in settling),
             'settle_seconds':sum(float(m.get('seconds',0)) for m in settling),
+            'dominance_profiled':sum(m.get('complete')=='1' for m in dominance),
+            'dominance_changed':sum(m.get('changed')=='1' for m in dominance),
+            'dominance_skipped':sum(m.get('skipped')!='0' for m in dominance),
             'minimum_clocks':[min(f['clocks'][i] for f in game['frames']) for i in [0,1]],'failed_side':game.get('failedSide')}
 
 
@@ -259,6 +277,7 @@ def main():
     prep.add_argument('--increment',type=float,default=2);prep.add_argument('--max-plies',type=int,default=512)
     prep.add_argument('--scales',type=float,nargs='+',default=[1,.9]);prep.add_argument('--seeds',type=int,nargs='+',default=[11,12])
     prep.add_argument('--settle-fractions',type=float,nargs='+',default=[0],help='Paired fixed-tree solve fractions; same total decision budget')
+    prep.add_argument('--dominance',type=int,nargs='+',choices=[0,1],default=[0],help='Paired root-dominance arms; same search and total clock')
     prep.add_argument('--exclude-job',action='append',default=[],help='Explicitly omit a job already retained in another immutable run')
     prep.add_argument('--fast-roots',action='store_true',help='Use cheap carried-root initialization (experimental)')
     prep.add_argument('--cpus',type=int,nargs='+',default=[6,7])

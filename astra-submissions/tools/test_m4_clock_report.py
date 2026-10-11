@@ -37,6 +37,19 @@ def main():
         assert not result['faults'] and result['settled_decisions']==1 and result['settle_seconds']==.06
         bad=copy.deepcopy(good);bad['privateDiagnostics']['white']=bad['privateDiagnostics']['white'].replace('fraction=0.200000','fraction=0.100000')
         path.write_text(json.dumps(bad));assert 'wrong_settling_configuration' in inspect_game(path,job)['faults']
+        # A configured policy intervention must actually execute on every ply.
+        job={'side':'white','scale':1,'root_dominance':1}
+        path.write_text(json.dumps(game))
+        assert 'missing_dominance_diagnostics' in inspect_game(path,job)['faults']
+        good=copy.deepcopy(game);good['privateDiagnostics']['white']+='m4-dominance: ply=0 complete=1 redirected=2 changed=1 skipped=0\n'
+        path.write_text(json.dumps(good));result=inspect_game(path,job)
+        assert not result['faults'] and result['dominance_profiled']==1 and result['dominance_changed']==1
+        assert 'unexpected_dominance_diagnostics' in inspect_game(path,{'side':'white','scale':1})['faults']
+        bad=copy.deepcopy(good);bad['privateDiagnostics']['white']=bad['privateDiagnostics']['white'].replace('redirected=2','redirected=0')
+        path.write_text(json.dumps(bad));assert 'dominance_profile_failure' in inspect_game(path,job)['faults']
+        good=copy.deepcopy(game);good['privateDiagnostics']['white']+='m4-dominance: ply=0 complete=0 redirected=0 changed=0 skipped=1\n'
+        path.write_text(json.dumps(good));result=inspect_game(path,job)
+        assert not result['faults'] and result['dominance_skipped']==1 and result['dominance_changed']==0
         # Same scale, different scheduling arms must never be pooled.
         root=Path(d);(root/'jobs').mkdir()
         for i,(arm,score) in enumerate([('scale1-settle0',0),('scale1-settle0.2',1)]):

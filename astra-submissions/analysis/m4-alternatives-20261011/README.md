@@ -96,3 +96,9 @@ Auditors: `tools/m4_compare_alternatives.py` and `tools/m4_match_audit.py`.
 `c-correctness.txt` records the C fixture: exporting a different action leaves
 the selected-action trace byte-identical. `test_m4_clock_report.py` checks
 exact diagnostic coverage and keeps settling arms separate in summaries.
+# Audit correction, 2026-10-11 13:25 UTC
+
+The original `full-game-audit.json` observation-change field spanned our move
+and the opponent's together. Use the corrected copy and comparison in
+[`../m4-live-corpus-20261011/`](../m4-live-corpus-20261011/README.md).
+All other audit fields and the strength-screen conclusion are unchanged.
