@@ -1,8 +1,68 @@
 # M4: frozen 24-death / 24-survival gate
 
-Astra, 2026-10-11. This is an **in-progress selected local-replay comparison**,
+Astra, 2026-10-11. The **40-iteration cold comparison is complete**; a second,
+time-limited comparison is running. These are selected local-replay comparisons,
 not an arena release or an Elo estimate. The run is sequential on cores 6–7 at
 nice 19; Fable's live match engines were verified on cores 0–5. No GPU work.
+
+## Completed cold comparison and time-budget pilot
+
+`cold-05-final.json` records all **192/192 valid decisions**, completed at
+08:21 UTC. No protocol failures, reported M4 budget overruns, or Stockfish
+request failures occurred. Matched belief fingerprints agree in every pair.
+
+| Outcome | Internal/static | Stockfish/child alternatives |
+| --- | ---: | ---: |
+| Historical-death decisions surviving now | 14/48 | 15/48 |
+| Potentially savable decisions surviving now (exclude d17) | 14/46 | 15/46 |
+| Historical-survival decisions surviving now | 48/48 | 48/48 |
+| Historical-survival moves changed | 37/48 | 36/48 |
+| Mean measured search time | .00969 s | .09967 s |
+
+These are two seeds per seat, not independent games. On paired historical-death
+decisions, Stockfish saves six but regresses five; nine survive under both and
+28 lose under both. This is no basis to promote Stockfish or M4. Both variants
+also change most historical safe moves, so the stated acceptance condition
+has not been met. The historical moves come from earlier mist-c versions,
+not a newly replayed v6 control.
+
+Among avoidable losses, the recorded true board is in sampled roots in 16
+internal and 19 Stockfish decisions. Missing tactical truth explains eight
+internal and six Stockfish losses; omitted root truth explains another eight
+and six. The unsavable d17 contributes two losses per variant. These buckets
+describe where truth is represented, not proof that representation alone
+would select the right action.
+
+Seven internal losses have a truly safe, zero-recorded-risk action with a
+greater raw value against the final opponent profile than the selected move.
+None of the Stockfish losses do. This is a diagnostic of the final profile,
+not a best-response exploitability bound or a proof of solver convergence.
+The post-hoc minimum-risk selector lowers death-cohort losses from 34 to six
+(internal) and 33 to seven (Stockfish), including d17, but changes 31/48 and
+34/48 survival decisions. No on-policy claim follows from this post-hoc rule.
+
+### Removing the binding 40-iteration ceiling
+
+`cold-time05-pilot.json` freezes the first **eight decisions** of the next run:
+d01 and s01, both seeds and variants. With an iteration ceiling of 1,000,000,
+the same .5-second allowance actually limits the solve. Internal search runs
+691–794 iterations; Stockfish runs 212–340. Total measured search is
+.3768–.3827 seconds; the engine reserves the remaining allowance for snapshot
+and cleanup. All eight decisions retain a snapshot, all four Stockfish
+decisions retain the evaluator, and no reported deadline overrun occurs.
+
+In d01, the 40-iteration run lost all four decisions. The time-limited pilot
+survives three: both Stockfish seeds and one internal seed select `b8a7`;
+internal seed 12 still selects fatal `d5e4`. All four s01 decisions survive.
+This demonstrates that the iteration ceiling mattered in this case; it does
+not establish a general gain or convergence. Different wall-clock runs can
+execute different numbers of iterations even at the same random seed.
+
+After verifying the pilot, the same frozen run resumed sequentially for the
+remaining 184 decisions. Its immutable configuration is copied in
+`cold-time05-manifest.json`; full logs are in the sibling external-disk
+directory `cold-time05`. The checked-in pilot stays an eight-decision snapshot.
+The original binary and probe remain unchanged.
 
 ## Frozen inputs and comparison
 
@@ -119,9 +179,9 @@ all historical belief updates and post-choice diagnostics.
 
 ## Remaining promotion work
 
-1. Finish the frozen cold comparison, including safe-decision changes and
-   protocol/evaluator failures; separate unsavable positions.
-2. Run a budget-filling iteration comparison, then test searched prefixes
+1. The fixed-iteration cold comparison is complete; its final report above
+   separates unsavable positions and records safe-decision changes.
+2. Finish the budget-filling iteration comparison, then test searched prefixes
    with matched settings and retained evaluator status.
 3. Recheck the earlier forced-loss prevention cases from the previous audit;
    surviving one ply is insufficient there.

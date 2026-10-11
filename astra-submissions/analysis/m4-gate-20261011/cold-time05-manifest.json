@@ -1,0 +1,46 @@
+{
+  "artifacts": {
+    "binary": {
+      "sha256": "1afb58d207a6bc4f292909d4575d5ca1b4179448f297942f1c8a10ca72baa191",
+      "source": "/tmp/mist-c-astra-m4/build/mist-m4"
+    },
+    "probe": {
+      "sha256": "d84b6b2a89d4ace497e3dacb0a671adedf1f469b4e96b7bb39f5d8370b5a9264",
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_replay_probe.py"
+    },
+    "runner": {
+      "sha256": "12fbaba86d7baac8c603ea8294ecf17547102743305ac5d16dc054e9c88b7c9d",
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_gate_run.py"
+    },
+    "seats": {
+      "sha256": "0f41f09b5e056c4847634f3854a295f3e6fd2047381b45bf95fbdb0fc4427ce2",
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/analysis/m4-gate-20261011/seats.json"
+    },
+    "stockfish": {
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+      "source": "/home/henrytan/git/iamavirus/data/arena_local/builds/mist-c-v8/bin/stockfish"
+    }
+  },
+  "classification": "offline diagnostic; forced historical prefix; no Elo inference",
+  "cpu_affinity": [
+    6,
+    7
+  ],
+  "created_at": "2026-10-11T08:21:55.751278+00:00",
+  "iterations": 1000000,
+  "kit": "/home/henrytan/git/fow-starter",
+  "mode": "cold",
+  "nice": 19,
+  "order": "interleaved cohorts; seeds; balanced variant order",
+  "parents": 20000,
+  "python": "/home/henrytan/git/fow-starter/.venv/bin/python",
+  "referee": "/home/henrytan/git/fow-starter/referee.py",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "samples": 128,
+  "schema": 1,
+  "seconds": 0.5,
+  "seeds": [
+    11,
+    12
+  ]
+}
