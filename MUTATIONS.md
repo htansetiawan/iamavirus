@@ -43,9 +43,10 @@ flowchart TD
   v25 --> v27[v27 hard-turn cap 8 s]
   misty[Misty by Brian Liou: open Obscuro-style engine] --> v28[v28 Misty + our protocol adapter]
   v28 --> v29[v29 Misty with arena time settings]
+  v29 --> v30[v30 Misty, 4 s search cap]
   classDef alive fill:#2e7d32,color:#fff;
   classDef cand fill:#f9a825,color:#000;
-  class v29 alive;
+  class v30 alive;
 ```
 
 ## Arena variants
@@ -78,7 +79,8 @@ flowchart TD
 | **25** | v23 | **safe Knight Vision replay** (v24b): the book forces only our own main first moves (1.d4 / 1...d5); 22-ply White and 35-ply Black KV lines | `iamavirus-v25-hybrid.zip` (`491a65b4e986`) | 68 | 32-5-31 | 0.507 | 0.77/28 | KV 2/2; top five 0.18/22 | Mist 0.36/14; rest 2/2 | **alive** (best record so far, 04:30 UTC) |
 | **26** | mist-c (new lineage) | **the mist version**: our clean-room C Obscuro ([mist-c](https://github.com/htansetiawan/mist-c) `b697c75`): exact belief weighted by an opponent move model, GT-CFR over 128–256 sampled worlds, legality guard, no third repetition when ahead, belief updates paid from the clock. No network, no IAmAVirus code | `iamavirus-v26-mist-c-v5.zip` (`082fb4f2b791`) | 0 | — | — | — | — | — | extinct: 4–1–15 over 20 (0/8 against the top six, every loss to a piece it could not see); replaced by v27 at 22:02 UTC. Bench: 0.60–0.75 vs v25, 0.85 vs TA-P, 0.1–0.3 vs Misty |
 | **27** | v25 | **hard-turn cap**: a turn the engine marks hard may take at most 8 s (was 12); v25 burned its clock on such turns against the top five | `iamavirus-v27-hybrid.zip` (`11d1c878e994`) | 0 | — | — | — | — | — | extinct: 2–0–6 over 8 (1–0–5 at the switch back; the cap was not the cause, see the map); v25 re| **28** | Misty (not our engine) | **Brian Liou's Misty** behind our protocol adapter, uploaded at the user's request to measure an Obscuro-style engine on the arena | `iamavirus-v28-misty.zip` (`2717d78f4cfc`) | 0 | — | — | — | — | — | extinct: 11–0–6 over 17 (0.65) with 2 time forfeits (10-18 s a move on the arena); replaced by v29 at 00:51 UTC. Local: 2–2 vs v25 |
-| **29** | v28 | **arena time settings**: a 3 s search cap, Misty's commit guards on 200 belief boards (was 1,000), |P| capped at 500,000, and crash recovery in our adapter | `iamavirus-v29-misty.zip` (`158c37d0a6c4`) | 0 | — | — | — | — | — | **alive** (uploaded 00:51 UTC). Replays of v28's lost-on-time games: the slowest move fell from 7.2 s to 3.6 s |
+| **29** | v28 | **arena time settings**: a 3 s search cap, Misty's commit guards on 200 belief boards (was 1,000), |P| capped at 500,000, and crash recovery in our adapter | `iamavirus-v29-misty.zip` (`158c37d0a6c4`) | 0 | — | — | — | — | — | cancelled by the user before it played, for a 4 s search cap (v30). Replays of v28's lost-on-time games: the slowest move fell from 7.2 s to 3.6 s |
+| **30** | v29 | **4 s search cap** (v29 had 3 s), the user's choice; the same guards (200 boards), |P| cap and crash recovery | `iamavirus-v30-misty-4s.zip` (`20a2e433ca31`) | 0 | — | — | — | — | — | **alive** (uploaded 01:05 UTC). Replays: at most 4.5 s a move; baseline 2–0 |
 activated 00:05 UTC. Bench: 0.533 vs v25 over 30, 0.50 vs Misty over 21 (v25 0.33) |
 
 Notes on the table:
