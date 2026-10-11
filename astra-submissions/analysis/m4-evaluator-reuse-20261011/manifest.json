@@ -1,0 +1,63 @@
+{
+  "created_at": "2026-10-11T13:00:37.633163+00:00",
+  "files": {
+    "candidate": {
+      "source": "/tmp/mist-c-astra-m4/build/mist-m4",
+      "sha256": "fb6fbf3ce0cc8f9cb6a1c127bbb7b054aa035034617b90e1d0fa5a401bf4030d"
+    },
+    "probe.py": {
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_replay_probe.py",
+      "sha256": "63c9feceb34deaa49a2ba85c5c1280a4457d9f7b9d9a4ed2fff6171515d181af"
+    },
+    "stockfish": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-settling-pair-20261011/stockfish",
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+    },
+    "game.json": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/game.json",
+      "sha256": "a5cc00ed7c3a748356d00945f68095e111847a29300d97ee95515da122d17a8a"
+    },
+    "kit/referee.py": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/kit/referee.py",
+      "sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+    },
+    "source.patch": {
+      "source": "da4d88b + diagnostic patch",
+      "sha256": "988e21cd05cf58766bc81995b764dd9d4ea5cfd25720d82ac4b84dd83145c8e6"
+    }
+  },
+  "command": [
+    "/home/henrytan/git/fow-starter/.venv/bin/python",
+    "/media/henrytan/seagate/iamavirus/astra/m4-sf-reuse-probe-20261011/probe.py",
+    "/media/henrytan/seagate/iamavirus/astra/m4-sf-reuse-probe-20261011/game.json",
+    "--binary",
+    "/media/henrytan/seagate/iamavirus/astra/m4-sf-reuse-probe-20261011/candidate",
+    "--out",
+    "/media/henrytan/seagate/iamavirus/astra/m4-sf-reuse-probe-20261011/probe",
+    "--kit",
+    "/media/henrytan/seagate/iamavirus/astra/m4-sf-reuse-probe-20261011/kit",
+    "--decision",
+    "6",
+    "--side",
+    "white",
+    "--seconds",
+    "10",
+    "--iterations",
+    "1000000",
+    "--seed",
+    "12",
+    "--parents",
+    "20000",
+    "--samples",
+    "32",
+    "--stockfish",
+    "/media/henrytan/seagate/iamavirus/astra/m4-sf-reuse-probe-20261011/stockfish",
+    "--mode",
+    "warm",
+    "--fast-roots"
+  ],
+  "environment": {
+    "MIST_M4_SF_LOG": "/media/henrytan/seagate/iamavirus/astra/m4-sf-reuse-probe-20261011/stockfish.log"
+  },
+  "classification": "instrumented searched-prefix evaluator reuse diagnostic; logging changes timing; no strength or throughput claim"
+}
