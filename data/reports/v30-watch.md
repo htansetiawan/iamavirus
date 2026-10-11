@@ -1,26 +1,26 @@
 # Arena v30 watch
 
-Updated 2026-10-11 02:25 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 02:46 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 15W-1D-16L over 32 games** (48%).
-As White: 8.0/16.
-As Black: 7.5/16.
+**Record: 16W-3D-19L over 38 games** (46%).
+As White: 9.5/19.
+As Black: 8.0/19.
 
-Queen lost for less: 5 games (4 to a capturer unseen when we moved, 0 before ply 30); losses with the queen lost: 2 of 16.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 73 plies.
+Queen lost for less: 5 games (4 to a capturer unseen when we moved, 0 before ply 30); losses with the queen lost: 2 of 19.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 6-1-1 |
+| TA Baseline A | 7-1-1 |
 | Mist Opportunities | 2-0-4 |
+| duck | 0-1-4 |
 | Decent Chess Bot | 1-0-3 |
+| Greek Gift | 0-1-3 |
 | TA Baseline P | 2-0-0 |
 | Knight Vision | 0-0-2 |
 | Apricot Squad | 2-0-0 |
 | Instructors | 1-0-1 |
-| duck | 0-0-2 |
-| Greek Gift | 0-0-2 |
 | Strongly Invisible | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -57,3 +57,9 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-11 02:19 | 5h4xih5q | B | Decent Chess Bot | 85 | win |  | 63 s | 16-12 |
 | 2026-10-11 02:20 | wtp51yhc | B | Mist Opportunities | 34 | loss |  | 136 s | 24-34 |
 | 2026-10-11 02:22 | rhnqjaqx | W | Mist Opportunities | 42 | win |  | 122 s | 17-23 |
+| 2026-10-11 02:31 | krcdv0px | W | duck | 59 | loss |  | 103 s | 5-19 |
+| 2026-10-11 02:34 | ykpadh8e | B | duck | 109 | draw |  | 77 s | 6-0 |
+| 2026-10-11 02:40 | mku32f8u | B | Greek Gift | 76 | loss |  | 83 s | 4-17 |
+| 2026-10-11 02:42 | 6svjwqza | W | TA Baseline A | 44 | win |  | 122 s | 18-28 |
+| 2026-10-11 02:43 | mzjmy3l6 | W | Greek Gift | 125 | draw |  | 57 s | 16-3 |
+| 2026-10-11 02:43 | alkwbg5a | B | duck | 50 | loss |  | 109 s | 12-14 |
