@@ -3,7 +3,7 @@
 
 This is an offline decision probe, not an Elo or real-clock match estimate.
 Run with fow-starter/.venv/bin/python (python-chess is a referee dependency).
-It consumes cached public completed-game replays, never live observations.
+It consumes cached completed-game replays (public or local), never live observations.
 """
 import argparse
 from collections import Counter
@@ -19,8 +19,14 @@ import time
 import tempfile
 
 
-def inputs(game, decision):
-    side = "white" if game["white"] == "IAmAVirus" else "black"
+def inputs(game, decision, side=None):
+    if side is None:
+        matched = [color for color in ("white", "black") if game[color] == "IAmAVirus"]
+        if len(matched) != 1:
+            raise ValueError("Specify --side when IAmAVirus is absent or plays both colors")
+        side = matched[0]
+    if side not in ("white", "black"):
+        raise ValueError("Unknown replay side")
     protocol = game.get("protocol")
     if not protocol or protocol.get("truncated"):
         raise ValueError("A complete recorded protocol is required")
@@ -58,6 +64,7 @@ def main():
     ap.add_argument("--out", type=Path, required=True)
     ap.add_argument("--kit", type=Path, default=Path.home()/"git/fow-starter")
     ap.add_argument("--decision", type=int)
+    ap.add_argument("--side", choices=["white", "black"], help="Required for local games without a unique IAmAVirus seat")
     ap.add_argument("--seconds", type=float, default=.5)
     ap.add_argument("--iterations", type=int, default=40)
     ap.add_argument("--seed", type=int, default=21)
@@ -79,7 +86,7 @@ def main():
     results = []
     for path in args.replays:
         game = json.loads(path.read_text())
-        side, decision, played, feed = inputs(game, args.decision)
+        side, decision, played, feed = inputs(game, args.decision, args.side)
         ply = 2*(decision - 1) + (side == "black")
         board = referee.FowBoard()
         repetitions = Counter({referee.position_key(board): 1})
@@ -114,7 +121,7 @@ def main():
             start = time.monotonic()
             proc = subprocess.run([str(binary)], input=feed, capture_output=True, text=True,
                                   env=env, timeout=max(60, decision*args.seconds*3))
-            name = f"{game['id']}-d{decision}-{mode}"
+            name = f"{game['id']}-{side}-d{decision}-{mode}"
             (args.out/(name+".stderr")).write_text(proc.stderr)
             (args.out/(name+".stdout")).write_text(proc.stdout)
             moves = [line[5:] for line in proc.stdout.splitlines() if line.startswith("move ")]
@@ -185,7 +192,7 @@ def main():
                       "child_alternates": bool(args.child_alternates or args.stockfish),
                       "classification": "offline diagnostic, no Elo inference", "rows": results}
             (args.out/"results.json").write_text(json.dumps(report, indent=2)+"\n")
-            print(json.dumps({k:v for k,v in row.items() if k not in ("metrics", "action_profiles")}), flush=True)
+            print(json.dumps({k:v for k,v in row.items() if k not in ("metrics", "action_profiles", "prefix_evaluation")}), flush=True)
 
 
 if __name__ == "__main__":
