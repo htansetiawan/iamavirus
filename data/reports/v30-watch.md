@@ -1,26 +1,26 @@
 # Arena v30 watch
 
-Updated 2026-10-11 10:16 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 10:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 81W-14D-92L over 187 games** (47%).
-As White: 49.0/93.
-As Black: 39.0/94.
+**Record: 86W-15D-97L over 198 games** (47%).
+As White: 52.0/99.
+As Black: 41.5/99.
 
-Queen lost for less: 27 games (22 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 21 of 92.
+Queen lost for less: 29 games (24 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 22 of 97.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 6-2-17 |
+| duck | 6-2-20 |
+| TA Baseline A | 17-5-2 |
 | Mist Opportunities | 7-2-15 |
-| TA Baseline A | 16-4-2 |
 | TA Baseline S | 14-1-7 |
 | Strongly Invisible | 2-1-17 |
-| Decent Chess Bot | 3-1-12 |
-| TA Baseline P | 13-0-1 |
+| Decent Chess Bot | 3-1-14 |
+| TA Baseline P | 15-0-1 |
 | Knight Vision | 3-1-8 |
-| Apricot Squad | 10-0-0 |
+| Apricot Squad | 12-0-0 |
 | Instructors | 3-1-6 |
 | Greek Gift | 0-1-7 |
 | baseline.py | 4-0-0 |
@@ -214,3 +214,14 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-11 10:13 | dt84tp1f | W | duck | 75 | loss |  | 78 s | 5-16 |
 | 2026-10-11 10:14 | ao41x2q6 | B | duck | 95 | win |  | 70 s | 15-5 |
 | 2026-10-11 10:14 | vjmk3hpq | B | duck | 78 | loss |  | 84 s | 2-11 |
+| 2026-10-11 10:16 | rxez29we | W | Decent Chess Bot | 43 | loss |  | 120 s | 9-10 |
+| 2026-10-11 10:16 | 2244hu1b | W | duck | 117 | loss | ply 96 by r unseen | 58 s | 2-8 |
+| 2026-10-11 10:18 | c8iyzn5f | W | TA Baseline P | 66 | win |  | 102 s | 14-4 |
+| 2026-10-11 10:18 | fy262x7g | B | Decent Chess Bot | 80 | loss |  | 64 s | 13-16 |
+| 2026-10-11 10:19 | af16lu4k | B | TA Baseline P | 73 | win |  | 73 s | 21-8 |
+| 2026-10-11 10:24 | xn798x1j | W | Apricot Squad | 36 | win |  | 130 s | 37-21 |
+| 2026-10-11 10:24 | udzn1huw | B | Apricot Squad | 43 | win |  | 111 s | 35-34 |
+| 2026-10-11 10:31 | ubysx5iu | B | TA Baseline A | 97 | draw | ply 69 by r unseen | 62 s | 12-6 |
+| 2026-10-11 10:31 | f0ayh3io | W | TA Baseline A | 98 | win |  | 70 s | 11-12 |
+| 2026-10-11 10:35 | tglhxq78 | B | duck | 68 | loss |  | 95 s | 2-14 |
+| 2026-10-11 10:36 | 86ykx0b2 | W | duck | 77 | loss |  | 66 s | 10-20 |
