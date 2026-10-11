@@ -1,28 +1,28 @@
 # Arena v30 watch
 
-Updated 2026-10-11 12:19 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 12:39 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 102W-17D-115L over 234 games** (47%).
-As White: 62.0/117.
-As Black: 48.5/117.
+**Record: 106W-18D-120L over 244 games** (47%).
+As White: 64.5/122.
+As Black: 50.5/122.
 
-Queen lost for less: 33 games (28 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 26 of 115.
+Queen lost for less: 36 games (31 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 28 of 120.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 76 plies.
-Games as Black where White opened 1.c4: 7 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline A | 25-6-3 |
+| duck | 7-3-24 |
 | Mist Opportunities | 8-2-22 |
-| duck | 6-3-23 |
-| TA Baseline A | 22-5-3 |
 | TA Baseline S | 16-1-7 |
+| Decent Chess Bot | 3-1-18 |
 | Strongly Invisible | 3-1-18 |
-| Decent Chess Bot | 3-1-16 |
 | TA Baseline P | 17-0-1 |
 | Knight Vision | 3-2-9 |
 | Instructors | 4-1-9 |
 | Apricot Squad | 12-0-0 |
-| Greek Gift | 0-1-7 |
+| Greek Gift | 0-1-9 |
 | baseline.py | 8-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -261,3 +261,13 @@ Games as Black where White opened 1.c4: 7 (the book-trap family; the v15 gate re
 | 2026-10-11 12:03 | ao6vdzhf | B | Instructors | 110 | loss |  | 69 s | 2-9 |
 | 2026-10-11 12:04 | gjlnku86 | B | Mist Opportunities | 18 | loss |  | 153 s | 35-32 |
 | 2026-10-11 12:08 | udzy8uxc | W | Mist Opportunities | 85 | loss |  | 88 s | 1-12 |
+| 2026-10-11 12:19 | 7p0t2c6q | W | TA Baseline A | 117 | draw |  | 57 s | 15-4 |
+| 2026-10-11 12:20 | bimljvua | B | TA Baseline A | 119 | win | ply 51 by r unseen | 65 s | 14-3 |
+| 2026-10-11 12:23 | e6li8thq | B | TA Baseline A | 71 | win |  | 82 s | 15-5 |
+| 2026-10-11 12:25 | hj3s3mya | W | TA Baseline A | 104 | win |  | 70 s | 18-3 |
+| 2026-10-11 12:26 | yaiamkwq | B | Greek Gift | 42 | loss | ply 33 by n unseen | 109 s | 14-25 |
+| 2026-10-11 12:27 | 7bwsz8m6 | W | Greek Gift | 55 | loss |  | 118 s | 4-15 |
+| 2026-10-11 12:30 | yow099ae | W | duck | 72 | win |  | 77 s | 21-10 |
+| 2026-10-11 12:31 | 2sldbdue | B | duck | 70 | loss |  | 64 s | 23-19 |
+| 2026-10-11 12:32 | c4ey7hbf | W | Decent Chess Bot | 69 | loss | ply 22 by n unseen | 94 s | 8-22 |
+| 2026-10-11 12:32 | bj4rc9f2 | B | Decent Chess Bot | 76 | loss |  | 81 s | 3-25 |
