@@ -1,18 +1,18 @@
 # Arena v30 watch
 
-Updated 2026-10-11 16:04 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 16:25 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 145W-23D-167L over 335 games** (47%).
-As White: 90.5/168.
-As Black: 66.0/167.
+**Record: 147W-24D-169L over 340 games** (47%).
+As White: 91.5/170.
+As Black: 67.5/170.
 
-Queen lost for less: 46 games (39 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 35 of 167.
-Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 3. Mean length 77 plies.
+Queen lost for less: 47 games (40 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 35 of 169.
+Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 4. Mean length 78 plies.
 Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Mist Opportunities | 13-2-33 |
+| Mist Opportunities | 14-3-33 |
 | TA Baseline A | 34-8-4 |
 | duck | 9-5-32 |
 | TA Baseline P | 29-0-1 |
@@ -20,8 +20,8 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | TA Baseline S | 19-1-8 |
 | Decent Chess Bot | 4-1-19 |
 | Knight Vision | 4-2-16 |
+| Greek Gift | 2-2-18 |
 | Instructors | 5-1-14 |
-| Greek Gift | 1-2-16 |
 | Apricot Squad | 16-0-0 |
 | baseline.py | 8-0-0 |
 
@@ -362,3 +362,8 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-11 16:01 | 20aqodyq | W | Greek Gift | 51 | loss |  | 113 s | 5-14 |
 | 2026-10-11 16:03 | 39av6ed0 | W | TA Baseline A | 60 | win |  | 95 s | 14-4 |
 | 2026-10-11 16:03 | 5i05jlde | B | TA Baseline A | 49 | win |  | 107 s | 24-22 |
+| 2026-10-11 16:04 | 64gqnlhg | W | Mist Opportunities | 46 | win |  | 121 s | 15-26 |
+| 2026-10-11 16:05 | bzktbcbx | B | Greek Gift | 107 | win |  | 76 s | 27-7 |
+| 2026-10-11 16:12 | j6pj2imt | B | Greek Gift | 80 | loss |  | 78 s | 4-18 |
+| 2026-10-11 16:12 | vpv54gl9 | W | Greek Gift | 81 | loss |  | 86 s | 2-11 |
+| 2026-10-11 16:13 | nvmqgvao | B | Mist Opportunities | 208 | draw | ply 195 by n unseen | 12 s | 6-7 |
