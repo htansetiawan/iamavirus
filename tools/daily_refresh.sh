@@ -5,7 +5,8 @@
 #   bash tools/daily_refresh.sh [--no-dataset] [--no-push]
 #
 # Storage: the Seagate (/media/henrytan/seagate/iamavirus-data, exFAT) is the
-# storage of record. data/manifests and data/derived are symlinks to it; the
+# storage of record. data/derived and data/manifests/arena-latest{,.json} are
+# symlinks to it (the small tracked manifests stay in the repo); the
 # replays stay on the local SSD as the working copy (a random replay read is
 # 0.1 ms there, about 50 ms on the USB disk) and are archived to it after every
 # run (tools/mirror_raw.py: a base tarball plus one per day). Without the
