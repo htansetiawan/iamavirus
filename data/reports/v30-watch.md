@@ -1,14 +1,14 @@
 # Arena v30 watch
 
-Updated 2026-10-11 08:13 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 08:33 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 61W-11D-64L over 136 games** (49%).
-As White: 38.5/68.
-As Black: 28.0/68.
+**Record: 64W-11D-65L over 140 games** (50%).
+As White: 39.5/70.
+As Black: 30.0/70.
 
-Queen lost for less: 20 games (17 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 14 of 64.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 20 games (17 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 14 of 65.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 74 plies.
+Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -17,10 +17,10 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | Mist Opportunities | 4-0-12 |
 | Strongly Invisible | 2-1-13 |
 | TA Baseline S | 9-1-6 |
+| Knight Vision | 3-1-8 |
 | TA Baseline P | 9-0-1 |
-| Knight Vision | 2-1-7 |
+| Apricot Squad | 10-0-0 |
 | Decent Chess Bot | 2-0-6 |
-| Apricot Squad | 8-0-0 |
 | Instructors | 3-1-4 |
 | Greek Gift | 0-1-3 |
 | baseline.py | 2-0-0 |
@@ -163,3 +163,7 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-11 08:04 | alsdugzy | W | Apricot Squad | 58 | win |  | 76 s | 28-9 |
 | 2026-10-11 08:07 | xurpg4d9 | W | TA Baseline S | 79 | loss |  | 88 s | 15-15 |
 | 2026-10-11 08:08 | xab7qdwv | B | TA Baseline S | 80 | loss |  | 89 s | 2-22 |
+| 2026-10-11 08:15 | 3msblim4 | B | Apricot Squad | 33 | win |  | 131 s | 44-21 |
+| 2026-10-11 08:17 | rw7g7z01 | W | Apricot Squad | 36 | win |  | 123 s | 35-33 |
+| 2026-10-11 08:24 | rezmiay9 | B | Knight Vision | 49 | win |  | 108 s | 16-17 |
+| 2026-10-11 08:25 | 3byay4np | W | Knight Vision | 67 | loss |  | 102 s | 3-16 |
