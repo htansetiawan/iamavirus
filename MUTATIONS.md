@@ -44,9 +44,10 @@ flowchart TD
   misty[Misty by Brian Liou: open Obscuro-style engine] --> v28[v28 Misty + our protocol adapter]
   v28 --> v29[v29 Misty with arena time settings]
   v29 --> v30[v30 Misty, 4 s search cap]
+  mc --> v32[v32 mist-c v7: Stockfish leaves]
   classDef alive fill:#2e7d32,color:#fff;
   classDef cand fill:#f9a825,color:#000;
-  class v30 alive;
+  class v32 alive;
 ```
 
 ## Arena variants
@@ -80,7 +81,8 @@ flowchart TD
 | **26** | mist-c (new lineage) | **the mist version**: our clean-room C Obscuro ([mist-c](https://github.com/htansetiawan/mist-c) `b697c75`): exact belief weighted by an opponent move model, GT-CFR over 128–256 sampled worlds, legality guard, no third repetition when ahead, belief updates paid from the clock. No network, no IAmAVirus code | `iamavirus-v26-mist-c-v5.zip` (`082fb4f2b791`) | 0 | — | — | — | — | — | extinct: 4–1–15 over 20 (0/8 against the top six, every loss to a piece it could not see); replaced by v27 at 22:02 UTC. Bench: 0.60–0.75 vs v25, 0.85 vs TA-P, 0.1–0.3 vs Misty |
 | **27** | v25 | **hard-turn cap**: a turn the engine marks hard may take at most 8 s (was 12); v25 burned its clock on such turns against the top five | `iamavirus-v27-hybrid.zip` (`11d1c878e994`) | 0 | — | — | — | — | — | extinct: 2–0–6 over 8 (1–0–5 at the switch back; the cap was not the cause, see the map); v25 re| **28** | Misty (not our engine) | **Brian Liou's Misty** behind our protocol adapter, uploaded at the user's request to measure an Obscuro-style engine on the arena | `iamavirus-v28-misty.zip` (`2717d78f4cfc`) | 0 | — | — | — | — | — | extinct: 11–0–6 over 17 (0.65) with 2 time forfeits (10-18 s a move on the arena); replaced by v29 at 00:51 UTC. Local: 2–2 vs v25 |
 | **29** | v28 | **arena time settings**: a 3 s search cap, Misty's commit guards on 200 belief boards (was 1,000), |P| capped at 500,000, and crash recovery in our adapter | `iamavirus-v29-misty.zip` (`158c37d0a6c4`) | 0 | — | — | — | — | — | cancelled by the user before it played, for a 4 s search cap (v30). Replays of v28's lost-on-time games: the slowest move fell from 7.2 s to 3.6 s |
-| **30** | v29 | **4 s search cap** (v29 had 3 s), the user's choice; the same guards (200 boards), |P| cap and crash recovery | `iamavirus-v30-misty-4s.zip` (`20a2e433ca31`) | 0 | — | — | — | — | — | **alive** (uploaded 01:05 UTC). Replays: at most 4.5 s a move; baseline 2–0 |
+| **30** | v29 | **4 s search cap** (v29 had 3 s), the user's choice; the same guards (200 boards), |P| cap and crash recovery | `iamavirus-v30-misty-4s.zip` (`20a2e433ca31`) | 0 | — | — | — | — | — | extinct: 29.0/60 (0.48), +0.12 a game over v25 against the same opponents (significant), no time forfeits; replaced by v32 at 04:26 UTC |
+| **32** | mist-c (v26's lineage) | **mist-c v7: Stockfish 19 scores the search's leaves** (one depth-1 MultiPV call per expanded node) on top of v6 (weighted belief, 128-256 worlds, clock-paid belief, king-trap caution) | `iamavirus-v32-mist-c-v7.zip` (`114b56e3937c`) | 0 | — | — | — | — | — | **alive** (uploaded 04:26 UTC). Bench: 11/12 vs v25, 7/14 vs Misty, 10/13 vs v6 |
 activated 00:05 UTC. Bench: 0.533 vs v25 over 30, 0.50 vs Misty over 21 (v25 0.33) |
 
 Notes on the table:
