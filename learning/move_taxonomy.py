@@ -221,6 +221,25 @@ def aggregate(labelled, side_of) -> dict:
     return out
 
 
+def game_paths(raw: str, since: str | None = None) -> list[str]:
+    """replay.json paths of the ingested games, created at or after `since`
+    (ISO UTC) when given; the dates come from accepted.jsonl, so only the
+    selected replays are opened"""
+    if since is None:
+        return sorted(glob.glob(os.path.join(raw, "games", "*", "replay.json")))
+    ids = set()
+    with open(os.path.join(raw, "accepted.jsonl")) as f:
+        for line in f:
+            try:
+                row = json.loads(line)
+            except ValueError:
+                continue
+            if (row.get("createdAt") or "") >= since:
+                ids.add(row["id"])
+    paths = (os.path.join(raw, "games", i, "replay.json") for i in sorted(ids))
+    return [p for p in paths if os.path.exists(p)]
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--raw", default="data/raw")
@@ -231,10 +250,11 @@ def main() -> None:
     ap.add_argument("--json", default=None)
     ap.add_argument("--by-team", action="store_true", help="aggregate by team name over all included games")
     ap.add_argument("--min-games", type=int, default=20)
+    ap.add_argument("--since", default=None, help="only games created at or after this UTC time (ISO, e.g. 2026-10-09)")
     args = ap.parse_args()
     opponents = set(json.load(open(args.opponents))) if args.opponents else None
     labelled, roles = [], []
-    for path in sorted(glob.glob(os.path.join(args.raw, "games", "*", "replay.json"))):
+    for path in game_paths(args.raw, args.since):
         try:
             r = json.load(open(path))
         except Exception:
