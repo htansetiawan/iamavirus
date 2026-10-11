@@ -12,4 +12,10 @@ else
   git rebase -q --autostash origin/main
   git push -q origin main
 fi
+# mirror: henryatharvard/iamavirus (private) gets the same main; its token is
+# passed to this one push so the active gh account is never switched
+if git remote get-url harvard >/dev/null 2>&1; then
+  GH_TOKEN=$(gh auth token --user henryatharvard 2>/dev/null) git push -q harvard main 2>/dev/null \
+    || echo "push_safe: mirror push to harvard failed" >&2
+fi
 git log --oneline -1 | cat
