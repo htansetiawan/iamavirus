@@ -1,27 +1,27 @@
 # Arena v30 watch
 
-Updated 2026-10-11 07:31 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 07:52 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 55W-11D-58L over 124 games** (49%).
-As White: 35.5/62.
-As Black: 25.0/62.
+**Record: 58W-11D-61L over 130 games** (49%).
+As White: 36.5/65.
+As Black: 27.0/65.
 
-Queen lost for less: 19 games (16 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 13 of 58.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 77 plies.
+Queen lost for less: 19 games (16 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 13 of 61.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 76 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 14-4-1 |
+| TA Baseline A | 15-4-1 |
 | duck | 5-2-11 |
-| Strongly Invisible | 2-1-12 |
+| Strongly Invisible | 2-1-13 |
+| Mist Opportunities | 3-0-11 |
 | TA Baseline S | 9-1-4 |
-| Mist Opportunities | 3-0-9 |
 | TA Baseline P | 9-0-1 |
 | Knight Vision | 2-1-7 |
 | Decent Chess Bot | 2-0-6 |
 | Instructors | 3-1-4 |
-| Apricot Squad | 4-0-0 |
+| Apricot Squad | 6-0-0 |
 | Greek Gift | 0-1-3 |
 | baseline.py | 2-0-0 |
 
@@ -151,3 +151,9 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-11 07:27 | 1o6hdavd | W | TA Baseline P | 109 | loss | ply 104 by r unseen | 59 s | 12-6 |
 | 2026-10-11 07:30 | h02x2qkl | B | Strongly Invisible | 80 | loss | ply 65 by q unseen | 75 s | 4-27 |
 | 2026-10-11 07:30 | 2nt3gkcz | W | TA Baseline A | 79 | draw |  | 88 s | 5-4 |
+| 2026-10-11 07:31 | hfhbpy52 | B | TA Baseline A | 93 | win |  | 77 s | 12-3 |
+| 2026-10-11 07:31 | wuy3zczy | W | Strongly Invisible | 111 | loss |  | 60 s | 5-19 |
+| 2026-10-11 07:37 | sebj3ouj | W | Mist Opportunities | 45 | loss |  | 118 s | 22-14 |
+| 2026-10-11 07:38 | b950sndb | B | Apricot Squad | 23 | win |  | 145 s | 38-31 |
+| 2026-10-11 07:39 | yeu7puae | B | Mist Opportunities | 64 | loss |  | 71 s | 24-12 |
+| 2026-10-11 07:39 | j56dwfvy | W | Apricot Squad | 50 | win |  | 117 s | 21-14 |
