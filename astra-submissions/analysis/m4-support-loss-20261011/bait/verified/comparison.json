@@ -1,0 +1,899 @@
+{
+  "classification": "retrospective same-tree comparison, not a strength test",
+  "actual_selected_move": "f8e7",
+  "ply": 55,
+  "side": "black",
+  "source": "/tmp/m4-support-bait-20261011/verified",
+  "manifest_sha256": "2a9def83fd587fb39972db6dc6fccd2df858fe6ed0ae418968a5d69b34afc754",
+  "tool_sha256": "535aab026efa4dba597b7b344480e79e28e7a12081cd2d0911085cd702d0cfb9",
+  "probe_sha256": "faaa3088c31f40efe30a9743c56fca8e744396600d3888433767c207a906c0af",
+  "trace_sha256": {
+    "f8g8": "1973298f29bf969562d6fb4a68e52e1cbe4bf7ae7d75d265b0e9d64a0e00040c",
+    "f8e7": "b2e4284d0b596209399e3a439c5c964c227a91d59449f80058806b44b54214aa"
+  },
+  "hypothetical_node_states_checked": 1384,
+  "alternatives": {
+    "f8g8": {
+      "raw_value": -0.9072772257315187,
+      "immediate_king_loss_share": 0.0,
+      "policy_probability": 0.0,
+      "execution_probability": 0.0,
+      "roots": 32,
+      "mass": 0.36820642161769396,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 9,
+            "group": 9,
+            "alternate": -1,
+            "raw": -1,
+            "cf": 1,
+            "opp": 0.008060357477483942,
+            "own_probability": 0
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 9,
+            "node": 401,
+            "path": "f8g8",
+            "board": "----R-K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r--k-",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 4,
+            "node_kind": "decision",
+            "infoset": 362,
+            "own_history": "85264b281fdd58bf",
+            "raw": -0.6375772432611923,
+            "cf": 0,
+            "opp": 0.008060357477483942,
+            "probability": 0,
+            "actions": 49,
+            "terminal_children": 5,
+            "loss_children": 0,
+            "frontier_children": 44
+          },
+          "top_replies": [
+            {
+              "kind": "node",
+              "root": 9,
+              "node": 24244,
+              "path": "f8g8/e7d8",
+              "board": "----R-K-PP---PBP-------------------N-b---p-n--q-p----ppp---Q--k-",
+              "side": 1,
+              "ep": -1,
+              "castle": "0000000000000000",
+              "halfmove": 0,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "ffce750ce81a5eb3",
+              "raw": -1,
+              "cf": 0,
+              "opp": 0.001002845106611627,
+              "probability": 0.12441695165667357,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 9,
+              "node": 24224,
+              "path": "f8g8/d5e3",
+              "board": "----R-K-PP---PBP----N----------------b---p-n--q-p---Qppp---r--k-",
+              "side": 1,
+              "ep": -1,
+              "castle": "0000000000000000",
+              "halfmove": 5,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "a8a321bf61474949",
+              "raw": -0.95853084482113,
+              "cf": 0,
+              "opp": 0.0009568517280878868,
+              "probability": 0.11871083022816131,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 9,
+              "node": 24225,
+              "path": "f8g8/d5b4",
+              "board": "----R-K-PP---PBP---------N-----------b---p-n--q-p---Qppp---r--k-",
+              "side": 1,
+              "ep": -1,
+              "castle": "0000000000000000",
+              "halfmove": 5,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "a8a321bf61474949",
+              "raw": -0.9363400955076433,
+              "cf": 0,
+              "opp": 0.0009322400009258956,
+              "probability": 0.11565740148995182,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 9,
+              "node": 24199,
+              "path": "f8g8/e1b1",
+              "board": "-R----K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r--k-",
+              "side": 1,
+              "ep": -1,
+              "castle": "0000000000000000",
+              "halfmove": 5,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "0e72102b54b70b59",
+              "raw": -0.7340715196043416,
+              "cf": 0,
+              "opp": 0.0007079042232894455,
+              "probability": 0.08782541286375048,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 9,
+              "node": 24239,
+              "path": "f8g8/e7a7",
+              "board": "----R-K-PP---PBP-------------------N-b---p-n--q-Q----ppp---r--k-",
+              "side": 1,
+              "ep": -1,
+              "castle": "0000000000000000",
+              "halfmove": 0,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "0a33315501ccfc82",
+              "raw": -0.6366380493098307,
+              "cf": 0,
+              "opp": 0.0005998409058476567,
+              "probability": 0.0744186479970983,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            }
+          ]
+        }
+      ],
+      "worlds": [
+        {
+          "root": 0,
+          "weight": 0.025684740043122285,
+          "raw": -0.8484683566419038,
+          "weighted_value": -0.021792689175162465,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "---R--K--P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 1,
+          "weight": 0.014639894346220844,
+          "raw": -0.7184140980208364,
+          "weighted_value": -0.010517506491860592,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "---NR-K--P---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 2,
+          "weight": 0.027212424677458196,
+          "raw": -0.9368394565994506,
+          "weighted_value": -0.025493673147583416,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R------K-P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 3,
+          "weight": 0.020031164626024837,
+          "raw": -0.7493472769289221,
+          "weighted_value": -0.015010298666226662,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K--P---PBPP------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 4,
+          "weight": 0.016640149563035344,
+          "raw": -0.6060434477487792,
+          "weighted_value": -0.01008465361223728,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R----K--PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 5,
+          "weight": 0.02155069498717612,
+          "raw": -0.9088361348007478,
+          "weighted_value": -0.019586050334414996,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP----BP-------------P-----N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 6,
+          "weight": 0.09047995644730142,
+          "raw": -0.9999999999999999,
+          "weighted_value": -0.0904799564473014,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K--P---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 7,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "------K--P---PBPR-------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 8,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 9,
+          "weight": 0.02189086611273975,
+          "raw": -0.6375772432611923,
+          "weighted_value": -0.013957118068760462,
+          "immediate_king_loss": false,
+          "true_state": true,
+          "board": "----R-K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 10,
+          "weight": 0.0,
+          "raw": -1,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "----R-K--P--NPBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 11,
+          "weight": 0.016081187828378474,
+          "raw": -0.4218720113322936,
+          "weighted_value": -0.006784203053770425,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP----BP-----P-------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 12,
+          "weight": 0.0022385211323345294,
+          "raw": -0.8625598101283487,
+          "weighted_value": -0.001930858362874768,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "--R---K-PP---PBP--------N------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 13,
+          "weight": 0.0,
+          "raw": -0.9999999999999999,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP----BP--------N----P-------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 14,
+          "weight": 0.02326706451138525,
+          "raw": -0.8997228259573417,
+          "weighted_value": -0.020933909033915312,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K--P----BP--------P----P-----N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 15,
+          "weight": 0.067319590990579,
+          "raw": -1,
+          "weighted_value": -0.067319590990579,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K-PP---PBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 16,
+          "weight": 0.09599625277627784,
+          "raw": -0.9999999999999999,
+          "weighted_value": -0.09599625277627782,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K-PP----BP-----P---------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 17,
+          "weight": 0.020680077839000235,
+          "raw": -0.5248444372157587,
+          "weighted_value": -0.010853823814988162,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "---R--K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 18,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "---NR-K-PP---PBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 19,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R------KPP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 20,
+          "weight": 0.023474136059100276,
+          "raw": -0.7405956301076283,
+          "weighted_value": -0.01738484258592157,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "----R-K--P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 21,
+          "weight": 0.04138102688086642,
+          "raw": -0.9507951431945212,
+          "weighted_value": -0.03934487937872972,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "----R-K-PP---PBP--------N------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 22,
+          "weight": 0.0032386427049836053,
+          "raw": -0.8576060293358835,
+          "weighted_value": -0.0027774795106586146,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K--P---PBPP--------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 23,
+          "weight": 0.020856555258250253,
+          "raw": -0.6467915335611512,
+          "weighted_value": -0.013489843360286573,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "--R---K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 24,
+          "weight": 0.0,
+          "raw": -0.9999999999999999,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "----R-K-PP--NPBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 25,
+          "weight": 0.02002334013587937,
+          "raw": -0.7376950177787951,
+          "weighted_value": -0.014771118257528394,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K--P----BP-----P--P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 26,
+          "weight": 0.005516993143486873,
+          "raw": -0.8062181317864625,
+          "weighted_value": -0.00444789990522071,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-NP---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 27,
+          "weight": 0.02175414522624064,
+          "raw": -0.8661107720098845,
+          "weighted_value": -0.018841499516314423,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K--P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 28,
+          "weight": 0.0,
+          "raw": -0.9011835652094408,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-NP----BP-----P--P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 29,
+          "weight": 0.006072649617975472,
+          "raw": -0.7001017166719224,
+          "weighted_value": -0.0042514724222917225,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP---PBP--------N------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 30,
+          "weight": 0.025765800124070433,
+          "raw": -0.5054561390598971,
+          "weighted_value": -0.013023481850501657,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP--NPBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 31,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "----R-K-NP---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        }
+      ]
+    },
+    "f8e7": {
+      "raw_value": -0.4243417721596081,
+      "immediate_king_loss_share": 0.7033715930629909,
+      "policy_probability": 1.0,
+      "execution_probability": 1.0,
+      "roots": 32,
+      "mass": 0.36820642161769396,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 9,
+            "group": 9,
+            "alternate": -1,
+            "raw": -1,
+            "cf": 1,
+            "opp": 0.008060357477483942,
+            "own_probability": 1
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 9,
+            "node": 399,
+            "path": "f8e7",
+            "board": "----R-K-PP---PBP-------------------N-b---p-n--q-p---kppp---r----",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 0,
+            "node_kind": "terminal",
+            "infoset": -1,
+            "own_history": "fa022554278d1022",
+            "raw": -1,
+            "cf": 1,
+            "opp": 0.008060357477483942,
+            "probability": 1,
+            "actions": 0,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 0
+          },
+          "top_replies": []
+        }
+      ],
+      "worlds": [
+        {
+          "root": 0,
+          "weight": 0.025684740043122285,
+          "raw": -1,
+          "weighted_value": -0.025684740043122285,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "---R--K--P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 1,
+          "weight": 0.014639894346220844,
+          "raw": -1,
+          "weighted_value": -0.014639894346220844,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "---NR-K--P---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 2,
+          "weight": 0.027212424677458196,
+          "raw": -1,
+          "weighted_value": -0.027212424677458196,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R------K-P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 3,
+          "weight": 0.020031164626024837,
+          "raw": -1,
+          "weighted_value": -0.020031164626024837,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-----K--P---PBPP------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 4,
+          "weight": 0.016640149563035344,
+          "raw": -1,
+          "weighted_value": -0.016640149563035344,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R----K--PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 5,
+          "weight": 0.02155069498717612,
+          "raw": -1,
+          "weighted_value": -0.02155069498717612,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-----K-PP----BP-------------P-----N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 6,
+          "weight": 0.09047995644730142,
+          "raw": 0.9453678956693188,
+          "weighted_value": 0.08553684602683695,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K--P---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 7,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "------K--P---PBPR-------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 8,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-----K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 9,
+          "weight": 0.02189086611273975,
+          "raw": -1,
+          "weighted_value": -0.02189086611273975,
+          "immediate_king_loss": true,
+          "true_state": true,
+          "board": "----R-K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 10,
+          "weight": 0.0,
+          "raw": 0.8116926537380904,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "----R-K--P--NPBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 11,
+          "weight": 0.016081187828378474,
+          "raw": -1,
+          "weighted_value": -0.016081187828378474,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-----K-PP----BP-----P-------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 12,
+          "weight": 0.0022385211323345294,
+          "raw": 0.9387302182774869,
+          "weighted_value": 0.00210136743117516,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "--R---K-PP---PBP--------N------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 13,
+          "weight": 0.0,
+          "raw": 0.9590746656027377,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP----BP--------N----P-------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 14,
+          "weight": 0.02326706451138525,
+          "raw": -1,
+          "weighted_value": -0.02326706451138525,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-----K--P----BP--------P----P-----N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 15,
+          "weight": 0.067319590990579,
+          "raw": 0.9517659364314758,
+          "weighted_value": 0.06407249355933237,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K-PP---PBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 16,
+          "weight": 0.09599625277627784,
+          "raw": 0.9336161497475289,
+          "weighted_value": 0.08962365190717905,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K-PP----BP-----P---------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 17,
+          "weight": 0.020680077839000235,
+          "raw": -1,
+          "weighted_value": -0.020680077839000235,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "---R--K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 18,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "---NR-K-PP---PBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 19,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R------KPP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 20,
+          "weight": 0.023474136059100276,
+          "raw": -1,
+          "weighted_value": -0.023474136059100276,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "----R-K--P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 21,
+          "weight": 0.04138102688086642,
+          "raw": -1,
+          "weighted_value": -0.04138102688086642,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "----R-K-PP---PBP--------N------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 22,
+          "weight": 0.0032386427049836053,
+          "raw": 0.9509520316743192,
+          "weighted_value": 0.003079793860171372,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R--N--K--P---PBPP--------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 23,
+          "weight": 0.020856555258250253,
+          "raw": -1,
+          "weighted_value": -0.020856555258250253,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "--R---K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 24,
+          "weight": 0.0,
+          "raw": 0.7618951513774921,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "----R-K-PP--NPBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 25,
+          "weight": 0.02002334013587937,
+          "raw": -1,
+          "weighted_value": -0.02002334013587937,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-----K--P----BP-----P--P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 26,
+          "weight": 0.005516993143486873,
+          "raw": 0.9535237553113485,
+          "weighted_value": 0.005260584020204564,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-NP---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 27,
+          "weight": 0.02175414522624064,
+          "raw": -1,
+          "weighted_value": -0.02175414522624064,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-----K--P---PBP--------P----------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 28,
+          "weight": 0.0,
+          "raw": 0.9570964746249543,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-NP----BP-----P--P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 29,
+          "weight": 0.006072649617975472,
+          "raw": 0.9585932611586676,
+          "weighted_value": 0.005821201001169045,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP---PBP--------N------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 30,
+          "weight": 0.025765800124070433,
+          "raw": 0.9133767623745848,
+          "weighted_value": 0.023533883097314127,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-----K-PP--NPBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 31,
+          "weight": 0.07364082499362251,
+          "raw": -1,
+          "weighted_value": -0.07364082499362251,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "----R-K-NP---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        }
+      ]
+    }
+  },
+  "pairwise_value_decomposition": [
+    {
+      "left": "f8g8",
+      "right": "f8e7",
+      "aggregate_difference": -0.48293545357191053,
+      "largest_favors_left": [
+        {
+          "root": 17,
+          "weight": 0.020680077839000235,
+          "true_state": false,
+          "left_value": -0.5248444372157587,
+          "right_value": -1,
+          "weighted_difference": 0.009826254024012073,
+          "board": "---R--K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 11,
+          "weight": 0.016081187828378474,
+          "true_state": false,
+          "left_value": -0.4218720113322936,
+          "right_value": -1,
+          "weighted_difference": 0.009296984774608049,
+          "board": "R-----K-PP----BP-----P-------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 9,
+          "weight": 0.02189086611273975,
+          "true_state": true,
+          "left_value": -0.6375772432611923,
+          "right_value": -1,
+          "weighted_difference": 0.007933748043979288,
+          "board": "----R-K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 23,
+          "weight": 0.020856555258250253,
+          "true_state": false,
+          "left_value": -0.6467915335611512,
+          "right_value": -1,
+          "weighted_difference": 0.007366711897963681,
+          "board": "--R---K-PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 4,
+          "weight": 0.016640149563035344,
+          "true_state": false,
+          "left_value": -0.6060434477487792,
+          "right_value": -1,
+          "weighted_difference": 0.006555495950798063,
+          "board": "R----K--PP---PBP-------------------N-b---p-n--q-p---Qppp---r-k--"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 16,
+          "weight": 0.09599625277627784,
+          "true_state": false,
+          "left_value": -0.9999999999999999,
+          "right_value": 0.9336161497475289,
+          "weighted_difference": -0.18561990468345688,
+          "board": "R--N--K-PP----BP-----P---------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 6,
+          "weight": 0.09047995644730142,
+          "true_state": false,
+          "left_value": -0.9999999999999999,
+          "right_value": 0.9453678956693188,
+          "weighted_difference": -0.17601680247413837,
+          "board": "R--N--K--P---PBP--------P------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 15,
+          "weight": 0.067319590990579,
+          "true_state": false,
+          "left_value": -1,
+          "right_value": 0.9517659364314758,
+          "weighted_difference": -0.1313920845499114,
+          "board": "R--N--K-PP---PBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 30,
+          "weight": 0.025765800124070433,
+          "true_state": false,
+          "left_value": -0.5054561390598971,
+          "right_value": 0.9133767623745848,
+          "weighted_difference": -0.036557364947815786,
+          "board": "R-----K-PP--NPBP---------------------b---p-n--q-p---Qppp---r-k--"
+        },
+        {
+          "root": 29,
+          "weight": 0.006072649617975472,
+          "true_state": false,
+          "left_value": -0.7001017166719224,
+          "right_value": 0.9585932611586676,
+          "weighted_difference": -0.010072673423460767,
+          "board": "R-----K-PP---PBP--------N------------b---p-n--q-p---Qppp---r-k--"
+        }
+      ]
+    }
+  ]
+}

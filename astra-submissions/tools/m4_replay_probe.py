@@ -181,6 +181,10 @@ def main():
             eval_line = re.search(r"m4-eval: (.*)", proc.stderr)
             if eval_line:
                 row["evaluation"] = {k:float(v) for k,v in re.findall(r"(\w+)=(\S+)",eval_line.group(1))}
+            if args.stockfish and not row.get("evaluation", {}).get("ready"):
+                row["validation_error"] = "Requested Stockfish evaluator was not ready; internal fallback is not this experimental arm."
+                (args.out/(name+".invalid.json")).write_text(json.dumps(row, indent=2)+"\n")
+                raise RuntimeError(row["validation_error"])
             row["prefix_evaluation"] = [
                 {k:float(v) for k,v in re.findall(r"(\w+)=(\S+)", line)}
                 for line in re.findall(r"m4-prefix-eval: (.*)", proc.stderr)]

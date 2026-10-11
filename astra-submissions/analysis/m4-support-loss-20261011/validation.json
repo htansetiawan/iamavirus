@@ -1,0 +1,20 @@
+{
+  "trace_rows_match": 1680,
+  "trace_events": 1652,
+  "first_losses_from_cap": 21,
+  "filter_errors": 0,
+  "mass_crosscheck_rows": 1438,
+  "mass_max_absolute_error": 1.4546000071113951e-08,
+  "mass_note": "Float32 recentering produces small numerical discrepancy; original diagnostic rows match exactly apart from time.",
+  "independently_reconstructed_bait_tree_nodes": 5991,
+  "fresh_frames": 467,
+  "fresh_games": 6,
+  "external_evaluator_failfast": {
+    "test": "Stockfish path /bin/false",
+    "expected_exit": 1,
+    "actual_exit": 1,
+    "invalid_receipt_saved": true,
+    "no_results_json": true
+  },
+  "excluded_probe": "bait/cold requested Stockfish but startup failed and fell back; not evidence for the intended external-evaluator arm."
+}
