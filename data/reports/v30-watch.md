@@ -1,12 +1,12 @@
 # Arena v30 watch
 
-Updated 2026-10-11 18:51 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 19:12 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 178W-25D-201L over 404 games** (47%).
-As White: 108.0/202.
-As Black: 82.5/202.
+**Record: 180W-25D-206L over 411 games** (47%).
+As White: 110.0/206.
+As Black: 82.5/205.
 
-Queen lost for less: 54 games (47 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 41 of 201.
+Queen lost for less: 54 games (47 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 41 of 206.
 Short losses (12 plies or fewer): 4. Games with a clock at 15 s or less: 4. Mean length 77 plies.
 Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -16,11 +16,11 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | TA Baseline A | 39-8-5 |
 | duck | 9-5-36 |
 | TA Baseline P | 38-0-2 |
+| Strongly Invisible | 4-1-29 |
+| TA Baseline S | 22-1-10 |
 | Instructors | 7-1-24 |
-| Strongly Invisible | 4-1-27 |
 | Decent Chess Bot | 5-1-24 |
-| TA Baseline S | 21-1-8 |
-| Knight Vision | 6-3-19 |
+| Knight Vision | 7-3-20 |
 | Greek Gift | 2-2-18 |
 | Apricot Squad | 20-0-0 |
 | baseline.py | 12-0-0 |
@@ -431,3 +431,10 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | 2026-10-11 18:49 | e47y6ajq | W | TA Baseline P | 68 | win |  | 96 s | 17-10 |
 | 2026-10-11 18:50 | up9cuirj | W | Decent Chess Bot | 100 | win | ply 50 by r unseen | 63 s | 9-6 |
 | 2026-10-11 18:50 | yb96870c | W | Decent Chess Bot | 65 | loss |  | 100 s | 3-10 |
+| 2026-10-11 18:51 | rykix63s | W | Knight Vision | 84 | win |  | 77 s | 12-8 |
+| 2026-10-11 18:52 | bod8w0wk | B | Knight Vision | 116 | loss |  | 67 s | 1-19 |
+| 2026-10-11 19:00 | kw5knb42 | B | Strongly Invisible | 70 | loss |  | 97 s | 9-12 |
+| 2026-10-11 19:02 | qxxb97kf | B | TA Baseline S | 20 | loss |  | 148 s | 39-39 |
+| 2026-10-11 19:02 | 2timjmol | W | Strongly Invisible | 103 | loss |  | 67 s | 1-19 |
+| 2026-10-11 19:08 | x8seohlv | W | TA Baseline S | 98 | win |  | 74 s | 16-1 |
+| 2026-10-11 19:11 | cl28t0o0 | W | TA Baseline S | 89 | loss |  | 82 s | 12-10 |
