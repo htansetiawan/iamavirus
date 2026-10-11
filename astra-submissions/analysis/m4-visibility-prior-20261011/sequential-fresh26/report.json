@@ -1,0 +1,241 @@
+{
+  "checks": {
+    "control26": {
+      "decisions": 1019,
+      "all_independent_fatal_and_attack_labels_match": true,
+      "all_belief_observations_match": true,
+      "only_full_model_used": true
+    },
+    "visibility32": {
+      "decisions": 1019,
+      "all_independent_fatal_and_attack_labels_match": true,
+      "all_belief_observations_match": true,
+      "only_full_model_used": true
+    }
+  },
+  "cohorts": {
+    "fresh_all": {
+      "control26": {
+        "games": 26,
+        "decisions": 1019,
+        "truth_present": 850,
+        "empty_belief": 0,
+        "rebuilds": 4,
+        "collapses": 4,
+        "update_cpu_seconds": 24.721658,
+        "attack": {
+          "expected": 28.684297707066676,
+          "actual": 40,
+          "brier": 0.013660612343271324
+        },
+        "fatal": {
+          "expected": 3.4700396911886964,
+          "actual": 13,
+          "brier": 0.011206650141973369
+        }
+      },
+      "visibility32": {
+        "games": 26,
+        "decisions": 1019,
+        "truth_present": 791,
+        "empty_belief": 0,
+        "rebuilds": 14,
+        "collapses": 14,
+        "update_cpu_seconds": 47.818452,
+        "attack": {
+          "expected": 30.254296042046377,
+          "actual": 40,
+          "brier": 0.013557217569184812
+        },
+        "fatal": {
+          "expected": 5.416789333491172,
+          "actual": 13,
+          "brier": 0.01082154586547393
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": 0.00010339477408651684,
+          "ci95": [
+            -0.0004336738360904759,
+            0.0006600846004733659
+          ],
+          "games": 26,
+          "moves": 1019
+        },
+        "fatal_brier_reduction": {
+          "mean": 0.000385104276499439,
+          "ci95": [
+            -0.00019192965109402006,
+            0.0012713534323243742
+          ],
+          "games": 26,
+          "moves": 1019
+        },
+        "truth_support_gain": {
+          "mean": -0.05789990186457311,
+          "ci95": [
+            -0.14788431051488804,
+            0.03330292595151973
+          ],
+          "games": 26,
+          "moves": 1019
+        }
+      }
+    },
+    "all_with_diagnostic": {
+      "control26": {
+        "games": 26,
+        "decisions": 1019,
+        "truth_present": 850,
+        "empty_belief": 0,
+        "rebuilds": 4,
+        "collapses": 4,
+        "update_cpu_seconds": 24.721658,
+        "attack": {
+          "expected": 28.684297707066676,
+          "actual": 40,
+          "brier": 0.013660612343271324
+        },
+        "fatal": {
+          "expected": 3.4700396911886964,
+          "actual": 13,
+          "brier": 0.011206650141973369
+        }
+      },
+      "visibility32": {
+        "games": 26,
+        "decisions": 1019,
+        "truth_present": 791,
+        "empty_belief": 0,
+        "rebuilds": 14,
+        "collapses": 14,
+        "update_cpu_seconds": 47.818452,
+        "attack": {
+          "expected": 30.254296042046377,
+          "actual": 40,
+          "brier": 0.013557217569184812
+        },
+        "fatal": {
+          "expected": 5.416789333491172,
+          "actual": 13,
+          "brier": 0.01082154586547393
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": 0.00010339477408651684,
+          "ci95": [
+            -0.0004336738360904759,
+            0.0006600846004733659
+          ],
+          "games": 26,
+          "moves": 1019
+        },
+        "fatal_brier_reduction": {
+          "mean": 0.000385104276499439,
+          "ci95": [
+            -0.00019192965109402006,
+            0.0012713534323243742
+          ],
+          "games": 26,
+          "moves": 1019
+        },
+        "truth_support_gain": {
+          "mean": -0.05789990186457311,
+          "ci95": [
+            -0.14788431051488804,
+            0.03330292595151973
+          ],
+          "games": 26,
+          "moves": 1019
+        }
+      }
+    },
+    "fresh_all_unchanged": {
+      "control26": {
+        "games": 25,
+        "decisions": 482,
+        "truth_present": 405,
+        "empty_belief": 0,
+        "rebuilds": 2,
+        "collapses": 2,
+        "update_cpu_seconds": 24.301488,
+        "attack": {
+          "expected": 3.4367421054720273,
+          "actual": 14,
+          "brier": 0.02695665233726462
+        },
+        "fatal": {
+          "expected": 2.0512806851002243,
+          "actual": 11,
+          "brier": 0.022063708320150005
+        }
+      },
+      "visibility32": {
+        "games": 25,
+        "decisions": 482,
+        "truth_present": 370,
+        "empty_belief": 0,
+        "rebuilds": 12,
+        "collapses": 12,
+        "update_cpu_seconds": 46.930386,
+        "attack": {
+          "expected": 5.178018815030095,
+          "actual": 14,
+          "brier": 0.02593866960996635
+        },
+        "fatal": {
+          "expected": 2.6884092990460173,
+          "actual": 11,
+          "brier": 0.020781924775821196
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": 0.0010179827272982663,
+          "ci95": [
+            -0.0002369614727956346,
+            0.0025840026091166536
+          ],
+          "games": 25,
+          "moves": 482
+        },
+        "fatal_brier_reduction": {
+          "mean": 0.0012817835443288059,
+          "ci95": [
+            -0.00023713439435629752,
+            0.0035470533843843226
+          ],
+          "games": 25,
+          "moves": 482
+        },
+        "truth_support_gain": {
+          "mean": -0.07261410788381743,
+          "ci95": [
+            -0.1673400245441795,
+            0.007454142947501526
+          ],
+          "games": 25,
+          "moves": 482
+        }
+      }
+    }
+  },
+  "diagnosed_traps": {
+    "gjlnku86": {
+      "control26": [],
+      "visibility32": []
+    },
+    "c4ak2ldi": {
+      "control26": [],
+      "visibility32": []
+    }
+  },
+  "limitations": [
+    "Fixed historical policy and fixed 10k cap; no search or clock-driven thinning.",
+    "Small game sample with few positives; bootstrap intervals are descriptive.",
+    "Truth is confined to audit labels; played moves and observations drive belief updates.",
+    "A better move-prior likelihood is not a demonstrated playing-strength gain."
+  ]
+}

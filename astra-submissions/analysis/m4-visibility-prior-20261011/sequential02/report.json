@@ -1,0 +1,325 @@
+{
+  "checks": {
+    "control26": {
+      "decisions": 661,
+      "all_independent_fatal_and_attack_labels_match": true,
+      "all_belief_observations_match": true,
+      "only_full_model_used": true
+    },
+    "visibility32": {
+      "decisions": 661,
+      "all_independent_fatal_and_attack_labels_match": true,
+      "all_belief_observations_match": true,
+      "only_full_model_used": true
+    }
+  },
+  "cohorts": {
+    "random16": {
+      "control26": {
+        "games": 16,
+        "decisions": 631,
+        "truth_present": 536,
+        "empty_belief": 0,
+        "rebuilds": 9,
+        "collapses": 9,
+        "update_cpu_seconds": 18.299126,
+        "attack": {
+          "expected": 24.889536837667933,
+          "actual": 27,
+          "brier": 0.01487273814884852
+        },
+        "fatal": {
+          "expected": 5.749022573792923,
+          "actual": 6,
+          "brier": 0.007881888642694257
+        }
+      },
+      "visibility32": {
+        "games": 16,
+        "decisions": 631,
+        "truth_present": 540,
+        "empty_belief": 0,
+        "rebuilds": 8,
+        "collapses": 8,
+        "update_cpu_seconds": 34.498102,
+        "attack": {
+          "expected": 27.21561616255607,
+          "actual": 27,
+          "brier": 0.013651081297739174
+        },
+        "fatal": {
+          "expected": 6.283640819224795,
+          "actual": 6,
+          "brier": 0.008059632902966669
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": 0.001221656851109347,
+          "ci95": [
+            -0.0010480279656304983,
+            0.00421458406093378
+          ],
+          "games": 16,
+          "moves": 631
+        },
+        "fatal_brier_reduction": {
+          "mean": -0.00017774426027241348,
+          "ci95": [
+            -0.001199900867100958,
+            0.0007622299214651457
+          ],
+          "games": 16,
+          "moves": 631
+        },
+        "truth_support_gain": {
+          "mean": 0.006339144215530904,
+          "ci95": [
+            -0.015701237391508326,
+            0.03365476646248085
+          ],
+          "games": 16,
+          "moves": 631
+        }
+      }
+    },
+    "all_with_diagnostic": {
+      "control26": {
+        "games": 17,
+        "decisions": 661,
+        "truth_present": 566,
+        "empty_belief": 0,
+        "rebuilds": 9,
+        "collapses": 9,
+        "update_cpu_seconds": 19.670719,
+        "attack": {
+          "expected": 24.97017509678143,
+          "actual": 28,
+          "brier": 0.015476435374476964
+        },
+        "fatal": {
+          "expected": 5.8296608329064235,
+          "actual": 7,
+          "brier": 0.008802871019887946
+        }
+      },
+      "visibility32": {
+        "games": 17,
+        "decisions": 661,
+        "truth_present": 570,
+        "empty_belief": 0,
+        "rebuilds": 8,
+        "collapses": 8,
+        "update_cpu_seconds": 37.004137,
+        "attack": {
+          "expected": 27.330546615997072,
+          "actual": 28,
+          "brier": 0.014216611801996326
+        },
+        "fatal": {
+          "expected": 6.398571272665794,
+          "actual": 7,
+          "brier": 0.008878935649044059
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": 0.0012598235724806358,
+          "ci95": [
+            -0.0008892781957453853,
+            0.003926940155822938
+          ],
+          "games": 17,
+          "moves": 661
+        },
+        "fatal_brier_reduction": {
+          "mean": -7.606462915611303e-05,
+          "ci95": [
+            -0.0010790058898940635,
+            0.0008357164987532549
+          ],
+          "games": 17,
+          "moves": 661
+        },
+        "truth_support_gain": {
+          "mean": 0.006051437216338881,
+          "ci95": [
+            -0.015810766867769967,
+            0.032260333015743374
+          ],
+          "games": 17,
+          "moves": 661
+        }
+      }
+    },
+    "random16_unchanged": {
+      "control26": {
+        "games": 16,
+        "decisions": 313,
+        "truth_present": 275,
+        "empty_belief": 0,
+        "rebuilds": 9,
+        "collapses": 9,
+        "update_cpu_seconds": 18.086929,
+        "attack": {
+          "expected": 5.0708142276077295,
+          "actual": 8,
+          "brier": 0.02441652767367796
+        },
+        "fatal": {
+          "expected": 5.0471570708151265,
+          "actual": 5,
+          "brier": 0.01242575166394396
+        }
+      },
+      "visibility32": {
+        "games": 16,
+        "decisions": 313,
+        "truth_present": 278,
+        "empty_belief": 0,
+        "rebuilds": 8,
+        "collapses": 8,
+        "update_cpu_seconds": 34.1217,
+        "attack": {
+          "expected": 6.70224257413447,
+          "actual": 8,
+          "brier": 0.024439709618406823
+        },
+        "fatal": {
+          "expected": 5.647559946395211,
+          "actual": 5,
+          "brier": 0.012760798187543056
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": -2.3181944728861083e-05,
+          "ci95": [
+            -0.003254138690676806,
+            0.0025666833144298083
+          ],
+          "games": 16,
+          "moves": 313
+        },
+        "fatal_brier_reduction": {
+          "mean": -0.00033504652359909505,
+          "ci95": [
+            -0.0022999669046853445,
+            0.0015834210885872283
+          ],
+          "games": 16,
+          "moves": 313
+        },
+        "truth_support_gain": {
+          "mean": 0.009584664536741214,
+          "ci95": [
+            -0.0066900892987849505,
+            0.03107064234609631
+          ],
+          "games": 16,
+          "moves": 313
+        }
+      }
+    }
+  },
+  "diagnosed_traps": {
+    "gjlnku86": {
+      "control26": [
+        {
+          "game": "gjlnku86",
+          "side": 1,
+          "ply": 17,
+          "move": "e5d3",
+          "worlds": 944,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.00136115291706,
+          "attack_probability": 0.0083310565225,
+          "fatal_probability": 0.0083310565225,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 0.268476,
+          "full_calls": 10473,
+          "cheap_calls": 0
+        }
+      ],
+      "visibility32": [
+        {
+          "game": "gjlnku86",
+          "side": 1,
+          "ply": 17,
+          "move": "e5d3",
+          "worlds": 943,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.00199940941438,
+          "attack_probability": 0.0124464056586,
+          "fatal_probability": 0.0124464056586,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 0.507639,
+          "full_calls": 10438,
+          "cheap_calls": 0
+        }
+      ]
+    },
+    "c4ak2ldi": {
+      "control26": [
+        {
+          "game": "c4ak2ldi",
+          "side": 1,
+          "ply": 59,
+          "move": "e2f2",
+          "worlds": 28,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.0682797466457,
+          "attack_probability": 0.0806382591135,
+          "fatal_probability": 0.0806382591135,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 1.371593,
+          "full_calls": 49349,
+          "cheap_calls": 0
+        }
+      ],
+      "visibility32": [
+        {
+          "game": "c4ak2ldi",
+          "side": 1,
+          "ply": 59,
+          "move": "e2f2",
+          "worlds": 15,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.114930453441,
+          "attack_probability": 0.114930453441,
+          "fatal_probability": 0.114930453441,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 2.506035,
+          "full_calls": 49368,
+          "cheap_calls": 0
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Fixed historical policy and fixed 10k cap; no search or clock-driven thinning.",
+    "Small game sample with few positives; bootstrap intervals are descriptive.",
+    "Truth is confined to audit labels; played moves and observations drive belief updates.",
+    "A better move-prior likelihood is not a demonstrated playing-strength gain."
+  ]
+}

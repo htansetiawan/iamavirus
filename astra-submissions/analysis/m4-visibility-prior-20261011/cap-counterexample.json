@@ -1,0 +1,59 @@
+{
+  "weights": [
+    0.8,
+    0.1,
+    0.1
+  ],
+  "cap": 2,
+  "exact_inclusion": [
+    0.9777777777777782,
+    0.5111111111111113,
+    0.5111111111111113
+  ],
+  "exact_old_normalized_expectation": [
+    0.8691358024691362,
+    0.06543209876543213,
+    0.06543209876543213
+  ],
+  "trials": 200000,
+  "estimators": {
+    "old_retained_weights": {
+      "mean": [
+        0.8692622222220764,
+        0.06545833333332633,
+        0.0652794444444375
+      ],
+      "standard_error": [
+        0.0002920677993346839,
+        0.00019080995884261315,
+        0.00019085595446954927
+      ]
+    },
+    "threshold_corrected_unnormalized": {
+      "mean": [
+        0.800215475094787,
+        0.10046944772108067,
+        0.09981823686433922
+      ],
+      "standard_error": [
+        0.00035538481360109485,
+        0.00037274051937456466,
+        0.0003577062691212574
+      ]
+    },
+    "threshold_corrected_normalized": {
+      "mean": [
+        0.8108061645665485,
+        0.0947852016980798,
+        0.09440863373537223
+      ],
+      "standard_error": [
+        0.0003054094611355959,
+        0.00025270374177149596,
+        0.0002523909105976265
+      ]
+    }
+  },
+  "source": "https://proceedings.mlr.press/v97/kool19a/kool19a.pdf",
+  "limitation": "Unnormalized importance estimates are unbiased; normalizing is a ratio estimate and remains biased at finite sample size. This three-world example does not prove the cause of the replay regressions."
+}
