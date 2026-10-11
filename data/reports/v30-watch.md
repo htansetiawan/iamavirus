@@ -1,13 +1,13 @@
 # Arena v30 watch
 
-Updated 2026-10-11 15:23 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 15:44 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 135W-23D-162L over 320 games** (46%).
-As White: 84.5/160.
-As Black: 62.0/160.
+**Record: 136W-23D-163L over 322 games** (46%).
+As White: 85.5/161.
+As Black: 62.0/161.
 
-Queen lost for less: 44 games (38 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 34 of 162.
-Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 3. Mean length 77 plies.
+Queen lost for less: 44 games (38 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 34 of 163.
+Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 3. Mean length 78 plies.
 Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -20,7 +20,7 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | TA Baseline S | 18-1-7 |
 | Decent Chess Bot | 4-1-19 |
 | Knight Vision | 4-2-16 |
-| Instructors | 4-1-13 |
+| Instructors | 5-1-14 |
 | Greek Gift | 1-2-15 |
 | Apricot Squad | 14-0-0 |
 | baseline.py | 8-0-0 |
@@ -347,3 +347,5 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-11 15:20 | p63nhuqc | B | duck | 93 | win | ply 47 by r unseen | 60 s | 12-3 |
 | 2026-10-11 15:20 | 0x9ew96y | W | duck | 103 | loss |  | 57 s | 2-22 |
 | 2026-10-11 15:22 | gf2qssqu | W | Greek Gift | 83 | loss |  | 73 s | 6-9 |
+| 2026-10-11 15:23 | hp7svdvm | B | Instructors | 90 | loss |  | 67 s | 5-9 |
+| 2026-10-11 15:25 | 3dfayxek | W | Instructors | 130 | win |  | 52 s | 13-3 |
