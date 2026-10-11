@@ -1,0 +1,636 @@
+{
+  "attention": {
+    "games": 64,
+    "decisions": 5179,
+    "metrics": {
+      "policy_nll": {
+        "control": 2.465651891902981,
+        "candidate": 2.465651891902981,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 5179
+      },
+      "policy_accuracy": {
+        "control": 0.31878741069704575,
+        "candidate": 0.31878741069704575,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 5179
+      },
+      "hidden_nll": {
+        "control": 0.48590107304271035,
+        "candidate": 0.5223550804591325,
+        "candidate_minus_control": 0.03645400741642213,
+        "paired_game_bootstrap_95": [
+          0.031238538406979512,
+          0.04158735877808002
+        ],
+        "target_count": 161649
+      },
+      "hidden_enemy_nll": {
+        "control": 1.1310000975644785,
+        "candidate": 0.9416734604698491,
+        "candidate_minus_control": -0.18932663709462938,
+        "paired_game_bootstrap_95": [
+          -0.20691298520762738,
+          -0.17181633934426369
+        ],
+        "target_count": 49330
+      },
+      "danger_brier": {
+        "control": 0.0330250126192512,
+        "candidate": 0.0330250126192512,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 158105
+      },
+      "value_mse": {
+        "control": 0.8039905377197601,
+        "candidate": 0.8039905377197601,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 5179
+      },
+      "hidden_piece_0_nll": {
+        "control": 0.6598891966624849,
+        "candidate": 0.5001016906408116,
+        "candidate_minus_control": -0.15978750602167335,
+        "paired_game_bootstrap_95": [
+          -0.1736906216251189,
+          -0.14528324845487692
+        ],
+        "target_count": 24268
+      },
+      "hidden_piece_0_recall": {
+        "control": 0.7593126751277403,
+        "candidate": 0.8272622383385528,
+        "candidate_minus_control": 0.06794956321081258,
+        "paired_game_bootstrap_95": [
+          0.058080185383277555,
+          0.07863955143405105
+        ],
+        "target_count": 24268
+      },
+      "hidden_piece_1_nll": {
+        "control": 1.6665083390313917,
+        "candidate": 1.4284077203111951,
+        "candidate_minus_control": -0.2381006187201966,
+        "paired_game_bootstrap_95": [
+          -0.27721761436230036,
+          -0.198933058118512
+        ],
+        "target_count": 4199
+      },
+      "hidden_piece_1_recall": {
+        "control": 0.3843772326744463,
+        "candidate": 0.49011669445105976,
+        "candidate_minus_control": 0.10573946177661347,
+        "paired_game_bootstrap_95": [
+          0.08526543177398525,
+          0.12661808237801306
+        ],
+        "target_count": 4199
+      },
+      "hidden_piece_2_nll": {
+        "control": 1.6018386961027038,
+        "candidate": 1.4828614314951944,
+        "candidate_minus_control": -0.11897726460750935,
+        "paired_game_bootstrap_95": [
+          -0.14943984939332663,
+          -0.0881035538285794
+        ],
+        "target_count": 5184
+      },
+      "hidden_piece_2_recall": {
+        "control": 0.42476851851851855,
+        "candidate": 0.4537037037037037,
+        "candidate_minus_control": 0.028935185185185175,
+        "paired_game_bootstrap_95": [
+          0.01934995258891595,
+          0.038720950795774534
+        ],
+        "target_count": 5184
+      },
+      "hidden_piece_3_nll": {
+        "control": 1.2818050370447591,
+        "candidate": 1.1169198676752474,
+        "candidate_minus_control": -0.1648851693695117,
+        "paired_game_bootstrap_95": [
+          -0.19391350371013452,
+          -0.13617140902125954
+        ],
+        "target_count": 7205
+      },
+      "hidden_piece_3_recall": {
+        "control": 0.4782789729354615,
+        "candidate": 0.5405968077723803,
+        "candidate_minus_control": 0.06231783483691877,
+        "paired_game_bootstrap_95": [
+          0.051435918049373995,
+          0.0739642917337456
+        ],
+        "target_count": 7205
+      },
+      "hidden_piece_4_nll": {
+        "control": 2.290486144143325,
+        "candidate": 1.8976279762348836,
+        "candidate_minus_control": -0.3928581679084413,
+        "paired_game_bootstrap_95": [
+          -0.4641670741191628,
+          -0.3276896171105415
+        ],
+        "target_count": 3295
+      },
+      "hidden_piece_4_recall": {
+        "control": 0.36661608497723824,
+        "candidate": 0.4182094081942337,
+        "candidate_minus_control": 0.051593323216995446,
+        "paired_game_bootstrap_95": [
+          0.03954788209358495,
+          0.0644864654655405
+        ],
+        "target_count": 3295
+      },
+      "hidden_piece_5_nll": {
+        "control": 1.485593037279677,
+        "candidate": 1.2224665782620279,
+        "candidate_minus_control": -0.2631264590176492,
+        "paired_game_bootstrap_95": [
+          -0.2961860271850457,
+          -0.23138726271320467
+        ],
+        "target_count": 5179
+      },
+      "hidden_piece_5_recall": {
+        "control": 0.47306429812705153,
+        "candidate": 0.5551264722919482,
+        "candidate_minus_control": 0.0820621741648967,
+        "paired_game_bootstrap_95": [
+          0.06442752596168679,
+          0.10141518477254312
+        ],
+        "target_count": 5179
+      },
+      "hidden_empty_nll": {
+        "control": 0.2025764808209845,
+        "candidate": 0.33819233123308723,
+        "candidate_minus_control": 0.13561585041210272,
+        "paired_game_bootstrap_95": [
+          0.12819219009093852,
+          0.14367674222878965
+        ],
+        "target_count": 112319
+      },
+      "hidden_occupancy_nll": {
+        "control": 0.34538435453398864,
+        "candidate": 0.3782615525892859,
+        "candidate_minus_control": 0.03287719805529726,
+        "paired_game_bootstrap_95": [
+          0.027978930949566747,
+          0.03769182214896747
+        ],
+        "target_count": 161649
+      },
+      "hidden_occupancy_brier": {
+        "control": 0.10706835355456908,
+        "candidate": 0.11859480403895162,
+        "candidate_minus_control": 0.011526450484382542,
+        "paired_game_bootstrap_95": [
+          0.009681484109145287,
+          0.013381398989385737
+        ],
+        "target_count": 161649
+      },
+      "hidden_predicted_occupancy": {
+        "control": 0.29546571320457504,
+        "candidate": 0.3795861880099287,
+        "candidate_minus_control": 0.08412047480535367,
+        "paired_game_bootstrap_95": [
+          0.07881648257290293,
+          0.08948155472450445
+        ],
+        "target_count": 161649
+      },
+      "hidden_conditional_type_nll": {
+        "control": 0.46045787277603,
+        "candidate": 0.47217868149534686,
+        "candidate_minus_control": 0.011720808719316855,
+        "paired_game_bootstrap_95": [
+          0.0073168197274567125,
+          0.015884753702089055
+        ],
+        "target_count": 49330
+      },
+      "hidden_location_nll": {
+        "control": 1.9825495804063533,
+        "candidate": 2.004052687936657,
+        "candidate_minus_control": 0.021503107530303822,
+        "paired_game_bootstrap_95": [
+          0.01548284918679455,
+          0.02754591365658524
+        ],
+        "target_count": 49330
+      },
+      "hidden_piece_0_location_nll": {
+        "control": 2.2033302540202055,
+        "candidate": 2.20665312962517,
+        "candidate_minus_control": 0.0033228756049643593,
+        "paired_game_bootstrap_95": [
+          -0.004982201075187574,
+          0.01152905996955603
+        ],
+        "target_count": 24268
+      },
+      "hidden_piece_1_location_nll": {
+        "control": 1.7860127214315793,
+        "candidate": 1.802409954836915,
+        "candidate_minus_control": 0.01639723340533572,
+        "paired_game_bootstrap_95": [
+          -0.0006162949836128289,
+          0.03384211071072636
+        ],
+        "target_count": 4199
+      },
+      "hidden_piece_2_location_nll": {
+        "control": 1.8924823547171545,
+        "candidate": 1.9178012734915337,
+        "candidate_minus_control": 0.025318918774379195,
+        "paired_game_bootstrap_95": [
+          0.010164383981781188,
+          0.040973448611584855
+        ],
+        "target_count": 5184
+      },
+      "hidden_piece_3_location_nll": {
+        "control": 1.7768993900867718,
+        "candidate": 1.8067922897467503,
+        "candidate_minus_control": 0.029892899659978545,
+        "paired_game_bootstrap_95": [
+          0.018068749796976386,
+          0.041858833472188016
+        ],
+        "target_count": 7205
+      },
+      "hidden_piece_4_location_nll": {
+        "control": 1.8913689426686104,
+        "candidate": 1.9113443880494483,
+        "candidate_minus_control": 0.019975445380837842,
+        "paired_game_bootstrap_95": [
+          0.0028221931938037063,
+          0.038066634220260916
+        ],
+        "target_count": 3295
+      },
+      "hidden_piece_5_location_nll": {
+        "control": 1.541617200438286,
+        "candidate": 1.6379303992630017,
+        "candidate_minus_control": 0.09631319882471567,
+        "paired_game_bootstrap_95": [
+          0.07547781541732669,
+          0.11531414515026189
+        ],
+        "target_count": 5179
+      },
+      "hidden_brier": {
+        "control": 0.24049837531783264,
+        "candidate": 0.25675623139216697,
+        "candidate_minus_control": 0.01625785607433433,
+        "paired_game_bootstrap_95": [
+          0.013283454162283754,
+          0.019395664717723856
+        ],
+        "target_count": 161649
+      }
+    },
+    "actual_hidden_occupancy": 0.30516736880525086
+  },
+  "cnn": {
+    "games": 64,
+    "decisions": 5179,
+    "metrics": {
+      "policy_nll": {
+        "control": 2.409344469231891,
+        "candidate": 2.409344469231891,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 5179
+      },
+      "policy_accuracy": {
+        "control": 0.3214906352577718,
+        "candidate": 0.3214906352577718,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 5179
+      },
+      "hidden_nll": {
+        "control": 0.4874170569923863,
+        "candidate": 0.49399737157823365,
+        "candidate_minus_control": 0.006580314585847347,
+        "paired_game_bootstrap_95": [
+          0.0039555887800798144,
+          0.009304689552897955
+        ],
+        "target_count": 161649
+      },
+      "hidden_enemy_nll": {
+        "control": 1.1136196737644182,
+        "candidate": 1.0284178931174692,
+        "candidate_minus_control": -0.08520178064694894,
+        "paired_game_bootstrap_95": [
+          -0.09455403254171323,
+          -0.07584990529338785
+        ],
+        "target_count": 49330
+      },
+      "danger_brier": {
+        "control": 0.036052097924897074,
+        "candidate": 0.036052097924897074,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 158105
+      },
+      "value_mse": {
+        "control": 0.9617430558911133,
+        "candidate": 0.9617430558911133,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ],
+        "target_count": 5179
+      },
+      "hidden_piece_0_nll": {
+        "control": 0.5561868760257238,
+        "candidate": 0.5183445330638913,
+        "candidate_minus_control": -0.03784234296183253,
+        "paired_game_bootstrap_95": [
+          -0.04473863807774791,
+          -0.03105525677604355
+        ],
+        "target_count": 24268
+      },
+      "hidden_piece_0_recall": {
+        "control": 0.8112741058183617,
+        "candidate": 0.8256963903082248,
+        "candidate_minus_control": 0.014422284489863157,
+        "paired_game_bootstrap_95": [
+          0.011715220942839593,
+          0.017096347794202434
+        ],
+        "target_count": 24268
+      },
+      "hidden_piece_1_nll": {
+        "control": 1.6916130469594293,
+        "candidate": 1.5650798317588819,
+        "candidate_minus_control": -0.1265332152005474,
+        "paired_game_bootstrap_95": [
+          -0.15086278262063002,
+          -0.1017268253730571
+        ],
+        "target_count": 4199
+      },
+      "hidden_piece_1_recall": {
+        "control": 0.39271255060728744,
+        "candidate": 0.4186711121695642,
+        "candidate_minus_control": 0.025958561562276772,
+        "paired_game_bootstrap_95": [
+          0.020623327266947575,
+          0.031917508504005425
+        ],
+        "target_count": 4199
+      },
+      "hidden_piece_2_nll": {
+        "control": 1.6230561359178988,
+        "candidate": 1.4735589501804407,
+        "candidate_minus_control": -0.14949718573745807,
+        "paired_game_bootstrap_95": [
+          -0.17268745562736457,
+          -0.12630220696870426
+        ],
+        "target_count": 5184
+      },
+      "hidden_piece_2_recall": {
+        "control": 0.4546682098765432,
+        "candidate": 0.4839891975308642,
+        "candidate_minus_control": 0.029320987654321007,
+        "paired_game_bootstrap_95": [
+          0.02260691763718628,
+          0.03646955024246411
+        ],
+        "target_count": 5184
+      },
+      "hidden_piece_3_nll": {
+        "control": 1.3590142324266956,
+        "candidate": 1.20396064226228,
+        "candidate_minus_control": -0.15505359016441567,
+        "paired_game_bootstrap_95": [
+          -0.1768276957686855,
+          -0.13320416122967682
+        ],
+        "target_count": 7205
+      },
+      "hidden_piece_3_recall": {
+        "control": 0.47522553782095767,
+        "candidate": 0.5063150589868147,
+        "candidate_minus_control": 0.03108952116585706,
+        "paired_game_bootstrap_95": [
+          0.024082704986826506,
+          0.0384618017524644
+        ],
+        "target_count": 7205
+      },
+      "hidden_piece_4_nll": {
+        "control": 2.5045014875769978,
+        "candidate": 2.265039275578691,
+        "candidate_minus_control": -0.23946221199830697,
+        "paired_game_bootstrap_95": [
+          -0.2903722225690744,
+          -0.192105319550329
+        ],
+        "target_count": 3295
+      },
+      "hidden_piece_4_recall": {
+        "control": 0.3484066767830046,
+        "candidate": 0.3544764795144158,
+        "candidate_minus_control": 0.006069802731411222,
+        "paired_game_bootstrap_95": [
+          0.002529457685920121,
+          0.01047594026172864
+        ],
+        "target_count": 3295
+      },
+      "hidden_piece_5_nll": {
+        "control": 1.5208108241771077,
+        "candidate": 1.50687949110321,
+        "candidate_minus_control": -0.013931333073897711,
+        "paired_game_bootstrap_95": [
+          -0.03150148459708974,
+          0.0020481316513223306
+        ],
+        "target_count": 5179
+      },
+      "hidden_piece_5_recall": {
+        "control": 0.4634099246958872,
+        "candidate": 0.4663062367252365,
+        "candidate_minus_control": 0.0028963120293493128,
+        "paired_game_bootstrap_95": [
+          -0.0021330251435968603,
+          0.008059989414452056
+        ],
+        "target_count": 5179
+      },
+      "hidden_empty_nll": {
+        "control": 0.2123916804482177,
+        "candidate": 0.2592822794765639,
+        "candidate_minus_control": 0.04689059902834619,
+        "paired_game_bootstrap_95": [
+          0.04449834478650263,
+          0.0490632391004626
+        ],
+        "target_count": 112319
+      },
+      "hidden_occupancy_nll": {
+        "control": 0.3331233385446293,
+        "candidate": 0.3385915910207961,
+        "candidate_minus_control": 0.005468252476166835,
+        "paired_game_bootstrap_95": [
+          0.0033704293886366427,
+          0.007598347919169029
+        ],
+        "target_count": 161649
+      },
+      "hidden_occupancy_brier": {
+        "control": 0.10295303023542798,
+        "candidate": 0.10495953264910816,
+        "candidate_minus_control": 0.0020065024136801807,
+        "paired_game_bootstrap_95": [
+          0.0012897198514105841,
+          0.002682824439932284
+        ],
+        "target_count": 161649
+      },
+      "hidden_predicted_occupancy": {
+        "control": 0.30748932031883464,
+        "candidate": 0.33844815515487164,
+        "candidate_minus_control": 0.030958834836037008,
+        "paired_game_bootstrap_95": [
+          0.028841041599803264,
+          0.03281447288714463
+        ],
+        "target_count": 161649
+      },
+      "hidden_conditional_type_nll": {
+        "control": 0.5056035873556848,
+        "candidate": 0.5092476942269883,
+        "candidate_minus_control": 0.003644106871303565,
+        "paired_game_bootstrap_95": [
+          0.00029115657542056096,
+          0.007231459317767089
+        ],
+        "target_count": 49330
+      },
+      "hidden_location_nll": {
+        "control": 1.9903748736492224,
+        "candidate": 1.9902105559602197,
+        "candidate_minus_control": -0.00016431768900271315,
+        "paired_game_bootstrap_95": [
+          -0.002123933674901146,
+          0.0017881279072037286
+        ],
+        "target_count": 49330
+      },
+      "hidden_piece_0_location_nll": {
+        "control": 2.156701067822621,
+        "candidate": 2.1560385248759566,
+        "candidate_minus_control": -0.0006625429466642352,
+        "paired_game_bootstrap_95": [
+          -0.003578562791545951,
+          0.0022095673551495118
+        ],
+        "target_count": 24268
+      },
+      "hidden_piece_1_location_nll": {
+        "control": 1.8124877999550528,
+        "candidate": 1.8143080255314121,
+        "candidate_minus_control": 0.0018202255763593023,
+        "paired_game_bootstrap_95": [
+          -0.002540944453254199,
+          0.006171932904402792
+        ],
+        "target_count": 4199
+      },
+      "hidden_piece_2_location_nll": {
+        "control": 1.9565188818172825,
+        "candidate": 1.958469609484199,
+        "candidate_minus_control": 0.0019507276669163964,
+        "paired_game_bootstrap_95": [
+          -0.0018703927161464718,
+          0.00567910834225615
+        ],
+        "target_count": 5184
+      },
+      "hidden_piece_3_location_nll": {
+        "control": 1.8432345100620862,
+        "candidate": 1.84388666557385,
+        "candidate_minus_control": 0.0006521555117637856,
+        "paired_game_bootstrap_95": [
+          -0.002803881905769678,
+          0.004090445853667726
+        ],
+        "target_count": 7205
+      },
+      "hidden_piece_4_location_nll": {
+        "control": 2.0042056332122526,
+        "candidate": 1.9992164180825556,
+        "candidate_minus_control": -0.004989215129697078,
+        "paired_game_bootstrap_95": [
+          -0.011918645396977928,
+          0.0018772210820309765
+        ],
+        "target_count": 3295
+      },
+      "hidden_piece_5_location_nll": {
+        "control": 1.585012288359339,
+        "candidate": 1.5853903120320234,
+        "candidate_minus_control": 0.0003780236726844688,
+        "paired_game_bootstrap_95": [
+          -0.007072509900532437,
+          0.008271805493762196
+        ],
+        "target_count": 5179
+      },
+      "hidden_brier": {
+        "control": 0.23670577472579943,
+        "candidate": 0.2395965392366837,
+        "candidate_minus_control": 0.0028907645108842694,
+        "paired_game_bootstrap_95": [
+          0.001847353205180475,
+          0.003939134843661611
+        ],
+        "target_count": 161649
+      }
+    },
+    "actual_hidden_occupancy": 0.30516736880525086
+  }
+}

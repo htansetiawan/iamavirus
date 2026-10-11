@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Diagnose recurrent-state dependence using a checkpoint's frozen source.
 
-The ablation resets GRU state before every observation. Explicit last-seen
-feature planes remain intact: this is not an all-history removal experiment.
+The default ablation resets GRU state before every observation; an optional
+adapter changes only the belief branch. Explicit last-seen feature planes
+remain intact: this is not an all-history removal experiment.
 No labels enter the model; replay targets only score its emitted predictions.
 """
 import argparse
@@ -25,6 +26,8 @@ def main():
     p.add_argument('--step', type=int, default=1000)
     p.add_argument('--output', type=Path, required=True)
     p.add_argument('--threads', type=int, default=2)
+    p.add_argument('--mode', choices=['reset-all','current-event-belief'], default='reset-all')
+    p.add_argument('--belief-diagnostics', action='store_true')
     args = p.parse_args()
     source = args.source_root.resolve()
     sys.path[:0] = [str(source / 'astra-submissions'), str(source)]
@@ -34,6 +37,11 @@ def main():
     from learning_experiments.models import ModelConfig, make_model
     from learning_experiments.run import isolate_rules, select_games, write_json
     from learning_experiments.evaluate import evaluate
+    if args.belief_diagnostics:
+        import importlib
+        from belief_diagnostics import extend_totals
+        evaluation=importlib.import_module('learning_experiments.evaluate')
+        evaluation.Totals=extend_totals(evaluation.Totals)
 
     if args.output.exists():
         raise ValueError('output exists; retain the previous diagnostic')
@@ -75,15 +83,27 @@ def main():
     start = time.monotonic()
     # CPU full-history pass is the precision/device control for CPU reset.
     full = evaluate(model, episodes, torch.device('cpu'))
-    reset = evaluate(ResetMemory(model), episodes, torch.device('cpu'))
+    if args.mode=='current-event-belief':
+        from split_belief_state import CurrentEventBelief
+        intervention=CurrentEventBelief(model)
+    else:
+        intervention=ResetMemory(model)
+    reset = evaluate(intervention, episodes, torch.device('cpu'))
     if full['unique_decisions'] != reset['unique_decisions'] or full['by_game'].keys() != reset['by_game'].keys():
         raise ValueError('ablation decisions differ')
     for game in full['by_game']:
         if full['by_game'][game]['counts'] != reset['by_game'][game]['counts']:
             raise ValueError('ablation target counts differ')
+        if args.mode=='current-event-belief':
+            for key,value in full['by_game'][game]['sums'].items():
+                if not key.startswith('hidden_') and value!=reset['by_game'][game]['sums'][key]:
+                    raise ValueError('belief-only adapter altered another task: '+key)
     result = {'run': str(args.run), 'step': args.step, 'checkpoint_sha256': digest(checkpoint_path),
               'script_sha256': digest(__file__), 'source_sha256': run['source_sha256'],
               'feature_version': feature_version,
+              'intervention': args.mode,
+              'adapter_sha256': digest(Path(__file__).with_name('split_belief_state.py')) if args.mode=='current-event-belief' else None,
+              'diagnostics_sha256': digest(Path(__file__).with_name('belief_diagnostics.py')) if args.belief_diagnostics else None,
               'feature_version_provenance': 'checkpoint metadata' if 'feature_version' in checkpoint else 'hash-verified frozen feature module',
               'validation_sha256': digest(shard), 'device': 'cpu', 'threads': args.threads,
               'pid': os.getpid(), 'elapsed_seconds': time.monotonic() - start,

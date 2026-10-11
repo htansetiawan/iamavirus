@@ -1,0 +1,58 @@
+{
+  "commands": [
+    [
+      "cc",
+      "-O2",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Wpedantic",
+      "-I",
+      "/tmp/m4-intent-build2-20261011",
+      "/tmp/m4-intent-build2-20261011/board.c",
+      "/tmp/m4-intent-build2-20261011/belief.c",
+      "/tmp/m4-intent-build2-20261011/movemodel.c",
+      "/tmp/m4-intent-build2-20261011/eval.c",
+      "/tmp/m4-intent-build2-20261011/front.c",
+      "/tmp/m4-intent-build2-20261011/intent.c",
+      "/tmp/m4-intent-build2-20261011/runner.c",
+      "-Wl,--wrap=move_logits",
+      "-lm",
+      "-o",
+      "/tmp/m4-intent-build2-20261011/runner"
+    ],
+    [
+      "cc",
+      "-O2",
+      "-std=c11",
+      "-shared",
+      "-fPIC",
+      "-I",
+      "/tmp/m4-intent-build2-20261011",
+      "/tmp/m4-intent-build2-20261011/board.c",
+      "/tmp/m4-intent-build2-20261011/movemodel.c",
+      "/tmp/m4-intent-build2-20261011/intent.c",
+      "-lm",
+      "-o",
+      "/tmp/m4-intent-build2-20261011/intent.so"
+    ]
+  ],
+  "sha256": {
+    "front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+    "fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "belief.c": "58dbb6e3725d4cc094c72c3c1dd2df014d9f0a06e185477a8edf10cb83fdd590",
+    "movemodel.h": "9d114bab8cf377a7a9a3973fca8cf9d358496dedcfd43581adba3baeb9918054",
+    "movemodel.c": "0cd74abf3d552cc0faa204e6addbfd636c35c1bf28bf0560c79c7aea58fa2b0e",
+    "runner.c": "76335585bf4159839fe91abcafee05601e581ad6acc0d858aadd6e3e21008c21",
+    "m4movefeatures.h": "24636b78af7c7899240b2749c989d97ce277e110a02154590be8202f9e3226f3",
+    "runner": "42394925145a99ff5a80ae736969b1f8bd2080c20044bff586b22b59c8cba082",
+    "eval.h": "4020fcce58269aaac95642fd23781e5af5babcddbd4189a7614ce9f10b6d6e76",
+    "intent.so": "02a88773677965f9e37edc1a02ede47bcdbc2228be6ab13a0b96a4ed675acef5",
+    "eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+    "belief.h": "b697aba077648644cf49143eddbe273f7abfdf5bda7c3b21452f1495307fcbf1",
+    "board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+    "intent.c": "7371430f642cd1b47b86390b10ac2f8e8cd73c60db3a10943a84aa9a20e24371",
+    "front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606"
+  },
+  "source_runner_sha256": "fa8791cdad924b191ec3f01f7a7fc55d7e33fdfa026292cb64d04b99fac6e866"
+}

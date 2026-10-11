@@ -1,0 +1,162 @@
+{
+  "cohorts": {
+    "primary": {
+      "control26": {
+        "decisions": 1650,
+        "games": 42,
+        "truth_present": 1386,
+        "collapses": 13,
+        "update_cpu_seconds": 42.525565,
+        "attack": {
+          "expected": 53.57383454473461,
+          "actual": 67,
+          "brier": 0.01412415863619206
+        },
+        "fatal": {
+          "expected": 9.21906226498162,
+          "actual": 19,
+          "brier": 0.009935180744370265
+        }
+      },
+      "intent": {
+        "decisions": 1650,
+        "games": 42,
+        "truth_present": 1379,
+        "collapses": 17,
+        "update_cpu_seconds": 42.90074,
+        "attack": {
+          "expected": 55.29962229668696,
+          "actual": 67,
+          "brier": 0.014031526563581089
+        },
+        "fatal": {
+          "expected": 9.677219547220233,
+          "actual": 19,
+          "brier": 0.009988535546209742
+        }
+      },
+      "paired": {
+        "truth_support_gain": {
+          "mean": -0.004242424242424243,
+          "ci95": [
+            -0.036289762314667844,
+            0.02042783814924776
+          ],
+          "games": 42,
+          "moves": 1650
+        },
+        "attack_brier_reduction": {
+          "mean": 9.263207261097157e-05,
+          "ci95": [
+            -0.00038352032064925426,
+            0.000565401502824152
+          ],
+          "games": 42,
+          "moves": 1650
+        },
+        "fatal_brier_reduction": {
+          "mean": -5.335480183947477e-05,
+          "ci95": [
+            -0.0003093831602887243,
+            0.00013364254833436961
+          ],
+          "games": 42,
+          "moves": 1650
+        }
+      }
+    },
+    "all_with_diagnostic": {
+      "control26": {
+        "decisions": 1680,
+        "games": 43,
+        "truth_present": 1416,
+        "collapses": 13,
+        "update_cpu_seconds": 43.876026,
+        "attack": {
+          "expected": 53.65447280384811,
+          "actual": 68,
+          "brier": 0.014375052238287354
+        },
+        "fatal": {
+          "expected": 9.299700524095119,
+          "actual": 20,
+          "brier": 0.010260877523105234
+        }
+      },
+      "intent": {
+        "decisions": 1680,
+        "games": 43,
+        "truth_present": 1409,
+        "collapses": 17,
+        "update_cpu_seconds": 44.257258,
+        "attack": {
+          "expected": 55.38768720159167,
+          "actual": 68,
+          "brier": 0.01427597883784242
+        },
+        "fatal": {
+          "expected": 9.765284452124932,
+          "actual": 20,
+          "brier": 0.010305184088638421
+        }
+      },
+      "paired": {
+        "truth_support_gain": {
+          "mean": -0.004166666666666667,
+          "ci95": [
+            -0.03522673057526996,
+            0.020979326795653324
+          ],
+          "games": 43,
+          "moves": 1680
+        },
+        "attack_brier_reduction": {
+          "mean": 9.907340044493167e-05,
+          "ci95": [
+            -0.0004140534424075103,
+            0.0005427693165672931
+          ],
+          "games": 43,
+          "moves": 1680
+        },
+        "fatal_brier_reduction": {
+          "mean": -4.4306565533185297e-05,
+          "ci95": [
+            -0.000306454857764023,
+            0.00014603475181546323
+          ],
+          "games": 43,
+          "moves": 1680
+        }
+      }
+    }
+  },
+  "timings": {
+    "sequential02": {
+      "control26": 20.20386113099812,
+      "intent": 20.103121929001645
+    },
+    "sequential-fresh26": {
+      "control26": 25.411486103999778,
+      "intent": 25.913399609002226
+    }
+  },
+  "inputs": [
+    {
+      "name": "sequential02",
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-visibility-prior-20261011/sequential02",
+      "input_sha256": "09e2d4ef6e8fe002d0a7d96c05b485c79f911448457e167c3d0505db6e71174d",
+      "original_control_sha256": "ef0db67a27cef15706737c77fdf169b7038f77503726f43ebcbc576b9cb1ecc6"
+    },
+    {
+      "name": "sequential-fresh26",
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-visibility-prior-20261011/sequential-fresh26",
+      "input_sha256": "1c6eaa9faa999e3165d6d172ddfc37ee5fcbe9b6b625d9c50d7d1260d6bba156",
+      "original_control_sha256": "b100ce0247ed6ae1fb55ef16345f18c47483e96b7e1b525922dcb50aa03a15dc"
+    }
+  ],
+  "zero_gate_exact_nontiming_parity": true,
+  "model_sha256": "d9e02881f4b294243896a740633459592add8fa3f7c3fcc567b5f1975594cfe5",
+  "script_sha256": "e7aafd8b69e0fecf60664548137306af30b86945ee40e3d09e2d9398cf2e4bc5",
+  "classification": "Historical-policy fixed-cap belief experiment. Reused development cohorts, not Elo or a fresh confirmation test."
+}
