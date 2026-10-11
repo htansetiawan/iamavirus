@@ -1,28 +1,29 @@
 # Arena v30 watch
 
-Updated 2026-10-11 06:49 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 07:10 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 45W-9D-48L over 102 games** (49%).
-As White: 29.0/51.
-As Black: 20.5/51.
+**Record: 49W-10D-54L over 113 games** (48%).
+As White: 31.0/56.
+As Black: 23.0/57.
 
-Queen lost for less: 16 games (14 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 10 of 48.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 76 plies.
-Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 17 games (14 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 11 of 54.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 75 plies.
+Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 14-3-1 |
-| duck | 3-2-10 |
+| duck | 4-2-11 |
 | TA Baseline S | 9-1-4 |
 | Strongly Invisible | 1-1-10 |
+| Knight Vision | 2-1-7 |
+| Mist Opportunities | 2-0-8 |
 | TA Baseline P | 8-0-0 |
 | Decent Chess Bot | 2-0-6 |
-| Knight Vision | 1-1-6 |
-| Mist Opportunities | 2-0-5 |
+| Instructors | 1-1-4 |
 | Apricot Squad | 4-0-0 |
-| Instructors | 1-0-3 |
 | Greek Gift | 0-1-3 |
+| baseline.py | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -128,3 +129,14 @@ Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate re
 | 2026-10-11 06:44 | 2z0qz5dr | W | Knight Vision | 119 | loss |  | 55 s | 7-23 |
 | 2026-10-11 06:45 | burzt1so | W | duck | 7 | loss |  | 172 s | 38-38 |
 | 2026-10-11 06:46 | si2hz4qs | B | Mist Opportunities | 58 | loss |  | 99 s | 13-20 |
+| 2026-10-11 06:49 | cfyor5gv | B | duck | 52 | loss |  | 95 s | 19-25 |
+| 2026-10-11 06:52 | y3vtihkm | W | baseline.py | 48 | win |  | 112 s | 30-23 |
+| 2026-10-11 06:52 | wban6q4e | B | baseline.py | 49 | win |  | 102 s | 32-19 |
+| 2026-10-11 06:52 | 0t11d4xp | W | Mist Opportunities | 149 | loss |  | 45 s | 0-15 |
+| 2026-10-11 06:57 | 1q0b4ac9 | B | Instructors | 61 | draw |  | 106 s | 9-7 |
+| 2026-10-11 07:01 | ei0ovmty | W | Instructors | 115 | loss |  | 52 s | 6-10 |
+| 2026-10-11 07:02 | oguoh5me | W | Knight Vision | 60 | win |  | 102 s | 19-5 |
+| 2026-10-11 07:02 | j28efa5l | B | Knight Vision | 64 | loss | ply 53 by r | 94 s | 6-20 |
+| 2026-10-11 07:04 | 989ogy2v | W | Mist Opportunities | 63 | loss |  | 113 s | 1-13 |
+| 2026-10-11 07:04 | 7mmjwd67 | B | Mist Opportunities | 52 | loss |  | 105 s | 5-18 |
+| 2026-10-11 07:08 | bnys3dom | B | duck | 63 | win |  | 96 s | 10-9 |
