@@ -1,0 +1,23 @@
+{
+  "classification": "diagnostic trace, not a policy comparison or strength estimate",
+  "source_base": "cc3a9eaeea39e41e7deb5523ab65b876760f9a17",
+  "cases": [
+    "7crrql6k: white decision18",
+    "zn8m31zt: black decision23"
+  ],
+  "seeds": [
+    11,
+    12
+  ],
+  "seconds": 0.5,
+  "closure": [
+    false,
+    true
+  ],
+  "evaluators": [
+    "internal",
+    "stockfish"
+  ],
+  "question": "Does the selected move have its forcing opponent reply and terminal own responses expanded in the actual represented world?",
+  "truth_boundary": "Bot exports every current sampled root after move selection. External checker matches the true root and applies historical referee outcomes. No true board or selected refutation is supplied to the bot."
+}

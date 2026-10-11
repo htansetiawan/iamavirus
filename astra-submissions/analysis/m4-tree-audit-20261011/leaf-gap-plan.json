@@ -1,0 +1,22 @@
+{
+  "at": "2026-10-11T09:18:04.912587+00:00",
+  "hypothesis": "Material/Stockfish scores saturating close to -1 make uncertain disadvantage numerically almost equivalent to a demonstrated FOW terminal loss. Reserve a terminal-value gap without changing terminal rules.",
+  "single_candidate": {
+    "nonterminal_scale": 0.9,
+    "terminal_outcomes": [
+      -1,
+      0,
+      1
+    ],
+    "tactical_closure": false
+  },
+  "baseline": {
+    "nonterminal_scale": 1.0,
+    "tactical_closure": false
+  },
+  "scope": "Scale every uncertain nonterminal root/child heuristic, including fallback internal scores and bounded Stockfish values. Child-backed alternate values and carried blueprints derive from the same scaled game. Proven terminals unchanged.",
+  "pilot": "Same two forced-loss prevention seats plus d01/s18 controls; 2 seeds, 2 evaluators, paired scales 1/.9, cold prefix, .5 seconds, 128 roots, 20000 parents. 32 decisions.",
+  "screen": "Require consistent prevention improvement on both seeds of at least one evaluator/case, no new immediate loss on either control seat, all protocol/snapshot/evaluator checks passing. This screens a broader gate, not Elo.",
+  "no_grid_search": true,
+  "limitation": "A fixed gap is uncalibrated; changing value semantics may hurt tactical winning play. Any passing pilot still needs broad control seats, searched prefixes and on-policy 180+2 matches."
+}

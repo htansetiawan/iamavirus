@@ -80,6 +80,14 @@ def validate(report, case, config, variant, seed):
         raise ValueError('Illegal or absent selected move')
     if row.get('immediate_loss')!=(row['chosen'] not in case['safe_moves']):
         raise ValueError('Candidate outcome disagrees with frozen oracle')
+    if report.get('leaf_scale',1.0)!=config.get('leaf_scale',1.0):
+        raise ValueError('Leaf scale setting differs')
+    if 'leaf_scale' in report and abs(row.get('evaluation',{}).get('scale',-1)-report['leaf_scale'])>1e-6:
+        raise ValueError('Engine did not report requested leaf scale')
+    if report.get('trace_continuation',False)!=config.get('trace_continuation',False):
+        raise ValueError('Continuation trace setting differs')
+    if config.get('trace_continuation') and not row.get('continuation_trace',{}).get('end',{}).get('complete'):
+        raise ValueError('Continuation trace is absent or incomplete')
     if config.get('tactical_closure') and not any(m.get('ply')==case['ply'] and not m.get('prefix') for m in row.get('closure_metrics',[])):
         raise ValueError('Enabled tactical closure has no final diagnostic')
     return row
@@ -122,6 +130,30 @@ def summary(rows, cases, expected):
             'distinct_seats':len(cases),'totals':totals,'paired_outcomes':discordance,'pairs':contrasts,'rows':rows}
 
 
+def scale_summary(rows, cases, expected, scales):
+    if len(scales)==1:
+        result=summary(rows,cases,expected);result['leaf_scale']=scales[0];return result
+    result={'updated_at':now(),'classification':'paired nonterminal-value experiment; selected seats; no Elo inference',
+            'complete':len(rows)==expected,'completed':len(rows),'expected_decisions':expected,'distinct_seats':len(cases),
+            'scales':scales,'by_scale':{},'paired_outcomes':{},'rows':rows}
+    for scale in scales:
+        part=summary([r for r in rows if r['leaf_scale']==scale],cases,expected//len(scales))
+        result['by_scale'][str(scale)]={k:v for k,v in part.items() if k not in ['rows','pairs']}
+    pairs=defaultdict(dict)
+    for r in rows:pairs[(r['case'],r['seed'],r['variant'])][r['leaf_scale']]=r
+    counts=defaultdict(Counter)
+    for pair in pairs.values():
+        if any(scale not in pair or pair[scale]['status']!='ok' for scale in scales):continue
+        a,b=(pair[scale] for scale in scales)
+        key=a['variant']+'/'+a['cohort'];counts[key]['pairs']+=1
+        tag=('both_lose' if a['immediate_loss'] and b['immediate_loss'] else
+             'both_safe' if not a['immediate_loss'] and not b['immediate_loss'] else
+             'candidate_saves' if a['immediate_loss'] else 'candidate_regresses')
+        counts[key][tag]+=1;counts[key]['same_move']+=a['chosen']==b['chosen']
+    result['paired_outcomes']={k:dict(v) for k,v in counts.items()}
+    return result
+
+
 def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--seats',type=Path,required=True)
@@ -131,6 +163,8 @@ def main():
     ap.add_argument('--probe',type=Path,default=Path(__file__).with_name('m4_replay_probe.py'))
     ap.add_argument('--kit',type=Path,default=Path.home()/'git/fow-starter')
     ap.add_argument('--python',type=Path,default=Path(sys.executable))
+    ap.add_argument('--leaf-scale',type=float,default=1.0)
+    ap.add_argument('--compare-leaf-scale',type=float)
     ap.add_argument('--mode',choices=['cold','warm'],default='cold')
     ap.add_argument('--seconds',type=float,default=.5)
     ap.add_argument('--iterations',type=int,default=40)
@@ -139,6 +173,8 @@ def main():
     ap.add_argument('--seeds',type=int,nargs='+',default=[11,12])
     ap.add_argument('--max-new-jobs',type=int,help='Stop after this many new receipts, then resume with identical config')
     args=ap.parse_args()
+    scales=[args.leaf_scale] if args.compare_leaf_scale is None else [args.leaf_scale,args.compare_leaf_scale]
+    if len(set(scales))!=len(scales) or not all(0<s<=1 for s in scales):raise ValueError('Invalid/duplicate leaf scales')
     args.run.mkdir(parents=True,exist_ok=True)
     lock=(args.run/'runner.lock').open('a')
     fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
@@ -153,7 +189,7 @@ def main():
     config={'schema':1,'artifacts':artifacts,'referee':str((args.kit/'referee.py').resolve()),
             'referee_sha256':sha(args.kit/'referee.py'),'python':str(args.python.absolute()),
             'kit':str(args.kit.resolve()),'mode':args.mode,'seconds':args.seconds,'iterations':args.iterations,
-            'parents':args.parents,'samples':args.samples,'seeds':args.seeds,'cpu_affinity':sorted(os.sched_getaffinity(0)),
+            'parents':args.parents,'samples':args.samples,'seeds':args.seeds,'leaf_scales':scales,'cpu_affinity':sorted(os.sched_getaffinity(0)),
             'nice':os.getpriority(os.PRIO_PROCESS,0), 'order':'interleaved cohorts; seeds; balanced variant order',
             'classification':'offline diagnostic; forced historical prefix; no Elo inference'}
     manifest=args.run/'manifest.json'
@@ -176,14 +212,15 @@ def main():
     for i,case in enumerate(ordered):
         for j,seed in enumerate(args.seeds):
             variants=['internal','stockfish'] if (i+j)%2==0 else ['stockfish','internal']
-            jobs.extend((case,seed,v) for v in variants)
+            order=scales if (i+j)%2==0 else list(reversed(scales))
+            jobs.extend((case,seed,v,scale) for v in variants for scale in order)
     rows=[];new=0
-    for case,seed,variant in jobs:
-        key=f'{case["case"]}-seed{seed}-{variant}'
+    for case,seed,variant,scale in jobs:
+        key=f'{case["case"]}-seed{seed}-{variant}-scale{scale:g}'
         directory=args.run/'jobs'/key;receipt=directory/'receipt.json'
         if receipt.exists():
             r=json.loads(receipt.read_text())
-            if r['config_sha256']!=sha(manifest) or r['case']!=case['case'] or r['seed']!=seed or r['variant']!=variant:
+            if r['config_sha256']!=sha(manifest) or r['case']!=case['case'] or r['seed']!=seed or r['variant']!=variant or r['leaf_scale']!=scale:
                 raise ValueError(f'Invalid cached receipt: {key}')
             for path,digest in r['file_hashes'].items():
                 if sha(directory/path)!=digest:raise ValueError(f'Changed job output: {key}/{path}')
@@ -196,19 +233,19 @@ def main():
         command=[str(args.python),str(args.run/'probe.py'),case['cache'],'--binary',str(args.run/'binary'),
                  '--out',str(directory),'--kit',str(args.kit),'--side',case['side'],'--decision',str(case['decision']),
                  '--mode',args.mode,'--seconds',str(args.seconds),'--iterations',str(args.iterations),
-                 '--parents',str(args.parents),'--samples',str(args.samples),'--seed',str(seed),'--audit-belief']
+                 '--parents',str(args.parents),'--samples',str(args.samples),'--seed',str(seed),'--audit-belief','--leaf-scale',str(scale)]
         if variant=='stockfish':command.extend(['--stockfish',str(args.run/'stockfish')])
         env={k:v for k,v in os.environ.items() if not k.startswith('MIST_') and k!='FOW_SEED'}
         write_json(directory/'command.json',{'argv':command,'started_at':now(),'cleared_env':'all inherited MIST_* and FOW_SEED'})
         if sha(args.kit/'referee.py')!=config['referee_sha256']:raise ValueError('Referee changed during gate')
         result=bounded_process(command,directory,env,max(90,case['decision']*args.seconds*3+30))
-        r={'case':case['case'],'cohort':case['cohort'],'seed':seed,'variant':variant,
+        r={'case':case['case'],'cohort':case['cohort'],'seed':seed,'variant':variant,'leaf_scale':scale,
            'opponent':case['opponent'],'config_sha256':sha(manifest),'completed_at':now(),
            'status':'failed','process':result,'played':case['played']}
         try:
             if result['returncode']!=0 or result['timed_out']:raise ValueError('Probe process failed or timed out')
             report=json.loads((directory/'results.json').read_text())
-            row=validate(report,case,config,variant,seed)
+            row=validate(report,case,dict(config,leaf_scale=scale),variant,seed)
             omit={'metrics','action_profiles','prefix_evaluation','true_safe_moves'}
             r.update({k:v for k,v in row.items() if k not in omit})
             r['final_metrics']=next((v for v in reversed(row['metrics']) if not v['prefix']),{})
@@ -220,11 +257,11 @@ def main():
         with (args.run/'progress.jsonl').open('a') as f:
             f.write(json.dumps(r,sort_keys=True)+'\n');f.flush();os.fsync(f.fileno())
         rows.append(r);new+=1
-        write_json(args.run/'summary.json',summary(rows,cases,len(jobs)))
+        write_json(args.run/'summary.json',scale_summary(rows,cases,len(jobs),scales))
         print(json.dumps({'job':key,'status':r['status'],'chosen':r.get('chosen'),
                           'loss':r.get('immediate_loss'),'elapsed':round(result['elapsed'],2),
                           'done':len(rows),'expected':len(jobs)},sort_keys=True),flush=True)
-    write_json(args.run/'summary.json',summary(rows,cases,len(jobs)))
+    write_json(args.run/'summary.json',scale_summary(rows,cases,len(jobs),scales))
     print(json.dumps({'run':str(args.run),'completed':len(rows),'expected':len(jobs),'new':new}),flush=True)
 
 

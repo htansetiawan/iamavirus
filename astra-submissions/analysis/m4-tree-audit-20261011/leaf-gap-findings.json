@@ -1,0 +1,1255 @@
+{
+  "classification": "post-decision diagnostic; no strength inference",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "source_sha256": "a140fb9778f174b2a215b253cb330c4ea121b08ce68814bdbb623e919848b773",
+  "provenance": [
+    {
+      "run": "/media/henrytan/seagate/iamavirus/astra/m4-leaf-gap-20261011/prevention-white",
+      "manifest_sha256": "7bd175535641a844333e838ce54bb985e73e42e7451eb63c2f2037e417a6d5cf",
+      "summary_sha256": "d770385350ab6632290acdaf87a1fbc4b0c29f4022e7f3ad767157ca91e6bdd0"
+    },
+    {
+      "run": "/media/henrytan/seagate/iamavirus/astra/m4-leaf-gap-20261011/prevention-black",
+      "manifest_sha256": "e0295eb35a0fa7747ed3702b64501525200cdbf5db763079ac922af8771a276d",
+      "summary_sha256": "f1408cba92790c2bddf70be364c6b9cfc61773e49bcc58dd2a2d655318bfd30d"
+    }
+  ],
+  "hypothetical_node_states_checked": 44713,
+  "rows": [
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "d4e6",
+      "status": "ok",
+      "trace_sha256": "516d5e22eafa4b42b99c2077f3bbe109d62b8edc73834e78c9e0ab2e05bc57ba",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.9890274022010992,
+            "raw": -0.9970781975852505,
+            "cf": 1,
+            "opp": 0.04991773899318205,
+            "own_probability": 0.3718768156671078
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 263,
+            "path": "d4e6",
+            "board": "R-B-K----P-PPPq---------------PPP---p-------N---ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 1,
+            "node_kind": "decision",
+            "infoset": 103,
+            "own_history": "468efc6aa997a4b3",
+            "raw": -0.9989682811212806,
+            "cf": 0.3718768156671078,
+            "opp": 0.04991773899318205,
+            "probability": 0.3718768156671078,
+            "actions": 40,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 35
+          },
+          "forcing": [
+            {
+              "reply": "g2h1",
+              "classification": "forced_loss_represented",
+              "node": {
+                "kind": "node",
+                "root": 10,
+                "node": 3914,
+                "path": "d4e6/g2h1",
+                "board": "R-B-K--q-P-PPP----------------PPP---p-------N---ppp--ppp--kr-b-r",
+                "side": 0,
+                "ep": -1,
+                "castle": "0000000000000001",
+                "halfmove": 2,
+                "node_kind": "decision",
+                "infoset": 976,
+                "own_history": "62009fc0d2c911ac",
+                "raw": -1.0000000000000002,
+                "cf": 0.3718768156671078,
+                "opp": 0,
+                "probability": 0,
+                "actions": 25,
+                "terminal_children": 25,
+                "loss_children": 25,
+                "frontier_children": 0
+              }
+            },
+            {
+              "reply": "g2g1",
+              "classification": "forced_loss_represented",
+              "node": {
+                "kind": "node",
+                "root": 10,
+                "node": 3913,
+                "path": "d4e6/g2g1",
+                "board": "R-B-K-q--P-PPP----------------PPP---p-------N---ppp--ppp--kr-b-r",
+                "side": 0,
+                "ep": -1,
+                "castle": "0000000000000001",
+                "halfmove": 2,
+                "node_kind": "decision",
+                "infoset": 976,
+                "own_history": "62009fc0d2c911ac",
+                "raw": -1.0000000000000002,
+                "cf": 0.3718768156671078,
+                "opp": 0.023224781626874295,
+                "probability": 0.46526108945051425,
+                "actions": 25,
+                "terminal_children": 25,
+                "loss_children": 25,
+                "frontier_children": 0
+              }
+            }
+          ]
+        }
+      ],
+      "oracle_forcing_replies": [
+        {
+          "reply": "g2h1",
+          "terminal": null,
+          "safe_escapes": []
+        },
+        {
+          "reply": "g2g1",
+          "terminal": null,
+          "safe_escapes": []
+        }
+      ],
+      "immediate_outcome": null,
+      "classification": "forcing_reply_present"
+    },
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "d2d3",
+      "status": "ok",
+      "trace_sha256": "ef0c0b9a433ffc475a1f992f99091d233adc10db0fb83bf571474d2bf1f7adb8",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.8901246619809893,
+            "raw": -0.8982695940560625,
+            "cf": 1,
+            "opp": 0.07142857142857142,
+            "own_probability": 0.5646037913848219
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 252,
+            "path": "d2d3",
+            "board": "R-B-K----P--PPq----P-------N--PPP---p-----------ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 89,
+            "own_history": "d995d7069c0e2823",
+            "raw": -0.8982159243867959,
+            "cf": 0.5646037913848219,
+            "opp": 0.07142857142857142,
+            "probability": 0.5646037913848219,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 31
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "d2d3",
+      "status": "ok",
+      "trace_sha256": "6a3ac41e137eeaf789693b2fdeb9ab8074eb0f2c6d613e97f2d50b7873154bd7",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.9965985551771295,
+            "raw": -0.9967220743017031,
+            "cf": 1,
+            "opp": 0.0007495659838042571,
+            "own_probability": 0.52449358639526
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 252,
+            "path": "d2d3",
+            "board": "R-B-K----P--PPq----P-------N--PPP---p-----------ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 20,
+            "own_history": "d995d7069c0e2823",
+            "raw": -0.9976726318080136,
+            "cf": 0.52449358639526,
+            "opp": 0.0007495659838042571,
+            "probability": 0.52449358639526,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 32
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "d2d3",
+      "status": "ok",
+      "trace_sha256": "a1c154d3e46768adda19bf9c611b5531d7b6583d8c7ca1fc4cf9b9e32aced118",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.8969386996594165,
+            "raw": -0.8984219275154385,
+            "cf": 1,
+            "opp": 0.07142857142857142,
+            "own_probability": 0.6271134165130255
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 252,
+            "path": "d2d3",
+            "board": "R-B-K----P--PPq----P-------N--PPP---p-----------ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 20,
+            "own_history": "d995d7069c0e2823",
+            "raw": -0.8987376530010571,
+            "cf": 0.6271134165130255,
+            "opp": 0.07142857142857142,
+            "probability": 0.6271134165130255,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 32
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "d2d3",
+      "status": "ok",
+      "trace_sha256": "88daeec97d5dfe93db91e5a62ab84283d8af737906c7054593818dfab4eba0f7",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.8969386996594165,
+            "raw": -0.8977155354747041,
+            "cf": 1,
+            "opp": 0.016189153597899596,
+            "own_probability": 0.5515077620062168
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 252,
+            "path": "d2d3",
+            "board": "R-B-K----P--PPq----P-------N--PPP---p-----------ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 86,
+            "own_history": "d995d7069c0e2823",
+            "raw": -0.8975324432114835,
+            "cf": 0.5515077620062168,
+            "opp": 0.016189153597899596,
+            "probability": 0.5515077620062168,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 31
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "d2d3",
+      "status": "ok",
+      "trace_sha256": "e1fc70a90231f25a08dd2514bb32ef906655460e3c36a35098dd71518465aa17",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.9965985551771295,
+            "raw": -0.9971452104880931,
+            "cf": 1,
+            "opp": 0.04594865134679662,
+            "own_probability": 0.6167071115115709
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 252,
+            "path": "d2d3",
+            "board": "R-B-K----P--PPq----P-------N--PPP---p-----------ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 66,
+            "own_history": "d995d7069c0e2823",
+            "raw": -0.9984222233151874,
+            "cf": 0.6167071115115709,
+            "opp": 0.04594865134679662,
+            "probability": 0.6167071115115709,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 31
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "e2e3",
+      "status": "ok",
+      "trace_sha256": "874a5a548eb3b0c06f6a4d397c680175eedb84065f1eba20edc866a684062d93",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.8901246619809893,
+            "raw": -0.8986840571774147,
+            "cf": 1,
+            "opp": 0.07142857142857142,
+            "own_probability": 0.42135705795597517
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 253,
+            "path": "e2e3",
+            "board": "R-B-K----P-P-Pq-----P------N--PPP---p-----------ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 82,
+            "own_history": "2699fc8d926f9a86",
+            "raw": -0.8987382706972663,
+            "cf": 0.42135705795597517,
+            "opp": 0.07142857142857142,
+            "probability": 0.42135705795597517,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 29
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "7crrql6k",
+      "side": "white",
+      "ply": 34,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "d4b5",
+      "status": "ok",
+      "trace_sha256": "6273c819fa8dfce14aff1f4d5f95fad2170e0edb30ce0ee993d3d9603b7ee54b",
+      "trace_roots": 14,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 10,
+            "group": 10,
+            "alternate": -0.9890274022010992,
+            "raw": -0.9950488621707223,
+            "cf": 1,
+            "opp": 0.07142857142857142,
+            "own_probability": 0.7055754940228205
+          },
+          "selected": {
+            "kind": "node",
+            "root": 10,
+            "node": 260,
+            "path": "d4b5",
+            "board": "R-B-K----P-PPPq---------------PPPN--p-----------ppp--ppp--kr-b-r",
+            "side": 1,
+            "ep": -1,
+            "castle": "0000000000000001",
+            "halfmove": 1,
+            "node_kind": "decision",
+            "infoset": 23,
+            "own_history": "035d9ad783c021c7",
+            "raw": -0.9933764303522757,
+            "cf": 0.7055754940228205,
+            "opp": 0.07142857142857142,
+            "probability": 0.7055754940228205,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 3
+          },
+          "forcing": [
+            {
+              "reply": "g2h1",
+              "classification": "forced_loss_represented",
+              "node": {
+                "kind": "node",
+                "root": 10,
+                "node": 643,
+                "path": "d4b5/g2h1",
+                "board": "R-B-K--q-P-PPP----------------PPPN--p-----------ppp--ppp--kr-b-r",
+                "side": 0,
+                "ep": -1,
+                "castle": "0000000000000001",
+                "halfmove": 2,
+                "node_kind": "decision",
+                "infoset": 77,
+                "own_history": "f45a177362ec0f31",
+                "raw": -1,
+                "cf": 0.7055754940228205,
+                "opp": 0.0022419705449079966,
+                "probability": 0.03138758762871195,
+                "actions": 23,
+                "terminal_children": 23,
+                "loss_children": 23,
+                "frontier_children": 0
+              }
+            },
+            {
+              "reply": "g2g1",
+              "classification": "forced_loss_represented",
+              "node": {
+                "kind": "node",
+                "root": 10,
+                "node": 642,
+                "path": "d4b5/g2g1",
+                "board": "R-B-K-q--P-PPP----------------PPPN--p-----------ppp--ppp--kr-b-r",
+                "side": 0,
+                "ep": -1,
+                "castle": "0000000000000001",
+                "halfmove": 2,
+                "node_kind": "decision",
+                "infoset": 77,
+                "own_history": "f45a177362ec0f31",
+                "raw": -1,
+                "cf": 0.7055754940228205,
+                "opp": 0.0024058127309986026,
+                "probability": 0.03368137823398044,
+                "actions": 23,
+                "terminal_children": 23,
+                "loss_children": 23,
+                "frontier_children": 0
+              }
+            }
+          ]
+        }
+      ],
+      "oracle_forcing_replies": [
+        {
+          "reply": "g2h1",
+          "terminal": null,
+          "safe_escapes": []
+        },
+        {
+          "reply": "g2g1",
+          "terminal": null,
+          "safe_escapes": []
+        }
+      ],
+      "immediate_outcome": null,
+      "classification": "forcing_reply_present"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "e7f6",
+      "status": "ok",
+      "trace_sha256": "71e719bedc153d8175541adef9034bc52caa7cfd51d89187143092d2a4d50eca",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 76,
+            "group": 76,
+            "alternate": -0.9987284120632095,
+            "raw": -0.9986127315396368,
+            "cf": 1,
+            "opp": 0.0009852700722129053,
+            "own_probability": 1
+          },
+          "selected": {
+            "kind": "node",
+            "root": 76,
+            "node": 1122,
+            "path": "e7f6",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---pp----Q--r------k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 240,
+            "own_history": "d40b35d9408d050b",
+            "raw": -0.9986127315396368,
+            "cf": 1,
+            "opp": 0.0009852700722129053,
+            "probability": 1,
+            "actions": 42,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 40
+          },
+          "forcing": [
+            {
+              "reply": "c1c8",
+              "classification": "own_response_frontier_unexpanded",
+              "node": {
+                "kind": "node",
+                "root": 76,
+                "node": 7291,
+                "path": "e7f6/c1c8",
+                "board": "-----RK-PP---PPP-----------P----p--p---p-p---pp----Q--r---R--k--",
+                "side": 1,
+                "ep": -1,
+                "castle": "0000000000000000",
+                "halfmove": 1,
+                "node_kind": "frontier",
+                "infoset": -1,
+                "own_history": "046df7e1863a6873",
+                "raw": -0.8971659575616286,
+                "cf": 1,
+                "opp": 0,
+                "probability": 0,
+                "actions": 0,
+                "terminal_children": 0,
+                "loss_children": 0,
+                "frontier_children": 0
+              }
+            }
+          ]
+        }
+      ],
+      "oracle_forcing_replies": [
+        {
+          "reply": "c1c8",
+          "terminal": null,
+          "safe_escapes": []
+        }
+      ],
+      "immediate_outcome": null,
+      "classification": "forcing_reply_present"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "g7h7",
+      "status": "ok",
+      "trace_sha256": "57f10c6e7853a1b9cb6f9f22be8a78cd69de1cc3ddf989401fbf30f368d889d1",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 76,
+            "group": 76,
+            "alternate": -0.8988555708568886,
+            "raw": -0.8998215032295136,
+            "cf": 1,
+            "opp": 0.0078125,
+            "own_probability": 0.9077499727292733
+          },
+          "selected": {
+            "kind": "node",
+            "root": 76,
+            "node": 1124,
+            "path": "g7h7",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---Bp----Qp--r-----k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 1,
+            "node_kind": "decision",
+            "infoset": 451,
+            "own_history": "89b58c1c68eddb92",
+            "raw": -0.8998238918520725,
+            "cf": 0.9077499727292733,
+            "opp": 0.0078125,
+            "probability": 0.9077499727292733,
+            "actions": 46,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 44
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "e7f6",
+      "status": "ok",
+      "trace_sha256": "a6d895ebff3abd8a498a33f6927771023342ddc441d910857f9cfdf1f24c4c07",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 76,
+            "group": 76,
+            "alternate": -0.9980941100587947,
+            "raw": -1,
+            "cf": 1,
+            "opp": 0.0078125,
+            "own_probability": 1
+          },
+          "selected": {
+            "kind": "node",
+            "root": 76,
+            "node": 1122,
+            "path": "e7f6",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---pp----Q--r------k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 230,
+            "own_history": "d40b35d9408d050b",
+            "raw": -1,
+            "cf": 1,
+            "opp": 0.0078125,
+            "probability": 1,
+            "actions": 42,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 40
+          },
+          "forcing": [
+            {
+              "reply": "c1c8",
+              "classification": "forced_loss_represented",
+              "node": {
+                "kind": "node",
+                "root": 76,
+                "node": 6547,
+                "path": "e7f6/c1c8",
+                "board": "-----RK-PP---PPP-----------P----p--p---p-p---pp----Q--r---R--k--",
+                "side": 1,
+                "ep": -1,
+                "castle": "0000000000000000",
+                "halfmove": 1,
+                "node_kind": "decision",
+                "infoset": 240,
+                "own_history": "046df7e1863a6873",
+                "raw": -1,
+                "cf": 1,
+                "opp": 0.0078125,
+                "probability": 1,
+                "actions": 14,
+                "terminal_children": 14,
+                "loss_children": 14,
+                "frontier_children": 0
+              }
+            }
+          ]
+        }
+      ],
+      "oracle_forcing_replies": [
+        {
+          "reply": "c1c8",
+          "terminal": null,
+          "safe_escapes": []
+        }
+      ],
+      "immediate_outcome": null,
+      "classification": "forcing_reply_present"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 11,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "g7h7",
+      "status": "ok",
+      "trace_sha256": "5145216d3705bfb6c9bfa3b3950d6d9b3108a9f10e2d3d4601871784e4a49222",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 76,
+            "group": 76,
+            "alternate": -0.8982846990529152,
+            "raw": -0.8997081509485353,
+            "cf": 1,
+            "opp": 0.0078125,
+            "own_probability": 0.5209486742287529
+          },
+          "selected": {
+            "kind": "node",
+            "root": 76,
+            "node": 1124,
+            "path": "g7h7",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---Bp----Qp--r-----k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 1,
+            "node_kind": "frontier",
+            "infoset": -1,
+            "own_history": "89b58c1c68eddb92",
+            "raw": -0.8997046582587844,
+            "cf": 0.5209486742287529,
+            "opp": 0.0078125,
+            "probability": 0.5209486742287529,
+            "actions": 0,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 0
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "g7h7",
+      "status": "ok",
+      "trace_sha256": "8abab0a2a75c8604c749d86343a5b133f5555c968d871b1fc77281c5e11cf453",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 67,
+            "group": 67,
+            "alternate": -0.8982846990529152,
+            "raw": -0.8997655112404881,
+            "cf": 1,
+            "opp": 0.0078125,
+            "own_probability": 0.5130136326678228
+          },
+          "selected": {
+            "kind": "node",
+            "root": 67,
+            "node": 1007,
+            "path": "g7h7",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---Bp----Qp--r-----k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 1,
+            "node_kind": "decision",
+            "infoset": 456,
+            "own_history": "89b58c1c68eddb92",
+            "raw": -0.8998167776219788,
+            "cf": 0.5130136326678228,
+            "opp": 0.0078125,
+            "probability": 0.5130136326678228,
+            "actions": 46,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 46
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "stockfish",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "e7f6",
+      "status": "ok",
+      "trace_sha256": "13924357764791158dcc5b13e661013cb01e15b423181c650dc9039cafc6fd0c",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 67,
+            "group": 67,
+            "alternate": -0.9980941100587947,
+            "raw": -0.9999999999999999,
+            "cf": 1,
+            "opp": 0.0078125,
+            "own_probability": 1
+          },
+          "selected": {
+            "kind": "node",
+            "root": 67,
+            "node": 1005,
+            "path": "e7f6",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---pp----Q--r------k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 236,
+            "own_history": "d40b35d9408d050b",
+            "raw": -0.9999999999999999,
+            "cf": 1,
+            "opp": 0.0078125,
+            "probability": 1,
+            "actions": 42,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 41
+          },
+          "forcing": [
+            {
+              "reply": "c1c8",
+              "classification": "forced_loss_represented",
+              "node": {
+                "kind": "node",
+                "root": 67,
+                "node": 6701,
+                "path": "e7f6/c1c8",
+                "board": "-----RK-PP---PPP-----------P----p--p---p-p---pp----Q--r---R--k--",
+                "side": 1,
+                "ep": -1,
+                "castle": "0000000000000000",
+                "halfmove": 1,
+                "node_kind": "decision",
+                "infoset": 189,
+                "own_history": "046df7e1863a6873",
+                "raw": -0.9999999999999999,
+                "cf": 1,
+                "opp": 0.0078125,
+                "probability": 1,
+                "actions": 14,
+                "terminal_children": 14,
+                "loss_children": 14,
+                "frontier_children": 0
+              }
+            }
+          ]
+        }
+      ],
+      "oracle_forcing_replies": [
+        {
+          "reply": "c1c8",
+          "terminal": null,
+          "safe_escapes": []
+        }
+      ],
+      "immediate_outcome": null,
+      "classification": "forcing_reply_present"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 0.9,
+      "chosen": "g7f7",
+      "status": "ok",
+      "trace_sha256": "9213755fbc1ffe904410b14eb14275dbc3c6aefea723e7d74f2ab707fd20304b",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 67,
+            "group": 67,
+            "alternate": -0.8988555708568886,
+            "raw": -0.8998454223019873,
+            "cf": 1,
+            "opp": 0.0078125,
+            "own_probability": 0.35037550113963034
+          },
+          "selected": {
+            "kind": "node",
+            "root": 67,
+            "node": 1006,
+            "path": "g7f7",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---Bp----Qpr-------k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 1,
+            "node_kind": "decision",
+            "infoset": 604,
+            "own_history": "fe69f91e3d3ffccc",
+            "raw": -0.8998715758841261,
+            "cf": 0.35037550113963034,
+            "opp": 0.0078125,
+            "probability": 0.35037550113963034,
+            "actions": 46,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 44
+          },
+          "forcing": [
+            {
+              "reply": "d7d8",
+              "classification": "own_response_frontier_unexpanded",
+              "node": {
+                "kind": "node",
+                "root": 67,
+                "node": 38435,
+                "path": "g7f7/d7d8",
+                "board": "--R--RK-PP---PPP-----------P----p--p---p-p---Bp-----pr-----Q-k--",
+                "side": 1,
+                "ep": -1,
+                "castle": "0000000000000000",
+                "halfmove": 2,
+                "node_kind": "frontier",
+                "infoset": -1,
+                "own_history": "e271ddc4f9e71d7a",
+                "raw": -0.8988382861879709,
+                "cf": 0.35037550113963034,
+                "opp": 0,
+                "probability": 0,
+                "actions": 0,
+                "terminal_children": 0,
+                "loss_children": 0,
+                "frontier_children": 0
+              }
+            },
+            {
+              "reply": "d7c8",
+              "classification": "own_response_frontier_unexpanded",
+              "node": {
+                "kind": "node",
+                "root": 67,
+                "node": 38434,
+                "path": "g7f7/d7c8",
+                "board": "--R--RK-PP---PPP-----------P----p--p---p-p---Bp-----pr----Q--k--",
+                "side": 1,
+                "ep": -1,
+                "castle": "0000000000000000",
+                "halfmove": 2,
+                "node_kind": "frontier",
+                "infoset": -1,
+                "own_history": "e271ddc4f9e71d7a",
+                "raw": -0.8988382861879709,
+                "cf": 0.35037550113963034,
+                "opp": 0,
+                "probability": 0,
+                "actions": 0,
+                "terminal_children": 0,
+                "loss_children": 0,
+                "frontier_children": 0
+              }
+            },
+            {
+              "reply": "c1c8",
+              "classification": "own_response_frontier_unexpanded",
+              "node": {
+                "kind": "node",
+                "root": 67,
+                "node": 38401,
+                "path": "g7f7/c1c8",
+                "board": "-----RK-PP---PPP-----------P----p--p---p-p---Bp----Qpr----R--k--",
+                "side": 1,
+                "ep": -1,
+                "castle": "0000000000000000",
+                "halfmove": 2,
+                "node_kind": "frontier",
+                "infoset": -1,
+                "own_history": "e271ddc4f9e71d7a",
+                "raw": -0.8988555708568886,
+                "cf": 0.35037550113963034,
+                "opp": 0,
+                "probability": 0,
+                "actions": 0,
+                "terminal_children": 0,
+                "loss_children": 0,
+                "frontier_children": 0
+              }
+            }
+          ]
+        }
+      ],
+      "oracle_forcing_replies": [
+        {
+          "reply": "d7d8",
+          "terminal": null,
+          "safe_escapes": []
+        },
+        {
+          "reply": "d7c8",
+          "terminal": null,
+          "safe_escapes": []
+        },
+        {
+          "reply": "c1c8",
+          "terminal": null,
+          "safe_escapes": []
+        }
+      ],
+      "immediate_outcome": null,
+      "classification": "forcing_reply_present"
+    },
+    {
+      "game": "zn8m31zt",
+      "side": "black",
+      "ply": 45,
+      "mode": "cold",
+      "variant": "internal",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 1.0,
+      "chosen": "e7f6",
+      "status": "ok",
+      "trace_sha256": "393c9a4f3d22fa6729011f32e0286b605a90a41ab9da9c582432806be40c53be",
+      "trace_roots": 128,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 67,
+            "group": 67,
+            "alternate": -0.9987284120632095,
+            "raw": -0.998708490739131,
+            "cf": 1,
+            "opp": 0.004206107924364096,
+            "own_probability": 1
+          },
+          "selected": {
+            "kind": "node",
+            "root": 67,
+            "node": 1005,
+            "path": "e7f6",
+            "board": "--R--RK-PP---PPP-----------P----p--p---p-p---pp----Q--r------k--",
+            "side": 0,
+            "ep": -1,
+            "castle": "0000000000000000",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 183,
+            "own_history": "d40b35d9408d050b",
+            "raw": -0.998708490739131,
+            "cf": 1,
+            "opp": 0.004206107924364096,
+            "probability": 1,
+            "actions": 42,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 35
+          },
+          "forcing": [
+            {
+              "reply": "c1c8",
+              "classification": "own_response_frontier_unexpanded",
+              "node": {
+                "kind": "node",
+                "root": 67,
+                "node": 4515,
+                "path": "e7f6/c1c8",
+                "board": "-----RK-PP---PPP-----------P----p--p---p-p---pp----Q--r---R--k--",
+                "side": 1,
+                "ep": -1,
+                "castle": "0000000000000000",
+                "halfmove": 1,
+                "node_kind": "frontier",
+                "infoset": -1,
+                "own_history": "046df7e1863a6873",
+                "raw": -0.8971659575616286,
+                "cf": 1,
+                "opp": 0,
+                "probability": 0,
+                "actions": 0,
+                "terminal_children": 0,
+                "loss_children": 0,
+                "frontier_children": 0
+              }
+            }
+          ]
+        }
+      ],
+      "oracle_forcing_replies": [
+        {
+          "reply": "c1c8",
+          "terminal": null,
+          "safe_escapes": []
+        }
+      ],
+      "immediate_outcome": null,
+      "classification": "forcing_reply_present"
+    }
+  ]
+}

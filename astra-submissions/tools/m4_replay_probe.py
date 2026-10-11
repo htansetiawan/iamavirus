@@ -71,6 +71,8 @@ def main():
     ap.add_argument("--parents", type=int, help="Fixed replay parent cap, >=2000; avoids clock-dependent thinning")
     ap.add_argument("--samples", type=int, help="Root sample target, 1..4096")
     ap.add_argument("--audit-belief", action="store_true", help="Compare truth with post-decision belief export")
+    ap.add_argument("--leaf-scale", type=float, default=1.0)
+    ap.add_argument("--trace-continuation", action="store_true", help="Export the selected move and reply nodes after search")
     ap.add_argument("--tactical-closure", action="store_true", help="Expand threatened future own-information-set aliases")
     ap.add_argument("--witnesses", action="store_true", help="Enable experimental tactical root witnesses")
     ap.add_argument("--stockfish", type=Path, help="Optional bounded external leaf evaluator")
@@ -110,6 +112,7 @@ def main():
                        MIST_REPLAY_WARM="1" if mode == "warm" else "0",
                        MIST_MAX_SECONDS=str(args.seconds), MIST_M4_ITERATIONS=str(args.iterations),
                        FOW_SEED=str(args.seed), MIST_SEARCH="m4", MIST_M4_DUMP_PLY=str(ply))
+            env["MIST_M4_LEAF_SCALE"] = str(args.leaf_scale)
             env["MIST_M4_CLOSURE"] = "1" if args.tactical_closure else "0"
             env["MIST_M4_WITNESSES"] = "1" if args.witnesses else "0"
             env.pop("MIST_STOCKFISH", None)
@@ -120,6 +123,9 @@ def main():
             belief_dump = tempfile.TemporaryDirectory(prefix="m4-belief-")
             dump_path = Path(belief_dump.name)/"belief.txt"
             if args.audit_belief: env["MIST_REPLAY_BELIEF_DUMP"] = str(dump_path)
+            trace_path=args.out/f"{game['id']}-{side}-d{decision}-{mode}.trace.jsonl"
+            env.pop("MIST_M4_TRACE_PATH",None)
+            if args.trace_continuation:env["MIST_M4_TRACE_PATH"]=str(trace_path.resolve())
             start = time.monotonic()
             proc = subprocess.run([str(binary)], input=feed, capture_output=True, text=True,
                                   env=env, timeout=max(60, decision*args.seconds*3))
@@ -155,6 +161,14 @@ def main():
             row["prefix_evaluation"] = [
                 {k:float(v) for k,v in re.findall(r"(\w+)=(\S+)", line)}
                 for line in re.findall(r"m4-prefix-eval: (.*)", proc.stderr)]
+            if args.trace_continuation:
+                trace=[json.loads(line) for line in trace_path.read_text().splitlines()]
+                if not trace or trace[-1].get("kind")!="end" or not trace[-1].get("complete") or trace[-1].get("records")!=len(trace)-1:
+                    raise ValueError("Missing or incomplete continuation trace")
+                row["continuation_trace"]={"path":str(trace_path.resolve()),"sha256":hashlib.sha256(trace_path.read_bytes()).hexdigest(),"end":trace[-1]}
+                timing=re.search(r"m4-trace: complete=(\d+) seconds=(\S+)",proc.stderr)
+                if not timing or timing[1]!="1":raise ValueError("Trace export failed")
+                row["continuation_trace"]["seconds"]=float(timing[2])
             row["closure_metrics"] = [{k:int(v) for k,v in re.findall(r"(\w+)=(\d+)",line)}
                 for line in re.findall(r"m4-closure: (.*)",proc.stderr)]
             witness_line = re.search(r"m4-witness: (.*)",proc.stderr)
@@ -190,7 +204,7 @@ def main():
             report = {"binary": str(binary), "sha256": digest, "seconds": args.seconds,
                       "iteration_cap": args.iterations, "seed": args.seed,
                       "fixed_parent_cap": args.parents, "sample_target": args.samples,
-                      "tactical_witnesses": args.witnesses, "tactical_closure":args.tactical_closure,
+                      "tactical_witnesses": args.witnesses, "tactical_closure":args.tactical_closure, "trace_continuation":args.trace_continuation, "leaf_scale":args.leaf_scale,
                       "stockfish": str(args.stockfish.resolve()) if args.stockfish else None,
                       "stockfish_sha256": hashlib.sha256(args.stockfish.read_bytes()).hexdigest() if args.stockfish else None,
                       "child_alternates": bool(args.child_alternates or args.stockfish),
