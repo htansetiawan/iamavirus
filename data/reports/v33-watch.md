@@ -1,20 +1,25 @@
 # Arena v33 watch
 
-Updated 2026-10-11 22:59 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 23:20 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 5W-0D-3L over 8 games** (62%).
-As White: 3.0/4.
-As Black: 2.0/4.
+**Record: 10W-0D-10L over 20 games** (50%).
+As White: 5.0/10.
+As Black: 5.0/10.
 
-Queen lost for less: 3 games (3 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 3.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 49 plies.
+Queen lost for less: 8 games (7 to a capturer unseen when we moved, 4 before ply 30); losses with the queen lost: 6 of 10.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 58 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Strongly Invisible | 1-0-3 |
+| Decent Chess Bot | 1-0-3 |
 | Apricot Squad | 2-0-0 |
 | TA Baseline P | 2-0-0 |
+| TA Baseline S | 2-0-0 |
+| Instructors | 0-0-2 |
+| Sausage | 2-0-0 |
+| Knight Vision | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -26,3 +31,15 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-11 22:50 | jgis18i1 | B | Strongly Invisible | 78 | loss | ply 37 by r unseen | 71 s | 3-18 |
 | 2026-10-11 22:53 | g77dj0n9 | B | Strongly Invisible | 70 | loss |  | 79 s | 2-12 |
 | 2026-10-11 22:53 | asw4lcoa | W | Strongly Invisible | 77 | loss | ply 20 by b unseen | 64 s | 3-21 |
+| 2026-10-11 23:01 | 02k1fsve | B | TA Baseline S | 43 | win |  | 107 s | 26-11 |
+| 2026-10-11 23:02 | hvinvvef | W | Decent Chess Bot | 81 | loss |  | 64 s | 2-14 |
+| 2026-10-11 23:02 | xhwu46rv | B | Decent Chess Bot | 76 | loss | ply 19 by b | 74 s | 7-31 |
+| 2026-10-11 23:06 | 7ok0nnks | W | TA Baseline S | 114 | win |  | 52 s | 15-0 |
+| 2026-10-11 23:07 | qsxhoqum | B | Instructors | 56 | loss | ply 41 by n unseen | 91 s | 9-16 |
+| 2026-10-11 23:07 | z34nungm | B | Decent Chess Bot | 31 | win | ply 21 by b unseen | 121 s | 20-39 |
+| 2026-10-11 23:10 | h8be5ywj | W | Instructors | 83 | loss |  | 67 s | 3-6 |
+| 2026-10-11 23:11 | 63yjw7rt | W | Decent Chess Bot | 73 | loss | ply 44 by p unseen | 72 s | 2-13 |
+| 2026-10-11 23:13 | nlfl85eh | B | Sausage | 23 | win |  | 136 s | 30-37 |
+| 2026-10-11 23:15 | ph9wr9pc | W | Sausage | 44 | win |  | 105 s | 19-18 |
+| 2026-10-11 23:16 | z1vbpjos | W | Knight Vision | 59 | loss | ply 18 by n unseen | 88 s | 3-23 |
+| 2026-10-11 23:17 | 2cnevcm3 | B | Knight Vision | 78 | loss |  | 70 s | 2-13 |
