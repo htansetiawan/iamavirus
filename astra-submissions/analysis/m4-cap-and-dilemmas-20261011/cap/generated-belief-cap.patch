@@ -1,0 +1,73 @@
+--- belief.c
++++ belief-cap.c
+@@ -6,6 +6,36 @@
+ #include <string.h>
+ 
+ #include "movemodel.h"
++#include "m4resample.h"
++
++/* Isolated generated experiment. Active belief.c remains unchanged. */
++static int m4_cap_mode(void) {
++    const char *s=getenv("MIST_M4_CAP_MODE");
++    if(!s||!strcmp(s,"0"))return 0;
++    if(!strcmp(s,"1"))return 1;
++    if(!strcmp(s,"2"))return 2;
++    abort();
++}
++typedef struct {uint32_t index;float logw;} M4Kept;
++static int m4_kept_order(const void *a,const void *b) {
++    const M4Kept *x=a,*y=b;return (x->index>y->index)-(x->index<y->index);
++}
++static size_t m4_heap_shrink(Belief *b,size_t target,int mode) {
++    size_t *indices=malloc(target*sizeof(*indices));
++    float *weights=malloc(target*sizeof(*weights));
++    M4Kept *kept=malloc(target*sizeof(*kept));
++    if(!indices||!weights||!kept||!m4_weighted_cap(b->logw,b->count,target,&b->rng,indices,weights))abort();
++    for(size_t i=0;i<target;++i)kept[i]=(M4Kept){(uint32_t)indices[i],mode==2?weights[i]:(b->logw?b->logw[indices[i]]:0)};
++    qsort(kept,target,sizeof(*kept),m4_kept_order);
++    for(size_t i=0;i<target;++i) {
++        b->items[i]=b->items[kept[i].index];
++        if(b->hist)b->hist[i]=b->hist[kept[i].index];
++        if(b->logw)b->logw[i]=kept[i].logw;
++    }
++    free(indices);free(weights);free(kept);
++    b->count=target;b->overflowed=1;return target;
++}
++
+ 
+ static uint64_t z_piece[2][6][64], z_side, z_castle[64], z_ep[64];
+ 
+@@ -286,12 +316,25 @@
+     uint32_t *chosen = malloc((m ? m : 1) * sizeof(uint32_t));
+     if (m > b->cap) {
+         b->overflowed = 1;
++        int mode=m4_cap_mode();
++        if(mode) {
++            keep=b->cap;
++            float *weights=malloc(m*sizeof(*weights));
++            float *corrected=malloc(keep*sizeof(*corrected));
++            size_t *indices=malloc(keep*sizeof(*indices));
++            if(!weights||!corrected||!indices)abort();
++            for(size_t i=0;i<m;++i)weights[i]=cand[i].logw;
++            if(!m4_weighted_cap(weights,m,keep,&b->rng,indices,corrected))abort();
++            for(size_t i=0;i<keep;++i){chosen[i]=(uint32_t)indices[i];if(mode==2)cand[chosen[i]].logw=corrected[i];}
++            free(weights);free(corrected);free(indices);
++        } else {
+         Ranked *r = malloc(m * sizeof(Ranked));
+         for (size_t i = 0; i < m; ++i) { r[i].key = log(-log(unit_open(&b->rng))) - cand[i].logw; r[i].index = (uint32_t)i; }
+         qsort(r, m, sizeof(Ranked), by_rank);
+         keep = b->cap;
+         for (size_t i = 0; i < keep; ++i) chosen[i] = r[i].index;
+         free(r);
++        }
+     } else {
+         for (size_t i = 0; i < m; ++i) chosen[i] = (uint32_t)i;
+     }
+@@ -346,6 +389,7 @@
+ 
+ size_t belief_shrink(Belief *b, size_t target) {
+     if (b->count <= target) return b->count;
++    if(m4_cap_mode())return m4_heap_shrink(b,target,m4_cap_mode());
+     Ranked *r = malloc(b->count * sizeof(Ranked));
+     for (size_t i = 0; i < b->count; ++i) {
+         r[i].key = log(-log(unit_open(&b->rng))) - (b->logw ? b->logw[i] : 0.0f);

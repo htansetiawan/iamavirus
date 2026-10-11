@@ -1,0 +1,580 @@
+{
+  "seed": 41,
+  "cap": 10000,
+  "classification": "Offline belief, same historical moves; no Elo inference",
+  "parity": {
+    "original_vs_heap_all_rows": true
+  },
+  "batches": {
+    "sequential02": {
+      "games": 17,
+      "decisions": 661,
+      "all_independent_labels_match": true
+    },
+    "sequential-fresh26": {
+      "games": 26,
+      "decisions": 1019,
+      "all_independent_labels_match": true
+    }
+  },
+  "cohorts": {
+    "primary42": {
+      "mode0": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1386,
+        "collapses": 13,
+        "rebuilds": 13,
+        "empty_belief": 0,
+        "update_cpu_seconds": 42.971481,
+        "attack": {
+          "expected": 53.57383454473461,
+          "actual": 67,
+          "brier": 0.01412415863619206
+        },
+        "fatal": {
+          "expected": 9.21906226498162,
+          "actual": 19,
+          "brier": 0.009935180744370265
+        }
+      },
+      "mode1": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1386,
+        "collapses": 13,
+        "rebuilds": 13,
+        "empty_belief": 0,
+        "update_cpu_seconds": 42.546457,
+        "attack": {
+          "expected": 53.57383454473461,
+          "actual": 67,
+          "brier": 0.01412415863619206
+        },
+        "fatal": {
+          "expected": 9.21906226498162,
+          "actual": 19,
+          "brier": 0.009935180744370265
+        }
+      },
+      "mode2": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1347,
+        "collapses": 16,
+        "rebuilds": 16,
+        "empty_belief": 0,
+        "update_cpu_seconds": 43.452497,
+        "attack": {
+          "expected": 53.71214414748471,
+          "actual": 67,
+          "brier": 0.014176602171612903
+        },
+        "fatal": {
+          "expected": 9.308104860011683,
+          "actual": 19,
+          "brier": 0.00988292882096448
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": -5.2443535420842305e-05,
+          "ci95": [
+            -0.00034498045741143115,
+            0.00016419696618163892
+          ],
+          "games": 42,
+          "moves": 1650
+        },
+        "fatal_brier_reduction": {
+          "mean": 5.225192340578772e-05,
+          "ci95": [
+            -0.0002726734879395936,
+            0.0003220257061160357
+          ],
+          "games": 42,
+          "moves": 1650
+        },
+        "truth_support_gain": {
+          "mean": -0.023636363636363636,
+          "ci95": [
+            -0.07196321948480573,
+            0.022860307690110535
+          ],
+          "games": 42,
+          "moves": 1650
+        }
+      }
+    },
+    "all_including_extra_diagnostic": {
+      "mode0": {
+        "games": 43,
+        "decisions": 1680,
+        "truth_present": 1416,
+        "collapses": 13,
+        "rebuilds": 13,
+        "empty_belief": 0,
+        "update_cpu_seconds": 44.343933,
+        "attack": {
+          "expected": 53.65447280384811,
+          "actual": 68,
+          "brier": 0.014375052238287354
+        },
+        "fatal": {
+          "expected": 9.299700524095119,
+          "actual": 20,
+          "brier": 0.010260877523105234
+        }
+      },
+      "mode1": {
+        "games": 43,
+        "decisions": 1680,
+        "truth_present": 1416,
+        "collapses": 13,
+        "rebuilds": 13,
+        "empty_belief": 0,
+        "update_cpu_seconds": 43.897623,
+        "attack": {
+          "expected": 53.65447280384811,
+          "actual": 68,
+          "brier": 0.014375052238287354
+        },
+        "fatal": {
+          "expected": 9.299700524095119,
+          "actual": 20,
+          "brier": 0.010260877523105234
+        }
+      },
+      "mode2": {
+        "games": 43,
+        "decisions": 1680,
+        "truth_present": 1359,
+        "collapses": 16,
+        "rebuilds": 16,
+        "empty_belief": 0,
+        "update_cpu_seconds": 44.805162,
+        "attack": {
+          "expected": 53.79227575996941,
+          "actual": 68,
+          "brier": 0.014427113948518623
+        },
+        "fatal": {
+          "expected": 9.388236472496382,
+          "actual": 20,
+          "brier": 0.010210113336274636
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": -5.206171023126901e-05,
+          "ci95": [
+            -0.00031000293861290987,
+            0.00017541306310947706
+          ],
+          "games": 43,
+          "moves": 1680
+        },
+        "fatal_brier_reduction": {
+          "mean": 5.076418683059977e-05,
+          "ci95": [
+            -0.00022930652526829655,
+            0.00032833987305437394
+          ],
+          "games": 43,
+          "moves": 1680
+        },
+        "truth_support_gain": {
+          "mean": -0.033928571428571426,
+          "ci95": [
+            -0.08694260977123282,
+            0.017961148318318118
+          ],
+          "games": 43,
+          "moves": 1680
+        }
+      }
+    },
+    "fresh26": {
+      "mode0": {
+        "games": 26,
+        "decisions": 1019,
+        "truth_present": 850,
+        "collapses": 4,
+        "rebuilds": 4,
+        "empty_belief": 0,
+        "update_cpu_seconds": 24.691757,
+        "attack": {
+          "expected": 28.684297707066676,
+          "actual": 40,
+          "brier": 0.013660612343271324
+        },
+        "fatal": {
+          "expected": 3.4700396911886964,
+          "actual": 13,
+          "brier": 0.011206650141973369
+        }
+      },
+      "mode1": {
+        "games": 26,
+        "decisions": 1019,
+        "truth_present": 850,
+        "collapses": 4,
+        "rebuilds": 4,
+        "empty_belief": 0,
+        "update_cpu_seconds": 24.457203,
+        "attack": {
+          "expected": 28.684297707066676,
+          "actual": 40,
+          "brier": 0.013660612343271324
+        },
+        "fatal": {
+          "expected": 3.4700396911886964,
+          "actual": 13,
+          "brier": 0.011206650141973369
+        }
+      },
+      "mode2": {
+        "games": 26,
+        "decisions": 1019,
+        "truth_present": 829,
+        "collapses": 7,
+        "rebuilds": 7,
+        "empty_belief": 0,
+        "update_cpu_seconds": 24.917523,
+        "attack": {
+          "expected": 29.248515420290484,
+          "actual": 40,
+          "brier": 0.01364226239423841
+        },
+        "fatal": {
+          "expected": 4.094733186137041,
+          "actual": 13,
+          "brier": 0.011203995993933277
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": 1.8349949032917655e-05,
+          "ci95": [
+            -5.4084850570669215e-05,
+            8.788072636572467e-05
+          ],
+          "games": 26,
+          "moves": 1019
+        },
+        "fatal_brier_reduction": {
+          "mean": 2.654148040092601e-06,
+          "ci95": [
+            -6.470343319527493e-05,
+            6.366107144671862e-05
+          ],
+          "games": 26,
+          "moves": 1019
+        },
+        "truth_support_gain": {
+          "mean": -0.020608439646712464,
+          "ci95": [
+            -0.0923998773796658,
+            0.05634467180441134
+          ],
+          "games": 26,
+          "moves": 1019
+        }
+      }
+    },
+    "primary_unchanged_view": {
+      "mode0": {
+        "games": 41,
+        "decisions": 795,
+        "truth_present": 680,
+        "collapses": 11,
+        "rebuilds": 11,
+        "empty_belief": 0,
+        "update_cpu_seconds": 42.335242,
+        "attack": {
+          "expected": 8.507556333079759,
+          "actual": 22,
+          "brier": 0.025956578098644965
+        },
+        "fatal": {
+          "expected": 7.098437755915351,
+          "actual": 16,
+          "brier": 0.018269141737266365
+        }
+      },
+      "mode1": {
+        "games": 41,
+        "decisions": 795,
+        "truth_present": 680,
+        "collapses": 11,
+        "rebuilds": 11,
+        "empty_belief": 0,
+        "update_cpu_seconds": 41.907805,
+        "attack": {
+          "expected": 8.507556333079759,
+          "actual": 22,
+          "brier": 0.025956578098644965
+        },
+        "fatal": {
+          "expected": 7.098437755915351,
+          "actual": 16,
+          "brier": 0.018269141737266365
+        }
+      },
+      "mode2": {
+        "games": 41,
+        "decisions": 795,
+        "truth_present": 661,
+        "collapses": 14,
+        "rebuilds": 14,
+        "empty_belief": 0,
+        "update_cpu_seconds": 42.825298,
+        "attack": {
+          "expected": 8.124046174387058,
+          "actual": 22,
+          "brier": 0.025949238981395915
+        },
+        "fatal": {
+          "expected": 6.57730591898246,
+          "actual": 16,
+          "brier": 0.01817193975287148
+        }
+      },
+      "paired": {
+        "attack_brier_reduction": {
+          "mean": 7.339117249049747e-06,
+          "ci95": [
+            -0.0005767793057982634,
+            0.0005110112687778902
+          ],
+          "games": 41,
+          "moves": 795
+        },
+        "fatal_brier_reduction": {
+          "mean": 9.720198439488759e-05,
+          "ci95": [
+            -0.0005034749453386855,
+            0.0006183167937537959
+          ],
+          "games": 41,
+          "moves": 795
+        },
+        "truth_support_gain": {
+          "mean": -0.02389937106918239,
+          "ci95": [
+            -0.05866531309766377,
+            0.006929382526865854
+          ],
+          "games": 41,
+          "moves": 795
+        }
+      }
+    }
+  },
+  "traps": {
+    "gjlnku86": {
+      "mode0": [
+        {
+          "game": "gjlnku86",
+          "side": 1,
+          "ply": 17,
+          "move": "e5d3",
+          "worlds": 944,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.00136115291706,
+          "attack_probability": 0.0083310565225,
+          "fatal_probability": 0.0083310565225,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 0.268482,
+          "full_calls": 10473,
+          "cheap_calls": 0
+        }
+      ],
+      "mode1": [
+        {
+          "game": "gjlnku86",
+          "side": 1,
+          "ply": 17,
+          "move": "e5d3",
+          "worlds": 944,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.00136115291706,
+          "attack_probability": 0.0083310565225,
+          "fatal_probability": 0.0083310565225,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 0.271049,
+          "full_calls": 10473,
+          "cheap_calls": 0
+        }
+      ],
+      "mode2": [
+        {
+          "game": "gjlnku86",
+          "side": 1,
+          "ply": 17,
+          "move": "e5d3",
+          "worlds": 965,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.00122776065232,
+          "attack_probability": 0.00776387743199,
+          "fatal_probability": 0.00776387743199,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 0.272831,
+          "full_calls": 10477,
+          "cheap_calls": 0
+        }
+      ]
+    },
+    "c4ak2ldi": {
+      "mode0": [
+        {
+          "game": "c4ak2ldi",
+          "side": 1,
+          "ply": 59,
+          "move": "e2f2",
+          "worlds": 28,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.0682797466457,
+          "attack_probability": 0.0806382591135,
+          "fatal_probability": 0.0806382591135,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 1.372452,
+          "full_calls": 49349,
+          "cheap_calls": 0
+        }
+      ],
+      "mode1": [
+        {
+          "game": "c4ak2ldi",
+          "side": 1,
+          "ply": 59,
+          "move": "e2f2",
+          "worlds": 28,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.0682797466457,
+          "attack_probability": 0.0806382591135,
+          "fatal_probability": 0.0806382591135,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 1.351166,
+          "full_calls": 49349,
+          "cheap_calls": 0
+        }
+      ],
+      "mode2": [
+        {
+          "game": "c4ak2ldi",
+          "side": 1,
+          "ply": 59,
+          "move": "e2f2",
+          "worlds": 15,
+          "overflowed": 1,
+          "truth_present": 1,
+          "truth_share": 0.0801316124847,
+          "attack_probability": 0.0801316124847,
+          "fatal_probability": 0.0801316124847,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 1.352665,
+          "full_calls": 48498,
+          "cheap_calls": 0
+        }
+      ]
+    },
+    "qkb2exm9": {
+      "mode0": [
+        {
+          "game": "qkb2exm9",
+          "side": 0,
+          "ply": 6,
+          "move": "c1e3",
+          "worlds": 8,
+          "overflowed": 0,
+          "truth_present": 1,
+          "truth_share": 0.124823905909,
+          "attack_probability": 0.624870077744,
+          "fatal_probability": 0.124823905909,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 7.5e-05,
+          "full_calls": 3,
+          "cheap_calls": 0
+        }
+      ],
+      "mode1": [
+        {
+          "game": "qkb2exm9",
+          "side": 0,
+          "ply": 6,
+          "move": "c1e3",
+          "worlds": 8,
+          "overflowed": 0,
+          "truth_present": 1,
+          "truth_share": 0.124823905909,
+          "attack_probability": 0.624870077744,
+          "fatal_probability": 0.124823905909,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 0.000113,
+          "full_calls": 3,
+          "cheap_calls": 0
+        }
+      ],
+      "mode2": [
+        {
+          "game": "qkb2exm9",
+          "side": 0,
+          "ply": 6,
+          "move": "c1e3",
+          "worlds": 8,
+          "overflowed": 0,
+          "truth_present": 1,
+          "truth_share": 0.124823905909,
+          "attack_probability": 0.624870077744,
+          "fatal_probability": 0.124823905909,
+          "actual_attack": 1,
+          "actual_fatal": 1,
+          "inconsistent": 0,
+          "rebuilds": 0,
+          "collapses": 0,
+          "update_cpu_seconds": 7.5e-05,
+          "full_calls": 3,
+          "cheap_calls": 0
+        }
+      ]
+    }
+  }
+}

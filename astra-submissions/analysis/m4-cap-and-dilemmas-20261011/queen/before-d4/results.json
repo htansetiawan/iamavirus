@@ -1,0 +1,819 @@
+{
+  "binary": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/candidate",
+  "sha256": "5892c2a9015395de2f541f954d3d3edc06b9217d9c7291913fd01d9d23949ab0",
+  "seconds": 1.0,
+  "iteration_cap": 100000,
+  "seed": 21,
+  "fixed_parent_cap": 20000,
+  "sample_target": 32,
+  "tactical_witnesses": false,
+  "tactical_closure": false,
+  "trace_continuation": true,
+  "leaf_scale": 1.0,
+  "root_dominance": false,
+  "fast_roots": true,
+  "settle_fraction": 0,
+  "trace_moves": [
+    "d2d4",
+    "b1c3",
+    "g1f3",
+    "c2c3"
+  ],
+  "stockfish": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/stockfish",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "qkb2exm9",
+      "side": "white",
+      "decision": 3,
+      "ply": 4,
+      "mode": "cold",
+      "played": "d2d4",
+      "returncode": 0,
+      "true_legal_count": 29,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 1.096712997998111,
+      "prefix_exact": true,
+      "outputs": 3,
+      "chosen": "d1e2",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 4,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "groups": 1,
+          "expand": 896,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.0011,
+          "solve": 0.749,
+          "save": 0.003,
+          "total": 0.7532,
+          "over": 0,
+          "active": 1.0,
+          "enter": 1.0,
+          "current": 1.0,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 1,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 1.0,
+      "all_root_reach": 1.0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_share": 0.0,
+      "action_profiles": [
+        {
+          "move": "b1a3",
+          "policy": 0.017516439,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0374179445
+        },
+        {
+          "move": "b1c3",
+          "policy": 0.166499087,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0702270413
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.275590104,
+          "played": 1.0,
+          "fatal": 0.0,
+          "raw": 0.000772857487
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.00414012414
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.955590758
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.966222158
+        },
+        {
+          "move": "e1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.247936009
+        },
+        {
+          "move": "f1e2",
+          "policy": 0.253466377,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0469048285
+        },
+        {
+          "move": "f1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0201124463
+        },
+        {
+          "move": "f1c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.684015713
+        },
+        {
+          "move": "f1b5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.66403677
+        },
+        {
+          "move": "f1a6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.296760301
+        },
+        {
+          "move": "g1e2",
+          "policy": 0.168125372,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.110278755
+        },
+        {
+          "move": "g1f3",
+          "policy": 0.00781065474,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0355679079
+        },
+        {
+          "move": "g1h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.00700775438
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0147886447
+        },
+        {
+          "move": "a2a4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0109384981
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.71629787
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.0618794608,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.032421575
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0124126909
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0185928775
+        },
+        {
+          "move": "d2d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.00167430262
+        },
+        {
+          "move": "d2d4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0825195471
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0566639128
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0169581692,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0262273895
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.82980191
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.835173364
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0105639238
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.0321543358,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0489449017
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 4,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 1.0,
+        "ready": 1.0,
+        "scored": 25530.0,
+        "calls": 764.0,
+        "failed": 0.0,
+        "seconds": 0.657088,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-cold.trace.jsonl",
+        "sha256": "797b8f9721d3cdda55321db4b587cb4239cdf202a875530dd6a234e2deaabb74",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 50,
+          "roots": 1,
+          "ply": 4
+        },
+        "seconds": 0.001318
+      },
+      "alternative_traces": {
+        "d2d4": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-cold.trace.jsonl.d2d4",
+          "sha256": "f652d2d25e84e8b30bdeddbd830dbb7212cb496f72a062ab9c9261ace8a439ba",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 48,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.000949,
+          "same_root_states_and_values": true
+        },
+        "b1c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-cold.trace.jsonl.b1c3",
+          "sha256": "da9d4748fd34126c179968a71521884e1a0a1976cb47b34165ead35d296ec157",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 50,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.00114,
+          "same_root_states_and_values": true
+        },
+        "g1f3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-cold.trace.jsonl.g1f3",
+          "sha256": "f02c89c7dddf85f3abd226eb09e77855260ea24f9ff6deb2c8b3315ee71f8757",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 49,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.000806,
+          "same_root_states_and_values": true
+        },
+        "c2c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-cold.trace.jsonl.c2c3",
+          "sha256": "d21c0d595dc19da6dd2ce04ad952abf16947b937532c6bb2d3dfd08a2369dbc9",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 50,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.000724,
+          "same_root_states_and_values": true
+        }
+      },
+      "closure_metrics": [],
+      "belief_count": 1,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 1.0,
+      "belief_truth_share": 1.0,
+      "legal": true,
+      "true_outcome": null,
+      "immediate_loss": false
+    },
+    {
+      "game": "qkb2exm9",
+      "side": "white",
+      "decision": 3,
+      "ply": 4,
+      "mode": "warm",
+      "played": "d2d4",
+      "returncode": 0,
+      "true_legal_count": 29,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 2.590562432000297,
+      "prefix_exact": true,
+      "outputs": 3,
+      "chosen": "d1e2",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.7537,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 2,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.7537,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 4,
+          "found": 1,
+          "positive": 1,
+          "carry": 1,
+          "offI": 0,
+          "fresh": 0,
+          "groups": 1,
+          "expand": 936,
+          "fallback": 0,
+          "snapshot": 1,
+          "setup": 0.0015,
+          "solve": 0.7508,
+          "save": 0.0029,
+          "total": 0.7551,
+          "over": 0,
+          "active": 1.0,
+          "enter": 1.0,
+          "current": 1.0,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 1,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 1.0,
+      "all_root_reach": 1.0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_share": 0.0,
+      "action_profiles": [
+        {
+          "move": "b1a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.00258630136
+        },
+        {
+          "move": "b1c3",
+          "policy": 0.100996301,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.038579893
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.260833273,
+          "played": 1.0,
+          "fatal": 0.0,
+          "raw": 0.00783178761
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.00381297836,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0279912008
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.97446446
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.958327311
+        },
+        {
+          "move": "e1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.283788175
+        },
+        {
+          "move": "f1e2",
+          "policy": 0.16207375,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0621716036
+        },
+        {
+          "move": "f1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0165025559
+        },
+        {
+          "move": "f1c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.658556599
+        },
+        {
+          "move": "f1b5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.675069875
+        },
+        {
+          "move": "f1a6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.207524285
+        },
+        {
+          "move": "g1e2",
+          "policy": 0.147933039,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.030360523
+        },
+        {
+          "move": "g1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0206020152
+        },
+        {
+          "move": "g1h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.193997224
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.00832898377
+        },
+        {
+          "move": "a2a4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0151292682
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0134347839
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.170721543,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0475142703
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0244919681
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0089532391
+        },
+        {
+          "move": "d2d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0702001623
+        },
+        {
+          "move": "d2d4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0215066655
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.157784441
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0522169799
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.274504897
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.910424594
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": 0.0127242912
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.153629116,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.0511781184
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 4,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 0.0,
+        "ready": 1.0,
+        "scored": 25458.0,
+        "calls": 797.0,
+        "failed": 0.0,
+        "seconds": 0.655281,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 33664.0,
+          "calls": 1428.0,
+          "failed": 0.0,
+          "seconds": 0.630329,
+          "scale": 1.0
+        },
+        {
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 24937.0,
+          "calls": 843.0,
+          "failed": 0.0,
+          "seconds": 0.656529,
+          "scale": 1.0
+        }
+      ],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-warm.trace.jsonl",
+        "sha256": "ac794931f2fe9eedcfd28d1b095b9dac3564d739b1071ff157071c488561bbc1",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 50,
+          "roots": 1,
+          "ply": 4
+        },
+        "seconds": 0.000879
+      },
+      "alternative_traces": {
+        "d2d4": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-warm.trace.jsonl.d2d4",
+          "sha256": "dbbbd4b6b5c15317b1847bac7883cd8741d2ce04e63a760d1862519e90c2b373",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 48,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.000675,
+          "same_root_states_and_values": true
+        },
+        "b1c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-warm.trace.jsonl.b1c3",
+          "sha256": "1b3627a1f5ca5c9121342f91f5610b0c76ce68f24b4b80b6390074e1a1b20793",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 50,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.000582,
+          "same_root_states_and_values": true
+        },
+        "g1f3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-warm.trace.jsonl.g1f3",
+          "sha256": "cc3a9291128d7341b7d387db081debc5daa1910a62ba4c5ca0709dd68fb36f96",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 49,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.000541,
+          "same_root_states_and_values": true
+        },
+        "c2c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/before-d4/qkb2exm9-white-d3-warm.trace.jsonl.c2c3",
+          "sha256": "dbf183fd1c25f4109617f0982dc263bcf827856abf17d43ba9f77031d3282ff6",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 50,
+            "roots": 1,
+            "ply": 4
+          },
+          "seconds": 0.000536,
+          "same_root_states_and_values": true
+        }
+      },
+      "closure_metrics": [],
+      "belief_count": 1,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 1.0,
+      "belief_truth_share": 1.0,
+      "legal": true,
+      "true_outcome": null,
+      "immediate_loss": false
+    }
+  ]
+}

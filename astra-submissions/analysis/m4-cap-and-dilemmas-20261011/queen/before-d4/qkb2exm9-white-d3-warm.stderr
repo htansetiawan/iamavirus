@@ -1,0 +1,44 @@
+mist-m4: evaluator=bounded-stockfish child_alternates=1 kappa=1, fresh-world singleton knowledge; replay=searched-prefix
+mist-m4: prefix ok=1 ply=0 carry=0 offI=0 fresh=1 fallback=1 snapshot=1 seconds=0.7537
+m4-prefix-eval: ply=0 ready=1 scored=33664 calls=1428 failed=0 seconds=0.630329 scale=1.000000
+mist-m4: prefix ok=1 ply=2 carry=0 offI=0 fresh=1 fallback=2 snapshot=1 seconds=0.7537
+m4-prefix-eval: ply=2 ready=1 scored=24937 calls=843 failed=0 seconds=0.656529 scale=1.000000
+m4-root: board=RNBQKBNRPPPP-PPP-------------------q------------ppp-pppprnb-kbnr ep=-1 castle=8100000000000081 halfmove=0 group=0 reach=1 value=0.00463949786 chosen_fatal=0
+m4-action: move=b1a3 policy=0 played=0 fatal=0 raw=-0.00258630136
+m4-action: move=b1c3 policy=0.100996301 played=0 fatal=0 raw=0.038579893
+m4-action: move=d1e2 policy=0.260833273 played=1 fatal=0 raw=0.00783178761
+m4-action: move=d1f3 policy=0.00381297836 played=0 fatal=0 raw=0.0279912008
+m4-action: move=d1g4 policy=0 played=0 fatal=0 raw=-0.97446446
+m4-action: move=d1h5 policy=0 played=0 fatal=0 raw=-0.958327311
+m4-action: move=e1e2 policy=0 played=0 fatal=0 raw=-0.283788175
+m4-action: move=f1e2 policy=0.16207375 played=0 fatal=0 raw=0.0621716036
+m4-action: move=f1d3 policy=0 played=0 fatal=0 raw=0.0165025559
+m4-action: move=f1c4 policy=0 played=0 fatal=0 raw=-0.658556599
+m4-action: move=f1b5 policy=0 played=0 fatal=0 raw=-0.675069875
+m4-action: move=f1a6 policy=0 played=0 fatal=0 raw=-0.207524285
+m4-action: move=g1e2 policy=0.147933039 played=0 fatal=0 raw=0.030360523
+m4-action: move=g1f3 policy=0 played=0 fatal=0 raw=0.0206020152
+m4-action: move=g1h3 policy=0 played=0 fatal=0 raw=-0.193997224
+m4-action: move=a2a3 policy=0 played=0 fatal=0 raw=0.00832898377
+m4-action: move=a2a4 policy=0 played=0 fatal=0 raw=0.0151292682
+m4-action: move=b2b3 policy=0 played=0 fatal=0 raw=0.0134347839
+m4-action: move=b2b4 policy=0.170721543 played=0 fatal=0 raw=-0.0475142703
+m4-action: move=c2c3 policy=0 played=0 fatal=0 raw=0.0244919681
+m4-action: move=c2c4 policy=0 played=0 fatal=0 raw=0.0089532391
+m4-action: move=d2d3 policy=0 played=0 fatal=0 raw=-0.0702001623
+m4-action: move=d2d4 policy=0 played=0 fatal=0 raw=-0.0215066655
+m4-action: move=f2f3 policy=0 played=0 fatal=0 raw=-0.157784441
+m4-action: move=f2f4 policy=0 played=0 fatal=0 raw=-0.0522169799
+m4-action: move=g2g3 policy=0 played=0 fatal=0 raw=-0.274504897
+m4-action: move=g2g4 policy=0 played=0 fatal=0 raw=-0.910424594
+m4-action: move=h2h3 policy=0 played=0 fatal=0 raw=0.0127242912
+m4-action: move=h2h4 policy=0.153629116 played=0 fatal=0 raw=-0.0511781184
+mist-m4: ok=1 ply=4 found=1 positive=1 carry=1 offI=0 fresh=0 groups=1 expand=936 fallback=0 snapshot=1 setup=0.0015 solve=0.7508 save=0.0029 total=0.7551 over=0 active=1.00000 enter=1.00000 current=1.00000 support=1
+m4-eval: child_alternates=0 ready=1 scored=25458 calls=797 failed=0 seconds=0.655281 scale=1.000000
+m4-setup: ply=4 cheap_carried_roots=0
+m4-trace: complete=1 seconds=0.000879
+m4-trace-alt: move=d2d4 complete=1 seconds=0.000675
+m4-trace-alt: move=b1c3 complete=1 seconds=0.000582
+m4-trace-alt: move=g1f3 complete=1 seconds=0.000541
+m4-trace-alt: move=c2c3 complete=1 seconds=0.000536
+mist: n=3 |P|=1 samples=1 moves=29 infosets=482 nodes=32775 iters=320 p=1.00 v=+0.005 lead=+0 clock=176.0 sf=0/0.0s move=d1e2

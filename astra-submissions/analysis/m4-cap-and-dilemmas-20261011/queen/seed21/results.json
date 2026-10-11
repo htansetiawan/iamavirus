@@ -1,0 +1,1021 @@
+{
+  "binary": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/candidate",
+  "sha256": "5892c2a9015395de2f541f954d3d3edc06b9217d9c7291913fd01d9d23949ab0",
+  "seconds": 1.0,
+  "iteration_cap": 100000,
+  "seed": 21,
+  "fixed_parent_cap": 20000,
+  "sample_target": 32,
+  "tactical_witnesses": false,
+  "tactical_closure": false,
+  "trace_continuation": true,
+  "leaf_scale": 1.0,
+  "root_dominance": false,
+  "fast_roots": true,
+  "settle_fraction": 0,
+  "trace_moves": [
+    "c1e3",
+    "c1d2",
+    "d1d2",
+    "b1c3",
+    "b1d2",
+    "e1e2",
+    "c2c3",
+    "b2b4"
+  ],
+  "stockfish": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/stockfish",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "qkb2exm9",
+      "side": "white",
+      "decision": 4,
+      "ply": 6,
+      "mode": "cold",
+      "played": "c1e3",
+      "returncode": 0,
+      "true_legal_count": 37,
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 1.0928385259976494,
+      "prefix_exact": true,
+      "outputs": 4,
+      "chosen": "g1e2",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 6,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 8,
+          "groups": 8,
+          "expand": 839,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.0052,
+          "solve": 0.7448,
+          "save": 0.0024,
+          "total": 0.7525,
+          "over": 0,
+          "active": 1.0,
+          "enter": 1.0,
+          "current": 1.0,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 8,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 0.125,
+      "all_root_reach": 1.0,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_share": 0.125,
+      "action_profiles": [
+        {
+          "move": "b1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25,
+          "raw": -0.206414
+        },
+        {
+          "move": "b1a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.341706459
+        },
+        {
+          "move": "b1c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25,
+          "raw": -0.194746495
+        },
+        {
+          "move": "c1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25,
+          "raw": -0.243065902
+        },
+        {
+          "move": "c1e3",
+          "policy": 0.237427977,
+          "played": 0.0,
+          "fatal": 0.125,
+          "raw": -0.0817161789
+        },
+        {
+          "move": "c1f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.578551926
+        },
+        {
+          "move": "c1g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.544666778
+        },
+        {
+          "move": "c1h6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.714837969
+        },
+        {
+          "move": "d1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25,
+          "raw": -0.224601704
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.125,
+          "raw": -0.213506854
+        },
+        {
+          "move": "d1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.425574656
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.27210292
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.974409589
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.460299096
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.125,
+          "raw": -0.486741776
+        },
+        {
+          "move": "e1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25,
+          "raw": -0.501402278
+        },
+        {
+          "move": "f1e2",
+          "policy": 0.270860024,
+          "played": 0.0,
+          "fatal": 0.125,
+          "raw": -0.0992682156
+        },
+        {
+          "move": "f1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.263259286
+        },
+        {
+          "move": "f1c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.351644747
+        },
+        {
+          "move": "f1b5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.631108913
+        },
+        {
+          "move": "f1a6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.909982653
+        },
+        {
+          "move": "g1e2",
+          "policy": 0.491712,
+          "played": 1.0,
+          "fatal": 0.125,
+          "raw": -0.0984448478
+        },
+        {
+          "move": "g1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.192948554
+        },
+        {
+          "move": "g1h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.409074629
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.324159213
+        },
+        {
+          "move": "a2a4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.392380597
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.369999581
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25,
+          "raw": -0.339042114
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25,
+          "raw": -0.22233612
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.395991026
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.478895478
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.354758904
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.444409194
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.713690042
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.302322771
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.310235738
+        },
+        {
+          "move": "d4d5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.375,
+          "raw": -0.410139988
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 6,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 8.0,
+        "ready": 1.0,
+        "scored": 24260.0,
+        "calls": 688.0,
+        "failed": 0.0,
+        "seconds": 0.66301,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl",
+        "sha256": "a51a5827e6db7a42467db01db5dbc9b10ab8122b7e4df5c0fdaa7af4c19c4a80",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 290,
+          "roots": 8,
+          "ply": 6
+        },
+        "seconds": 0.001559
+      },
+      "alternative_traces": {
+        "c1e3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.c1e3",
+          "sha256": "1013d6534acf443e4486f5f796f05eb91bb4d664b66e340ae7c2f64289810ecc",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 288,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.00141,
+          "same_root_states_and_values": true
+        },
+        "c1d2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.c1d2",
+          "sha256": "53d4c6f2ec9cbc3b7953ac6dff460bbeaf48e0b5e5379ded52ee610bc787b00c",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 167,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.001151,
+          "same_root_states_and_values": true
+        },
+        "d1d2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.d1d2",
+          "sha256": "60bb77bc1c2d2e07427e65ca96473b9acd1a2c990fe5b35ff3a4cff5e4e04b46",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 190,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.001094,
+          "same_root_states_and_values": true
+        },
+        "b1c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.b1c3",
+          "sha256": "9a1034101d46a16ec78a94231c3a1f83fb9f02ac8daab477c553b285407cfb3d",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 179,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.001262,
+          "same_root_states_and_values": true
+        },
+        "b1d2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.b1d2",
+          "sha256": "7f799c067fbf9ccfce71589ce5a89cb9c8817a4c8b7bd4c655228acc16276c49",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 168,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.001327,
+          "same_root_states_and_values": true
+        },
+        "e1e2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.e1e2",
+          "sha256": "2800f8eb36d488d7b2e3711ecb39b7ab2913d926128c87ee934ae4b26f06bc48",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 250,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.001204,
+          "same_root_states_and_values": true
+        },
+        "c2c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.c2c3",
+          "sha256": "cc164f6c745358c5ca09d3a45e50794e60197c231710fe9ddd8aefc0ca5b9428",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 209,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.00125,
+          "same_root_states_and_values": true
+        },
+        "b2b4": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-cold.trace.jsonl.b2b4",
+          "sha256": "9ec332e4033151f88cfc8b0c099599f507707118018d5f45d2ac6591cb766dee",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 203,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000949,
+          "same_root_states_and_values": true
+        }
+      },
+      "closure_metrics": [],
+      "belief_count": 8,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_truth_share": 0.12343688811538321,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    },
+    {
+      "game": "qkb2exm9",
+      "side": "white",
+      "decision": 4,
+      "ply": 6,
+      "mode": "warm",
+      "played": "c1e3",
+      "returncode": 0,
+      "true_legal_count": 37,
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 3.3437586650034063,
+      "prefix_exact": true,
+      "outputs": 4,
+      "chosen": "c1e3",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.7535,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 2,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.7533,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 4,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.7546,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 6,
+          "found": 8,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 8,
+          "groups": 8,
+          "expand": 818,
+          "fallback": 2,
+          "snapshot": 1,
+          "setup": 0.0062,
+          "solve": 0.7439,
+          "save": 0.0016,
+          "total": 0.7517,
+          "over": 0,
+          "active": 0.82467,
+          "enter": 1.0,
+          "current": 0.82467,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 8,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 0.125,
+      "all_root_reach": 0.8246672855492141,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_share": 0.15157628075030546,
+      "action_profiles": [
+        {
+          "move": "b1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.303152562,
+          "raw": -0.258675234
+        },
+        {
+          "move": "b1a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.265694413
+        },
+        {
+          "move": "b1c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.303152562,
+          "raw": -0.321148975
+        },
+        {
+          "move": "c1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.303152562,
+          "raw": -0.227551385
+        },
+        {
+          "move": "c1e3",
+          "policy": 0.607140875,
+          "played": 1.0,
+          "fatal": 0.151576281,
+          "raw": -0.154044942
+        },
+        {
+          "move": "c1f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.554544534
+        },
+        {
+          "move": "c1g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.465361447
+        },
+        {
+          "move": "c1h6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.934837729
+        },
+        {
+          "move": "d1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.303152562,
+          "raw": -0.293020436
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.149496253,
+          "played": 0.0,
+          "fatal": 0.151576281,
+          "raw": -0.113414055
+        },
+        {
+          "move": "d1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.354471831
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.63387384
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.97799044
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.671996891
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.151576281,
+          "raw": -0.334887037
+        },
+        {
+          "move": "e1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.303152562,
+          "raw": -0.281822008
+        },
+        {
+          "move": "f1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.151576281,
+          "raw": -0.255288096
+        },
+        {
+          "move": "f1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.482329223
+        },
+        {
+          "move": "f1c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.449135137
+        },
+        {
+          "move": "f1b5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.777660001
+        },
+        {
+          "move": "f1a6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.909864076
+        },
+        {
+          "move": "g1e2",
+          "policy": 0.243362871,
+          "played": 0.0,
+          "fatal": 0.151576281,
+          "raw": -0.14807358
+        },
+        {
+          "move": "g1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.359999578
+        },
+        {
+          "move": "g1h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.456153056
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.272620333
+        },
+        {
+          "move": "a2a4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.301527663
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.360749373
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.303152562,
+          "raw": -0.176273884
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.303152562,
+          "raw": -0.312004361
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.335856258
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.353485298
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.346225433
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.555841258
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.524231889
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.38488723
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.338152917
+        },
+        {
+          "move": "d4d5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.454728842,
+          "raw": -0.37658476
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 6,
+        "cheap_carried_roots": 0
+      },
+      "evaluation": {
+        "child_alternates": 8.0,
+        "ready": 1.0,
+        "scored": 24296.0,
+        "calls": 684.0,
+        "failed": 0.0,
+        "seconds": 0.661973,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 34251.0,
+          "calls": 1453.0,
+          "failed": 0.0,
+          "seconds": 0.629679,
+          "scale": 1.0
+        },
+        {
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 22871.0,
+          "calls": 750.0,
+          "failed": 0.0,
+          "seconds": 0.666177,
+          "scale": 1.0
+        },
+        {
+          "ply": 4.0,
+          "ready": 1.0,
+          "scored": 25853.0,
+          "calls": 799.0,
+          "failed": 0.0,
+          "seconds": 0.656453,
+          "scale": 1.0
+        }
+      ],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl",
+        "sha256": "bbc0cfea13c253cde735bd2201c187554755b4be612a330ae45c4c987340082a",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 288,
+          "roots": 8,
+          "ply": 6
+        },
+        "seconds": 0.001228
+      },
+      "alternative_traces": {
+        "c1e3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.c1e3",
+          "sha256": "bbc0cfea13c253cde735bd2201c187554755b4be612a330ae45c4c987340082a",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 288,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.00101,
+          "same_root_states_and_values": true
+        },
+        "c1d2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.c1d2",
+          "sha256": "48cb756bd932734393853007dc81f9c1b59a26d424592a0b769da4504e41d328",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 249,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000872,
+          "same_root_states_and_values": true
+        },
+        "d1d2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.d1d2",
+          "sha256": "4cfe6fd5b92a835d5889b35403e7ea599e4c8bfae9260c624185734deac2b9dd",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 208,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000757,
+          "same_root_states_and_values": true
+        },
+        "b1c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.b1c3",
+          "sha256": "aa5eed870233de1fa6e1aa1733f449ac44cb34269a75b449c84d6b7f07bc9a05",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 247,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000796,
+          "same_root_states_and_values": true
+        },
+        "b1d2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.b1d2",
+          "sha256": "749314501ac3e01c1f15cde3c3c820c6f3fe285d7cffffa20b52e7f15556db53",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 164,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000661,
+          "same_root_states_and_values": true
+        },
+        "e1e2": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.e1e2",
+          "sha256": "1db5bbf49440e8be6510f8196d3236bc208582fb31c9b6fa2797c12d00c3a5c4",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 106,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000572,
+          "same_root_states_and_values": true
+        },
+        "c2c3": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.c2c3",
+          "sha256": "793c44c54ccf700ff7ec023950315c132d1711a183c1948e668e2579bc1b361c",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 248,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000803,
+          "same_root_states_and_values": true
+        },
+        "b2b4": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-duck-early-trap-20261011/seed21/qkb2exm9-white-d4-warm.trace.jsonl.b2b4",
+          "sha256": "0abb759991147b2da41bdef9188e42dc626b750022a39409f5bcb7462172728f",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 216,
+            "roots": 8,
+            "ply": 6
+          },
+          "seconds": 0.000741,
+          "same_root_states_and_values": true
+        }
+      },
+      "closure_metrics": [],
+      "belief_count": 8,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_truth_share": 0.12343688811538321,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    }
+  ]
+}
