@@ -1,0 +1,281 @@
+{
+  "games": 64,
+  "decisions": 5179,
+  "metrics": {
+    "policy_nll": {
+      "control": 2.5941977389876127,
+      "candidate": 2.6260524111616292,
+      "candidate_minus_control": 0.031854672174016496,
+      "paired_game_bootstrap_95": [
+        0.01777001901922023,
+        0.04577634816411258
+      ],
+      "target_count": 5179
+    },
+    "policy_accuracy": {
+      "control": 0.30044410117783354,
+      "candidate": 0.2915620776211624,
+      "candidate_minus_control": -0.00888202355667117,
+      "paired_game_bootstrap_95": [
+        -0.017334562448098105,
+        -0.0012706134707123123
+      ],
+      "target_count": 5179
+    },
+    "hidden_nll": {
+      "control": 0.5265804188963983,
+      "candidate": 0.5448245006644205,
+      "candidate_minus_control": 0.01824408176802217,
+      "paired_game_bootstrap_95": [
+        0.014413621418272623,
+        0.022181917121169067
+      ],
+      "target_count": 161649
+    },
+    "hidden_enemy_nll": {
+      "control": 1.2425516910915948,
+      "candidate": 1.2241756879882206,
+      "candidate_minus_control": -0.018376003103374172,
+      "paired_game_bootstrap_95": [
+        -0.031304223914033806,
+        -0.005405070859340242
+      ],
+      "target_count": 49330
+    },
+    "danger_brier": {
+      "control": 0.03848178840365863,
+      "candidate": 0.04237148273724133,
+      "candidate_minus_control": 0.0038896943335827022,
+      "paired_game_bootstrap_95": [
+        0.0027900581438915456,
+        0.005089058921313081
+      ],
+      "target_count": 158105
+    },
+    "value_mse": {
+      "control": 0.8498597399165277,
+      "candidate": 0.9191455312860589,
+      "candidate_minus_control": 0.06928579136953117,
+      "paired_game_bootstrap_95": [
+        0.04268317830161645,
+        0.09799134194800742
+      ],
+      "target_count": 5179
+    },
+    "hidden_piece_0_nll": {
+      "control": 0.7269281913678788,
+      "candidate": 0.7156380803499433,
+      "candidate_minus_control": -0.011290111017935534,
+      "paired_game_bootstrap_95": [
+        -0.02749887835976205,
+        0.0052108872342846784
+      ],
+      "target_count": 24268
+    },
+    "hidden_piece_0_recall": {
+      "control": 0.7048788528102852,
+      "candidate": 0.7183533871765287,
+      "candidate_minus_control": 0.013474534366243573,
+      "paired_game_bootstrap_95": [
+        0.003899890840865266,
+        0.022781689643795146
+      ],
+      "target_count": 24268
+    },
+    "hidden_piece_1_nll": {
+      "control": 1.734019050827535,
+      "candidate": 1.5870952258850455,
+      "candidate_minus_control": -0.14692382494248957,
+      "paired_game_bootstrap_95": [
+        -0.1713063788301867,
+        -0.12074736218690363
+      ],
+      "target_count": 4199
+    },
+    "hidden_piece_1_recall": {
+      "control": 0.36580138128125744,
+      "candidate": 0.42176708740176233,
+      "candidate_minus_control": 0.05596570612050489,
+      "paired_game_bootstrap_95": [
+        0.033081511503812396,
+        0.07922507614259784
+      ],
+      "target_count": 4199
+    },
+    "hidden_piece_2_nll": {
+      "control": 1.6250244241644756,
+      "candidate": 1.9284338823427665,
+      "candidate_minus_control": 0.3034094581782909,
+      "paired_game_bootstrap_95": [
+        0.26324594738352775,
+        0.3452755856349925
+      ],
+      "target_count": 5184
+    },
+    "hidden_piece_2_recall": {
+      "control": 0.43962191358024694,
+      "candidate": 0.388695987654321,
+      "candidate_minus_control": -0.05092592592592593,
+      "paired_game_bootstrap_95": [
+        -0.06382567530523163,
+        -0.03857799782164346
+      ],
+      "target_count": 5184
+    },
+    "hidden_piece_3_nll": {
+      "control": 1.4965092770083135,
+      "candidate": 1.3428880688188227,
+      "candidate_minus_control": -0.15362120818949077,
+      "paired_game_bootstrap_95": [
+        -0.18523586014978205,
+        -0.12203387773149552
+      ],
+      "target_count": 7205
+    },
+    "hidden_piece_3_recall": {
+      "control": 0.4455239417071478,
+      "candidate": 0.4499653018736988,
+      "candidate_minus_control": 0.0044413601665510005,
+      "paired_game_bootstrap_95": [
+        -0.004307900977536166,
+        0.013304500278690375
+      ],
+      "target_count": 7205
+    },
+    "hidden_piece_4_nll": {
+      "control": 2.4097764731267515,
+      "candidate": 2.384396121118427,
+      "candidate_minus_control": -0.025380352008324447,
+      "paired_game_bootstrap_95": [
+        -0.08006818571023151,
+        0.033688520250816555
+      ],
+      "target_count": 3295
+    },
+    "hidden_piece_4_recall": {
+      "control": 0.36358118361153263,
+      "candidate": 0.33474962063732927,
+      "candidate_minus_control": -0.028831562974203362,
+      "paired_game_bootstrap_95": [
+        -0.04815735104151442,
+        -0.010047963600004341
+      ],
+      "target_count": 3295
+    },
+    "hidden_piece_5_nll": {
+      "control": 1.781453187810302,
+      "candidate": 1.7046097588757216,
+      "candidate_minus_control": -0.0768434289345803,
+      "paired_game_bootstrap_95": [
+        -0.11334589454483271,
+        -0.03977799844173576
+      ],
+      "target_count": 5179
+    },
+    "hidden_piece_5_recall": {
+      "control": 0.4284610928750724,
+      "candidate": 0.4468044023942846,
+      "candidate_minus_control": 0.018343309519212203,
+      "paired_game_bootstrap_95": [
+        0.0010252066948981653,
+        0.03606215994674248
+      ],
+      "target_count": 5179
+    }
+  },
+  "control": "/media/henrytan/seagate/iamavirus/astra/ssl-transfer-20261011/supervised-fresh-2500",
+  "candidate": "/media/henrytan/seagate/iamavirus/astra/ssl-transfer-20261011/ssl-plus-1000",
+  "control_step": 2250,
+  "candidate_step": 1000,
+  "validation_sha256": [
+    "aff8405b20f150a239ae3ac5946700795e7d6c36d723fef8ec8ff22f42f4c806",
+    "fac400bccfe53867ecf92bad6578d659f2750f9a5c492af2116dfcbf9fe9befa"
+  ],
+  "source_sha256": {
+    "astra-submissions/learning_experiments/__init__.py": "bd83efa0660d6325dd5a389be96dcbfb0583c568b365eff42d2c6ebda02630f2",
+    "astra-submissions/learning_experiments/compare_pilots.py": "653760a9568de7a8d663b0a07a3e3ef9a8a6868e8f68865770a035788e9cd60e",
+    "astra-submissions/learning_experiments/evaluate.py": "a5c431e1df0b15a1d8e5705a171603df6e0d4bc4e37ba48cbc3d9819ceb51d93",
+    "astra-submissions/learning_experiments/export_checkpoint.py": "b2a898b6bca38f0b1a9900c86161a6114fe31afca38c37b9ef8525856a7d774c",
+    "astra-submissions/learning_experiments/models.py": "828a72f1a42483454f6cec0ed415407aad5e59da2921cc7140abe0416f570d66",
+    "astra-submissions/learning_experiments/profile_models.py": "84f37f345595260a0d9dbf106ab465663bab59f2ba469bf7e521aa4ec8bef6b9",
+    "astra-submissions/learning_experiments/quantize_audit.py": "1d670163d4d6bd7e1374540909f5e622043b2f72ac196b86a4a47ffe1045a949",
+    "astra-submissions/learning_experiments/run.py": "3007f8b2d1195365ee86d53ce91346f5e480bca53e1eabf9f5cdacdc32d637eb",
+    "astra-submissions/learning_experiments/ssl.py": "3126064acff03b0f0bd6d0cedd50989afa2ba8bafc97b2a4228dd014fffdbf4b",
+    "astra-submissions/learning_experiments/test_evaluate.py": "032e194933fc87c5a9bbd6551cc33d6176bc185bd1c54d2700122f5705aeeda7",
+    "astra-submissions/learning_experiments/test_models.py": "8f3233964020c94c39ce117aafc7563ab1c025b561b04013ed41ddc1de67f252",
+    "astra-submissions/learning_experiments/test_ssl.py": "43fca8f9bcab2427a835e9a008d49f6340648365b7af89006b6a62620e2fa748",
+    "learning/__init__.py": "611d705dba1f1ed454590cd9406c1e42f3df122356c3e5b8afa19e7e421a4571",
+    "learning/_native.py": "af915a3247124654933c06b2d5e3e2717560df3a08a39f7ce65a0a4a4eace704",
+    "learning/action_codec.py": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+    "learning/api_client.py": "53420c369ec99fad4cac42eca20700d09adc328b3a70bb0f7aeab006b3c35b22",
+    "learning/book.py": "77f70515d8cbe0e6f5d926294b257ae6d9d734d2604d545bcc85afdbf6d709ff",
+    "learning/compare_archives.py": "015075e4ec4cb3d5ed5310cc6036efb12d4ba59a814b42a8a3519e6235c3a9af",
+    "learning/curate.py": "34b9053c691a2377a8891eecb211082b122bb63516b3bcbf92bc5b52591f16c0",
+    "learning/dataset.py": "8ee40cee5afbb978de21954b2f59deed9ecaf3599aee5d3b49b01e9b2f26b03f",
+    "learning/env.py": "23ef68b423364a8c2345d18419aaa988757211e5c967de46f6e11ff8807762da",
+    "learning/evaluate.py": "c5355f5a4d0bfecbcc5d97807a49b1f67e931417acc16a8515f098c9c9a1ee67",
+    "learning/export.py": "ddcb8c08112d0e01132f0d4ffcbf324f7842b2a3e55e31b321ad85f00ceff146",
+    "learning/features.py": "abbf3b0b5a344349d9f39f69f56901124bdf8960c21caf565382ebc979863077",
+    "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+    "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+    "learning/labels.py": "11f10cfdc1a4bc4e6b4823ef8502c192b83e1bfd7e168fe42e39ff4e4e1a6b92",
+    "learning/model.py": "78da59fb06a959920e108a4c0ff425bc8ed94ac8a5de4bc3d2fa766cc70a22ff",
+    "learning/opponent_model.py": "07448e0d6ec888545fd67e469a6c1bd92ed9fff06a8c02ecb5095cf2fca41497",
+    "learning/pretrain.py": "97ee5c455cbd3a690c56fb1e31a44a538ef8345ad35fb87d0169602ceac5cae6",
+    "learning/replay_bot.py": "801fe12709afbfa7fd6d516ec191be7669b97379edbca90ccba41aa447373a35",
+    "learning/rollouts.py": "44c844e2417d2534730c12d58cbdd5cd7d3a0937fc3536ecd82b1d3b69f92d41",
+    "learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+    "learning/train_ppo.py": "a5e72f7a06ebc908988d09fad8b459be49c4b810c513a65009ff665f5783d6cf"
+  },
+  "training_decisions": [
+    139620,
+    62083
+  ],
+  "loop_wall_seconds": [
+    694.180500800001,
+    296.01423044699914
+  ],
+  "danger_recall_at_fpr": [
+    {
+      "0.01": {
+        "recall": 0.21569688768606224,
+        "actual_fpr": 0.009999004744053346,
+        "threshold": 0.1797277182340622
+      },
+      "0.05": {
+        "recall": 0.4953991880920162,
+        "actual_fpr": 0.04999502372026673,
+        "threshold": 0.09632408618927002
+      },
+      "0.1": {
+        "recall": 0.6428958051420839,
+        "actual_fpr": 0.09999668248017782,
+        "threshold": 0.05272499844431877
+      }
+    },
+    {
+      "0.01": {
+        "recall": 0.11244925575101489,
+        "actual_fpr": 0.009999004744053346,
+        "threshold": 0.13758723437786102
+      },
+      "0.05": {
+        "recall": 0.34776725304465494,
+        "actual_fpr": 0.04999502372026673,
+        "threshold": 0.06893526017665863
+      },
+      "0.1": {
+        "recall": 0.4949932341001353,
+        "actual_fpr": 0.09999668248017782,
+        "threshold": 0.03448985144495964
+      }
+    }
+  ],
+  "limitations": [
+    "One seed: game bootstrap does not cover initialization variation.",
+    "Validation games have been reused for architecture research; intervals do not account for experiment selection.",
+    "Equal downstream updates omit the SSL pretraining cost; report that separately.",
+    "Loop wall time includes intermediate validation but omits setup and final validation.",
+    "These legacy-source task metrics are not runtime compatibility or Elo evidence."
+  ]
+}

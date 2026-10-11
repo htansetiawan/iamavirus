@@ -1,0 +1,23 @@
+{
+  "source_commit": "063e87d",
+  "code": "/tmp/astra-ssl-transfer-20261011",
+  "source_matches_original_ssl": true,
+  "data_shards_match_original": true,
+  "feature_version": "features-v1",
+  "arms": {
+    "ssl-plus-1000": {
+      "initialize": "/media/henrytan/seagate/iamavirus/astra/representations/v3-seed253/attention-ssl-pilot-v2/step-001000.pt",
+      "phase": "supervised",
+      "steps": 1000
+    },
+    "supervised-2500": {
+      "resume": true,
+      "original_steps": 1000,
+      "total_steps": 2500
+    }
+  },
+  "seed": 253,
+  "validation_games": 64,
+  "test_shard_used": false,
+  "notes": "Allocation experiment on frozen legacy contract. Compare equal downstream updates and longer supervised-only total-compute control; report measured timing rather than claiming exact wall-clock equality. No current-runtime compatibility or Elo claim. The first preparation rejected a reserialized manifest; original manifest bytes match the recorded SHA."
+}

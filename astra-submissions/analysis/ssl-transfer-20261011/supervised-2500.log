@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/tmp/astra-ssl-transfer-20261011/astra-submissions/learning_experiments/run.py", line 282, in <module>
+    main()
+  File "/tmp/astra-ssl-transfer-20261011/astra-submissions/learning_experiments/run.py", line 278, in main
+    train(args)
+  File "/tmp/astra-ssl-transfer-20261011/astra-submissions/learning_experiments/run.py", line 163, in train
+    raise ValueError("source changed since checkpoint; start a new run with --initialize")
+ValueError: source changed since checkpoint; start a new run with --initialize

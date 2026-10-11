@@ -1,0 +1,16 @@
+{
+  "declared_at": "2026-10-11T16:17:14.076721+00:00",
+  "comparison_rule": "first 250-update supervised checkpoint whose recorded training-loop time meets or exceeds SSL pretraining plus supervised fine-tuning loop time; otherwise report unmet",
+  "ssl_pretrain_loop_seconds": 408.97350422502495,
+  "ssl_finetune_loop_seconds": 296.01423044699914,
+  "target_loop_seconds": 704.9877346720241,
+  "also_report": [
+    1000,
+    2500
+  ],
+  "limitations": [
+    "Loop wall time is not FLOP equality and was measured on separate runs.",
+    "CPU memory probes on cores4\u20135 overlap some control training on6\u20137.",
+    "This rule does not select by validation quality."
+  ]
+}

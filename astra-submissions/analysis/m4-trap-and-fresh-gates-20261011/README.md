@@ -112,3 +112,40 @@ The existing witness option remains experimental. A fresh learned model must
 earn posterior/calibration benefit on held-out histories before integration.
 The now-free GPU is running the separately declared SSL-transfer pilot, which
 tests an existing representation hypothesis without changing production.
+
+## Follow-up: separate local move likelihood from parent-state coverage
+
+The offline `m4_move_rank.c` tool reconstructs each true parent, scores every
+opponent move with the unchanged full/cheap prior, and conditions that local
+distribution on our resulting observation. **This truth-parent diagnostic is
+not the actor's full posterior.** It cannot establish which unseen state is
+correct at runtime. Its inputs, source snapshot and hashes are in
+[`prior-rank/manifest.json`](prior-rank/manifest.json), separate from the original
+inventory above.
+
+Across seven games, 692 rows cover both priors at 346 opponent moves. The 688
+rows followed by one of our decisions match the independent referee's attacker
+count and attacker visibility exactly. Three selected conditional move sets
+also match independent Python reconstruction. ASan/UBSan output matches the
+optimized binary; leak detection was disabled because the sandbox's ptrace
+environment prevents LeakSanitizer from running. No runtime source changed.
+
+For Greek Gift's final **Rb8–b1** in `gf2qssqu`:
+
+- Full prior: rank 13/19 overall; rank **10/13** among moves yielding our view.
+- Probability 2.052% before the observation, **7.090%** conditional on it.
+- The highest-scored consistent move is the quiet **Rb8–b7**.
+- Relative to Rb7, Rb1 receives −0.743 logit from forward displacement,
+  −0.296 from centralization, +0.701 from giving check and +0.041 from
+  king-zone pressure. These contributions sum to about −0.297.
+
+This is a concrete tactical feature conflict: generic displacement/location
+terms outweigh a hidden check. It supports testing tactical-context or
+piece-dependent interactions in a separately gated move prior, not simply
+increasing all checking-move weights after seeing one loss.
+
+Duck's final Qh1–g1 in `0x9ew96y` is rank 20/30 among observation-consistent
+moves, with 2.698% conditional likelihood from the true parent. Its prior
+promotion h2–h1q was rank 1 and 66.450% conditional. This distinguishes a
+well-predicted promotion from the subsequent quiet queen relocation; the
+earlier missing true state still requires a sequential support diagnosis.

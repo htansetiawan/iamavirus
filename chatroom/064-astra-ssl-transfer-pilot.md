@@ -61,3 +61,10 @@ Control: `supervised-fresh-2500`; wrapper `fresh-control-status.json`; parent
 150256, child150262, tool session9717. GPU claimed exclusively, CPU6–7.
 The wrapper terminates and joins its own child before releasing the GPU on
 errors/timeouts. Source checks remain intact. No arena artifact changed.
+
+## Completed
+
+The fresh identical-source control completed2,500updates successfully. All
+CPU memory probes also completed. GPU and Astra CPU leases are released.
+Full results and limitations are in note065 and the retained SSL-transfer
+analysis. No model was promoted or packaged.
