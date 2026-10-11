@@ -1,28 +1,28 @@
 # Arena v30 watch
 
-Updated 2026-10-11 06:07 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 06:28 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 32W-9D-35L over 76 games** (48%).
-As White: 22.0/38.
-As Black: 14.5/38.
+**Record: 42W-9D-38L over 89 games** (52%).
+As White: 28.0/45.
+As Black: 18.5/44.
 
-Queen lost for less: 12 games (11 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 35.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 13 games (11 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 7 of 38.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 76 plies.
+Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline A | 11-3-1 |
 | duck | 3-2-9 |
-| TA Baseline A | 8-3-1 |
-| TA Baseline S | 6-1-3 |
+| TA Baseline S | 9-1-4 |
+| TA Baseline P | 8-0-0 |
 | Decent Chess Bot | 2-0-6 |
-| TA Baseline P | 6-0-0 |
+| Strongly Invisible | 1-1-6 |
 | Mist Opportunities | 2-0-4 |
-| Strongly Invisible | 1-1-4 |
 | Knight Vision | 1-1-2 |
+| Apricot Squad | 4-0-0 |
 | Instructors | 1-0-3 |
 | Greek Gift | 0-1-3 |
-| Apricot Squad | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -101,4 +101,17 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-11 06:01 | i2lcep6s | B | TA Baseline P | 95 | win |  | 60 s | 17-6 |
 | 2026-10-11 06:03 | 2i8lre9b | B | duck | 60 | loss | ply 53 by r unseen | 93 s | 15-9 |
 | 2026-10-11 06:07 | gr6iofmo | W | Knight Vision | 114 | win |  | 69 s | 9-4 |
+| 2026-10-11 06:07 | lx45ir50 | W | Apricot Squad | 26 | win |  | 148 s | 38-31 |
 | 2026-10-11 06:07 | ee7u7ywy | B | Knight Vision | 99 | draw |  | 59 s | 11-13 |
+| 2026-10-11 06:08 | 7lhoem34 | B | Apricot Squad | 45 | win |  | 105 s | 34-13 |
+| 2026-10-11 06:08 | ue4fb660 | B | TA Baseline S | 73 | win |  | 87 s | 21-5 |
+| 2026-10-11 06:09 | epx1p4p9 | W | TA Baseline S | 102 | win |  | 68 s | 19-4 |
+| 2026-10-11 06:15 | 1qvs9viz | W | TA Baseline S | 42 | win |  | 139 s | 26-19 |
+| 2026-10-11 06:18 | b6pswh78 | W | TA Baseline P | 34 | win |  | 134 s | 28-27 |
+| 2026-10-11 06:18 | 6jy47d01 | B | TA Baseline S | 78 | loss | ply 61 by r | 85 s | 5-20 |
+| 2026-10-11 06:19 | 5zntg6w4 | B | TA Baseline P | 81 | win |  | 72 s | 21-3 |
+| 2026-10-11 06:20 | szw3iorv | B | Strongly Invisible | 60 | loss |  | 103 s | 1-16 |
+| 2026-10-11 06:23 | zdx4fssi | W | Strongly Invisible | 105 | loss |  | 66 s | 3-10 |
+| 2026-10-11 06:24 | 36wy814h | W | TA Baseline A | 18 | win |  | 161 s | 34-38 |
+| 2026-10-11 06:24 | u8q3ictq | W | TA Baseline A | 80 | win |  | 82 s | 12-8 |
+| 2026-10-11 06:25 | 6y2o5yi0 | B | TA Baseline A | 87 | win |  | 75 s | 6-3 |
