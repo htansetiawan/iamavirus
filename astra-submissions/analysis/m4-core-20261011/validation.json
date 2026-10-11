@@ -1,0 +1,92 @@
+{
+  "created_at": "2026-10-11T04:55:42.689063+00:00",
+  "author": "astra",
+  "classification": "correctness only; no chess playing-strength evidence",
+  "repository": "https://github.com/htansetiawan/mist-c",
+  "branch": "astra/m4",
+  "commit": "9a517d1131bd69bf6a3a83d347047205806af626",
+  "base_commit": "ec17eb0",
+  "worktree": "/tmp/mist-c-astra-m4",
+  "sha256": {
+    "src/gadget.c": "abb7f406d7aaba15a0dbe058c6f3b8669a40109e336d88bb2fd3a3939a0ff516",
+    "src/gadget.h": "1332181723b97e18a720b2f341554e9966bd62e60b84a6be0f047c9d39287d5f",
+    "src/kluss.c": "422af731134d364de5f525f60a67c626f72dc3013b44ef279daaf1b6cf388112",
+    "src/kluss.h": "4c516448146daa93430e69d04a2143cb3349f6c10fc74826dc4a7631f971b3d2",
+    "tests/test_gadget.c": "bb011c060dcae0c25f72eb6813bec9625eedb81d0f76d883c655f49f25faa2be",
+    "tests/test_kluss.c": "57c2e16d5b4a8837fbf1dec5faa3930f44742214fabd88fcafa147c4b10b47ae",
+    "tests/test_gadget_kuhn.c": "1907aa8abaab1369bb349af1c95542a7b9b778f24286453a2cec409e436714d7",
+    "docs/M4.md": "dd7c75839fc6fd1bf9159e6dc1b4377439dc8df4dea96066acf12e2a29affa0f",
+    "Makefile": "a389c29ac9b77fa3fa634d4bb777f91eef8ace91469b95d7b13366e339acdd2f"
+  },
+  "checks": {
+    "make_test_m4": {
+      "exit_code": 0,
+      "low_prior_trap": {
+        "plain_risky_probability": 1.0,
+        "resolve_risky_probability": 0.0,
+        "maxmargin_risky_probability": 0.0,
+        "gadget_exploitability": 0.0
+      },
+      "nonzero_alternate_mixed_game": {
+        "action0_probability": 0.5,
+        "analytic": 0.5,
+        "gap_abs_below": 1e-12
+      },
+      "infeasible_margin_game": {
+        "resolve_action0_probability": 0.75,
+        "maxmargin_action0_probability": 0.4117647058823529,
+        "gap_abs_below": 1e-12
+      },
+      "kuhn_complete_frontier": {
+        "baseline_opponent_br": 0.05555555555555555,
+        "resolve_opponent_br": 0.05555555555555555,
+        "maxmargin_opponent_br": 0.05555555555555555,
+        "gadget_gap_abs_below": 1e-12
+      },
+      "kluss": "one-hop closure, excluded second-hop, unfrozen outside-I node, deep-copy behavior, reset regrets and atomic invalid-capture failure"
+    },
+    "make_test": {
+      "exit_code": 0,
+      "rules_positions": 13467,
+      "rules_mismatches": 0,
+      "belief_games": 40,
+      "belief_plies": 3135,
+      "truth_missing_while_exact": 0,
+      "truth_missing_after_cap": 211,
+      "search_games": 3,
+      "search_decisions": 57,
+      "illegal_moves": 0,
+      "tactical_safe_alternative_cases": 0,
+      "stockfish_checks": "skipped: MIST_STOCKFISH unset"
+    },
+    "sanitizers": {
+      "address": true,
+      "undefined_behavior": true,
+      "leak_detection": true,
+      "tests": [
+        "test_gadget",
+        "test_kluss",
+        "test_gadget_kuhn"
+      ],
+      "exit_code": 0,
+      "sandbox_note": "LeakSanitizer cannot inspect sandbox processes; host reruns passed."
+    }
+  },
+  "integration": {
+    "arena_enabled": false,
+    "gtcfr_changed": false,
+    "frontend_changed": false,
+    "smooth_mode_controller": false,
+    "replay_gate_run": false,
+    "match_gate_run": false,
+    "new_zip": null,
+    "pending": [
+      "persistent Tree/Position/history payload adapter",
+      "frontier and reach/gift extraction",
+      "new-world coverage and raw/centered value plumbing",
+      "Figure 10 shared mode controller",
+      "fatal/survival replay gate",
+      "paired clock-controlled match gate"
+    ]
+  }
+}
