@@ -104,11 +104,34 @@ for line in sys.stdin:
             for c in result['localTurnControl']['controls']:
                 assert not [r for r in group_members(c['pid']) if r['state'] not in ('Z','X')]
             negative[mode]=result['reason']
+        # More than the referee's default rolling tail, but under its budget.
+        # Retaining diagnostics must not relax total-output/line warnings.
+        capture_class=referee.StderrCapture
+        noisy=root/'noisy.py'
+        noisy.write_text('import sys\ninput();side=input().split()[0]\n'
+                         'sys.stderr.write("BEGIN\\n"+"abcdefghij\\n"*2200+"END\\n");sys.stderr.flush()\n'
+                         'print("ready",flush=True)\n'
+                         'for line in sys.stdin:\n'
+                         ' if len(line.strip())!=64:print("move "+("e2e4" if side=="w" else "e7e5"),flush=True)\n')
+        bounded=run_controlled(referee,[sys.executable,str(noisy)],argv,
+                              base=2,increment=0,max_plies=2,retain_stderr=True)
+        captured=bounded['privateDiagnostics']['white']
+        assert captured.startswith('BEGIN\n') and captured.endswith('END\n')
+        assert len(captured)>16384 and not bounded.get('warnings')
+        assert bounded['localTurnControl']['stderr_retained_bytes']==capture_class.LIMIT
+        assert referee.StderrCapture is capture_class and referee.Bot.__name__=='Bot'
+        # A line exceeding the original line budget still causes a warning.
+        noisy.write_text(noisy.read_text().replace('"abcdefghij\\n"*2200','"x"*5000'))
+        excess=run_controlled(referee,[sys.executable,str(noisy)],argv,
+                             base=2,increment=0,max_plies=2,retain_stderr=True)
+        assert {'side':'white','code':'stderr_limit'} in excess['warnings']
         print(json.dumps({'result':'passed','child_and_parent_counters_frozen':True,
             'leaderless_child_cleaned':True,'stale_registry_refused':True,
             'white_charged_one_observation_seconds':white,'black_charged_two_observations_seconds':black,
             'uncontrolled_black_clock_seconds':plain_black,'negative_cases':negative,
-            'bot_groups_cleaned':True,'referee_sha_scope':'unmodified imported referee'}))
+            'bot_groups_cleaned':True,'complete_bounded_stderr_bytes':len(captured),
+            'original_line_limit_preserved':True,'capture_class_restored':True,
+            'referee_sha_scope':'unmodified imported referee'}))
 
 
 if __name__=='__main__':main()

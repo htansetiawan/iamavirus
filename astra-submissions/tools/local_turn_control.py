@@ -98,13 +98,19 @@ class ProcessGroupControl:
         self.events.append({'op':'resume'})
 
 
-def run_controlled(referee, white, black, *, registry_path=None, **kwargs):
+def run_controlled(referee, white, black, *, registry_path=None, retain_stderr=False, **kwargs):
     """Use the unmodified referee with a narrowly scoped Bot subclass.
 
     This entrypoint is intentionally sequential: temporary module replacement
     must not be shared across simultaneous games in the same Python process.
     """
     original=referee.Bot
+    original_capture=referee.StderrCapture
+    class CompleteBoundedCapture(original_capture):
+        # The course's 16 KiB excerpt is a rolling tail, independent of its
+        # 1 MiB output budget. Retain up to that existing budget for offline
+        # per-decision checks. Output/line limits and warnings stay unchanged.
+        RETAIN=original_capture.LIMIT
     controls=[]
     def save_registry():
         if registry_path:
@@ -123,12 +129,16 @@ def run_controlled(referee, white, black, *, registry_path=None, **kwargs):
             bound.arguments['turn_control_factory']=factory
             original.__init__(*bound.args,**bound.kwargs)
     referee.Bot=ControlledBot
+    if retain_stderr:referee.StderrCapture=CompleteBoundedCapture
     try:
         game=referee.run_match(white,black,**kwargs)
     finally:
         referee.Bot=original
+        referee.StderrCapture=original_capture
     game['localTurnControl']={'method':'owned process-group SIGSTOP/SIGCONT; buffered observations',
-        'security_sandbox':False,'controls':[{'pid':c.pid,'events':c.events} for c in controls]}
+        'security_sandbox':False,'stderr_retained_bytes':original_capture.LIMIT if retain_stderr else original_capture.RETAIN,
+        'stderr_output_limit':original_capture.LIMIT,
+        'controls':[{'pid':c.pid,'events':c.events} for c in controls]}
     return game
 
 

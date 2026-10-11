@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-11T11:00:03.534848+00:00",
+  "purpose": "Continue the remaining three jobs of the same default M4 baseline; do not replay or discard the first loss.",
+  "original_run": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-20261011",
+  "continuation_run": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-continuation-20261011",
+  "original_game_result": "0-1",
+  "original_instrumentation_fault": "The 16 KiB rolling stderr tail omits the first M4 metric record. All 72 frames were checked against the referee. Search status at first move is unverified.",
+  "change": "Increase only local retained stderr up to the unchanged native 1 MiB budget. Keep output/line warning rules, rules, clocks, engine bytes and seeds unchanged. Validate exact ply coverage.",
+  "excluded_jobs": [
+    "seed11-white-scale1"
+  ],
+  "binary_sha256": "7149ebd08b9a4a1bb833803138220f39c65ae99ee53eeb11ac9e10a5c1d13640",
+  "continuation_manifest_sha256": "420e9de23fa00d3b03cbd054801828f48db7c178eb66815fab4353882202ccb8",
+  "classification": "Initial architecture screen, no Elo estimate; count all four planned games including the retained loss."
+}

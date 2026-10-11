@@ -1,0 +1,90 @@
+{
+  "created_at": "2026-10-11T11:00:52.997310+00:00",
+  "source_commit": "c887a842e4a8dd485c55c3f09c7903c570cf3510",
+  "run": "/media/henrytan/seagate/iamavirus/astra/m4-root-policy-pilot-20261011",
+  "artifacts": {
+    "candidate": {
+      "source": "/tmp/mist-c-astra-m4/build/mist-m4",
+      "sha256": "1603b8f3e2fb0cfdad22a7a27a19ce21e315ec7e9ec037d99623a41ef3c91ef9"
+    },
+    "probe.py": {
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_replay_probe.py",
+      "sha256": "ca3283dbddde02cdc30cc2b02c5a3d581ed55376974899575510b28ea4d9b37f"
+    },
+    "s24.json": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-gate-20261011/inputs/mistc4-vs-mistc3-p5-b-white.json",
+      "sha256": "3621f99f84b474dc5ada738017315031825f71943910b2244b1137eadad8493f"
+    },
+    "new-loss.json": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-20261011/jobs/seed11-white-scale1/game.json",
+      "sha256": "1c3151474b7e53fe3b5a87a48539a8fb6e1ea65ba1440a4c29de0424c70cb564"
+    },
+    "stockfish": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-20261011/stockfish",
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+    }
+  },
+  "jobs": [
+    {
+      "id": "s24-seed11-dom0",
+      "case": "s24",
+      "seed": 11,
+      "dominance": false,
+      "decision": 48,
+      "scale": 0.9
+    },
+    {
+      "id": "s24-seed11-dom1",
+      "case": "s24",
+      "seed": 11,
+      "dominance": true,
+      "decision": 48,
+      "scale": 0.9
+    },
+    {
+      "id": "s24-seed12-dom0",
+      "case": "s24",
+      "seed": 12,
+      "dominance": false,
+      "decision": 48,
+      "scale": 0.9
+    },
+    {
+      "id": "s24-seed12-dom1",
+      "case": "s24",
+      "seed": 12,
+      "dominance": true,
+      "decision": 48,
+      "scale": 0.9
+    },
+    {
+      "id": "new-loss-seed11-dom0",
+      "case": "new-loss",
+      "seed": 11,
+      "dominance": false,
+      "decision": 36,
+      "scale": 1
+    },
+    {
+      "id": "new-loss-seed11-dom1",
+      "case": "new-loss",
+      "seed": 11,
+      "dominance": true,
+      "decision": 36,
+      "scale": 1
+    }
+  ],
+  "seconds": 0.5,
+  "samples": 128,
+  "parents": 20000,
+  "iterations": 1000000,
+  "cpus": [
+    4,
+    5
+  ],
+  "mode": "cold",
+  "classification": "Development counterexample checks; a forced historical prefix is not on-policy play; no Elo inference.",
+  "pass_question": "Does full-precision redirection eliminate the selected s24 regression, with no new immediate death among these three seats? The newly observed game is one external check, not a strength estimate.",
+  "fail_policy": "Retain and stop on probe error or engine fault. No automatic replay.",
+  "runner_sha256": "bf86b24089b6823f2f95b43f58796a737798a22dd8844a12700bfc0b6b1a0507"
+}

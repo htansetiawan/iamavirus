@@ -1,0 +1,80 @@
+{
+  "artifacts": {
+    "candidate": {
+      "sha256": "d384f81928152d29dfda6c2e9bf68d731297df3e217d299a98ef6ffbec7217da",
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-root-setup-pilot-20261011/candidate"
+    },
+    "local_turn_control.py": {
+      "sha256": "7e72530a5871904df3a76107dff4751b67c8423e78af10beb3252fae8108189b",
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/local_turn_control.py"
+    },
+    "opponent": {
+      "sha256": "8a14e1c8d32d434539d3fe7210e1a1fbc8d9002cadfbcee235b4b2dbb4a4067a",
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-20261011/opponent"
+    },
+    "referee.py": {
+      "sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+      "source": "/home/henrytan/git/fow-starter/referee.py"
+    },
+    "runner.py": {
+      "sha256": "c1b107630fc05815333afde7c1a77ee91edaeb79226b1c4527457efff56c71f7",
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_clock_run.py"
+    },
+    "stockfish": {
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-20261011/stockfish"
+    }
+  },
+  "base": 180.0,
+  "classification": "small paired on-policy screening set; not an Elo estimate",
+  "cpus": [
+    6,
+    7
+  ],
+  "created_at": "2026-10-11T11:14:18.840726+00:00",
+  "excluded_jobs": [],
+  "failure_policy": "retain all attempts; halt on infrastructure, protocol or M4 instrumentation faults",
+  "fast_roots": true,
+  "increment": 2.0,
+  "iterations": 1000000,
+  "jobs": [
+    {
+      "id": "seed11-white-scale1",
+      "scale": 1.0,
+      "seed": 11,
+      "side": "white"
+    },
+    {
+      "id": "seed11-black-scale1",
+      "scale": 1.0,
+      "seed": 11,
+      "side": "black"
+    },
+    {
+      "id": "seed12-white-scale1",
+      "scale": 1.0,
+      "seed": 12,
+      "side": "white"
+    },
+    {
+      "id": "seed12-black-scale1",
+      "scale": 1.0,
+      "seed": 12,
+      "side": "black"
+    }
+  ],
+  "max_plies": 512,
+  "max_seconds": 10.0,
+  "opponent_name": "mist-c-v8",
+  "python": "/home/henrytan/git/fow-starter/.venv/bin/python",
+  "run": "/media/henrytan/seagate/iamavirus/astra/m4-clock-fast-roots-20261011",
+  "runtime": {
+    "chess_sha256": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b",
+    "chess_version": "1.11.2",
+    "python": "3.12.13 (main, Apr 14 2026, 14:29:00) [Clang 22.1.3 ]"
+  },
+  "samples": 32,
+  "schema": 1,
+  "security_sandbox": false,
+  "turn_control": "buffered observations and owned process-group SIGSTOP/SIGCONT"
+}

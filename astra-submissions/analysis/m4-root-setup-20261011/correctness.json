@@ -1,0 +1,23 @@
+{
+  "source_commit": "fd7b764905419d0bf910d99abde9bdc9599d58e2",
+  "candidate_sha256": "d384f81928152d29dfda6c2e9bf68d731297df3e217d299a98ef6ffbec7217da",
+  "make_test_m4": "passed",
+  "both_color_real_stockfish_fast_roots_test": "passed",
+  "reproduced_preflight_failure": {
+    "us": "black",
+    "decision": 4,
+    "carry": 1153,
+    "off_current": 644,
+    "cheap_roots_before_capacity_failure": 794,
+    "max_nodes": 30000
+  },
+  "same_test_after_fix": {
+    "fallback": 4,
+    "fresh": 12,
+    "nodes": 9108,
+    "iterations": 40,
+    "seconds": 0.2104,
+    "snapshot": true
+  },
+  "meaning": "Correctness/resource-cap handling only; full-game strength unmeasured."
+}

@@ -1,0 +1,54 @@
+{
+  "created_at": "2026-10-11T11:09:30.370217+00:00",
+  "base_commit": "c887a842e4a8dd485c55c3f09c7903c570cf3510",
+  "source_patch_sha256": "0a1e0580707d5683631ad1040709aee1ad8ff9299d7c43bc878fdc965d6b66ac",
+  "artifacts": {
+    "candidate": {
+      "source": "/tmp/mist-c-astra-m4/build/mist-m4",
+      "sha256": "d384f81928152d29dfda6c2e9bf68d731297df3e217d299a98ef6ffbec7217da"
+    },
+    "probe.py": {
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_replay_probe.py",
+      "sha256": "39dfd645bda485b4aab9539260171f587a46ebd78409fdbf0aeb19efdfc2ff2c"
+    },
+    "game.json": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-continuation-20261011/jobs/seed11-black-scale1/game.json",
+      "sha256": "d0a05a10f52a8f03b59bc5122a96bcba9c386e595ee0422f7e68bda99045c890"
+    },
+    "stockfish": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-v8-baseline-20261011/stockfish",
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+    }
+  },
+  "jobs": [
+    {
+      "id": "standard",
+      "fast_roots": false
+    },
+    {
+      "id": "fast-roots",
+      "fast_roots": true
+    }
+  ],
+  "mode": "warm",
+  "decision": 9,
+  "side": "black",
+  "seed": 11,
+  "seconds": 10,
+  "samples": 32,
+  "parents": 20000,
+  "iterations": 1000000,
+  "cpus": [
+    6,
+    7
+  ],
+  "classification": "Searched-prefix diagnostic of initialization cost, not exact carried-state reproduction or strength test",
+  "questions": [
+    "Does each target solve and save a blueprint?",
+    "How many carried roots and external evaluator calls, how much setup time?",
+    "Do any searched prefixes fail?"
+  ],
+  "root_dominance": false,
+  "leaf_scale": 1,
+  "runner_sha256": "37c3835055d33da34d1b6fde47964eb38f9e6cc50a92759c28ea18bb9d20a487"
+}

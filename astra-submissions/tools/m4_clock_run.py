@@ -56,11 +56,16 @@ def prepare(args):
         for j,side in enumerate(['white','black']):
             for scale in args.scales[::1 if (i+j)%2==0 else -1]:
                 jobs.append({'id':f'seed{seed}-{side}-scale{scale:g}','seed':seed,'side':side,'scale':scale})
+    excluded=set(args.exclude_job)
+    if excluded-{j['id'] for j in jobs}:raise ValueError('Unknown excluded job')
+    jobs=[j for j in jobs if j['id'] not in excluded]
+    if not jobs:raise ValueError('No jobs remain')
     runtime=json.loads(subprocess.check_output([str(args.python),'-c',
         'import chess,sys,json,hashlib;print(json.dumps(dict(python=sys.version,chess_version=chess.__version__,chess_sha256=hashlib.sha256(open(chess.__file__,"rb").read()).hexdigest())))'],text=True))
     config={'schema':1,'created_at':now(),'run':str(run),'artifacts':artifacts,'python':str(args.python.absolute()),'runtime':runtime,
             'base':args.base,'increment':args.increment,'max_plies':args.max_plies,'max_seconds':args.seconds,
-            'samples':args.samples,'iterations':1000000,'cpus':args.cpus,'jobs':jobs,'opponent_name':args.opponent_name,
+            'samples':args.samples,'iterations':1000000,'cpus':args.cpus,'jobs':jobs,'excluded_jobs':sorted(excluded),'opponent_name':args.opponent_name,
+            'fast_roots':args.fast_roots,
             'classification':'small paired on-policy screening set; not an Elo estimate',
             'turn_control':'buffered observations and owned process-group SIGSTOP/SIGCONT',
             'security_sandbox':False,'failure_policy':'retain all attempts; halt on infrastructure, protocol or M4 instrumentation faults'}
@@ -96,6 +101,7 @@ def worker(run,job_id):
     candidate=[*common,'MIST_SEARCH=m4',f'MIST_SAMPLES={config["samples"]}',
                f'MIST_MAX_SECONDS={config["max_seconds"]}',f'MIST_M4_ITERATIONS={config["iterations"]}',
                f'MIST_M4_LEAF_SCALE={job["scale"]}','MIST_M4_CLOSURE=0','MIST_M4_WITNESSES=0',str(run/'candidate')]
+    candidate.insert(-1,f'MIST_M4_FAST_ROOTS={int(config.get("fast_roots",False))}')
     opponent=[*common,str(run/'opponent')]
     white,black=(candidate,opponent) if job['side']=='white' else (opponent,candidate)
     def terminate(_signum,_frame):raise KeyboardInterrupt('Owned worker terminated')
@@ -105,11 +111,11 @@ def worker(run,job_id):
                           max_plies=config['max_plies'],match_id=job_id,
                           white_name=f'M4 scale{job["scale"]:g}' if job['side']=='white' else config['opponent_name'],
                           black_name=config['opponent_name'] if job['side']=='white' else f'M4 scale{job["scale"]:g}',
-                          registry_path=directory/'processes.json')
+                          registry_path=directory/'processes.json',retain_stderr=True)
     write(directory/'game.json',replay)
 
 
-def inspect_game(path,job):
+def inspect_game(path,job,config=None):
     game=json.loads(path.read_text());side=job['side'];result=game['result']
     faults=[]
     if result not in ['1-0','0-1','1/2-1/2']:faults.append('infrastructure_result')
@@ -118,8 +124,12 @@ def inspect_game(path,job):
     stderr=game.get('privateDiagnostics',{}).get(side,'')
     metrics=[dict(re.findall(r'(\w+)=([^ ]+)',line)) for line in stderr.splitlines() if line.startswith('mist-m4: ok=')]
     evals=[dict(re.findall(r'(\w+)=([^ ]+)',line)) for line in stderr.splitlines() if line.startswith('m4-eval:')]
-    own_moves=sum(1 for f in game['frames'][1:] if (f['ply']%2==1)==(side=='white'))
-    if len(metrics)<own_moves or len(evals)<own_moves:faults.append('missing_m4_diagnostics')
+    own_plies=[f['ply']-1 for f in game['frames'][1:] if (f['ply']%2==1)==(side=='white')]
+    measured_plies=[int(m.get('ply',-1)) for m in metrics]
+    if measured_plies!=own_plies or len(evals)!=len(own_plies):faults.append('missing_m4_diagnostics')
+    setups=[dict(re.findall(r'(\w+)=([^ ]+)',line)) for line in stderr.splitlines() if line.startswith('m4-setup:')]
+    if config and config.get('fast_roots') and [int(m.get('ply',-1)) for m in setups]!=own_plies:
+        faults.append('missing_fast_root_diagnostics')
     for row in metrics:
         if row.get('ok')!='1' or row.get('snapshot')!='1':faults.append('m4_snapshot_or_search_failure')
         if row.get('over')!='0':faults.append('m4_reported_overrun')
@@ -129,6 +139,7 @@ def inspect_game(path,job):
     score=None if result=='*' else .5 if result=='1/2-1/2' else float((result=='1-0')==(side=='white'))
     return {'result':result,'reason':game['reason'],'score':score,'plies':len(game['frames'])-1,
             'faults':sorted(set(faults)),'m4_decisions':len(metrics),'m4_carried_decisions':sum(int(m.get('carry',0))>0 for m in metrics),
+            'cheap_carried_roots':sum(int(m.get('cheap_carried_roots',0)) for m in setups),
             'minimum_clocks':[min(f['clocks'][i] for f in game['frames']) for i in [0,1]],'failed_side':game.get('failedSide')}
 
 
@@ -208,7 +219,7 @@ def run_matches(args):
         faults=[]
         if proc.returncode or timed_out:faults.append('worker_failure')
         if cleanup['unverified_groups'] or cleanup['live_after_cleanup']:faults.append('cleanup_failure')
-        game=inspect_game(directory/'game.json',job) if (directory/'game.json').exists() else None
+        game=inspect_game(directory/'game.json',job,config) if (directory/'game.json').exists() else None
         if game:faults+=game['faults']
         else:faults.append('missing_game')
         receipt={**job,'completed_at':now(),'elapsed':time.monotonic()-started_at,'returncode':proc.returncode,
@@ -230,6 +241,8 @@ def main():
     prep.add_argument('--seconds',type=float,default=10);prep.add_argument('--base',type=float,default=180)
     prep.add_argument('--increment',type=float,default=2);prep.add_argument('--max-plies',type=int,default=512)
     prep.add_argument('--scales',type=float,nargs='+',default=[1,.9]);prep.add_argument('--seeds',type=int,nargs='+',default=[11,12])
+    prep.add_argument('--exclude-job',action='append',default=[],help='Explicitly omit a job already retained in another immutable run')
+    prep.add_argument('--fast-roots',action='store_true',help='Use cheap carried-root initialization (experimental)')
     prep.add_argument('--cpus',type=int,nargs='+',default=[6,7])
     run=sub.add_parser('run');run.add_argument('--run',type=Path,required=True);run.add_argument('--max-new-jobs',type=int)
     work=sub.add_parser('worker');work.add_argument('--run',type=Path,required=True);work.add_argument('--job',required=True)
