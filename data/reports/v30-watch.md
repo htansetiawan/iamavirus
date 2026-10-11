@@ -1,27 +1,27 @@
 # Arena v30 watch
 
-Updated 2026-10-11 09:14 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 09:34 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 68W-13D-72L over 153 games** (49%).
-As White: 42.5/76.
-As Black: 32.0/77.
+**Record: 69W-13D-80L over 162 games** (47%).
+As White: 43.5/81.
+As Black: 32.0/81.
 
-Queen lost for less: 21 games (18 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 15 of 72.
+Queen lost for less: 26 games (22 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 20 of 80.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Mist Opportunities | 6-1-14 |
+| Mist Opportunities | 6-1-15 |
 | TA Baseline A | 15-4-1 |
-| duck | 5-2-11 |
-| Strongly Invisible | 2-1-13 |
+| duck | 5-2-13 |
+| Strongly Invisible | 2-1-15 |
 | TA Baseline S | 9-1-6 |
+| Decent Chess Bot | 3-1-10 |
 | TA Baseline P | 11-0-1 |
-| Decent Chess Bot | 2-1-9 |
 | Knight Vision | 3-1-8 |
 | Apricot Squad | 10-0-0 |
-| Instructors | 3-1-4 |
+| Instructors | 3-1-6 |
 | Greek Gift | 0-1-5 |
 | baseline.py | 2-0-0 |
 
@@ -180,3 +180,12 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-11 09:00 | rsbokyog | W | Decent Chess Bot | 93 | loss |  | 71 s | 3-25 |
 | 2026-10-11 09:01 | t4656p5m | B | Mist Opportunities | 123 | win |  | 44 s | 17-6 |
 | 2026-10-11 09:11 | gtx70jqn | B | Mist Opportunities | 42 | loss |  | 116 s | 29-31 |
+| 2026-10-11 09:14 | itq3czv6 | W | Mist Opportunities | 87 | loss |  | 75 s | 10-9 |
+| 2026-10-11 09:19 | alrl3xk4 | W | Strongly Invisible | 47 | loss | ply 16 by n unseen | 111 s | 14-25 |
+| 2026-10-11 09:21 | jpstln49 | B | Instructors | 88 | loss | ply 27 by r | 75 s | 1-22 |
+| 2026-10-11 09:21 | 9lviygc8 | B | Strongly Invisible | 70 | loss | ply 65 by q unseen | 72 s | 4-19 |
+| 2026-10-11 09:21 | d4b03s15 | W | Instructors | 81 | loss | ply 24 by r unseen | 74 s | 6-21 |
+| 2026-10-11 09:26 | 7qp8u5lo | B | duck | 60 | loss | ply 33 by k unseen | 121 s | 22-32 |
+| 2026-10-11 09:28 | g2zmz5ec | W | duck | 85 | loss |  | 70 s | 2-16 |
+| 2026-10-11 09:33 | 3tgppv9p | B | Decent Chess Bot | 72 | loss |  | 87 s | 3-16 |
+| 2026-10-11 09:33 | k64y2ljd | W | Decent Chess Bot | 72 | win |  | 87 s | 14-7 |
