@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-11T10:33:24.784080+00:00",
+  "hypothesis": "Terminal-gap change should improve actual play, not only historical king-loss seats.",
+  "comparison": "Stockfish M4 scales1/.9, frozen C567c3df, vs same frozen Fable mist-c-v8",
+  "games": 8,
+  "seeds": [
+    11,
+    12
+  ],
+  "colors": [
+    "white",
+    "black"
+  ],
+  "base": 180,
+  "increment": 2,
+  "max_plies": 512,
+  "samples": 32,
+  "max_seconds": 10,
+  "iterations": 1000000,
+  "stockfish": true,
+  "closure": false,
+  "forced_prefix": false,
+  "truth_input": false,
+  "cpu_affinity": [
+    6,
+    7
+  ],
+  "nice": 19,
+  "gpu": false,
+  "classification": "small paired on-policy screen; not an Elo estimate or release gate",
+  "development_status": "Plan written after inspecting346/384 replay decisions, not preregistered before all development evidence.",
+  "launch_condition": "Complete replay receipts valid; Stockfish .9 reduces immediate losses with no new survival loss against scale1 and keeps more than half the baseline survival moves.",
+  "failure_policy": "Stop on any infrastructure/protocol/evaluator/control fault; retain every attempt; no retries.",
+  "next_gate": "If useful, compare more games against Misty and v25 with identical clock control. Original20-games-per-opponent acceptance remains outstanding.",
+  "limitations": [
+    "32 roots differs from replay128",
+    "search budgets are wall-clock, so paired seeds are not identical trajectories",
+    "local trusted process controls do not impose arena memory/security sandbox",
+    "M4 historical repetition and ambiguous en-passant limitations still need full-game validation"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "artifacts": {
+    "candidate": {
+      "sha256": "f1601d21cbe9974559973f172e091e180db7e2e9a714abdcc903304f19e3699c",
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-leaf-gap-20261011/binary"
+    },
+    "local_turn_control.py": {
+      "sha256": "70b7f0d258af7905cd60d1e176fc1b085e663c5a2980cbd97614669526134f51",
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/local_turn_control.py"
+    },
+    "opponent": {
+      "sha256": "8a14e1c8d32d434539d3fe7210e1a1fbc8d9002cadfbcee235b4b2dbb4a4067a",
+      "source": "/home/henrytan/git/iamavirus/data/arena_local/builds/mist-c-v8/mist"
+    },
+    "referee.py": {
+      "sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+      "source": "/home/henrytan/git/fow-starter/referee.py"
+    },
+    "runner.py": {
+      "sha256": "0deeb1b22dcccf8ebfa6cbad2b986450fe2c7ac64e049ae4ae9f944b76850811",
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_clock_run.py"
+    },
+    "stockfish": {
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+      "source": "/home/henrytan/git/iamavirus/data/arena_local/builds/mist-c-v8/bin/stockfish"
+    }
+  },
+  "base": 5.0,
+  "classification": "small paired on-policy screening set; not an Elo estimate",
+  "cpus": [
+    4,
+    5
+  ],
+  "created_at": "2026-10-11T10:25:46.677997+00:00",
+  "failure_policy": "retain all attempts; halt on infrastructure, protocol or M4 instrumentation faults",
+  "increment": 0.0,
+  "iterations": 1000000,
+  "jobs": [
+    {
+      "id": "seed11-white-scale1",
+      "scale": 1,
+      "seed": 11,
+      "side": "white"
+    },
+    {
+      "id": "seed11-white-scale0.9",
+      "scale": 0.9,
+      "seed": 11,
+      "side": "white"
+    },
+    {
+      "id": "seed11-black-scale0.9",
+      "scale": 0.9,
+      "seed": 11,
+      "side": "black"
+    },
+    {
+      "id": "seed11-black-scale1",
+      "scale": 1,
+      "seed": 11,
+      "side": "black"
+    }
+  ],
+  "max_plies": 2,
+  "max_seconds": 0.2,
+  "opponent_name": "mist-c-v8",
+  "python": "/home/henrytan/git/fow-starter/.venv/bin/python",
+  "run": "/tmp/astra-clock-smoke-20261011",
+  "samples": 32,
+  "schema": 1,
+  "security_sandbox": false,
+  "turn_control": "buffered observations and owned process-group SIGSTOP/SIGCONT"
+}

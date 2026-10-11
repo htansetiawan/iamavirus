@@ -34,6 +34,12 @@ def main():
     for row in summary['rows']:
         r=dict(row)
         key=f"{r['case']}-seed{r['seed']}-{r['variant']}"
+        multi_scale=len(summary.get('scales',[]))>1
+        label=r['variant']
+        if multi_scale:
+            key+=f"-scale{r['leaf_scale']:g}"
+            label+=f"/scale{r['leaf_scale']:g}"
+        r['report_group']=label
         case=cases[r['case']]
         if r['status']=='ok':
             report_path=args.run/'jobs'/key/'results.json'
@@ -66,7 +72,7 @@ def main():
                 r['posthoc_minimum_risk']={'move':alternative['move'],'root_fatal_share':alternative['fatal'],
                     'raw_value':alternative['raw'],'would_lose':alternative['move'] not in case['safe_moves'],
                     'chosen_root_fatal_share':actual['fatal'],'chosen_raw_value':actual['raw']}
-                selection=selector_counts[r['variant']+'/'+r['cohort']]
+                selection=selector_counts[label+'/'+r['cohort']]
                 selection['available']+=1
                 selection['chosen_loses']+=r['immediate_loss']
                 selection['posthoc_loses']+=alternative['move'] not in case['safe_moves']
@@ -80,8 +86,8 @@ def main():
                         'truth_board_absent_from_roots' if not r.get('true_board_roots',0) else
                         'truth_present_but_policy_loses')
                 r['failure_bucket']=bucket
-                failure_buckets[r['variant']+'/'+r['cohort']][bucket]+=1
-            matched_beliefs[(r['case'],r['seed'])][r['variant']]=[
+                failure_buckets[label+'/'+r['cohort']][bucket]+=1
+            matched_beliefs[(r['case'],r['seed'])][label]=[
                 r.get(k) for k in ['belief_count','belief_true_states','belief_tactical_states','belief_truth_share','belief_tactical_share']]
         result['rows'].append(r)
     result['failure_buckets']={k:dict(v) for k,v in failure_buckets.items()}
@@ -89,10 +95,10 @@ def main():
         'rule':'minimize recorded root fatal share; break ties by greatest raw root action value, then UCI',
         'counts':{k:dict(v) for k,v in selector_counts.items()}}
     result['matched_belief_mismatches']=[{'case':k[0],'seed':k[1],'fingerprints':v} for k,v in matched_beliefs.items()
-                                        if len(v)==2 and v['internal']!=v['stockfish']]
+                                        if len(v)>1 and any(x!=next(iter(v.values())) for x in v.values())]
     result['work_by_variant']={}
-    for variant in ['internal','stockfish']:
-        valid=[r for r in result['rows'] if r['variant']==variant and r['status']=='ok']
+    for variant in sorted({r['report_group'] for r in result['rows']}):
+        valid=[r for r in result['rows'] if r['report_group']==variant and r['status']=='ok']
         stat={}
         for key in ['iters','nodes','samples']:
             values=sorted(r['engine_work'][key] for r in valid if key in r.get('engine_work',{}))
