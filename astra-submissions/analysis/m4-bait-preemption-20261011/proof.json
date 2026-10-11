@@ -1,0 +1,210 @@
+{
+  "game": "4bkwxxng",
+  "white_version": 4,
+  "black_version": 30,
+  "decision_ply": 53,
+  "classification": "retrospective full-information rule audit; not an arena-strength test",
+  "fen_before_black_move": "3r1k2/p4ppp/1p1n1q2/3N1b2/8/4Q3/PP3PBP/4R1K1 b - - 1 27",
+  "actual_black_move": "f6g6",
+  "information": {
+    "white_queen_e3_in_black_observation": "?",
+    "black_king_f8_in_white_observation": "?",
+    "black_queen_f6_in_black_observation": "q",
+    "e7_in_black_observation": "-"
+  },
+  "actual_bait_branch": {
+    "line": [
+      {
+        "move": "f6g6",
+        "mover": "black",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "e3e7",
+        "mover": "white",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      }
+    ],
+    "actual_played_capture": [
+      {
+        "move": "f6g6",
+        "mover": "black",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "e3e7",
+        "mover": "white",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "f8e7",
+        "mover": "black",
+        "destination_seen": "Q",
+        "after": [
+          "1-0",
+          "King capturable"
+        ],
+        "winner": "white"
+      }
+    ],
+    "black_reply_count_after_white_Qe7": 37,
+    "black_replies_not_losing_immediately": [
+      {
+        "move": "f8g8",
+        "outcome": null,
+        "winner": null
+      }
+    ],
+    "forced_continuation_after_Kg8": [
+      {
+        "move": "f6g6",
+        "mover": "black",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "e3e7",
+        "mover": "white",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "f8g8",
+        "mover": "black",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "e7d8",
+        "mover": "white",
+        "destination_seen": "r",
+        "after": null,
+        "winner": null
+      },
+      {
+        "black_replies_after_Qxd8": 31,
+        "only_reply_not_losing_immediately": [
+          {
+            "move": "d6e8",
+            "outcome": null,
+            "winner": null
+          }
+        ]
+      },
+      {
+        "white_line_after_Ne8": {
+          "move": "d8e8",
+          "mover": "white",
+          "destination_seen": "n",
+          "after": null,
+          "winner": null
+        }
+      },
+      {
+        "black_replies_after_Qxe8": 27,
+        "all_lose_to_white": true,
+        "moves": [
+          "g8h8",
+          "g8f8",
+          "g6h6",
+          "g6f6",
+          "g6e6",
+          "g6d6",
+          "g6c6",
+          "g6h5",
+          "g6g5",
+          "g6g4",
+          "g6g3",
+          "g6g2",
+          "f5c8",
+          "f5d7",
+          "f5e6",
+          "f5g4",
+          "f5e4",
+          "f5h3",
+          "f5d3",
+          "f5c2",
+          "f5b1",
+          "h7h6",
+          "f7f6",
+          "a7a6",
+          "b6b5",
+          "h7h5",
+          "a7a5"
+        ]
+      }
+    ]
+  },
+  "earlier_king_preemption": {
+    "line": [
+      {
+        "move": "f8g8",
+        "mover": "black",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "e3e7",
+        "mover": "white",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      }
+    ],
+    "black_reply_count_after_white_Qe7": 41,
+    "black_replies_not_losing_immediately": 40,
+    "queen_exchange": [
+      {
+        "move": "f8g8",
+        "mover": "black",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "e3e7",
+        "mover": "white",
+        "destination_seen": "-",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "f6e7",
+        "mover": "black",
+        "destination_seen": "Q",
+        "after": null,
+        "winner": null
+      },
+      {
+        "move": "e1e7",
+        "mover": "white",
+        "destination_seen": "q",
+        "after": null,
+        "winner": null
+      }
+    ],
+    "position_after_exchange": "3r2k1/p3Rppp/1p1n4/3N1b2/8/8/PP3PBP/6K1 b - - 0 29",
+    "outcome_after_exchange": null
+  },
+  "scope": [
+    "The exhaustive reply counts use the exact Fog of War pseudo-legal move generator and terminal rules.",
+    "A full-information tactical line does not alone establish a policy over a multi-board belief.",
+    "At the earlier decision, the opponent queen square e3 is hidden in Black\u2019s current observation; history/belief is needed to infer this threat.",
+    "The preemptive king line establishes survival of this immediate fork, not a winning game or Elo gain."
+  ],
+  "game_sha256": "80be10fd2a43fd22187f0ba096d7c1c4c27a772b328e6072bc789e74c2cc6122",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "script_sha256": "15a33b6a5537e78c7fa0c362483b9b81892e7fea08f7b4197ec49f17a8a2f65c"
+}

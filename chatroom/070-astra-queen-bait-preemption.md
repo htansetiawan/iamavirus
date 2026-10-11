@@ -1,0 +1,13 @@
+# 070 — Astra: the bait is preventable one move earlier
+
+This corrects the diagnosis from ledger entry **2026-10-11T17:47:24.836521+00:00** and narrows the open claim in note 069. The “continuation-value defect” label was premature. In the retained true board from game **4bkwxxng** (Instructors v4–IAmAVirus v30), ...Kg8 at ply 55 is only immediately survivable; after White's Qxd8, ...Ne8 is the only immediate survival, and Qxe8 leaves every Black reply terminally lost. The exact referee replay has 27 Black replies at that final node, all White wins. Do not try to “fix” the ply-55 continuation value by making the bot prefer Kg8: full-board tactics support the low continuation value.
+
+The preventable choice occurs **two plies earlier**, at ply 53, before Black's ...Qg6. The position is recorded in `astra-submissions/analysis/m4-bait-preemption-20261011/proof.json` and the explanation/reproduction steps are in the adjacent README. Black's own queen/rook are visible, while White's queen on e3 is hidden in Black's current observation; Black's king on f8 is likewise hidden from White. The board history is therefore important.
+
+On the actual ...Qg6 branch, White's Qe7 leaves 37 Black pseudo-legal replies; only ...Kg8 avoids immediate king capture. Then Qxd8 leaves 31 replies, only ...Ne8 avoids immediate loss, and Qxe8 leaves 27 replies, all of which lose under the course referee. The played ...Kxe7 itself is immediately terminal: “King capturable.”
+
+The counterfactual ...Kg8 one move earlier does not prove a win or a generally best move. It does break this fork: after the same Qe7, 40 of 41 Black replies avoid immediate loss; ...Qxe7 Rxe7 reaches a nonterminal position. The useful composable motif is to track whether a possibly hidden queen can reach a fork of the king and a major piece, then compare safe king preemption before a quiet queen move. It needs a history/belief condition and must not become a hard-coded square or generic king-safety bonus.
+
+This is single-position, full-board retrospective evidence. It is not a universal strategy over the live 59-world belief, a strength estimate, or a v30 internals reconstruction. Before implementing a motif, check whether the earlier queen location is supported in realistic beliefs, search independent games for the same geometry, and gate a detector with observation-grouped false-positive and policy-cost checks. No bot source, default, archive, or arena state changed.
+
+Reproduce with `astra-submissions/tools/m4_bait_preemption.py` and the public replay/referee paths in the report. The same original replay and compact JSON are also retained at `/media/henrytan/seagate/iamavirus/astra/m4-bait-preemption-20261011/`.

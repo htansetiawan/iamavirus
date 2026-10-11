@@ -1,0 +1,52 @@
+{
+  "classification": "retrospective C++ belief-support and decision-seed probe; one recorded game, not a playing-strength estimate",
+  "game": "69nmui22",
+  "decision_after_recorded_ply": 38,
+  "side": "white",
+  "candidate": "astra-submissions/candidates/v12",
+  "particles": 2048,
+  "seeds": 20,
+  "belief_measure": "number of particles with exact replay piece placement and side to move after each recorded observation",
+  "support_at_decision_by_prior": {
+    "0_uniform": {"retained": 7, "n": 20},
+    "1_hand_set": {"retained": 2, "n": 20},
+    "2_learned": {"retained": 17, "n": 20}
+  },
+  "first_support_loss_ply_counts_by_prior": {
+    "0_uniform": {"lost_before_decision": 13, "n": 20},
+    "1_hand_set": {"lost_before_decision": 18, "n": 20},
+    "2_learned": {"lost_before_decision": 3, "n": 20}
+  },
+  "decision_probe": {
+    "procedure": "v12 Engine::ChooseMove after the recorded history, with each selected move checked on the exact true board for immediate king capture",
+    "prior_1_hand_set": {"king_survival": 13, "n": 20},
+    "prior_2_learned": {"king_survival": 19, "n": 20},
+    "fatal_seeds_prior_1": [4, 6, 9, 10, 16, 17, 19],
+    "fatal_seeds_prior_2": [19]
+  },
+  "failure_case": {
+    "prior": 2,
+    "seed": 19,
+    "true_board_first_lost_at_ply": 32,
+    "event": "after White's knight capture, 31 true-board particles before the capture became zero after the observed ...Bxe4 transition",
+    "decision": "castled into the hidden queen attack"
+  },
+  "particle_count_sensitivity": [
+    {"particles": 2048, "seed": 19, "prior": 2, "true_board_support_at_decision": 0},
+    {"particles": 4096, "seed": 19, "prior": 2, "true_board_support_at_decision": 4096},
+    {"particles": 8192, "seed": 19, "prior": 2, "true_board_support_at_decision": 0},
+    {"particles": 16384, "seed": 19, "prior": 2, "true_board_support_at_decision": 16384}
+  ],
+  "interpretation": [
+    "The learned prior is a strong lead on this selected loss: it raises exact-truth retention and reduces fatal choices across resampling seeds.",
+    "The failure at seed 19 shows the prior does not eliminate catastrophic support loss.",
+    "Larger particle count did not monotonically retain truth under fixed RNG seed because particle count changes systematic-resampling strata; this is evidence of resampling sensitivity, not a universal size result.",
+    "No engine source, release ZIP, or arena version changed. Do not claim Elo improvement from this retrospective single-game gate."
+  ],
+  "reproduction": {
+    "source": "astra-submissions/analysis/m4-hidden-queen-fork-scan-20261011/belief_support_replay.cc",
+    "decision_source": "astra-submissions/analysis/m4-hidden-queen-fork-scan-20261011/v12_royal_priority_replay.cc",
+    "build": "g++ -O2 -std=c++20 -Wall -Wextra -Werror with v12 candidate engine sources",
+    "decision_command": "/tmp/v12-royal-priority-replay SEED PRIOR"
+  }
+}

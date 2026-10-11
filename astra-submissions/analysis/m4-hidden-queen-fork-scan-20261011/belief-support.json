@@ -1,0 +1,79 @@
+{
+  "classification": "v30 Misty belief-update replay; exact P support, not search policy",
+  "archive": "fable-submissions/iamavirus-v30-misty-4s.zip",
+  "archive_sha256": "20a2e433ca310593f4aa8c38a09fefbd19daf65cd04fcb9f726228e424a8d5c7",
+  "profile": "v1.6 (adapter default)",
+  "p_max_size": 500000,
+  "seed_for_cap_resampling": 1,
+  "enumerator_source_sha256": "cbd17f42597c1b99a9682b0370839e687d8a56f41184044c139c74ab09bbc9ea",
+  "rust_extension_sha256": "2c08c386dc9d24c6d67188cb0219a0881e769756568c54b914007723c3161038",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "python_chess_version": "1.11.2",
+  "games": [
+    {
+      "game": "4bkwxxng",
+      "opponent": "Instructors",
+      "result": "1-0",
+      "reason": "King capturable",
+      "game_sha256": "f3a73d6ce19db24df4371c32bf523ea805960de61b42e4eef57f36dc8242e9d9",
+      "probes": [
+        {
+          "decision_ply": 53,
+          "side": "black",
+          "source_square": "e3",
+          "true_piece": "Q",
+          "belief_size": 1711,
+          "cap": 500000,
+          "cap_fires": 0,
+          "true_board_in_belief": true,
+          "opponent_piece_counts_at_source": {
+            "null": 1575,
+            "Q": 24,
+            "R": 112
+          }
+        }
+      ]
+    },
+    {
+      "game": "69nmui22",
+      "opponent": "duck",
+      "result": "0-1",
+      "reason": "King capturable",
+      "game_sha256": "3de36a1f3fd4f157a214a4c4033fb4c215bae1629654ca11ba7cc6f2c5a16eea",
+      "probes": [
+        {
+          "decision_ply": 36,
+          "side": "white",
+          "source_square": "f6",
+          "true_piece": "q",
+          "belief_size": 1,
+          "cap": 500000,
+          "cap_fires": 0,
+          "true_board_in_belief": true,
+          "opponent_piece_counts_at_source": {
+            "q": 1
+          }
+        },
+        {
+          "decision_ply": 38,
+          "side": "white",
+          "source_square": "c3",
+          "true_piece": "q",
+          "belief_size": 1,
+          "cap": 500000,
+          "cap_fires": 0,
+          "true_board_in_belief": true,
+          "opponent_piece_counts_at_source": {
+            "q": 1
+          }
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "This replays the shipped belief updater and observations, not pick_move/search.",
+    "All recorded belief sizes are below the cap, so search-time RNG draws cannot change these P sets.",
+    "The 32-root search sample and strategy ranking are not reconstructed."
+  ],
+  "script_sha256": "9a462ed6746c0797592837d188287e75f92864fc539d1a15f07cb9ef1f8ce412"
+}

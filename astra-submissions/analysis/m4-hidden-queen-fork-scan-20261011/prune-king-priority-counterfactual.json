@@ -1,0 +1,29 @@
+{
+  "classification": "single-position exact-world counterfactual",
+  "game": "69nmui22",
+  "decision_frame": 38,
+  "profile": "v1.6-net-prune",
+  "world_count": 1,
+  "world_fen": "r5k1/pp3ppp/8/P1bp4/5p1P/2q5/4B1Q1/R1B1K2R w KQ - 0 20",
+  "search_move_before_prune": "e1d1",
+  "old_prune_move": "a1a2",
+  "actor_emitted_move": "g2g7",
+  "captured_live_guard_input": true,
+  "new_royal_first_move": "e1d1",
+  "risk": {
+    "e1d1": {
+      "king_capture": 0.0,
+      "root_value": -0.6234356005592692
+    },
+    "a1a2": {
+      "king_capture": 1.0,
+      "root_value": -1.0
+    }
+  },
+  "candidate_pool_size_before": 42,
+  "candidate_pool_size_after_royal_filter": 3,
+  "limits": [
+    "One retrospective Duck position only; no Elo claim.",
+    "The royal-first wrapper is a candidate algorithm, not a release."
+  ]
+}
