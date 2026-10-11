@@ -1,0 +1,37 @@
+test_gadget
+low-prior trap mode=0: risky 0.00000000 gap 0
+low-prior trap mode=1: risky 0.00000000 gap 0
+analytic mixed game: action0 0.50000000 (target .5), gap -4.4408921e-15
+infeasible margins mode=0: action0 0.75000000 (target 0.75000000), gap 0
+infeasible margins mode=1: action0 0.41176471 (target 0.41176471), gap 5.5511151e-17
+test_gadget: passed
+
+test_kluss
+test_kluss: passed (one-hop closure, unfrozen B, isolated blueprint and fresh regrets)
+
+test_gadget_controller
+controller one-iteration oracle: exact nonunit root mass and alternating updates passed
+adaptive controller case=0: action0 0.750000000 target 0.750000000, max_enter 1.000000, active_mass 0.541875
+adaptive controller case=1: action0 0.411764706 target 0.411764706, max_enter 0.000000, active_mass 1.000000
+adaptive controller case=2: action0 0.000000000 target 0.000000000, max_enter 0.500000, active_mass 0.750000
+adaptive revision phase=0: action0 0.750000000 max_enter 1.000000
+adaptive revision phase=1: action0 0.411764706 max_enter 0.000000
+adaptive revision phase=2: action0 0.750000000 max_enter 1.000000
+controller pruning: unvisited P0 predictions preserved; zero-root-mass P1 reply updated
+controller growth: appended infoset, 81 actions and workspace resizing passed
+test_gadget_controller: passed
+
+test_gadget_kuhn
+Kuhn mode=0: opponent BR 0.05555556 -> 0.05555556, gadget gap -1.3877788e-17
+Kuhn mode=1: opponent BR 0.05555556 -> 0.05555556, gadget gap 1.110223e-16
+Kuhn mode=2 (adaptive): opponent BR 0.05555556 -> 0.05555556, fixed-Resolve diagnostic gap 0.011137742
+test_gadget_kuhn: passed
+
+test_kluss_prepare
+blueprint preparation: KLUSS selection, grouped alternates, gifts, fresh seeds and atomic failure passed
+blueprint gifts: shared opponent infoset aggregates CF values before path accumulation
+test_kluss_prepare: passed
+
+test_kluss_carry
+adaptive carry-over: actual nonunit root reaches, raw expanded leaves, real-action gifts and two successive solves passed
+

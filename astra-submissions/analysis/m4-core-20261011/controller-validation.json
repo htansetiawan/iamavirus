@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-11T05:44:00.603228+00:00",
+  "commit": "4f79c4dba6e0ca055623949f82e619b9e84b8e2c",
+  "baseline": "9a517d1",
+  "classification": "generic algorithm correctness; not playing strength",
+  "checks": {
+    "make test_m4": "passed; five suites",
+    "sanitizers": "ASan+UBSan+LSan passed on gadget, controller, Kuhn and preparation fixtures",
+    "adaptive_kuhn_opponent_br": 0.05555555555555555,
+    "adaptive_kuhn_fixed_resolve_diagnostic_gap": 0.011137742,
+    "controller_first_iteration_weights": [
+      0.1996,
+      0.2232
+    ],
+    "controller_first_iteration_active_mass": 0.4228,
+    "warm_start": "cumulative regret zero; initial prediction seeded then replaced on first visited update"
+  },
+  "source_sha256": {
+    "src/gadget.c": "5780e33d9ce8584dcb2db3a24312f7de7907e77fbe2e0cd3b67d3b460aaf6414",
+    "src/gadget.h": "cfa90793e053ccacd78b1b2c39fd454cc253137ddf14c797a207a611a7bcaed0",
+    "src/kluss.c": "4e815e56fef612ad89348b314289d8263a4bd3fd96a62156e792e0cd5fc3facb",
+    "src/kluss.h": "838913cab09d04eb41e1541ab76eb805d9ad3fa64e3e084c2bf3e903e7f013c7",
+    "tests/test_gadget.c": "1f73ea543dbe56bb9498876e7621fc294e4c7463028a39459ec1d4a33075daa3",
+    "tests/test_gadget_controller.c": "e3f77157e34084d97d199611d76476118bcf00f41efa9c17e879002257e196be",
+    "tests/test_gadget_kuhn.c": "5596f4567e1c1e69c19fab57dee012ce90e3ea676da73662101c8db6ed7a58c1",
+    "tests/test_kluss_prepare.c": "34f51bcf5601c03977e832a11e571f4e2fb61f884228504b921e07df935ed0cc",
+    "Makefile": "1ddd6601a179268a8860fcf33fc2173c768fbeff642bbe65f3127e4f6e5847af"
+  },
+  "limits": [
+    "Not linked into engine",
+    "No chess replay or match gate yet",
+    "Existing forced replay harness is cold at target: earlier searches are skipped",
+    "Adaptive profile requires actual root weights and raw score restoration before carry-over"
+  ]
+}
