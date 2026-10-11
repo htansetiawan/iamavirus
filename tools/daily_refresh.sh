@@ -4,6 +4,10 @@
 #
 #   bash tools/daily_refresh.sh [--no-dataset] [--no-push]
 #
+# Storage: data/raw and data/manifests are symlinks to
+# /media/henrytan/seagate/iamavirus-data (exFAT); the run is skipped when the
+# drive is not mounted.
+#
 # Steps (each logged to data/logs/daily/<date>.log; a failed step does not stop
 # the later ones):
 #   1. ingest our games (newest 1,000) and all teams' games (newest 6,000;
@@ -26,6 +30,11 @@ LOG="data/logs/daily/$(date -u +%F).log"
 exec 9>data/logs/daily/.lock
 flock -n 9 || { echo "daily refresh already running" >&2; exit 0; }
 step() { echo "== $(date -u +%H:%M:%S) $*" >>"$LOG"; }
+# data/raw and data/manifests live on the Seagate (symlinks); without it, skip
+if [ -L data/raw ] && [ ! -d data/raw/games ]; then
+    step "data/raw -> $(readlink data/raw) is not available (drive not mounted?); skipped"
+    exit 1
+fi
 run() { "$@" >>"$LOG" 2>&1 || echo "   step failed (exit $?): $*" >>"$LOG"; }
 
 step "ingest ours";      run nice -n 10 $PY -m learning.ingest --team IAmAVirus --output data/raw --limit 1000
