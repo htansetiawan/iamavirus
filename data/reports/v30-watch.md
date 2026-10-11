@@ -1,18 +1,18 @@
 # Arena v30 watch
 
-Updated 2026-10-11 20:55 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 21:15 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 209W-29D-226L over 464 games** (48%).
-As White: 123.5/232.
-As Black: 100.0/232.
+**Record: 211W-30D-229L over 470 games** (48%).
+As White: 124.0/235.
+As Black: 102.0/235.
 
-Queen lost for less: 63 games (56 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 46 of 226.
+Queen lost for less: 63 games (56 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 46 of 229.
 Short losses (12 plies or fewer): 4. Games with a clock at 15 s or less: 4. Mean length 77 plies.
 Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 45-9-6 |
+| TA Baseline A | 47-10-6 |
 | Mist Opportunities | 16-3-39 |
 | duck | 9-5-36 |
 | TA Baseline P | 46-0-2 |
@@ -20,8 +20,8 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | Instructors | 9-2-29 |
 | Knight Vision | 12-3-23 |
 | Strongly Invisible | 4-1-31 |
-| Decent Chess Bot | 5-1-24 |
-| Greek Gift | 2-2-22 |
+| Decent Chess Bot | 5-1-25 |
+| Greek Gift | 2-2-24 |
 | Apricot Squad | 22-0-0 |
 | baseline.py | 14-0-0 |
 
@@ -491,3 +491,9 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | 2026-10-11 20:52 | j6c80yot | W | Instructors | 99 | loss |  | 72 s | 3-14 |
 | 2026-10-11 20:52 | b9ud2w2q | B | TA Baseline A | 85 | win |  | 81 s | 14-7 |
 | 2026-10-11 20:54 | zcp49b21 | W | TA Baseline A | 120 | win | ply 68 by p unseen | 67 s | 6-2 |
+| 2026-10-11 21:07 | a5d56xv1 | B | Greek Gift | 66 | loss |  | 85 s | 3-19 |
+| 2026-10-11 21:10 | zqcmhxol | B | TA Baseline A | 71 | win |  | 94 s | 18-8 |
+| 2026-10-11 21:10 | juzd8cdv | W | Greek Gift | 117 | loss |  | 56 s | 2-7 |
+| 2026-10-11 21:11 | 8c9cxnpy | W | TA Baseline A | 85 | draw |  | 88 s | 8-4 |
+| 2026-10-11 21:12 | q9z9o912 | B | TA Baseline A | 25 | win |  | 146 s | 31-34 |
+| 2026-10-11 21:14 | 3trba5jj | W | Decent Chess Bot | 55 | loss |  | 100 s | 17-24 |
