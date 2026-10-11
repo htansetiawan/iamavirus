@@ -73,6 +73,7 @@ def main():
     ap.add_argument("--audit-belief", action="store_true", help="Compare truth with post-decision belief export")
     ap.add_argument("--leaf-scale", type=float, default=1.0)
     ap.add_argument("--trace-continuation", action="store_true", help="Export the selected move and reply nodes after search")
+    ap.add_argument("--trace-moves", help="Up to eight comma-separated UCI alternatives to inspect in the same post-selection tree")
     ap.add_argument("--tactical-closure", action="store_true", help="Expand threatened future own-information-set aliases")
     ap.add_argument("--root-dominance", action="store_true", help="Redirect played root mass to lower-risk, no-lower-value actions")
     ap.add_argument("--fast-roots", action="store_true", help="Cheap initialization of carried frontier roots; external evaluator remains active in search")
@@ -84,6 +85,10 @@ def main():
     args = ap.parse_args()
     if not 0 <= args.settle_fraction <= .5:
         ap.error("settle fraction must be in 0..0.5")
+    trace_moves=args.trace_moves.split(',') if args.trace_moves else []
+    if trace_moves and (not args.trace_continuation or len(trace_moves)>8 or len(set(trace_moves))!=len(trace_moves)
+                        or any(not re.fullmatch(r'[a-h][1-8][a-h][1-8][qrbn]?',move) for move in trace_moves)):
+        ap.error("trace moves require --trace-continuation and 1..8 unique UCI moves")
     sys.path.insert(0, str(args.kit))
     import referee
     import chess
@@ -133,7 +138,9 @@ def main():
             if args.audit_belief: env["MIST_REPLAY_BELIEF_DUMP"] = str(dump_path)
             trace_path=args.out/f"{game['id']}-{side}-d{decision}-{mode}.trace.jsonl"
             env.pop("MIST_M4_TRACE_PATH",None)
+            env.pop("MIST_M4_TRACE_MOVES",None)
             if args.trace_continuation:env["MIST_M4_TRACE_PATH"]=str(trace_path.resolve())
+            if trace_moves:env["MIST_M4_TRACE_MOVES"]=','.join(trace_moves)
             start = time.monotonic()
             proc = subprocess.run([str(binary)], input=feed, capture_output=True, text=True,
                                   env=env, timeout=max(60, decision*args.seconds*3))
@@ -185,6 +192,19 @@ def main():
                 timing=re.search(r"m4-trace: complete=(\d+) seconds=(\S+)",proc.stderr)
                 if not timing or timing[1]!="1":raise ValueError("Trace export failed")
                 row["continuation_trace"]["seconds"]=float(timing[2])
+                row["alternative_traces"]={}
+                primary_roots={t['root']:t for t in trace if t['kind']=='node' and not t['path']}
+                for move in trace_moves:
+                    alternative=Path(str(trace_path)+'.'+move)
+                    records=[json.loads(line) for line in alternative.read_text().splitlines()]
+                    if not records or records[-1].get('kind')!='end' or not records[-1].get('complete') or records[-1].get('records')!=len(records)-1:
+                        raise ValueError('Missing or incomplete alternative trace: '+move)
+                    roots={t['root']:t for t in records if t['kind']=='node' and not t['path']}
+                    if roots!=primary_roots:raise ValueError('Alternative trace changed the saved root states or values')
+                    timing=re.search(r'm4-trace-alt: move='+re.escape(move)+r' complete=(\d+) seconds=(\S+)',proc.stderr)
+                    if not timing or timing[1]!='1':raise ValueError('Alternative trace export failed: '+move)
+                    row['alternative_traces'][move]={'path':str(alternative.resolve()),'sha256':hashlib.sha256(alternative.read_bytes()).hexdigest(),
+                        'end':records[-1],'seconds':float(timing[2]),'same_root_states_and_values':True}
             row["closure_metrics"] = [{k:int(v) for k,v in re.findall(r"(\w+)=(\d+)",line)}
                 for line in re.findall(r"m4-closure: (.*)",proc.stderr)]
             witness_line = re.search(r"m4-witness: (.*)",proc.stderr)
@@ -224,6 +244,7 @@ def main():
                       "root_dominance":args.root_dominance,
                       "fast_roots":args.fast_roots,
                       "settle_fraction":args.settle_fraction,
+                      "trace_moves":trace_moves,
                       "stockfish": str(args.stockfish.resolve()) if args.stockfish else None,
                       "stockfish_sha256": hashlib.sha256(args.stockfish.read_bytes()).hexdigest() if args.stockfish else None,
                       "child_alternates": bool(args.child_alternates or args.stockfish),

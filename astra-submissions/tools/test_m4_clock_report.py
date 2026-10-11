@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 import tempfile
 
-from m4_clock_run import inspect_game
+from m4_clock_run import inspect_game, summarize
 
 
 def main():
@@ -29,6 +29,23 @@ def main():
         assert 'missing_m4_diagnostics' in check(bad)['faults']
         bad=copy.deepcopy(game);bad['privateDiagnostics']['white']=bad['privateDiagnostics']['white'].replace('ok=1','ok=0').replace('over=0','over=1').replace('ready=1','ready=0')
         assert {'m4_snapshot_or_search_failure','m4_reported_overrun','stockfish_request_failure'}<=set(check(bad)['faults'])
+        # Requested solver scheduling must be evidenced on every actual turn.
+        path.write_text(json.dumps(game));job={'side':'white','scale':1,'settle_fraction':.2}
+        assert 'missing_settling_diagnostics' in inspect_game(path,job)['faults']
+        good=copy.deepcopy(game);good['privateDiagnostics']['white']+='m4-settle: ply=0 prefix=0 fraction=0.200000 iterations=20 nodes=100 expansions=3 seconds=0.060000\n'
+        path.write_text(json.dumps(good));result=inspect_game(path,job)
+        assert not result['faults'] and result['settled_decisions']==1 and result['settle_seconds']==.06
+        bad=copy.deepcopy(good);bad['privateDiagnostics']['white']=bad['privateDiagnostics']['white'].replace('fraction=0.200000','fraction=0.100000')
+        path.write_text(json.dumps(bad));assert 'wrong_settling_configuration' in inspect_game(path,job)['faults']
+        # Same scale, different scheduling arms must never be pooled.
+        root=Path(d);(root/'jobs').mkdir()
+        for i,(arm,score) in enumerate([('scale1-settle0',0),('scale1-settle0.2',1)]):
+            folder=root/'jobs'/str(i);folder.mkdir()
+            (folder/'receipt.json').write_text(json.dumps({'scale':1,'arm':arm,'faults':[],'game':{'score':score}}))
+        report=summarize(root,{'jobs':[{},{}],'classification':'fixture'})
+        assert report['complete'] and len(report['totals'])==2
+        assert report['totals']['scale1-settle0.2']['wins']==1
+        assert report['totals']['scale1-settle0']['losses']==1
     print('test_m4_clock_report: exact ply coverage, duplicates, option evidence and search/evaluator/clock faults passed')
 
 

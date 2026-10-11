@@ -1,0 +1,70 @@
+{
+  "created_at": "2026-10-11T12:19:00.395832+00:00",
+  "base_commit": "48cdeae",
+  "source_patch_sha256": "71f9b1876d69967e132cf2cd7cc033c8d7a42007e8d02d77f0b1c19b279b19f5",
+  "command": [
+    "nice",
+    "-n",
+    "19",
+    "taskset",
+    "-c",
+    "6,7",
+    "/home/henrytan/git/fow-starter/.venv/bin/python",
+    "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/probe.py",
+    "--binary",
+    "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/candidate",
+    "--kit",
+    "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/kit",
+    "--out",
+    "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/probe",
+    "--decision",
+    "6",
+    "--side",
+    "white",
+    "--seconds",
+    "10",
+    "--iterations",
+    "1000000",
+    "--seed",
+    "12",
+    "--parents",
+    "20000",
+    "--samples",
+    "32",
+    "--audit-belief",
+    "--trace-continuation",
+    "--trace-moves",
+    "a4c3,d4c3,d4d2,d4f4",
+    "--fast-roots",
+    "--stockfish",
+    "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/stockfish",
+    "--child-alternates",
+    "--mode",
+    "warm",
+    "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011/game.json"
+  ],
+  "question": "Compare Nc3, Qc3, Qd2 and Qf4 in one saved tree, including coverage and weight of the Nc6xd4 queen capture",
+  "classification": "post-selection alternative trace; no policy change or strength claim",
+  "files": {
+    "candidate": {
+      "source": "/tmp/mist-c-astra-m4/build/mist-m4",
+      "sha256": "5892c2a9015395de2f541f954d3d3edc06b9217d9c7291913fd01d9d23949ab0"
+    },
+    "probe.py": {
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_replay_probe.py",
+      "sha256": "63c9feceb34deaa49a2ba85c5c1280a4457d9f7b9d9a4ed2fff6171515d181af"
+    },
+    "game.json": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-settle-pilot-20261011/game.json",
+      "sha256": "a5cc00ed7c3a748356d00945f68095e111847a29300d97ee95515da122d17a8a"
+    },
+    "stockfish": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-settle-pilot-20261011/stockfish",
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+    },
+    "kit/referee.py": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-settle-pilot-20261011/kit/referee.py",
+      "sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+    }
+  }
+}

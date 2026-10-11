@@ -1,0 +1,472 @@
+{
+  "binary": "/media/henrytan/seagate/iamavirus/astra/m4-recapture-alternatives-20261011/candidate",
+  "sha256": "5892c2a9015395de2f541f954d3d3edc06b9217d9c7291913fd01d9d23949ab0",
+  "seconds": 10.0,
+  "iteration_cap": 1000000,
+  "seed": 12,
+  "fixed_parent_cap": 20000,
+  "sample_target": 32,
+  "tactical_witnesses": false,
+  "tactical_closure": false,
+  "trace_continuation": true,
+  "leaf_scale": 1.0,
+  "root_dominance": false,
+  "fast_roots": true,
+  "settle_fraction": 0,
+  "trace_moves": [
+    "f3d4",
+    "d1d4"
+  ],
+  "stockfish": "/media/henrytan/seagate/iamavirus/astra/m4-recapture-alternatives-20261011/stockfish",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "seed12-white-scale1",
+      "side": "white",
+      "decision": 5,
+      "ply": 8,
+      "mode": "warm",
+      "played": "d1d4",
+      "returncode": 0,
+      "true_legal_count": 31,
+      "true_safe_moves": [
+        "a4b6",
+        "a4c5",
+        "a4c3",
+        "f3g5",
+        "f3e5",
+        "f3h4",
+        "f3d4",
+        "f3d2",
+        "f3g1",
+        "h1g1",
+        "e1d2",
+        "d1d4",
+        "d1d3",
+        "d1d2",
+        "c1h6",
+        "c1g5",
+        "c1f4",
+        "c1e3",
+        "c1d2",
+        "a1b1",
+        "h2h3",
+        "g2g3",
+        "e2e3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "e2e4",
+        "c2c4",
+        "b2b4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 28.034388519998174,
+      "prefix_exact": true,
+      "outputs": 5,
+      "chosen": "d1d4",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 5.721,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 2,
+          "carry": 14,
+          "offI": 227,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 5.6382,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 4,
+          "carry": 13,
+          "offI": 321,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 5.5353,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 6,
+          "carry": 11,
+          "offI": 1358,
+          "fresh": 1,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 5.44,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 8,
+          "found": 3,
+          "positive": 3,
+          "carry": 3,
+          "offI": 71,
+          "fresh": 7,
+          "groups": 10,
+          "expand": 4157,
+          "fallback": 0,
+          "snapshot": 1,
+          "setup": 0.014,
+          "solve": 5.3286,
+          "save": 0.0131,
+          "total": 5.3557,
+          "over": 0,
+          "active": 0.94571,
+          "enter": 1.0,
+          "current": 0.86697,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 10,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 0.12037201277543468,
+      "all_root_reach": 0.8669735899268985,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_share": 0.0,
+      "action_profiles": [
+        {
+          "move": "a1b1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.469598754
+        },
+        {
+          "move": "c1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.399543919
+        },
+        {
+          "move": "c1e3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.937359032
+        },
+        {
+          "move": "c1f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.382301847
+        },
+        {
+          "move": "c1g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.378029834
+        },
+        {
+          "move": "c1h6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.707673016
+        },
+        {
+          "move": "d1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.440718387
+        },
+        {
+          "move": "d1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.770781326
+        },
+        {
+          "move": "d1d4",
+          "policy": 0.50090775,
+          "played": 1.0,
+          "fatal": 0.0,
+          "raw": -0.385620615
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.773571205
+        },
+        {
+          "move": "h1g1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.630893108
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.390483455
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.390465802
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.380395707
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.392628958
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.413441046
+        },
+        {
+          "move": "e2e3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.444283014
+        },
+        {
+          "move": "e2e4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.417473317
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.480703787
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.543958983
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.498070577
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.455301815
+        },
+        {
+          "move": "f3g1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.741545078
+        },
+        {
+          "move": "f3d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.721793802
+        },
+        {
+          "move": "f3d4",
+          "policy": 0.49909225,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.346644669
+        },
+        {
+          "move": "f3h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.767962477
+        },
+        {
+          "move": "f3e5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.556110621
+        },
+        {
+          "move": "f3g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.662139081
+        },
+        {
+          "move": "a4c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.926369268
+        },
+        {
+          "move": "a4c5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.391363856
+        },
+        {
+          "move": "a4b6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.751509955
+        }
+      ],
+      "settling": [],
+      "root_setup": {
+        "ply": 8,
+        "cheap_carried_roots": 3
+      },
+      "evaluation": {
+        "child_alternates": 7.0,
+        "ready": 1.0,
+        "scored": 133230.0,
+        "calls": 4103.0,
+        "failed": 0.0,
+        "seconds": 4.404448,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 196822.0,
+          "calls": 7661.0,
+          "failed": 0.0,
+          "seconds": 4.04363,
+          "scale": 1.0
+        },
+        {
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 156348.0,
+          "calls": 5835.0,
+          "failed": 0.0,
+          "seconds": 3.42944,
+          "scale": 1.0
+        },
+        {
+          "ply": 4.0,
+          "ready": 1.0,
+          "scored": 169936.0,
+          "calls": 5751.0,
+          "failed": 0.0,
+          "seconds": 4.228931,
+          "scale": 1.0
+        },
+        {
+          "ply": 6.0,
+          "ready": 1.0,
+          "scored": 132342.0,
+          "calls": 4189.0,
+          "failed": 0.0,
+          "seconds": 4.582821,
+          "scale": 1.0
+        }
+      ],
+      "continuation_trace": {
+        "path": "/media/henrytan/seagate/iamavirus/astra/m4-recapture-alternatives-20261011/probe/seed12-white-scale1-white-d5-warm.trace.jsonl",
+        "sha256": "2e2422d13206dcce741ba5a3fef722128e2390c33c31f9c716075f67257171d4",
+        "end": {
+          "kind": "end",
+          "complete": true,
+          "records": 314,
+          "roots": 10,
+          "ply": 8
+        },
+        "seconds": 0.004077
+      },
+      "alternative_traces": {
+        "f3d4": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-recapture-alternatives-20261011/probe/seed12-white-scale1-white-d5-warm.trace.jsonl.f3d4",
+          "sha256": "348d3ccc43cfb703d7be6e04f4bc9bc504603bc0447f6109bf7d686623624ccc",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 314,
+            "roots": 10,
+            "ply": 8
+          },
+          "seconds": 0.003766,
+          "same_root_states_and_values": true
+        },
+        "d1d4": {
+          "path": "/media/henrytan/seagate/iamavirus/astra/m4-recapture-alternatives-20261011/probe/seed12-white-scale1-white-d5-warm.trace.jsonl.d1d4",
+          "sha256": "2e2422d13206dcce741ba5a3fef722128e2390c33c31f9c716075f67257171d4",
+          "end": {
+            "kind": "end",
+            "complete": true,
+            "records": 314,
+            "roots": 10,
+            "ply": 8
+          },
+          "seconds": 0.00377,
+          "same_root_states_and_values": true
+        }
+      },
+      "closure_metrics": [],
+      "belief_count": 10,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 0.053032598930549305,
+      "belief_truth_share": 0.053032598930549305,
+      "legal": true,
+      "true_outcome": null,
+      "immediate_loss": false
+    }
+  ]
+}

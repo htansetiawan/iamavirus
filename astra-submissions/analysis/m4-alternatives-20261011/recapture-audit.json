@@ -1,0 +1,614 @@
+{
+  "classification": "retrospective same-tree comparison, not a strength test",
+  "actual_selected_move": "d1d4",
+  "ply": 8,
+  "side": "white",
+  "source": "/media/henrytan/seagate/iamavirus/astra/m4-recapture-alternatives-20261011",
+  "manifest_sha256": "b7fe385c9b6b2adcae24f6f9bda357fd41b0833d0d8f12922cb8cb4b788bca93",
+  "tool_sha256": "535aab026efa4dba597b7b344480e79e28e7a12081cd2d0911085cd702d0cfb9",
+  "probe_sha256": "29d3d5e10b18a5df728f4d37b7097af441ce694221fcf7038e2f851809c80362",
+  "trace_sha256": {
+    "f3d4": "348d3ccc43cfb703d7be6e04f4bc9bc504603bc0447f6109bf7d686623624ccc",
+    "d1d4": "2e2422d13206dcce741ba5a3fef722128e2390c33c31f9c716075f67257171d4"
+  },
+  "hypothetical_node_states_checked": 608,
+  "alternatives": {
+    "f3d4": {
+      "raw_value": -0.3466446690013392,
+      "immediate_king_loss_share": 0.0,
+      "policy_probability": 0.49909225,
+      "execution_probability": 0.0,
+      "roots": 10,
+      "mass": 0.8669735899268985,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 80,
+            "group": 9,
+            "alternate": 0,
+            "raw": -0.4269092971783636,
+            "cf": 1,
+            "opp": 0.12037201277543468,
+            "own_probability": 0.4990922499252349
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 80,
+            "node": 560,
+            "path": "f3d4",
+            "board": "R-BQKB-RPPP-PPPP--------N--N-------p--------p---pp---ppprnbqkbnr",
+            "side": 1,
+            "ep": -1,
+            "castle": "8100000000000081",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 34,
+            "own_history": "b1ba652bd45d22ad",
+            "raw": -0.31039125327153444,
+            "cf": 0.4990922499252349,
+            "opp": 0.12037201277543468,
+            "probability": 0.4990922499252349,
+            "actions": 34,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 6
+          },
+          "top_replies": [
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1472,
+              "path": "f3d4/c8d7",
+              "board": "R-BQKB-RPPP-PPPP--------N--N-------p--------p---pp-b-ppprn-qkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 1,
+              "node_kind": "decision",
+              "infoset": 59,
+              "own_history": "71719284dba9ce00",
+              "raw": -0.3627074675780511,
+              "cf": 0.4990922499252349,
+              "opp": 0.07835121782642963,
+              "probability": 0.650908928245648,
+              "actions": 32,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 28
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1470,
+              "path": "f3d4/b8c6",
+              "board": "R-BQKB-RPPP-PPPP--------N--N-------p------n-p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 1,
+              "node_kind": "decision",
+              "infoset": 132,
+              "own_history": "40259a4b7f373c58",
+              "raw": -0.2128433818436257,
+              "cf": 0.4990922499252349,
+              "opp": 0.04202079494900503,
+              "probability": 0.3490910717543519,
+              "actions": 32,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 2
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1458,
+              "path": "f3d4/e6e5",
+              "board": "R-BQKB-RPPP-PPPP--------N--N-------pp-----------pp---ppprnbqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 88,
+              "own_history": "20dbdb7eabcd070c",
+              "raw": -0.14112145347332708,
+              "cf": 0.4990922499252349,
+              "opp": 0,
+              "probability": 0,
+              "actions": 32,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 31
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1459,
+              "path": "f3d4/a7a6",
+              "board": "R-BQKB-RPPP-PPPP--------N--N-------p----p---p----p---ppprnbqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 59,
+              "own_history": "71719284dba9ce00",
+              "raw": -0.49676344321412846,
+              "cf": 0.4990922499252349,
+              "opp": 0,
+              "probability": 0,
+              "actions": 32,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 31
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1460,
+              "path": "f3d4/a7a5",
+              "board": "R-BQKB-RPPP-PPPP--------N--N----p--p--------p----p---ppprnbqkbnr",
+              "side": 0,
+              "ep": 40,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 59,
+              "own_history": "71719284dba9ce00",
+              "raw": 0.1683810458708147,
+              "cf": 0.4990922499252349,
+              "opp": 0,
+              "probability": 0,
+              "actions": 32,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 32
+            }
+          ]
+        }
+      ],
+      "worlds": [
+        {
+          "root": 18,
+          "weight": 0.003392264132567274,
+          "raw": -0.3471006192566611,
+          "weighted_value": -0.001177456981096261,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----p--------p--pppprnbqkbnr"
+        },
+        {
+          "root": 58,
+          "weight": 0.00038525587448919914,
+          "raw": 0.01522729557545121,
+          "weighted_value": 5.866405073025969e-06,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.024331179937206605,
+          "raw": 0.1261027567118917,
+          "weighted_value": 0.003068228864134825,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p----p--p-------------p--pppprnbqkbnr"
+        },
+        {
+          "root": 74,
+          "weight": 0.1388416142936767,
+          "raw": -0.1544903296365625,
+          "weighted_value": -0.02144968675950258,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 75,
+          "weight": 0.1388416142936767,
+          "raw": -0.22192463619888708,
+          "weighted_value": -0.0308123747413904,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----------p-pp--pp-prnbqkbnr"
+        },
+        {
+          "root": 76,
+          "weight": 0.1388416142936767,
+          "raw": -0.705768863575299,
+          "weighted_value": -0.09799008833700819,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---------n--pp--pppprnbqkb-r"
+        },
+        {
+          "root": 77,
+          "weight": 0.1388416142936767,
+          "raw": -0.1360933680324413,
+          "weighted_value": -0.018895422912287605,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 78,
+          "weight": 0.1388416142936767,
+          "raw": -0.05097282480221248,
+          "weighted_value": -0.007077149280647942,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p------------pp--pppprnbqkbnr"
+        },
+        {
+          "root": 79,
+          "weight": 0.1388416142936767,
+          "raw": -0.9307106032232437,
+          "weighted_value": -0.1292213625917568,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---------p--pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 80,
+          "weight": 0.1388416142936767,
+          "raw": -0.31039125327153444,
+          "weighted_value": -0.0430952226668573,
+          "immediate_king_loss": false,
+          "true_state": true,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p--------p---pp---ppprnbqkbnr"
+        }
+      ]
+    },
+    "d1d4": {
+      "raw_value": -0.3856206145964302,
+      "immediate_king_loss_share": 0.0,
+      "policy_probability": 0.50090775,
+      "execution_probability": 1.0,
+      "roots": 10,
+      "mass": 0.8669735899268985,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 80,
+            "group": 9,
+            "alternate": 0,
+            "raw": -0.4269092971783636,
+            "cf": 1,
+            "opp": 0.12037201277543468,
+            "own_probability": 0.5009077500747651
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 80,
+            "node": 544,
+            "path": "d1d4",
+            "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr",
+            "side": 1,
+            "ep": -1,
+            "castle": "8100000000000081",
+            "halfmove": 0,
+            "node_kind": "decision",
+            "infoset": 34,
+            "own_history": "dd8dbf8ee69376f2",
+            "raw": -0.5430050307374207,
+            "cf": 0.5009077500747651,
+            "opp": 0.12037201277543468,
+            "probability": 0.5009077500747651,
+            "actions": 34,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 4
+          },
+          "top_replies": [
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1171,
+              "path": "d1d4/c8d7",
+              "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-b-ppprn-qkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 1,
+              "node_kind": "decision",
+              "infoset": 90,
+              "own_history": "caed2cfd3bbb50df",
+              "raw": -0.4418651315990213,
+              "cf": 0.5009077500747651,
+              "opp": 0.07835121782642963,
+              "probability": 0.650908928245648,
+              "actions": 46,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 38
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1169,
+              "path": "d1d4/b8c6",
+              "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 1,
+              "node_kind": "decision",
+              "infoset": 90,
+              "own_history": "caed2cfd3bbb50df",
+              "raw": -0.7315886660054511,
+              "cf": 0.5009077500747651,
+              "opp": 0.04202079494900503,
+              "probability": 0.3490910717543519,
+              "actions": 46,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 22
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1157,
+              "path": "d1d4/e6e5",
+              "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------pp-----------pp---ppprnbqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 167,
+              "own_history": "66c9b098f0d953c4",
+              "raw": 0.01999733375993093,
+              "cf": 0.5009077500747651,
+              "opp": 0,
+              "probability": 0,
+              "actions": 44,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 44
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1158,
+              "path": "d1d4/a7a6",
+              "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----p---p----p---ppprnbqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 111,
+              "own_history": "bb8ed499d968aef7",
+              "raw": 0.100883819255674,
+              "cf": 0.5009077500747651,
+              "opp": 0,
+              "probability": 0,
+              "actions": 46,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 46
+            },
+            {
+              "kind": "node",
+              "root": 80,
+              "node": 1159,
+              "path": "d1d4/a7a5",
+              "board": "R-B-KB-RPPP-PPPP-----N--N--Q----p--p--------p----p---ppprnbqkbnr",
+              "side": 0,
+              "ep": 40,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 111,
+              "own_history": "bb8ed499d968aef7",
+              "raw": 0.18926637075765645,
+              "cf": 0.5009077500747651,
+              "opp": 0,
+              "probability": 0,
+              "actions": 46,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 45
+            }
+          ]
+        }
+      ],
+      "worlds": [
+        {
+          "root": 18,
+          "weight": 0.003392264132567274,
+          "raw": -0.2758337941013463,
+          "weighted_value": -0.0009357010862799435,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----p--------p--pppprnbqkbnr"
+        },
+        {
+          "root": 58,
+          "weight": 0.00038525587448919914,
+          "raw": -0.40908507626138507,
+          "weighted_value": -0.00015760242879556062,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.024331179937206605,
+          "raw": -0.19173654954868452,
+          "weighted_value": -0.004665176487608173,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p----p--p-------------p--pppprnbqkbnr"
+        },
+        {
+          "root": 74,
+          "weight": 0.1388416142936767,
+          "raw": -0.1681871818727075,
+          "weighted_value": -0.02335137983471091,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 75,
+          "weight": 0.1388416142936767,
+          "raw": -0.1915030793054521,
+          "weighted_value": -0.02658859667297896,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----------p-pp--pp-prnbqkbnr"
+        },
+        {
+          "root": 76,
+          "weight": 0.1388416142936767,
+          "raw": -0.31514045465446583,
+          "weighted_value": -0.043754609453469255,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---------n--pp--pppprnbqkb-r"
+        },
+        {
+          "root": 77,
+          "weight": 0.1388416142936767,
+          "raw": -0.5782561468137974,
+          "weighted_value": -0.08028601689886895,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 78,
+          "weight": 0.1388416142936767,
+          "raw": -0.6693196020603167,
+          "weighted_value": -0.09292941402845567,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p------------pp--pppprnbqkbnr"
+        },
+        {
+          "root": 79,
+          "weight": 0.1388416142936767,
+          "raw": -0.2705271244444354,
+          "weighted_value": -0.03756042266809177,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---------p--pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 80,
+          "weight": 0.1388416142936767,
+          "raw": -0.5430050307374207,
+          "weighted_value": -0.07539169503717102,
+          "immediate_king_loss": false,
+          "true_state": true,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p--------p---pp---ppprnbqkbnr"
+        }
+      ]
+    }
+  },
+  "pairwise_value_decomposition": [
+    {
+      "left": "f3d4",
+      "right": "d1d4",
+      "aggregate_difference": 0.038975945595091016,
+      "largest_favors_left": [
+        {
+          "root": 78,
+          "weight": 0.1388416142936767,
+          "true_state": false,
+          "left_value": -0.05097282480221248,
+          "right_value": -0.6693196020603167,
+          "weighted_difference": 0.08585226474780773,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p------------pp--pppprnbqkbnr"
+        },
+        {
+          "root": 77,
+          "weight": 0.1388416142936767,
+          "true_state": false,
+          "left_value": -0.1360933680324413,
+          "right_value": -0.5782561468137974,
+          "weighted_difference": 0.061390593986581345,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 80,
+          "weight": 0.1388416142936767,
+          "true_state": true,
+          "left_value": -0.31039125327153444,
+          "right_value": -0.5430050307374207,
+          "weighted_difference": 0.032296472370313724,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.024331179937206605,
+          "true_state": false,
+          "left_value": 0.1261027567118917,
+          "right_value": -0.19173654954868452,
+          "weighted_difference": 0.007733405351742998,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p----p--p-------------p--pppprnbqkbnr"
+        },
+        {
+          "root": 74,
+          "weight": 0.1388416142936767,
+          "true_state": false,
+          "left_value": -0.1544903296365625,
+          "right_value": -0.1681871818727075,
+          "weighted_difference": 0.0019016930752083275,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----n-------pp--ppppr-bqkbnr"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 79,
+          "weight": 0.1388416142936767,
+          "true_state": false,
+          "left_value": -0.9307106032232437,
+          "right_value": -0.2705271244444354,
+          "weighted_difference": -0.091660939923665,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---------p--pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 76,
+          "weight": 0.1388416142936767,
+          "true_state": false,
+          "left_value": -0.705768863575299,
+          "right_value": -0.31514045465446583,
+          "weighted_difference": -0.05423547888353893,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p---------n--pp--pppprnbqkb-r"
+        },
+        {
+          "root": 75,
+          "weight": 0.1388416142936767,
+          "true_state": false,
+          "left_value": -0.22192463619888708,
+          "right_value": -0.1915030793054521,
+          "weighted_difference": -0.0042237780684114415,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----------p-pp--pp-prnbqkbnr"
+        },
+        {
+          "root": 18,
+          "weight": 0.003392264132567274,
+          "true_state": false,
+          "left_value": -0.3471006192566611,
+          "right_value": -0.2758337941013463,
+          "weighted_difference": -0.00024175589481631752,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p----p--------p--pppprnbqkbnr"
+        },
+        {
+          "root": 58,
+          "weight": 0.00038525587448919914,
+          "true_state": false,
+          "left_value": 0.01522729557545121,
+          "right_value": -0.40908507626138507,
+          "weighted_difference": 0.0001634688338685866,
+          "board": "R-BQKB-RPPP-PPPP-----N--N--p-------p-p----------pp--p-pprnbqkbnr"
+        }
+      ]
+    }
+  ]
+}

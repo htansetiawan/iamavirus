@@ -1,0 +1,4523 @@
+{
+  "classification": "retrospective same-tree comparison, not a strength test",
+  "actual_selected_move": "d4f4",
+  "ply": 10,
+  "side": "white",
+  "source": "/media/henrytan/seagate/iamavirus/astra/m4-queen-alternatives-20261011",
+  "manifest_sha256": "9fe90ef7ab83c06daf0169b321021a0ac850b65fc430cacceffaf279e491d2a5",
+  "tool_sha256": "535aab026efa4dba597b7b344480e79e28e7a12081cd2d0911085cd702d0cfb9",
+  "probe_sha256": "a428dac9c2d0deb497c25634c44c60d6fc3f0bb5109680ce9cf967edcd7445b1",
+  "trace_sha256": {
+    "a4c3": "bf60990a7baf07d901d289b49cdc6db916f61f89bc3e3094699969d97431cc36",
+    "d4c3": "dadc490f2964357c06679ec4877e87e7a6c5dee154a09cd1ca19bd4d7ef6e05d",
+    "d4d2": "42fdbca3831f874620d3ec45ec7c3df94bac7acc6c9c450b7f9ccf6a7fd80907",
+    "d4f4": "143ecc679ae0a1f7390a8eb5fcb0f9618ccc20efd84d26c448d550b0da5c62f5"
+  },
+  "hypothetical_node_states_checked": 10759,
+  "alternatives": {
+    "a4c3": {
+      "raw_value": -0.3602522656706225,
+      "immediate_king_loss_share": 0.0,
+      "policy_probability": 0.171816064,
+      "execution_probability": 0.0,
+      "roots": 91,
+      "mass": 0.4852687082171649,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 17,
+            "group": 77,
+            "alternate": -0.5680300433420108,
+            "raw": -0.5541899039568174,
+            "cf": 1,
+            "opp": 0.06174568546249765,
+            "own_probability": 0.17181606394259905
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 17,
+            "node": 399,
+            "path": "a4c3",
+            "board": "R-B-KB-RPPP-PPPP--N--N-----Q-------p------n-p---pp---pppr-bqkbnr",
+            "side": 1,
+            "ep": -1,
+            "castle": "8100000000000081",
+            "halfmove": 2,
+            "node_kind": "decision",
+            "infoset": 16,
+            "own_history": "91fce3cd8b362e4a",
+            "raw": -0.9770263217408068,
+            "cf": 0.17181606394259905,
+            "opp": 0.06174568546249765,
+            "probability": 0.17181606394259905,
+            "actions": 38,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 34
+          },
+          "top_replies": [
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 7904,
+              "path": "a4c3/c6d4",
+              "board": "R-B-KB-RPPP-PPPP--N--N-----n-------p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 261,
+              "own_history": "65e5354aa6e5305d",
+              "raw": -0.9770263217408068,
+              "cf": 0.17181606394259905,
+              "opp": 0.06174568546249765,
+              "probability": 1,
+              "actions": 31,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 24
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 7903,
+              "path": "a4c3/c6b4",
+              "board": "R-B-KB-RPPP-PPPP--N--N---n-Q-------p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 260,
+              "own_history": "781ee66aa6cf4fae",
+              "raw": 0.2402128646861803,
+              "cf": 0.17181606394259905,
+              "opp": 0,
+              "probability": 0,
+              "actions": 46,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 45
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 7905,
+              "path": "a4c3/c6a5",
+              "board": "R-B-KB-RPPP-PPPP--N--N-----Q----n--p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 262,
+              "own_history": "fe05023c99b65ed4",
+              "raw": -0.07086920647655207,
+              "cf": 0.17181606394259905,
+              "opp": 0,
+              "probability": 0,
+              "actions": 48,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 47
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 7906,
+              "path": "a4c3/c6e5",
+              "board": "R-B-KB-RPPP-PPPP--N--N-----Q-------pn-------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 1239,
+              "own_history": "3486baa181de9a87",
+              "raw": 0.9691129062420462,
+              "cf": 0.17181606394259905,
+              "opp": 0,
+              "probability": 0,
+              "actions": 46,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 46
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 7907,
+              "path": "a4c3/c6e7",
+              "board": "R-B-KB-RPPP-PPPP--N--N-----Q-------p--------p---pp--npppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "fe05023c99b65ed4",
+              "raw": -0.165950908402399,
+              "cf": 0.17181606394259905,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            }
+          ]
+        }
+      ],
+      "worlds": [
+        {
+          "root": 13,
+          "weight": 0.0,
+          "raw": -0.33107696274849374,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p--------p---p----ppprnbqkbnr"
+        },
+        {
+          "root": 14,
+          "weight": 0.0,
+          "raw": -0.17772731669355304,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 15,
+          "weight": 0.0,
+          "raw": -0.10037525669276412,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 16,
+          "weight": 0.0,
+          "raw": -0.1377061888797066,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "raw": -0.9770263217408068,
+          "weighted_value": -0.12431702050689737,
+          "immediate_king_loss": false,
+          "true_state": true,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 18,
+          "weight": 0.0,
+          "raw": 0.4218990052500079,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-n-pppr-bqkbnr"
+        },
+        {
+          "root": 19,
+          "weight": 0.005307793813657734,
+          "raw": -0.2913126124515909,
+          "weighted_value": -0.0015462272822110272,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-b-ppprn-qkbnr"
+        },
+        {
+          "root": 20,
+          "weight": 0.007273406789353001,
+          "raw": -0.22273535481541296,
+          "weighted_value": -0.0016200448419433741,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p--------p---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 21,
+          "weight": 0.0,
+          "raw": -0.23019822047190802,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------qp---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 22,
+          "weight": 0.0,
+          "raw": -0.19111556499061583,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---ppq--ppprnb-kbnr"
+        },
+        {
+          "root": 23,
+          "weight": 0.0,
+          "raw": 0.9807743917349983,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-q-ppprnb-kbnr"
+        },
+        {
+          "root": 24,
+          "weight": 0.0,
+          "raw": 0.014972952412340028,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--qppprnb-kbnr"
+        },
+        {
+          "root": 25,
+          "weight": 0.0,
+          "raw": -0.0043682691986520195,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-k-ppprnbq-bnr"
+        },
+        {
+          "root": 26,
+          "weight": 0.0,
+          "raw": 0.0374824317570705,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--kppprnbq-bnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "raw": 0.3402994190075464,
+          "weighted_value": 0.014290665839927436,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 28,
+          "weight": 0.0,
+          "raw": -0.31852077690277086,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--bppprnbqk-nr"
+        },
+        {
+          "root": 29,
+          "weight": 0.0,
+          "raw": -0.3430100684508116,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--nppprnbqkb-r"
+        },
+        {
+          "root": 59,
+          "weight": 0.0,
+          "raw": 0.29814092757786337,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p-p----------p---p-pprnbqkbnr"
+        },
+        {
+          "root": 60,
+          "weight": 0.0,
+          "raw": -0.2887622955339214,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 61,
+          "weight": 0.0,
+          "raw": 0.7187237485317317,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 62,
+          "weight": 0.0,
+          "raw": 0.9878803970168316,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 63,
+          "weight": 0.0,
+          "raw": -0.9680303033155948,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----n-----pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 64,
+          "weight": 0.0,
+          "raw": 0.27662541263793206,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-np-ppr-bqkbnr"
+        },
+        {
+          "root": 65,
+          "weight": 0.0,
+          "raw": 0.09007914424241123,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------b---pp--p-pprn-qkbnr"
+        },
+        {
+          "root": 66,
+          "weight": 0.000158672864011418,
+          "raw": 0.6962576726866816,
+          "weighted_value": 0.00011047719901512021,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-bp-pprn-qkbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.00042821558430841087,
+          "raw": 0.19896905637114298,
+          "weighted_value": 8.520165073326213e-05,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p-p----------pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 68,
+          "weight": 0.0,
+          "raw": 0.36315889489141534,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-----q----pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 69,
+          "weight": 0.0,
+          "raw": -0.43315127883418325,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------ppq-p-pprnb-kbnr"
+        },
+        {
+          "root": 70,
+          "weight": 0.0,
+          "raw": -0.2636248354722033,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-qp-pprnb-kbnr"
+        },
+        {
+          "root": 71,
+          "weight": 0.0,
+          "raw": 0.4816174124316279,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-kp-pprnbq-bnr"
+        },
+        {
+          "root": 72,
+          "weight": 0.0,
+          "raw": 0.7922701689754607,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--pkpprnbq-bnr"
+        },
+        {
+          "root": 130,
+          "weight": 0.0,
+          "raw": -0.00407890018806914,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 131,
+          "weight": 0.0,
+          "raw": -0.03242303780904567,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 132,
+          "weight": 0.0,
+          "raw": 0.24042063858342105,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 133,
+          "weight": 0.0,
+          "raw": 0.6174183690381084,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 134,
+          "weight": 0.0,
+          "raw": 0.6106768328168444,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "raw": -0.9704703236174567,
+          "weighted_value": -0.09288699849869542,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 136,
+          "weight": 0.0,
+          "raw": 0.5064821751030004,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 137,
+          "weight": 0.0,
+          "raw": -0.7532197616523815,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 138,
+          "weight": 0.0,
+          "raw": -0.34080231961773716,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "raw": 0.19670292868882322,
+          "weighted_value": 0.0024929098046473025,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "raw": 0.29875107634440984,
+          "weighted_value": 0.01827247843962377,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 141,
+          "weight": 0.0,
+          "raw": 0.8282385907538471,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 142,
+          "weight": 0.0,
+          "raw": 0.32356691733234455,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 143,
+          "weight": 0.0,
+          "raw": 0.581085974051357,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 144,
+          "weight": 0.0,
+          "raw": 0.5423648911116336,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 145,
+          "weight": 0.0,
+          "raw": -0.17033828372089693,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 146,
+          "weight": 0.0,
+          "raw": -0.3668003220628838,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 147,
+          "weight": 0.0,
+          "raw": -0.07378675086867592,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 148,
+          "weight": 0.0,
+          "raw": 0.5614854958242568,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 149,
+          "weight": 0.0,
+          "raw": 0.945760565596474,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 150,
+          "weight": 0.0,
+          "raw": -0.9671502161902397,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 151,
+          "weight": 0.0,
+          "raw": -0.9558073556932596,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 152,
+          "weight": 0.0,
+          "raw": -0.7545427116887795,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 153,
+          "weight": 0.0,
+          "raw": -0.34080231961773716,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 154,
+          "weight": 0.004466223477624316,
+          "raw": -0.03531813476307477,
+          "weighted_value": -0.00015773868266474406,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 155,
+          "weight": 0.003094929138382022,
+          "raw": 0.9386808988813908,
+          "weighted_value": 0.002905150865590645,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 156,
+          "weight": 0.0,
+          "raw": 0.6061452113069661,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 157,
+          "weight": 0.0,
+          "raw": 0.5125911041159782,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 158,
+          "weight": 0.0,
+          "raw": 0.7818063576087741,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 159,
+          "weight": 0.0,
+          "raw": 0.5370495669980353,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 160,
+          "weight": 0.0,
+          "raw": 0.0064907664183181946,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppn-ppppr-bqkbnr"
+        },
+        {
+          "root": 161,
+          "weight": 0.0,
+          "raw": 0.6101025317389367,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp--pppprnbqkbnr"
+        },
+        {
+          "root": 162,
+          "weight": 0.0,
+          "raw": 0.49676344321412846,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p----n-------p---ppppr-bqkbnr"
+        },
+        {
+          "root": 163,
+          "weight": 0.0,
+          "raw": -0.1598768944106556,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 164,
+          "weight": 0.0,
+          "raw": 0.5042582228791403,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 165,
+          "weight": 0.0,
+          "raw": 0.9631337199977802,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 166,
+          "weight": 0.0,
+          "raw": 0.9710285520050661,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--pppp-rbqkbnr"
+        },
+        {
+          "root": 167,
+          "weight": 0.0,
+          "raw": -0.7466274650471207,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b--n-------pp--ppppr--qkbnr"
+        },
+        {
+          "root": 168,
+          "weight": 0.0,
+          "raw": 0.2888966351760598,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---b---pp--ppppr--qkbnr"
+        },
+        {
+          "root": 169,
+          "weight": 0.0,
+          "raw": -0.044274937721644314,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-bppppr--qkbnr"
+        },
+        {
+          "root": 170,
+          "weight": 0.0,
+          "raw": 0.2045723537772613,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p----n-------pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 171,
+          "weight": 0.0,
+          "raw": 0.3884726802160609,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n--q----pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 172,
+          "weight": 0.0,
+          "raw": -0.12189090064943242,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------ppq-ppppr-b-kbnr"
+        },
+        {
+          "root": 173,
+          "weight": 0.0,
+          "raw": 0.30717273590991684,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-qppppr-b-kbnr"
+        },
+        {
+          "root": 174,
+          "weight": 0.0,
+          "raw": 0.5816812695738734,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-kppppr-bq-bnr"
+        },
+        {
+          "root": 175,
+          "weight": 0.0,
+          "raw": 0.3153853090902422,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p---p--------p---ppp-rnbqkbnr"
+        },
+        {
+          "root": 176,
+          "weight": 0.0,
+          "raw": -0.3179163238325148,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 177,
+          "weight": 0.0,
+          "raw": 0.610088546381026,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 178,
+          "weight": 0.0,
+          "raw": 0.8562358530960488,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "raw": -0.9664742397230773,
+          "weighted_value": -0.3358183451656166,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 180,
+          "weight": 0.005003520542270881,
+          "raw": 0.4302270980362635,
+          "weighted_value": 0.0021526501228660328,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-nppp-r-bqkbnr"
+        },
+        {
+          "root": 181,
+          "weight": 0.0,
+          "raw": -0.7625008728761924,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b-p--------pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 182,
+          "weight": 0.0,
+          "raw": -0.451223714292306,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----b---pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "raw": 0.5952229485016899,
+          "weighted_value": 0.1590077758318044,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "raw": -0.15440044746341544,
+          "weighted_value": -0.003223200446801888,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 185,
+          "weight": 0.0,
+          "raw": 0.20680592192774086,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p---q----pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 186,
+          "weight": 0.0,
+          "raw": 0.9512728113694443,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------ppq-ppp-rnb-kbnr"
+        },
+        {
+          "root": 187,
+          "weight": 0.0,
+          "raw": 0.561052323808752,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-qppp-rnb-kbnr"
+        },
+        {
+          "root": 188,
+          "weight": 0.0,
+          "raw": 0.6473576713674395,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-kppp-rnbq-bnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "raw": 0.8566827154106152,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        }
+      ]
+    },
+    "d4c3": {
+      "raw_value": -0.3670238513982665,
+      "immediate_king_loss_share": 0.0,
+      "policy_probability": 0.189116086,
+      "execution_probability": 0.0,
+      "roots": 91,
+      "mass": 0.4852687082171649,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 17,
+            "group": 77,
+            "alternate": -0.5680300433420108,
+            "raw": -0.5541899039568174,
+            "cf": 1,
+            "opp": 0.06174568546249765,
+            "own_probability": 0.18911608562388696
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 17,
+            "node": 404,
+            "path": "d4c3",
+            "board": "R-B-KB-RPPP-PPPP--Q--N--N----------p------n-p---pp---pppr-bqkbnr",
+            "side": 1,
+            "ep": -1,
+            "castle": "8100000000000081",
+            "halfmove": 2,
+            "node_kind": "decision",
+            "infoset": 26,
+            "own_history": "1ef8c725472131d7",
+            "raw": -0.31118953782192865,
+            "cf": 0.18911608562388696,
+            "opp": 0.06174568546249765,
+            "probability": 0.18911608562388696,
+            "actions": 39,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 25
+          },
+          "top_replies": [
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8091,
+              "path": "d4c3/g8f6",
+              "board": "R-B-KB-RPPP-PPPP--Q--N--N----------p------n-pn--pp---pppr-bqkb-r",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 356,
+              "own_history": "1e82f733baf4ccb6",
+              "raw": -0.31118953782192865,
+              "cf": 0.18911608562388696,
+              "opp": 0.06174568546249765,
+              "probability": 1,
+              "actions": 39,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 36
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8055,
+              "path": "d4c3/d5d4",
+              "board": "R-B-KB-RPPP-PPPP--Q--N--N--p--------------n-p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "decision",
+              "infoset": 850,
+              "own_history": "84caa17fc67fb406",
+              "raw": -0.017299599935924833,
+              "cf": 0.18911608562388696,
+              "opp": 0,
+              "probability": 0,
+              "actions": 37,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 37
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8056,
+              "path": "d4c3/c6b4",
+              "board": "R-B-KB-RPPP-PPPP--Q--N--Nn---------p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 269,
+              "own_history": "f07506d1dde30329",
+              "raw": 0.23414115154812268,
+              "cf": 0.18911608562388696,
+              "opp": 0,
+              "probability": 0,
+              "actions": 40,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 40
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8057,
+              "path": "d4c3/c6d4",
+              "board": "R-B-KB-RPPP-PPPP--Q--N--N--n-------p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "6c02a8346a742fa4",
+              "raw": 0.9652433350320649,
+              "cf": 0.18911608562388696,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8058,
+              "path": "d4c3/c6a5",
+              "board": "R-B-KB-RPPP-PPPP--Q--N--N-------n--p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 942,
+              "own_history": "8846ca2542730fd6",
+              "raw": 0.2260283522786709,
+              "cf": 0.18911608562388696,
+              "opp": 0,
+              "probability": 0,
+              "actions": 42,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 42
+            }
+          ]
+        }
+      ],
+      "worlds": [
+        {
+          "root": 13,
+          "weight": 0.0,
+          "raw": -0.6917989751488618,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p--------p---p----ppprnbqkbnr"
+        },
+        {
+          "root": 14,
+          "weight": 0.0,
+          "raw": -0.46604029847771505,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 15,
+          "weight": 0.0,
+          "raw": -0.1200167649169554,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 16,
+          "weight": 0.0,
+          "raw": -0.5849798828807289,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "raw": -0.31118953782192865,
+          "weighted_value": -0.039595817731923486,
+          "immediate_king_loss": false,
+          "true_state": true,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 18,
+          "weight": 0.0,
+          "raw": -0.5679292286009072,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-n-pppr-bqkbnr"
+        },
+        {
+          "root": 19,
+          "weight": 0.005307793813657734,
+          "raw": -0.6082697781752648,
+          "weighted_value": -0.003228570565633633,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-b-ppprn-qkbnr"
+        },
+        {
+          "root": 20,
+          "weight": 0.007273406789353001,
+          "raw": -0.8169241874133502,
+          "weighted_value": -0.005941821931118944,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p--------p---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 21,
+          "weight": 0.0,
+          "raw": 0.04995837495787997,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------qp---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 22,
+          "weight": 0.0,
+          "raw": -0.338590805554892,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---ppq--ppprnb-kbnr"
+        },
+        {
+          "root": 23,
+          "weight": 0.0,
+          "raw": -0.2922964111894975,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-q-ppprnb-kbnr"
+        },
+        {
+          "root": 24,
+          "weight": 0.0,
+          "raw": -0.3363755443363322,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--qppprnb-kbnr"
+        },
+        {
+          "root": 25,
+          "weight": 0.0,
+          "raw": 0.9643791367189491,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-k-ppprnbq-bnr"
+        },
+        {
+          "root": 26,
+          "weight": 0.0,
+          "raw": 0.13657114820790567,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--kppprnbq-bnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "raw": -0.34588796961596635,
+          "weighted_value": -0.014525353602567083,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 28,
+          "weight": 0.0,
+          "raw": -0.2996573755600411,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--bppprnbqk-nr"
+        },
+        {
+          "root": 29,
+          "weight": 0.0,
+          "raw": -0.5370495669980353,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--nppprnbqkb-r"
+        },
+        {
+          "root": 59,
+          "weight": 0.0,
+          "raw": -0.8692493331488548,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p-p----------p---p-pprnbqkbnr"
+        },
+        {
+          "root": 60,
+          "weight": 0.0,
+          "raw": 0.08975778474716012,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 61,
+          "weight": 0.0,
+          "raw": -0.013781005794700289,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 62,
+          "weight": 0.0,
+          "raw": -0.2445531297567427,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 63,
+          "weight": 0.0,
+          "raw": -0.11909289188763805,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----n-----pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 64,
+          "weight": 0.0,
+          "raw": -0.39059333869513074,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-np-ppr-bqkbnr"
+        },
+        {
+          "root": 65,
+          "weight": 0.0,
+          "raw": -0.11545707609622018,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------b---pp--p-pprn-qkbnr"
+        },
+        {
+          "root": 66,
+          "weight": 0.000158672864011418,
+          "raw": -0.9121203692077173,
+          "weighted_value": -0.0001447287513053405,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-bp-pprn-qkbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.00042821558430841087,
+          "raw": -0.09471523628617856,
+          "weighted_value": -4.055854024919515e-05,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p-p----------pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 68,
+          "weight": 0.0,
+          "raw": 0.32524367434016505,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-----q----pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 69,
+          "weight": 0.0,
+          "raw": -0.10461581914865054,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------ppq-p-pprnb-kbnr"
+        },
+        {
+          "root": 70,
+          "weight": 0.0,
+          "raw": -0.3863478986519003,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-qp-pprnb-kbnr"
+        },
+        {
+          "root": 71,
+          "weight": 0.0,
+          "raw": -0.10214253861468392,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-kp-pprnbq-bnr"
+        },
+        {
+          "root": 72,
+          "weight": 0.0,
+          "raw": -0.11696222487632274,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--pkpprnbq-bnr"
+        },
+        {
+          "root": 130,
+          "weight": 0.0,
+          "raw": -0.7253049867827347,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 131,
+          "weight": 0.0,
+          "raw": -0.39270985964766825,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 132,
+          "weight": 0.0,
+          "raw": -0.39693043200507755,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 133,
+          "weight": 0.0,
+          "raw": 0.20217575769673957,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 134,
+          "weight": 0.0,
+          "raw": -0.2288385933776284,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "raw": -0.08356787963372665,
+          "weighted_value": -0.007998564532239034,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 136,
+          "weight": 0.0,
+          "raw": 0.013608359727427192,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 137,
+          "weight": 0.0,
+          "raw": 0.9505546004392487,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 138,
+          "weight": 0.0,
+          "raw": -0.22839928555379033,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "raw": -0.883719698991578,
+          "weighted_value": -0.011199800210708532,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "raw": 0.08085343612103287,
+          "weighted_value": 0.004945229608437913,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 141,
+          "weight": 0.0,
+          "raw": -0.34924028002306734,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 142,
+          "weight": 0.0,
+          "raw": -0.24491866240370913,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 143,
+          "weight": 0.0,
+          "raw": 0.17080913825893018,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 144,
+          "weight": 0.0,
+          "raw": 0.270102228110162,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 145,
+          "weight": 0.0,
+          "raw": -0.7597668427022533,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 146,
+          "weight": 0.0,
+          "raw": -0.36153582333788203,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 147,
+          "weight": 0.0,
+          "raw": -0.17767845904787044,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 148,
+          "weight": 0.0,
+          "raw": -0.004999958333749999,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 149,
+          "weight": 0.0,
+          "raw": -0.39482222879176454,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 150,
+          "weight": 0.0,
+          "raw": -0.4442392116987145,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 151,
+          "weight": 0.0,
+          "raw": -0.2636248354722033,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 152,
+          "weight": 0.0,
+          "raw": 0.21413397614340712,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 153,
+          "weight": 0.0,
+          "raw": -0.0789130115575408,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 154,
+          "weight": 0.004466223477624316,
+          "raw": -0.49109322825280527,
+          "weighted_value": -0.002193332105724996,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 155,
+          "weight": 0.003094929138382022,
+          "raw": -0.054944608689187435,
+          "weighted_value": -0.00017004967042916425,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 156,
+          "weight": 0.0,
+          "raw": -0.6007391117591543,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 157,
+          "weight": 0.0,
+          "raw": -0.22602835227867096,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 158,
+          "weight": 0.0,
+          "raw": -0.3627074675780511,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 159,
+          "weight": 0.0,
+          "raw": -0.24491866240370913,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 160,
+          "weight": 0.0,
+          "raw": -0.3207653461584322,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppn-ppppr-bqkbnr"
+        },
+        {
+          "root": 161,
+          "weight": 0.0,
+          "raw": -0.29481534597425346,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp--pppprnbqkbnr"
+        },
+        {
+          "root": 162,
+          "weight": 0.0,
+          "raw": -0.8798266996519848,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p----n-------p---ppppr-bqkbnr"
+        },
+        {
+          "root": 163,
+          "weight": 0.0,
+          "raw": -0.4640810036832635,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 164,
+          "weight": 0.0,
+          "raw": -0.3027097293321085,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 165,
+          "weight": 0.0,
+          "raw": -0.36704178747263133,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 166,
+          "weight": 0.0,
+          "raw": -0.5669496159698978,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--pppp-rbqkbnr"
+        },
+        {
+          "root": 167,
+          "weight": 0.0,
+          "raw": -0.6202731259498296,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b--n-------pp--ppppr--qkbnr"
+        },
+        {
+          "root": 168,
+          "weight": 0.0,
+          "raw": -0.1805005038603668,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---b---pp--ppppr--qkbnr"
+        },
+        {
+          "root": 169,
+          "weight": 0.0,
+          "raw": -0.6153583568455541,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-bppppr--qkbnr"
+        },
+        {
+          "root": 170,
+          "weight": 0.0,
+          "raw": -0.9034386542836481,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p----n-------pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 171,
+          "weight": 0.0,
+          "raw": -0.4414687851199295,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n--q----pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 172,
+          "weight": 0.0,
+          "raw": -0.5350970244986588,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------ppq-ppppr-b-kbnr"
+        },
+        {
+          "root": 173,
+          "weight": 0.0,
+          "raw": 0.22839928555379035,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-qppppr-b-kbnr"
+        },
+        {
+          "root": 174,
+          "weight": 0.0,
+          "raw": -0.25429553262639115,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-kppppr-bq-bnr"
+        },
+        {
+          "root": 175,
+          "weight": 0.0,
+          "raw": -0.9475772098867019,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p---p--------p---ppp-rnbqkbnr"
+        },
+        {
+          "root": 176,
+          "weight": 0.0,
+          "raw": -0.501708468746132,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 177,
+          "weight": 0.0,
+          "raw": -0.20935816942801871,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 178,
+          "weight": 0.0,
+          "raw": -0.26028210360336335,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "raw": -0.3927421221766112,
+          "weighted_value": -0.13646510597527386,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 180,
+          "weight": 0.005003520542270881,
+          "raw": -0.3432321611270892,
+          "weighted_value": -0.0017173691689674198,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-nppp-r-bqkbnr"
+        },
+        {
+          "root": 181,
+          "weight": 0.0,
+          "raw": 0.018884769843131918,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b-p--------pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 182,
+          "weight": 0.0,
+          "raw": -0.17323515783466012,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----b---pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "raw": -0.549609122575697,
+          "weighted_value": -0.14682250470620595,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "raw": -0.09223708209155929,
+          "weighted_value": -0.0019255035143577548,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 185,
+          "weight": 0.0,
+          "raw": -0.32747739480870536,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p---q----pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 186,
+          "weight": 0.0,
+          "raw": 0.00836674716897896,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------ppq-ppp-rnb-kbnr"
+        },
+        {
+          "root": 187,
+          "weight": 0.0,
+          "raw": 0.08024748309986689,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-qppp-rnb-kbnr"
+        },
+        {
+          "root": 188,
+          "weight": 0.0,
+          "raw": 0.18533319990813946,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-kppp-rnbq-bnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "raw": -0.18476848667206097,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        }
+      ]
+    },
+    "d4d2": {
+      "raw_value": -0.36975804442203836,
+      "immediate_king_loss_share": 0.0,
+      "policy_probability": 0.0114960127,
+      "execution_probability": 0.0,
+      "roots": 91,
+      "mass": 0.4852687082171649,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 17,
+            "group": 77,
+            "alternate": -0.5680300433420108,
+            "raw": -0.5541899039568174,
+            "cf": 1,
+            "opp": 0.06174568546249765,
+            "own_probability": 0.01149601268335729
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 17,
+            "node": 403,
+            "path": "d4d2",
+            "board": "R-B-KB-RPPPQPPPP-----N--N----------p------n-p---pp---pppr-bqkbnr",
+            "side": 1,
+            "ep": -1,
+            "castle": "8100000000000081",
+            "halfmove": 2,
+            "node_kind": "decision",
+            "infoset": 26,
+            "own_history": "0ef7ebf119ff40ca",
+            "raw": -0.1805005038603668,
+            "cf": 0.01149601268335729,
+            "opp": 0.06174568546249765,
+            "probability": 0.01149601268335729,
+            "actions": 39,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 25
+          },
+          "top_replies": [
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8052,
+              "path": "d4d2/g8f6",
+              "board": "R-B-KB-RPPPQPPPP-----N--N----------p------n-pn--pp---pppr-bqkb-r",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 267,
+              "own_history": "e4f9c549096e5664",
+              "raw": -0.1805005038603668,
+              "cf": 0.01149601268335729,
+              "opp": 0.06174568546249765,
+              "probability": 1,
+              "actions": 33,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 27
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8016,
+              "path": "d4d2/d5d4",
+              "board": "R-B-KB-RPPPQPPPP-----N--N--p--------------n-p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "4e193fad6a2ddb3b",
+              "raw": -0.3778078359539094,
+              "cf": 0.01149601268335729,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8017,
+              "path": "d4d2/c6b4",
+              "board": "R-B-KB-RPPPQPPPP-----N--Nn---------p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 610,
+              "own_history": "86d34e9fdc958c72",
+              "raw": 0.1214488149417697,
+              "cf": 0.01149601268335729,
+              "opp": 0,
+              "probability": 0,
+              "actions": 31,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 30
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8018,
+              "path": "d4d2/c6d4",
+              "board": "R-B-KB-RPPPQPPPP-----N--N--n-------p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "6fa02b09f7fd56ab",
+              "raw": 0.9652433350320649,
+              "cf": 0.01149601268335729,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8019,
+              "path": "d4d2/c6a5",
+              "board": "R-B-KB-RPPPQPPPP-----N--N-------n--p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "d47357405626d7ea",
+              "raw": -0.2589662239347898,
+              "cf": 0.01149601268335729,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            }
+          ]
+        }
+      ],
+      "worlds": [
+        {
+          "root": 13,
+          "weight": 0.0,
+          "raw": -0.9393305226323236,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p--------p---p----ppprnbqkbnr"
+        },
+        {
+          "root": 14,
+          "weight": 0.0,
+          "raw": 0.007499859378163998,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 15,
+          "weight": 0.0,
+          "raw": 0.13173000579096328,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 16,
+          "weight": 0.0,
+          "raw": 0.14888503362331795,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "raw": -0.1805005038603668,
+          "weighted_value": -0.02296691945815089,
+          "immediate_king_loss": false,
+          "true_state": true,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 18,
+          "weight": 0.0,
+          "raw": 0.09719221716626869,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-n-pppr-bqkbnr"
+        },
+        {
+          "root": 19,
+          "weight": 0.005307793813657734,
+          "raw": -0.45217956469511394,
+          "weighted_value": -0.002400075896151173,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-b-ppprn-qkbnr"
+        },
+        {
+          "root": 20,
+          "weight": 0.007273406789353001,
+          "raw": -0.9825880221410839,
+          "weighted_value": -0.007146762391377896,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p--------p---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 21,
+          "weight": 0.0,
+          "raw": 0.11202778108923989,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------qp---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 22,
+          "weight": 0.0,
+          "raw": -0.5763105321099826,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---ppq--ppprnb-kbnr"
+        },
+        {
+          "root": 23,
+          "weight": 0.0,
+          "raw": 0.21651806149302888,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-q-ppprnb-kbnr"
+        },
+        {
+          "root": 24,
+          "weight": 0.0,
+          "raw": -0.3692030006468615,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--qppprnb-kbnr"
+        },
+        {
+          "root": 25,
+          "weight": 0.0,
+          "raw": 0.9624029719005225,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-k-ppprnbq-bnr"
+        },
+        {
+          "root": 26,
+          "weight": 0.0,
+          "raw": 0.1479838639440306,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--kppprnbq-bnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "raw": 0.018348184005548038,
+          "weighted_value": 0.0007705207583295158,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 28,
+          "weight": 0.0,
+          "raw": 0.15864850429749894,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--bppprnbqk-nr"
+        },
+        {
+          "root": 29,
+          "weight": 0.0,
+          "raw": -0.4601487679622377,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--nppprnbqkb-r"
+        },
+        {
+          "root": 59,
+          "weight": 0.0,
+          "raw": -0.9170257613966083,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p-p----------p---p-pprnbqkbnr"
+        },
+        {
+          "root": 60,
+          "weight": 0.0,
+          "raw": -0.49298796667532435,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 61,
+          "weight": 0.0,
+          "raw": -0.19237384476505845,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 62,
+          "weight": 0.0,
+          "raw": -0.3360033368710411,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 63,
+          "weight": 0.0,
+          "raw": -0.08588962727845302,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----n-----pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 64,
+          "weight": 0.0,
+          "raw": 0.17808086811733015,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-np-ppr-bqkbnr"
+        },
+        {
+          "root": 65,
+          "weight": 0.0,
+          "raw": -0.17003131511884975,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------b---pp--p-pprn-qkbnr"
+        },
+        {
+          "root": 66,
+          "weight": 0.000158672864011418,
+          "raw": -0.9553120479939317,
+          "weighted_value": -0.00015158209867981035,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-bp-pprn-qkbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.00042821558430841087,
+          "raw": -0.831352607157051,
+          "weighted_value": -0.0003559981424400773,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p-p----------pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 68,
+          "weight": 0.0,
+          "raw": 0.1949715316540322,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-----q----pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 69,
+          "weight": 0.0,
+          "raw": -0.4723685871733231,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------ppq-p-pprnb-kbnr"
+        },
+        {
+          "root": 70,
+          "weight": 0.0,
+          "raw": -0.8826196500158177,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-qp-pprnb-kbnr"
+        },
+        {
+          "root": 71,
+          "weight": 0.0,
+          "raw": 0.7476036243586327,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-kp-pprnbq-bnr"
+        },
+        {
+          "root": 72,
+          "weight": 0.0,
+          "raw": -0.20696649972945258,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--pkpprnbq-bnr"
+        },
+        {
+          "root": 130,
+          "weight": 0.0,
+          "raw": -0.83864709797366,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 131,
+          "weight": 0.0,
+          "raw": -0.39270985964766825,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 132,
+          "weight": 0.0,
+          "raw": -0.33193385350364046,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 133,
+          "weight": 0.0,
+          "raw": 0.165950908402399,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 134,
+          "weight": 0.0,
+          "raw": -0.3092212485800979,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "raw": -0.07982976911113138,
+          "weighted_value": -0.007640777325304169,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 136,
+          "weight": 0.0,
+          "raw": -0.007499859378163998,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 137,
+          "weight": 0.0,
+          "raw": 0.12189090064943242,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 138,
+          "weight": 0.0,
+          "raw": 0.26129705130214903,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "raw": -0.8562377650230303,
+          "weighted_value": -0.010851508585883553,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "raw": -0.8336546070121551,
+          "weighted_value": -0.05098872284952578,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 141,
+          "weight": 0.0,
+          "raw": -0.3502731474946226,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 142,
+          "weight": 0.0,
+          "raw": -0.43008421140197944,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 143,
+          "weight": 0.0,
+          "raw": -0.9051482536448664,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 144,
+          "weight": 0.0,
+          "raw": 0.7340715196043416,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 145,
+          "weight": 0.0,
+          "raw": -0.8351733637441744,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 146,
+          "weight": 0.0,
+          "raw": -0.3705942933616925,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 147,
+          "weight": 0.0,
+          "raw": -0.1591801627900002,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 148,
+          "weight": 0.0,
+          "raw": 0.21651806149302882,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 149,
+          "weight": 0.0,
+          "raw": -0.3341565541912505,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 150,
+          "weight": 0.0,
+          "raw": 0.09719221716626869,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 151,
+          "weight": 0.0,
+          "raw": 0.36270746757805106,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 152,
+          "weight": 0.0,
+          "raw": 0.190156947732268,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 153,
+          "weight": 0.0,
+          "raw": 0.21651806149302888,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 154,
+          "weight": 0.004466223477624316,
+          "raw": 0.20935816942801871,
+          "weighted_value": 0.0009350403715318665,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 155,
+          "weight": 0.003094929138382022,
+          "raw": -0.9081407189902939,
+          "weighted_value": -0.0028106311729542604,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 156,
+          "weight": 0.0,
+          "raw": -0.2566323765907325,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 157,
+          "weight": 0.0,
+          "raw": 0.16351875368367252,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 158,
+          "weight": 0.0,
+          "raw": -0.36704178747263133,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 159,
+          "weight": 0.0,
+          "raw": -0.2935987851159713,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 160,
+          "weight": 0.0,
+          "raw": 0.029991003238820146,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppn-ppppr-bqkbnr"
+        },
+        {
+          "root": 161,
+          "weight": 0.0,
+          "raw": -0.35102707316003684,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp--pppprnbqkbnr"
+        },
+        {
+          "root": 162,
+          "weight": 0.0,
+          "raw": -0.7593145996834514,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p----n-------p---ppppr-bqkbnr"
+        },
+        {
+          "root": 163,
+          "weight": 0.0,
+          "raw": 0.23088356367508212,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 164,
+          "weight": 0.0,
+          "raw": -0.33193385350364046,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 165,
+          "weight": 0.0,
+          "raw": -0.38208602483144566,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 166,
+          "weight": 0.0,
+          "raw": -0.39270985964766825,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--pppp-rbqkbnr"
+        },
+        {
+          "root": 167,
+          "weight": 0.0,
+          "raw": 0.027493069804709835,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b--n-------pp--ppppr--qkbnr"
+        },
+        {
+          "root": 168,
+          "weight": 0.0,
+          "raw": -0.21651806149302885,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---b---pp--ppppr--qkbnr"
+        },
+        {
+          "root": 169,
+          "weight": 0.0,
+          "raw": -0.44223035604572614,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-bppppr--qkbnr"
+        },
+        {
+          "root": 170,
+          "weight": 0.0,
+          "raw": -0.9434748952667027,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p----n-------pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 171,
+          "weight": 0.0,
+          "raw": 0.11202778108923989,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n--q----pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 172,
+          "weight": 0.0,
+          "raw": 0.02749306980470989,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------ppq-ppppr-b-kbnr"
+        },
+        {
+          "root": 173,
+          "weight": 0.0,
+          "raw": -0.4136444421871352,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-qppppr-b-kbnr"
+        },
+        {
+          "root": 174,
+          "weight": 0.0,
+          "raw": 0.3430100684508116,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-kppppr-bq-bnr"
+        },
+        {
+          "root": 175,
+          "weight": 0.0,
+          "raw": -0.8564312326705011,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p---p--------p---ppp-rnbqkbnr"
+        },
+        {
+          "root": 176,
+          "weight": 0.0,
+          "raw": 0.13173000579096333,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 177,
+          "weight": 0.0,
+          "raw": -0.2958816041613005,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 178,
+          "weight": 0.0,
+          "raw": -0.31130102571744195,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "raw": -0.33943096458693467,
+          "weighted_value": -0.11794121368223327,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 180,
+          "weight": 0.005003520542270881,
+          "raw": 0.32982553509814094,
+          "weighted_value": 0.0016502888402290337,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-nppp-r-bqkbnr"
+        },
+        {
+          "root": 181,
+          "weight": 0.0,
+          "raw": 0.028611696254665198,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b-p--------pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 182,
+          "weight": 0.0,
+          "raw": 0.1805005038603668,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----b---pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "raw": -0.49425859699054314,
+          "weighted_value": -0.13203617298534198,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "raw": -0.8537976531552436,
+          "weighted_value": -0.0178235298040859,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 185,
+          "weight": 0.0,
+          "raw": 0.16595090840239907,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p---q----pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 186,
+          "weight": 0.0,
+          "raw": 0.09966799462495579,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------ppq-ppp-rnb-kbnr"
+        },
+        {
+          "root": 187,
+          "weight": 0.0,
+          "raw": -0.5441270988535674,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-qppp-rnb-kbnr"
+        },
+        {
+          "root": 188,
+          "weight": 0.0,
+          "raw": 0.7175129851098501,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-kppp-rnbq-bnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "raw": -0.01249934899902086,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        }
+      ]
+    },
+    "d4f4": {
+      "raw_value": -0.3852220295351495,
+      "immediate_king_loss_share": 0.09283502896354481,
+      "policy_probability": 0.463422996,
+      "execution_probability": 1.0,
+      "roots": 91,
+      "mass": 0.4852687082171649,
+      "true_roots": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 17,
+            "group": 77,
+            "alternate": -0.5680300433420108,
+            "raw": -0.5541899039568174,
+            "cf": 1,
+            "opp": 0.06174568546249765,
+            "own_probability": 0.46342299567835077
+          },
+          "selected_action": {
+            "kind": "node",
+            "root": 17,
+            "node": 410,
+            "path": "d4f4",
+            "board": "R-B-KB-RPPP-PPPP-----N--N----Q-----p------n-p---pp---pppr-bqkbnr",
+            "side": 1,
+            "ep": -1,
+            "castle": "8100000000000081",
+            "halfmove": 2,
+            "node_kind": "decision",
+            "infoset": 26,
+            "own_history": "489d1625b73f20cf",
+            "raw": -0.6342292159666165,
+            "cf": 0.46342299567835077,
+            "opp": 0.06174568546249765,
+            "probability": 0.46342299567835077,
+            "actions": 39,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 18
+          },
+          "top_replies": [
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8286,
+              "path": "d4f4/g8f6",
+              "board": "R-B-KB-RPPP-PPPP-----N--N----Q-----p------n-pn--pp---pppr-bqkb-r",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 277,
+              "own_history": "109f9ebd039645ad",
+              "raw": -0.6342292159666165,
+              "cf": 0.46342299567835077,
+              "opp": 0.06174568546249765,
+              "probability": 1,
+              "actions": 43,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 36
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8250,
+              "path": "d4f4/d5d4",
+              "board": "R-B-KB-RPPP-PPPP-----N--N--p-Q------------n-p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 0,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "d08bd06e0e1a6be6",
+              "raw": -0.41571454284896264,
+              "cf": 0.46342299567835077,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8251,
+              "path": "d4f4/c6b4",
+              "board": "R-B-KB-RPPP-PPPP-----N--Nn---Q-----p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "1a3ffa6ac51ecacd",
+              "raw": -0.6923732720415865,
+              "cf": 0.46342299567835077,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8252,
+              "path": "d4f4/c6d4",
+              "board": "R-B-KB-RPPP-PPPP-----N--N--n-Q-----p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "decision",
+              "infoset": 849,
+              "own_history": "3a01172f63873041",
+              "raw": 0.9691129062420462,
+              "cf": 0.46342299567835077,
+              "opp": 0,
+              "probability": 0,
+              "actions": 42,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 42
+            },
+            {
+              "kind": "node",
+              "root": 17,
+              "node": 8253,
+              "path": "d4f4/c6a5",
+              "board": "R-B-KB-RPPP-PPPP-----N--N----Q--n--p--------p---pp---pppr-bqkbnr",
+              "side": 0,
+              "ep": -1,
+              "castle": "8100000000000081",
+              "halfmove": 3,
+              "node_kind": "frontier",
+              "infoset": -1,
+              "own_history": "299cff848c8431d9",
+              "raw": -0.22602835227867096,
+              "cf": 0.46342299567835077,
+              "opp": 0,
+              "probability": 0,
+              "actions": 0,
+              "terminal_children": 0,
+              "loss_children": 0,
+              "frontier_children": 0
+            }
+          ]
+        }
+      ],
+      "worlds": [
+        {
+          "root": 13,
+          "weight": 0.0,
+          "raw": -0.9499247470998885,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p--------p---p----ppprnbqkbnr"
+        },
+        {
+          "root": 14,
+          "weight": 0.0,
+          "raw": -0.38847268021606096,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 15,
+          "weight": 0.0,
+          "raw": -0.3162348048676332,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 16,
+          "weight": 0.0,
+          "raw": -0.4948780404403998,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "raw": -0.6342292159666165,
+          "weighted_value": -0.0806994496390979,
+          "immediate_king_loss": false,
+          "true_state": true,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 18,
+          "weight": 0.0,
+          "raw": -0.4218990052500079,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-n-pppr-bqkbnr"
+        },
+        {
+          "root": 19,
+          "weight": 0.005307793813657734,
+          "raw": -0.5225998896069877,
+          "weighted_value": -0.002773852461074184,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-b-ppprn-qkbnr"
+        },
+        {
+          "root": 20,
+          "weight": 0.007273406789353001,
+          "raw": -1,
+          "weighted_value": -0.007273406789353001,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p--------p---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 21,
+          "weight": 0.0,
+          "raw": -0.27967192575962757,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------qp---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 22,
+          "weight": 0.0,
+          "raw": -0.1970713376558925,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---ppq--ppprnb-kbnr"
+        },
+        {
+          "root": 23,
+          "weight": 0.0,
+          "raw": -0.5542199167744707,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-q-ppprnb-kbnr"
+        },
+        {
+          "root": 24,
+          "weight": 0.0,
+          "raw": -0.35617649910325494,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--qppprnb-kbnr"
+        },
+        {
+          "root": 25,
+          "weight": 0.0,
+          "raw": -0.8194037105941603,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-k-ppprnbq-bnr"
+        },
+        {
+          "root": 26,
+          "weight": 0.0,
+          "raw": -0.26459265929607567,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--kppprnbq-bnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "raw": -0.973479494777761,
+          "weighted_value": -0.04088067561931943,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 28,
+          "weight": 0.0,
+          "raw": -0.47315528707517496,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--bppprnbqk-nr"
+        },
+        {
+          "root": 29,
+          "weight": 0.0,
+          "raw": -0.43819931483276775,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp--nppprnbqkb-r"
+        },
+        {
+          "root": 59,
+          "weight": 0.0,
+          "raw": -0.3230063184059049,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p-p----------p---p-pprnbqkbnr"
+        },
+        {
+          "root": 60,
+          "weight": 0.0,
+          "raw": -0.39482222879176454,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------p---pp----pprnbqkbnr"
+        },
+        {
+          "root": 61,
+          "weight": 0.0,
+          "raw": -0.30724466179900806,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 62,
+          "weight": 0.0,
+          "raw": -0.20586700050213297,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 63,
+          "weight": 0.0,
+          "raw": -0.12225052712140609,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----n-----pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 64,
+          "weight": 0.0,
+          "raw": -0.16703185885585442,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-np-ppr-bqkbnr"
+        },
+        {
+          "root": 65,
+          "weight": 0.0,
+          "raw": -0.1369186380454635,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p------b---pp--p-pprn-qkbnr"
+        },
+        {
+          "root": 66,
+          "weight": 0.000158672864011418,
+          "raw": -0.338590805554892,
+          "weighted_value": -5.372517284532785e-05,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-bp-pprn-qkbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.00042821558430841087,
+          "raw": -1,
+          "weighted_value": -0.00042821558430841087,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p-p----------pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 68,
+          "weight": 0.0,
+          "raw": -0.17565907696502286,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-----q----pp--p-pprnb-kbnr"
+        },
+        {
+          "root": 69,
+          "weight": 0.0,
+          "raw": -0.04995837495787997,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------ppq-p-pprnb-kbnr"
+        },
+        {
+          "root": 70,
+          "weight": 0.0,
+          "raw": -0.2958816041613005,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-qp-pprnb-kbnr"
+        },
+        {
+          "root": 71,
+          "weight": 0.0,
+          "raw": 0.1537705222640926,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-kp-pprnbq-bnr"
+        },
+        {
+          "root": 72,
+          "weight": 0.0,
+          "raw": -0.004999958333749999,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--pkpprnbq-bnr"
+        },
+        {
+          "root": 130,
+          "weight": 0.0,
+          "raw": -0.8366794890768107,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 131,
+          "weight": 0.0,
+          "raw": -0.38421900860357633,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 132,
+          "weight": 0.0,
+          "raw": -0.37270907032264616,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 133,
+          "weight": 0.0,
+          "raw": -0.39059333869513074,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 134,
+          "weight": 0.0,
+          "raw": -0.2589633747312054,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "raw": -0.5968767319457047,
+          "weighted_value": -0.0571290916938963,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 136,
+          "weight": 0.0,
+          "raw": -0.38421900860357633,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 137,
+          "weight": 0.0,
+          "raw": -0.9673950012571181,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 138,
+          "weight": 0.0,
+          "raw": -0.2325785223674765,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "raw": -0.10955847021442955,
+          "weighted_value": -0.0013884866199006913,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "raw": -1,
+          "weighted_value": -0.06116288738842457,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 141,
+          "weight": 0.0,
+          "raw": -0.11202778108923989,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 142,
+          "weight": 0.0,
+          "raw": 0.14154322378898343,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 143,
+          "weight": 0.0,
+          "raw": -0.2619601008492553,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 144,
+          "weight": 0.0,
+          "raw": 0.3893249980321265,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 145,
+          "weight": 0.0,
+          "raw": -0.6975434949818515,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p------------p---pppprnbqkbnr"
+        },
+        {
+          "root": 146,
+          "weight": 0.0,
+          "raw": -0.39033698624246427,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp---ppprnbqkbnr"
+        },
+        {
+          "root": 147,
+          "weight": 0.0,
+          "raw": -0.14044627837387344,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp--p-pprnbqkbnr"
+        },
+        {
+          "root": 148,
+          "weight": 0.0,
+          "raw": -0.41984183666890645,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppp-rnbqkbnr"
+        },
+        {
+          "root": 149,
+          "weight": 0.0,
+          "raw": -0.3230063184059049,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 150,
+          "weight": 0.0,
+          "raw": -0.40949139599618206,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 151,
+          "weight": 0.0,
+          "raw": -0.21413397614340712,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-nppppr-bqkbnr"
+        },
+        {
+          "root": 152,
+          "weight": 0.0,
+          "raw": -1,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b----------pp--pppprn-qkbnr"
+        },
+        {
+          "root": 153,
+          "weight": 0.0,
+          "raw": -0.2584591334567923,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------b---pp--pppprn-qkbnr"
+        },
+        {
+          "root": 154,
+          "weight": 0.004466223477624316,
+          "raw": -0.39059333869513074,
+          "weighted_value": -0.001744477139483859,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 155,
+          "weight": 0.003094929138382022,
+          "raw": -1,
+          "weighted_value": -0.003094929138382022,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 156,
+          "weight": 0.0,
+          "raw": -0.23076751278236435,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------q----pp--pppprnb-kbnr"
+        },
+        {
+          "root": 157,
+          "weight": 0.0,
+          "raw": -0.08479588154870199,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppq-pppprnb-kbnr"
+        },
+        {
+          "root": 158,
+          "weight": 0.0,
+          "raw": -0.22602835227867096,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-qpppprnb-kbnr"
+        },
+        {
+          "root": 159,
+          "weight": 0.0,
+          "raw": 0.19562326241821762,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-kpppprnbq-bnr"
+        },
+        {
+          "root": 160,
+          "weight": 0.0,
+          "raw": -0.2798321934754683,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------ppn-ppppr-bqkbnr"
+        },
+        {
+          "root": 161,
+          "weight": 0.0,
+          "raw": -0.3190532577461108,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp--pppprnbqkbnr"
+        },
+        {
+          "root": 162,
+          "weight": 0.0,
+          "raw": -0.5665993699780817,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p----n-------p---ppppr-bqkbnr"
+        },
+        {
+          "root": 163,
+          "weight": 0.0,
+          "raw": -0.6923732720415865,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 164,
+          "weight": 0.0,
+          "raw": -0.35399171247704597,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p--n-------pp--p-ppr-bqkbnr"
+        },
+        {
+          "root": 165,
+          "weight": 0.0,
+          "raw": -0.3207653461584322,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 166,
+          "weight": 0.0,
+          "raw": -0.3391258182158295,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp--pppp-rbqkbnr"
+        },
+        {
+          "root": 167,
+          "weight": 0.0,
+          "raw": -0.42600032550456335,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b--n-------pp--ppppr--qkbnr"
+        },
+        {
+          "root": 168,
+          "weight": 0.0,
+          "raw": -0.22602835227867096,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n---b---pp--ppppr--qkbnr"
+        },
+        {
+          "root": 169,
+          "weight": 0.0,
+          "raw": -0.5931422541818654,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-bppppr--qkbnr"
+        },
+        {
+          "root": 170,
+          "weight": 0.0,
+          "raw": -1,
+          "weighted_value": -0.0,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p----n-------pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 171,
+          "weight": 0.0,
+          "raw": -0.08377016669256698,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n--q----pp--ppppr-b-kbnr"
+        },
+        {
+          "root": 172,
+          "weight": 0.0,
+          "raw": -0.15864850429749888,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------ppq-ppppr-b-kbnr"
+        },
+        {
+          "root": 173,
+          "weight": 0.0,
+          "raw": -0.6804760061126619,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-qppppr-b-kbnr"
+        },
+        {
+          "root": 174,
+          "weight": 0.0,
+          "raw": 0.3925998934969635,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p----n-------pp-kppppr-bq-bnr"
+        },
+        {
+          "root": 175,
+          "weight": 0.0,
+          "raw": -0.8218529445288736,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-----p-p---p--------p---ppp-rnbqkbnr"
+        },
+        {
+          "root": 176,
+          "weight": 0.0,
+          "raw": -0.5368105154300346,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----p---pp---pp-rnbqkbnr"
+        },
+        {
+          "root": 177,
+          "weight": 0.0,
+          "raw": -0.30724466179900806,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p-p--------pp--p-p-rnbqkbnr"
+        },
+        {
+          "root": 178,
+          "weight": 0.0,
+          "raw": -0.3018152910371935,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---pn-------pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "raw": -0.30141563630303103,
+          "weighted_value": -0.10473212428230672,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 180,
+          "weight": 0.005003520542270881,
+          "raw": -0.24034756685739858,
+          "weighted_value": -0.0012025839880558178,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-nppp-r-bqkbnr"
+        },
+        {
+          "root": 181,
+          "weight": 0.0,
+          "raw": -0.4624734225881628,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-b-p--------pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 182,
+          "weight": 0.0,
+          "raw": -0.33081155312942323,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p----b---pp--ppp-rn-qkbnr"
+        },
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "raw": -0.006672661832547836,
+          "weighted_value": -0.0017825339556245135,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "raw": -1,
+          "weighted_value": -0.020875590063076807,
+          "immediate_king_loss": true,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 185,
+          "weight": 0.0,
+          "raw": -0.20696649972945258,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p---q----pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 186,
+          "weight": 0.0,
+          "raw": -0.12189090064943242,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------ppq-ppp-rnb-kbnr"
+        },
+        {
+          "root": 187,
+          "weight": 0.0,
+          "raw": -0.44021705360098295,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-qppp-rnb-kbnr"
+        },
+        {
+          "root": 188,
+          "weight": 0.0,
+          "raw": 0.22365473800347424,
+          "weighted_value": 0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-kppp-rnbq-bnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "raw": -0.20253370580430635,
+          "weighted_value": -0.0,
+          "immediate_king_loss": false,
+          "true_state": false,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        }
+      ]
+    }
+  },
+  "pairwise_value_decomposition": [
+    {
+      "left": "a4c3",
+      "right": "d4c3",
+      "aggregate_difference": 0.006771585727644014,
+      "largest_favors_left": [
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "true_state": false,
+          "left_value": 0.5952229485016899,
+          "right_value": -0.549609122575697,
+          "weighted_difference": 0.3058302805380103,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "true_state": false,
+          "left_value": 0.3402994190075464,
+          "right_value": -0.34588796961596635,
+          "weighted_difference": 0.028816019442494522,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "true_state": false,
+          "left_value": 0.19670292868882322,
+          "right_value": -0.883719698991578,
+          "weighted_difference": 0.013692710015355835,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "true_state": false,
+          "left_value": 0.29875107634440984,
+          "right_value": 0.08085343612103287,
+          "weighted_difference": 0.013327248831185858,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 20,
+          "weight": 0.007273406789353001,
+          "true_state": false,
+          "left_value": -0.22273535481541296,
+          "right_value": -0.8169241874133502,
+          "weighted_difference": 0.00432177708917557,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p--------p---pp---ppprnb-kbnr"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "true_state": false,
+          "left_value": -0.9664742397230773,
+          "right_value": -0.3927421221766112,
+          "weighted_difference": -0.19935323919034273,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "true_state": false,
+          "left_value": -0.9704703236174567,
+          "right_value": -0.08356787963372665,
+          "weighted_difference": -0.08488843396645637,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "true_state": true,
+          "left_value": -0.9770263217408068,
+          "right_value": -0.31118953782192865,
+          "weighted_difference": -0.08472120277497389,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "true_state": false,
+          "left_value": -0.15440044746341544,
+          "right_value": -0.09223708209155929,
+          "weighted_difference": -0.0012976969324441333,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "true_state": false,
+          "left_value": 0.8566827154106152,
+          "right_value": -0.18476848667206097,
+          "weighted_difference": 0.0,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        }
+      ]
+    },
+    {
+      "left": "a4c3",
+      "right": "d4d2",
+      "aggregate_difference": 0.009505778751415957,
+      "largest_favors_left": [
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "true_state": false,
+          "left_value": 0.5952229485016899,
+          "right_value": -0.49425859699054314,
+          "weighted_difference": 0.2910439488171464,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "true_state": false,
+          "left_value": 0.29875107634440984,
+          "right_value": -0.8336546070121551,
+          "weighted_difference": 0.06926120128914956,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "true_state": false,
+          "left_value": -0.15440044746341544,
+          "right_value": -0.8537976531552436,
+          "weighted_difference": 0.014600329357284014,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "true_state": false,
+          "left_value": 0.3402994190075464,
+          "right_value": 0.018348184005548038,
+          "weighted_difference": 0.01352014508159792,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "true_state": false,
+          "left_value": 0.19670292868882322,
+          "right_value": -0.8562377650230303,
+          "weighted_difference": 0.013344418390530856,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "true_state": false,
+          "left_value": -0.9664742397230773,
+          "right_value": -0.33943096458693467,
+          "weighted_difference": -0.2178771314833833,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "true_state": true,
+          "left_value": -0.9770263217408068,
+          "right_value": -0.1805005038603668,
+          "weighted_difference": -0.10135010104874648,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "true_state": false,
+          "left_value": -0.9704703236174567,
+          "right_value": -0.07982976911113138,
+          "weighted_difference": -0.08524622117339124,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 154,
+          "weight": 0.004466223477624316,
+          "true_state": false,
+          "left_value": -0.03531813476307477,
+          "right_value": 0.20935816942801871,
+          "weighted_difference": -0.0010927790541966106,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "true_state": false,
+          "left_value": 0.8566827154106152,
+          "right_value": -0.01249934899902086,
+          "weighted_difference": 0.0,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        }
+      ]
+    },
+    {
+      "left": "a4c3",
+      "right": "d4f4",
+      "aggregate_difference": 0.02496976386452712,
+      "largest_favors_left": [
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "true_state": false,
+          "left_value": 0.5952229485016899,
+          "right_value": -0.006672661832547836,
+          "weighted_difference": 0.16079030978742892,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "true_state": false,
+          "left_value": 0.29875107634440984,
+          "right_value": -1,
+          "weighted_difference": 0.07943536582804835,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "true_state": false,
+          "left_value": 0.3402994190075464,
+          "right_value": -0.973479494777761,
+          "weighted_difference": 0.05517134145924686,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "true_state": false,
+          "left_value": -0.15440044746341544,
+          "right_value": -1,
+          "weighted_difference": 0.01765238961627492,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 155,
+          "weight": 0.003094929138382022,
+          "true_state": false,
+          "left_value": 0.9386808988813908,
+          "right_value": -1,
+          "weighted_difference": 0.006000080003972667,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "true_state": false,
+          "left_value": -0.9664742397230773,
+          "right_value": -0.30141563630303103,
+          "weighted_difference": -0.23108622088330988,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "true_state": true,
+          "left_value": -0.9770263217408068,
+          "right_value": -0.6342292159666165,
+          "weighted_difference": -0.043617570867799466,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "true_state": false,
+          "left_value": -0.9704703236174567,
+          "right_value": -0.5968767319457047,
+          "weighted_difference": -0.035757906804799115,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "true_state": false,
+          "left_value": 0.8566827154106152,
+          "right_value": -0.20253370580430635,
+          "weighted_difference": 0.0,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        },
+        {
+          "root": 188,
+          "weight": 0.0,
+          "true_state": false,
+          "left_value": 0.6473576713674395,
+          "right_value": 0.22365473800347424,
+          "weighted_difference": 0.0,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-kppp-rnbq-bnr"
+        }
+      ]
+    },
+    {
+      "left": "d4c3",
+      "right": "d4d2",
+      "aggregate_difference": 0.0027341930237718905,
+      "largest_favors_left": [
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "true_state": false,
+          "left_value": 0.08085343612103287,
+          "right_value": -0.8336546070121551,
+          "weighted_difference": 0.0559339524579637,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "true_state": false,
+          "left_value": -0.09223708209155929,
+          "right_value": -0.8537976531552436,
+          "weighted_difference": 0.015898026289728147,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        },
+        {
+          "root": 155,
+          "weight": 0.003094929138382022,
+          "true_state": false,
+          "left_value": -0.054944608689187435,
+          "right_value": -0.9081407189902939,
+          "weighted_difference": 0.0026405815025250965,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 20,
+          "weight": 0.007273406789353001,
+          "true_state": false,
+          "left_value": -0.8169241874133502,
+          "right_value": -0.9825880221410839,
+          "weighted_difference": 0.0012049404602589519,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p--------p---pp---ppprnb-kbnr"
+        },
+        {
+          "root": 67,
+          "weight": 0.00042821558430841087,
+          "true_state": false,
+          "left_value": -0.09471523628617856,
+          "right_value": -0.831352607157051,
+          "weighted_difference": 0.0003154396021908822,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p-p----------pp--p-pprnb-kbnr"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "true_state": false,
+          "left_value": -0.3927421221766112,
+          "right_value": -0.33943096458693467,
+          "weighted_difference": -0.01852389229304059,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "true_state": true,
+          "left_value": -0.31118953782192865,
+          "right_value": -0.1805005038603668,
+          "weighted_difference": -0.016628898273772594,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "true_state": false,
+          "left_value": -0.34588796961596635,
+          "right_value": 0.018348184005548038,
+          "weighted_difference": -0.0152958743608966,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "true_state": false,
+          "left_value": -0.549609122575697,
+          "right_value": -0.49425859699054314,
+          "weighted_difference": -0.01478633172086395,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 180,
+          "weight": 0.005003520542270881,
+          "true_state": false,
+          "left_value": -0.3432321611270892,
+          "right_value": 0.32982553509814094,
+          "weighted_difference": -0.0033676580091964534,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-nppp-r-bqkbnr"
+        }
+      ]
+    },
+    {
+      "left": "d4c3",
+      "right": "d4f4",
+      "aggregate_difference": 0.01819817813688309,
+      "largest_favors_left": [
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "true_state": false,
+          "left_value": 0.08085343612103287,
+          "right_value": -1,
+          "weighted_difference": 0.06610811699686249,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "true_state": false,
+          "left_value": -0.08356787963372665,
+          "right_value": -0.5968767319457047,
+          "weighted_difference": 0.04913052716165726,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "true_state": true,
+          "left_value": -0.31118953782192865,
+          "right_value": -0.6342292159666165,
+          "weighted_difference": 0.04110363190717442,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "true_state": false,
+          "left_value": -0.34588796961596635,
+          "right_value": -0.973479494777761,
+          "weighted_difference": 0.026355322016752343,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "true_state": false,
+          "left_value": -0.09223708209155929,
+          "right_value": -1,
+          "weighted_difference": 0.018950086548719054,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "true_state": false,
+          "left_value": -0.549609122575697,
+          "right_value": -0.006672661832547836,
+          "weighted_difference": -0.14503997075058142,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "true_state": false,
+          "left_value": -0.3927421221766112,
+          "right_value": -0.30141563630303103,
+          "weighted_difference": -0.03173298169296714,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "true_state": false,
+          "left_value": -0.883719698991578,
+          "right_value": -0.10955847021442955,
+          "weighted_difference": -0.00981131359080784,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 180,
+          "weight": 0.005003520542270881,
+          "true_state": false,
+          "left_value": -0.3432321611270892,
+          "right_value": -0.24034756685739858,
+          "weighted_difference": -0.000514785180911602,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-nppp-r-bqkbnr"
+        },
+        {
+          "root": 19,
+          "weight": 0.005307793813657734,
+          "true_state": false,
+          "left_value": -0.6082697781752648,
+          "right_value": -0.5225998896069877,
+          "weighted_difference": -0.000454718104559449,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p--------p---pp-b-ppprn-qkbnr"
+        }
+      ]
+    },
+    {
+      "left": "d4d2",
+      "right": "d4f4",
+      "aggregate_difference": 0.015463985113111183,
+      "largest_favors_left": [
+        {
+          "root": 17,
+          "weight": 0.1272401958274745,
+          "true_state": true,
+          "left_value": -0.1805005038603668,
+          "right_value": -0.6342292159666165,
+          "weighted_difference": 0.05773253018094702,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-p---pp---pppr-bqkbnr"
+        },
+        {
+          "root": 135,
+          "weight": 0.09571338374619885,
+          "true_state": false,
+          "left_value": -0.07982976911113138,
+          "right_value": -0.5968767319457047,
+          "weighted_difference": 0.04948831436859213,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------n-----pp--ppppr-bqkbnr"
+        },
+        {
+          "root": 27,
+          "weight": 0.041994388005730125,
+          "true_state": false,
+          "left_value": 0.018348184005548038,
+          "right_value": -0.973479494777761,
+          "weighted_difference": 0.04165119637764894,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-------bp---pp---ppprnbqk-nr"
+        },
+        {
+          "root": 140,
+          "weight": 0.06116288738842457,
+          "true_state": false,
+          "left_value": -0.8336546070121551,
+          "right_value": -1,
+          "weighted_difference": 0.010174164538898788,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p------------pp--pppprnb-kbnr"
+        },
+        {
+          "root": 184,
+          "weight": 0.020875590063076807,
+          "true_state": false,
+          "left_value": -0.8537976531552436,
+          "right_value": -1,
+          "weighted_difference": 0.0030520602589909056,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q----q--p---p--------pp--ppp-rnb-kbnr"
+        }
+      ],
+      "largest_favors_right": [
+        {
+          "root": 183,
+          "weight": 0.2671398611764932,
+          "true_state": false,
+          "left_value": -0.49425859699054314,
+          "right_value": -0.006672661832547836,
+          "weighted_difference": -0.13025363902971748,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp-bppp-rn-qkbnr"
+        },
+        {
+          "root": 179,
+          "weight": 0.34746745579254984,
+          "true_state": false,
+          "left_value": -0.33943096458693467,
+          "right_value": -0.30141563630303103,
+          "weighted_difference": -0.013209089399926557,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--n-----pp--ppp-r-bqkbnr"
+        },
+        {
+          "root": 139,
+          "weight": 0.01267347579044435,
+          "true_state": false,
+          "left_value": -0.8562377650230303,
+          "right_value": -0.10955847021442955,
+          "weighted_difference": -0.009463021965982862,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p------------pp-bpppprn-qkbnr"
+        },
+        {
+          "root": 66,
+          "weight": 0.000158672864011418,
+          "true_state": false,
+          "left_value": -0.9553120479939317,
+          "right_value": -0.338590805554892,
+          "weighted_difference": -9.785692583448248e-05,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p-p----------pp-bp-pprn-qkbnr"
+        },
+        {
+          "root": 189,
+          "weight": 0.0,
+          "true_state": false,
+          "left_value": -0.01249934899902086,
+          "right_value": -0.20253370580430635,
+          "weighted_difference": 0.0,
+          "board": "R-B-KB-RPPP-PPPP-----N--N--Q-------p---p--------pp--ppprrnbqkbn-"
+        }
+      ]
+    }
+  ]
+}

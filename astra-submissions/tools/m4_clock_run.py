@@ -44,6 +44,8 @@ def prepare(args):
     if not 1<=args.samples<=4096 or len(set(args.seeds))!=len(args.seeds):raise ValueError('Invalid samples/seeds')
     if not args.scales or len(set(args.scales))!=len(args.scales) or not all(0<x<=1 for x in args.scales):
         raise ValueError('Invalid scales')
+    if not args.settle_fractions or len(set(args.settle_fractions))!=len(args.settle_fractions) or not all(0<=x<=.5 for x in args.settle_fractions):
+        raise ValueError('Invalid settling fractions')
     sources={'candidate':args.binary,'opponent':args.opponent,'stockfish':args.stockfish,
              'runner.py':Path(__file__),'local_turn_control.py':Path(__file__).with_name('local_turn_control.py'),
              'referee.py':args.kit/'referee.py'}
@@ -54,8 +56,12 @@ def prepare(args):
     jobs=[]
     for i,seed in enumerate(args.seeds):
         for j,side in enumerate(['white','black']):
-            for scale in args.scales[::1 if (i+j)%2==0 else -1]:
-                jobs.append({'id':f'seed{seed}-{side}-scale{scale:g}','seed':seed,'side':side,'scale':scale})
+            variants=[(scale,settle) for scale in args.scales for settle in args.settle_fractions]
+            for scale,settle in variants[::1 if (i+j)%2==0 else -1]:
+                arm=f'scale{scale:g}-settle{settle:g}'
+                suffix=f'-settle{settle:g}' if args.settle_fractions!=[0] else ''
+                jobs.append({'id':f'seed{seed}-{side}-scale{scale:g}{suffix}','seed':seed,'side':side,
+                             'scale':scale,'settle_fraction':settle,'arm':arm})
     excluded=set(args.exclude_job)
     if excluded-{j['id'] for j in jobs}:raise ValueError('Unknown excluded job')
     jobs=[j for j in jobs if j['id'] not in excluded]
@@ -66,6 +72,7 @@ def prepare(args):
             'base':args.base,'increment':args.increment,'max_plies':args.max_plies,'max_seconds':args.seconds,
             'samples':args.samples,'iterations':1000000,'cpus':args.cpus,'jobs':jobs,'excluded_jobs':sorted(excluded),'opponent_name':args.opponent_name,
             'fast_roots':args.fast_roots,
+            'settle_fractions':args.settle_fractions,
             'classification':'small paired on-policy screening set; not an Elo estimate',
             'turn_control':'buffered observations and owned process-group SIGSTOP/SIGCONT',
             'security_sandbox':False,'failure_policy':'retain all attempts; halt on infrastructure, protocol or M4 instrumentation faults'}
@@ -102,6 +109,7 @@ def worker(run,job_id):
                f'MIST_MAX_SECONDS={config["max_seconds"]}',f'MIST_M4_ITERATIONS={config["iterations"]}',
                f'MIST_M4_LEAF_SCALE={job["scale"]}','MIST_M4_CLOSURE=0','MIST_M4_WITNESSES=0',str(run/'candidate')]
     candidate.insert(-1,f'MIST_M4_FAST_ROOTS={int(config.get("fast_roots",False))}')
+    candidate.insert(-1,f'MIST_M4_SETTLE={job.get("settle_fraction",0)}')
     opponent=[*common,str(run/'opponent')]
     white,black=(candidate,opponent) if job['side']=='white' else (opponent,candidate)
     def terminate(_signum,_frame):raise KeyboardInterrupt('Owned worker terminated')
@@ -130,6 +138,13 @@ def inspect_game(path,job,config=None):
     setups=[dict(re.findall(r'(\w+)=([^ ]+)',line)) for line in stderr.splitlines() if line.startswith('m4-setup:')]
     if config and config.get('fast_roots') and [int(m.get('ply',-1)) for m in setups]!=own_plies:
         faults.append('missing_fast_root_diagnostics')
+    settling=[dict(re.findall(r'(\w+)=([^ ]+)',line)) for line in stderr.splitlines() if line.startswith('m4-settle:')]
+    fraction=job.get('settle_fraction',0)
+    if fraction>0:
+        if [int(m.get('ply',-1)) for m in settling]!=own_plies:faults.append('missing_settling_diagnostics')
+        if any(m.get('prefix')!='0' or abs(float(m.get('fraction',-1))-fraction)>1e-6 for m in settling):
+            faults.append('wrong_settling_configuration')
+    elif settling:faults.append('unexpected_settling_diagnostics')
     for row in metrics:
         if row.get('ok')!='1' or row.get('snapshot')!='1':faults.append('m4_snapshot_or_search_failure')
         if row.get('over')!='0':faults.append('m4_reported_overrun')
@@ -140,6 +155,8 @@ def inspect_game(path,job,config=None):
     return {'result':result,'reason':game['reason'],'score':score,'plies':len(game['frames'])-1,
             'faults':sorted(set(faults)),'m4_decisions':len(metrics),'m4_carried_decisions':sum(int(m.get('carry',0))>0 for m in metrics),
             'cheap_carried_roots':sum(int(m.get('cheap_carried_roots',0)) for m in setups),
+            'settled_decisions':sum(int(m.get('iterations',0))>0 for m in settling),
+            'settle_seconds':sum(float(m.get('seconds',0)) for m in settling),
             'minimum_clocks':[min(f['clocks'][i] for f in game['frames']) for i in [0,1]],'failed_side':game.get('failedSide')}
 
 
@@ -157,7 +174,7 @@ def ensure_cleanup(directory):
 def summarize(run,config):
     rows=[json.loads(p.read_text()) for p in sorted((run/'jobs').glob('*/receipt.json'))]
     groups=defaultdict(list)
-    for row in rows:groups[str(row['scale'])].append(row)
+    for row in rows:groups[row.get('arm',str(row['scale']))].append(row)
     totals={}
     for scale,group in groups.items():
         scores=[r['game']['score'] for r in group if r.get('game',{}).get('score') is not None]
@@ -241,6 +258,7 @@ def main():
     prep.add_argument('--seconds',type=float,default=10);prep.add_argument('--base',type=float,default=180)
     prep.add_argument('--increment',type=float,default=2);prep.add_argument('--max-plies',type=int,default=512)
     prep.add_argument('--scales',type=float,nargs='+',default=[1,.9]);prep.add_argument('--seeds',type=int,nargs='+',default=[11,12])
+    prep.add_argument('--settle-fractions',type=float,nargs='+',default=[0],help='Paired fixed-tree solve fractions; same total decision budget')
     prep.add_argument('--exclude-job',action='append',default=[],help='Explicitly omit a job already retained in another immutable run')
     prep.add_argument('--fast-roots',action='store_true',help='Use cheap carried-root initialization (experimental)')
     prep.add_argument('--cpus',type=int,nargs='+',default=[6,7])
