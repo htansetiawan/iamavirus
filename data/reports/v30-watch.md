@@ -1,26 +1,26 @@
 # Arena v30 watch
 
-Updated 2026-10-11 21:15 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 21:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 211W-30D-229L over 470 games** (48%).
-As White: 124.0/235.
-As Black: 102.0/235.
+**Record: 213W-31D-231L over 475 games** (48%).
+As White: 126.0/237.
+As Black: 102.5/238.
 
-Queen lost for less: 63 games (56 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 46 of 229.
+Queen lost for less: 64 games (57 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 46 of 231.
 Short losses (12 plies or fewer): 4. Games with a clock at 15 s or less: 4. Mean length 77 plies.
 Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 47-10-6 |
+| TA Baseline A | 48-10-6 |
 | Mist Opportunities | 16-3-39 |
+| TA Baseline P | 47-1-2 |
 | duck | 9-5-36 |
-| TA Baseline P | 46-0-2 |
 | TA Baseline S | 25-3-14 |
-| Instructors | 9-2-29 |
+| Instructors | 9-2-30 |
 | Knight Vision | 12-3-23 |
 | Strongly Invisible | 4-1-31 |
-| Decent Chess Bot | 5-1-25 |
+| Decent Chess Bot | 5-1-26 |
 | Greek Gift | 2-2-24 |
 | Apricot Squad | 22-0-0 |
 | baseline.py | 14-0-0 |
@@ -497,3 +497,8 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | 2026-10-11 21:11 | 8c9cxnpy | W | TA Baseline A | 85 | draw |  | 88 s | 8-4 |
 | 2026-10-11 21:12 | q9z9o912 | B | TA Baseline A | 25 | win |  | 146 s | 31-34 |
 | 2026-10-11 21:14 | 3trba5jj | W | Decent Chess Bot | 55 | loss |  | 100 s | 17-24 |
+| 2026-10-11 21:15 | xq3pdumw | B | Decent Chess Bot | 72 | loss |  | 80 s | 4-15 |
+| 2026-10-11 21:18 | n2mrwk71 | W | TA Baseline A | 116 | win |  | 44 s | 13-3 |
+| 2026-10-11 21:22 | hyrhi7bg | W | TA Baseline P | 30 | win |  | 137 s | 31-18 |
+| 2026-10-11 21:27 | 458ksiud | B | TA Baseline P | 168 | draw | ply 83 by r unseen | 38 s | 9-3 |
+| 2026-10-11 21:34 | z8accqtb | B | Instructors | 52 | loss |  | 112 s | 8-10 |
