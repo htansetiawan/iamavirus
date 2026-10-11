@@ -1,25 +1,25 @@
 # Arena v30 watch
 
-Updated 2026-10-11 08:53 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 09:14 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 66W-12D-69L over 147 games** (49%).
-As White: 41.0/73.
-As Black: 31.0/74.
+**Record: 68W-13D-72L over 153 games** (49%).
+As White: 42.5/76.
+As Black: 32.0/77.
 
-Queen lost for less: 21 games (18 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 15 of 69.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 74 plies.
+Queen lost for less: 21 games (18 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 15 of 72.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Mist Opportunities | 6-1-14 |
 | TA Baseline A | 15-4-1 |
 | duck | 5-2-11 |
-| Mist Opportunities | 4-0-13 |
 | Strongly Invisible | 2-1-13 |
 | TA Baseline S | 9-1-6 |
 | TA Baseline P | 11-0-1 |
+| Decent Chess Bot | 2-1-9 |
 | Knight Vision | 3-1-8 |
-| Decent Chess Bot | 2-1-7 |
 | Apricot Squad | 10-0-0 |
 | Instructors | 3-1-4 |
 | Greek Gift | 0-1-5 |
@@ -174,3 +174,9 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-11 08:45 | zf3v2fi1 | W | Decent Chess Bot | 58 | draw |  | 101 s | 13-16 |
 | 2026-10-11 08:52 | ccwsbgtq | W | TA Baseline P | 42 | win |  | 131 s | 25-17 |
 | 2026-10-11 08:53 | wj3y8osx | B | TA Baseline P | 47 | win |  | 116 s | 18-13 |
+| 2026-10-11 08:54 | yq4fgkdh | B | Decent Chess Bot | 18 | loss |  | 157 s | 24-26 |
+| 2026-10-11 08:55 | p8jzu14f | W | Mist Opportunities | 344 | draw |  | 33 s | 2-4 |
+| 2026-10-11 08:56 | me3qx6wi | W | Mist Opportunities | 40 | win |  | 117 s | 20-30 |
+| 2026-10-11 09:00 | rsbokyog | W | Decent Chess Bot | 93 | loss |  | 71 s | 3-25 |
+| 2026-10-11 09:01 | t4656p5m | B | Mist Opportunities | 123 | win |  | 44 s | 17-6 |
+| 2026-10-11 09:11 | gtx70jqn | B | Mist Opportunities | 42 | loss |  | 116 s | 29-31 |
