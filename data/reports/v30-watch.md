@@ -1,13 +1,13 @@
 # Arena v30 watch
 
-Updated 2026-10-11 03:48 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 04:08 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 23W-5D-26L over 54 games** (47%).
-As White: 15.0/27.
-As Black: 10.5/27.
+**Record: 26W-6D-27L over 59 games** (49%).
+As White: 18.0/30.
+As Black: 11.0/29.
 
-Queen lost for less: 8 games (7 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 26.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
+Queen lost for less: 9 games (8 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 27.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -15,11 +15,11 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | TA Baseline A | 7-2-1 |
 | duck | 3-1-6 |
 | Decent Chess Bot | 2-0-6 |
+| TA Baseline S | 5-1-2 |
 | Mist Opportunities | 2-0-4 |
 | Greek Gift | 0-1-3 |
 | Strongly Invisible | 1-1-2 |
-| TA Baseline S | 3-0-1 |
-| TA Baseline P | 2-0-0 |
+| TA Baseline P | 3-0-0 |
 | Knight Vision | 0-0-2 |
 | Apricot Squad | 2-0-0 |
 | Instructors | 1-0-1 |
@@ -80,3 +80,8 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-11 03:38 | cjb3jsbm | B | duck | 117 | win |  | 46 s | 7-3 |
 | 2026-10-11 03:42 | l01dveny | B | Strongly Invisible | 102 | loss |  | 73 s | 2-16 |
 | 2026-10-11 03:42 | 8v8q5fh7 | W | Strongly Invisible | 102 | draw |  | 63 s | 13-12 |
+| 2026-10-11 03:51 | 101lm6rn | B | TA Baseline S | 62 | loss |  | 89 s | 21-20 |
+| 2026-10-11 03:57 | vh80lxbk | W | TA Baseline S | 160 | win | ply 36 by q unseen | 41 s | 23-2 |
+| 2026-10-11 03:59 | 9idyfvi9 | W | TA Baseline S | 114 | win |  | 75 s | 18-1 |
+| 2026-10-11 04:00 | gymi8wga | B | TA Baseline S | 146 | draw |  | 41 s | 16-7 |
+| 2026-10-11 04:08 | kha6tr7m | W | TA Baseline P | 28 | win |  | 148 s | 31-23 |
