@@ -1,0 +1,5956 @@
+{
+  "classification": "forced-prefix cold/warm diagnostic; no Elo inference",
+  "complete": true,
+  "completed": 16,
+  "expected": 16,
+  "manifest": {
+    "artifacts": {
+      "binary": {
+        "sha256": "1afb58d207a6bc4f292909d4575d5ca1b4179448f297942f1c8a10ca72baa191",
+        "source": "/media/henrytan/seagate/iamavirus/astra/m4-gate-20261011/cold-time05/binary"
+      },
+      "helper": {
+        "sha256": "12fbaba86d7baac8c603ea8294ecf17547102743305ac5d16dc054e9c88b7c9d",
+        "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_gate_run.py"
+      },
+      "probe": {
+        "sha256": "d84b6b2a89d4ace497e3dacb0a671adedf1f469b4e96b7bb39f5d8370b5a9264",
+        "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_replay_probe.py"
+      },
+      "replay": {
+        "sha256": "d32a0852afeb9abe104ffb26a02c6baa4ee320299d29711c4e3d814dd661639f",
+        "source": "/media/henrytan/seagate/iamavirus/astra/m4-gate-20261011/duck-openings/9pl31sez.json"
+      },
+      "runner": {
+        "sha256": "b8cf694e7f4f71987d3b42e6b02acb3efa519344bdb0695f4d38ae67c30638b3",
+        "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_prefix_pair.py"
+      },
+      "stockfish": {
+        "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+        "source": "/media/henrytan/seagate/iamavirus/astra/m4-gate-20261011/cold-time05/stockfish"
+      }
+    },
+    "cases": [
+      {
+        "decision": 3,
+        "game": "9pl31sez",
+        "legal_moves": [
+          "a2a3",
+          "a2a4",
+          "b1a3",
+          "b1c3",
+          "b2b3",
+          "b2b4",
+          "c2c3",
+          "c2c4",
+          "d1e2",
+          "d1f3",
+          "d1g4",
+          "d1h5",
+          "d2d3",
+          "d2d4",
+          "e1e2",
+          "f1a6",
+          "f1b5",
+          "f1c4",
+          "f1d3",
+          "f1e2",
+          "f2f3",
+          "f2f4",
+          "g1e2",
+          "g1f3",
+          "g1h3",
+          "g2g3",
+          "g2g4",
+          "h2h3",
+          "h2h4"
+        ],
+        "played": "d2d4",
+        "ply": 4,
+        "safe_moves": [
+          "a2a3",
+          "a2a4",
+          "b1a3",
+          "b1c3",
+          "b2b3",
+          "b2b4",
+          "c2c3",
+          "c2c4",
+          "d1e2",
+          "d1f3",
+          "d1g4",
+          "d1h5",
+          "d2d3",
+          "d2d4",
+          "e1e2",
+          "f1a6",
+          "f1b5",
+          "f1c4",
+          "f1d3",
+          "f1e2",
+          "f2f3",
+          "f2f4",
+          "g1e2",
+          "g1f3",
+          "g1h3",
+          "g2g3",
+          "g2g4",
+          "h2h3",
+          "h2h4"
+        ],
+        "side": "white"
+      },
+      {
+        "decision": 4,
+        "game": "9pl31sez",
+        "legal_moves": [
+          "a2a3",
+          "a2a4",
+          "b1a3",
+          "b1c3",
+          "b1d2",
+          "b2b3",
+          "b2b4",
+          "c1d2",
+          "c1e3",
+          "c1f4",
+          "c1g5",
+          "c1h6",
+          "c2c3",
+          "c2c4",
+          "d1d2",
+          "d1d3",
+          "d1e2",
+          "d1f3",
+          "d1g4",
+          "d1h5",
+          "d4d5",
+          "e1d2",
+          "e1e2",
+          "f1a6",
+          "f1b5",
+          "f1c4",
+          "f1d3",
+          "f1e2",
+          "f2f3",
+          "f2f4",
+          "g1e2",
+          "g1f3",
+          "g1h3",
+          "g2g3",
+          "g2g4",
+          "h2h3",
+          "h2h4"
+        ],
+        "played": "c1e3",
+        "ply": 6,
+        "safe_moves": [
+          "b1c3",
+          "b1d2",
+          "b2b4",
+          "c1d2",
+          "c2c3",
+          "d1d2",
+          "e1e2"
+        ],
+        "side": "white"
+      }
+    ],
+    "cpu_affinity": [
+      6,
+      7
+    ],
+    "created_at": "2026-10-11T08:48:54.885027+00:00",
+    "iterations": 1000000,
+    "nice": 19,
+    "parents": 20000,
+    "python": "/home/henrytan/git/fow-starter/.venv/bin/python",
+    "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "samples": 128,
+    "seconds": 0.5,
+    "seeds": [
+      11,
+      12
+    ]
+  },
+  "rows": [
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.017395468
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 0.409267671,
+          "policy": 0.409267671,
+          "raw": 0.0184697777
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0211520106
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00572009725
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.977078777
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.976683167
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.195183501
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.557881287,
+          "policy": 0.557881287,
+          "raw": 0.0320843816
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.193546964
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.126843608
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.11258715
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.122008743
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0328510412,
+          "policy": 0.0328510412,
+          "raw": 0.0100917271
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0164931683
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0421840716
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0100670285
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00597491167
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0830319669
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0201386788
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0103735589
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0256053362
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0157889562
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00248173243
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0230805859
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.000896555445
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.84239399
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.724712585
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0157178741
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00797808297
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "f1e2",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 0.3846601709992683,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-cold.stderr": "01c232687b34cc32cadb6b96db748c538f9c2f83bc6b5bf9d03f657e977ad3c9",
+        "9pl31sez-white-d3-cold.stdout": "91eb894b21b5740e2eef38e78154e039c37cb4b8d6ec58855a887392bd60757b",
+        "command.json": "29d66f4a0f5bd140b4b15968946bc2c728deab904778d4fdb137e5c916a8c688",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "5083cda493bb267c60f4978165f50b852bc280767ada8118308847d52cb25d15",
+        "results.json": "54b946b539af68e214a050a1321a62512c17b8ffb360eb099ffcbc5babd052cd"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 1.0,
+          "carry": 0,
+          "current": 1.0,
+          "enter": 0.0,
+          "expand": 2117,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 1,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0062,
+          "setup": 0.0002,
+          "snapshot": 1,
+          "solve": 0.3753,
+          "support": 3,
+          "total": 0.3817
+        }
+      ],
+      "mode": "cold",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 0.5150317600000562,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 1.0,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0916460717
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.218008798,
+          "raw": 0.128080187
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 1.0,
+          "policy": 0.390757702,
+          "raw": 0.14754394
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0342951545
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.976786612
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.624592442
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.516826166
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.229910827,
+          "raw": 0.0828451565
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0721253566
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.670321697
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.680476006
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.171903315
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.099455252,
+          "raw": 0.117226851
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0463449087
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.318520777
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0589838012
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.000391004193
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.836575299
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0618674205,
+          "raw": 0.155731282
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0994058419
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.105395855
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00296745205
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.107795683
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.116439612
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0519351318
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.334096396
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.892187371
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0223621932
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.105775688
+        }
+      ],
+      "all_root_reach": 0.8606343665730091,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "d1e2",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 0.6980923490009445,
+      "evaluation": {
+        "calls": 388.0,
+        "child_alternates": 1.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12300.0,
+        "seconds": 0.322274
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-cold.stderr": "c714f7cf8e77e2ab23f85f3802def5d5463b59c4a55f6507f0f7fe17c586c270",
+        "9pl31sez-white-d3-cold.stdout": "9b6579b619d6033ce49195395413e147875b8d9b28f1e1e117a966fee1d021fa",
+        "command.json": "af16ed380c3e03f5a398cba95252c4dc1902753a4b440fd6f84513af581486a5",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "48799d47692e2be82aeb755ea45c22c202dc6d18cd7461f688a742acd9d7f53f",
+        "results.json": "73d2ffa4c7a8ea7a7e8d9a5201f3e4bfef0a8100d1360c6691f283eec0bd4cbf"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 0.86063,
+          "carry": 0,
+          "current": 0.86063,
+          "enter": 0.16738,
+          "expand": 563,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 1,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0015,
+          "setup": 0.0009,
+          "snapshot": 1,
+          "solve": 0.3741,
+          "support": 1,
+          "total": 0.3766
+        }
+      ],
+      "mode": "cold",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.069335484999101,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 0.8606343665730091,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0275726134
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 1.0,
+          "policy": 0.685623363,
+          "raw": 0.0223495828
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0169038397
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00819436529
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.97753598
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.976735399
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.349102216
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0171073602
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.194971532
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.174977821
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.268419674
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.621622089
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.162363865,
+          "raw": 0.0058464648
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00402243721
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.180392748
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0093788134
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00192360827
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.794764083
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0274112068
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00818042645
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0688296366
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.47600663
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.133431012
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0323593963
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0144935409
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.84402353
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.729426184
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00841806292
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.152012772,
+          "raw": 0.024334397
+        }
+      ],
+      "all_root_reach": 0.7825232961434126,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "b1c3",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 1.1488432299993292,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-warm.stderr": "2398c556d8df99df7aade7b07ab1f0afc8213b4e0af802545bf496ff8592fe1b",
+        "9pl31sez-white-d3-warm.stdout": "5c900bb9a44186ca9692c93ba9ef850a93064af76729d964def7c56792d310ed",
+        "command.json": "253673fee74953e6a11a72d15f3bf545f9ccb25fcf091a7c345fb17cb814592d",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "c5a6dceabf67ae135d3356c77aae6b838716851d2cd1164443efbd9f248c387e",
+        "results.json": "af805b23401af83f2b5bb1baa47e852762b7cf2e690454210e7d3c4804d74918"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.3815,
+          "snapshot": 1
+        },
+        {
+          "carry": 0,
+          "fallback": 2,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3818,
+          "snapshot": 1
+        },
+        {
+          "active": 0.78252,
+          "carry": 1,
+          "current": 0.78252,
+          "enter": 0.31966,
+          "expand": 1555,
+          "fallback": 0,
+          "found": 1,
+          "fresh": 0,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 1,
+          "prefix": false,
+          "save": 0.0069,
+          "setup": 0.0129,
+          "snapshot": 1,
+          "solve": 0.3622,
+          "support": 1,
+          "total": 0.382
+        }
+      ],
+      "mode": "warm",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.3181789890004438,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 0.7825232961434126,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0389869082
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.203359035,
+          "raw": 0.132250567
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 1.0,
+          "policy": 0.655030282,
+          "raw": 0.127828603
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0130256767
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.930887539
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.685809062
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.414330139
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.122056705
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.128450879
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.675069875
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.644012628
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.790401241
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.0907061709,
+          "raw": 0.116507843
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.351813807
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0698858903
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.123255441
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00494315806
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.836679489
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0840809256
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0509045125,
+          "raw": 0.143306219
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.08538363
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0810139757
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0534562257
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.143677546
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0358072434
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.841852646
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.894102076
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.10396001
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.088609138
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "d1e2",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 1.450558472000921,
+      "evaluation": {
+        "calls": 397.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12352.0,
+        "seconds": 0.322221
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-warm.stderr": "b3845b425af8878b1f36b492f53e287a96282e701eafd0d71a61b05672be4bfb",
+        "9pl31sez-white-d3-warm.stdout": "9b6579b619d6033ce49195395413e147875b8d9b28f1e1e117a966fee1d021fa",
+        "command.json": "99d5dfdc08f4a15e8552c508204290f52ec1a736e0ef4aa8cc8c290d5fe2b14e",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "e0eee395c0480a9a9423dfc093f86c5125d60a5835876a2a5fa314fde3aa3438",
+        "results.json": "160000043615ef9500bfbc6fe42321c8a57cbe768ca1fce01bc02d68dc15a79a"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.3773,
+          "snapshot": 1
+        },
+        {
+          "carry": 0,
+          "fallback": 2,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3766,
+          "snapshot": 1
+        },
+        {
+          "active": 1.0,
+          "carry": 1,
+          "current": 1.0,
+          "enter": 1.0,
+          "expand": 568,
+          "fallback": 0,
+          "found": 1,
+          "fresh": 0,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 1,
+          "prefix": false,
+          "save": 0.0017,
+          "setup": 0.0007,
+          "snapshot": 1,
+          "solve": 0.3744,
+          "support": 1,
+          "total": 0.3769
+        }
+      ],
+      "mode": "warm",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [
+        {
+          "calls": 750.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 17020.0,
+          "seconds": 0.311071
+        },
+        {
+          "calls": 373.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 11320.0,
+          "seconds": 0.324919
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.8184031160017184,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 1.0,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0603466083
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.171944061,
+          "raw": 0.0728282606
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 1.0,
+          "policy": 0.517833357,
+          "raw": 0.0980960528
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0330127889
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.976836211
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.648380806
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.433255956
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.174317987,
+          "raw": 0.0644396595
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0203461189
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.670967074
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.672318554
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.662636811
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.0927052956,
+          "raw": 0.0801219025
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0618095529
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0474643083
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0898281173
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0870406954
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.607531887
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0398387,
+          "raw": 0.0828077932
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0136177305
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0716834984
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0646420478
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0314998935
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.135119777
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0648805673
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.265667976
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.900053284
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0577997809
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0033605996,
+          "raw": 0.103381405
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "d1e2",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 0.7009715929998492,
+      "evaluation": {
+        "calls": 391.0,
+        "child_alternates": 1.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12659.0,
+        "seconds": 0.32214
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-cold.stderr": "7ca61eefa9b2f38f7cbd00ee712c3e5edd2a0e324d91233e698b617b92a3ac16",
+        "9pl31sez-white-d3-cold.stdout": "9b6579b619d6033ce49195395413e147875b8d9b28f1e1e117a966fee1d021fa",
+        "command.json": "918266cb02b2f86059510810d431e3c70ebe04fc8649e572c4607236c0f89058",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "99f8fb8715b324bab090d59759d5d4cd39abfdf0cbfb1b894e18cae95cca040a",
+        "results.json": "e004c5697286a77f692b50959a7c0470fcb36643db8cf88c7b494f17c3ec60de"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 1.0,
+          "carry": 0,
+          "current": 1.0,
+          "enter": 1.0,
+          "expand": 559,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 1,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0015,
+          "setup": 0.0009,
+          "snapshot": 1,
+          "solve": 0.3742,
+          "support": 1,
+          "total": 0.3766
+        }
+      ],
+      "mode": "cold",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.01756468900021,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 1.0,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0068555654
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 0.128577756,
+          "policy": 0.128577756,
+          "raw": 0.0374234921
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0208718736
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.019917057
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.976099952
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.977370309
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.194780726
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.79219571,
+          "policy": 0.79219571,
+          "raw": 0.0368093059
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.182917957
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.157760144
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0517626231
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.153163477
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0792265341,
+          "policy": 0.0792265341,
+          "raw": 0.0371821215
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0140515274
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0377528962
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00773377068
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0142627924
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0769669227
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0342794172
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.000925758822
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0174681882
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00666991132
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0162103508
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0236274895
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0152996623
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.84402353
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.729426184
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00788514861
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0269790274
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "f1e2",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 0.384304400999099,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-cold.stderr": "d68884e81435d6b0e1450b985e6ea47fe933e954c6e723935673a9bfbb2f05e3",
+        "9pl31sez-white-d3-cold.stdout": "91eb894b21b5740e2eef38e78154e039c37cb4b8d6ec58855a887392bd60757b",
+        "command.json": "d79293afbcb331a925184832e0ab902ebfcdb351a25d7c4b51761e711ceec283",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "2a386c880cf1a4bd12243036f18f100459bee41c83e01881b609a6b41d62d4e3",
+        "results.json": "eb64db7d22e321f1a4310529e83370cf9f9e2ed95507e0fc8df9f9664b20434b"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 1.0,
+          "carry": 0,
+          "current": 1.0,
+          "enter": 0.0,
+          "expand": 2096,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 1,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.006,
+          "setup": 0.0002,
+          "snapshot": 1,
+          "solve": 0.3749,
+          "support": 3,
+          "total": 0.3811
+        }
+      ],
+      "mode": "cold",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 0.5169805440000346,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 1.0,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.124989047
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 0.148997361,
+          "policy": 0.148997361,
+          "raw": 0.106042706
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0959762173,
+          "raw": 0.0852561545
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0604221789
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.970054451
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.965413687
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.423120156
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.761806062,
+          "policy": 0.541299401,
+          "raw": 0.046709298
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.17737946
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.684482626
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.62306535
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.710156737
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0891965767,
+          "policy": 0.0891965767,
+          "raw": 0.0631243348
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00401741732
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.318520777
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0256323814
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0528532644
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.604367777
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0719003064,
+          "raw": 0.0779572223
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0361960389,
+          "raw": 0.0232619377
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00793498331
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0969865478
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0444202865
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.188175688
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0164340983,
+          "raw": 0.0475469113
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.84402353
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.892798077
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0499348504
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0625618047
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "f1e2",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 1.4501327609996224,
+      "evaluation": {
+        "calls": 425.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12875.0,
+        "seconds": 0.321363
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-warm.stderr": "1e4550409d59139b234b4fd9f637d6f7db460cb7ae1c680150102baeb0ec4bf5",
+        "9pl31sez-white-d3-warm.stdout": "91eb894b21b5740e2eef38e78154e039c37cb4b8d6ec58855a887392bd60757b",
+        "command.json": "e294dc698785702abe183d53db0fd663035f0289f8fb5f2784d0ab152c72957a",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "9ed2cc6bac703e6546074d0d4da9e97451e2febf10e01b2fa1a5734a36238a9a",
+        "results.json": "0ca4962402689bb911431d26f532e1787f3115d76cd360fbb4b528476a5abda2"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.3772,
+          "snapshot": 1
+        },
+        {
+          "carry": 1,
+          "fallback": 0,
+          "fresh": 0,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3768,
+          "snapshot": 1
+        },
+        {
+          "active": 1.0,
+          "carry": 1,
+          "current": 1.0,
+          "enter": 0.0,
+          "expand": 594,
+          "fallback": 0,
+          "found": 1,
+          "fresh": 0,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 1,
+          "prefix": false,
+          "save": 0.002,
+          "setup": 0.0008,
+          "snapshot": 1,
+          "solve": 0.3742,
+          "support": 3,
+          "total": 0.377
+        }
+      ],
+      "mode": "warm",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [
+        {
+          "calls": 702.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 16468.0,
+          "seconds": 0.312949
+        },
+        {
+          "calls": 362.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 11213.0,
+          "seconds": 0.324802
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.7670393230000627,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 1.0,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.0,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0189314521
+        },
+        {
+          "fatal": 0.0,
+          "move": "b1c3",
+          "played": 0.15307046,
+          "policy": 0.15307046,
+          "raw": 0.0391296153
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0330445928
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0167983749
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.977476108
+        },
+        {
+          "fatal": 0.0,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.976778921
+        },
+        {
+          "fatal": 0.0,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.28932285
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1e2",
+          "played": 0.84692954,
+          "policy": 0.776201822,
+          "raw": 0.04282102
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.216518061
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.183073944
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.274832093
+        },
+        {
+          "fatal": 0.0,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.318272377
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.0101320964,
+          "raw": 0.0407476767
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0160218321
+        },
+        {
+          "fatal": 0.0,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0389518756
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0325126956
+        },
+        {
+          "fatal": 0.0,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0234357469
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0101002651
+        },
+        {
+          "fatal": 0.0,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.00706951763
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00820392036
+        },
+        {
+          "fatal": 0.0,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.00970045046
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.01855129
+        },
+        {
+          "fatal": 0.0,
+          "move": "d2d4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.000594641449
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0214239344
+        },
+        {
+          "fatal": 0.0,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": 0.0234172605
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.835173364
+        },
+        {
+          "fatal": 0.0,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.729426184
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0174983898
+        },
+        {
+          "fatal": 0.0,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0605956223,
+          "raw": 0.0464176023
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 1,
+      "belief_tactical_share": 1.0,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 1.0,
+      "chosen": "b1c3",
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_share": 0.0,
+      "decision": 3,
+      "dumped_current_roots": 1,
+      "elapsed": 1.1521302269993612,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d3-warm.stderr": "b2b343cf2394ac6532cee3691c8db71224ff63e2fa97e3cc7b9a7957d0fa8589",
+        "9pl31sez-white-d3-warm.stdout": "5c900bb9a44186ca9692c93ba9ef850a93064af76729d964def7c56792d310ed",
+        "command.json": "e5ce3daa534428c20eecc1e6a69d5eebdb16eaa6fc99d413669e8aabb01f7041",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "012e7d8b4ca3f853848a6d1297e6f75b2ff18fe660e7189c666e80aa7b873ed8",
+        "results.json": "557ccc97279b0491fb465d68f1cb8dc1ce54578f9eaf874b41c17730c2bdb8af"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": false,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.383,
+          "snapshot": 1
+        },
+        {
+          "carry": 0,
+          "fallback": 2,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3822,
+          "snapshot": 1
+        },
+        {
+          "active": 1.0,
+          "carry": 1,
+          "current": 1.0,
+          "enter": 0.0,
+          "expand": 1604,
+          "fallback": 0,
+          "found": 1,
+          "fresh": 0,
+          "groups": 1,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 4,
+          "positive": 1,
+          "prefix": false,
+          "save": 0.0074,
+          "setup": 0.0145,
+          "snapshot": 1,
+          "solve": 0.3607,
+          "support": 2,
+          "total": 0.3826
+        }
+      ],
+      "mode": "warm",
+      "outputs": 3,
+      "played": "d2d4",
+      "ply": 4,
+      "prefix_evaluation": [
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.3182579969998187,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 29,
+      "true_outcome": null,
+      "true_safe_moves": [
+        "g1h3",
+        "g1f3",
+        "g1e2",
+        "f1a6",
+        "f1b5",
+        "f1c4",
+        "f1d3",
+        "f1e2",
+        "e1e2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1e2",
+        "b1c3",
+        "b1a3",
+        "h2h3",
+        "g2g3",
+        "f2f3",
+        "d2d3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "f2f4",
+        "d2d4",
+        "c2c4",
+        "b2b4",
+        "a2a4"
+      ],
+      "true_state_reach": 1.0,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.25,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.260128025
+        },
+        {
+          "fatal": 0.375,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.344263249
+        },
+        {
+          "fatal": 0.25,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.152482014
+        },
+        {
+          "fatal": 0.25,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.21893242
+        },
+        {
+          "fatal": 0.125,
+          "move": "c1e3",
+          "played": 1.0,
+          "policy": 0.890109343,
+          "raw": -0.103651332
+        },
+        {
+          "fatal": 0.375,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.565391136
+        },
+        {
+          "fatal": 0.375,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.511882347
+        },
+        {
+          "fatal": 0.375,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.946359425
+        },
+        {
+          "fatal": 0.25,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.256316507
+        },
+        {
+          "fatal": 0.125,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.126238222
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.400932327
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.471603384
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.981762976
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.605454765
+        },
+        {
+          "fatal": 0.125,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.683136053
+        },
+        {
+          "fatal": 0.25,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.463406107
+        },
+        {
+          "fatal": 0.125,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0129466129,
+          "raw": -0.114874066
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.362847419
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.423701873
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.704070633
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.946360604
+        },
+        {
+          "fatal": 0.125,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.0969440445,
+          "raw": -0.0945506419
+        },
+        {
+          "fatal": 0.375,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.189457476
+        },
+        {
+          "fatal": 0.375,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.432702802
+        },
+        {
+          "fatal": 0.375,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.297680265
+        },
+        {
+          "fatal": 0.375,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.323192166
+        },
+        {
+          "fatal": 0.375,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.366051388
+        },
+        {
+          "fatal": 0.25,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.432359194
+        },
+        {
+          "fatal": 0.25,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.195177191
+        },
+        {
+          "fatal": 0.375,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.369606753
+        },
+        {
+          "fatal": 0.375,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.422537653
+        },
+        {
+          "fatal": 0.375,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.318433881
+        },
+        {
+          "fatal": 0.375,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.507063019
+        },
+        {
+          "fatal": 0.375,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.616183345
+        },
+        {
+          "fatal": 0.375,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.343274718
+        },
+        {
+          "fatal": 0.375,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.341258993
+        },
+        {
+          "fatal": 0.375,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.377573854
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "c1e3",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.125,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 0.698264561000542,
+      "evaluation": {
+        "calls": 343.0,
+        "child_alternates": 8.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12266.0,
+        "seconds": 0.325289
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-cold.stderr": "d31e2fec072caf3cb2495826e0a1389d7e97aa80e30456e2704f7e762f645bb2",
+        "9pl31sez-white-d4-cold.stdout": "d331749158757670045ad951950f61ae1201dd1c112523a725bc553df2d9a6b3",
+        "command.json": "0113b49711a0de8708ed415adaec2a48c5963d9282e6413d5c41d8c9e52b6e9e",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "81c0a71a4700e84bfc82e913fbc6db3b1b93035320d5023386c4e70e6922e9b6",
+        "results.json": "afde00c4d650c1265c0575df7a20173d66f99e568909571f1389dadb78e34af2"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 1.0,
+          "carry": 0,
+          "current": 1.0,
+          "enter": 1.0,
+          "expand": 489,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0014,
+          "setup": 0.0052,
+          "snapshot": 1,
+          "solve": 0.3698,
+          "support": 1,
+          "total": 0.3765
+        }
+      ],
+      "mode": "cold",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.0158447129997512,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.186094593,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.178722475
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.344876122
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.00991511169,
+          "raw": -0.161392636
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.184500923
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "c1e3",
+          "played": 0.0,
+          "policy": 0.0870355771,
+          "raw": -0.160535142
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.508762376
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.420919929
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.777127024
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.19744875
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.175030209
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.329239666
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.359248342
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.985612835
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.603755444
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.244728904
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.270985672
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.203614554
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.305677881
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.395564938
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.572736891
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.780961859
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "g1e2",
+          "played": 1.0,
+          "policy": 0.903049311,
+          "raw": -0.158382616
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.305166373
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.353518939
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.332752512
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.326833734
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.337954828
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.248920105
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.187074722
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.311993441
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.328672064
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.342502732
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.429264711
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.468072916
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.331990944
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.321115753
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.31627527
+        }
+      ],
+      "all_root_reach": 0.8900615725460171,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "g1e2",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.14043972221206905,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 0.3859240249985305,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-cold.stderr": "d4f768d2ab7758aa28adc80e5c3b4ccd699e4a301f9c8d357c46a6f47a108fb5",
+        "9pl31sez-white-d4-cold.stdout": "fe02ffd41efad3fc0c0dd1cda2a4adee1ca58e73439330528c7af92a7e2cf150",
+        "command.json": "9afb5faa58874adad51dc4f7f6d9d5cccc2ae63c6ea56fdb01700938bb04f903",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "cf2ff5776d2ca5e67cc0fac2c4a1dad4fd30a5013d834245e15c8e81645a0625",
+        "results.json": "3380c7464147cd1f0ec41b901411b5645b4b03cfb2bd5137da25d4f23356c37c"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 0.89006,
+          "carry": 0,
+          "current": 0.89006,
+          "enter": 1.0,
+          "expand": 1956,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0072,
+          "setup": 0.0008,
+          "snapshot": 1,
+          "solve": 0.3743,
+          "support": 1,
+          "total": 0.3824
+        }
+      ],
+      "mode": "cold",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 0.5166374620002898,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.251172029,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.235915602
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.309109919
+        },
+        {
+          "fatal": 0.251172029,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.197071999
+        },
+        {
+          "fatal": 0.251172029,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.19540699
+        },
+        {
+          "fatal": 0.125586015,
+          "move": "c1e3",
+          "played": 1.0,
+          "policy": 0.767169206,
+          "raw": -0.156465388
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.511677427
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.381653874
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.90938485
+        },
+        {
+          "fatal": 0.251172029,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.174778878
+        },
+        {
+          "fatal": 0.125586015,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.175935609
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.262514461
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.441214349
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.979878498
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.635873971
+        },
+        {
+          "fatal": 0.125586015,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.307834727
+        },
+        {
+          "fatal": 0.251172029,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.43337994
+        },
+        {
+          "fatal": 0.125586015,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.232830794,
+          "raw": -0.0187985511
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.486078039
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.340585661
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.732432709
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.905188899
+        },
+        {
+          "fatal": 0.125586015,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.167418902
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.18163131
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.320492157
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.238206753
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.191513455
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.228543961
+        },
+        {
+          "fatal": 0.251172029,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.28492125
+        },
+        {
+          "fatal": 0.251172029,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.24086399
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.306598581
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.265692938
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.356265027
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.464085947
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.658956099
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.214385593
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.361250966
+        },
+        {
+          "fatal": 0.376758044,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.214218081
+        }
+      ],
+      "all_root_reach": 0.9953337587680241,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "c1e3",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.12558601463967117,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 1.8272172319993842,
+      "evaluation": {
+        "calls": 355.0,
+        "child_alternates": 8.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12379.0,
+        "seconds": 0.323245
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-warm.stderr": "938d032283954bc07dfa74819635fe56482111441e403ba71abed8626f8aa273",
+        "9pl31sez-white-d4-warm.stdout": "d331749158757670045ad951950f61ae1201dd1c112523a725bc553df2d9a6b3",
+        "command.json": "74d7e6ff57aea49049d3582f28d0e0c80ff6b8b97fe6e33a2f08b104a825dafc",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "6bfc9956823029eb772fe058749ed0e6036599bd7b96909e1d2d6ce49ee28c4c",
+        "results.json": "d6567e2095e439c7c6a46100f9bbdc1ffaa73c8c70078b86b545043739c6f389"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.3771,
+          "snapshot": 1
+        },
+        {
+          "carry": 0,
+          "fallback": 2,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3766,
+          "snapshot": 1
+        },
+        {
+          "carry": 1,
+          "fallback": 0,
+          "fresh": 0,
+          "offI": 0,
+          "ok": 1,
+          "ply": 4,
+          "prefix": true,
+          "seconds": 0.3768,
+          "snapshot": 1
+        },
+        {
+          "active": 0.99533,
+          "carry": 0,
+          "current": 0.99533,
+          "enter": 1.0,
+          "expand": 518,
+          "fallback": 2,
+          "found": 8,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0011,
+          "setup": 0.0064,
+          "snapshot": 1,
+          "solve": 0.3687,
+          "support": 1,
+          "total": 0.3762
+        }
+      ],
+      "mode": "warm",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [
+        {
+          "calls": 733.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 16614.0,
+          "seconds": 0.311431
+        },
+        {
+          "calls": 378.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 11431.0,
+          "seconds": 0.325274
+        },
+        {
+          "calls": 384.0,
+          "failed": 0.0,
+          "ply": 4.0,
+          "ready": 1.0,
+          "scored": 12342.0,
+          "seconds": 0.321722
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 2.1701185360016098,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.186094593,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.178722475
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.344876122
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.00991511169,
+          "raw": -0.161358367
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.184500923
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "c1e3",
+          "played": 0.0,
+          "policy": 0.0870355771,
+          "raw": -0.160535142
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.508762376
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.420919929
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.777127024
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.19744875
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.175030209
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.329239666
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.359248342
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.985612835
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.603755444
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.249869514
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.275369813
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.203614554
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.311262057
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.393124663
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.572736891
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.77708791
+        },
+        {
+          "fatal": 0.140439722,
+          "move": "g1e2",
+          "played": 1.0,
+          "policy": 0.903049311,
+          "raw": -0.159330677
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.303739161
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.353518939
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.332752512
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.326833734
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.337954828
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.248920105
+        },
+        {
+          "fatal": 0.186094593,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.187074722
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.311993441
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.328672064
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.342502732
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.429264711
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.468072916
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.331990944
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.321115753
+        },
+        {
+          "fatal": 0.326534316,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.31627527
+        }
+      ],
+      "all_root_reach": 0.8900615725460171,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "g1e2",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.14043972221206905,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 1.5311977849996765,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-warm.stderr": "89187be32e6077e388992848e99ade313b47e7c86063d0ca66dcd6c3d3422ae3",
+        "9pl31sez-white-d4-warm.stdout": "fe02ffd41efad3fc0c0dd1cda2a4adee1ca58e73439330528c7af92a7e2cf150",
+        "command.json": "30caca9c7196d6e935dcf190d02130d4d135aa402f9be5bbd0b9186c937f99cf",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "17d543264cea9e6d7d4717938e2245df52c97258c9e3fd43f1ef946e2c8e0462",
+        "results.json": "a91f1ad7f4f8ec903af18d3c527bc1a5accf514aa77a086a1cf2a7720e223937"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.3818,
+          "snapshot": 1
+        },
+        {
+          "carry": 0,
+          "fallback": 2,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3818,
+          "snapshot": 1
+        },
+        {
+          "carry": 1,
+          "fallback": 0,
+          "fresh": 0,
+          "offI": 0,
+          "ok": 1,
+          "ply": 4,
+          "prefix": true,
+          "seconds": 0.3825,
+          "snapshot": 1
+        },
+        {
+          "active": 0.89006,
+          "carry": 0,
+          "current": 0.89006,
+          "enter": 1.0,
+          "expand": 1935,
+          "fallback": 2,
+          "found": 8,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0053,
+          "setup": 0.0025,
+          "snapshot": 1,
+          "solve": 0.3727,
+          "support": 1,
+          "total": 0.3804
+        }
+      ],
+      "mode": "warm",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 4.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.6183467069986364,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.166527143,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.188332862
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.313953185
+        },
+        {
+          "fatal": 0.166527143,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.0329186909,
+          "raw": -0.158323362
+        },
+        {
+          "fatal": 0.166527143,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.0119160504,
+          "raw": -0.164195104
+        },
+        {
+          "fatal": 0.138912143,
+          "move": "c1e3",
+          "played": 0.0,
+          "policy": 0.224819114,
+          "raw": -0.156973147
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.483289076
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.175959695
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.756489364
+        },
+        {
+          "fatal": 0.166527143,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.177496103
+        },
+        {
+          "fatal": 0.138912143,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.218873638
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.295664816
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.366555852
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.979874746
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.577898115
+        },
+        {
+          "fatal": 0.138912143,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.259658973
+        },
+        {
+          "fatal": 0.166527143,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.286125597
+        },
+        {
+          "fatal": 0.138912143,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.175037153
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.295830217
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.398671604
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.561091651
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.77408065
+        },
+        {
+          "fatal": 0.138912143,
+          "move": "g1e2",
+          "played": 1.0,
+          "policy": 0.730346144,
+          "raw": -0.161700112
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.290988907
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.399786171
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.315201821
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.300250716
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.308297584
+        },
+        {
+          "fatal": 0.166527143,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.213083489
+        },
+        {
+          "fatal": 0.166527143,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.167455404
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.290583661
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.324876684
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.313736693
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.416895932
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.430728796
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.302311865
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.303508708
+        },
+        {
+          "fatal": 0.305439286,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.30861905
+        }
+      ],
+      "all_root_reach": 0.899849339305649,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "g1e2",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.13891214288877934,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 0.38578201200107287,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-cold.stderr": "b85ceaee77487e3268507fa010c9a30ebdbb42e9f55445c918a219c41585e5cd",
+        "9pl31sez-white-d4-cold.stdout": "fe02ffd41efad3fc0c0dd1cda2a4adee1ca58e73439330528c7af92a7e2cf150",
+        "command.json": "8dd5a5d046f578d39e8e8308fdd74a66223985c2e9dc062fc3913ffde50f462f",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "097426f8157ebd11882b37c2697df76f19a5981b9f79aabf7ae9534a2bbb9864",
+        "results.json": "8dd49160463bd4a2e56453fc3c99b391f8ad77749c0adf2278ec388564b8c3f6"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 0.89985,
+          "carry": 0,
+          "current": 0.89985,
+          "enter": 1.0,
+          "expand": 1959,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0067,
+          "setup": 0.0008,
+          "snapshot": 1,
+          "solve": 0.3746,
+          "support": 1,
+          "total": 0.3822
+        }
+      ],
+      "mode": "cold",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 0.5149587910000264,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.25,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.233585978
+        },
+        {
+          "fatal": 0.375,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.317982303
+        },
+        {
+          "fatal": 0.25,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.164896354
+        },
+        {
+          "fatal": 0.25,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.137076973
+        },
+        {
+          "fatal": 0.125,
+          "move": "c1e3",
+          "played": 1.0,
+          "policy": 0.719759524,
+          "raw": -0.0744542534
+        },
+        {
+          "fatal": 0.375,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.544444855
+        },
+        {
+          "fatal": 0.375,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.506266488
+        },
+        {
+          "fatal": 0.375,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.940194245
+        },
+        {
+          "fatal": 0.25,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.254513384
+        },
+        {
+          "fatal": 0.125,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.190569341
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.369945903
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.378465426
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.979700482
+        },
+        {
+          "fatal": 0.375,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.579909324
+        },
+        {
+          "fatal": 0.125,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.709244219
+        },
+        {
+          "fatal": 0.25,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.462319055
+        },
+        {
+          "fatal": 0.125,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.280240476,
+          "raw": -0.0865367349
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.370462549
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.458219653
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.671883657
+        },
+        {
+          "fatal": 0.375,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.945318982
+        },
+        {
+          "fatal": 0.125,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.0936055316
+        },
+        {
+          "fatal": 0.375,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.256870937
+        },
+        {
+          "fatal": 0.375,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.379155023
+        },
+        {
+          "fatal": 0.375,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.332803333
+        },
+        {
+          "fatal": 0.375,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.332674868
+        },
+        {
+          "fatal": 0.375,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.351906472
+        },
+        {
+          "fatal": 0.25,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.431980589
+        },
+        {
+          "fatal": 0.25,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.171915893
+        },
+        {
+          "fatal": 0.375,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.310930744
+        },
+        {
+          "fatal": 0.375,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.360076165
+        },
+        {
+          "fatal": 0.375,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.341425997
+        },
+        {
+          "fatal": 0.375,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.442681137
+        },
+        {
+          "fatal": 0.375,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.649249793
+        },
+        {
+          "fatal": 0.375,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.390732368
+        },
+        {
+          "fatal": 0.375,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.30249136
+        },
+        {
+          "fatal": 0.375,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.371475921
+        }
+      ],
+      "all_root_reach": 1.0,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "c1e3",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.125,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 0.7002546550011175,
+      "evaluation": {
+        "calls": 349.0,
+        "child_alternates": 8.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12341.0,
+        "seconds": 0.324253
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-cold.stderr": "e742468c881d2a928acd4ad2ab6286536201d1f54303b61fc979b7991ada7d40",
+        "9pl31sez-white-d4-cold.stdout": "d331749158757670045ad951950f61ae1201dd1c112523a725bc553df2d9a6b3",
+        "command.json": "2546ba5d5c3ddc4b1c334ed6b22ec8a8c169a172c7952315fc131ea354660039",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "56239286879319e7760fa73f6c57a8970a980be9995b4a7c3dd259697132c401",
+        "results.json": "40135e83b1a489c1903b36b3b6d06b3f179411e33d307be8942155f92017bbee"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "active": 1.0,
+          "carry": 0,
+          "current": 1.0,
+          "enter": 1.0,
+          "expand": 506,
+          "fallback": 1,
+          "found": 0,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0016,
+          "setup": 0.0052,
+          "snapshot": 1,
+          "solve": 0.3698,
+          "support": 1,
+          "total": 0.3766
+        }
+      ],
+      "mode": "cold",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.0171622130001197,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.1675213,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.188887164
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.312860956
+        },
+        {
+          "fatal": 0.1675213,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.0123828931,
+          "raw": -0.158675756
+        },
+        {
+          "fatal": 0.1675213,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.00943522986,
+          "raw": -0.156846727
+        },
+        {
+          "fatal": 0.13874645,
+          "move": "c1e3",
+          "played": 0.0,
+          "policy": 0.219273508,
+          "raw": -0.161884457
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.483905403
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.176942601
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.75677982
+        },
+        {
+          "fatal": 0.1675213,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.171694749
+        },
+        {
+          "fatal": 0.13874645,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.218536759
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.29722479
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.367551822
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.979898751
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.57844643
+        },
+        {
+          "fatal": 0.13874645,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.265988993
+        },
+        {
+          "fatal": 0.1675213,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.286551523
+        },
+        {
+          "fatal": 0.13874645,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.177328638
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.296238121
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.398749351
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.561615176
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.775140701
+        },
+        {
+          "fatal": 0.13874645,
+          "move": "g1e2",
+          "played": 1.0,
+          "policy": 0.758908369,
+          "raw": -0.160897442
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.313405581
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.407751358
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.316494749
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.301670881
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.309618833
+        },
+        {
+          "fatal": 0.1675213,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.230145383
+        },
+        {
+          "fatal": 0.1675213,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.171337939
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.290709904
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.32464223
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.310772845
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.421594076
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.420239133
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.30314406
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.304729724
+        },
+        {
+          "fatal": 0.30626775,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.303296589
+        }
+      ],
+      "all_root_reach": 0.900923951445223,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "g1e2",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.13874645001887279,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 1.5317051640013233,
+      "evaluation": {
+        "calls": 0.0,
+        "child_alternates": 0.0,
+        "failed": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "seconds": 0.0
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-warm.stderr": "98206a3762f65193a8fbe9f40476e0663f498e360ff0fdde28c495ef11ff55a4",
+        "9pl31sez-white-d4-warm.stdout": "fe02ffd41efad3fc0c0dd1cda2a4adee1ca58e73439330528c7af92a7e2cf150",
+        "command.json": "ff8862a1aebf6abe3a14a56c1f8c6dc5f52dd890fa15c88900498f6c2cd6038f",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "a6276ec4a8677114e4cc3ed8e8212bd2c89071728b4bf2254a2d867dfe8b5b92",
+        "results.json": "55e03d6d84e583243f9bddf763f0ec668f17bcc3e27ec714c6d95c96164a0565"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.3817,
+          "snapshot": 1
+        },
+        {
+          "carry": 0,
+          "fallback": 2,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3822,
+          "snapshot": 1
+        },
+        {
+          "carry": 1,
+          "fallback": 0,
+          "fresh": 0,
+          "offI": 0,
+          "ok": 1,
+          "ply": 4,
+          "prefix": true,
+          "seconds": 0.3821,
+          "snapshot": 1
+        },
+        {
+          "active": 0.90092,
+          "carry": 0,
+          "current": 0.90092,
+          "enter": 1.0,
+          "expand": 1933,
+          "fallback": 2,
+          "found": 8,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.0054,
+          "setup": 0.0025,
+          "snapshot": 1,
+          "solve": 0.3729,
+          "support": 1,
+          "total": 0.3808
+        }
+      ],
+      "mode": "warm",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "calls": 0.0,
+          "failed": 0.0,
+          "ply": 4.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "seconds": 0.0
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 1.6226358129988512,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "internal"
+    },
+    {
+      "action_profiles": [
+        {
+          "fatal": 0.259952044,
+          "move": "b1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.165765277
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "b1a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.298338221
+        },
+        {
+          "fatal": 0.259952044,
+          "move": "b1c3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.161435829
+        },
+        {
+          "fatal": 0.259952044,
+          "move": "c1d2",
+          "played": 0.0,
+          "policy": 0.130337075,
+          "raw": -0.110351931
+        },
+        {
+          "fatal": 0.129976022,
+          "move": "c1e3",
+          "played": 1.0,
+          "policy": 0.780696256,
+          "raw": -0.140138152
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "c1f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.490618868
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "c1g5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.399198255
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "c1h6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.981759522
+        },
+        {
+          "fatal": 0.259952044,
+          "move": "d1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.156591185
+        },
+        {
+          "fatal": 0.129976022,
+          "move": "d1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.159366823
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "d1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.384955081
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "d1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.414762529
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "d1g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.981313311
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "d1h5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.651000431
+        },
+        {
+          "fatal": 0.129976022,
+          "move": "e1d2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.405587866
+        },
+        {
+          "fatal": 0.259952044,
+          "move": "e1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.378802987
+        },
+        {
+          "fatal": 0.129976022,
+          "move": "f1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.17053232
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "f1d3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.448219992
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "f1c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.296849244
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "f1b5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.620326295
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "f1a6",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.959764132
+        },
+        {
+          "fatal": 0.129976022,
+          "move": "g1e2",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.158277868
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "g1f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.20426157
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "g1h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.296049795
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "a2a3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.329191665
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "a2a4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.259445102
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "b2b3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.245539503
+        },
+        {
+          "fatal": 0.259952044,
+          "move": "b2b4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.168342231
+        },
+        {
+          "fatal": 0.259952044,
+          "move": "c2c3",
+          "played": 0.0,
+          "policy": 0.0889666685,
+          "raw": -0.118071517
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "c2c4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.316527334
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "f2f3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.345664901
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "f2f4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.296687321
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "g2g3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.472643935
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "g2g4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.59378056
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "h2h3",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.257836047
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "h2h4",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.321172614
+        },
+        {
+          "fatal": 0.389928066,
+          "move": "d4d5",
+          "played": 0.0,
+          "policy": 0.0,
+          "raw": -0.314391864
+        }
+      ],
+      "all_root_reach": 0.9617158474039809,
+      "belief_count": 8,
+      "belief_tactical_share": 0.12343688811538321,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.12343688811538321,
+      "chosen": "c1e3",
+      "chosen_fatal_reach": 0.125,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_share": 0.12997602185450124,
+      "decision": 4,
+      "dumped_current_roots": 8,
+      "elapsed": 1.8263422400013951,
+      "evaluation": {
+        "calls": 337.0,
+        "child_alternates": 8.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scored": 12021.0,
+        "seconds": 0.324994
+      },
+      "file_hashes": {
+        "9pl31sez-white-d4-warm.stderr": "456ae868718a1e7ad5c9bb82d613f28ec75204fcf043d28371d7543695d16475",
+        "9pl31sez-white-d4-warm.stdout": "d331749158757670045ad951950f61ae1201dd1c112523a725bc553df2d9a6b3",
+        "command.json": "9061afc88674e239a7da972785c2b491a59ad7271e6b6338500218c489254629",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "4a4868e69ae4b1747d38068a7852e94b5f564e96c70c3684e4217b689a2e0e31",
+        "results.json": "ca5ab0ef2cc6ca0f8c7053d905d8c8c8b602a7bafd43ce05477b8d23c5d8c18a"
+      },
+      "game": "9pl31sez",
+      "immediate_loss": true,
+      "legal": true,
+      "metrics": [
+        {
+          "carry": 0,
+          "fallback": 1,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 0,
+          "prefix": true,
+          "seconds": 0.3772,
+          "snapshot": 1
+        },
+        {
+          "carry": 0,
+          "fallback": 2,
+          "fresh": 1,
+          "offI": 0,
+          "ok": 1,
+          "ply": 2,
+          "prefix": true,
+          "seconds": 0.3768,
+          "snapshot": 1
+        },
+        {
+          "carry": 1,
+          "fallback": 0,
+          "fresh": 0,
+          "offI": 0,
+          "ok": 1,
+          "ply": 4,
+          "prefix": true,
+          "seconds": 0.3769,
+          "snapshot": 1
+        },
+        {
+          "active": 0.96172,
+          "carry": 0,
+          "current": 0.96172,
+          "enter": 1.0,
+          "expand": 482,
+          "fallback": 2,
+          "found": 8,
+          "fresh": 8,
+          "groups": 8,
+          "offI": 0,
+          "ok": 1,
+          "over": 0,
+          "ply": 6,
+          "positive": 0,
+          "prefix": false,
+          "save": 0.001,
+          "setup": 0.0066,
+          "snapshot": 1,
+          "solve": 0.3685,
+          "support": 1,
+          "total": 0.3761
+        }
+      ],
+      "mode": "warm",
+      "outputs": 4,
+      "played": "c1e3",
+      "ply": 6,
+      "prefix_evaluation": [
+        {
+          "calls": 727.0,
+          "failed": 0.0,
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 17059.0,
+          "seconds": 0.311519
+        },
+        {
+          "calls": 384.0,
+          "failed": 0.0,
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 11523.0,
+          "seconds": 0.324158
+        },
+        {
+          "calls": 369.0,
+          "failed": 0.0,
+          "ply": 4.0,
+          "ready": 1.0,
+          "scored": 11861.0,
+          "seconds": 0.323932
+        }
+      ],
+      "prefix_exact": true,
+      "process": {
+        "elapsed": 2.1721326219994808,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "returncode": 0,
+      "seed": 12,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 1,
+      "true_legal_count": 37,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_safe_moves": [
+        "e1e2",
+        "d1d2",
+        "c1d2",
+        "b1c3",
+        "b1d2",
+        "c2c3",
+        "b2b4"
+      ],
+      "true_state_reach": 0.125,
+      "true_state_roots": 1,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    }
+  ],
+  "run": "/media/henrytan/seagate/iamavirus/astra/m4-gate-20261011/duck-openings/prefix-pair-05",
+  "source_sha256": {
+    "manifest.json": "52a536d05dfa475232282063893db9b417541f22de52f690cd0aaf25ca4b3f3c",
+    "summary.json": "c60904f4be7a4bcea4ed6e12862f32f9bca228ae0b101130b1c2dae6b95a777a"
+  },
+  "updated_at": "2026-10-11T08:49:26.577333+00:00"
+}

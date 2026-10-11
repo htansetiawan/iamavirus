@@ -63,6 +63,8 @@ def validate(report, case, config, variant, seed):
                 'tactical_witnesses':False, 'child_alternates':variant=='stockfish'}
     for k,v in expected.items():
         if report.get(k)!=v: raise ValueError(f'Probe configuration mismatch: {k}')
+    if report.get("tactical_closure",False)!=config.get("tactical_closure",False):
+        raise ValueError("Tactical closure setting differs")
     if len(report.get('rows',[]))!=1: raise ValueError('Expected one decision')
     row = report['rows'][0]
     for k in ['game','side','decision','ply','played']:
@@ -78,6 +80,8 @@ def validate(report, case, config, variant, seed):
         raise ValueError('Illegal or absent selected move')
     if row.get('immediate_loss')!=(row['chosen'] not in case['safe_moves']):
         raise ValueError('Candidate outcome disagrees with frozen oracle')
+    if config.get('tactical_closure') and not any(m.get('ply')==case['ply'] and not m.get('prefix') for m in row.get('closure_metrics',[])):
+        raise ValueError('Enabled tactical closure has no final diagnostic')
     return row
 
 

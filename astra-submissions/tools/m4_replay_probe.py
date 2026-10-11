@@ -71,6 +71,7 @@ def main():
     ap.add_argument("--parents", type=int, help="Fixed replay parent cap, >=2000; avoids clock-dependent thinning")
     ap.add_argument("--samples", type=int, help="Root sample target, 1..4096")
     ap.add_argument("--audit-belief", action="store_true", help="Compare truth with post-decision belief export")
+    ap.add_argument("--tactical-closure", action="store_true", help="Expand threatened future own-information-set aliases")
     ap.add_argument("--witnesses", action="store_true", help="Enable experimental tactical root witnesses")
     ap.add_argument("--stockfish", type=Path, help="Optional bounded external leaf evaluator")
     ap.add_argument("--child-alternates", action="store_true", help="Fresh root heuristic from best rules-adjudicated child (automatic with Stockfish)")
@@ -109,6 +110,7 @@ def main():
                        MIST_REPLAY_WARM="1" if mode == "warm" else "0",
                        MIST_MAX_SECONDS=str(args.seconds), MIST_M4_ITERATIONS=str(args.iterations),
                        FOW_SEED=str(args.seed), MIST_SEARCH="m4", MIST_M4_DUMP_PLY=str(ply))
+            env["MIST_M4_CLOSURE"] = "1" if args.tactical_closure else "0"
             env["MIST_M4_WITNESSES"] = "1" if args.witnesses else "0"
             env.pop("MIST_STOCKFISH", None)
             if args.stockfish: env["MIST_STOCKFISH"] = str(args.stockfish.resolve())
@@ -153,6 +155,8 @@ def main():
             row["prefix_evaluation"] = [
                 {k:float(v) for k,v in re.findall(r"(\w+)=(\S+)", line)}
                 for line in re.findall(r"m4-prefix-eval: (.*)", proc.stderr)]
+            row["closure_metrics"] = [{k:int(v) for k,v in re.findall(r"(\w+)=(\d+)",line)}
+                for line in re.findall(r"m4-closure: (.*)",proc.stderr)]
             witness_line = re.search(r"m4-witness: (.*)",proc.stderr)
             if witness_line:
                 row["witness_metrics"] = {k:int(v) for k,v in re.findall(r"(\w+)=(\d+)",witness_line.group(1))}
@@ -186,7 +190,7 @@ def main():
             report = {"binary": str(binary), "sha256": digest, "seconds": args.seconds,
                       "iteration_cap": args.iterations, "seed": args.seed,
                       "fixed_parent_cap": args.parents, "sample_target": args.samples,
-                      "tactical_witnesses": args.witnesses,
+                      "tactical_witnesses": args.witnesses, "tactical_closure":args.tactical_closure,
                       "stockfish": str(args.stockfish.resolve()) if args.stockfish else None,
                       "stockfish_sha256": hashlib.sha256(args.stockfish.read_bytes()).hexdigest() if args.stockfish else None,
                       "child_alternates": bool(args.child_alternates or args.stockfish),

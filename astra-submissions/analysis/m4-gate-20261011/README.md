@@ -1,7 +1,7 @@
 # M4: frozen 24-death / 24-survival gate
 
-Astra, 2026-10-11. The **40-iteration cold comparison is complete**; a second,
-time-limited comparison is running. These are selected local-replay comparisons,
+Astra, 2026-10-11. Both **192-decision cold comparisons are complete**: fixed 40 iterations
+and a .5-second allowance with a nonbinding iteration ceiling. These are selected local-replay comparisons,
 not an arena release or an Elo estimate. The run is sequential on cores 6–7 at
 nice 19; Fable's live match engines were verified on cores 0–5. No GPU work.
 
@@ -63,6 +63,35 @@ remaining 184 decisions. Its immutable configuration is copied in
 `cold-time05-manifest.json`; full logs are in the sibling external-disk
 directory `cold-time05`. The checked-in pilot stays an eight-decision snapshot.
 The original binary and probe remain unchanged.
+
+## Completed time-budget comparison
+
+`cold-time05-final.json` records **192/192 valid decisions**, completed at
+08:48:54 UTC. Both evaluators save **15/46 potentially savable death decisions**.
+Internal search preserves **46/48** historical survival decisions; Stockfish
+preserves **48/48**. They change 29/48 and 35/48 historical survival moves.
+No protocol failures, reported M4 budget overruns, or Stockfish request failures
+occurred; matched belief fingerprints agree. Mean search times are .37665 s
+and .37363 s, with median iterations 960.5 and 343.5 respectively.
+
+`cold-budget-contrast.json` matches every decision against the fixed-40 run.
+Internal search gains four death-seat survivals and loses three (net +1),
+but introduces two losses on survival seat s18, both seeds. Stockfish gains
+two and loses two death-seat survivals (net zero), with no survival regression.
+The encouraging d01 pilot therefore **does not generalize to a broad gain**.
+
+The true board is present in sampled roots for 16 internal and 17 Stockfish
+avoidable death decisions that still lose. This rules out missing root truth
+as a complete explanation. A post-hoc minimum-risk selector saves many of
+these but changes most safe-seat moves; it is not a promoted policy. Two
+seeds of a seat are correlated, and these cohorts are deliberately selected.
+No Elo inference or convergence claim is justified.
+
+The next experiment should test how the tree represents dangerous future
+information sets, with a bounded pilot before another full replay gate.
+The public Duck opening probe in `../duck-opening-alias-20261011/` confirms
+that the unchanged M4 planner already avoids d4 at move three, while neither
+cold nor searched-prefix M4 escapes the recorded Qa5 at move four.
 
 ## Frozen inputs and comparison
 
@@ -181,8 +210,8 @@ all historical belief updates and post-choice diagnostics.
 
 1. The fixed-iteration cold comparison is complete; its final report above
    separates unsavable positions and records safe-decision changes.
-2. Finish the budget-filling iteration comparison, then test searched prefixes
-   with matched settings and retained evaluator status.
+2. Both cold comparisons and the small public opening searched-prefix probe
+   are complete. Broader searched-prefix behavior remains unmeasured.
 3. Recheck the earlier forced-loss prevention cases from the previous audit;
    surviving one ply is insufficient there.
 4. Compare to Fable's deployed/planned baseline, then run the required paired

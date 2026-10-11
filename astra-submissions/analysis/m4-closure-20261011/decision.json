@@ -1,0 +1,188 @@
+{
+  "classification": "development screen failed; no broad rerun or promotion",
+  "source_commit": "8d6a9691339ffc6c0a2a7ce0c79294e39622d380",
+  "pilot_sha256": "97c57b14eb48e072341534a40592725d08f09c4d6000c4ee8742612e170d28a4",
+  "oracle_sha256": {
+    "prevention-white": "80c80a31b7d25d879607d5fd0bdf9a1a0f4d7942188f1d5393c283cfb46b3df5",
+    "prevention-black": "9e822267f9b3c278c44d94dec0a2a8305e8eb5ffc93c7c201513dbaacf4aea0b"
+  },
+  "complete": true,
+  "valid": 32,
+  "pairs": [
+    {
+      "case": "prevention-white",
+      "variant": "internal",
+      "seed": 11,
+      "off_move": "d4e6",
+      "on_move": "a1a4",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "prevention-white",
+      "variant": "stockfish",
+      "seed": 11,
+      "off_move": "d2d3",
+      "on_move": "d2d3",
+      "off_fails": false,
+      "on_fails": false,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "prevention-white",
+      "variant": "stockfish",
+      "seed": 12,
+      "off_move": "d2d3",
+      "on_move": "e2e3",
+      "off_fails": false,
+      "on_fails": false,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "prevention-white",
+      "variant": "internal",
+      "seed": 12,
+      "off_move": "d4b5",
+      "on_move": "d4b5",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "prevention-black",
+      "variant": "internal",
+      "seed": 11,
+      "off_move": "e7f6",
+      "on_move": "e7f6",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "prevention-black",
+      "variant": "stockfish",
+      "seed": 11,
+      "off_move": "e7f6",
+      "on_move": "e7f6",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "prevention-black",
+      "variant": "stockfish",
+      "seed": 12,
+      "off_move": "e7f6",
+      "on_move": "e7f6",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "prevention-black",
+      "variant": "internal",
+      "seed": 12,
+      "off_move": "e7f6",
+      "on_move": "e7f6",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "forced_loss_by_next_own_turn"
+    },
+    {
+      "case": "d01",
+      "variant": "internal",
+      "seed": 11,
+      "off_move": "b8a7",
+      "on_move": "b7b6",
+      "off_fails": false,
+      "on_fails": true,
+      "metric": "immediate_loss"
+    },
+    {
+      "case": "d01",
+      "variant": "stockfish",
+      "seed": 11,
+      "off_move": "b8a7",
+      "on_move": "b8a7",
+      "off_fails": false,
+      "on_fails": false,
+      "metric": "immediate_loss"
+    },
+    {
+      "case": "d01",
+      "variant": "stockfish",
+      "seed": 12,
+      "off_move": "b8a7",
+      "on_move": "d5c4",
+      "off_fails": false,
+      "on_fails": true,
+      "metric": "immediate_loss"
+    },
+    {
+      "case": "d01",
+      "variant": "internal",
+      "seed": 12,
+      "off_move": "b8a7",
+      "on_move": "b8a7",
+      "off_fails": false,
+      "on_fails": false,
+      "metric": "immediate_loss"
+    },
+    {
+      "case": "s18",
+      "variant": "internal",
+      "seed": 11,
+      "off_move": "f1e2",
+      "on_move": "f1e2",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "immediate_loss"
+    },
+    {
+      "case": "s18",
+      "variant": "stockfish",
+      "seed": 11,
+      "off_move": "f1e1",
+      "on_move": "f1e1",
+      "off_fails": false,
+      "on_fails": false,
+      "metric": "immediate_loss"
+    },
+    {
+      "case": "s18",
+      "variant": "stockfish",
+      "seed": 12,
+      "off_move": "f1e1",
+      "on_move": "f1e1",
+      "off_fails": false,
+      "on_fails": false,
+      "metric": "immediate_loss"
+    },
+    {
+      "case": "s18",
+      "variant": "internal",
+      "seed": 12,
+      "off_move": "f1e2",
+      "on_move": "f1e2",
+      "off_fails": true,
+      "on_fails": true,
+      "metric": "immediate_loss"
+    }
+  ],
+  "gates": {
+    "consistent_prevention_improvement": false,
+    "no_immediate_control_regression": false,
+    "protocol_ok": true,
+    "m4_ok": true,
+    "snapshots_all": true,
+    "no_reported_overruns": true,
+    "no_sf_failures": true,
+    "paired_beliefs_equal": true
+  },
+  "enabled_expansion_range": [
+    287,
+    1535
+  ],
+  "capacity_drops": 0
+}

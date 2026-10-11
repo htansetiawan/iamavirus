@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-11T09:03:09.968243+00:00",
+  "classification": "development pilot, not a held-out test or strength estimate",
+  "cases": [
+    "prevention-white: 7crrql6k ply34",
+    "prevention-black: zn8m31zt ply45",
+    "d01: only one immediate safe move",
+    "s18: previously safe promotion seat regressed in time gate"
+  ],
+  "expected_decisions": 32,
+  "settings": {
+    "seeds": [
+      11,
+      12
+    ],
+    "seconds": 0.5,
+    "samples": 128,
+    "parents": 20000,
+    "prefix": "cold",
+    "evaluators": [
+      "internal",
+      "stockfish"
+    ],
+    "closure": [
+      false,
+      true
+    ]
+  },
+  "decision_rule": "Do not start a broad rerun unless closure improves forced-loss prevention on both seeds of at least one evaluator/case without adding an immediate loss in either control seat, and protocol/evaluator/snapshot checks pass. This screens compute spending; it is not a strength promotion rule.",
+  "run": "/media/henrytan/seagate/iamavirus/astra/m4-gate-20261011/tactical-closure-pilot"
+}

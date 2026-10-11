@@ -132,10 +132,29 @@ The exploratory three-move report and full all-move report live under:
 
 ## Next measured use
 
-A 16-decision cold/warm probe is queued after the current broad M4 gate:
-third and fourth White decisions, internal and Stockfish, seeds11/12. It uses
-the unchanged engine and recorded protocol to test whether current search
-already avoids the ambiguity earlier and whether carry-over matters.
+The **16-decision cold/warm probe completed** at 08:49:26 UTC. Its frozen
+manifest and full receipt snapshot are in `prefix-pair-final.json`; process
+logs remain on Seagate. All prefixes and chosen moves validate, with no
+reported M4 overruns or Stockfish request failures.
+
+| Decision | Cold internal | Warm internal | Cold Stockfish | Warm Stockfish |
+| --- | --- | --- | --- | --- |
+| Third, before historical d4 | Be2 / Be2 | Nc3 / Nc3 | Qe2 / Qe2 | Qe2 / Be2 |
+| Fourth, after historical Qa5 | Ne2 / Ne2 | Ne2 / Ne2 | Be3 / Be3 | Be3 / Be3 |
+
+Each cell lists seeds 11/12. All third-decision choices are among the 26
+moves with a shared safe reply in each tested future observation group.
+All fourth-decision choices lose to the actual Qa5. The belief then contains
+all eight possible queen destinations, including the true board with
+posterior mass .12344; root truth is present in every run. This is not a
+missing-attacker failure.
+
+Warm search carries one root at decision three. At decision four it falls
+back because the forced historical d4 had zero own reach in the previous
+blueprint. These are searched **forced prefixes**, not on-policy games.
+Consequently the result does not show that carry would fail following the
+moves M4 actually wanted to play. It demonstrates why forced-prefix results
+must retain the carry/fallback diagnostics.
 
 For a later runtime experiment, the C primitive can label unresolved future
 information sets for expansion priority, or provide a training target for
