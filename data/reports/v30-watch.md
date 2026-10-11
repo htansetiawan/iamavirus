@@ -1,14 +1,14 @@
 # Arena v30 watch
 
-Updated 2026-10-11 04:29 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 05:47 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 29W-8D-31L over 68 games** (49%).
-As White: 20.0/34.
-As Black: 13.0/34.
+**Record: 29W-8D-33L over 70 games** (47%).
+As White: 20.0/35.
+As Black: 13.0/35.
 
-Queen lost for less: 11 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 5 of 31.
+Queen lost for less: 11 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 5 of 33.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
-Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -19,10 +19,10 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | Mist Opportunities | 2-0-4 |
 | Strongly Invisible | 1-1-4 |
 | TA Baseline P | 4-0-0 |
+| Instructors | 1-0-3 |
 | Greek Gift | 0-1-3 |
 | Knight Vision | 0-0-2 |
 | Apricot Squad | 2-0-0 |
-| Instructors | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -94,3 +94,5 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-11 04:19 | vrrtt3ag | W | duck | 91 | loss |  | 63 s | 3-15 |
 | 2026-10-11 04:20 | mbvjftdr | W | TA Baseline A | 104 | win |  | 75 s | 12-8 |
 | 2026-10-11 04:20 | ks0fqbab | B | TA Baseline A | 92 | draw |  | 66 s | 15-9 |
+| 2026-10-11 04:29 | wkyjv18f | W | Instructors | 77 | loss |  | 80 s | 7-26 |
+| 2026-10-11 04:32 | g7xzrx7g | B | Instructors | 104 | loss |  | 52 s | 1-17 |
