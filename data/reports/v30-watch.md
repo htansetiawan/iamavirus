@@ -1,28 +1,28 @@
 # Arena v30 watch
 
-Updated 2026-10-11 20:13 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 20:34 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 194W-28D-215L over 437 games** (48%).
-As White: 115.5/218.
-As Black: 92.5/219.
+**Record: 199W-29D-221L over 449 games** (48%).
+As White: 118.5/224.
+As Black: 95.0/225.
 
-Queen lost for less: 59 games (52 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 44 of 215.
+Queen lost for less: 59 games (52 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 44 of 221.
 Short losses (12 plies or fewer): 4. Games with a clock at 15 s or less: 4. Mean length 77 plies.
-Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 43-9-6 |
 | Mist Opportunities | 16-3-39 |
 | duck | 9-5-36 |
-| TA Baseline P | 38-0-2 |
-| TA Baseline S | 23-3-13 |
+| TA Baseline P | 42-0-2 |
+| TA Baseline S | 24-3-13 |
+| Instructors | 8-2-26 |
 | Strongly Invisible | 4-1-31 |
-| Knight Vision | 10-3-21 |
-| Instructors | 8-1-25 |
+| Knight Vision | 10-3-22 |
 | Decent Chess Bot | 5-1-24 |
+| Greek Gift | 2-2-22 |
 | Apricot Squad | 22-0-0 |
-| Greek Gift | 2-2-18 |
 | baseline.py | 14-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -464,3 +464,15 @@ Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate r
 | 2026-10-11 20:00 | qpszsqlt | W | TA Baseline A | 104 | win |  | 70 s | 13-4 |
 | 2026-10-11 20:00 | le9rgzu9 | W | Strongly Invisible | 91 | loss |  | 71 s | 3-15 |
 | 2026-10-11 20:12 | 5mwrwdh3 | B | TA Baseline S | 78 | draw |  | 80 s | 16-11 |
+| 2026-10-11 20:13 | qwwm0jvl | W | TA Baseline S | 118 | win |  | 63 s | 12-2 |
+| 2026-10-11 20:14 | oie07tv2 | W | Instructors | 77 | loss |  | 79 s | 4-17 |
+| 2026-10-11 20:17 | fkjlszs7 | B | Greek Gift | 70 | loss |  | 88 s | 3-13 |
+| 2026-10-11 20:19 | o2nczcra | B | Instructors | 157 | draw |  | 37 s | 4-3 |
+| 2026-10-11 20:19 | 6bf619f3 | W | Greek Gift | 101 | loss |  | 54 s | 0-15 |
+| 2026-10-11 20:23 | gjz9cyh8 | B | TA Baseline P | 77 | win |  | 80 s | 13-3 |
+| 2026-10-11 20:23 | 986a5ezu | W | TA Baseline P | 50 | win |  | 115 s | 24-18 |
+| 2026-10-11 20:29 | oda4tky4 | B | TA Baseline P | 71 | win |  | 56 s | 25-16 |
+| 2026-10-11 20:29 | ruuxzv7w | B | Greek Gift | 56 | loss |  | 107 s | 13-28 |
+| 2026-10-11 20:29 | 0hgz0lox | W | TA Baseline P | 82 | win |  | 82 s | 12-3 |
+| 2026-10-11 20:32 | vcnqqd4h | W | Greek Gift | 87 | loss |  | 77 s | 0-18 |
+| 2026-10-11 20:32 | 3dnfgflk | B | Knight Vision | 22 | loss |  | 154 s | 31-33 |
