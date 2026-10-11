@@ -1,0 +1,16 @@
+{
+  "flags": "-O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer",
+  "leak_detection": true,
+  "tests": [
+    {
+      "test": "test_m4_chess",
+      "returncode": 0,
+      "binary_sha256": "af7615add3407baa49227f7111ac3a0817b8043411292092882586afaa269033"
+    },
+    {
+      "test": "test_m4_sample",
+      "returncode": 0,
+      "binary_sha256": "f2db82425b126f8731ee7edbee67b2e17dc5fa8fb055d6f4b5a900d61ff69382"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "classification": "correctness and offline diagnostic checkpoint; not a release or strength claim",
+  "base_commit": "27a3e68d242b6a61bf64629b506165fd000aa33a",
+  "files": {
+    "src/m4search.c": "7f4f2248af6dbbf1a42ccc3d49fa0df655715d66d618fe52c3e0bd1c6fd55f98",
+    "src/m4search.h": "371d87a58e4595aa96188946fc5359240a05eb68c4d525ce9e5c4d6780aa3432",
+    "src/m4sample.c": "e91a26245423b74e4a0af3fe7daa7eb02a6a4df5c371aea41559260de9b6b0fe",
+    "src/m4sample.h": "6d8e46a4000b4e019e8ee34e6c0a6c5b7cc4b00f72c29241d9149b3579b0c25e",
+    "src/m4main.c": "2ec7df76ffc4f57f6108a90bb6f7a2f892da52a16848068e6e6f342a67bf2b0f",
+    "tests/test_m4_chess.c": "d790db5fc8f345c52272b96f84b055d15a1489ab70c6be53399a9191da72e882",
+    "tests/test_m4_sample.c": "48ae8033dba411f2c73234107740247738b5461c7e518c01a3f08bb5429eee56"
+  },
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "checks": [
+    "make test_m4: six generic suites plus chess adapter and sampler suites passed",
+    "ASan/UBSan/LSan: both new suites passed; see sanitizer-results.json",
+    "Two bounded official-referee protocol games ended by king capturability, without protocol failures or capture warnings; see protocol-games/results.json"
+  ],
+  "known_negative": "Two-world cold fixture chooses g3h4, losing in one world; static alternate -0.970012071 exceeds best child -0.991486640.",
+  "source_commit": "5c04b56886029ce47e45296540ab651561bbf47d"
+}
