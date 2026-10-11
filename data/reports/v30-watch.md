@@ -1,28 +1,28 @@
 # Arena v30 watch
 
-Updated 2026-10-11 14:42 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 15:03 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 131W-22D-151L over 304 games** (47%).
-As White: 81.5/152.
-As Black: 60.5/152.
+**Record: 133W-22D-157L over 312 games** (46%).
+As White: 83.5/156.
+As Black: 60.5/156.
 
-Queen lost for less: 41 games (36 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 33 of 151.
-Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 2. Mean length 76 plies.
-Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 42 games (37 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 34 of 157.
+Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 3. Mean length 77 plies.
+Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Mist Opportunities | 13-2-31 |
 | duck | 8-5-31 |
-| Mist Opportunities | 12-2-27 |
 | TA Baseline A | 29-7-4 |
 | TA Baseline P | 27-0-1 |
-| Strongly Invisible | 3-1-22 |
+| Strongly Invisible | 3-1-24 |
 | TA Baseline S | 18-1-7 |
 | Decent Chess Bot | 4-1-19 |
 | Knight Vision | 4-2-16 |
 | Instructors | 4-1-13 |
 | Apricot Squad | 14-0-0 |
-| Greek Gift | 0-2-11 |
+| Greek Gift | 1-2-11 |
 | baseline.py | 8-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -331,3 +331,11 @@ Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate r
 | 2026-10-11 14:31 | 8o4ca1q8 | B | duck | 88 | loss |  | 79 s | 3-9 |
 | 2026-10-11 14:38 | 8bw7go5c | W | Mist Opportunities | 104 | win |  | 64 s | 8-6 |
 | 2026-10-11 14:40 | 0cdckmv0 | B | Greek Gift | 46 | loss | ply 31 by q unseen | 123 s | 17-16 |
+| 2026-10-11 14:42 | bh5881ie | B | Mist Opportunities | 161 | loss |  | 2 s | 1-17 |
+| 2026-10-11 14:47 | po23rp14 | W | Greek Gift | 148 | win |  | 59 s | 4-0 |
+| 2026-10-11 14:51 | ynahh5ex | B | Mist Opportunities | 90 | loss |  | 67 s | 6-15 |
+| 2026-10-11 14:53 | 6u4y6pwm | W | Mist Opportunities | 70 | win |  | 95 s | 13-6 |
+| 2026-10-11 14:54 | wgumupnc | W | Mist Opportunities | 133 | loss |  | 49 s | 0-14 |
+| 2026-10-11 14:54 | bgt9p8cj | B | Strongly Invisible | 66 | loss |  | 95 s | 3-23 |
+| 2026-10-11 14:57 | kd5hnap2 | B | Mist Opportunities | 132 | loss | ply 41 by q unseen | 42 s | 0-8 |
+| 2026-10-11 14:57 | itet3brz | W | Strongly Invisible | 129 | loss |  | 54 s | 2-12 |
