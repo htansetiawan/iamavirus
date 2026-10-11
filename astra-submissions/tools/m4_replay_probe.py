@@ -65,6 +65,8 @@ def main():
     ap.add_argument("--samples", type=int, help="Root sample target, 1..4096")
     ap.add_argument("--audit-belief", action="store_true", help="Compare truth with post-decision belief export")
     ap.add_argument("--witnesses", action="store_true", help="Enable experimental tactical root witnesses")
+    ap.add_argument("--stockfish", type=Path, help="Optional bounded external leaf evaluator")
+    ap.add_argument("--child-alternates", action="store_true", help="Fresh root heuristic from best rules-adjudicated child (automatic with Stockfish)")
     ap.add_argument("--mode", choices=["cold", "warm", "both"], default="both")
     args = ap.parse_args()
     sys.path.insert(0, str(args.kit))
@@ -101,6 +103,9 @@ def main():
                        MIST_MAX_SECONDS=str(args.seconds), MIST_M4_ITERATIONS=str(args.iterations),
                        FOW_SEED=str(args.seed), MIST_SEARCH="m4", MIST_M4_DUMP_PLY=str(ply))
             env["MIST_M4_WITNESSES"] = "1" if args.witnesses else "0"
+            env.pop("MIST_STOCKFISH", None)
+            if args.stockfish: env["MIST_STOCKFISH"] = str(args.stockfish.resolve())
+            env["MIST_M4_ALT_CHILDREN"] = "1" if args.child_alternates else "0"
             if args.parents is not None: env["MIST_REPLAY_PARENTS"] = str(args.parents)
             if args.samples is not None: env["MIST_SAMPLES"] = str(args.samples)
             belief_dump = tempfile.TemporaryDirectory(prefix="m4-belief-")
@@ -135,6 +140,12 @@ def main():
             row["action_profiles"] = [dict(move=m, policy=float(p), played=float(q),
                                            fatal=float(f), raw=float(v)) for m,p,q,f,v in re.findall(
                 r"m4-action: move=(\S+) policy=(\S+) played=(\S+) fatal=(\S+) raw=(\S+)",proc.stderr)]
+            eval_line = re.search(r"m4-eval: (.*)", proc.stderr)
+            if eval_line:
+                row["evaluation"] = {k:float(v) for k,v in re.findall(r"(\w+)=(\S+)",eval_line.group(1))}
+            row["prefix_evaluation"] = [
+                {k:float(v) for k,v in re.findall(r"(\w+)=(\S+)", line)}
+                for line in re.findall(r"m4-prefix-eval: (.*)", proc.stderr)]
             witness_line = re.search(r"m4-witness: (.*)",proc.stderr)
             if witness_line:
                 row["witness_metrics"] = {k:int(v) for k,v in re.findall(r"(\w+)=(\d+)",witness_line.group(1))}
@@ -169,6 +180,9 @@ def main():
                       "iteration_cap": args.iterations, "seed": args.seed,
                       "fixed_parent_cap": args.parents, "sample_target": args.samples,
                       "tactical_witnesses": args.witnesses,
+                      "stockfish": str(args.stockfish.resolve()) if args.stockfish else None,
+                      "stockfish_sha256": hashlib.sha256(args.stockfish.read_bytes()).hexdigest() if args.stockfish else None,
+                      "child_alternates": bool(args.child_alternates or args.stockfish),
                       "classification": "offline diagnostic, no Elo inference", "rows": results}
             (args.out/"results.json").write_text(json.dumps(report, indent=2)+"\n")
             print(json.dumps({k:v for k,v in row.items() if k not in ("metrics", "action_profiles")}), flush=True)

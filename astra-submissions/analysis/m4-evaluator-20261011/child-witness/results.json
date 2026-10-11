@@ -1,0 +1,3506 @@
+{
+  "binary": "/tmp/mist-c-astra-m4/build/mist-m4",
+  "sha256": "1afb58d207a6bc4f292909d4575d5ca1b4179448f297942f1c8a10ca72baa191",
+  "seconds": 0.5,
+  "iteration_cap": 40,
+  "seed": 21,
+  "fixed_parent_cap": 20000,
+  "sample_target": 128,
+  "tactical_witnesses": true,
+  "stockfish": null,
+  "stockfish_sha256": null,
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "nra5paph",
+      "side": "white",
+      "decision": 21,
+      "ply": 40,
+      "mode": "cold",
+      "played": "g3h4",
+      "returncode": 0,
+      "true_legal_count": 27,
+      "true_safe_moves": [
+        "g1h2",
+        "g1g2",
+        "g1h1",
+        "e1a5",
+        "e1b4",
+        "e1c3",
+        "e1d2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1d3",
+        "d1e2",
+        "d1d2",
+        "d1c2",
+        "d1c1",
+        "d1b1",
+        "a1a3",
+        "a1a2",
+        "a1c1",
+        "a1b1",
+        "d4d5",
+        "a4a5",
+        "g3g4",
+        "b3b4",
+        "f2f3",
+        "f2f4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 0.4226581359998818,
+      "prefix_exact": true,
+      "outputs": 21,
+      "chosen": "g3h4",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 40,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "groups": 128,
+          "expand": 119,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.0122,
+          "solve": 0.0129,
+          "save": 0.0021,
+          "total": 0.0272,
+          "over": 0,
+          "active": 0.98778,
+          "enter": 1.0,
+          "current": 0.98778,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 128,
+      "true_board_roots": 0,
+      "true_state_roots": 0,
+      "true_state_reach": 0,
+      "all_root_reach": 0.9877779224867588,
+      "chosen_fatal_roots": 2,
+      "chosen_fatal_reach": 0.015625,
+      "chosen_fatal_share": 0.01581833289072064,
+      "action_profiles": [
+        {
+          "move": "a1b1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.420282361
+        },
+        {
+          "move": "a1c1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.417970903
+        },
+        {
+          "move": "a1a2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.420248254
+        },
+        {
+          "move": "a1a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.438216699
+        },
+        {
+          "move": "d1b1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.415515997
+        },
+        {
+          "move": "d1c1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.477255486
+        },
+        {
+          "move": "d1c2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.474691762
+        },
+        {
+          "move": "d1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.913041182
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.458956893
+        },
+        {
+          "move": "d1d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.416019798
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.461397946
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.590151152
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.564417587
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.424462949
+        },
+        {
+          "move": "e1c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.784214777
+        },
+        {
+          "move": "e1b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.535501179
+        },
+        {
+          "move": "e1a5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.666918634
+        },
+        {
+          "move": "g1h1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0293359432,
+          "raw": -0.461728273
+        },
+        {
+          "move": "g1g2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0293359432,
+          "raw": -0.525202405
+        },
+        {
+          "move": "g1h2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0135176103,
+          "raw": -0.516618636
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.423727905
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.415803694
+        },
+        {
+          "move": "b3b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.407667965
+        },
+        {
+          "move": "g3g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.421843297
+        },
+        {
+          "move": "g3h4",
+          "policy": 1.0,
+          "played": 1.0,
+          "fatal": 0.0158183329,
+          "raw": 0.18490487
+        },
+        {
+          "move": "a4a5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.407685803
+        },
+        {
+          "move": "d4d5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.406692888
+        }
+      ],
+      "evaluation": {
+        "child_alternates": 128.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "calls": 0.0,
+        "failed": 0.0,
+        "seconds": 0.0
+      },
+      "prefix_evaluation": [],
+      "witness_metrics": {
+        "scanned": 1061,
+        "complete": 1,
+        "added": 3,
+        "candidate_moves": 4
+      },
+      "belief_count": 1061,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 0.0003433894645377249,
+      "belief_truth_share": 0.0003433894645377249,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    },
+    {
+      "game": "nra5paph",
+      "side": "white",
+      "decision": 21,
+      "ply": 40,
+      "mode": "warm",
+      "played": "g3h4",
+      "returncode": 0,
+      "true_legal_count": 27,
+      "true_safe_moves": [
+        "g1h2",
+        "g1g2",
+        "g1h1",
+        "e1a5",
+        "e1b4",
+        "e1c3",
+        "e1d2",
+        "d1h5",
+        "d1g4",
+        "d1f3",
+        "d1d3",
+        "d1e2",
+        "d1d2",
+        "d1c2",
+        "d1c1",
+        "d1b1",
+        "a1a3",
+        "a1a2",
+        "a1c1",
+        "a1b1",
+        "d4d5",
+        "a4a5",
+        "g3g4",
+        "b3b4",
+        "f2f3",
+        "f2f4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 0.9243051379999088,
+      "prefix_exact": true,
+      "outputs": 21,
+      "chosen": "g3h4",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0058,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 2,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0082,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 4,
+          "carry": 23,
+          "offI": 287,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0136,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 6,
+          "carry": 20,
+          "offI": 34,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0145,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 8,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 3,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0091,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 10,
+          "carry": 63,
+          "offI": 431,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0176,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 12,
+          "carry": 328,
+          "offI": 378,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0493,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 14,
+          "carry": 2,
+          "offI": 0,
+          "fresh": 81,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0255,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 16,
+          "carry": 63,
+          "offI": 422,
+          "fresh": 65,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0347,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 18,
+          "carry": 8,
+          "offI": 3,
+          "fresh": 120,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0328,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 20,
+          "carry": 35,
+          "offI": 20,
+          "fresh": 93,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0374,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 22,
+          "carry": 8,
+          "offI": 0,
+          "fresh": 120,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0411,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 24,
+          "carry": 4,
+          "offI": 0,
+          "fresh": 30,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0236,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 26,
+          "carry": 5,
+          "offI": 0,
+          "fresh": 27,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.019,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 28,
+          "carry": 22,
+          "offI": 20,
+          "fresh": 10,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0152,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 30,
+          "carry": 9,
+          "offI": 0,
+          "fresh": 60,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0199,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 32,
+          "carry": 133,
+          "offI": 357,
+          "fresh": 1,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0308,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 34,
+          "carry": 12,
+          "offI": 0,
+          "fresh": 116,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0266,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 36,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0297,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 38,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0457,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 40,
+          "found": 7,
+          "positive": 7,
+          "carry": 7,
+          "offI": 2,
+          "fresh": 121,
+          "groups": 128,
+          "expand": 121,
+          "fallback": 0,
+          "snapshot": 1,
+          "setup": 0.0124,
+          "solve": 0.0129,
+          "save": 0.0012,
+          "total": 0.0265,
+          "over": 0,
+          "active": 0.01941,
+          "enter": 1.0,
+          "current": 0.01862,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 128,
+      "true_board_roots": 0,
+      "true_state_roots": 0,
+      "true_state_reach": 0,
+      "all_root_reach": 0.018622974669068853,
+      "chosen_fatal_roots": 1,
+      "chosen_fatal_reach": 0.008038481404958678,
+      "chosen_fatal_share": 0.4316432550547308,
+      "action_profiles": [
+        {
+          "move": "a1b1",
+          "policy": 0.0294441078,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.33757654
+        },
+        {
+          "move": "a1c1",
+          "policy": 0.0313057742,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.35451042
+        },
+        {
+          "move": "a1a2",
+          "policy": 0.0292359066,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.357795814
+        },
+        {
+          "move": "a1a3",
+          "policy": 0.0241100019,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.332064488
+        },
+        {
+          "move": "d1b1",
+          "policy": 0.073480514,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.337078811
+        },
+        {
+          "move": "d1c1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.477835984
+        },
+        {
+          "move": "d1c2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.470799943
+        },
+        {
+          "move": "d1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.945903704
+        },
+        {
+          "move": "d1e2",
+          "policy": 0.0317278114,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.197849752
+        },
+        {
+          "move": "d1d3",
+          "policy": 0.0453206592,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.324402379
+        },
+        {
+          "move": "d1f3",
+          "policy": 0.0629774154,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.344864484
+        },
+        {
+          "move": "d1g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.624589427
+        },
+        {
+          "move": "d1h5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.655306527
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.00360183549,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.470789475
+        },
+        {
+          "move": "e1c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.745124366
+        },
+        {
+          "move": "e1b4",
+          "policy": 0.0358332526,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.277136916
+        },
+        {
+          "move": "e1a5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.765737317
+        },
+        {
+          "move": "g1h1",
+          "policy": 0.0132037037,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.386809952
+        },
+        {
+          "move": "g1g2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.437381448
+        },
+        {
+          "move": "g1h2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.461286087
+        },
+        {
+          "move": "f2f3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.513048502
+        },
+        {
+          "move": "f2f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.505687554
+        },
+        {
+          "move": "b3b4",
+          "policy": 0.0348250009,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.324402379
+        },
+        {
+          "move": "g3g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.531835047
+        },
+        {
+          "move": "g3h4",
+          "policy": 0.554653695,
+          "played": 1.0,
+          "fatal": 0.431643255,
+          "raw": -0.385291068
+        },
+        {
+          "move": "a4a5",
+          "policy": 0.0141120527,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.432263937
+        },
+        {
+          "move": "d4d5",
+          "policy": 0.0161682695,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.400519954
+        }
+      ],
+      "evaluation": {
+        "child_alternates": 121.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "calls": 0.0,
+        "failed": 0.0,
+        "seconds": 0.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 0.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 2.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 4.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 6.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 8.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 10.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 12.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 14.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 16.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 18.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 20.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 22.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 24.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 26.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 28.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 30.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 32.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 34.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 36.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 38.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        }
+      ],
+      "witness_metrics": {
+        "scanned": 1061,
+        "complete": 1,
+        "added": 3,
+        "candidate_moves": 4
+      },
+      "belief_count": 1061,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 0.0003433894645377249,
+      "belief_truth_share": 0.0003433894645377249,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    },
+    {
+      "game": "jnx42ysn",
+      "side": "black",
+      "decision": 33,
+      "ply": 65,
+      "mode": "cold",
+      "played": "e6f6",
+      "returncode": 0,
+      "true_legal_count": 21,
+      "true_safe_moves": [
+        "e6f7",
+        "e6e7",
+        "e6d7",
+        "e6e5",
+        "e6d5",
+        "c5c6"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 1.5882836939999834,
+      "prefix_exact": true,
+      "outputs": 33,
+      "chosen": "c5c4",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 65,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "groups": 128,
+          "expand": 106,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.0042,
+          "solve": 0.0046,
+          "save": 0.0008,
+          "total": 0.0096,
+          "over": 0,
+          "active": 0.9955,
+          "enter": 1.0,
+          "current": 0.9955,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 128,
+      "true_board_roots": 0,
+      "true_state_roots": 0,
+      "true_state_reach": 0,
+      "all_root_reach": 0.9955029445623599,
+      "chosen_fatal_roots": 11,
+      "chosen_fatal_reach": 0.0859375,
+      "chosen_fatal_share": 0.0863257115103558,
+      "action_profiles": [
+        {
+          "move": "a4a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.323255601
+        },
+        {
+          "move": "e4e3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.311412693
+        },
+        {
+          "move": "b5b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.323504948
+        },
+        {
+          "move": "c5c2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.334552541
+        },
+        {
+          "move": "c5c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": -0.0570302659
+        },
+        {
+          "move": "c5c4",
+          "policy": 0.869047335,
+          "played": 1.0,
+          "fatal": 0.0863257115,
+          "raw": 0.35938859
+        },
+        {
+          "move": "c5d5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.338655812
+        },
+        {
+          "move": "c5e5",
+          "policy": 0.0393788869,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.377514528
+        },
+        {
+          "move": "c5c6",
+          "policy": 0.0915737783,
+          "played": 0.0,
+          "fatal": 0.0627823356,
+          "raw": 0.378939778
+        },
+        {
+          "move": "c5c7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.23383895
+        },
+        {
+          "move": "c5c8",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": -0.021336688
+        },
+        {
+          "move": "f5f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.332996501
+        },
+        {
+          "move": "h5h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0863257115,
+          "raw": 0.349727101
+        },
+        {
+          "move": "e6d5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.505589107,
+          "raw": -0.265736801
+        },
+        {
+          "move": "e6e5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.136742885,
+          "raw": 0.34467169
+        },
+        {
+          "move": "e6d6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.536980275,
+          "raw": -0.306783214
+        },
+        {
+          "move": "e6f6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0784779196,
+          "raw": 0.376106727
+        },
+        {
+          "move": "e6d7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.536980275,
+          "raw": -0.354553945
+        },
+        {
+          "move": "e6e7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0941735035,
+          "raw": 0.318320271
+        },
+        {
+          "move": "e6f7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.102021295,
+          "raw": 0.326842696
+        },
+        {
+          "move": "g6g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.102021295,
+          "raw": 0.348280939
+        }
+      ],
+      "evaluation": {
+        "child_alternates": 128.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "calls": 0.0,
+        "failed": 0.0,
+        "seconds": 0.0
+      },
+      "prefix_evaluation": [],
+      "witness_metrics": {
+        "scanned": 1559,
+        "complete": 1,
+        "added": 3,
+        "candidate_moves": 21
+      },
+      "belief_count": 1559,
+      "belief_true_states": 0,
+      "belief_true_boards": 0,
+      "belief_tactical_states": 0,
+      "belief_tactical_share": 0.0,
+      "belief_truth_share": 0.0,
+      "legal": true,
+      "true_outcome": [
+        "1-0",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    },
+    {
+      "game": "jnx42ysn",
+      "side": "black",
+      "decision": 33,
+      "ply": 65,
+      "mode": "warm",
+      "played": "e6f6",
+      "returncode": 0,
+      "true_legal_count": 21,
+      "true_safe_moves": [
+        "e6f7",
+        "e6e7",
+        "e6d7",
+        "e6e5",
+        "e6d5",
+        "c5c6"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 2.6896514740001294,
+      "prefix_exact": true,
+      "outputs": 33,
+      "chosen": "e6f7",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 1,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 20,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0095,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 3,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 24,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0132,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 5,
+          "carry": 110,
+          "offI": 0,
+          "fresh": 18,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0255,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 7,
+          "carry": 251,
+          "offI": 110,
+          "fresh": 1,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0465,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 9,
+          "carry": 157,
+          "offI": 130,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0664,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 11,
+          "carry": 198,
+          "offI": 87,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.1352,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 13,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.1358,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 15,
+          "carry": 12,
+          "offI": 4,
+          "fresh": 116,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0734,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 17,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.1389,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 19,
+          "carry": 7,
+          "offI": 10,
+          "fresh": 121,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.1003,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 21,
+          "carry": 1,
+          "offI": 0,
+          "fresh": 127,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0429,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 23,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 33,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.024,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 25,
+          "carry": 127,
+          "offI": 0,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0378,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 27,
+          "carry": 6,
+          "offI": 0,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0113,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 29,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0323,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 31,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 26,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0113,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 33,
+          "carry": 2,
+          "offI": 0,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0052,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 35,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0134,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 37,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.062,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 39,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0158,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 41,
+          "carry": 18,
+          "offI": 10,
+          "fresh": 110,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0142,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 43,
+          "carry": 7,
+          "offI": 3,
+          "fresh": 121,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0131,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 45,
+          "carry": 3,
+          "offI": 1,
+          "fresh": 28,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0055,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 47,
+          "carry": 15,
+          "offI": 8,
+          "fresh": 15,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0058,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 49,
+          "carry": 26,
+          "offI": 8,
+          "fresh": 3,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0055,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 51,
+          "carry": 8,
+          "offI": 0,
+          "fresh": 4,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0051,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 53,
+          "carry": 116,
+          "offI": 261,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0095,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 55,
+          "carry": 130,
+          "offI": 85,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0109,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 57,
+          "carry": 24,
+          "offI": 7,
+          "fresh": 104,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0098,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 59,
+          "carry": 4,
+          "offI": 7,
+          "fresh": 124,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0077,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 61,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0075,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 63,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0092,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 65,
+          "found": 21,
+          "positive": 21,
+          "carry": 21,
+          "offI": 0,
+          "fresh": 107,
+          "groups": 128,
+          "expand": 99,
+          "fallback": 0,
+          "snapshot": 1,
+          "setup": 0.0044,
+          "solve": 0.0044,
+          "save": 0.0007,
+          "total": 0.0096,
+          "over": 0,
+          "active": 0.26751,
+          "enter": 1.0,
+          "current": 0.26751,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 128,
+      "true_board_roots": 0,
+      "true_state_roots": 0,
+      "true_state_reach": 0,
+      "all_root_reach": 0.26751246533629996,
+      "chosen_fatal_roots": 10,
+      "chosen_fatal_reach": 0.04136737564282543,
+      "chosen_fatal_share": 0.15463718892807835,
+      "action_profiles": [
+        {
+          "move": "a4a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.373955495
+        },
+        {
+          "move": "e4e3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.388670784
+        },
+        {
+          "move": "b5b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.378471394
+        },
+        {
+          "move": "c5c2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.219550865
+        },
+        {
+          "move": "c5c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.318566334
+        },
+        {
+          "move": "c5c4",
+          "policy": 0.0502212028,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.199959001
+        },
+        {
+          "move": "c5d5",
+          "policy": 0.271593533,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.224605338
+        },
+        {
+          "move": "c5e5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.269343504
+        },
+        {
+          "move": "c5c6",
+          "policy": 0.148534431,
+          "played": 0.0,
+          "fatal": 0.190786551,
+          "raw": -0.207342083
+        },
+        {
+          "move": "c5c7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.349189547
+        },
+        {
+          "move": "c5c8",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.41199563
+        },
+        {
+          "move": "f5f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.379991702
+        },
+        {
+          "move": "h5h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.365019385
+        },
+        {
+          "move": "e6d5",
+          "policy": 0.0857829135,
+          "played": 0.0,
+          "fatal": 0.402581904,
+          "raw": -0.205183556
+        },
+        {
+          "move": "e6e5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.444514829,
+          "raw": -0.30852493
+        },
+        {
+          "move": "e6d6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.526262481,
+          "raw": -0.399760468
+        },
+        {
+          "move": "e6f6",
+          "policy": 0.00288863192,
+          "played": 0.0,
+          "fatal": 0.215501857,
+          "raw": -0.20463971
+        },
+        {
+          "move": "e6d7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.433327729,
+          "raw": -0.345172445
+        },
+        {
+          "move": "e6e7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.25360246,
+          "raw": -0.279274518
+        },
+        {
+          "move": "e6f7",
+          "policy": 0.440979288,
+          "played": 1.0,
+          "fatal": 0.154637189,
+          "raw": -0.203744776
+        },
+        {
+          "move": "g6g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.314467128,
+          "raw": -0.354794883
+        }
+      ],
+      "evaluation": {
+        "child_alternates": 107.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "calls": 0.0,
+        "failed": 0.0,
+        "seconds": 0.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 1.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 3.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 5.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 7.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 9.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 11.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 13.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 15.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 17.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 19.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 21.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 23.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 25.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 27.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 29.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 31.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 33.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 35.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 37.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 39.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 41.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 43.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 45.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 47.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 49.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 51.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 53.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 55.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 57.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 59.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 61.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 63.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        }
+      ],
+      "witness_metrics": {
+        "scanned": 0,
+        "complete": 1,
+        "added": 0,
+        "candidate_moves": 0
+      },
+      "belief_count": 1559,
+      "belief_true_states": 0,
+      "belief_true_boards": 0,
+      "belief_tactical_states": 0,
+      "belief_tactical_share": 0.0,
+      "belief_truth_share": 0.0,
+      "legal": true,
+      "true_outcome": null,
+      "immediate_loss": false
+    },
+    {
+      "game": "m2zj8p6j",
+      "side": "white",
+      "decision": 61,
+      "ply": 120,
+      "mode": "cold",
+      "played": "d2e1",
+      "returncode": 0,
+      "true_legal_count": 10,
+      "true_safe_moves": [
+        "d2d3",
+        "d2c3",
+        "d2c2",
+        "f4f5",
+        "d4d5",
+        "e3e4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 5.202680149999651,
+      "prefix_exact": true,
+      "outputs": 61,
+      "chosen": "d2e1",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 120,
+          "found": 0,
+          "positive": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "groups": 128,
+          "expand": 102,
+          "fallback": 1,
+          "snapshot": 1,
+          "setup": 0.003,
+          "solve": 0.0055,
+          "save": 0.0006,
+          "total": 0.0092,
+          "over": 0,
+          "active": 0.63853,
+          "enter": 1.0,
+          "current": 0.63853,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 128,
+      "true_board_roots": 0,
+      "true_state_roots": 0,
+      "true_state_reach": 0,
+      "all_root_reach": 0.6385294819109208,
+      "chosen_fatal_roots": 8,
+      "chosen_fatal_reach": 0.0625,
+      "chosen_fatal_share": 0.09788115000259169,
+      "action_profiles": [
+        {
+          "move": "d2c1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.235199036,
+          "raw": -0.996927557
+        },
+        {
+          "move": "d2d1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.493125569,
+          "raw": -0.998034184
+        },
+        {
+          "move": "d2e1",
+          "policy": 0.580560991,
+          "played": 1.0,
+          "fatal": 0.09788115,
+          "raw": -0.996025226
+        },
+        {
+          "move": "d2c2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.265243984,
+          "raw": -0.996909027
+        },
+        {
+          "move": "d2e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.835847794,
+          "raw": -0.999323398
+        },
+        {
+          "move": "d2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.159848166,
+          "raw": -0.996308041
+        },
+        {
+          "move": "d2d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.178892282,
+          "raw": -0.996377626
+        },
+        {
+          "move": "e3e4",
+          "policy": 0.141721785,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.995947445
+        },
+        {
+          "move": "d4d5",
+          "policy": 0.20539842,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.996043094
+        },
+        {
+          "move": "f4f5",
+          "policy": 0.0723188038,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.995870067
+        }
+      ],
+      "evaluation": {
+        "child_alternates": 128.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "calls": 0.0,
+        "failed": 0.0,
+        "seconds": 0.0
+      },
+      "prefix_evaluation": [],
+      "witness_metrics": {
+        "scanned": 11414,
+        "complete": 1,
+        "added": 4,
+        "candidate_moves": 10
+      },
+      "belief_count": 11414,
+      "belief_true_states": 0,
+      "belief_true_boards": 0,
+      "belief_tactical_states": 0,
+      "belief_tactical_share": 0.0,
+      "belief_truth_share": 0.0,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    },
+    {
+      "game": "m2zj8p6j",
+      "side": "white",
+      "decision": 61,
+      "ply": 120,
+      "mode": "warm",
+      "played": "d2e1",
+      "returncode": 0,
+      "true_legal_count": 10,
+      "true_safe_moves": [
+        "d2d3",
+        "d2c3",
+        "d2c2",
+        "f4f5",
+        "d4d5",
+        "e3e4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 7.596799926999665,
+      "prefix_exact": true,
+      "outputs": 61,
+      "chosen": "d2e1",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0056,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 2,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0078,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 4,
+          "carry": 23,
+          "offI": 287,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0133,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 6,
+          "carry": 20,
+          "offI": 34,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0141,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 8,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 3,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0092,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 10,
+          "carry": 63,
+          "offI": 431,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0172,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 12,
+          "carry": 328,
+          "offI": 378,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0476,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 14,
+          "carry": 2,
+          "offI": 0,
+          "fresh": 81,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0251,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 16,
+          "carry": 63,
+          "offI": 422,
+          "fresh": 65,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.036,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 18,
+          "carry": 8,
+          "offI": 3,
+          "fresh": 120,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0323,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 20,
+          "carry": 620,
+          "offI": 371,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.1761,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 22,
+          "carry": 251,
+          "offI": 236,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.1451,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 24,
+          "carry": 352,
+          "offI": 132,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.156,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 26,
+          "carry": 4,
+          "offI": 16,
+          "fresh": 124,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0715,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 28,
+          "carry": 2,
+          "offI": 0,
+          "fresh": 126,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0388,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 30,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0412,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 32,
+          "carry": 2,
+          "offI": 0,
+          "fresh": 29,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0155,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 34,
+          "carry": 390,
+          "offI": 267,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0575,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 36,
+          "carry": 435,
+          "offI": 83,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0696,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 38,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0266,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 40,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0311,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 42,
+          "carry": 78,
+          "offI": 0,
+          "fresh": 50,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0284,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 44,
+          "carry": 550,
+          "offI": 64,
+          "fresh": 1,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.1627,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 46,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0611,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 48,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.1295,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 50,
+          "carry": 143,
+          "offI": 43,
+          "fresh": 1,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0672,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 52,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.1337,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 54,
+          "carry": 21,
+          "offI": 7,
+          "fresh": 107,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.1249,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 56,
+          "carry": 7,
+          "offI": 2,
+          "fresh": 121,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0572,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 58,
+          "carry": 5,
+          "offI": 0,
+          "fresh": 123,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0259,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 60,
+          "carry": 68,
+          "offI": 20,
+          "fresh": 60,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0265,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 62,
+          "carry": 15,
+          "offI": 10,
+          "fresh": 113,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0219,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 64,
+          "carry": 12,
+          "offI": 0,
+          "fresh": 45,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0127,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 66,
+          "carry": 13,
+          "offI": 0,
+          "fresh": 40,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0113,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 68,
+          "carry": 78,
+          "offI": 169,
+          "fresh": 50,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0167,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 70,
+          "carry": 212,
+          "offI": 194,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0238,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 72,
+          "carry": 99,
+          "offI": 18,
+          "fresh": 29,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0268,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 74,
+          "carry": 40,
+          "offI": 18,
+          "fresh": 88,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0293,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 76,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0215,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 78,
+          "carry": 77,
+          "offI": 32,
+          "fresh": 51,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.02,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 80,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 22,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0095,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 82,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 113,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0158,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 84,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 82,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0109,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 86,
+          "carry": 418,
+          "offI": 0,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0306,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 88,
+          "carry": 282,
+          "offI": 143,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0182,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 90,
+          "carry": 51,
+          "offI": 10,
+          "fresh": 77,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0145,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 92,
+          "carry": 225,
+          "offI": 69,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0173,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 94,
+          "carry": 267,
+          "offI": 84,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0201,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 96,
+          "carry": 551,
+          "offI": 190,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0291,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 98,
+          "carry": 532,
+          "offI": 91,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0291,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 100,
+          "carry": 574,
+          "offI": 99,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0291,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 102,
+          "carry": 209,
+          "offI": 51,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0132,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 104,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0107,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 106,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0089,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 108,
+          "carry": 72,
+          "offI": 21,
+          "fresh": 56,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0117,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 110,
+          "carry": 10,
+          "offI": 20,
+          "fresh": 118,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 0.0123,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 112,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0128,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 114,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.007,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 116,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 2,
+          "snapshot": 1,
+          "seconds": 0.0075,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 118,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 128,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 0.0093,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 120,
+          "found": 865,
+          "positive": 865,
+          "carry": 865,
+          "offI": 0,
+          "fresh": 0,
+          "groups": 865,
+          "expand": 101,
+          "fallback": 0,
+          "snapshot": 1,
+          "setup": 0.0148,
+          "solve": 0.0095,
+          "save": 0.0053,
+          "total": 0.0296,
+          "over": 0,
+          "active": 0.73001,
+          "enter": 1.0,
+          "current": 0.73001,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 865,
+      "true_board_roots": 0,
+      "true_state_roots": 0,
+      "true_state_reach": 0,
+      "all_root_reach": 0.7300050742317105,
+      "chosen_fatal_roots": 68,
+      "chosen_fatal_reach": 0.1771576368366624,
+      "chosen_fatal_share": 0.24268000742749757,
+      "action_profiles": [
+        {
+          "move": "d2c1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.342489714,
+          "raw": -0.997305991
+        },
+        {
+          "move": "d2d1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.67369474,
+          "raw": -0.998861513
+        },
+        {
+          "move": "d2e1",
+          "policy": 1.0,
+          "played": 1.0,
+          "fatal": 0.242680007,
+          "raw": -0.996596557
+        },
+        {
+          "move": "d2c2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.222802707,
+          "raw": -0.997478532
+        },
+        {
+          "move": "d2e2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.712043866,
+          "raw": -0.999253036
+        },
+        {
+          "move": "d2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.176500132,
+          "raw": -0.997017242
+        },
+        {
+          "move": "d2d3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.179471374,
+          "raw": -0.997204191
+        },
+        {
+          "move": "e3e4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0252873476,
+          "raw": -0.996788769
+        },
+        {
+          "move": "d4d5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0252873476,
+          "raw": -0.996848221
+        },
+        {
+          "move": "f4f5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0252873476,
+          "raw": -0.996738402
+        }
+      ],
+      "evaluation": {
+        "child_alternates": 0.0,
+        "ready": 0.0,
+        "scored": 0.0,
+        "calls": 0.0,
+        "failed": 0.0,
+        "seconds": 0.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 0.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 2.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 4.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 6.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 8.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 10.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 12.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 14.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 16.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 18.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 20.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 22.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 24.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 26.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 28.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 30.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 32.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 34.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 36.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 38.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 40.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 42.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 44.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 46.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 48.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 50.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 52.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 54.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 56.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 58.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 60.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 62.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 64.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 66.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 68.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 70.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 72.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 74.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 76.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 78.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 80.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 82.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 84.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 86.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 88.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 90.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 92.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 94.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 96.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 98.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 100.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 102.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 104.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 106.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 108.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 110.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 112.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 114.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 116.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        },
+        {
+          "ply": 118.0,
+          "ready": 0.0,
+          "scored": 0.0,
+          "calls": 0.0,
+          "failed": 0.0,
+          "seconds": 0.0
+        }
+      ],
+      "witness_metrics": {
+        "scanned": 0,
+        "complete": 1,
+        "added": 0,
+        "candidate_moves": 0
+      },
+      "belief_count": 11414,
+      "belief_true_states": 0,
+      "belief_true_boards": 0,
+      "belief_tactical_states": 0,
+      "belief_tactical_share": 0.0,
+      "belief_truth_share": 0.0,
+      "legal": true,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "immediate_loss": true
+    }
+  ]
+}

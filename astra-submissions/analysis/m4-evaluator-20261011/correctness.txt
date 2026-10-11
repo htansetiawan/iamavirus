@@ -1,0 +1,70 @@
+mkdir -p build && cc -O2 -std=c11 -Wall -Wextra -Wpedantic src/board.c src/belief.c src/movemodel.c src/cfr.c src/eval.c src/search.c src/gtcfr.c src/front.c src/sfeval.c src/gadget.c src/kluss.c src/m4sample.c src/m4search.c src/m4sf.c tests/test_m4_chess.c -lm -o build/test_m4_chess
+mkdir -p build && cc -O2 -std=c11 -Wall -Wextra -Wpedantic src/board.c src/belief.c src/movemodel.c src/cfr.c src/eval.c src/search.c src/gtcfr.c src/front.c src/sfeval.c src/gadget.c src/kluss.c src/m4sample.c src/m4search.c src/m4sf.c tests/test_m4_sample.c -lm -o build/test_m4_sample
+./build/test_m4_chess
+M4 protocol history: both colours, every view, own moves, phase rejection and repeated board passed
+M4 chess us=0 turn=0 move=b1c3 carried=0 off-I=0 fresh=1 nodes=6850 iters=40 0.0239s fallback=1
+M4 chess us=0 turn=1 move=g1f3 carried=18 off-I=309 fresh=0 nodes=13456 iters=40 0.0272s fallback=0
+M4 chess us=0 turn=2 move=h2h4 carried=265 off-I=2883 fresh=0 nodes=21367 iters=40 0.0502s fallback=0
+M4 chess us=0 turn=3 move=a2a3 carried=6 off-I=12 fresh=6 nodes=8115 iters=40 0.0289s fallback=0
+M4 chess us=1 turn=0 move=g8f6 carried=0 off-I=0 fresh=12 nodes=7392 iters=40 0.0215s fallback=1
+M4 chess us=1 turn=1 move=b8c6 carried=189 off-I=1582 fresh=0 nodes=16692 iters=40 0.0410s fallback=0
+M4 chess us=1 turn=2 move=a7a5 carried=345 off-I=1173 fresh=0 nodes=20093 iters=40 0.0611s fallback=0
+M4 chess us=1 turn=3 move=h7h5 carried=550 off-I=936 fresh=0 nodes=26359 iters=40 0.0797s fallback=0
+M4 50-move terminal: draw overrides heuristic evaluation passed
+test_m4_chess: passed
+./build/test_m4_sample
+M4 cold-alternate diagnostic: chosen=g3h4 fatal_worlds=1/2 (not a safety gate)
+M4 cold-alternate feasibility: rare-world alternate=-0.970012071 best_child=-0.991486640
+test_m4_sample: rare hidden-slider witness, identical observations, existing coverage and deadline passed
+mkdir -p build && cc -O2 -std=c11 -Wall -Wextra -Wpedantic src/board.c src/belief.c src/movemodel.c src/cfr.c src/eval.c src/search.c src/gtcfr.c src/front.c src/sfeval.c src/m4sf.c tests/test_m4_sf.c -lm -o build/test_m4_sf
+./build/test_m4_sf ./build/fake_m4_uci
+silent    : 0.0604s; partial scores discarded, instance disabled
+dribble   : 0.0610s; partial scores discarded, instance disabled
+flood     : 0.0600s; partial scores discarded, instance disabled
+partial   : 0.0607s; partial scores discarded, instance disabled
+dead      : 0.0001s; partial scores discarded, instance disabled
+overlong  : 0.0199s; partial scores discarded, instance disabled
+real Stockfish: 20/20 starting actions, 0.0011s
+test_m4_sf: whole-request deadlines, atomic scores, malformed input, shutdown and SIGPIPE isolation passed
+mkdir -p build && cc -O2 -std=c11 -Wall -Wextra -Wpedantic src/board.c src/belief.c src/movemodel.c src/cfr.c src/eval.c src/search.c src/gtcfr.c src/front.c src/sfeval.c src/gadget.c src/kluss.c src/m4sample.c src/m4search.c src/m4sf.c tests/test_m4_eval.c -lm -o build/test_m4_eval
+./build/test_m4_eval
+child-backed alternate internal: move=g3h4 fatal=1/2 scored=0 calls=0
+child-backed alternate Stockfish: move=g3h4 fatal=1/2 scored=12 calls=2
+test_m4_eval: fresh alternatives and two-color rules-first terminal override passed; rare-world policy is diagnostic only
+./build/test_gadget
+low-prior trap mode=0: risky 0.00000000 gap 0
+low-prior trap mode=1: risky 0.00000000 gap 0
+analytic mixed game: action0 0.50000000 (target .5), gap -4.4408921e-15
+infeasible margins mode=0: action0 0.75000000 (target 0.75000000), gap 0
+infeasible margins mode=1: action0 0.41176471 (target 0.41176471), gap 5.5511151e-17
+test_gadget: passed
+./build/test_kluss
+test_kluss: passed (one-hop closure, unfrozen B, isolated blueprint and fresh regrets)
+./build/test_gadget_kuhn
+Kuhn mode=0: opponent BR 0.05555556 -> 0.05555556, gadget gap -1.3877788e-17
+Kuhn mode=1: opponent BR 0.05555556 -> 0.05555556, gadget gap 1.110223e-16
+Kuhn mode=2 (adaptive): opponent BR 0.05555556 -> 0.05555556, fixed-Resolve diagnostic gap 0.011137742
+test_gadget_kuhn: passed
+./build/test_gadget_controller
+controller one-iteration oracle: exact nonunit root mass and alternating updates passed
+adaptive controller case=0: action0 0.750000000 target 0.750000000, max_enter 1.000000, active_mass 0.541875
+adaptive controller case=1: action0 0.411764706 target 0.411764706, max_enter 0.000000, active_mass 1.000000
+adaptive controller case=2: action0 0.000000000 target 0.000000000, max_enter 0.500000, active_mass 0.750000
+adaptive revision phase=0: action0 0.750000000 max_enter 1.000000
+adaptive revision phase=1: action0 0.411764706 max_enter 0.000000
+adaptive revision phase=2: action0 0.750000000 max_enter 1.000000
+controller pruning: unvisited P0 predictions preserved; zero-root-mass P1 reply updated
+controller growth: appended infoset, 81 actions and workspace resizing passed
+test_gadget_controller: passed
+./build/test_kluss_prepare
+blueprint preparation: KLUSS selection, grouped alternates, gifts, fresh seeds and atomic failure passed
+blueprint gifts: shared opponent infoset aggregates CF values before path accumulation
+test_kluss_prepare: passed
+./build/test_kluss_carry
+adaptive carry-over: actual nonunit root reaches, raw expanded leaves, real-action gifts and two successive solves passed
+m4sf: request aborted elapsed=0.060360 deadline_expired=1; partial scores discarded
+m4sf: request aborted elapsed=0.060969 deadline_expired=1; partial scores discarded
+m4sf: request aborted elapsed=0.059997 deadline_expired=1; partial scores discarded
+m4sf: request aborted elapsed=0.060619 deadline_expired=1; partial scores discarded
+m4sf: request aborted elapsed=0.000066 deadline_expired=0; partial scores discarded
+m4sf: request aborted elapsed=0.019793 deadline_expired=0; partial scores discarded

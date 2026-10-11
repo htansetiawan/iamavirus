@@ -1,0 +1,121 @@
+{
+  "results": [
+    {
+      "name": "transport",
+      "compile": [
+        "cc",
+        "-O1",
+        "-g",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "src/board.c",
+        "src/belief.c",
+        "src/movemodel.c",
+        "src/cfr.c",
+        "src/eval.c",
+        "src/search.c",
+        "src/gtcfr.c",
+        "src/front.c",
+        "src/sfeval.c",
+        "src/m4sf.c",
+        "tests/test_m4_sf.c",
+        "-lm",
+        "-o",
+        "/tmp/astra-m4-transport-asan"
+      ],
+      "argv": [
+        "/tmp/astra-m4-transport-asan",
+        "/tmp/mist-c-astra-m4/build/fake_m4_uci"
+      ],
+      "returncode": 0,
+      "binary_sha256": "bd5d9c50f3ddf53e5d0d9ef5693488bb6e74d78e1b9930d053120815305ee38a"
+    },
+    {
+      "name": "integration",
+      "compile": [
+        "cc",
+        "-O1",
+        "-g",
+        "-std=c11",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "src/board.c",
+        "src/belief.c",
+        "src/movemodel.c",
+        "src/cfr.c",
+        "src/eval.c",
+        "src/search.c",
+        "src/gtcfr.c",
+        "src/front.c",
+        "src/sfeval.c",
+        "src/gadget.c",
+        "src/kluss.c",
+        "src/m4sample.c",
+        "src/m4search.c",
+        "src/m4sf.c",
+        "tests/test_m4_eval.c",
+        "-lm",
+        "-o",
+        "/tmp/astra-m4-integration-asan"
+      ],
+      "argv": [
+        "/tmp/astra-m4-integration-asan"
+      ],
+      "returncode": 0,
+      "binary_sha256": "7753328d5d5f7ebec29304ec322cdf16a883b2777fb63a516ecb1de72bb78b76"
+    },
+    {
+      "name": "all M4 correctness suites",
+      "argv": [
+        "make",
+        "test_m4"
+      ],
+      "returncode": 0
+    },
+    {
+      "name": "on-policy carry, 4 own turns per color",
+      "evaluator": "stockfish",
+      "argv": [
+        "build/test_m4_chess"
+      ],
+      "returncode": 0,
+      "log": "stockfish-onpolicy-carry.txt"
+    },
+    {
+      "name": "on-policy carry, 4 own turns per color",
+      "evaluator": "internal",
+      "argv": [
+        "build/test_m4_chess"
+      ],
+      "returncode": 0,
+      "log": "internal-onpolicy-carry.txt"
+    }
+  ],
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "engine_sha256": "1afb58d207a6bc4f292909d4575d5ca1b4179448f297942f1c8a10ca72baa191",
+  "sources": {
+    "src/m4main.c": "7c5946b514aafd33d60e797863b22775c639a4a648ce41c1354d162792fb9ea5",
+    "src/m4sample.c": "e91a26245423b74e4a0af3fe7daa7eb02a6a4df5c371aea41559260de9b6b0fe",
+    "src/m4sample.h": "6d8e46a4000b4e019e8ee34e6c0a6c5b7cc4b00f72c29241d9149b3579b0c25e",
+    "src/m4search.c": "20202094a4d82500615c04d74a2a88732d27d77f6cc69f7ca2accc76593e5069",
+    "src/m4search.h": "ee6142df1f02ef96e87909b4d18ed2d02c52e8d04b9494f2dd8def451844cecc",
+    "src/m4sf.c": "e134812eccc241db577f30b6666dc5cef3bed486bdd0b7e501d49020a1f8935f",
+    "src/m4sf.h": "3815579c214518aecb62f27f362e64102d7f42577fcb6839ed583235fc740620"
+  },
+  "code_commit": "a97a1d5",
+  "tested_at": "2026-10-11T07:28:07.917299+00:00",
+  "tests": {
+    "fake_m4_uci.c": "3aba78b834f53bd913f268319af06a9b28cbff5fbf93d08f8e85a9df6e39ec78",
+    "test_m4_chess.c": "b5f6c334bc635b27349aec71ba8ccec02917c34fdd0950c76ca2cfc79a32c263",
+    "test_m4_sf.c": "75153aa56b1278e87863b4ee666f42f1da9209fa301f630ebb3e0c0af5b9f8ac",
+    "test_m4_eval.c": "aee9013f6ac46c9a48fd4ad433463fdf191ba26b14b9daee7bf6f210f1eba23c",
+    "test_m4_sample.c": "48ae8033dba411f2c73234107740247738b5461c7e518c01a3f08bb5429eee56"
+  }
+}
