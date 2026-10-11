@@ -1,0 +1,2846 @@
+{
+  "by_scale": {
+    "0.9": {
+      "classification": "selected local replay comparison; paired seeds are not independent games",
+      "complete": true,
+      "completed": 192,
+      "distinct_seats": 48,
+      "expected_decisions": 192,
+      "paired_outcomes": {
+        "death": {
+          "both_lose": 27,
+          "both_safe": 15,
+          "stockfish_regresses": 1,
+          "stockfish_saves": 5
+        },
+        "survival": {
+          "both_safe": 45,
+          "stockfish_regresses": 2,
+          "stockfish_saves": 1
+        }
+      },
+      "totals": {
+        "internal/death": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 26,
+          "immediate_losses": 32,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 46,
+          "savable_saved": 16,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 0,
+          "tactical_truth_in_belief": 38,
+          "truth_in_belief": 36,
+          "truth_in_roots": 27,
+          "valid": 48
+        },
+        "internal/survival": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 38,
+          "immediate_losses": 1,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 48,
+          "savable_saved": 47,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 0,
+          "tactical_truth_in_belief": 36,
+          "truth_in_belief": 32,
+          "truth_in_roots": 14,
+          "valid": 48
+        },
+        "stockfish/death": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 29,
+          "immediate_losses": 28,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 46,
+          "savable_saved": 20,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 48,
+          "tactical_truth_in_belief": 38,
+          "truth_in_belief": 36,
+          "truth_in_roots": 27,
+          "valid": 48
+        },
+        "stockfish/survival": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 39,
+          "immediate_losses": 2,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 48,
+          "savable_saved": 46,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 48,
+          "tactical_truth_in_belief": 36,
+          "truth_in_belief": 32,
+          "truth_in_roots": 14,
+          "valid": 48
+        }
+      },
+      "updated_at": "2026-10-11T10:36:14.891020+00:00"
+    },
+    "1.0": {
+      "classification": "selected local replay comparison; paired seeds are not independent games",
+      "complete": true,
+      "completed": 192,
+      "distinct_seats": 48,
+      "expected_decisions": 192,
+      "paired_outcomes": {
+        "death": {
+          "both_lose": 29,
+          "both_safe": 11,
+          "stockfish_regresses": 3,
+          "stockfish_saves": 5
+        },
+        "survival": {
+          "both_safe": 45,
+          "stockfish_regresses": 1,
+          "stockfish_saves": 2
+        }
+      },
+      "totals": {
+        "internal/death": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 23,
+          "immediate_losses": 34,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 46,
+          "savable_saved": 14,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 0,
+          "tactical_truth_in_belief": 38,
+          "truth_in_belief": 36,
+          "truth_in_roots": 27,
+          "valid": 48
+        },
+        "internal/survival": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 31,
+          "immediate_losses": 2,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 48,
+          "savable_saved": 46,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 0,
+          "tactical_truth_in_belief": 36,
+          "truth_in_belief": 32,
+          "truth_in_roots": 14,
+          "valid": 48
+        },
+        "stockfish/death": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 27,
+          "immediate_losses": 32,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 46,
+          "savable_saved": 16,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 48,
+          "tactical_truth_in_belief": 38,
+          "truth_in_belief": 36,
+          "truth_in_roots": 27,
+          "valid": 48
+        },
+        "stockfish/survival": {
+          "completed": 48,
+          "failures": 0,
+          "historical_move_changed": 36,
+          "immediate_losses": 1,
+          "m4_failed_or_missing": 0,
+          "m4_over_budget": 0,
+          "savable_decisions": 48,
+          "savable_saved": 47,
+          "sf_failed_requests": 0.0,
+          "sf_ready": 48,
+          "tactical_truth_in_belief": 36,
+          "truth_in_belief": 32,
+          "truth_in_roots": 14,
+          "valid": 48
+        }
+      },
+      "updated_at": "2026-10-11T10:36:14.890320+00:00"
+    }
+  },
+  "classification": "paired nonterminal-value experiment; selected seats; no Elo inference",
+  "complete": true,
+  "completed": 384,
+  "distinct_seats": 48,
+  "expected_decisions": 384,
+  "failure_buckets": {
+    "internal/scale0.9/death": {
+      "tactical_truth_absent_from_belief": 6,
+      "truth_board_absent_from_roots": 8,
+      "truth_present_but_policy_loses": 16,
+      "unavoidable": 2
+    },
+    "internal/scale0.9/survival": {
+      "truth_board_absent_from_roots": 1
+    },
+    "internal/scale1/death": {
+      "tactical_truth_absent_from_belief": 6,
+      "truth_board_absent_from_roots": 9,
+      "truth_present_but_policy_loses": 17,
+      "unavoidable": 2
+    },
+    "internal/scale1/survival": {
+      "truth_board_absent_from_roots": 1,
+      "truth_present_but_policy_loses": 1
+    },
+    "stockfish/scale0.9/death": {
+      "tactical_truth_absent_from_belief": 6,
+      "truth_board_absent_from_roots": 8,
+      "truth_present_but_policy_loses": 12,
+      "unavoidable": 2
+    },
+    "stockfish/scale0.9/survival": {
+      "truth_board_absent_from_roots": 1,
+      "truth_present_but_policy_loses": 1
+    },
+    "stockfish/scale1/death": {
+      "tactical_truth_absent_from_belief": 6,
+      "truth_board_absent_from_roots": 8,
+      "truth_present_but_policy_loses": 16,
+      "unavoidable": 2
+    },
+    "stockfish/scale1/survival": {
+      "truth_present_but_policy_loses": 1
+    }
+  },
+  "manifest_sha256": "17a698f71ec548b86d1a0ee94f3a7a0be31fe1aba6edf8b74975e8a046b46456",
+  "matched_belief_mismatches": [],
+  "paired_outcomes": {
+    "internal/death": {
+      "both_lose": 31,
+      "both_safe": 13,
+      "candidate_regresses": 1,
+      "candidate_saves": 3,
+      "pairs": 48,
+      "same_move": 31
+    },
+    "internal/survival": {
+      "both_lose": 1,
+      "both_safe": 46,
+      "candidate_saves": 1,
+      "pairs": 48,
+      "same_move": 24
+    },
+    "stockfish/death": {
+      "both_lose": 28,
+      "both_safe": 16,
+      "candidate_saves": 4,
+      "pairs": 48,
+      "same_move": 33
+    },
+    "stockfish/survival": {
+      "both_lose": 1,
+      "both_safe": 46,
+      "candidate_regresses": 1,
+      "pairs": 48,
+      "same_move": 28
+    }
+  },
+  "posthoc_minimum_risk_selector": {
+    "classification": "descriptive post-hoc choice from frozen profiles; no new search; not a promotion result",
+    "counts": {
+      "internal/scale0.9/death": {
+        "available": 48,
+        "chosen_loses": 32,
+        "posthoc_changes": 40,
+        "posthoc_loses": 7,
+        "regressions": 0,
+        "saves": 25
+      },
+      "internal/scale0.9/survival": {
+        "available": 48,
+        "chosen_loses": 1,
+        "posthoc_changes": 33,
+        "posthoc_loses": 0,
+        "regressions": 0,
+        "saves": 1
+      },
+      "internal/scale1/death": {
+        "available": 48,
+        "chosen_loses": 34,
+        "posthoc_changes": 42,
+        "posthoc_loses": 8,
+        "regressions": 0,
+        "saves": 26
+      },
+      "internal/scale1/survival": {
+        "available": 48,
+        "chosen_loses": 2,
+        "posthoc_changes": 42,
+        "posthoc_loses": 0,
+        "regressions": 0,
+        "saves": 2
+      },
+      "stockfish/scale0.9/death": {
+        "available": 48,
+        "chosen_loses": 28,
+        "posthoc_changes": 34,
+        "posthoc_loses": 7,
+        "regressions": 1,
+        "saves": 22
+      },
+      "stockfish/scale0.9/survival": {
+        "available": 48,
+        "chosen_loses": 2,
+        "posthoc_changes": 34,
+        "posthoc_loses": 0,
+        "regressions": 0,
+        "saves": 2
+      },
+      "stockfish/scale1/death": {
+        "available": 48,
+        "chosen_loses": 32,
+        "posthoc_changes": 37,
+        "posthoc_loses": 7,
+        "regressions": 1,
+        "saves": 26
+      },
+      "stockfish/scale1/survival": {
+        "available": 48,
+        "chosen_loses": 1,
+        "posthoc_changes": 36,
+        "posthoc_loses": 0,
+        "regressions": 0,
+        "saves": 1
+      }
+    },
+    "rule": "minimize recorded root fatal share; break ties by greatest raw root action value, then UCI"
+  },
+  "run": "/media/henrytan/seagate/iamavirus/astra/m4-leaf-gap-broad-20261011",
+  "scale_pairs": [
+    {
+      "base_loss": false,
+      "base_move": "b8a7",
+      "candidate_loss": false,
+      "candidate_move": "b8a7",
+      "case": "d01",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8a7",
+      "candidate_loss": false,
+      "candidate_move": "b8a7",
+      "case": "d01",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d5e4",
+      "candidate_loss": false,
+      "candidate_move": "b8a7",
+      "case": "d01",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8a7",
+      "candidate_loss": false,
+      "candidate_move": "b8a7",
+      "case": "d01",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d3d4",
+      "candidate_loss": false,
+      "candidate_move": "h6h7",
+      "case": "d02",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h6h7",
+      "candidate_loss": false,
+      "candidate_move": "c4d6",
+      "case": "d02",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h6h7",
+      "candidate_loss": false,
+      "candidate_move": "h6h7",
+      "case": "d02",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h6h7",
+      "candidate_loss": false,
+      "candidate_move": "h6h7",
+      "case": "d02",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "a4a1",
+      "candidate_loss": true,
+      "candidate_move": "a4a5",
+      "case": "d03",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1f2",
+      "candidate_loss": false,
+      "candidate_move": "g1f2",
+      "case": "d03",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "a4a5",
+      "candidate_loss": true,
+      "candidate_move": "a4a1",
+      "case": "d03",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1f2",
+      "candidate_loss": false,
+      "candidate_move": "g1f2",
+      "case": "d03",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f4g3",
+      "candidate_loss": false,
+      "candidate_move": "c1b1",
+      "case": "d04",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f3e5",
+      "candidate_loss": false,
+      "candidate_move": "f4c7",
+      "case": "d04",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c1b1",
+      "candidate_loss": false,
+      "candidate_move": "c1b1",
+      "case": "d04",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f3e5",
+      "candidate_loss": false,
+      "candidate_move": "f4c7",
+      "case": "d04",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d7d5",
+      "candidate_loss": true,
+      "candidate_move": "d7d6",
+      "case": "d05",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "b4b3",
+      "candidate_loss": true,
+      "candidate_move": "b4b3",
+      "case": "d05",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "b4b3",
+      "candidate_loss": true,
+      "candidate_move": "d7d6",
+      "case": "d05",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "c1b3",
+      "candidate_loss": true,
+      "candidate_move": "b4b3",
+      "case": "d05",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "a4c2",
+      "candidate_loss": false,
+      "candidate_move": "b6b5",
+      "case": "d06",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b6b5",
+      "candidate_loss": false,
+      "candidate_move": "b6b5",
+      "case": "d06",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "a4c2",
+      "candidate_loss": true,
+      "candidate_move": "a4c2",
+      "case": "d06",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "a4c2",
+      "candidate_loss": false,
+      "candidate_move": "b6b5",
+      "case": "d06",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f2e3",
+      "candidate_loss": true,
+      "candidate_move": "f2e3",
+      "case": "d07",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f2e3",
+      "candidate_loss": true,
+      "candidate_move": "f2e3",
+      "case": "d07",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f2e3",
+      "candidate_loss": true,
+      "candidate_move": "f2e3",
+      "case": "d07",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f2e3",
+      "candidate_loss": true,
+      "candidate_move": "f2e3",
+      "case": "d07",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "c8b7",
+      "candidate_loss": true,
+      "candidate_move": "c8b7",
+      "case": "d08",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "c8b7",
+      "candidate_loss": true,
+      "candidate_move": "c8b7",
+      "case": "d08",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "c8b7",
+      "candidate_loss": true,
+      "candidate_move": "c8b7",
+      "case": "d08",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "c8b7",
+      "candidate_loss": true,
+      "candidate_move": "c8b7",
+      "case": "d08",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b2b4",
+      "candidate_loss": false,
+      "candidate_move": "b2b4",
+      "case": "d09",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b2b3",
+      "candidate_loss": false,
+      "candidate_move": "g1f1",
+      "case": "d09",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b2b4",
+      "candidate_loss": false,
+      "candidate_move": "b2b3",
+      "case": "d09",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "a4a5",
+      "candidate_loss": false,
+      "candidate_move": "g1f1",
+      "case": "d09",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d10",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d10",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d10",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d10",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d7g4",
+      "candidate_loss": true,
+      "candidate_move": "d7g4",
+      "case": "d11",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d7c6",
+      "candidate_loss": true,
+      "candidate_move": "d7c6",
+      "case": "d11",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d7g4",
+      "candidate_loss": true,
+      "candidate_move": "d7g4",
+      "case": "d11",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d7c6",
+      "candidate_loss": true,
+      "candidate_move": "d7c6",
+      "case": "d11",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1f2",
+      "candidate_loss": true,
+      "candidate_move": "f1f2",
+      "case": "d12",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f1g1",
+      "candidate_loss": false,
+      "candidate_move": "f1e1",
+      "case": "d12",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e3e4",
+      "candidate_loss": true,
+      "candidate_move": "f1f2",
+      "case": "d12",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1g2",
+      "candidate_loss": false,
+      "candidate_move": "f1g1",
+      "case": "d12",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "h8g8",
+      "candidate_loss": true,
+      "candidate_move": "h8g8",
+      "case": "d13",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "h8g8",
+      "candidate_loss": true,
+      "candidate_move": "h8g8",
+      "case": "d13",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "h8g8",
+      "candidate_loss": true,
+      "candidate_move": "h8g8",
+      "case": "d13",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "h8g8",
+      "candidate_loss": true,
+      "candidate_move": "h8g8",
+      "case": "d13",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g2g3",
+      "candidate_loss": true,
+      "candidate_move": "g2g3",
+      "case": "d14",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g2g3",
+      "candidate_loss": true,
+      "candidate_move": "g2g3",
+      "case": "d14",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g2g3",
+      "candidate_loss": true,
+      "candidate_move": "g2g3",
+      "case": "d14",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g2g3",
+      "candidate_loss": true,
+      "candidate_move": "g2g3",
+      "case": "d14",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b5a6",
+      "candidate_loss": false,
+      "candidate_move": "b5a6",
+      "case": "d15",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d5c4",
+      "candidate_loss": false,
+      "candidate_move": "d5c4",
+      "case": "d15",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b5a6",
+      "candidate_loss": false,
+      "candidate_move": "b5a6",
+      "case": "d15",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d5c4",
+      "candidate_loss": false,
+      "candidate_move": "d5c4",
+      "case": "d15",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "b2c2",
+      "candidate_loss": true,
+      "candidate_move": "b3b4",
+      "case": "d16",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "b2c3",
+      "candidate_loss": true,
+      "candidate_move": "b2c2",
+      "case": "d16",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "b2c3",
+      "candidate_loss": true,
+      "candidate_move": "b2a2",
+      "case": "d16",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "b2a2",
+      "candidate_loss": true,
+      "candidate_move": "b2a2",
+      "case": "d16",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e3d3",
+      "candidate_loss": true,
+      "candidate_move": "e3f3",
+      "case": "d17",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": true,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e3d2",
+      "candidate_loss": true,
+      "candidate_move": "e3e2",
+      "case": "d17",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": true,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e3f3",
+      "candidate_loss": true,
+      "candidate_move": "e3d2",
+      "case": "d17",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": true,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e3d3",
+      "candidate_loss": true,
+      "candidate_move": "e3f3",
+      "case": "d17",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": true,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g8h7",
+      "candidate_loss": false,
+      "candidate_move": "g8g7",
+      "case": "d18",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g8h7",
+      "candidate_loss": false,
+      "candidate_move": "g8g7",
+      "case": "d18",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g8g7",
+      "candidate_loss": false,
+      "candidate_move": "g8g7",
+      "case": "d18",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g8g7",
+      "candidate_loss": false,
+      "candidate_move": "g8g7",
+      "case": "d18",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1c1",
+      "candidate_loss": true,
+      "candidate_move": "f1c1",
+      "case": "d19",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1c1",
+      "candidate_loss": true,
+      "candidate_move": "f1c1",
+      "case": "d19",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1c1",
+      "candidate_loss": true,
+      "candidate_move": "f1c1",
+      "case": "d19",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1c1",
+      "candidate_loss": true,
+      "candidate_move": "f1c1",
+      "case": "d19",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b6b5",
+      "candidate_loss": false,
+      "candidate_move": "b6b5",
+      "case": "d20",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h8e8",
+      "candidate_loss": false,
+      "candidate_move": "h8e8",
+      "case": "d20",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b6b5",
+      "candidate_loss": false,
+      "candidate_move": "b6b5",
+      "case": "d20",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f7f6",
+      "candidate_loss": false,
+      "candidate_move": "f7f6",
+      "case": "d20",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1d1",
+      "candidate_loss": true,
+      "candidate_move": "f1d1",
+      "case": "d21",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1h1",
+      "candidate_loss": true,
+      "candidate_move": "f1h1",
+      "case": "d21",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1d1",
+      "candidate_loss": true,
+      "candidate_move": "b5c4",
+      "case": "d21",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1h1",
+      "candidate_loss": true,
+      "candidate_move": "f1h1",
+      "case": "d21",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f7e8",
+      "candidate_loss": false,
+      "candidate_move": "f7e8",
+      "case": "d22",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d8g8",
+      "candidate_loss": true,
+      "candidate_move": "d8f8",
+      "case": "d22",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f7e8",
+      "candidate_loss": true,
+      "candidate_move": "f7f8",
+      "case": "d22",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "d8g8",
+      "candidate_loss": true,
+      "candidate_move": "d8h8",
+      "case": "d22",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d23",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d23",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d23",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "g7g6",
+      "candidate_loss": true,
+      "candidate_move": "g7g6",
+      "case": "d23",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e8f7",
+      "candidate_loss": true,
+      "candidate_move": "e8f7",
+      "case": "d24",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e8f7",
+      "candidate_loss": true,
+      "candidate_move": "e8f7",
+      "case": "d24",
+      "cohort": "death",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e8f7",
+      "candidate_loss": true,
+      "candidate_move": "e8f7",
+      "case": "d24",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e8f7",
+      "candidate_loss": true,
+      "candidate_move": "e8f7",
+      "case": "d24",
+      "cohort": "death",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8a8",
+      "candidate_loss": false,
+      "candidate_move": "b8f8",
+      "case": "s01",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b3b2",
+      "candidate_loss": false,
+      "candidate_move": "c6d4",
+      "case": "s01",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8c8",
+      "candidate_loss": false,
+      "candidate_move": "d7d6",
+      "case": "s01",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b3b2",
+      "candidate_loss": false,
+      "candidate_move": "c6d4",
+      "case": "s01",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d6d7",
+      "candidate_loss": false,
+      "candidate_move": "d6d5",
+      "case": "s02",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d6d5",
+      "candidate_loss": false,
+      "candidate_move": "d6d5",
+      "case": "s02",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d6d5",
+      "candidate_loss": false,
+      "candidate_move": "d6d5",
+      "case": "s02",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c3c2",
+      "candidate_loss": false,
+      "candidate_move": "c6d5",
+      "case": "s02",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f1h1",
+      "candidate_loss": false,
+      "candidate_move": "f1h1",
+      "case": "s03",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f1h1",
+      "candidate_loss": false,
+      "candidate_move": "f1h1",
+      "case": "s03",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f1h1",
+      "candidate_loss": false,
+      "candidate_move": "c4b5",
+      "case": "s03",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f1h1",
+      "candidate_loss": false,
+      "candidate_move": "f1h1",
+      "case": "s03",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f2f1",
+      "candidate_loss": false,
+      "candidate_move": "c4f1",
+      "case": "s04",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c4f1",
+      "candidate_loss": false,
+      "candidate_move": "c4f1",
+      "case": "s04",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f2f1",
+      "candidate_loss": false,
+      "candidate_move": "c4f1",
+      "case": "s04",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f2f1",
+      "candidate_loss": false,
+      "candidate_move": "c4f1",
+      "case": "s04",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e2f2",
+      "candidate_loss": false,
+      "candidate_move": "e2f2",
+      "case": "s05",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e2d1",
+      "candidate_loss": false,
+      "candidate_move": "e2d1",
+      "case": "s05",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e2f2",
+      "candidate_loss": false,
+      "candidate_move": "e2f2",
+      "case": "s05",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e2d1",
+      "candidate_loss": false,
+      "candidate_move": "b3b4",
+      "case": "s05",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g4g5",
+      "candidate_loss": false,
+      "candidate_move": "g3g2",
+      "case": "s06",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h6h7",
+      "candidate_loss": false,
+      "candidate_move": "f3e3",
+      "case": "s06",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g4g5",
+      "candidate_loss": false,
+      "candidate_move": "g4g5",
+      "case": "s06",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h6h7",
+      "candidate_loss": false,
+      "candidate_move": "h6h7",
+      "case": "s06",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e3e6",
+      "candidate_loss": false,
+      "candidate_move": "e3e6",
+      "case": "s07",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e3e6",
+      "candidate_loss": false,
+      "candidate_move": "e3e6",
+      "case": "s07",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e3e6",
+      "candidate_loss": false,
+      "candidate_move": "e3e6",
+      "case": "s07",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e3e6",
+      "candidate_loss": false,
+      "candidate_move": "e3e6",
+      "case": "s07",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f7g8",
+      "candidate_loss": false,
+      "candidate_move": "f7g8",
+      "case": "s08",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d3f2",
+      "candidate_loss": false,
+      "candidate_move": "d3f2",
+      "case": "s08",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f7g8",
+      "candidate_loss": false,
+      "candidate_move": "f7g8",
+      "case": "s08",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f4f3",
+      "candidate_loss": false,
+      "candidate_move": "d3f2",
+      "case": "s08",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g3h4",
+      "candidate_loss": false,
+      "candidate_move": "g3h4",
+      "case": "s09",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g3h4",
+      "candidate_loss": false,
+      "candidate_move": "g3h4",
+      "case": "s09",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g3h4",
+      "candidate_loss": false,
+      "candidate_move": "g3h4",
+      "case": "s09",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g3h4",
+      "candidate_loss": false,
+      "candidate_move": "g3h4",
+      "case": "s09",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d6d5",
+      "candidate_loss": false,
+      "candidate_move": "c5c4",
+      "case": "s10",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h8g8",
+      "candidate_loss": false,
+      "candidate_move": "h8g8",
+      "case": "s10",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h8g8",
+      "candidate_loss": false,
+      "candidate_move": "h8g7",
+      "case": "s10",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h8g7",
+      "candidate_loss": false,
+      "candidate_move": "h8g7",
+      "case": "s10",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c6b6",
+      "candidate_loss": false,
+      "candidate_move": "c6b6",
+      "case": "s11",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c6e6",
+      "candidate_loss": false,
+      "candidate_move": "b7b6",
+      "case": "s11",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c6b6",
+      "candidate_loss": false,
+      "candidate_move": "c6b6",
+      "case": "s11",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c6c1",
+      "candidate_loss": false,
+      "candidate_move": "b7b6",
+      "case": "s11",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b7a6",
+      "candidate_loss": false,
+      "candidate_move": "b7a8",
+      "case": "s12",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h3h2",
+      "candidate_loss": false,
+      "candidate_move": "h3h2",
+      "case": "s12",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b7a6",
+      "candidate_loss": false,
+      "candidate_move": "b7a8",
+      "case": "s12",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "h3h2",
+      "candidate_loss": false,
+      "candidate_move": "h3h2",
+      "case": "s12",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1f1",
+      "candidate_loss": false,
+      "candidate_move": "g1g2",
+      "case": "s13",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1g2",
+      "candidate_loss": false,
+      "candidate_move": "g1g2",
+      "case": "s13",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1h2",
+      "candidate_loss": false,
+      "candidate_move": "g1g2",
+      "case": "s13",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1g2",
+      "candidate_loss": false,
+      "candidate_move": "g1g2",
+      "case": "s13",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d8d7",
+      "candidate_loss": false,
+      "candidate_move": "b8b7",
+      "case": "s14",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8c8",
+      "candidate_loss": false,
+      "candidate_move": "b8b4",
+      "case": "s14",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d8d7",
+      "candidate_loss": false,
+      "candidate_move": "d8d7",
+      "case": "s14",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d8d7",
+      "candidate_loss": false,
+      "candidate_move": "d8d7",
+      "case": "s14",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "a7a6",
+      "candidate_loss": false,
+      "candidate_move": "b8c8",
+      "case": "s15",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c7c5",
+      "candidate_loss": false,
+      "candidate_move": "c7c5",
+      "case": "s15",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f8f7",
+      "candidate_loss": false,
+      "candidate_move": "f8f7",
+      "case": "s15",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8e8",
+      "candidate_loss": false,
+      "candidate_move": "c7c5",
+      "case": "s15",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f2f3",
+      "candidate_loss": false,
+      "candidate_move": "g3h2",
+      "case": "s16",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f2f3",
+      "candidate_loss": false,
+      "candidate_move": "f2f3",
+      "case": "s16",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f2d2",
+      "candidate_loss": false,
+      "candidate_move": "f2d2",
+      "case": "s16",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f2h2",
+      "candidate_loss": false,
+      "candidate_move": "f2e2",
+      "case": "s16",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d6c5",
+      "candidate_loss": false,
+      "candidate_move": "e6e5",
+      "case": "s17",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b1d2",
+      "candidate_loss": false,
+      "candidate_move": "e6e5",
+      "case": "s17",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b1d2",
+      "candidate_loss": false,
+      "candidate_move": "d6e5",
+      "case": "s17",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b1a3",
+      "candidate_loss": false,
+      "candidate_move": "e6e5",
+      "case": "s17",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1e2",
+      "candidate_loss": false,
+      "candidate_move": "f1e1",
+      "case": "s18",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f1e1",
+      "candidate_loss": false,
+      "candidate_move": "f1e1",
+      "case": "s18",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": true,
+      "base_move": "f1e2",
+      "candidate_loss": true,
+      "candidate_move": "f1e2",
+      "case": "s18",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "f1e1",
+      "candidate_loss": false,
+      "candidate_move": "f1e1",
+      "case": "s18",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "a2b4",
+      "candidate_loss": false,
+      "candidate_move": "a2b4",
+      "case": "s19",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d2b4",
+      "candidate_loss": false,
+      "candidate_move": "d2b4",
+      "case": "s19",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "a2b4",
+      "candidate_loss": false,
+      "candidate_move": "a2b4",
+      "case": "s19",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d2b4",
+      "candidate_loss": false,
+      "candidate_move": "a2c1",
+      "case": "s19",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e7e5",
+      "candidate_loss": false,
+      "candidate_move": "e7e5",
+      "case": "s20",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8b4",
+      "candidate_loss": false,
+      "candidate_move": "b8b4",
+      "case": "s20",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e7e5",
+      "candidate_loss": false,
+      "candidate_move": "b8e8",
+      "case": "s20",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b8c8",
+      "candidate_loss": false,
+      "candidate_move": "b8b4",
+      "case": "s20",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c8c6",
+      "candidate_loss": false,
+      "candidate_move": "c8c7",
+      "case": "s21",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c8c1",
+      "candidate_loss": false,
+      "candidate_move": "c8e8",
+      "case": "s21",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c8c7",
+      "candidate_loss": false,
+      "candidate_move": "c8c7",
+      "case": "s21",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "c8c1",
+      "candidate_loss": false,
+      "candidate_move": "c8c7",
+      "case": "s21",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b1b2",
+      "candidate_loss": false,
+      "candidate_move": "b1b2",
+      "case": "s22",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e4e5",
+      "candidate_loss": false,
+      "candidate_move": "e4e5",
+      "case": "s22",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "b1c2",
+      "candidate_loss": false,
+      "candidate_move": "b1b2",
+      "case": "s22",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e4e5",
+      "candidate_loss": false,
+      "candidate_move": "e4e5",
+      "case": "s22",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1f2",
+      "candidate_loss": false,
+      "candidate_move": "g1f2",
+      "case": "s23",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d4d5",
+      "candidate_loss": false,
+      "candidate_move": "d4d5",
+      "case": "s23",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "g1f2",
+      "candidate_loss": false,
+      "candidate_move": "g1f2",
+      "case": "s23",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "d2c2",
+      "candidate_loss": false,
+      "candidate_move": "d2c2",
+      "case": "s23",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e3f3",
+      "candidate_loss": false,
+      "candidate_move": "a4a5",
+      "case": "s24",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": false,
+      "base_move": "a4a5",
+      "candidate_loss": true,
+      "candidate_move": "e3d3",
+      "case": "s24",
+      "cohort": "survival",
+      "seed": 11,
+      "unavoidable": false,
+      "variant": "stockfish"
+    },
+    {
+      "base_loss": false,
+      "base_move": "e3f3",
+      "candidate_loss": false,
+      "candidate_move": "a4a5",
+      "case": "s24",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "internal"
+    },
+    {
+      "base_loss": true,
+      "base_move": "e3e2",
+      "candidate_loss": true,
+      "candidate_move": "e3d2",
+      "case": "s24",
+      "cohort": "survival",
+      "seed": 12,
+      "unavoidable": false,
+      "variant": "stockfish"
+    }
+  ],
+  "scales": [
+    1.0,
+    0.9
+  ],
+  "source_summary_sha256": "18ea87a4f9399cabbaee699539e3c88e3dc9854ae4fd01e80e379f9da5d9bbd2",
+  "unique_seat_summary": {
+    "internal/death": {
+      "paired_seats": 24,
+      "paired_seed_decisions": 48,
+      "seats_with_any_regression": [
+        "d22"
+      ],
+      "seats_with_any_save": [
+        "d01",
+        "d04",
+        "d06"
+      ],
+      "seats_with_both_directions": []
+    },
+    "internal/survival": {
+      "paired_seats": 24,
+      "paired_seed_decisions": 48,
+      "seats_with_any_regression": [],
+      "seats_with_any_save": [
+        "s18"
+      ],
+      "seats_with_both_directions": []
+    },
+    "stockfish/death": {
+      "paired_seats": 24,
+      "paired_seed_decisions": 48,
+      "seats_with_any_regression": [],
+      "seats_with_any_save": [
+        "d04",
+        "d06",
+        "d12"
+      ],
+      "seats_with_both_directions": []
+    },
+    "stockfish/survival": {
+      "paired_seats": 24,
+      "paired_seed_decisions": 48,
+      "seats_with_any_regression": [
+        "s24"
+      ],
+      "seats_with_any_save": [],
+      "seats_with_both_directions": []
+    }
+  },
+  "updated_at": "2026-10-11T10:36:14.889475+00:00",
+  "work_by_variant": {
+    "internal/scale0.9": {
+      "iters": {
+        "count": 96,
+        "max": 1920,
+        "mean": 1014.2604166666666,
+        "median": 971.0,
+        "min": 590
+      },
+      "nodes": {
+        "count": 96,
+        "max": 87652,
+        "mean": 59462.854166666664,
+        "median": 63553.5,
+        "min": 34836
+      },
+      "samples": {
+        "count": 96,
+        "max": 128,
+        "mean": 106.9375,
+        "median": 128.0,
+        "min": 2
+      },
+      "search_seconds": {
+        "count": 96,
+        "max": 0.3907,
+        "mean": 0.37690416666666665,
+        "min": 0.2279
+      }
+    },
+    "internal/scale1": {
+      "iters": {
+        "count": 96,
+        "max": 1924,
+        "mean": 1033.75,
+        "median": 967.5,
+        "min": 583
+      },
+      "nodes": {
+        "count": 96,
+        "max": 87502,
+        "mean": 58860.364583333336,
+        "median": 62447.5,
+        "min": 32024
+      },
+      "samples": {
+        "count": 96,
+        "max": 128,
+        "mean": 106.9375,
+        "median": 128.0,
+        "min": 2
+      },
+      "search_seconds": {
+        "count": 96,
+        "max": 0.3882,
+        "mean": 0.37676770833333334,
+        "min": 0.2278
+      }
+    },
+    "stockfish/scale0.9": {
+      "iters": {
+        "count": 96,
+        "max": 1167,
+        "mean": 368.3541666666667,
+        "median": 328.0,
+        "min": 140
+      },
+      "nodes": {
+        "count": 96,
+        "max": 27087,
+        "mean": 22203.145833333332,
+        "median": 22162.5,
+        "min": 17112
+      },
+      "samples": {
+        "count": 96,
+        "max": 128,
+        "mean": 106.9375,
+        "median": 128.0,
+        "min": 2
+      },
+      "search_seconds": {
+        "count": 96,
+        "max": 0.3778,
+        "mean": 0.3736520833333334,
+        "min": 0.2261
+      }
+    },
+    "stockfish/scale1": {
+      "iters": {
+        "count": 96,
+        "max": 1173,
+        "mean": 379.8229166666667,
+        "median": 342.5,
+        "min": 137
+      },
+      "nodes": {
+        "count": 96,
+        "max": 27036,
+        "mean": 22358.135416666668,
+        "median": 22432.0,
+        "min": 17088
+      },
+      "samples": {
+        "count": 96,
+        "max": 128,
+        "mean": 106.9375,
+        "median": 128.0,
+        "min": 2
+      },
+      "search_seconds": {
+        "count": 96,
+        "max": 0.3777,
+        "mean": 0.37366041666666666,
+        "min": 0.2261
+      }
+    }
+  },
+  "full_audit_sha256": "699f533cce21d6a87d2c73d7b401b55d6e32f43f7f0df73a74887cad08a54a04",
+  "all_artifacts_and_receipts_verified": true,
+  "gate_verdict": "Does not pass the zero-new-survival-loss launch condition; gap screen held, no release",
+  "counterexample": [
+    {
+      "all_root_reach": 0.99609375,
+      "belief_count": 887,
+      "belief_tactical_share": 0.011494456588067893,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.011494456588067893,
+      "case": "s24",
+      "chosen": "e3d3",
+      "chosen_fatal_reach": 0.67578125,
+      "chosen_fatal_roots": 87,
+      "chosen_fatal_share": 0.6784313725490196,
+      "closure_metrics": [],
+      "cohort": "survival",
+      "completed_at": "2026-10-11T10:35:23.032666+00:00",
+      "config_sha256": "17a698f71ec548b86d1a0ee94f3a7a0be31fe1aba6edf8b74975e8a046b46456",
+      "decision": 48,
+      "dumped_current_roots": 128,
+      "elapsed": 6.993648821000534,
+      "engine_work": {
+        "infosets": 465,
+        "iters": 652,
+        "moves": 9,
+        "n": 48,
+        "nodes": 18149,
+        "samples": 128
+      },
+      "evaluation": {
+        "calls": 776.0,
+        "child_alternates": 128.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scale": 0.9,
+        "scored": 12880.0,
+        "seconds": 0.269816
+      },
+      "failure_bucket": "truth_board_absent_from_roots",
+      "file_hashes": {
+        "a298aa6b-3e62-448b-8873-be51aaa28010-white-d48-cold.stderr": "e29d4f8213eaa7b28d9a8cea35c9482cf48359c9f35fc74e398f201614a3ebda",
+        "a298aa6b-3e62-448b-8873-be51aaa28010-white-d48-cold.stdout": "58d9a2c06fdb0d8e16269fac5653dbc2e07bfcd2d0b5d881f1934a9e090b6c0b",
+        "command.json": "5f2c1a971aadf522b23045afde1fde03a1442c6fc54f33d13ace1f42d16abc8a",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "f06852431d308ff3b8c8fb505177db71eb7d20391d32b4aa1f9fe7166fb4d20e",
+        "results.json": "6788768a12803f06259bbf06a9547a5b8515aa17f19e124452d0b00bda1900fe"
+      },
+      "final_metrics": {
+        "active": 0.99609,
+        "carry": 0,
+        "current": 0.99609,
+        "enter": 1.0,
+        "expand": 748,
+        "fallback": 1,
+        "found": 0,
+        "fresh": 128,
+        "groups": 128,
+        "offI": 0,
+        "ok": 1,
+        "over": 0,
+        "ply": 94,
+        "positive": 0,
+        "prefix": false,
+        "save": 0.0012,
+        "setup": 0.0135,
+        "snapshot": 1,
+        "solve": 0.3616,
+        "support": 1,
+        "total": 0.3764
+      },
+      "final_profile_diagnostic": {
+        "best_raw_advantage_over_chosen": 0.00025268900000008365,
+        "best_raw_move": "e3e2",
+        "best_raw_would_lose": true,
+        "best_zero_risk_move": null,
+        "best_zero_risk_value_gap": null,
+        "best_zero_risk_would_lose": null,
+        "zero_risk_actions": 0
+      },
+      "game": "a298aa6b-3e62-448b-8873-be51aaa28010",
+      "immediate_loss": true,
+      "leaf_scale": 0.9,
+      "legal": true,
+      "mode": "cold",
+      "opponent": "mist-c-v4",
+      "outputs": 48,
+      "played": "e3f3",
+      "ply": 94,
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.971052423,
+        "chosen_root_fatal_share": 0.678431373,
+        "move": "a4a5",
+        "raw_value": -0.970813019,
+        "root_fatal_share": 0.301960784,
+        "would_lose": false
+      },
+      "prefix_exact": true,
+      "prefix_sf_failures": 0,
+      "process": {
+        "elapsed": 7.328067046000797,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "report_group": "stockfish/scale0.9",
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 0,
+      "true_legal_count": 9,
+      "true_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "true_state_reach": 0,
+      "true_state_roots": 0,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    },
+    {
+      "all_root_reach": 0.9373489485481096,
+      "belief_count": 887,
+      "belief_tactical_share": 0.011494456588067893,
+      "belief_tactical_states": 1,
+      "belief_true_boards": 1,
+      "belief_true_states": 1,
+      "belief_truth_share": 0.011494456588067893,
+      "case": "s24",
+      "chosen": "a4a5",
+      "chosen_fatal_reach": 0.26851378186177116,
+      "chosen_fatal_roots": 39,
+      "chosen_fatal_share": 0.28646085566925844,
+      "closure_metrics": [],
+      "cohort": "survival",
+      "completed_at": "2026-10-11T10:35:30.633949+00:00",
+      "config_sha256": "17a698f71ec548b86d1a0ee94f3a7a0be31fe1aba6edf8b74975e8a046b46456",
+      "decision": 48,
+      "dumped_current_roots": 128,
+      "elapsed": 7.011522146000061,
+      "engine_work": {
+        "infosets": 457,
+        "iters": 673,
+        "moves": 9,
+        "n": 48,
+        "nodes": 17869,
+        "samples": 128
+      },
+      "evaluation": {
+        "calls": 779.0,
+        "child_alternates": 128.0,
+        "failed": 0.0,
+        "ready": 1.0,
+        "scale": 1.0,
+        "scored": 12646.0,
+        "seconds": 0.266365
+      },
+      "file_hashes": {
+        "a298aa6b-3e62-448b-8873-be51aaa28010-white-d48-cold.stderr": "812a203796057e64416006a70ee5df3fd67ff0772143af5dc6b1e9ea8c39704e",
+        "a298aa6b-3e62-448b-8873-be51aaa28010-white-d48-cold.stdout": "a448f474fd3f079652b7c3115e7429d594f5535793ad6838345a31d775abf78b",
+        "command.json": "b69f11b57b96c329c976d3a5919454df75e70b42829c3dfbbcb1d3be80d8effa",
+        "probe.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "probe.stdout": "0c1e5cb0093d8949235b097fa81e74c59214934c03205a8d5d68f396e8665fe7",
+        "results.json": "0d7363ff35694a4c187916ad40fa1ffdc9f566394b502ee5d430923bcb3371cd"
+      },
+      "final_metrics": {
+        "active": 0.93735,
+        "carry": 0,
+        "current": 0.93735,
+        "enter": 1.0,
+        "expand": 761,
+        "fallback": 1,
+        "found": 0,
+        "fresh": 128,
+        "groups": 128,
+        "offI": 0,
+        "ok": 1,
+        "over": 0,
+        "ply": 94,
+        "positive": 0,
+        "prefix": false,
+        "save": 0.0012,
+        "setup": 0.0138,
+        "snapshot": 1,
+        "solve": 0.3613,
+        "support": 1,
+        "total": 0.3763
+      },
+      "final_profile_diagnostic": {
+        "best_raw_advantage_over_chosen": 3.5229999999497608e-06,
+        "best_raw_move": "e3d2",
+        "best_raw_would_lose": true,
+        "best_zero_risk_move": null,
+        "best_zero_risk_value_gap": null,
+        "best_zero_risk_would_lose": null,
+        "zero_risk_actions": 0
+      },
+      "game": "a298aa6b-3e62-448b-8873-be51aaa28010",
+      "immediate_loss": false,
+      "leaf_scale": 1.0,
+      "legal": true,
+      "mode": "cold",
+      "opponent": "mist-c-v4",
+      "outputs": 48,
+      "played": "e3f3",
+      "ply": 94,
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.999820928,
+        "chosen_root_fatal_share": 0.286460856,
+        "move": "a4a5",
+        "raw_value": -0.999820928,
+        "root_fatal_share": 0.286460856,
+        "would_lose": false
+      },
+      "prefix_exact": true,
+      "prefix_sf_failures": 0,
+      "process": {
+        "elapsed": 7.3341974719987775,
+        "returncode": 0,
+        "timed_out": false
+      },
+      "report_group": "stockfish/scale1",
+      "returncode": 0,
+      "seed": 11,
+      "side": "white",
+      "status": "ok",
+      "true_board_roots": 0,
+      "true_legal_count": 9,
+      "true_outcome": null,
+      "true_state_reach": 0,
+      "true_state_roots": 0,
+      "unavoidable_immediate_loss": false,
+      "variant": "stockfish"
+    }
+  ]
+}

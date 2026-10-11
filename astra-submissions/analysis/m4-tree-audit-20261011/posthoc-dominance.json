@@ -1,0 +1,1856 @@
+{
+  "at": "2026-10-11T10:45:28.808197+00:00",
+  "classification": "post-hoc diagnostic; not runtime code or a strength result",
+  "source_manifest_sha256": "17a698f71ec548b86d1a0ee94f3a7a0be31fe1aba6edf8b74975e8a046b46456",
+  "source_summary_sha256": "18ea87a4f9399cabbaee699539e3c88e3dc9854ae4fd01e80e379f9da5d9bbd2",
+  "report_tool_sha256": "305f6065ef8a2f06bf67983214be00ca0111d0632dfbd51e482a2cd32c7ad69e",
+  "selector": {
+    "classification": "post-hoc development diagnostic, rounded profiles, fixed searched opponent response; no playing-strength claim",
+    "counts": {
+      "internal/scale0.9/death": {
+        "available": 48,
+        "changes": 8,
+        "chosen_loses": 32,
+        "posthoc_loses": 24,
+        "regressions": 0,
+        "saves": 8
+      },
+      "internal/scale0.9/survival": {
+        "available": 48,
+        "changes": 11,
+        "chosen_loses": 1,
+        "posthoc_loses": 0,
+        "regressions": 0,
+        "saves": 1
+      },
+      "internal/scale1/death": {
+        "available": 48,
+        "changes": 8,
+        "chosen_loses": 34,
+        "posthoc_loses": 28,
+        "regressions": 0,
+        "saves": 6
+      },
+      "internal/scale1/survival": {
+        "available": 48,
+        "changes": 20,
+        "chosen_loses": 2,
+        "posthoc_loses": 1,
+        "regressions": 0,
+        "saves": 1
+      },
+      "stockfish/scale0.9/death": {
+        "available": 48,
+        "changes": 4,
+        "chosen_loses": 28,
+        "posthoc_loses": 25,
+        "regressions": 0,
+        "saves": 3
+      },
+      "stockfish/scale0.9/survival": {
+        "available": 48,
+        "changes": 9,
+        "chosen_loses": 2,
+        "posthoc_loses": 1,
+        "regressions": 0,
+        "saves": 1
+      },
+      "stockfish/scale1/death": {
+        "available": 48,
+        "changes": 5,
+        "chosen_loses": 32,
+        "posthoc_loses": 30,
+        "regressions": 0,
+        "saves": 2
+      },
+      "stockfish/scale1/survival": {
+        "available": 48,
+        "changes": 9,
+        "chosen_loses": 1,
+        "posthoc_loses": 0,
+        "regressions": 0,
+        "saves": 1
+      }
+    },
+    "limitation": "Counterfactual root reach is not the posterior. Opponent response and carried blueprint would need revalidation after changing the executed strategy.",
+    "rule": "Only replace a selected move if another has strictly lower root fatal share and no lower raw value; select least fatal share among those dominators, then highest value and UCI."
+  },
+  "changed_rows": [
+    {
+      "case": "s02",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "c6d5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 6,
+        "move": "d6d7",
+        "raw_value": 0.641722252,
+        "root_fatal_share": 0.0390921771,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.63684377,
+        "chosen_root_fatal_share": 0.0625474833,
+        "move": "d6d7",
+        "raw_value": 0.641722252,
+        "root_fatal_share": 0.0390921771,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s03",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "f1h1",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f1f3",
+        "raw_value": -0.884006032,
+        "root_fatal_share": 0.0421351425,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.884163582,
+        "chosen_root_fatal_share": 0.0948040707,
+        "move": "f1f3",
+        "raw_value": -0.884006032,
+        "root_fatal_share": 0.0421351425,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s03",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "c4b5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 4,
+        "move": "c4d5",
+        "raw_value": -0.889959903,
+        "root_fatal_share": 0.0898501304,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.89127263,
+        "chosen_root_fatal_share": 0.134775196,
+        "move": "c4d5",
+        "raw_value": -0.889959903,
+        "root_fatal_share": 0.0898501304,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s03",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "f1h1",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "c4d5",
+        "raw_value": -0.934331415,
+        "root_fatal_share": 0.0892029461,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.935415163,
+        "chosen_root_fatal_share": 0.133804419,
+        "move": "c4d5",
+        "raw_value": -0.934331415,
+        "root_fatal_share": 0.0892029461,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s03",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "f1h1",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "c4e2",
+        "raw_value": -0.846539925,
+        "root_fatal_share": 0.124025958,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.846560562,
+        "chosen_root_fatal_share": 0.132884955,
+        "move": "c4d5",
+        "raw_value": -0.847039535,
+        "root_fatal_share": 0.0885899702,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d04",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "f4g3",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "c1b1",
+        "raw_value": -0.93632629,
+        "root_fatal_share": 0.039735825,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.937146865,
+        "chosen_root_fatal_share": 0.103313145,
+        "move": "f4c7",
+        "raw_value": -0.977185924,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s04",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "f2f1",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "c4f1",
+        "raw_value": -0.975355086,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.975402531,
+        "chosen_root_fatal_share": 0.0633335394,
+        "move": "c4f1",
+        "raw_value": -0.975355086,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s05",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "e2f2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "e2f1",
+        "raw_value": -0.999281533,
+        "root_fatal_share": 0.156560746,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.999304231,
+        "chosen_root_fatal_share": 0.157983168,
+        "move": "e2f1",
+        "raw_value": -0.999281533,
+        "root_fatal_share": 0.156560746,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d06",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "a4c2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g8b8",
+        "raw_value": -0.587864565,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.588230731,
+        "chosen_root_fatal_share": 0.290994829,
+        "move": "g8b8",
+        "raw_value": -0.587864565,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d06",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "a4c2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b6b5",
+        "raw_value": -0.880444675,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.883259466,
+        "chosen_root_fatal_share": 0.299038691,
+        "move": "b6b5",
+        "raw_value": -0.880444675,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d06",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "a4c2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 4,
+        "move": "b6b5",
+        "raw_value": -0.517432651,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.518789864,
+        "chosen_root_fatal_share": 0.224394221,
+        "move": "b6b5",
+        "raw_value": -0.517432651,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d06",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "a4c2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b6b5",
+        "raw_value": -0.573677382,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.574223249,
+        "chosen_root_fatal_share": 0.254983526,
+        "move": "b6b5",
+        "raw_value": -0.573677382,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d08",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "c8b7",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "c8d8",
+        "raw_value": -0.79122088,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.797054948,
+        "chosen_root_fatal_share": 0.891302687,
+        "move": "c8d8",
+        "raw_value": -0.79122088,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d08",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "c8b7",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "c8d8",
+        "raw_value": -0.789459248,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.791231398,
+        "chosen_root_fatal_share": 0.888171526,
+        "move": "c8d8",
+        "raw_value": -0.789459248,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s09",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "g3h4",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "g3g2",
+        "raw_value": -0.856743393,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.858005118,
+        "chosen_root_fatal_share": 0.158279225,
+        "move": "g3g2",
+        "raw_value": -0.856743393,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s09",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "g3h4",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g3g2",
+        "raw_value": -0.943505443,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.945245724,
+        "chosen_root_fatal_share": 0.336442641,
+        "move": "g3g2",
+        "raw_value": -0.943505443,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s09",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "g3h4",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "g3f3",
+        "raw_value": -0.857232239,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.863256652,
+        "chosen_root_fatal_share": 0.190272112,
+        "move": "g3f3",
+        "raw_value": -0.857232239,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d10",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "g7g6",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g7h8",
+        "raw_value": -0.923306857,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.924788947,
+        "chosen_root_fatal_share": 0.955058262,
+        "move": "g7h8",
+        "raw_value": -0.923306857,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s10",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "h8g8",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 3,
+        "move": "c5c4",
+        "raw_value": -0.971712934,
+        "root_fatal_share": 0.117432311,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.973036211,
+        "chosen_root_fatal_share": 0.129512649,
+        "move": "c5c4",
+        "raw_value": -0.971712934,
+        "root_fatal_share": 0.117432311,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s10",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "c5c4",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "h8g8",
+        "raw_value": -0.881568059,
+        "root_fatal_share": 0.0819738892,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.882923864,
+        "chosen_root_fatal_share": 0.098368667,
+        "move": "h8g8",
+        "raw_value": -0.881568059,
+        "root_fatal_share": 0.0819738892,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s10",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "d6d5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "h8g8",
+        "raw_value": -0.965274293,
+        "root_fatal_share": 0.0800301825,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.965360522,
+        "chosen_root_fatal_share": 0.096036219,
+        "move": "h8g8",
+        "raw_value": -0.965274293,
+        "root_fatal_share": 0.0800301825,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s10",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "h8g8",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 5,
+        "move": "h8h7",
+        "raw_value": -0.962300081,
+        "root_fatal_share": 0.0716737498,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.964222263,
+        "chosen_root_fatal_share": 0.12742,
+        "move": "h8h7",
+        "raw_value": -0.962300081,
+        "root_fatal_share": 0.0716737498,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s10",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "h8g7",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "h8h7",
+        "raw_value": -0.969425598,
+        "root_fatal_share": 0.143643074,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.97073578,
+        "chosen_root_fatal_share": 0.159603416,
+        "move": "g4g3",
+        "raw_value": -0.970966482,
+        "root_fatal_share": 0.106856143,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s10",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "h8g7",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "h8h7",
+        "raw_value": -0.889795367,
+        "root_fatal_share": 0.121283898,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.890243413,
+        "chosen_root_fatal_share": 0.134759887,
+        "move": "h8h7",
+        "raw_value": -0.889795367,
+        "root_fatal_share": 0.121283898,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s11",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "b7b6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "c6e6",
+        "raw_value": -0.802631463,
+        "root_fatal_share": 0.12949513,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.804978338,
+        "chosen_root_fatal_share": 0.143883478,
+        "move": "c6c7",
+        "raw_value": -0.83143861,
+        "root_fatal_share": 0.0287766955,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s11",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "c6b6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "c6c7",
+        "raw_value": -0.722593414,
+        "root_fatal_share": 0.0160355204,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.723157644,
+        "chosen_root_fatal_share": 0.136301923,
+        "move": "c6c7",
+        "raw_value": -0.722593414,
+        "root_fatal_share": 0.0160355204,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s11",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "c6b6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b7a8",
+        "raw_value": -0.73332093,
+        "root_fatal_share": 0.0408821893,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.733384369,
+        "chosen_root_fatal_share": 0.155352319,
+        "move": "c6c7",
+        "raw_value": -0.734471322,
+        "root_fatal_share": 0.0327057514,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s11",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "c6b6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 4,
+        "move": "c6c7",
+        "raw_value": -0.670958008,
+        "root_fatal_share": 0.032039389,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.672111861,
+        "chosen_root_fatal_share": 0.152187098,
+        "move": "c6c7",
+        "raw_value": -0.670958008,
+        "root_fatal_share": 0.032039389,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s11",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "b7b6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "c6c7",
+        "raw_value": -0.82480728,
+        "root_fatal_share": 0.0494753036,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.829058862,
+        "chosen_root_fatal_share": 0.148425911,
+        "move": "b7a8",
+        "raw_value": -0.855570186,
+        "root_fatal_share": 0.0303846786,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d12",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "f1g1",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "f1e1",
+        "raw_value": -0.919772372,
+        "root_fatal_share": 0.173488462,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.923258056,
+        "chosen_root_fatal_share": 0.260232692,
+        "move": "f1e1",
+        "raw_value": -0.919772372,
+        "root_fatal_share": 0.173488462,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d12",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "f1g2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 5,
+        "move": "f1f2",
+        "raw_value": -0.994953261,
+        "root_fatal_share": 0.150472836,
+        "would_lose": true
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.995442288,
+        "chosen_root_fatal_share": 0.375953222,
+        "move": "f1f2",
+        "raw_value": -0.994953261,
+        "root_fatal_share": 0.150472836,
+        "would_lose": true
+      }
+    },
+    {
+      "case": "s12",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "b7a6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b7a8",
+        "raw_value": -0.580222906,
+        "root_fatal_share": 0.0546875,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.582850782,
+        "chosen_root_fatal_share": 0.09375,
+        "move": "b7a8",
+        "raw_value": -0.580222906,
+        "root_fatal_share": 0.0546875,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s12",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "b7a6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 4,
+        "move": "b6h6",
+        "raw_value": -0.570520333,
+        "root_fatal_share": 0.0859375,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.572854701,
+        "chosen_root_fatal_share": 0.1328125,
+        "move": "b7a8",
+        "raw_value": -0.576539174,
+        "root_fatal_share": 0.046875,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s13",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "g1g2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "g1h1",
+        "raw_value": -0.952556947,
+        "root_fatal_share": 0.012462003,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.953643425,
+        "chosen_root_fatal_share": 0.0601640935,
+        "move": "g1h1",
+        "raw_value": -0.952556947,
+        "root_fatal_share": 0.012462003,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s13",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "g1f1",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g1h2",
+        "raw_value": -0.976264784,
+        "root_fatal_share": 0.0216283994,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.976279736,
+        "chosen_root_fatal_share": 0.0410785841,
+        "move": "g1h1",
+        "raw_value": -0.976303537,
+        "root_fatal_share": 0.0164314337,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s13",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "g1h2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 3,
+        "move": "g1h1",
+        "raw_value": -0.976042276,
+        "root_fatal_share": 0.0168706245,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.976184162,
+        "chosen_root_fatal_share": 0.0433184488,
+        "move": "g1h1",
+        "raw_value": -0.976042276,
+        "root_fatal_share": 0.0168706245,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s13",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "g1g2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g1h1",
+        "raw_value": -0.882828454,
+        "root_fatal_share": 0.0174503929,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.883016774,
+        "chosen_root_fatal_share": 0.0261755894,
+        "move": "g1h1",
+        "raw_value": -0.882828454,
+        "root_fatal_share": 0.0174503929,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d14",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "g2g3",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 3,
+        "move": "g2h1",
+        "raw_value": -0.8599227,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.860797794,
+        "chosen_root_fatal_share": 0.144434426,
+        "move": "g2h1",
+        "raw_value": -0.8599227,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s14",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "d8d7",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 7,
+        "move": "b8a8",
+        "raw_value": -0.953549004,
+        "root_fatal_share": 0.0253751004,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.954177677,
+        "chosen_root_fatal_share": 0.0676669344,
+        "move": "b8a8",
+        "raw_value": -0.953549004,
+        "root_fatal_share": 0.0253751004,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s15",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "c7c5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g8h7",
+        "raw_value": 0.69971958,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.68527357,
+        "chosen_root_fatal_share": 0.00784557513,
+        "move": "g8h7",
+        "raw_value": 0.69971958,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s15",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "c7c5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g8h7",
+        "raw_value": 0.773331169,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.771865798,
+        "chosen_root_fatal_share": 0.00814460673,
+        "move": "g8h7",
+        "raw_value": 0.773331169,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s15",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "b8c8",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "g8h8",
+        "raw_value": 0.503450734,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.503061905,
+        "chosen_root_fatal_share": 0.00833921264,
+        "move": "g8h8",
+        "raw_value": 0.503450734,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s15",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "a7a6",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "f8f7",
+        "raw_value": 0.559439862,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.557318788,
+        "chosen_root_fatal_share": 0.00868073173,
+        "move": "f8f7",
+        "raw_value": 0.559439862,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d16",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "b2c2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b2a3",
+        "raw_value": -0.955305087,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.955759192,
+        "chosen_root_fatal_share": 0.0236266852,
+        "move": "b2a3",
+        "raw_value": -0.955305087,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d16",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "b3b4",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b2a3",
+        "raw_value": -0.878154069,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.878356853,
+        "chosen_root_fatal_share": 0.0234375,
+        "move": "b2a3",
+        "raw_value": -0.878154069,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d16",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "b2a2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "b2a3",
+        "raw_value": -0.977839188,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.978232864,
+        "chosen_root_fatal_share": 0.102338712,
+        "move": "b2a3",
+        "raw_value": -0.977839188,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d16",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "b2a2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b2a3",
+        "raw_value": -0.874532906,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.87489968,
+        "chosen_root_fatal_share": 0.03125,
+        "move": "b2a3",
+        "raw_value": -0.874532906,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d16",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "b2c3",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 3,
+        "move": "b2a3",
+        "raw_value": -0.956043371,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.957564913,
+        "chosen_root_fatal_share": 0.0712766875,
+        "move": "b2a3",
+        "raw_value": -0.956043371,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s16",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "g3h2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f2f3",
+        "raw_value": -0.750351137,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.750627686,
+        "chosen_root_fatal_share": 0.0260707743,
+        "move": "f2f3",
+        "raw_value": -0.750351137,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s16",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "f2d2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "f2f3",
+        "raw_value": -0.819726325,
+        "root_fatal_share": 0.00801525029,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.820291576,
+        "chosen_root_fatal_share": 0.0721372526,
+        "move": "f2f3",
+        "raw_value": -0.819726325,
+        "root_fatal_share": 0.00801525029,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s16",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "f2d2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f2f3",
+        "raw_value": -0.744258414,
+        "root_fatal_share": 0.00809425117,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.744747703,
+        "chosen_root_fatal_share": 0.0728482605,
+        "move": "f2f3",
+        "raw_value": -0.744258414,
+        "root_fatal_share": 0.00809425117,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d17",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "e3d3",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 3,
+        "move": "a4a5",
+        "raw_value": -0.999976347,
+        "root_fatal_share": 0.335800517,
+        "would_lose": true
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.999978204,
+        "chosen_root_fatal_share": 0.590446874,
+        "move": "a4a5",
+        "raw_value": -0.999976347,
+        "root_fatal_share": 0.335800517,
+        "would_lose": true
+      }
+    },
+    {
+      "case": "d17",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "e3d3",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 3,
+        "move": "e3f3",
+        "raw_value": -0.999686477,
+        "root_fatal_share": 0.447515806,
+        "would_lose": true
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.999704321,
+        "chosen_root_fatal_share": 0.611597445,
+        "move": "a4a5",
+        "raw_value": -0.999725123,
+        "root_fatal_share": 0.296025071,
+        "would_lose": true
+      }
+    },
+    {
+      "case": "d17",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "e3f3",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "a4a5",
+        "raw_value": -0.999976675,
+        "root_fatal_share": 0.346188619,
+        "would_lose": true
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.999976767,
+        "chosen_root_fatal_share": 0.398330908,
+        "move": "a4a5",
+        "raw_value": -0.999976675,
+        "root_fatal_share": 0.346188619,
+        "would_lose": true
+      }
+    },
+    {
+      "case": "s17",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "b1d2",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "e6e5",
+        "raw_value": -0.95128001,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.960799487,
+        "chosen_root_fatal_share": 0.227760908,
+        "move": "e6e5",
+        "raw_value": -0.95128001,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s17",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "d6c5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "e6e5",
+        "raw_value": -0.979633444,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.983666646,
+        "chosen_root_fatal_share": 0.2134449,
+        "move": "e6e5",
+        "raw_value": -0.979633444,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s17",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "b1a3",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 4,
+        "move": "e6e5",
+        "raw_value": -0.966642651,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.973402441,
+        "chosen_root_fatal_share": 0.225435694,
+        "move": "e6e5",
+        "raw_value": -0.966642651,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s18",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "f1e2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f1e1",
+        "raw_value": 0.713763621,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.713020162,
+        "chosen_root_fatal_share": 0.118428413,
+        "move": "f1e1",
+        "raw_value": 0.713763621,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s18",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "f1e2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f1e1",
+        "raw_value": 0.660018129,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.657399793,
+        "chosen_root_fatal_share": 0.102096698,
+        "move": "f1e1",
+        "raw_value": 0.660018129,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s19",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "a2b4",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "c2b1",
+        "raw_value": 0.563517266,
+        "root_fatal_share": 0.0557815307,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.563030082,
+        "chosen_root_fatal_share": 0.111563061,
+        "move": "a2c3",
+        "raw_value": 0.347810558,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s20",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "e7e5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 9,
+        "move": "d7d8",
+        "raw_value": -0.85647376,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.857449409,
+        "chosen_root_fatal_share": 0.0670364227,
+        "move": "d7d8",
+        "raw_value": -0.85647376,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s20",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "e7e5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 6,
+        "move": "b8e8",
+        "raw_value": -0.950662695,
+        "root_fatal_share": 0.0206055047,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.951083736,
+        "chosen_root_fatal_share": 0.082422019,
+        "move": "d7d8",
+        "raw_value": -0.951227644,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s20",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "e7e5",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 6,
+        "move": "d7d8",
+        "raw_value": -0.950703134,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.951493452,
+        "chosen_root_fatal_share": 0.084466381,
+        "move": "d7d8",
+        "raw_value": -0.950703134,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s21",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "c8c7",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b7a8",
+        "raw_value": -0.679684413,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.679791431,
+        "chosen_root_fatal_share": 0.0313586392,
+        "move": "b7a8",
+        "raw_value": -0.679684413,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s21",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "c8c7",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "b7a8",
+        "raw_value": -0.730321261,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.730991151,
+        "chosen_root_fatal_share": 0.0312905996,
+        "move": "b7a8",
+        "raw_value": -0.730321261,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d22",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "d8f8",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f7e8",
+        "raw_value": -0.810980618,
+        "root_fatal_share": 0.0678050499,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.821676233,
+        "chosen_root_fatal_share": 0.2712202,
+        "move": "f7e8",
+        "raw_value": -0.810980618,
+        "root_fatal_share": 0.0678050499,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d22",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "d8h8",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "f7e8",
+        "raw_value": -0.641833825,
+        "root_fatal_share": 0.0509029714,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.814056707,
+        "chosen_root_fatal_share": 0.203611886,
+        "move": "f7e8",
+        "raw_value": -0.641833825,
+        "root_fatal_share": 0.0509029714,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d22",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "death",
+      "chosen": "d8g8",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f7f8",
+        "raw_value": -0.825237167,
+        "root_fatal_share": 0.144027396,
+        "would_lose": true
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.84918309,
+        "chosen_root_fatal_share": 0.201638354,
+        "move": "f7e8",
+        "raw_value": -0.853276496,
+        "root_fatal_share": 0.0576109583,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d22",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "f7f8",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "f7e8",
+        "raw_value": 0.0758366244,
+        "root_fatal_share": 0.0356468324,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": 0.0737143169,
+        "chosen_root_fatal_share": 0.106940497,
+        "move": "f7e8",
+        "raw_value": 0.0758366244,
+        "root_fatal_share": 0.0356468324,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d23",
+      "seed": 12,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "g7g6",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "g7h8",
+        "raw_value": -0.904184939,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.904376009,
+        "chosen_root_fatal_share": 0.831062204,
+        "move": "g7h8",
+        "raw_value": -0.904184939,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "d24",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 0.9,
+      "cohort": "death",
+      "chosen": "e8f7",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "e8d8",
+        "raw_value": -0.158305419,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.15947231,
+        "chosen_root_fatal_share": 0.469859781,
+        "move": "e8d8",
+        "raw_value": -0.158305419,
+        "root_fatal_share": 0.0,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s24",
+      "seed": 11,
+      "variant": "stockfish",
+      "leaf_scale": 0.9,
+      "cohort": "survival",
+      "chosen": "e3d3",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 2,
+        "move": "a4a5",
+        "raw_value": -0.970813019,
+        "root_fatal_share": 0.301960784,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.971052423,
+        "chosen_root_fatal_share": 0.678431373,
+        "move": "a4a5",
+        "raw_value": -0.970813019,
+        "root_fatal_share": 0.301960784,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s24",
+      "seed": 11,
+      "variant": "internal",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "e3f3",
+      "immediate_loss": false,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "a4a5",
+        "raw_value": -0.999978568,
+        "root_fatal_share": 0.311038039,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.999978854,
+        "chosen_root_fatal_share": 0.510421397,
+        "move": "a4a5",
+        "raw_value": -0.999978568,
+        "root_fatal_share": 0.311038039,
+        "would_lose": false
+      }
+    },
+    {
+      "case": "s24",
+      "seed": 12,
+      "variant": "stockfish",
+      "leaf_scale": 1.0,
+      "cohort": "survival",
+      "chosen": "e3e2",
+      "immediate_loss": true,
+      "posthoc_dominance": {
+        "dominating_actions": 1,
+        "move": "e3f3",
+        "raw_value": -0.999764039,
+        "root_fatal_share": 0.500661266,
+        "would_lose": false
+      },
+      "posthoc_minimum_risk": {
+        "chosen_raw_value": -0.999769848,
+        "chosen_root_fatal_share": 0.637673721,
+        "move": "a4a5",
+        "raw_value": -0.999783086,
+        "root_fatal_share": 0.243266313,
+        "would_lose": false
+      }
+    }
+  ]
+}

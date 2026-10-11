@@ -30,6 +30,7 @@ def main():
                    'source_summary_sha256':sha(summary_path),'rows':[]})
     failure_buckets=defaultdict(Counter)
     selector_counts=defaultdict(Counter)
+    dominance_counts=defaultdict(Counter)
     matched_beliefs=defaultdict(dict)
     for row in summary['rows']:
         r=dict(row)
@@ -79,6 +80,17 @@ def main():
                 selection['posthoc_changes']+=alternative['move']!=r['chosen']
                 selection['saves']+=r['immediate_loss'] and alternative['move'] in case['safe_moves']
                 selection['regressions']+=not r['immediate_loss'] and alternative['move'] not in case['safe_moves']
+                # Development diagnosis only: truth labels are used after the
+                # choice, never to identify a dominating action.
+                dominators=[p for p in profiles if p['fatal']<actual['fatal']-1e-9 and p['raw']>=actual['raw']]
+                replacement=min(dominators,key=lambda p:(p['fatal'],-p['raw'],p['move'])) if dominators else actual
+                loss=replacement['move'] not in case['safe_moves']
+                r['posthoc_dominance']={'move':replacement['move'],'dominating_actions':len(dominators),
+                    'root_fatal_share':replacement['fatal'],'raw_value':replacement['raw'],'would_lose':loss}
+                dc=dominance_counts[label+'/'+r['cohort']];dc['available']+=1
+                dc['changes']+=replacement['move']!=actual['move'];dc['chosen_loses']+=r['immediate_loss']
+                dc['posthoc_loses']+=loss;dc['saves']+=r['immediate_loss'] and not loss
+                dc['regressions']+=not r['immediate_loss'] and loss
             if r['immediate_loss']:
                 bucket=('unavoidable' if case['unavoidable_immediate_loss'] else
                         'tactical_truth_absent_from_belief' if not r.get('belief_tactical_states',0) else
@@ -94,6 +106,10 @@ def main():
     result['posthoc_minimum_risk_selector']={'classification':'descriptive post-hoc choice from frozen profiles; no new search; not a promotion result',
         'rule':'minimize recorded root fatal share; break ties by greatest raw root action value, then UCI',
         'counts':{k:dict(v) for k,v in selector_counts.items()}}
+    result['posthoc_dominance_selector']={'classification':'post-hoc development diagnostic, rounded profiles, fixed searched opponent response; no playing-strength claim',
+        'rule':'Only replace a selected move if another has strictly lower root fatal share and no lower raw value; select least fatal share among those dominators, then highest value and UCI.',
+        'limitation':'Counterfactual root reach is not the posterior. Opponent response and carried blueprint would need revalidation after changing the executed strategy.',
+        'counts':{k:dict(v) for k,v in dominance_counts.items()}}
     result['matched_belief_mismatches']=[{'case':k[0],'seed':k[1],'fingerprints':v} for k,v in matched_beliefs.items()
                                         if len(v)>1 and any(x!=next(iter(v.values())) for x in v.values())]
     result['work_by_variant']={}
@@ -107,6 +123,27 @@ def main():
         values=sorted(r['final_metrics']['total'] for r in valid if 'total' in r.get('final_metrics',{}))
         if values:stat['search_seconds']={'count':len(values),'min':min(values),'max':max(values),'mean':sum(values)/len(values)}
         result['work_by_variant'][variant]=stat
+    if len(summary.get('scales',[]))==2:
+        base,candidate=summary['scales']
+        pairs=defaultdict(dict)
+        for r in result['rows']:pairs[(r['case'],r['seed'],r['variant'])][r['leaf_scale']]=r
+        result['scale_pairs']=[]
+        for (case,seed,variant),pair in sorted(pairs.items()):
+            if any(s not in pair or pair[s]['status']!='ok' for s in [base,candidate]):continue
+            a,b=pair[base],pair[candidate]
+            result['scale_pairs'].append({'case':case,'seed':seed,'variant':variant,'cohort':a['cohort'],
+                'base_move':a['chosen'],'candidate_move':b['chosen'],'base_loss':a['immediate_loss'],
+                'candidate_loss':b['immediate_loss'],'unavoidable':a['unavoidable_immediate_loss']})
+        result['unique_seat_summary']={}
+        for variant in ['internal','stockfish']:
+            for cohort in ['death','survival']:
+                pairs=[r for r in result['scale_pairs'] if r['variant']==variant and r['cohort']==cohort]
+                saves={r['case'] for r in pairs if r['base_loss'] and not r['candidate_loss']}
+                regressions={r['case'] for r in pairs if not r['base_loss'] and r['candidate_loss']}
+                result['unique_seat_summary'][variant+'/'+cohort]={
+                    'paired_seats':len({r['case'] for r in pairs}), 'paired_seed_decisions':len(pairs),
+                    'seats_with_any_save':sorted(saves),'seats_with_any_regression':sorted(regressions),
+                    'seats_with_both_directions':sorted(saves&regressions)}
     args.out.parent.mkdir(parents=True,exist_ok=True)
     args.out.write_text(json.dumps(result,indent=2,sort_keys=True)+'\n')
     print(json.dumps({k:result[k] for k in ['completed','expected_decisions','complete','paired_outcomes','failure_buckets','posthoc_minimum_risk_selector','matched_belief_mismatches','work_by_variant']},indent=2))

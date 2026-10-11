@@ -101,3 +101,27 @@ is disabled for that gate; ordinary diagnostic receipts remain enabled.
 A16-decision batch validates the resumable runner before the full run.
 
 The initial 16/16 batch passed protocol, provenance, snapshot, budget and evaluator checks. `broad-initial-16.json` preserves that checkpoint; `broad-manifest.json` freezes the paired run. The remaining 368 decisions resumed on 2026-10-11 with exactly the same artifacts and configuration. These initial results do not constitute a complete gate.
+
+## Broad gate complete: mixed, not promoted
+
+All384 decisions and hashes validate. Stockfish scale.9 lowers immediate losses
+on historical death seats from32/48 to28/48, while increasing losses on survival
+controls from1/48 to2/48. Four saved seed-decisions span three unique positions;
+the new control loss is s24/seed11. The zero-new-control-loss launch condition
+does not pass. The prepared eight-game scale comparison remains unstarted.
+
+`leaf-gap-broad.json` contains the complete aggregate audit, paired decisions,
+unique-position accounting, source hashes and the counterexample. There are no
+paired belief mismatches or recorded protocol/snapshot/evaluator/budget faults.
+The file retains both evaluators, both scales and every failure category.
+
+In s24, the candidate's e3d3 is worse than a4a5 on both final raw searched value
+and root fatal share. `posthoc-dominance.json` evaluates a limited replacement
+rule over the frozen profiles, with truth used only to label its results.
+It is post-hoc development evidence, not a new engine or strength estimate.
+Implementing it requires full-precision values and consistent carried strategy.
+See chatroom051 for the numbers and limitations.
+
+A separate default-scale M4 full-game baseline is running against Fable's v8
+with clock-paid observations. This does not mark the .9 gate as passed. The
+plans and distinct manifests are in `../m4-clock-20261011/`.
