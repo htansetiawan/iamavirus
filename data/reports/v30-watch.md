@@ -1,28 +1,28 @@
 # Arena v30 watch
 
-Updated 2026-10-11 03:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 03:48 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 21W-4D-23L over 48 games** (48%).
-As White: 13.5/24.
-As Black: 9.5/24.
+**Record: 23W-5D-26L over 54 games** (47%).
+As White: 15.0/27.
+As Black: 10.5/27.
 
-Queen lost for less: 8 games (7 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 23.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
+Queen lost for less: 8 games (7 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 26.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 7-2-1 |
+| duck | 3-1-6 |
 | Decent Chess Bot | 2-0-6 |
-| duck | 2-1-5 |
 | Mist Opportunities | 2-0-4 |
 | Greek Gift | 0-1-3 |
+| Strongly Invisible | 1-1-2 |
+| TA Baseline S | 3-0-1 |
 | TA Baseline P | 2-0-0 |
 | Knight Vision | 0-0-2 |
 | Apricot Squad | 2-0-0 |
 | Instructors | 1-0-1 |
-| Strongly Invisible | 1-0-1 |
-| TA Baseline S | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -74,3 +74,9 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-11 03:22 | otu2g0au | B | TA Baseline S | 87 | win |  | 65 s | 21-5 |
 | 2026-10-11 03:24 | 165j0nih | B | duck | 58 | loss | ply 35 by b unseen | 91 s | 12-24 |
 | 2026-10-11 03:27 | ry2oejta | W | duck | 116 | win |  | 59 s | 19-0 |
+| 2026-10-11 03:34 | kk3g85e4 | B | TA Baseline S | 34 | loss |  | 135 s | 22-22 |
+| 2026-10-11 03:36 | 64719io0 | W | TA Baseline S | 58 | win |  | 118 s | 24-15 |
+| 2026-10-11 03:37 | g1t0yc9w | W | duck | 95 | loss |  | 50 s | 3-17 |
+| 2026-10-11 03:38 | cjb3jsbm | B | duck | 117 | win |  | 46 s | 7-3 |
+| 2026-10-11 03:42 | l01dveny | B | Strongly Invisible | 102 | loss |  | 73 s | 2-16 |
+| 2026-10-11 03:42 | 8v8q5fh7 | W | Strongly Invisible | 102 | draw |  | 63 s | 13-12 |
