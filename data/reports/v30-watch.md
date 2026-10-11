@@ -1,25 +1,25 @@
 # Arena v30 watch
 
-Updated 2026-10-11 04:08 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 04:29 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 26W-6D-27L over 59 games** (49%).
-As White: 18.0/30.
-As Black: 11.0/29.
+**Record: 29W-8D-31L over 68 games** (49%).
+As White: 20.0/34.
+As Black: 13.0/34.
 
-Queen lost for less: 9 games (8 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 27.
+Queen lost for less: 11 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 5 of 31.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
 Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 7-2-1 |
-| duck | 3-1-6 |
+| TA Baseline A | 8-3-1 |
+| duck | 3-2-7 |
+| TA Baseline S | 6-1-3 |
 | Decent Chess Bot | 2-0-6 |
-| TA Baseline S | 5-1-2 |
 | Mist Opportunities | 2-0-4 |
+| Strongly Invisible | 1-1-4 |
+| TA Baseline P | 4-0-0 |
 | Greek Gift | 0-1-3 |
-| Strongly Invisible | 1-1-2 |
-| TA Baseline P | 3-0-0 |
 | Knight Vision | 0-0-2 |
 | Apricot Squad | 2-0-0 |
 | Instructors | 1-0-1 |
@@ -85,3 +85,12 @@ Games as Black where White opened 1.c4: 0 (the book-trap family; the v15 gate re
 | 2026-10-11 03:59 | 9idyfvi9 | W | TA Baseline S | 114 | win |  | 75 s | 18-1 |
 | 2026-10-11 04:00 | gymi8wga | B | TA Baseline S | 146 | draw |  | 41 s | 16-7 |
 | 2026-10-11 04:08 | kha6tr7m | W | TA Baseline P | 28 | win |  | 148 s | 31-23 |
+| 2026-10-11 04:09 | 6kez8eil | B | TA Baseline S | 18 | loss |  | 159 s | 34-32 |
+| 2026-10-11 04:10 | 2cbua6ps | B | TA Baseline P | 71 | win |  | 74 s | 22-11 |
+| 2026-10-11 04:11 | 1ar1d55q | W | TA Baseline S | 52 | win |  | 124 s | 20-12 |
+| 2026-10-11 04:13 | y4zijbqu | B | Strongly Invisible | 92 | loss | ply 39 by r unseen | 48 s | 2-10 |
+| 2026-10-11 04:13 | rn505480 | W | Strongly Invisible | 81 | loss |  | 85 s | 3-15 |
+| 2026-10-11 04:19 | 4geubeqf | B | duck | 100 | draw | ply 57 by r unseen | 66 s | 13-2 |
+| 2026-10-11 04:19 | vrrtt3ag | W | duck | 91 | loss |  | 63 s | 3-15 |
+| 2026-10-11 04:20 | mbvjftdr | W | TA Baseline A | 104 | win |  | 75 s | 12-8 |
+| 2026-10-11 04:20 | ks0fqbab | B | TA Baseline A | 92 | draw |  | 66 s | 15-9 |
