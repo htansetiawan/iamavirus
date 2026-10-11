@@ -1,24 +1,24 @@
 # Arena v30 watch
 
-Updated 2026-10-11 13:41 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 14:01 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 122W-21D-142L over 285 games** (46%).
-As White: 75.0/142.
-As Black: 57.5/143.
+**Record: 125W-22D-145L over 292 games** (47%).
+As White: 77.5/146.
+As Black: 58.5/146.
 
-Queen lost for less: 39 games (34 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 31 of 142.
+Queen lost for less: 39 games (34 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 31 of 145.
 Short losses (12 plies or fewer): 3. Games with a clock at 15 s or less: 2. Mean length 77 plies.
 Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| duck | 7-5-30 |
 | Mist Opportunities | 11-2-27 |
 | TA Baseline A | 27-7-4 |
-| duck | 7-4-27 |
-| TA Baseline P | 25-0-1 |
+| TA Baseline P | 27-0-1 |
 | TA Baseline S | 18-1-7 |
+| Decent Chess Bot | 4-1-19 |
 | Strongly Invisible | 3-1-20 |
-| Decent Chess Bot | 3-1-19 |
 | Knight Vision | 4-2-16 |
 | Instructors | 4-1-11 |
 | Apricot Squad | 12-0-0 |
@@ -312,3 +312,10 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | 2026-10-11 13:39 | 4np6f4ni | W | Knight Vision | 81 | loss |  | 77 s | 4-18 |
 | 2026-10-11 13:39 | lkdomwfj | B | Knight Vision | 66 | loss |  | 87 s | 4-15 |
 | 2026-10-11 13:40 | lgdxswlh | B | Decent Chess Bot | 48 | loss |  | 116 s | 5-16 |
+| 2026-10-11 13:43 | ll4ddj8r | W | Decent Chess Bot | 118 | win |  | 67 s | 13-3 |
+| 2026-10-11 13:47 | n00zvw3g | B | duck | 72 | loss |  | 120 s | 4-17 |
+| 2026-10-11 13:49 | pa719ykg | B | duck | 60 | loss |  | 85 s | 11-12 |
+| 2026-10-11 13:49 | nohiffn7 | W | duck | 89 | loss |  | 51 s | 11-15 |
+| 2026-10-11 13:52 | 1mn8a3v2 | W | duck | 116 | draw |  | 67 s | 2-11 |
+| 2026-10-11 13:55 | 975ohnbm | W | TA Baseline P | 68 | win |  | 86 s | 25-7 |
+| 2026-10-11 13:56 | kyxpa1pq | B | TA Baseline P | 73 | win |  | 79 s | 20-20 |
