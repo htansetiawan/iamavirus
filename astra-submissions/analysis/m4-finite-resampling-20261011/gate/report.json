@@ -1,0 +1,288 @@
+{
+  "classification": "Reused development games, fixed historical policy, cap10000. No Elo inference.",
+  "seeds": [
+    41,
+    73,
+    109
+  ],
+  "runs": [
+    {
+      "cohort": "sequential02",
+      "arm": "control",
+      "seed": 41,
+      "returncode": 0,
+      "seconds": 20.002128835003532,
+      "original_exact_nontiming_parity": true
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "control",
+      "seed": 41,
+      "returncode": 0,
+      "seconds": 25.265654224000173,
+      "original_exact_nontiming_parity": true
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "finite",
+      "seed": 41,
+      "returncode": 0,
+      "seconds": 20.65420226399874
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "finite",
+      "seed": 41,
+      "returncode": 0,
+      "seconds": 26.112596933999157
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "raw",
+      "seed": 41,
+      "returncode": 0,
+      "seconds": 20.404031400998065
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "raw",
+      "seed": 41,
+      "returncode": 0,
+      "seconds": 26.013414865003142
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "control",
+      "seed": 73,
+      "returncode": 0,
+      "seconds": 19.901154885003052
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "control",
+      "seed": 73,
+      "returncode": 0,
+      "seconds": 25.362359097998706
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "finite",
+      "seed": 73,
+      "returncode": 0,
+      "seconds": 20.354186157994263
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "finite",
+      "seed": 73,
+      "returncode": 0,
+      "seconds": 26.36469724500057
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "raw",
+      "seed": 73,
+      "returncode": 0,
+      "seconds": 20.054328587000782
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "raw",
+      "seed": 73,
+      "returncode": 0,
+      "seconds": 27.515661764999095
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "control",
+      "seed": 109,
+      "returncode": 0,
+      "seconds": 19.900760536002053
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "control",
+      "seed": 109,
+      "returncode": 0,
+      "seconds": 25.912974403996486
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "finite",
+      "seed": 109,
+      "returncode": 0,
+      "seconds": 20.50408295499801
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "finite",
+      "seed": 109,
+      "returncode": 0,
+      "seconds": 26.866587625998363
+    },
+    {
+      "cohort": "sequential02",
+      "arm": "raw",
+      "seed": 109,
+      "returncode": 0,
+      "seconds": 20.29965463499684
+    },
+    {
+      "cohort": "sequential-fresh26",
+      "arm": "raw",
+      "seed": 109,
+      "returncode": 0,
+      "seconds": 26.614244951997534
+    }
+  ],
+  "per_seed": {
+    "41": {
+      "control": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1386,
+        "collapses": 13,
+        "cpu_seconds": 42.206302,
+        "attack_brier": 0.01412415863619206,
+        "fatal_brier": 0.009935180744370265
+      },
+      "finite": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1310,
+        "collapses": 18,
+        "cpu_seconds": 43.603077,
+        "attack_brier": 0.014102775106525578,
+        "fatal_brier": 0.009655044203688618
+      },
+      "raw": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1349,
+        "collapses": 14,
+        "cpu_seconds": 43.302783,
+        "attack_brier": 0.013715628086300391,
+        "fatal_brier": 0.010093018193760121
+      }
+    },
+    "73": {
+      "control": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1361,
+        "collapses": 12,
+        "cpu_seconds": 42.180687999999996,
+        "attack_brier": 0.013705221407682638,
+        "fatal_brier": 0.009853643246794006
+      },
+      "finite": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1357,
+        "collapses": 9,
+        "cpu_seconds": 43.520096,
+        "attack_brier": 0.01465655438400496,
+        "fatal_brier": 0.009617586271691451
+      },
+      "raw": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1358,
+        "collapses": 17,
+        "cpu_seconds": 44.455034,
+        "attack_brier": 0.01410510402911162,
+        "fatal_brier": 0.009518307062487099
+      }
+    },
+    "109": {
+      "control": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1355,
+        "collapses": 16,
+        "cpu_seconds": 42.718590999999996,
+        "attack_brier": 0.014233276474133241,
+        "fatal_brier": 0.009634631341175088
+      },
+      "finite": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1297,
+        "collapses": 20,
+        "cpu_seconds": 44.248806,
+        "attack_brier": 0.0142042068524829,
+        "fatal_brier": 0.009744757899295034
+      },
+      "raw": {
+        "games": 42,
+        "decisions": 1650,
+        "truth_present": 1340,
+        "collapses": 14,
+        "cpu_seconds": 43.812872999999996,
+        "attack_brier": 0.013989717082426145,
+        "fatal_brier": 0.009829465144377953
+      }
+    }
+  },
+  "paired_game_bootstrap": {
+    "finite": {
+      "truth_support_gain": {
+        "mean": -0.027878787878787878,
+        "ci95": [
+          -0.049035868613348264,
+          -0.010601422780155257
+        ],
+        "games": 42,
+        "moves": 4950
+      },
+      "attack_brier_reduction": {
+        "mean": -0.00030029327500183384,
+        "ci95": [
+          -0.0008946862492470435,
+          0.00015393096409960962
+        ],
+        "games": 42,
+        "moves": 4950
+      },
+      "fatal_brier_reduction": {
+        "mean": 0.00013535565255475156,
+        "ci95": [
+          -9.891815415720214e-05,
+          0.0004097179152262831
+        ],
+        "games": 42,
+        "moves": 4950
+      }
+    },
+    "raw": {
+      "truth_support_gain": {
+        "mean": -0.011111111111111112,
+        "ci95": [
+          -0.033119060219642366,
+          0.009768113522072948
+        ],
+        "games": 42,
+        "moves": 4950
+      },
+      "attack_brier_reduction": {
+        "mean": 8.406910672325969e-05,
+        "ci95": [
+          -9.60106881920976e-05,
+          0.0002929294131140648
+        ],
+        "games": 42,
+        "moves": 4950
+      },
+      "fatal_brier_reduction": {
+        "mean": -5.778356095272201e-06,
+        "ci95": [
+          -0.00014539345527691532,
+          0.0001263596356747974
+        ],
+        "games": 42,
+        "moves": 4950
+      }
+    }
+  },
+  "zero_switch_exact_nontiming_parity": true
+}
