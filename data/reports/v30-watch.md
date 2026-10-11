@@ -1,29 +1,29 @@
 # Arena v30 watch
 
-Updated 2026-10-11 19:53 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 20:13 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 191W-26D-213L over 430 games** (47%).
-As White: 113.5/215.
-As Black: 90.5/215.
+**Record: 194W-28D-215L over 437 games** (48%).
+As White: 115.5/218.
+As Black: 92.5/219.
 
-Queen lost for less: 58 games (51 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 44 of 213.
+Queen lost for less: 59 games (52 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 44 of 215.
 Short losses (12 plies or fewer): 4. Games with a clock at 15 s or less: 4. Mean length 77 plies.
 Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline A | 43-9-6 |
 | Mist Opportunities | 16-3-39 |
-| TA Baseline A | 42-8-6 |
 | duck | 9-5-36 |
 | TA Baseline P | 38-0-2 |
-| TA Baseline S | 23-2-13 |
+| TA Baseline S | 23-3-13 |
+| Strongly Invisible | 4-1-31 |
 | Knight Vision | 10-3-21 |
 | Instructors | 8-1-25 |
-| Strongly Invisible | 4-1-29 |
 | Decent Chess Bot | 5-1-24 |
 | Apricot Squad | 22-0-0 |
 | Greek Gift | 2-2-18 |
-| baseline.py | 12-0-0 |
+| baseline.py | 14-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -457,3 +457,10 @@ Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate r
 | 2026-10-11 19:46 | gtsw1bcw | W | Mist Opportunities | 137 | loss | ply 66 by r unseen | 16 s | 1-8 |
 | 2026-10-11 19:50 | j2qebw69 | W | TA Baseline A | 89 | loss |  | 53 s | 12-34 |
 | 2026-10-11 19:50 | 5mf6wz94 | B | TA Baseline A | 83 | win |  | 70 s | 19-12 |
+| 2026-10-11 19:56 | 70cdz85e | W | baseline.py | 14 | win |  | 166 s | 36-26 |
+| 2026-10-11 19:58 | epphx48q | B | TA Baseline A | 64 | draw | ply 45 by q unseen | 95 s | 27-22 |
+| 2026-10-11 19:58 | 4yh3tlsb | B | Strongly Invisible | 66 | loss |  | 83 s | 12-21 |
+| 2026-10-11 19:59 | ng944v9u | B | baseline.py | 49 | win |  | 106 s | 26-17 |
+| 2026-10-11 20:00 | qpszsqlt | W | TA Baseline A | 104 | win |  | 70 s | 13-4 |
+| 2026-10-11 20:00 | le9rgzu9 | W | Strongly Invisible | 91 | loss |  | 71 s | 3-15 |
+| 2026-10-11 20:12 | 5mwrwdh3 | B | TA Baseline S | 78 | draw |  | 80 s | 16-11 |
