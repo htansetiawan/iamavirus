@@ -1,27 +1,27 @@
 # Arena v30 watch
 
-Updated 2026-10-11 11:58 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 12:19 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 101W-17D-112L over 230 games** (48%).
-As White: 61.0/115.
-As Black: 48.5/115.
+**Record: 102W-17D-115L over 234 games** (47%).
+As White: 62.0/117.
+As Black: 48.5/117.
 
-Queen lost for less: 33 games (28 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 26 of 112.
+Queen lost for less: 33 games (28 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 26 of 115.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 76 plies.
 Games as Black where White opened 1.c4: 7 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Mist Opportunities | 8-2-22 |
 | duck | 6-3-23 |
 | TA Baseline A | 22-5-3 |
-| Mist Opportunities | 8-2-20 |
 | TA Baseline S | 16-1-7 |
 | Strongly Invisible | 3-1-18 |
 | Decent Chess Bot | 3-1-16 |
 | TA Baseline P | 17-0-1 |
 | Knight Vision | 3-2-9 |
+| Instructors | 4-1-9 |
 | Apricot Squad | 12-0-0 |
-| Instructors | 3-1-8 |
 | Greek Gift | 0-1-7 |
 | baseline.py | 8-0-0 |
 
@@ -257,3 +257,7 @@ Games as Black where White opened 1.c4: 7 (the book-trap family; the v15 gate re
 | 2026-10-11 11:55 | ff63xogk | W | Mist Opportunities | 135 | loss |  | 55 s | 0-9 |
 | 2026-10-11 11:55 | isq5qvhw | W | Decent Chess Bot | 61 | loss |  | 106 s | 6-11 |
 | 2026-10-11 11:55 | gen2p4rz | B | Decent Chess Bot | 56 | loss | ply 51 by p unseen | 73 s | 13-18 |
+| 2026-10-11 12:02 | mp3hwwum | W | Instructors | 90 | win |  | 84 s | 23-1 |
+| 2026-10-11 12:03 | ao6vdzhf | B | Instructors | 110 | loss |  | 69 s | 2-9 |
+| 2026-10-11 12:04 | gjlnku86 | B | Mist Opportunities | 18 | loss |  | 153 s | 35-32 |
+| 2026-10-11 12:08 | udzy8uxc | W | Mist Opportunities | 85 | loss |  | 88 s | 1-12 |
