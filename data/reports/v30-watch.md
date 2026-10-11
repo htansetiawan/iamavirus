@@ -1,26 +1,26 @@
 # Arena v30 watch
 
-Updated 2026-10-11 19:12 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 19:32 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 180W-25D-206L over 411 games** (47%).
-As White: 110.0/206.
-As Black: 82.5/205.
+**Record: 186W-25D-209L over 420 games** (47%).
+As White: 112.0/210.
+As Black: 86.5/210.
 
-Queen lost for less: 54 games (47 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 41 of 206.
+Queen lost for less: 56 games (49 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 42 of 209.
 Short losses (12 plies or fewer): 4. Games with a clock at 15 s or less: 4. Mean length 77 plies.
-Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Mist Opportunities | 15-3-38 |
-| TA Baseline A | 39-8-5 |
+| TA Baseline A | 41-8-5 |
 | duck | 9-5-36 |
 | TA Baseline P | 38-0-2 |
+| TA Baseline S | 23-1-12 |
+| Knight Vision | 10-3-21 |
 | Strongly Invisible | 4-1-29 |
-| TA Baseline S | 22-1-10 |
 | Instructors | 7-1-24 |
 | Decent Chess Bot | 5-1-24 |
-| Knight Vision | 7-3-20 |
 | Greek Gift | 2-2-18 |
 | Apricot Squad | 20-0-0 |
 | baseline.py | 12-0-0 |
@@ -438,3 +438,12 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | 2026-10-11 19:02 | 2timjmol | W | Strongly Invisible | 103 | loss |  | 67 s | 1-19 |
 | 2026-10-11 19:08 | x8seohlv | W | TA Baseline S | 98 | win |  | 74 s | 16-1 |
 | 2026-10-11 19:11 | cl28t0o0 | W | TA Baseline S | 89 | loss |  | 82 s | 12-10 |
+| 2026-10-11 19:14 | 4ygb4s54 | B | TA Baseline S | 155 | win |  | 38 s | 11-1 |
+| 2026-10-11 19:16 | 9qs4lmne | W | TA Baseline A | 80 | win |  | 71 s | 19-14 |
+| 2026-10-11 19:16 | vrr3k675 | B | TA Baseline A | 73 | win |  | 72 s | 7-3 |
+| 2026-10-11 19:20 | jjtyd01f | B | Knight Vision | 67 | win |  | 93 s | 11-13 |
+| 2026-10-11 19:23 | 6nz43kad | W | Knight Vision | 92 | win |  | 68 s | 18-3 |
+| 2026-10-11 19:29 | 50wlww54 | W | Knight Vision | 31 | loss |  | 136 s | 19-22 |
+| 2026-10-11 19:30 | plgg2tue | B | TA Baseline S | 104 | loss | ply 91 by q unseen | 55 s | 7-15 |
+| 2026-10-11 19:30 | y9vrfr4d | B | Knight Vision | 45 | win | ply 43 by b unseen | 129 s | 16-11 |
+| 2026-10-11 19:31 | enzw7nuy | W | TA Baseline S | 121 | loss |  | 67 s | 2-5 |
