@@ -1,0 +1,57 @@
+{
+  "created_at": "2026-10-11T11:44:58.641546+00:00",
+  "base_commit": "fd7b764905419d0bf910d99abde9bdc9599d58e2",
+  "source_patch_sha256": "7d137d6889ecb1cb1cfb38d476297b850510886b924d2638d74d31bb5d26110b",
+  "runner_sha256": "d06b38772ee9c32ca4d8a7e6c766c0868d10c3b0a1e914e59e2f1f8a99cbdb4b",
+  "artifacts": {
+    "candidate": {
+      "source": "/tmp/mist-c-astra-m4/build/mist-m4",
+      "sha256": "bb4daf445e23a7e28f7f83b56605f4d22e5209bd8a8e5e7a260944020f0b220c"
+    },
+    "probe.py": {
+      "source": "/home/henrytan/git/iamavirus/astra-submissions/tools/m4_replay_probe.py",
+      "sha256": "0903d360736665b48a55f3d9ff25a119da38819fe469af97afcdc3b9bec5ba69"
+    },
+    "game.json": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-fast-roots-20261011/jobs/seed12-white-scale1/game.json",
+      "sha256": "a5cc00ed7c3a748356d00945f68095e111847a29300d97ee95515da122d17a8a"
+    },
+    "stockfish": {
+      "source": "/media/henrytan/seagate/iamavirus/astra/m4-clock-fast-roots-20261011/stockfish",
+      "sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19"
+    },
+    "kit/referee.py": {
+      "source": "/home/henrytan/git/fow-starter/referee.py",
+      "sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+    }
+  },
+  "jobs": [
+    {
+      "id": "seed12-settle0",
+      "seed": 12,
+      "fraction": 0
+    },
+    {
+      "id": "seed12-settle0.2",
+      "seed": 12,
+      "fraction": 0.2
+    },
+    {
+      "id": "seed13-settle0.2",
+      "seed": 13,
+      "fraction": 0.2
+    },
+    {
+      "id": "seed13-settle0",
+      "seed": 13,
+      "fraction": 0
+    }
+  ],
+  "classification": "development replay pair, searched prefixes may differ; no playing-strength claim",
+  "cpus": [
+    6,
+    7
+  ],
+  "question": "Does a fixed-tree final solve change the early queen-loss decision without taking represented immediate king risks?",
+  "constraints": "No evaluator, belief, terminal utility or default policy change. Original deadline retained."
+}

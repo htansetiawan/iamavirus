@@ -1,0 +1,252 @@
+{
+  "manifest": {
+    "tool_sha256": "7f4ce00a3cf9127ce680aca20fff5337d584d83e6bba504f687d2a2024ba2198",
+    "positions_sha256": "423f423be7640af29bbfac836c87167ce9e29087aa1dff70a234988b43fb63b8",
+    "excluded_sha256": "09568b707fc94f89811c51c00c6f7b70eef1552164d597da6fc699dd370659fb",
+    "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "rows": 9000,
+    "excluded_games": 1000,
+    "feature_families": {
+      "cp": [
+        "cp",
+        "cp_clip1",
+        "cp_clip3",
+        "to_move"
+      ],
+      "ordinary": [
+        "pawn",
+        "knight",
+        "bishop",
+        "rook",
+        "queen",
+        "mobility",
+        "king_attacked",
+        "hanging_material"
+      ],
+      "fog": [
+        "visible_squares",
+        "hidden_king_attackers",
+        "hidden_king_zone_attacks",
+        "hidden_queen_attack",
+        "hidden_hanging_material",
+        "concealed_material"
+      ]
+    },
+    "split": "SHA256(fog-value-v1/ + first five FEN fields) modulo 10; train0..5,val6..7,test8..9",
+    "ridge_grid": [
+      1.0,
+      10.0,
+      100.0
+    ],
+    "selection": "minimum validation log loss, then one test evaluation",
+    "classification": "offline predictive feasibility; no search integration or strength evidence"
+  },
+  "feature_seconds": 4.38219726099851,
+  "fold_sizes": {
+    "train": 5367,
+    "validation": 1846,
+    "test": 1787
+  },
+  "unique_state_groups": 8750,
+  "models": {
+    "cp": {
+      "ridge": 1.0,
+      "validation": {
+        "n": 1846,
+        "brier": 0.14070597871795745,
+        "log_loss": 0.4447847351007514
+      },
+      "test": {
+        "n": 1787,
+        "brier": 0.13403100743605847,
+        "log_loss": 0.4291957284686384
+      },
+      "fit": {
+        "iterations": 8,
+        "converged": true,
+        "gradient_max": 7.072120666862247e-14
+      },
+      "weights": {
+        "intercept": 0.12900839247822454,
+        "cp": 2.0450904018638467,
+        "cp_clip1": 0.9339856666122873,
+        "cp_clip3": -0.5350370294840912,
+        "to_move": -0.2492918340078618
+      },
+      "feature_mean": [
+        0.19600708030557062,
+        0.06998229923607233,
+        0.13576299608719936,
+        0.013601639649711198
+      ],
+      "feature_std": [
+        3.9324273872384428,
+        0.8079966142627351,
+        2.1204347337592084,
+        0.9999074934207328
+      ]
+    },
+    "ordinary": {
+      "ridge": 1.0,
+      "validation": {
+        "n": 1846,
+        "brier": 0.13546953975142123,
+        "log_loss": 0.4263800061721832
+      },
+      "test": {
+        "n": 1787,
+        "brier": 0.13243929748466143,
+        "log_loss": 0.42356078561894533
+      },
+      "fit": {
+        "iterations": 9,
+        "converged": true,
+        "gradient_max": 3.7414515929867775e-14
+      },
+      "weights": {
+        "intercept": 0.11507971374239695,
+        "cp": 0.7562293091037178,
+        "cp_clip1": 0.798554486813638,
+        "cp_clip3": 0.004865565375146272,
+        "to_move": -0.08702374871897044,
+        "pawn": 0.36551620797577916,
+        "knight": 0.18892708846265352,
+        "bishop": 0.19929177577414692,
+        "rook": 0.304977867164396,
+        "queen": 0.2861849683539777,
+        "mobility": 0.5335675853323366,
+        "king_attacked": -0.14206428854547776,
+        "hanging_material": -0.10696903160765889
+      },
+      "feature_mean": [
+        0.19600708030557062,
+        0.06998229923607233,
+        0.13576299608719936,
+        0.013601639649711198,
+        0.03018446059250978,
+        0.00689398174026458,
+        -0.0040991242779951555,
+        -0.001490590646543693,
+        0.015278554127072852,
+        1.577231227874045,
+        -0.0040991242779951555,
+        -0.03415315818893235
+      ],
+      "feature_std": [
+        3.9324273872384428,
+        0.8079966142627351,
+        2.1204347337592084,
+        0.9999074934207328,
+        1.2917238181854902,
+        0.632741958023602,
+        0.6222251341916784,
+        0.5019039722949082,
+        0.4466606233155404,
+        12.334144603334522,
+        0.22755487722206894,
+        2.146439229288346
+      ]
+    },
+    "fog": {
+      "ridge": 1.0,
+      "validation": {
+        "n": 1846,
+        "brier": 0.1359524924622394,
+        "log_loss": 0.42737778255756415
+      },
+      "test": {
+        "n": 1787,
+        "brier": 0.132651575049994,
+        "log_loss": 0.42435041642035076
+      },
+      "fit": {
+        "iterations": 9,
+        "converged": true,
+        "gradient_max": 1.5730750035913843e-12
+      },
+      "weights": {
+        "intercept": 0.11829526740803337,
+        "cp": 0.6913091132805381,
+        "cp_clip1": 0.8223700276907201,
+        "cp_clip3": -0.0019896714527637424,
+        "to_move": -0.07947774469825697,
+        "pawn": 0.35857600869149303,
+        "knight": 0.16205719125212534,
+        "bishop": 0.1553957834815001,
+        "rook": 0.2598179123212098,
+        "queen": 0.18128290359450583,
+        "mobility": 0.5912204170856702,
+        "king_attacked": -0.07741126815104123,
+        "hanging_material": -0.03877117293721725,
+        "visible_squares": -0.16243737363918603,
+        "hidden_king_attackers": -0.133291477648256,
+        "hidden_king_zone_attacks": -0.08963607584837367,
+        "hidden_queen_attack": 0.016045992889460677,
+        "hidden_hanging_material": -0.017182405613507035,
+        "concealed_material": 0.25803562585223494
+      },
+      "feature_mean": [
+        0.19600708030557062,
+        0.06998229923607233,
+        0.13576299608719936,
+        0.013601639649711198,
+        0.03018446059250978,
+        0.00689398174026458,
+        -0.0040991242779951555,
+        -0.001490590646543693,
+        0.015278554127072852,
+        1.577231227874045,
+        -0.0040991242779951555,
+        -0.03415315818893235,
+        0.9103782373765604,
+        -0.001863238308179616,
+        -0.07471585615800261,
+        -0.0022358859698155395,
+        -0.035215204024594764,
+        0.23344512763182387
+      ],
+      "feature_std": [
+        3.9324273872384428,
+        0.8079966142627351,
+        2.1204347337592084,
+        0.9999074934207328,
+        1.2917238181854902,
+        0.632741958023602,
+        0.6222251341916784,
+        0.5019039722949082,
+        0.4466606233155404,
+        12.334144603334522,
+        0.22755487722206894,
+        2.146439229288346,
+        8.414210387846056,
+        0.14826577615730518,
+        1.2720965869057324,
+        0.09255213142632615,
+        1.6523497802352536,
+        7.335286085005224
+      ]
+    }
+  },
+  "limitations": [
+    "Outcomes follow recorded policies; this is not an equilibrium value or a causal treatment effect.",
+    "Current-state grouping blocks exact position leakage; related games, teams and dates remain correlated.",
+    "Features use a complete sampled world. This is not an observation-only policy or an oracle available to the arena bot.",
+    "No time-split or opponent-holdout generalization claim. No runtime cost or playing strength measured."
+  ],
+  "comparisons": {
+    "fog_minus_cp": {
+      "brier_delta": -0.0013794323860644763,
+      "group_bootstrap_95_percent": [
+        -0.0044584754227230475,
+        0.001506402167269983
+      ]
+    },
+    "fog_minus_ordinary": {
+      "brier_delta": 0.00021227756533257868,
+      "group_bootstrap_95_percent": [
+        -0.0006060982339715645,
+        0.0010157117850433362
+      ]
+    }
+  }
+}

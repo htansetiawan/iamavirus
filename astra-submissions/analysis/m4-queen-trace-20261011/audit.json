@@ -1,0 +1,70 @@
+{
+  "classification": "post-decision diagnostic; no strength inference",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "source_sha256": "a140fb9778f174b2a215b253cb330c4ea121b08ce68814bdbb623e919848b773",
+  "provenance": [
+    {
+      "run": "/tmp/m4-queen-trace-audit-20261011",
+      "manifest_sha256": "16ca56b87ce93054cbfa9102f5ed1456177a9a19403f207b38f0de7d5dea632e",
+      "summary_sha256": "5c8a1b9b71e74a750e8b242a30f61f271f6f337dcc8a7a87bf5c483751de84de"
+    }
+  ],
+  "hypothetical_node_states_checked": 2781,
+  "rows": [
+    {
+      "game": "seed12-white-scale1",
+      "side": "white",
+      "ply": 10,
+      "mode": "warm",
+      "variant": "trace-only",
+      "seed": 12,
+      "tactical_closure": false,
+      "leaf_scale": 1,
+      "chosen": "d4f4",
+      "status": "ok",
+      "trace_sha256": "03331871915a459ae3640b70100f45ea284aca6db95c18bd077217692b56b5be",
+      "trace_roots": 91,
+      "true_roots": 1,
+      "matches": [
+        {
+          "root": {
+            "kind": "root",
+            "root": 89,
+            "group": 77,
+            "alternate": -0.7203044163177772,
+            "raw": -0.6910279530916343,
+            "cf": 1,
+            "opp": 0.03838710683970659,
+            "own_probability": 0.2710653829383201
+          },
+          "selected": {
+            "kind": "node",
+            "root": 89,
+            "node": 3039,
+            "path": "d4f4",
+            "board": "R-B-KB-RPPP-PPPP-----N--N----Q-----p------n-p---pp---pppr-bqkbnr",
+            "side": 1,
+            "ep": -1,
+            "castle": "8100000000000081",
+            "halfmove": 2,
+            "node_kind": "decision",
+            "infoset": 100,
+            "own_history": "489d1625b73f20cf",
+            "raw": -0.43625142196951266,
+            "cf": 0.2710653829383201,
+            "opp": 0.03838710683970659,
+            "probability": 0.2710653829383201,
+            "actions": 39,
+            "terminal_children": 0,
+            "loss_children": 0,
+            "frontier_children": 30
+          },
+          "forcing": []
+        }
+      ],
+      "oracle_forcing_replies": [],
+      "immediate_outcome": null,
+      "classification": "no_forcing_reply"
+    }
+  ]
+}

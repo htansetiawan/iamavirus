@@ -112,6 +112,32 @@ def ledger_event(path, event, snapshot, duck):
         os.close(descriptor)
 
 
+def cache_replay(client, game_id, destination, cache, metadata):
+    """Reuse the shared per-game cache; publish a gzip only after a full write."""
+    if destination.exists():
+        return
+    existing = cache / game_id / "replay.json" if cache else None
+    if existing is not None and existing.exists():
+        raw = existing.read_bytes()
+        replay = json.loads(raw)
+        if replay.get("id") != game_id:
+            raise ValueError(f"Cached replay ID mismatch: {existing}")
+        metadata.append(dict(game=game_id, cache=str(existing), sha256=hashlib.sha256(raw).hexdigest()))
+    else:
+        replay, record = client.get("/api/games/" + game_id)
+        if replay.get("id") != game_id:
+            raise ValueError(f"Public replay ID mismatch: {game_id}")
+        metadata.append(record)
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    temporary = destination.with_name(destination.name + ".tmp")
+    try:
+        with gzip.open(temporary, "wt") as handle:
+            json.dump(replay, handle)
+        temporary.replace(destination)
+    finally:
+        temporary.unlink(missing_ok=True)
+
+
 def poll(client, output, state, ledger, cache):
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     snapshot = output / "snapshots" / stamp
@@ -149,19 +175,7 @@ def poll(client, output, state, ledger, cache):
         if initial and not notable_initial:
             continue
         destination = output / "replays" / (game["id"] + ".json.gz")
-        if not destination.exists():
-            existing = cache / game["id"] / "replay.json" if cache else None
-            if existing is not None and existing.exists():
-                raw = existing.read_bytes()
-                replay = json.loads(raw)
-                assert replay["id"] == game["id"]
-                metadata.append(dict(game=game["id"], cache=str(existing), sha256=hashlib.sha256(raw).hexdigest()))
-            else:
-                replay, record = client.get("/api/games/" + game["id"])
-                metadata.append(record)
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            with gzip.open(destination, "wt") as handle:
-                json.dump(replay, handle)
+        cache_replay(client, game["id"], destination, cache, metadata)
         if not initial and (event["opponent_id"] == DUCK or event["reason"] not in
                            ("King capturable", "Threefold repetition", "50-move rule", "Move limit reached", "No legal moves")):
             ledger_event(ledger, event, snapshot, duck)
@@ -184,10 +198,13 @@ def main():
     parser.add_argument("--hours", type=float, default=0, help="0 means one poll")
     parser.add_argument("--interval", type=float, default=300)
     parser.add_argument("--ledger", type=Path)
-    parser.add_argument("--cache", type=Path)
+    parser.add_argument("--cache", type=Path,
+                        help="Existing directory containing <game-id>/replay.json, normally data/raw/games")
     args = parser.parse_args()
     if args.interval < 30 or args.hours < 0 or args.hours > 48:
         parser.error("interval must be >=30 seconds and hours between 0 and 48")
+    if args.cache is not None and not args.cache.is_dir():
+        parser.error("--cache must be an existing directory with <game-id>/replay.json; check data/raw/games")
     drive = Path("/media/henrytan/seagate")
     if args.output.resolve().is_relative_to(drive) and not drive.is_mount():
         parser.error("Seagate is not mounted; refusing to write into its empty mountpoint")

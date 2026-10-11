@@ -1,0 +1,217 @@
+{
+  "classification": "calibration diagnostic only; no engine or arena change",
+  "positions": 10000,
+  "skips": {
+    "other_termination": 45,
+    "duplicate_trajectory": 20
+  },
+  "calibration_fit": {
+    "a": 0.6940706295824538,
+    "b": 0.024844379494527866,
+    "formula": "expected score = sigmoid(a*clip(cp/200,-20,20)+b)"
+  },
+  "held_out_games": {
+    "games": 1968,
+    "raw_brier": 0.1472954094411961,
+    "calibrated_brier": 0.14642491450445203,
+    "raw_log_loss": 0.48062955293029913,
+    "calibrated_log_loss": 0.46036962443362084,
+    "bins": [
+      {
+        "range": [
+          0.0,
+          0.1
+        ],
+        "n": 470,
+        "mean_expected_score": 0.022481895501664725,
+        "mean_recorded_score": 0.08617021276595745
+      },
+      {
+        "range": [
+          0.1,
+          0.2
+        ],
+        "n": 62,
+        "mean_expected_score": 0.1443025232617719,
+        "mean_recorded_score": 0.21774193548387097
+      },
+      {
+        "range": [
+          0.2,
+          0.3
+        ],
+        "n": 53,
+        "mean_expected_score": 0.2548520228315182,
+        "mean_recorded_score": 0.22641509433962265
+      },
+      {
+        "range": [
+          0.3,
+          0.4
+        ],
+        "n": 71,
+        "mean_expected_score": 0.3611241645154937,
+        "mean_recorded_score": 0.2605633802816901
+      },
+      {
+        "range": [
+          0.4,
+          0.5
+        ],
+        "n": 209,
+        "mean_expected_score": 0.4593480390432956,
+        "mean_recorded_score": 0.41626794258373206
+      },
+      {
+        "range": [
+          0.5,
+          0.6
+        ],
+        "n": 367,
+        "mean_expected_score": 0.5387454308099999,
+        "mean_recorded_score": 0.6198910081743869
+      },
+      {
+        "range": [
+          0.6,
+          0.7
+        ],
+        "n": 135,
+        "mean_expected_score": 0.6473270574259135,
+        "mean_recorded_score": 0.7111111111111111
+      },
+      {
+        "range": [
+          0.7,
+          0.8
+        ],
+        "n": 65,
+        "mean_expected_score": 0.7482655286332542,
+        "mean_recorded_score": 0.6461538461538462
+      },
+      {
+        "range": [
+          0.8,
+          0.9
+        ],
+        "n": 64,
+        "mean_expected_score": 0.8512807281614363,
+        "mean_recorded_score": 0.8046875
+      },
+      {
+        "range": [
+          0.9,
+          1.0
+        ],
+        "n": 472,
+        "mean_expected_score": 0.9737891409644701,
+        "mean_recorded_score": 0.9184322033898306
+      }
+    ]
+  },
+  "held_out_elite_pairs": {
+    "games": 617,
+    "raw_brier": 0.17972775914807798,
+    "calibrated_brier": 0.17453386523408745,
+    "raw_log_loss": 0.5825543455512726,
+    "calibrated_log_loss": 0.551772972307586,
+    "bins": [
+      {
+        "range": [
+          0.0,
+          0.1
+        ],
+        "n": 92,
+        "mean_expected_score": 0.032264130477088704,
+        "mean_recorded_score": 0.13043478260869565
+      },
+      {
+        "range": [
+          0.1,
+          0.2
+        ],
+        "n": 24,
+        "mean_expected_score": 0.14190708754759745,
+        "mean_recorded_score": 0.3541666666666667
+      },
+      {
+        "range": [
+          0.2,
+          0.3
+        ],
+        "n": 18,
+        "mean_expected_score": 0.25432099467639285,
+        "mean_recorded_score": 0.4444444444444444
+      },
+      {
+        "range": [
+          0.3,
+          0.4
+        ],
+        "n": 27,
+        "mean_expected_score": 0.36589580523337234,
+        "mean_recorded_score": 0.35185185185185186
+      },
+      {
+        "range": [
+          0.4,
+          0.5
+        ],
+        "n": 73,
+        "mean_expected_score": 0.46170302766508603,
+        "mean_recorded_score": 0.5616438356164384
+      },
+      {
+        "range": [
+          0.5,
+          0.6
+        ],
+        "n": 148,
+        "mean_expected_score": 0.5410423749390741,
+        "mean_recorded_score": 0.6148648648648649
+      },
+      {
+        "range": [
+          0.6,
+          0.7
+        ],
+        "n": 54,
+        "mean_expected_score": 0.6468149259966813,
+        "mean_recorded_score": 0.6111111111111112
+      },
+      {
+        "range": [
+          0.7,
+          0.8
+        ],
+        "n": 25,
+        "mean_expected_score": 0.7494090308454243,
+        "mean_recorded_score": 0.48
+      },
+      {
+        "range": [
+          0.8,
+          0.9
+        ],
+        "n": 22,
+        "mean_expected_score": 0.8454536153744091,
+        "mean_recorded_score": 0.7954545454545454
+      },
+      {
+        "range": [
+          0.9,
+          1.0
+        ],
+        "n": 134,
+        "mean_expected_score": 0.9668997903486324,
+        "mean_recorded_score": 0.8992537313432836
+      }
+    ]
+  },
+  "limitations": [
+    "Recorded outcome depends on player policies and strength; this is not the game-theoretic value of a board.",
+    "Single-PV depth-one scores at a position can differ from its parent MultiPV child score in the deployed search.",
+    "A game-trajectory split prevents exact game duplicates crossing folds; repeated positions or related player versions may still cross folds.",
+    "The fitted scalar calibration is a diagnostic and is not deployed. Better Brier score does not establish stronger play."
+  ]
+}

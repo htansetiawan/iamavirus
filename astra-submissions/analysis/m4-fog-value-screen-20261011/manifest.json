@@ -1,0 +1,42 @@
+{
+  "tool_sha256": "7f4ce00a3cf9127ce680aca20fff5337d584d83e6bba504f687d2a2024ba2198",
+  "positions_sha256": "423f423be7640af29bbfac836c87167ce9e29087aa1dff70a234988b43fb63b8",
+  "excluded_sha256": "09568b707fc94f89811c51c00c6f7b70eef1552164d597da6fc699dd370659fb",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "rows": 9000,
+  "excluded_games": 1000,
+  "feature_families": {
+    "cp": [
+      "cp",
+      "cp_clip1",
+      "cp_clip3",
+      "to_move"
+    ],
+    "ordinary": [
+      "pawn",
+      "knight",
+      "bishop",
+      "rook",
+      "queen",
+      "mobility",
+      "king_attacked",
+      "hanging_material"
+    ],
+    "fog": [
+      "visible_squares",
+      "hidden_king_attackers",
+      "hidden_king_zone_attacks",
+      "hidden_queen_attack",
+      "hidden_hanging_material",
+      "concealed_material"
+    ]
+  },
+  "split": "SHA256(fog-value-v1/ + first five FEN fields) modulo 10; train0..5,val6..7,test8..9",
+  "ridge_grid": [
+    1.0,
+    10.0,
+    100.0
+  ],
+  "selection": "minimum validation log loss, then one test evaluation",
+  "classification": "offline predictive feasibility; no search integration or strength evidence"
+}

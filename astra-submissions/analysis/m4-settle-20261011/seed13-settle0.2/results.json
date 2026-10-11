@@ -1,0 +1,623 @@
+{
+  "binary": "/media/henrytan/seagate/iamavirus/astra/m4-settle-pilot-20261011/candidate",
+  "sha256": "bb4daf445e23a7e28f7f83b56605f4d22e5209bd8a8e5e7a260944020f0b220c",
+  "seconds": 10.0,
+  "iteration_cap": 1000000,
+  "seed": 13,
+  "fixed_parent_cap": 20000,
+  "sample_target": 32,
+  "tactical_witnesses": false,
+  "tactical_closure": false,
+  "trace_continuation": false,
+  "leaf_scale": 1.0,
+  "root_dominance": false,
+  "fast_roots": true,
+  "settle_fraction": 0.2,
+  "stockfish": "/media/henrytan/seagate/iamavirus/astra/m4-settle-pilot-20261011/stockfish",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "child_alternates": true,
+  "classification": "offline diagnostic, no Elo inference",
+  "rows": [
+    {
+      "game": "seed12-white-scale1",
+      "side": "white",
+      "decision": 6,
+      "ply": 10,
+      "mode": "warm",
+      "played": "a4c3",
+      "returncode": 0,
+      "true_legal_count": 46,
+      "true_safe_moves": [
+        "d4g7",
+        "d4a7",
+        "d4f6",
+        "d4b6",
+        "d4e5",
+        "d4d5",
+        "d4c5",
+        "d4h4",
+        "d4g4",
+        "d4f4",
+        "d4e4",
+        "d4c4",
+        "d4b4",
+        "d4e3",
+        "d4d3",
+        "d4c3",
+        "d4d2",
+        "d4d1",
+        "a4b6",
+        "a4c5",
+        "a4c3",
+        "f3g5",
+        "f3e5",
+        "f3h4",
+        "f3d2",
+        "f3g1",
+        "h1g1",
+        "e1d2",
+        "e1d1",
+        "c1h6",
+        "c1g5",
+        "c1f4",
+        "c1e3",
+        "c1d2",
+        "a1b1",
+        "h2h3",
+        "g2g3",
+        "e2e3",
+        "c2c3",
+        "b2b3",
+        "a2a3",
+        "h2h4",
+        "g2g4",
+        "e2e4",
+        "c2c4",
+        "b2b4"
+      ],
+      "unavoidable_immediate_loss": false,
+      "elapsed": 33.26341797100031,
+      "prefix_exact": true,
+      "outputs": 6,
+      "chosen": "a4c3",
+      "metrics": [
+        {
+          "ok": 1,
+          "ply": 0,
+          "carry": 0,
+          "offI": 0,
+          "fresh": 1,
+          "fallback": 1,
+          "snapshot": 1,
+          "seconds": 5.7162,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 2,
+          "carry": 14,
+          "offI": 227,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 5.6296,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 4,
+          "carry": 13,
+          "offI": 296,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 5.5303,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 6,
+          "carry": 12,
+          "offI": 957,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 5.4374,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 8,
+          "carry": 11,
+          "offI": 86,
+          "fresh": 0,
+          "fallback": 0,
+          "snapshot": 1,
+          "seconds": 5.3502,
+          "prefix": true
+        },
+        {
+          "ok": 1,
+          "ply": 10,
+          "found": 91,
+          "positive": 91,
+          "carry": 91,
+          "offI": 134,
+          "fresh": 0,
+          "groups": 91,
+          "expand": 3305,
+          "fallback": 0,
+          "snapshot": 1,
+          "setup": 0.0124,
+          "solve": 5.2461,
+          "save": 0.0096,
+          "total": 5.2681,
+          "over": 0,
+          "active": 0.41749,
+          "enter": 1.0,
+          "current": 0.22214,
+          "support": 1,
+          "prefix": false
+        }
+      ],
+      "dumped_current_roots": 91,
+      "true_board_roots": 1,
+      "true_state_roots": 1,
+      "true_state_reach": 0.009480828506740193,
+      "all_root_reach": 0.2221388898821548,
+      "chosen_fatal_roots": 0,
+      "chosen_fatal_reach": 0,
+      "chosen_fatal_share": 0.0,
+      "action_profiles": [
+        {
+          "move": "a1b1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.402613949
+        },
+        {
+          "move": "c1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.297769988
+        },
+        {
+          "move": "c1e3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.397452273
+        },
+        {
+          "move": "c1f4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.346181879
+        },
+        {
+          "move": "c1g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.374256851
+        },
+        {
+          "move": "c1h6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.827027639
+        },
+        {
+          "move": "e1d1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.342754776
+        },
+        {
+          "move": "e1d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.575080179
+        },
+        {
+          "move": "h1g1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.4321783
+        },
+        {
+          "move": "a2a3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.355557886
+        },
+        {
+          "move": "b2b3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.364154159
+        },
+        {
+          "move": "b2b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.476952763
+        },
+        {
+          "move": "c2c3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.306298502
+        },
+        {
+          "move": "c2c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.449360528
+        },
+        {
+          "move": "e2e3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.35700367
+        },
+        {
+          "move": "e2e4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.424605806
+        },
+        {
+          "move": "g2g3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.386454719
+        },
+        {
+          "move": "g2g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.442273564
+        },
+        {
+          "move": "h2h3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.401503011
+        },
+        {
+          "move": "h2h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.377684197
+        },
+        {
+          "move": "f3g1",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.506736852
+        },
+        {
+          "move": "f3d2",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.376243583
+        },
+        {
+          "move": "f3h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.505347247
+        },
+        {
+          "move": "f3e5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.408095605
+        },
+        {
+          "move": "f3g5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.482937146
+        },
+        {
+          "move": "a4c3",
+          "policy": 0.423736506,
+          "played": 1.0,
+          "fatal": 0.0,
+          "raw": -0.288066053
+        },
+        {
+          "move": "a4c5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.369759712
+        },
+        {
+          "move": "a4b6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.684444275
+        },
+        {
+          "move": "d4d1",
+          "policy": 0.153572598,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.288024613
+        },
+        {
+          "move": "d4d2",
+          "policy": 0.0668801887,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.28812503
+        },
+        {
+          "move": "d4c3",
+          "policy": 0.171419849,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.288054084
+        },
+        {
+          "move": "d4d3",
+          "policy": 0.108755801,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.288059994
+        },
+        {
+          "move": "d4e3",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.356868299
+        },
+        {
+          "move": "d4b4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0,
+          "raw": -0.669676219
+        },
+        {
+          "move": "d4c4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.951346671
+        },
+        {
+          "move": "d4e4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.931854302
+        },
+        {
+          "move": "d4f4",
+          "policy": 0.0756350572,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.2880754
+        },
+        {
+          "move": "d4g4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.79491658
+        },
+        {
+          "move": "d4h4",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.335672019
+        },
+        {
+          "move": "d4c5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.401597488
+        },
+        {
+          "move": "d4d5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.770932725
+        },
+        {
+          "move": "d4e5",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.380022768
+        },
+        {
+          "move": "d4b6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.957397214
+        },
+        {
+          "move": "d4f6",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.946940639
+        },
+        {
+          "move": "d4a7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.943669025
+        },
+        {
+          "move": "d4g7",
+          "policy": 0.0,
+          "played": 0.0,
+          "fatal": 0.0830391347,
+          "raw": -0.938183724
+        }
+      ],
+      "settling": [
+        {
+          "ply": 0.0,
+          "prefix": 1.0,
+          "fraction": 0.2,
+          "iterations": 1829.0,
+          "nodes": 155131.0,
+          "expansions": 6098.0,
+          "seconds": 1.520282
+        },
+        {
+          "ply": 2.0,
+          "prefix": 1.0,
+          "fraction": 0.2,
+          "iterations": 1342.0,
+          "nodes": 220657.0,
+          "expansions": 4530.0,
+          "seconds": 1.484517
+        },
+        {
+          "ply": 4.0,
+          "prefix": 1.0,
+          "fraction": 0.2,
+          "iterations": 2199.0,
+          "nodes": 158759.0,
+          "expansions": 4622.0,
+          "seconds": 1.470945
+        },
+        {
+          "ply": 6.0,
+          "prefix": 1.0,
+          "fraction": 0.2,
+          "iterations": 2269.0,
+          "nodes": 104874.0,
+          "expansions": 3147.0,
+          "seconds": 1.444928
+        },
+        {
+          "ply": 8.0,
+          "prefix": 1.0,
+          "fraction": 0.2,
+          "iterations": 1959.0,
+          "nodes": 107189.0,
+          "expansions": 3156.0,
+          "seconds": 1.419958
+        },
+        {
+          "ply": 10.0,
+          "prefix": 0.0,
+          "fraction": 0.2,
+          "iterations": 1691.0,
+          "nodes": 121800.0,
+          "expansions": 3305.0,
+          "seconds": 1.395603
+        }
+      ],
+      "root_setup": {
+        "ply": 10,
+        "cheap_carried_roots": 48
+      },
+      "evaluation": {
+        "child_alternates": 0.0,
+        "ready": 1.0,
+        "scored": 106279.0,
+        "calls": 3234.0,
+        "failed": 0.0,
+        "seconds": 3.130937,
+        "scale": 1.0
+      },
+      "prefix_evaluation": [
+        {
+          "ply": 0.0,
+          "ready": 1.0,
+          "scored": 153283.0,
+          "calls": 6051.0,
+          "failed": 0.0,
+          "seconds": 3.144737,
+          "scale": 1.0
+        },
+        {
+          "ply": 2.0,
+          "ready": 1.0,
+          "scored": 120513.0,
+          "calls": 4467.0,
+          "failed": 0.0,
+          "seconds": 2.664848,
+          "scale": 1.0
+        },
+        {
+          "ply": 4.0,
+          "ready": 1.0,
+          "scored": 134736.0,
+          "calls": 4548.0,
+          "failed": 0.0,
+          "seconds": 3.152783,
+          "scale": 1.0
+        },
+        {
+          "ply": 6.0,
+          "ready": 1.0,
+          "scored": 97115.0,
+          "calls": 3066.0,
+          "failed": 0.0,
+          "seconds": 3.441817,
+          "scale": 1.0
+        },
+        {
+          "ply": 8.0,
+          "ready": 1.0,
+          "scored": 101417.0,
+          "calls": 3095.0,
+          "failed": 0.0,
+          "seconds": 3.329523,
+          "scale": 1.0
+        }
+      ],
+      "closure_metrics": [],
+      "belief_count": 75,
+      "belief_true_states": 1,
+      "belief_true_boards": 1,
+      "belief_tactical_states": 1,
+      "belief_tactical_share": 0.012230935176835449,
+      "belief_truth_share": 0.012230935176835449,
+      "legal": true,
+      "true_outcome": null,
+      "immediate_loss": false
+    }
+  ]
+}

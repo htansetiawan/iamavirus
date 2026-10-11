@@ -1,0 +1,28 @@
+{
+  "created_at": "2026-10-11T12:02:48.454325+00:00",
+  "requested_games": 10000,
+  "tool_sha256": "27d3739b5c2a2fea284df36cff7912a74b80ea0c94c86a33c4ae3e618df8aedd",
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "cache": "/home/henrytan/git/iamavirus/data/raw/games",
+  "selection": "One seeded-uniform nonterminal frame (ply>=2) per unique entire move trajectory; deterministic hash order over cached game IDs.",
+  "settings": {
+    "depth": 1,
+    "Threads": 1,
+    "Hash": 16,
+    "input": "current FEN only; no FOW move history",
+    "hard_analysis_timeout_seconds": 10
+  },
+  "classification": "calibration diagnostic only; no engine or arena change",
+  "previous_run": {
+    "path": "/media/henrytan/seagate/iamavirus/astra/m4-value-calibration-20261011",
+    "manifest_sha256": "4fddee6ac82c047fcdd1c107b19ebce1123f18ee08471f2c6e0e1f09dc5a23b8",
+    "positions_sha256": "0cf466004185c2ecb10552d98d33782738a2d929655dc85d8949107ecc6e9cf6",
+    "reason": "Original samples retained in place. Rescore the same positions using FEN snapshots because FOW castling histories can be invalid for orthodox Stockfish."
+  },
+  "full_manifest_path": "/media/henrytan/seagate/iamavirus/astra/m4-value-calibration-10k-20261011/manifest.json",
+  "full_manifest_sha256": "3fabfeb02fb689f8ea58bcc389a7f88a70939f7a6afcf344186ca72b3fa67182",
+  "positions_path": "/media/henrytan/seagate/iamavirus/astra/m4-value-calibration-10k-20261011/positions.jsonl",
+  "positions_sha256": "423f423be7640af29bbfac836c87167ce9e29087aa1dff70a234988b43fb63b8",
+  "candidate_count": 97679
+}

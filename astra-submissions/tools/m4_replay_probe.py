@@ -76,11 +76,14 @@ def main():
     ap.add_argument("--tactical-closure", action="store_true", help="Expand threatened future own-information-set aliases")
     ap.add_argument("--root-dominance", action="store_true", help="Redirect played root mass to lower-risk, no-lower-value actions")
     ap.add_argument("--fast-roots", action="store_true", help="Cheap initialization of carried frontier roots; external evaluator remains active in search")
+    ap.add_argument("--settle-fraction", type=float, default=0, help="Fraction of total budget reserved for fixed-tree CFR, 0..0.5")
     ap.add_argument("--witnesses", action="store_true", help="Enable experimental tactical root witnesses")
     ap.add_argument("--stockfish", type=Path, help="Optional bounded external leaf evaluator")
     ap.add_argument("--child-alternates", action="store_true", help="Fresh root heuristic from best rules-adjudicated child (automatic with Stockfish)")
     ap.add_argument("--mode", choices=["cold", "warm", "both"], default="both")
     args = ap.parse_args()
+    if not 0 <= args.settle_fraction <= .5:
+        ap.error("settle fraction must be in 0..0.5")
     sys.path.insert(0, str(args.kit))
     import referee
     import chess
@@ -118,6 +121,7 @@ def main():
             env["MIST_M4_CLOSURE"] = "1" if args.tactical_closure else "0"
             env["MIST_M4_DOMINANCE"] = "1" if args.root_dominance else "0"
             env["MIST_M4_FAST_ROOTS"] = "1" if args.fast_roots else "0"
+            env["MIST_M4_SETTLE"] = str(args.settle_fraction)
             env["MIST_M4_WITNESSES"] = "1" if args.witnesses else "0"
             env.pop("MIST_STOCKFISH", None)
             if args.stockfish: env["MIST_STOCKFISH"] = str(args.stockfish.resolve())
@@ -163,6 +167,8 @@ def main():
             if dominance_lines:
                 row["dominance"]={k:int(v) for k,v in re.findall(r"(\w+)=(\S+)",dominance_lines[-1])}
             setup_lines=re.findall(r"m4-setup: (.*)",proc.stderr)
+            row["settling"] = [{k:float(v) for k,v in re.findall(r"(\w+)=(\S+)", line)}
+                               for line in re.findall(r"m4-settle: (.*)",proc.stderr)]
             if setup_lines:
                 row["root_setup"]={k:int(v) for k,v in re.findall(r"(\w+)=(\S+)",setup_lines[-1])}
             eval_line = re.search(r"m4-eval: (.*)", proc.stderr)
@@ -217,6 +223,7 @@ def main():
                       "tactical_witnesses": args.witnesses, "tactical_closure":args.tactical_closure, "trace_continuation":args.trace_continuation, "leaf_scale":args.leaf_scale,
                       "root_dominance":args.root_dominance,
                       "fast_roots":args.fast_roots,
+                      "settle_fraction":args.settle_fraction,
                       "stockfish": str(args.stockfish.resolve()) if args.stockfish else None,
                       "stockfish_sha256": hashlib.sha256(args.stockfish.read_bytes()).hexdigest() if args.stockfish else None,
                       "child_alternates": bool(args.child_alternates or args.stockfish),
