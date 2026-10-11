@@ -1,20 +1,20 @@
 # Arena v30 watch
 
-Updated 2026-10-11 10:57 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-11 11:17 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 88W-16D-104L over 208 games** (46%).
-As White: 53.0/104.
-As Black: 43.0/104.
+**Record: 92W-16D-106L over 214 games** (47%).
+As White: 56.0/107.
+As Black: 44.0/107.
 
-Queen lost for less: 30 games (25 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 23 of 104.
+Queen lost for less: 31 games (26 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 24 of 106.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 6-2-22 |
-| Mist Opportunities | 7-2-17 |
-| TA Baseline A | 17-5-2 |
+| TA Baseline A | 20-5-3 |
+| Mist Opportunities | 8-2-18 |
 | TA Baseline S | 14-1-7 |
 | Strongly Invisible | 2-1-17 |
 | Decent Chess Bot | 3-1-14 |
@@ -235,3 +235,9 @@ Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate re
 | 2026-10-11 10:54 | sdvrax5j | B | Instructors | 78 | loss |  | 85 s | 4-19 |
 | 2026-10-11 10:55 | uezes69b | W | duck | 71 | loss |  | 98 s | 4-8 |
 | 2026-10-11 10:55 | 13lpy77s | B | duck | 78 | loss |  | 85 s | 3-17 |
+| 2026-10-11 10:57 | gfugt3dy | B | Mist Opportunities | 86 | loss |  | 31 s | 3-15 |
+| 2026-10-11 10:58 | rmziwecd | W | Mist Opportunities | 118 | win |  | 70 s | 12-1 |
+| 2026-10-11 11:03 | s082jy7g | W | TA Baseline A | 62 | win |  | 104 s | 14-5 |
+| 2026-10-11 11:03 | e74gk61j | B | TA Baseline A | 70 | loss | ply 39 by p unseen | 100 s | 19-22 |
+| 2026-10-11 11:11 | zmwzfcs1 | B | TA Baseline A | 67 | win |  | 92 s | 17-8 |
+| 2026-10-11 11:12 | moklfnx0 | W | TA Baseline A | 86 | win |  | 80 s | 11-8 |
