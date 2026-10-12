@@ -1,24 +1,24 @@
 # Arena v33 watch
 
-Updated 2026-10-12 17:00 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 17:21 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 207W-3D-232L over 442 games** (47%).
-As White: 116.5/221.
-As Black: 92.0/221.
+**Record: 210W-3D-237L over 450 games** (47%).
+As White: 119.5/225.
+As Black: 92.0/225.
 
-Queen lost for less: 158 games (151 to a capturer unseen when we moved, 63 before ply 30); losses with the queen lost: 135 of 232.
+Queen lost for less: 160 games (152 to a capturer unseen when we moved, 64 before ply 30); losses with the queen lost: 137 of 237.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 13-0-41 |
-| Mist Opportunities | 11-0-35 |
+| Mist Opportunities | 12-0-36 |
+| Strongly Invisible | 9-1-34 |
 | duck | 14-1-27 |
-| Strongly Invisible | 8-1-31 |
 | TA Baseline S | 31-0-9 |
 | Decent Chess Bot | 7-0-33 |
-| Instructors | 10-0-26 |
+| Instructors | 11-0-27 |
 | TA Baseline A | 36-0-0 |
 | Sausage | 26-1-3 |
 | Greek Gift | 4-0-26 |
@@ -470,3 +470,11 @@ Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate r
 | 2026-10-12 16:46 | pijfzrk7 | W | Strongly Invisible | 61 | loss |  | 85 s | 12-26 |
 | 2026-10-12 16:48 | s6lt0cju | W | TA Baseline S | 92 | win |  | 63 s | 12-3 |
 | 2026-10-12 16:48 | 9dw49tcp | B | Strongly Invisible | 82 | loss | ply 39 by b unseen | 68 s | 2-16 |
+| 2026-10-12 17:03 | esr50yrz | W | Mist Opportunities | 42 | win |  | 107 s | 18-13 |
+| 2026-10-12 17:03 | iqayk43k | W | Strongly Invisible | 65 | loss |  | 77 s | 8-12 |
+| 2026-10-12 17:04 | cqakzbch | B | Strongly Invisible | 66 | loss |  | 77 s | 3-12 |
+| 2026-10-12 17:05 | 4pagkfjb | B | Strongly Invisible | 54 | loss |  | 93 s | 15-25 |
+| 2026-10-12 17:05 | 9mp9xnfz | B | Mist Opportunities | 68 | loss | ply 15 by b unseen | 81 s | 4-24 |
+| 2026-10-12 17:09 | n2eyptp5 | W | Strongly Invisible | 126 | win |  | 47 s | 4-0 |
+| 2026-10-12 17:12 | ujzeff7n | B | Instructors | 60 | loss | ply 33 by q | 87 s | 3-14 |
+| 2026-10-12 17:14 | abm6h6px | W | Instructors | 88 | win |  | 66 s | 16-2 |
