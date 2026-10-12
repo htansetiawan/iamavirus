@@ -1,26 +1,26 @@
 # Arena v33 watch
 
-Updated 2026-10-12 05:31 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 05:54 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 89W-1D-88L over 178 games** (50%).
-As White: 48.5/89.
-As Black: 41.0/89.
+**Record: 91W-1D-91L over 183 games** (50%).
+As White: 49.5/92.
+As Black: 42.0/91.
 
-Queen lost for less: 66 games (62 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 54 of 88.
+Queen lost for less: 68 games (64 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 56 of 91.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 73 plies.
 Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Knight Vision | 5-0-16 |
 | Decent Chess Bot | 5-0-15 |
-| Knight Vision | 5-0-15 |
 | TA Baseline A | 20-0-0 |
+| duck | 7-0-11 |
 | TA Baseline S | 12-0-4 |
-| duck | 6-0-10 |
+| Greek Gift | 2-0-14 |
 | Mist Opportunities | 4-0-12 |
 | Instructors | 3-0-11 |
 | Sausage | 13-0-1 |
-| Greek Gift | 1-0-13 |
 | Strongly Invisible | 4-1-7 |
 | TA Baseline P | 8-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -206,3 +206,8 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | 2026-10-12 05:11 | 8bdi6njc | B | TA Baseline A | 117 | win |  | 50 s | 15-8 |
 | 2026-10-12 05:20 | kcw27ck1 | B | Greek Gift | 68 | loss | ply 37 by r unseen | 69 s | 5-13 |
 | 2026-10-12 05:20 | 69p3qihg | W | Greek Gift | 71 | loss | ply 36 by r unseen | 69 s | 5-18 |
+| 2026-10-12 05:35 | 5czrp3gh | W | duck | 46 | win |  | 101 s | 21-16 |
+| 2026-10-12 05:37 | 426ji0dd | B | duck | 64 | loss |  | 83 s | 8-18 |
+| 2026-10-12 05:42 | eme1k34v | W | Greek Gift | 87 | loss | ply 74 by q unseen | 64 s | 3-14 |
+| 2026-10-12 05:44 | q306dmfl | B | Greek Gift | 113 | win |  | 52 s | 10-1 |
+| 2026-10-12 05:51 | ijjta906 | W | Knight Vision | 57 | loss | ply 54 by q unseen | 89 s | 11-15 |
