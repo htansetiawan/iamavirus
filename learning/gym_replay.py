@@ -179,6 +179,10 @@ def run_seat(line: str, args, cores: str) -> dict:
         # mist-c (github.com/htansetiawan/mist-c) speaks the same referee protocol;
         # its forced moves are comma separated and still pay full belief updates
         env = dict(os.environ, FOW_SEED=str(args.seed), MIST_FORCE_MOVES=",".join(forced))
+        if args.truth:
+            # the true board behind every view, so the engine can report whether
+            # its belief still holds the truth after each update (mist: truth lines)
+            env["MIST_TRUTH_SEQ"] = ",".join(frames[t]["board"] for t in range(k))
     else:
         env = dict(os.environ, FOW_MODE=args.mode, FOW_MODEL_DIR=str(Path(args.model).resolve()), FOW_SEED=str(args.seed),
                    FOW_FORCE_MOVES=" ".join(forced), FOW_FORCE_FAST="1", FOW_CELL_THREADS=str(args.threads))
@@ -206,8 +210,16 @@ def run_seat(line: str, args, cores: str) -> dict:
         decision_lines = [l for l in out.stderr.splitlines() if l.startswith("mist: n=")]
         if decision_lines:
             fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
-            record["engine"] = {k2: fields.get(k2) for k2 in ("|P|", "samples", "moves", "nodes", "iters", "p", "v", "clock", "sf", "mr")}
+            record["engine"] = {k2: fields.get(k2) for k2 in ("|P|", "samples", "moves", "nodes", "iters", "p", "v", "clock", "sf", "mr", "hist")}
             record["guard"] = sum(1 for l in out.stderr.splitlines() if l.startswith("mist: king guard"))
+            if args.truth:
+                truth = []
+                for l in out.stderr.splitlines():
+                    if l.startswith("mist: truth "):
+                        f2 = dict(tok.split("=", 1) for tok in l.split()[2:] if "=" in tok)
+                        truth.append({"v": int(f2["v"]), "P": f2["|P|"], "lost": l.endswith("LOST"),
+                                      "share": float(f2["share"]) if "share" in f2 else None, "rank": int(f2["rank"]) if "rank" in f2 else None})
+                record["truth"] = truth
     else:
         decision_lines = [l for l in out.stderr.splitlines() if " n=" in l and " mode=" in l]
         if decision_lines:
@@ -296,6 +308,7 @@ def main() -> None:
     ap.add_argument("--model", default="releases/v1")
     ap.add_argument("--mode", default="hybrid")
     ap.add_argument("--engine", default="fow", choices=["fow", "mist"], help="fow: this repository's bot; mist: a mist-c binary")
+    ap.add_argument("--truth", action="store_true", help="mist only: pass the true boards so the engine traces whether its belief holds the truth")
     ap.add_argument("--raw", default="data/raw")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--threads", type=int, default=2)
