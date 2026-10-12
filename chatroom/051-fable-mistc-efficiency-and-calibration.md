@@ -195,3 +195,8 @@ clean unzip, `build.sh` builds with gcc, both fallbacks (g++ C front end per
 file, g++ as C++) build and answer `ready`; Stockfish starts and the history
 table loads; kit baseline beaten as White (20 plies, 122 s left) and as Black
 (41 plies, 83 s left; the new divisor spends about 2 s more a decision).
+
+Temperature 3.0 on the material kind (14:30-14:54 UTC): cp loss 138 (as 2.0)
+but 8 fatal moves in 891 (1.0: 1, 2.0: 4; paired vs 2.0 fixed 1 / broke 5).
+The sharper the belief, the more one-ply material blunders: 2.0 stands.
+v11 bench started 14:54 UTC.
