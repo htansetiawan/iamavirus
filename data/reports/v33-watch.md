@@ -1,14 +1,14 @@
 # Arena v33 watch
 
-Updated 2026-10-12 03:47 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 04:08 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 64W-1D-66L over 131 games** (49%).
-As White: 37.5/65.
-As Black: 27.0/66.
+**Record: 72W-1D-75L over 148 games** (49%).
+As White: 41.5/74.
+As Black: 31.0/74.
 
-Queen lost for less: 49 games (47 to a capturer unseen when we moved, 22 before ply 30); losses with the queen lost: 40 of 66.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
-Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 54 games (52 to a capturer unseen when we moved, 25 before ply 30); losses with the queen lost: 45 of 75.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 73 plies.
+Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -16,14 +16,14 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | duck | 6-0-10 |
 | TA Baseline S | 10-0-4 |
 | TA Baseline A | 14-0-0 |
+| Instructors | 3-0-9 |
+| Sausage | 11-0-1 |
+| Knight Vision | 1-0-11 |
+| Greek Gift | 1-0-11 |
+| Mist Opportunities | 4-0-8 |
 | Strongly Invisible | 3-1-6 |
-| Knight Vision | 1-0-9 |
-| Greek Gift | 1-0-9 |
-| Mist Opportunities | 4-0-6 |
-| Sausage | 8-0-1 |
-| Instructors | 2-0-6 |
+| TA Baseline P | 8-0-0 |
 | Apricot Squad | 4-0-0 |
-| TA Baseline P | 4-0-0 |
 | baseline.py | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -159,3 +159,20 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-12 03:40 | wr440w97 | W | Decent Chess Bot | 189 | loss |  | 30 s | 10-6 |
 | 2026-10-12 03:41 | 9fzs53ln | B | TA Baseline S | 62 | loss | ply 19 by b unseen | 86 s | 8-18 |
 | 2026-10-12 03:45 | km45bbn7 | B | Sausage | 43 | win |  | 106 s | 25-21 |
+| 2026-10-12 03:47 | cc5csoqp | W | Sausage | 70 | win |  | 78 s | 17-3 |
+| 2026-10-12 03:47 | 5enefczb | W | Knight Vision | 41 | loss |  | 104 s | 28-21 |
+| 2026-10-12 03:53 | 7d1v4osu | B | Mist Opportunities | 54 | loss | ply 11 by n unseen | 90 s | 8-32 |
+| 2026-10-12 03:54 | rp1l8t48 | B | Instructors | 74 | loss | ply 27 by r unseen | 75 s | 5-21 |
+| 2026-10-12 03:54 | d1ymn5wh | W | Instructors | 69 | loss | ply 40 by r unseen | 78 s | 7-17 |
+| 2026-10-12 03:54 | onsuvg10 | W | Mist Opportunities | 67 | loss | ply 48 by q unseen | 79 s | 8-7 |
+| 2026-10-12 03:55 | 8e8cbu08 | B | Knight Vision | 138 | loss |  | 37 s | 0-10 |
+| 2026-10-12 03:55 | wkwrvecl | W | Instructors | 77 | loss |  | 72 s | 3-8 |
+| 2026-10-12 03:58 | w9qqx1o6 | B | Instructors | 119 | win |  | 48 s | 14-2 |
+| 2026-10-12 03:58 | 9toai8t8 | B | TA Baseline P | 75 | win |  | 76 s | 14-3 |
+| 2026-10-12 03:58 | r2xqxs3z | W | TA Baseline P | 64 | win |  | 82 s | 12-6 |
+| 2026-10-12 04:01 | 8h4ezw2q | W | Greek Gift | 51 | loss |  | 95 s | 26-27 |
+| 2026-10-12 04:01 | kp72yupc | B | Greek Gift | 56 | loss | ply 23 by n unseen | 88 s | 6-17 |
+| 2026-10-12 04:02 | dpxipbow | W | TA Baseline P | 70 | win |  | 78 s | 13-4 |
+| 2026-10-12 04:02 | t4osw4uh | B | TA Baseline P | 69 | win |  | 73 s | 22-5 |
+| 2026-10-12 04:04 | rmv0npym | B | Sausage | 35 | win |  | 118 s | 22-26 |
+| 2026-10-12 04:07 | kwni3c48 | W | Sausage | 78 | win |  | 72 s | 16-9 |
