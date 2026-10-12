@@ -1,25 +1,25 @@
 # Arena v33 watch
 
-Updated 2026-10-12 15:17 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 15:38 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 193W-3D-215L over 411 games** (47%).
-As White: 107.5/206.
-As Black: 87.0/205.
+**Record: 195W-3D-220L over 418 games** (47%).
+As White: 109.5/209.
+As Black: 87.0/209.
 
-Queen lost for less: 149 games (142 to a capturer unseen when we moved, 61 before ply 30); losses with the queen lost: 128 of 215.
+Queen lost for less: 150 games (143 to a capturer unseen when we moved, 62 before ply 30); losses with the queen lost: 129 of 220.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 11-0-35 |
+| Knight Vision | 11-0-37 |
 | duck | 14-1-27 |
 | Mist Opportunities | 10-0-32 |
 | Decent Chess Bot | 7-0-33 |
-| TA Baseline S | 28-0-8 |
+| TA Baseline S | 29-0-9 |
+| Instructors | 10-0-26 |
 | Strongly Invisible | 7-1-26 |
 | TA Baseline A | 34-0-0 |
-| Instructors | 9-0-24 |
 | Sausage | 26-1-3 |
 | Greek Gift | 4-0-26 |
 | TA Baseline P | 25-0-1 |
@@ -439,3 +439,10 @@ Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate r
 | 2026-10-12 15:10 | dza54yhr | B | Sausage | 63 | win |  | 85 s | 23-3 |
 | 2026-10-12 15:11 | vz77dxni | W | Sausage | 58 | win |  | 88 s | 25-13 |
 | 2026-10-12 15:16 | yr5i3f2b | W | Instructors | 69 | loss | ply 46 by r unseen | 79 s | 5-11 |
+| 2026-10-12 15:17 | 0que5qra | B | Instructors | 88 | loss | ply 19 by k unseen | 56 s | 4-21 |
+| 2026-10-12 15:19 | jglry70f | B | TA Baseline S | 30 | loss |  | 124 s | 30-29 |
+| 2026-10-12 15:23 | snpmk4e2 | W | TA Baseline S | 94 | win |  | 61 s | 17-1 |
+| 2026-10-12 15:24 | 9e0coypy | B | Knight Vision | 86 | loss |  | 62 s | 0-16 |
+| 2026-10-12 15:25 | aewnot9i | W | Knight Vision | 91 | loss |  | 62 s | 13-12 |
+| 2026-10-12 15:33 | 06y3h5mi | W | Instructors | 78 | win |  | 72 s | 8-2 |
+| 2026-10-12 15:33 | 0vdm6oix | B | Instructors | 72 | loss |  | 76 s | 2-17 |
