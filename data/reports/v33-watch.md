@@ -1,27 +1,27 @@
 # Arena v33 watch
 
-Updated 2026-10-12 14:15 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 14:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 180W-2D-200L over 382 games** (47%).
-As White: 99.0/191.
-As Black: 82.0/191.
+**Record: 183W-2D-204L over 389 games** (47%).
+As White: 101.0/194.
+As Black: 83.0/195.
 
-Queen lost for less: 140 games (133 to a capturer unseen when we moved, 54 before ply 30); losses with the queen lost: 120 of 200.
+Queen lost for less: 142 games (135 to a capturer unseen when we moved, 56 before ply 30); losses with the queen lost: 122 of 204.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 20 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 11-0-35 |
 | Decent Chess Bot | 7-0-33 |
-| duck | 12-1-25 |
+| duck | 12-1-26 |
 | Mist Opportunities | 9-0-29 |
 | Strongly Invisible | 7-1-26 |
+| TA Baseline S | 28-0-6 |
 | TA Baseline A | 32-0-0 |
-| TA Baseline S | 25-0-5 |
 | Instructors | 9-0-21 |
+| Greek Gift | 4-0-24 |
 | TA Baseline P | 25-0-1 |
-| Greek Gift | 4-0-22 |
 | Sausage | 21-0-3 |
 | Apricot Squad | 10-0-0 |
 | baseline.py | 8-0-0 |
@@ -410,3 +410,10 @@ Games as Black where White opened 1.c4: 20 (the book-trap family; the v15 gate r
 | 2026-10-12 14:03 | ia59s4fw | W | baseline.py | 44 | win |  | 105 s | 33-9 |
 | 2026-10-12 14:07 | bm1wjsk8 | B | duck | 90 | loss | ply 27 by q unseen | 45 s | 4-24 |
 | 2026-10-12 14:09 | 3x55fanm | W | duck | 134 | win |  | 44 s | 14-0 |
+| 2026-10-12 14:15 | 6g9jxb41 | W | Greek Gift | 59 | loss | ply 28 by n unseen | 88 s | 4-16 |
+| 2026-10-12 14:16 | f0zylk2t | B | Greek Gift | 70 | loss |  | 78 s | 5-4 |
+| 2026-10-12 14:20 | bpzxsxnp | W | TA Baseline S | 66 | win |  | 83 s | 19-3 |
+| 2026-10-12 14:20 | xvxngflv | B | TA Baseline S | 51 | win |  | 98 s | 16-13 |
+| 2026-10-12 14:28 | oj76n20a | B | TA Baseline S | 74 | loss |  | 76 s | 0-16 |
+| 2026-10-12 14:31 | fn7pj9u8 | W | TA Baseline S | 124 | win |  | 47 s | 10-3 |
+| 2026-10-12 14:33 | fvpo0jbd | B | duck | 76 | loss | ply 27 by r unseen | 72 s | 4-23 |
