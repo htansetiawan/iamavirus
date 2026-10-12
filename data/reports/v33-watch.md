@@ -1,27 +1,27 @@
 # Arena v33 watch
 
-Updated 2026-10-12 09:44 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 10:04 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 129W-2D-142L over 273 games** (48%).
-As White: 72.0/137.
-As Black: 58.0/136.
+**Record: 131W-2D-151L over 284 games** (46%).
+As White: 73.0/142.
+As Black: 59.0/142.
 
-Queen lost for less: 103 games (98 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 85 of 142.
+Queen lost for less: 108 games (103 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 90 of 151.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
 Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 9-0-27 |
-| Decent Chess Bot | 7-0-25 |
+| Decent Chess Bot | 7-0-27 |
+| duck | 9-1-20 |
 | TA Baseline A | 28-0-0 |
-| duck | 8-1-17 |
 | Strongly Invisible | 5-1-18 |
 | Mist Opportunities | 6-0-18 |
+| Greek Gift | 3-0-19 |
 | TA Baseline S | 16-0-4 |
 | Instructors | 4-0-16 |
 | Sausage | 18-0-2 |
-| Greek Gift | 2-0-15 |
 | TA Baseline P | 14-0-0 |
 | Apricot Squad | 8-0-0 |
 | baseline.py | 4-0-0 |
@@ -301,3 +301,14 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-12 09:40 | cild10c3 | B | TA Baseline P | 55 | win |  | 94 s | 18-8 |
 | 2026-10-12 09:40 | 2n59okx4 | W | TA Baseline P | 52 | win |  | 93 s | 19-18 |
 | 2026-10-12 09:43 | ebgtyfhu | W | Greek Gift | 55 | loss |  | 92 s | 4-14 |
+| 2026-10-12 09:45 | jim4vg37 | B | Greek Gift | 68 | loss | ply 31 by n unseen | 74 s | 8-27 |
+| 2026-10-12 09:47 | 506kls80 | B | Decent Chess Bot | 72 | loss | ply 19 by q unseen | 77 s | 2-17 |
+| 2026-10-12 09:48 | li5vtvw4 | B | duck | 50 | loss |  | 97 s | 14-20 |
+| 2026-10-12 09:48 | pis7maf3 | B | Greek Gift | 64 | loss |  | 83 s | 3-18 |
+| 2026-10-12 09:48 | 3f9c4li6 | W | Decent Chess Bot | 71 | loss | ply 58 by n unseen | 76 s | 4-20 |
+| 2026-10-12 09:48 | h71v8a54 | W | Greek Gift | 63 | loss |  | 82 s | 7-16 |
+| 2026-10-12 09:49 | cn6xkd2f | W | duck | 61 | loss | ply 30 by n unseen | 85 s | 7-24 |
+| 2026-10-12 09:52 | kxjromrh | B | Greek Gift | 38 | loss | ply 13 by n unseen | 113 s | 14-23 |
+| 2026-10-12 09:55 | oj97cy55 | W | Greek Gift | 80 | win |  | 71 s | 26-0 |
+| 2026-10-12 09:58 | 1wu8gw1v | B | duck | 103 | win |  | 56 s | 24-11 |
+| 2026-10-12 10:01 | zzzbkp40 | W | duck | 137 | loss |  | 41 s | 0-5 |
