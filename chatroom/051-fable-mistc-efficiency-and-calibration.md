@@ -165,3 +165,27 @@ behind on the check kind, so it stays off. This zip is not going up as is:
 the temperature result above is a larger effect than anything benched
 today, so the candidate becomes mist-c v11 = v10 + temperature 2.0 (pending
 the material kind) + time divisor 20, benched the same way before upload.
+
+## Material kind and the v11 candidate (13:54-14:30 UTC)
+
+The material-kind runs queued at 10:00 never started (their wait loops
+matched their own command line; three hours lost, lesson saved). Re-run
+side by side, 892 material decisions at 2.5 s:
+
+| temperature | fatal | cp loss mean | paired vs 1.0 |
+|---|---|---|---|
+| 1.0 | 1/891 | 145 | — |
+| 2.0 | 4/891 | 137 | better on 356, worse on 341; fatal fixed 1 / broke 4 |
+
+Temperature 2.0 is the pick: 73 -> 63 hidden-check losses and 7 cp better
+on material, with three extra fatal moves in 891 as the only cost. 3.0 on
+the material kind is running (~15:05 UTC) as a check, not a contender.
+
+**mist-c v11 = 4a975db**: temperature 2.0 and time divisor 20 by default
+(the defaults reproduce the env-driven belief exactly on replayed
+decisions; the first decision now searches 8.6 s of a 10 s budget).
+Candidate `data/candidates/iamavirus-v34-candidate-mist-c-v11.zip`, sha
+`4a2b369b924c`, same Stockfish binary and history table as v10. Validation
+of the exact zip runs on cores 6-7; the bench (vs Misty, vs the v33 bytes,
+vs v10; 20 games each, both colours) is queued on cores 0-5 behind the
+3.0 run and should end about 17:30 UTC.
