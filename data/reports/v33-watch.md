@@ -1,26 +1,26 @@
 # Arena v33 watch
 
-Updated 2026-10-12 06:15 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 06:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 94W-1D-94L over 189 games** (50%).
-As White: 52.5/95.
-As Black: 42.0/94.
+**Record: 97W-1D-102L over 200 games** (49%).
+As White: 54.5/100.
+As Black: 43.0/100.
 
-Queen lost for less: 70 games (66 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 58 of 94.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 73 plies.
+Queen lost for less: 74 games (70 to a capturer unseen when we moved, 31 before ply 30); losses with the queen lost: 61 of 102.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 72 plies.
 Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 5-0-17 |
-| Decent Chess Bot | 5-0-15 |
+| Decent Chess Bot | 5-0-19 |
+| Knight Vision | 6-0-18 |
 | TA Baseline A | 20-0-0 |
+| Instructors | 4-0-14 |
+| Sausage | 16-0-2 |
 | duck | 7-0-11 |
 | Mist Opportunities | 5-0-13 |
 | TA Baseline S | 12-0-4 |
-| Instructors | 4-0-12 |
 | Greek Gift | 2-0-14 |
-| Sausage | 14-0-1 |
 | Strongly Invisible | 4-1-7 |
 | TA Baseline P | 8-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -217,3 +217,14 @@ Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate r
 | 2026-10-12 06:11 | kwwmqcrh | B | Instructors | 44 | loss | ply 43 by r unseen | 105 s | 8-18 |
 | 2026-10-12 06:14 | tcsvy2wq | W | Instructors | 90 | win |  | 64 s | 7-1 |
 | 2026-10-12 06:14 | uywgnyht | W | Sausage | 42 | win |  | 108 s | 17-19 |
+| 2026-10-12 06:15 | 0v51n51w | B | Sausage | 64 | loss | ply 29 by q unseen | 82 s | 2-19 |
+| 2026-10-12 06:16 | 7gnc38mj | B | Instructors | 72 | loss |  | 77 s | 3-10 |
+| 2026-10-12 06:17 | lt2ti00a | W | Knight Vision | 40 | win |  | 110 s | 30-18 |
+| 2026-10-12 06:18 | ctr11zqr | B | Decent Chess Bot | 66 | loss |  | 82 s | 2-22 |
+| 2026-10-12 06:18 | qvp7lya8 | W | Instructors | 91 | loss |  | 60 s | 2-10 |
+| 2026-10-12 06:19 | 8lgiqu8z | W | Decent Chess Bot | 83 | loss |  | 67 s | 14-10 |
+| 2026-10-12 06:19 | l583eva2 | B | Knight Vision | 62 | loss | ply 49 by q unseen | 85 s | 5-22 |
+| 2026-10-12 06:28 | 8lywbrbt | W | Sausage | 50 | win | ply 46 by r unseen | 98 s | 21-18 |
+| 2026-10-12 06:28 | o2mhk8eo | B | Sausage | 39 | win |  | 108 s | 31-26 |
+| 2026-10-12 06:30 | 0o8amfjf | W | Decent Chess Bot | 55 | loss | ply 24 by n unseen | 91 s | 5-17 |
+| 2026-10-12 06:30 | kn7c4hzy | B | Decent Chess Bot | 52 | loss |  | 96 s | 3-18 |
