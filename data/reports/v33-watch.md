@@ -1,12 +1,12 @@
 # Arena v33 watch
 
-Updated 2026-10-12 17:42 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 18:02 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 216W-3D-241L over 460 games** (47%).
-As White: 122.5/230.
-As Black: 95.0/230.
+**Record: 226W-4D-247L over 477 games** (48%).
+As White: 127.5/239.
+As Black: 100.5/238.
 
-Queen lost for less: 163 games (154 to a capturer unseen when we moved, 65 before ply 30); losses with the queen lost: 140 of 241.
+Queen lost for less: 169 games (160 to a capturer unseen when we moved, 67 before ply 30); losses with the queen lost: 144 of 247.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,15 +14,15 @@ Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate r
 | --- | --- |
 | Knight Vision | 15-0-41 |
 | Mist Opportunities | 12-0-38 |
-| Strongly Invisible | 9-1-36 |
-| duck | 14-1-27 |
-| TA Baseline S | 31-0-9 |
+| Strongly Invisible | 10-1-37 |
+| TA Baseline S | 34-1-10 |
+| duck | 14-1-29 |
 | Decent Chess Bot | 7-0-33 |
+| TA Baseline A | 40-0-0 |
 | Instructors | 11-0-27 |
-| TA Baseline A | 36-0-0 |
 | Sausage | 30-1-3 |
-| Greek Gift | 4-0-26 |
-| TA Baseline P | 27-0-1 |
+| Greek Gift | 5-0-27 |
+| TA Baseline P | 28-0-2 |
 | Apricot Squad | 10-0-0 |
 | baseline.py | 10-0-0 |
 
@@ -488,3 +488,20 @@ Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate r
 | 2026-10-12 17:35 | yce8wmsq | W | Strongly Invisible | 111 | loss | ply 102 by r | 48 s | 0-12 |
 | 2026-10-12 17:36 | 83cte235 | W | Sausage | 64 | win |  | 82 s | 20-5 |
 | 2026-10-12 17:38 | 8fvivi10 | B | Sausage | 83 | win |  | 46 s | 28-18 |
+| 2026-10-12 17:41 | ig4gxrg7 | W | TA Baseline P | 83 | loss | ply 10 by n unseen | 58 s | 1-25 |
+| 2026-10-12 17:41 | wbwvll2m | B | TA Baseline P | 75 | win |  | 53 s | 29-20 |
+| 2026-10-12 17:42 | 0l4b5kg1 | W | TA Baseline S | 66 | win |  | 82 s | 10-10 |
+| 2026-10-12 17:46 | mneu22vr | B | Greek Gift | 40 | loss | ply 23 by r unseen | 110 s | 15-28 |
+| 2026-10-12 17:46 | zmrjsjxu | B | TA Baseline S | 121 | win |  | 49 s | 13-4 |
+| 2026-10-12 17:47 | 5vx2aco1 | B | Strongly Invisible | 65 | win |  | 83 s | 17-6 |
+| 2026-10-12 17:49 | ud1vtu2o | W | Strongly Invisible | 95 | loss |  | 57 s | 1-13 |
+| 2026-10-12 17:50 | 0sqg0t38 | W | Greek Gift | 78 | win | ply 42 by r unseen | 73 s | 8-7 |
+| 2026-10-12 17:52 | ybdqywju | W | TA Baseline S | 67 | loss |  | 80 s | 4-16 |
+| 2026-10-12 17:54 | kd0aed3f | W | TA Baseline A | 44 | win | ply 36 by r unseen | 105 s | 17-8 |
+| 2026-10-12 17:55 | q9g6mtcd | B | TA Baseline A | 57 | win |  | 89 s | 23-25 |
+| 2026-10-12 17:56 | xc1abycy | W | TA Baseline A | 72 | win |  | 77 s | 16-4 |
+| 2026-10-12 17:56 | zhhfsa2x | B | TA Baseline A | 71 | win |  | 75 s | 12-11 |
+| 2026-10-12 17:56 | 5otxyyq6 | B | TA Baseline S | 149 | draw |  | 39 s | 0-0 |
+| 2026-10-12 17:58 | vhznsvim | W | TA Baseline S | 34 | win |  | 118 s | 29-14 |
+| 2026-10-12 17:59 | nbemujv7 | B | duck | 70 | loss | ply 33 by q unseen | 77 s | 4-27 |
+| 2026-10-12 18:01 | pxzsnh0d | W | duck | 87 | loss | ply 40 by q unseen | 54 s | 3-26 |
