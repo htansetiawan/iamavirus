@@ -1,31 +1,31 @@
 # Arena v33 watch
 
-Updated 2026-10-12 18:45 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 19:06 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 237W-4D-253L over 494 games** (48%).
-As White: 133.5/247.
-As Black: 105.5/247.
+**Record: 248W-4D-258L over 510 games** (49%).
+As White: 139.5/255.
+As Black: 110.5/255.
 
-Queen lost for less: 174 games (164 to a capturer unseen when we moved, 69 before ply 30); losses with the queen lost: 148 of 253.
+Queen lost for less: 179 games (169 to a capturer unseen when we moved, 70 before ply 30); losses with the queen lost: 152 of 258.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 15-0-41 |
-| Strongly Invisible | 10-1-39 |
+| Knight Vision | 16-0-42 |
+| Strongly Invisible | 11-1-42 |
+| Mist Opportunities | 13-0-39 |
 | duck | 18-1-31 |
-| Mist Opportunities | 12-0-38 |
-| TA Baseline S | 35-1-10 |
+| TA Baseline S | 37-1-10 |
+| TA Baseline A | 42-0-0 |
 | Decent Chess Bot | 7-0-33 |
-| TA Baseline A | 40-0-0 |
 | Instructors | 11-0-27 |
 | Sausage | 30-1-3 |
 | Greek Gift | 5-0-29 |
-| TA Baseline P | 28-0-2 |
+| TA Baseline P | 30-0-2 |
 | Apricot Squad | 12-0-0 |
 | baseline.py | 10-0-0 |
-| Gravel Road | 4-0-0 |
+| Gravel Road | 6-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -523,3 +523,19 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | 2026-10-12 18:34 | 6fm53kvw | W | Apricot Squad | 24 | win |  | 130 s | 35-35 |
 | 2026-10-12 18:39 | c1cwf5pg | B | Gravel Road | 41 | win |  | 110 s | 36-14 |
 | 2026-10-12 18:40 | umie6rg9 | W | Gravel Road | 46 | win |  | 103 s | 37-10 |
+| 2026-10-12 18:47 | x1f20jya | W | Strongly Invisible | 67 | loss | ply 32 by r unseen | 74 s | 1-9 |
+| 2026-10-12 18:47 | 3ft93v7c | B | Gravel Road | 29 | win |  | 127 s | 35-20 |
+| 2026-10-12 18:47 | 4nuym5il | W | Gravel Road | 36 | win |  | 115 s | 37-19 |
+| 2026-10-12 18:48 | hghosm8y | B | TA Baseline A | 45 | win |  | 103 s | 31-20 |
+| 2026-10-12 18:49 | srlxm1im | W | TA Baseline A | 62 | win |  | 85 s | 15-4 |
+| 2026-10-12 18:49 | ru93csge | B | Strongly Invisible | 113 | win |  | 50 s | 19-10 |
+| 2026-10-12 18:51 | 3chrjvwb | W | TA Baseline S | 44 | win |  | 105 s | 23-24 |
+| 2026-10-12 18:55 | y6hk0y99 | B | TA Baseline P | 49 | win |  | 99 s | 23-7 |
+| 2026-10-12 18:55 | xv3y5pvu | W | TA Baseline P | 70 | win |  | 78 s | 16-5 |
+| 2026-10-12 18:55 | 9baiw9ti | B | TA Baseline S | 101 | win |  | 59 s | 9-6 |
+| 2026-10-12 18:56 | yorilfpv | B | Mist Opportunities | 60 | loss | ply 53 by r unseen | 83 s | 13-22 |
+| 2026-10-12 18:56 | 0hpvhz9y | B | Knight Vision | 80 | loss | ply 13 by q unseen | 64 s | 2-20 |
+| 2026-10-12 18:57 | o1yjafro | W | Strongly Invisible | 65 | loss |  | 82 s | 4-13 |
+| 2026-10-12 18:59 | parjia0e | W | Knight Vision | 134 | win | ply 98 by r unseen | 44 s | 12-1 |
+| 2026-10-12 18:59 | 6ebtxahn | B | Strongly Invisible | 102 | loss | ply 73 by q unseen | 56 s | 1-13 |
+| 2026-10-12 18:59 | 1xhmbnia | W | Mist Opportunities | 116 | win |  | 47 s | 10-3 |
