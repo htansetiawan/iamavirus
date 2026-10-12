@@ -1,26 +1,26 @@
 # Arena v33 watch
 
-Updated 2026-10-12 17:21 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 17:42 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 210W-3D-237L over 450 games** (47%).
-As White: 119.5/225.
-As Black: 92.0/225.
+**Record: 216W-3D-241L over 460 games** (47%).
+As White: 122.5/230.
+As Black: 95.0/230.
 
-Queen lost for less: 160 games (152 to a capturer unseen when we moved, 64 before ply 30); losses with the queen lost: 137 of 237.
+Queen lost for less: 163 games (154 to a capturer unseen when we moved, 65 before ply 30); losses with the queen lost: 140 of 241.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 13-0-41 |
-| Mist Opportunities | 12-0-36 |
-| Strongly Invisible | 9-1-34 |
+| Knight Vision | 15-0-41 |
+| Mist Opportunities | 12-0-38 |
+| Strongly Invisible | 9-1-36 |
 | duck | 14-1-27 |
 | TA Baseline S | 31-0-9 |
 | Decent Chess Bot | 7-0-33 |
 | Instructors | 11-0-27 |
 | TA Baseline A | 36-0-0 |
-| Sausage | 26-1-3 |
+| Sausage | 30-1-3 |
 | Greek Gift | 4-0-26 |
 | TA Baseline P | 27-0-1 |
 | Apricot Squad | 10-0-0 |
@@ -478,3 +478,13 @@ Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate r
 | 2026-10-12 17:09 | n2eyptp5 | W | Strongly Invisible | 126 | win |  | 47 s | 4-0 |
 | 2026-10-12 17:12 | ujzeff7n | B | Instructors | 60 | loss | ply 33 by q | 87 s | 3-14 |
 | 2026-10-12 17:14 | abm6h6px | W | Instructors | 88 | win |  | 66 s | 16-2 |
+| 2026-10-12 17:22 | t4zawtbq | B | Knight Vision | 109 | win |  | 54 s | 14-8 |
+| 2026-10-12 17:22 | dbv7ceav | W | Knight Vision | 120 | win |  | 46 s | 9-9 |
+| 2026-10-12 17:29 | miso0bk5 | W | Mist Opportunities | 79 | loss | ply 32 by n unseen | 70 s | 6-8 |
+| 2026-10-12 17:32 | s7i79vvq | B | Mist Opportunities | 128 | loss | ply 11 by n unseen | 32 s | 0-13 |
+| 2026-10-12 17:32 | f0euf5be | W | Sausage | 40 | win |  | 110 s | 21-15 |
+| 2026-10-12 17:33 | obo0iw9z | B | Sausage | 43 | win |  | 108 s | 24-23 |
+| 2026-10-12 17:34 | x70mll0v | B | Strongly Invisible | 92 | loss |  | 44 s | 2-23 |
+| 2026-10-12 17:35 | yce8wmsq | W | Strongly Invisible | 111 | loss | ply 102 by r | 48 s | 0-12 |
+| 2026-10-12 17:36 | 83cte235 | W | Sausage | 64 | win |  | 82 s | 20-5 |
+| 2026-10-12 17:38 | 8fvivi10 | B | Sausage | 83 | win |  | 46 s | 28-18 |
