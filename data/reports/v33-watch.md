@@ -1,27 +1,27 @@
 # Arena v33 watch
 
-Updated 2026-10-12 21:31 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 21:52 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 275W-7D-284L over 566 games** (49%).
-As White: 155.5/283.
-As Black: 123.0/283.
+**Record: 279W-7D-286L over 572 games** (49%).
+As White: 157.5/286.
+As Black: 125.0/286.
 
-Queen lost for less: 197 games (186 to a capturer unseen when we moved, 77 before ply 30); losses with the queen lost: 168 of 284.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 74 plies.
-Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 197 games (186 to a capturer unseen when we moved, 77 before ply 30); losses with the queen lost: 168 of 286.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 75 plies.
+Games as Black where White opened 1.c4: 30 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 17-0-51 |
+| duck | 22-2-34 |
 | Mist Opportunities | 15-1-42 |
-| duck | 20-2-34 |
+| TA Baseline S | 43-1-12 |
 | Strongly Invisible | 11-1-42 |
-| TA Baseline S | 41-1-12 |
 | TA Baseline A | 48-0-0 |
 | Decent Chess Bot | 8-1-37 |
 | Instructors | 14-0-30 |
 | TA Baseline P | 36-0-2 |
-| Greek Gift | 5-0-31 |
+| Greek Gift | 5-0-33 |
 | Sausage | 30-1-3 |
 | Apricot Squad | 12-0-0 |
 | baseline.py | 12-0-0 |
@@ -595,3 +595,9 @@ Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate r
 | 2026-10-12 21:29 | yxf1xr5r | W | Knight Vision | 87 | loss | ply 56 by n unseen | 58 s | 1-19 |
 | 2026-10-12 21:30 | q2inlets | W | Mist Opportunities | 138 | win |  | 41 s | 11-1 |
 | 2026-10-12 21:31 | rts93ze1 | B | Knight Vision | 116 | loss |  | 37 s | 0-11 |
+| 2026-10-12 21:33 | cpdi9ugv | B | duck | 117 | win |  | 51 s | 10-2 |
+| 2026-10-12 21:34 | s8noxmc6 | W | duck | 136 | win |  | 44 s | 13-1 |
+| 2026-10-12 21:37 | ewynzijs | B | Greek Gift | 54 | loss |  | 93 s | 14-26 |
+| 2026-10-12 21:42 | ve6nq6qi | W | Greek Gift | 131 | loss |  | 20 s | 1-10 |
+| 2026-10-12 21:43 | c06phd9n | W | TA Baseline S | 44 | win |  | 103 s | 28-30 |
+| 2026-10-12 21:49 | lz94ndq4 | B | TA Baseline S | 169 | win |  | 35 s | 12-0 |
