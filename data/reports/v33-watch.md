@@ -1,28 +1,28 @@
 # Arena v33 watch
 
-Updated 2026-10-12 11:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 11:49 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 145W-2D-163L over 310 games** (47%).
-As White: 79.0/155.
-As Black: 67.0/155.
+**Record: 152W-2D-171L over 325 games** (47%).
+As White: 83.0/162.
+As Black: 70.0/163.
 
-Queen lost for less: 114 games (109 to a capturer unseen when we moved, 47 before ply 30); losses with the queen lost: 95 of 163.
+Queen lost for less: 117 games (112 to a capturer unseen when we moved, 49 before ply 30); losses with the queen lost: 98 of 171.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
-Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 9-0-29 |
+| Knight Vision | 10-0-32 |
 | Decent Chess Bot | 7-0-27 |
 | duck | 9-1-20 |
 | TA Baseline A | 30-0-0 |
-| Strongly Invisible | 5-1-20 |
+| Strongly Invisible | 6-1-21 |
+| Mist Opportunities | 7-0-21 |
+| TA Baseline S | 21-0-5 |
 | Greek Gift | 4-0-22 |
-| Mist Opportunities | 6-0-20 |
-| TA Baseline S | 20-0-4 |
-| Instructors | 6-0-18 |
+| Instructors | 6-0-19 |
 | Sausage | 21-0-3 |
-| TA Baseline P | 14-0-0 |
+| TA Baseline P | 17-0-1 |
 | Apricot Squad | 10-0-0 |
 | baseline.py | 4-0-0 |
 
@@ -338,3 +338,18 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | 2026-10-12 11:14 | p9e722y5 | W | TA Baseline A | 80 | win |  | 71 s | 11-9 |
 | 2026-10-12 11:26 | w9ckj8lc | B | TA Baseline S | 95 | win |  | 60 s | 10-2 |
 | 2026-10-12 11:26 | f0077mmg | W | TA Baseline S | 80 | win |  | 71 s | 21-2 |
+| 2026-10-12 11:27 | knu6d7bf | B | TA Baseline S | 50 | loss | ply 23 by q unseen | 97 s | 6-26 |
+| 2026-10-12 11:28 | h1jo5423 | B | Mist Opportunities | 78 | loss |  | 65 s | 1-15 |
+| 2026-10-12 11:30 | yts998j1 | W | Mist Opportunities | 100 | win |  | 47 s | 19-7 |
+| 2026-10-12 11:31 | tewuuh8g | W | TA Baseline S | 116 | win |  | 49 s | 14-5 |
+| 2026-10-12 11:35 | ibob3d6l | W | Knight Vision | 40 | win |  | 110 s | 19-27 |
+| 2026-10-12 11:38 | jdfu42lw | B | Knight Vision | 74 | loss |  | 68 s | 2-10 |
+| 2026-10-12 11:38 | ofycxj90 | W | TA Baseline P | 70 | win |  | 79 s | 15-4 |
+| 2026-10-12 11:39 | w3hcix16 | B | TA Baseline P | 105 | win |  | 56 s | 9-1 |
+| 2026-10-12 11:42 | oiqy5neb | B | Knight Vision | 72 | loss |  | 76 s | 2-8 |
+| 2026-10-12 11:43 | 4mpfxa5e | W | Knight Vision | 89 | loss | ply 36 by q unseen | 61 s | 0-14 |
+| 2026-10-12 11:43 | a3urcyc2 | W | TA Baseline P | 115 | loss | ply 10 by n unseen | 31 s | 2-26 |
+| 2026-10-12 11:43 | b86sga4q | B | TA Baseline P | 137 | win |  | 32 s | 18-3 |
+| 2026-10-12 11:46 | whrlm1qt | W | Strongly Invisible | 63 | loss |  | 84 s | 2-13 |
+| 2026-10-12 11:47 | ti3yccs0 | B | Strongly Invisible | 99 | win |  | 58 s | 18-11 |
+| 2026-10-12 11:47 | 74mvnco8 | B | Instructors | 58 | loss |  | 89 s | 17-22 |
