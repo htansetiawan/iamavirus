@@ -1,25 +1,25 @@
 # Arena v33 watch
 
-Updated 2026-10-12 15:58 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 16:19 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 197W-3D-224L over 424 games** (47%).
-As White: 110.5/212.
-As Black: 88.0/212.
+**Record: 200W-3D-225L over 428 games** (47%).
+As White: 112.5/214.
+As Black: 89.0/214.
 
-Queen lost for less: 153 games (146 to a capturer unseen when we moved, 62 before ply 30); losses with the queen lost: 132 of 224.
+Queen lost for less: 154 games (147 to a capturer unseen when we moved, 62 before ply 30); losses with the queen lost: 132 of 225.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
 Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 11-0-39 |
+| Knight Vision | 12-0-40 |
 | Mist Opportunities | 11-0-33 |
 | duck | 14-1-27 |
 | Decent Chess Bot | 7-0-33 |
 | TA Baseline S | 29-0-9 |
 | Strongly Invisible | 8-1-27 |
 | Instructors | 10-0-26 |
-| TA Baseline A | 34-0-0 |
+| TA Baseline A | 36-0-0 |
 | Sausage | 26-1-3 |
 | Greek Gift | 4-0-26 |
 | TA Baseline P | 25-0-1 |
@@ -452,3 +452,7 @@ Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate r
 | 2026-10-12 15:53 | xznm91mq | W | Mist Opportunities | 129 | loss | ply 48 by k unseen | 31 s | 2-19 |
 | 2026-10-12 15:53 | zvdgf8je | W | Knight Vision | 81 | loss | ply 42 by q unseen | 59 s | 2-11 |
 | 2026-10-12 15:54 | jtxlmrdy | B | Knight Vision | 94 | loss |  | 55 s | 3-11 |
+| 2026-10-12 15:59 | r6om6xjw | B | Knight Vision | 68 | loss |  | 73 s | 1-24 |
+| 2026-10-12 16:00 | saci0jzm | W | Knight Vision | 76 | win |  | 72 s | 19-13 |
+| 2026-10-12 16:06 | u1f1iger | W | TA Baseline A | 72 | win | ply 48 by r unseen | 76 s | 8-8 |
+| 2026-10-12 16:07 | bhvryxpc | B | TA Baseline A | 85 | win |  | 68 s | 16-2 |
