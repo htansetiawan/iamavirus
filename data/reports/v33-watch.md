@@ -1,12 +1,12 @@
 # Arena v33 watch
 
-Updated 2026-10-12 10:25 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 10:46 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 133W-2D-155L over 290 games** (46%).
-As White: 74.0/145.
-As Black: 60.0/145.
+**Record: 135W-2D-159L over 296 games** (46%).
+As White: 75.0/148.
+As Black: 61.0/148.
 
-Queen lost for less: 110 games (105 to a capturer unseen when we moved, 43 before ply 30); losses with the queen lost: 92 of 155.
+Queen lost for less: 112 games (107 to a capturer unseen when we moved, 45 before ply 30); losses with the queen lost: 94 of 159.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
 Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -16,11 +16,11 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | Decent Chess Bot | 7-0-27 |
 | duck | 9-1-20 |
 | TA Baseline A | 28-0-0 |
-| Strongly Invisible | 5-1-18 |
+| Strongly Invisible | 5-1-20 |
+| Sausage | 21-0-3 |
+| Greek Gift | 3-0-21 |
 | Mist Opportunities | 6-0-18 |
 | Instructors | 5-0-17 |
-| Sausage | 19-0-3 |
-| Greek Gift | 3-0-19 |
 | TA Baseline S | 16-0-4 |
 | TA Baseline P | 14-0-0 |
 | Apricot Squad | 8-0-0 |
@@ -318,3 +318,9 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-12 10:21 | drab1oq7 | W | Instructors | 59 | loss | ply 44 by r unseen | 88 s | 5-25 |
 | 2026-10-12 10:21 | zy6c6gq1 | W | Sausage | 60 | win |  | 83 s | 15-6 |
 | 2026-10-12 10:23 | udvd9eq7 | B | Instructors | 75 | win |  | 68 s | 19-6 |
+| 2026-10-12 10:31 | 3lp3wa9j | W | Strongly Invisible | 71 | loss |  | 77 s | 12-25 |
+| 2026-10-12 10:32 | ujisnjgz | B | Strongly Invisible | 76 | loss | ply 27 by r unseen | 59 s | 4-16 |
+| 2026-10-12 10:36 | rjyceafj | W | Sausage | 28 | win |  | 127 s | 31-25 |
+| 2026-10-12 10:37 | to72mkd0 | B | Sausage | 31 | win |  | 124 s | 30-23 |
+| 2026-10-12 10:40 | q8ufxn7r | W | Greek Gift | 65 | loss | ply 18 by n unseen | 78 s | 6-13 |
+| 2026-10-12 10:40 | 1ega5r3i | B | Greek Gift | 66 | loss |  | 82 s | 3-13 |
