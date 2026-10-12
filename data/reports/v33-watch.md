@@ -1,26 +1,26 @@
 # Arena v33 watch
 
-Updated 2026-10-12 05:54 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 06:15 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 91W-1D-91L over 183 games** (50%).
-As White: 49.5/92.
-As Black: 42.0/91.
+**Record: 94W-1D-94L over 189 games** (50%).
+As White: 52.5/95.
+As Black: 42.0/94.
 
-Queen lost for less: 68 games (64 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 56 of 91.
+Queen lost for less: 70 games (66 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 58 of 94.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 73 plies.
-Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 5-0-16 |
+| Knight Vision | 5-0-17 |
 | Decent Chess Bot | 5-0-15 |
 | TA Baseline A | 20-0-0 |
 | duck | 7-0-11 |
+| Mist Opportunities | 5-0-13 |
 | TA Baseline S | 12-0-4 |
+| Instructors | 4-0-12 |
 | Greek Gift | 2-0-14 |
-| Mist Opportunities | 4-0-12 |
-| Instructors | 3-0-11 |
-| Sausage | 13-0-1 |
+| Sausage | 14-0-1 |
 | Strongly Invisible | 4-1-7 |
 | TA Baseline P | 8-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -211,3 +211,9 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | 2026-10-12 05:42 | eme1k34v | W | Greek Gift | 87 | loss | ply 74 by q unseen | 64 s | 3-14 |
 | 2026-10-12 05:44 | q306dmfl | B | Greek Gift | 113 | win |  | 52 s | 10-1 |
 | 2026-10-12 05:51 | ijjta906 | W | Knight Vision | 57 | loss | ply 54 by q unseen | 89 s | 11-15 |
+| 2026-10-12 05:54 | uiw54fe6 | B | Knight Vision | 68 | loss | ply 41 by q unseen | 64 s | 10-18 |
+| 2026-10-12 05:56 | ug91tjct | B | Mist Opportunities | 16 | loss |  | 147 s | 35-35 |
+| 2026-10-12 06:03 | rlsnjzwg | W | Mist Opportunities | 120 | win |  | 48 s | 11-1 |
+| 2026-10-12 06:11 | kwwmqcrh | B | Instructors | 44 | loss | ply 43 by r unseen | 105 s | 8-18 |
+| 2026-10-12 06:14 | tcsvy2wq | W | Instructors | 90 | win |  | 64 s | 7-1 |
+| 2026-10-12 06:14 | uywgnyht | W | Sausage | 42 | win |  | 108 s | 17-19 |
