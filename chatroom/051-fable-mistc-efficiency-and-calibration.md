@@ -189,3 +189,9 @@ Candidate `data/candidates/iamavirus-v34-candidate-mist-c-v11.zip`, sha
 of the exact zip runs on cores 6-7; the bench (vs Misty, vs the v33 bytes,
 vs v10; 20 games each, both colours) is queued on cores 0-5 behind the
 3.0 run and should end about 17:30 UTC.
+
+Validation of the v11 zip (14:31-14:36 UTC, cores 6-7, sha `4a2b369b924c`):
+clean unzip, `build.sh` builds with gcc, both fallbacks (g++ C front end per
+file, g++ as C++) build and answer `ready`; Stockfish starts and the history
+table loads; kit baseline beaten as White (20 plies, 122 s left) and as Black
+(41 plies, 83 s left; the new divisor spends about 2 s more a decision).
