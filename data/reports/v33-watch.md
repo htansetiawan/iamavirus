@@ -1,26 +1,26 @@
 # Arena v33 watch
 
-Updated 2026-10-12 00:42 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 01:03 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 25W-0D-25L over 50 games** (50%).
-As White: 14.0/25.
-As Black: 11.0/25.
+**Record: 34W-0D-30L over 64 games** (53%).
+As White: 20.0/32.
+As Black: 14.0/32.
 
-Queen lost for less: 18 games (17 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 15 of 25.
+Queen lost for less: 22 games (21 to a capturer unseen when we moved, 9 before ply 30); losses with the queen lost: 18 of 30.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 65 plies.
 Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| duck | 4-0-6 |
 | TA Baseline S | 7-0-1 |
+| Decent Chess Bot | 3-0-5 |
+| Sausage | 7-0-1 |
 | Strongly Invisible | 1-0-5 |
-| Decent Chess Bot | 2-0-4 |
-| duck | 1-0-5 |
 | Apricot Squad | 4-0-0 |
+| TA Baseline P | 4-0-0 |
 | Instructors | 0-0-4 |
-| Sausage | 4-0-0 |
-| TA Baseline P | 2-0-0 |
-| Knight Vision | 0-0-2 |
+| Knight Vision | 0-0-4 |
 | baseline.py | 2-0-0 |
 | Greek Gift | 0-0-2 |
 | TA Baseline A | 2-0-0 |
@@ -78,3 +78,17 @@ Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate re
 | 2026-10-12 00:35 | emqgkxo7 | W | TA Baseline S | 88 | win |  | 66 s | 19-2 |
 | 2026-10-12 00:40 | r2zfvdjk | W | Apricot Squad | 52 | win |  | 91 s | 34-13 |
 | 2026-10-12 00:41 | mdyx2liq | B | Apricot Squad | 65 | win |  | 71 s | 32-19 |
+| 2026-10-12 00:44 | drnnxb3e | W | Decent Chess Bot | 86 | win |  | 66 s | 9-10 |
+| 2026-10-12 00:46 | seuv58ii | B | Decent Chess Bot | 106 | loss | ply 59 by r unseen | 56 s | 1-11 |
+| 2026-10-12 00:47 | dwuw52gb | W | Sausage | 20 | win |  | 140 s | 34-25 |
+| 2026-10-12 00:47 | wa25msue | W | Sausage | 48 | win |  | 101 s | 12-10 |
+| 2026-10-12 00:48 | 6512mp9z | B | Sausage | 67 | win |  | 80 s | 15-5 |
+| 2026-10-12 00:50 | 77559i4m | B | duck | 38 | loss |  | 112 s | 22-18 |
+| 2026-10-12 00:50 | sc7cxo6g | B | Sausage | 86 | loss |  | 61 s | 1-15 |
+| 2026-10-12 00:50 | vf7pjwhn | W | duck | 40 | win |  | 110 s | 27-17 |
+| 2026-10-12 00:52 | ttmkr4fw | B | Knight Vision | 46 | loss | ply 39 by q unseen | 103 s | 6-22 |
+| 2026-10-12 00:54 | seshvl5t | W | TA Baseline P | 42 | win | ply 10 by n unseen | 108 s | 10-27 |
+| 2026-10-12 00:54 | loxmbr7k | W | Knight Vision | 77 | loss | ply 34 by q unseen | 63 s | 3-19 |
+| 2026-10-12 00:54 | boptjnu3 | B | TA Baseline P | 65 | win |  | 82 s | 9-6 |
+| 2026-10-12 01:02 | q9q9m0xi | B | duck | 105 | win |  | 56 s | 15-3 |
+| 2026-10-12 01:02 | feab7fld | W | duck | 96 | win |  | 59 s | 10-2 |
