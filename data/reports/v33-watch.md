@@ -1,30 +1,30 @@
 # Arena v33 watch
 
-Updated 2026-10-12 01:03 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 01:23 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 34W-0D-30L over 64 games** (53%).
-As White: 20.0/32.
-As Black: 14.0/32.
+**Record: 37W-1D-32L over 70 games** (54%).
+As White: 22.5/35.
+As Black: 15.0/35.
 
-Queen lost for less: 22 games (21 to a capturer unseen when we moved, 9 before ply 30); losses with the queen lost: 18 of 30.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 65 plies.
-Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 24 games (23 to a capturer unseen when we moved, 11 before ply 30); losses with the queen lost: 19 of 32.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 67 plies.
+Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 4-0-6 |
+| Strongly Invisible | 1-1-6 |
 | TA Baseline S | 7-0-1 |
 | Decent Chess Bot | 3-0-5 |
 | Sausage | 7-0-1 |
-| Strongly Invisible | 1-0-5 |
 | Apricot Squad | 4-0-0 |
 | TA Baseline P | 4-0-0 |
 | Instructors | 0-0-4 |
 | Knight Vision | 0-0-4 |
+| TA Baseline A | 4-0-0 |
+| Mist Opportunities | 1-0-3 |
 | baseline.py | 2-0-0 |
 | Greek Gift | 0-0-2 |
-| TA Baseline A | 2-0-0 |
-| Mist Opportunities | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -92,3 +92,9 @@ Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate re
 | 2026-10-12 00:54 | boptjnu3 | B | TA Baseline P | 65 | win |  | 82 s | 9-6 |
 | 2026-10-12 01:02 | q9q9m0xi | B | duck | 105 | win |  | 56 s | 15-3 |
 | 2026-10-12 01:02 | feab7fld | W | duck | 96 | win |  | 59 s | 10-2 |
+| 2026-10-12 01:07 | jij8n2nr | B | Mist Opportunities | 24 | loss | ply 11 by n unseen | 134 s | 22-35 |
+| 2026-10-12 01:10 | aextvnui | W | Strongly Invisible | 105 | draw |  | 53 s | 14-14 |
+| 2026-10-12 01:10 | 3oeaj26i | B | Strongly Invisible | 84 | loss |  | 57 s | 2-16 |
+| 2026-10-12 01:14 | gk52a2hi | W | Mist Opportunities | 124 | win | ply 20 by p unseen | 27 s | 9-15 |
+| 2026-10-12 01:17 | pu3fqyu4 | B | TA Baseline A | 57 | win |  | 91 s | 18-4 |
+| 2026-10-12 01:18 | lc58h7m0 | W | TA Baseline A | 76 | win |  | 74 s | 18-12 |
