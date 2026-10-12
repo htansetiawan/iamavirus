@@ -227,3 +227,12 @@ arrays, then the suite again (check+fatal, material) before any bench.
 In parallel, cores 0-3 bench the divisor-only variant (the v11 zip with
 `MIST_MODEL_TEMP=1.0`, which is v10 + divisor 20) vs v10 and vs Misty, 20
 games each, as the fallback candidate.
+
+**Split weights (mist-c working tree, 16:50 UTC):** the stored weights are
+the fitted probabilities again (v10's belief, the king guard and the truth
+diagnostics read them); the search's sampled worlds and the thinning of P
+draw by weight^temperature. Replaying both queen-check decisions at
+temperature 2.0: the guard narrows the root to 8 and 6 moves and the block
+is played on every seed. The suite re-measurement for the split at 2.0
+(check+fatal, then material; cores 4-7) runs until about 18:10 UTC; it
+goes into a candidate only if the gain holds.
