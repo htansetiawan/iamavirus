@@ -1,20 +1,20 @@
 # Arena v33 watch
 
-Updated 2026-10-12 00:01 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 00:18 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 15W-0D-21L over 36 games** (42%).
-As White: 8.0/18.
-As Black: 7.0/18.
+**Record: 19W-0D-21L over 40 games** (48%).
+As White: 10.0/20.
+As Black: 9.0/20.
 
-Queen lost for less: 14 games (13 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 12 of 21.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 65 plies.
+Queen lost for less: 15 games (14 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 12 of 21.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 67 plies.
 Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Strongly Invisible | 1-0-5 |
+| TA Baseline S | 6-0-0 |
 | Decent Chess Bot | 2-0-4 |
-| TA Baseline S | 4-0-0 |
 | Instructors | 0-0-4 |
 | duck | 0-0-4 |
 | Apricot Squad | 2-0-0 |
@@ -23,6 +23,7 @@ Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate re
 | Knight Vision | 0-0-2 |
 | baseline.py | 2-0-0 |
 | Greek Gift | 0-0-2 |
+| TA Baseline A | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -62,3 +63,7 @@ Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate re
 | 2026-10-11 23:53 | wud2rt69 | W | Greek Gift | 89 | loss |  | 53 s | 2-21 |
 | 2026-10-11 23:56 | zjg773yb | B | Strongly Invisible | 68 | loss | ply 61 by q unseen | 79 s | 5-16 |
 | 2026-10-11 23:59 | zmxmqg4x | W | Strongly Invisible | 97 | loss |  | 59 s | 3-4 |
+| 2026-10-12 00:03 | g9hvj6dz | B | TA Baseline S | 55 | win |  | 92 s | 25-24 |
+| 2026-10-12 00:04 | 036rpfyx | W | TA Baseline S | 56 | win |  | 92 s | 15-16 |
+| 2026-10-12 00:10 | g7fyes4k | W | TA Baseline A | 70 | win |  | 77 s | 18-12 |
+| 2026-10-12 00:16 | al49lzoj | B | TA Baseline A | 177 | win | ply 61 by b unseen | 32 s | 6-1 |

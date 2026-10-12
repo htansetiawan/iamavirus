@@ -1,21 +1,21 @@
 # Against the top six
 
-Updated 2026-10-12 00:01 UTC; leaderboard fetched 2026-10-12T00:01. Active version: v33. Measurement only.
+Updated 2026-10-12 00:18 UTC; leaderboard fetched 2026-10-12T00:17. Active version: v33. Measurement only.
 
 ## Ladder
 
 | team | rating | gap to us |
 | --- | --- | --- |
-| Greek Gift | 2161 | +404 |
-| Knight Vision | 2100 | +342 |
-| Decent Chess Bot | 2040 | +283 |
-| Strongly Invisible | 2070 | +313 |
-| **duck** | 1975 | +218 |
-| **Instructors** | 1936 | +178 |
-| TA Baseline S | 1633 | -124 |
-| **IAmAVirus** | 1757 |  |
-| TA Baseline A | 1524 | -233 |
-| TA Baseline P | 1423 | -334 |
+| Greek Gift | 2165 | +399 |
+| Knight Vision | 2098 | +333 |
+| Decent Chess Bot | 2047 | +281 |
+| Strongly Invisible | 2057 | +292 |
+| **duck** | 1980 | +214 |
+| **Instructors** | 1930 | +164 |
+| TA Baseline S | 1630 | -136 |
+| **IAmAVirus** | 1766 |  |
+| TA Baseline A | 1524 | -241 |
+| TA Baseline P | 1420 | -346 |
 
 ## Record by version (W-D-L)
 
@@ -28,8 +28,8 @@ Updated 2026-10-12 00:01 UTC; leaderboard fetched 2026-10-12T00:01. Active versi
 | **duck** | 0-0-4 | 0-0-4 | 9-5-40 | 1-0-3 |  |  |
 | **Instructors** | 0-0-4 | 2-0-4 | 10-3-35 | 1-0-1 |  | 0-0-2 |
 | TA Baseline P | 2-0-0 |  | 50-2-2 | 2-0-0 | 1-0-1 |  |
-| TA Baseline A |  | 4-0-0 | 50-10-6 | 3-0-1 | 1-0-1 | 2-1-1 |
-| TA Baseline S | 4-0-0 | 3-0-3 | 27-5-18 | 4-0-0 |  | 2-0-2 |
+| TA Baseline A | 2-0-0 | 4-0-0 | 50-10-6 | 3-0-1 | 1-0-1 | 2-1-1 |
+| TA Baseline S | 6-0-0 | 3-0-3 | 27-5-18 | 4-0-0 |  | 2-0-2 |
 
 ## Skill gaps (rates per 100 moves unless noted)
 
@@ -37,23 +37,23 @@ Active version v33. "them" is the opponent in those games; "top six among themse
 
 | skill | measure | us vs duck + Instructors | them | us vs other four | them | us vs TA baselines (contrast) | them | top six among themselves |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Information | squares we see (mean) | 29.8 | 35.5 | 32.3 | 36.4 | 34.3 | 29.1 | 32.7 |
-|  | vision-gaining moves | 20.3 | 23.3 | 19.3 | 23.0 | 22.7 | 19.6 | 19.1 |
-| Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.43 | 0.45 | 0.45 | 0.39 | 0.41 | 0.29 | 0.40 |
-|  | captures from unseen squares | 8.8 ⚠ | 12.6 | 10.1 | 12.1 | 11.6 | 7.1 | 8.3 |
-|  | captures after a route the other side never saw | 13.0 ⚠ | 19.6 | 16.6 ⚠ | 21.7 | 18.2 | 16.3 | 15.0 |
-|  | long slider strikes | 4.5 | 4.9 | 4.8 ⚠ | 6.4 | 4.4 | 4.9 | 4.4 |
-| King pressure | moves that attack the enemy king | 3.3 | 4.0 | 4.4 | 5.0 | 6.6 | 2.2 | 3.6 |
-|  | ...with an attacker the king's side cannot see | 1.5 | 1.8 | 1.8 ⚠ | 2.9 | 2.8 | 0.0 | 1.6 |
-|  | sacrifices that lead to a king capture | 0.0 | 0.6 | 0.4 | 0.4 | 1.1 | 0.0 | 0.2 |
-| Queen activity | queen moves into the enemy half | 1.5 | 4.6 | 3.2 | 4.5 | 5.5 | 1.6 | 3.1 |
-| Discipline (not giving things away) | material given (3+ net over two plies) | 5.5 ⚠ | 0.9 | 6.9 ⚠ | 1.6 | 1.1 | 3.3 | 1.7 |
-|  | pieces walked onto squares hit by unseen attackers | 3.6 ⚠ | 1.8 | 4.1 ⚠ | 2.0 | 0.6 | 1.1 | 2.9 |
-|  | queen left attacked by an unseen piece | 0.9 | 0.0 | 0.5 | 0.0 | 0.6 | 0.0 | 0.2 |
-|  | bare back rank with enemy heavy pieces alive | 13.3 ⚠ | 4.0 | 11.3 ⚠ | 2.3 | 3.3 | 7.1 | 5.3 |
-| King handling | king moves | 22.4 | 8.9 | 13.8 | 8.7 | 9.4 | 26.1 | 15.8 |
-|  | king moves beyond the second rank | 1.8 | 1.8 | 2.3 | 1.4 | 3.3 | 3.8 | 5.0 |
-|  | castling | 2.1 | 2.1 | 2.8 | 2.1 | 1.7 | 1.6 | 1.8 |
+| Information | squares we see (mean) | 29.8 | 35.5 | 32.3 | 36.4 | 33.9 | 28.8 | 32.7 |
+|  | vision-gaining moves | 20.3 | 23.3 | 19.3 | 23.0 | 22.3 | 16.8 | 19.1 |
+| Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.43 | 0.45 | 0.45 | 0.39 | 0.47 | 0.35 | 0.40 |
+|  | captures from unseen squares | 8.8 ⚠ | 12.6 | 10.1 | 12.1 | 11.1 | 8.0 | 8.3 |
+|  | captures after a route the other side never saw | 13.0 ⚠ | 19.6 | 16.6 ⚠ | 21.7 | 17.5 | 15.7 | 15.0 |
+|  | long slider strikes | 4.5 | 4.9 | 4.8 ⚠ | 6.4 | 4.2 | 4.7 | 4.4 |
+| King pressure | moves that attack the enemy king | 3.3 | 4.0 | 4.4 | 5.0 | 5.0 | 3.0 | 3.6 |
+|  | ...with an attacker the king's side cannot see | 1.5 | 1.8 | 1.8 ⚠ | 2.9 | 2.5 | 0.5 | 1.6 |
+|  | sacrifices that lead to a king capture | 0.0 | 0.6 | 0.4 | 0.4 | 0.8 | 0.0 | 0.2 |
+| Queen activity | queen moves into the enemy half | 1.5 | 4.6 | 3.2 | 4.5 | 3.9 | 1.4 | 3.1 |
+| Discipline (not giving things away) | material given (3+ net over two plies) | 5.5 ⚠ | 0.9 | 6.9 ⚠ | 1.6 | 1.1 | 2.5 | 1.7 |
+|  | pieces walked onto squares hit by unseen attackers | 3.6 ⚠ | 1.8 | 4.1 ⚠ | 2.0 | 1.1 | 2.7 | 2.9 |
+|  | queen left attacked by an unseen piece | 0.9 | 0.0 | 0.5 | 0.0 | 0.3 | 0.0 | 0.2 |
+|  | bare back rank with enemy heavy pieces alive | 13.3 ⚠ | 4.0 | 11.3 ⚠ | 2.3 | 2.2 | 5.2 | 5.3 |
+| King handling | king moves | 22.4 | 8.9 | 13.8 | 8.7 | 9.2 | 28.0 | 15.8 |
+|  | king moves beyond the second rank | 1.8 | 1.8 | 2.3 | 1.4 | 3.1 | 8.5 | 5.0 |
+|  | castling | 2.1 | 2.1 | 2.8 | 2.1 | 1.7 | 1.9 | 1.8 |
 
 ⚠ marks a gap of 20% or more in the direction that hurts us.
 
