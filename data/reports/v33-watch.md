@@ -1,12 +1,12 @@
 # Arena v33 watch
 
-Updated 2026-10-12 02:25 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 02:46 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 47W-1D-49L over 97 games** (49%).
-As White: 27.5/49.
-As Black: 20.0/48.
+**Record: 49W-1D-53L over 103 games** (48%).
+As White: 29.5/52.
+As Black: 20.0/51.
 
-Queen lost for less: 34 games (32 to a capturer unseen when we moved, 15 before ply 30); losses with the queen lost: 28 of 49.
+Queen lost for less: 37 games (35 to a capturer unseen when we moved, 15 before ply 30); losses with the queen lost: 30 of 53.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 71 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -15,15 +15,15 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | duck | 6-0-10 |
 | Decent Chess Bot | 3-0-9 |
 | Strongly Invisible | 3-1-6 |
+| Mist Opportunities | 3-0-6 |
 | TA Baseline S | 7-0-1 |
 | Sausage | 7-0-1 |
 | Knight Vision | 1-0-7 |
+| Greek Gift | 0-0-8 |
 | TA Baseline A | 8-0-0 |
-| Greek Gift | 0-0-7 |
 | Instructors | 1-0-5 |
 | Apricot Squad | 4-0-0 |
 | TA Baseline P | 4-0-0 |
-| Mist Opportunities | 1-0-3 |
 | baseline.py | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -125,3 +125,9 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-12 02:12 | d38nkxlq | W | TA Baseline A | 56 | win |  | 89 s | 19-6 |
 | 2026-10-12 02:15 | smnxlnb2 | B | TA Baseline A | 87 | win |  | 61 s | 10-8 |
 | 2026-10-12 02:23 | dx6bixoc | W | Greek Gift | 53 | loss | ply 42 by k unseen | 93 s | 5-21 |
+| 2026-10-12 02:25 | m4thpw6s | B | Greek Gift | 74 | loss |  | 54 s | 9-18 |
+| 2026-10-12 02:29 | 6a89ddba | B | Mist Opportunities | 56 | loss | ply 39 by n unseen | 91 s | 8-21 |
+| 2026-10-12 02:31 | lksg677j | W | Mist Opportunities | 94 | win | ply 54 by r unseen | 59 s | 9-15 |
+| 2026-10-12 02:37 | dfsfn43l | B | Mist Opportunities | 72 | loss | ply 39 by p unseen | 75 s | 8-16 |
+| 2026-10-12 02:38 | v4j7pf0h | W | Mist Opportunities | 88 | win |  | 64 s | 14-8 |
+| 2026-10-12 02:43 | b7c4gp08 | W | Mist Opportunities | 73 | loss |  | 61 s | 22-26 |
