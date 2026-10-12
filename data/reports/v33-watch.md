@@ -1,27 +1,27 @@
 # Arena v33 watch
 
-Updated 2026-10-12 03:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 03:47 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 60W-1D-58L over 119 games** (51%).
-As White: 36.5/60.
-As Black: 24.0/59.
+**Record: 64W-1D-66L over 131 games** (49%).
+As White: 37.5/65.
+As Black: 27.0/66.
 
-Queen lost for less: 43 games (41 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 34 of 58.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 72 plies.
+Queen lost for less: 49 games (47 to a capturer unseen when we moved, 22 before ply 30); losses with the queen lost: 40 of 66.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
 Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Decent Chess Bot | 5-0-11 |
+| Decent Chess Bot | 5-0-15 |
 | duck | 6-0-10 |
-| TA Baseline S | 10-0-2 |
-| TA Baseline A | 11-0-0 |
+| TA Baseline S | 10-0-4 |
+| TA Baseline A | 14-0-0 |
 | Strongly Invisible | 3-1-6 |
+| Knight Vision | 1-0-9 |
 | Greek Gift | 1-0-9 |
 | Mist Opportunities | 4-0-6 |
+| Sausage | 8-0-1 |
 | Instructors | 2-0-6 |
-| Sausage | 7-0-1 |
-| Knight Vision | 1-0-7 |
 | Apricot Squad | 4-0-0 |
 | TA Baseline P | 4-0-0 |
 | baseline.py | 2-0-0 |
@@ -147,3 +147,15 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-12 03:21 | 9fcf4oeu | W | TA Baseline A | 14 | win |  | 151 s | 36-38 |
 | 2026-10-12 03:22 | d50u6vot | B | TA Baseline A | 61 | win |  | 87 s | 22-14 |
 | 2026-10-12 03:23 | 2jkl529u | W | TA Baseline A | 86 | win | ply 66 by r unseen | 61 s | 9-7 |
+| 2026-10-12 03:27 | co7rpplc | B | TA Baseline A | 89 | win |  | 47 s | 16-5 |
+| 2026-10-12 03:27 | 6y8u7oji | W | TA Baseline A | 58 | win |  | 89 s | 21-9 |
+| 2026-10-12 03:28 | s9o4az87 | B | TA Baseline A | 77 | win |  | 66 s | 20-3 |
+| 2026-10-12 03:30 | wgxt7rzl | B | Knight Vision | 86 | loss | ply 21 by n unseen | 59 s | 1-19 |
+| 2026-10-12 03:31 | kgjm9kao | W | Knight Vision | 107 | loss |  | 52 s | 5-2 |
+| 2026-10-12 03:31 | 1bfphfl8 | B | Decent Chess Bot | 62 | loss | ply 43 by r unseen | 82 s | 4-11 |
+| 2026-10-12 03:33 | hqgwr3ye | W | Decent Chess Bot | 97 | loss | ply 26 by r unseen | 49 s | 0-21 |
+| 2026-10-12 03:37 | 31xs39mg | B | Decent Chess Bot | 112 | loss | ply 79 by r unseen | 39 s | 4-17 |
+| 2026-10-12 03:40 | 39lh8r1j | W | TA Baseline S | 51 | loss | ply 32 by n unseen | 96 s | 3-22 |
+| 2026-10-12 03:40 | wr440w97 | W | Decent Chess Bot | 189 | loss |  | 30 s | 10-6 |
+| 2026-10-12 03:41 | 9fzs53ln | B | TA Baseline S | 62 | loss | ply 19 by b unseen | 86 s | 8-18 |
+| 2026-10-12 03:45 | km45bbn7 | B | Sausage | 43 | win |  | 106 s | 25-21 |
