@@ -75,8 +75,23 @@ The gain so far is against the baselines, not the teams above us.
 1. Calibration sweep (7 variants, ~08:15 UTC).
 2. Time experiment: 1 s and 6 s vs the 2.5 s baseline (~09:15 UTC).
 3. v34 candidate bench: `data/candidates/iamavirus-v34-candidate-mist-c-v10.zip`
-   (sha `916c34a70b26`; mist-c d8fcac8 = v9 + history prior + threaded belief +
+   (sha `6c4c0235e4b6` (repackaged with the build.sh fallback fix); mist-c d8fcac8 = v9 + history prior + threaded belief +
    one-move shortcut) vs Misty (20, seed 110000), vs the v33 bytes (20),
    and the same with `MIST_ASYNC=1` vs Misty (20, same seeds). Validation of
    the exact zip (clean build, g++ fallbacks, kit baseline both colours) is
    running on cores 6-7.
+
+## Validation of the candidate zip (06:40-06:47 UTC, cores 6-7)
+
+sha `6c4c0235e4b6`: clean unzip, `build.sh` builds with gcc; the bot answers
+`ready`, Stockfish starts, the history table loads (2.4 MB, `data/history.bin`);
+both fallbacks (g++ C front end per file, g++ as C++) build and answer; kit
+baseline beaten as White (76 plies) and as Black (75 plies), 63 s and 75 s
+left on our clock. g++ 12 applies `-x c` to the first source only, so the old
+C-mode fallback had never built (fixed in mist-c b6d53e0).
+
+## Calibration sweep, first result
+
+Model temperature 0.5 (flatter weights): truth rank median 54 (1.0: 23),
+top-10 37% (40%), fatal 0.316 (0.303), cp loss 101 (89). Flatter is worse
+on every measure.
