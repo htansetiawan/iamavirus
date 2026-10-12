@@ -80,6 +80,12 @@ def score_move(board_text: str, prefix: list[str], move: str, side: int) -> dict
     board = position_at(board_text, side, prefix)
     if move not in board.legal_moves():
         return {"legal": False}
+    # what the move itself takes: a trade is not a giveaway
+    target = rules.square_index(move[2:4])
+    taken_c = board_text[target]
+    taken = VALUE[chess.Piece.from_symbol(taken_c).piece_type] if taken_c != "-" and (taken_c.islower() == (side == 0)) else 0
+    if not taken and board_text[rules.square_index(move[:2])] in "Pp" and move[0] != move[2] and taken_c == "-":
+        taken = 1   # en passant
     board.push(move)
     enemy = 1 - side
     after = chess.Board(board_fen(board.board_string(), enemy == 0))
@@ -108,9 +114,10 @@ def score_move(board_text: str, prefix: list[str], move: str, side: int) -> dict
         defended = bool(after.attackers(us_col, sq))
         net = VALUE[piece.piece_type] - (cheapest if defended else 0)
         best = max(best, net)
-        if piece.piece_type == chess.QUEEN and net >= 5:
+        if piece.piece_type == chess.QUEEN and net - taken >= 5:
             out["queen_en_prise"] = True
-    out["giveaway"] = best >= 3
+    out["giveaway"] = best - taken >= 3
+    out["net_loss"] = best - taken
     return out
 
 
@@ -199,7 +206,7 @@ def run_seat(line: str, args, cores: str) -> dict:
         decision_lines = [l for l in out.stderr.splitlines() if l.startswith("mist: n=")]
         if decision_lines:
             fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
-            record["engine"] = {k2: fields.get(k2) for k2 in ("|P|", "samples", "moves", "nodes", "iters", "p", "v", "clock", "sf")}
+            record["engine"] = {k2: fields.get(k2) for k2 in ("|P|", "samples", "moves", "nodes", "iters", "p", "v", "clock", "sf", "mr")}
             record["guard"] = sum(1 for l in out.stderr.splitlines() if l.startswith("mist: king guard"))
     else:
         decision_lines = [l for l in out.stderr.splitlines() if " n=" in l and " mode=" in l]
