@@ -200,3 +200,30 @@ Temperature 3.0 on the material kind (14:30-14:54 UTC): cp loss 138 (as 2.0)
 but 8 fatal moves in 891 (1.0: 1, 2.0: 4; paired vs 2.0 fixed 1 / broke 5).
 The sharper the belief, the more one-ply material blunders: 2.0 stands.
 v11 bench started 14:54 UTC.
+
+## v11 bench stopped at 15:50 UTC: the sharper belief switches the king guard off in the opening
+
+After 10 / 9 / 8 games: 6-0-4 vs Misty, 3-0-6 vs the v33 bytes, **1-0-7 vs
+v10**, with two losses as White in 7 and 9 plies, both the hidden queen
+check on a5 after 1.d4 (`1.d4 c5 2.Nf3 Nf6 3.e4 Qa5+ 4.Bf4??` and
+`1.d4 d5 2.Bf4 c6 3.a4 Qb6 4.e3 Qa5+ 5.Bd3??`), the family the history
+prior had fixed. Replaying the decisions: at temperature 1.0 the king
+guard leaves 8 (6) root moves, all answers to the check, on every seed; at
+2.0 the check world's weight falls under the guard's 2% threshold, all 37
+(39) moves stay in and the search plays a developing move on 1 of 4 (2 of
+3) seeds. Mechanism: the temperature was applied to the whole history
+mixture, so a check the table had seen at 3% went to 0.1%; and where the
+table has no entry the squared model probability does the same.
+
+Fix 1 (mist-c working tree): the temperature is applied to the model term
+only, renormalised, inside the history mixture. It restores the guard in
+the first game (8 moves) but not in the second (the table has no entry for
+that parent; the guard fires only at 1.0). The next step is to keep two
+weights per position: the fitted model's for the king guard's risk (the
+calibration v10 had) and the tempered one for the search's sampled worlds
+(where the suite gain came from). That is a belief.c change of the weight
+arrays, then the suite again (check+fatal, material) before any bench.
+
+In parallel, cores 0-3 bench the divisor-only variant (the v11 zip with
+`MIST_MODEL_TEMP=1.0`, which is v10 + divisor 20) vs v10 and vs Misty, 20
+games each, as the fallback candidate.
