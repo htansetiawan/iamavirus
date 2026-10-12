@@ -1,23 +1,23 @@
 # Arena v33 watch
 
-Updated 2026-10-12 12:10 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 12:31 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 160W-2D-178L over 340 games** (47%).
-As White: 87.0/170.
-As Black: 74.0/170.
+**Record: 160W-2D-184L over 346 games** (47%).
+As White: 87.0/173.
+As Black: 74.0/173.
 
-Queen lost for less: 123 games (116 to a capturer unseen when we moved, 50 before ply 30); losses with the queen lost: 103 of 178.
+Queen lost for less: 129 games (122 to a capturer unseen when we moved, 51 before ply 30); losses with the queen lost: 109 of 184.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 11-0-33 |
-| Decent Chess Bot | 7-0-27 |
+| Decent Chess Bot | 7-0-31 |
 | Mist Opportunities | 8-0-26 |
 | TA Baseline A | 32-0-0 |
+| Strongly Invisible | 6-1-23 |
 | duck | 9-1-20 |
-| Strongly Invisible | 6-1-21 |
 | Instructors | 8-0-20 |
 | TA Baseline S | 21-0-5 |
 | Greek Gift | 4-0-22 |
@@ -368,3 +368,9 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | 2026-10-12 12:06 | 2217pmw1 | W | Mist Opportunities | 120 | win |  | 48 s | 14-2 |
 | 2026-10-12 12:07 | wddhmeyw | B | Mist Opportunities | 66 | loss |  | 82 s | 3-15 |
 | 2026-10-12 12:09 | 3mm0id8m | W | Mist Opportunities | 85 | loss | ply 46 by r unseen | 66 s | 2-13 |
+| 2026-10-12 12:10 | r7u5dxxp | W | Decent Chess Bot | 63 | loss | ply 30 by p unseen | 83 s | 5-21 |
+| 2026-10-12 12:10 | 5dopvis9 | B | Decent Chess Bot | 74 | loss | ply 29 by q unseen | 69 s | 3-24 |
+| 2026-10-12 12:21 | po0rbuc3 | W | Decent Chess Bot | 53 | loss | ply 46 by q unseen | 87 s | 15-15 |
+| 2026-10-12 12:24 | yxmq44jr | B | Decent Chess Bot | 92 | loss | ply 57 by q unseen | 56 s | 4-14 |
+| 2026-10-12 12:29 | ht4gjxlz | B | Strongly Invisible | 100 | loss | ply 31 by q unseen | 37 s | 1-13 |
+| 2026-10-12 12:30 | c0qpaotw | W | Strongly Invisible | 101 | loss | ply 50 by r unseen | 37 s | 8-22 |
