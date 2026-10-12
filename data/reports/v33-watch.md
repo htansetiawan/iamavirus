@@ -1,28 +1,28 @@
 # Arena v33 watch
 
-Updated 2026-10-12 22:13 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 22:33 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 281W-7D-294L over 582 games** (49%).
-As White: 158.5/291.
-As Black: 126.0/291.
+**Record: 286W-7D-298L over 591 games** (49%).
+As White: 161.5/296.
+As Black: 128.0/295.
 
-Queen lost for less: 203 games (192 to a capturer unseen when we moved, 78 before ply 30); losses with the queen lost: 174 of 294.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 30 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 206 games (195 to a capturer unseen when we moved, 80 before ply 30); losses with the queen lost: 177 of 298.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 75 plies.
+Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 17-0-51 |
 | duck | 22-2-38 |
+| TA Baseline S | 47-1-12 |
 | Mist Opportunities | 15-1-44 |
-| TA Baseline S | 45-1-12 |
 | Strongly Invisible | 11-1-42 |
-| TA Baseline A | 48-0-0 |
+| TA Baseline A | 48-0-1 |
 | Decent Chess Bot | 8-1-37 |
-| Instructors | 14-0-30 |
+| Instructors | 15-0-31 |
+| TA Baseline P | 38-0-2 |
 | Greek Gift | 5-0-35 |
-| TA Baseline P | 36-0-2 |
-| Sausage | 30-1-3 |
+| Sausage | 30-1-5 |
 | Apricot Squad | 12-0-0 |
 | baseline.py | 12-0-0 |
 | Gravel Road | 6-0-0 |
@@ -611,3 +611,12 @@ Games as Black where White opened 1.c4: 30 (the book-trap family; the v15 gate r
 | 2026-10-12 22:07 | ldfipfrr | W | Mist Opportunities | 77 | loss | ply 46 by r unseen | 71 s | 6-21 |
 | 2026-10-12 22:08 | rz7936mk | W | duck | 75 | loss | ply 54 by n unseen | 72 s | 4-9 |
 | 2026-10-12 22:10 | k696y86a | B | duck | 106 | loss |  | 29 s | 3-15 |
+| 2026-10-12 22:13 | 7rgpn5oj | B | Sausage | 12 | loss |  | 155 s | 38-27 |
+| 2026-10-12 22:14 | dmtp0tzc | W | TA Baseline S | 62 | win |  | 86 s | 25-5 |
+| 2026-10-12 22:15 | s83s57cy | W | Sausage | 45 | loss | ply 20 by n unseen | 103 s | 8-28 |
+| 2026-10-12 22:16 | zs60ak39 | B | TA Baseline S | 97 | win |  | 61 s | 11-1 |
+| 2026-10-12 22:16 | rn1ked2d | W | Instructors | 52 | win |  | 96 s | 21-10 |
+| 2026-10-12 22:17 | 8yx2ilg5 | B | Instructors | 66 | loss | ply 39 by q unseen | 82 s | 3-31 |
+| 2026-10-12 22:24 | hvllm3zz | W | TA Baseline P | 32 | win |  | 121 s | 25-32 |
+| 2026-10-12 22:25 | hogunfvv | B | TA Baseline P | 69 | win |  | 78 s | 30-13 |
+| 2026-10-12 22:33 | 6sk45c9b | W | TA Baseline A | 63 | loss | ply 24 by b unseen | 78 s | 9-29 |
