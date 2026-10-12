@@ -1,27 +1,27 @@
 # Arena v33 watch
 
-Updated 2026-10-12 19:06 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 19:27 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 248W-4D-258L over 510 games** (49%).
-As White: 139.5/255.
-As Black: 110.5/255.
+**Record: 248W-4D-264L over 516 games** (48%).
+As White: 139.5/258.
+As Black: 110.5/258.
 
-Queen lost for less: 179 games (169 to a capturer unseen when we moved, 70 before ply 30); losses with the queen lost: 152 of 258.
+Queen lost for less: 183 games (173 to a capturer unseen when we moved, 72 before ply 30); losses with the queen lost: 156 of 264.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 16-0-42 |
+| Knight Vision | 16-0-44 |
 | Strongly Invisible | 11-1-42 |
-| Mist Opportunities | 13-0-39 |
+| Mist Opportunities | 13-0-41 |
 | duck | 18-1-31 |
 | TA Baseline S | 37-1-10 |
 | TA Baseline A | 42-0-0 |
 | Decent Chess Bot | 7-0-33 |
 | Instructors | 11-0-27 |
+| Greek Gift | 5-0-31 |
 | Sausage | 30-1-3 |
-| Greek Gift | 5-0-29 |
 | TA Baseline P | 30-0-2 |
 | Apricot Squad | 12-0-0 |
 | baseline.py | 10-0-0 |
@@ -539,3 +539,9 @@ Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate r
 | 2026-10-12 18:59 | parjia0e | W | Knight Vision | 134 | win | ply 98 by r unseen | 44 s | 12-1 |
 | 2026-10-12 18:59 | 6ebtxahn | B | Strongly Invisible | 102 | loss | ply 73 by q unseen | 56 s | 1-13 |
 | 2026-10-12 18:59 | 1xhmbnia | W | Mist Opportunities | 116 | win |  | 47 s | 10-3 |
+| 2026-10-12 19:08 | ycqlqmff | B | Mist Opportunities | 32 | loss | ply 11 by n unseen | 121 s | 23-33 |
+| 2026-10-12 19:10 | eqvtcrbm | W | Mist Opportunities | 51 | loss | ply 40 by q unseen | 90 s | 9-14 |
+| 2026-10-12 19:18 | tg0i23mi | B | Knight Vision | 48 | loss |  | 100 s | 16-16 |
+| 2026-10-12 19:19 | 0rl6ilsj | B | Greek Gift | 60 | loss | ply 29 by q unseen | 88 s | 9-12 |
+| 2026-10-12 19:20 | 1s2pkez5 | W | Greek Gift | 77 | loss | ply 40 by q unseen | 72 s | 3-14 |
+| 2026-10-12 19:24 | lfhv3eqq | W | Knight Vision | 135 | loss |  | 20 s | 0-23 |
