@@ -1,12 +1,12 @@
 # Arena v33 watch
 
-Updated 2026-10-12 20:08 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 20:29 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 252W-4D-272L over 528 games** (48%).
-As White: 142.5/264.
-As Black: 111.5/264.
+**Record: 259W-4D-273L over 536 games** (49%).
+As White: 146.5/268.
+As Black: 114.5/268.
 
-Queen lost for less: 189 games (179 to a capturer unseen when we moved, 75 before ply 30); losses with the queen lost: 161 of 272.
+Queen lost for less: 191 games (181 to a capturer unseen when we moved, 76 before ply 30); losses with the queen lost: 162 of 273.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -16,15 +16,15 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | Strongly Invisible | 11-1-42 |
 | Mist Opportunities | 13-0-41 |
 | TA Baseline S | 39-1-12 |
-| duck | 18-1-31 |
+| duck | 19-1-32 |
 | Decent Chess Bot | 7-0-35 |
 | Instructors | 13-0-29 |
 | TA Baseline A | 42-0-0 |
+| TA Baseline P | 34-0-2 |
 | Greek Gift | 5-0-31 |
 | Sausage | 30-1-3 |
-| TA Baseline P | 30-0-2 |
 | Apricot Squad | 12-0-0 |
-| baseline.py | 10-0-0 |
+| baseline.py | 12-0-0 |
 | Gravel Road | 6-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -557,3 +557,11 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | 2026-10-12 20:00 | my3ng763 | W | TA Baseline S | 80 | win |  | 71 s | 18-10 |
 | 2026-10-12 20:03 | iv8uvt6p | B | Instructors | 115 | win |  | 50 s | 7-1 |
 | 2026-10-12 20:04 | 3e7nbpqg | W | Instructors | 117 | loss |  | 44 s | 1-7 |
+| 2026-10-12 20:19 | ey3db868 | B | duck | 60 | loss | ply 17 by q unseen | 83 s | 6-28 |
+| 2026-10-12 20:21 | ghak3i11 | W | duck | 108 | win |  | 54 s | 14-1 |
+| 2026-10-12 20:23 | 7ag03g2t | W | TA Baseline P | 50 | win |  | 97 s | 15-7 |
+| 2026-10-12 20:23 | id4crnio | W | TA Baseline P | 18 | win |  | 144 s | 33-35 |
+| 2026-10-12 20:23 | lf212my2 | W | baseline.py | 12 | win |  | 155 s | 36-39 |
+| 2026-10-12 20:23 | nb832o4c | B | TA Baseline P | 39 | win | ply 37 by n unseen | 113 s | 21-19 |
+| 2026-10-12 20:24 | q08bic4a | B | baseline.py | 31 | win |  | 124 s | 24-19 |
+| 2026-10-12 20:25 | d776suze | B | TA Baseline P | 71 | win |  | 71 s | 15-6 |
