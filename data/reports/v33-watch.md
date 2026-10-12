@@ -1,25 +1,25 @@
 # Arena v33 watch
 
-Updated 2026-10-12 12:31 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 12:51 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 160W-2D-184L over 346 games** (47%).
-As White: 87.0/173.
-As Black: 74.0/173.
+**Record: 164W-2D-188L over 354 games** (47%).
+As White: 90.0/177.
+As Black: 75.0/177.
 
-Queen lost for less: 129 games (122 to a capturer unseen when we moved, 51 before ply 30); losses with the queen lost: 109 of 184.
+Queen lost for less: 131 games (124 to a capturer unseen when we moved, 51 before ply 30); losses with the queen lost: 111 of 188.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 11-0-33 |
+| Knight Vision | 11-0-35 |
 | Decent Chess Bot | 7-0-31 |
+| duck | 11-1-22 |
 | Mist Opportunities | 8-0-26 |
 | TA Baseline A | 32-0-0 |
 | Strongly Invisible | 6-1-23 |
-| duck | 9-1-20 |
+| TA Baseline S | 23-0-5 |
 | Instructors | 8-0-20 |
-| TA Baseline S | 21-0-5 |
 | Greek Gift | 4-0-22 |
 | Sausage | 21-0-3 |
 | TA Baseline P | 17-0-1 |
@@ -374,3 +374,11 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | 2026-10-12 12:24 | yxmq44jr | B | Decent Chess Bot | 92 | loss | ply 57 by q unseen | 56 s | 4-14 |
 | 2026-10-12 12:29 | ht4gjxlz | B | Strongly Invisible | 100 | loss | ply 31 by q unseen | 37 s | 1-13 |
 | 2026-10-12 12:30 | c0qpaotw | W | Strongly Invisible | 101 | loss | ply 50 by r unseen | 37 s | 8-22 |
+| 2026-10-12 12:33 | 02uidrp3 | B | duck | 60 | loss |  | 72 s | 6-21 |
+| 2026-10-12 12:34 | sxg91vwb | W | Knight Vision | 57 | loss | ply 32 by q unseen | 89 s | 4-23 |
+| 2026-10-12 12:34 | zjtrybuj | W | duck | 62 | win |  | 86 s | 16-7 |
+| 2026-10-12 12:37 | 997vnju1 | B | Knight Vision | 94 | loss |  | 41 s | 3-18 |
+| 2026-10-12 12:40 | xbxn7z2i | W | TA Baseline S | 42 | win |  | 108 s | 16-15 |
+| 2026-10-12 12:41 | lhgh3u5t | B | TA Baseline S | 57 | win |  | 92 s | 26-15 |
+| 2026-10-12 12:47 | znu8x87b | B | duck | 64 | loss | ply 53 by n unseen | 84 s | 7-11 |
+| 2026-10-12 12:51 | 3xmwlps6 | W | duck | 130 | win |  | 46 s | 10-0 |
