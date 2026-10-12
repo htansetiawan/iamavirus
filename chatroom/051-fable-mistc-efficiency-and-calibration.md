@@ -228,7 +228,7 @@ In parallel, cores 0-3 bench the divisor-only variant (the v11 zip with
 `MIST_MODEL_TEMP=1.0`, which is v10 + divisor 20) vs v10 and vs Misty, 20
 games each, as the fallback candidate.
 
-**Split weights (mist-c working tree, 16:50 UTC):** the stored weights are
+**Split weights (mist-c working tree, 15:50 UTC):** the stored weights are
 the fitted probabilities again (v10's belief, the king guard and the truth
 diagnostics read them); the search's sampled worlds and the thinning of P
 draw by weight^temperature. Replaying both queen-check decisions at
@@ -236,3 +236,22 @@ temperature 2.0: the guard narrows the root to 8 and 6 moves and the block
 is played on every seed. The suite re-measurement for the split at 2.0
 (check+fatal, then material; cores 4-7) runs until about 18:10 UTC; it
 goes into a candidate only if the gain holds.
+
+## The temperature gain was the guard (16:47 UTC)
+
+Split belief at 2.0 on check+fatal: 116/399, check 71/300, cp 90, i.e. the
+1.0 numbers (fixed 14 / broke 9 vs 1.0; vs the whole-belief 2.0: fixed 20 /
+broke 27). On the 16 check decisions that whole-belief 2.0 fixed, the root
+after the guard had 17-41 moves at 1.0 and the split, and 1-2 moves at 2.0:
+with weight^2 the risk is nearly binary, so the guard keeps only the moves
+safe in the dominant world. That is the gain, and the a5 loss is the same
+rule ignoring a 3% world. So the lever is the guard's weighting, not the
+search's worlds.
+
+**Combined guard (main.c, build/mist-v12):** king risk under both
+weightings on the same strided pass of P; a move is out when it is more
+than 2% above the safest under either; if that leaves nothing, the sharper
+rule alone. Both queen-check replays: 8 and 6 root moves, the block on
+every seed. Suite (check+fatal, then material) on cores 4-7 after the split
+material run, ~18:40 UTC. Fallback bench (v10 + divisor 20) at 17:00: 3-0-5
+vs v10, 5-0-2 vs Misty after 8 and 7 games.
