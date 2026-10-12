@@ -95,3 +95,26 @@ C-mode fallback had never built (fixed in mist-c b6d53e0).
 Model temperature 0.5 (flatter weights): truth rank median 54 (1.0: 23),
 top-10 37% (40%), fatal 0.316 (0.303), cp loss 101 (89). Flatter is worse
 on every measure.
+
+## Calibration sweep, full result (06:08-08:10 UTC, 487 check+fatal decisions, 2.5 s, paired)
+
+`MIST_MODEL_TEMP` multiplies the move model's log-likelihood: above 1 the
+belief weights are sharper. Paired against temperature 1.0 (the shipped
+default); "fixed / broke" counts fatal decisions that a safe move existed for.
+
+| variant | fatal, all (fixed / broke) | fatal, check kind (fixed / broke) | cp loss | truth rank median, check | truth top-10, check |
+|---|---|---|---|---|---|
+| temp 1.0 (default) | 121/399 | 73/300 | 89 | 23 | 40% |
+| temp 0.5 | 126 (24 / 29) | 83 (10 / 20) | 101 | 54 | 37% |
+| temp 0.7 | 119 (20 / 18) | 76 (9 / 12) | 98 | 40 | 39% |
+| **temp 1.5** | **112 (20 / 11)** | **63 (14 / 4)** | 90 | **20** | **43%** |
+| history n0 1 | 122 (6 / 7) | 74 (4 / 5) | 92 | 23 | 41% |
+| history n0 16 | 126 (6 / 11) | 79 (3 / 9) | 96 | 25 | 40% |
+| model off | 142 (23 / 44) | 92 (9 / 28) | 107 | 161 | 34% |
+
+The trend is monotone in temperature: sharper is better on the check kind
+(fixed 14, broke 4; fatal 73 -> 63), neutral on the fatal kind (6 / 7) and
+on cp loss. The history prior strength (n0 1..16) is a null; the model off
+is clearly worse (its removal ranks the truth at 161). Temperature 2.0 and
+3.0 are running now on cores 6-7 (one worker, ~2 h) to find the peak; the
+winner then runs on the material kind before it goes into a candidate.
