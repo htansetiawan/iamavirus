@@ -1,12 +1,12 @@
 # Arena v33 watch
 
-Updated 2026-10-12 16:40 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 17:00 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 203W-3D-230L over 436 games** (47%).
-As White: 114.5/218.
-As Black: 90.0/218.
+**Record: 207W-3D-232L over 442 games** (47%).
+As White: 116.5/221.
+As Black: 92.0/221.
 
-Queen lost for less: 156 games (149 to a capturer unseen when we moved, 62 before ply 30); losses with the queen lost: 134 of 230.
+Queen lost for less: 158 games (151 to a capturer unseen when we moved, 63 before ply 30); losses with the queen lost: 135 of 232.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -15,14 +15,14 @@ Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate r
 | Knight Vision | 13-0-41 |
 | Mist Opportunities | 11-0-35 |
 | duck | 14-1-27 |
+| Strongly Invisible | 8-1-31 |
+| TA Baseline S | 31-0-9 |
 | Decent Chess Bot | 7-0-33 |
-| Strongly Invisible | 8-1-29 |
-| TA Baseline S | 29-0-9 |
 | Instructors | 10-0-26 |
 | TA Baseline A | 36-0-0 |
 | Sausage | 26-1-3 |
 | Greek Gift | 4-0-26 |
-| TA Baseline P | 25-0-1 |
+| TA Baseline P | 27-0-1 |
 | Apricot Squad | 10-0-0 |
 | baseline.py | 10-0-0 |
 
@@ -464,3 +464,9 @@ Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate r
 | 2026-10-12 16:37 | qsxstzsj | W | Knight Vision | 86 | win |  | 66 s | 14-15 |
 | 2026-10-12 16:37 | ffxlmgoh | B | baseline.py | 21 | win |  | 140 s | 34-28 |
 | 2026-10-12 16:38 | bm9obtxt | W | baseline.py | 24 | win |  | 133 s | 35-21 |
+| 2026-10-12 16:44 | 5ol84ask | B | TA Baseline P | 57 | win |  | 92 s | 17-5 |
+| 2026-10-12 16:45 | 1l491m7u | W | TA Baseline P | 64 | win |  | 82 s | 8-4 |
+| 2026-10-12 16:45 | fx05ngiz | B | TA Baseline S | 51 | win | ply 21 by b unseen | 98 s | 13-18 |
+| 2026-10-12 16:46 | pijfzrk7 | W | Strongly Invisible | 61 | loss |  | 85 s | 12-26 |
+| 2026-10-12 16:48 | s6lt0cju | W | TA Baseline S | 92 | win |  | 63 s | 12-3 |
+| 2026-10-12 16:48 | 9dw49tcp | B | Strongly Invisible | 82 | loss | ply 39 by b unseen | 68 s | 2-16 |
