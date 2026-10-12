@@ -1,25 +1,25 @@
 # Arena v33 watch
 
-Updated 2026-10-12 07:59 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 08:19 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 108W-1D-124L over 233 games** (47%).
-As White: 61.5/116.
-As Black: 47.0/117.
+**Record: 110W-1D-130L over 241 games** (46%).
+As White: 62.5/120.
+As Black: 48.0/121.
 
-Queen lost for less: 88 games (84 to a capturer unseen when we moved, 36 before ply 30); losses with the queen lost: 74 of 124.
+Queen lost for less: 91 games (87 to a capturer unseen when we moved, 38 before ply 30); losses with the queen lost: 76 of 130.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 73 plies.
 Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 7-0-23 |
-| Decent Chess Bot | 6-0-22 |
+| Knight Vision | 8-0-24 |
+| Decent Chess Bot | 7-0-23 |
+| Strongly Invisible | 5-1-16 |
 | duck | 7-0-15 |
 | TA Baseline A | 22-0-0 |
 | Mist Opportunities | 5-0-17 |
-| Strongly Invisible | 5-1-13 |
+| Instructors | 4-0-15 |
 | TA Baseline S | 14-0-4 |
-| Instructors | 4-0-14 |
 | Sausage | 16-0-2 |
 | Greek Gift | 2-0-14 |
 | TA Baseline P | 10-0-0 |
@@ -261,3 +261,11 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | 2026-10-12 07:52 | fvyckjc1 | B | baseline.py | 13 | win |  | 155 s | 36-37 |
 | 2026-10-12 07:53 | q63qlggl | W | baseline.py | 10 | win |  | 159 s | 38-35 |
 | 2026-10-12 07:58 | 9lpy18hw | B | Strongly Invisible | 62 | loss | ply 45 by r unseen | 84 s | 5-17 |
+| 2026-10-12 07:59 | cl4c35g6 | W | Strongly Invisible | 81 | loss |  | 69 s | 0-11 |
+| 2026-10-12 08:00 | 2fuuxdn7 | B | Decent Chess Bot | 64 | loss |  | 79 s | 4-18 |
+| 2026-10-12 08:03 | y525aue6 | W | Decent Chess Bot | 112 | win |  | 51 s | 10-2 |
+| 2026-10-12 08:05 | nsolnuo2 | B | Knight Vision | 63 | win | ply 21 by q unseen | 85 s | 12-4 |
+| 2026-10-12 08:07 | f2gr73eq | W | Knight Vision | 93 | loss | ply 34 by b unseen | 58 s | 1-17 |
+| 2026-10-12 08:16 | sif5mtd3 | W | Strongly Invisible | 63 | loss |  | 84 s | 5-16 |
+| 2026-10-12 08:17 | fzuglcut | B | Strongly Invisible | 84 | loss | ply 21 by q unseen | 57 s | 3-15 |
+| 2026-10-12 08:18 | thojhte4 | B | Instructors | 74 | loss |  | 75 s | 8-13 |
