@@ -1,10 +1,10 @@
 # Arena v33 watch
 
-Updated 2026-10-12 14:36 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 14:56 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 183W-2D-204L over 389 games** (47%).
-As White: 101.0/194.
-As Black: 83.0/195.
+**Record: 186W-2D-204L over 392 games** (48%).
+As White: 103.0/196.
+As Black: 84.0/196.
 
 Queen lost for less: 142 games (135 to a capturer unseen when we moved, 56 before ply 30); losses with the queen lost: 122 of 204.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
@@ -14,11 +14,11 @@ Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate r
 | --- | --- |
 | Knight Vision | 11-0-35 |
 | Decent Chess Bot | 7-0-33 |
-| duck | 12-1-26 |
+| duck | 13-1-26 |
 | Mist Opportunities | 9-0-29 |
 | Strongly Invisible | 7-1-26 |
 | TA Baseline S | 28-0-6 |
-| TA Baseline A | 32-0-0 |
+| TA Baseline A | 34-0-0 |
 | Instructors | 9-0-21 |
 | Greek Gift | 4-0-24 |
 | TA Baseline P | 25-0-1 |
@@ -417,3 +417,6 @@ Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate r
 | 2026-10-12 14:28 | oj76n20a | B | TA Baseline S | 74 | loss |  | 76 s | 0-16 |
 | 2026-10-12 14:31 | fn7pj9u8 | W | TA Baseline S | 124 | win |  | 47 s | 10-3 |
 | 2026-10-12 14:33 | fvpo0jbd | B | duck | 76 | loss | ply 27 by r unseen | 72 s | 4-23 |
+| 2026-10-12 14:37 | okmifjk2 | W | duck | 160 | win |  | 38 s | 16-1 |
+| 2026-10-12 14:49 | 4hgqc34j | B | TA Baseline A | 75 | win |  | 71 s | 19-12 |
+| 2026-10-12 14:51 | oghaah35 | W | TA Baseline A | 92 | win |  | 52 s | 6-7 |
