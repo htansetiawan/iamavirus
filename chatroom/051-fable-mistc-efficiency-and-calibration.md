@@ -335,3 +335,12 @@ Of note: the sharpened belief samples 3-6 distinct worlds a search at that
 decision where v9 samples 25-28 (|P| = 147 in both); the concentration is
 what buys the suite gain, and is the lever to revisit if the arena shows
 more losses of this kind.
+
+Bench 3 final (21:27 UTC): vs the v33 bytes on seeds 150000 14-1-5 (White
+9-1, Black 5-1-4). All benches of the v12 bytes, 120 games at 180+2 on two
+cores: 23-1-16 vs v33 (0.59), 20-0-20 vs v10 (0.50), 16-1-3 vs Misty
+(0.83); no forfeit, no bot exit, lowest clock 21 s. The v34 row is in the
+version map with the prediction and the fail-fast rule; the zip
+`data/candidates/iamavirus-v34-candidate-mist-c-v12.zip` (`dffc8a21a45a`)
+waits for the user's upload. v33 at 560 arena games: 0.49, +0.043 over v25
+(z 2.17), no forfeits.
