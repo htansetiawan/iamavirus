@@ -1,14 +1,14 @@
 # Arena v33 watch
 
-Updated 2026-10-12 10:46 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 11:06 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 135W-2D-159L over 296 games** (46%).
-As White: 75.0/148.
-As Black: 61.0/148.
+**Record: 140W-2D-162L over 304 games** (46%).
+As White: 77.0/153.
+As Black: 64.0/151.
 
-Queen lost for less: 112 games (107 to a capturer unseen when we moved, 45 before ply 30); losses with the queen lost: 94 of 159.
+Queen lost for less: 114 games (109 to a capturer unseen when we moved, 47 before ply 30); losses with the queen lost: 95 of 162.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
-Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -17,13 +17,13 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | duck | 9-1-20 |
 | TA Baseline A | 28-0-0 |
 | Strongly Invisible | 5-1-20 |
+| Greek Gift | 3-0-22 |
+| Mist Opportunities | 6-0-19 |
+| Instructors | 6-0-18 |
 | Sausage | 21-0-3 |
-| Greek Gift | 3-0-21 |
-| Mist Opportunities | 6-0-18 |
-| Instructors | 5-0-17 |
-| TA Baseline S | 16-0-4 |
+| TA Baseline S | 18-0-4 |
 | TA Baseline P | 14-0-0 |
-| Apricot Squad | 8-0-0 |
+| Apricot Squad | 10-0-0 |
 | baseline.py | 4-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -324,3 +324,11 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-12 10:37 | to72mkd0 | B | Sausage | 31 | win |  | 124 s | 30-23 |
 | 2026-10-12 10:40 | q8ufxn7r | W | Greek Gift | 65 | loss | ply 18 by n unseen | 78 s | 6-13 |
 | 2026-10-12 10:40 | 1ega5r3i | B | Greek Gift | 66 | loss |  | 82 s | 3-13 |
+| 2026-10-12 10:49 | 907cef47 | B | Apricot Squad | 23 | win | ply 11 by b unseen | 137 s | 29-37 |
+| 2026-10-12 10:50 | xyvo3saa | W | Apricot Squad | 32 | win |  | 121 s | 35-21 |
+| 2026-10-12 10:58 | ur78p0kr | W | TA Baseline S | 64 | win |  | 81 s | 9-7 |
+| 2026-10-12 10:59 | 4zwbesdj | W | Instructors | 103 | loss | ply 14 by b unseen | 47 s | 6-24 |
+| 2026-10-12 11:00 | ycpjxbk0 | B | Instructors | 115 | win |  | 52 s | 11-2 |
+| 2026-10-12 11:00 | u7qxdc6m | B | TA Baseline S | 91 | win |  | 64 s | 32-8 |
+| 2026-10-12 11:05 | 5yc926au | W | Mist Opportunities | 49 | loss |  | 97 s | 20-17 |
+| 2026-10-12 11:05 | d1xglvxm | W | Greek Gift | 65 | loss |  | 78 s | 14-15 |
