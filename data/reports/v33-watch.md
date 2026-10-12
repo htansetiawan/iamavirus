@@ -1,14 +1,14 @@
 # Arena v33 watch
 
-Updated 2026-10-12 13:33 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 13:54 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 170W-2D-194L over 366 games** (47%).
-As White: 93.0/183.
-As Black: 78.0/183.
+**Record: 175W-2D-197L over 374 games** (47%).
+As White: 96.0/187.
+As Black: 80.0/187.
 
-Queen lost for less: 136 games (129 to a capturer unseen when we moved, 53 before ply 30); losses with the queen lost: 116 of 194.
+Queen lost for less: 138 games (131 to a capturer unseen when we moved, 53 before ply 30); losses with the queen lost: 118 of 197.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 20 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -16,13 +16,13 @@ Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate r
 | Decent Chess Bot | 7-0-31 |
 | Mist Opportunities | 9-0-29 |
 | duck | 11-1-24 |
-| Strongly Invisible | 7-1-24 |
+| Strongly Invisible | 7-1-26 |
 | TA Baseline A | 32-0-0 |
-| TA Baseline S | 23-0-5 |
-| Instructors | 8-0-20 |
+| TA Baseline S | 25-0-5 |
+| Instructors | 9-0-21 |
 | Greek Gift | 4-0-22 |
+| TA Baseline P | 23-0-1 |
 | Sausage | 21-0-3 |
-| TA Baseline P | 21-0-1 |
 | Apricot Squad | 10-0-0 |
 | baseline.py | 6-0-0 |
 
@@ -394,3 +394,11 @@ Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate r
 | 2026-10-12 13:29 | 2qgkoden | W | TA Baseline P | 36 | win |  | 116 s | 28-9 |
 | 2026-10-12 13:30 | kttsh3b9 | B | TA Baseline P | 63 | win |  | 86 s | 18-5 |
 | 2026-10-12 13:31 | 56a8y0n2 | W | Mist Opportunities | 88 | win |  | 63 s | 21-4 |
+| 2026-10-12 13:37 | py7qzu6n | W | Strongly Invisible | 77 | loss | ply 40 by q unseen | 55 s | 8-18 |
+| 2026-10-12 13:38 | y9icd0fb | B | Strongly Invisible | 90 | loss | ply 47 by b unseen | 59 s | 0-11 |
+| 2026-10-12 13:44 | 9v2hb2bb | W | TA Baseline P | 46 | win |  | 102 s | 24-11 |
+| 2026-10-12 13:44 | oyoxu70z | B | TA Baseline P | 55 | win |  | 92 s | 21-15 |
+| 2026-10-12 13:46 | lj0s29uu | B | TA Baseline S | 29 | win |  | 127 s | 29-33 |
+| 2026-10-12 13:51 | d0l3mrye | W | Instructors | 86 | win |  | 66 s | 16-3 |
+| 2026-10-12 13:51 | uubj72o7 | B | Instructors | 94 | loss |  | 61 s | 2-16 |
+| 2026-10-12 13:53 | m4aac32e | W | TA Baseline S | 152 | win |  | 39 s | 18-3 |
