@@ -299,3 +299,13 @@ second rule leaves out some moves the search preferred). Committed as
 mist-c v12 (`git log` on origin). The material kind runs until ~19:05; the
 provisional bench (same source, sha `dffc8a21a45a`) vs v10 and Misty until
 ~20:50 UTC.
+
+Material kind for v12 (18:13-18:48 UTC): cp loss 139 (1.0: 146, whole-belief
+2.0: 137), fatal 4/891 (1.0: 1, 2.0: 4). Validation of the exact zip
+(18:48-18:50, sha `dffc8a21a45a`): clean build, both fallbacks, Stockfish
+and the history table load, kit games won as White (10 plies) and Black
+(17 plies). Provisional bench at 7 games a lane: 3-4 vs v10 (no loss under
+58 plies), 7-0 vs Misty. A second pair of lanes (vs the v33 bytes, vs v10
+on new seeds) started 18:52 on cores 4-7. v33 at 500 arena games: 0.49,
++0.041 over v25's schedule (z 1.97), the first checkpoint past the 95%
+margin.
