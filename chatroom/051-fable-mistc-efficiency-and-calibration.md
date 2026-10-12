@@ -255,3 +255,31 @@ rule alone. Both queen-check replays: 8 and 6 root moves, the block on
 every seed. Suite (check+fatal, then material) on cores 4-7 after the split
 material run, ~18:40 UTC. Fallback bench (v10 + divisor 20) at 17:00: 3-0-5
 vs v10, 5-0-2 vs Misty after 8 and 7 games.
+
+## Fallback bench: v10 + divisor 20 (15:55-18:06 UTC, cores 0-3)
+
+The v11 zip with `MIST_MODEL_TEMP=1.0`, i.e. v10's belief and guard with the
+time divisor 20. Two games were killed by my process cleanup at 17:41 and
+struck from the log (both lanes 19 games).
+
+| lane | score | as White | as Black | shortest loss | our clock min / median |
+|---|---|---|---|---|---|
+| vs v10 | 9/19 (0.47) | 6/10 | 3/9 | 30 plies | 21 / 55 s |
+| vs Misty v16 | 13/19 (0.68) | 7/10 | 6/9 | 60 plies | 23 / 47 s |
+
+No forfeit on our side (Misty forfeited once, as before); the lowest clock,
+21 s, came in a 177-ply game, where the 20 s floor keeps the clock. The
+divisor alone is a null in games, as the suite predicted (a few material
+decisions in 900): it is safe but not a reason to upload by itself.
+
+## Final design under test: v11's belief + the guard under both weightings
+
+The combined guard on the split belief measured at the 1.0 level (116/399,
+check 69): the sharper guard needs the belief's own tempered weights,
+merges included, not a power applied afterwards. So the belief is v11's as
+measured (weights sharpened at 2.0) and the king guard applies its 2% rule
+under those weights and under weight^(1/2), the fitted weighting; a move
+is out when either flags it, the sharper rule alone when both would leave
+nothing. Both queen-check replays: 8 and 6 root moves, the block on every
+seed. Suite started 17:48 UTC on cores 4-7 (check+fatal ~18:15, material
+~19:05); it ships only if the 2.0 gain survives the second rule.
