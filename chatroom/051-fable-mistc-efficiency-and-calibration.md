@@ -112,15 +112,20 @@ default); "fixed / broke" counts fatal decisions that a safe move existed for.
 | history n0 16 | 126 (6 / 11) | 79 (3 / 9) | 96 | 25 | 40% |
 | model off | 142 (23 / 44) | 92 (9 / 28) | 107 | 161 | 34% |
 | **temp 2.0** (cores 6-7, one worker) | **109 (30 / 18)** | **63 (16 / 6)** | **84** | 24 | 43% |
+| temp 3.0 (cores 6-7, one worker) | 105 (37 / 21) | 59 (21 / 7) | 85 | 23 | 42% |
 
 The trend is monotone in temperature: sharper is better on the check kind
 (fixed 14, broke 4; fatal 73 -> 63), neutral on the fatal kind (6 / 7) and
 on cp loss. The history prior strength (n0 1..16) is a null; the model off
 is clearly worse (its removal ranks the truth at 161). Temperature 2.0 (09:06 UTC): the same 63 check-kind blunders as 1.5 but the
 best centipawn loss of the sweep (84; check kind 69 against 78), and 109
-fatal overall. 3.0 is running (~10:00 UTC); the best sharper temperature
-then runs on the material kind (892 decisions, ~3 h) against 1.0 before it
-goes into a candidate.
+fatal overall. Temperature 3.0 (09:59 UTC): 59 check-kind blunders and 105 overall, but
+against 2.0 it is inside the noise (fixed 17 / broke 13; check 10 / 6), its
+median centipawn loss creeps up (1 -> 2 -> 3 from 1.0 to 3.0) and it changes
+more of the arena moves (repeat rate 0.50 -> 0.40). The curve is flat from
+2.0 up; 2.0 is the safer pick unless the material kind says otherwise. The
+material kind (892 decisions) runs now for 1.0 and 3.0 on cores 6-7 and for
+2.0 on cores 0-5 after the bench.
 
 ## Search-time experiment (08:10-08:40 UTC, same 487 decisions, round loop, temperature 1.0)
 
