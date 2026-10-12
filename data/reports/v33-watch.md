@@ -1,12 +1,12 @@
 # Arena v33 watch
 
-Updated 2026-10-12 12:51 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 13:12 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 164W-2D-188L over 354 games** (47%).
-As White: 90.0/177.
-As Black: 75.0/177.
+**Record: 165W-2D-192L over 359 games** (46%).
+As White: 90.0/180.
+As Black: 76.0/179.
 
-Queen lost for less: 131 games (124 to a capturer unseen when we moved, 51 before ply 30); losses with the queen lost: 111 of 188.
+Queen lost for less: 134 games (127 to a capturer unseen when we moved, 52 before ply 30); losses with the queen lost: 114 of 192.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,10 +14,10 @@ Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate r
 | --- | --- |
 | Knight Vision | 11-0-35 |
 | Decent Chess Bot | 7-0-31 |
-| duck | 11-1-22 |
-| Mist Opportunities | 8-0-26 |
+| Mist Opportunities | 8-0-28 |
+| duck | 11-1-23 |
+| Strongly Invisible | 7-1-24 |
 | TA Baseline A | 32-0-0 |
-| Strongly Invisible | 6-1-23 |
 | TA Baseline S | 23-0-5 |
 | Instructors | 8-0-20 |
 | Greek Gift | 4-0-22 |
@@ -382,3 +382,8 @@ Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate r
 | 2026-10-12 12:41 | lhgh3u5t | B | TA Baseline S | 57 | win |  | 92 s | 26-15 |
 | 2026-10-12 12:47 | znu8x87b | B | duck | 64 | loss | ply 53 by n unseen | 84 s | 7-11 |
 | 2026-10-12 12:51 | 3xmwlps6 | W | duck | 130 | win |  | 46 s | 10-0 |
+| 2026-10-12 13:00 | 9qknmp0p | W | Mist Opportunities | 107 | loss | ply 56 by r unseen | 53 s | 6-29 |
+| 2026-10-12 13:03 | s9mmji2x | B | Strongly Invisible | 51 | win |  | 96 s | 28-27 |
+| 2026-10-12 13:04 | mh5ngoml | B | Mist Opportunities | 156 | loss | ply 27 by b unseen | 20 s | 0-30 |
+| 2026-10-12 13:05 | ij8k8ivs | W | Strongly Invisible | 77 | loss | ply 60 by r unseen | 71 s | 4-12 |
+| 2026-10-12 13:11 | om5oi6fh | W | duck | 75 | loss |  | 71 s | 14-19 |
