@@ -283,3 +283,19 @@ is out when either flags it, the sharper rule alone when both would leave
 nothing. Both queen-check replays: 8 and 6 root moves, the block on every
 seed. Suite started 17:48 UTC on cores 4-7 (check+fatal ~18:15, material
 ~19:05); it ships only if the 2.0 gain survives the second rule.
+
+## Final design on the suite (17:48-18:13 UTC): the gain holds, with the safety
+
+| variant | fatal, all | check kind (fixed / broke vs 1.0) | cp loss |
+|---|---|---|---|
+| 1.0 (v10) | 121/399 | 73/300 | 89 |
+| whole-belief 2.0 (v11) | 109 | 63 (16 / 6) | 84 |
+| split (sampling sharpened only) | 116 | 71 (8 / 6) | 90 |
+| combined guard on the split | 116 | 69 | 87 |
+| **v11 belief + guard under both weightings (mist-c v12)** | **104** | **59 (16 / 2)** | 88 |
+
+Against v11: fixed 12 / broke 7 on fatal (check 7 / 3), 4 cp worse (the
+second rule leaves out some moves the search preferred). Committed as
+mist-c v12 (`git log` on origin). The material kind runs until ~19:05; the
+provisional bench (same source, sha `dffc8a21a45a`) vs v10 and Misty until
+~20:50 UTC.
