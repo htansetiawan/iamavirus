@@ -1,28 +1,28 @@
 # Arena v33 watch
 
-Updated 2026-10-12 14:56 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 15:17 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 186W-2D-204L over 392 games** (48%).
-As White: 103.0/196.
-As Black: 84.0/196.
+**Record: 193W-3D-215L over 411 games** (47%).
+As White: 107.5/206.
+As Black: 87.0/205.
 
-Queen lost for less: 142 games (135 to a capturer unseen when we moved, 56 before ply 30); losses with the queen lost: 122 of 204.
+Queen lost for less: 149 games (142 to a capturer unseen when we moved, 61 before ply 30); losses with the queen lost: 128 of 215.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 11-0-35 |
+| duck | 14-1-27 |
+| Mist Opportunities | 10-0-32 |
 | Decent Chess Bot | 7-0-33 |
-| duck | 13-1-26 |
-| Mist Opportunities | 9-0-29 |
+| TA Baseline S | 28-0-8 |
 | Strongly Invisible | 7-1-26 |
-| TA Baseline S | 28-0-6 |
 | TA Baseline A | 34-0-0 |
-| Instructors | 9-0-21 |
-| Greek Gift | 4-0-24 |
+| Instructors | 9-0-24 |
+| Sausage | 26-1-3 |
+| Greek Gift | 4-0-26 |
 | TA Baseline P | 25-0-1 |
-| Sausage | 21-0-3 |
 | Apricot Squad | 10-0-0 |
 | baseline.py | 8-0-0 |
 
@@ -420,3 +420,22 @@ Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate r
 | 2026-10-12 14:37 | okmifjk2 | W | duck | 160 | win |  | 38 s | 16-1 |
 | 2026-10-12 14:49 | 4hgqc34j | B | TA Baseline A | 75 | win |  | 71 s | 19-12 |
 | 2026-10-12 14:51 | oghaah35 | W | TA Baseline A | 92 | win |  | 52 s | 6-7 |
+| 2026-10-12 14:57 | 9npqpfqt | W | Sausage | 68 | win |  | 80 s | 20-8 |
+| 2026-10-12 14:57 | 1tuz7zf3 | B | Mist Opportunities | 106 | loss | ply 11 by n unseen | 50 s | 2-15 |
+| 2026-10-12 14:58 | k32gvg7s | B | Instructors | 52 | loss | ply 45 by q unseen | 95 s | 6-19 |
+| 2026-10-12 14:59 | mltsjhcl | B | Sausage | 91 | win |  | 65 s | 13-3 |
+| 2026-10-12 14:59 | plt5j3nh | W | Mist Opportunities | 151 | loss |  | 33 s | 3-11 |
+| 2026-10-12 15:00 | fjzj4rle | W | Mist Opportunities | 118 | win |  | 50 s | 14-0 |
+| 2026-10-12 15:00 | lbzjm3k8 | W | Instructors | 91 | loss |  | 56 s | 1-20 |
+| 2026-10-12 15:00 | bfw6qu5m | B | Mist Opportunities | 102 | loss | ply 25 by q unseen | 45 s | 0-15 |
+| 2026-10-12 15:03 | gnks3gwc | B | duck | 78 | loss |  | 66 s | 5-25 |
+| 2026-10-12 15:05 | au7ihfgk | W | duck | 128 | win |  | 45 s | 15-2 |
+| 2026-10-12 15:05 | k3s41p7m | B | Sausage | 75 | win |  | 72 s | 22-9 |
+| 2026-10-12 15:06 | a14egucj | W | Sausage | 117 | draw | ply 8 by n unseen | 50 s | 1-2 |
+| 2026-10-12 15:08 | mokg9cco | W | TA Baseline S | 59 | loss | ply 26 by b unseen | 87 s | 18-21 |
+| 2026-10-12 15:08 | mc8dqvlf | B | Greek Gift | 54 | loss | ply 29 by p unseen | 91 s | 7-19 |
+| 2026-10-12 15:08 | c9lts05l | W | Greek Gift | 51 | loss |  | 95 s | 9-9 |
+| 2026-10-12 15:09 | iunvhqs8 | B | TA Baseline S | 72 | loss |  | 75 s | 1-21 |
+| 2026-10-12 15:10 | dza54yhr | B | Sausage | 63 | win |  | 85 s | 23-3 |
+| 2026-10-12 15:11 | vz77dxni | W | Sausage | 58 | win |  | 88 s | 25-13 |
+| 2026-10-12 15:16 | yr5i3f2b | W | Instructors | 69 | loss | ply 46 by r unseen | 79 s | 5-11 |
