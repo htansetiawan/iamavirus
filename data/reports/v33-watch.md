@@ -1,27 +1,27 @@
 # Arena v33 watch
 
-Updated 2026-10-12 01:23 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 01:44 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 37W-1D-32L over 70 games** (54%).
-As White: 22.5/35.
-As Black: 15.0/35.
+**Record: 41W-1D-36L over 78 games** (53%).
+As White: 24.5/39.
+As Black: 17.0/39.
 
-Queen lost for less: 24 games (23 to a capturer unseen when we moved, 11 before ply 30); losses with the queen lost: 19 of 32.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 67 plies.
+Queen lost for less: 26 games (25 to a capturer unseen when we moved, 12 before ply 30); losses with the queen lost: 20 of 36.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 69 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 4-0-6 |
+| duck | 6-0-8 |
+| Decent Chess Bot | 3-0-7 |
 | Strongly Invisible | 1-1-6 |
 | TA Baseline S | 7-0-1 |
-| Decent Chess Bot | 3-0-5 |
 | Sausage | 7-0-1 |
+| TA Baseline A | 6-0-0 |
 | Apricot Squad | 4-0-0 |
 | TA Baseline P | 4-0-0 |
 | Instructors | 0-0-4 |
 | Knight Vision | 0-0-4 |
-| TA Baseline A | 4-0-0 |
 | Mist Opportunities | 1-0-3 |
 | baseline.py | 2-0-0 |
 | Greek Gift | 0-0-2 |
@@ -98,3 +98,11 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-12 01:14 | gk52a2hi | W | Mist Opportunities | 124 | win | ply 20 by p unseen | 27 s | 9-15 |
 | 2026-10-12 01:17 | pu3fqyu4 | B | TA Baseline A | 57 | win |  | 91 s | 18-4 |
 | 2026-10-12 01:18 | lc58h7m0 | W | TA Baseline A | 76 | win |  | 74 s | 18-12 |
+| 2026-10-12 01:28 | rvp9zvdh | B | TA Baseline A | 69 | win | ply 61 by q unseen | 78 s | 12-4 |
+| 2026-10-12 01:29 | oq94os3c | B | duck | 58 | loss |  | 90 s | 5-15 |
+| 2026-10-12 01:29 | zzhlmbv3 | W | duck | 55 | loss | ply 28 by b unseen | 90 s | 10-17 |
+| 2026-10-12 01:29 | v0xkpmtp | W | TA Baseline A | 80 | win |  | 64 s | 24-17 |
+| 2026-10-12 01:33 | zrvr7opi | W | Decent Chess Bot | 93 | loss |  | 53 s | 2-17 |
+| 2026-10-12 01:34 | vqqseaxx | B | Decent Chess Bot | 122 | loss |  | 48 s | 1-5 |
+| 2026-10-12 01:37 | ycvp17p2 | B | duck | 101 | win |  | 58 s | 10-4 |
+| 2026-10-12 01:40 | d7s2f6wk | W | duck | 178 | win |  | 34 s | 15-0 |
