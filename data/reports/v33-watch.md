@@ -1,27 +1,27 @@
 # Arena v33 watch
 
-Updated 2026-10-12 10:04 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 10:25 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 131W-2D-151L over 284 games** (46%).
-As White: 73.0/142.
-As Black: 59.0/142.
+**Record: 133W-2D-155L over 290 games** (46%).
+As White: 74.0/145.
+As Black: 60.0/145.
 
-Queen lost for less: 108 games (103 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 90 of 151.
+Queen lost for less: 110 games (105 to a capturer unseen when we moved, 43 before ply 30); losses with the queen lost: 92 of 155.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
 Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 9-0-27 |
+| Knight Vision | 9-0-29 |
 | Decent Chess Bot | 7-0-27 |
 | duck | 9-1-20 |
 | TA Baseline A | 28-0-0 |
 | Strongly Invisible | 5-1-18 |
 | Mist Opportunities | 6-0-18 |
+| Instructors | 5-0-17 |
+| Sausage | 19-0-3 |
 | Greek Gift | 3-0-19 |
 | TA Baseline S | 16-0-4 |
-| Instructors | 4-0-16 |
-| Sausage | 18-0-2 |
 | TA Baseline P | 14-0-0 |
 | Apricot Squad | 8-0-0 |
 | baseline.py | 4-0-0 |
@@ -312,3 +312,9 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-12 09:55 | oj97cy55 | W | Greek Gift | 80 | win |  | 71 s | 26-0 |
 | 2026-10-12 09:58 | 1wu8gw1v | B | duck | 103 | win |  | 56 s | 24-11 |
 | 2026-10-12 10:01 | zzzbkp40 | W | duck | 137 | loss |  | 41 s | 0-5 |
+| 2026-10-12 10:08 | gquksw7q | B | Knight Vision | 86 | loss |  | 52 s | 1-30 |
+| 2026-10-12 10:10 | mycjl6dc | W | Knight Vision | 107 | loss |  | 53 s | 1-9 |
+| 2026-10-12 10:20 | z3twafa1 | B | Sausage | 52 | loss | ply 25 by n unseen | 95 s | 23-25 |
+| 2026-10-12 10:21 | drab1oq7 | W | Instructors | 59 | loss | ply 44 by r unseen | 88 s | 5-25 |
+| 2026-10-12 10:21 | zy6c6gq1 | W | Sausage | 60 | win |  | 83 s | 15-6 |
+| 2026-10-12 10:23 | udvd9eq7 | B | Instructors | 75 | win |  | 68 s | 19-6 |
