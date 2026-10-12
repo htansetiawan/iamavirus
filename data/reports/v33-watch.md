@@ -1,10 +1,10 @@
 # Arena v33 watch
 
-Updated 2026-10-12 18:24 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 18:45 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 231W-4D-253L over 488 games** (48%).
-As White: 130.5/244.
-As Black: 102.5/244.
+**Record: 237W-4D-253L over 494 games** (48%).
+As White: 133.5/247.
+As Black: 105.5/247.
 
 Queen lost for less: 174 games (164 to a capturer unseen when we moved, 69 before ply 30); losses with the queen lost: 148 of 253.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
@@ -23,8 +23,9 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | Sausage | 30-1-3 |
 | Greek Gift | 5-0-29 |
 | TA Baseline P | 28-0-2 |
-| Apricot Squad | 10-0-0 |
+| Apricot Squad | 12-0-0 |
 | baseline.py | 10-0-0 |
+| Gravel Road | 4-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -516,3 +517,9 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | 2026-10-12 18:17 | d3u0pr47 | B | duck | 68 | loss |  | 80 s | 5-15 |
 | 2026-10-12 18:19 | mp5g7wby | W | duck | 44 | win |  | 105 s | 27-8 |
 | 2026-10-12 18:22 | snf9ls9p | B | duck | 79 | win |  | 72 s | 26-11 |
+| 2026-10-12 18:30 | 6vhn98ys | B | Gravel Road | 49 | win |  | 100 s | 44-11 |
+| 2026-10-12 18:30 | ro3z2yah | W | Gravel Road | 44 | win |  | 105 s | 36-19 |
+| 2026-10-12 18:33 | 9ddv945e | B | Apricot Squad | 21 | win |  | 140 s | 39-39 |
+| 2026-10-12 18:34 | 6fm53kvw | W | Apricot Squad | 24 | win |  | 130 s | 35-35 |
+| 2026-10-12 18:39 | c1cwf5pg | B | Gravel Road | 41 | win |  | 110 s | 36-14 |
+| 2026-10-12 18:40 | umie6rg9 | W | Gravel Road | 46 | win |  | 103 s | 37-10 |
