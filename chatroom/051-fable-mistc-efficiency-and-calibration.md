@@ -145,3 +145,23 @@ problem (temperature), the material ones respond to time. The arena leaves
 divisor change in the candidate, not a search change.
 
 Bench of the v34 candidate started 08:40 UTC (three lanes, 20 games each).
+
+## v34 candidate bench (08:41-10:45 UTC, 180+2, three lanes on cores 0-5, 20 games each)
+
+Candidate = mist-c b6d53e0 (v9 + history prior + threaded belief + one-move
+shortcut; pipeline off), sha `6c4c0235e4b6`.
+
+| lane | W-D-L | as White | as Black | shortest loss | our clock min / median |
+|---|---|---|---|---|---|
+| candidate vs Misty v16 | 14-0-6 (0.70) | 8/10 | 6/10 | 52 plies | 37 / 74 s |
+| candidate vs the v33 bytes | 12-0-8 (0.60) | 7/10 | 5/10 | 60 plies | 27 / 82 s |
+| candidate with `MIST_ASYNC=1` vs Misty | 15-0-5 (0.75) | 8/10 | 7/10 | 49 plies | 52 / 81 s |
+
+No forfeit or crash on our side (Misty forfeited on time once, as in the v9
+bench). The history prior + threading is ahead of the v33 bytes (0.60, 20
+games, inside the noise) and holds against Misty (v9 scored 0.80 on its own
+20). The pipeline is not worse in games (0.75) but the suite put it slightly
+behind on the check kind, so it stays off. This zip is not going up as is:
+the temperature result above is a larger effect than anything benched
+today, so the candidate becomes mist-c v11 = v10 + temperature 2.0 (pending
+the material kind) + time divisor 20, benched the same way before upload.
