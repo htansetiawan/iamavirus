@@ -118,3 +118,22 @@ on cp loss. The history prior strength (n0 1..16) is a null; the model off
 is clearly worse (its removal ranks the truth at 161). Temperature 2.0 and
 3.0 are running now on cores 6-7 (one worker, ~2 h) to find the peak; the
 winner then runs on the material kind before it goes into a candidate.
+
+## Search-time experiment (08:10-08:40 UTC, same 487 decisions, round loop, temperature 1.0)
+
+| seconds per decision | fatal, all | fatal, check kind | fatal, material kind | cp loss mean |
+|---|---|---|---|---|
+| 1.0 | 124/399 | 73/300 | 51/99 | 96 |
+| 2.5 (baseline E) | 120/399 | 71/300 | 49/99 | 94 |
+| 6.0 | 117/399 | 73/300 | 44/99 | 87 |
+
+Paired: 1 s -> 6 s fixed 12 / broke 5 overall, 4 / 4 on the check kind, 8 / 1
+on the material kind. Two identical 2.5 s runs at different times differ by
+4 / 5, so that is the noise floor. Search time buys a slow, steady gain on
+material decisions and centipawn loss and nothing on hidden checks, which
+matches the throughput results above: the check blunders are a belief
+problem (temperature), the material ones respond to time. The arena leaves
+74 s unused per game, so the time budget can go up for free; that is a
+divisor change in the candidate, not a search change.
+
+Bench of the v34 candidate started 08:40 UTC (three lanes, 20 games each).
