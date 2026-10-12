@@ -1,12 +1,12 @@
 # Arena v33 watch
 
-Updated 2026-10-12 19:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 19:48 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 248W-4D-264L over 516 games** (48%).
-As White: 139.5/258.
-As Black: 110.5/258.
+**Record: 248W-4D-267L over 519 games** (48%).
+As White: 139.5/259.
+As Black: 110.5/260.
 
-Queen lost for less: 183 games (173 to a capturer unseen when we moved, 72 before ply 30); losses with the queen lost: 156 of 264.
+Queen lost for less: 184 games (174 to a capturer unseen when we moved, 72 before ply 30); losses with the queen lost: 157 of 267.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -16,9 +16,9 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | Strongly Invisible | 11-1-42 |
 | Mist Opportunities | 13-0-41 |
 | duck | 18-1-31 |
-| TA Baseline S | 37-1-10 |
+| TA Baseline S | 37-1-11 |
+| Decent Chess Bot | 7-0-35 |
 | TA Baseline A | 42-0-0 |
-| Decent Chess Bot | 7-0-33 |
 | Instructors | 11-0-27 |
 | Greek Gift | 5-0-31 |
 | Sausage | 30-1-3 |
@@ -545,3 +545,6 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | 2026-10-12 19:19 | 0rl6ilsj | B | Greek Gift | 60 | loss | ply 29 by q unseen | 88 s | 9-12 |
 | 2026-10-12 19:20 | 1s2pkez5 | W | Greek Gift | 77 | loss | ply 40 by q unseen | 72 s | 3-14 |
 | 2026-10-12 19:24 | lfhv3eqq | W | Knight Vision | 135 | loss |  | 20 s | 0-23 |
+| 2026-10-12 19:38 | itzdl6vh | W | Decent Chess Bot | 49 | loss |  | 97 s | 17-21 |
+| 2026-10-12 19:39 | riu20uci | B | Decent Chess Bot | 74 | loss | ply 49 by n unseen | 76 s | 6-15 |
+| 2026-10-12 19:45 | dn4u2cb2 | B | TA Baseline S | 18 | loss |  | 144 s | 34-23 |
