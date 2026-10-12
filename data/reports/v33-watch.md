@@ -1,25 +1,25 @@
 # Arena v33 watch
 
-Updated 2026-10-12 19:48 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 20:08 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 248W-4D-267L over 519 games** (48%).
-As White: 139.5/259.
-As Black: 110.5/260.
+**Record: 252W-4D-272L over 528 games** (48%).
+As White: 142.5/264.
+As Black: 111.5/264.
 
-Queen lost for less: 184 games (174 to a capturer unseen when we moved, 72 before ply 30); losses with the queen lost: 157 of 267.
+Queen lost for less: 189 games (179 to a capturer unseen when we moved, 75 before ply 30); losses with the queen lost: 161 of 272.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 16-0-44 |
+| Knight Vision | 16-0-46 |
 | Strongly Invisible | 11-1-42 |
 | Mist Opportunities | 13-0-41 |
+| TA Baseline S | 39-1-12 |
 | duck | 18-1-31 |
-| TA Baseline S | 37-1-11 |
 | Decent Chess Bot | 7-0-35 |
+| Instructors | 13-0-29 |
 | TA Baseline A | 42-0-0 |
-| Instructors | 11-0-27 |
 | Greek Gift | 5-0-31 |
 | Sausage | 30-1-3 |
 | TA Baseline P | 30-0-2 |
@@ -548,3 +548,12 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | 2026-10-12 19:38 | itzdl6vh | W | Decent Chess Bot | 49 | loss |  | 97 s | 17-21 |
 | 2026-10-12 19:39 | riu20uci | B | Decent Chess Bot | 74 | loss | ply 49 by n unseen | 76 s | 6-15 |
 | 2026-10-12 19:45 | dn4u2cb2 | B | TA Baseline S | 18 | loss |  | 144 s | 34-23 |
+| 2026-10-12 19:52 | r5513c3g | B | Instructors | 70 | loss | ply 21 by p unseen | 77 s | 3-27 |
+| 2026-10-12 19:52 | auup38kp | W | TA Baseline S | 102 | win | ply 28 by r unseen | 58 s | 13-2 |
+| 2026-10-12 19:52 | 75kmbqwz | B | Knight Vision | 56 | loss | ply 23 by r unseen | 90 s | 5-23 |
+| 2026-10-12 19:54 | s5f90lkj | W | Knight Vision | 75 | loss | ply 44 by k unseen | 67 s | 2-18 |
+| 2026-10-12 19:56 | 01n38mp1 | W | Instructors | 138 | win |  | 43 s | 11-1 |
+| 2026-10-12 20:00 | uvxezh2i | B | TA Baseline S | 72 | loss | ply 41 by r unseen | 72 s | 2-22 |
+| 2026-10-12 20:00 | my3ng763 | W | TA Baseline S | 80 | win |  | 71 s | 18-10 |
+| 2026-10-12 20:03 | iv8uvt6p | B | Instructors | 115 | win |  | 50 s | 7-1 |
+| 2026-10-12 20:04 | 3e7nbpqg | W | Instructors | 117 | loss |  | 44 s | 1-7 |
