@@ -1,24 +1,24 @@
 # Arena v33 watch
 
-Updated 2026-10-12 15:38 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-12 15:58 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 195W-3D-220L over 418 games** (47%).
-As White: 109.5/209.
-As Black: 87.0/209.
+**Record: 197W-3D-224L over 424 games** (47%).
+As White: 110.5/212.
+As Black: 88.0/212.
 
-Queen lost for less: 150 games (143 to a capturer unseen when we moved, 62 before ply 30); losses with the queen lost: 129 of 220.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 153 games (146 to a capturer unseen when we moved, 62 before ply 30); losses with the queen lost: 132 of 224.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
+Games as Black where White opened 1.c4: 22 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Knight Vision | 11-0-37 |
+| Knight Vision | 11-0-39 |
+| Mist Opportunities | 11-0-33 |
 | duck | 14-1-27 |
-| Mist Opportunities | 10-0-32 |
 | Decent Chess Bot | 7-0-33 |
 | TA Baseline S | 29-0-9 |
+| Strongly Invisible | 8-1-27 |
 | Instructors | 10-0-26 |
-| Strongly Invisible | 7-1-26 |
 | TA Baseline A | 34-0-0 |
 | Sausage | 26-1-3 |
 | Greek Gift | 4-0-26 |
@@ -446,3 +446,9 @@ Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate r
 | 2026-10-12 15:25 | aewnot9i | W | Knight Vision | 91 | loss |  | 62 s | 13-12 |
 | 2026-10-12 15:33 | 06y3h5mi | W | Instructors | 78 | win |  | 72 s | 8-2 |
 | 2026-10-12 15:33 | 0vdm6oix | B | Instructors | 72 | loss |  | 76 s | 2-17 |
+| 2026-10-12 15:47 | s8hw5pvf | B | Strongly Invisible | 56 | loss | ply 33 by b unseen | 92 s | 2-23 |
+| 2026-10-12 15:48 | i5zc5fsq | B | Mist Opportunities | 53 | win |  | 96 s | 22-16 |
+| 2026-10-12 15:49 | 7t4b3qlq | W | Strongly Invisible | 72 | win |  | 77 s | 13-6 |
+| 2026-10-12 15:53 | xznm91mq | W | Mist Opportunities | 129 | loss | ply 48 by k unseen | 31 s | 2-19 |
+| 2026-10-12 15:53 | zvdgf8je | W | Knight Vision | 81 | loss | ply 42 by q unseen | 59 s | 2-11 |
+| 2026-10-12 15:54 | jtxlmrdy | B | Knight Vision | 94 | loss |  | 55 s | 3-11 |
