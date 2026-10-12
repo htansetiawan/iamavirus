@@ -1,17 +1,17 @@
 # Against the top six
 
-Updated 2026-10-12 00:18 UTC; leaderboard fetched 2026-10-12T00:17. Active version: v33. Measurement only.
+Updated 2026-10-12 00:22 UTC; leaderboard fetched 2026-10-12T00:21. Active version: v33. Measurement only.
 
 ## Ladder
 
 | team | rating | gap to us |
 | --- | --- | --- |
-| Greek Gift | 2165 | +399 |
+| Greek Gift | 2162 | +396 |
 | Knight Vision | 2098 | +333 |
-| Decent Chess Bot | 2047 | +281 |
+| Decent Chess Bot | 2050 | +284 |
 | Strongly Invisible | 2057 | +292 |
-| **duck** | 1980 | +214 |
-| **Instructors** | 1930 | +164 |
+| **duck** | 1972 | +206 |
+| **Instructors** | 1933 | +167 |
 | TA Baseline S | 1630 | -136 |
 | **IAmAVirus** | 1766 |  |
 | TA Baseline A | 1524 | -241 |
