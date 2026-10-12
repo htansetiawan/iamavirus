@@ -309,3 +309,13 @@ and the history table load, kit games won as White (10 plies) and Black
 on new seeds) started 18:52 on cores 4-7. v33 at 500 arena games: 0.49,
 +0.041 over v25's schedule (z 1.97), the first checkpoint past the 95%
 margin.
+
+Bench state at 19:53 UTC (v12 bytes): vs v10 8-0-8 of 16 (seed 130000) and
+5-0-4 of 9 (seed 140000); vs Misty 12-1-3 of 16; vs the v33 bytes 4-0-5 of
+9 (lost the first five, won the next four). All 20 losses so far began with
+a material swing of 3+ to a capturer we could not see, at plies 9-44 (a
+hanging piece under a hidden attacker, e.g. our b5 bishop to an unseen Qa5
+in v12-vs-v33 pair 1 White); none was a hidden check, the shortest loss is
+53 plies, the lowest clock 22 s in a 110-ply game, no forfeit. v33 at 522
+arena games: 0.48, +0.034 over v25 (z 1.69), back under the margin after
+three top-six losses in 22 games.
