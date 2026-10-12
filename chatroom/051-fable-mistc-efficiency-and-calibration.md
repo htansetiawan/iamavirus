@@ -319,3 +319,19 @@ in v12-vs-v33 pair 1 White); none was a hidden check, the shortest loss is
 53 plies, the lowest clock 22 s in a 110-ply game, no forfeit. v33 at 522
 arena games: 0.48, +0.034 over v25 (z 1.69), back under the margin after
 three top-six losses in 22 games.
+
+Bench 2 final (21:02 UTC, 20 games a lane): vs the v33 bytes 9-0-11 (White
+5-5, Black 4-6), vs v10 on seeds 140000 10-0-10 (White 6-4, Black 4-6).
+Combined v12 vs v10: 20-0-20 over 40 games (0.50; the divisor-20 null was
+9/19). vs Misty 16-1-3 (0.83; the null 13/19). Lowest clock 21 s, no
+forfeit, no bot exit. The third v33 seed set (150000, cores 0-3) stood
+10-0-3 at 21:02 with one 23-ply loss (pair 4, White): after Bb5xc6 Bd7xc6
+opened the long diagonal we played Nf3-e5 (the g2 defender) with the black
+queen unseen on g6, and Qxg2 captured the king next move whatever we did
+(Kxg2 Bxg2, Kf1 Qxf1, Kh1 Qxh1). Replayed at 6 s, three seeds: v12 plays
+Ne5 once (Nd4 twice), the v33 binary plays Ne5 once (Nd4, cxd4 once each),
+so the tactic is a shared weakness of the search, not a v12 regression.
+Of note: the sharpened belief samples 3-6 distinct worlds a search at that
+decision where v9 samples 25-28 (|P| = 147 in both); the concentration is
+what buys the suite gain, and is the lever to revisit if the arena shows
+more losses of this kind.
