@@ -344,3 +344,20 @@ version map with the prediction and the fail-fast rule; the zip
 `data/candidates/iamavirus-v34-candidate-mist-c-v12.zip` (`dffc8a21a45a`)
 waits for the user's upload. v33 at 560 arena games: 0.49, +0.043 over v25
 (z 2.17), no forfeits.
+
+Arena, 22:13 UTC: v33 lost to Sausage in 12 plies as Black (1.e3 d5 2.Qf3
+e5 3.b3 Nc6 4.Nc3 d4 5.Bc4 dxc3?? 6.Qxf7+ and the king is taken next move
+whatever it does: Kxf7 Bxf7, Kd7 Qxd7). Queen and bishop were both out of
+view. The suite does not hold this decision: dxc3 is neither fatal (no
+immediate king capture), nor a material swing, nor a check, so the suite
+only records the forced Kxf7 after it (safe = false). Built the dxc3
+decision by hand and ran it at 6 s on three seeds: v12 plays dxc3 3/3, the
+v33 binary plays dxc3 3/3 (cp loss 1000 = mate). A shared blind spot, not a
+v12 regression: a two-ply hidden mate, where the knight is worth 3 in every
+world and the mate lives in the few worlds with Qf3 and Bc4 together. The
+same shape as the 23-ply bench loss (Ne5 into Qxg2). If this kind recurs,
+the next suite kind to add is "allowed a forced king capture within two of
+their moves on the true board", and the lever is either a two-ply king
+guard (risk of a forced capture after their best reply, on P) or weighting
+the mate worlds up, which is what the opponent history prior should learn
+for queen-sortie bots like Sausage. Not for tonight.
