@@ -168,8 +168,13 @@ def run_seat(line: str, args, cores: str) -> dict:
                 script.append(args.clock.split(":", 1)[1])
             else:
                 script.append(f"{modeled_clock(decision):.6f}")
-    env = dict(os.environ, FOW_MODE=args.mode, FOW_MODEL_DIR=str(Path(args.model).resolve()), FOW_SEED=str(args.seed),
-               FOW_FORCE_MOVES=" ".join(forced), FOW_FORCE_FAST="1", FOW_CELL_THREADS=str(args.threads))
+    if args.engine == "mist":
+        # mist-c (github.com/htansetiawan/mist-c) speaks the same referee protocol;
+        # its forced moves are comma separated and still pay full belief updates
+        env = dict(os.environ, FOW_SEED=str(args.seed), MIST_FORCE_MOVES=",".join(forced))
+    else:
+        env = dict(os.environ, FOW_MODE=args.mode, FOW_MODEL_DIR=str(Path(args.model).resolve()), FOW_SEED=str(args.seed),
+                   FOW_FORCE_MOVES=" ".join(forced), FOW_FORCE_FAST="1", FOW_CELL_THREADS=str(args.threads))
     for kv in args.env or []:
         name, value = kv.split("=", 1)
         env[name] = value
@@ -190,10 +195,17 @@ def run_seat(line: str, args, cores: str) -> dict:
     choice = moves_out[-1]
     record["choice"] = choice
     record["seconds"] = round(time.time() - started, 2)
-    decision_lines = [l for l in out.stderr.splitlines() if " n=" in l and " mode=" in l]
-    if decision_lines:
-        fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
-        record["engine"] = {k2: fields.get(k2) for k2 in ("mode", "nodes", "spent", "short", "hyp", "budget", "book", "inj", "kfog", "risk", "safe_rows", "unsafe")}
+    if args.engine == "mist":
+        decision_lines = [l for l in out.stderr.splitlines() if l.startswith("mist: n=")]
+        if decision_lines:
+            fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
+            record["engine"] = {k2: fields.get(k2) for k2 in ("|P|", "samples", "moves", "nodes", "iters", "p", "v", "clock", "sf")}
+            record["guard"] = sum(1 for l in out.stderr.splitlines() if l.startswith("mist: king guard"))
+    else:
+        decision_lines = [l for l in out.stderr.splitlines() if " n=" in l and " mode=" in l]
+        if decision_lines:
+            fields = dict(tok.split("=", 1) for tok in decision_lines[-1].split() if "=" in tok)
+            record["engine"] = {k2: fields.get(k2) for k2 in ("mode", "nodes", "spent", "short", "hyp", "budget", "book", "inj", "kfog", "risk", "safe_rows", "unsafe")}
     record["match"] = choice == moves[-1]
     pos = position_at(frames[k - 1]["board"], side, moves[:-1])
     record["position"] = [frames[k - 1]["board"], side, pos.castling, pos.en_passant]
@@ -276,6 +288,7 @@ def main() -> None:
     ap.add_argument("--bot", default="build/v15plus/bot")
     ap.add_argument("--model", default="releases/v1")
     ap.add_argument("--mode", default="hybrid")
+    ap.add_argument("--engine", default="fow", choices=["fow", "mist"], help="fow: this repository's bot; mist: a mist-c binary")
     ap.add_argument("--raw", default="data/raw")
     ap.add_argument("--workers", type=int, default=4)
     ap.add_argument("--threads", type=int, default=2)
