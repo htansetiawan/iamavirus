@@ -1,20 +1,20 @@
 # Arena v34 watch
 
-Updated 2026-10-13 17:09 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 17:29 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 203W-9D-198L over 410 games** (51%).
-As White: 106.0/205.
-As Black: 101.5/205.
+**Record: 207W-9D-202L over 418 games** (51%).
+As White: 109.0/209.
+As Black: 102.5/209.
 
-Queen lost for less: 139 games (135 to a capturer unseen when we moved, 30 before ply 30); losses with the queen lost: 114 of 198.
+Queen lost for less: 142 games (137 to a capturer unseen when we moved, 30 before ply 30); losses with the queen lost: 117 of 202.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 28 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 19-1-28 |
-| Mist Opportunities | 19-0-23 |
-| TA Baseline S | 39-0-3 |
+| Instructors | 20-1-31 |
+| Mist Opportunities | 20-0-24 |
+| TA Baseline S | 41-0-3 |
 | TA Baseline A | 36-2-2 |
 | duck | 11-1-26 |
 | Strongly Invisible | 9-0-29 |
@@ -440,3 +440,11 @@ Games as Black where White opened 1.c4: 28 (the book-trap family; the v15 gate r
 | 2026-10-13 17:05 | ukfckvb8 | B | HYPOTHERMIA | 157 | win |  | 20 s | 10-4 |
 | 2026-10-13 17:07 | tt0ggwlr | W | Decent Chess Bot | 63 | loss | ply 36 by r unseen | 55 s | 4-17 |
 | 2026-10-13 17:08 | hd9f2d6v | B | Decent Chess Bot | 82 | loss | ply 15 by n unseen | 30 s | 3-25 |
+| 2026-10-13 17:11 | kszyr1d6 | W | TA Baseline S | 36 | win |  | 89 s | 37-26 |
+| 2026-10-13 17:13 | d4gluygm | B | Instructors | 84 | loss | ply 33 by q unseen | 40 s | 3-20 |
+| 2026-10-13 17:13 | soy8e813 | W | Instructors | 91 | loss | ply 66 by p | 35 s | 8-12 |
+| 2026-10-13 17:14 | zx55bd1o | B | TA Baseline S | 79 | win |  | 43 s | 18-10 |
+| 2026-10-13 17:18 | 12zxgmki | B | Mist Opportunities | 86 | loss |  | 37 s | 2-10 |
+| 2026-10-13 17:18 | y7h1wle4 | W | Mist Opportunities | 98 | win |  | 29 s | 19-5 |
+| 2026-10-13 17:19 | uc7vsln7 | B | Instructors | 78 | loss | ply 73 by p unseen | 41 s | 3-19 |
+| 2026-10-13 17:20 | 5ytc7zxa | W | Instructors | 84 | win |  | 39 s | 11-2 |
