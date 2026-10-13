@@ -1,14 +1,14 @@
 # Arena v34 watch
 
-Updated 2026-10-13 18:52 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 19:13 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 226W-11D-225L over 462 games** (50%).
-As White: 119.0/231.
-As Black: 112.5/231.
+**Record: 233W-11D-229L over 473 games** (50%).
+As White: 123.0/237.
+As Black: 115.5/236.
 
-Queen lost for less: 161 games (154 to a capturer unseen when we moved, 38 before ply 30); losses with the queen lost: 134 of 225.
+Queen lost for less: 163 games (156 to a capturer unseen when we moved, 38 before ply 30); losses with the queen lost: 135 of 229.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
-Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -18,11 +18,11 @@ Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate r
 | TA Baseline S | 41-0-3 |
 | Decent Chess Bot | 9-1-34 |
 | Strongly Invisible | 10-0-34 |
-| duck | 11-1-28 |
-| Knight Vision | 5-3-26 |
+| duck | 11-1-30 |
+| Knight Vision | 5-3-28 |
 | Greek Gift | 0-1-33 |
-| Sausage | 24-0-2 |
-| TA Baseline P | 16-1-1 |
+| Sausage | 29-0-2 |
+| TA Baseline P | 18-1-1 |
 | HYPOTHERMIA | 7-1-6 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
@@ -492,3 +492,14 @@ Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate r
 | 2026-10-13 18:44 | 64l1jl5n | B | Greek Gift | 62 | loss | ply 41 by r unseen | 54 s | 9-26 |
 | 2026-10-13 18:47 | cpzfn9tt | B | HYPOTHERMIA | 106 | loss | ply 19 by q unseen | 20 s | 2-24 |
 | 2026-10-13 18:48 | sc4puuvs | W | Greek Gift | 121 | draw |  | 22 s | 2-2 |
+| 2026-10-13 19:01 | xa5x4mrm | B | Knight Vision | 74 | loss |  | 47 s | 4-20 |
+| 2026-10-13 19:02 | fc4kn6le | W | Knight Vision | 79 | loss |  | 41 s | 8-7 |
+| 2026-10-13 19:03 | de4wa64u | W | TA Baseline P | 102 | win |  | 32 s | 19-3 |
+| 2026-10-13 19:03 | kurl2kh0 | B | TA Baseline P | 77 | win |  | 39 s | 20-12 |
+| 2026-10-13 19:05 | eflsh9hj | B | duck | 64 | loss | ply 61 by q unseen | 48 s | 12-18 |
+| 2026-10-13 19:05 | a66zu6px | B | Sausage | 5 | win |  | 167 s | 39-39 |
+| 2026-10-13 19:06 | lg1cn8r6 | B | Sausage | 59 | win |  | 58 s | 15-10 |
+| 2026-10-13 19:06 | a2qf0akp | W | Sausage | 62 | win |  | 47 s | 33-18 |
+| 2026-10-13 19:08 | drhmypkd | W | duck | 101 | loss |  | 31 s | 5-14 |
+| 2026-10-13 19:11 | dcifjoy5 | W | Sausage | 36 | win |  | 90 s | 32-28 |
+| 2026-10-13 19:11 | 5ac15leb | W | Sausage | 106 | win | ply 54 by k unseen | 31 s | 8-5 |
