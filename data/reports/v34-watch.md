@@ -1,14 +1,14 @@
 # Arena v34 watch
 
-Updated 2026-10-13 16:07 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 16:27 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 200W-9D-185L over 394 games** (52%).
-As White: 104.0/197.
-As Black: 100.5/197.
+**Record: 200W-9D-188L over 397 games** (52%).
+As White: 104.0/198.
+As Black: 100.5/199.
 
-Queen lost for less: 133 games (129 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 108 of 185.
+Queen lost for less: 133 games (129 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 108 of 188.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -17,9 +17,9 @@ Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate r
 | TA Baseline S | 39-0-3 |
 | TA Baseline A | 36-2-2 |
 | duck | 11-1-26 |
-| Strongly Invisible | 9-0-25 |
+| Strongly Invisible | 9-0-26 |
+| Greek Gift | 0-0-32 |
 | Decent Chess Bot | 6-1-25 |
-| Greek Gift | 0-0-30 |
 | Knight Vision | 3-3-18 |
 | Sausage | 22-0-2 |
 | TA Baseline P | 14-1-1 |
@@ -424,3 +424,6 @@ Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate r
 | 2026-10-13 15:56 | p2ggmgpc | W | Decent Chess Bot | 80 | draw |  | 43 s | 6-7 |
 | 2026-10-13 15:59 | j0pkru7z | B | TA Baseline A | 50 | loss |  | 66 s | 25-27 |
 | 2026-10-13 15:59 | i82rigf8 | W | TA Baseline A | 62 | win |  | 55 s | 17-13 |
+| 2026-10-13 16:18 | azbhvgv4 | W | Greek Gift | 57 | loss |  | 61 s | 5-16 |
+| 2026-10-13 16:21 | ht6zs6bw | B | Greek Gift | 92 | loss |  | 35 s | 5-16 |
+| 2026-10-13 16:25 | f83g17u5 | B | Strongly Invisible | 58 | loss |  | 60 s | 8-21 |
