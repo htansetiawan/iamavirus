@@ -1,28 +1,28 @@
 # Against the top six
 
-Updated 2026-10-13 21:17 UTC; leaderboard fetched 2026-10-13T21:17. Active version: v34. Measurement only.
+Updated 2026-10-13 21:38 UTC; leaderboard fetched 2026-10-13T21:37. Active version: v34. Measurement only.
 
 ## Ladder
 
 | team | rating | gap to us |
 | --- | --- | --- |
-| Greek Gift | 2277 | +425 |
-| Knight Vision | 2107 | +255 |
-| Decent Chess Bot | 2074 | +222 |
-| Strongly Invisible | 2081 | +229 |
-| **duck** | 1997 | +145 |
-| **Instructors** | 1942 | +90 |
-| TA Baseline S | 1628 | -224 |
-| **IAmAVirus** | 1852 |  |
-| TA Baseline A | 1563 | -289 |
-| TA Baseline P | 1468 | -384 |
+| Greek Gift | 2277 | +430 |
+| Knight Vision | 2107 | +260 |
+| Decent Chess Bot | 2087 | +240 |
+| Strongly Invisible | 2080 | +233 |
+| **duck** | 1999 | +152 |
+| **Instructors** | 1931 | +84 |
+| TA Baseline S | 1630 | -217 |
+| **IAmAVirus** | 1847 |  |
+| TA Baseline A | 1563 | -284 |
+| TA Baseline P | 1457 | -390 |
 
 ## Record by version (W-D-L)
 
 | opponent | v34 | v33 | v32 | v30 | v28 | v27 |
 | --- | --- | --- | --- | --- | --- | --- |
 | Greek Gift | 0-1-33 | 5-0-41 | 0-0-2 | 2-2-24 |  |  |
-| Knight Vision | 5-3-28 | 19-1-56 | 0-0-4 | 12-3-27 | 0-0-2 | 0-0-2 |
+| Knight Vision | 5-3-29 | 19-1-56 | 0-0-4 | 12-3-27 | 0-0-2 | 0-0-2 |
 | Decent Chess Bot | 9-1-34 | 10-1-43 |  | 6-1-31 | 0-0-2 |  |
 | Strongly Invisible | 10-0-34 | 15-1-44 |  | 4-1-31 | 0-0-2 |  |
 | **duck** | 13-1-34 | 22-3-41 | 0-0-4 | 9-5-40 | 1-0-3 |  |
@@ -40,7 +40,7 @@ Active version v34. "them" is the opponent in those games; "top six among themse
 | Information | squares we see (mean) | 32.3 | 34.0 | 31.7 | 35.2 | 35.3 | 31.7 | 33.1 |
 |  | vision-gaining moves | 20.8 | 19.9 | 20.9 | 21.4 | 22.4 | 19.0 | 19.2 |
 | Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.43 | 0.43 | 0.46 | 0.39 | 0.51 | 0.34 | 0.41 |
-|  | captures from unseen squares | 9.5 | 10.1 | 9.3 | 9.8 | 12.1 | 7.5 | 8.5 |
+|  | captures from unseen squares | 9.5 | 10.1 | 9.4 | 9.9 | 12.1 | 7.5 | 8.5 |
 |  | captures after a route the other side never saw | 15.6 | 16.4 | 15.1 | 18.6 | 18.3 | 13.3 | 14.9 |
 |  | long slider strikes | 4.6 | 4.7 | 4.6 | 5.4 | 5.5 | 4.5 | 4.3 |
 | King pressure | moves that attack the enemy king | 3.1 ⚠ | 4.6 | 2.7 ⚠ | 4.9 | 4.5 | 2.3 | 3.5 |
@@ -59,34 +59,34 @@ Active version v34. "them" is the opponent in those games; "top six among themse
 
 ## Loss anatomy: v34 against the top six
 
-Record 58-7-199; 199 losses analysed.
+Record 58-7-200; 200 losses analysed.
 
 **How our king fell**
 
 | ending | all top six | of which duck + Instructors |
 | --- | --- | --- |
-| king walked into an unseen attacker | 86 | 30 |
+| king walked into an unseen attacker | 87 | 30 |
 | king already attacked by an unseen piece | 41 | 14 |
 | king walked into an unseen attacker after taking the bait (king capture) | 25 | 8 |
 | king already attacked by an unseen piece (no safe move existed) | 24 | 6 |
 | king left to an attacker we could see (no safe move existed) | 16 | 8 |
 | our move opened a line from an unseen attacker | 7 | 4 |
 
-Pieces that took our king: q 114, r 58, n 13, b 6, k 4, p 1, nq 1, br 1, qr 1
+Pieces that took our king: q 114, r 58, n 13, b 6, k 4, p 2, nq 1, br 1, qr 1
 
 **When the material went** (levels held for four plies, so exchanges are not swings)
 
-- Phase of the collapse: middlegame (30-69) 120, late (70+) or never 3 down 43, opening (ply < 30) 36.
-- Down 3 or more at some point in 180 of 199 losses; median first ply 43.0.
-- Down 5 or more in 176; median first ply 47.0.
-- Lost although we had led by 3 or more: 16 of 199.
-- Our clock at 15 s or less: 0 of 199.
-- Median length 78 plies.
+- Phase of the collapse: middlegame (30-69) 121, late (70+) or never 3 down 43, opening (ply < 30) 36.
+- Down 3 or more at some point in 181 of 200 losses; median first ply 43.
+- Down 5 or more in 177; median first ply 47.
+- Lost although we had led by 3 or more: 16 of 200.
+- Our clock at 15 s or less: 0 of 200.
+- Median length 78.0 plies.
 
 | what put us 3 down | losses |
 | --- | --- |
 | capturer unseen when we moved, piece had just moved there (q) | 69 |
-| capturer unseen when we moved, piece had just moved there (r) | 36 |
+| capturer unseen when we moved, piece had just moved there (r) | 37 |
 | capturer unseen when we moved, piece had just moved there (n) | 18 |
 | capturer unseen when we moved, piece had just moved there (b) | 13 |
 | capturer unseen when we moved (q) | 8 |

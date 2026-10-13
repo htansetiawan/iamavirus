@@ -1,14 +1,14 @@
 # Arena v34 watch
 
-Updated 2026-10-13 21:17 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 21:38 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 263W-11D-244L over 518 games** (52%).
-As White: 139.0/259.
-As Black: 129.5/259.
+**Record: 264W-11D-246L over 521 games** (52%).
+As White: 139.0/260.
+As Black: 130.5/261.
 
-Queen lost for less: 178 games (170 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 144 of 244.
+Queen lost for less: 179 games (171 to a capturer unseen when we moved, 41 before ply 30); losses with the queen lost: 145 of 246.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -20,10 +20,10 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | Decent Chess Bot | 9-1-34 |
 | Strongly Invisible | 10-0-34 |
 | Sausage | 40-0-2 |
-| Knight Vision | 5-3-28 |
+| Knight Vision | 5-3-29 |
 | Greek Gift | 0-1-33 |
 | TA Baseline P | 18-1-1 |
-| HYPOTHERMIA | 10-1-7 |
+| HYPOTHERMIA | 11-1-8 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -548,3 +548,6 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | 2026-10-13 21:08 | p3ghj1qs | W | Mist Opportunities | 141 | loss |  | 20 s | 1-15 |
 | 2026-10-13 21:11 | 14ywcklg | B | Instructors | 76 | loss | ply 55 by r | 41 s | 3-22 |
 | 2026-10-13 21:13 | szl1j9ku | W | Instructors | 104 | win | ply 40 by r unseen | 30 s | 12-2 |
+| 2026-10-13 21:23 | 3s3w3bv0 | W | HYPOTHERMIA | 47 | loss | ply 24 by r unseen | 72 s | 8-28 |
+| 2026-10-13 21:26 | d1ilev54 | B | HYPOTHERMIA | 95 | win |  | 29 s | 14-14 |
+| 2026-10-13 21:36 | jx74i38s | B | Knight Vision | 78 | loss |  | 36 s | 1-17 |
