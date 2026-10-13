@@ -1,31 +1,31 @@
 # Arena v34 watch
 
-Updated 2026-10-13 18:11 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 18:31 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 215W-10D-217L over 442 games** (50%).
-As White: 112.5/221.
-As Black: 107.5/221.
+**Record: 222W-10D-220L over 452 games** (50%).
+As White: 115.5/225.
+As Black: 111.5/227.
 
-Queen lost for less: 154 games (148 to a capturer unseen when we moved, 34 before ply 30); losses with the queen lost: 128 of 217.
+Queen lost for less: 155 games (149 to a capturer unseen when we moved, 35 before ply 30); losses with the queen lost: 129 of 220.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
 Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 20-1-31 |
-| Mist Opportunities | 20-0-24 |
+| Mist Opportunities | 21-0-24 |
 | TA Baseline A | 39-2-3 |
 | TA Baseline S | 41-0-3 |
 | Strongly Invisible | 10-0-34 |
-| Decent Chess Bot | 7-1-32 |
-| duck | 11-1-26 |
+| Decent Chess Bot | 9-1-32 |
+| duck | 11-1-27 |
 | Knight Vision | 5-3-26 |
 | Greek Gift | 0-0-32 |
-| Sausage | 22-0-2 |
+| Sausage | 24-0-2 |
 | TA Baseline P | 16-1-1 |
 | baseline.py | 10-0-0 |
+| HYPOTHERMIA | 4-1-5 |
 | Gravel Road | 8-0-0 |
-| HYPOTHERMIA | 2-1-3 |
 | Apricot Squad | 4-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -472,3 +472,13 @@ Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate r
 | 2026-10-13 18:05 | jpcxtx23 | B | Knight Vision | 60 | loss |  | 38 s | 28-20 |
 | 2026-10-13 18:07 | 7iwz4tgk | B | Knight Vision | 102 | loss | ply 67 by n unseen | 30 s | 6-15 |
 | 2026-10-13 18:09 | o436f0ij | W | Knight Vision | 105 | loss |  | 25 s | 2-19 |
+| 2026-10-13 18:14 | iygzxsr9 | W | Sausage | 78 | win |  | 44 s | 21-18 |
+| 2026-10-13 18:14 | xuw50ltw | B | Sausage | 69 | win |  | 45 s | 30-17 |
+| 2026-10-13 18:15 | wx0e2lg2 | B | HYPOTHERMIA | 82 | loss | ply 17 by n unseen | 34 s | 2-28 |
+| 2026-10-13 18:16 | dn1k6qsz | W | HYPOTHERMIA | 105 | loss |  | 28 s | 2-9 |
+| 2026-10-13 18:16 | tr3r212p | W | HYPOTHERMIA | 102 | win |  | 32 s | 10-2 |
+| 2026-10-13 18:16 | clpa9vgy | B | HYPOTHERMIA | 73 | win |  | 48 s | 13-16 |
+| 2026-10-13 18:22 | n69l9snx | B | Mist Opportunities | 9 | win |  | 154 s | 36-38 |
+| 2026-10-13 18:26 | bjjjgdns | B | Decent Chess Bot | 71 | win |  | 49 s | 17-4 |
+| 2026-10-13 18:30 | 8cmvjx19 | W | Decent Chess Bot | 134 | win |  | 20 s | 12-7 |
+| 2026-10-13 18:31 | dw2vmq7s | B | duck | 62 | loss |  | 55 s | 4-16 |
