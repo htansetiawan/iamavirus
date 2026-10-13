@@ -1,27 +1,27 @@
 # Arena v34 watch
 
-Updated 2026-10-13 13:42 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 14:03 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 177W-8D-155L over 340 games** (53%).
-As White: 90.5/170.
-As Black: 90.5/170.
+**Record: 180W-8D-162L over 350 games** (53%).
+As White: 92.5/175.
+As Black: 91.5/175.
 
-Queen lost for less: 108 games (104 to a capturer unseen when we moved, 26 before ply 30); losses with the queen lost: 87 of 155.
+Queen lost for less: 114 games (110 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 93 of 162.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
-Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 19-1-22 |
 | Mist Opportunities | 18-0-18 |
 | TA Baseline S | 34-0-2 |
-| duck | 9-1-20 |
+| duck | 9-1-24 |
 | TA Baseline A | 28-2-0 |
+| Greek Gift | 0-0-30 |
 | Decent Chess Bot | 6-0-24 |
-| Greek Gift | 0-0-28 |
-| Strongly Invisible | 8-0-20 |
+| Strongly Invisible | 9-0-21 |
 | Knight Vision | 3-3-18 |
-| Sausage | 16-0-2 |
+| Sausage | 18-0-2 |
 | TA Baseline P | 14-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
@@ -369,3 +369,13 @@ Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate r
 | 2026-10-13 13:40 | 4tf8x9ga | W | Sausage | 76 | win |  | 45 s | 20-7 |
 | 2026-10-13 13:40 | eh1dd6fy | B | Sausage | 88 | loss | ply 21 by b unseen | 37 s | 2-9 |
 | 2026-10-13 13:40 | 5ivbaseg | W | Knight Vision | 83 | loss |  | 35 s | 2-12 |
+| 2026-10-13 13:46 | f5h291bu | B | Sausage | 9 | win |  | 154 s | 38-38 |
+| 2026-10-13 13:49 | vsyld6pj | W | Sausage | 42 | win |  | 80 s | 25-21 |
+| 2026-10-13 13:52 | 2goq1zeh | W | duck | 91 | loss | ply 22 by p unseen | 32 s | 2-12 |
+| 2026-10-13 13:53 | wrtlqfcw | B | duck | 110 | loss | ply 47 by r unseen | 28 s | 2-15 |
+| 2026-10-13 13:53 | ggdar4bq | B | Strongly Invisible | 80 | loss | ply 43 by q unseen | 41 s | 3-19 |
+| 2026-10-13 13:54 | flgcykq6 | W | Greek Gift | 73 | loss |  | 47 s | 20-11 |
+| 2026-10-13 13:54 | toe238b5 | W | Strongly Invisible | 86 | win |  | 38 s | 6-1 |
+| 2026-10-13 13:54 | 54hpc62u | B | duck | 78 | loss | ply 25 by q unseen | 40 s | 4-23 |
+| 2026-10-13 13:56 | ceqxslqv | B | Greek Gift | 88 | loss | ply 27 by q unseen | 27 s | 8-25 |
+| 2026-10-13 13:57 | c5lxifbm | W | duck | 109 | loss | ply 42 by r unseen | 22 s | 2-22 |
