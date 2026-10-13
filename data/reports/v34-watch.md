@@ -1,12 +1,12 @@
 # Arena v34 watch
 
-Updated 2026-10-13 15:05 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 15:25 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 190W-8D-173L over 371 games** (52%).
-As White: 98.5/186.
-As Black: 95.5/185.
+**Record: 191W-8D-175L over 374 games** (52%).
+As White: 98.5/187.
+As Black: 96.5/187.
 
-Queen lost for less: 124 games (120 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 101 of 173.
+Queen lost for less: 125 games (121 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 102 of 175.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -21,11 +21,12 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | Decent Chess Bot | 6-0-24 |
 | Strongly Invisible | 9-0-21 |
 | Knight Vision | 3-3-18 |
-| Sausage | 21-0-2 |
+| Sausage | 22-0-2 |
 | TA Baseline P | 14-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
 | Apricot Squad | 4-0-0 |
+| HYPOTHERMIA | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -400,3 +401,6 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | 2026-10-13 14:55 | 2u2pmqt1 | B | Sausage | 53 | win |  | 67 s | 22-7 |
 | 2026-10-13 14:56 | wqbsjl7y | W | Instructors | 101 | loss |  | 27 s | 3-17 |
 | 2026-10-13 15:04 | ejgik4fa | W | Sausage | 74 | win |  | 41 s | 17-4 |
+| 2026-10-13 15:05 | l5yivfgi | B | Sausage | 83 | win |  | 39 s | 20-3 |
+| 2026-10-13 15:19 | xcqs5oqs | B | HYPOTHERMIA | 78 | loss |  | 31 s | 3-17 |
+| 2026-10-13 15:20 | e0qrpaqx | W | HYPOTHERMIA | 97 | loss | ply 50 by r unseen | 30 s | 0-16 |
