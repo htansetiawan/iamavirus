@@ -1,29 +1,29 @@
 # Arena v34 watch
 
-Updated 2026-10-13 20:15 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 20:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 247W-11D-237L over 495 games** (51%).
-As White: 130.0/248.
-As Black: 122.5/247.
+**Record: 254W-11D-239L over 504 games** (51%).
+As White: 133.0/252.
+As Black: 126.5/252.
 
-Queen lost for less: 171 games (164 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 140 of 237.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
-Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 172 games (165 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 140 of 239.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
+Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 20-1-33 |
+| Instructors | 20-1-35 |
 | Mist Opportunities | 23-0-25 |
 | TA Baseline A | 43-2-3 |
 | duck | 12-1-33 |
 | TA Baseline S | 42-0-4 |
 | Decent Chess Bot | 9-1-34 |
 | Strongly Invisible | 10-0-34 |
+| Sausage | 38-0-2 |
 | Knight Vision | 5-3-28 |
-| Sausage | 33-0-2 |
 | Greek Gift | 0-1-33 |
 | TA Baseline P | 18-1-1 |
-| HYPOTHERMIA | 8-1-7 |
+| HYPOTHERMIA | 10-1-7 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -525,3 +525,12 @@ Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate r
 | 2026-10-13 20:09 | 10zigsfm | W | Apricot Squad | 20 | win |  | 122 s | 37-35 |
 | 2026-10-13 20:12 | 0xg4viw0 | B | Apricot Squad | 47 | win |  | 73 s | 37-7 |
 | 2026-10-13 20:14 | uthrvgxl | W | Sausage | 20 | win |  | 122 s | 20-25 |
+| 2026-10-13 20:15 | z8ikb3vq | B | Sausage | 41 | win |  | 83 s | 19-16 |
+| 2026-10-13 20:16 | kl3haw5n | B | HYPOTHERMIA | 71 | win | ply 55 by r unseen | 41 s | 14-15 |
+| 2026-10-13 20:16 | ed16peaz | W | Instructors | 47 | loss |  | 72 s | 13-15 |
+| 2026-10-13 20:17 | e1hw4czs | W | HYPOTHERMIA | 98 | win |  | 34 s | 11-2 |
+| 2026-10-13 20:20 | naeum6wg | B | Sausage | 41 | win |  | 84 s | 31-20 |
+| 2026-10-13 20:21 | 2pqkua6c | B | Instructors | 124 | loss |  | 24 s | 5-21 |
+| 2026-10-13 20:21 | 440rcf5s | W | Sausage | 50 | win |  | 70 s | 25-18 |
+| 2026-10-13 20:31 | fqj1hb8v | W | Sausage | 74 | win |  | 46 s | 20-7 |
+| 2026-10-13 20:32 | v7nn40nr | B | Sausage | 89 | win |  | 39 s | 7-3 |
