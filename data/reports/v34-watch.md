@@ -1,27 +1,27 @@
 # Arena v34 watch
 
-Updated 2026-10-13 19:13 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 19:34 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 233W-11D-229L over 473 games** (50%).
-As White: 123.0/237.
-As Black: 115.5/236.
+**Record: 239W-11D-232L over 482 games** (51%).
+As White: 125.0/241.
+As Black: 119.5/241.
 
-Queen lost for less: 163 games (156 to a capturer unseen when we moved, 38 before ply 30); losses with the queen lost: 135 of 229.
+Queen lost for less: 168 games (161 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 138 of 232.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
-Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 33 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 20-1-31 |
+| Instructors | 20-1-33 |
+| TA Baseline A | 43-2-3 |
 | Mist Opportunities | 22-0-24 |
-| TA Baseline A | 39-2-3 |
+| duck | 12-1-31 |
 | TA Baseline S | 41-0-3 |
 | Decent Chess Bot | 9-1-34 |
 | Strongly Invisible | 10-0-34 |
-| duck | 11-1-30 |
 | Knight Vision | 5-3-28 |
 | Greek Gift | 0-1-33 |
-| Sausage | 29-0-2 |
+| Sausage | 30-0-2 |
 | TA Baseline P | 18-1-1 |
 | HYPOTHERMIA | 7-1-6 |
 | baseline.py | 10-0-0 |
@@ -503,3 +503,12 @@ Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate r
 | 2026-10-13 19:08 | drhmypkd | W | duck | 101 | loss |  | 31 s | 5-14 |
 | 2026-10-13 19:11 | dcifjoy5 | W | Sausage | 36 | win |  | 90 s | 32-28 |
 | 2026-10-13 19:11 | 5ac15leb | W | Sausage | 106 | win | ply 54 by k unseen | 31 s | 8-5 |
+| 2026-10-13 19:14 | 2wfzz70o | B | Sausage | 109 | win |  | 27 s | 16-7 |
+| 2026-10-13 19:18 | ehpl64pf | B | Instructors | 60 | loss | ply 29 by p unseen | 58 s | 12-24 |
+| 2026-10-13 19:21 | 2k7py9vg | B | TA Baseline A | 69 | win |  | 48 s | 12-6 |
+| 2026-10-13 19:22 | 5k34rbw6 | W | TA Baseline A | 82 | win |  | 41 s | 21-7 |
+| 2026-10-13 19:23 | igekpa0g | W | TA Baseline A | 54 | win | ply 52 by b unseen | 64 s | 11-8 |
+| 2026-10-13 19:24 | o4pw3it9 | W | Instructors | 165 | loss | ply 34 by r unseen | 20 s | 0-0 |
+| 2026-10-13 19:25 | razih3wi | B | TA Baseline A | 73 | win | ply 61 by r unseen | 45 s | 14-5 |
+| 2026-10-13 19:30 | f92ig9i0 | W | duck | 57 | loss | ply 28 by n unseen | 41 s | 24-32 |
+| 2026-10-13 19:32 | zpal1iv1 | B | duck | 103 | win |  | 32 s | 13-3 |
