@@ -1,14 +1,14 @@
 # Arena v34 watch
 
-Updated 2026-10-13 11:38 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 11:59 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 158W-7D-125L over 290 games** (56%).
-As White: 79.5/145.
-As Black: 82.0/145.
+**Record: 160W-7D-127L over 294 games** (56%).
+As White: 80.5/147.
+As Black: 83.0/147.
 
-Queen lost for less: 97 games (93 to a capturer unseen when we moved, 24 before ply 30); losses with the queen lost: 77 of 125.
+Queen lost for less: 98 games (94 to a capturer unseen when we moved, 24 before ply 30); losses with the queen lost: 78 of 127.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
-Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -18,9 +18,9 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | Mist Opportunities | 15-0-15 |
 | Decent Chess Bot | 6-0-24 |
 | TA Baseline A | 26-2-0 |
+| Strongly Invisible | 7-0-15 |
 | Greek Gift | 0-0-20 |
-| Strongly Invisible | 5-0-15 |
-| Knight Vision | 3-3-10 |
+| Knight Vision | 3-3-12 |
 | Sausage | 15-0-1 |
 | TA Baseline P | 10-1-1 |
 | baseline.py | 10-0-0 |
@@ -319,3 +319,7 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | 2026-10-13 11:33 | id1yi6fv | B | Strongly Invisible | 52 | loss | ply 39 by q unseen | 67 s | 14-23 |
 | 2026-10-13 11:35 | tieyluc3 | B | Greek Gift | 122 | loss |  | 22 s | 1-15 |
 | 2026-10-13 11:36 | plh8a8pt | W | Strongly Invisible | 93 | loss |  | 28 s | 0-12 |
+| 2026-10-13 11:44 | 0jl9lbsc | W | Strongly Invisible | 96 | win |  | 31 s | 7-3 |
+| 2026-10-13 11:47 | 2befnpma | B | Strongly Invisible | 135 | win |  | 23 s | 11-1 |
+| 2026-10-13 11:56 | b9acl01t | B | Knight Vision | 92 | loss |  | 22 s | 3-20 |
+| 2026-10-13 11:56 | pnfwwd3g | W | Knight Vision | 89 | loss | ply 38 by q unseen | 37 s | 1-16 |
