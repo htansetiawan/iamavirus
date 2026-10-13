@@ -1,12 +1,12 @@
 # Arena v34 watch
 
-Updated 2026-10-13 21:38 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 21:58 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 264W-11D-246L over 521 games** (52%).
-As White: 139.0/260.
-As Black: 130.5/261.
+**Record: 268W-11D-249L over 528 games** (52%).
+As White: 141.0/264.
+As Black: 132.5/264.
 
-Queen lost for less: 179 games (171 to a capturer unseen when we moved, 41 before ply 30); losses with the queen lost: 145 of 246.
+Queen lost for less: 182 games (174 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 148 of 249.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,13 +14,13 @@ Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate r
 | --- | --- |
 | Instructors | 21-1-36 |
 | Mist Opportunities | 25-0-27 |
-| TA Baseline A | 44-2-4 |
+| TA Baseline A | 46-2-4 |
+| TA Baseline S | 46-0-4 |
 | duck | 13-1-34 |
-| TA Baseline S | 44-0-4 |
-| Decent Chess Bot | 9-1-34 |
+| Decent Chess Bot | 9-1-36 |
 | Strongly Invisible | 10-0-34 |
 | Sausage | 40-0-2 |
-| Knight Vision | 5-3-29 |
+| Knight Vision | 5-3-30 |
 | Greek Gift | 0-1-33 |
 | TA Baseline P | 18-1-1 |
 | HYPOTHERMIA | 11-1-8 |
@@ -551,3 +551,10 @@ Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate r
 | 2026-10-13 21:23 | 3s3w3bv0 | W | HYPOTHERMIA | 47 | loss | ply 24 by r unseen | 72 s | 8-28 |
 | 2026-10-13 21:26 | d1ilev54 | B | HYPOTHERMIA | 95 | win |  | 29 s | 14-14 |
 | 2026-10-13 21:36 | jx74i38s | B | Knight Vision | 78 | loss |  | 36 s | 1-17 |
+| 2026-10-13 21:38 | 043vam5a | W | Knight Vision | 93 | loss | ply 70 by k unseen | 27 s | 4-17 |
+| 2026-10-13 21:51 | 5ggishco | W | TA Baseline S | 120 | win |  | 26 s | 11-2 |
+| 2026-10-13 21:51 | 48umaafw | B | TA Baseline S | 101 | win |  | 30 s | 15-3 |
+| 2026-10-13 21:54 | iogldjww | W | Decent Chess Bot | 53 | loss | ply 16 by b unseen | 62 s | 13-27 |
+| 2026-10-13 21:54 | 0l3dcb9b | W | TA Baseline A | 38 | win |  | 87 s | 24-28 |
+| 2026-10-13 21:56 | 0dj6sk5m | B | TA Baseline A | 51 | win |  | 67 s | 18-16 |
+| 2026-10-13 21:56 | m54jk7gj | B | Decent Chess Bot | 74 | loss | ply 57 by r unseen | 45 s | 6-18 |
