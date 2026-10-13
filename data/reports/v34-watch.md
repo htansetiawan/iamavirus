@@ -1,14 +1,14 @@
 # Arena v34 watch
 
-Updated 2026-10-13 22:40 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 23:01 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 272W-11D-255L over 538 games** (52%).
-As White: 143.0/269.
-As Black: 134.5/269.
+**Record: 273W-11D-260L over 544 games** (51%).
+As White: 144.0/272.
+As Black: 134.5/272.
 
-Queen lost for less: 187 games (179 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 152 of 255.
+Queen lost for less: 189 games (181 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 154 of 260.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 38 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 40 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -16,12 +16,12 @@ Games as Black where White opened 1.c4: 38 (the book-trap family; the v15 gate r
 | Mist Opportunities | 25-0-29 |
 | TA Baseline A | 48-2-4 |
 | TA Baseline S | 46-0-6 |
+| Strongly Invisible | 10-0-40 |
 | duck | 13-1-34 |
 | Decent Chess Bot | 9-1-36 |
-| Strongly Invisible | 10-0-36 |
 | Sausage | 40-0-2 |
 | Knight Vision | 5-3-30 |
-| Greek Gift | 0-1-33 |
+| Greek Gift | 1-1-34 |
 | TA Baseline P | 18-1-1 |
 | HYPOTHERMIA | 11-1-8 |
 | Gravel Road | 10-0-0 |
@@ -568,3 +568,9 @@ Games as Black where White opened 1.c4: 38 (the book-trap family; the v15 gate r
 | 2026-10-13 22:18 | mlb4ba39 | B | TA Baseline A | 121 | win | ply 59 by r unseen | 26 s | 7-1 |
 | 2026-10-13 22:31 | x24mg8lw | B | Mist Opportunities | 70 | loss |  | 48 s | 6-13 |
 | 2026-10-13 22:35 | xcxqf24o | W | Mist Opportunities | 133 | loss |  | 23 s | 1-11 |
+| 2026-10-13 22:40 | mkcygww5 | W | Greek Gift | 72 | win |  | 48 s | 8-13 |
+| 2026-10-13 22:42 | 3n99z2xq | B | Greek Gift | 90 | loss |  | 35 s | 3-12 |
+| 2026-10-13 22:45 | fx2t0am5 | W | Strongly Invisible | 81 | loss | ply 66 by q unseen | 35 s | 5-17 |
+| 2026-10-13 22:46 | 6sc6x1pj | B | Strongly Invisible | 90 | loss |  | 30 s | 3-12 |
+| 2026-10-13 22:48 | fxkhr7pl | W | Strongly Invisible | 85 | loss |  | 35 s | 4-14 |
+| 2026-10-13 22:49 | 1omoj0vp | B | Strongly Invisible | 100 | loss | ply 39 by r unseen | 23 s | 3-22 |
