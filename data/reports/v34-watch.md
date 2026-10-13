@@ -1,10 +1,10 @@
 # Arena v34 watch
 
-Updated 2026-10-13 23:22 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 23:43 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 278W-11D-261L over 550 games** (52%).
-As White: 146.0/275.
-As Black: 137.5/275.
+**Record: 285W-11D-261L over 557 games** (52%).
+As White: 150.0/279.
+As Black: 140.5/278.
 
 Queen lost for less: 190 games (182 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 155 of 261.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
@@ -13,21 +13,21 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 23-1-36 |
+| TA Baseline A | 49-2-4 |
 | Mist Opportunities | 25-0-29 |
-| TA Baseline A | 48-2-4 |
-| TA Baseline S | 46-0-6 |
+| TA Baseline S | 48-0-6 |
 | duck | 14-1-35 |
 | Strongly Invisible | 10-0-40 |
 | Decent Chess Bot | 9-1-36 |
 | Sausage | 40-0-2 |
 | Knight Vision | 5-3-30 |
 | Greek Gift | 1-1-34 |
-| TA Baseline P | 18-1-1 |
+| TA Baseline P | 20-1-1 |
 | HYPOTHERMIA | 11-1-8 |
 | Gravel Road | 10-0-0 |
 | baseline.py | 10-0-0 |
 | Apricot Squad | 6-0-0 |
-| Lost Signal | 2-0-0 |
+| Lost Signal | 4-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -581,3 +581,10 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | 2026-10-13 23:05 | 8pd9vzea | W | duck | 107 | loss | ply 42 by r unseen | 25 s | 3-11 |
 | 2026-10-13 23:19 | 49ffudf7 | B | Instructors | 85 | win |  | 40 s | 19-4 |
 | 2026-10-13 23:20 | ulxqmous | W | Instructors | 108 | win |  | 30 s | 1-0 |
+| 2026-10-13 23:27 | pstvam4m | B | TA Baseline P | 33 | win |  | 88 s | 26-34 |
+| 2026-10-13 23:28 | qbj84bcb | W | TA Baseline P | 44 | win |  | 77 s | 24-30 |
+| 2026-10-13 23:35 | yn6xf2gs | B | Lost Signal | 31 | win |  | 101 s | 28-23 |
+| 2026-10-13 23:35 | f6qzxxuq | W | Lost Signal | 36 | win |  | 90 s | 29-17 |
+| 2026-10-13 23:37 | hadwvkxo | W | TA Baseline S | 132 | win |  | 22 s | 14-1 |
+| 2026-10-13 23:38 | 2zfwsnlq | B | TA Baseline S | 137 | win |  | 22 s | 13-4 |
+| 2026-10-13 23:40 | dpkku1yc | W | TA Baseline A | 36 | win |  | 90 s | 29-22 |
