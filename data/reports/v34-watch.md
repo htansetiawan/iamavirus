@@ -1,22 +1,22 @@
 # Arena v34 watch
 
-Updated 2026-10-13 14:23 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 14:44 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 182W-8D-164L over 354 games** (53%).
-As White: 93.5/177.
-As Black: 92.5/177.
+**Record: 187W-8D-171L over 366 games** (52%).
+As White: 96.5/183.
+As Black: 94.5/183.
 
-Queen lost for less: 117 games (113 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 95 of 164.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
-Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 123 games (119 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 100 of 171.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
+Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 19-1-24 |
-| Mist Opportunities | 18-0-18 |
-| TA Baseline S | 34-0-2 |
-| duck | 9-1-24 |
-| TA Baseline A | 30-2-0 |
+| Instructors | 19-1-26 |
+| duck | 11-1-26 |
+| Mist Opportunities | 18-0-20 |
+| TA Baseline S | 35-0-3 |
+| TA Baseline A | 32-2-0 |
 | Greek Gift | 0-0-30 |
 | Decent Chess Bot | 6-0-24 |
 | Strongly Invisible | 9-0-21 |
@@ -383,3 +383,15 @@ Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate r
 | 2026-10-13 14:10 | bky5hcjf | B | Instructors | 54 | loss | ply 33 by q unseen | 64 s | 13-27 |
 | 2026-10-13 14:11 | de85raro | W | Instructors | 75 | loss | ply 34 by q unseen | 45 s | 5-24 |
 | 2026-10-13 14:12 | c8tl03vq | B | TA Baseline A | 121 | win | ply 57 by r unseen | 22 s | 17-12 |
+| 2026-10-13 14:27 | gp12qvyd | W | Mist Opportunities | 77 | loss | ply 38 by r unseen | 37 s | 8-11 |
+| 2026-10-13 14:28 | 0hynqay3 | B | TA Baseline S | 70 | loss | ply 63 by r unseen | 42 s | 17-25 |
+| 2026-10-13 14:29 | rrrrqe0i | W | TA Baseline S | 80 | win |  | 42 s | 12-4 |
+| 2026-10-13 14:33 | yy8y8aoj | B | Mist Opportunities | 192 | loss | ply 37 by n unseen | 19 s | 3-24 |
+| 2026-10-13 14:37 | bu1uj6ya | B | Instructors | 64 | loss | ply 53 by r unseen | 53 s | 5-22 |
+| 2026-10-13 14:37 | ibbjpwdg | W | duck | 73 | loss | ply 60 by q unseen | 46 s | 7-7 |
+| 2026-10-13 14:38 | 98aje6v3 | W | duck | 100 | win |  | 32 s | 17-1 |
+| 2026-10-13 14:40 | sttiqpmw | B | duck | 118 | loss |  | 21 s | 1-21 |
+| 2026-10-13 14:40 | 0ta8eowb | W | TA Baseline A | 60 | win |  | 59 s | 15-10 |
+| 2026-10-13 14:41 | v7zpli0p | W | Instructors | 131 | loss |  | 20 s | 1-10 |
+| 2026-10-13 14:42 | dzmazevd | B | duck | 207 | win | ply 37 by r unseen | 20 s | 8-2 |
+| 2026-10-13 14:42 | 5z5o0hzp | B | TA Baseline A | 85 | win |  | 40 s | 18-2 |
