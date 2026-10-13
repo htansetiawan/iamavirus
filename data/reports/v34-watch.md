@@ -1,27 +1,27 @@
 # Arena v34 watch
 
-Updated 2026-10-13 13:21 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 13:42 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 173W-8D-147L over 328 games** (54%).
-As White: 88.5/164.
-As Black: 88.5/164.
+**Record: 177W-8D-155L over 340 games** (53%).
+As White: 90.5/170.
+As Black: 90.5/170.
 
-Queen lost for less: 106 games (102 to a capturer unseen when we moved, 25 before ply 30); losses with the queen lost: 85 of 147.
+Queen lost for less: 108 games (104 to a capturer unseen when we moved, 26 before ply 30); losses with the queen lost: 87 of 155.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
-Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 18-1-21 |
+| Instructors | 19-1-22 |
 | Mist Opportunities | 18-0-18 |
 | TA Baseline S | 34-0-2 |
 | duck | 9-1-20 |
+| TA Baseline A | 28-2-0 |
 | Decent Chess Bot | 6-0-24 |
-| TA Baseline A | 26-2-0 |
 | Greek Gift | 0-0-28 |
 | Strongly Invisible | 8-0-20 |
-| Knight Vision | 3-3-12 |
-| Sausage | 15-0-1 |
+| Knight Vision | 3-3-18 |
+| Sausage | 16-0-2 |
 | TA Baseline P | 14-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
@@ -357,3 +357,15 @@ Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate r
 | 2026-10-13 13:15 | d0e0hzct | B | Mist Opportunities | 96 | loss |  | 33 s | 3-13 |
 | 2026-10-13 13:19 | 7jv69h90 | W | TA Baseline P | 60 | win |  | 53 s | 22-14 |
 | 2026-10-13 13:19 | p9yylv39 | B | TA Baseline P | 63 | win |  | 57 s | 23-5 |
+| 2026-10-13 13:24 | n9pb5p8k | W | Knight Vision | 45 | loss |  | 75 s | 10-11 |
+| 2026-10-13 13:25 | cmyf2h7z | W | Instructors | 19 | loss |  | 122 s | 35-35 |
+| 2026-10-13 13:28 | qanm8ig4 | B | Knight Vision | 88 | loss |  | 34 s | 1-10 |
+| 2026-10-13 13:28 | dzfs0m1x | B | TA Baseline A | 71 | win |  | 45 s | 15-12 |
+| 2026-10-13 13:28 | rmr2fj17 | W | TA Baseline A | 80 | win |  | 43 s | 17-10 |
+| 2026-10-13 13:31 | riym93ih | B | Instructors | 101 | win |  | 32 s | 11-3 |
+| 2026-10-13 13:36 | r024fi9h | B | Knight Vision | 104 | loss |  | 30 s | 0-8 |
+| 2026-10-13 13:37 | ya6f6xoh | W | Knight Vision | 105 | loss | ply 62 by r unseen | 28 s | 4-18 |
+| 2026-10-13 13:39 | m9yrd0t0 | B | Knight Vision | 72 | loss |  | 48 s | 2-18 |
+| 2026-10-13 13:40 | 4tf8x9ga | W | Sausage | 76 | win |  | 45 s | 20-7 |
+| 2026-10-13 13:40 | eh1dd6fy | B | Sausage | 88 | loss | ply 21 by b unseen | 37 s | 2-9 |
+| 2026-10-13 13:40 | 5ivbaseg | W | Knight Vision | 83 | loss |  | 35 s | 2-12 |
