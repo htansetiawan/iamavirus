@@ -1,27 +1,27 @@
 # Arena v34 watch
 
-Updated 2026-10-13 05:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 05:47 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 70W-1D-64L over 135 games** (52%).
-As White: 36.5/67.
-As Black: 34.0/68.
+**Record: 72W-1D-67L over 140 games** (52%).
+As White: 37.5/70.
+As Black: 35.0/70.
 
-Queen lost for less: 50 games (48 to a capturer unseen when we moved, 13 before ply 30); losses with the queen lost: 40 of 64.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
+Queen lost for less: 54 games (52 to a capturer unseen when we moved, 13 before ply 30); losses with the queen lost: 43 of 67.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
 Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 9-0-12 |
-| TA Baseline S | 19-0-1 |
+| Instructors | 10-0-12 |
+| TA Baseline S | 20-0-2 |
 | duck | 5-0-9 |
 | Mist Opportunities | 6-0-8 |
 | Greek Gift | 0-0-12 |
 | TA Baseline A | 10-0-0 |
 | Strongly Invisible | 1-0-9 |
 | Knight Vision | 1-0-7 |
+| Decent Chess Bot | 1-0-7 |
 | Sausage | 5-0-1 |
-| Decent Chess Bot | 1-0-5 |
 | TA Baseline P | 5-1-0 |
 | Gravel Road | 4-0-0 |
 | baseline.py | 4-0-0 |
@@ -163,3 +163,8 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-13 05:24 | kxg2xeti | W | Greek Gift | 73 | loss |  | 46 s | 2-10 |
 | 2026-10-13 05:26 | 9u4o7myf | W | Strongly Invisible | 81 | loss | ply 68 by q unseen | 39 s | 19-26 |
 | 2026-10-13 05:26 | 71grmj4i | B | Instructors | 58 | loss | ply 53 by n unseen | 58 s | 10-27 |
+| 2026-10-13 05:27 | 63lu4q06 | B | Decent Chess Bot | 78 | loss | ply 45 by q unseen | 35 s | 4-20 |
+| 2026-10-13 05:28 | 2jweeigz | W | Decent Chess Bot | 105 | loss | ply 80 by r unseen | 21 s | 1-7 |
+| 2026-10-13 05:29 | wz467mbn | W | Instructors | 96 | win |  | 35 s | 15-3 |
+| 2026-10-13 05:41 | nmv0mhai | B | TA Baseline S | 67 | win | ply 63 by r unseen | 51 s | 17-14 |
+| 2026-10-13 05:44 | 2ry65kp5 | W | TA Baseline S | 109 | loss | ply 34 by q unseen | 22 s | 2-16 |
