@@ -1,10 +1,10 @@
 # Arena v34 watch
 
-Updated 2026-10-13 19:54 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 20:15 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 242W-11D-237L over 490 games** (51%).
-As White: 127.0/245.
-As Black: 120.5/245.
+**Record: 247W-11D-237L over 495 games** (51%).
+As White: 130.0/248.
+As Black: 122.5/247.
 
 Queen lost for less: 171 games (164 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 140 of 237.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
@@ -20,13 +20,13 @@ Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate r
 | Decent Chess Bot | 9-1-34 |
 | Strongly Invisible | 10-0-34 |
 | Knight Vision | 5-3-28 |
+| Sausage | 33-0-2 |
 | Greek Gift | 0-1-33 |
-| Sausage | 30-0-2 |
 | TA Baseline P | 18-1-1 |
 | HYPOTHERMIA | 8-1-7 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
-| Apricot Squad | 4-0-0 |
+| Apricot Squad | 6-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -520,3 +520,8 @@ Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate r
 | 2026-10-13 19:51 | htz8htoc | W | Mist Opportunities | 98 | win |  | 33 s | 19-3 |
 | 2026-10-13 19:52 | t91kugdm | B | TA Baseline S | 57 | win | ply 37 by b unseen | 63 s | 15-11 |
 | 2026-10-13 19:52 | 751mjy0s | W | TA Baseline S | 57 | loss |  | 60 s | 13-18 |
+| 2026-10-13 20:03 | 7tyugay5 | B | Sausage | 49 | win |  | 71 s | 20-20 |
+| 2026-10-13 20:05 | a5uxep61 | W | Sausage | 96 | win |  | 34 s | 12-2 |
+| 2026-10-13 20:09 | 10zigsfm | W | Apricot Squad | 20 | win |  | 122 s | 37-35 |
+| 2026-10-13 20:12 | 0xg4viw0 | B | Apricot Squad | 47 | win |  | 73 s | 37-7 |
+| 2026-10-13 20:14 | uthrvgxl | W | Sausage | 20 | win |  | 122 s | 20-25 |
