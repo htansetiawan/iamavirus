@@ -1,30 +1,30 @@
 # Arena v34 watch
 
-Updated 2026-10-13 08:12 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 08:33 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 107W-5D-90L over 202 games** (54%).
-As White: 56.0/101.
-As Black: 53.5/101.
+**Record: 119W-5D-90L over 214 games** (57%).
+As White: 62.0/107.
+As Black: 59.5/107.
 
-Queen lost for less: 77 games (73 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 60 of 90.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
+Queen lost for less: 78 games (74 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 60 of 90.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
 Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline S | 26-0-2 |
 | Instructors | 11-0-13 |
-| TA Baseline S | 22-0-2 |
+| TA Baseline A | 20-2-0 |
 | duck | 5-1-14 |
-| TA Baseline A | 18-2-0 |
 | Mist Opportunities | 8-0-10 |
 | Decent Chess Bot | 4-0-14 |
 | Strongly Invisible | 5-0-13 |
 | Greek Gift | 0-0-14 |
 | Knight Vision | 3-1-8 |
+| TA Baseline P | 10-1-1 |
 | Sausage | 9-0-1 |
-| TA Baseline P | 8-1-1 |
-| baseline.py | 8-0-0 |
-| Gravel Road | 6-0-0 |
+| baseline.py | 10-0-0 |
+| Gravel Road | 8-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -230,3 +230,15 @@ Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate r
 | 2026-10-13 08:02 | b7qfs4yu | B | Gravel Road | 35 | win |  | 93 s | 35-20 |
 | 2026-10-13 08:05 | fmfx99e9 | W | TA Baseline P | 44 | win |  | 78 s | 20-13 |
 | 2026-10-13 08:05 | swfnu7zu | B | TA Baseline P | 47 | win |  | 74 s | 21-21 |
+| 2026-10-13 08:14 | iskmnsfz | B | Gravel Road | 31 | win |  | 100 s | 44-10 |
+| 2026-10-13 08:15 | nmvdkq5u | W | Gravel Road | 56 | win |  | 63 s | 38-13 |
+| 2026-10-13 08:19 | f6wwlefl | W | TA Baseline A | 42 | win |  | 78 s | 17-11 |
+| 2026-10-13 08:20 | ke6s8n7r | B | baseline.py | 19 | win |  | 127 s | 27-28 |
+| 2026-10-13 08:20 | pwl3y8ev | W | baseline.py | 16 | win |  | 132 s | 34-35 |
+| 2026-10-13 08:21 | 4bo1wdyc | W | TA Baseline S | 62 | win |  | 54 s | 16-6 |
+| 2026-10-13 08:22 | kpexvmzy | B | TA Baseline A | 93 | win |  | 37 s | 19-2 |
+| 2026-10-13 08:25 | ako4kt69 | B | TA Baseline S | 135 | win |  | 23 s | 10-1 |
+| 2026-10-13 08:28 | uxnekopn | B | TA Baseline S | 61 | win |  | 57 s | 15-6 |
+| 2026-10-13 08:29 | vbzfb83j | W | TA Baseline P | 28 | win |  | 104 s | 28-30 |
+| 2026-10-13 08:31 | qucy7eer | W | TA Baseline S | 108 | win | ply 96 by r unseen | 30 s | 16-3 |
+| 2026-10-13 08:31 | w17vukim | B | TA Baseline P | 63 | win |  | 49 s | 30-13 |
