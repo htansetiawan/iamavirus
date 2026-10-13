@@ -1,23 +1,26 @@
 # Arena v34 watch
 
-Updated 2026-10-13 01:40 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 02:00 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 11W-0D-15L over 26 games** (42%).
-As White: 6.0/13.
-As Black: 5.0/13.
+**Record: 15W-0D-18L over 33 games** (45%).
+As White: 7.0/16.
+As Black: 8.0/17.
 
-Queen lost for less: 12 games (11 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 11 of 15.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 65 plies.
+Queen lost for less: 15 games (14 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 13 of 18.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 66 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Mist Opportunities | 3-0-5 |
 | Instructors | 4-0-4 |
-| Mist Opportunities | 2-0-4 |
 | duck | 0-0-4 |
 | Knight Vision | 1-0-3 |
 | Gravel Road | 2-0-0 |
 | TA Baseline A | 2-0-0 |
+| Greek Gift | 0-0-2 |
+| Sausage | 2-0-0 |
+| TA Baseline S | 1-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -47,3 +50,10 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-13 01:19 | ez8rfxyd | B | Mist Opportunities | 68 | loss | ply 11 by n unseen | 51 s | 7-17 |
 | 2026-10-13 01:28 | ml71mbge | B | Knight Vision | 70 | loss | ply 29 by q unseen | 46 s | 4-32 |
 | 2026-10-13 01:29 | x34hj4wn | W | Knight Vision | 91 | loss | ply 56 by r unseen | 32 s | 3-17 |
+| 2026-10-13 01:41 | mx8vnaeq | W | Greek Gift | 51 | loss | ply 30 by p unseen | 48 s | 21-32 |
+| 2026-10-13 01:41 | m2kcadln | B | Greek Gift | 60 | loss | ply 59 by q unseen | 57 s | 7-19 |
+| 2026-10-13 01:47 | rfdwp0kz | B | Mist Opportunities | 89 | win |  | 35 s | 8-2 |
+| 2026-10-13 01:48 | 0ehavxn0 | W | Mist Opportunities | 99 | loss |  | 32 s | 1-16 |
+| 2026-10-13 01:50 | z575k8xy | W | Sausage | 34 | win |  | 92 s | 31-30 |
+| 2026-10-13 01:53 | g1vbv2q8 | B | Sausage | 81 | win | ply 45 by n unseen | 42 s | 17-9 |
+| 2026-10-13 01:57 | 1don4zy4 | B | TA Baseline S | 59 | win |  | 58 s | 21-22 |
