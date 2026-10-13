@@ -1,26 +1,28 @@
 # Arena v34 watch
 
-Updated 2026-10-13 02:00 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 02:21 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 15W-0D-18L over 33 games** (45%).
-As White: 7.0/16.
-As Black: 8.0/17.
+**Record: 20W-0D-21L over 41 games** (49%).
+As White: 10.0/21.
+As Black: 10.0/20.
 
-Queen lost for less: 15 games (14 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 13 of 18.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 66 plies.
+Queen lost for less: 17 games (16 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 15 of 21.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 68 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Mist Opportunities | 3-0-5 |
+| Mist Opportunities | 5-0-5 |
 | Instructors | 4-0-4 |
-| duck | 0-0-4 |
+| duck | 0-0-5 |
 | Knight Vision | 1-0-3 |
 | Gravel Road | 2-0-0 |
 | TA Baseline A | 2-0-0 |
 | Greek Gift | 0-0-2 |
 | Sausage | 2-0-0 |
-| TA Baseline S | 1-0-0 |
+| TA Baseline S | 2-0-0 |
+| baseline.py | 2-0-0 |
+| Decent Chess Bot | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -57,3 +59,11 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-13 01:50 | z575k8xy | W | Sausage | 34 | win |  | 92 s | 31-30 |
 | 2026-10-13 01:53 | g1vbv2q8 | B | Sausage | 81 | win | ply 45 by n unseen | 42 s | 17-9 |
 | 2026-10-13 01:57 | 1don4zy4 | B | TA Baseline S | 59 | win |  | 58 s | 21-22 |
+| 2026-10-13 02:00 | 17ywuihj | W | TA Baseline S | 94 | win |  | 33 s | 20-11 |
+| 2026-10-13 02:02 | zisf6rcd | B | Mist Opportunities | 101 | win |  | 32 s | 17-7 |
+| 2026-10-13 02:02 | tv17qm77 | W | Mist Opportunities | 102 | win |  | 29 s | 16-7 |
+| 2026-10-13 02:12 | 8cy7c0yl | W | baseline.py | 40 | win |  | 84 s | 21-15 |
+| 2026-10-13 02:12 | 8and5sxt | B | baseline.py | 43 | win |  | 80 s | 19-17 |
+| 2026-10-13 02:14 | gisk5rs1 | W | Decent Chess Bot | 69 | loss | ply 54 by q unseen | 49 s | 8-20 |
+| 2026-10-13 02:18 | s2z4rx3r | B | Decent Chess Bot | 132 | loss |  | 21 s | 0-18 |
+| 2026-10-13 02:18 | 2w3z2hx3 | W | duck | 55 | loss | ply 34 by q unseen | 59 s | 11-20 |
