@@ -1,28 +1,28 @@
 # Arena v34 watch
 
-Updated 2026-10-13 13:01 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 13:21 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 167W-8D-143L over 318 games** (54%).
-As White: 85.5/159.
-As Black: 85.5/159.
+**Record: 173W-8D-147L over 328 games** (54%).
+As White: 88.5/164.
+As Black: 88.5/164.
 
-Queen lost for less: 104 games (100 to a capturer unseen when we moved, 25 before ply 30); losses with the queen lost: 84 of 143.
+Queen lost for less: 106 games (102 to a capturer unseen when we moved, 25 before ply 30); losses with the queen lost: 85 of 147.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
-Games as Black where White opened 1.c4: 20 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 21 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 18-1-21 |
+| Mist Opportunities | 18-0-18 |
 | TA Baseline S | 34-0-2 |
-| Mist Opportunities | 17-0-17 |
 | duck | 9-1-20 |
 | Decent Chess Bot | 6-0-24 |
 | TA Baseline A | 26-2-0 |
 | Greek Gift | 0-0-28 |
-| Strongly Invisible | 7-0-17 |
+| Strongly Invisible | 8-0-20 |
 | Knight Vision | 3-3-12 |
 | Sausage | 15-0-1 |
-| TA Baseline P | 10-1-1 |
+| TA Baseline P | 14-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
 | Apricot Squad | 4-0-0 |
@@ -347,3 +347,13 @@ Games as Black where White opened 1.c4: 20 (the book-trap family; the v15 gate r
 | 2026-10-13 12:52 | 0r1k86vv | W | Instructors | 84 | win |  | 41 s | 19-1 |
 | 2026-10-13 12:55 | zq8x6xe9 | B | TA Baseline S | 85 | win |  | 41 s | 17-4 |
 | 2026-10-13 12:58 | 37ijvn56 | W | TA Baseline S | 132 | win |  | 24 s | 10-2 |
+| 2026-10-13 13:01 | m9uxoezx | W | TA Baseline P | 42 | win |  | 81 s | 32-28 |
+| 2026-10-13 13:02 | r5o48zpj | B | TA Baseline P | 85 | win |  | 41 s | 11-2 |
+| 2026-10-13 13:06 | bu8c18g1 | W | Strongly Invisible | 69 | loss | ply 48 by q unseen | 48 s | 7-19 |
+| 2026-10-13 13:07 | o4erd2s1 | W | Strongly Invisible | 105 | loss |  | 31 s | 4-10 |
+| 2026-10-13 13:08 | 3x8iwche | B | Strongly Invisible | 111 | win | ply 77 by n unseen | 28 s | 20-5 |
+| 2026-10-13 13:11 | n4dg5qqb | W | Mist Opportunities | 36 | win |  | 87 s | 25-35 |
+| 2026-10-13 13:15 | vz6ua8fv | B | Strongly Invisible | 230 | loss |  | 20 s | 3-24 |
+| 2026-10-13 13:15 | d0e0hzct | B | Mist Opportunities | 96 | loss |  | 33 s | 3-13 |
+| 2026-10-13 13:19 | 7jv69h90 | W | TA Baseline P | 60 | win |  | 53 s | 22-14 |
+| 2026-10-13 13:19 | p9yylv39 | B | TA Baseline P | 63 | win |  | 57 s | 23-5 |
