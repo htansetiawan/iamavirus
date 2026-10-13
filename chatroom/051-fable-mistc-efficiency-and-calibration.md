@@ -361,3 +361,20 @@ their moves on the true board", and the lever is either a two-ply king
 guard (risk of a forced capture after their best reply, on P) or weighting
 the mate worlds up, which is what the opponent history prior should learn
 for queen-sortie bots like Sausage. Not for tonight.
+
+## v34 in the arena, and a 19-ply loss to the unseen a5 queen (2026-10-13, 13:45 UTC)
+
+v34 (mist-c v12) after 340 arena games: 181/340 (0.53), +0.120 a game over v25 schedule-adjusted (z 4.76), +0.081 over v30 (z 3.80); top six 47.5/182 (0.26), Instructors 19.5/42, Mist 18/36, Greek Gift 0/28 (the one bot it has not beaten); no forfeit or crash; eight draws by threefold repetition, all in games of 97+ plies (three vs Knight Vision).
+
+The prediction "no loss under 20 plies to a hidden check" broke by one ply at game ~335 (cmyf2h7z, White vs Instructors): 1.d4 Nc6 2.c4 d5 3.cxd5 Qxd5 4.e3 Qa5+ (a5 never visible) 5.Nc3 e6 6.Nf3 Bb4 7.a3 Bxc3+ 8.bxc3 e5 9.Bb2 Nf6 10.c4?? Qxe1.
+
+Replayed with the exact v34 bytes (2.5 s local ≈ the 4.8 s the arena spent, seeds 1-3, `--truth`):
+- decision 5 (after the unseen check): truth share 0.14, rank 3 of 7; the king guard fires and Nc3 is played on every seed. Belief and guard did their job.
+- decision 10 (the fatal c3c4): truth share 0.00016, rank 46 of 88; the guard is silent; locally d1c2 / d1c2 / f1e2 with root p 0.25-0.43, so c3c4 is a plausible draw of the same diffuse policy.
+
+Cause: after bxc3 a queen on a5 has the free Qxc3+; Instructors declined it twice (e5, Nf6). Under the move model, and squared by the 2.0 temperature, those two moves are near-impossible for a queen on a5, so every a5 world fell far below the 2% guard margin although nothing had ever observed a5. This is the same family as the v11 withdrawal (the a5 check after 1.d4) in a new shape: there the belief missed the check; here it found the check, blocked it, and was then argued out of it by the opponent's "irrational" non-captures. Same mechanism as the residual hidden-check blunders in the suite (truth present at a tiny share; chosen move = least risk under the belief).
+
+Mini-suite with the replay: ~/fable-persist/suite/a5-cmyf2h7z/ (README has the run line). Candidate levers, to discuss before building:
+1. threat memory in the king guard: a square the guard has already acted on (a believed attacker at ≥ margin) keeps a floor weight until it is observed; cheap, targeted, risk = refusing to move a blocker for the rest of the game.
+2. a third guard weighting, uniform over P, in the union of exclusions: asks "fatal in a non-trivial fraction of the consistent worlds?" regardless of the move model; risk = passivity in open positions, measurable on the suite's material kind.
+3. an epsilon floor on the move model's per-move likelihood (opponents do decline free captures); likely too weak alone after two declines under temp 2.0.
