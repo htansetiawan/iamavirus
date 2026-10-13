@@ -1,31 +1,31 @@
 # Arena v34 watch
 
-Updated 2026-10-13 10:16 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 10:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 137W-5D-105L over 247 games** (56%).
-As White: 70.0/124.
-As Black: 69.5/123.
+**Record: 142W-7D-109L over 258 games** (56%).
+As White: 72.5/129.
+As Black: 73.0/129.
 
-Queen lost for less: 85 games (81 to a capturer unseen when we moved, 20 before ply 30); losses with the queen lost: 66 of 105.
+Queen lost for less: 88 games (84 to a capturer unseen when we moved, 21 before ply 30); losses with the queen lost: 69 of 109.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline S | 28-0-2 |
+| Instructors | 13-0-15 |
 | TA Baseline A | 26-2-0 |
 | duck | 6-1-19 |
-| Instructors | 13-0-13 |
 | Decent Chess Bot | 5-0-21 |
 | Mist Opportunities | 11-0-11 |
 | Strongly Invisible | 5-0-13 |
-| Knight Vision | 3-1-10 |
-| Greek Gift | 0-0-14 |
-| Sausage | 11-0-1 |
+| Knight Vision | 3-3-10 |
+| Greek Gift | 0-0-16 |
+| Sausage | 13-0-1 |
 | TA Baseline P | 10-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
-| Apricot Squad | 1-0-0 |
+| Apricot Squad | 4-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -276,3 +276,14 @@ Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate r
 | 2026-10-13 09:51 | u3nuhwd1 | B | duck | 76 | loss |  | 45 s | 8-10 |
 | 2026-10-13 09:53 | smn1jt1k | B | TA Baseline S | 121 | win | ply 117 by n unseen | 26 s | 14-10 |
 | 2026-10-13 10:12 | qa9w7vyo | W | Apricot Squad | 20 | win |  | 122 s | 39-32 |
+| 2026-10-13 10:16 | 1xlc9f5s | B | Apricot Squad | 61 | win |  | 55 s | 33-16 |
+| 2026-10-13 10:24 | ocj3gtkz | B | Greek Gift | 74 | loss | ply 45 by q unseen | 42 s | 4-17 |
+| 2026-10-13 10:24 | cvd6xx64 | B | Instructors | 58 | loss | ply 45 by p unseen | 60 s | 5-24 |
+| 2026-10-13 10:25 | rz7w49z1 | W | Greek Gift | 87 | loss |  | 29 s | 16-16 |
+| 2026-10-13 10:25 | d4ujwg6y | W | Instructors | 87 | loss | ply 26 by r unseen | 38 s | 4-15 |
+| 2026-10-13 10:25 | wvb70h0v | W | Knight Vision | 97 | draw |  | 34 s | 5-4 |
+| 2026-10-13 10:26 | 3arejdrz | W | Apricot Squad | 26 | win |  | 108 s | 35-27 |
+| 2026-10-13 10:26 | ww4nom37 | B | Apricot Squad | 19 | win |  | 127 s | 38-36 |
+| 2026-10-13 10:28 | nt4qf9fl | B | Knight Vision | 138 | draw |  | 23 s | 0-0 |
+| 2026-10-13 10:31 | bhw1xjt0 | W | Sausage | 48 | win |  | 73 s | 13-10 |
+| 2026-10-13 10:34 | zm2ogrc8 | B | Sausage | 115 | win |  | 24 s | 9-8 |
