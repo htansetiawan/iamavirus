@@ -1,28 +1,28 @@
 # Arena v34 watch
 
-Updated 2026-10-13 08:53 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 09:14 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 123W-5D-95L over 223 games** (56%).
-As White: 64.0/112.
-As Black: 61.5/111.
+**Record: 128W-5D-99L over 232 games** (56%).
+As White: 66.0/116.
+As Black: 64.5/116.
 
-Queen lost for less: 79 games (75 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 61 of 95.
+Queen lost for less: 81 games (77 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 63 of 99.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
-Games as Black where White opened 1.c4: 13 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline S | 26-0-2 |
 | TA Baseline A | 24-2-0 |
 | Instructors | 11-0-13 |
-| Decent Chess Bot | 4-0-17 |
-| duck | 5-1-14 |
-| Mist Opportunities | 8-0-10 |
+| Decent Chess Bot | 4-0-20 |
+| duck | 6-1-15 |
+| Mist Opportunities | 10-0-10 |
 | Strongly Invisible | 5-0-13 |
 | Knight Vision | 3-1-10 |
 | Greek Gift | 0-0-14 |
+| Sausage | 11-0-1 |
 | TA Baseline P | 10-1-1 |
-| Sausage | 9-0-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
 
@@ -251,3 +251,12 @@ Games as Black where White opened 1.c4: 13 (the book-trap family; the v15 gate r
 | 2026-10-13 08:45 | kztd3b8x | B | TA Baseline A | 63 | win |  | 56 s | 9-5 |
 | 2026-10-13 08:48 | ws5mt4ji | W | TA Baseline A | 92 | win |  | 35 s | 37-4 |
 | 2026-10-13 08:52 | fc6nkb19 | W | Decent Chess Bot | 71 | loss |  | 43 s | 4-12 |
+| 2026-10-13 08:53 | leh8wojw | B | Decent Chess Bot | 98 | loss |  | 30 s | 1-11 |
+| 2026-10-13 08:58 | edotvkxn | W | Decent Chess Bot | 71 | loss | ply 54 by r unseen | 49 s | 3-13 |
+| 2026-10-13 08:59 | a6u5ci14 | B | Decent Chess Bot | 88 | loss |  | 37 s | 3-9 |
+| 2026-10-13 09:03 | p2sf9yqt | W | Sausage | 28 | win |  | 104 s | 28-21 |
+| 2026-10-13 09:03 | o1zk47ek | B | duck | 75 | win |  | 47 s | 8-3 |
+| 2026-10-13 09:05 | te8s2de6 | W | duck | 103 | loss | ply 46 by r unseen | 24 s | 2-18 |
+| 2026-10-13 09:07 | 8guk4dhg | B | Sausage | 67 | win |  | 52 s | 39-8 |
+| 2026-10-13 09:12 | mk959ocw | W | Mist Opportunities | 80 | win |  | 43 s | 18-2 |
+| 2026-10-13 09:14 | tt5b62xw | B | Mist Opportunities | 101 | win |  | 32 s | 10-3 |
