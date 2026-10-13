@@ -1,12 +1,12 @@
 # Arena v34 watch
 
-Updated 2026-10-13 16:48 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 17:09 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 201W-9D-194L over 404 games** (51%).
-As White: 105.0/202.
-As Black: 100.5/202.
+**Record: 203W-9D-198L over 410 games** (51%).
+As White: 106.0/205.
+As Black: 101.5/205.
 
-Queen lost for less: 135 games (131 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 110 of 194.
+Queen lost for less: 139 games (135 to a capturer unseen when we moved, 30 before ply 30); losses with the queen lost: 114 of 198.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 28 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -18,15 +18,15 @@ Games as Black where White opened 1.c4: 28 (the book-trap family; the v15 gate r
 | TA Baseline A | 36-2-2 |
 | duck | 11-1-26 |
 | Strongly Invisible | 9-0-29 |
+| Decent Chess Bot | 6-1-27 |
 | Greek Gift | 0-0-32 |
-| Decent Chess Bot | 6-1-25 |
-| Knight Vision | 4-3-21 |
+| Knight Vision | 5-3-22 |
 | Sausage | 22-0-2 |
 | TA Baseline P | 14-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
 | Apricot Squad | 4-0-0 |
-| HYPOTHERMIA | 0-0-2 |
+| HYPOTHERMIA | 1-0-3 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -434,3 +434,9 @@ Games as Black where White opened 1.c4: 28 (the book-trap family; the v15 gate r
 | 2026-10-13 16:36 | ohd62jvp | W | Strongly Invisible | 65 | loss |  | 53 s | 19-21 |
 | 2026-10-13 16:37 | 1pe896bm | B | Knight Vision | 112 | loss | ply 63 by r unseen | 27 s | 1-19 |
 | 2026-10-13 16:37 | lup8dwog | B | Strongly Invisible | 64 | loss |  | 55 s | 5-14 |
+| 2026-10-13 16:49 | kw938q3t | W | Knight Vision | 46 | win |  | 73 s | 26-30 |
+| 2026-10-13 16:53 | 478w4ub3 | B | Knight Vision | 86 | loss | ply 57 by q unseen | 33 s | 3-27 |
+| 2026-10-13 17:01 | qzypte41 | W | HYPOTHERMIA | 77 | loss | ply 44 by n unseen | 36 s | 15-29 |
+| 2026-10-13 17:05 | ukfckvb8 | B | HYPOTHERMIA | 157 | win |  | 20 s | 10-4 |
+| 2026-10-13 17:07 | tt0ggwlr | W | Decent Chess Bot | 63 | loss | ply 36 by r unseen | 55 s | 4-17 |
+| 2026-10-13 17:08 | hd9f2d6v | B | Decent Chess Bot | 82 | loss | ply 15 by n unseen | 30 s | 3-25 |
