@@ -1,23 +1,23 @@
 # Arena v34 watch
 
-Updated 2026-10-13 01:19 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 01:40 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 11W-0D-12L over 23 games** (48%).
-As White: 6.0/12.
-As Black: 5.0/11.
+**Record: 11W-0D-15L over 26 games** (42%).
+As White: 6.0/13.
+As Black: 5.0/13.
 
-Queen lost for less: 9 games (8 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 8 of 12.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 64 plies.
+Queen lost for less: 12 games (11 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 11 of 15.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 65 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 4-0-4 |
-| Mist Opportunities | 2-0-3 |
+| Mist Opportunities | 2-0-4 |
 | duck | 0-0-4 |
+| Knight Vision | 1-0-3 |
 | Gravel Road | 2-0-0 |
 | TA Baseline A | 2-0-0 |
-| Knight Vision | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -44,3 +44,6 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-13 01:18 | d45daubt | B | Knight Vision | 50 | loss | ply 7 by q unseen | 70 s | 8-26 |
 | 2026-10-13 01:18 | nl9yqm9c | W | Mist Opportunities | 57 | loss |  | 59 s | 6-13 |
 | 2026-10-13 01:18 | 19pwd8n9 | W | Knight Vision | 50 | win |  | 70 s | 25-10 |
+| 2026-10-13 01:19 | ez8rfxyd | B | Mist Opportunities | 68 | loss | ply 11 by n unseen | 51 s | 7-17 |
+| 2026-10-13 01:28 | ml71mbge | B | Knight Vision | 70 | loss | ply 29 by q unseen | 46 s | 4-32 |
+| 2026-10-13 01:29 | x34hj4wn | W | Knight Vision | 91 | loss | ply 56 by r unseen | 32 s | 3-17 |
