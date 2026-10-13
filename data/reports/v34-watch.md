@@ -1,13 +1,13 @@
 # Arena v34 watch
 
-Updated 2026-10-13 05:47 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 06:08 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 72W-1D-67L over 140 games** (52%).
-As White: 37.5/70.
-As Black: 35.0/70.
+**Record: 77W-1D-70L over 148 games** (52%).
+As White: 40.5/74.
+As Black: 37.0/74.
 
-Queen lost for less: 54 games (52 to a capturer unseen when we moved, 13 before ply 30); losses with the queen lost: 43 of 67.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
+Queen lost for less: 57 games (55 to a capturer unseen when we moved, 14 before ply 30); losses with the queen lost: 45 of 70.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
 Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -16,12 +16,12 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | TA Baseline S | 20-0-2 |
 | duck | 5-0-9 |
 | Mist Opportunities | 6-0-8 |
-| Greek Gift | 0-0-12 |
+| Greek Gift | 0-0-14 |
 | TA Baseline A | 10-0-0 |
+| Sausage | 9-0-1 |
+| Decent Chess Bot | 2-0-8 |
 | Strongly Invisible | 1-0-9 |
 | Knight Vision | 1-0-7 |
-| Decent Chess Bot | 1-0-7 |
-| Sausage | 5-0-1 |
 | TA Baseline P | 5-1-0 |
 | Gravel Road | 4-0-0 |
 | baseline.py | 4-0-0 |
@@ -168,3 +168,11 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-13 05:29 | wz467mbn | W | Instructors | 96 | win |  | 35 s | 15-3 |
 | 2026-10-13 05:41 | nmv0mhai | B | TA Baseline S | 67 | win | ply 63 by r unseen | 51 s | 17-14 |
 | 2026-10-13 05:44 | 2ry65kp5 | W | TA Baseline S | 109 | loss | ply 34 by q unseen | 22 s | 2-16 |
+| 2026-10-13 05:48 | rfskxb6p | B | Decent Chess Bot | 48 | loss | ply 31 by r unseen | 68 s | 9-18 |
+| 2026-10-13 05:50 | qbssgsaz | W | Sausage | 6 | win |  | 160 s | 39-39 |
+| 2026-10-13 05:52 | dgdbtyya | W | Decent Chess Bot | 96 | win |  | 28 s | 12-5 |
+| 2026-10-13 05:53 | fdqfinry | B | Sausage | 45 | win | ply 15 by b unseen | 78 s | 18-27 |
+| 2026-10-13 06:02 | z9yy0632 | B | Greek Gift | 74 | loss |  | 45 s | 4-10 |
+| 2026-10-13 06:04 | y9rtxzes | W | Greek Gift | 77 | loss | ply 54 by q unseen | 36 s | 12-23 |
+| 2026-10-13 06:04 | jfnk6h90 | W | Sausage | 36 | win |  | 90 s | 22-16 |
+| 2026-10-13 06:05 | 0itbwwea | B | Sausage | 47 | win |  | 75 s | 25-14 |
