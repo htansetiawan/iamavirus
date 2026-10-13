@@ -1,28 +1,29 @@
 # Arena v34 watch
 
-Updated 2026-10-13 02:21 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 02:41 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 20W-0D-21L over 41 games** (49%).
-As White: 10.0/21.
-As Black: 10.0/20.
+**Record: 26W-0D-26L over 52 games** (50%).
+As White: 14.0/26.
+As Black: 12.0/26.
 
-Queen lost for less: 17 games (16 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 15 of 21.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 68 plies.
-Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 20 games (19 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 18 of 26.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 71 plies.
+Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Mist Opportunities | 5-0-5 |
 | Instructors | 4-0-4 |
-| duck | 0-0-5 |
+| duck | 0-0-6 |
+| Gravel Road | 4-0-0 |
 | Knight Vision | 1-0-3 |
-| Gravel Road | 2-0-0 |
+| Sausage | 3-0-1 |
+| TA Baseline S | 4-0-0 |
+| Decent Chess Bot | 1-0-3 |
 | TA Baseline A | 2-0-0 |
 | Greek Gift | 0-0-2 |
-| Sausage | 2-0-0 |
-| TA Baseline S | 2-0-0 |
 | baseline.py | 2-0-0 |
-| Decent Chess Bot | 0-0-2 |
+| Strongly Invisible | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -67,3 +68,14 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-13 02:14 | gisk5rs1 | W | Decent Chess Bot | 69 | loss | ply 54 by q unseen | 49 s | 8-20 |
 | 2026-10-13 02:18 | s2z4rx3r | B | Decent Chess Bot | 132 | loss |  | 21 s | 0-18 |
 | 2026-10-13 02:18 | 2w3z2hx3 | W | duck | 55 | loss | ply 34 by q unseen | 59 s | 11-20 |
+| 2026-10-13 02:21 | 29914k2q | B | duck | 86 | loss | ply 59 by q unseen | 35 s | 3-16 |
+| 2026-10-13 02:22 | 950mipt1 | W | Sausage | 74 | win |  | 43 s | 13-9 |
+| 2026-10-13 02:23 | 4bo5fh6y | B | Sausage | 86 | loss |  | 36 s | 2-10 |
+| 2026-10-13 02:25 | jyojlwgv | B | Decent Chess Bot | 58 | loss |  | 60 s | 4-13 |
+| 2026-10-13 02:28 | sdr3y95n | W | Decent Chess Bot | 138 | win |  | 22 s | 10-3 |
+| 2026-10-13 02:30 | 4xa7j7q6 | B | Strongly Invisible | 86 | loss | ply 33 by n unseen | 25 s | 11-30 |
+| 2026-10-13 02:32 | 33oe1qup | B | Gravel Road | 41 | win |  | 84 s | 35-21 |
+| 2026-10-13 02:32 | ag2u1k61 | W | Gravel Road | 40 | win |  | 84 s | 41-10 |
+| 2026-10-13 02:33 | k64yjh27 | W | Strongly Invisible | 139 | loss | ply 34 by n unseen | 20 s | 2-16 |
+| 2026-10-13 02:33 | 1n4mfia3 | B | TA Baseline S | 53 | win |  | 67 s | 17-5 |
+| 2026-10-13 02:36 | b74uvnz9 | W | TA Baseline S | 100 | win |  | 33 s | 22-5 |
