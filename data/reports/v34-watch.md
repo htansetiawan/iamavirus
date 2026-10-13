@@ -1,13 +1,13 @@
 # Arena v34 watch
 
-Updated 2026-10-13 09:55 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 10:16 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 136W-5D-105L over 246 games** (56%).
-As White: 69.0/123.
+**Record: 137W-5D-105L over 247 games** (56%).
+As White: 70.0/124.
 As Black: 69.5/123.
 
 Queen lost for less: 85 games (81 to a capturer unseen when we moved, 20 before ply 30); losses with the queen lost: 66 of 105.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
 Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -25,6 +25,7 @@ Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate r
 | TA Baseline P | 10-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
+| Apricot Squad | 1-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -274,3 +275,4 @@ Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate r
 | 2026-10-13 09:50 | 1v4fg1ot | W | TA Baseline S | 76 | win |  | 44 s | 16-4 |
 | 2026-10-13 09:51 | u3nuhwd1 | B | duck | 76 | loss |  | 45 s | 8-10 |
 | 2026-10-13 09:53 | smn1jt1k | B | TA Baseline S | 121 | win | ply 117 by n unseen | 26 s | 14-10 |
+| 2026-10-13 10:12 | qa9w7vyo | W | Apricot Squad | 20 | win |  | 122 s | 39-32 |
