@@ -1,31 +1,31 @@
 # Arena v33 watch
 
-Updated 2026-10-12 23:56 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 00:17 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 309W-9D-326L over 644 games** (49%).
-As White: 175.5/322.
-As Black: 138.0/322.
+**Record: 316W-9D-330L over 655 games** (49%).
+As White: 180.5/328.
+As Black: 140.0/327.
 
-Queen lost for less: 224 games (213 to a capturer unseen when we moved, 88 before ply 30); losses with the queen lost: 192 of 326.
+Queen lost for less: 226 games (215 to a capturer unseen when we moved, 90 before ply 30); losses with the queen lost: 194 of 330.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 0. Mean length 74 plies.
-Games as Black where White opened 1.c4: 35 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Knight Vision | 19-1-56 |
-| TA Baseline S | 50-1-15 |
+| TA Baseline S | 51-1-15 |
 | duck | 22-3-41 |
-| Mist Opportunities | 16-1-45 |
+| Mist Opportunities | 18-1-47 |
 | Strongly Invisible | 15-1-44 |
 | Decent Chess Bot | 10-1-43 |
 | TA Baseline A | 51-0-3 |
-| TA Baseline P | 44-0-2 |
-| Instructors | 15-0-31 |
+| TA Baseline P | 46-0-2 |
+| Instructors | 15-0-33 |
 | Greek Gift | 5-0-41 |
 | Sausage | 32-1-5 |
 | Apricot Squad | 12-0-0 |
 | baseline.py | 12-0-0 |
-| Gravel Road | 6-0-0 |
+| Gravel Road | 8-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -673,3 +673,14 @@ Games as Black where White opened 1.c4: 35 (the book-trap family; the v15 gate r
 | 2026-10-12 23:52 | cz2pgv6u | W | TA Baseline P | 42 | win |  | 106 s | 16-21 |
 | 2026-10-12 23:52 | 1msy6wln | B | TA Baseline P | 61 | win |  | 87 s | 21-10 |
 | 2026-10-12 23:53 | ep61hr4v | W | TA Baseline P | 98 | win |  | 59 s | 17-4 |
+| 2026-10-12 23:58 | cvncy8yh | W | TA Baseline P | 76 | win |  | 74 s | 18-13 |
+| 2026-10-12 23:58 | 9s527b61 | B | Mist Opportunities | 16 | loss |  | 147 s | 35-35 |
+| 2026-10-12 23:59 | v8vag2qv | B | TA Baseline P | 79 | win |  | 68 s | 16-8 |
+| 2026-10-13 00:04 | g8sjfkxg | B | Instructors | 70 | loss |  | 79 s | 5-22 |
+| 2026-10-13 00:05 | e6ubvhzb | W | Instructors | 91 | loss | ply 26 by q unseen | 59 s | 7-14 |
+| 2026-10-13 00:05 | vn8ojxg6 | W | Mist Opportunities | 120 | win |  | 44 s | 12-3 |
+| 2026-10-13 00:07 | bp4hdy4b | B | Gravel Road | 51 | win |  | 97 s | 38-21 |
+| 2026-10-13 00:08 | 78vrijwu | W | Gravel Road | 66 | win |  | 82 s | 27-7 |
+| 2026-10-13 00:13 | s316whon | B | Mist Opportunities | 78 | loss | ply 27 by b unseen | 71 s | 8-29 |
+| 2026-10-13 00:14 | wuv6llsf | W | Mist Opportunities | 72 | win |  | 73 s | 22-7 |
+| 2026-10-13 00:16 | qyiygizl | W | TA Baseline S | 52 | win |  | 95 s | 23-13 |
