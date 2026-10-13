@@ -1,22 +1,22 @@
 # Arena v34 watch
 
-Updated 2026-10-13 20:56 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 21:17 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 261W-11D-240L over 512 games** (52%).
-As White: 138.0/257.
-As Black: 128.5/255.
+**Record: 263W-11D-244L over 518 games** (52%).
+As White: 139.0/259.
+As Black: 129.5/259.
 
-Queen lost for less: 174 games (167 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 141 of 240.
+Queen lost for less: 178 games (170 to a capturer unseen when we moved, 40 before ply 30); losses with the queen lost: 144 of 244.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 20-1-35 |
-| Mist Opportunities | 24-0-26 |
-| TA Baseline A | 44-2-3 |
+| Instructors | 21-1-36 |
+| Mist Opportunities | 25-0-27 |
+| TA Baseline A | 44-2-4 |
+| duck | 13-1-34 |
 | TA Baseline S | 44-0-4 |
-| duck | 13-1-33 |
 | Decent Chess Bot | 9-1-34 |
 | Strongly Invisible | 10-0-34 |
 | Sausage | 40-0-2 |
@@ -541,4 +541,10 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | 2026-10-13 20:50 | ptyqe3my | W | Mist Opportunities | 106 | win |  | 30 s | 14-3 |
 | 2026-10-13 20:50 | ii22h0rp | B | Mist Opportunities | 86 | loss | ply 41 by r unseen | 35 s | 5-16 |
 | 2026-10-13 20:54 | spbqputi | W | duck | 36 | win |  | 90 s | 16-16 |
+| 2026-10-13 20:56 | b1y1a52c | B | duck | 74 | loss | ply 43 by r unseen | 43 s | 5-18 |
 | 2026-10-13 20:56 | 7q7bnycz | W | TA Baseline A | 50 | win |  | 70 s | 19-12 |
+| 2026-10-13 20:58 | pkj3s3ep | B | TA Baseline A | 88 | loss | ply 57 by r unseen | 35 s | 1-14 |
+| 2026-10-13 21:02 | wtyv3c23 | B | Mist Opportunities | 41 | win |  | 81 s | 19-29 |
+| 2026-10-13 21:08 | p3ghj1qs | W | Mist Opportunities | 141 | loss |  | 20 s | 1-15 |
+| 2026-10-13 21:11 | 14ywcklg | B | Instructors | 76 | loss | ply 55 by r | 41 s | 3-22 |
+| 2026-10-13 21:13 | szl1j9ku | W | Instructors | 104 | win | ply 40 by r unseen | 30 s | 12-2 |
