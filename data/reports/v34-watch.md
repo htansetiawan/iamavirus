@@ -1,23 +1,23 @@
 # Arena v34 watch
 
-Updated 2026-10-13 03:44 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 04:04 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 45W-0D-37L over 82 games** (55%).
-As White: 24.0/41.
-As Black: 21.0/41.
+**Record: 48W-0D-42L over 90 games** (53%).
+As White: 25.0/45.
+As Black: 23.0/45.
 
-Queen lost for less: 30 games (29 to a capturer unseen when we moved, 10 before ply 30); losses with the queen lost: 24 of 37.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 75 plies.
-Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 34 games (32 to a capturer unseen when we moved, 10 before ply 30); losses with the queen lost: 28 of 42.
+Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 74 plies.
+Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 4-0-8 |
+| duck | 5-0-9 |
+| Instructors | 6-0-6 |
 | TA Baseline S | 11-0-1 |
 | Mist Opportunities | 5-0-5 |
-| Instructors | 4-0-4 |
+| Greek Gift | 0-0-8 |
 | Knight Vision | 1-0-5 |
-| Greek Gift | 0-0-6 |
 | Gravel Road | 4-0-0 |
 | TA Baseline A | 4-0-0 |
 | Sausage | 3-0-1 |
@@ -110,3 +110,11 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-13 03:36 | cnymk69a | B | TA Baseline S | 117 | win | ply 29 by b unseen | 26 s | 14-1 |
 | 2026-10-13 03:40 | 8pyr908y | W | duck | 89 | loss |  | 38 s | 2-12 |
 | 2026-10-13 03:41 | wnso8ft4 | B | duck | 107 | win |  | 31 s | 13-2 |
+| 2026-10-13 03:48 | gkv66h28 | B | Instructors | 78 | loss | ply 59 by r unseen | 40 s | 3-16 |
+| 2026-10-13 03:49 | chlhx37z | W | Instructors | 97 | loss | ply 46 by r unseen | 32 s | 6-11 |
+| 2026-10-13 03:50 | n3e191mm | B | Instructors | 45 | win |  | 77 s | 17-21 |
+| 2026-10-13 03:52 | p5k8pu4u | W | Instructors | 68 | win |  | 50 s | 20-19 |
+| 2026-10-13 03:54 | ws7u0pes | W | duck | 47 | loss | ply 42 by q unseen | 72 s | 19-21 |
+| 2026-10-13 03:56 | eropql1w | B | Greek Gift | 38 | loss | ply 33 by q | 81 s | 21-25 |
+| 2026-10-13 03:56 | dxobuj8w | W | Greek Gift | 45 | loss |  | 66 s | 23-25 |
+| 2026-10-13 03:57 | n9entvtq | B | duck | 101 | win |  | 32 s | 16-3 |
