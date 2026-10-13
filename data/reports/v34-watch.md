@@ -1,22 +1,22 @@
 # Arena v34 watch
 
-Updated 2026-10-13 14:03 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 14:23 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 180W-8D-162L over 350 games** (53%).
-As White: 92.5/175.
-As Black: 91.5/175.
+**Record: 182W-8D-164L over 354 games** (53%).
+As White: 93.5/177.
+As Black: 92.5/177.
 
-Queen lost for less: 114 games (110 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 93 of 162.
+Queen lost for less: 117 games (113 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 95 of 164.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
 Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 19-1-22 |
+| Instructors | 19-1-24 |
 | Mist Opportunities | 18-0-18 |
 | TA Baseline S | 34-0-2 |
 | duck | 9-1-24 |
-| TA Baseline A | 28-2-0 |
+| TA Baseline A | 30-2-0 |
 | Greek Gift | 0-0-30 |
 | Decent Chess Bot | 6-0-24 |
 | Strongly Invisible | 9-0-21 |
@@ -379,3 +379,7 @@ Games as Black where White opened 1.c4: 24 (the book-trap family; the v15 gate r
 | 2026-10-13 13:54 | 54hpc62u | B | duck | 78 | loss | ply 25 by q unseen | 40 s | 4-23 |
 | 2026-10-13 13:56 | ceqxslqv | B | Greek Gift | 88 | loss | ply 27 by q unseen | 27 s | 8-25 |
 | 2026-10-13 13:57 | c5lxifbm | W | duck | 109 | loss | ply 42 by r unseen | 22 s | 2-22 |
+| 2026-10-13 14:09 | nv31t944 | W | TA Baseline A | 72 | win |  | 48 s | 24-3 |
+| 2026-10-13 14:10 | bky5hcjf | B | Instructors | 54 | loss | ply 33 by q unseen | 64 s | 13-27 |
+| 2026-10-13 14:11 | de85raro | W | Instructors | 75 | loss | ply 34 by q unseen | 45 s | 5-24 |
+| 2026-10-13 14:12 | c8tl03vq | B | TA Baseline A | 121 | win | ply 57 by r unseen | 22 s | 17-12 |
