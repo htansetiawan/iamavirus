@@ -1,25 +1,25 @@
 # Arena v34 watch
 
-Updated 2026-10-13 06:08 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 06:29 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 77W-1D-70L over 148 games** (52%).
-As White: 40.5/74.
-As Black: 37.0/74.
+**Record: 80W-1D-73L over 154 games** (52%).
+As White: 42.5/77.
+As Black: 38.0/77.
 
-Queen lost for less: 57 games (55 to a capturer unseen when we moved, 14 before ply 30); losses with the queen lost: 45 of 70.
+Queen lost for less: 60 games (58 to a capturer unseen when we moved, 14 before ply 30); losses with the queen lost: 48 of 73.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
 Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline S | 22-0-2 |
 | Instructors | 10-0-12 |
-| TA Baseline S | 20-0-2 |
 | duck | 5-0-9 |
 | Mist Opportunities | 6-0-8 |
 | Greek Gift | 0-0-14 |
+| Decent Chess Bot | 3-0-11 |
 | TA Baseline A | 10-0-0 |
 | Sausage | 9-0-1 |
-| Decent Chess Bot | 2-0-8 |
 | Strongly Invisible | 1-0-9 |
 | Knight Vision | 1-0-7 |
 | TA Baseline P | 5-1-0 |
@@ -176,3 +176,9 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-13 06:04 | y9rtxzes | W | Greek Gift | 77 | loss | ply 54 by q unseen | 36 s | 12-23 |
 | 2026-10-13 06:04 | jfnk6h90 | W | Sausage | 36 | win |  | 90 s | 22-16 |
 | 2026-10-13 06:05 | 0itbwwea | B | Sausage | 47 | win |  | 75 s | 25-14 |
+| 2026-10-13 06:11 | yavz6o1s | B | TA Baseline S | 61 | win |  | 58 s | 15-14 |
+| 2026-10-13 06:14 | 1cth8dp0 | W | Decent Chess Bot | 67 | loss | ply 38 by k unseen | 51 s | 7-16 |
+| 2026-10-13 06:17 | rj4199x8 | W | TA Baseline S | 174 | win |  | 20 s | 7-0 |
+| 2026-10-13 06:18 | od80m5ff | B | Decent Chess Bot | 152 | loss | ply 129 by q unseen | 20 s | 12-15 |
+| 2026-10-13 06:22 | tbbl82pn | W | Decent Chess Bot | 50 | win |  | 63 s | 21-27 |
+| 2026-10-13 06:23 | 90d670kp | B | Decent Chess Bot | 80 | loss | ply 65 by r unseen | 41 s | 3-14 |
