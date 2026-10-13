@@ -1,25 +1,25 @@
 # Arena v34 watch
 
-Updated 2026-10-13 11:59 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 12:20 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 160W-7D-127L over 294 games** (56%).
-As White: 80.5/147.
-As Black: 83.0/147.
+**Record: 162W-8D-134L over 304 games** (55%).
+As White: 82.5/152.
+As Black: 83.5/152.
 
-Queen lost for less: 98 games (94 to a capturer unseen when we moved, 24 before ply 30); losses with the queen lost: 78 of 127.
+Queen lost for less: 100 games (96 to a capturer unseen when we moved, 24 before ply 30); losses with the queen lost: 80 of 134.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
-Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Instructors | 16-1-17 |
 | TA Baseline S | 32-0-2 |
-| Instructors | 15-0-17 |
+| Mist Opportunities | 16-0-16 |
 | duck | 9-1-20 |
-| Mist Opportunities | 15-0-15 |
 | Decent Chess Bot | 6-0-24 |
 | TA Baseline A | 26-2-0 |
+| Greek Gift | 0-0-26 |
 | Strongly Invisible | 7-0-15 |
-| Greek Gift | 0-0-20 |
 | Knight Vision | 3-3-12 |
 | Sausage | 15-0-1 |
 | TA Baseline P | 10-1-1 |
@@ -323,3 +323,13 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | 2026-10-13 11:47 | 2befnpma | B | Strongly Invisible | 135 | win |  | 23 s | 11-1 |
 | 2026-10-13 11:56 | b9acl01t | B | Knight Vision | 92 | loss |  | 22 s | 3-20 |
 | 2026-10-13 11:56 | pnfwwd3g | W | Knight Vision | 89 | loss | ply 38 by q unseen | 37 s | 1-16 |
+| 2026-10-13 12:04 | a9wciyvi | W | Instructors | 14 | win |  | 137 s | 35-39 |
+| 2026-10-13 12:05 | xm7zgfo0 | B | Greek Gift | 88 | loss |  | 34 s | 3-9 |
+| 2026-10-13 12:05 | j0xvlrtp | W | Greek Gift | 81 | loss | ply 52 by b unseen | 38 s | 4-25 |
+| 2026-10-13 12:10 | qqm0fhjh | B | Instructors | 99 | draw |  | 23 s | 10-11 |
+| 2026-10-13 12:11 | j3txawor | W | Mist Opportunities | 50 | win |  | 62 s | 31-30 |
+| 2026-10-13 12:12 | a63mbixq | B | Mist Opportunities | 64 | loss |  | 55 s | 3-16 |
+| 2026-10-13 12:13 | na9jydsm | B | Greek Gift | 70 | loss |  | 46 s | 4-16 |
+| 2026-10-13 12:15 | dyrsgigt | W | Greek Gift | 89 | loss |  | 37 s | 3-11 |
+| 2026-10-13 12:17 | o4j4kl22 | W | Greek Gift | 51 | loss |  | 67 s | 13-10 |
+| 2026-10-13 12:18 | hrz5vkw8 | B | Greek Gift | 68 | loss | ply 39 by q unseen | 46 s | 4-18 |
