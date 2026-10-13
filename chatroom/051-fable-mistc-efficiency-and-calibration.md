@@ -378,3 +378,24 @@ Mini-suite with the replay: ~/fable-persist/suite/a5-cmyf2h7z/ (README has the r
 1. threat memory in the king guard: a square the guard has already acted on (a believed attacker at ≥ margin) keeps a floor weight until it is observed; cheap, targeted, risk = refusing to move a blocker for the rest of the game.
 2. a third guard weighting, uniform over P, in the union of exclusions: asks "fatal in a non-trivial fraction of the consistent worlds?" regardless of the move model; risk = passivity in open positions, measurable on the suite's material kind.
 3. an epsilon floor on the move model's per-move likelihood (opponents do decline free captures); likely too weak alone after two declines under temp 2.0.
+
+## The queen guard: mist-c v13 (2026-10-13, 19:30-21:00 UTC)
+
+Why: on a TA-baseline panel v34's behavioural rates match the top six (king threats, unseen threats, queen raids, visibility, lead conversion), but head-to-head our queen is lost outright in 43% of v34's top-six games (score 0.01 in those; v33 41%) against their 10%; trades they start 23% (0.22), trades we start 16% (0.34). In 99 of 100 outright losses the taker stood on a square unseen at decision time, usually the defender of what the queen took; the search's 3-6 sampled worlds held it too rarely. The king capture comes later (178 of 190 king losses had the queen already gone). Clock use is not a differentiator. The user: "queen in general is very vital and so we need to protect the queen with what it takes".
+
+Built (fowsearch-c ae1e31b): `queen_risks` beside `king_risks` in main.c: on all of P (strided to 20,000, fitted weights and weight^temp), the share on which a move loses our queen on the next ply for 4+ pawns net (their best capture of a queen square, 9 less the capturer where we recapture, less what the move took; a world where the move takes the king is won). Exclusion = the king guard's rule with margin `MIST_QUEEN_GUARD` (default 0.05); the king guard has the last word; the existing one-ply material guard stays off.
+
+Labels: a queen "loss" needs a 3-ply net (our move, their capture, our recapture); the 2-ply window counted 98 trades of 162 as losses.
+
+Calibration (64 in-sample losses, truth in P for 55; `~/fable-persist/suite/queen_calib.py`): margin 0.05 vetoes the losing move in 39/55; control (735 material decisions without a queen loss): 1% of the played moves vetoed, 5% of the short search's own choices. 13 held-truth losses show ~0 risk: the truth sits in P at a tiny weight (the hidden-check calibration problem again).
+
+Pitfall found on the way: P is thinned by measured wall-clock cost per position, so oversubscribed cores (2 workers x engine + 2 Stockfish on 2 cores) thin P far harder than the arena would; calibrate with one worker per core pair, compare runs under the same load.
+
+Results, paired against the v12 baseline (h20-*.json), 2.5 s, seed 1:
+- hidden-check kind: fatal 59 -> 59 of 300 (fixed 2, broke 2), cp loss 74 -> 69
+- fatal kind: 45 -> 49 of 99 (fixed 1, broke 5; the noise floor is ~5 each way), cp loss 122 -> 111
+- material kind: fatal 4 -> 5 of 891, cp loss 138 -> 132 (better on 358, worse on 351), the guard fired on 435 of 892
+- the one-ply material guard at 2 pawns, for comparison: check 59 -> 64, fatal 45 -> 49, material cp 139 -> 125 but fatal 4 -> 9; stays off
+- **out of sample, 114 v34 queen losses the engine had never seen (suite-v34-queen.json):** repeats the losing move 93 -> 16, cp loss on the true board 440 -> 197 (median 447 -> 97), queen-sized losses (400+ cp) 51 -> 21, worse by 300+ in 2, better by 300+ in 36; guard fired in 108
+
+Candidate zip data/candidates/iamavirus-v35-candidate-mist-c-v13.zip (1a7444f488c1; v34's Stockfish and history table). Gates still to pass: validation of the exact zip; 40 games vs the v34 bytes at 180+2 (no forfeit, lowest clock above 20 s, shortest loss not shorter than v34's).
