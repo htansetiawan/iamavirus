@@ -1,25 +1,25 @@
 # Arena v34 watch
 
-Updated 2026-10-13 11:18 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 11:38 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 155W-7D-120L over 282 games** (56%).
-As White: 78.5/141.
-As Black: 80.0/141.
+**Record: 158W-7D-125L over 290 games** (56%).
+As White: 79.5/145.
+As Black: 82.0/145.
 
-Queen lost for less: 95 games (91 to a capturer unseen when we moved, 23 before ply 30); losses with the queen lost: 75 of 120.
+Queen lost for less: 97 games (93 to a capturer unseen when we moved, 24 before ply 30); losses with the queen lost: 77 of 125.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 77 plies.
-Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline S | 32-0-2 |
 | Instructors | 15-0-17 |
+| duck | 9-1-20 |
 | Mist Opportunities | 15-0-15 |
-| duck | 7-1-20 |
+| Decent Chess Bot | 6-0-24 |
 | TA Baseline A | 26-2-0 |
-| Decent Chess Bot | 5-0-23 |
-| Greek Gift | 0-0-18 |
-| Strongly Invisible | 5-0-13 |
+| Greek Gift | 0-0-20 |
+| Strongly Invisible | 5-0-15 |
 | Knight Vision | 3-3-10 |
 | Sausage | 15-0-1 |
 | TA Baseline P | 10-1-1 |
@@ -311,3 +311,11 @@ Games as Black where White opened 1.c4: 16 (the book-trap family; the v15 gate r
 | 2026-10-13 11:14 | fk7govyx | B | Sausage | 33 | win |  | 97 s | 24-21 |
 | 2026-10-13 11:15 | zbw8hrk0 | W | Sausage | 44 | win |  | 78 s | 28-16 |
 | 2026-10-13 11:16 | 7lz3x77f | W | Mist Opportunities | 133 | loss |  | 20 s | 1-17 |
+| 2026-10-13 11:23 | iephcpwl | B | duck | 5 | win |  | 167 s | 39-39 |
+| 2026-10-13 11:30 | tjnbsan1 | W | Decent Chess Bot | 53 | loss | ply 28 by n unseen | 65 s | 10-13 |
+| 2026-10-13 11:32 | hxt7ik2p | W | Greek Gift | 67 | loss |  | 49 s | 3-24 |
+| 2026-10-13 11:33 | m9sg9bhc | B | Decent Chess Bot | 85 | win |  | 40 s | 14-2 |
+| 2026-10-13 11:33 | y8vbimyh | W | duck | 148 | win |  | 20 s | 15-2 |
+| 2026-10-13 11:33 | id1yi6fv | B | Strongly Invisible | 52 | loss | ply 39 by q unseen | 67 s | 14-23 |
+| 2026-10-13 11:35 | tieyluc3 | B | Greek Gift | 122 | loss |  | 22 s | 1-15 |
+| 2026-10-13 11:36 | plh8a8pt | W | Strongly Invisible | 93 | loss |  | 28 s | 0-12 |
