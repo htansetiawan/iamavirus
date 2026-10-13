@@ -1,21 +1,21 @@
 # Against the top six
 
-Updated 2026-10-13 21:59 UTC; leaderboard fetched 2026-10-13T21:58. Active version: v34. Measurement only.
+Updated 2026-10-13 22:19 UTC; leaderboard fetched 2026-10-13T22:19. Active version: v34. Measurement only.
 
 ## Ladder
 
 | team | rating | gap to us |
 | --- | --- | --- |
-| Greek Gift | 2283 | +434 |
-| Knight Vision | 2099 | +251 |
-| Decent Chess Bot | 2075 | +226 |
-| Strongly Invisible | 2093 | +245 |
-| **duck** | 1995 | +147 |
-| **Instructors** | 1922 | +74 |
-| TA Baseline S | 1621 | -228 |
-| **IAmAVirus** | 1848 |  |
-| TA Baseline A | 1561 | -288 |
-| TA Baseline P | 1458 | -390 |
+| Greek Gift | 2283 | +447 |
+| Knight Vision | 2097 | +261 |
+| Decent Chess Bot | 2068 | +233 |
+| Strongly Invisible | 2096 | +260 |
+| **duck** | 1998 | +162 |
+| **Instructors** | 1937 | +102 |
+| TA Baseline S | 1632 | -204 |
+| **IAmAVirus** | 1836 |  |
+| TA Baseline A | 1572 | -264 |
+| TA Baseline P | 1449 | -387 |
 
 ## Record by version (W-D-L)
 
@@ -24,12 +24,12 @@ Updated 2026-10-13 21:59 UTC; leaderboard fetched 2026-10-13T21:58. Active versi
 | Greek Gift | 0-1-33 | 5-0-41 | 0-0-2 | 2-2-24 |  |  |
 | Knight Vision | 5-3-30 | 19-1-56 | 0-0-4 | 12-3-27 | 0-0-2 | 0-0-2 |
 | Decent Chess Bot | 9-1-36 | 10-1-43 |  | 6-1-31 | 0-0-2 |  |
-| Strongly Invisible | 10-0-34 | 15-1-44 |  | 4-1-31 | 0-0-2 |  |
+| Strongly Invisible | 10-0-36 | 15-1-44 |  | 4-1-31 | 0-0-2 |  |
 | **duck** | 13-1-34 | 22-3-41 | 0-0-4 | 9-5-40 | 1-0-3 |  |
 | **Instructors** | 21-1-36 | 15-0-35 | 2-0-4 | 10-3-35 | 1-0-1 |  |
 | TA Baseline P | 18-1-1 | 46-0-2 |  | 50-2-2 | 2-0-0 | 1-0-1 |
-| TA Baseline A | 46-2-4 | 51-0-3 | 4-0-0 | 50-10-6 | 3-0-1 | 1-0-1 |
-| TA Baseline S | 46-0-4 | 53-1-16 | 3-0-3 | 27-5-18 | 4-0-0 |  |
+| TA Baseline A | 48-2-4 | 51-0-3 | 4-0-0 | 50-10-6 | 3-0-1 | 1-0-1 |
+| TA Baseline S | 46-0-6 | 53-1-16 | 3-0-3 | 27-5-18 | 4-0-0 |  |
 
 ## Skill gaps (rates per 100 moves unless noted)
 
@@ -37,55 +37,55 @@ Active version v34. "them" is the opponent in those games; "top six among themse
 
 | skill | measure | us vs duck + Instructors | them | us vs other four | them | us vs TA baselines (contrast) | them | top six among themselves |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Information | squares we see (mean) | 32.3 | 34.0 | 31.7 | 35.2 | 35.3 | 31.6 | 33.1 |
-|  | vision-gaining moves | 20.8 | 19.9 | 20.9 | 21.4 | 22.3 | 19.1 | 19.2 |
-| Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.43 | 0.43 | 0.46 | 0.39 | 0.51 | 0.34 | 0.41 |
-|  | captures from unseen squares | 9.5 | 10.1 | 9.4 | 9.8 | 12.1 | 7.4 | 8.5 |
-|  | captures after a route the other side never saw | 15.6 | 16.4 | 15.1 | 18.6 | 18.3 | 13.3 | 14.9 |
-|  | long slider strikes | 4.6 | 4.7 | 4.6 | 5.4 | 5.5 | 4.5 | 4.3 |
-| King pressure | moves that attack the enemy king | 3.1 ⚠ | 4.6 | 2.6 ⚠ | 4.8 | 4.6 | 2.3 | 3.5 |
+| Information | squares we see (mean) | 32.3 | 34.0 | 31.8 | 35.2 | 35.3 | 31.7 | 33.1 |
+|  | vision-gaining moves | 20.8 | 19.9 | 20.9 | 21.4 | 22.3 | 19.0 | 19.2 |
+| Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.43 | 0.43 | 0.46 | 0.38 | 0.51 | 0.34 | 0.41 |
+|  | captures from unseen squares | 9.5 | 10.1 | 9.4 | 9.8 | 12.1 | 7.5 | 8.5 |
+|  | captures after a route the other side never saw | 15.6 | 16.4 | 15.1 | 18.5 | 18.3 | 13.5 | 14.9 |
+|  | long slider strikes | 4.6 | 4.7 | 4.6 | 5.4 | 5.5 | 4.6 | 4.3 |
+| King pressure | moves that attack the enemy king | 3.1 ⚠ | 4.6 | 2.6 ⚠ | 4.8 | 4.5 | 2.4 | 3.5 |
 |  | ...with an attacker the king's side cannot see | 1.3 ⚠ | 2.3 | 0.8 ⚠ | 2.4 | 2.8 | 0.5 | 1.6 |
 |  | sacrifices that lead to a king capture | 0.1 | 0.2 | 0.1 | 0.4 | 0.7 | 0.0 | 0.2 |
-| Queen activity | queen moves into the enemy half | 3.5 | 4.9 | 3.0 | 4.9 | 4.6 | 1.7 | 3.1 |
-| Discipline (not giving things away) | material given (3+ net over two plies) | 3.5 ⚠ | 1.5 | 4.2 ⚠ | 1.2 | 1.7 | 3.3 | 1.7 |
+| Queen activity | queen moves into the enemy half | 3.5 | 4.9 | 3.0 | 4.9 | 4.5 | 1.9 | 3.1 |
+| Discipline (not giving things away) | material given (3+ net over two plies) | 3.5 ⚠ | 1.5 | 4.2 ⚠ | 1.2 | 1.8 | 3.3 | 1.7 |
 |  | pieces walked onto squares hit by unseen attackers | 3.2 | 2.3 | 3.5 ⚠ | 2.2 | 1.5 | 3.7 | 3.1 |
-|  | queen left attacked by an unseen piece | 0.2 | 0.2 | 0.2 | 0.2 | 0.1 | 0.6 | 0.2 |
-|  | bare back rank with enemy heavy pieces alive | 6.9 ⚠ | 4.1 | 7.1 ⚠ | 3.5 | 3.9 | 6.2 | 5.7 |
-| King handling | king moves | 16.6 | 12.9 | 17.5 | 11.1 | 9.1 | 13.0 | 15.2 |
-|  | king moves beyond the second rank | 4.3 | 3.0 | 5.5 | 2.8 | 1.7 | 2.2 | 4.4 |
+|  | queen left attacked by an unseen piece | 0.2 | 0.2 | 0.2 | 0.2 | 0.1 | 0.5 | 0.2 |
+|  | bare back rank with enemy heavy pieces alive | 6.9 ⚠ | 4.1 | 7.3 ⚠ | 3.4 | 4.0 | 6.1 | 5.7 |
+| King handling | king moves | 16.6 | 12.9 | 17.5 | 11.0 | 9.2 | 13.1 | 15.2 |
+|  | king moves beyond the second rank | 4.3 | 3.0 | 5.5 | 2.8 | 1.8 | 2.3 | 4.4 |
 |  | castling | 2.1 | 2.0 | 2.1 | 2.2 | 1.9 | 2.2 | 1.8 |
 
 ⚠ marks a gap of 20% or more in the direction that hurts us.
 
 ## Loss anatomy: v34 against the top six
 
-Record 58-7-203; 203 losses analysed.
+Record 58-7-205; 205 losses analysed.
 
 **How our king fell**
 
 | ending | all top six | of which duck + Instructors |
 | --- | --- | --- |
-| king walked into an unseen attacker | 89 | 30 |
+| king walked into an unseen attacker | 90 | 30 |
 | king already attacked by an unseen piece | 42 | 14 |
 | king walked into an unseen attacker after taking the bait (king capture) | 25 | 8 |
 | king already attacked by an unseen piece (no safe move existed) | 24 | 6 |
 | king left to an attacker we could see (no safe move existed) | 16 | 8 |
-| our move opened a line from an unseen attacker | 7 | 4 |
+| our move opened a line from an unseen attacker | 8 | 4 |
 
-Pieces that took our king: q 117, r 58, n 13, b 6, k 4, p 2, nq 1, br 1, qr 1
+Pieces that took our king: q 118, r 59, n 13, b 6, k 4, p 2, nq 1, br 1, qr 1
 
 **When the material went** (levels held for four plies, so exchanges are not swings)
 
-- Phase of the collapse: middlegame (30-69) 122, late (70+) or never 3 down 44, opening (ply < 30) 37.
-- Down 3 or more at some point in 184 of 203 losses; median first ply 43.0.
-- Down 5 or more in 180; median first ply 47.0.
-- Lost although we had led by 3 or more: 16 of 203.
-- Our clock at 15 s or less: 0 of 203.
+- Phase of the collapse: middlegame (30-69) 123, late (70+) or never 3 down 45, opening (ply < 30) 37.
+- Down 3 or more at some point in 186 of 205 losses; median first ply 43.0.
+- Down 5 or more in 182; median first ply 47.0.
+- Lost although we had led by 3 or more: 16 of 205.
+- Our clock at 15 s or less: 0 of 205.
 - Median length 78 plies.
 
 | what put us 3 down | losses |
 | --- | --- |
-| capturer unseen when we moved, piece had just moved there (q) | 71 |
+| capturer unseen when we moved, piece had just moved there (q) | 73 |
 | capturer unseen when we moved, piece had just moved there (r) | 37 |
 | capturer unseen when we moved, piece had just moved there (n) | 18 |
 | capturer unseen when we moved, piece had just moved there (b) | 13 |

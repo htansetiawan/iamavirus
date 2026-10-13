@@ -1,31 +1,31 @@
 # Arena v34 watch
 
-Updated 2026-10-13 21:58 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 22:19 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 268W-11D-249L over 528 games** (52%).
-As White: 141.0/264.
-As Black: 132.5/264.
+**Record: 272W-11D-253L over 536 games** (52%).
+As White: 143.0/268.
+As Black: 134.5/268.
 
-Queen lost for less: 182 games (174 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 148 of 249.
+Queen lost for less: 187 games (179 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 152 of 253.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 38 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 21-1-36 |
+| TA Baseline A | 48-2-4 |
 | Mist Opportunities | 25-0-27 |
-| TA Baseline A | 46-2-4 |
-| TA Baseline S | 46-0-4 |
+| TA Baseline S | 46-0-6 |
 | duck | 13-1-34 |
 | Decent Chess Bot | 9-1-36 |
-| Strongly Invisible | 10-0-34 |
+| Strongly Invisible | 10-0-36 |
 | Sausage | 40-0-2 |
 | Knight Vision | 5-3-30 |
 | Greek Gift | 0-1-33 |
 | TA Baseline P | 18-1-1 |
 | HYPOTHERMIA | 11-1-8 |
+| Gravel Road | 10-0-0 |
 | baseline.py | 10-0-0 |
-| Gravel Road | 8-0-0 |
 | Apricot Squad | 6-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -558,3 +558,11 @@ Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate r
 | 2026-10-13 21:54 | 0l3dcb9b | W | TA Baseline A | 38 | win |  | 87 s | 24-28 |
 | 2026-10-13 21:56 | 0dj6sk5m | B | TA Baseline A | 51 | win |  | 67 s | 18-16 |
 | 2026-10-13 21:56 | m54jk7gj | B | Decent Chess Bot | 74 | loss | ply 57 by r unseen | 45 s | 6-18 |
+| 2026-10-13 22:02 | 13oaxs6l | B | Gravel Road | 27 | win |  | 109 s | 36-23 |
+| 2026-10-13 22:03 | pz20vfbg | W | Gravel Road | 36 | win |  | 90 s | 37-15 |
+| 2026-10-13 22:10 | ele47v6l | W | TA Baseline S | 67 | loss | ply 32 by q unseen | 47 s | 6-15 |
+| 2026-10-13 22:11 | oub17af9 | B | TA Baseline S | 82 | loss | ply 59 by r unseen | 35 s | 1-10 |
+| 2026-10-13 22:14 | dp74l1x9 | W | Strongly Invisible | 73 | loss | ply 36 by b unseen | 43 s | 8-27 |
+| 2026-10-13 22:14 | domza50l | W | TA Baseline A | 56 | win |  | 58 s | 17-12 |
+| 2026-10-13 22:16 | wq9wdtic | B | Strongly Invisible | 112 | loss | ply 101 by q unseen | 28 s | 3-21 |
+| 2026-10-13 22:18 | mlb4ba39 | B | TA Baseline A | 121 | win | ply 59 by r unseen | 26 s | 7-1 |
