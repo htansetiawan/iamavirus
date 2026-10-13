@@ -1,22 +1,22 @@
 # Arena v34 watch
 
-Updated 2026-10-13 09:35 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 09:55 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 133W-5D-101L over 239 games** (57%).
-As White: 68.0/120.
-As Black: 67.5/119.
+**Record: 136W-5D-105L over 246 games** (56%).
+As White: 69.0/123.
+As Black: 69.5/123.
 
-Queen lost for less: 83 games (79 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 65 of 101.
+Queen lost for less: 85 games (81 to a capturer unseen when we moved, 20 before ply 30); losses with the queen lost: 66 of 105.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
-Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline S | 28-0-2 |
 | TA Baseline A | 26-2-0 |
-| TA Baseline S | 26-0-2 |
+| duck | 6-1-19 |
+| Instructors | 13-0-13 |
 | Decent Chess Bot | 5-0-21 |
-| Instructors | 12-0-13 |
-| duck | 6-1-15 |
 | Mist Opportunities | 11-0-11 |
 | Strongly Invisible | 5-0-13 |
 | Knight Vision | 3-1-10 |
@@ -267,3 +267,10 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | 2026-10-13 09:24 | c6mgynha | B | Mist Opportunities | 59 | win |  | 57 s | 12-21 |
 | 2026-10-13 09:26 | hi4pvzpg | B | TA Baseline A | 71 | win |  | 46 s | 10-3 |
 | 2026-10-13 09:31 | bhyq3nht | W | Instructors | 40 | win |  | 84 s | 18-17 |
+| 2026-10-13 09:35 | np3pbx8c | B | Instructors | 91 | win |  | 37 s | 13-4 |
+| 2026-10-13 09:49 | mqmzkakl | W | duck | 41 | loss |  | 81 s | 10-10 |
+| 2026-10-13 09:49 | ydlbrsk1 | B | duck | 60 | loss | ply 13 by n unseen | 55 s | 7-29 |
+| 2026-10-13 09:50 | u68brpr3 | W | duck | 85 | loss |  | 37 s | 6-15 |
+| 2026-10-13 09:50 | 1v4fg1ot | W | TA Baseline S | 76 | win |  | 44 s | 16-4 |
+| 2026-10-13 09:51 | u3nuhwd1 | B | duck | 76 | loss |  | 45 s | 8-10 |
+| 2026-10-13 09:53 | smn1jt1k | B | TA Baseline S | 121 | win | ply 117 by n unseen | 26 s | 14-10 |
