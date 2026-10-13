@@ -1,14 +1,14 @@
 # Arena v34 watch
 
-Updated 2026-10-13 16:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 16:48 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 200W-9D-188L over 397 games** (52%).
-As White: 104.0/198.
-As Black: 100.5/199.
+**Record: 201W-9D-194L over 404 games** (51%).
+As White: 105.0/202.
+As Black: 100.5/202.
 
-Queen lost for less: 133 games (129 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 108 of 188.
+Queen lost for less: 135 games (131 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 110 of 194.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 28 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -17,10 +17,10 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | TA Baseline S | 39-0-3 |
 | TA Baseline A | 36-2-2 |
 | duck | 11-1-26 |
-| Strongly Invisible | 9-0-26 |
+| Strongly Invisible | 9-0-29 |
 | Greek Gift | 0-0-32 |
 | Decent Chess Bot | 6-1-25 |
-| Knight Vision | 3-3-18 |
+| Knight Vision | 4-3-21 |
 | Sausage | 22-0-2 |
 | TA Baseline P | 14-1-1 |
 | baseline.py | 10-0-0 |
@@ -427,3 +427,10 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | 2026-10-13 16:18 | azbhvgv4 | W | Greek Gift | 57 | loss |  | 61 s | 5-16 |
 | 2026-10-13 16:21 | ht6zs6bw | B | Greek Gift | 92 | loss |  | 35 s | 5-16 |
 | 2026-10-13 16:25 | f83g17u5 | B | Strongly Invisible | 58 | loss |  | 60 s | 8-21 |
+| 2026-10-13 16:27 | sko48qkl | W | Strongly Invisible | 93 | loss |  | 34 s | 3-4 |
+| 2026-10-13 16:29 | co1oboor | B | Knight Vision | 58 | loss | ply 49 by r unseen | 57 s | 8-24 |
+| 2026-10-13 16:30 | ppk3o8v8 | W | Knight Vision | 68 | win |  | 42 s | 26-13 |
+| 2026-10-13 16:35 | 2dbbbb3x | W | Knight Vision | 85 | loss |  | 36 s | 2-15 |
+| 2026-10-13 16:36 | ohd62jvp | W | Strongly Invisible | 65 | loss |  | 53 s | 19-21 |
+| 2026-10-13 16:37 | 1pe896bm | B | Knight Vision | 112 | loss | ply 63 by r unseen | 27 s | 1-19 |
+| 2026-10-13 16:37 | lup8dwog | B | Strongly Invisible | 64 | loss |  | 55 s | 5-14 |
