@@ -1,18 +1,18 @@
 # Arena v34 watch
 
-Updated 2026-10-13 14:44 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 15:05 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 187W-8D-171L over 366 games** (52%).
-As White: 96.5/183.
-As Black: 94.5/183.
+**Record: 190W-8D-173L over 371 games** (52%).
+As White: 98.5/186.
+As Black: 95.5/185.
 
-Queen lost for less: 123 games (119 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 100 of 171.
+Queen lost for less: 124 games (120 to a capturer unseen when we moved, 29 before ply 30); losses with the queen lost: 101 of 173.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 19-1-26 |
+| Instructors | 19-1-28 |
 | duck | 11-1-26 |
 | Mist Opportunities | 18-0-20 |
 | TA Baseline S | 35-0-3 |
@@ -21,7 +21,7 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | Decent Chess Bot | 6-0-24 |
 | Strongly Invisible | 9-0-21 |
 | Knight Vision | 3-3-18 |
-| Sausage | 18-0-2 |
+| Sausage | 21-0-2 |
 | TA Baseline P | 14-1-1 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 8-0-0 |
@@ -395,3 +395,8 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | 2026-10-13 14:41 | v7zpli0p | W | Instructors | 131 | loss |  | 20 s | 1-10 |
 | 2026-10-13 14:42 | dzmazevd | B | duck | 207 | win | ply 37 by r unseen | 20 s | 8-2 |
 | 2026-10-13 14:42 | 5z5o0hzp | B | TA Baseline A | 85 | win |  | 40 s | 18-2 |
+| 2026-10-13 14:55 | ol542r5m | W | Sausage | 40 | win |  | 84 s | 27-17 |
+| 2026-10-13 14:55 | znipbkug | B | Instructors | 84 | loss | ply 31 by k unseen | 38 s | 3-14 |
+| 2026-10-13 14:55 | 2u2pmqt1 | B | Sausage | 53 | win |  | 67 s | 22-7 |
+| 2026-10-13 14:56 | wqbsjl7y | W | Instructors | 101 | loss |  | 27 s | 3-17 |
+| 2026-10-13 15:04 | ejgik4fa | W | Sausage | 74 | win |  | 41 s | 17-4 |
