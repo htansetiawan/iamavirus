@@ -3,6 +3,18 @@
 A bot for the [MIT 6.7980 Fog of War Challenge](https://www.mit.edu/~6.7980/fow/)
 (Topics in Multiagent Learning, Fall 2026).
 
+**Documentation:** the methods, architecture and algorithms over time are written up
+at **[htansetiawan.github.io/iamavirus/docs/](https://htansetiawan.github.io/iamavirus/docs/)**
+(sources in [docs/](docs/)); the interactive system notebook of the neural-era bot is at
+[htansetiawan.github.io/iamavirus/](https://htansetiawan.github.io/iamavirus/). The version-by-version
+record with outcomes is [MUTATIONS.md](MUTATIONS.md); the submission log is
+[fable-submissions/README.md](fable-submissions/README.md).
+
+The engine playing in the arena since version 33 is **[mist-c](https://github.com/htansetiawan/mist-c)**,
+a clean-room C implementation of Obscuro-style imperfect-information search with Stockfish
+leaf evaluation. The description below is of the earlier C++ engine in this repository,
+which remains the rules reference and the local harness.
+
 Fog of War chess is a two-player zero-sum **extensive-form game with imperfect
 information**, so this is built as one: alpha-beta search over an explicit belief
 distribution, with the root move chosen by solving a matrix game rather than by
