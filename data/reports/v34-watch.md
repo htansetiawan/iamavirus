@@ -1,30 +1,30 @@
 # Arena v34 watch
 
-Updated 2026-10-13 18:31 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 18:52 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 222W-10D-220L over 452 games** (50%).
-As White: 115.5/225.
-As Black: 111.5/227.
+**Record: 226W-11D-225L over 462 games** (50%).
+As White: 119.0/231.
+As Black: 112.5/231.
 
-Queen lost for less: 155 games (149 to a capturer unseen when we moved, 35 before ply 30); losses with the queen lost: 129 of 220.
+Queen lost for less: 161 games (154 to a capturer unseen when we moved, 38 before ply 30); losses with the queen lost: 134 of 225.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 79 plies.
 Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 20-1-31 |
-| Mist Opportunities | 21-0-24 |
+| Mist Opportunities | 22-0-24 |
 | TA Baseline A | 39-2-3 |
 | TA Baseline S | 41-0-3 |
+| Decent Chess Bot | 9-1-34 |
 | Strongly Invisible | 10-0-34 |
-| Decent Chess Bot | 9-1-32 |
-| duck | 11-1-27 |
+| duck | 11-1-28 |
 | Knight Vision | 5-3-26 |
-| Greek Gift | 0-0-32 |
+| Greek Gift | 0-1-33 |
 | Sausage | 24-0-2 |
 | TA Baseline P | 16-1-1 |
+| HYPOTHERMIA | 7-1-6 |
 | baseline.py | 10-0-0 |
-| HYPOTHERMIA | 4-1-5 |
 | Gravel Road | 8-0-0 |
 | Apricot Squad | 4-0-0 |
 
@@ -482,3 +482,13 @@ Games as Black where White opened 1.c4: 31 (the book-trap family; the v15 gate r
 | 2026-10-13 18:26 | bjjjgdns | B | Decent Chess Bot | 71 | win |  | 49 s | 17-4 |
 | 2026-10-13 18:30 | 8cmvjx19 | W | Decent Chess Bot | 134 | win |  | 20 s | 12-7 |
 | 2026-10-13 18:31 | dw2vmq7s | B | duck | 62 | loss |  | 55 s | 4-16 |
+| 2026-10-13 18:32 | vgs6ldbd | W | duck | 83 | loss | ply 54 by q unseen | 38 s | 4-19 |
+| 2026-10-13 18:33 | bfkvloen | W | Mist Opportunities | 204 | win | ply 190 by b | 20 s | 10-11 |
+| 2026-10-13 18:36 | 0ojyfpmn | B | Decent Chess Bot | 58 | loss | ply 21 by b unseen | 59 s | 8-26 |
+| 2026-10-13 18:38 | 75bczus6 | W | Decent Chess Bot | 73 | loss | ply 28 by b unseen | 42 s | 4-26 |
+| 2026-10-13 18:41 | i4lex4gx | B | HYPOTHERMIA | 43 | win |  | 79 s | 25-31 |
+| 2026-10-13 18:41 | wrl1l2l6 | W | HYPOTHERMIA | 50 | win |  | 64 s | 18-20 |
+| 2026-10-13 18:42 | dor7zzpe | W | HYPOTHERMIA | 32 | win |  | 97 s | 31-21 |
+| 2026-10-13 18:44 | 64l1jl5n | B | Greek Gift | 62 | loss | ply 41 by r unseen | 54 s | 9-26 |
+| 2026-10-13 18:47 | cpzfn9tt | B | HYPOTHERMIA | 106 | loss | ply 19 by q unseen | 20 s | 2-24 |
+| 2026-10-13 18:48 | sc4puuvs | W | Greek Gift | 121 | draw |  | 22 s | 2-2 |
