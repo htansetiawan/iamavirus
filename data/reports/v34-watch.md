@@ -1,20 +1,20 @@
 # Arena v34 watch
 
-Updated 2026-10-13 07:10 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 07:31 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 93W-4D-82L over 179 games** (53%).
-As White: 48.5/90.
-As Black: 46.5/89.
+**Record: 96W-4D-85L over 185 games** (53%).
+As White: 49.5/92.
+As Black: 48.5/93.
 
-Queen lost for less: 70 games (67 to a capturer unseen when we moved, 17 before ply 30); losses with the queen lost: 55 of 82.
+Queen lost for less: 71 games (68 to a capturer unseen when we moved, 17 before ply 30); losses with the queen lost: 56 of 85.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Instructors | 11-0-13 |
 | TA Baseline S | 22-0-2 |
-| Instructors | 10-0-12 |
-| duck | 5-0-12 |
+| duck | 5-0-14 |
 | Mist Opportunities | 7-0-9 |
 | TA Baseline A | 14-2-0 |
 | Decent Chess Bot | 4-0-12 |
@@ -22,7 +22,7 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | Greek Gift | 0-0-14 |
 | Knight Vision | 3-1-8 |
 | Sausage | 9-0-1 |
-| baseline.py | 6-0-0 |
+| baseline.py | 8-0-0 |
 | TA Baseline P | 5-1-0 |
 | Gravel Road | 4-0-0 |
 
@@ -207,3 +207,9 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-13 07:06 | e1v2pu2s | B | Knight Vision | 29 | win |  | 105 s | 36-35 |
 | 2026-10-13 07:09 | pdsihv7f | W | Knight Vision | 58 | win |  | 56 s | 15-12 |
 | 2026-10-13 07:09 | 60mkf6qu | W | duck | 61 | loss | ply 14 by n unseen | 57 s | 8-22 |
+| 2026-10-13 07:11 | 4suhbce6 | B | duck | 96 | loss |  | 22 s | 2-21 |
+| 2026-10-13 07:14 | uaos11qq | B | baseline.py | 21 | win |  | 122 s | 27-29 |
+| 2026-10-13 07:15 | 84npw38g | W | baseline.py | 44 | win |  | 78 s | 24-15 |
+| 2026-10-13 07:18 | 4nun0itq | B | Instructors | 93 | win |  | 37 s | 9-2 |
+| 2026-10-13 07:20 | axcvcpkc | W | Instructors | 127 | loss |  | 20 s | 3-19 |
+| 2026-10-13 07:30 | rjz5xhu2 | B | duck | 82 | loss | ply 41 by q unseen | 36 s | 4-31 |
