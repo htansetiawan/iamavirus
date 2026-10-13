@@ -1,23 +1,23 @@
 # Arena v34 watch
 
-Updated 2026-10-13 09:14 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-13 09:35 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 128W-5D-99L over 232 games** (56%).
-As White: 66.0/116.
-As Black: 64.5/116.
+**Record: 133W-5D-101L over 239 games** (57%).
+As White: 68.0/120.
+As Black: 67.5/119.
 
-Queen lost for less: 81 games (77 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 63 of 99.
+Queen lost for less: 83 games (79 to a capturer unseen when we moved, 19 before ply 30); losses with the queen lost: 65 of 101.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 76 plies.
 Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline A | 26-2-0 |
 | TA Baseline S | 26-0-2 |
-| TA Baseline A | 24-2-0 |
-| Instructors | 11-0-13 |
-| Decent Chess Bot | 4-0-20 |
+| Decent Chess Bot | 5-0-21 |
+| Instructors | 12-0-13 |
 | duck | 6-1-15 |
-| Mist Opportunities | 10-0-10 |
+| Mist Opportunities | 11-0-11 |
 | Strongly Invisible | 5-0-13 |
 | Knight Vision | 3-1-10 |
 | Greek Gift | 0-0-14 |
@@ -260,3 +260,10 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | 2026-10-13 09:07 | 8guk4dhg | B | Sausage | 67 | win |  | 52 s | 39-8 |
 | 2026-10-13 09:12 | mk959ocw | W | Mist Opportunities | 80 | win |  | 43 s | 18-2 |
 | 2026-10-13 09:14 | tt5b62xw | B | Mist Opportunities | 101 | win |  | 32 s | 10-3 |
+| 2026-10-13 09:20 | jzfmzivw | W | Decent Chess Bot | 53 | loss | ply 32 by n unseen | 64 s | 13-26 |
+| 2026-10-13 09:21 | 8qruqdt1 | B | Decent Chess Bot | 61 | win |  | 54 s | 20-33 |
+| 2026-10-13 09:22 | fvcyqgcx | W | TA Baseline A | 22 | win |  | 117 s | 31-29 |
+| 2026-10-13 09:23 | mezdoabm | W | Mist Opportunities | 51 | loss | ply 40 by r unseen | 66 s | 19-14 |
+| 2026-10-13 09:24 | c6mgynha | B | Mist Opportunities | 59 | win |  | 57 s | 12-21 |
+| 2026-10-13 09:26 | hi4pvzpg | B | TA Baseline A | 71 | win |  | 46 s | 10-3 |
+| 2026-10-13 09:31 | bhyq3nht | W | Instructors | 40 | win |  | 84 s | 18-17 |
