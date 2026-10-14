@@ -1,32 +1,32 @@
 # Arena v35 watch
 
-Updated 2026-10-14 22:19 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 22:40 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 168W-4D-152L over 324 games** (52%).
-As White: 89.5/162.
-As Black: 80.5/162.
+**Record: 174W-5D-155L over 334 games** (53%).
+As White: 92.5/167.
+As Black: 84.0/167.
 
-Queen lost for less: 40 games (39 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 32 of 152.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
-Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 41 games (40 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 33 of 155.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 83 plies.
+Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 8-0-28 |
 | Knight Vision | 8-0-22 |
+| Lost Signal | 17-3-8 |
 | Mist Opportunities | 16-1-11 |
 | Strongly Invisible | 6-0-22 |
 | Instructors | 6-0-20 |
-| Lost Signal | 16-2-8 |
 | HYPOTHERMIA | 12-0-14 |
 | TA Baseline S | 19-0-3 |
+| Greek Gift | 3-0-15 |
+| TA Baseline A | 17-0-1 |
 | Decent Chess Bot | 6-1-11 |
-| Greek Gift | 3-0-13 |
-| TA Baseline A | 16-0-0 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
+| TA Baseline P | 12-0-0 |
 | baseline.py | 10-0-0 |
-| TA Baseline P | 8-0-0 |
 | Gravel Road | 4-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -355,3 +355,13 @@ Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate r
 | 2026-10-14 22:04 | 9n1kzsz2 | W | Knight Vision | 106 | win |  | 29 s | 6-2 |
 | 2026-10-14 22:09 | ttvmc1hn | W | Instructors | 99 | loss |  | 31 s | 3-10 |
 | 2026-10-14 22:13 | dx4a0qkx | B | Instructors | 156 | loss |  | 20 s | 2-9 |
+| 2026-10-14 22:19 | m0koz4d3 | B | TA Baseline A | 75 | win |  | 46 s | 19-13 |
+| 2026-10-14 22:20 | 68p8uao8 | W | TA Baseline P | 22 | win |  | 117 s | 31-25 |
+| 2026-10-14 22:21 | 4npypgff | W | TA Baseline A | 95 | loss | ply 90 by r unseen | 28 s | 1-14 |
+| 2026-10-14 22:21 | s2bmaw21 | B | TA Baseline P | 57 | win |  | 60 s | 32-14 |
+| 2026-10-14 22:22 | q8aaetm9 | W | Greek Gift | 57 | loss |  | 59 s | 8-19 |
+| 2026-10-14 22:23 | qi9ymq16 | B | Greek Gift | 90 | loss |  | 35 s | 2-15 |
+| 2026-10-14 22:35 | kn9oi59j | W | Lost Signal | 50 | win |  | 50 s | 26-31 |
+| 2026-10-14 22:37 | tkxco387 | B | Lost Signal | 172 | draw |  | 20 s | 6-9 |
+| 2026-10-14 22:37 | qq8vsf5d | B | TA Baseline P | 63 | win |  | 56 s | 19-7 |
+| 2026-10-14 22:38 | h31ewwfp | W | TA Baseline P | 80 | win |  | 43 s | 14-9 |
