@@ -1,17 +1,19 @@
 # Arena v35 watch
 
-Updated 2026-10-14 07:29 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 07:50 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 10W-0D-6L over 16 games** (62%).
-As White: 4.0/8.
-As Black: 6.0/8.
+**Record: 15W-0D-10L over 25 games** (60%).
+As White: 7.0/12.
+As Black: 8.0/13.
 
-Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 6.
-Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 62 plies.
+Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 10.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 68 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| TA Baseline A | 4-0-0 |
+| HYPOTHERMIA | 1-0-2 |
 | Instructors | 0-0-2 |
 | Lost Signal | 1-0-1 |
 | TA Baseline S | 2-0-0 |
@@ -20,6 +22,7 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | Sausage | 2-0-0 |
 | Gravel Road | 2-0-0 |
 | duck | 1-0-1 |
+| Mist Opportunities | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -39,3 +42,12 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-14 07:18 | 52kltc6x | W | Gravel Road | 44 | win |  | 78 s | 30-14 |
 | 2026-10-14 07:27 | ol5e72pm | B | duck | 97 | win |  | 26 s | 18-6 |
 | 2026-10-14 07:27 | k9p8hfot | W | duck | 91 | loss |  | 27 s | 3-20 |
+| 2026-10-14 07:33 | 6l4mta0k | B | TA Baseline A | 73 | win |  | 45 s | 24-11 |
+| 2026-10-14 07:34 | 6rhc27ha | W | TA Baseline A | 98 | win |  | 32 s | 14-13 |
+| 2026-10-14 07:34 | pc3iyhnw | W | Mist Opportunities | 63 | loss |  | 55 s | 3-19 |
+| 2026-10-14 07:34 | a8m712sd | W | TA Baseline A | 42 | win |  | 80 s | 25-30 |
+| 2026-10-14 07:35 | tnts1466 | B | HYPOTHERMIA | 66 | loss |  | 53 s | 7-17 |
+| 2026-10-14 07:38 | y1seqgqv | W | HYPOTHERMIA | 126 | win |  | 20 s | 17-10 |
+| 2026-10-14 07:38 | w1y6jpma | B | TA Baseline A | 99 | win |  | 33 s | 29-2 |
+| 2026-10-14 07:38 | ar01w4yg | B | Mist Opportunities | 130 | loss |  | 20 s | 4-8 |
+| 2026-10-14 07:44 | 5e8qqe2d | B | HYPOTHERMIA | 8 | loss |  | 154 s | 39-36 |
