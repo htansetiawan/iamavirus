@@ -1,13 +1,13 @@
 # Arena v35 watch
 
-Updated 2026-10-14 10:17 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 10:38 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 41W-0D-37L over 78 games** (53%).
-As White: 24.0/39.
-As Black: 17.0/39.
+**Record: 42W-0D-38L over 80 games** (52%).
+As White: 25.0/40.
+As Black: 17.0/40.
 
-Queen lost for less: 9 games (9 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 37.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 87 plies.
+Queen lost for less: 9 games (9 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 38.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 88 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -22,9 +22,9 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | Lost Signal | 2-0-2 |
 | Greek Gift | 0-0-4 |
 | Sausage | 4-0-0 |
+| Knight Vision | 1-0-3 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
-| Knight Vision | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -106,3 +106,5 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 10:05 | z3ydilsg | W | Greek Gift | 53 | loss |  | 62 s | 8-15 |
 | 2026-10-14 10:06 | lnatwehg | B | Greek Gift | 54 | loss |  | 62 s | 16-18 |
 | 2026-10-14 10:08 | w3b1i73o | B | Instructors | 174 | loss |  | 20 s | 0-4 |
+| 2026-10-14 10:35 | 9dlc0mgv | W | Knight Vision | 76 | win |  | 31 s | 14-10 |
+| 2026-10-14 10:37 | pse9mfyx | B | Knight Vision | 120 | loss |  | 20 s | 0-16 |
