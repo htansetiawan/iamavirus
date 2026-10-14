@@ -1,29 +1,29 @@
 # Arena v34 watch
 
-Updated 2026-10-14 01:49 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 02:10 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 309W-12D-273L over 594 games** (53%).
-As White: 162.5/297.
-As Black: 152.5/297.
+**Record: 311W-12D-277L over 600 games** (53%).
+As White: 164.5/300.
+As Black: 152.5/300.
 
-Queen lost for less: 198 games (189 to a capturer unseen when we moved, 43 before ply 30); losses with the queen lost: 163 of 273.
+Queen lost for less: 201 games (192 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 166 of 277.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 42 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 43 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 24-2-40 |
 | TA Baseline A | 52-2-4 |
+| TA Baseline S | 51-0-7 |
 | Mist Opportunities | 27-0-29 |
-| TA Baseline S | 50-0-6 |
 | duck | 15-1-38 |
 | Strongly Invisible | 12-0-40 |
 | Decent Chess Bot | 11-1-38 |
 | Sausage | 45-0-3 |
 | Knight Vision | 5-3-32 |
-| Greek Gift | 1-1-34 |
+| Greek Gift | 1-1-36 |
 | TA Baseline P | 24-1-1 |
-| HYPOTHERMIA | 11-1-8 |
+| HYPOTHERMIA | 12-1-9 |
 | Gravel Road | 10-0-0 |
 | baseline.py | 10-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -625,3 +625,9 @@ Games as Black where White opened 1.c4: 42 (the book-trap family; the v15 gate r
 | 2026-10-14 01:33 | feorhfkd | W | Lost Signal | 42 | win |  | 77 s | 28-16 |
 | 2026-10-14 01:39 | 25srl1cz | B | Sausage | 9 | win |  | 154 s | 39-39 |
 | 2026-10-14 01:42 | umnpzkqw | W | Sausage | 64 | win |  | 55 s | 19-4 |
+| 2026-10-14 01:55 | kjm3xin2 | W | HYPOTHERMIA | 56 | win |  | 61 s | 30-17 |
+| 2026-10-14 01:58 | 848x8ot9 | B | HYPOTHERMIA | 104 | loss | ply 7 by q unseen | 20 s | 2-27 |
+| 2026-10-14 01:58 | nb7tafo3 | B | TA Baseline S | 70 | loss | ply 43 by r unseen | 50 s | 4-25 |
+| 2026-10-14 02:01 | dn2gk7wv | W | TA Baseline S | 116 | win |  | 27 s | 12-5 |
+| 2026-10-14 02:08 | hlkfth4k | B | Greek Gift | 58 | loss | ply 37 by q unseen | 57 s | 10-23 |
+| 2026-10-14 02:09 | z4hi2ern | W | Greek Gift | 73 | loss |  | 46 s | 3-21 |
