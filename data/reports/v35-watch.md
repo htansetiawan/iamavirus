@@ -1,12 +1,12 @@
 # Arena v35 watch
 
-Updated 2026-10-14 21:38 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 21:59 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 163W-4D-147L over 314 games** (53%).
-As White: 87.5/157.
-As Black: 77.5/157.
+**Record: 166W-4D-150L over 320 games** (52%).
+As White: 88.5/160.
+As Black: 79.5/160.
 
-Queen lost for less: 40 games (39 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 32 of 147.
+Queen lost for less: 40 games (39 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 32 of 150.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 83 plies.
 Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,16 +14,16 @@ Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate r
 | --- | --- |
 | duck | 8-0-28 |
 | Mist Opportunities | 16-1-11 |
+| Strongly Invisible | 6-0-22 |
 | Knight Vision | 6-0-22 |
+| Lost Signal | 16-2-8 |
 | HYPOTHERMIA | 12-0-14 |
-| Strongly Invisible | 6-0-20 |
 | Instructors | 6-0-18 |
-| Lost Signal | 14-2-8 |
 | TA Baseline S | 19-0-3 |
 | Decent Chess Bot | 6-1-11 |
+| Greek Gift | 3-0-13 |
 | TA Baseline A | 16-0-0 |
 | Apricot Squad | 16-0-0 |
-| Greek Gift | 2-0-12 |
 | Sausage | 14-0-0 |
 | baseline.py | 10-0-0 |
 | TA Baseline P | 8-0-0 |
@@ -345,3 +345,9 @@ Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate r
 | 2026-10-14 21:33 | mctucnfr | W | baseline.py | 30 | win |  | 100 s | 34-26 |
 | 2026-10-14 21:34 | em6c5ypk | B | Knight Vision | 59 | win |  | 59 s | 15-9 |
 | 2026-10-14 21:35 | r95xed9a | W | Knight Vision | 67 | loss |  | 47 s | 3-14 |
+| 2026-10-14 21:52 | 7tm2bivo | B | Lost Signal | 59 | win |  | 61 s | 26-26 |
+| 2026-10-14 21:53 | 3rqwmz9a | W | Greek Gift | 65 | loss |  | 49 s | 15-16 |
+| 2026-10-14 21:54 | hrtqktci | B | Strongly Invisible | 82 | loss |  | 33 s | 12-21 |
+| 2026-10-14 21:55 | rowog9tq | W | Strongly Invisible | 95 | loss |  | 32 s | 2-11 |
+| 2026-10-14 21:56 | 6d37j0ih | B | Greek Gift | 129 | win |  | 21 s | 19-2 |
+| 2026-10-14 21:58 | o0l9azbd | W | Lost Signal | 158 | win |  | 20 s | 10-6 |
