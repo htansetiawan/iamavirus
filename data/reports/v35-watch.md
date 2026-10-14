@@ -1,18 +1,18 @@
 # Arena v35 watch
 
-Updated 2026-10-14 20:16 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 20:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 143W-4D-132L over 279 games** (52%).
-As White: 77.5/139.
-As Black: 67.5/140.
+**Record: 146W-4D-136L over 286 games** (52%).
+As White: 79.5/143.
+As Black: 68.5/143.
 
-Queen lost for less: 35 games (34 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 28 of 132.
+Queen lost for less: 38 games (37 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 31 of 136.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
 Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 7-0-25 |
+| duck | 8-0-28 |
 | Mist Opportunities | 16-1-11 |
 | HYPOTHERMIA | 12-0-14 |
 | Lost Signal | 14-2-8 |
@@ -21,10 +21,10 @@ Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate r
 | Instructors | 5-0-15 |
 | TA Baseline S | 17-0-3 |
 | TA Baseline A | 16-0-0 |
+| Greek Gift | 2-0-12 |
 | Sausage | 14-0-0 |
+| Apricot Squad | 14-0-0 |
 | Decent Chess Bot | 4-1-9 |
-| Greek Gift | 2-0-11 |
-| Apricot Squad | 12-0-0 |
 | baseline.py | 6-0-0 |
 | Gravel Road | 4-0-0 |
 | TA Baseline P | 4-0-0 |
@@ -310,3 +310,10 @@ Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate r
 | 2026-10-14 20:12 | nmzv1f2y | W | Sausage | 54 | win |  | 60 s | 24-5 |
 | 2026-10-14 20:14 | 9a9asr2a | B | Greek Gift | 38 | loss |  | 78 s | 28-27 |
 | 2026-10-14 20:14 | efjwwh9q | B | Sausage | 77 | win |  | 45 s | 13-5 |
+| 2026-10-14 20:18 | ygdp610w | W | Greek Gift | 93 | loss | ply 84 by k unseen | 29 s | 4-15 |
+| 2026-10-14 20:29 | okl1wol7 | B | duck | 72 | loss | ply 67 by p unseen | 39 s | 3-22 |
+| 2026-10-14 20:31 | 1pp9481j | W | duck | 97 | loss |  | 30 s | 8-12 |
+| 2026-10-14 20:32 | ta4z36xo | B | duck | 80 | loss | ply 79 by q unseen | 41 s | 4-15 |
+| 2026-10-14 20:32 | 47uif0tt | W | Apricot Squad | 34 | win |  | 93 s | 33-21 |
+| 2026-10-14 20:33 | c8blbwsd | W | duck | 104 | win |  | 31 s | 21-2 |
+| 2026-10-14 20:34 | q3npixgg | B | Apricot Squad | 73 | win |  | 45 s | 27-13 |
