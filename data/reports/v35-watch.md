@@ -1,28 +1,28 @@
 # Arena v35 watch
 
-Updated 2026-10-14 08:33 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 08:54 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 20W-0D-16L over 36 games** (56%).
-As White: 11.0/18.
-As Black: 9.0/18.
+**Record: 25W-0D-19L over 44 games** (57%).
+As White: 13.0/22.
+As Black: 12.0/22.
 
-Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 16.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 76 plies.
+Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 19.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Instructors | 2-0-4 |
+| duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
 | HYPOTHERMIA | 2-0-4 |
-| Instructors | 1-0-3 |
-| duck | 1-0-3 |
+| TA Baseline S | 4-0-0 |
+| Mist Opportunities | 2-0-2 |
 | Lost Signal | 1-0-1 |
-| TA Baseline S | 2-0-0 |
 | Greek Gift | 0-0-2 |
 | baseline.py | 2-0-0 |
 | Sausage | 2-0-0 |
 | Gravel Road | 2-0-0 |
-| Mist Opportunities | 0-0-2 |
 | Strongly Invisible | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -63,3 +63,11 @@ Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate re
 | 2026-10-14 08:17 | c5cnjewf | W | Strongly Invisible | 124 | win |  | 21 s | 16-5 |
 | 2026-10-14 08:24 | lnf37fsi | W | duck | 87 | loss |  | 37 s | 3-11 |
 | 2026-10-14 08:25 | iepuot0k | B | duck | 94 | loss |  | 33 s | 3-13 |
+| 2026-10-14 08:35 | lggxla2q | W | Instructors | 57 | loss |  | 47 s | 7-14 |
+| 2026-10-14 08:38 | 9cwnzqzg | W | Mist Opportunities | 52 | win |  | 59 s | 23-27 |
+| 2026-10-14 08:38 | h2u89knk | B | Instructors | 113 | win |  | 28 s | 13-1 |
+| 2026-10-14 08:41 | 1rc7mgjw | B | Mist Opportunities | 105 | win |  | 28 s | 28-3 |
+| 2026-10-14 08:42 | 0ycp6br6 | W | duck | 83 | loss |  | 38 s | 2-17 |
+| 2026-10-14 08:43 | b3pyelii | B | duck | 102 | loss |  | 19 s | 4-21 |
+| 2026-10-14 08:44 | ute39yxl | B | TA Baseline S | 71 | win |  | 44 s | 21-16 |
+| 2026-10-14 08:46 | u7q2v366 | W | TA Baseline S | 106 | win |  | 29 s | 7-3 |
