@@ -1,20 +1,20 @@
 # Arena v35 watch
 
-Updated 2026-10-14 07:50 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 08:12 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 15W-0D-10L over 25 games** (60%).
-As White: 7.0/12.
-As Black: 8.0/13.
+**Record: 19W-0D-13L over 32 games** (59%).
+As White: 10.0/16.
+As Black: 9.0/16.
 
-Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 10.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 68 plies.
+Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 13.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 74 plies.
 Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| TA Baseline A | 4-0-0 |
-| HYPOTHERMIA | 1-0-2 |
-| Instructors | 0-0-2 |
+| TA Baseline A | 6-0-0 |
+| HYPOTHERMIA | 2-0-4 |
+| Instructors | 1-0-3 |
 | Lost Signal | 1-0-1 |
 | TA Baseline S | 2-0-0 |
 | Greek Gift | 0-0-2 |
@@ -51,3 +51,10 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-14 07:38 | w1y6jpma | B | TA Baseline A | 99 | win |  | 33 s | 29-2 |
 | 2026-10-14 07:38 | ar01w4yg | B | Mist Opportunities | 130 | loss |  | 20 s | 4-8 |
 | 2026-10-14 07:44 | 5e8qqe2d | B | HYPOTHERMIA | 8 | loss |  | 154 s | 39-36 |
+| 2026-10-14 07:54 | yzy7ghax | W | HYPOTHERMIA | 160 | win |  | 18 s | 7-1 |
+| 2026-10-14 07:59 | gt86zlm4 | B | Instructors | 76 | loss |  | 46 s | 2-15 |
+| 2026-10-14 08:01 | 61bzys3l | W | Instructors | 98 | win |  | 33 s | 19-4 |
+| 2026-10-14 08:07 | i99eww4g | W | HYPOTHERMIA | 93 | loss |  | 20 s | 2-20 |
+| 2026-10-14 08:09 | 7syelpmt | W | TA Baseline A | 46 | win |  | 75 s | 13-18 |
+| 2026-10-14 08:09 | ctf69vii | B | HYPOTHERMIA | 112 | loss |  | 26 s | 4-17 |
+| 2026-10-14 08:11 | sd88pe7y | B | TA Baseline A | 71 | win |  | 48 s | 21-12 |
