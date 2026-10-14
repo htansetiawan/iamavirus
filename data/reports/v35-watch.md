@@ -1,10 +1,10 @@
 # Arena v35 watch
 
-Updated 2026-10-14 17:30 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 17:51 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 116W-2D-104L over 222 games** (53%).
-As White: 61.5/111.
-As Black: 55.5/111.
+**Record: 118W-2D-104L over 224 games** (53%).
+As White: 62.5/112.
+As Black: 56.5/112.
 
 Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 104.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 83 plies.
@@ -19,9 +19,9 @@ Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate r
 | HYPOTHERMIA | 8-0-10 |
 | Instructors | 5-0-11 |
 | Lost Signal | 7-1-6 |
+| TA Baseline A | 14-0-0 |
 | Knight Vision | 3-0-11 |
 | Greek Gift | 2-0-10 |
-| TA Baseline A | 12-0-0 |
 | Apricot Squad | 12-0-0 |
 | Sausage | 10-0-0 |
 | Decent Chess Bot | 2-0-6 |
@@ -253,3 +253,5 @@ Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate r
 | 2026-10-14 17:18 | q94vtemp | W | Greek Gift | 83 | loss |  | 40 s | 3-10 |
 | 2026-10-14 17:20 | mjlz20bt | B | Greek Gift | 78 | loss |  | 38 s | 2-10 |
 | 2026-10-14 17:23 | ayog1ifk | B | Mist Opportunities | 205 | draw |  | 20 s | 16-13 |
+| 2026-10-14 17:48 | dtanf24x | W | TA Baseline A | 34 | win |  | 93 s | 29-24 |
+| 2026-10-14 17:50 | k3ekjkl4 | B | TA Baseline A | 57 | win |  | 61 s | 22-10 |
