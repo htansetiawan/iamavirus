@@ -1,25 +1,25 @@
 # Arena v35 watch
 
-Updated 2026-10-14 23:01 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 23:21 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 180W-5D-158L over 343 games** (53%).
-As White: 96.5/172.
-As Black: 86.0/171.
+**Record: 185W-5D-160L over 350 games** (54%).
+As White: 99.5/175.
+As Black: 88.0/175.
 
-Queen lost for less: 43 games (41 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 34 of 158.
+Queen lost for less: 44 games (42 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 35 of 160.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 84 plies.
 Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 8-0-28 |
-| Mist Opportunities | 18-1-13 |
+| Mist Opportunities | 20-1-13 |
+| Knight Vision | 9-0-23 |
 | Lost Signal | 19-3-8 |
-| Knight Vision | 8-0-22 |
+| Instructors | 7-0-21 |
 | HYPOTHERMIA | 13-0-15 |
 | Strongly Invisible | 6-0-22 |
-| Instructors | 6-0-20 |
-| TA Baseline S | 20-0-3 |
+| TA Baseline S | 21-0-3 |
 | Greek Gift | 3-0-15 |
 | TA Baseline A | 17-0-1 |
 | Decent Chess Bot | 6-1-11 |
@@ -374,3 +374,10 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | 2026-10-14 22:57 | 6sylzrt0 | W | Mist Opportunities | 128 | win |  | 23 s | 14-4 |
 | 2026-10-14 22:57 | wf5yrbaq | W | Mist Opportunities | 171 | loss |  | 20 s | 0-8 |
 | 2026-10-14 22:59 | zjl6nwy9 | W | TA Baseline S | 66 | win |  | 52 s | 12-5 |
+| 2026-10-14 23:01 | 7c0jn131 | B | TA Baseline S | 101 | win |  | 32 s | 7-13 |
+| 2026-10-14 23:05 | j3uxv19m | W | Knight Vision | 44 | win |  | 77 s | 27-25 |
+| 2026-10-14 23:08 | b78e5n2s | B | Mist Opportunities | 105 | win |  | 31 s | 9-3 |
+| 2026-10-14 23:09 | 173gila4 | W | Mist Opportunities | 128 | win |  | 23 s | 19-8 |
+| 2026-10-14 23:10 | i6stcw4n | B | Knight Vision | 116 | loss |  | 20 s | 1-22 |
+| 2026-10-14 23:18 | 7hivhp9l | W | Instructors | 82 | win |  | 39 s | 13-8 |
+| 2026-10-14 23:19 | l99cng3h | B | Instructors | 86 | loss | ply 85 by r unseen | 28 s | 5-23 |
