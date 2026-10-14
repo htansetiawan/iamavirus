@@ -1,10 +1,10 @@
 # Arena v34 watch
 
-Updated 2026-10-14 00:45 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 01:06 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 292W-12D-268L over 572 games** (52%).
-As White: 154.5/286.
-As Black: 143.5/286.
+**Record: 296W-12D-268L over 576 games** (52%).
+As White: 156.5/288.
+As Black: 145.5/288.
 
 Queen lost for less: 194 games (186 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 159 of 268.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
@@ -14,12 +14,12 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | --- | --- |
 | Instructors | 23-2-37 |
 | TA Baseline A | 52-2-4 |
+| TA Baseline S | 50-0-6 |
 | Mist Opportunities | 25-0-29 |
-| TA Baseline S | 48-0-6 |
 | duck | 14-1-37 |
 | Strongly Invisible | 10-0-40 |
 | Decent Chess Bot | 10-1-37 |
-| Sausage | 41-0-3 |
+| Sausage | 43-0-3 |
 | Knight Vision | 5-3-32 |
 | Greek Gift | 1-1-34 |
 | TA Baseline P | 22-1-1 |
@@ -603,3 +603,7 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | 2026-10-14 00:26 | qxd78i0y | W | Sausage | 46 | win |  | 75 s | 20-16 |
 | 2026-10-14 00:32 | i7j17kp4 | W | Knight Vision | 81 | loss | ply 56 by r unseen | 37 s | 1-25 |
 | 2026-10-14 00:32 | 10ochgw4 | B | Knight Vision | 76 | loss | ply 45 by q unseen | 41 s | 5-16 |
+| 2026-10-14 00:55 | hi4pd92q | W | Sausage | 70 | win |  | 50 s | 25-7 |
+| 2026-10-14 00:55 | u1nswz39 | B | Sausage | 83 | win |  | 39 s | 13-13 |
+| 2026-10-14 01:01 | zk6c10cb | W | TA Baseline S | 56 | win |  | 63 s | 10-8 |
+| 2026-10-14 01:01 | uir7bbds | B | TA Baseline S | 43 | win |  | 77 s | 22-7 |

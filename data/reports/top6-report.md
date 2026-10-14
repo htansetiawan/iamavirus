@@ -1,21 +1,21 @@
 # Against the top six
 
-Updated 2026-10-14 00:45 UTC; leaderboard fetched 2026-10-14T00:44. Active version: v34. Measurement only.
+Updated 2026-10-14 01:06 UTC; leaderboard fetched 2026-10-14T01:05. Active version: v34. Measurement only.
 
 ## Ladder
 
 | team | rating | gap to us |
 | --- | --- | --- |
-| Greek Gift | 2282 | +435 |
-| Knight Vision | 2126 | +279 |
-| Decent Chess Bot | 2086 | +239 |
-| Strongly Invisible | 2085 | +238 |
-| **duck** | 1975 | +128 |
-| **Instructors** | 1887 | +40 |
-| TA Baseline S | 1696 | -151 |
-| **IAmAVirus** | 1847 |  |
-| TA Baseline A | 1547 | -300 |
-| TA Baseline P | 1489 | -358 |
+| Greek Gift | 2272 | +419 |
+| Knight Vision | 2135 | +282 |
+| Decent Chess Bot | 2086 | +233 |
+| Strongly Invisible | 2088 | +234 |
+| **duck** | 1976 | +123 |
+| **Instructors** | 1887 | +34 |
+| TA Baseline S | 1688 | -166 |
+| **IAmAVirus** | 1853 |  |
+| TA Baseline A | 1545 | -308 |
+| TA Baseline P | 1494 | -359 |
 
 ## Record by version (W-D-L)
 
@@ -29,7 +29,7 @@ Updated 2026-10-14 00:45 UTC; leaderboard fetched 2026-10-14T00:44. Active versi
 | **Instructors** | 23-2-37 | 15-0-35 | 2-0-4 | 10-3-35 | 1-0-1 |  |
 | TA Baseline P | 22-1-1 | 46-0-2 |  | 50-2-2 | 2-0-0 | 1-0-1 |
 | TA Baseline A | 52-2-4 | 51-0-3 | 4-0-0 | 50-10-6 | 3-0-1 | 1-0-1 |
-| TA Baseline S | 48-0-6 | 53-1-16 | 3-0-3 | 27-5-18 | 4-0-0 |  |
+| TA Baseline S | 50-0-6 | 53-1-16 | 3-0-3 | 27-5-18 | 4-0-0 |  |
 
 ## Skill gaps (rates per 100 moves unless noted)
 
@@ -38,20 +38,20 @@ Active version v34. "them" is the opponent in those games; "top six among themse
 | skill | measure | us vs duck + Instructors | them | us vs other four | them | us vs TA baselines (contrast) | them | top six among themselves |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | Information | squares we see (mean) | 32.4 | 34.1 | 31.8 | 35.2 | 35.3 | 31.7 | 33.1 |
-|  | vision-gaining moves | 20.7 | 19.8 | 20.7 | 21.4 | 22.3 | 19.1 | 19.2 |
+|  | vision-gaining moves | 20.7 | 19.8 | 20.7 | 21.4 | 22.4 | 19.1 | 19.2 |
 | Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.43 | 0.43 | 0.45 | 0.38 | 0.50 | 0.33 | 0.41 |
-|  | captures from unseen squares | 9.6 | 10.1 | 9.2 | 9.7 | 12.0 | 7.3 | 8.5 |
-|  | captures after a route the other side never saw | 15.8 | 16.3 | 15.0 | 18.6 | 18.3 | 13.4 | 14.9 |
-|  | long slider strikes | 4.8 | 4.6 | 4.7 | 5.3 | 5.5 | 4.4 | 4.3 |
-| King pressure | moves that attack the enemy king | 3.3 ⚠ | 4.6 | 2.6 ⚠ | 4.8 | 4.4 | 2.3 | 3.5 |
-|  | ...with an attacker the king's side cannot see | 1.5 | 2.3 | 0.8 ⚠ | 2.4 | 2.7 | 0.4 | 1.6 |
-|  | sacrifices that lead to a king capture | 0.1 | 0.2 | 0.1 | 0.3 | 0.7 | 0.0 | 0.2 |
+|  | captures from unseen squares | 9.6 | 10.1 | 9.2 | 9.7 | 12.0 | 7.4 | 8.5 |
+|  | captures after a route the other side never saw | 15.8 | 16.3 | 15.0 | 18.6 | 18.5 | 13.5 | 14.9 |
+|  | long slider strikes | 4.8 | 4.6 | 4.7 | 5.3 | 5.5 | 4.5 | 4.3 |
+| King pressure | moves that attack the enemy king | 3.3 ⚠ | 4.6 | 2.6 ⚠ | 4.8 | 4.5 | 2.4 | 3.5 |
+|  | ...with an attacker the king's side cannot see | 1.5 | 2.3 | 0.8 ⚠ | 2.4 | 2.7 | 0.5 | 1.6 |
+|  | sacrifices that lead to a king capture | 0.1 | 0.2 | 0.1 | 0.3 | 0.8 | 0.0 | 0.2 |
 | Queen activity | queen moves into the enemy half | 3.7 | 4.7 | 2.9 | 4.9 | 4.6 | 1.8 | 3.1 |
 | Discipline (not giving things away) | material given (3+ net over two plies) | 3.4 ⚠ | 1.6 | 4.2 ⚠ | 1.2 | 1.8 | 3.3 | 1.7 |
 |  | pieces walked onto squares hit by unseen attackers | 3.2 | 2.4 | 3.5 ⚠ | 2.2 | 1.5 | 3.6 | 3.1 |
 |  | queen left attacked by an unseen piece | 0.2 | 0.2 | 0.2 | 0.2 | 0.1 | 0.5 | 0.2 |
-|  | bare back rank with enemy heavy pieces alive | 6.8 ⚠ | 4.5 | 7.6 ⚠ | 3.4 | 4.2 | 6.2 | 5.7 |
-| King handling | king moves | 16.4 | 12.9 | 17.5 | 11.2 | 9.1 | 13.0 | 15.2 |
+|  | bare back rank with enemy heavy pieces alive | 6.8 ⚠ | 4.5 | 7.6 ⚠ | 3.4 | 4.2 | 6.3 | 5.7 |
+| King handling | king moves | 16.4 | 12.9 | 17.5 | 11.2 | 9.2 | 13.0 | 15.2 |
 |  | king moves beyond the second rank | 4.1 | 2.9 | 5.3 | 2.8 | 1.8 | 2.2 | 4.4 |
 |  | castling | 2.1 | 2.1 | 2.1 | 2.2 | 2.0 | 2.2 | 1.8 |
 
