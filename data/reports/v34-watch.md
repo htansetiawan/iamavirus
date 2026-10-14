@@ -1,12 +1,12 @@
 # Arena v34 watch
 
-Updated 2026-10-14 05:42 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 06:03 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 343W-12D-311L over 666 games** (52%).
-As White: 182.5/333.
-As Black: 166.5/333.
+**Record: 349W-12D-313L over 674 games** (53%).
+As White: 186.5/337.
+As Black: 168.5/337.
 
-Queen lost for less: 220 games (211 to a capturer unseen when we moved, 50 before ply 30); losses with the queen lost: 180 of 311.
+Queen lost for less: 222 games (213 to a capturer unseen when we moved, 51 before ply 30); losses with the queen lost: 182 of 313.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 47 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -16,7 +16,7 @@ Games as Black where White opened 1.c4: 47 (the book-trap family; the v15 gate r
 | TA Baseline S | 55-0-11 |
 | TA Baseline A | 57-2-5 |
 | duck | 15-1-44 |
-| Mist Opportunities | 28-0-30 |
+| Mist Opportunities | 29-0-31 |
 | Decent Chess Bot | 13-1-40 |
 | Strongly Invisible | 12-0-42 |
 | Sausage | 47-0-3 |
@@ -24,10 +24,10 @@ Games as Black where White opened 1.c4: 47 (the book-trap family; the v15 gate r
 | Greek Gift | 1-1-40 |
 | TA Baseline P | 26-1-1 |
 | HYPOTHERMIA | 14-1-11 |
+| Lost Signal | 11-0-3 |
 | Gravel Road | 12-0-0 |
+| Apricot Squad | 12-0-0 |
 | baseline.py | 10-0-0 |
-| Apricot Squad | 10-0-0 |
-| Lost Signal | 8-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -697,3 +697,11 @@ Games as Black where White opened 1.c4: 47 (the book-trap family; the v15 gate r
 | 2026-10-14 05:38 | 5rumsqzk | B | Lost Signal | 158 | loss | ply 25 by q unseen | 19 s | 3-23 |
 | 2026-10-14 05:38 | cmmku260 | W | TA Baseline S | 86 | win | ply 76 by n unseen | 39 s | 14-4 |
 | 2026-10-14 05:38 | 33x7sd3z | B | Apricot Squad | 43 | win |  | 80 s | 32-16 |
+| 2026-10-14 05:41 | on1f0yjc | B | Apricot Squad | 41 | win |  | 81 s | 34-22 |
+| 2026-10-14 05:42 | 6z3f14kl | W | Apricot Squad | 44 | win |  | 77 s | 38-24 |
+| 2026-10-14 05:50 | u7r3s0e8 | W | Mist Opportunities | 62 | win |  | 50 s | 20-29 |
+| 2026-10-14 05:54 | jvu7irv8 | B | Mist Opportunities | 128 | loss | ply 37 by r unseen | 20 s | 0-14 |
+| 2026-10-14 05:58 | kz96d5dt | W | Lost Signal | 42 | win |  | 80 s | 22-25 |
+| 2026-10-14 05:59 | dzifull9 | W | Lost Signal | 40 | win |  | 83 s | 29-28 |
+| 2026-10-14 06:00 | b4s7b0y9 | B | Lost Signal | 100 | loss | ply 23 by n unseen | 29 s | 13-20 |
+| 2026-10-14 06:00 | wx5vpog8 | B | Lost Signal | 73 | win |  | 45 s | 14-14 |
