@@ -1,27 +1,27 @@
 # Arena v34 watch
 
-Updated 2026-10-14 02:10 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 02:32 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 311W-12D-277L over 600 games** (53%).
-As White: 164.5/300.
-As Black: 152.5/300.
+**Record: 313W-12D-281L over 606 games** (53%).
+As White: 165.5/303.
+As Black: 153.5/303.
 
-Queen lost for less: 201 games (192 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 166 of 277.
+Queen lost for less: 203 games (194 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 167 of 281.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 43 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 24-2-40 |
-| TA Baseline A | 52-2-4 |
+| TA Baseline A | 54-2-4 |
 | TA Baseline S | 51-0-7 |
+| duck | 15-1-40 |
 | Mist Opportunities | 27-0-29 |
-| duck | 15-1-38 |
 | Strongly Invisible | 12-0-40 |
 | Decent Chess Bot | 11-1-38 |
 | Sausage | 45-0-3 |
 | Knight Vision | 5-3-32 |
-| Greek Gift | 1-1-36 |
+| Greek Gift | 1-1-38 |
 | TA Baseline P | 24-1-1 |
 | HYPOTHERMIA | 12-1-9 |
 | Gravel Road | 10-0-0 |
@@ -631,3 +631,9 @@ Games as Black where White opened 1.c4: 43 (the book-trap family; the v15 gate r
 | 2026-10-14 02:01 | dn2gk7wv | W | TA Baseline S | 116 | win |  | 27 s | 12-5 |
 | 2026-10-14 02:08 | hlkfth4k | B | Greek Gift | 58 | loss | ply 37 by q unseen | 57 s | 10-23 |
 | 2026-10-14 02:09 | z4hi2ern | W | Greek Gift | 73 | loss |  | 46 s | 3-21 |
+| 2026-10-14 02:11 | tz4mx9vr | W | duck | 65 | loss |  | 53 s | 4-8 |
+| 2026-10-14 02:13 | vb9qb5lt | B | duck | 86 | loss |  | 38 s | 2-12 |
+| 2026-10-14 02:17 | 5xxngykq | B | Greek Gift | 58 | loss | ply 49 by q unseen | 54 s | 9-21 |
+| 2026-10-14 02:19 | 7y7xg53m | W | Greek Gift | 95 | loss |  | 34 s | 2-7 |
+| 2026-10-14 02:21 | rzmdcsgc | B | TA Baseline A | 73 | win |  | 48 s | 11-3 |
+| 2026-10-14 02:21 | r6zyhp6j | W | TA Baseline A | 88 | win | ply 76 by r unseen | 33 s | 11-2 |
