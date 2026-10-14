@@ -1,22 +1,22 @@
 # Arena v35 watch
 
-Updated 2026-10-14 15:47 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 16:08 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 98W-1D-90L over 189 games** (52%).
-As White: 51.5/94.
-As Black: 47.0/95.
+**Record: 102W-1D-94L over 197 games** (52%).
+As White: 53.5/98.
+As Black: 49.0/99.
 
-Queen lost for less: 24 games (23 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 17 of 90.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 85 plies.
-Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 24 games (23 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 17 of 94.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
+Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 4-0-18 |
-| Mist Opportunities | 11-0-9 |
+| duck | 4-0-19 |
+| Mist Opportunities | 13-0-9 |
+| Strongly Invisible | 5-0-15 |
 | TA Baseline S | 16-0-2 |
 | HYPOTHERMIA | 8-0-10 |
-| Strongly Invisible | 4-0-14 |
 | Instructors | 5-0-9 |
 | Lost Signal | 7-1-6 |
 | Knight Vision | 3-0-11 |
@@ -24,8 +24,8 @@ Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate r
 | Sausage | 10-0-0 |
 | Apricot Squad | 10-0-0 |
 | TA Baseline A | 8-0-0 |
-| baseline.py | 5-0-0 |
-| Decent Chess Bot | 1-0-3 |
+| baseline.py | 6-0-0 |
+| Decent Chess Bot | 1-0-5 |
 | Gravel Road | 2-0-0 |
 | TA Baseline P | 2-0-0 |
 
@@ -220,3 +220,11 @@ Games as Black where White opened 1.c4: 10 (the book-trap family; the v15 gate r
 | 2026-10-14 15:45 | wh3btiki | W | Mist Opportunities | 93 | loss |  | 35 s | 2-7 |
 | 2026-10-14 15:45 | wds16gva | B | baseline.py | 9 | win |  | 154 s | 39-39 |
 | 2026-10-14 15:45 | bya7d9ih | B | Mist Opportunities | 77 | win |  | 40 s | 8-3 |
+| 2026-10-14 15:47 | rdwbfvvl | W | baseline.py | 32 | win |  | 97 s | 32-27 |
+| 2026-10-14 16:00 | ewtbamhv | W | Decent Chess Bot | 75 | loss |  | 37 s | 4-18 |
+| 2026-10-14 16:00 | va6pv7uf | B | Strongly Invisible | 97 | win |  | 34 s | 6-3 |
+| 2026-10-14 16:02 | vxzo0nrh | W | Strongly Invisible | 125 | loss |  | 20 s | 0-15 |
+| 2026-10-14 16:02 | bt5z9aer | B | Decent Chess Bot | 90 | loss |  | 21 s | 2-20 |
+| 2026-10-14 16:06 | xoqjjdc6 | B | Mist Opportunities | 65 | win |  | 53 s | 25-4 |
+| 2026-10-14 16:06 | 9v3dxkq6 | W | Mist Opportunities | 62 | win |  | 50 s | 11-13 |
+| 2026-10-14 16:07 | wgncszwh | B | duck | 48 | loss |  | 68 s | 16-28 |
