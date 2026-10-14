@@ -1,29 +1,29 @@
 # Arena v35 watch
 
-Updated 2026-10-14 19:14 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 19:34 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 131W-3D-120L over 254 games** (52%).
-As White: 71.5/127.
-As Black: 61.0/127.
+**Record: 135W-3D-125L over 263 games** (52%).
+As White: 73.5/131.
+As Black: 63.0/132.
 
-Queen lost for less: 29 games (28 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 22 of 120.
+Queen lost for less: 33 games (32 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 26 of 125.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
-Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 6-0-22 |
+| duck | 6-0-24 |
 | Mist Opportunities | 16-1-11 |
-| HYPOTHERMIA | 11-0-13 |
+| HYPOTHERMIA | 12-0-14 |
 | Strongly Invisible | 6-0-18 |
-| Lost Signal | 11-1-8 |
+| Lost Signal | 12-1-8 |
+| Instructors | 5-0-15 |
 | TA Baseline S | 17-0-3 |
-| Instructors | 5-0-13 |
 | Knight Vision | 3-0-15 |
 | TA Baseline A | 16-0-0 |
 | Greek Gift | 2-0-10 |
+| Sausage | 12-0-0 |
 | Apricot Squad | 12-0-0 |
-| Sausage | 10-0-0 |
 | Decent Chess Bot | 2-1-7 |
 | baseline.py | 6-0-0 |
 | Gravel Road | 4-0-0 |
@@ -285,3 +285,12 @@ Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate r
 | 2026-10-14 19:02 | vaiftf1o | B | Knight Vision | 80 | loss |  | 40 s | 3-15 |
 | 2026-10-14 19:04 | 0f2h6ges | W | Knight Vision | 117 | loss |  | 23 s | 1-16 |
 | 2026-10-14 19:07 | 1aq0ci8f | W | Mist Opportunities | 131 | loss | ply 58 by r unseen | 20 s | 0-18 |
+| 2026-10-14 19:14 | ba8gtx4b | W | Instructors | 65 | loss | ply 46 by r unseen | 51 s | 6-16 |
+| 2026-10-14 19:15 | ahxo52oc | B | Instructors | 68 | loss | ply 41 by r unseen | 43 s | 10-12 |
+| 2026-10-14 19:18 | ah88hnc9 | W | duck | 73 | loss | ply 24 by n unseen | 39 s | 3-17 |
+| 2026-10-14 19:20 | 6qta6wjt | B | duck | 98 | loss |  | 29 s | 1-12 |
+| 2026-10-14 19:23 | hj8egoou | W | HYPOTHERMIA | 106 | win |  | 22 s | 14-7 |
+| 2026-10-14 19:25 | 84q0waky | B | HYPOTHERMIA | 132 | loss | ply 19 by q unseen | 20 s | 5-25 |
+| 2026-10-14 19:27 | 25k0wl92 | W | Sausage | 44 | win |  | 78 s | 27-18 |
+| 2026-10-14 19:28 | xdzdd3pn | B | Sausage | 63 | win |  | 52 s | 9-5 |
+| 2026-10-14 19:33 | ul9nq978 | B | Lost Signal | 61 | win |  | 58 s | 19-19 |
