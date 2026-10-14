@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-14 08:54 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 09:15 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 25W-0D-19L over 44 games** (57%).
-As White: 13.0/22.
-As Black: 12.0/22.
+**Record: 32W-0D-24L over 56 games** (57%).
+As White: 18.0/28.
+As Black: 14.0/28.
 
-Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 19.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 4 games (4 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 3 of 24.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 1. Mean length 84 plies.
+Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 2-0-4 |
+| HYPOTHERMIA | 3-0-7 |
+| Instructors | 3-0-5 |
+| Mist Opportunities | 5-0-3 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
-| HYPOTHERMIA | 2-0-4 |
 | TA Baseline S | 4-0-0 |
-| Mist Opportunities | 2-0-2 |
+| Sausage | 4-0-0 |
 | Lost Signal | 1-0-1 |
 | Greek Gift | 0-0-2 |
 | baseline.py | 2-0-0 |
-| Sausage | 2-0-0 |
 | Gravel Road | 2-0-0 |
 | Strongly Invisible | 1-0-1 |
 
@@ -71,3 +71,15 @@ Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate re
 | 2026-10-14 08:43 | b3pyelii | B | duck | 102 | loss |  | 19 s | 4-21 |
 | 2026-10-14 08:44 | ute39yxl | B | TA Baseline S | 71 | win |  | 44 s | 21-16 |
 | 2026-10-14 08:46 | u7q2v366 | W | TA Baseline S | 106 | win |  | 29 s | 7-3 |
+| 2026-10-14 08:55 | x4vp4mac | W | Mist Opportunities | 90 | win |  | 25 s | 14-3 |
+| 2026-10-14 08:56 | 3tujmeay | B | Mist Opportunities | 110 | loss |  | 23 s | 3-19 |
+| 2026-10-14 08:56 | oet74xu7 | B | Mist Opportunities | 93 | win |  | 32 s | 18-5 |
+| 2026-10-14 08:56 | p6tda8k3 | W | Mist Opportunities | 104 | win |  | 23 s | 15-4 |
+| 2026-10-14 09:04 | gf0cdit7 | W | HYPOTHERMIA | 131 | loss |  | 20 s | 4-16 |
+| 2026-10-14 09:05 | 4fqgnf1d | B | HYPOTHERMIA | 172 | loss | ply 167 by b unseen | 9 s | 4-31 |
+| 2026-10-14 09:05 | 7rurh8eo | B | HYPOTHERMIA | 118 | loss |  | 19 s | 3-16 |
+| 2026-10-14 09:06 | f31lth9v | B | Instructors | 62 | loss |  | 56 s | 5-12 |
+| 2026-10-14 09:07 | gt1mghiq | W | Instructors | 80 | win |  | 43 s | 17-4 |
+| 2026-10-14 09:08 | wr7l74p6 | W | HYPOTHERMIA | 168 | win | ply 106 by r unseen | 19 s | 14-4 |
+| 2026-10-14 09:09 | etpl5u9h | W | Sausage | 50 | win |  | 70 s | 9-9 |
+| 2026-10-14 09:10 | e2lrdcge | B | Sausage | 65 | win |  | 50 s | 13-6 |
