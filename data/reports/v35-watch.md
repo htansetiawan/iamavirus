@@ -1,12 +1,12 @@
 # Arena v35 watch
 
-Updated 2026-10-14 11:19 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 11:39 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 51W-0D-45L over 96 games** (53%).
-As White: 28.0/48.
-As Black: 23.0/48.
+**Record: 56W-0D-46L over 102 games** (55%).
+As White: 30.0/51.
+As Black: 26.0/51.
 
-Queen lost for less: 10 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 45.
+Queen lost for less: 10 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 46.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 89 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,17 +14,18 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | --- | --- |
 | Mist Opportunities | 9-0-5 |
 | Instructors | 4-0-8 |
+| TA Baseline S | 11-0-1 |
 | Lost Signal | 5-0-5 |
-| TA Baseline S | 9-0-1 |
 | HYPOTHERMIA | 3-0-7 |
 | Strongly Invisible | 2-0-6 |
+| Greek Gift | 1-0-5 |
 | Sausage | 6-0-0 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
 | Knight Vision | 2-0-4 |
-| Greek Gift | 0-0-4 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
+| Apricot Squad | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -124,3 +125,9 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 11:04 | 86ep1c1b | B | Lost Signal | 103 | win |  | 23 s | 19-5 |
 | 2026-10-14 11:17 | 19xxo4zt | B | Lost Signal | 93 | win |  | 26 s | 25-3 |
 | 2026-10-14 11:17 | vlpcxkvm | W | Lost Signal | 69 | loss |  | 35 s | 9-13 |
+| 2026-10-14 11:32 | yz5hosr6 | B | Apricot Squad | 29 | win |  | 104 s | 30-34 |
+| 2026-10-14 11:34 | wjajkss9 | B | TA Baseline S | 91 | win |  | 35 s | 17-4 |
+| 2026-10-14 11:34 | c0mv6joi | W | Apricot Squad | 56 | win |  | 55 s | 35-22 |
+| 2026-10-14 11:34 | 48qbhra2 | W | TA Baseline S | 88 | win |  | 36 s | 18-5 |
+| 2026-10-14 11:35 | whx4qqln | B | Greek Gift | 111 | win |  | 28 s | 8-3 |
+| 2026-10-14 11:35 | vi9xq78r | W | Greek Gift | 113 | loss |  | 23 s | 5-16 |
