@@ -1,20 +1,20 @@
 # Arena v34 watch
 
-Updated 2026-10-14 05:20 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 05:42 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 337W-12D-305L over 654 games** (52%).
-As White: 179.5/327.
-As Black: 163.5/327.
+**Record: 343W-12D-311L over 666 games** (52%).
+As White: 182.5/333.
+As Black: 166.5/333.
 
-Queen lost for less: 214 games (205 to a capturer unseen when we moved, 49 before ply 30); losses with the queen lost: 175 of 305.
+Queen lost for less: 220 games (211 to a capturer unseen when we moved, 50 before ply 30); losses with the queen lost: 180 of 311.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 46 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 47 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 27-2-45 |
+| Instructors | 28-2-46 |
+| TA Baseline S | 55-0-11 |
 | TA Baseline A | 57-2-5 |
-| TA Baseline S | 53-0-9 |
 | duck | 15-1-44 |
 | Mist Opportunities | 28-0-30 |
 | Decent Chess Bot | 13-1-40 |
@@ -23,11 +23,11 @@ Games as Black where White opened 1.c4: 46 (the book-trap family; the v15 gate r
 | Knight Vision | 7-3-36 |
 | Greek Gift | 1-1-40 |
 | TA Baseline P | 26-1-1 |
-| HYPOTHERMIA | 13-1-10 |
+| HYPOTHERMIA | 14-1-11 |
 | Gravel Road | 12-0-0 |
 | baseline.py | 10-0-0 |
-| Apricot Squad | 8-0-0 |
-| Lost Signal | 8-0-0 |
+| Apricot Squad | 10-0-0 |
+| Lost Signal | 8-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -685,3 +685,15 @@ Games as Black where White opened 1.c4: 46 (the book-trap family; the v15 gate r
 | 2026-10-14 04:57 | w61cx7ew | W | Instructors | 102 | win |  | 32 s | 16-2 |
 | 2026-10-14 05:02 | vznbj5rv | W | TA Baseline P | 66 | win |  | 51 s | 18-4 |
 | 2026-10-14 05:03 | 1l4irpc8 | B | TA Baseline P | 75 | win |  | 47 s | 19-9 |
+| 2026-10-14 05:23 | vq0hgkct | W | TA Baseline S | 79 | loss | ply 52 by r unseen | 41 s | 8-17 |
+| 2026-10-14 05:23 | db7nurc2 | B | TA Baseline S | 90 | loss |  | 36 s | 2-17 |
+| 2026-10-14 05:33 | btdmyn4t | W | Lost Signal | 109 | loss | ply 60 by k unseen | 20 s | 3-15 |
+| 2026-10-14 05:34 | ub8cy6jb | W | Instructors | 58 | win |  | 59 s | 15-13 |
+| 2026-10-14 05:35 | x1poxb1q | W | Apricot Squad | 20 | win |  | 122 s | 37-35 |
+| 2026-10-14 05:36 | hmm8ev5r | B | Instructors | 92 | loss | ply 65 by b unseen | 32 s | 4-15 |
+| 2026-10-14 05:36 | q4gphw7o | B | HYPOTHERMIA | 121 | win |  | 21 s | 14-5 |
+| 2026-10-14 05:37 | 074ri3w0 | W | HYPOTHERMIA | 133 | loss | ply 88 by r unseen | 20 s | 8-20 |
+| 2026-10-14 05:37 | ww213fq7 | B | TA Baseline S | 71 | win |  | 47 s | 24-8 |
+| 2026-10-14 05:38 | 5rumsqzk | B | Lost Signal | 158 | loss | ply 25 by q unseen | 19 s | 3-23 |
+| 2026-10-14 05:38 | cmmku260 | W | TA Baseline S | 86 | win | ply 76 by n unseen | 39 s | 14-4 |
+| 2026-10-14 05:38 | 33x7sd3z | B | Apricot Squad | 43 | win |  | 80 s | 32-16 |
