@@ -1,18 +1,18 @@
 # Arena v35 watch
 
-Updated 2026-10-14 16:08 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 16:28 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 102W-1D-94L over 197 games** (52%).
-As White: 53.5/98.
+**Record: 102W-1D-95L over 198 games** (52%).
+As White: 53.5/99.
 As Black: 49.0/99.
 
-Queen lost for less: 24 games (23 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 17 of 94.
+Queen lost for less: 24 games (23 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 17 of 95.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
 Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 4-0-19 |
+| duck | 4-0-20 |
 | Mist Opportunities | 13-0-9 |
 | Strongly Invisible | 5-0-15 |
 | TA Baseline S | 16-0-2 |
@@ -228,3 +228,4 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-14 16:06 | xoqjjdc6 | B | Mist Opportunities | 65 | win |  | 53 s | 25-4 |
 | 2026-10-14 16:06 | 9v3dxkq6 | W | Mist Opportunities | 62 | win |  | 50 s | 11-13 |
 | 2026-10-14 16:07 | wgncszwh | B | duck | 48 | loss |  | 68 s | 16-28 |
+| 2026-10-14 16:09 | xmbyacgw | W | duck | 91 | loss |  | 24 s | 8-16 |
