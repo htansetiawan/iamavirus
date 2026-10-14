@@ -1,30 +1,30 @@
 # Arena v35 watch
 
-Updated 2026-10-14 19:34 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 19:55 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 135W-3D-125L over 263 games** (52%).
-As White: 73.5/131.
-As Black: 63.0/132.
+**Record: 138W-3D-129L over 270 games** (52%).
+As White: 74.5/135.
+As Black: 65.0/135.
 
-Queen lost for less: 33 games (32 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 26 of 125.
+Queen lost for less: 33 games (32 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 26 of 129.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
-Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 6-0-24 |
+| duck | 7-0-25 |
 | Mist Opportunities | 16-1-11 |
 | HYPOTHERMIA | 12-0-14 |
 | Strongly Invisible | 6-0-18 |
-| Lost Signal | 12-1-8 |
+| Lost Signal | 13-1-8 |
 | Instructors | 5-0-15 |
 | TA Baseline S | 17-0-3 |
-| Knight Vision | 3-0-15 |
+| Knight Vision | 4-0-16 |
 | TA Baseline A | 16-0-0 |
 | Greek Gift | 2-0-10 |
 | Sausage | 12-0-0 |
 | Apricot Squad | 12-0-0 |
-| Decent Chess Bot | 2-1-7 |
+| Decent Chess Bot | 2-1-9 |
 | baseline.py | 6-0-0 |
 | Gravel Road | 4-0-0 |
 | TA Baseline P | 4-0-0 |
@@ -294,3 +294,10 @@ Games as Black where White opened 1.c4: 17 (the book-trap family; the v15 gate r
 | 2026-10-14 19:27 | 25k0wl92 | W | Sausage | 44 | win |  | 78 s | 27-18 |
 | 2026-10-14 19:28 | xdzdd3pn | B | Sausage | 63 | win |  | 52 s | 9-5 |
 | 2026-10-14 19:33 | ul9nq978 | B | Lost Signal | 61 | win |  | 58 s | 19-19 |
+| 2026-10-14 19:35 | nkuvrw5g | W | Lost Signal | 64 | win |  | 42 s | 34-18 |
+| 2026-10-14 19:38 | 378sfh3a | B | Decent Chess Bot | 82 | loss |  | 37 s | 2-16 |
+| 2026-10-14 19:38 | ibjlcy1f | W | Knight Vision | 49 | loss |  | 66 s | 10-19 |
+| 2026-10-14 19:40 | oqlszekn | W | Decent Chess Bot | 99 | loss |  | 32 s | 2-16 |
+| 2026-10-14 19:40 | i4fx2fc5 | B | Knight Vision | 67 | win |  | 52 s | 14-8 |
+| 2026-10-14 19:53 | ba3a3n1z | W | duck | 87 | loss |  | 38 s | 3-17 |
+| 2026-10-14 19:53 | em1o8ynh | B | duck | 79 | win |  | 33 s | 12-9 |
