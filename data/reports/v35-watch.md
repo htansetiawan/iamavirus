@@ -1,13 +1,13 @@
 # Arena v35 watch
 
-Updated 2026-10-14 14:25 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 14:45 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 83W-0D-79L over 162 games** (51%).
-As White: 45.0/81.
-As Black: 38.0/81.
+**Record: 85W-0D-81L over 166 games** (51%).
+As White: 46.0/83.
+As Black: 39.0/83.
 
-Queen lost for less: 22 games (21 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 16 of 79.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 86 plies.
+Queen lost for less: 22 games (21 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 16 of 81.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 85 plies.
 Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -18,11 +18,11 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | HYPOTHERMIA | 6-0-10 |
 | Strongly Invisible | 4-0-12 |
 | Instructors | 5-0-9 |
+| Knight Vision | 3-0-11 |
 | Lost Signal | 7-0-5 |
-| Knight Vision | 3-0-9 |
 | Greek Gift | 2-0-8 |
+| Apricot Squad | 10-0-0 |
 | Sausage | 8-0-0 |
-| Apricot Squad | 8-0-0 |
 | TA Baseline A | 6-0-0 |
 | Decent Chess Bot | 1-0-3 |
 | baseline.py | 2-0-0 |
@@ -192,3 +192,7 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-14 14:21 | e625q24u | B | Instructors | 70 | loss | ply 65 by b unseen | 41 s | 3-15 |
 | 2026-10-14 14:22 | 7jufzw8a | B | Apricot Squad | 19 | win |  | 126 s | 39-35 |
 | 2026-10-14 14:23 | gkatqyr6 | W | Apricot Squad | 36 | win |  | 89 s | 38-27 |
+| 2026-10-14 14:26 | 9rk1kzmd | B | Knight Vision | 58 | loss |  | 55 s | 14-16 |
+| 2026-10-14 14:26 | 2q37p46x | W | Knight Vision | 63 | loss |  | 55 s | 5-14 |
+| 2026-10-14 14:27 | h0gd4x39 | W | Apricot Squad | 22 | win |  | 117 s | 35-22 |
+| 2026-10-14 14:28 | 2lh10d97 | B | Apricot Squad | 43 | win |  | 78 s | 35-16 |
