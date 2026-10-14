@@ -1,12 +1,12 @@
 # Arena v35 watch
 
-Updated 2026-10-14 13:44 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 14:04 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 75W-0D-75L over 150 games** (50%).
-As White: 39.0/75.
-As Black: 36.0/75.
+**Record: 77W-0D-76L over 153 games** (50%).
+As White: 41.0/77.
+As Black: 36.0/76.
 
-Queen lost for less: 19 games (18 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 13 of 75.
+Queen lost for less: 20 games (19 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 14 of 76.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 87 plies.
 Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -15,8 +15,8 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | duck | 3-0-15 |
 | TA Baseline S | 15-0-1 |
 | Mist Opportunities | 10-0-6 |
-| HYPOTHERMIA | 5-0-9 |
-| Strongly Invisible | 3-0-11 |
+| Strongly Invisible | 4-0-12 |
+| HYPOTHERMIA | 6-0-9 |
 | Instructors | 4-0-8 |
 | Knight Vision | 3-0-9 |
 | Lost Signal | 5-0-5 |
@@ -180,3 +180,6 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-14 13:27 | 32ymjeht | B | Decent Chess Bot | 98 | loss |  | 20 s | 4-12 |
 | 2026-10-14 13:32 | egrpftvw | B | Strongly Invisible | 62 | loss |  | 56 s | 8-13 |
 | 2026-10-14 13:35 | xzdrlud0 | W | Strongly Invisible | 97 | loss | ply 68 by r unseen | 32 s | 3-15 |
+| 2026-10-14 13:53 | eooiys8y | B | Strongly Invisible | 60 | loss | ply 45 by q unseen | 45 s | 10-17 |
+| 2026-10-14 13:54 | f3qhsn1p | W | Strongly Invisible | 88 | win |  | 37 s | 9-5 |
+| 2026-10-14 14:03 | uhw2zrct | W | HYPOTHERMIA | 52 | win |  | 65 s | 33-23 |
