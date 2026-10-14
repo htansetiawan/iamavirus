@@ -1,24 +1,24 @@
 # Arena v34 watch
 
-Updated 2026-10-14 01:06 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 01:27 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 296W-12D-268L over 576 games** (52%).
-As White: 156.5/288.
-As Black: 145.5/288.
+**Record: 301W-12D-273L over 586 games** (52%).
+As White: 158.5/293.
+As Black: 148.5/293.
 
-Queen lost for less: 194 games (186 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 159 of 268.
+Queen lost for less: 198 games (189 to a capturer unseen when we moved, 43 before ply 30); losses with the queen lost: 163 of 273.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 42 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 23-2-37 |
+| Instructors | 24-2-40 |
 | TA Baseline A | 52-2-4 |
 | TA Baseline S | 50-0-6 |
+| duck | 15-1-38 |
 | Mist Opportunities | 25-0-29 |
-| duck | 14-1-37 |
-| Strongly Invisible | 10-0-40 |
-| Decent Chess Bot | 10-1-37 |
+| Strongly Invisible | 12-0-40 |
+| Decent Chess Bot | 11-1-38 |
 | Sausage | 43-0-3 |
 | Knight Vision | 5-3-32 |
 | Greek Gift | 1-1-34 |
@@ -607,3 +607,13 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | 2026-10-14 00:55 | u1nswz39 | B | Sausage | 83 | win |  | 39 s | 13-13 |
 | 2026-10-14 01:01 | zk6c10cb | W | TA Baseline S | 56 | win |  | 63 s | 10-8 |
 | 2026-10-14 01:01 | uir7bbds | B | TA Baseline S | 43 | win |  | 77 s | 22-7 |
+| 2026-10-14 01:06 | j5d1uk21 | B | Strongly Invisible | 123 | win |  | 25 s | 8-2 |
+| 2026-10-14 01:06 | lqi5xje0 | W | Strongly Invisible | 116 | win |  | 27 s | 8-3 |
+| 2026-10-14 01:12 | jvvvcq2w | W | Decent Chess Bot | 61 | loss | ply 18 by q unseen | 57 s | 5-23 |
+| 2026-10-14 01:12 | el516obe | W | duck | 62 | win |  | 57 s | 24-4 |
+| 2026-10-14 01:13 | z249297c | B | Decent Chess Bot | 81 | win |  | 42 s | 19-14 |
+| 2026-10-14 01:14 | 6ip3r4tr | B | duck | 86 | loss | ply 43 by r | 37 s | 4-27 |
+| 2026-10-14 01:18 | nlcifw0n | B | Instructors | 65 | win |  | 55 s | 25-5 |
+| 2026-10-14 01:18 | ousklq3y | W | Instructors | 77 | loss |  | 43 s | 3-12 |
+| 2026-10-14 01:23 | s34wmmhr | W | Instructors | 61 | loss | ply 32 by n unseen | 57 s | 7-18 |
+| 2026-10-14 01:24 | 39ssg0n2 | B | Instructors | 100 | loss | ply 43 by r unseen | 25 s | 2-15 |
