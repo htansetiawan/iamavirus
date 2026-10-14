@@ -1,30 +1,30 @@
 # Arena v35 watch
 
-Updated 2026-10-14 18:32 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 18:53 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 126W-2D-110L over 238 games** (53%).
-As White: 68.5/120.
-As Black: 58.5/118.
+**Record: 130W-3D-115L over 248 games** (53%).
+As White: 70.5/124.
+As Black: 61.0/124.
 
-Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 110.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
-Games as Black where White opened 1.c4: 13 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 115.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
+Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 6-0-22 |
 | Mist Opportunities | 16-1-9 |
 | Strongly Invisible | 6-0-18 |
+| HYPOTHERMIA | 10-0-12 |
+| Lost Signal | 11-1-8 |
 | TA Baseline S | 17-0-3 |
-| HYPOTHERMIA | 10-0-10 |
 | Instructors | 5-0-13 |
-| Lost Signal | 9-1-8 |
-| TA Baseline A | 14-0-0 |
-| Knight Vision | 3-0-11 |
+| TA Baseline A | 16-0-0 |
+| Knight Vision | 3-0-13 |
 | Greek Gift | 2-0-10 |
 | Apricot Squad | 12-0-0 |
 | Sausage | 10-0-0 |
-| Decent Chess Bot | 2-0-6 |
+| Decent Chess Bot | 2-1-7 |
 | baseline.py | 6-0-0 |
 | Gravel Road | 4-0-0 |
 | TA Baseline P | 4-0-0 |
@@ -268,4 +268,14 @@ Games as Black where White opened 1.c4: 13 (the book-trap family; the v15 gate r
 | 2026-10-14 18:11 | 4jdb6tll | B | Instructors | 62 | loss |  | 51 s | 9-13 |
 | 2026-10-14 18:12 | 2vt0fqmy | W | Instructors | 85 | loss |  | 34 s | 5-23 |
 | 2026-10-14 18:27 | txs7pzrb | W | HYPOTHERMIA | 38 | win |  | 78 s | 34-35 |
+| 2026-10-14 18:32 | 56dow4fp | B | HYPOTHERMIA | 122 | loss |  | 25 s | 8-6 |
 | 2026-10-14 18:32 | e6up6erf | W | HYPOTHERMIA | 126 | win |  | 22 s | 11-8 |
+| 2026-10-14 18:34 | k1gh83a7 | B | HYPOTHERMIA | 182 | loss |  | 12 s | 4-31 |
+| 2026-10-14 18:36 | 0av9qe8r | W | Knight Vision | 109 | loss |  | 28 s | 1-11 |
+| 2026-10-14 18:37 | g93zfyma | B | Knight Vision | 98 | loss |  | 23 s | 1-9 |
+| 2026-10-14 18:38 | i27i4flj | W | Lost Signal | 64 | win |  | 49 s | 25-5 |
+| 2026-10-14 18:38 | pehpfoph | B | Lost Signal | 41 | win |  | 57 s | 37-35 |
+| 2026-10-14 18:40 | 7j0ladfx | W | Decent Chess Bot | 47 | loss |  | 54 s | 32-31 |
+| 2026-10-14 18:43 | rm7og0rc | W | TA Baseline A | 42 | win |  | 81 s | 22-21 |
+| 2026-10-14 18:44 | p9ff21uk | B | Decent Chess Bot | 114 | draw |  | 25 s | 8-7 |
+| 2026-10-14 18:45 | 9z40twjj | B | TA Baseline A | 79 | win |  | 40 s | 16-7 |
