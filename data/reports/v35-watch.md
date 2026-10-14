@@ -1,32 +1,33 @@
 # Arena v35 watch
 
-Updated 2026-10-14 14:45 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 15:06 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 85W-0D-81L over 166 games** (51%).
-As White: 46.0/83.
-As Black: 39.0/83.
+**Record: 89W-0D-83L over 172 games** (52%).
+As White: 48.0/86.
+As Black: 41.0/86.
 
-Queen lost for less: 22 games (21 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 16 of 81.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 85 plies.
-Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 24 games (23 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 17 of 83.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
+Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 4-0-16 |
+| Strongly Invisible | 4-0-14 |
 | TA Baseline S | 15-0-1 |
 | Mist Opportunities | 10-0-6 |
 | HYPOTHERMIA | 6-0-10 |
-| Strongly Invisible | 4-0-12 |
 | Instructors | 5-0-9 |
 | Knight Vision | 3-0-11 |
 | Lost Signal | 7-0-5 |
 | Greek Gift | 2-0-8 |
+| Sausage | 10-0-0 |
 | Apricot Squad | 10-0-0 |
-| Sausage | 8-0-0 |
 | TA Baseline A | 6-0-0 |
 | Decent Chess Bot | 1-0-3 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
+| TA Baseline P | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -196,3 +197,9 @@ Games as Black where White opened 1.c4: 8 (the book-trap family; the v15 gate re
 | 2026-10-14 14:26 | 2q37p46x | W | Knight Vision | 63 | loss |  | 55 s | 5-14 |
 | 2026-10-14 14:27 | h0gd4x39 | W | Apricot Squad | 22 | win |  | 117 s | 35-22 |
 | 2026-10-14 14:28 | 2lh10d97 | B | Apricot Squad | 43 | win |  | 78 s | 35-16 |
+| 2026-10-14 14:50 | ky1el9qu | W | TA Baseline P | 26 | win |  | 109 s | 25-26 |
+| 2026-10-14 14:51 | nvo7uvtb | B | Strongly Invisible | 70 | loss | ply 45 by r unseen | 50 s | 7-20 |
+| 2026-10-14 14:52 | 2f0u0hxt | W | Strongly Invisible | 77 | loss |  | 43 s | 9-17 |
+| 2026-10-14 14:53 | uufzew9s | B | TA Baseline P | 85 | win |  | 37 s | 16-6 |
+| 2026-10-14 14:55 | y2fcw9vl | W | Sausage | 68 | win |  | 51 s | 24-11 |
+| 2026-10-14 14:57 | hhm23sea | B | Sausage | 97 | win | ply 83 by r unseen | 34 s | 11-3 |
