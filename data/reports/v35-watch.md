@@ -1,12 +1,12 @@
 # Arena v35 watch
 
-Updated 2026-10-14 10:58 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 11:19 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 48W-0D-42L over 90 games** (53%).
-As White: 27.0/45.
-As Black: 21.0/45.
+**Record: 51W-0D-45L over 96 games** (53%).
+As White: 28.0/48.
+As Black: 23.0/48.
 
-Queen lost for less: 10 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 42.
+Queen lost for less: 10 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 45.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 89 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,10 +14,10 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | --- | --- |
 | Mist Opportunities | 9-0-5 |
 | Instructors | 4-0-8 |
+| Lost Signal | 5-0-5 |
+| TA Baseline S | 9-0-1 |
 | HYPOTHERMIA | 3-0-7 |
-| TA Baseline S | 8-0-0 |
 | Strongly Invisible | 2-0-6 |
-| Lost Signal | 3-0-3 |
 | Sausage | 6-0-0 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
@@ -118,3 +118,9 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 10:55 | ttjadbye | B | Strongly Invisible | 122 | loss |  | 25 s | 2-12 |
 | 2026-10-14 10:57 | ap9qo49s | W | Knight Vision | 67 | loss |  | 50 s | 22-17 |
 | 2026-10-14 10:58 | sjvstkmq | B | Knight Vision | 65 | win |  | 50 s | 17-13 |
+| 2026-10-14 11:00 | l9012606 | W | TA Baseline S | 72 | win |  | 46 s | 16-6 |
+| 2026-10-14 11:01 | 9sknafrj | B | TA Baseline S | 86 | loss |  | 39 s | 9-21 |
+| 2026-10-14 11:03 | wqtqhhof | W | Lost Signal | 135 | loss |  | 20 s | 2-21 |
+| 2026-10-14 11:04 | 86ep1c1b | B | Lost Signal | 103 | win |  | 23 s | 19-5 |
+| 2026-10-14 11:17 | 19xxo4zt | B | Lost Signal | 93 | win |  | 26 s | 25-3 |
+| 2026-10-14 11:17 | vlpcxkvm | W | Lost Signal | 69 | loss |  | 35 s | 9-13 |
