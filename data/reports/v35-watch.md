@@ -1,28 +1,29 @@
 # Arena v35 watch
 
-Updated 2026-10-14 08:12 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 08:33 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 19W-0D-13L over 32 games** (59%).
-As White: 10.0/16.
-As Black: 9.0/16.
+**Record: 20W-0D-16L over 36 games** (56%).
+As White: 11.0/18.
+As Black: 9.0/18.
 
-Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 13.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 74 plies.
-Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 2 games (2 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 2 of 16.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 0. Mean length 76 plies.
+Games as Black where White opened 1.c4: 2 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | TA Baseline A | 6-0-0 |
 | HYPOTHERMIA | 2-0-4 |
 | Instructors | 1-0-3 |
+| duck | 1-0-3 |
 | Lost Signal | 1-0-1 |
 | TA Baseline S | 2-0-0 |
 | Greek Gift | 0-0-2 |
 | baseline.py | 2-0-0 |
 | Sausage | 2-0-0 |
 | Gravel Road | 2-0-0 |
-| duck | 1-0-1 |
 | Mist Opportunities | 0-0-2 |
+| Strongly Invisible | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -58,3 +59,7 @@ Games as Black where White opened 1.c4: 1 (the book-trap family; the v15 gate re
 | 2026-10-14 08:09 | 7syelpmt | W | TA Baseline A | 46 | win |  | 75 s | 13-18 |
 | 2026-10-14 08:09 | ctf69vii | B | HYPOTHERMIA | 112 | loss |  | 26 s | 4-17 |
 | 2026-10-14 08:11 | sd88pe7y | B | TA Baseline A | 71 | win |  | 48 s | 21-12 |
+| 2026-10-14 08:14 | fqq0uxfc | B | Strongly Invisible | 84 | loss |  | 40 s | 4-17 |
+| 2026-10-14 08:17 | c5cnjewf | W | Strongly Invisible | 124 | win |  | 21 s | 16-5 |
+| 2026-10-14 08:24 | lnf37fsi | W | duck | 87 | loss |  | 37 s | 3-11 |
+| 2026-10-14 08:25 | iepuot0k | B | duck | 94 | loss |  | 33 s | 3-13 |
