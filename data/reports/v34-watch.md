@@ -1,24 +1,24 @@
 # Arena v34 watch
 
-Updated 2026-10-14 02:32 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 02:53 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 313W-12D-281L over 606 games** (53%).
-As White: 165.5/303.
-As Black: 153.5/303.
+**Record: 314W-12D-284L over 610 games** (52%).
+As White: 166.5/305.
+As Black: 153.5/305.
 
-Queen lost for less: 203 games (194 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 167 of 281.
+Queen lost for less: 204 games (195 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 168 of 284.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 43 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 44 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 24-2-40 |
 | TA Baseline A | 54-2-4 |
+| duck | 15-1-42 |
 | TA Baseline S | 51-0-7 |
-| duck | 15-1-40 |
 | Mist Opportunities | 27-0-29 |
+| Decent Chess Bot | 12-1-39 |
 | Strongly Invisible | 12-0-40 |
-| Decent Chess Bot | 11-1-38 |
 | Sausage | 45-0-3 |
 | Knight Vision | 5-3-32 |
 | Greek Gift | 1-1-38 |
@@ -637,3 +637,7 @@ Games as Black where White opened 1.c4: 43 (the book-trap family; the v15 gate r
 | 2026-10-14 02:19 | 7y7xg53m | W | Greek Gift | 95 | loss |  | 34 s | 2-7 |
 | 2026-10-14 02:21 | rzmdcsgc | B | TA Baseline A | 73 | win |  | 48 s | 11-3 |
 | 2026-10-14 02:21 | r6zyhp6j | W | TA Baseline A | 88 | win | ply 76 by r unseen | 33 s | 11-2 |
+| 2026-10-14 02:40 | 1fzfwaps | W | Decent Chess Bot | 56 | win |  | 62 s | 19-15 |
+| 2026-10-14 02:41 | 0bqocqkh | W | duck | 87 | loss |  | 36 s | 2-11 |
+| 2026-10-14 02:42 | q7gqmukw | B | Decent Chess Bot | 86 | loss | ply 59 by r unseen | 26 s | 4-18 |
+| 2026-10-14 02:44 | pctb5dqh | B | duck | 140 | loss |  | 22 s | 3-8 |
