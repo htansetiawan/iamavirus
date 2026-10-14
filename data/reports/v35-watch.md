@@ -1,14 +1,14 @@
 # Arena v35 watch
 
-Updated 2026-10-14 16:28 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 16:49 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 102W-1D-95L over 198 games** (52%).
-As White: 53.5/99.
-As Black: 49.0/99.
+**Record: 109W-1D-98L over 208 games** (53%).
+As White: 57.5/104.
+As Black: 52.0/104.
 
-Queen lost for less: 24 games (23 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 17 of 95.
+Queen lost for less: 26 games (25 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 19 of 98.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
-Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
@@ -17,16 +17,16 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | Strongly Invisible | 5-0-15 |
 | TA Baseline S | 16-0-2 |
 | HYPOTHERMIA | 8-0-10 |
-| Instructors | 5-0-9 |
+| Instructors | 5-0-11 |
 | Lost Signal | 7-1-6 |
 | Knight Vision | 3-0-11 |
+| TA Baseline A | 12-0-0 |
 | Greek Gift | 2-0-8 |
 | Sausage | 10-0-0 |
 | Apricot Squad | 10-0-0 |
-| TA Baseline A | 8-0-0 |
+| Decent Chess Bot | 2-0-6 |
 | baseline.py | 6-0-0 |
-| Decent Chess Bot | 1-0-5 |
-| Gravel Road | 2-0-0 |
+| Gravel Road | 4-0-0 |
 | TA Baseline P | 2-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
@@ -229,3 +229,13 @@ Games as Black where White opened 1.c4: 11 (the book-trap family; the v15 gate r
 | 2026-10-14 16:06 | 9v3dxkq6 | W | Mist Opportunities | 62 | win |  | 50 s | 11-13 |
 | 2026-10-14 16:07 | wgncszwh | B | duck | 48 | loss |  | 68 s | 16-28 |
 | 2026-10-14 16:09 | xmbyacgw | W | duck | 91 | loss |  | 24 s | 8-16 |
+| 2026-10-14 16:31 | 96zdmkm0 | B | Instructors | 80 | loss |  | 42 s | 12-21 |
+| 2026-10-14 16:33 | av4rfaiv | W | Instructors | 111 | loss | ply 46 by r unseen | 28 s | 5-10 |
+| 2026-10-14 16:34 | 7njwrfkf | B | Decent Chess Bot | 54 | loss | ply 39 by q unseen | 62 s | 10-11 |
+| 2026-10-14 16:35 | 8x4m9ds3 | W | Decent Chess Bot | 68 | win |  | 42 s | 20-19 |
+| 2026-10-14 16:35 | 0wkc9uxg | B | TA Baseline A | 51 | win |  | 66 s | 21-25 |
+| 2026-10-14 16:36 | iui7db4u | W | Gravel Road | 22 | win |  | 117 s | 33-32 |
+| 2026-10-14 16:37 | 3pgc2kis | W | TA Baseline A | 90 | win |  | 37 s | 17-2 |
+| 2026-10-14 16:38 | pwysv8rj | B | Gravel Road | 47 | win |  | 73 s | 32-5 |
+| 2026-10-14 16:48 | 077warkl | W | TA Baseline A | 82 | win |  | 40 s | 15-9 |
+| 2026-10-14 16:48 | gzrm4qqc | B | TA Baseline A | 87 | win |  | 35 s | 10-11 |
