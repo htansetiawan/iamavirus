@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-14 12:00 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 12:21 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 58W-0D-48L over 106 games** (55%).
-As White: 30.0/53.
-As Black: 28.0/53.
+**Record: 61W-0D-54L over 115 games** (53%).
+As White: 31.0/57.
+As Black: 30.0/58.
 
-Queen lost for less: 11 games (11 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 7 of 48.
+Queen lost for less: 13 games (12 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 8 of 54.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 89 plies.
-Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Mist Opportunities | 10-0-6 |
 | Instructors | 4-0-8 |
 | TA Baseline S | 11-0-1 |
+| duck | 3-0-9 |
+| HYPOTHERMIA | 4-0-7 |
 | Lost Signal | 5-0-5 |
-| HYPOTHERMIA | 3-0-7 |
+| Knight Vision | 3-0-7 |
 | Strongly Invisible | 2-0-6 |
-| Knight Vision | 3-0-5 |
 | Greek Gift | 1-0-5 |
 | Sausage | 6-0-0 |
-| duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
@@ -135,3 +135,12 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 11:48 | xeih1cug | W | Mist Opportunities | 117 | loss |  | 19 s | 3-17 |
 | 2026-10-14 11:56 | 1b9cgn8c | B | Knight Vision | 67 | win |  | 47 s | 15-7 |
 | 2026-10-14 11:58 | 3z5ompaz | W | Knight Vision | 89 | loss | ply 76 by n unseen | 34 s | 4-18 |
+| 2026-10-14 12:03 | 3imbje3o | B | duck | 72 | loss |  | 48 s | 10-14 |
+| 2026-10-14 12:04 | 7gt61ohn | W | duck | 79 | loss |  | 34 s | 2-17 |
+| 2026-10-14 12:07 | vhpav04p | W | Knight Vision | 73 | loss |  | 45 s | 2-16 |
+| 2026-10-14 12:07 | t496adv9 | B | Knight Vision | 66 | loss | ply 53 by q unseen | 52 s | 4-24 |
+| 2026-10-14 12:13 | p4ki6f81 | W | duck | 54 | win | ply 22 by r | 65 s | 12-14 |
+| 2026-10-14 12:16 | ypy8cnxv | B | duck | 99 | win |  | 33 s | 13-2 |
+| 2026-10-14 12:18 | e7g4hrx5 | B | duck | 64 | loss |  | 52 s | 18-17 |
+| 2026-10-14 12:18 | fwy2j476 | W | duck | 83 | loss |  | 39 s | 3-17 |
+| 2026-10-14 12:19 | 843df4yu | B | HYPOTHERMIA | 143 | win |  | 20 s | 29-8 |
