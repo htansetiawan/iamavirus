@@ -1,26 +1,26 @@
 # Arena v35 watch
 
-Updated 2026-10-14 23:21 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 23:42 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 185W-5D-160L over 350 games** (54%).
-As White: 99.5/175.
-As Black: 88.0/175.
+**Record: 187W-6D-164L over 357 games** (53%).
+As White: 102.0/178.
+As Black: 88.0/179.
 
-Queen lost for less: 44 games (42 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 35 of 160.
+Queen lost for less: 44 games (42 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 35 of 164.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 84 plies.
-Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 8-0-28 |
-| Mist Opportunities | 20-1-13 |
-| Knight Vision | 9-0-23 |
+| Mist Opportunities | 20-1-14 |
+| Knight Vision | 10-0-24 |
+| Instructors | 8-0-22 |
 | Lost Signal | 19-3-8 |
-| Instructors | 7-0-21 |
 | HYPOTHERMIA | 13-0-15 |
 | Strongly Invisible | 6-0-22 |
 | TA Baseline S | 21-0-3 |
-| Greek Gift | 3-0-15 |
+| Greek Gift | 3-1-16 |
 | TA Baseline A | 17-0-1 |
 | Decent Chess Bot | 6-1-11 |
 | Apricot Squad | 16-0-0 |
@@ -381,3 +381,10 @@ Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate r
 | 2026-10-14 23:10 | i6stcw4n | B | Knight Vision | 116 | loss |  | 20 s | 1-22 |
 | 2026-10-14 23:18 | 7hivhp9l | W | Instructors | 82 | win |  | 39 s | 13-8 |
 | 2026-10-14 23:19 | l99cng3h | B | Instructors | 86 | loss | ply 85 by r unseen | 28 s | 5-23 |
+| 2026-10-14 23:28 | fhkdqnwa | W | Knight Vision | 78 | win |  | 36 s | 15-7 |
+| 2026-10-14 23:28 | 48da8uc1 | B | Instructors | 66 | loss |  | 50 s | 13-23 |
+| 2026-10-14 23:28 | lnzzzvgm | B | Knight Vision | 94 | loss |  | 34 s | 2-11 |
+| 2026-10-14 23:30 | ansdqn1x | W | Instructors | 110 | win |  | 29 s | 12-3 |
+| 2026-10-14 23:36 | dt7hlk6l | W | Greek Gift | 64 | draw |  | 45 s | 10-10 |
+| 2026-10-14 23:36 | tj0981bh | B | Greek Gift | 66 | loss |  | 46 s | 7-20 |
+| 2026-10-14 23:41 | v45yjjeg | B | Mist Opportunities | 54 | loss |  | 65 s | 4-16 |
