@@ -1,30 +1,30 @@
 # Arena v34 watch
 
-Updated 2026-10-14 03:35 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 03:55 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 322W-12D-290L over 624 games** (53%).
-As White: 170.5/312.
-As Black: 157.5/312.
+**Record: 325W-12D-293L over 630 games** (53%).
+As White: 172.5/315.
+As Black: 158.5/315.
 
-Queen lost for less: 205 games (196 to a capturer unseen when we moved, 45 before ply 30); losses with the queen lost: 168 of 290.
+Queen lost for less: 206 games (197 to a capturer unseen when we moved, 45 before ply 30); losses with the queen lost: 169 of 293.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 45 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 24-2-42 |
-| TA Baseline A | 56-2-4 |
+| TA Baseline A | 57-2-5 |
 | duck | 15-1-42 |
 | TA Baseline S | 51-0-7 |
 | Mist Opportunities | 27-0-29 |
-| Decent Chess Bot | 12-1-39 |
-| Strongly Invisible | 12-0-40 |
+| Strongly Invisible | 12-0-42 |
+| Decent Chess Bot | 13-1-39 |
 | Sausage | 47-0-3 |
 | Knight Vision | 6-3-33 |
 | Greek Gift | 1-1-40 |
 | TA Baseline P | 24-1-1 |
 | HYPOTHERMIA | 13-1-10 |
-| Gravel Road | 10-0-0 |
+| Gravel Road | 11-0-0 |
 | baseline.py | 10-0-0 |
 | Lost Signal | 8-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -655,3 +655,9 @@ Games as Black where White opened 1.c4: 45 (the book-trap family; the v15 gate r
 | 2026-10-14 03:19 | opsslpg3 | B | Greek Gift | 128 | loss |  | 24 s | 3-11 |
 | 2026-10-14 03:28 | kanp37uz | W | Sausage | 56 | win |  | 61 s | 25-8 |
 | 2026-10-14 03:29 | u8vlka4h | B | Sausage | 57 | win |  | 62 s | 32-6 |
+| 2026-10-14 03:35 | mixtplj6 | W | TA Baseline A | 84 | win |  | 39 s | 18-5 |
+| 2026-10-14 03:36 | zk0d606q | B | TA Baseline A | 110 | loss |  | 26 s | 2-12 |
+| 2026-10-14 03:42 | wfm8xj2h | B | Strongly Invisible | 86 | loss | ply 69 by r unseen | 34 s | 10-20 |
+| 2026-10-14 03:43 | 3xv5hoe3 | W | Strongly Invisible | 79 | loss |  | 37 s | 1-16 |
+| 2026-10-14 03:52 | t29klooy | W | Decent Chess Bot | 38 | win |  | 86 s | 31-32 |
+| 2026-10-14 03:54 | c7j91twf | B | Gravel Road | 37 | win |  | 90 s | 34-11 |
