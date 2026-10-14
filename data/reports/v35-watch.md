@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-14 09:57 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 10:17 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 38W-0D-33L over 71 games** (54%).
-As White: 21.0/35.
-As Black: 17.0/36.
+**Record: 41W-0D-37L over 78 games** (53%).
+As White: 24.0/39.
+As Black: 17.0/39.
 
-Queen lost for less: 7 games (7 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 33.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 1. Mean length 88 plies.
+Queen lost for less: 9 games (9 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 37.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 87 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Instructors | 4-0-8 |
 | Mist Opportunities | 7-0-5 |
-| Instructors | 3-0-7 |
 | HYPOTHERMIA | 3-0-7 |
-| TA Baseline S | 7-0-0 |
+| TA Baseline S | 8-0-0 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
 | Strongly Invisible | 2-0-4 |
+| Lost Signal | 2-0-2 |
+| Greek Gift | 0-0-4 |
 | Sausage | 4-0-0 |
-| Lost Signal | 1-0-1 |
-| Greek Gift | 0-0-2 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
 | Knight Vision | 0-0-2 |
@@ -99,3 +99,10 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 09:49 | g9upaa98 | B | Instructors | 88 | loss | ply 51 by r unseen | 29 s | 1-21 |
 | 2026-10-14 09:51 | 8qbi1q1k | B | Knight Vision | 132 | loss |  | 23 s | 1-1 |
 | 2026-10-14 09:56 | ixx7x7b7 | B | TA Baseline S | 111 | win |  | 28 s | 10-3 |
+| 2026-10-14 09:57 | di7kzwht | B | Lost Signal | 8 | loss |  | 154 s | 38-38 |
+| 2026-10-14 09:57 | a1x4udhv | W | TA Baseline S | 142 | win | ply 54 by r unseen | 22 s | 13-1 |
+| 2026-10-14 10:02 | dwyhzuvv | W | Instructors | 48 | win |  | 72 s | 22-19 |
+| 2026-10-14 10:04 | oxouhn3r | W | Lost Signal | 90 | win | ply 66 by q unseen | 35 s | 22-16 |
+| 2026-10-14 10:05 | z3ydilsg | W | Greek Gift | 53 | loss |  | 62 s | 8-15 |
+| 2026-10-14 10:06 | lnatwehg | B | Greek Gift | 54 | loss |  | 62 s | 16-18 |
+| 2026-10-14 10:08 | w3b1i73o | B | Instructors | 174 | loss |  | 20 s | 0-4 |
