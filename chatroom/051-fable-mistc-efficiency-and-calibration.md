@@ -399,3 +399,13 @@ Results, paired against the v12 baseline (h20-*.json), 2.5 s, seed 1:
 - **out of sample, 114 v34 queen losses the engine had never seen (suite-v34-queen.json):** repeats the losing move 93 -> 16, cp loss on the true board 440 -> 197 (median 447 -> 97), queen-sized losses (400+ cp) 51 -> 21, worse by 300+ in 2, better by 300+ in 36; guard fired in 108
 
 Candidate zip data/candidates/iamavirus-v35-candidate-mist-c-v13.zip (1a7444f488c1; v34's Stockfish and history table). Gates still to pass: validation of the exact zip; 40 games vs the v34 bytes at 180+2 (no forfeit, lowest clock above 20 s, shortest loss not shorter than v34's).
+
+## v13 → v14 → v35 candidate (2026-10-13 21:00 – 2026-10-14 01:30 UTC)
+
+v13's bench vs the v34 bytes: 18.5/40, White 15/20, Black 3.5/20 (vs Misty 11.5/20, Black 3/10 where v12 had 7.5/10). Of its seven Black outright queen losses, three were the rule "the king guard has the last word": every queen-saving move carried a few percent of king risk, the king guard removed them, the queen guard was dropped whole, and a certain queen loss was played (p3 decision 11: c6e5 with queen risk 1.000). Four were the truth in P at a weight of 0.07% or less (the hidden-check calibration problem; no share-based guard can fire).
+
+v14 (97b60f1): one combined risk, king + 0.9 × queen, under the king guard's rule and margin. Suite vs v12: check 59 → 60, fatal 45 → 48 (noise), cp lower on both; material cp 138 → 133 (fatal 4 → 5); out of sample the same as v13 (repeats 15, cp 192). Bench vs the v34 bytes, same seeds: **22-3-15 (0.59), White 13/20, Black 10.5/20**, no forfeit, three repetition draws, shortest loss 39 plies, lowest clock 19.8 s under the bench's double load (two engines with two Stockfish workers each on two cores; the arena gives each bot its own two). Queen events: v34 lost its queen outright in 14 games (we scored 0.93), we in 4.
+
+v15 (36c500a, opt-in `MIST_GUARD_UNIFORM`): a uniform weighting of P as a third clause. At 0.10 vs v14: queen set cp 192 → 174, fatal 48 → 46, check 60 → 61, material cp 132 → 135 (fatal 5 → 3). Mixed; it rescued one of the four tiny-weight losses. Left off.
+
+Shipped to the user as the v35 candidate: `fable-submissions/iamavirus-v35-mist-c-v14.zip` (24791ca64a42), validated 23:51 UTC. Prediction and fail-fast rule in the README version map and MUTATIONS.
