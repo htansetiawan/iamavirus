@@ -1,30 +1,30 @@
 # Arena v35 watch
 
-Updated 2026-10-14 19:55 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 20:16 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 138W-3D-129L over 270 games** (52%).
-As White: 74.5/135.
-As Black: 65.0/135.
+**Record: 143W-4D-132L over 279 games** (52%).
+As White: 77.5/139.
+As Black: 67.5/140.
 
-Queen lost for less: 33 games (32 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 26 of 129.
+Queen lost for less: 35 games (34 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 28 of 132.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
-Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 19 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 7-0-25 |
 | Mist Opportunities | 16-1-11 |
 | HYPOTHERMIA | 12-0-14 |
+| Lost Signal | 14-2-8 |
 | Strongly Invisible | 6-0-18 |
-| Lost Signal | 13-1-8 |
+| Knight Vision | 4-0-18 |
 | Instructors | 5-0-15 |
 | TA Baseline S | 17-0-3 |
-| Knight Vision | 4-0-16 |
 | TA Baseline A | 16-0-0 |
-| Greek Gift | 2-0-10 |
-| Sausage | 12-0-0 |
+| Sausage | 14-0-0 |
+| Decent Chess Bot | 4-1-9 |
+| Greek Gift | 2-0-11 |
 | Apricot Squad | 12-0-0 |
-| Decent Chess Bot | 2-1-9 |
 | baseline.py | 6-0-0 |
 | Gravel Road | 4-0-0 |
 | TA Baseline P | 4-0-0 |
@@ -301,3 +301,12 @@ Games as Black where White opened 1.c4: 18 (the book-trap family; the v15 gate r
 | 2026-10-14 19:40 | i4fx2fc5 | B | Knight Vision | 67 | win |  | 52 s | 14-8 |
 | 2026-10-14 19:53 | ba3a3n1z | W | duck | 87 | loss |  | 38 s | 3-17 |
 | 2026-10-14 19:53 | em1o8ynh | B | duck | 79 | win |  | 33 s | 12-9 |
+| 2026-10-14 19:56 | l8st0ty0 | B | Lost Signal | 68 | draw |  | 42 s | 21-21 |
+| 2026-10-14 19:58 | mutlyd5k | W | Lost Signal | 100 | win |  | 24 s | 20-7 |
+| 2026-10-14 20:03 | 0oaoht7a | B | Decent Chess Bot | 47 | win |  | 62 s | 26-21 |
+| 2026-10-14 20:08 | dak540m5 | W | Decent Chess Bot | 140 | win |  | 20 s | 14-3 |
+| 2026-10-14 20:08 | sf8unzkf | W | Knight Vision | 97 | loss | ply 52 by r unseen | 24 s | 1-18 |
+| 2026-10-14 20:10 | qlale0v1 | B | Knight Vision | 120 | loss | ply 55 by r unseen | 21 s | 3-24 |
+| 2026-10-14 20:12 | nmzv1f2y | W | Sausage | 54 | win |  | 60 s | 24-5 |
+| 2026-10-14 20:14 | 9a9asr2a | B | Greek Gift | 38 | loss |  | 78 s | 28-27 |
+| 2026-10-14 20:14 | efjwwh9q | B | Sausage | 77 | win |  | 45 s | 13-5 |
