@@ -1,28 +1,28 @@
 # Arena v35 watch
 
-Updated 2026-10-14 17:10 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 17:30 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 115W-1D-102L over 218 games** (53%).
-As White: 60.5/109.
-As Black: 55.0/109.
+**Record: 116W-2D-104L over 222 games** (53%).
+As White: 61.5/111.
+As Black: 55.5/111.
 
-Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 102.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 82 plies.
+Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 104.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 83 plies.
 Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 5-0-21 |
-| Mist Opportunities | 13-0-9 |
+| Mist Opportunities | 14-1-9 |
 | Strongly Invisible | 5-0-17 |
 | TA Baseline S | 17-0-3 |
 | HYPOTHERMIA | 8-0-10 |
 | Instructors | 5-0-11 |
 | Lost Signal | 7-1-6 |
 | Knight Vision | 3-0-11 |
+| Greek Gift | 2-0-10 |
 | TA Baseline A | 12-0-0 |
 | Apricot Squad | 12-0-0 |
-| Greek Gift | 2-0-8 |
 | Sausage | 10-0-0 |
 | Decent Chess Bot | 2-0-6 |
 | baseline.py | 6-0-0 |
@@ -249,3 +249,7 @@ Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate r
 | 2026-10-14 17:00 | aizzewt2 | B | TA Baseline P | 57 | win |  | 55 s | 22-23 |
 | 2026-10-14 17:05 | oti6x0b4 | B | Apricot Squad | 33 | win |  | 84 s | 39-29 |
 | 2026-10-14 17:06 | hurcj3qu | W | Apricot Squad | 48 | win |  | 57 s | 35-27 |
+| 2026-10-14 17:18 | alu56dz8 | W | Mist Opportunities | 96 | win |  | 32 s | 14-3 |
+| 2026-10-14 17:18 | q94vtemp | W | Greek Gift | 83 | loss |  | 40 s | 3-10 |
+| 2026-10-14 17:20 | mjlz20bt | B | Greek Gift | 78 | loss |  | 38 s | 2-10 |
+| 2026-10-14 17:23 | ayog1ifk | B | Mist Opportunities | 205 | draw |  | 20 s | 16-13 |
