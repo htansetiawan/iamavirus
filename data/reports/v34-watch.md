@@ -1,10 +1,10 @@
 # Arena v34 watch
 
-Updated 2026-10-14 01:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 01:49 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 301W-12D-273L over 586 games** (52%).
-As White: 158.5/293.
-As Black: 148.5/293.
+**Record: 309W-12D-273L over 594 games** (53%).
+As White: 162.5/297.
+As Black: 152.5/297.
 
 Queen lost for less: 198 games (189 to a capturer unseen when we moved, 43 before ply 30); losses with the queen lost: 163 of 273.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
@@ -14,20 +14,20 @@ Games as Black where White opened 1.c4: 42 (the book-trap family; the v15 gate r
 | --- | --- |
 | Instructors | 24-2-40 |
 | TA Baseline A | 52-2-4 |
+| Mist Opportunities | 27-0-29 |
 | TA Baseline S | 50-0-6 |
 | duck | 15-1-38 |
-| Mist Opportunities | 25-0-29 |
 | Strongly Invisible | 12-0-40 |
 | Decent Chess Bot | 11-1-38 |
-| Sausage | 43-0-3 |
+| Sausage | 45-0-3 |
 | Knight Vision | 5-3-32 |
 | Greek Gift | 1-1-34 |
-| TA Baseline P | 22-1-1 |
+| TA Baseline P | 24-1-1 |
 | HYPOTHERMIA | 11-1-8 |
 | Gravel Road | 10-0-0 |
 | baseline.py | 10-0-0 |
 | Apricot Squad | 6-0-0 |
-| Lost Signal | 4-0-0 |
+| Lost Signal | 6-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -617,3 +617,11 @@ Games as Black where White opened 1.c4: 42 (the book-trap family; the v15 gate r
 | 2026-10-14 01:18 | ousklq3y | W | Instructors | 77 | loss |  | 43 s | 3-12 |
 | 2026-10-14 01:23 | s34wmmhr | W | Instructors | 61 | loss | ply 32 by n unseen | 57 s | 7-18 |
 | 2026-10-14 01:24 | 39ssg0n2 | B | Instructors | 100 | loss | ply 43 by r unseen | 25 s | 2-15 |
+| 2026-10-14 01:27 | 8hcvbsr0 | W | Mist Opportunities | 52 | win |  | 68 s | 23-17 |
+| 2026-10-14 01:31 | glvnr6ns | B | TA Baseline P | 79 | win |  | 43 s | 24-4 |
+| 2026-10-14 01:31 | x499hibk | W | TA Baseline P | 86 | win |  | 28 s | 16-9 |
+| 2026-10-14 01:32 | 5p6f9ob3 | B | Lost Signal | 33 | win |  | 95 s | 33-29 |
+| 2026-10-14 01:32 | qvg0m3s6 | B | Mist Opportunities | 147 | win |  | 20 s | 16-1 |
+| 2026-10-14 01:33 | feorhfkd | W | Lost Signal | 42 | win |  | 77 s | 28-16 |
+| 2026-10-14 01:39 | 25srl1cz | B | Sausage | 9 | win |  | 154 s | 39-39 |
+| 2026-10-14 01:42 | umnpzkqw | W | Sausage | 64 | win |  | 55 s | 19-4 |

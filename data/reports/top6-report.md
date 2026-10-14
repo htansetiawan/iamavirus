@@ -1,21 +1,21 @@
 # Against the top six
 
-Updated 2026-10-14 01:28 UTC; leaderboard fetched 2026-10-14T01:26. Active version: v34. Measurement only.
+Updated 2026-10-14 01:49 UTC; leaderboard fetched 2026-10-14T01:48. Active version: v34. Measurement only.
 
 ## Ladder
 
 | team | rating | gap to us |
 | --- | --- | --- |
-| Greek Gift | 2273 | +407 |
-| Knight Vision | 2142 | +276 |
-| Decent Chess Bot | 2067 | +201 |
-| Strongly Invisible | 2069 | +203 |
-| **duck** | 1978 | +112 |
-| **Instructors** | 1896 | +31 |
-| TA Baseline S | 1690 | -175 |
-| **IAmAVirus** | 1866 |  |
-| TA Baseline A | 1544 | -321 |
-| TA Baseline P | 1496 | -370 |
+| Greek Gift | 2274 | +395 |
+| Knight Vision | 2147 | +267 |
+| Decent Chess Bot | 2071 | +192 |
+| Strongly Invisible | 2062 | +182 |
+| **duck** | 1978 | +99 |
+| **Instructors** | 1904 | +25 |
+| TA Baseline S | 1682 | -197 |
+| **IAmAVirus** | 1879 |  |
+| TA Baseline A | 1554 | -326 |
+| TA Baseline P | 1479 | -400 |
 
 ## Record by version (W-D-L)
 
@@ -27,7 +27,7 @@ Updated 2026-10-14 01:28 UTC; leaderboard fetched 2026-10-14T01:26. Active versi
 | Strongly Invisible | 12-0-40 | 15-1-44 |  | 4-1-31 | 0-0-2 |  |
 | **duck** | 15-1-38 | 22-3-41 | 0-0-4 | 9-5-40 | 1-0-3 |  |
 | **Instructors** | 24-2-40 | 15-0-35 | 2-0-4 | 10-3-35 | 1-0-1 |  |
-| TA Baseline P | 22-1-1 | 46-0-2 |  | 50-2-2 | 2-0-0 | 1-0-1 |
+| TA Baseline P | 24-1-1 | 46-0-2 |  | 50-2-2 | 2-0-0 | 1-0-1 |
 | TA Baseline A | 52-2-4 | 51-0-3 | 4-0-0 | 50-10-6 | 3-0-1 | 1-0-1 |
 | TA Baseline S | 50-0-6 | 53-1-16 | 3-0-3 | 27-5-18 | 4-0-0 |  |
 
@@ -37,21 +37,21 @@ Active version v34. "them" is the opponent in those games; "top six among themse
 
 | skill | measure | us vs duck + Instructors | them | us vs other four | them | us vs TA baselines (contrast) | them | top six among themselves |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Information | squares we see (mean) | 32.4 | 34.1 | 31.8 | 35.1 | 35.3 | 31.7 | 33.1 |
+| Information | squares we see (mean) | 32.4 | 34.1 | 31.8 | 35.1 | 35.4 | 31.7 | 33.1 |
 |  | vision-gaining moves | 20.8 | 19.8 | 20.7 | 21.4 | 22.4 | 19.1 | 19.2 |
 | Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.43 | 0.43 | 0.46 | 0.38 | 0.50 | 0.33 | 0.41 |
 |  | captures from unseen squares | 9.6 | 10.1 | 9.2 | 9.7 | 12.0 | 7.4 | 8.5 |
 |  | captures after a route the other side never saw | 15.8 | 16.4 | 15.1 | 18.5 | 18.5 | 13.5 | 14.9 |
 |  | long slider strikes | 4.8 | 4.6 | 4.7 | 5.3 | 5.5 | 4.5 | 4.3 |
-| King pressure | moves that attack the enemy king | 3.4 ⚠ | 4.6 | 2.5 ⚠ | 4.7 | 4.5 | 2.4 | 3.5 |
+| King pressure | moves that attack the enemy king | 3.4 ⚠ | 4.6 | 2.5 ⚠ | 4.7 | 4.4 | 2.4 | 3.5 |
 |  | ...with an attacker the king's side cannot see | 1.5 | 2.3 | 0.8 ⚠ | 2.4 | 2.7 | 0.5 | 1.6 |
-|  | sacrifices that lead to a king capture | 0.1 | 0.3 | 0.1 | 0.3 | 0.8 | 0.0 | 0.2 |
+|  | sacrifices that lead to a king capture | 0.1 | 0.3 | 0.1 | 0.3 | 0.7 | 0.0 | 0.2 |
 | Queen activity | queen moves into the enemy half | 3.7 | 4.8 | 3.0 | 4.7 | 4.6 | 1.8 | 3.1 |
 | Discipline (not giving things away) | material given (3+ net over two plies) | 3.4 ⚠ | 1.7 | 4.2 ⚠ | 1.2 | 1.8 | 3.3 | 1.7 |
-|  | pieces walked onto squares hit by unseen attackers | 3.3 | 2.6 | 3.5 ⚠ | 2.2 | 1.5 | 3.6 | 3.1 |
-|  | queen left attacked by an unseen piece | 0.3 | 0.2 | 0.2 | 0.2 | 0.1 | 0.5 | 0.2 |
-|  | bare back rank with enemy heavy pieces alive | 6.7 ⚠ | 4.5 | 7.5 ⚠ | 3.5 | 4.2 | 6.3 | 5.7 |
-| King handling | king moves | 16.4 | 12.7 | 17.3 | 11.4 | 9.2 | 13.0 | 15.2 |
+|  | pieces walked onto squares hit by unseen attackers | 3.3 | 2.6 | 3.5 ⚠ | 2.2 | 1.6 | 3.6 | 3.1 |
+|  | queen left attacked by an unseen piece | 0.3 | 0.2 | 0.2 | 0.2 | 0.1 | 0.6 | 0.2 |
+|  | bare back rank with enemy heavy pieces alive | 6.7 ⚠ | 4.5 | 7.5 ⚠ | 3.5 | 4.1 | 6.2 | 5.7 |
+| King handling | king moves | 16.4 | 12.7 | 17.3 | 11.4 | 9.1 | 13.0 | 15.2 |
 |  | king moves beyond the second rank | 4.2 | 2.8 | 5.1 | 2.9 | 1.8 | 2.2 | 4.4 |
 |  | castling | 2.1 | 2.1 | 2.1 | 2.2 | 2.0 | 2.2 | 1.8 |
 
