@@ -409,3 +409,9 @@ v14 (97b60f1): one combined risk, king + 0.9 × queen, under the king guard's ru
 v15 (36c500a, opt-in `MIST_GUARD_UNIFORM`): a uniform weighting of P as a third clause. At 0.10 vs v14: queen set cp 192 → 174, fatal 48 → 46, check 60 → 61, material cp 132 → 135 (fatal 5 → 3). Mixed; it rescued one of the four tiny-weight losses. Left off.
 
 Shipped to the user as the v35 candidate: `fable-submissions/iamavirus-v35-mist-c-v14.zip` (24791ca64a42), validated 23:51 UTC. Prediction and fail-fast rule in the README version map and MUTATIONS.
+
+## v35 in the arena, first 60 games (2026-10-14 06:41–09:30 UTC)
+
+35/60 (0.58; v25 would expect 0.53), top six 6/20 (0.30; v34 0.24), Mist 7/10, no forfeit, White 20/30, Black 15/30. The queen metric the version was built for: against the top six our queen is lost outright in 2 of 18 ingested games (11%; v34 43%). What replaced it: queen trades we start, 9 of 18 (v34: 16%), score 0.11 — in every one our queen was already attacked, the material is level right after the trade (median 0 → 0) and the game is lost later (median −7 at the end, length 76). The same was true of v34's trades (score 0.25, −8 at the end). So the queen guard converts outright losses into queenless middlegames that we then lose on material: the next lever is piece safety after the queens go (a rook/minor version of queen_risks under the same combined rule), not the queen.
+
+One 8-ply loss as Black to HYPOTHERMIA (5e8qqe2d): 1.d4 Nc6 2.Qd3 d5 3.Bf4 e5 4.Qe3 exf4?? Qxe8. P held 132 worlds, the truth at rank 46, weight 0.00064; the king risk of exf4 was 0.0006 under both weightings and a single board in 132 holds the queen on e3, so the uniform clause cannot fire at any margin either. The belief-weight class, as the a5 loss; the fix would be an exposure rule for moves that open a line from our king into unseen squares. Mini-suite: ~/fable-persist/suite/e3-5e8qqe2d/. HYPOTHERMIA 3/10 so far (v34 11.5/20).
