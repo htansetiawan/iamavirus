@@ -1,10 +1,10 @@
 # Arena v35 watch
 
-Updated 2026-10-14 15:06 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 15:26 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 89W-0D-83L over 172 games** (52%).
-As White: 48.0/86.
-As Black: 41.0/86.
+**Record: 91W-0D-83L over 174 games** (52%).
+As White: 49.0/87.
+As Black: 42.0/87.
 
 Queen lost for less: 24 games (23 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 17 of 83.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
@@ -23,7 +23,7 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | Greek Gift | 2-0-8 |
 | Sausage | 10-0-0 |
 | Apricot Squad | 10-0-0 |
-| TA Baseline A | 6-0-0 |
+| TA Baseline A | 8-0-0 |
 | Decent Chess Bot | 1-0-3 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
@@ -203,3 +203,5 @@ Games as Black where White opened 1.c4: 9 (the book-trap family; the v15 gate re
 | 2026-10-14 14:53 | uufzew9s | B | TA Baseline P | 85 | win |  | 37 s | 16-6 |
 | 2026-10-14 14:55 | y2fcw9vl | W | Sausage | 68 | win |  | 51 s | 24-11 |
 | 2026-10-14 14:57 | hhm23sea | B | Sausage | 97 | win | ply 83 by r unseen | 34 s | 11-3 |
+| 2026-10-14 15:18 | qcuwn3mp | W | TA Baseline A | 64 | win |  | 47 s | 20-7 |
+| 2026-10-14 15:21 | z96t2lrb | B | TA Baseline A | 105 | win |  | 29 s | 22-2 |
