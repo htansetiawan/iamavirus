@@ -1,26 +1,26 @@
 # Arena v35 watch
 
-Updated 2026-10-14 18:53 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 19:14 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 130W-3D-115L over 248 games** (53%).
-As White: 70.5/124.
-As Black: 61.0/124.
+**Record: 131W-3D-120L over 254 games** (52%).
+As White: 71.5/127.
+As Black: 61.0/127.
 
-Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 115.
+Queen lost for less: 29 games (28 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 22 of 120.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
-Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 15 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 6-0-22 |
-| Mist Opportunities | 16-1-9 |
+| Mist Opportunities | 16-1-11 |
+| HYPOTHERMIA | 11-0-13 |
 | Strongly Invisible | 6-0-18 |
-| HYPOTHERMIA | 10-0-12 |
 | Lost Signal | 11-1-8 |
 | TA Baseline S | 17-0-3 |
 | Instructors | 5-0-13 |
+| Knight Vision | 3-0-15 |
 | TA Baseline A | 16-0-0 |
-| Knight Vision | 3-0-13 |
 | Greek Gift | 2-0-10 |
 | Apricot Squad | 12-0-0 |
 | Sausage | 10-0-0 |
@@ -279,3 +279,9 @@ Games as Black where White opened 1.c4: 14 (the book-trap family; the v15 gate r
 | 2026-10-14 18:43 | rm7og0rc | W | TA Baseline A | 42 | win |  | 81 s | 22-21 |
 | 2026-10-14 18:44 | p9ff21uk | B | Decent Chess Bot | 114 | draw |  | 25 s | 8-7 |
 | 2026-10-14 18:45 | 9z40twjj | B | TA Baseline A | 79 | win |  | 40 s | 16-7 |
+| 2026-10-14 19:01 | c0p6w3pb | W | HYPOTHERMIA | 88 | win |  | 35 s | 24-7 |
+| 2026-10-14 19:01 | y8gf0uod | B | HYPOTHERMIA | 80 | loss |  | 41 s | 2-12 |
+| 2026-10-14 19:02 | 60pw5rdo | B | Mist Opportunities | 48 | loss |  | 72 s | 17-19 |
+| 2026-10-14 19:02 | vaiftf1o | B | Knight Vision | 80 | loss |  | 40 s | 3-15 |
+| 2026-10-14 19:04 | 0f2h6ges | W | Knight Vision | 117 | loss |  | 23 s | 1-16 |
+| 2026-10-14 19:07 | 1aq0ci8f | W | Mist Opportunities | 131 | loss | ply 58 by r unseen | 20 s | 0-18 |
