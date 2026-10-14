@@ -1,24 +1,24 @@
 # Arena v35 watch
 
-Updated 2026-10-14 17:51 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 18:12 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 118W-2D-104L over 224 games** (53%).
-As White: 62.5/112.
-As Black: 56.5/112.
+**Record: 124W-2D-109L over 235 games** (53%).
+As White: 66.5/117.
+As Black: 58.5/118.
 
-Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 104.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 83 plies.
-Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 109.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
+Games as Black where White opened 1.c4: 13 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 5-0-21 |
-| Mist Opportunities | 14-1-9 |
-| Strongly Invisible | 5-0-17 |
+| duck | 6-0-22 |
+| Mist Opportunities | 16-1-9 |
+| Strongly Invisible | 6-0-18 |
 | TA Baseline S | 17-0-3 |
+| Lost Signal | 9-1-8 |
 | HYPOTHERMIA | 8-0-10 |
-| Instructors | 5-0-11 |
-| Lost Signal | 7-1-6 |
+| Instructors | 5-0-12 |
 | TA Baseline A | 14-0-0 |
 | Knight Vision | 3-0-11 |
 | Greek Gift | 2-0-10 |
@@ -255,3 +255,14 @@ Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate r
 | 2026-10-14 17:23 | ayog1ifk | B | Mist Opportunities | 205 | draw |  | 20 s | 16-13 |
 | 2026-10-14 17:48 | dtanf24x | W | TA Baseline A | 34 | win |  | 93 s | 29-24 |
 | 2026-10-14 17:50 | k3ekjkl4 | B | TA Baseline A | 57 | win |  | 61 s | 22-10 |
+| 2026-10-14 17:57 | 483fqkfd | B | Lost Signal | 92 | loss |  | 28 s | 5-13 |
+| 2026-10-14 18:01 | r0uvohcr | W | Lost Signal | 144 | win |  | 20 s | 14-12 |
+| 2026-10-14 18:01 | gt4i6a6q | B | duck | 95 | win |  | 32 s | 17-4 |
+| 2026-10-14 18:01 | kvgph21g | W | duck | 97 | loss |  | 32 s | 2-18 |
+| 2026-10-14 18:07 | bznbmujf | W | Lost Signal | 112 | win |  | 28 s | 16-4 |
+| 2026-10-14 18:07 | 932qtmn7 | B | Lost Signal | 160 | loss |  | 19 s | 0-16 |
+| 2026-10-14 18:09 | b5astegx | B | Strongly Invisible | 70 | loss |  | 44 s | 5-13 |
+| 2026-10-14 18:09 | 07xwbpmj | W | Mist Opportunities | 106 | win |  | 30 s | 11-3 |
+| 2026-10-14 18:10 | 65k6q1zy | B | Mist Opportunities | 127 | win |  | 24 s | 14-3 |
+| 2026-10-14 18:10 | 3gswuuyj | W | Strongly Invisible | 76 | win |  | 34 s | 15-4 |
+| 2026-10-14 18:11 | 4jdb6tll | B | Instructors | 62 | loss |  | 51 s | 9-13 |
