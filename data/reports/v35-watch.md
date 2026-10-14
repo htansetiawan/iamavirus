@@ -1,29 +1,30 @@
 # Arena v35 watch
 
-Updated 2026-10-14 09:36 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 09:57 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 35W-0D-27L over 62 games** (56%).
-As White: 20.0/31.
-As Black: 15.0/31.
+**Record: 38W-0D-33L over 71 games** (54%).
+As White: 21.0/35.
+As Black: 17.0/36.
 
-Queen lost for less: 5 games (5 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 27.
+Queen lost for less: 7 games (7 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 33.
 Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 1. Mean length 88 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Mist Opportunities | 7-0-5 |
+| Instructors | 3-0-7 |
 | HYPOTHERMIA | 3-0-7 |
-| Instructors | 3-0-5 |
+| TA Baseline S | 7-0-0 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
-| TA Baseline S | 4-0-0 |
+| Strongly Invisible | 2-0-4 |
 | Sausage | 4-0-0 |
-| Strongly Invisible | 2-0-2 |
 | Lost Signal | 1-0-1 |
 | Greek Gift | 0-0-2 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
+| Knight Vision | 0-0-2 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -89,3 +90,12 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 09:25 | s0qklx4g | B | Mist Opportunities | 129 | win |  | 24 s | 6-6 |
 | 2026-10-14 09:28 | 8n81uvmw | B | Mist Opportunities | 112 | loss |  | 20 s | 1-7 |
 | 2026-10-14 09:32 | h71nvlel | W | Mist Opportunities | 223 | loss |  | 17 s | 9-24 |
+| 2026-10-14 09:39 | qyfrgjq3 | W | TA Baseline S | 78 | win |  | 45 s | 17-2 |
+| 2026-10-14 09:40 | lygo38mk | B | Strongly Invisible | 86 | loss |  | 38 s | 0-10 |
+| 2026-10-14 09:40 | fsi2yhwa | B | TA Baseline S | 85 | win |  | 40 s | 16-5 |
+| 2026-10-14 09:41 | 1m9dqcvx | W | Strongly Invisible | 79 | loss |  | 42 s | 4-8 |
+| 2026-10-14 09:48 | b5h1bvzv | W | Instructors | 67 | loss | ply 38 by r unseen | 47 s | 10-21 |
+| 2026-10-14 09:48 | jcvudp1q | W | Knight Vision | 91 | loss |  | 32 s | 1-18 |
+| 2026-10-14 09:49 | g9upaa98 | B | Instructors | 88 | loss | ply 51 by r unseen | 29 s | 1-21 |
+| 2026-10-14 09:51 | 8qbi1q1k | B | Knight Vision | 132 | loss |  | 23 s | 1-1 |
+| 2026-10-14 09:56 | ixx7x7b7 | B | TA Baseline S | 111 | win |  | 28 s | 10-3 |
