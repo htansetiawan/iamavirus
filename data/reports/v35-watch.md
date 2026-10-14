@@ -1,28 +1,28 @@
 # Arena v35 watch
 
-Updated 2026-10-14 10:38 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 10:58 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 42W-0D-38L over 80 games** (52%).
-As White: 25.0/40.
-As Black: 17.0/40.
+**Record: 48W-0D-42L over 90 games** (53%).
+As White: 27.0/45.
+As Black: 21.0/45.
 
-Queen lost for less: 9 games (9 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 38.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 88 plies.
+Queen lost for less: 10 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 42.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 89 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Mist Opportunities | 9-0-5 |
 | Instructors | 4-0-8 |
-| Mist Opportunities | 7-0-5 |
 | HYPOTHERMIA | 3-0-7 |
 | TA Baseline S | 8-0-0 |
+| Strongly Invisible | 2-0-6 |
+| Lost Signal | 3-0-3 |
+| Sausage | 6-0-0 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
-| Strongly Invisible | 2-0-4 |
-| Lost Signal | 2-0-2 |
+| Knight Vision | 2-0-4 |
 | Greek Gift | 0-0-4 |
-| Sausage | 4-0-0 |
-| Knight Vision | 1-0-3 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
 
@@ -108,3 +108,13 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 10:08 | w3b1i73o | B | Instructors | 174 | loss |  | 20 s | 0-4 |
 | 2026-10-14 10:35 | 9dlc0mgv | W | Knight Vision | 76 | win |  | 31 s | 14-10 |
 | 2026-10-14 10:37 | pse9mfyx | B | Knight Vision | 120 | loss |  | 20 s | 0-16 |
+| 2026-10-14 10:41 | 56yv55d0 | B | Mist Opportunities | 63 | win |  | 48 s | 20-19 |
+| 2026-10-14 10:43 | a8qo3y9l | B | Sausage | 69 | win |  | 51 s | 25-5 |
+| 2026-10-14 10:45 | 1raf5l1u | W | Sausage | 102 | win | ply 38 by b unseen | 30 s | 10-4 |
+| 2026-10-14 10:46 | i40p8o1l | W | Mist Opportunities | 154 | win |  | 20 s | 10-0 |
+| 2026-10-14 10:50 | cbgbqst5 | B | Lost Signal | 107 | win |  | 29 s | 14-8 |
+| 2026-10-14 10:51 | sp9psiz6 | W | Strongly Invisible | 65 | loss |  | 50 s | 7-9 |
+| 2026-10-14 10:53 | 90r6cg41 | W | Lost Signal | 193 | loss |  | 16 s | 16-22 |
+| 2026-10-14 10:55 | ttjadbye | B | Strongly Invisible | 122 | loss |  | 25 s | 2-12 |
+| 2026-10-14 10:57 | ap9qo49s | W | Knight Vision | 67 | loss |  | 50 s | 22-17 |
+| 2026-10-14 10:58 | sjvstkmq | B | Knight Vision | 65 | win |  | 50 s | 17-13 |
