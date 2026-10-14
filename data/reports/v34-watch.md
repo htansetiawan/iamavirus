@@ -1,12 +1,12 @@
 # Arena v34 watch
 
-Updated 2026-10-14 00:24 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 00:45 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 291W-12D-265L over 568 games** (52%).
-As White: 153.5/284.
-As Black: 143.5/284.
+**Record: 292W-12D-268L over 572 games** (52%).
+As White: 154.5/286.
+As Black: 143.5/286.
 
-Queen lost for less: 192 games (184 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 157 of 265.
+Queen lost for less: 194 games (186 to a capturer unseen when we moved, 42 before ply 30); losses with the queen lost: 159 of 268.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -19,8 +19,8 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | duck | 14-1-37 |
 | Strongly Invisible | 10-0-40 |
 | Decent Chess Bot | 10-1-37 |
-| Sausage | 40-0-2 |
-| Knight Vision | 5-3-30 |
+| Sausage | 41-0-3 |
+| Knight Vision | 5-3-32 |
 | Greek Gift | 1-1-34 |
 | TA Baseline P | 22-1-1 |
 | HYPOTHERMIA | 11-1-8 |
@@ -599,3 +599,7 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | 2026-10-14 00:13 | q2xt9asg | B | Decent Chess Bot | 76 | loss | ply 59 by q unseen | 44 s | 4-14 |
 | 2026-10-14 00:13 | ylh2q4nh | W | TA Baseline P | 102 | win |  | 31 s | 12-11 |
 | 2026-10-14 00:16 | 3j22jsfv | W | Decent Chess Bot | 144 | win |  | 20 s | 9-2 |
+| 2026-10-14 00:25 | jb2s7lye | B | Sausage | 22 | loss |  | 117 s | 31-24 |
+| 2026-10-14 00:26 | qxd78i0y | W | Sausage | 46 | win |  | 75 s | 20-16 |
+| 2026-10-14 00:32 | i7j17kp4 | W | Knight Vision | 81 | loss | ply 56 by r unseen | 37 s | 1-25 |
+| 2026-10-14 00:32 | 10ochgw4 | B | Knight Vision | 76 | loss | ply 45 by q unseen | 41 s | 5-16 |
