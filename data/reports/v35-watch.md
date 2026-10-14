@@ -1,29 +1,29 @@
 # Arena v35 watch
 
-Updated 2026-10-14 09:15 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 09:36 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 32W-0D-24L over 56 games** (57%).
-As White: 18.0/28.
-As Black: 14.0/28.
+**Record: 35W-0D-27L over 62 games** (56%).
+As White: 20.0/31.
+As Black: 15.0/31.
 
-Queen lost for less: 4 games (4 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 3 of 24.
-Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 1. Mean length 84 plies.
-Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 5 games (5 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 4 of 27.
+Short losses (12 plies or fewer): 1. Games with a clock at 15 s or less: 1. Mean length 88 plies.
+Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Mist Opportunities | 7-0-5 |
 | HYPOTHERMIA | 3-0-7 |
 | Instructors | 3-0-5 |
-| Mist Opportunities | 5-0-3 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
 | TA Baseline S | 4-0-0 |
 | Sausage | 4-0-0 |
+| Strongly Invisible | 2-0-2 |
 | Lost Signal | 1-0-1 |
 | Greek Gift | 0-0-2 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
-| Strongly Invisible | 1-0-1 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -83,3 +83,9 @@ Games as Black where White opened 1.c4: 3 (the book-trap family; the v15 gate re
 | 2026-10-14 09:08 | wr7l74p6 | W | HYPOTHERMIA | 168 | win | ply 106 by r unseen | 19 s | 14-4 |
 | 2026-10-14 09:09 | etpl5u9h | W | Sausage | 50 | win |  | 70 s | 9-9 |
 | 2026-10-14 09:10 | e2lrdcge | B | Sausage | 65 | win |  | 50 s | 13-6 |
+| 2026-10-14 09:17 | p391y39y | B | Strongly Invisible | 80 | loss | ply 35 by r unseen | 36 s | 10-21 |
+| 2026-10-14 09:19 | tlaqq2oz | W | Strongly Invisible | 120 | win |  | 25 s | 8-3 |
+| 2026-10-14 09:23 | gimcki76 | W | Mist Opportunities | 84 | win |  | 38 s | 22-5 |
+| 2026-10-14 09:25 | s0qklx4g | B | Mist Opportunities | 129 | win |  | 24 s | 6-6 |
+| 2026-10-14 09:28 | 8n81uvmw | B | Mist Opportunities | 112 | loss |  | 20 s | 1-7 |
+| 2026-10-14 09:32 | h71nvlel | W | Mist Opportunities | 223 | loss |  | 17 s | 9-24 |
