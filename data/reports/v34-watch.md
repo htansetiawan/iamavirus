@@ -1,10 +1,10 @@
 # Arena v34 watch
 
-Updated 2026-10-14 04:59 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 05:20 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 335W-12D-305L over 652 games** (52%).
-As White: 178.5/326.
-As Black: 162.5/326.
+**Record: 337W-12D-305L over 654 games** (52%).
+As White: 179.5/327.
+As Black: 163.5/327.
 
 Queen lost for less: 214 games (205 to a capturer unseen when we moved, 49 before ply 30); losses with the queen lost: 175 of 305.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
@@ -22,7 +22,7 @@ Games as Black where White opened 1.c4: 46 (the book-trap family; the v15 gate r
 | Sausage | 47-0-3 |
 | Knight Vision | 7-3-36 |
 | Greek Gift | 1-1-40 |
-| TA Baseline P | 24-1-1 |
+| TA Baseline P | 26-1-1 |
 | HYPOTHERMIA | 13-1-10 |
 | Gravel Road | 12-0-0 |
 | baseline.py | 10-0-0 |
@@ -683,3 +683,5 @@ Games as Black where White opened 1.c4: 46 (the book-trap family; the v15 gate r
 | 2026-10-14 04:35 | ayt20f1f | W | TA Baseline S | 62 | win |  | 56 s | 29-28 |
 | 2026-10-14 04:55 | tnnhxtli | B | Instructors | 76 | loss | ply 29 by q unseen | 41 s | 3-23 |
 | 2026-10-14 04:57 | w61cx7ew | W | Instructors | 102 | win |  | 32 s | 16-2 |
+| 2026-10-14 05:02 | vznbj5rv | W | TA Baseline P | 66 | win |  | 51 s | 18-4 |
+| 2026-10-14 05:03 | 1l4irpc8 | B | TA Baseline P | 75 | win |  | 47 s | 19-9 |
