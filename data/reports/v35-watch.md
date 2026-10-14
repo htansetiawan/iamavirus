@@ -1,33 +1,33 @@
 # Arena v35 watch
 
-Updated 2026-10-14 16:49 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 17:10 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 109W-1D-98L over 208 games** (53%).
-As White: 57.5/104.
-As Black: 52.0/104.
+**Record: 115W-1D-102L over 218 games** (53%).
+As White: 60.5/109.
+As Black: 55.0/109.
 
-Queen lost for less: 26 games (25 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 19 of 98.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 84 plies.
+Queen lost for less: 28 games (27 to a capturer unseen when we moved, 3 before ply 30); losses with the queen lost: 21 of 102.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 82 plies.
 Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 4-0-20 |
+| duck | 5-0-21 |
 | Mist Opportunities | 13-0-9 |
-| Strongly Invisible | 5-0-15 |
-| TA Baseline S | 16-0-2 |
+| Strongly Invisible | 5-0-17 |
+| TA Baseline S | 17-0-3 |
 | HYPOTHERMIA | 8-0-10 |
 | Instructors | 5-0-11 |
 | Lost Signal | 7-1-6 |
 | Knight Vision | 3-0-11 |
 | TA Baseline A | 12-0-0 |
+| Apricot Squad | 12-0-0 |
 | Greek Gift | 2-0-8 |
 | Sausage | 10-0-0 |
-| Apricot Squad | 10-0-0 |
 | Decent Chess Bot | 2-0-6 |
 | baseline.py | 6-0-0 |
 | Gravel Road | 4-0-0 |
-| TA Baseline P | 2-0-0 |
+| TA Baseline P | 4-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -239,3 +239,13 @@ Games as Black where White opened 1.c4: 12 (the book-trap family; the v15 gate r
 | 2026-10-14 16:38 | pwysv8rj | B | Gravel Road | 47 | win |  | 73 s | 32-5 |
 | 2026-10-14 16:48 | 077warkl | W | TA Baseline A | 82 | win |  | 40 s | 15-9 |
 | 2026-10-14 16:48 | gzrm4qqc | B | TA Baseline A | 87 | win |  | 35 s | 10-11 |
+| 2026-10-14 16:51 | 46xtvlye | W | Strongly Invisible | 47 | loss | ply 38 by r unseen | 71 s | 12-21 |
+| 2026-10-14 16:54 | 6651ez1k | B | Strongly Invisible | 82 | loss |  | 32 s | 1-13 |
+| 2026-10-14 16:54 | 81ad7fm9 | W | duck | 86 | win |  | 39 s | 16-1 |
+| 2026-10-14 16:56 | wr8dpeym | B | duck | 106 | loss |  | 28 s | 1-9 |
+| 2026-10-14 16:58 | mfxdyz1r | B | TA Baseline S | 43 | win |  | 81 s | 28-25 |
+| 2026-10-14 16:58 | 9rkdgho7 | W | TA Baseline P | 26 | win |  | 109 s | 25-25 |
+| 2026-10-14 17:00 | xjzsc7cu | W | TA Baseline S | 73 | loss | ply 48 by r unseen | 47 s | 2-7 |
+| 2026-10-14 17:00 | aizzewt2 | B | TA Baseline P | 57 | win |  | 55 s | 22-23 |
+| 2026-10-14 17:05 | oti6x0b4 | B | Apricot Squad | 33 | win |  | 84 s | 39-29 |
+| 2026-10-14 17:06 | hurcj3qu | W | Apricot Squad | 48 | win |  | 57 s | 35-27 |
