@@ -1,24 +1,24 @@
 # Arena v35 watch
 
-Updated 2026-10-14 21:59 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 22:19 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 166W-4D-150L over 320 games** (52%).
-As White: 88.5/160.
-As Black: 79.5/160.
+**Record: 168W-4D-152L over 324 games** (52%).
+As White: 89.5/162.
+As Black: 80.5/162.
 
-Queen lost for less: 40 games (39 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 32 of 150.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 83 plies.
-Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 40 games (39 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 32 of 152.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 84 plies.
+Games as Black where White opened 1.c4: 25 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 8-0-28 |
+| Knight Vision | 8-0-22 |
 | Mist Opportunities | 16-1-11 |
 | Strongly Invisible | 6-0-22 |
-| Knight Vision | 6-0-22 |
+| Instructors | 6-0-20 |
 | Lost Signal | 16-2-8 |
 | HYPOTHERMIA | 12-0-14 |
-| Instructors | 6-0-18 |
 | TA Baseline S | 19-0-3 |
 | Decent Chess Bot | 6-1-11 |
 | Greek Gift | 3-0-13 |
@@ -351,3 +351,7 @@ Games as Black where White opened 1.c4: 23 (the book-trap family; the v15 gate r
 | 2026-10-14 21:55 | rowog9tq | W | Strongly Invisible | 95 | loss |  | 32 s | 2-11 |
 | 2026-10-14 21:56 | 6d37j0ih | B | Greek Gift | 129 | win |  | 21 s | 19-2 |
 | 2026-10-14 21:58 | o0l9azbd | W | Lost Signal | 158 | win |  | 20 s | 10-6 |
+| 2026-10-14 22:02 | gyilqvmx | B | Knight Vision | 69 | win |  | 46 s | 25-18 |
+| 2026-10-14 22:04 | 9n1kzsz2 | W | Knight Vision | 106 | win |  | 29 s | 6-2 |
+| 2026-10-14 22:09 | ttvmc1hn | W | Instructors | 99 | loss |  | 31 s | 3-10 |
+| 2026-10-14 22:13 | dx4a0qkx | B | Instructors | 156 | loss |  | 20 s | 2-9 |
