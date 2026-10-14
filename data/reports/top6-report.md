@@ -1,21 +1,21 @@
 # Against the top six
 
-Updated 2026-10-14 22:40 UTC; leaderboard fetched 2026-10-14T22:40. Active version: v35. Measurement only.
+Updated 2026-10-14 23:01 UTC; leaderboard fetched 2026-10-14T23:00. Active version: v35. Measurement only.
 
 ## Ladder
 
 | team | rating | gap to us |
 | --- | --- | --- |
-| Greek Gift | 2255 | +377 |
-| Knight Vision | 2067 | +189 |
-| Decent Chess Bot | 2023 | +145 |
-| Strongly Invisible | 2060 | +182 |
-| **duck** | 1959 | +81 |
-| **Instructors** | 1949 | +71 |
-| TA Baseline S | 1704 | -174 |
-| **IAmAVirus** | 1878 |  |
-| TA Baseline A | 1532 | -346 |
-| TA Baseline P | 1377 | -501 |
+| Greek Gift | 2265 | +377 |
+| Knight Vision | 2078 | +190 |
+| Decent Chess Bot | 2016 | +128 |
+| Strongly Invisible | 2059 | +172 |
+| **duck** | 1953 | +65 |
+| **Instructors** | 1946 | +59 |
+| TA Baseline S | 1699 | -188 |
+| **IAmAVirus** | 1888 |  |
+| TA Baseline A | 1545 | -343 |
+| TA Baseline P | 1376 | -511 |
 
 ## Record by version (W-D-L)
 
@@ -29,7 +29,7 @@ Updated 2026-10-14 22:40 UTC; leaderboard fetched 2026-10-14T22:40. Active versi
 | **Instructors** | 6-0-20 | 29-2-47 | 15-0-35 | 2-0-4 | 10-3-35 | 1-0-1 |
 | TA Baseline P | 12-0-0 | 26-1-1 | 46-0-2 |  | 50-2-2 | 2-0-0 |
 | TA Baseline A | 17-0-1 | 57-2-5 | 51-0-3 | 4-0-0 | 50-10-6 | 3-0-1 |
-| TA Baseline S | 19-0-3 | 57-0-13 | 53-1-16 | 3-0-3 | 27-5-18 | 4-0-0 |
+| TA Baseline S | 20-0-3 | 57-0-13 | 53-1-16 | 3-0-3 | 27-5-18 | 4-0-0 |
 
 ## Skill gaps (rates per 100 moves unless noted)
 
@@ -37,22 +37,22 @@ Active version v35. "them" is the opponent in those games; "top six among themse
 
 | skill | measure | us vs duck + Instructors | them | us vs other four | them | us vs TA baselines (contrast) | them | top six among themselves |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Information | squares we see (mean) | 31.5 | 35.1 | 32.2 | 34.5 | 36.0 | 31.9 | 33.2 |
+| Information | squares we see (mean) | 31.5 | 35.1 | 32.2 | 34.5 | 36.1 | 32.0 | 33.2 |
 |  | vision-gaining moves | 19.9 | 20.9 | 21.0 | 21.7 | 22.8 | 18.1 | 18.9 |
 | Stealth (attacking from the fog) | captures the victim's side could not see coming (share) | 0.41 | 0.41 | 0.42 | 0.37 | 0.48 | 0.38 | 0.39 |
-|  | captures from unseen squares | 8.7 | 9.7 | 9.2 | 9.7 | 11.8 | 9.0 | 8.1 |
-|  | captures after a route the other side never saw | 15.3 | 16.4 | 15.5 | 18.8 | 19.0 | 13.9 | 14.7 |
-|  | long slider strikes | 4.8 | 5.4 | 4.8 | 5.3 | 5.4 | 5.3 | 4.2 |
-| King pressure | moves that attack the enemy king | 2.7 ⚠ | 4.8 | 3.1 ⚠ | 5.1 | 4.6 | 2.7 | 3.5 |
+|  | captures from unseen squares | 8.7 | 9.7 | 9.2 | 9.7 | 11.8 | 9.1 | 8.1 |
+|  | captures after a route the other side never saw | 15.3 | 16.4 | 15.5 | 18.8 | 18.9 | 14.0 | 14.7 |
+|  | long slider strikes | 4.8 | 5.4 | 4.8 | 5.3 | 5.4 | 5.4 | 4.2 |
+| King pressure | moves that attack the enemy king | 2.7 ⚠ | 4.8 | 3.1 ⚠ | 5.1 | 4.7 | 2.6 | 3.5 |
 |  | ...with an attacker the king's side cannot see | 1.2 ⚠ | 2.5 | 1.0 ⚠ | 2.8 | 3.1 | 0.7 | 1.6 |
 |  | sacrifices that lead to a king capture | 0.0 | 0.4 | 0.1 | 0.2 | 0.7 | 0.1 | 0.2 |
 | Queen activity | queen moves into the enemy half | 2.7 | 4.5 | 2.1 | 3.5 | 3.5 | 1.9 | 3.0 |
 | Discipline (not giving things away) | material given (3+ net over two plies) | 3.3 ⚠ | 1.2 | 2.7 ⚠ | 1.2 | 2.0 | 3.4 | 1.6 |
-|  | pieces walked onto squares hit by unseen attackers | 3.1 | 2.4 | 3.5 ⚠ | 2.3 | 1.8 | 3.8 | 3.0 |
+|  | pieces walked onto squares hit by unseen attackers | 3.1 | 2.4 | 3.5 ⚠ | 2.3 | 1.7 | 3.8 | 3.0 |
 |  | queen left attacked by an unseen piece | 0.3 | 0.1 | 0.3 | 0.2 | 0.0 | 0.3 | 0.2 |
-|  | bare back rank with enemy heavy pieces alive | 7.8 ⚠ | 3.4 | 8.0 ⚠ | 3.5 | 2.8 | 5.3 | 5.3 |
-| King handling | king moves | 18.9 | 9.7 | 15.5 | 11.1 | 8.0 | 12.3 | 15.1 |
-|  | king moves beyond the second rank | 3.9 | 1.9 | 3.6 | 3.0 | 1.6 | 4.3 | 4.6 |
+|  | bare back rank with enemy heavy pieces alive | 7.8 ⚠ | 3.4 | 8.0 ⚠ | 3.5 | 2.8 | 5.7 | 5.3 |
+| King handling | king moves | 18.9 | 9.7 | 15.5 | 11.1 | 7.9 | 12.4 | 15.1 |
+|  | king moves beyond the second rank | 3.9 | 1.9 | 3.6 | 3.0 | 1.5 | 4.3 | 4.6 |
 |  | castling | 1.9 | 2.1 | 2.2 | 2.1 | 1.8 | 1.9 | 1.8 |
 
 ⚠ marks a gap of 20% or more in the direction that hurts us.

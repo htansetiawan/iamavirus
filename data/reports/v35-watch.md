@@ -1,25 +1,25 @@
 # Arena v35 watch
 
-Updated 2026-10-14 22:40 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 23:01 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 174W-5D-155L over 334 games** (53%).
-As White: 92.5/167.
-As Black: 84.0/167.
+**Record: 180W-5D-158L over 343 games** (53%).
+As White: 96.5/172.
+As Black: 86.0/171.
 
-Queen lost for less: 41 games (40 to a capturer unseen when we moved, 5 before ply 30); losses with the queen lost: 33 of 155.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 2. Mean length 83 plies.
-Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 43 games (41 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 34 of 158.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 84 plies.
+Games as Black where White opened 1.c4: 27 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 8-0-28 |
+| Mist Opportunities | 18-1-13 |
+| Lost Signal | 19-3-8 |
 | Knight Vision | 8-0-22 |
-| Lost Signal | 17-3-8 |
-| Mist Opportunities | 16-1-11 |
+| HYPOTHERMIA | 13-0-15 |
 | Strongly Invisible | 6-0-22 |
 | Instructors | 6-0-20 |
-| HYPOTHERMIA | 12-0-14 |
-| TA Baseline S | 19-0-3 |
+| TA Baseline S | 20-0-3 |
 | Greek Gift | 3-0-15 |
 | TA Baseline A | 17-0-1 |
 | Decent Chess Bot | 6-1-11 |
@@ -365,3 +365,12 @@ Games as Black where White opened 1.c4: 26 (the book-trap family; the v15 gate r
 | 2026-10-14 22:37 | tkxco387 | B | Lost Signal | 172 | draw |  | 20 s | 6-9 |
 | 2026-10-14 22:37 | qq8vsf5d | B | TA Baseline P | 63 | win |  | 56 s | 19-7 |
 | 2026-10-14 22:38 | h31ewwfp | W | TA Baseline P | 80 | win |  | 43 s | 14-9 |
+| 2026-10-14 22:43 | 98xopiay | W | HYPOTHERMIA | 78 | win | ply 14 by q unseen | 44 s | 26-5 |
+| 2026-10-14 22:44 | gsld0jjo | B | HYPOTHERMIA | 92 | loss |  | 28 s | 6-22 |
+| 2026-10-14 22:50 | l8im9cn3 | W | Lost Signal | 136 | win |  | 4 s | 38-17 |
+| 2026-10-14 22:50 | qknsatxa | B | Lost Signal | 163 | win |  | 20 s | 24-4 |
+| 2026-10-14 22:53 | 6kgokemi | B | Mist Opportunities | 86 | loss | ply 67 by q | 37 s | 2-15 |
+| 2026-10-14 22:54 | dey3n9cx | B | Mist Opportunities | 73 | win |  | 48 s | 24-2 |
+| 2026-10-14 22:57 | 6sylzrt0 | W | Mist Opportunities | 128 | win |  | 23 s | 14-4 |
+| 2026-10-14 22:57 | wf5yrbaq | W | Mist Opportunities | 171 | loss |  | 20 s | 0-8 |
+| 2026-10-14 22:59 | zjl6nwy9 | W | TA Baseline S | 66 | win |  | 52 s | 12-5 |
