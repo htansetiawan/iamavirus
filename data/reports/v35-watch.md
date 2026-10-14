@@ -1,28 +1,28 @@
 # Arena v35 watch
 
-Updated 2026-10-14 11:39 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 12:00 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 56W-0D-46L over 102 games** (55%).
-As White: 30.0/51.
-As Black: 26.0/51.
+**Record: 58W-0D-48L over 106 games** (55%).
+As White: 30.0/53.
+As Black: 28.0/53.
 
-Queen lost for less: 10 games (10 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 6 of 46.
+Queen lost for less: 11 games (11 to a capturer unseen when we moved, 1 before ply 30); losses with the queen lost: 7 of 48.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 89 plies.
 Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Mist Opportunities | 9-0-5 |
+| Mist Opportunities | 10-0-6 |
 | Instructors | 4-0-8 |
 | TA Baseline S | 11-0-1 |
 | Lost Signal | 5-0-5 |
 | HYPOTHERMIA | 3-0-7 |
 | Strongly Invisible | 2-0-6 |
+| Knight Vision | 3-0-5 |
 | Greek Gift | 1-0-5 |
 | Sausage | 6-0-0 |
 | duck | 1-0-5 |
 | TA Baseline A | 6-0-0 |
-| Knight Vision | 2-0-4 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
 | Apricot Squad | 2-0-0 |
@@ -131,3 +131,7 @@ Games as Black where White opened 1.c4: 4 (the book-trap family; the v15 gate re
 | 2026-10-14 11:34 | 48qbhra2 | W | TA Baseline S | 88 | win |  | 36 s | 18-5 |
 | 2026-10-14 11:35 | whx4qqln | B | Greek Gift | 111 | win |  | 28 s | 8-3 |
 | 2026-10-14 11:35 | vi9xq78r | W | Greek Gift | 113 | loss |  | 23 s | 5-16 |
+| 2026-10-14 11:47 | v7ugm83b | B | Mist Opportunities | 117 | win |  | 23 s | 16-2 |
+| 2026-10-14 11:48 | xeih1cug | W | Mist Opportunities | 117 | loss |  | 19 s | 3-17 |
+| 2026-10-14 11:56 | 1b9cgn8c | B | Knight Vision | 67 | win |  | 47 s | 15-7 |
+| 2026-10-14 11:58 | 3z5ompaz | W | Knight Vision | 89 | loss | ply 76 by n unseen | 34 s | 4-18 |
