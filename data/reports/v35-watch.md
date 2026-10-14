@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-14 12:41 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 13:02 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 66W-0D-58L over 124 games** (53%).
-As White: 34.0/62.
-As Black: 32.0/62.
+**Record: 68W-0D-64L over 132 games** (52%).
+As White: 35.0/66.
+As Black: 33.0/66.
 
-Queen lost for less: 14 games (13 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 8 of 58.
+Queen lost for less: 15 games (14 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 9 of 64.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 89 plies.
-Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 7 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| duck | 3-0-13 |
 | Mist Opportunities | 10-0-6 |
 | TA Baseline S | 13-0-1 |
-| duck | 3-0-11 |
 | HYPOTHERMIA | 5-0-9 |
 | Instructors | 4-0-8 |
 | Lost Signal | 5-0-5 |
+| Greek Gift | 2-0-8 |
+| Strongly Invisible | 3-0-7 |
 | Knight Vision | 3-0-7 |
 | Sausage | 8-0-0 |
-| Strongly Invisible | 2-0-6 |
-| Greek Gift | 1-0-5 |
 | TA Baseline A | 6-0-0 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
@@ -153,3 +153,11 @@ Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate re
 | 2026-10-14 12:39 | 95zaa7yb | B | TA Baseline S | 73 | win |  | 49 s | 12-4 |
 | 2026-10-14 12:39 | cd9f62px | W | TA Baseline S | 58 | win |  | 61 s | 19-4 |
 | 2026-10-14 12:39 | oifpi7bp | B | HYPOTHERMIA | 108 | loss |  | 20 s | 0-10 |
+| 2026-10-14 12:42 | nmx9t2gb | B | Greek Gift | 62 | loss |  | 54 s | 5-11 |
+| 2026-10-14 12:43 | kxkm3ewh | B | Strongly Invisible | 67 | win |  | 47 s | 16-15 |
+| 2026-10-14 12:45 | 0yc4k7zr | W | Greek Gift | 88 | win |  | 37 s | 17-3 |
+| 2026-10-14 12:45 | w4qpl0rm | W | Strongly Invisible | 113 | loss |  | 22 s | 12-22 |
+| 2026-10-14 12:57 | krn56wrf | B | duck | 68 | loss |  | 48 s | 18-14 |
+| 2026-10-14 12:58 | phzr6o8i | B | Greek Gift | 76 | loss |  | 35 s | 2-15 |
+| 2026-10-14 12:59 | gq0bgc3e | W | Greek Gift | 91 | loss |  | 35 s | 3-16 |
+| 2026-10-14 13:00 | jkhmnvck | W | duck | 109 | loss | ply 60 by r unseen | 20 s | 3-17 |
