@@ -1,33 +1,33 @@
 # Arena v34 watch
 
-Updated 2026-10-14 03:14 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 03:35 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 316W-12D-288L over 616 games** (52%).
-As White: 167.5/308.
-As Black: 154.5/308.
+**Record: 322W-12D-290L over 624 games** (53%).
+As White: 170.5/312.
+As Black: 157.5/312.
 
-Queen lost for less: 204 games (195 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 168 of 288.
+Queen lost for less: 205 games (196 to a capturer unseen when we moved, 45 before ply 30); losses with the queen lost: 168 of 290.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
-Games as Black where White opened 1.c4: 44 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 45 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Instructors | 24-2-42 |
-| TA Baseline A | 55-2-4 |
+| TA Baseline A | 56-2-4 |
 | duck | 15-1-42 |
 | TA Baseline S | 51-0-7 |
 | Mist Opportunities | 27-0-29 |
 | Decent Chess Bot | 12-1-39 |
 | Strongly Invisible | 12-0-40 |
-| Sausage | 45-0-3 |
+| Sausage | 47-0-3 |
 | Knight Vision | 6-3-33 |
-| Greek Gift | 1-1-38 |
+| Greek Gift | 1-1-40 |
 | TA Baseline P | 24-1-1 |
-| HYPOTHERMIA | 12-1-10 |
+| HYPOTHERMIA | 13-1-10 |
 | Gravel Road | 10-0-0 |
 | baseline.py | 10-0-0 |
+| Lost Signal | 8-0-0 |
 | Apricot Squad | 6-0-0 |
-| Lost Signal | 6-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -647,3 +647,11 @@ Games as Black where White opened 1.c4: 44 (the book-trap family; the v15 gate r
 | 2026-10-14 03:04 | ttmpof69 | W | Knight Vision | 117 | loss |  | 26 s | 3-11 |
 | 2026-10-14 03:08 | 21t4uq56 | W | TA Baseline A | 38 | win |  | 87 s | 20-18 |
 | 2026-10-14 03:12 | 0citmuk0 | B | HYPOTHERMIA | 76 | loss |  | 36 s | 6-16 |
+| 2026-10-14 03:13 | 0lrw90ks | B | TA Baseline A | 111 | win | ply 27 by r unseen | 28 s | 11-3 |
+| 2026-10-14 03:14 | 4hwlwktl | W | HYPOTHERMIA | 124 | win |  | 25 s | 11-1 |
+| 2026-10-14 03:17 | wb6b1x78 | W | Greek Gift | 81 | loss |  | 37 s | 4-23 |
+| 2026-10-14 03:17 | 6fu7p9w9 | W | Lost Signal | 64 | win |  | 44 s | 19-14 |
+| 2026-10-14 03:17 | pgxj1vj1 | B | Lost Signal | 59 | win |  | 60 s | 11-13 |
+| 2026-10-14 03:19 | opsslpg3 | B | Greek Gift | 128 | loss |  | 24 s | 3-11 |
+| 2026-10-14 03:28 | kanp37uz | W | Sausage | 56 | win |  | 61 s | 25-8 |
+| 2026-10-14 03:29 | u8vlka4h | B | Sausage | 57 | win |  | 62 s | 32-6 |
