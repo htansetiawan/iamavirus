@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-14 12:21 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 12:41 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 61W-0D-54L over 115 games** (53%).
-As White: 31.0/57.
-As Black: 30.0/58.
+**Record: 66W-0D-58L over 124 games** (53%).
+As White: 34.0/62.
+As Black: 32.0/62.
 
-Queen lost for less: 13 games (12 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 8 of 54.
+Queen lost for less: 14 games (13 to a capturer unseen when we moved, 2 before ply 30); losses with the queen lost: 8 of 58.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 1. Mean length 89 plies.
-Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 6 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | Mist Opportunities | 10-0-6 |
+| TA Baseline S | 13-0-1 |
+| duck | 3-0-11 |
+| HYPOTHERMIA | 5-0-9 |
 | Instructors | 4-0-8 |
-| TA Baseline S | 11-0-1 |
-| duck | 3-0-9 |
-| HYPOTHERMIA | 4-0-7 |
 | Lost Signal | 5-0-5 |
 | Knight Vision | 3-0-7 |
+| Sausage | 8-0-0 |
 | Strongly Invisible | 2-0-6 |
 | Greek Gift | 1-0-5 |
-| Sausage | 6-0-0 |
 | TA Baseline A | 6-0-0 |
 | baseline.py | 2-0-0 |
 | Gravel Road | 2-0-0 |
@@ -144,3 +144,12 @@ Games as Black where White opened 1.c4: 5 (the book-trap family; the v15 gate re
 | 2026-10-14 12:18 | e7g4hrx5 | B | duck | 64 | loss |  | 52 s | 18-17 |
 | 2026-10-14 12:18 | fwy2j476 | W | duck | 83 | loss |  | 39 s | 3-17 |
 | 2026-10-14 12:19 | 843df4yu | B | HYPOTHERMIA | 143 | win |  | 20 s | 29-8 |
+| 2026-10-14 12:20 | woavhhvw | W | HYPOTHERMIA | 185 | loss |  | 20 s | 0-14 |
+| 2026-10-14 12:36 | 7ppazgro | B | Sausage | 89 | win |  | 36 s | 25-16 |
+| 2026-10-14 12:36 | th7z2gnz | W | duck | 77 | loss |  | 44 s | 2-10 |
+| 2026-10-14 12:36 | itb3ti50 | W | Sausage | 64 | win |  | 54 s | 14-11 |
+| 2026-10-14 12:37 | ju3cp1b4 | B | duck | 102 | loss |  | 32 s | 4-6 |
+| 2026-10-14 12:37 | isfyiitp | W | HYPOTHERMIA | 86 | win | ply 76 by q unseen | 19 s | 16-19 |
+| 2026-10-14 12:39 | 95zaa7yb | B | TA Baseline S | 73 | win |  | 49 s | 12-4 |
+| 2026-10-14 12:39 | cd9f62px | W | TA Baseline S | 58 | win |  | 61 s | 19-4 |
+| 2026-10-14 12:39 | oifpi7bp | B | HYPOTHERMIA | 108 | loss |  | 20 s | 0-10 |
