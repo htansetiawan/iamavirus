@@ -1,29 +1,29 @@
 # Arena v34 watch
 
-Updated 2026-10-14 02:53 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-14 03:14 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 314W-12D-284L over 610 games** (52%).
-As White: 166.5/305.
-As Black: 153.5/305.
+**Record: 316W-12D-288L over 616 games** (52%).
+As White: 167.5/308.
+As Black: 154.5/308.
 
-Queen lost for less: 204 games (195 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 168 of 284.
+Queen lost for less: 204 games (195 to a capturer unseen when we moved, 44 before ply 30); losses with the queen lost: 168 of 288.
 Short losses (12 plies or fewer): 0. Games with a clock at 15 s or less: 0. Mean length 78 plies.
 Games as Black where White opened 1.c4: 44 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Instructors | 24-2-40 |
-| TA Baseline A | 54-2-4 |
+| Instructors | 24-2-42 |
+| TA Baseline A | 55-2-4 |
 | duck | 15-1-42 |
 | TA Baseline S | 51-0-7 |
 | Mist Opportunities | 27-0-29 |
 | Decent Chess Bot | 12-1-39 |
 | Strongly Invisible | 12-0-40 |
 | Sausage | 45-0-3 |
-| Knight Vision | 5-3-32 |
+| Knight Vision | 6-3-33 |
 | Greek Gift | 1-1-38 |
 | TA Baseline P | 24-1-1 |
-| HYPOTHERMIA | 12-1-9 |
+| HYPOTHERMIA | 12-1-10 |
 | Gravel Road | 10-0-0 |
 | baseline.py | 10-0-0 |
 | Apricot Squad | 6-0-0 |
@@ -641,3 +641,9 @@ Games as Black where White opened 1.c4: 44 (the book-trap family; the v15 gate r
 | 2026-10-14 02:41 | 0bqocqkh | W | duck | 87 | loss |  | 36 s | 2-11 |
 | 2026-10-14 02:42 | q7gqmukw | B | Decent Chess Bot | 86 | loss | ply 59 by r unseen | 26 s | 4-18 |
 | 2026-10-14 02:44 | pctb5dqh | B | duck | 140 | loss |  | 22 s | 3-8 |
+| 2026-10-14 02:52 | g1hzt0q9 | B | Instructors | 92 | loss |  | 36 s | 2-8 |
+| 2026-10-14 02:54 | wjdxs0so | W | Instructors | 127 | loss |  | 23 s | 4-16 |
+| 2026-10-14 02:58 | rf69681c | B | Knight Vision | 37 | win |  | 90 s | 18-21 |
+| 2026-10-14 03:04 | ttmpof69 | W | Knight Vision | 117 | loss |  | 26 s | 3-11 |
+| 2026-10-14 03:08 | 21t4uq56 | W | TA Baseline A | 38 | win |  | 87 s | 20-18 |
+| 2026-10-14 03:12 | 0citmuk0 | B | HYPOTHERMIA | 76 | loss |  | 36 s | 6-16 |
