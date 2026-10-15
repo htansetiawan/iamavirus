@@ -1,21 +1,21 @@
 # Arena v35 watch
 
-Updated 2026-10-15 07:38 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 07:58 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 287W-16D-253L over 556 games** (53%).
-As White: 164.0/278.
-As Black: 131.0/278.
+**Record: 289W-16D-255L over 560 games** (53%).
+As White: 165.0/280.
+As Black: 132.0/280.
 
-Queen lost for less: 72 games (66 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 61 of 253.
+Queen lost for less: 73 games (67 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 62 of 255.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 85 plies.
 Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| Lost Signal | 38-7-13 |
+| Lost Signal | 40-7-13 |
 | duck | 15-1-42 |
 | Mist Opportunities | 33-3-20 |
-| Decent Chess Bot | 15-4-31 |
+| Decent Chess Bot | 15-4-33 |
 | Instructors | 12-0-34 |
 | Strongly Invisible | 13-0-33 |
 | HYPOTHERMIA | 26-0-18 |
@@ -587,3 +587,7 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | 2026-10-15 07:19 | 2t4baqwm | W | TA Baseline A | 82 | win |  | 42 s | 19-10 |
 | 2026-10-15 07:28 | ejjj1vra | W | TA Baseline A | 46 | win |  | 75 s | 22-14 |
 | 2026-10-15 07:30 | n330ezud | B | TA Baseline A | 59 | win |  | 52 s | 22-18 |
+| 2026-10-15 07:37 | zebhybxl | B | Lost Signal | 51 | win |  | 69 s | 27-26 |
+| 2026-10-15 07:41 | vqvqmt3p | W | Lost Signal | 82 | win |  | 32 s | 28-7 |
+| 2026-10-15 07:52 | zzllevh6 | W | Decent Chess Bot | 61 | loss |  | 53 s | 3-19 |
+| 2026-10-15 07:53 | f4au425s | B | Decent Chess Bot | 76 | loss | ply 41 by q unseen | 39 s | 3-20 |
