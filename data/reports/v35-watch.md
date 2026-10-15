@@ -1,10 +1,10 @@
 # Arena v35 watch
 
-Updated 2026-10-14 23:42 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 00:03 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 187W-6D-164L over 357 games** (53%).
-As White: 102.0/178.
-As Black: 88.0/179.
+**Record: 190W-6D-164L over 360 games** (54%).
+As White: 104.0/180.
+As Black: 89.0/180.
 
 Queen lost for less: 44 games (42 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 35 of 164.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 84 plies.
@@ -13,7 +13,7 @@ Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate r
 | opponent | W-D-L |
 | --- | --- |
 | duck | 8-0-28 |
-| Mist Opportunities | 20-1-14 |
+| Mist Opportunities | 21-1-14 |
 | Knight Vision | 10-0-24 |
 | Instructors | 8-0-22 |
 | Lost Signal | 19-3-8 |
@@ -21,7 +21,7 @@ Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate r
 | Strongly Invisible | 6-0-22 |
 | TA Baseline S | 21-0-3 |
 | Greek Gift | 3-1-16 |
-| TA Baseline A | 17-0-1 |
+| TA Baseline A | 19-0-1 |
 | Decent Chess Bot | 6-1-11 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
@@ -388,3 +388,6 @@ Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate r
 | 2026-10-14 23:36 | dt7hlk6l | W | Greek Gift | 64 | draw |  | 45 s | 10-10 |
 | 2026-10-14 23:36 | tj0981bh | B | Greek Gift | 66 | loss |  | 46 s | 7-20 |
 | 2026-10-14 23:41 | v45yjjeg | B | Mist Opportunities | 54 | loss |  | 65 s | 4-16 |
+| 2026-10-14 23:48 | ebtc1mc3 | W | Mist Opportunities | 170 | win |  | 20 s | 14-6 |
+| 2026-10-14 23:57 | vpupedne | W | TA Baseline A | 74 | win |  | 45 s | 15-17 |
+| 2026-10-14 23:57 | 0to06oeb | B | TA Baseline A | 77 | win |  | 45 s | 13-9 |
