@@ -1,19 +1,19 @@
 # Arena v35 watch
 
-Updated 2026-10-15 07:17 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 07:38 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 282W-16D-253L over 551 games** (53%).
-As White: 162.0/276.
-As Black: 128.0/275.
+**Record: 287W-16D-253L over 556 games** (53%).
+As White: 164.0/278.
+As Black: 131.0/278.
 
 Queen lost for less: 72 games (66 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 61 of 253.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 86 plies.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 85 plies.
 Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Lost Signal | 38-7-13 |
 | duck | 15-1-42 |
-| Lost Signal | 37-7-13 |
 | Mist Opportunities | 33-3-20 |
 | Decent Chess Bot | 15-4-31 |
 | Instructors | 12-0-34 |
@@ -21,8 +21,8 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | HYPOTHERMIA | 26-0-18 |
 | Knight Vision | 12-0-32 |
 | Greek Gift | 3-1-26 |
+| TA Baseline A | 29-0-1 |
 | TA Baseline S | 25-0-3 |
-| TA Baseline A | 25-0-1 |
 | Sausage | 18-0-0 |
 | Apricot Squad | 16-0-0 |
 | TA Baseline P | 16-0-0 |
@@ -582,3 +582,8 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | 2026-10-15 07:13 | jvgyyrva | W | Lost Signal | 60 | win |  | 52 s | 14-26 |
 | 2026-10-15 07:15 | dklvhytw | B | Strongly Invisible | 88 | loss | ply 61 by r unseen | 32 s | 4-17 |
 | 2026-10-15 07:15 | k1s138so | W | Strongly Invisible | 100 | win |  | 30 s | 15-11 |
+| 2026-10-15 07:17 | 93e7kz7l | B | TA Baseline A | 51 | win |  | 66 s | 20-8 |
+| 2026-10-15 07:17 | fyppkr7x | B | Lost Signal | 113 | win |  | 28 s | 23-4 |
+| 2026-10-15 07:19 | 2t4baqwm | W | TA Baseline A | 82 | win |  | 42 s | 19-10 |
+| 2026-10-15 07:28 | ejjj1vra | W | TA Baseline A | 46 | win |  | 75 s | 22-14 |
+| 2026-10-15 07:30 | n330ezud | B | TA Baseline A | 59 | win |  | 52 s | 22-18 |
