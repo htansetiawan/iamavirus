@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-15 05:33 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 05:54 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 261W-13D-232L over 506 games** (53%).
-As White: 148.0/252.
-As Black: 119.5/254.
+**Record: 265W-13D-234L over 512 games** (53%).
+As White: 151.0/256.
+As Black: 120.5/256.
 
-Queen lost for less: 66 games (60 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 56 of 232.
+Queen lost for less: 67 games (61 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 57 of 234.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 85 plies.
 Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 15-1-38 |
-| Mist Opportunities | 30-3-20 |
+| Mist Opportunities | 31-3-20 |
 | Lost Signal | 34-5-13 |
-| Instructors | 10-0-33 |
+| Instructors | 11-0-33 |
 | Strongly Invisible | 10-0-32 |
-| Knight Vision | 12-0-28 |
+| Knight Vision | 12-0-30 |
 | Decent Chess Bot | 13-3-24 |
 | HYPOTHERMIA | 22-0-16 |
+| TA Baseline S | 25-0-3 |
 | Greek Gift | 3-1-24 |
-| TA Baseline S | 23-0-3 |
 | TA Baseline A | 25-0-1 |
 | Sausage | 18-0-0 |
 | Apricot Squad | 16-0-0 |
@@ -537,3 +537,9 @@ Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate r
 | 2026-10-15 05:26 | d4nu2rdn | W | Decent Chess Bot | 42 | win |  | 81 s | 27-30 |
 | 2026-10-15 05:29 | f7db0ad8 | B | Mist Opportunities | 69 | win |  | 51 s | 26-6 |
 | 2026-10-15 05:32 | 7qbzg2ht | B | Instructors | 74 | loss | ply 71 by r unseen | 32 s | 6-20 |
+| 2026-10-15 05:33 | 6660t09l | W | Instructors | 116 | win |  | 27 s | 10-2 |
+| 2026-10-15 05:33 | t6tfha8z | W | Mist Opportunities | 140 | win |  | 21 s | 23-4 |
+| 2026-10-15 05:41 | xv1ay092 | W | Knight Vision | 67 | loss | ply 20 by r unseen | 49 s | 4-13 |
+| 2026-10-15 05:42 | xpdxrr3z | B | Knight Vision | 84 | loss |  | 33 s | 0-14 |
+| 2026-10-15 05:49 | y92dsqhf | W | TA Baseline S | 62 | win |  | 54 s | 22-9 |
+| 2026-10-15 05:49 | eehgk5k8 | B | TA Baseline S | 75 | win |  | 47 s | 8-6 |
