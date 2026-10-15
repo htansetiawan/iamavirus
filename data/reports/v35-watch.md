@@ -1,22 +1,22 @@
 # Arena v35 watch
 
-Updated 2026-10-15 04:52 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 05:13 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 252W-12D-222L over 486 games** (53%).
-As White: 144.0/243.
-As Black: 114.0/243.
+**Record: 256W-13D-224L over 493 games** (53%).
+As White: 147.0/247.
+As Black: 115.5/246.
 
-Queen lost for less: 62 games (58 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 53 of 222.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 85 plies.
+Queen lost for less: 63 games (59 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 53 of 224.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 86 plies.
 Games as Black where White opened 1.c4: 38 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 14-0-38 |
-| Lost Signal | 33-5-12 |
-| Mist Opportunities | 26-3-19 |
+| duck | 15-1-38 |
+| Lost Signal | 34-5-13 |
+| Mist Opportunities | 27-3-19 |
+| Strongly Invisible | 10-0-32 |
 | Instructors | 10-0-30 |
-| Strongly Invisible | 9-0-31 |
 | Knight Vision | 12-0-28 |
 | HYPOTHERMIA | 22-0-16 |
 | Decent Chess Bot | 11-3-20 |
@@ -517,3 +517,10 @@ Games as Black where White opened 1.c4: 38 (the book-trap family; the v15 gate r
 | 2026-10-15 04:45 | qgrws5li | W | Strongly Invisible | 90 | win |  | 38 s | 10-5 |
 | 2026-10-15 04:49 | ojov9m2i | B | Sausage | 63 | win |  | 56 s | 18-13 |
 | 2026-10-15 04:49 | 0bqyjzpw | W | Sausage | 82 | win |  | 37 s | 28-5 |
+| 2026-10-15 04:56 | b7d3n5vw | B | duck | 98 | draw |  | 28 s | 8-12 |
+| 2026-10-15 04:58 | ktc3mk0t | W | duck | 140 | win |  | 22 s | 21-2 |
+| 2026-10-15 05:02 | olw8egl6 | W | Lost Signal | 82 | win |  | 25 s | 25-23 |
+| 2026-10-15 05:02 | mlntigph | B | Lost Signal | 106 | loss |  | 29 s | 11-11 |
+| 2026-10-15 05:07 | qsytrzyr | W | Strongly Invisible | 95 | loss |  | 29 s | 15-21 |
+| 2026-10-15 05:10 | c03eswl0 | W | Mist Opportunities | 66 | win |  | 54 s | 22-6 |
+| 2026-10-15 05:10 | va05mb6j | B | Strongly Invisible | 125 | win | ply 47 by r unseen | 25 s | 15-2 |
