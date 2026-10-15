@@ -1,23 +1,23 @@
 # Arena v35 watch
 
-Updated 2026-10-15 04:11 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 04:31 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 240W-11D-215L over 466 games** (53%).
-As White: 135.5/233.
-As Black: 110.0/233.
+**Record: 247W-11D-218L over 476 games** (53%).
+As White: 140.5/238.
+As Black: 112.0/238.
 
-Queen lost for less: 60 games (56 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 51 of 215.
+Queen lost for less: 62 games (58 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 53 of 218.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 85 plies.
-Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 13-0-37 |
-| Lost Signal | 29-5-12 |
-| Mist Opportunities | 23-3-18 |
+| duck | 14-0-38 |
+| Lost Signal | 33-5-12 |
+| Mist Opportunities | 24-3-19 |
 | Instructors | 10-0-30 |
 | Knight Vision | 12-0-28 |
-| HYPOTHERMIA | 21-0-15 |
+| HYPOTHERMIA | 22-0-16 |
 | Strongly Invisible | 8-0-28 |
 | Decent Chess Bot | 11-2-19 |
 | Greek Gift | 3-1-24 |
@@ -497,3 +497,13 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | 2026-10-15 04:03 | mm7b6sdf | W | Decent Chess Bot | 61 | loss |  | 57 s | 4-15 |
 | 2026-10-15 04:06 | zp91vlsc | B | Decent Chess Bot | 125 | draw |  | 23 s | 14-15 |
 | 2026-10-15 04:08 | ce89s1bi | W | Instructors | 126 | win |  | 22 s | 20-3 |
+| 2026-10-15 04:15 | vxikrwot | B | duck | 60 | loss |  | 54 s | 5-10 |
+| 2026-10-15 04:17 | aaunzwuj | W | duck | 106 | win |  | 28 s | 11-1 |
+| 2026-10-15 04:23 | 56sw6g7s | W | HYPOTHERMIA | 110 | win |  | 29 s | 2-1 |
+| 2026-10-15 04:23 | 1ocozedm | B | Lost Signal | 57 | win |  | 51 s | 21-14 |
+| 2026-10-15 04:23 | zs65ay25 | B | HYPOTHERMIA | 102 | loss | ply 81 by r unseen | 24 s | 3-10 |
+| 2026-10-15 04:24 | fip255up | W | Lost Signal | 68 | win |  | 50 s | 20-20 |
+| 2026-10-15 04:27 | maekq7mg | W | Mist Opportunities | 68 | win |  | 41 s | 10-14 |
+| 2026-10-15 04:28 | jlqxzwpn | B | Mist Opportunities | 74 | loss | ply 49 by r unseen | 44 s | 5-19 |
+| 2026-10-15 04:30 | mqjyctox | W | Lost Signal | 96 | win |  | 21 s | 30-15 |
+| 2026-10-15 04:31 | 3llgps8s | B | Lost Signal | 139 | win |  | 20 s | 7-2 |
