@@ -1,25 +1,25 @@
 # Arena v35 watch
 
-Updated 2026-10-15 06:35 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 06:56 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 272W-16D-242L over 530 games** (53%).
-As White: 156.0/265.
-As Black: 124.0/265.
+**Record: 275W-16D-246L over 537 games** (53%).
+As White: 157.0/268.
+As Black: 126.0/269.
 
-Queen lost for less: 70 games (64 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 59 of 242.
+Queen lost for less: 70 games (64 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 59 of 246.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 86 plies.
-Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 15-1-40 |
 | Mist Opportunities | 33-3-20 |
 | Lost Signal | 34-7-13 |
+| Decent Chess Bot | 15-4-29 |
 | Instructors | 12-0-34 |
-| Decent Chess Bot | 15-4-27 |
-| Strongly Invisible | 10-0-32 |
-| Knight Vision | 12-0-30 |
-| HYPOTHERMIA | 22-0-18 |
+| Strongly Invisible | 12-0-32 |
+| Knight Vision | 12-0-32 |
+| HYPOTHERMIA | 23-0-18 |
 | TA Baseline S | 25-0-3 |
 | Greek Gift | 3-1-24 |
 | TA Baseline A | 25-0-1 |
@@ -561,3 +561,10 @@ Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate r
 | 2026-10-15 06:33 | cda03qsg | W | Decent Chess Bot | 100 | draw |  | 18 s | 28-23 |
 | 2026-10-15 06:33 | 2rnq32p6 | B | HYPOTHERMIA | 94 | loss |  | 26 s | 1-10 |
 | 2026-10-15 06:34 | 1c84o1gi | B | Decent Chess Bot | 116 | loss | ply 89 by q unseen | 23 s | 3-21 |
+| 2026-10-15 06:35 | mwicefvr | B | Strongly Invisible | 31 | win |  | 98 s | 27-33 |
+| 2026-10-15 06:36 | jsflylj3 | W | Strongly Invisible | 40 | win |  | 83 s | 15-20 |
+| 2026-10-15 06:49 | xyqk5e5p | W | Decent Chess Bot | 97 | loss |  | 20 s | 1-16 |
+| 2026-10-15 06:51 | fnst1q2i | B | Knight Vision | 64 | loss |  | 54 s | 4-21 |
+| 2026-10-15 06:52 | 9xp1ds8x | B | Decent Chess Bot | 162 | loss |  | 19 s | 9-10 |
+| 2026-10-15 06:53 | lqbzc64d | W | Knight Vision | 87 | loss |  | 32 s | 2-21 |
+| 2026-10-15 06:56 | chuyzzxf | B | HYPOTHERMIA | 53 | win |  | 66 s | 32-24 |
