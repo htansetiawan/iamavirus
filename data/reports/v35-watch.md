@@ -1,23 +1,23 @@
 # Arena v35 watch
 
-Updated 2026-10-15 01:25 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 01:46 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 209W-8D-179L over 396 games** (54%).
-As White: 117.0/198.
-As Black: 96.0/198.
+**Record: 214W-8D-180L over 402 games** (54%).
+As White: 119.0/201.
+As Black: 99.0/201.
 
-Queen lost for less: 49 games (47 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 40 of 179.
+Queen lost for less: 49 games (47 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 40 of 180.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
 Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 12-0-34 |
-| Lost Signal | 23-5-10 |
+| Lost Signal | 24-5-11 |
 | Mist Opportunities | 21-1-16 |
 | Knight Vision | 11-0-25 |
 | Instructors | 9-0-25 |
-| HYPOTHERMIA | 17-0-15 |
+| HYPOTHERMIA | 19-0-15 |
 | Strongly Invisible | 7-0-23 |
 | TA Baseline S | 21-0-3 |
 | TA Baseline A | 21-0-1 |
@@ -25,7 +25,7 @@ Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate r
 | Decent Chess Bot | 8-1-11 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
-| TA Baseline P | 12-0-0 |
+| TA Baseline P | 14-0-0 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 4-0-0 |
 
@@ -427,3 +427,9 @@ Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate r
 | 2026-10-15 01:18 | zn1619p6 | W | TA Baseline A | 42 | win |  | 81 s | 22-6 |
 | 2026-10-15 01:19 | qdj87mkg | W | Instructors | 98 | win |  | 33 s | 18-5 |
 | 2026-10-15 01:22 | gtdg4hr4 | B | TA Baseline A | 103 | win |  | 30 s | 11-10 |
+| 2026-10-15 01:28 | 6jjj5vxy | B | TA Baseline P | 67 | win |  | 53 s | 13-3 |
+| 2026-10-15 01:28 | uywuezuq | W | TA Baseline P | 64 | win |  | 55 s | 25-9 |
+| 2026-10-15 01:35 | 9bxmlbzp | W | HYPOTHERMIA | 52 | win |  | 67 s | 19-9 |
+| 2026-10-15 01:42 | qewiox1b | B | HYPOTHERMIA | 187 | win |  | 19 s | 9-5 |
+| 2026-10-15 01:43 | khiinow4 | B | Lost Signal | 79 | win |  | 35 s | 13-8 |
+| 2026-10-15 01:45 | tpmguhvg | W | Lost Signal | 151 | loss |  | 20 s | 0-15 |
