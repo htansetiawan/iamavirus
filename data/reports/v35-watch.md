@@ -1,28 +1,28 @@
 # Arena v35 watch
 
-Updated 2026-10-15 02:07 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 02:27 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 218W-8D-184L over 410 games** (54%).
-As White: 121.0/205.
-As Black: 101.0/205.
+**Record: 221W-8D-188L over 417 games** (54%).
+As White: 124.0/209.
+As Black: 101.0/208.
 
-Queen lost for less: 51 games (49 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 42 of 184.
+Queen lost for less: 52 games (50 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 43 of 188.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
 Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 12-0-34 |
+| duck | 13-0-35 |
 | Lost Signal | 26-5-11 |
 | Knight Vision | 12-0-28 |
-| Mist Opportunities | 21-1-16 |
+| Mist Opportunities | 22-1-16 |
 | Instructors | 9-0-25 |
 | HYPOTHERMIA | 19-0-15 |
 | Strongly Invisible | 8-0-24 |
 | TA Baseline S | 21-0-3 |
+| Decent Chess Bot | 9-1-14 |
 | TA Baseline A | 21-0-1 |
 | Greek Gift | 3-1-16 |
-| Decent Chess Bot | 8-1-11 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
 | TA Baseline P | 14-0-0 |
@@ -441,3 +441,10 @@ Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate r
 | 2026-10-15 02:05 | ss967yxl | B | Strongly Invisible | 72 | loss |  | 46 s | 2-13 |
 | 2026-10-15 02:05 | bovfe30t | B | Knight Vision | 68 | loss |  | 48 s | 3-16 |
 | 2026-10-15 02:06 | 1pw73z7d | W | Knight Vision | 81 | loss | ply 66 by n unseen | 39 s | 2-30 |
+| 2026-10-15 02:07 | zvshchbz | B | Decent Chess Bot | 58 | loss | ply 51 by r unseen | 57 s | 8-17 |
+| 2026-10-15 02:08 | cfth65cf | W | Decent Chess Bot | 63 | loss |  | 50 s | 12-27 |
+| 2026-10-15 02:14 | mj6cm3ff | W | Decent Chess Bot | 68 | win |  | 49 s | 12-5 |
+| 2026-10-15 02:14 | h0zqzega | B | Decent Chess Bot | 64 | loss |  | 54 s | 3-13 |
+| 2026-10-15 02:24 | 1d8jky5d | W | Mist Opportunities | 120 | win |  | 21 s | 19-0 |
+| 2026-10-15 02:26 | dadnkz87 | W | duck | 70 | win |  | 49 s | 23-2 |
+| 2026-10-15 02:27 | wfmyd47d | B | duck | 110 | loss |  | 20 s | 2-25 |
