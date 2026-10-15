@@ -1,12 +1,12 @@
 # Arena v35 watch
 
-Updated 2026-10-15 02:27 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 02:48 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 221W-8D-188L over 417 games** (54%).
-As White: 124.0/209.
-As Black: 101.0/208.
+**Record: 221W-10D-197L over 428 games** (53%).
+As White: 124.5/214.
+As Black: 101.5/214.
 
-Queen lost for less: 52 games (50 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 43 of 188.
+Queen lost for less: 54 games (52 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 45 of 197.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
 Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,15 +14,15 @@ Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate r
 | --- | --- |
 | duck | 13-0-35 |
 | Lost Signal | 26-5-11 |
+| Mist Opportunities | 22-3-17 |
 | Knight Vision | 12-0-28 |
-| Mist Opportunities | 22-1-16 |
-| Instructors | 9-0-25 |
+| Instructors | 9-0-27 |
 | HYPOTHERMIA | 19-0-15 |
 | Strongly Invisible | 8-0-24 |
+| Decent Chess Bot | 9-1-16 |
 | TA Baseline S | 21-0-3 |
-| Decent Chess Bot | 9-1-14 |
+| Greek Gift | 3-1-20 |
 | TA Baseline A | 21-0-1 |
-| Greek Gift | 3-1-16 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
 | TA Baseline P | 14-0-0 |
@@ -447,4 +447,15 @@ Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate r
 | 2026-10-15 02:14 | h0zqzega | B | Decent Chess Bot | 64 | loss |  | 54 s | 3-13 |
 | 2026-10-15 02:24 | 1d8jky5d | W | Mist Opportunities | 120 | win |  | 21 s | 19-0 |
 | 2026-10-15 02:26 | dadnkz87 | W | duck | 70 | win |  | 49 s | 23-2 |
+| 2026-10-15 02:27 | i5rj5o6e | B | Mist Opportunities | 192 | loss |  | 19 s | 0-9 |
 | 2026-10-15 02:27 | wfmyd47d | B | duck | 110 | loss |  | 20 s | 2-25 |
+| 2026-10-15 02:31 | paeoahnr | B | Decent Chess Bot | 86 | loss | ply 31 by n unseen | 31 s | 2-18 |
+| 2026-10-15 02:32 | ojreq1v8 | W | Decent Chess Bot | 99 | loss |  | 21 s | 2-21 |
+| 2026-10-15 02:34 | k81iqlcb | B | Greek Gift | 76 | loss |  | 40 s | 14-26 |
+| 2026-10-15 02:35 | tjqv40th | W | Greek Gift | 75 | loss | ply 48 by r unseen | 45 s | 7-11 |
+| 2026-10-15 02:37 | 181td32n | W | Greek Gift | 85 | loss |  | 37 s | 3-12 |
+| 2026-10-15 02:37 | 2drm92wc | B | Greek Gift | 100 | loss |  | 27 s | 0-10 |
+| 2026-10-15 02:38 | ick1qwgu | W | Instructors | 77 | loss |  | 44 s | 4-32 |
+| 2026-10-15 02:43 | ddgxu8wb | W | Mist Opportunities | 85 | draw |  | 37 s | 15-15 |
+| 2026-10-15 02:44 | pxfqlw9v | B | Mist Opportunities | 96 | draw |  | 32 s | 13-12 |
+| 2026-10-15 02:45 | j52b8525 | B | Instructors | 204 | loss |  | 17 s | 9-17 |
