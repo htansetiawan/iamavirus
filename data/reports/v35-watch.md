@@ -1,12 +1,12 @@
 # Arena v35 watch
 
-Updated 2026-10-15 03:09 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 03:29 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 224W-10D-207L over 441 games** (52%).
-As White: 126.5/220.
-As Black: 102.5/221.
+**Record: 228W-10D-212L over 450 games** (52%).
+As White: 128.5/225.
+As Black: 104.5/225.
 
-Queen lost for less: 57 games (55 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 48 of 207.
+Queen lost for less: 59 games (55 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 50 of 212.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
 Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -17,12 +17,12 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | Mist Opportunities | 22-3-17 |
 | Knight Vision | 12-0-28 |
 | Instructors | 9-0-29 |
-| HYPOTHERMIA | 19-0-15 |
-| Strongly Invisible | 8-0-26 |
+| HYPOTHERMIA | 21-0-15 |
+| Strongly Invisible | 8-0-28 |
+| Greek Gift | 3-1-24 |
 | Decent Chess Bot | 9-1-18 |
-| Greek Gift | 3-1-21 |
 | TA Baseline S | 21-0-3 |
-| TA Baseline A | 21-0-1 |
+| TA Baseline A | 23-0-1 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
 | TA Baseline P | 14-0-0 |
@@ -472,3 +472,12 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | 2026-10-15 03:05 | nnvekfhn | W | Decent Chess Bot | 61 | loss | ply 60 by q unseen | 56 s | 5-17 |
 | 2026-10-15 03:06 | 0tzkmh0g | B | Greek Gift | 40 | loss |  | 79 s | 23-23 |
 | 2026-10-15 03:06 | mrnbtwzi | B | Decent Chess Bot | 84 | loss |  | 38 s | 2-19 |
+| 2026-10-15 03:08 | aqsm0a4l | W | Greek Gift | 83 | loss | ply 76 by r | 33 s | 2-19 |
+| 2026-10-15 03:13 | 6ajpwqf0 | B | Strongly Invisible | 96 | loss |  | 33 s | 3-21 |
+| 2026-10-15 03:13 | 2a0jz6g5 | W | Greek Gift | 45 | loss |  | 65 s | 26-22 |
+| 2026-10-15 03:14 | nawa9kxp | B | Greek Gift | 68 | loss |  | 47 s | 4-10 |
+| 2026-10-15 03:15 | sw688yek | W | TA Baseline A | 20 | win |  | 122 s | 34-36 |
+| 2026-10-15 03:15 | 700r407s | W | Strongly Invisible | 133 | loss | ply 130 by n | 19 s | 1-23 |
+| 2026-10-15 03:19 | m1j206p9 | W | HYPOTHERMIA | 48 | win |  | 72 s | 32-31 |
+| 2026-10-15 03:21 | aag2s1ie | B | HYPOTHERMIA | 75 | win |  | 45 s | 17-24 |
+| 2026-10-15 03:21 | bktyd72t | B | TA Baseline A | 95 | win |  | 32 s | 12-3 |
