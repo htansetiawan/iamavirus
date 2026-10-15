@@ -1,23 +1,23 @@
 # Arena v35 watch
 
-Updated 2026-10-15 00:23 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 00:44 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 195W-7D-168L over 370 games** (54%).
-As White: 107.0/185.
-As Black: 91.5/185.
+**Record: 199W-7D-170L over 376 games** (54%).
+As White: 110.0/188.
+As Black: 92.5/188.
 
-Queen lost for less: 45 games (43 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 36 of 168.
+Queen lost for less: 46 games (44 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 37 of 170.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 85 plies.
 Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| duck | 10-0-30 |
 | Mist Opportunities | 21-1-16 |
-| duck | 8-0-28 |
 | Knight Vision | 10-0-24 |
 | Instructors | 8-0-24 |
 | Lost Signal | 20-4-8 |
-| HYPOTHERMIA | 15-0-15 |
+| HYPOTHERMIA | 17-0-15 |
 | Strongly Invisible | 6-0-22 |
 | TA Baseline S | 21-0-3 |
 | Greek Gift | 3-1-16 |
@@ -401,3 +401,9 @@ Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate r
 | 2026-10-15 00:18 | y9xwcbn3 | B | Instructors | 94 | loss |  | 27 s | 2-18 |
 | 2026-10-15 00:20 | c8gv8oxz | W | Instructors | 131 | loss |  | 20 s | 1-10 |
 | 2026-10-15 00:20 | jezse4vo | B | HYPOTHERMIA | 129 | win |  | 17 s | 15-13 |
+| 2026-10-15 00:23 | 1cxxnzf8 | B | duck | 98 | loss |  | 33 s | 12-12 |
+| 2026-10-15 00:23 | spm7agay | W | duck | 112 | win |  | 29 s | 11-1 |
+| 2026-10-15 00:27 | zmn5sh82 | W | HYPOTHERMIA | 70 | win |  | 43 s | 22-17 |
+| 2026-10-15 00:28 | 4eez2g06 | B | HYPOTHERMIA | 91 | win |  | 29 s | 18-13 |
+| 2026-10-15 00:30 | 70iiiydp | B | duck | 88 | loss | ply 83 by q unseen | 24 s | 3-24 |
+| 2026-10-15 00:30 | g728j51o | W | duck | 84 | win |  | 41 s | 17-4 |
