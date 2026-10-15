@@ -1,29 +1,29 @@
 # Arena v35 watch
 
-Updated 2026-10-15 04:31 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 04:52 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 247W-11D-218L over 476 games** (53%).
-As White: 140.5/238.
-As Black: 112.0/238.
+**Record: 252W-12D-222L over 486 games** (53%).
+As White: 144.0/243.
+As Black: 114.0/243.
 
-Queen lost for less: 62 games (58 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 53 of 218.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 85 plies.
-Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 62 games (58 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 53 of 222.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 85 plies.
+Games as Black where White opened 1.c4: 38 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 14-0-38 |
 | Lost Signal | 33-5-12 |
-| Mist Opportunities | 24-3-19 |
+| Mist Opportunities | 26-3-19 |
 | Instructors | 10-0-30 |
+| Strongly Invisible | 9-0-31 |
 | Knight Vision | 12-0-28 |
 | HYPOTHERMIA | 22-0-16 |
-| Strongly Invisible | 8-0-28 |
-| Decent Chess Bot | 11-2-19 |
+| Decent Chess Bot | 11-3-20 |
 | Greek Gift | 3-1-24 |
 | TA Baseline S | 23-0-3 |
 | TA Baseline A | 25-0-1 |
-| Sausage | 16-0-0 |
+| Sausage | 18-0-0 |
 | Apricot Squad | 16-0-0 |
 | TA Baseline P | 16-0-0 |
 | baseline.py | 10-0-0 |
@@ -507,3 +507,13 @@ Games as Black where White opened 1.c4: 37 (the book-trap family; the v15 gate r
 | 2026-10-15 04:28 | jlqxzwpn | B | Mist Opportunities | 74 | loss | ply 49 by r unseen | 44 s | 5-19 |
 | 2026-10-15 04:30 | mqjyctox | W | Lost Signal | 96 | win |  | 21 s | 30-15 |
 | 2026-10-15 04:31 | 3llgps8s | B | Lost Signal | 139 | win |  | 20 s | 7-2 |
+| 2026-10-15 04:40 | e6na1mx2 | W | Decent Chess Bot | 81 | draw |  | 15 s | 28-27 |
+| 2026-10-15 04:41 | uvmokzpl | W | Strongly Invisible | 71 | loss |  | 49 s | 9-12 |
+| 2026-10-15 04:41 | yvvyoke9 | B | Decent Chess Bot | 124 | loss |  | 23 s | 2-17 |
+| 2026-10-15 04:42 | ir40b264 | B | Strongly Invisible | 92 | loss |  | 24 s | 2-16 |
+| 2026-10-15 04:43 | ork0ho9x | W | Mist Opportunities | 84 | win |  | 39 s | 9-7 |
+| 2026-10-15 04:44 | wv7vicle | B | Strongly Invisible | 52 | loss |  | 64 s | 16-23 |
+| 2026-10-15 04:44 | g1vz39wi | B | Mist Opportunities | 91 | win |  | 30 s | 18-4 |
+| 2026-10-15 04:45 | qgrws5li | W | Strongly Invisible | 90 | win |  | 38 s | 10-5 |
+| 2026-10-15 04:49 | ojov9m2i | B | Sausage | 63 | win |  | 56 s | 18-13 |
+| 2026-10-15 04:49 | 0bqyjzpw | W | Sausage | 82 | win |  | 37 s | 28-5 |
