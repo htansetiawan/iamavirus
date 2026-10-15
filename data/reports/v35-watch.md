@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-15 06:56 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 07:17 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 275W-16D-246L over 537 games** (53%).
-As White: 157.0/268.
-As Black: 126.0/269.
+**Record: 282W-16D-253L over 551 games** (53%).
+As White: 162.0/276.
+As Black: 128.0/275.
 
-Queen lost for less: 70 games (64 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 59 of 246.
+Queen lost for less: 72 games (66 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 61 of 253.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 86 plies.
 Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 15-1-40 |
+| duck | 15-1-42 |
+| Lost Signal | 37-7-13 |
 | Mist Opportunities | 33-3-20 |
-| Lost Signal | 34-7-13 |
-| Decent Chess Bot | 15-4-29 |
+| Decent Chess Bot | 15-4-31 |
 | Instructors | 12-0-34 |
-| Strongly Invisible | 12-0-32 |
+| Strongly Invisible | 13-0-33 |
+| HYPOTHERMIA | 26-0-18 |
 | Knight Vision | 12-0-32 |
-| HYPOTHERMIA | 23-0-18 |
+| Greek Gift | 3-1-26 |
 | TA Baseline S | 25-0-3 |
-| Greek Gift | 3-1-24 |
 | TA Baseline A | 25-0-1 |
 | Sausage | 18-0-0 |
 | Apricot Squad | 16-0-0 |
@@ -568,3 +568,17 @@ Games as Black where White opened 1.c4: 41 (the book-trap family; the v15 gate r
 | 2026-10-15 06:52 | 9xp1ds8x | B | Decent Chess Bot | 162 | loss |  | 19 s | 9-10 |
 | 2026-10-15 06:53 | lqbzc64d | W | Knight Vision | 87 | loss |  | 32 s | 2-21 |
 | 2026-10-15 06:56 | chuyzzxf | B | HYPOTHERMIA | 53 | win |  | 66 s | 32-24 |
+| 2026-10-15 06:56 | imuczl81 | W | duck | 79 | loss |  | 40 s | 4-17 |
+| 2026-10-15 06:58 | g4yyohav | W | Lost Signal | 86 | win |  | 34 s | 18-6 |
+| 2026-10-15 06:58 | e0oczajs | W | HYPOTHERMIA | 98 | win |  | 31 s | 31-28 |
+| 2026-10-15 06:59 | yew4ivwd | B | Greek Gift | 68 | loss |  | 52 s | 9-13 |
+| 2026-10-15 06:59 | 39f2rt5f | B | Lost Signal | 83 | win |  | 27 s | 36-6 |
+| 2026-10-15 07:00 | cudts0pk | B | duck | 138 | loss |  | 20 s | 1-3 |
+| 2026-10-15 07:02 | o8wacax9 | W | Greek Gift | 93 | loss |  | 35 s | 3-24 |
+| 2026-10-15 07:05 | in6jh4y4 | W | Decent Chess Bot | 65 | loss | ply 34 by q unseen | 48 s | 4-19 |
+| 2026-10-15 07:06 | ft0w846y | W | HYPOTHERMIA | 54 | win |  | 65 s | 21-17 |
+| 2026-10-15 07:07 | s2u3ejkf | B | Decent Chess Bot | 122 | loss |  | 25 s | 11-7 |
+| 2026-10-15 07:08 | azd6qmqs | B | HYPOTHERMIA | 83 | win |  | 32 s | 17-22 |
+| 2026-10-15 07:13 | jvgyyrva | W | Lost Signal | 60 | win |  | 52 s | 14-26 |
+| 2026-10-15 07:15 | dklvhytw | B | Strongly Invisible | 88 | loss | ply 61 by r unseen | 32 s | 4-17 |
+| 2026-10-15 07:15 | k1s138so | W | Strongly Invisible | 100 | win |  | 30 s | 15-11 |
