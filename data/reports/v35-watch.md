@@ -1,27 +1,27 @@
 # Arena v35 watch
 
-Updated 2026-10-15 02:48 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 03:09 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 221W-10D-197L over 428 games** (53%).
-As White: 124.5/214.
-As Black: 101.5/214.
+**Record: 224W-10D-207L over 441 games** (52%).
+As White: 126.5/220.
+As Black: 102.5/221.
 
-Queen lost for less: 54 games (52 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 45 of 197.
+Queen lost for less: 57 games (55 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 48 of 207.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
-Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 13-0-35 |
-| Lost Signal | 26-5-11 |
+| duck | 13-0-37 |
+| Lost Signal | 29-5-12 |
 | Mist Opportunities | 22-3-17 |
 | Knight Vision | 12-0-28 |
-| Instructors | 9-0-27 |
+| Instructors | 9-0-29 |
 | HYPOTHERMIA | 19-0-15 |
-| Strongly Invisible | 8-0-24 |
-| Decent Chess Bot | 9-1-16 |
+| Strongly Invisible | 8-0-26 |
+| Decent Chess Bot | 9-1-18 |
+| Greek Gift | 3-1-21 |
 | TA Baseline S | 21-0-3 |
-| Greek Gift | 3-1-20 |
 | TA Baseline A | 21-0-1 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
@@ -459,3 +459,16 @@ Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate r
 | 2026-10-15 02:43 | ddgxu8wb | W | Mist Opportunities | 85 | draw |  | 37 s | 15-15 |
 | 2026-10-15 02:44 | pxfqlw9v | B | Mist Opportunities | 96 | draw |  | 32 s | 13-12 |
 | 2026-10-15 02:45 | j52b8525 | B | Instructors | 204 | loss |  | 17 s | 9-17 |
+| 2026-10-15 02:56 | w3b0eoc8 | W | Instructors | 61 | loss | ply 34 by q unseen | 54 s | 20-26 |
+| 2026-10-15 02:56 | pmtgb6e9 | W | duck | 61 | loss |  | 57 s | 10-9 |
+| 2026-10-15 02:57 | r9oud5wj | W | Lost Signal | 86 | win |  | 32 s | 25-4 |
+| 2026-10-15 02:57 | 45cvayjs | B | Lost Signal | 97 | win |  | 33 s | 27-4 |
+| 2026-10-15 02:57 | i0pa235m | B | duck | 76 | loss |  | 38 s | 14-25 |
+| 2026-10-15 02:59 | g291fuyl | B | Instructors | 82 | loss |  | 34 s | 14-25 |
+| 2026-10-15 03:02 | 2al0tm9e | W | Lost Signal | 100 | win |  | 32 s | 11-12 |
+| 2026-10-15 03:02 | r35uawhc | B | Lost Signal | 124 | loss |  | 20 s | 1-18 |
+| 2026-10-15 03:03 | m7fmmhmg | B | Strongly Invisible | 66 | loss | ply 53 by q unseen | 51 s | 5-9 |
+| 2026-10-15 03:04 | nuknl0xd | W | Strongly Invisible | 87 | loss |  | 27 s | 1-10 |
+| 2026-10-15 03:05 | nnvekfhn | W | Decent Chess Bot | 61 | loss | ply 60 by q unseen | 56 s | 5-17 |
+| 2026-10-15 03:06 | 0tzkmh0g | B | Greek Gift | 40 | loss |  | 79 s | 23-23 |
+| 2026-10-15 03:06 | mrnbtwzi | B | Decent Chess Bot | 84 | loss |  | 38 s | 2-19 |
