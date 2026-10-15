@@ -1,28 +1,28 @@
 # Arena v35 watch
 
-Updated 2026-10-15 00:03 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 00:23 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 190W-6D-164L over 360 games** (54%).
-As White: 104.0/180.
-As Black: 89.0/180.
+**Record: 195W-7D-168L over 370 games** (54%).
+As White: 107.0/185.
+As Black: 91.5/185.
 
-Queen lost for less: 44 games (42 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 35 of 164.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 84 plies.
+Queen lost for less: 45 games (43 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 36 of 168.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 85 plies.
 Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
+| Mist Opportunities | 21-1-16 |
 | duck | 8-0-28 |
-| Mist Opportunities | 21-1-14 |
 | Knight Vision | 10-0-24 |
-| Instructors | 8-0-22 |
-| Lost Signal | 19-3-8 |
-| HYPOTHERMIA | 13-0-15 |
+| Instructors | 8-0-24 |
+| Lost Signal | 20-4-8 |
+| HYPOTHERMIA | 15-0-15 |
 | Strongly Invisible | 6-0-22 |
 | TA Baseline S | 21-0-3 |
 | Greek Gift | 3-1-16 |
 | TA Baseline A | 19-0-1 |
-| Decent Chess Bot | 6-1-11 |
+| Decent Chess Bot | 8-1-11 |
 | Apricot Squad | 16-0-0 |
 | Sausage | 14-0-0 |
 | TA Baseline P | 12-0-0 |
@@ -391,3 +391,13 @@ Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate r
 | 2026-10-14 23:48 | ebtc1mc3 | W | Mist Opportunities | 170 | win |  | 20 s | 14-6 |
 | 2026-10-14 23:57 | vpupedne | W | TA Baseline A | 74 | win |  | 45 s | 15-17 |
 | 2026-10-14 23:57 | 0to06oeb | B | TA Baseline A | 77 | win |  | 45 s | 13-9 |
+| 2026-10-15 00:06 | 36q11are | W | Decent Chess Bot | 96 | win |  | 34 s | 22-2 |
+| 2026-10-15 00:08 | 7dq0e86p | B | Decent Chess Bot | 131 | win |  | 23 s | 18-2 |
+| 2026-10-15 00:10 | 07v4u5ci | B | Lost Signal | 178 | draw |  | 20 s | 10-16 |
+| 2026-10-15 00:10 | 8n8nx729 | W | Lost Signal | 74 | win |  | 38 s | 32-5 |
+| 2026-10-15 00:13 | ibbin84m | W | HYPOTHERMIA | 24 | win |  | 113 s | 25-26 |
+| 2026-10-15 00:14 | d0e9ervz | W | Mist Opportunities | 103 | loss | ply 44 by r unseen | 25 s | 1-15 |
+| 2026-10-15 00:14 | qd69tdsf | B | Mist Opportunities | 108 | loss |  | 26 s | 3-17 |
+| 2026-10-15 00:18 | y9xwcbn3 | B | Instructors | 94 | loss |  | 27 s | 2-18 |
+| 2026-10-15 00:20 | c8gv8oxz | W | Instructors | 131 | loss |  | 20 s | 1-10 |
+| 2026-10-15 00:20 | jezse4vo | B | HYPOTHERMIA | 129 | win |  | 17 s | 15-13 |
