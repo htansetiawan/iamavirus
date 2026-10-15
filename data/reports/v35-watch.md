@@ -1,13 +1,13 @@
 # Arena v35 watch
 
-Updated 2026-10-15 03:29 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 03:50 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 228W-10D-212L over 450 games** (52%).
-As White: 128.5/225.
-As Black: 104.5/225.
+**Record: 238W-10D-212L over 460 games** (53%).
+As White: 133.5/230.
+As Black: 109.5/230.
 
 Queen lost for less: 59 games (55 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 50 of 212.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 85 plies.
 Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -19,13 +19,13 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | Instructors | 9-0-29 |
 | HYPOTHERMIA | 21-0-15 |
 | Strongly Invisible | 8-0-28 |
+| Decent Chess Bot | 11-1-18 |
 | Greek Gift | 3-1-24 |
-| Decent Chess Bot | 9-1-18 |
-| TA Baseline S | 21-0-3 |
-| TA Baseline A | 23-0-1 |
+| TA Baseline S | 23-0-3 |
+| TA Baseline A | 25-0-1 |
+| Sausage | 16-0-0 |
 | Apricot Squad | 16-0-0 |
-| Sausage | 14-0-0 |
-| TA Baseline P | 14-0-0 |
+| TA Baseline P | 16-0-0 |
 | baseline.py | 10-0-0 |
 | Gravel Road | 4-0-0 |
 
@@ -481,3 +481,13 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | 2026-10-15 03:19 | m1j206p9 | W | HYPOTHERMIA | 48 | win |  | 72 s | 32-31 |
 | 2026-10-15 03:21 | aag2s1ie | B | HYPOTHERMIA | 75 | win |  | 45 s | 17-24 |
 | 2026-10-15 03:21 | bktyd72t | B | TA Baseline A | 95 | win |  | 32 s | 12-3 |
+| 2026-10-15 03:29 | pudl4maw | W | TA Baseline S | 100 | win |  | 33 s | 19-9 |
+| 2026-10-15 03:30 | zl91fh4w | B | TA Baseline S | 93 | win |  | 24 s | 17-4 |
+| 2026-10-15 03:37 | q4miurf8 | B | TA Baseline A | 53 | win |  | 64 s | 15-8 |
+| 2026-10-15 03:37 | s17dx6mn | W | TA Baseline A | 50 | win |  | 65 s | 21-20 |
+| 2026-10-15 03:44 | prao6o42 | B | Sausage | 23 | win |  | 117 s | 32-34 |
+| 2026-10-15 03:46 | jgbhzuxr | B | Decent Chess Bot | 69 | win |  | 41 s | 23-23 |
+| 2026-10-15 03:46 | 8msbiwud | W | Sausage | 52 | win |  | 63 s | 29-19 |
+| 2026-10-15 03:47 | 9i0w7ro1 | W | Decent Chess Bot | 80 | win |  | 33 s | 10-7 |
+| 2026-10-15 03:49 | yyxwox8e | W | TA Baseline P | 78 | win |  | 43 s | 18-4 |
+| 2026-10-15 03:50 | pafdfl3z | B | TA Baseline P | 73 | win |  | 19 s | 32-25 |
