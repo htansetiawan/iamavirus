@@ -1,12 +1,12 @@
 # Arena v35 watch
 
-Updated 2026-10-15 03:50 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 04:11 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 238W-10D-212L over 460 games** (53%).
-As White: 133.5/230.
-As Black: 109.5/230.
+**Record: 240W-11D-215L over 466 games** (53%).
+As White: 135.5/233.
+As Black: 110.0/233.
 
-Queen lost for less: 59 games (55 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 50 of 212.
+Queen lost for less: 60 games (56 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 51 of 215.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 85 plies.
 Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate refuses the booked recapture).
 
@@ -14,12 +14,12 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | --- | --- |
 | duck | 13-0-37 |
 | Lost Signal | 29-5-12 |
-| Mist Opportunities | 22-3-17 |
+| Mist Opportunities | 23-3-18 |
+| Instructors | 10-0-30 |
 | Knight Vision | 12-0-28 |
-| Instructors | 9-0-29 |
 | HYPOTHERMIA | 21-0-15 |
 | Strongly Invisible | 8-0-28 |
-| Decent Chess Bot | 11-1-18 |
+| Decent Chess Bot | 11-2-19 |
 | Greek Gift | 3-1-24 |
 | TA Baseline S | 23-0-3 |
 | TA Baseline A | 25-0-1 |
@@ -491,3 +491,9 @@ Games as Black where White opened 1.c4: 36 (the book-trap family; the v15 gate r
 | 2026-10-15 03:47 | 9i0w7ro1 | W | Decent Chess Bot | 80 | win |  | 33 s | 10-7 |
 | 2026-10-15 03:49 | yyxwox8e | W | TA Baseline P | 78 | win |  | 43 s | 18-4 |
 | 2026-10-15 03:50 | pafdfl3z | B | TA Baseline P | 73 | win |  | 19 s | 32-25 |
+| 2026-10-15 03:59 | mcavzxk8 | B | Mist Opportunities | 56 | loss | ply 49 by q unseen | 59 s | 15-15 |
+| 2026-10-15 04:03 | 00zqf41o | W | Mist Opportunities | 112 | win |  | 26 s | 11-3 |
+| 2026-10-15 04:03 | kye6mfb4 | B | Instructors | 66 | loss |  | 49 s | 13-17 |
+| 2026-10-15 04:03 | mm7b6sdf | W | Decent Chess Bot | 61 | loss |  | 57 s | 4-15 |
+| 2026-10-15 04:06 | zp91vlsc | B | Decent Chess Bot | 125 | draw |  | 23 s | 14-15 |
+| 2026-10-15 04:08 | ce89s1bi | W | Instructors | 126 | win |  | 22 s | 20-3 |
