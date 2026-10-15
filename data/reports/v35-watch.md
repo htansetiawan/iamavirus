@@ -1,22 +1,22 @@
 # Arena v35 watch
 
-Updated 2026-10-15 00:44 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 01:05 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 199W-7D-170L over 376 games** (54%).
-As White: 110.0/188.
-As Black: 92.5/188.
+**Record: 201W-8D-176L over 385 games** (53%).
+As White: 112.0/193.
+As Black: 93.0/192.
 
-Queen lost for less: 46 games (44 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 37 of 170.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 85 plies.
-Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate refuses the booked recapture).
+Queen lost for less: 48 games (46 to a capturer unseen when we moved, 6 before ply 30); losses with the queen lost: 39 of 176.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
+Games as Black where White opened 1.c4: 30 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 10-0-30 |
+| duck | 11-0-34 |
 | Mist Opportunities | 21-1-16 |
+| Lost Signal | 21-5-10 |
 | Knight Vision | 10-0-24 |
 | Instructors | 8-0-24 |
-| Lost Signal | 20-4-8 |
 | HYPOTHERMIA | 17-0-15 |
 | Strongly Invisible | 6-0-22 |
 | TA Baseline S | 21-0-3 |
@@ -407,3 +407,12 @@ Games as Black where White opened 1.c4: 29 (the book-trap family; the v15 gate r
 | 2026-10-15 00:28 | 4eez2g06 | B | HYPOTHERMIA | 91 | win |  | 29 s | 18-13 |
 | 2026-10-15 00:30 | 70iiiydp | B | duck | 88 | loss | ply 83 by q unseen | 24 s | 3-24 |
 | 2026-10-15 00:30 | g728j51o | W | duck | 84 | win |  | 41 s | 17-4 |
+| 2026-10-15 00:44 | pbcr0e0v | B | duck | 50 | loss |  | 66 s | 21-22 |
+| 2026-10-15 00:46 | czkk7qmj | W | duck | 67 | loss | ply 30 by r unseen | 48 s | 13-22 |
+| 2026-10-15 00:49 | hjjjnibq | W | duck | 94 | win |  | 36 s | 22-4 |
+| 2026-10-15 00:49 | u26dzv3s | B | duck | 90 | loss | ply 49 by r unseen | 30 s | 3-13 |
+| 2026-10-15 00:51 | ltr67kec | B | Lost Signal | 78 | draw |  | 24 s | 23-23 |
+| 2026-10-15 00:53 | 80f65rxg | W | Lost Signal | 100 | win |  | 20 s | 23-17 |
+| 2026-10-15 01:02 | hp39m96q | W | duck | 73 | loss |  | 45 s | 14-16 |
+| 2026-10-15 01:02 | 9ovpzf9v | B | Lost Signal | 160 | loss |  | 20 s | 0-7 |
+| 2026-10-15 01:04 | px85eu9c | W | Lost Signal | 217 | loss |  | 20 s | 1-21 |
