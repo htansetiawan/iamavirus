@@ -1,13 +1,13 @@
 # Arena v35 watch
 
-Updated 2026-10-15 06:15 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 06:35 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 270W-15D-237L over 522 games** (53%).
-As White: 154.5/261.
-As Black: 123.0/261.
+**Record: 272W-16D-242L over 530 games** (53%).
+As White: 156.0/265.
+As Black: 124.0/265.
 
-Queen lost for less: 69 games (63 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 58 of 237.
-Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 85 plies.
+Queen lost for less: 70 games (64 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 59 of 242.
+Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 86 plies.
 Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
@@ -15,11 +15,11 @@ Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate r
 | duck | 15-1-40 |
 | Mist Opportunities | 33-3-20 |
 | Lost Signal | 34-7-13 |
-| Instructors | 11-0-33 |
+| Instructors | 12-0-34 |
+| Decent Chess Bot | 15-4-27 |
 | Strongly Invisible | 10-0-32 |
 | Knight Vision | 12-0-30 |
-| Decent Chess Bot | 14-3-25 |
-| HYPOTHERMIA | 22-0-16 |
+| HYPOTHERMIA | 22-0-18 |
 | TA Baseline S | 25-0-3 |
 | Greek Gift | 3-1-24 |
 | TA Baseline A | 25-0-1 |
@@ -553,3 +553,11 @@ Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate r
 | 2026-10-15 06:02 | o6u4gtot | W | duck | 81 | loss |  | 22 s | 5-21 |
 | 2026-10-15 06:11 | 6hhkamot | B | Decent Chess Bot | 88 | loss | ply 37 by r unseen | 32 s | 4-24 |
 | 2026-10-15 06:12 | t7nc7ku8 | W | Decent Chess Bot | 110 | win |  | 27 s | 8-12 |
+| 2026-10-15 06:17 | sjfuffga | W | Instructors | 73 | loss |  | 44 s | 4-18 |
+| 2026-10-15 06:20 | uwizvfas | B | Decent Chess Bot | 82 | loss |  | 39 s | 4-12 |
+| 2026-10-15 06:21 | j5mq17vy | B | Instructors | 130 | win |  | 20 s | 10-5 |
+| 2026-10-15 06:24 | 3nrcmy5i | W | Decent Chess Bot | 172 | win |  | 20 s | 8-2 |
+| 2026-10-15 06:31 | lkxpubcg | W | HYPOTHERMIA | 63 | loss |  | 45 s | 14-20 |
+| 2026-10-15 06:33 | cda03qsg | W | Decent Chess Bot | 100 | draw |  | 18 s | 28-23 |
+| 2026-10-15 06:33 | 2rnq32p6 | B | HYPOTHERMIA | 94 | loss |  | 26 s | 1-10 |
+| 2026-10-15 06:34 | 1c84o1gi | B | Decent Chess Bot | 116 | loss | ply 89 by q unseen | 23 s | 3-21 |
