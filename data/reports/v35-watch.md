@@ -1,24 +1,24 @@
 # Arena v35 watch
 
-Updated 2026-10-15 05:54 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 06:15 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 265W-13D-234L over 512 games** (53%).
-As White: 151.0/256.
-As Black: 120.5/256.
+**Record: 270W-15D-237L over 522 games** (53%).
+As White: 154.5/261.
+As Black: 123.0/261.
 
-Queen lost for less: 67 games (61 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 57 of 234.
+Queen lost for less: 69 games (63 to a capturer unseen when we moved, 8 before ply 30); losses with the queen lost: 58 of 237.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 4. Mean length 85 plies.
 Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
-| duck | 15-1-38 |
-| Mist Opportunities | 31-3-20 |
-| Lost Signal | 34-5-13 |
+| duck | 15-1-40 |
+| Mist Opportunities | 33-3-20 |
+| Lost Signal | 34-7-13 |
 | Instructors | 11-0-33 |
 | Strongly Invisible | 10-0-32 |
 | Knight Vision | 12-0-30 |
-| Decent Chess Bot | 13-3-24 |
+| Decent Chess Bot | 14-3-25 |
 | HYPOTHERMIA | 22-0-16 |
 | TA Baseline S | 25-0-3 |
 | Greek Gift | 3-1-24 |
@@ -27,7 +27,7 @@ Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate r
 | Apricot Squad | 16-0-0 |
 | TA Baseline P | 16-0-0 |
 | baseline.py | 10-0-0 |
-| Gravel Road | 4-0-0 |
+| Gravel Road | 6-0-0 |
 
 | when (UTC) | id | us | opponent | plies | result | queen lost | min clock | material end |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -543,3 +543,13 @@ Games as Black where White opened 1.c4: 39 (the book-trap family; the v15 gate r
 | 2026-10-15 05:42 | xpdxrr3z | B | Knight Vision | 84 | loss |  | 33 s | 0-14 |
 | 2026-10-15 05:49 | y92dsqhf | W | TA Baseline S | 62 | win |  | 54 s | 22-9 |
 | 2026-10-15 05:49 | eehgk5k8 | B | TA Baseline S | 75 | win |  | 47 s | 8-6 |
+| 2026-10-15 05:54 | v985ooa1 | B | Mist Opportunities | 113 | win |  | 27 s | 10-3 |
+| 2026-10-15 05:55 | svjupb5u | W | Mist Opportunities | 122 | win |  | 24 s | 12-3 |
+| 2026-10-15 05:56 | edv6a4rc | B | Lost Signal | 77 | draw | ply 37 by r unseen | 39 s | 11-14 |
+| 2026-10-15 05:58 | 81yt3005 | W | Gravel Road | 14 | win |  | 137 s | 37-33 |
+| 2026-10-15 06:00 | tx1rjs91 | B | Gravel Road | 53 | win |  | 67 s | 30-9 |
+| 2026-10-15 06:01 | j7c7z9ah | B | duck | 86 | loss |  | 26 s | 3-23 |
+| 2026-10-15 06:01 | 57ci1wdr | W | Lost Signal | 118 | draw |  | 26 s | 17-12 |
+| 2026-10-15 06:02 | o6u4gtot | W | duck | 81 | loss |  | 22 s | 5-21 |
+| 2026-10-15 06:11 | 6hhkamot | B | Decent Chess Bot | 88 | loss | ply 37 by r unseen | 32 s | 4-24 |
+| 2026-10-15 06:12 | t7nc7ku8 | W | Decent Chess Bot | 110 | win |  | 27 s | 8-12 |
