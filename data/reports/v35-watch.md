@@ -1,24 +1,24 @@
 # Arena v35 watch
 
-Updated 2026-10-15 01:46 UTC. Measurement only; newest games at the bottom of the table.
+Updated 2026-10-15 02:07 UTC. Measurement only; newest games at the bottom of the table.
 
-**Record: 214W-8D-180L over 402 games** (54%).
-As White: 119.0/201.
-As Black: 99.0/201.
+**Record: 218W-8D-184L over 410 games** (54%).
+As White: 121.0/205.
+As Black: 101.0/205.
 
-Queen lost for less: 49 games (47 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 40 of 180.
+Queen lost for less: 51 games (49 to a capturer unseen when we moved, 7 before ply 30); losses with the queen lost: 42 of 184.
 Short losses (12 plies or fewer): 2. Games with a clock at 15 s or less: 3. Mean length 86 plies.
-Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate refuses the booked recapture).
+Games as Black where White opened 1.c4: 34 (the book-trap family; the v15 gate refuses the booked recapture).
 
 | opponent | W-D-L |
 | --- | --- |
 | duck | 12-0-34 |
-| Lost Signal | 24-5-11 |
+| Lost Signal | 26-5-11 |
+| Knight Vision | 12-0-28 |
 | Mist Opportunities | 21-1-16 |
-| Knight Vision | 11-0-25 |
 | Instructors | 9-0-25 |
 | HYPOTHERMIA | 19-0-15 |
-| Strongly Invisible | 7-0-23 |
+| Strongly Invisible | 8-0-24 |
 | TA Baseline S | 21-0-3 |
 | TA Baseline A | 21-0-1 |
 | Greek Gift | 3-1-16 |
@@ -433,3 +433,11 @@ Games as Black where White opened 1.c4: 32 (the book-trap family; the v15 gate r
 | 2026-10-15 01:42 | qewiox1b | B | HYPOTHERMIA | 187 | win |  | 19 s | 9-5 |
 | 2026-10-15 01:43 | khiinow4 | B | Lost Signal | 79 | win |  | 35 s | 13-8 |
 | 2026-10-15 01:45 | tpmguhvg | W | Lost Signal | 151 | loss |  | 20 s | 0-15 |
+| 2026-10-15 01:46 | u8cwvtom | W | Lost Signal | 78 | win |  | 44 s | 13-23 |
+| 2026-10-15 01:48 | igql42l6 | B | Lost Signal | 101 | win |  | 29 s | 18-4 |
+| 2026-10-15 02:00 | inr7ezd1 | W | Knight Vision | 57 | loss | ply 32 by n unseen | 58 s | 6-21 |
+| 2026-10-15 02:01 | 8plkbxg7 | B | Knight Vision | 61 | win |  | 59 s | 21-15 |
+| 2026-10-15 02:04 | tf4nvgyh | W | Strongly Invisible | 70 | win |  | 48 s | 13-3 |
+| 2026-10-15 02:05 | ss967yxl | B | Strongly Invisible | 72 | loss |  | 46 s | 2-13 |
+| 2026-10-15 02:05 | bovfe30t | B | Knight Vision | 68 | loss |  | 48 s | 3-16 |
+| 2026-10-15 02:06 | 1pw73z7d | W | Knight Vision | 81 | loss | ply 66 by n unseen | 39 s | 2-30 |
