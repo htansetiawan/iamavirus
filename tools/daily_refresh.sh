@@ -60,13 +60,18 @@ if [ "$SEAGATE" = 1 ]; then
     run rsync -rt --no-perms --modify-window=1 data/reports/ "$STORE/reports/"
 fi
 step "daily report";     run $PY -m learning.daily_report --raw data/raw --out data/reports/daily
+# the deeper analysis: opponent version changes, rating point flow, queen events,
+# king walking, the fog-line hazard table and the short losses (learning.daily_insights)
+step "daily insights";   run $PY -m learning.daily_insights --raw data/raw --out data/reports/daily
 REPORT="data/reports/daily/$(date -u +%F)"
+INSIGHTS="data/reports/daily/insights-$(date -u +%F).md"
 if [ -f "$REPORT.md" ]; then
     git add -f "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md >>"$LOG" 2>&1
-    if ! git diff --cached --quiet -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md; then
+    [ -f "$INSIGHTS" ] && git add -f "$INSIGHTS" data/reports/daily/insights-latest.md >>"$LOG" 2>&1
+    if ! git diff --cached --quiet -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md; then
         git -c user.name=henrytan commit -q -m "Daily arena report $(date -u +%F)
 
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md >>"$LOG" 2>&1
+Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md >>"$LOG" 2>&1
         [ "$PUSH" = 1 ] && run bash tools/push_safe.sh
     fi
 fi
