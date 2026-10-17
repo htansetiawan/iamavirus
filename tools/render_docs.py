@@ -26,10 +26,11 @@ TEMPLATE = """<!doctype html>
 <meta name="description" content="{description}">
 <title>{title} — IAmAVirus docs</title>
 <style>
-:root{{--ink:#242424;--muted:#6f6d68;--line:#e6e5e1;--side:#fafaf9;--soft:#f3f2ef;--accent:#2d5be3;--code:#f6f5f2;--serif:Georgia,"Times New Roman",serif}}
-@media (prefers-color-scheme:dark){{:root{{--ink:#e8e6e1;--muted:#a19e97;--line:#2e2d2b;--side:#1c1c1b;--soft:#262523;--accent:#8fb0ff;--code:#202020}}body{{background:#161615}}}}
+:root{{--bg:#ffffff;--ink:#242424;--muted:#5f5d58;--line:#e6e5e1;--side:#fafaf9;--soft:#f3f2ef;--accent:#2d5be3;--code:#f6f5f2;--serif:Georgia,"Times New Roman",serif;color-scheme:light}}
+@media (prefers-color-scheme:dark){{:root:not([data-theme="light"]){{--bg:#161615;--ink:#e8e6e1;--muted:#b3b0a8;--line:#2e2d2b;--side:#1c1c1b;--soft:#262523;--accent:#8fb0ff;--code:#202020;color-scheme:dark}}}}
+:root[data-theme="dark"]{{--bg:#161615;--ink:#e8e6e1;--muted:#b3b0a8;--line:#2e2d2b;--side:#1c1c1b;--soft:#262523;--accent:#8fb0ff;--code:#202020;color-scheme:dark}}
 *{{box-sizing:border-box}}html{{scroll-behavior:smooth}}
-body{{margin:0;background:#fff;color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}
+body{{margin:0;background:var(--bg);color:var(--ink);font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}}
 .sidebar{{position:fixed;inset:0 auto 0 0;width:240px;background:var(--side);border-right:1px solid var(--line);padding:26px 18px;overflow:auto}}
 .sidebar .brand{{font-family:var(--serif);font-size:19px;margin:0 0 4px}}
 .sidebar .sub{{color:var(--muted);font-size:12px;margin:0 0 18px}}
