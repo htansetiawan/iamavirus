@@ -425,3 +425,11 @@ The uniform-weighting clause (v15, opt-in) at 0.02 refuses the second (one board
 ## v16 withdrawn (2026-10-14 13:20 UTC)
 
 v16 = v14 + the uniform-weighting clause at 0.02 by default (fowsearch-c f6f9595; zip 5f1b169fe587, validated 10:46). Bench vs the v35 bytes, 40 games, same seeds: **16.5/40 (0.41), White 10/20, Black 6.5/20**, no forfeit, five repetition draws, shortest loss 44 plies, lowest clock 21.2 s. The suite's small gain (fatal 48 → 44, check 60 → 58, material unchanged) is over-caution over a whole game: refusing every move that is fatal on one board in fifty of the belief costs more than it saves. Default back to off; the knob stays for experiments. v35 remains active. What is left for the two 8-ply losses is an exposure rule (a move that opens a line from our king into unseen squares, charged regardless of belief weight, with its own suite kind), and for the top-six queenless middlegames a rook/minor version of the queen guard; both need the user's go-ahead.
+
+## Week 1 of the month plan: v17 and v18, both withdrawn (2026-10-16/17)
+
+The data: all 672 recent losses to the teams above us are king captures; our king moves 16.6/100 vs their 11.6 (late 13.2 vs Greek Gift 1.8); after our move the king is captured within four plies 1.8/7.3/17.3/36.1% for 0/1/2/3+ fog lines (middlegame; late 1.7/4.3/7.8/12.0), and a king move itself multiplies those rates two to four times (mid 2.2/12.8/27.5/46.5%, late 3.9/8.3/14.0/17.0%).
+
+v17 (`fog_adjust`, MIST_FOG_HAZARD 0.5): the standing-exposure hazard subtracted from the leaf value. Suite vs v14: check 60 → 58, fatal 48 → 46 (cp 113 → 105), material cp 133 → 129. Bench vs the v35 bytes 19.5/40, king walking unchanged. Kept at 0.5 as harmless.
+
+v18 (MIST_KING_MOVE_HAZARD 1.0): the king move's own hazard. Suite: fatal 48 → 45 (fixed 3, broke 0). Bench vs v35 18.5/40 with the late king-move rate down from 32 to 22 per 100, so the mechanism works and the score does not; vs Misty 14/20 on the seeds where v12 had 16.5/20 (Misty forfeited one game on time, not us). Withdrawn (default 0, commit after dd1845d). Reading: a flat charge on every king move penalises the king that has to move; the hazard must be conditional on the king's situation. Next: the fitted logistic model on all teams' games (tools/fit_hazard.py), replacing both hand tables.
