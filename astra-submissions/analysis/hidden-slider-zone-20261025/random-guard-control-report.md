@@ -43,6 +43,12 @@ The candidate chose one of the enumerated true-board-safe alternatives in
 65/138 cases. This is only a mechanical property of the selected action; it
 does not imply strategic improvement.
 
+Among the 26 changed decisions, an offline true-board audit found no immediate
+capture on either move in 22 cases; two choices preserved the same pawn
+capture, one changed a pawn capture to no capture, and one changed a pawn
+capture to a bishop capture. Capture values here are simple immediate piece
+values only. This is not a material-loss or tactical continuation evaluation.
+
 ## Limits and decision
 
 The games were deliberately stratified by past outcome and color; the total
