@@ -27,6 +27,14 @@ versus 18.56 s for fresh processes, with matching input/support checks and three
 different timed-search choices. This is producer evidence, not teacher-quality
 or playing-strength evidence.
 
+[Concrete PPO experiment ready for review](risk-run-preflight/README.md):
+identical verified 20.36M-parameter CNN/critic initialization, original loss
+versus risk-supervised loss, 60 iterations and at most one GPU hour per arm.
+The isolated trainer imports/builds successfully, both launch previews pass,
+and 128 recent games / 5,843 own decisions are frozen for validation. No training
+has started. This is an upstream learning experiment, not an implementation of
+the persistent C-search model proposed below; the scope choice is explicit.
+
 ## What we actually need to improve
 
 There are three different objects called a “table” in this project:

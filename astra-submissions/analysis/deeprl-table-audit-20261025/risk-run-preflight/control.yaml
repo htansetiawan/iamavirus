@@ -1,0 +1,59 @@
+rl:
+  init: /media/henrytan/seagate1/iamavirus/checkpoints/v6-l/best.pt
+  critic_init: /media/henrytan/seagate1/iamavirus/checkpoints/critic-vs/best.pt
+  games: 256
+  max_plies: 300
+  env_threads: 1
+  rollout_decisions: 16384
+  iterations: 60
+  lr: 1.0e-05
+  critic_lr: 0.0001
+  clip: 0.2
+  epochs: 2
+  minibatch: 2048
+  kl_ref_coef: 0.05
+  entropy_coef: 0.003
+  grad_clip: 1.0
+  gamma: 1.0
+  lambda: 0.95
+  temperature: 1.0
+  seed: 20261025
+  league:
+    reference: 2.0
+    replica_weight: 1.0
+    snapshot_weight: 1.0
+    snapshot_every: 10
+    group_weights:
+      target_opponents: 0.4
+      ta_controls: 0.25
+      other_leaders: 0.2
+      self_play: 0.15
+    snapshot_sample_capacity: 6
+    member_groups:
+      reference: other_leaders
+      duck: target_opponents
+      duck-b: target_opponents
+      instructors: target_opponents
+      instructors-b: target_opponents
+      ta-baseline-p: ta_controls
+      ta-baseline-a: ta_controls
+      ta-baseline-s: ta_controls
+      greek-gift: other_leaders
+      knight-vision: other_leaders
+      decent-chess-bot: other_leaders
+      strongly-invisible: other_leaders
+    replicas:
+      duck: /media/henrytan/seagate1/iamavirus/checkpoints/replica-duck/best.pt
+      duck-b: /media/henrytan/seagate1/iamavirus/checkpoints/replica-duck/best.pt
+      instructors: /media/henrytan/seagate1/iamavirus/checkpoints/replica-instructors/best.pt
+      instructors-b: /media/henrytan/seagate1/iamavirus/checkpoints/replica-instructors/best.pt
+      ta-baseline-p: /media/henrytan/seagate1/iamavirus/checkpoints/replica-ta-baseline-p/best.pt
+      ta-baseline-a: /media/henrytan/seagate1/iamavirus/checkpoints/replica-ta-baseline-a/best.pt
+      ta-baseline-s: /media/henrytan/seagate1/iamavirus/checkpoints/replica-ta-baseline-s/best.pt
+      greek-gift: /media/henrytan/seagate1/iamavirus/checkpoints/replica-greek-gift/best.pt
+      knight-vision: /media/henrytan/seagate1/iamavirus/checkpoints/replica-knight-vision/best.pt
+      decent-chess-bot: /media/henrytan/seagate1/iamavirus/checkpoints/replica-decent-chess-bot/best.pt
+      strongly-invisible: /media/henrytan/seagate1/iamavirus/checkpoints/replica-strongly-invisible/best.pt
+    snapshots: []
+  risk_aux_coef: 0.0
+  risk_separation_coef: 0.0

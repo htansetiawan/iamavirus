@@ -1,0 +1,39 @@
+{
+  "checked_at": "2026-10-25T19:24:32.186963+00:00",
+  "classification": "CPU-only prepared-run validation; no optimization or GPU training",
+  "preflight_sha256": "99822a0b239bbe897cdd8efcdef28223a1adfaab5c820ec70014beb66e758f40",
+  "module_help": {
+    "command": "python -m learning.rl_train --help",
+    "cwd": "astra-submissions/build/ppo-risk-review-20261025",
+    "exit_code": 0,
+    "session_id": 7607
+  },
+  "launch_previews": [
+    {
+      "arm": "control",
+      "exit_code": 0,
+      "started": false,
+      "session_id": 72910
+    },
+    {
+      "arm": "auxiliary",
+      "exit_code": 0,
+      "started": false,
+      "session_id": 45334
+    }
+  ],
+  "launcher_sha256": "1cf21eadaed35c75546b7993f8ffb6a6f3bf65e7e0a616a65255cd9dc80f65f3",
+  "native_libraries": {
+    "astra-submissions/build/ppo-risk-review-20261025/build/librules.so": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3"
+  },
+  "configuration_differences": {
+    "risk_separation_coef": [
+      0.0,
+      0.25
+    ],
+    "risk_aux_coef": [
+      0.0,
+      0.1
+    ]
+  }
+}

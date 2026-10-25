@@ -1,0 +1,285 @@
+{
+  "classification": "prepared, not launched; no GPU use or optimizer updates",
+  "prepared_at": "2026-10-25T19:13:45.969333+00:00",
+  "preparer_sha256": "62e90fca0270438312d55b04ab11c9dcc768af40ab74732ad2c769316189a30a",
+  "source_root": "/home/henrytan/git/iamavirus/astra-submissions/build/ppo-risk-review-20261025",
+  "source_sha256": {
+    "regret.h": "6c4a1bfd814cf8ec8cd3c48cd6c473ce2bad0d9b60cf17af2af5d6ccdc004712",
+    "opponent_model.h": "1b3443eb9cd394b2897a71ed2daf3a0544ee41794f68cc0c8fe5de9b0ad9ff54",
+    "batch_env.cc": "f822866e4c3172d996075e1e9b9e9632ba2b4e990ee0a5412c91969eb5ba7142",
+    "bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+    "neural_observation.cc": "7abb02336b2e262e1f37a907c35164663b8bafb4da1795be88a792dc26aa9ba2",
+    "search.h": "727cfce37e60e7d2aefa94c7f3b0528f4b564a01ebafe473c88adc69d0073687",
+    "engine.cc": "bb9a604a289809da1e23ec30beb0513f6ec3fd944e591113d0317148a9049f24",
+    "move.h": "d9df0633b6449f6156b7ce5aeba762a11629834ffe8276a5a14336b5bda411fb",
+    "bitboard.h": "8e44e16445d783bb10df53533d54039d345893fccd1b5b0e40a40c771fa5aa0d",
+    "opponent_model.cc": "d9ef2083e3482af4ee4dbf642dff5a98ae75950730b660527b425530548c1597",
+    "position.h": "4779d19bc65b7f083c9cb85cc08de760ba723dd17b3447b276ee9eef356e02a7",
+    "move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+    "evaluation.h": "58d68872baebedc8359bf85374bcdf4b12e46637e2015f3f1b9fe2c37ee8fa6a",
+    "engine.h": "0acb58ec83150806694374b24b08d531278797011da4748318100304b934ccdf",
+    "regret.cc": "6e166aa11721d718ddfdff9772228dc8e5acda5ecf00e8e52d8e02fc9d4e906a",
+    "rules_capi.cc": "26794cb3062e5bdd881ed07858e0821cfa5abd907707cc4f80b0e2c75c5cb31e",
+    "evaluation.cc": "c7ffc3e23fe0303121bf2c9885cdade0531706be6764ce1d5574d523258a179a",
+    "belief.h": "9cda8cab44fa0870f60f6c15e8184602b415cc9d45847be4f4f6a368340305ea",
+    "transposition.h": "63e49121e2fcec3ee7ccc79c3680e98670ebe535359c314d70c08cc82267f295",
+    "belief.cc": "3236280f734e65951276a41755f1149207d210c0b11ab4539cda6f1a4bcf9f7e",
+    "search.cc": "fa8a64876248c695aebbeec504efa73e9d1a1040cb280f7e86ff6299fb3e153a",
+    "neural_observation.h": "f39ec7924043609b253b63436e06ce6c49bbe5d66014fad8db22f9ee7d321802",
+    "opponent_weights.h": "a93041d41ac93b79f85b2c138fd05da9add9c768ad5309d08368d7dc9b506c05",
+    "observation.h": "1a2c3499673f10426a30e1182af2c3cc0fa1e3ac88b1edbb3ec18f118fd3a9dd",
+    "observation.cc": "cdf3a5316aedf4a764f9c94827816ab6bb87369cf8c3020c8af5a8ff5489c5ca",
+    "transposition.cc": "92467ff1857fb681c57e81a857b03dbd7bb22fe0b85cc8b17e95e2a8d51b466e",
+    "position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+    "piece_square.h": "2c7deec8b737fbd450ed8fdc0e456139f2dad564e5792c98b201e336aaef01dc",
+    "learning_experiments/__init__.py": "bd83efa0660d6325dd5a389be96dcbfb0583c568b365eff42d2c6ebda02630f2",
+    "learning_experiments/risk_auxiliary.py": "9aa44705d3d3203ab892ec298321f15530852a4b612df674db21eb4c5f46cba3",
+    "learning/gym_corpora.py": "18fd631410ee4f1ee2ba53847497c77b4a011bcfb0bc7664c698e8c3ec0598b3",
+    "learning/critic.py": "a40e2fefb4555dade67aaa8990f5f6ee69c459d6d033bc6dcf7dc2bc6309ab4a",
+    "learning/evaluate.py": "c5355f5a4d0bfecbcc5d97807a49b1f67e931417acc16a8515f098c9c9a1ee67",
+    "learning/__init__.py": "611d705dba1f1ed454590cd9406c1e42f3df122356c3e5b8afa19e7e421a4571",
+    "learning/dataset.py": "8ee40cee5afbb978de21954b2f59deed9ecaf3599aee5d3b49b01e9b2f26b03f",
+    "learning/fatal_corpus.py": "960d3099f2d9c2faecb50bebd76c1cbdbbab280848042d5cb2f80eef1c5dac04",
+    "learning/replay_bot.py": "801fe12709afbfa7fd6d516ec191be7669b97379edbca90ccba41aa447373a35",
+    "learning/top6_report.py": "2a16b52f88c290cc15c73873c7b6cee60dab55319f928b3597da3bf3a38f01ae",
+    "learning/labels.py": "11f10cfdc1a4bc4e6b4823ef8502c192b83e1bfd7e168fe42e39ff4e4e1a6b92",
+    "learning/arena_local.py": "4946ed85abc473eb3c95e30b120c3239198f0a8ae22369ce5dc473209d7d4d74",
+    "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+    "learning/opponent_prediction.py": "68da5d7837f1ecb5e7fe6b2f0ad0d857411dba79419d68717cbb099d0a391a8e",
+    "learning/model.py": "db8dcf7e73737343fdb80176e20da289dfe90c2c49c923c7850b1688b5d07509",
+    "learning/decision_stats.py": "7950a0098fbb97a2f50219c48bbefa62937e764d6851223bc283d9e6213b3276",
+    "learning/rl_train.py": "bd3c78e8c6daac60fd6a727d8efed1f22b0d6259c523a405050903a20f552ebb",
+    "learning/compare_archives.py": "836abd22014646d534ef0d60faa4e497f552662548f2d221677eb517886389c9",
+    "learning/opponent_model.py": "07448e0d6ec888545fd67e469a6c1bd92ed9fff06a8c02ecb5095cf2fca41497",
+    "learning/features.py": "4b4a0a9893c7751d13a4e6b9d00da74093b873e142ae39e9a35d1bcb9014d88c",
+    "learning/api_client.py": "53420c369ec99fad4cac42eca20700d09adc328b3a70bb0f7aeab006b3c35b22",
+    "learning/king_belief_eval.py": "64dbcf894c68ed2b955a5a02147571ebf8dd1152fcee4cf8c7d393b433b4af5d",
+    "learning/move_taxonomy.py": "dcd139c59ad25dfc3a5aef1e696ac6326b34a11e976dcddf0658c31efa566a9a",
+    "learning/rollouts.py": "44c844e2417d2534730c12d58cbdd5cd7d3a0937fc3536ecd82b1d3b69f92d41",
+    "learning/action_codec.py": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+    "learning/suntzu_rvq.py": "6202a0ece34b2ff1224aa06295257603658fd1faf7f94687e3a1c567744d0d18",
+    "learning/pretrain.py": "71423a7094cb82ceeebc5ee3afcf80a7aeee834d28678f900b68cb5491ea6a2c",
+    "learning/_native.py": "3bf861fb77073b385e53b36e42b5e2a6e309b2229e9fdbb0cf1cb0e98d5cfe35",
+    "learning/model_ceiling_eval.py": "f9a8a47c189d0606a9179e3f3169a839b1a26fc6a03a9824b178fd0c0faa05a3",
+    "learning/replay_book.py": "ecb8cbddab09e274f38422d4334c88c36ea55806f965845470a43f8a333ee411",
+    "learning/gym_replay.py": "2fcf678c8f71d9e2762a17da45207a169e915656ca61a03acf57741e7212b962",
+    "learning/ceiling_match.py": "c0dae11f2e0d2889a630d8ccf5b77f957b08ea2184bdf3f4a45fddebca6e21d8",
+    "learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+    "learning/feature_cache.py": "b0a21db0028ef11f3f4a5b17752639bb2633f3fdfd70890739c0cf0df087d2ec",
+    "learning/export.py": "7fd95dbeb795a90334a9f661ee2a35722b1812d0375c541a833d6f3c5ac64c10",
+    "learning/train_ppo.py": "a5e72f7a06ebc908988d09fad8b459be49c4b810c513a65009ff665f5783d6cf",
+    "learning/daily_report.py": "0f3d88c0bf4dd7848787f5655e0c8e7a774f13ad6faa869935b098bc93abf9f8",
+    "learning/arena_watch.py": "3542f8bf4a5bb6d3abaea80a8791bc2b48afdae0de64027321a6cd4e73112e92",
+    "learning/daily_insights.py": "f70c65f886b0ae8e40054c8be15d0390339b2c326a079dfcc1cc82fcbff27e2a",
+    "learning/curate.py": "34b9053c691a2377a8891eecb211082b122bb63516b3bcbf92bc5b52591f16c0",
+    "learning/book.py": "67bcf4201215428ad2b92af1845b2919c2c8d8d4a1e20014ac0e3ef347ebd4e2",
+    "learning/env.py": "23ef68b423364a8c2345d18419aaa988757211e5c967de46f6e11ff8807762da",
+    "learning/suntzu_windows.py": "0c324fa6559fb7a56d1af6aa26805f655cfdb412895e612226181098db15d756",
+    "learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+    "learning/batch_env.py": "faea55b6804b15d9cf84d4dc945d5c19cfd2f0605a1ca63c690fd2e5806a2e9d"
+  },
+  "actor_checkpoints": {
+    "initial_actor_and_reference": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/v6-l/best.pt",
+      "sha256": "ba8cdcee1c743b6fc0cda838f940eeb8e1ad46b3e2877aeb8b3c8a066bf24197",
+      "architecture": "cnn192x10-gru768-heads-v1",
+      "model_config": {
+        "channels": 192,
+        "blocks": 10,
+        "hidden": 768,
+        "cand_width": 384
+      },
+      "parameters": 20363530,
+      "checkpoint_step": 15030,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "duck": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-duck/best.pt",
+      "sha256": "b1bc21ca1ace43c4074e9e6901f54cb9c2deeeea9baecfc57c0e66e7e1785717",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 158,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "duck-b": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-duck/best.pt",
+      "sha256": "b1bc21ca1ace43c4074e9e6901f54cb9c2deeeea9baecfc57c0e66e7e1785717",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 158,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "instructors": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-instructors/best.pt",
+      "sha256": "5fbe92f7242d3d9e4c1d4c6307001eb1ace206088d7a4fa7e26cabbd0c9a412b",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 70,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "instructors-b": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-instructors/best.pt",
+      "sha256": "5fbe92f7242d3d9e4c1d4c6307001eb1ace206088d7a4fa7e26cabbd0c9a412b",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 70,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "ta-baseline-p": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-ta-baseline-p/best.pt",
+      "sha256": "bad1d6c373d58c13c7734a5a18accfe694da1e5aaaa5ec17658de53cfbb0784b",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 378,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "ta-baseline-a": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-ta-baseline-a/best.pt",
+      "sha256": "0a053216237d488e840f81ef3c89524cf5f02aa1df58092c68f75211528562e5",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 330,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "ta-baseline-s": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-ta-baseline-s/best.pt",
+      "sha256": "cf4aacb343070b1ad0bc2226980df3b3617d83615a92d0f65e04517c9605b1de",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 420,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "greek-gift": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-greek-gift/best.pt",
+      "sha256": "b398d047b0493a0fc55ded4d546383586ccdb3d2e6fb9135c71ba21e95aa64e5",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 134,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "knight-vision": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-knight-vision/best.pt",
+      "sha256": "dbda57ba9f7a8b99f4e5fcea5d91d38fcd064d732170f5f719238359a06eff12",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 268,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "decent-chess-bot": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-decent-chess-bot/best.pt",
+      "sha256": "8df7dac60f381b3aa60968d63503efacc6c65de3603711c5c5f25f7c996f677f",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 246,
+      "cpu_forward_pass": "finite, expected shapes"
+    },
+    "strongly-invisible": {
+      "path": "/media/henrytan/seagate1/iamavirus/checkpoints/replica-strongly-invisible/best.pt",
+      "sha256": "101a086867f4a46203f7cb096e09a541e90f39e71311a2bbaea0eba9f0bbf21b",
+      "architecture": "cnn64x4-gru256-heads-v1",
+      "model_config": {
+        "channels": 64,
+        "blocks": 4,
+        "hidden": 256,
+        "cand_width": 128
+      },
+      "parameters": 1872394,
+      "checkpoint_step": 80,
+      "cpu_forward_pass": "finite, expected shapes"
+    }
+  },
+  "critic_checkpoint": {
+    "path": "/media/henrytan/seagate1/iamavirus/checkpoints/critic-vs/best.pt",
+    "sha256": "f64846fda63c5fccf3f529783e1f93e4267ebbadc927349987325263d60420f3",
+    "parameters": 1352065,
+    "cpu_forward_pass": "finite"
+  },
+  "dataset": {
+    "content_sha256": "2b894fb16833b1c4cdea8ddc3b16849ef89bfc2da5236ab2226e74aa91db9028",
+    "shard_sha256": {
+      "test": "6377b8db97749809b5c1f344c23cfb4f87805781997b8a644e34c089838bdccb",
+      "train": "0bfd2f646129df56be098cacd28c333193b0797b59a67ef60adad4059418214f",
+      "validation": "b7d01360f394b9e2614fe08c2fd1acf6b19a409f78433ea7d5a1bae8a691462b"
+    },
+    "episodes_by_split": {
+      "train": 40120,
+      "test": 5008,
+      "validation": 5012
+    },
+    "unique_games": 25070
+  },
+  "dataset_manifest_file_sha256": "136598f587be057f644dc787ecf3617b82074ade10fe6a43d0ccb4250955de41",
+  "validation_sha256": "92cec3a6801831dc138c354471885a8f4ac5789591336682b65b417a2ac44ab3",
+  "configuration_sha256": {
+    "control": "35c53e977328170c87e1979f7908a5983a15700b43ca7f1cfa236dcf718bc135",
+    "auxiliary": "114fb6d841e926d027c5bc8110efa19c46b136acba98da17eb6ab36382ae5b8a"
+  },
+  "limits": {
+    "iterations_per_arm": 60,
+    "wall_seconds_per_arm": 3600,
+    "gpu_seconds_total": 7200
+  },
+  "initialization": "Both arms start from identical supervised actor and critic; fresh optimizers; no actor-only resume.",
+  "comparison": "Use the largest common completed snapshot (multiples of 10); discard incomplete rollout updates.",
+  "wall_seconds": 24.104733561980538
+}
