@@ -1,0 +1,4751 @@
+{
+  "classification": "game-excluded fixed-prefix, one-ply safety diagnostic; not Elo or game strength",
+  "audit": "astra-submissions/analysis/standing-trend-20261024/hidden-arrival-cases-ply70.json",
+  "audit_sha256": "f710247db6690b5a90811d8cba9b5dc1562d67bc3839189797fcdfd6b84d4c1d",
+  "baseline_binary_sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+  "candidate_binary_sha256": "43125879c397f875d1f69838eaa35bacf82a2b10381349ef007beb68bdedd7f9",
+  "target_games": 91,
+  "seconds_per_move": 5.0,
+  "summary": {
+    "n": 91,
+    "changed": 39,
+    "v35_immediate_fatal": 84,
+    "candidate_immediate_fatal": 81,
+    "fatal_saved": 8,
+    "fatal_introduced": 5,
+    "candidate_listed_safe_alternative": 9,
+    "full_model_beliefs_le_10000": 64
+  },
+  "by_opponent": {
+    "Decent Chess Bot": {
+      "n": 24,
+      "changed": 11,
+      "v35_immediate_fatal": 20,
+      "candidate_immediate_fatal": 20,
+      "fatal_saved": 3,
+      "fatal_introduced": 3,
+      "candidate_listed_safe_alternative": 4,
+      "full_model_beliefs_le_10000": 16
+    },
+    "Instructors": {
+      "n": 18,
+      "changed": 9,
+      "v35_immediate_fatal": 17,
+      "candidate_immediate_fatal": 16,
+      "fatal_saved": 2,
+      "fatal_introduced": 1,
+      "candidate_listed_safe_alternative": 2,
+      "full_model_beliefs_le_10000": 15
+    },
+    "Strongly Invisible": {
+      "n": 22,
+      "changed": 10,
+      "v35_immediate_fatal": 22,
+      "candidate_immediate_fatal": 20,
+      "fatal_saved": 2,
+      "fatal_introduced": 0,
+      "candidate_listed_safe_alternative": 1,
+      "full_model_beliefs_le_10000": 18
+    },
+    "duck": {
+      "n": 27,
+      "changed": 9,
+      "v35_immediate_fatal": 25,
+      "candidate_immediate_fatal": 25,
+      "fatal_saved": 1,
+      "fatal_introduced": 1,
+      "candidate_listed_safe_alternative": 2,
+      "full_model_beliefs_le_10000": 15
+    }
+  },
+  "elapsed_seconds": 1412.6909931070404,
+  "limits": [
+    "All cases were selected from historical IAmAVirus losses and are not representative of all decisions.",
+    "Only immediate true-board king fatality and a capped list of safe alternatives are measured.",
+    "Changed moves are not branched through opponent strategies; no material, positional, or Elo conclusion follows."
+  ],
+  "rows": [
+    {
+      "game": "15p66co5",
+      "opponent": "Strongly Invisible",
+      "ply": 63,
+      "recorded_fatal_move": "c5d4",
+      "safe_alternatives": [
+        "f8e7",
+        "f8f7"
+      ],
+      "v35": {
+        "move": "a7a6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 63,
+          "particles": 2069,
+          "report": "share=0.01922 rank=3"
+        },
+        "belief_size": 2069,
+        "risk": {
+          "king_risk": 0.0787,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.92",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c5d4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 63,
+          "particles": 2069,
+          "report": "share=0.01990 rank=3"
+        },
+        "belief_size": 2069,
+        "risk": {
+          "king_risk": 0.0811,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.09",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "g2uy48wp",
+      "opponent": "Strongly Invisible",
+      "ply": 62,
+      "recorded_fatal_move": "b3b4",
+      "safe_alternatives": [
+        "b2a1",
+        "b2a3",
+        "b2c1",
+        "b2c3"
+      ],
+      "v35": {
+        "move": "b3b4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 269,
+          "report": "share=0.00174 rank=177"
+        },
+        "belief_size": 269,
+        "risk": {
+          "king_risk": 0.0072,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.88",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b3b4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 269,
+          "report": "share=0.00170 rank=173"
+        },
+        "belief_size": 269,
+        "risk": {
+          "king_risk": 0.0067,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.87",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "r7ujdjq7",
+      "opponent": "Decent Chess Bot",
+      "ply": 61,
+      "recorded_fatal_move": "g8h7",
+      "safe_alternatives": [
+        "b7b5",
+        "b7b6",
+        "e7c6",
+        "e7c8",
+        "e7f5",
+        "e7g6",
+        "f7f5",
+        "f7f6"
+      ],
+      "v35": {
+        "move": "f7f5",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 61,
+          "particles": 24,
+          "report": "LOST"
+        },
+        "belief_size": 24,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.06",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g8h7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 61,
+          "particles": 18,
+          "report": "LOST"
+        },
+        "belief_size": 18,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "2.92",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "r0lx5ri4",
+      "opponent": "Strongly Invisible",
+      "ply": 51,
+      "recorded_fatal_move": "g3h2",
+      "safe_alternatives": [
+        "c8b7",
+        "c8d7"
+      ],
+      "v35": {
+        "move": "g3h2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 51,
+          "particles": 130,
+          "report": "share=0.00257 rank=44"
+        },
+        "belief_size": 130,
+        "risk": {
+          "king_risk": 0.0026,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.57",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g3h2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 51,
+          "particles": 130,
+          "report": "share=0.00236 rank=44"
+        },
+        "belief_size": 130,
+        "risk": {
+          "king_risk": 0.0024,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.57",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "t2wd07vn",
+      "opponent": "Decent Chess Bot",
+      "ply": 70,
+      "recorded_fatal_move": "b3b4",
+      "safe_alternatives": [
+        "b5a4",
+        "b5a5"
+      ],
+      "v35": {
+        "move": "b3b4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 70,
+          "particles": 200000,
+          "report": "share=0.00000 rank=147657"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0346,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b3b4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 70,
+          "particles": 200000,
+          "report": "share=0.00000 rank=159552"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0246,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "hnc7w4lc",
+      "opponent": "Strongly Invisible",
+      "ply": 63,
+      "recorded_fatal_move": "a5a4",
+      "safe_alternatives": [
+        "h5g5",
+        "h5g6"
+      ],
+      "v35": {
+        "move": "a5a4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 63,
+          "particles": 99,
+          "report": "share=0.00134 rank=67"
+        },
+        "belief_size": 99,
+        "risk": {
+          "king_risk": 0.2689,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.12",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h7g6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 63,
+          "particles": 99,
+          "report": "share=0.00131 rank=67"
+        },
+        "belief_size": 99,
+        "risk": {
+          "king_risk": 0.2475,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.20",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "nhu5uwhm",
+      "opponent": "duck",
+      "ply": 63,
+      "recorded_fatal_move": "h6g6",
+      "safe_alternatives": [
+        "a3b2",
+        "f6f5",
+        "g5g4",
+        "h5h4"
+      ],
+      "v35": {
+        "move": "h5h4",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 63,
+          "particles": 200000,
+          "report": "LOST"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.004,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h5h4",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 63,
+          "particles": 200000,
+          "report": "LOST"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0072,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.99",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "lkwnhe24",
+      "opponent": "Decent Chess Bot",
+      "ply": 60,
+      "recorded_fatal_move": "h2h4",
+      "safe_alternatives": [
+        "b1a2"
+      ],
+      "v35": {
+        "move": "a1a4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 200000,
+          "report": "share=0.00000 rank=42008"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0032,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.30",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g3g4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 200000,
+          "report": "share=0.00001 rank=24422"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0065,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.44",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "tt8fyk8p",
+      "opponent": "Strongly Invisible",
+      "ply": 58,
+      "recorded_fatal_move": "d5c4",
+      "safe_alternatives": [
+        "b2b4",
+        "d1d2",
+        "e1f1",
+        "e1f2",
+        "e2c3"
+      ],
+      "v35": {
+        "move": "d5c4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 58,
+          "particles": 1285,
+          "report": "share=0.00003 rank=1053"
+        },
+        "belief_size": 1285,
+        "risk": {
+          "king_risk": 0.0075,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "d5c4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 58,
+          "particles": 1285,
+          "report": "share=0.00004 rank=1028"
+        },
+        "belief_size": 1285,
+        "risk": {
+          "king_risk": 0.0086,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "yf7hdgad",
+      "opponent": "Instructors",
+      "ply": 38,
+      "recorded_fatal_move": "b2d4",
+      "safe_alternatives": [
+        "g3f2",
+        "g3h4"
+      ],
+      "v35": {
+        "move": "b2d4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 38,
+          "particles": 649,
+          "report": "share=0.00036 rank=472"
+        },
+        "belief_size": 649,
+        "risk": {
+          "king_risk": 0.0004,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-2.96",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b2d4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 38,
+          "particles": 649,
+          "report": "share=0.00038 rank=470"
+        },
+        "belief_size": 649,
+        "risk": {
+          "king_risk": 0.0004,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-2.96",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "g5z2qa4y",
+      "opponent": "Strongly Invisible",
+      "ply": 65,
+      "recorded_fatal_move": "f8e7",
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b6b5",
+        "f5f4",
+        "f7f6",
+        "f8e8",
+        "f8g7",
+        "f8g8"
+      ],
+      "v35": {
+        "move": "f8e7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 2502,
+          "report": "share=0.00045 rank=559"
+        },
+        "belief_size": 2502,
+        "risk": {
+          "king_risk": 0.0169,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.11",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f8e7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 2502,
+          "report": "share=0.00051 rank=524"
+        },
+        "belief_size": 2502,
+        "risk": {
+          "king_risk": 0.0194,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.11",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "kbbb4vam",
+      "opponent": "Instructors",
+      "ply": 56,
+      "recorded_fatal_move": "e4e5",
+      "safe_alternatives": [
+        "f3e2",
+        "f3e3",
+        "f3f2",
+        "f3g3",
+        "f3g4"
+      ],
+      "v35": {
+        "move": "a6c5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 520,
+          "report": "share=0.01609 rank=15"
+        },
+        "belief_size": 520,
+        "risk": {
+          "king_risk": 0.0163,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.33",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e4e5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 520,
+          "report": "share=0.01645 rank=15"
+        },
+        "belief_size": 520,
+        "risk": {
+          "king_risk": 0.0167,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.38",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "cxew39q1",
+      "opponent": "Strongly Invisible",
+      "ply": 37,
+      "recorded_fatal_move": "b8a6",
+      "safe_alternatives": [
+        "h7g8"
+      ],
+      "v35": {
+        "move": "c6c1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 37,
+          "particles": 2904,
+          "report": "share=0.00252 rank=124"
+        },
+        "belief_size": 2904,
+        "risk": {
+          "king_risk": 0.23,
+          "queen_risk": "0.002",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "3.54",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e7f6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 37,
+          "particles": 2904,
+          "report": "share=0.00283 rank=112"
+        },
+        "belief_size": 2904,
+        "risk": {
+          "king_risk": 0.2584,
+          "queen_risk": "0.002",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.37",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "pksszjy2",
+      "opponent": "duck",
+      "ply": 62,
+      "recorded_fatal_move": "b1c1",
+      "safe_alternatives": [
+        "b1b2",
+        "b1c2"
+      ],
+      "v35": {
+        "move": "h2h4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 45044,
+          "report": "share=0.00006 rank=2373"
+        },
+        "belief_size": 45044,
+        "risk": {
+          "king_risk": 0.003,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.32",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h2h3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 45044,
+          "report": "share=0.00010 rank=1697"
+        },
+        "belief_size": 45044,
+        "risk": {
+          "king_risk": 0.0057,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.35",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "n6175efw",
+      "opponent": "Decent Chess Bot",
+      "ply": 49,
+      "recorded_fatal_move": "h8g7",
+      "safe_alternatives": [
+        "a8a2",
+        "a8a3",
+        "a8a4",
+        "a8a5",
+        "a8a6",
+        "a8a7",
+        "a8b8",
+        "a8c8"
+      ],
+      "v35": {
+        "move": "h8g7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 49,
+          "particles": 4558,
+          "report": "share=0.00034 rank=563"
+        },
+        "belief_size": 4558,
+        "risk": {
+          "king_risk": 0.0337,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.39",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h8g7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 49,
+          "particles": 4558,
+          "report": "share=0.00042 rank=495"
+        },
+        "belief_size": 4558,
+        "risk": {
+          "king_risk": 0.0375,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.39",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "qj2x0m0y",
+      "opponent": "Decent Chess Bot",
+      "ply": 39,
+      "recorded_fatal_move": "c8g4",
+      "safe_alternatives": [
+        "h5g5",
+        "h5h4"
+      ],
+      "v35": {
+        "move": "c8g4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 39,
+          "particles": 36777,
+          "report": "share=0.00434 rank=36"
+        },
+        "belief_size": 36777,
+        "risk": {
+          "king_risk": 0.1088,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.23",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c8g4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 39,
+          "particles": 36777,
+          "report": "share=0.00383 rank=43"
+        },
+        "belief_size": 36777,
+        "risk": {
+          "king_risk": 0.1183,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.24",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "qczqwkdb",
+      "opponent": "Instructors",
+      "ply": 70,
+      "recorded_fatal_move": "e6f7",
+      "safe_alternatives": [
+        "c1b2",
+        "c1d2"
+      ],
+      "v35": {
+        "move": "e6f7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 70,
+          "particles": 1783,
+          "report": "share=0.00177 rank=149"
+        },
+        "belief_size": 1783,
+        "risk": {
+          "king_risk": 0.1008,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e6f7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 70,
+          "particles": 1783,
+          "report": "share=0.00189 rank=130"
+        },
+        "belief_size": 1783,
+        "risk": {
+          "king_risk": 0.1052,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "06suhyqi",
+      "opponent": "duck",
+      "ply": 56,
+      "recorded_fatal_move": "g1f2",
+      "safe_alternatives": [
+        "a6a7",
+        "b4b5",
+        "e3e4",
+        "f4f5",
+        "g1f1",
+        "g1h1",
+        "g2g3",
+        "g2g4"
+      ],
+      "v35": {
+        "move": "g1f2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 4633,
+          "report": "share=0.00133 rank=160"
+        },
+        "belief_size": 4633,
+        "risk": {
+          "king_risk": 0.0757,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.17",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g1f2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 4633,
+          "report": "share=0.00154 rank=132"
+        },
+        "belief_size": 4633,
+        "risk": {
+          "king_risk": 0.0871,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.17",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "ognkwqq1",
+      "opponent": "duck",
+      "ply": 67,
+      "recorded_fatal_move": "g5g4",
+      "safe_alternatives": [
+        "h7g8",
+        "h7h6",
+        "h7h8"
+      ],
+      "v35": {
+        "move": "b6b5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 63408,
+          "report": "share=0.00000 rank=34291"
+        },
+        "belief_size": 63408,
+        "risk": {
+          "king_risk": 0.0013,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.51",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b6b5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 63408,
+          "report": "share=0.00000 rank=31257"
+        },
+        "belief_size": 63408,
+        "risk": {
+          "king_risk": 0.0024,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.51",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "62bx774l",
+      "opponent": "duck",
+      "ply": 40,
+      "recorded_fatal_move": "b3c3",
+      "safe_alternatives": [
+        "b3d1",
+        "f2f1"
+      ],
+      "v35": {
+        "move": "b3c3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 40,
+          "particles": 814,
+          "report": "share=0.00051 rank=210"
+        },
+        "belief_size": 814,
+        "risk": {
+          "king_risk": 0.0073,
+          "queen_risk": "0.016",
+          "queen_risk_sharp": "0.007",
+          "material_risk": "1.02",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b3b5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 40,
+          "particles": 814,
+          "report": "share=0.00055 rank=197"
+        },
+        "belief_size": 814,
+        "risk": {
+          "king_risk": 0.008,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.05",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "mpyj9grh",
+      "opponent": "Instructors",
+      "ply": 66,
+      "recorded_fatal_move": "b1c2",
+      "safe_alternatives": [
+        "a2a3",
+        "b1a1",
+        "b1c1",
+        "b2b3",
+        "b2b4",
+        "c4c5",
+        "f2f3",
+        "g2g3"
+      ],
+      "v35": {
+        "move": "h4h5",
+        "immediate_fatal": false,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 66,
+          "particles": 2772,
+          "report": "share=0.00007 rank=723"
+        },
+        "belief_size": 2772,
+        "risk": {
+          "king_risk": 0.0074,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.30",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b1c2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 66,
+          "particles": 2772,
+          "report": "share=0.00009 rank=677"
+        },
+        "belief_size": 2772,
+        "risk": {
+          "king_risk": 0.006,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.28",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "wafgr6qm",
+      "opponent": "duck",
+      "ply": 69,
+      "recorded_fatal_move": "h7g8",
+      "safe_alternatives": [
+        "a5a4",
+        "b7b5",
+        "b7b6",
+        "c6c5",
+        "h7h6"
+      ],
+      "v35": {
+        "move": "h7g8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 51298,
+          "report": "share=0.00000 rank=32258"
+        },
+        "belief_size": 51298,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.02",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "a5a4",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 69,
+          "particles": 52043,
+          "report": "share=0.00000 rank=24263"
+        },
+        "belief_size": 52043,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.15",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "ha586oa6",
+      "opponent": "Decent Chess Bot",
+      "ply": 53,
+      "recorded_fatal_move": "g7g5",
+      "safe_alternatives": [
+        "g8f7"
+      ],
+      "v35": {
+        "move": "h7h5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 1092,
+          "report": "share=0.00004 rank=399"
+        },
+        "belief_size": 1092,
+        "risk": {
+          "king_risk": 0.0061,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.50",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h7h5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 1092,
+          "report": "share=0.00004 rank=385"
+        },
+        "belief_size": 1092,
+        "risk": {
+          "king_risk": 0.0067,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.48",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "agp88drd",
+      "opponent": "duck",
+      "ply": 50,
+      "recorded_fatal_move": "b8b7",
+      "safe_alternatives": [
+        "f1f2"
+      ],
+      "v35": {
+        "move": "b8b7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 50,
+          "particles": 30,
+          "report": "share=0.02023 rank=18"
+        },
+        "belief_size": 30,
+        "risk": {
+          "king_risk": 0.2268,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.07",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b8b7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 50,
+          "particles": 30,
+          "report": "share=0.02158 rank=18"
+        },
+        "belief_size": 30,
+        "risk": {
+          "king_risk": 0.2414,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.07",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "avoet07h",
+      "opponent": "Strongly Invisible",
+      "ply": 59,
+      "recorded_fatal_move": "b7c8",
+      "safe_alternatives": [
+        "f6f8"
+      ],
+      "v35": {
+        "move": "b7c8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 7525,
+          "report": "share=0.00000 rank=3585"
+        },
+        "belief_size": 7525,
+        "risk": {
+          "king_risk": 0.0081,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "2.18",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b7c8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 7525,
+          "report": "share=0.00000 rank=3663"
+        },
+        "belief_size": 7525,
+        "risk": {
+          "king_risk": 0.0082,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "2.07",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "u5kwvtiw",
+      "opponent": "Strongly Invisible",
+      "ply": 56,
+      "recorded_fatal_move": "g3g4",
+      "safe_alternatives": [
+        "c1b1"
+      ],
+      "v35": {
+        "move": "a2a3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 44819,
+          "report": "share=0.00002 rank=4532"
+        },
+        "belief_size": 44819,
+        "risk": {
+          "king_risk": 0.0023,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.04",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "a2a3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 44819,
+          "report": "share=0.00003 rank=3216"
+        },
+        "belief_size": 44819,
+        "risk": {
+          "king_risk": 0.0034,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.03",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "ot9bc96z",
+      "opponent": "duck",
+      "ply": 65,
+      "recorded_fatal_move": "h4h3",
+      "safe_alternatives": [
+        "h8g7",
+        "h8h7"
+      ],
+      "v35": {
+        "move": "g6g5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 22226,
+          "report": "share=0.00007 rank=2403"
+        },
+        "belief_size": 22226,
+        "risk": {
+          "king_risk": 0.0945,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.91",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "a5a4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 22226,
+          "report": "share=0.00009 rank=2029"
+        },
+        "belief_size": 22226,
+        "risk": {
+          "king_risk": 0.1024,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.73",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "hn6w9ofq",
+      "opponent": "Decent Chess Bot",
+      "ply": 51,
+      "recorded_fatal_move": "e5e4",
+      "safe_alternatives": [
+        "b8b7"
+      ],
+      "v35": {
+        "move": "e5e4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 51,
+          "particles": 306,
+          "report": "share=0.00331 rank=89"
+        },
+        "belief_size": 306,
+        "risk": {
+          "king_risk": 0.0042,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-1.84",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e5e4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 51,
+          "particles": 306,
+          "report": "share=0.00327 rank=90"
+        },
+        "belief_size": 306,
+        "risk": {
+          "king_risk": 0.0043,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-1.84",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "67rfrdqv",
+      "opponent": "duck",
+      "ply": 47,
+      "recorded_fatal_move": "f7e7",
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "c7a6",
+        "c7a8",
+        "c7b5",
+        "c7e8"
+      ],
+      "v35": {
+        "move": "f7e7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 47,
+          "particles": 3754,
+          "report": "share=0.00000 rank=2156"
+        },
+        "belief_size": 3754,
+        "risk": {
+          "king_risk": 0.0497,
+          "queen_risk": "0.001",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.79",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f7e7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 47,
+          "particles": 3754,
+          "report": "share=0.00000 rank=2151"
+        },
+        "belief_size": 3754,
+        "risk": {
+          "king_risk": 0.0569,
+          "queen_risk": "0.001",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.77",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "mcboa1ek",
+      "opponent": "Instructors",
+      "ply": 52,
+      "recorded_fatal_move": "f3h3",
+      "safe_alternatives": [
+        "f3d1",
+        "f3f1"
+      ],
+      "v35": {
+        "move": "f3h3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 52,
+          "particles": 2318,
+          "report": "share=0.00007 rank=1138"
+        },
+        "belief_size": 2318,
+        "risk": {
+          "king_risk": 0.1609,
+          "queen_risk": "0.005",
+          "queen_risk_sharp": "0.006",
+          "material_risk": "-1.73",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f3h3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 52,
+          "particles": 2318,
+          "report": "share=0.00007 rank=1178"
+        },
+        "belief_size": 2318,
+        "risk": {
+          "king_risk": 0.1659,
+          "queen_risk": "0.006",
+          "queen_risk_sharp": "0.006",
+          "material_risk": "-1.72",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "rw4i2b1v",
+      "opponent": "Instructors",
+      "ply": 41,
+      "recorded_fatal_move": "b6c6",
+      "safe_alternatives": [
+        "g6f8",
+        "g8h7"
+      ],
+      "v35": {
+        "move": "b6c6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 41,
+          "particles": 4435,
+          "report": "share=0.00001 rank=2661"
+        },
+        "belief_size": 4435,
+        "risk": {
+          "king_risk": 0.0016,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-2.99",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b6c6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 41,
+          "particles": 4223,
+          "report": "share=0.00001 rank=2609"
+        },
+        "belief_size": 4223,
+        "risk": {
+          "king_risk": 0.0017,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-2.99",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "yfijtgfy",
+      "opponent": "Instructors",
+      "ply": 64,
+      "recorded_fatal_move": "e1f1",
+      "safe_alternatives": [
+        "e1c1",
+        "e1d2",
+        "e2f1"
+      ],
+      "v35": {
+        "move": "e1f1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 64,
+          "particles": 274,
+          "report": "share=0.01358 rank=20"
+        },
+        "belief_size": 274,
+        "risk": {
+          "king_risk": 0.0466,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e1f1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 64,
+          "particles": 274,
+          "report": "share=0.01768 rank=12"
+        },
+        "belief_size": 274,
+        "risk": {
+          "king_risk": 0.0534,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "xl514w2z",
+      "opponent": "duck",
+      "ply": 56,
+      "recorded_fatal_move": "c1b1",
+      "safe_alternatives": [
+        "c1d2",
+        "f6f1"
+      ],
+      "v35": {
+        "move": "c1b1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 587,
+          "report": "share=0.00048 rank=244"
+        },
+        "belief_size": 587,
+        "risk": {
+          "king_risk": 0.3066,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c1b1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 587,
+          "report": "share=0.00052 rank=222"
+        },
+        "belief_size": 587,
+        "risk": {
+          "king_risk": 0.3201,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "tmx681tf",
+      "opponent": "duck",
+      "ply": 58,
+      "recorded_fatal_move": "e1f1",
+      "safe_alternatives": [
+        "e1e2"
+      ],
+      "v35": {
+        "move": "e1f1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 58,
+          "particles": 8331,
+          "report": "share=0.00181 rank=40"
+        },
+        "belief_size": 8331,
+        "risk": {
+          "king_risk": 0.0375,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.59",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e1f1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 58,
+          "particles": 8331,
+          "report": "share=0.00197 rank=34"
+        },
+        "belief_size": 8331,
+        "risk": {
+          "king_risk": 0.0406,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.58",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "01ll19jx",
+      "opponent": "duck",
+      "ply": 61,
+      "recorded_fatal_move": "a6b7",
+      "safe_alternatives": [
+        "b6b5"
+      ],
+      "v35": {
+        "move": "a6b7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 61,
+          "particles": 200000,
+          "report": "share=0.00000 rank=14419"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0203,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.11",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "a6b7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 61,
+          "particles": 200000,
+          "report": "share=0.00003 rank=4410"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.058,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.18",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "wsldbdiq",
+      "opponent": "duck",
+      "ply": 43,
+      "recorded_fatal_move": "g8h6",
+      "safe_alternatives": [
+        "a5a4",
+        "a8a6",
+        "a8a7",
+        "a8b8",
+        "a8c8",
+        "a8d8",
+        "a8e8",
+        "b6a6"
+      ],
+      "v35": {
+        "move": "g8h6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 43,
+          "particles": 69729,
+          "report": "share=0.00000 rank=46193"
+        },
+        "belief_size": 69729,
+        "risk": {
+          "king_risk": 0.0001,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g8h6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 43,
+          "particles": 69729,
+          "report": "share=0.00000 rank=36953"
+        },
+        "belief_size": 69729,
+        "risk": {
+          "king_risk": 0.0003,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "sy8hdyx7",
+      "opponent": "duck",
+      "ply": 60,
+      "recorded_fatal_move": "d1e1",
+      "safe_alternatives": [
+        "d1c2",
+        "d1d2",
+        "d1e2"
+      ],
+      "v35": {
+        "move": "d1e1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 1370,
+          "report": "share=0.00012 rank=714"
+        },
+        "belief_size": 1370,
+        "risk": {
+          "king_risk": 0.1146,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.71",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "d1e1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 1370,
+          "report": "share=0.00011 rank=722"
+        },
+        "belief_size": 1370,
+        "risk": {
+          "king_risk": 0.1111,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.68",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "wo8wcn9q",
+      "opponent": "duck",
+      "ply": 59,
+      "recorded_fatal_move": "g8h8",
+      "safe_alternatives": [
+        "g8g7"
+      ],
+      "v35": {
+        "move": "g8f8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 21,
+          "report": "share=0.03331 rank=12"
+        },
+        "belief_size": 21,
+        "risk": {
+          "king_risk": 0.0333,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.85",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g8f8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 21,
+          "report": "share=0.03542 rank=11"
+        },
+        "belief_size": 21,
+        "risk": {
+          "king_risk": 0.0354,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.85",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "rzteq318",
+      "opponent": "Strongly Invisible",
+      "ply": 68,
+      "recorded_fatal_move": "b3b4",
+      "safe_alternatives": [
+        "a3a4",
+        "a3b4"
+      ],
+      "v35": {
+        "move": "b3b4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 68,
+          "particles": 2645,
+          "report": "share=0.00003 rank=949"
+        },
+        "belief_size": 2645,
+        "risk": {
+          "king_risk": 0.1207,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.39",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b3b4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 68,
+          "particles": 2645,
+          "report": "share=0.00003 rank=951"
+        },
+        "belief_size": 2645,
+        "risk": {
+          "king_risk": 0.1305,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.37",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "hq9powvg",
+      "opponent": "Decent Chess Bot",
+      "ply": 60,
+      "recorded_fatal_move": "g2g3",
+      "safe_alternatives": [
+        "b1b2",
+        "e2d1",
+        "e2f1"
+      ],
+      "v35": {
+        "move": "e2h5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 175964,
+          "report": "share=0.00000 rank=133948"
+        },
+        "belief_size": 175964,
+        "risk": {
+          "king_risk": 0.0001,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.34",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e2b5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 175964,
+          "report": "share=0.00000 rank=122385"
+        },
+        "belief_size": 175964,
+        "risk": {
+          "king_risk": 0.0001,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.51",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "e4bf4r9x",
+      "opponent": "duck",
+      "ply": 69,
+      "recorded_fatal_move": "h5h4",
+      "safe_alternatives": [
+        "f6e5",
+        "f6e7",
+        "f6f5"
+      ],
+      "v35": {
+        "move": "h5h4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 125757,
+          "report": "share=0.00000 rank=99365"
+        },
+        "belief_size": 125757,
+        "risk": {
+          "king_risk": 0.0259,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.86",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c5c4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 125757,
+          "report": "share=0.00000 rank=68572"
+        },
+        "belief_size": 125757,
+        "risk": {
+          "king_risk": 0.0541,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.94",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "rn2o84ub",
+      "opponent": "Strongly Invisible",
+      "ply": 60,
+      "recorded_fatal_move": "g4h5",
+      "safe_alternatives": [
+        "a3a4",
+        "b2b3",
+        "b2b4",
+        "c2c3",
+        "c2c4",
+        "e1a1",
+        "e1b1",
+        "e1c1"
+      ],
+      "v35": {
+        "move": "g4h5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 4275,
+          "report": "share=0.00006 rank=935"
+        },
+        "belief_size": 4275,
+        "risk": {
+          "king_risk": 0.0098,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-4.88",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e2e4",
+        "immediate_fatal": false,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 60,
+          "particles": 4275,
+          "report": "share=0.00006 rank=916"
+        },
+        "belief_size": 4275,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "tib8naw6",
+      "opponent": "Instructors",
+      "ply": 57,
+      "recorded_fatal_move": "f3g2",
+      "safe_alternatives": [
+        "f6e5",
+        "f6e6",
+        "f6e7"
+      ],
+      "v35": {
+        "move": "g7g5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 57,
+          "particles": 11117,
+          "report": "share=0.00039 rank=485"
+        },
+        "belief_size": 11117,
+        "risk": {
+          "king_risk": 0.4006,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.51",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c5c4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 57,
+          "particles": 11117,
+          "report": "share=0.00039 rank=470"
+        },
+        "belief_size": 11117,
+        "risk": {
+          "king_risk": 0.4028,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.50",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "4m4ry70f",
+      "opponent": "Decent Chess Bot",
+      "ply": 69,
+      "recorded_fatal_move": "h5h4",
+      "safe_alternatives": [
+        "h6g6",
+        "h6h7"
+      ],
+      "v35": {
+        "move": "a5a4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 29120,
+          "report": "share=0.00016 rank=879"
+        },
+        "belief_size": 29120,
+        "risk": {
+          "king_risk": 0.2819,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.69",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "a5a4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 29120,
+          "report": "share=0.00015 rank=907"
+        },
+        "belief_size": 29120,
+        "risk": {
+          "king_risk": 0.3054,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.67",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "ggt2o5sl",
+      "opponent": "Instructors",
+      "ply": 53,
+      "recorded_fatal_move": "e4e3",
+      "safe_alternatives": [
+        "f8e7"
+      ],
+      "v35": {
+        "move": "e4e3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 555,
+          "report": "share=0.00143 rank=175"
+        },
+        "belief_size": 555,
+        "risk": {
+          "king_risk": 0.0103,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.12",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e4e3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 555,
+          "report": "share=0.00173 rank=145"
+        },
+        "belief_size": 555,
+        "risk": {
+          "king_risk": 0.0128,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.12",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "xxi35gh1",
+      "opponent": "Decent Chess Bot",
+      "ply": 57,
+      "recorded_fatal_move": "g7f6",
+      "safe_alternatives": [
+        "a5a4",
+        "e6e5",
+        "f5f4",
+        "g6g5",
+        "g7f7",
+        "g7h6",
+        "h7h5",
+        "h7h6"
+      ],
+      "v35": {
+        "move": "g7h6",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 57,
+          "particles": 128485,
+          "report": "share=0.00000 rank=17176"
+        },
+        "belief_size": 128485,
+        "risk": {
+          "king_risk": 0.026,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.49",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g7h6",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 57,
+          "particles": 128485,
+          "report": "share=0.00000 rank=6449"
+        },
+        "belief_size": 128485,
+        "risk": {
+          "king_risk": 0.0253,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.61",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "sufk5em2",
+      "opponent": "duck",
+      "ply": 49,
+      "recorded_fatal_move": "b6c7",
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b6a5",
+        "b6a6",
+        "b6b5",
+        "b6c5",
+        "b6c6",
+        "g6g5"
+      ],
+      "v35": {
+        "move": "b6c7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 49,
+          "particles": 352,
+          "report": "share=0.00251 rank=89"
+        },
+        "belief_size": 352,
+        "risk": {
+          "king_risk": 0.0687,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.26",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b6c7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 49,
+          "particles": 352,
+          "report": "share=0.00303 rank=78"
+        },
+        "belief_size": 352,
+        "risk": {
+          "king_risk": 0.0753,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.27",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "4g2uv5o5",
+      "opponent": "duck",
+      "ply": 56,
+      "recorded_fatal_move": "g2f1",
+      "safe_alternatives": [
+        "a2a3",
+        "a2a4",
+        "b4b5",
+        "f2f3",
+        "f2f4",
+        "g2f3",
+        "g2g3"
+      ],
+      "v35": {
+        "move": "g2f1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 22877,
+          "report": "share=0.00001 rank=4721"
+        },
+        "belief_size": 22877,
+        "risk": {
+          "king_risk": 0.004,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.04",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g2f1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 22877,
+          "report": "share=0.00001 rank=4014"
+        },
+        "belief_size": 22877,
+        "risk": {
+          "king_risk": 0.0064,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.05",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "5lzg9oil",
+      "opponent": "Instructors",
+      "ply": 70,
+      "recorded_fatal_move": "d1e2",
+      "safe_alternatives": [
+        "f1e2",
+        "f1f2",
+        "f1g1"
+      ],
+      "v35": {
+        "move": "f3f2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 70,
+          "particles": 1890,
+          "report": "share=0.00005 rank=418"
+        },
+        "belief_size": 1890,
+        "risk": {
+          "king_risk": 0.4049,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.39",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f1e2",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 70,
+          "particles": 1888,
+          "report": "share=0.00005 rank=422"
+        },
+        "belief_size": 1888,
+        "risk": {
+          "king_risk": 0.3725,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "0ghuci4v",
+      "opponent": "Strongly Invisible",
+      "ply": 19,
+      "recorded_fatal_move": "b8c6",
+      "safe_alternatives": [
+        "e8d7",
+        "e8e7"
+      ],
+      "v35": {
+        "move": "b8c6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 19,
+          "particles": 950,
+          "report": "share=0.00090 rank=65"
+        },
+        "belief_size": 950,
+        "risk": {
+          "king_risk": 0.0009,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b8a6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 19,
+          "particles": 950,
+          "report": "share=0.00097 rank=61"
+        },
+        "belief_size": 950,
+        "risk": {
+          "king_risk": 0.001,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "qurbdkrq",
+      "opponent": "Strongly Invisible",
+      "ply": 39,
+      "recorded_fatal_move": "f8d8",
+      "safe_alternatives": [
+        "c8b8",
+        "c8d8",
+        "f7f5"
+      ],
+      "v35": {
+        "move": "f8e8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 39,
+          "particles": 20684,
+          "report": "share=0.00001 rank=7715"
+        },
+        "belief_size": 20684,
+        "risk": {
+          "king_risk": 0.0066,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.51",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f7f5",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 39,
+          "particles": 20684,
+          "report": "share=0.00001 rank=7718"
+        },
+        "belief_size": 20684,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.50",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "0dbrdj9l",
+      "opponent": "Decent Chess Bot",
+      "ply": 58,
+      "recorded_fatal_move": "a7a1",
+      "safe_alternatives": [
+        "c4f1",
+        "g1h2"
+      ],
+      "v35": {
+        "move": "a7a1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 58,
+          "particles": 806,
+          "report": "share=0.00205 rank=115"
+        },
+        "belief_size": 806,
+        "risk": {
+          "king_risk": 0.0607,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.73",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "a7a1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 58,
+          "particles": 806,
+          "report": "share=0.00202 rank=114"
+        },
+        "belief_size": 806,
+        "risk": {
+          "king_risk": 0.0636,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.72",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "qzve2h6y",
+      "opponent": "Instructors",
+      "ply": 67,
+      "recorded_fatal_move": "a5a4",
+      "safe_alternatives": [
+        "h7g6",
+        "h7g8",
+        "h7h6",
+        "h7h8"
+      ],
+      "v35": {
+        "move": "a5a4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 40468,
+          "report": "share=0.00001 rank=6646"
+        },
+        "belief_size": 40468,
+        "risk": {
+          "king_risk": 0.003,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.29",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h7h6",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 67,
+          "particles": 40468,
+          "report": "share=0.00002 rank=5379"
+        },
+        "belief_size": 40468,
+        "risk": {
+          "king_risk": 0.0056,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.50",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "g194c6qs",
+      "opponent": "duck",
+      "ply": 54,
+      "recorded_fatal_move": "b3c2",
+      "safe_alternatives": [
+        "a2a3",
+        "a2a4",
+        "b3a4",
+        "b3b4",
+        "d1a1",
+        "d1b1",
+        "d1c1",
+        "d1d2"
+      ],
+      "v35": {
+        "move": "b3c2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 54,
+          "particles": 40,
+          "report": "share=0.04217 rank=8"
+        },
+        "belief_size": 40,
+        "risk": {
+          "king_risk": 0.1118,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.58",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b3c2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 54,
+          "particles": 40,
+          "report": "share=0.04334 rank=7"
+        },
+        "belief_size": 40,
+        "risk": {
+          "king_risk": 0.1096,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.62",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "9j1e98y6",
+      "opponent": "Strongly Invisible",
+      "ply": 53,
+      "recorded_fatal_move": "c3c2",
+      "safe_alternatives": [
+        "e7d8",
+        "e7e8",
+        "e7f8"
+      ],
+      "v35": {
+        "move": "c3c2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 110411,
+          "report": "share=0.00000 rank=45183"
+        },
+        "belief_size": 110411,
+        "risk": {
+          "king_risk": 0.0005,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.10",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c3b2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 110411,
+          "report": "share=0.00000 rank=41578"
+        },
+        "belief_size": 110411,
+        "risk": {
+          "king_risk": 0.0006,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.53",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "qv7s3yas",
+      "opponent": "duck",
+      "ply": 27,
+      "recorded_fatal_move": "c5d4",
+      "safe_alternatives": [
+        "b7b5",
+        "e5c6",
+        "e5d7",
+        "e8c8",
+        "e8d8",
+        "e8e7",
+        "e8f8",
+        "e8g8"
+      ],
+      "v35": {
+        "move": "c5d4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 27,
+          "particles": 400,
+          "report": "share=0.00302 rank=72"
+        },
+        "belief_size": 400,
+        "risk": {
+          "king_risk": 0.003,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-1.30",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c5d4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 27,
+          "particles": 400,
+          "report": "share=0.00328 rank=72"
+        },
+        "belief_size": 400,
+        "risk": {
+          "king_risk": 0.0033,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-1.30",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "9jedtbqc",
+      "opponent": "Decent Chess Bot",
+      "ply": 62,
+      "recorded_fatal_move": "b2b4",
+      "safe_alternatives": [
+        "c2b1",
+        "c2c1",
+        "c2d1"
+      ],
+      "v35": {
+        "move": "b2b4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 60,
+          "report": "share=0.07475 rank=3"
+        },
+        "belief_size": 60,
+        "risk": {
+          "king_risk": 0.0748,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.01",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b2b3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 60,
+          "report": "share=0.07872 rank=3"
+        },
+        "belief_size": 60,
+        "risk": {
+          "king_risk": 0.0787,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.01",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "wfen8uqi",
+      "opponent": "Strongly Invisible",
+      "ply": 53,
+      "recorded_fatal_move": "b2a2",
+      "safe_alternatives": [
+        "e6g4",
+        "g7f8",
+        "g7h6",
+        "g7h8"
+      ],
+      "v35": {
+        "move": "b2a2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 1445,
+          "report": "share=0.01223 rank=10"
+        },
+        "belief_size": 1445,
+        "risk": {
+          "king_risk": 0.0146,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.98",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b2a2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 1445,
+          "report": "share=0.01321 rank=10"
+        },
+        "belief_size": 1445,
+        "risk": {
+          "king_risk": 0.0157,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.98",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "rjaerwc3",
+      "opponent": "Instructors",
+      "ply": 69,
+      "recorded_fatal_move": "b6b5",
+      "safe_alternatives": [
+        "h6g5",
+        "h6g7"
+      ],
+      "v35": {
+        "move": "b6b5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 152,
+          "report": "share=0.00212 rank=86"
+        },
+        "belief_size": 152,
+        "risk": {
+          "king_risk": 0.0022,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.08",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b6b5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 152,
+          "report": "share=0.00272 rank=81"
+        },
+        "belief_size": 152,
+        "risk": {
+          "king_risk": 0.0029,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.09",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "p4eg4e17",
+      "opponent": "Instructors",
+      "ply": 57,
+      "recorded_fatal_move": "f7f6",
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "e2c1",
+        "e2c3",
+        "e2d4",
+        "e2f4",
+        "e2g1",
+        "e2g3"
+      ],
+      "v35": {
+        "move": "f7f6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 57,
+          "particles": 548,
+          "report": "share=0.05168 rank=6"
+        },
+        "belief_size": 548,
+        "risk": {
+          "king_risk": 0.074,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.48",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f7f6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 57,
+          "particles": 548,
+          "report": "share=0.06294 rank=5"
+        },
+        "belief_size": 548,
+        "risk": {
+          "king_risk": 0.0895,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.48",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "7aov7279",
+      "opponent": "duck",
+      "ply": 65,
+      "recorded_fatal_move": "h6h5",
+      "safe_alternatives": [
+        "f8g7"
+      ],
+      "v35": {
+        "move": "c8e8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 200000,
+          "report": "share=0.00000 rank=79510"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0143,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.22",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h6h5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 200000,
+          "report": "share=0.00000 rank=40450"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0186,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.37",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "uo17elr2",
+      "opponent": "Decent Chess Bot",
+      "ply": 64,
+      "recorded_fatal_move": "g2g1",
+      "safe_alternatives": [
+        "a2a3",
+        "a2a4",
+        "e3e4",
+        "g2f2",
+        "g2g3",
+        "h2h3",
+        "h2h4"
+      ],
+      "v35": {
+        "move": "e3e4",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 64,
+          "particles": 9077,
+          "report": "share=0.00002 rank=6722"
+        },
+        "belief_size": 9077,
+        "risk": {
+          "king_risk": 0.0015,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.21",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g2h1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 64,
+          "particles": 9077,
+          "report": "share=0.00002 rank=6396"
+        },
+        "belief_size": 9077,
+        "risk": {
+          "king_risk": 0.0003,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.06",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "1k5t2uvl",
+      "opponent": "Decent Chess Bot",
+      "ply": 59,
+      "recorded_fatal_move": "a3a2",
+      "safe_alternatives": [
+        "e7f8",
+        "e8d7"
+      ],
+      "v35": {
+        "move": "a3a2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 20270,
+          "report": "share=0.00009 rank=1943"
+        },
+        "belief_size": 20270,
+        "risk": {
+          "king_risk": 0.0075,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.01",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e7f8",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 59,
+          "particles": 20270,
+          "report": "share=0.00010 rank=1816"
+        },
+        "belief_size": 20270,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "xhv5wh8a",
+      "opponent": "Strongly Invisible",
+      "ply": 67,
+      "recorded_fatal_move": "b4b3",
+      "safe_alternatives": [
+        "g8g7"
+      ],
+      "v35": {
+        "move": "b4b3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 155908,
+          "report": "share=0.00001 rank=7620"
+        },
+        "belief_size": 155908,
+        "risk": {
+          "king_risk": 0.0192,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.77",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h7h6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 155908,
+          "report": "share=0.00001 rank=5677"
+        },
+        "belief_size": 155908,
+        "risk": {
+          "king_risk": 0.0369,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.97",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "5wsart3r",
+      "opponent": "Decent Chess Bot",
+      "ply": 48,
+      "recorded_fatal_move": "f2g3",
+      "safe_alternatives": [
+        "b2b3",
+        "b2b4",
+        "c2c3",
+        "c2c4",
+        "e4a4",
+        "e4b4",
+        "e4c4",
+        "e4c6"
+      ],
+      "v35": {
+        "move": "f2g3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 48,
+          "particles": 98,
+          "report": "share=0.06901 rank=2"
+        },
+        "belief_size": 98,
+        "risk": {
+          "king_risk": 0.1549,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.78",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f2g3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 48,
+          "particles": 98,
+          "report": "share=0.06899 rank=2"
+        },
+        "belief_size": 98,
+        "risk": {
+          "king_risk": 0.1502,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.78",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "figcf5a8",
+      "opponent": "duck",
+      "ply": 62,
+      "recorded_fatal_move": "h2g3",
+      "safe_alternatives": [
+        "b7b8b",
+        "b7b8n",
+        "b7b8q",
+        "b7b8r",
+        "f3f4",
+        "g2g3",
+        "g2g4",
+        "h6g7"
+      ],
+      "v35": {
+        "move": "h6g7",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 62,
+          "particles": 31843,
+          "report": "share=0.00000 rank=6280"
+        },
+        "belief_size": 31843,
+        "risk": {
+          "king_risk": 0.0054,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h2g3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 31843,
+          "report": "share=0.00000 rank=5614"
+        },
+        "belief_size": 31843,
+        "risk": {
+          "king_risk": 0.0046,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.98",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "lftf1jwc",
+      "opponent": "duck",
+      "ply": 25,
+      "recorded_fatal_move": "e5g6",
+      "safe_alternatives": [
+        "e7d6"
+      ],
+      "v35": {
+        "move": "e5g6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 25,
+          "particles": 2525,
+          "report": "share=0.00007 rank=423"
+        },
+        "belief_size": 2525,
+        "risk": {
+          "king_risk": 0.0645,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-8.42",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e5g6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 25,
+          "particles": 2325,
+          "report": "share=0.00007 rank=404"
+        },
+        "belief_size": 2325,
+        "risk": {
+          "king_risk": 0.0695,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-8.37",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "053pp843",
+      "opponent": "Instructors",
+      "ply": 67,
+      "recorded_fatal_move": "d3b2",
+      "safe_alternatives": [
+        "h8h7"
+      ],
+      "v35": {
+        "move": "d3f2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 1426,
+          "report": "share=0.00164 rank=70"
+        },
+        "belief_size": 1426,
+        "risk": {
+          "king_risk": 0.3297,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "2.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "d3e5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 1426,
+          "report": "share=0.00166 rank=68"
+        },
+        "belief_size": 1426,
+        "risk": {
+          "king_risk": 0.3394,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.82",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "m8ktf3ox",
+      "opponent": "duck",
+      "ply": 62,
+      "recorded_fatal_move": "g2h3",
+      "safe_alternatives": [
+        "a1a2",
+        "a1a3",
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a1e1",
+        "a1f1",
+        "a1g1"
+      ],
+      "v35": {
+        "move": "g2h3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 97,
+          "report": "share=0.00436 rank=22"
+        },
+        "belief_size": 97,
+        "risk": {
+          "king_risk": 0.0549,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.72",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g2h3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 62,
+          "particles": 97,
+          "report": "share=0.00504 rank=22"
+        },
+        "belief_size": 97,
+        "risk": {
+          "king_risk": 0.0624,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.68",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "ecoafdaa",
+      "opponent": "Strongly Invisible",
+      "ply": 65,
+      "recorded_fatal_move": "d5d4",
+      "safe_alternatives": [
+        "h7h8"
+      ],
+      "v35": {
+        "move": "h7g7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 3374,
+          "report": "share=0.00019 rank=964"
+        },
+        "belief_size": 3374,
+        "risk": {
+          "king_risk": 0.1515,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.26",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h7g7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 3374,
+          "report": "share=0.00024 rank=808"
+        },
+        "belief_size": 3374,
+        "risk": {
+          "king_risk": 0.1597,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.26",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "gk4dgsit",
+      "opponent": "Decent Chess Bot",
+      "ply": 65,
+      "recorded_fatal_move": "h7g7",
+      "safe_alternatives": [
+        "a5a4",
+        "f7f5",
+        "f7f6",
+        "h6h5",
+        "h7h8"
+      ],
+      "v35": {
+        "move": "a5a4",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 65,
+          "particles": 3449,
+          "report": "share=0.00049 rank=560"
+        },
+        "belief_size": 3449,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.27",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h7g7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 3449,
+          "report": "share=0.00060 rank=502"
+        },
+        "belief_size": 3449,
+        "risk": {
+          "king_risk": 0.0092,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.13",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "m8vt44ho",
+      "opponent": "duck",
+      "ply": 63,
+      "recorded_fatal_move": "h5h4",
+      "safe_alternatives": [
+        "d8d7",
+        "d8e7"
+      ],
+      "v35": {
+        "move": "h5h4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 63,
+          "particles": 3957,
+          "report": "share=0.01265 rank=2"
+        },
+        "belief_size": 3957,
+        "risk": {
+          "king_risk": 0.1331,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.74",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f5f4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 63,
+          "particles": 3957,
+          "report": "share=0.01272 rank=4"
+        },
+        "belief_size": 3957,
+        "risk": {
+          "king_risk": 0.1323,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.86",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "mhzsv4k3",
+      "opponent": "duck",
+      "ply": 59,
+      "recorded_fatal_move": "e8d7",
+      "safe_alternatives": [
+        "a6a5",
+        "b7b5",
+        "b7b6",
+        "d8a8",
+        "d8b8",
+        "d8c8",
+        "d8d6",
+        "d8d7"
+      ],
+      "v35": {
+        "move": "e8d7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 3114,
+          "report": "share=0.00000 rank=2603"
+        },
+        "belief_size": 3114,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.38",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e8d7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 3114,
+          "report": "share=0.00000 rank=2567"
+        },
+        "belief_size": 3114,
+        "risk": {
+          "king_risk": 0.0001,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.38",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "jd27fhfx",
+      "opponent": "Strongly Invisible",
+      "ply": 53,
+      "recorded_fatal_move": "b7b5",
+      "safe_alternatives": [
+        "e8d7",
+        "e8f7"
+      ],
+      "v35": {
+        "move": "h7h5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 402,
+          "report": "share=0.00147 rank=146"
+        },
+        "belief_size": 402,
+        "risk": {
+          "king_risk": 0.0129,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.38",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b7b6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 402,
+          "report": "share=0.00156 rank=145"
+        },
+        "belief_size": 402,
+        "risk": {
+          "king_risk": 0.0136,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.22",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "orkivj8b",
+      "opponent": "Strongly Invisible",
+      "ply": 68,
+      "recorded_fatal_move": "g1g3",
+      "safe_alternatives": [
+        "g1g4",
+        "h3g2",
+        "h3g3",
+        "h3h4"
+      ],
+      "v35": {
+        "move": "g1g3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 68,
+          "particles": 645,
+          "report": "share=0.00235 rank=63"
+        },
+        "belief_size": 645,
+        "risk": {
+          "king_risk": 0.2732,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.53",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g1g3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 68,
+          "particles": 645,
+          "report": "share=0.00211 rank=66"
+        },
+        "belief_size": 645,
+        "risk": {
+          "king_risk": 0.2535,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.56",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "fs0aub8s",
+      "opponent": "Decent Chess Bot",
+      "ply": 69,
+      "recorded_fatal_move": "f5d7",
+      "safe_alternatives": [
+        "f5c8",
+        "f5f8",
+        "h8g7"
+      ],
+      "v35": {
+        "move": "f5d7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 69,
+          "particles": 383,
+          "report": "share=0.00073 rank=92"
+        },
+        "belief_size": 383,
+        "risk": {
+          "king_risk": 0.0067,
+          "queen_risk": "0.020",
+          "queen_risk_sharp": "0.005",
+          "material_risk": "0.04",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f5f8",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 69,
+          "particles": 383,
+          "report": "share=0.00078 rank=92"
+        },
+        "belief_size": 383,
+        "risk": {
+          "king_risk": 0.0,
+          "queen_risk": "0.019",
+          "queen_risk_sharp": "0.007",
+          "material_risk": "0.32",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "wq12zy26",
+      "opponent": "Decent Chess Bot",
+      "ply": 65,
+      "recorded_fatal_move": "f6e7",
+      "safe_alternatives": [
+        "f6e5",
+        "f6e6",
+        "f6g6"
+      ],
+      "v35": {
+        "move": "f6e7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 31,
+          "report": "share=0.04598 rank=8"
+        },
+        "belief_size": 31,
+        "risk": {
+          "king_risk": 0.1231,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.62",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f6e7",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 65,
+          "particles": 31,
+          "report": "share=0.04934 rank=8"
+        },
+        "belief_size": 31,
+        "risk": {
+          "king_risk": 0.1284,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.55",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "1qnsuo1a",
+      "opponent": "Instructors",
+      "ply": 45,
+      "recorded_fatal_move": "a7a6",
+      "safe_alternatives": [
+        "c8c7"
+      ],
+      "v35": {
+        "move": "a7a6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 45,
+          "particles": 466,
+          "report": "share=0.00531 rank=58"
+        },
+        "belief_size": 466,
+        "risk": {
+          "king_risk": 0.0053,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.57",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g7g5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 45,
+          "particles": 466,
+          "report": "share=0.00579 rank=52"
+        },
+        "belief_size": 466,
+        "risk": {
+          "king_risk": 0.0058,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.77",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "6jpnq94e",
+      "opponent": "Decent Chess Bot",
+      "ply": 61,
+      "recorded_fatal_move": "b6c5",
+      "safe_alternatives": [
+        "a8a7"
+      ],
+      "v35": {
+        "move": "b6c5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 61,
+          "particles": 200000,
+          "report": "share=0.00001 rank=16467"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0008,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-2.85",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b6c5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 61,
+          "particles": 200000,
+          "report": "share=0.00002 rank=8893"
+        },
+        "belief_size": 200000,
+        "risk": {
+          "king_risk": 0.0016,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-2.83",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "g5mjya0h",
+      "opponent": "duck",
+      "ply": 61,
+      "recorded_fatal_move": "b6b5",
+      "safe_alternatives": [
+        "h6g5"
+      ],
+      "v35": {
+        "move": "h5h4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 61,
+          "particles": 26809,
+          "report": "share=0.00000 rank=2897"
+        },
+        "belief_size": 26809,
+        "risk": {
+          "king_risk": 0.0059,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.41",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "b6b5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 61,
+          "particles": 26809,
+          "report": "share=0.00000 rank=2749"
+        },
+        "belief_size": 26809,
+        "risk": {
+          "king_risk": 0.0057,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.27",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "onimatrd",
+      "opponent": "Strongly Invisible",
+      "ply": 53,
+      "recorded_fatal_move": "f2d2",
+      "safe_alternatives": [
+        "e8e7"
+      ],
+      "v35": {
+        "move": "f2d2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 7,
+          "report": "share=0.23314 rank=1"
+        },
+        "belief_size": 7,
+        "risk": {
+          "king_risk": 0.2331,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.60",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "f2d2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 7,
+          "report": "share=0.22374 rank=1"
+        },
+        "belief_size": 7,
+        "risk": {
+          "king_risk": 0.2237,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.63",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "g5xz6er2",
+      "opponent": "Decent Chess Bot",
+      "ply": 59,
+      "recorded_fatal_move": "d8e8",
+      "safe_alternatives": [
+        "a5a4",
+        "c6c5",
+        "d8c7",
+        "d8c8",
+        "e7e6",
+        "g6g5",
+        "h7h5",
+        "h7h6"
+      ],
+      "v35": {
+        "move": "d8e8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 59,
+          "particles": 432,
+          "report": "share=0.00024 rank=242"
+        },
+        "belief_size": 432,
+        "risk": {
+          "king_risk": 0.0009,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.05",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "d8c8",
+        "immediate_fatal": false,
+        "listed_safe_alternative": true,
+        "truth_rank": {
+          "view": 59,
+          "particles": 432,
+          "report": "share=0.00024 rank=243"
+        },
+        "belief_size": 432,
+        "risk": {
+          "king_risk": 0.0013,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": true
+    },
+    {
+      "game": "1w0ivuae",
+      "opponent": "Decent Chess Bot",
+      "ply": 56,
+      "recorded_fatal_move": "f3g5",
+      "safe_alternatives": [
+        "d2c1",
+        "d2d1",
+        "d2d3",
+        "d2e1"
+      ],
+      "v35": {
+        "move": "f3g5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 1054,
+          "report": "share=0.00006 rank=371"
+        },
+        "belief_size": 1054,
+        "risk": {
+          "king_risk": 0.0069,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.04",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h6h1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 56,
+          "particles": 1054,
+          "report": "share=0.00006 rank=365"
+        },
+        "belief_size": 1054,
+        "risk": {
+          "king_risk": 0.0073,
+          "queen_risk": "0.006",
+          "queen_risk_sharp": "0.002",
+          "material_risk": "0.05",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "87j82hyp",
+      "opponent": "Decent Chess Bot",
+      "ply": 41,
+      "recorded_fatal_move": "g6f8",
+      "safe_alternatives": [
+        "b7b5",
+        "c7c6",
+        "e8f8"
+      ],
+      "v35": {
+        "move": "g6f8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 41,
+          "particles": 2137,
+          "report": "share=0.00020 rank=507"
+        },
+        "belief_size": 2137,
+        "risk": {
+          "king_risk": 0.0102,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.07",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "e7d8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 41,
+          "particles": 2137,
+          "report": "share=0.00018 rank=437"
+        },
+        "belief_size": 2137,
+        "risk": {
+          "king_risk": 0.0102,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.06",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "sippfoaf",
+      "opponent": "Strongly Invisible",
+      "ply": 53,
+      "recorded_fatal_move": "e4c3",
+      "safe_alternatives": [
+        "g8g7"
+      ],
+      "v35": {
+        "move": "c8a8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 4,
+          "report": "share=0.47936 rank=1"
+        },
+        "belief_size": 4,
+        "risk": {
+          "king_risk": 0.4794,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c8a8",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 53,
+          "particles": 4,
+          "report": "share=0.45099 rank=2"
+        },
+        "belief_size": 4,
+        "risk": {
+          "king_risk": 0.451,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "teyfakqk",
+      "opponent": "Decent Chess Bot",
+      "ply": 50,
+      "recorded_fatal_move": "a2a4",
+      "safe_alternatives": [
+        "b1c2"
+      ],
+      "v35": {
+        "move": "h3h1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 50,
+          "particles": 322,
+          "report": "share=0.00782 rank=31"
+        },
+        "belief_size": 322,
+        "risk": {
+          "king_risk": 0.0169,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.92",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "h3h1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 50,
+          "particles": 322,
+          "report": "share=0.00889 rank=25"
+        },
+        "belief_size": 322,
+        "risk": {
+          "king_risk": 0.0196,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.91",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "yrp18nyi",
+      "opponent": "Strongly Invisible",
+      "ply": 66,
+      "recorded_fatal_move": "h2g2",
+      "safe_alternatives": [
+        "h2h3"
+      ],
+      "v35": {
+        "move": "h2g2",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 66,
+          "particles": 8150,
+          "report": "share=0.00004 rank=1426"
+        },
+        "belief_size": 8150,
+        "risk": {
+          "king_risk": 0.2541,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.31",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "g3g4",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 66,
+          "particles": 8150,
+          "report": "share=0.00004 rank=1414"
+        },
+        "belief_size": 8150,
+        "risk": {
+          "king_risk": 0.2599,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.77",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "ghtd43iy",
+      "opponent": "Instructors",
+      "ply": 67,
+      "recorded_fatal_move": "c4d3",
+      "safe_alternatives": [
+        "g8f7",
+        "g8g7",
+        "g8h7"
+      ],
+      "v35": {
+        "move": "c4d3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 143898,
+          "report": "share=0.00000 rank=26349"
+        },
+        "belief_size": 143898,
+        "risk": {
+          "king_risk": 0.0004,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c4c3",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 67,
+          "particles": 143898,
+          "report": "share=0.00000 rank=20785"
+        },
+        "belief_size": 143898,
+        "risk": {
+          "king_risk": 0.0009,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "1.00",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "m1jrlvze",
+      "opponent": "Instructors",
+      "ply": 49,
+      "recorded_fatal_move": "f5c2",
+      "safe_alternatives": [
+        "c8c7"
+      ],
+      "v35": {
+        "move": "b7b6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 49,
+          "particles": 611,
+          "report": "share=0.00219 rank=93"
+        },
+        "belief_size": 611,
+        "risk": {
+          "king_risk": 0.0552,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.31",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "c6c5",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 49,
+          "particles": 611,
+          "report": "share=0.00234 rank=85"
+        },
+        "belief_size": 611,
+        "risk": {
+          "king_risk": 0.0565,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.74",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": true,
+      "fatality_changed": false
+    },
+    {
+      "game": "bev10tfo",
+      "opponent": "Instructors",
+      "ply": 66,
+      "recorded_fatal_move": "a1g1",
+      "safe_alternatives": [
+        "h2g1",
+        "h2g2"
+      ],
+      "v35": {
+        "move": "a1g1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 66,
+          "particles": 44,
+          "report": "share=0.09624 rank=1"
+        },
+        "belief_size": 44,
+        "risk": {
+          "king_risk": 0.193,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.08",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "a1g1",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 66,
+          "particles": 44,
+          "report": "share=0.10503 rank=1"
+        },
+        "belief_size": 44,
+        "risk": {
+          "king_risk": 0.2028,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.08",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    },
+    {
+      "game": "4057x5np",
+      "opponent": "Decent Chess Bot",
+      "ply": 45,
+      "recorded_fatal_move": "d5e6",
+      "safe_alternatives": [
+        "d5d8",
+        "g8h7"
+      ],
+      "v35": {
+        "move": "d5e6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 45,
+          "particles": 151,
+          "report": "share=0.00066 rank=64"
+        },
+        "belief_size": 151,
+        "risk": {
+          "king_risk": 0.0376,
+          "queen_risk": "0.002",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.03",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "candidate": {
+        "move": "d5e6",
+        "immediate_fatal": true,
+        "listed_safe_alternative": false,
+        "truth_rank": {
+          "view": 45,
+          "particles": 151,
+          "report": "share=0.00072 rank=64"
+        },
+        "belief_size": 151,
+        "risk": {
+          "king_risk": 0.04,
+          "queen_risk": "0.002",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.03",
+          "chosen": true
+        },
+        "runtime_seconds": null
+      },
+      "choice_changed": false,
+      "fatality_changed": false
+    }
+  ]
+}

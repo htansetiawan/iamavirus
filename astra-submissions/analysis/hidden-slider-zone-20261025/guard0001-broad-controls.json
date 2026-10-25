@@ -1,0 +1,658 @@
+{
+  "classification": "recorded nonfatal king-move controls with at least one known immediate-safe nonking alternative; fixed-prefix false-fatal diagnostic, not representative game sample",
+  "source_audit": "astra-submissions/analysis/standing-trend-20261024/king-choice-audit.json",
+  "excluded_loss_target_games": 91,
+  "count": 23,
+  "selection_rule": "Choose the earliest-ply entry from king_moves_with_safe_nonking_examples for each unique game after excluding all games in the 91 hidden-arrival loss target set. safe_alternatives is the source example_safe_nonking list.",
+  "examples": [
+    {
+      "game": "o075y85b",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 10,
+      "move": "e1g1",
+      "fatal": false,
+      "safe_nonking_count": 31,
+      "safe_count": 34,
+      "legal_count": 34,
+      "board": "R-BQK--RPPP-PPBP--N---PN---P-------p--------pn--ppp-bppprnbq-rk-",
+      "observation": "R-BQK--RPPP-PPBP--N---PN--?P---??-?p??-????????-????????????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a2a3",
+        "a2a4",
+        "b2b3",
+        "b2b4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a2a3",
+        "a2a4",
+        "b2b3",
+        "b2b4"
+      ]
+    },
+    {
+      "game": "tpik12ax",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 13,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 38,
+      "safe_count": 42,
+      "legal_count": 42,
+      "board": "R-BQK--RPP---PPP--NBPN-----P-------p------pb-n--pp---ppprnbqk--r",
+      "observation": "???????????????P-?????--?-??---?---p------pb-n--pp---ppprnbqk--r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "b8a6"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "b8a6"
+      ]
+    },
+    {
+      "game": "xg1eornf",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 13,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 20,
+      "safe_count": 24,
+      "legal_count": 30,
+      "board": "R--QK--RPPP-NPPP--N--------P-P---B-p------n-pn--ppp--pppr-bqk--r",
+      "observation": "?????????????????????????-?P-?-?-??p-?----n-pn--ppp--pppr-bqk--r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "b7b6",
+        "c8d7"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "b7b6",
+        "c8d7"
+      ]
+    },
+    {
+      "game": "e79axgvh",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 14,
+      "move": "e1c1",
+      "fatal": false,
+      "safe_nonking_count": 46,
+      "safe_count": 49,
+      "legal_count": 49,
+      "board": "R---KBNRPPP-PPPP---Q---------B-----p------p-----pp--bppprnbqk--r",
+      "observation": "R---KBNRPPP-PPPP---Q---------B--?-?p---?-??-??--??-????p?n??????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "62xxz8x6",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 15,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 37,
+      "safe_count": 41,
+      "legal_count": 41,
+      "board": "R-BQ-RK-PP---PPP--NBPN-----P-------p-----ppb-n--p----ppprnbqk--r",
+      "observation": "???????????????P-?????--?-??---?---p-----ppb-n--p----ppprnbqk--r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "b6b5",
+        "b8a6",
+        "b8d7"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b6b5",
+        "b8a6",
+        "b8d7"
+      ]
+    },
+    {
+      "game": "ayrkq2zf",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 16,
+      "move": "e1g1",
+      "fatal": false,
+      "safe_nonking_count": 34,
+      "safe_count": 37,
+      "legal_count": 37,
+      "board": "R-BQK--R-P-N-PP---PBPN-PP--Pn------p-p----nbp---ppp---ppr-bq-rk-",
+      "observation": "R-BQK--R-P-N-PP---PBPN-PP--Pn?----??-?-?-???????????????????????",
+      "example_safe_nonking": [
+        "a1a2",
+        "a1a3",
+        "a1b1",
+        "a4a5",
+        "b2b3"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1a2",
+        "a1a3",
+        "a1b1",
+        "a4a5",
+        "b2b3"
+      ]
+    },
+    {
+      "game": "mivspw22",
+      "opponent": "Decent Chess Bot",
+      "outcome": "win",
+      "ply": 17,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 29,
+      "safe_count": 32,
+      "legal_count": 32,
+      "board": "R--Q-RK-PPPB--PP--NBP------P-P-----pN-----nbpn--pppbqppp-r--k--r",
+      "observation": "????????????????-????????-?P-?-?---pN?----nbpn--pppbqppp-r--k--r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "b8a8"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "b8a8"
+      ]
+    },
+    {
+      "game": "1bw9tnm0",
+      "opponent": "duck",
+      "outcome": "win",
+      "ply": 18,
+      "move": "e1c1",
+      "fatal": false,
+      "safe_nonking_count": 25,
+      "safe_count": 28,
+      "legal_count": 28,
+      "board": "R---KB-RPPP-NPPP--N---------p--------b-----ppn--pp----pprn-k---r",
+      "observation": "R---KB-RPPP-NPPP--N??-----?-p---?-?-????????????????????????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "yp9z8oak",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 18,
+      "move": "e1g1",
+      "fatal": false,
+      "safe_nonking_count": 39,
+      "safe_count": 44,
+      "legal_count": 44,
+      "board": "R---K--RPBPQ-PPP-PN-PN-----------B-pp----bn--n--pp---pppr-bq-rk-",
+      "observation": "R---K--RPBPQ-PPP-PN-PN-------?--?B?pp?-?-?n?????????????????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "sff05dg2",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 19,
+      "move": "e8c8",
+      "fatal": false,
+      "safe_nonking_count": 26,
+      "safe_count": 29,
+      "legal_count": 29,
+      "board": "R----RK-PPP--P-P--NBBP-----P--------------n--n--ppp-ppppr---kb-r",
+      "observation": "?????????????????????????-?P-?-?--?--?----n?-n--ppp-ppppr---kb-r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "a8d8"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "a8d8"
+      ]
+    },
+    {
+      "game": "52t8q9yr",
+      "opponent": "duck",
+      "outcome": "win",
+      "ply": 20,
+      "move": "e1c1",
+      "fatal": false,
+      "safe_nonking_count": 29,
+      "safe_count": 32,
+      "legal_count": 32,
+      "board": "R---KB-RPPQB-PPP--P-P------Pp-------------p-p---ppqn-pppr---kb-r",
+      "observation": "R---KB-RPPQB-PPP--P-P------Pp---?-?-????-???????????????????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "ktg7wuij",
+      "opponent": "Decent Chess Bot",
+      "outcome": "win",
+      "ply": 20,
+      "move": "e1c1",
+      "fatal": false,
+      "safe_nonking_count": 36,
+      "safe_count": 40,
+      "legal_count": 40,
+      "board": "R---K--RPPPQBPPP--N-PN-------------p-p----n-b---pp--n-ppr-q-k--r",
+      "observation": "R---K--RPPPQBPPP--N-PN-------?--?-?p-?-?-???????????????????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "vqfyyi7g",
+      "opponent": "Decent Chess Bot",
+      "outcome": "win",
+      "ply": 20,
+      "move": "e1g1",
+      "fatal": false,
+      "safe_nonking_count": 37,
+      "safe_count": 40,
+      "legal_count": 42,
+      "board": "R-Q-K--RPPP--PPP--N-PNB----------Bq--p----n-bn--ppp---pp--kr-b-r",
+      "observation": "R-Q-K--RPPP--PPP--N-PNB-------?-?B?--?-?-?n-??????p?????????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a2a3",
+        "a2a4",
+        "b2b3",
+        "b2b4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a2a3",
+        "a2a4",
+        "b2b3",
+        "b2b4"
+      ]
+    },
+    {
+      "game": "wg9hsaag",
+      "opponent": "Decent Chess Bot",
+      "outcome": "win",
+      "ply": 20,
+      "move": "e1g1",
+      "fatal": false,
+      "safe_nonking_count": 37,
+      "safe_count": 41,
+      "legal_count": 47,
+      "board": "R--QK--RPPP--PPP--NBP----b-N----------q-----b---ppp--ppp--kr--nr",
+      "observation": "R--QK--RPPP--PPP--NBP----?-N----?-?-?-?--?-?b?-????????p????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a2a3",
+        "a2a4",
+        "b2b3"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a2a3",
+        "a2a4",
+        "b2b3"
+      ]
+    },
+    {
+      "game": "av0loozd",
+      "opponent": "Decent Chess Bot",
+      "outcome": "win",
+      "ply": 21,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 36,
+      "safe_count": 41,
+      "legal_count": 41,
+      "board": "R---K--RPP--NPPP--NP---Q-b-P-B-----p------n-pn--pp-q-pppr---k--r",
+      "observation": "????????????????-?N??????b?P-?-?---p-?----n-pn--pp-q-pppr---k--r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "a8d8"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "a8d8"
+      ]
+    },
+    {
+      "game": "lk81sakm",
+      "opponent": "Decent Chess Bot",
+      "outcome": "win",
+      "ply": 21,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 41,
+      "safe_count": 45,
+      "legal_count": 45,
+      "board": "R---K--RPP--Q--P--NPBN---b-P-PP----p------n-p-n-pp---pppr--qk--r",
+      "observation": "????????????????-?N??????b?P?P?----p------n-p-n-pp---pppr--qk--r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "b4a3"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "b4a3"
+      ]
+    },
+    {
+      "game": "xzhy39nz",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 21,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 47,
+      "safe_count": 50,
+      "legal_count": 50,
+      "board": "R--QK--RPP--BPPP--B-PN-----P--------p--p--n-b---pp--bpp-r--qk--r",
+      "observation": "????????P???????--?????-?--P-?------p--p--n-b---pp--bpp-r--qk--r",
+      "example_safe_nonking": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "b7b5"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "a8c8",
+        "b7b5"
+      ]
+    },
+    {
+      "game": "v4tuefd6",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 25,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 41,
+      "safe_count": 47,
+      "legal_count": 47,
+      "board": "--RQ-RK-P--B-PPP----PN--NP-P-------p-p--p-nbpn---pq--p-pr---k--r",
+      "observation": "???????????????P??????-??P?P---?---p-p?-p-nbpn?--pq--p?pr---k--r",
+      "example_safe_nonking": [
+        "a6a5",
+        "a8a7",
+        "a8b8",
+        "a8c8",
+        "a8d8"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a6a5",
+        "a8a7",
+        "a8b8",
+        "a8c8",
+        "a8d8"
+      ]
+    },
+    {
+      "game": "7vlssq39",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 26,
+      "move": "e1c1",
+      "fatal": false,
+      "safe_nonking_count": 41,
+      "safe_count": 44,
+      "legal_count": 44,
+      "board": "R---KB-RPP-N-PPP--P-P---Q------------p----p-bn--p-pq--ppr----rk-",
+      "observation": "R---KB-RPP-N-PPP--P-P---Q---------??????-?p?????p???????????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a4a3"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a4a3"
+      ]
+    },
+    {
+      "game": "lwxy4ez3",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 32,
+      "move": "e1c1",
+      "fatal": false,
+      "safe_nonking_count": 44,
+      "safe_count": 48,
+      "legal_count": 48,
+      "board": "R---K-R-PPPN-P-P-----------PQ---------------p--qpp----ppr-b--rk-",
+      "observation": "R---K-R-PPPN-P-P-----------PQ---???----???-?p?-??p????pp????????",
+      "example_safe_nonking": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "kh103wqo",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 39,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 26,
+      "safe_count": 30,
+      "legal_count": 30,
+      "board": "-R---RK-P-P-NPPPP--B-Q-------B-----pP--pp-p------p--n-p-r--qk--r",
+      "observation": "???????????????????????????-???----p?--pp-p-??---p--n-p-r--qk--r",
+      "example_safe_nonking": [
+        "a6a5",
+        "a8a7",
+        "a8b8",
+        "a8c8",
+        "b7b5"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a6a5",
+        "a8a7",
+        "a8b8",
+        "a8c8",
+        "b7b5"
+      ]
+    },
+    {
+      "game": "zl06sde0",
+      "opponent": "Strongly Invisible",
+      "outcome": "win",
+      "ply": 39,
+      "move": "e8g8",
+      "fatal": false,
+      "safe_nonking_count": 31,
+      "safe_count": 36,
+      "legal_count": 36,
+      "board": "--R-RK--P---QP-P--P--NPp-p-PP---p---------p-pqn------pp--r--k--r",
+      "observation": "?????????????????-P??N?p-p?P?-?-p--?----?-p?pqn-?-?--pp--r--k--r",
+      "example_safe_nonking": [
+        "a5a4",
+        "b4b3",
+        "b4c3",
+        "b8a8",
+        "b8b5"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a5a4",
+        "b4b3",
+        "b4c3",
+        "b8a8",
+        "b8b5"
+      ]
+    },
+    {
+      "game": "ap6ydwkc",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 52,
+      "move": "e1e2",
+      "fatal": false,
+      "safe_nonking_count": 21,
+      "safe_count": 25,
+      "legal_count": 25,
+      "board": "----K---PPP--PP---------N---p-------bpB----n--n-ppp----r-k------",
+      "observation": "??--K-??PPP--PP?---?---?N--??---??-???B??-???-?-????-??????-????",
+      "example_safe_nonking": [
+        "a2a3",
+        "a4b6",
+        "a4c3",
+        "a4c5",
+        "b2b3"
+      ],
+      "king_move": true,
+      "safe_alternatives": [
+        "a2a3",
+        "a4b6",
+        "a4c3",
+        "a4c5",
+        "b2b3"
+      ]
+    }
+  ],
+  "limits": [
+    "Curated decisions, not a random policy sample.",
+    "Only one decision per replay, but opponents are limited to Decent Chess Bot, Strongly Invisible, and duck.",
+    "Only immediate fatality is measured; no branching or strength claim."
+  ]
+}

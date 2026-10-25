@@ -1,0 +1,213 @@
+{
+  "classification": "matched nonfatal king-move controls with legal immediate-safe nonking alternatives; action-selection regression diagnostic only",
+  "source_audits": [
+    "astra-submissions/analysis/standing-trend-20261024/v35-guard-controls-12.json",
+    "astra-submissions/analysis/standing-trend-20261024/king-choice-audit.json"
+  ],
+  "excluded_target_games": 91,
+  "selection_rule": "Include all 12 curated controls, then up to 8 earliest-ply unique games per opponent from the 100-case nonfatal king-move audit; exclude overlap with the 91 fatal target games and deduplicate games.",
+  "count": 12,
+  "by_opponent": {
+    "Decent Chess Bot": 4,
+    "Strongly Invisible": 4,
+    "duck": 4
+  },
+  "examples": [
+    {
+      "game": "xg1eornf",
+      "opponent": "Decent Chess Bot",
+      "ply": 13,
+      "move": "e8g8",
+      "outcome": "loss",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "a8b8",
+        "b7b6",
+        "c8d7"
+      ]
+    },
+    {
+      "game": "ayrkq2zf",
+      "opponent": "Decent Chess Bot",
+      "ply": 16,
+      "move": "e1g1",
+      "outcome": "loss",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a1a2",
+        "a1a3",
+        "a1b1",
+        "a4a5",
+        "b2b3"
+      ]
+    },
+    {
+      "game": "mivspw22",
+      "opponent": "Decent Chess Bot",
+      "ply": 17,
+      "move": "e8g8",
+      "outcome": "win",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "b8a8"
+      ]
+    },
+    {
+      "game": "ktg7wuij",
+      "opponent": "Decent Chess Bot",
+      "ply": 20,
+      "move": "e1c1",
+      "outcome": "win",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "o075y85b",
+      "opponent": "Strongly Invisible",
+      "ply": 10,
+      "move": "e1g1",
+      "outcome": "loss",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a1b1",
+        "a2a3",
+        "a2a4",
+        "b2b3",
+        "b2b4"
+      ]
+    },
+    {
+      "game": "e79axgvh",
+      "opponent": "Strongly Invisible",
+      "ply": 14,
+      "move": "e1c1",
+      "outcome": "loss",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "62xxz8x6",
+      "opponent": "Strongly Invisible",
+      "ply": 15,
+      "move": "e8g8",
+      "outcome": "loss",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b6b5",
+        "b8a6",
+        "b8d7"
+      ]
+    },
+    {
+      "game": "zl06sde0",
+      "opponent": "Strongly Invisible",
+      "ply": 39,
+      "move": "e8g8",
+      "outcome": "win",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a5a4",
+        "b4b3",
+        "b4c3",
+        "b8a8",
+        "b8b5"
+      ]
+    },
+    {
+      "game": "tpik12ax",
+      "opponent": "duck",
+      "ply": 13,
+      "move": "e8g8",
+      "outcome": "loss",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "b8a6"
+      ]
+    },
+    {
+      "game": "1bw9tnm0",
+      "opponent": "duck",
+      "ply": 18,
+      "move": "e1c1",
+      "outcome": "win",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "yp9z8oak",
+      "opponent": "duck",
+      "ply": 18,
+      "move": "e1g1",
+      "outcome": "loss",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    },
+    {
+      "game": "52t8q9yr",
+      "opponent": "duck",
+      "ply": 20,
+      "move": "e1c1",
+      "outcome": "win",
+      "king_move": true,
+      "fatal": false,
+      "safe_alternatives": [
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a2a3",
+        "a2a4"
+      ]
+    }
+  ],
+  "limits": [
+    "Not a random arena sample.",
+    "Only detects immediate king fatality; no opponent reply or Elo inference."
+  ]
+}

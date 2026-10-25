@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Run color-swapped, full-clock v35-vs-hidden-prior screening games."""
+"""Run color-swapped, full-clock v35-vs-candidate screening games."""
 import argparse
 from datetime import datetime, timezone
 import hashlib
@@ -20,7 +20,7 @@ def sha(path):
     return h.hexdigest()
 
 
-def bot_command(label, runtime, seed):
+def bot_command(label, runtime, seed, king_guard=None):
     runtime = runtime.resolve()
     env = [
         f"FOW_SEED={seed}",
@@ -31,6 +31,8 @@ def bot_command(label, runtime, seed):
         f"MIST_STOCKFISH={runtime / 'bin/stockfish'}",
         f"MIST_HISTORY_TABLE={runtime / 'data/history.bin'}",
     ]
+    if king_guard is not None:
+        env.append(f"MIST_KING_GUARD={king_guard}")
     return shlex.join(["env", *env, str(runtime / "mist")])
 
 
@@ -40,6 +42,10 @@ def main():
     ap.add_argument("--candidate", type=Path, required=True)
     ap.add_argument("--kit", type=Path, default=Path.home() / "git/fow-starter")
     ap.add_argument("--output", type=Path, required=True)
+    ap.add_argument("--candidate-name", default="hidden-prior",
+                    help="name recorded for the candidate in referee output")
+    ap.add_argument("--candidate-king-guard", type=float,
+                    help="set MIST_KING_GUARD only for the candidate arm")
     ap.add_argument("--pairs", type=int, default=4)
     ap.add_argument("--seed", type=int, default=20261025)
     ap.add_argument("--base-seconds", type=float, default=180)
@@ -62,6 +68,7 @@ def main():
         "started_at": datetime.now(timezone.utc).isoformat(),
         "baseline": str(baseline), "baseline_sha256": sha(baseline / "mist"),
         "candidate": str(candidate), "candidate_sha256": sha(candidate / "mist"),
+        "candidate_king_guard": args.candidate_king_guard,
         "referee_sha256": sha(referee), "pairs_planned": args.pairs,
         "seed": args.seed, "time_control": {"base": args.base_seconds, "increment": args.increment_seconds},
         "games": [], "pair_scores": [],
@@ -84,12 +91,14 @@ def main():
             for candidate_white in (True, False):
                 white = (candidate, candidate_seed) if candidate_white else (baseline, baseline_seed)
                 black = (baseline, baseline_seed) if candidate_white else (candidate, candidate_seed)
-                white_name = "hidden-prior" if candidate_white else "v35"
-                black_name = "v35" if candidate_white else "hidden-prior"
+                white_name = args.candidate_name if candidate_white else "v35"
+                black_name = "v35" if candidate_white else args.candidate_name
+                white_guard = args.candidate_king_guard if candidate_white else None
+                black_guard = None if candidate_white else args.candidate_king_guard
                 output = out.parent / f"{out.stem}-pair{pair}-candidate-{'white' if candidate_white else 'black'}.json"
                 command = [str(py), str(referee), "--trusted-local",
-                           "--white", bot_command(white_name, white[0], white[1]),
-                           "--black", bot_command(black_name, black[0], black[1]),
+                           "--white", bot_command(white_name, white[0], white[1], white_guard),
+                           "--black", bot_command(black_name, black[0], black[1], black_guard),
                            "--white-name", white_name, "--black-name", black_name,
                            "--base-time", str(args.base_seconds), "--increment", str(args.increment_seconds),
                            "--max-plies", "1000", "--output", str(output)]

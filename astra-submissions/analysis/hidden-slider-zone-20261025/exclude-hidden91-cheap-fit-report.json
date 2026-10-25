@@ -1,0 +1,258 @@
+{
+  "experiment": "single appended MM_HIDDEN_SLIDER_ZONE feature on v35 cheap prior",
+  "base_prior": "cheap",
+  "feature_index": 28,
+  "feature_definition": "hidden bishop/rook/queen destination; moved piece attacks one or more squares adjacent to the enemy king, but does not necessarily check",
+  "dataset": "/tmp/iamavirus-v35-kingzone/candidates-kingzone-exclude91.jsonl",
+  "dataset_sha256": "7337fe955a60eb0f1aac6ace120556e1b4e336e284b79398d61a4dca1fa163ae",
+  "positions": 59100,
+  "games": 5889,
+  "invalid_groups": 0,
+  "split_games": {
+    "train": 3533,
+    "validation": 1178,
+    "test": 1178
+  },
+  "split_positions": {
+    "train": 35418,
+    "validation": 11769,
+    "test": 11913
+  },
+  "validation_grid": [
+    {
+      "penalty": 0.001,
+      "weight": 3.2142776360695575,
+      "validation_nll": 2.8683003517714023
+    },
+    {
+      "penalty": 0.01,
+      "weight": 3.213986693310793,
+      "validation_nll": 2.8683001271773874
+    },
+    {
+      "penalty": 0.1,
+      "weight": 3.211079550989602,
+      "validation_nll": 2.868297896217958
+    },
+    {
+      "penalty": 1.0,
+      "weight": 3.182235310820006,
+      "validation_nll": 2.8682770611323107
+    },
+    {
+      "penalty": 10.0,
+      "weight": 2.9152182844450554,
+      "validation_nll": 2.868194924337437
+    },
+    {
+      "penalty": 100.0,
+      "weight": 1.5077571072945943,
+      "validation_nll": 2.8708252668274774
+    }
+  ],
+  "selected_penalty": 10.0,
+  "fitted_weight": 2.9205125488413803,
+  "heldout_v35": {
+    "positions": 11913,
+    "nll": 2.814340965314913,
+    "top1": 0.23478552841433728,
+    "brier": 0.8712168523174271,
+    "candidate_ece_10bin": 0.0011107119374461113,
+    "true_hidden_threat_positions": 0,
+    "hidden_nll": null,
+    "hidden_top1": null
+  },
+  "heldout_candidate": {
+    "positions": 11913,
+    "nll": 2.8025595636853833,
+    "top1": 0.23864685637538824,
+    "brier": 0.8694477194876017,
+    "candidate_ece_10bin": 0.0010586271046681103,
+    "true_hidden_threat_positions": 0,
+    "hidden_nll": null,
+    "hidden_top1": null
+  },
+  "heldout_candidate_minus_v35_nll": -0.011781401629529675,
+  "heldout_game_cluster_bootstrap": {
+    "games": 1178,
+    "mean_delta_candidate_minus_v35": -0.01246212207181325,
+    "ci95": [
+      -0.015163830359091447,
+      -0.009747749094095625
+    ],
+    "replicates": 5000,
+    "seed": 734091
+  },
+  "true_move_feature_active_subset": {
+    "positions": 1034,
+    "v35": {
+      "positions": 1034,
+      "nll": 3.096770103235786,
+      "top1": 0.20696324951644102,
+      "brier": 0.8910488640326071,
+      "candidate_ece_10bin": 0.001750611530602749,
+      "true_hidden_threat_positions": 0,
+      "hidden_nll": null,
+      "hidden_top1": null
+    },
+    "candidate": {
+      "positions": 1034,
+      "nll": 2.7059013331852344,
+      "top1": 0.29593810444874274,
+      "brier": 0.8373490137268453,
+      "candidate_ece_10bin": 0.002939167290137792,
+      "true_hidden_threat_positions": 0,
+      "hidden_nll": null,
+      "hidden_top1": null
+    },
+    "candidate_minus_v35_nll": -0.39086877005055154
+  },
+  "actor_slices": {
+    "Apricot Squad": {
+      "positions": 99,
+      "baseline_nll": 3.296639305315063,
+      "candidate_nll": 3.297950949850006,
+      "delta_nll": 0.001311644534943035
+    },
+    "Crimson Fog": {
+      "positions": 336,
+      "baseline_nll": 2.940845461093854,
+      "candidate_nll": 2.919655381797982,
+      "delta_nll": -0.021190079295872355
+    },
+    "Czechmate": {
+      "positions": 75,
+      "baseline_nll": 2.597196368873909,
+      "candidate_nll": 2.600032554427313,
+      "delta_nll": 0.002836185553404036
+    },
+    "Decent Chess Bot": {
+      "positions": 985,
+      "baseline_nll": 2.9068674169585904,
+      "candidate_nll": 2.890841656093746,
+      "delta_nll": -0.01602576086484442
+    },
+    "Gravel Road": {
+      "positions": 462,
+      "baseline_nll": 2.7438941683623552,
+      "candidate_nll": 2.7250614238845263,
+      "delta_nll": -0.0188327444778289
+    },
+    "Greek Gift": {
+      "positions": 939,
+      "baseline_nll": 3.0031186473119194,
+      "candidate_nll": 2.9734715599027326,
+      "delta_nll": -0.029647087409186756
+    },
+    "HYPOTHERMIA": {
+      "positions": 667,
+      "baseline_nll": 2.7819018638556794,
+      "candidate_nll": 2.784033829515492,
+      "delta_nll": 0.0021319656598124404
+    },
+    "In Pawn Sight": {
+      "positions": 292,
+      "baseline_nll": 3.0722396319843406,
+      "candidate_nll": 3.0273045599312476,
+      "delta_nll": -0.044935072053092995
+    },
+    "Instructors": {
+      "positions": 882,
+      "baseline_nll": 2.8539787691870235,
+      "candidate_nll": 2.840347777022415,
+      "delta_nll": -0.013630992164608724
+    },
+    "Knight Vision": {
+      "positions": 879,
+      "baseline_nll": 2.8608538306193236,
+      "candidate_nll": 2.8446529872510906,
+      "delta_nll": -0.01620084336823302
+    },
+    "Lost Signal": {
+      "positions": 617,
+      "baseline_nll": 2.827255280963405,
+      "candidate_nll": 2.8208789456500702,
+      "delta_nll": -0.006376335313334813
+    },
+    "Mist Opportunities": {
+      "positions": 1140,
+      "baseline_nll": 2.8433836229448706,
+      "candidate_nll": 2.8420926091020204,
+      "delta_nll": -0.0012910138428501305
+    },
+    "Sausage": {
+      "positions": 322,
+      "baseline_nll": 2.744854060500145,
+      "candidate_nll": 2.7450895049456308,
+      "delta_nll": 0.00023544444548573296
+    },
+    "Strongly Invisible": {
+      "positions": 1075,
+      "baseline_nll": 2.872211345172085,
+      "candidate_nll": 2.856165065201172,
+      "delta_nll": -0.016046279970913346
+    },
+    "TA Baseline A": {
+      "positions": 811,
+      "baseline_nll": 2.5006218981391726,
+      "candidate_nll": 2.5022811649187067,
+      "delta_nll": 0.0016592667795340965
+    },
+    "TA Baseline P": {
+      "positions": 603,
+      "baseline_nll": 2.5473937251941656,
+      "candidate_nll": 2.550774513530775,
+      "delta_nll": 0.003380788336609264
+    },
+    "TA Baseline S": {
+      "positions": 754,
+      "baseline_nll": 2.6790840690899,
+      "candidate_nll": 2.6647445578582656,
+      "delta_nll": -0.01433951123163446
+    },
+    "baseline.py": {
+      "positions": 84,
+      "baseline_nll": 2.483180979883984,
+      "candidate_nll": 2.477263481511028,
+      "delta_nll": -0.005917498372955965
+    },
+    "duck": {
+      "positions": 891,
+      "baseline_nll": 2.8423402797482185,
+      "candidate_nll": 2.82799342146624,
+      "delta_nll": -0.01434685828197857
+    }
+  },
+  "coefficients_extended": [
+    0.7705,
+    3.669,
+    0.0,
+    -0.5296,
+    -0.692,
+    -0.2792,
+    -0.7406,
+    -0.4606,
+    0.1304,
+    2.3256,
+    1.3647,
+    -0.6156,
+    -1.476,
+    -0.1127,
+    0.7298,
+    1.5767,
+    1.6693,
+    1.0416,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    2.9205125488413803
+  ],
+  "caveat": "This is held-out prediction of opponents' selected moves, not belief calibration, changed-action quality, or playing strength. The selected feature and all hypotheses were chosen during development; require a sealed sample and referee branches before a strength claim."
+}

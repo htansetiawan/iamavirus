@@ -1,0 +1,187 @@
+{
+  "classification": "targeted postmortem of candidate full-clock losses; replay-prefix choices and immediate true-board king fatality only",
+  "baseline_sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+  "candidate_sha256": "43125879c397f875d1f69838eaa35bacf82a2b10381349ef007beb68bdedd7f9",
+  "rows": [
+    {
+      "game_file": "fullclock-selfplay-4pairs-pair1-candidate-black.json",
+      "candidate_color": "black",
+      "result": "1-0",
+      "plies": 64,
+      "actual_losing_move": "h7h8",
+      "target_frame": 63,
+      "v35": {
+        "move": "h7h8",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.3015,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-3.35",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 63,
+          "particles": 2572,
+          "report": "share=0.00028 rank=387"
+        },
+        "safe_alternatives": []
+      },
+      "candidate": {
+        "move": "h7h8",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.3188,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-3.27",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 63,
+          "particles": 2572,
+          "report": "share=0.00027 rank=395"
+        },
+        "safe_alternatives": []
+      },
+      "choice_changed": false
+    },
+    {
+      "game_file": "fullclock-selfplay-4pairs-pair1-candidate-white.json",
+      "candidate_color": "white",
+      "result": "0-1",
+      "plies": 63,
+      "actual_losing_move": "f2g1",
+      "target_frame": 62,
+      "v35": {
+        "move": "f2g1",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.2709,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.14",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 62,
+          "particles": 4994,
+          "report": "share=0.00007 rank=1846"
+        },
+        "safe_alternatives": [
+          "f2e1"
+        ]
+      },
+      "candidate": {
+        "move": "f2g1",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.2645,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.15",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 62,
+          "particles": 4994,
+          "report": "share=0.00007 rank=1852"
+        },
+        "safe_alternatives": [
+          "f2e1"
+        ]
+      },
+      "choice_changed": false
+    },
+    {
+      "game_file": "fullclock-selfplay-4pairs-pair2-candidate-white.json",
+      "candidate_color": "white",
+      "result": "0-1",
+      "plies": 93,
+      "actual_losing_move": "h3g3",
+      "target_frame": 92,
+      "v35": {
+        "move": "h3g3",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.015,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.91",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 92,
+          "particles": 167484,
+          "report": "share=0.00000 rank=64745"
+        },
+        "safe_alternatives": []
+      },
+      "candidate": {
+        "move": "h3g3",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.0311,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.79",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 92,
+          "particles": 148799,
+          "report": "share=0.00000 rank=44757"
+        },
+        "safe_alternatives": []
+      },
+      "choice_changed": false
+    },
+    {
+      "game_file": "fullclock-selfplay-4pairs-pair3-candidate-white.json",
+      "candidate_color": "white",
+      "result": "0-1",
+      "plies": 79,
+      "actual_losing_move": "g2b2",
+      "target_frame": 78,
+      "v35": {
+        "move": "g2b2",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.0508,
+          "queen_risk": "0.004",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-4.53",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 78,
+          "particles": 1231,
+          "report": "share=0.00090 rank=238"
+        },
+        "safe_alternatives": [
+          "h2g1"
+        ]
+      },
+      "candidate": {
+        "move": "g2b2",
+        "immediate_fatal": true,
+        "chosen_move_risk": {
+          "king_risk": 0.0569,
+          "queen_risk": "0.005",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "-4.50",
+          "chosen": true
+        },
+        "truth_rank": {
+          "view": 78,
+          "particles": 1231,
+          "report": "share=0.00101 rank=222"
+        },
+        "safe_alternatives": [
+          "h2g1"
+        ]
+      },
+      "choice_changed": false
+    }
+  ]
+}
