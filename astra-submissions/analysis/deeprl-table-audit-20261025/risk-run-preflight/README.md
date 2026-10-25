@@ -2,6 +2,12 @@
 
 2026-10-25. Prepared for Henry/Fable review. **Not launched.**
 
+The [frozen-panel evaluator and initial-model measurement](initial-model-evaluation.md)
+are now complete: 128 games, 5,843 decisions, 170,648 independently checked
+candidate labels. The initial CNN has overall ranking AUC 0.923 but hidden-attack
+AUC 0.557. This is CPU evaluation of the unchanged starting checkpoint, not a
+training result. The paired evaluator is ready for both future arms.
+
 ## Fixed experiment
 
 | Setting | Both arms |

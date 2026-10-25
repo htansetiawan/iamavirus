@@ -1,0 +1,128 @@
+{
+  "created_at": "2026-10-25T19:51:17.667340+00:00",
+  "classification": "evaluator correctness, not a model improvement",
+  "analytic_tests": {
+    "script_sha256": "8fa9328ade8764f3d9dd219c8f86322c1da5363f92ddf29533e71e8fc329e0be",
+    "passed": 3,
+    "command": ".venv/bin/python astra-submissions/analysis/deeprl-table-audit-20261025/test_risk_panel_metrics.py -v"
+  },
+  "batch_parity": {
+    "games": 4,
+    "sides": [
+      "black",
+      "white"
+    ],
+    "decisions": 221,
+    "max_logit_difference": 6.67572021484375e-06,
+    "changed_choices": 0,
+    "absolute_tolerance": 0.0001,
+    "relative_tolerance": 1e-05,
+    "sources": {
+      "/media/henrytan/seagate1/iamavirus/astra/rl-risk-20261025/evaluation-pilot-batch1/summary.json": "6f469eef9c35cfc7f154196974292dbe52c74d1905d6d62eae0247301035b534",
+      "/media/henrytan/seagate1/iamavirus/astra/rl-risk-20261025/evaluation-pilot-batch1/predictions.jsonl.gz": "143784e3865786cfb46367fda44ec4cf85b41e980254679c69488a9ad9ce072b",
+      "/media/henrytan/seagate1/iamavirus/astra/rl-risk-20261025/evaluation-pilot-batch4/summary.json": "9a968c0d4935b306afa2f4351976cb3e46ee07ac879f7549cc52332caaed77e1",
+      "/media/henrytan/seagate1/iamavirus/astra/rl-risk-20261025/evaluation-pilot-batch4/predictions.jsonl.gz": "478dcd56bdd0887254087b5f34dbfb4c7b097595a3dfdf27828fa97b490f4a9c"
+    }
+  },
+  "whole_panel_self_comparison": {
+    "games": 128,
+    "game_weighted_metrics": {
+      "log_loss": {
+        "control_game_mean": 0.11821749409845525,
+        "candidate_game_mean": 0.11821749409845525,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "brier": {
+        "control_game_mean": 0.03199222652658172,
+        "candidate_game_mean": 0.03199222652658172,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy_fatal": {
+        "control_game_mean": 0.027818759225118186,
+        "candidate_game_mean": 0.027818759225118186,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "min_risk_fatal": {
+        "control_game_mean": 0.02221581692940488,
+        "candidate_game_mean": 0.02221581692940488,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ]
+      },
+      "policy_fatal_mass": {
+        "control_game_mean": 0.03560648960248894,
+        "candidate_game_mean": 0.03560648960248894,
+        "candidate_minus_control": 0.0,
+        "paired_game_bootstrap_95": [
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "mixed_label_games": 123,
+    "game_mean_auc_delta": 0.0,
+    "choice_counts": {
+      "policy_fatal_count": {
+        "control": 161,
+        "candidate": 161
+      },
+      "min_risk_fatal_count": {
+        "control": 125,
+        "candidate": 125
+      },
+      "avoidable_policy_fatal_count": {
+        "control": 139,
+        "candidate": 139
+      },
+      "avoidable_min_risk_fatal_count": {
+        "control": 103,
+        "candidate": 103
+      }
+    },
+    "conditions": {
+      "risk_log_loss_interval_below_zero": false,
+      "within_position_ordering_not_worse": true,
+      "policy_fatal_count_not_worse": true,
+      "avoidable_policy_fatal_count_not_worse": true
+    },
+    "advance_to_c_search_integration_test": false,
+    "bootstrap": {
+      "samples": 20000,
+      "seed": 20261025,
+      "unit": "whole replay game"
+    },
+    "limits": [
+      "No training-return or arena-strength evidence; selected actions were not played.",
+      "The interval is approximate and does not model correlations between games with shared openings.",
+      "Within-position ordering and safety are point-estimate non-regression checks, not proven equivalence.",
+      "No policy distribution, search root mask, or arena release is changed by this gate."
+    ],
+    "inputs": {
+      "control": {
+        "path": "/tmp/astra-risk-panel-initial128/summary.json",
+        "sha256": "73708ba0e07ef8ff6a835f1347a64c18ac8d99c82c486b7db863e5fde79af8cb"
+      },
+      "candidate": {
+        "path": "/tmp/astra-risk-panel-initial128/summary.json",
+        "sha256": "73708ba0e07ef8ff6a835f1347a64c18ac8d99c82c486b7db863e5fde79af8cb"
+      }
+    },
+    "comparator_sha256": "4921ac12b3066f3095ccf8148445224e952d49062dfbc500468358a6bf740bb7"
+  },
+  "verified_candidate_labels": 170648,
+  "feature_parity_max_error": 0.0
+}
