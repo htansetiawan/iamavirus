@@ -204,6 +204,23 @@ forfeit, or process failure; the referee stopped at the configured move limit.
 Replay: `protocol-smoke-20plies.json` (24,644 bytes). This is a protocol smoke,
 not a strength comparison.
 
+The full-clock strength gate is a resumable, color-swapped 20-pair comparison
+against unchanged v35. Its runner writes a manifest after every game and saves
+each replay separately:
+
+```sh
+taskset -c 4,5 /home/henrytan/git/fow-starter/.venv/bin/python \
+  astra-submissions/analysis/ep-target-inference-20261025/run_ep_history_paired_gate.py \
+  --candidate /tmp/iamavirus-v35-ep-history \
+  --baseline /tmp/iamavirus-v35-ep-history-base \
+  --referee /home/henrytan/git/fow-starter/referee.py \
+  --out astra-submissions/analysis/ep-target-inference-20261025/v35-ep-history-paired-20pairs-seed20261080.json \
+  --pairs 20 --seed 20261080
+```
+
+The match pair owns cores 4–5 while the separate king-guard screen owns 6–7.
+Neither screen uses the GPU.
+
 To regenerate the corpus event set, first create the cached top-team filename
 list and the cheaper diagonal-pawn prefilter, then run the two scripts:
 
