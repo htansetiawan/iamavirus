@@ -99,3 +99,64 @@ arrival evidence to the defender's king-risk decision, rather than only
 changing the opponent move likelihood. The separate Astra v36 archive changes
 only the king-guard default; it does not include this rejected hidden-slider
 feature. Follow its evidence at `astra-submissions/v36-kingguard0001.md`.
+
+## Census of newly created hidden king attacks
+
+Added 2026-10-25 for the DeepRL/tree review. The reusable scanner is
+[`scan_hidden_king_arrivals.py`](scan_hidden_king_arrivals.py). It compares
+each replay's true board before and after every move. An event qualifies when
+the victim king was not attacked before the move and is attacked afterward.
+Attacking pieces are classified using the victim's observation in that frame:
+fully hidden means all attacking pieces are on `?` squares; visible means none
+are hidden; mixed events are kept separate. The recorded next move is then
+checked to see whether the same king remains attacked. The scan does not model
+counterfactual best replies.
+
+### Result
+
+On 123,251 cached games matching the top-team name filter, the scan found
+326,940 new direct king attacks. Among events with a recorded defender reply:
+
+| Attack visibility | Still attacks after reply | Answered events | Rate |
+|---|---:|---:|---:|
+| Fully hidden | 50,802 | 144,766 | 35.1% |
+| Visible | 22,568 | 174,151 | 13.0% |
+| Mixed | 265 | 766 | 34.6% |
+
+The hidden-visible difference is +22.1 percentage points, game-clustered
+approximate 95% interval [+21.8, +22.4] across 112,148 games with at least one
+classified event. By top attacker:
+
+| Attacker | Hidden | Visible |
+|---|---:|---:|
+| Greek Gift | 31.6% (3,885/12,312) | 15.2% (1,826/12,032) |
+| Instructors | 39.7% (10,780/27,186) | 13.9% (4,282/30,880) |
+| Knight Vision | 30.0% (5,583/18,586) | 11.4% (1,895/16,573) |
+| Decent Chess Bot | 31.8% (3,618/11,366) | 15.3% (1,731/11,346) |
+| Strongly Invisible | 37.5% (10,991/29,337) | 18.2% (5,888/32,388) |
+| duck | 33.6% (2,807/8,350) | 12.5% (1,140/9,093) |
+
+This is descriptive association, not causal effect or Elo. The interval accounts
+for repeated events within a game, not selection into this cached corpus,
+opportunity mix, team strength, or correlated strategies. Events without a
+recorded reply are excluded. The output event file is
+[`top-opponents-hidden-king-arrivals.jsonl.gz`](top-opponents-hidden-king-arrivals.jsonl.gz);
+the aggregate report is
+[`top-opponents-hidden-king-arrivals-summary.json`](top-opponents-hidden-king-arrivals-summary.json).
+
+### Reproduction
+
+From the repository root, make the top-team replay list and run on one core:
+
+```sh
+rg -l --no-messages --glob replay.json '"(white|black)"\s*:\s*"(Greek Gift|Instructors|Knight Vision|Decent Chess Bot|Strongly Invisible|duck|TA Baseline [ASP])([[:space:]]+v[0-9]+)?"' data/raw/games > /tmp/iamavirus-top-replays.txt
+taskset -c 0 python3 astra-submissions/analysis/hidden-slider-zone-20261025/scan_hidden_king_arrivals.py \
+  --path-list /tmp/iamavirus-top-replays.txt \
+  --events astra-submissions/analysis/hidden-slider-zone-20261025/top-opponents-hidden-king-arrivals.jsonl.gz \
+  --summary astra-submissions/analysis/hidden-slider-zone-20261025/top-opponents-hidden-king-arrivals-summary.json
+```
+
+The attack detector has basic rook/pawn/color fixtures, but it has not yet been
+differentially validated against the referee across a frozen replay sample.
+That independent check is a required next gate before fitting a training
+feature from these labels.
