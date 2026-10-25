@@ -1,6 +1,9 @@
 # Astra v36: reduced king-risk guard (exploratory)
 
-**Status:** built and reproducibly packaged; not uploaded. This is an optional arena probe, not a demonstrated strength upgrade. The active v35 should remain the reference until arena evidence says otherwise.
+**Status, 2026-10-25:** **do not promote**. The completed fixed 20-pair test
+against v35 finished **16W–0D–24L (40%)**. The archive remains an immutable
+experimental artifact; Astra has not uploaded it. Keep v35 as the reference.
+See the [completed report](analysis/hidden-slider-zone-20261025/guard0001-fixed-20pairs-report.md).
 
 ## Change
 
@@ -16,7 +19,15 @@ Artifact: [`iamavirus-v36-kingguard0001.zip`](iamavirus-v36-kingguard0001.zip), 
 - Of those 26 changed decisions, 22 had no immediate capture with either choice; two preserved the same pawn capture, one gave up a pawn capture, and one improved a pawn capture to a bishop capture. This checks only the immediate destination occupancy, not downstream tactical/material value.
 - A true-board one-ply reply audit of all 229 tested positions found that, in the 138 ordinary controls, six candidate choices added a visible immediately capturable piece and five removed one; cumulative exposed piece value changed by +2 pawn-equivalents. In the four loss-target cases where both choices were nonfatal, the count was unchanged. This is a threat tally, not expected material loss or a reply policy; see [`guard-reply-tactics-229.json`](analysis/hidden-slider-zone-20261025/guard-reply-tactics-229.json).
 - Paired color-swapped local self-play at 180+2 finished **8/16 = 0.50** (initial four pairs 4/8; additional four pairs 4/8). This is neutral and not an Elo estimate.
+- The subsequent fixed **20-pair** run completed **16W–0D–24L = 0.40**. All
+  3,348 replay frames and 40 terminal results passed the integrity audit. The
+  approximate pair-bootstrap 95% score interval is [0.25, 0.575]. Earlier
+  exploratory matches are not pooled into this result.
 
 ## Recommendation
 
-If submitted, use it as a bounded arena information-gathering trial and keep v35 ready to reactivate. Do not describe it as stronger based on these results. The broader replay control reduces concern about immediate-fatal collateral, but says nothing about strategic or material regressions. Arena games or full-game matches against diverse opponents remain necessary before promotion.
+Do not submit this candidate as an improvement. The completed full-game screen
+does not support the earlier optional-trial recommendation, despite the
+selected replay improvement. The interval still includes equal strength, so
+do not claim a proven Elo regression either. Close this threshold experiment
+at its fixed cap and keep the learning/posterior investigation separate.

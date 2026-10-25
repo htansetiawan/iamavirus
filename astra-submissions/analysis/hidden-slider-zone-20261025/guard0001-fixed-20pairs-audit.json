@@ -1,0 +1,528 @@
+{
+  "classification": "completed local head-to-head screen; not an arena Elo estimate",
+  "audited_at": "2026-10-25T19:34:39.984170+00:00",
+  "manifest": "astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042.json",
+  "manifest_sha256": "392599acbf507bb5d359506eba312ff28df7acc7065a19e2461567895c0ffbc4",
+  "auditor_sha256": "157dcc9e5de863c4098ad3addb82b006a72c700d58624fb48eb772d2b1556506",
+  "identities": {
+    "baseline_binary": {
+      "path": "/home/henrytan/git/iamavirus/data/arena_local/builds/iamavirus-v35-mist-c-v14/mist",
+      "sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff"
+    },
+    "candidate_binary": {
+      "path": "/tmp/iamavirus-v36-kingguard0001/mist",
+      "sha256": "eed0257297be608d093ae328d81cc3a2108b8e720d72d2b9f52dd61311a8dc17"
+    },
+    "referee": {
+      "path": "/home/henrytan/git/fow-starter/referee.py",
+      "sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+    }
+  },
+  "pairs": 20,
+  "games": 40,
+  "candidate_record": {
+    "wins": 16,
+    "draws": 0,
+    "losses": 24
+  },
+  "candidate_points": 16.0,
+  "candidate_score_rate": 0.4,
+  "by_color": {
+    "white": {
+      "wins": 7,
+      "draws": 0,
+      "losses": 13
+    },
+    "black": {
+      "wins": 9,
+      "draws": 0,
+      "losses": 11
+    }
+  },
+  "pair_scores": [
+    1.0,
+    0.0,
+    0.5,
+    1.0,
+    1.0,
+    0.5,
+    0.0,
+    0.5,
+    0.0,
+    0.0,
+    0.5,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.5,
+    0.5,
+    0.0,
+    0.5,
+    0.5
+  ],
+  "pair_bootstrap": {
+    "resamples": 20000,
+    "seed": 20261025,
+    "percentile_95_interval": [
+      0.25,
+      0.575
+    ],
+    "limits": "Approximate interval from whole pairs; assumes independent representative pairs. No cross-opponent generalization."
+  },
+  "reasons": {
+    "King capturable": 40
+  },
+  "frames_verified": 3348,
+  "non_board_terminal_games": [],
+  "summed_match_wall_seconds": 17639.334563703975,
+  "median_plies": 77.0,
+  "replays": [
+    {
+      "pair": 0,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair0-candidate-white.json",
+      "sha256": "ba8537131322acf127f73d690e757a08f77599d76339131e493f83b4cbb7f81d",
+      "frames_verified": 107,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 0,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair0-candidate-black.json",
+      "sha256": "370c90a0d6978e25c17bda95d0a6b5239a184fa9a64adc12b455ef94c2fcc857",
+      "frames_verified": 82,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 1,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair1-candidate-white.json",
+      "sha256": "5ae8fdaae57a1b0ac04d99bc7497a60f16d00f51e953cbf269439ff88be17241",
+      "frames_verified": 122,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 1,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair1-candidate-black.json",
+      "sha256": "621e7fdf241a3ba9c97ee8e53682b9a79b67bb6a127c2c13a09a44a095a6b1d9",
+      "frames_verified": 101,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 2,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair2-candidate-white.json",
+      "sha256": "199aa1754db74806fae5c2aa993d4cca2608f5297c9016090e07433fcaa4c0c1",
+      "frames_verified": 70,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 2,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair2-candidate-black.json",
+      "sha256": "506fd880edcd58d30e9332b3d60d270388f99d6da17b2e2f5ad86450875f1e1f",
+      "frames_verified": 90,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 3,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair3-candidate-white.json",
+      "sha256": "4af4d78ce1d5edba3338ef85fd1d6d299d00b62cb18a045f376a330ef24c876b",
+      "frames_verified": 85,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 3,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair3-candidate-black.json",
+      "sha256": "7019cf8c15f67a4ef0ac90adac00743edd3032bbca8042cda9dc2c8be63e6ba1",
+      "frames_verified": 96,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 4,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair4-candidate-white.json",
+      "sha256": "06db649ff72ac1c09679cc1db9fcfe6364c5bf98bf4f141cf095c7bf93f27ddb",
+      "frames_verified": 61,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 4,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair4-candidate-black.json",
+      "sha256": "c2de6ebcc2e9429927177bdc405a2af27ef7693d949c946295914b6968809c28",
+      "frames_verified": 86,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 5,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair5-candidate-white.json",
+      "sha256": "7d0dde5cd5135aa0e0d579d8adfe396d9c8a1733ccff176ac00f5003ffbb51cc",
+      "frames_verified": 126,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 5,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair5-candidate-black.json",
+      "sha256": "a41204d961032dea71e1d2e706d8022f231710079f6edeb8ee20f844e8b5021a",
+      "frames_verified": 72,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 6,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair6-candidate-white.json",
+      "sha256": "fecf508b2a7d039a327357d8a5ede5edde29cad2191f3439c91d5aa723403d4c",
+      "frames_verified": 72,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 6,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair6-candidate-black.json",
+      "sha256": "37ef7049642b6d76fae482923ebc4a5ab10ac834af5bfd1fc333bfce48fecbc4",
+      "frames_verified": 33,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 7,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair7-candidate-white.json",
+      "sha256": "26656305a37e78d0afd327dc559e79599e27268d4caf53b696ac23ecec5fe701",
+      "frames_verified": 75,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 7,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair7-candidate-black.json",
+      "sha256": "c03c7207ae930cfeb00cfb251aa5bc56e28da6e054aa05ca86651e6435d16d75",
+      "frames_verified": 109,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 8,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair8-candidate-white.json",
+      "sha256": "4f4ca34cdb2eeb979ab127e250acace693fafdaadd77ffad14abd2ae00b88064",
+      "frames_verified": 56,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 8,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair8-candidate-black.json",
+      "sha256": "e3c27d085cfe632e016aea3463588df982e70cbf5d3b4d6ee4d07715e012f17d",
+      "frames_verified": 107,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 9,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair9-candidate-white.json",
+      "sha256": "1fc56e3520692980411de76673cae258190840b6ae67a9caac0392a4ddc1bdff",
+      "frames_verified": 78,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 9,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair9-candidate-black.json",
+      "sha256": "1fa955a95d78cb51b055ea087c4a8623369a11927d848223a76417f6ab5bb27a",
+      "frames_verified": 45,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 10,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair10-candidate-white.json",
+      "sha256": "ec22ce1de1b73a2ba113c1275d1ec52919fe1977831bbc42a52dc2f533d47251",
+      "frames_verified": 73,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 10,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair10-candidate-black.json",
+      "sha256": "e243b8a6c428b40369d81b3268b8ddf25408c268d9b8065615959e37d4fd8f23",
+      "frames_verified": 71,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 11,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair11-candidate-white.json",
+      "sha256": "2548ae846a1e6656a457634739fe20924ab96a8d921024f0f2b0ec253e5a9d65",
+      "frames_verified": 69,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 11,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair11-candidate-black.json",
+      "sha256": "a46ac66cbbb4aca98c531d7c66794d6398601b2dc46aa93a4185d4da1a144f01",
+      "frames_verified": 78,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 12,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair12-candidate-white.json",
+      "sha256": "a19c6b4f38d5999043a50f832e6463c2cbe8e3ca867a07e0a1157a74be1cd467",
+      "frames_verified": 82,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 12,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair12-candidate-black.json",
+      "sha256": "a9843bcb25bf4f809ba561c00212b884bb58389a527a5b39ff2832104e138766",
+      "frames_verified": 63,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 13,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair13-candidate-white.json",
+      "sha256": "1711035a1e9bac9974add7658e030f4902ad86430b642759d8d7ca053643f896",
+      "frames_verified": 60,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 13,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair13-candidate-black.json",
+      "sha256": "1d213ede2b5ebec57aa7f5cc5afaa2c524f7261d99b12e6508290a207821eed8",
+      "frames_verified": 137,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 14,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair14-candidate-white.json",
+      "sha256": "88c18c84992aec85400375398879cf9a26b35bdf5faaf8e73f9b3ee82c7d5bde",
+      "frames_verified": 68,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 14,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair14-candidate-black.json",
+      "sha256": "5e91916e010d27540ed9b9690763a65143d2d22b7e13ad3af54bd3121c3085e2",
+      "frames_verified": 129,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 15,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair15-candidate-white.json",
+      "sha256": "f521d37ff855f27a849692b330ae86303aaab553b6b357280ac4d9a72f5ee859",
+      "frames_verified": 98,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 15,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair15-candidate-black.json",
+      "sha256": "8a427aa686c7ad5b9e7c6c269c001a2bb3ceb0426a105ef536ff9703fd82afb3",
+      "frames_verified": 76,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 16,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair16-candidate-white.json",
+      "sha256": "e4d4d7b01b992fd69b7400ff44df07cb1db6a13a40edbb654444f203d02705de",
+      "frames_verified": 61,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 16,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair16-candidate-black.json",
+      "sha256": "b7852206f803974b22b2f814827535657a795b0e5c24baa015f4096350b34b82",
+      "frames_verified": 71,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 17,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair17-candidate-white.json",
+      "sha256": "596268d6b19dc4305179485113f508f3fdfb062e0a7ff07dd183f0343ed5d2c5",
+      "frames_verified": 68,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 17,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair17-candidate-black.json",
+      "sha256": "460b6c3632f37e67dd1d0c05f5e7be24d28e83a6a7088a966e49999d7e40d18b",
+      "frames_verified": 47,
+      "board_terminal_verified": true,
+      "result": "1-0",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 18,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair18-candidate-white.json",
+      "sha256": "17913e53d8b5d66a7e0d99ad54b68ba91216602488f1ffdfaeca079ce05e8f6d",
+      "frames_verified": 86,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 18,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair18-candidate-black.json",
+      "sha256": "11350ebdf0fba1358ad21b9cbf547365710448dc2090af3df88839f313331b3d",
+      "frames_verified": 116,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    },
+    {
+      "pair": 19,
+      "candidate_color": "white",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair19-candidate-white.json",
+      "sha256": "e0c72315714a894e45c0ccd59516b2fd5a0db95e4a33adfcbce164f8cc6ae6e2",
+      "frames_verified": 124,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 0.0
+    },
+    {
+      "pair": 19,
+      "candidate_color": "black",
+      "replay": "/home/henrytan/git/iamavirus/astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair19-candidate-black.json",
+      "sha256": "38082aa7034fb1b5645a78629839b4c13b0ef123aec464abcec3f6103e300d72",
+      "frames_verified": 98,
+      "board_terminal_verified": true,
+      "result": "0-1",
+      "reason": "King capturable",
+      "candidate_score": 1.0
+    }
+  ],
+  "limitations": [
+    "Validation replays the recorded games with the same referee; it is not a second rules implementation.",
+    "Clock fields are checked for finiteness only; no reconstruction of process scheduling.",
+    "Only this fixed run is summarized. Earlier exploratory screens are not pooled.",
+    "Actual runtime binaries are verified now; the manifest does not prove past resource isolation."
+  ]
+}

@@ -1,6 +1,24 @@
 # Astra workspace
 
-The new conservative trial is **[Astra v12](iamavirus-v12-hybrid.zip)**
+## Current campaign — October 25, 2026
+
+The current search reference for this campaign is Fable's arena-v35 C engine.
+**[Astra v36 king-guard candidate](v36-kingguard0001.md): do not promote.** Its
+fixed 20-pair test finished 16W–0D–24L against v35; the archive is retained as an
+experimental artifact, not a strength upgrade.
+
+The [DeepRL/search design and evidence](analysis/deeprl-table-audit-20261025/README.md)
+and [bounded PPO comparison](analysis/deeprl-table-audit-20261025/risk-run-preflight/README.md)
+are ready for the requested committee review. Target export and trainer changes
+are tested; the proposed training has not started and no learned C-search
+improvement is claimed. Current coordination is in [the chatroom](../chatroom/README.md).
+
+The sections below document earlier C++/hybrid work; they do not describe the
+current C search architecture or a current submission recommendation.
+
+## Historical v12 release
+
+The earlier conservative trial was **[Astra v12](iamavirus-v12-hybrid.zip)**
 (`a5f806d0039f`): arena v10 plus Fable's population-wide material-exposure
 term, independently frozen and validated by Astra. Its exact source is in
 `candidates/v12/`; the ZIP includes the unchanged Stage A v1 model.
@@ -16,7 +34,7 @@ Independent analysis and implementation for IAmAVirus, established 2026-10-07 at
 
 | Path | Purpose |
 |---|---|
-| [analysis/release-v12/README.md](analysis/release-v12/README.md) | Frozen source/model provenance, target-opponent replay gate, correctness checks, and timed matches for the current release. |
+| [analysis/release-v12/README.md](analysis/release-v12/README.md) | Frozen source/model provenance, target-opponent replay gate, correctness checks, and timed matches for the historical v12 release. |
 | `candidates/v12/`, `v12-origin.json`, `v12-manifest.json` | Pinned release source and immutable ZIP/model checksums, separate from ongoing experiments. |
 | [specs/research-plan-24h.md](specs/research-plan-24h.md) | Research-based campaign, responsibilities, resource limits and fail-fast gates. |
 | [specs/technical-spec.md](specs/technical-spec.md) | Belief, simulation, evaluation and later training implementation contracts. |
@@ -38,7 +56,7 @@ Independent analysis and implementation for IAmAVirus, established 2026-10-07 at
 | `analysis/v10-hybrid-corpus/summary.json` | Node-limited baseline/candidate comparison with the actual hybrid model. |
 | `analysis/v10-referee/summary.json` | Complete color-swapped protocol smoke games. |
 
-## Working understanding of the codebase
+## Historical C++/hybrid architecture
 
 The C++ runtime enters through `bot.cc`: initialize the arena protocol, consume each observation once, update both particle belief and recurrent history, and answer clock prompts with legal UCI moves. It loads two ONNX graphs for neural/hybrid mode and falls back to cpp if inference is unavailable.
 
@@ -54,7 +72,7 @@ The Python learning pipeline uses the C++ rules via `rules_capi.cc` and `learnin
 
 `model.py` is a CNN plus GRU with candidate policy, danger, value, and belief heads. `pretrain.py` performs supervised replay learning. `env.py`, `rollouts.py`, and `train_ppo.py` train recurrent PPO on fresh simulated policy trajectories, with same-player returns and recurrent prefix reconstruction. Public replays are not inserted into the PPO likelihood ratio. `export.py` produces ONNX releases; `evaluate.py` and `harness/` cover model, tactical, simulated-match, timed-arena, and measurement checks.
 
-## Current assessment
+## Historical v12 assessment
 
 The older v5/v8 comparison is confounded by opponent mix. The new Astra v12
 trial starts from the later arena-v10 safety fixes and adds population-wide
