@@ -1,5 +1,15 @@
 # v35 hidden-threat move-prior refit pilot
 
+> **Methodology correction (2026-10-25):** The earlier `hidden_two_only`
+> coefficients and held-out metrics in this document were produced by a fitting
+> bug. The fitter optimized only features 26–27, then the builder inserted those
+> coefficients into the full v35 prior. Training and validation therefore did
+> not match runtime. Do not use the earlier hidden-only NLL, coefficients, or
+> 83→47/91 comparison as predictive evidence for a correctly fitted specialist.
+> Replay results remain observations about those exact binaries, but do not
+> validate that fitting procedure. The `full_refit` path fitted the full feature
+> vector and remains valid. Corrected fit and replay results are recorded below.
+
 ## Data and split
 
 Candidate features came from exact v35 `move_features()` in the archived C
@@ -24,31 +34,35 @@ the extracted baseline binary SHA-256 was
 
 ## Held-out results
 
+The first table is retained as an historical record. Its `hidden_two_only`
+row is invalid as a fitted-model result; only the frozen v35 and full-refit rows
+remain usable.
+
 | Model | Overall NLL ↓ | Top-1 | Brier ↓ | Candidate ECE ↓ | Hidden-threat NLL ↓ | Hidden-threat top-1 |
 |---|---:|---:|---:|---:|---:|---:|
 | Frozen v35 | 2.6629 | 26.90% | 0.8462 | 0.00184 | 2.8726 | 22.58% |
 | Frozen v35 + two fitted hidden-threat weights | 2.6766 | 26.54% | 0.8523 | 0.00094 | **2.4271** | **30.65%** |
 | Regularized full refit | **2.6592** | **27.27%** | 0.8478 | 0.00173 | 2.7073 | 27.42% |
 
-Validation selected L2 strength 1.0 for both refits. The two-feature update
-helps the small hidden-threat slice while worsening overall NLL, top-1 and
-Brier. The full refit is essentially tied overall and improves hidden-threat
+Validation selected L2 strength 1.0 for both refits. The earlier two-feature
+held-out metrics are invalidated by the methodology correction above. The full
+refit is essentially tied overall and improves hidden-threat
 top-1 modestly while worsening hidden-threat NLL. No model dominates. These
 differences are not strength evidence, and 62 hidden-threat examples are too
 few for a release decision.
 
 ## Exact sequential-belief and one-reply referee gate
 
-The two-feature candidate was built from the exact v35 archive, changing only
+The historical two-feature binary was built from the exact v35 archive, changing only
 the two `theta_full` coefficients. On the same 16 targeted unseen-arrival
 prefixes and identical search parameters, baseline v35 selected a referee
 fatal move in 16/16. The candidate selected 7/16 recorded nonfatal legal
 alternatives; 9/16 remained immediately fatal. Exact sequential belief traces
 showed median true-board posterior share rising from 0.0675% to 0.478% and
-median truth rank improving from 273.5 to 33. This is strong evidence that the
-prior update affects the intended narrow failure family, but it is selected
-loss data. Exact enumeration found no immediate king-capture reply to any of
-the seven rescued moves. Opponent replies are enumerated on the true board
+median truth rank improving from 273.5 to 33 for that binary. This is a
+binary-specific observation on selected loss data, not evidence that the fit
+method generalizes. Exact enumeration found no immediate king-capture reply to
+any of the moves it changed to a nonfatal alternative. Opponent replies are enumerated on the true board
 only for that terminal check; no reply policy, material value, or deeper
 continuation is modeled, so this is not a playing-strength estimate.
 
@@ -64,14 +78,13 @@ two coefficients above.
 
 ## Decision
 
-Do not change the submitted v35 coefficients or ZIP based on this pilot. The
-candidate passes these narrow immediate-safety controls; broader recent-data
-fit and deeper continuation gates are still underway. Keep arena evaluation as
-the promotion gate.
+Do not change the submitted v35 coefficients or ZIP based on this pilot. These
+fixed-binary controls do not validate the flawed fit objective. Require
+corrected-fit, broader controls, and continuation evidence before promotion.
 
 ## Recent hidden-only fit: sequential safety evidence, with overlap caveat
 
-The Oct 18–24 fit's two hidden-threat coefficients were rebuilt in isolation
+The historical Oct 18–24 fit's two hidden-threat coefficients were rebuilt in isolation
 from the exact v35 archive (full coefficients only; cheap prior unchanged):
 `MM_CHECK_UNSEEN=1.3592952`, `MM_THREAT_UNSEEN=0.5914142`, binary SHA-256
 `adbbb2a4dc998d2485844ccaf8ad3a4783e9f5f6b5efbb14b4cc3df8ee298ff9`.
@@ -103,22 +116,14 @@ version is cleared.
 
 To remove this overlap, I created a second Seagate dataset excluding all 91
 target game IDs (3,523 candidate rows removed; 5,889 games and 59,100 positions
-remain). On its new game-disjoint Oct 23–24 test split, the hidden-only refit
-has overall NLL 2.6475 vs frozen v35 2.6420, but hidden-action NLL 2.2229 vs
-2.7175 and hidden top-1 37.70% vs 24.69%. The refitted weights remain close at
-1.3541 and 0.5908. This supports a specialized predictive signal while
-showing a small overall trade-off.
+remain). The original hidden-only fit on this set is invalidated by the
+training/runtime mismatch; its reported 1.3541/0.5908 weights and test metrics
+must not be used as evidence of predictive gain.
 
-The fresh 91-position search replay using these game-excluded weights is
-complete: baseline fatal choices 83/91 vs candidate 47/91; known-safe
-alternatives 7/91 vs 44/91; no chosen candidate move allowed immediate king
-capture on the true board. Per opponent, fatal choices were Duck 25→19,
-Strongly Invisible 22→8, Decent Chess Bot 20→12, and Instructors 16→8. Median
-true-board mass increased 0.036%→0.078%, and median truth rank improved
-418→151. This removes direct game overlap from the fit, but the sample still
-contains only loss-selected cases and the analysis remains one-ply. The
-candidate changed 58/91 choices, so nonfatal controls and continuation quality
-are necessary before considering a version.
+The earlier 91-position comparison reported baseline fatal choices 83/91 vs candidate
+47/91; that candidate came from the invalid hidden-only fit and is retained only
+as a binary-specific historical observation. Its metrics, truth-mass change,
+and per-opponent deltas are not evidence for a correctly fitted specialist.
 
 The candidate and baseline were also replayed on 25 nonfatal king-move controls
 from 25 distinct games, all disjoint from the fit corpus. At five seconds per
@@ -135,7 +140,8 @@ binary, followed by opponent-reply continuations for rescued tactical moves.
 Artifacts: `recent-hidden-only-hidden-arrival-compare.json`,
 `recent-hidden-only-controls-12-referee.json`,
 `recent-hidden-only-wide-compare-91-5s.json`, and the individual traces in
-this directory. A Fable handoff is in
+this directory. The correction superseding the older hidden-only claims is in
+[`chatroom/109-astra-hidden-prior-fit-methodology-correction.md`](../../../chatroom/109-astra-hidden-prior-fit-methodology-correction.md); the earlier Fable handoff is in
 [`chatroom/104-astra-hidden-prior-wide-replay-provisional.md`](../../../chatroom/104-astra-hidden-prior-wide-replay-provisional.md).
 
 ## Expanded recent data in progress
@@ -187,7 +193,8 @@ frozen. Its candidate binary SHA-256 is
 `a4a5aaf26fc9c2d86132da59a36defeff733555ae784519da0b9161b9dd42e04`. On the
 game-disjoint test set it improves overall NLL 2.6420→2.6252 and hidden-action
 NLL 2.7175→2.4587. On the selected 91 hidden-arrival loss positions it reduces
-referee-fatal choices only 83→73 (versus 83→47 for the hidden-only candidate).
+referee-fatal choices only 83→73. The older 83→47 hidden-only comparison is
+invalidated by the fitting mismatch and cannot be used for this comparison.
 On 25 nonfatal king-move controls, it and v35 both choose 0 immediately fatal
 moves; each chooses a listed safe non-king alternative in 4/25.
 
@@ -218,6 +225,25 @@ Artifacts: `exclude-hidden91-fullrefit-manifest.json`,
 promising next intervention needs to model the danger of an
 opponent's newly hidden slider arrival directly or use a calibrated tail-risk
 safety decision; it must pass full-game tests before promotion.
+
+### Corrected game-excluded hidden-feature fit
+
+The fitter now optimizes selected hidden-feature weights as deltas around the
+frozen v35 logits, making optimization and validation match the full runtime
+model. Refit after excluding all 91 target games gives
+`MM_CHECK_UNSEEN=0.20237` and `MM_THREAT_UNSEEN=0.39288`, rather than the
+invalid 1.354/0.591 weights. On the game-disjoint test set, corrected hidden-two
+NLL is 2.63854 vs frozen 2.64202 overall; top-1 is 26.27% vs 26.31% and Brier
+.84745 vs .84696, so there is no broad predictive win. In the true-move
+hidden-check slice (n=204), NLL is 1.8918 vs 2.0364; for hidden-threat moves
+(n=862), NLL is 2.5458 vs 2.8433. These subgroup metrics are replay prediction,
+not playing-strength evidence.
+
+The corrected binary was replayed on the same four candidate-as-Black loss
+prefixes from the previous full-clock screen. It chose a referee-fatal move in
+all 4; v35 did so in 3/4. This is a tiny loss-selected sample, but adverse
+evidence: reject this specialist for promotion. Binary SHA-256:
+`eee414bd459a8d9fb6957fe0e4315a89887bd7cb7b5cfdb2c2fb30ffb59ab2ec`.
 
 ## Reproduction
 

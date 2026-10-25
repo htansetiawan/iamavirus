@@ -86,6 +86,41 @@ def fit(groups, indices, center, penalty):
                     options={"maxiter": 500, "ftol": 1e-11, "gtol": 1e-7}).x
 
 
+def fit_delta(groups, indices, center, penalty, base=THETA_FULL):
+    """Fit selected weights while retaining every unselected base logit.
+
+    The returned coefficients are absolute values for ``indices``. This is
+    required for a subset refit: optimizing only X[:, indices] and later
+    inserting those coefficients into the full model creates a train/runtime
+    objective mismatch.
+    """
+    indices = np.asarray(indices, dtype=np.int64)
+    center = np.asarray(center, dtype=np.float64)
+    base = np.asarray(base, dtype=np.float64)
+    x, counts, offsets, truth = pack(groups, np.arange(len(base)))
+    fixed_logits = x @ base
+    selected = x[:, indices]
+
+    def fg(beta):
+        z = fixed_logits + selected @ (beta - base[indices])
+        maxima = np.maximum.reduceat(z, offsets)
+        expz = np.exp(z - np.repeat(maxima, counts))
+        sums = np.add.reduceat(expz, offsets)
+        p = expz / np.repeat(sums, counts)
+        loss = np.sum(np.log(sums) + maxima - z[truth])
+        residual = p.copy()
+        residual[truth] -= 1.0
+        grad = selected.T @ residual
+        delta = beta - center
+        loss += 0.5 * penalty * float(delta @ delta)
+        grad += penalty * delta
+        return float(loss / len(counts)), grad / len(counts)
+
+    result = minimize(fg, center.copy(), jac=True, method="L-BFGS-B",
+                      options={"maxiter": 500, "ftol": 1e-11, "gtol": 1e-7})
+    return result.x
+
+
 def score(groups, beta, indices):
     x, counts, offsets, truth = pack(groups, indices)
     z = x @ beta
@@ -131,19 +166,28 @@ def main():
     lambdas = [1e-4, 1e-3, 1e-2, 1e-1, 1.0]
     models = {}
     for name, indices, center in (
-        ("hidden_two_only", np.array([26, 27]), np.zeros(2)),
+        ("hidden_two_only", np.array([26, 27]), THETA_FULL[[26, 27]]),
         ("full_refit", np.arange(28), np.zeros(28)),
     ):
         choices = []
         for lam in lambdas:
-            beta = fit(tr, indices, center, lam)
-            choices.append((score(va, beta, indices)["nll"], lam))
+            if name == "hidden_two_only":
+                beta = fit_delta(tr, indices, center, lam)
+                theta = THETA_FULL.copy(); theta[indices] = beta
+                valid_nll = score(va, theta, np.arange(28))["nll"]
+            else:
+                beta = fit(tr, indices, center, lam)
+                valid_nll = score(va, beta, indices)["nll"]
+            choices.append((valid_nll, lam))
         _, best_lam = min(choices)
         fit_ids = train_ids | valid_ids
         fit_groups = [g for g in groups if g["game"] in fit_ids]
-        beta = fit(fit_groups, indices, center, best_lam)
-        full_beta = THETA_FULL.copy()
-        full_beta[indices] = beta
+        if name == "hidden_two_only":
+            beta = fit_delta(fit_groups, indices, center, best_lam)
+            full_beta = THETA_FULL.copy(); full_beta[indices] = beta
+        else:
+            beta = fit(fit_groups, indices, center, best_lam)
+            full_beta = THETA_FULL.copy(); full_beta[indices] = beta
         models[name] = {"indices": indices, "beta": beta, "theta_full": full_beta,
                         "lambda": best_lam, "validation_grid": choices}
     baseline_indices = np.arange(28)

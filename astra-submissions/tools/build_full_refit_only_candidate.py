@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a research v35 binary with only theta_full refitted; keep cheap prior frozen."""
+"""Build a research v35 binary from a fitted full-prior report; keep cheap prior frozen."""
 import argparse
 import hashlib
 import json
@@ -22,11 +22,19 @@ def main():
     ap.add_argument("source", type=Path)
     ap.add_argument("fit_report", type=Path)
     ap.add_argument("output", type=Path, help="new directory; must not exist")
+    ap.add_argument("--model", choices=("full_refit", "hidden_two_only"), default="full_refit",
+                    help="model entry from the fit report")
     a = ap.parse_args()
     src = a.source / "src/movemodel.c"
     if not src.is_file() or a.output.exists():
         raise SystemExit("invalid source or output already exists")
-    weights = json.loads(a.fit_report.read_text())["models"]["full_refit"]["coefficients"]
+    report = json.loads(a.fit_report.read_text())
+    audit = report.get("methodology_audit", {}).get("status")
+    if a.model == "hidden_two_only" and audit != "corrected_delta_fit":
+        raise SystemExit(
+            "refusing hidden_two_only report without corrected_delta_fit methodology audit"
+        )
+    weights = report["models"][a.model]["coefficients"]
     if len(weights) != 28:
         raise SystemExit("expected 28 fitted full-prior coefficients")
     shutil.copytree(a.source, a.output)
@@ -47,11 +55,11 @@ def main():
     if proc.returncode:
         raise SystemExit(proc.stdout)
     manifest = {
-        "classification": "research-only v35 binary; chronological full prior refit, frozen cheap prior",
+        "classification": f"research-only v35 binary; {a.model} prior weights, frozen cheap prior",
         "source_movemodel_sha256": sha(src),
         "candidate_movemodel_sha256": sha(model),
         "binary_sha256": sha(a.output / "mist"),
-        "fit_report_sha256": sha(a.fit_report),
+        "fit_report_sha256": sha(a.fit_report), "fit_model": a.model,
         "theta_full": weights,
         "cheap_prior": "unchanged from source archive",
     }

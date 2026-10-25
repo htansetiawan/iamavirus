@@ -154,5 +154,12 @@
       ]
     }
   },
-  "caveat": "Small cached replay sample; historical opponents, not an arena strength estimate."
+  "caveat": "Small cached replay sample; historical opponents, not an arena strength estimate.",
+  "methodology_audit": {
+    "status": "invalid_for_model_selection",
+    "scope": "models.hidden_two_only only; frozen_v35 and full_refit results are unaffected",
+    "reason": "The prior fitter optimized only features 26 and 27 without the frozen base logits, then inserted those coefficients into the full v35 runtime model. Training/validation objective therefore differed from deployed scoring.",
+    "superseded_by": "exclude-hidden91-corrected-prior-fit-report.json",
+    "note": "Historical metrics and binaries are preserved for reproducibility. Do not treat them as held-out predictive evidence for a correctly fitted specialist."
+  }
 }

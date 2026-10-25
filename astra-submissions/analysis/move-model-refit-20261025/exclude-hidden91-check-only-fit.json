@@ -1,0 +1,215 @@
+{
+  "classification": "single-feature specialist fitted on train games, selected on validation games, evaluated once on later held-out games",
+  "dataset": "/media/henrytan/seagate1/iamavirus/move-model-20261024/top-opponent-20261018-24-exclude-hidden91.jsonl",
+  "games": 5889,
+  "positions": 59100,
+  "invalid_groups": 0,
+  "split_games": {
+    "train": 3533,
+    "validation": 1178,
+    "test": 1178
+  },
+  "split_positions": {
+    "train": 35418,
+    "validation": 11769,
+    "test": 11913
+  },
+  "feature": 26,
+  "feature_name": "unseen_check",
+  "validation_grid": [
+    {
+      "lambda": 0.01,
+      "weight": 0.23784984714840707,
+      "validation": {
+        "positions": 11769,
+        "nll": 2.6916232143471372,
+        "top1": 0.24887416093126008,
+        "brier": 0.8590008107923972,
+        "candidate_ece_10bin": 0.0006694893006281056,
+        "true_hidden_threat_positions": 1057,
+        "hidden_nll": 2.743695080203754,
+        "hidden_top1": 0.22421948912015138
+      }
+    },
+    {
+      "lambda": 0.1,
+      "weight": 0.23778944010064984,
+      "validation": {
+        "positions": 11769,
+        "nll": 2.6916231947766085,
+        "top1": 0.24887416093126008,
+        "brier": 0.8590007307075699,
+        "candidate_ece_10bin": 0.0006695037134870986,
+        "true_hidden_threat_positions": 1057,
+        "hidden_nll": 2.7437019872809345,
+        "hidden_top1": 0.22421948912015138
+      }
+    },
+    {
+      "lambda": 1.0,
+      "weight": 0.23718695564917092,
+      "validation": {
+        "positions": 11769,
+        "nll": 2.691623001587457,
+        "top1": 0.24887416093126008,
+        "brier": 0.8589999324958708,
+        "candidate_ece_10bin": 0.0006696474460253842,
+        "true_hidden_threat_positions": 1057,
+        "hidden_nll": 2.7437708821463676,
+        "hidden_top1": 0.22421948912015138
+      }
+    },
+    {
+      "lambda": 10.0,
+      "weight": 0.23131685455964623,
+      "validation": {
+        "positions": 11769,
+        "nll": 2.6916213095979793,
+        "top1": 0.24887416093126008,
+        "brier": 0.8589922060958625,
+        "candidate_ece_10bin": 0.0006687928261290526,
+        "true_hidden_threat_positions": 1057,
+        "hidden_nll": 2.744442653179382,
+        "hidden_top1": 0.22421948912015138
+      }
+    },
+    {
+      "lambda": 100.0,
+      "weight": 0.18496641714297565,
+      "validation": {
+        "positions": 11769,
+        "nll": 2.6916199668001686,
+        "top1": 0.2489591299175801,
+        "brier": 0.8589343827342136,
+        "candidate_ece_10bin": 0.0006800487465855474,
+        "true_hidden_threat_positions": 1057,
+        "hidden_nll": 2.7497797491048988,
+        "hidden_top1": 0.22327341532639547
+      }
+    }
+  ],
+  "selected_lambda": 100.0,
+  "selected_weight": 0.189147434246099,
+  "frozen_test": {
+    "positions": 11913,
+    "nll": 2.6420198518251956,
+    "top1": 0.26307395282464535,
+    "brier": 0.8469572616147191,
+    "candidate_ece_10bin": 0.0012714009461019938,
+    "true_hidden_threat_positions": 1037,
+    "hidden_nll": 2.717510546445104,
+    "hidden_top1": 0.24686595949855353
+  },
+  "candidate_test": {
+    "positions": 11913,
+    "nll": 2.641728219946016,
+    "top1": 0.2629060690002518,
+    "brier": 0.8470538217549926,
+    "candidate_ece_10bin": 0.001236874874801618,
+    "true_hidden_threat_positions": 1037,
+    "hidden_nll": 2.694911523062897,
+    "hidden_top1": 0.2507232401157184
+  },
+  "hidden_either_test": {
+    "positions": 1037,
+    "frozen": {
+      "positions": 1037,
+      "nll": 2.717510546445104,
+      "top1": 0.24686595949855353,
+      "brier": 0.8531176967051868,
+      "candidate_ece_10bin": 0.002348232277679786,
+      "true_hidden_threat_positions": 1037,
+      "hidden_nll": 2.717510546445104,
+      "hidden_top1": 0.24686595949855353
+    },
+    "candidate": {
+      "positions": 1037,
+      "nll": 2.694911523062897,
+      "top1": 0.2507232401157184,
+      "brier": 0.8491604475381926,
+      "candidate_ece_10bin": 0.002203225295321108,
+      "true_hidden_threat_positions": 1037,
+      "hidden_nll": 2.694911523062897,
+      "hidden_top1": 0.2507232401157184
+    }
+  },
+  "feature_subgroups_test": {
+    "unseen_check": {
+      "positions": 204,
+      "frozen": {
+        "positions": 204,
+        "nll": 2.0364047662007243,
+        "top1": 0.47549019607843135,
+        "brier": 0.6730019945018572,
+        "candidate_ece_10bin": 0.002325856224983599,
+        "true_hidden_threat_positions": 204,
+        "hidden_nll": 2.0364047662007243,
+        "hidden_top1": 0.47549019607843135
+      },
+      "candidate": {
+        "positions": 204,
+        "nll": 1.9155072094915049,
+        "top1": 0.5,
+        "brier": 0.6513292963645847,
+        "candidate_ece_10bin": 0.004366594457098826,
+        "true_hidden_threat_positions": 204,
+        "hidden_nll": 1.9155072094915049,
+        "hidden_top1": 0.5
+      }
+    },
+    "unseen_threat": {
+      "positions": 862,
+      "frozen": {
+        "positions": 862,
+        "nll": 2.8432986870746153,
+        "top1": 0.20417633410672853,
+        "brier": 0.8863592651551273,
+        "candidate_ece_10bin": 0.0028262464536866067,
+        "true_hidden_threat_positions": 862,
+        "hidden_nll": 2.8432986870746153,
+        "hidden_top1": 0.20417633410672853
+      },
+      "candidate": {
+        "positions": 862,
+        "nll": 2.841059166052309,
+        "top1": 0.20533642691415313,
+        "brier": 0.8858472079776374,
+        "candidate_ece_10bin": 0.002913561267738749,
+        "true_hidden_threat_positions": 862,
+        "hidden_nll": 2.841059166052309,
+        "hidden_top1": 0.20533642691415313
+      }
+    }
+  },
+  "theta_full": [
+    1.0883,
+    4.2173,
+    0.0,
+    -0.5976,
+    -0.7174,
+    -0.2331,
+    -0.4542,
+    -0.3852,
+    0.1103,
+    2.3662,
+    1.6652,
+    -0.5344,
+    -0.8673,
+    -0.1008,
+    0.8894,
+    1.5612,
+    1.4574,
+    1.1427,
+    0.7011,
+    1.0507,
+    -0.1183,
+    -1.2109,
+    -2.5556,
+    -2.4094,
+    0.3295,
+    0.2615,
+    0.189147434246099,
+    0.0
+  ],
+  "caveat": "Predictive metrics are not playing-strength evidence; target games were excluded from fit but the test split is not a pristine project-wide test."
+}
