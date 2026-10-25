@@ -1,0 +1,42 @@
+{
+  "classification": "fixed-history local choice ablation; each changed choice is followed by the recorded action sequence",
+  "decisions": 1393,
+  "games": 64,
+  "candidate_prediction_parity": "exact for particle, neural logit, policy and legal moves across both binaries",
+  "changed_choices": 231,
+  "changed_choice_rate": 0.1658291457286432,
+  "baseline_selected_fatal": 23,
+  "fused_selected_fatal": 18,
+  "baseline_selected_fatal_rate": 0.016511127063890883,
+  "fused_selected_fatal_rate": 0.012921751615218953,
+  "fatal_rate_delta_bootstrap": {
+    "baseline_rate": 0.016511127063890883,
+    "fused_rate": 0.012921751615218953,
+    "delta_fused_minus_baseline": -0.00358937544867193,
+    "game_bootstrap_95pct": [
+      -0.007662835249042145,
+      0.0006426735218508997
+    ],
+    "seed": 20261011,
+    "replicates": 10000
+  },
+  "changed_choice_transitions": {
+    "baseline_fatal_to_fused_safe": 8,
+    "baseline_safe_to_fused_fatal": 3
+  },
+  "mean_chosen_risk_permille": {
+    "baseline": 9.943287867910984,
+    "fused": 11.833452979181622
+  },
+  "runtime_seconds": {
+    "baseline": 56.9,
+    "fused": 62.244
+  },
+  "run_receipt_sha256": "9a84ca84b63e857f82c84e5429784df6deeb79e41e8e07c9adcebb48de1bfb5f",
+  "limitations": [
+    "Retrospective fixed-history analysis, not a branched rollout or match.",
+    "Labels are immediate king-capturable outcomes only.",
+    "Fusion weights were fit on development-validation games; sealed test remains unread.",
+    "No Elo or release-strength claim."
+  ]
+}

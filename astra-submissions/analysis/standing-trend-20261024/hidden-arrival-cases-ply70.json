@@ -1,0 +1,2610 @@
+{
+  "classification": "targeted replay subset: fatal choices with an immediately preceding wholly unseen attacker arrival",
+  "source_audit": "astra-submissions/analysis/standing-trend-20261024/king-choice-audit.json",
+  "source_audit_sha256": "c93379e93c4fbcebd94a762787cf26687b0278cebaf61227d482d36e770e1339",
+  "max_ply": 70,
+  "selection_rule": "last opponent move destination equals a true-board attacker square after the recorded fatal action; last-move origin is hidden before it and destination is hidden afterward",
+  "count": 91,
+  "by_opponent": {
+    "Strongly Invisible": 22,
+    "Decent Chess Bot": 24,
+    "duck": 27,
+    "Instructors": 18
+  },
+  "examples": [
+    {
+      "game": "15p66co5",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 63,
+      "move": "c5d4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 10,
+      "safe_alternatives": [
+        "f8e7",
+        "f8f7"
+      ],
+      "board": "------R--PP--P-P-----K--P--P------pp--------p---p--------R---k--",
+      "observation": "??????????????????????????-P????-?pp-???-???p???p???---?????-k-?",
+      "hidden_arrival_context": {
+        "opponent_move": "b7b8",
+        "attacker_squares": [
+          "b8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "g2uy48wp",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 62,
+      "move": "b3b4",
+      "king_move": false,
+      "safe_count": 4,
+      "legal_count": 11,
+      "safe_alternatives": [
+        "b2a1",
+        "b2a3",
+        "b2c1",
+        "b2c3"
+      ],
+      "board": "---------K-r-----P--P--P--------P----b------n---pp---ppp-------k",
+      "observation": "---?????-K-?????-P-?P??P?-??-??-P???????-???????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d8d2",
+        "attacker_squares": [
+          "d2"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "r7ujdjq7",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 61,
+      "move": "g8h7",
+      "king_move": true,
+      "safe_count": 13,
+      "legal_count": 14,
+      "safe_alternatives": [
+        "b7b5",
+        "b7b6",
+        "e7c6",
+        "e7c8",
+        "e7f5",
+        "e7g6",
+        "f7f5",
+        "f7f6"
+      ],
+      "board": "--Q---K--P----PP---B----P--N-P--p--p-----------p-p--npp-------k-",
+      "observation": "????????????????????????????????p-?p?---?--??--p?p??npp-??-??-k-",
+      "hidden_arrival_context": {
+        "opponent_move": "e2d3",
+        "attacker_squares": [
+          "d3"
+        ],
+        "attacker_pieces": [
+          "B"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "r0lx5ri4",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 51,
+      "move": "g3h2",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 17,
+      "safe_alternatives": [
+        "c8b7",
+        "c8d7"
+      ],
+      "board": "--K-----PPP----P------p--p------------------------p---ppR-k----r",
+      "observation": "??????????????-P?-????p??p????????-???--??-???--?-p-??pp?-k----r",
+      "hidden_arrival_context": {
+        "opponent_move": "a5a8",
+        "attacker_squares": [
+          "a8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "t2wd07vn",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 70,
+      "move": "b3b4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 8,
+      "safe_alternatives": [
+        "b5a4",
+        "b5a5"
+      ],
+      "board": "-----q-------r---P---------------K-p---p--P-----p-p---p------bk-",
+      "observation": "?????????????????P??????---?????-K-?????--P?????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d1f1",
+        "attacker_squares": [
+          "f1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "hnc7w4lc",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 63,
+      "move": "a5a4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 23,
+      "safe_alternatives": [
+        "h5g5",
+        "h5g6"
+      ],
+      "board": "-R-B--K-P----P--------P---------pp--P--k---------------q-----Q--",
+      "observation": "?R????????-????????-????--??-?--pp???--k??????---------q??????--",
+      "hidden_arrival_context": {
+        "opponent_move": "b3d1",
+        "attacker_squares": [
+          "d1"
+        ],
+        "attacker_pieces": [
+          "B"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "nhu5uwhm",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 63,
+      "move": "h6g6",
+      "king_move": true,
+      "safe_count": 4,
+      "legal_count": 7,
+      "safe_alternatives": [
+        "a3b2",
+        "f6f5",
+        "g5g4",
+        "h5h4"
+      ],
+      "board": "--------PPK---PPp---P-----P-p---------pp-----p-k---R----------R-",
+      "observation": "?????????P??????p???????????p?--?????-pp?????p-k??????--????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d8g8",
+        "attacker_squares": [
+          "g8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "lkwnhe24",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 60,
+      "move": "h2h4",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 15,
+      "safe_alternatives": [
+        "b1a2"
+      ],
+      "board": "RK-N-----P-----P---q--P-----p---P----------b----pp----pp--r-r-k-",
+      "observation": "RK-N????-P-??-?P---?-?P---????--P???????-???????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "f3d3",
+        "attacker_squares": [
+          "d3"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "tt8fyk8p",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 58,
+      "move": "d5c4",
+      "king_move": false,
+      "safe_count": 5,
+      "legal_count": 29,
+      "safe_alternatives": [
+        "b2b4",
+        "d1d2",
+        "e1f1",
+        "e1f2",
+        "e2c3"
+      ],
+      "board": "---RK----P--N-PPP-------p-b--P--bp-B---------p-------p-p-r---k--",
+      "observation": "---RK--??P?-N-PPP---?---?-b--P--???B?-????-?-????-???p??-???????",
+      "hidden_arrival_context": {
+        "opponent_move": "b6a5",
+        "attacker_squares": [
+          "a5"
+        ],
+        "attacker_pieces": [
+          "b"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "yf7hdgad",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 38,
+      "move": "b2d4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 21,
+      "safe_alternatives": [
+        "g3f2",
+        "g3h4"
+      ],
+      "board": "R----B-RPB----PP----r-K---Pb-P-------b----------ppk--ppp--------",
+      "observation": "R----B-RPB??--PP-?--?-K--?Pb?P--??-?????????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "e8e3",
+        "attacker_squares": [
+          "e3"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "g5z2qa4y",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 65,
+      "move": "f8e7",
+      "king_move": true,
+      "safe_count": 10,
+      "legal_count": 11,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b6b5",
+        "f5f4",
+        "f7f6",
+        "f8e8",
+        "f8g7",
+        "f8g8"
+      ],
+      "board": "-------------P-P---KP----------------p---p------p-R--p-p-----k--",
+      "observation": "?????????????????????????????-??--???p?--p???-?-p???-p-p????-k-?",
+      "hidden_arrival_context": {
+        "opponent_move": "c3c7",
+        "attacker_squares": [
+          "c7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "kbbb4vam",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 56,
+      "move": "e4e5",
+      "king_move": false,
+      "safe_count": 5,
+      "legal_count": 13,
+      "safe_alternatives": [
+        "f3e2",
+        "f3e3",
+        "f3f2",
+        "f3g3",
+        "f3g4"
+      ],
+      "board": "-------q----------P--K------PP----------N-p-----p---k-p---------",
+      "observation": "????????????---???P?-K-??--?PP-???-?--??N?????????-??????-??????",
+      "hidden_arrival_context": {
+        "opponent_move": "h2h1q",
+        "attacker_squares": [
+          "h1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "cxew39q1",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 37,
+      "move": "b8a6",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 44,
+      "safe_alternatives": [
+        "h7g8"
+      ],
+      "board": "---R--K-PP---PP-----P--P-q-P-B-----pN--Q--r-p---pp-bb-pkrn------",
+      "observation": "??-?-????P--????---?????-q-P???----p??-?--r-p---pp-bb?pkrn------",
+      "hidden_arrival_context": {
+        "opponent_move": "f7h5",
+        "attacker_squares": [
+          "h5"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "pksszjy2",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 62,
+      "move": "b1c1",
+      "king_move": true,
+      "safe_count": 2,
+      "legal_count": 12,
+      "safe_alternatives": [
+        "b1b2",
+        "b1c2"
+      ],
+      "board": "-K--r---P-----PP-P--------P--P----b-----p--r--p--------p-------k",
+      "observation": "-K-?????P--???PP-P????----P??P--?????-??????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "e2e1",
+        "attacker_squares": [
+          "e1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "n6175efw",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 49,
+      "move": "h8g7",
+      "king_move": true,
+      "safe_count": 28,
+      "legal_count": 30,
+      "safe_alternatives": [
+        "a8a2",
+        "a8a3",
+        "a8a4",
+        "a8a5",
+        "a8a6",
+        "a8a7",
+        "a8b8",
+        "a8c8"
+      ],
+      "board": "R-----K-PPr---PP-------------P-----pNpR--p-------------pr------k",
+      "observation": "??-?????PPr---P?-?-?????-?--????---p?p?--p-????--?-???-pr------k",
+      "hidden_arrival_context": {
+        "opponent_move": "g3g5",
+        "attacker_squares": [
+          "g5"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "qj2x0m0y",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 39,
+      "move": "c8g4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 20,
+      "safe_alternatives": [
+        "h5g5",
+        "h5h4"
+      ],
+      "board": "R----RK-PPP--PPP-----------P-----------k-np--Np-pp-----prnb--Q--",
+      "observation": "???????????????????????--?-???---?--?--k-np?-?p-pp?-???prnb?????",
+      "hidden_arrival_context": {
+        "opponent_move": "e4f6",
+        "attacker_squares": [
+          "f6"
+        ],
+        "attacker_pieces": [
+          "N"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "qczqwkdb",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 70,
+      "move": "e6f7",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 7,
+      "safe_alternatives": [
+        "c1b2",
+        "c1d2"
+      ],
+      "board": "--K----r----------P---------b--------P------Pp--p---kp----------",
+      "observation": "?-K-?????---??????P???????-??????????P??????P????????p??????????",
+      "hidden_arrival_context": {
+        "opponent_move": "h2h1",
+        "attacker_squares": [
+          "h1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "06suhyqi",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 56,
+      "move": "g1f2",
+      "king_move": true,
+      "safe_count": 10,
+      "legal_count": 11,
+      "safe_alternatives": [
+        "a6a7",
+        "b4b5",
+        "e3e4",
+        "f4f5",
+        "g1f1",
+        "g1h1",
+        "g2g3",
+        "g2g4"
+      ],
+      "board": "------K----r--PP----P----P---P-----p----P----npb----pp-p------k-",
+      "observation": "?????-K-?????-PP????P?--?P??-P--?-???-??P???????-???????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d3d2",
+        "attacker_squares": [
+          "d2"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "ognkwqq1",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 67,
+      "move": "g5g4",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 7,
+      "safe_alternatives": [
+        "h7g8",
+        "h7h6",
+        "h7h8"
+      ],
+      "board": "----BNK-------P-----P--P---P-------p--pp-p----p--pR----k--------",
+      "observation": "??????????????????????????????--?-?p??pp?p????p-?p????-k??????--",
+      "hidden_arrival_context": {
+        "opponent_move": "c1c7",
+        "attacker_squares": [
+          "c7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "62bx774l",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 40,
+      "move": "b3c3",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 39,
+      "safe_alternatives": [
+        "b3d1",
+        "f2f1"
+      ],
+      "board": "--q---K-PP---RPP-Q-----------------P-------p--p-pR--pp-pr-----k-",
+      "observation": "???-?-K-PP---RPP-Q---------??---?-?P?-???-???-??pR--pp???-??????",
+      "hidden_arrival_context": {
+        "opponent_move": "c5c1",
+        "attacker_squares": [
+          "c1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "mpyj9grh",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 66,
+      "move": "b1c2",
+      "king_move": true,
+      "safe_count": 10,
+      "legal_count": 11,
+      "safe_alternatives": [
+        "a2a3",
+        "b1a1",
+        "b1c1",
+        "b2b3",
+        "b2b4",
+        "c4c5",
+        "f2f3",
+        "g2g3"
+      ],
+      "board": "-K------PP-r-PP---------p-P--b-P-----P----p--p---p---kp---------",
+      "observation": "-K-?????PP-??PP?--???--??-P???-P??-??P?-????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d8d2",
+        "attacker_squares": [
+          "d2"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "wafgr6qm",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 69,
+      "move": "h7g8",
+      "king_move": true,
+      "safe_count": 5,
+      "legal_count": 9,
+      "safe_alternatives": [
+        "a5a4",
+        "b7b5",
+        "b7b6",
+        "c6c5",
+        "h7h6"
+      ],
+      "board": "------K-P---------P--P------BP-Pp---P--p--p--Bp--p---p-k---R----",
+      "observation": "????????????????????????-???????p--???-p?-p???p-?p???p-k??????--",
+      "hidden_arrival_context": {
+        "opponent_move": "d1d8",
+        "attacker_squares": [
+          "d8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "ha586oa6",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 53,
+      "move": "g7g5",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 32,
+      "safe_alternatives": [
+        "g8f7"
+      ],
+      "board": "----K--R--P-N-PP-----P---Pq-------Npp--------p--------ppR-bQ--k-",
+      "observation": "????????-?P?N????---???-?Pq-----?-Npp----???-p--?-?-?-pp??b??-k-",
+      "hidden_arrival_context": {
+        "opponent_move": "c7d8",
+        "attacker_squares": [
+          "d8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "agp88drd",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 50,
+      "move": "b8b7",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 23,
+      "safe_alternatives": [
+        "f1f2"
+      ],
+      "board": "-----K-r-P--P---B-----P----PbP-----p---p-p--p--------ppk-R------",
+      "observation": "????-K-??P??P--?B-??-?P??-?P?P-???-??-???p?-?????-??-???-R------",
+      "hidden_arrival_context": {
+        "opponent_move": "h2h1",
+        "attacker_squares": [
+          "h1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "avoet07h",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 59,
+      "move": "b7c8",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 29,
+      "safe_alternatives": [
+        "f6f8"
+      ],
+      "board": "------K-P----PP----P------P------pp---Q------r--pb-----p----R--k",
+      "observation": "?????????????PP??????-???-P?--??-pp-?-?------r--pb???--p-?-??--k",
+      "hidden_arrival_context": {
+        "opponent_move": "e1e8",
+        "attacker_squares": [
+          "e8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "u5kwvtiw",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 56,
+      "move": "g3g4",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 9,
+      "safe_alternatives": [
+        "c1b1"
+      ],
+      "board": "--K-----P-P----P--p-b-P------P-------p----------p----p-p---r--k-",
+      "observation": "?-K-????P-P-???P-?????P--????P--????????????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d4e3",
+        "attacker_squares": [
+          "e3"
+        ],
+        "attacker_pieces": [
+          "b"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "ot9bc96z",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 65,
+      "move": "h4h3",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 6,
+      "safe_alternatives": [
+        "h8g7",
+        "h8h7"
+      ],
+      "board": "------K-PP---PPP----B-------p--pp---p---------p------------NR--k",
+      "observation": "???????????????????????--???p??pp???p?-???????p???????--??????-k",
+      "hidden_arrival_context": {
+        "opponent_move": "e7e8",
+        "attacker_squares": [
+          "e8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "hn6w9ofq",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 51,
+      "move": "e5e4",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 21,
+      "safe_alternatives": [
+        "b8b7"
+      ],
+      "board": "R---Q-K--PP--PPPP-----------B-------rpp---N----ppPb------k------",
+      "observation": "????????????????????????????B--?----rpp---?--??ppPb?-???-k---???",
+      "hidden_arrival_context": {
+        "opponent_move": "d4c6",
+        "attacker_squares": [
+          "c6"
+        ],
+        "attacker_pieces": [
+          "N"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "67rfrdqv",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 47,
+      "move": "f7e7",
+      "king_move": true,
+      "safe_count": 38,
+      "legal_count": 49,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b7b5",
+        "b7b6",
+        "c7a6",
+        "c7a8",
+        "c7b5",
+        "c7e8"
+      ],
+      "board": "-----R-KPP--N-PP---B---------b-Q---pP-------q---ppnb-kp------r--",
+      "observation": "??-????????-???P????-?---??-?b-?--?pP--?----q---ppnb-kp?-----r--",
+      "hidden_arrival_context": {
+        "opponent_move": "h7h4",
+        "attacker_squares": [
+          "h4"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "mcboa1ek",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 52,
+      "move": "f3h3",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 22,
+      "safe_alternatives": [
+        "f3d1",
+        "f3f1"
+      ],
+      "board": "--q---K-P--r---P----PQ-b--P--PP---------------p-pp--ppbp------k-",
+      "observation": "???-?-K-P???---P-???PQ-b-?P?-PP???--?--???-??????p??????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "b2c1",
+        "attacker_squares": [
+          "c1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "rw4i2b1v",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 41,
+      "move": "b6c6",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 24,
+      "safe_alternatives": [
+        "g6f8",
+        "g8h7"
+      ],
+      "board": "-K------PPP---PP--N----------P---p--p---prB---np-----pp---bR--k-",
+      "observation": "???????????????????????-?-??-P---p??p-?-prB?--np?-?--pp-?-b??-k-",
+      "hidden_arrival_context": {
+        "opponent_move": "d1d8",
+        "attacker_squares": [
+          "d8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "yfijtgfy",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 64,
+      "move": "e1f1",
+      "king_move": true,
+      "safe_count": 3,
+      "legal_count": 37,
+      "safe_alternatives": [
+        "e1c1",
+        "e1d2",
+        "e2f1"
+      ],
+      "board": "R---K-q-----B--P--n---P------P-----p---pQ---p-p-P----p--r-----k-",
+      "observation": "R---K-??-??-B-?P-??-?-P--?-??P----???-?pQ---p???P-????????-?????",
+      "hidden_arrival_context": {
+        "opponent_move": "e3g1",
+        "attacker_squares": [
+          "g1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "xl514w2z",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 56,
+      "move": "c1b1",
+      "king_move": true,
+      "safe_count": 2,
+      "legal_count": 38,
+      "safe_alternatives": [
+        "c1d2",
+        "f6f1"
+      ],
+      "board": "--K---q-PP----P----b----------------P----kn--Q--pp----R---------",
+      "observation": "?-K-?-??PP--?-P?--???--?--???---????P--???n--Q--?p----R-???-?--?",
+      "hidden_arrival_context": {
+        "opponent_move": "d4g1",
+        "attacker_squares": [
+          "g1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "tmx681tf",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 58,
+      "move": "e1f1",
+      "king_move": true,
+      "safe_count": 1,
+      "legal_count": 11,
+      "safe_alternatives": [
+        "e1e2"
+      ],
+      "board": "-r--K---------P--------PP--PnP----------p---p---------pp-----rk-",
+      "observation": "???-K-?????---P???????-PP??P?P---??-?-??????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "b2b1",
+        "attacker_squares": [
+          "b1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "01ll19jx",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 61,
+      "move": "a6b7",
+      "king_move": true,
+      "safe_count": 1,
+      "legal_count": 4,
+      "safe_alternatives": [
+        "b6b5"
+      ],
+      "board": "--K-----PPP--P-------p---------P-----R--kp------p--R------------",
+      "observation": "?????????????????????p??????????--??????kp??????p-??????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d1d7",
+        "attacker_squares": [
+          "d7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "wsldbdiq",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 43,
+      "move": "g8h6",
+      "king_move": false,
+      "safe_count": 34,
+      "legal_count": 36,
+      "safe_alternatives": [
+        "a5a4",
+        "a8a6",
+        "a8a7",
+        "a8b8",
+        "a8c8",
+        "a8d8",
+        "a8e8",
+        "b6a6"
+      ],
+      "board": "--R-----PP--KP-----BPN----------p--pP----q--p----p--bpp-r----knQ",
+      "observation": "?????????P??????--??P???--?-???-p--p?--?-q--p----p-?bpp?r----kn?",
+      "hidden_arrival_context": {
+        "opponent_move": "h1h8",
+        "attacker_squares": [
+          "h8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "sy8hdyx7",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 60,
+      "move": "d1e1",
+      "king_move": true,
+      "safe_count": 3,
+      "legal_count": 11,
+      "safe_alternatives": [
+        "d1c2",
+        "d1d2",
+        "d1e2"
+      ],
+      "board": "-r-K----------PP-P--P--------------------------p-p---p------nk--",
+      "observation": "??-K-?????---?PP?P??P?--?-??-?--????????????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "b2b1",
+        "attacker_squares": [
+          "b1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "wo8wcn9q",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 59,
+      "move": "g8h8",
+      "king_move": true,
+      "safe_count": 1,
+      "legal_count": 10,
+      "safe_alternatives": [
+        "g8g7"
+      ],
+      "board": "----K-----B---P-P-p----P---------------------p--pp---p-p---R--k-",
+      "observation": "??????????????????p?????????????--???-?---???p?-pp???p-p?????-k-",
+      "hidden_arrival_context": {
+        "opponent_move": "d4d8",
+        "attacker_squares": [
+          "d8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "rzteq318",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 68,
+      "move": "b3b4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 8,
+      "safe_alternatives": [
+        "a3a4",
+        "a3b4"
+      ],
+      "board": "--q-------r----PKP--------------P-----------p---pp---p-------k--",
+      "observation": "????????--?????PKP?????---?????-P???????-???????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "f4c1",
+        "attacker_squares": [
+          "c1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "hq9powvg",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 60,
+      "move": "g2g3",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 19,
+      "safe_alternatives": [
+        "b1b2",
+        "e2d1",
+        "e2f1"
+      ],
+      "board": "-K-----r--P-BPP-P-----------p----p-b------n------pk----------n--",
+      "observation": "-K--?-??--P?BPP?P?--?--?-?-??--??p?????-????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "h7h1",
+        "attacker_squares": [
+          "h1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "e4bf4r9x",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 69,
+      "move": "h5h4",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 23,
+      "safe_alternatives": [
+        "f6e5",
+        "f6e7",
+        "f6f5"
+      ],
+      "board": "K------RPP-------NP---P-q----N--p-p----p-p-R-k----------------Q-",
+      "observation": "????????P???????-N??????q----N?-p-p?---p?p-?-k-????----?????-???",
+      "hidden_arrival_context": {
+        "opponent_move": "d1d6",
+        "attacker_squares": [
+          "d6"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "rn2o84ub",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 60,
+      "move": "g4h5",
+      "king_move": true,
+      "safe_count": 26,
+      "legal_count": 32,
+      "safe_alternatives": [
+        "a3a4",
+        "b2b3",
+        "b2b4",
+        "c2c3",
+        "c2c4",
+        "e1a1",
+        "e1b1",
+        "e1c1"
+      ],
+      "board": "----R----PP-R---P----N------npK--pbp---rp-----P---p---p--k-----r",
+      "observation": "----R---?PP-R---P--?-N------npK-????---r??????P?????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d8h8",
+        "attacker_squares": [
+          "h8"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "tib8naw6",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 57,
+      "move": "f3g2",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 14,
+      "safe_alternatives": [
+        "f6e5",
+        "f6e6",
+        "f6e7"
+      ],
+      "board": "--B-----P-pK-PP------p------B--P--p--------p-k--------ppR----R--",
+      "observation": "??????????p???P??????p????-???????p-----???p-k--????--pp????????",
+      "hidden_arrival_context": {
+        "opponent_move": "e8f8",
+        "attacker_squares": [
+          "f8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "4m4ry70f",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 69,
+      "move": "h5h4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 6,
+      "safe_alternatives": [
+        "h6g6",
+        "h6h7"
+      ],
+      "board": "--R---K-P-P---pP----------------p-----pp--P-N--k-------------Q--",
+      "observation": "??????????????p?????????-?????--p?????pp??????-k??????--????????",
+      "hidden_arrival_context": {
+        "opponent_move": "f7f8",
+        "attacker_squares": [
+          "f8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "ggt2o5sl",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 53,
+      "move": "e4e3",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 37,
+      "safe_alternatives": [
+        "f8e7"
+      ],
+      "board": "----R-K-PP----pP--B-P-------rP----p--R---p-rq---p----p-------k-Q",
+      "observation": "???-????P??-??p??-?-P???----rP??--p--R??-p-rq---p??--p-???---k-?",
+      "hidden_arrival_context": {
+        "opponent_move": "h5h8",
+        "attacker_squares": [
+          "h8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "xxi35gh1",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 57,
+      "move": "g7f6",
+      "king_move": true,
+      "safe_count": 8,
+      "legal_count": 12,
+      "safe_alternatives": [
+        "a5a4",
+        "e6e5",
+        "f5f4",
+        "g6g5",
+        "g7f7",
+        "g7h6",
+        "h7h5",
+        "h7h6"
+      ],
+      "board": "---R--K-PP----PP----P-----------p----p------p-p--P----kp---Q----",
+      "observation": "????????????????????????-????-??p???-p--????p-p-?????-kp?????---",
+      "hidden_arrival_context": {
+        "opponent_move": "c8d8",
+        "attacker_squares": [
+          "d8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "sufk5em2",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 49,
+      "move": "b6c7",
+      "king_move": true,
+      "safe_count": 9,
+      "legal_count": 10,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "b6a5",
+        "b6a6",
+        "b6b5",
+        "b6c5",
+        "b6c6",
+        "g6g5"
+      ],
+      "board": "------K-PPP--PP--------P---------------p-k----p-pp----R---------",
+      "observation": "???????????????????????????????----???-p-k-???p?pp-?????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "g8g7",
+        "attacker_squares": [
+          "g7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "4g2uv5o5",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 56,
+      "move": "g2f1",
+      "king_move": true,
+      "safe_count": 7,
+      "legal_count": 12,
+      "safe_alternatives": [
+        "a2a3",
+        "a2a4",
+        "b4b5",
+        "f2f3",
+        "f2f4",
+        "g2f3",
+        "g2g3"
+      ],
+      "board": "----r---P----PK--P-------P-------------r--p-----p----ppp------k-",
+      "observation": "?????---P????PK--P???----P???-???-??????????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "e8e1",
+        "attacker_squares": [
+          "e1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "5lzg9oil",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 70,
+      "move": "d1e2",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 37,
+      "safe_alternatives": [
+        "f1e2",
+        "f1f2",
+        "f1g1"
+      ],
+      "board": "---QRK--PP-----------RPq---P------P-----p-p-----kp-------------r",
+      "observation": "---QRK-?PP-----?-----RP?--?P---???P---??????--??????--??????--??",
+      "hidden_arrival_context": {
+        "opponent_move": "h2h3",
+        "attacker_squares": [
+          "h3"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "0ghuci4v",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 19,
+      "move": "b8c6",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 39,
+      "safe_alternatives": [
+        "e8d7",
+        "e8e7"
+      ],
+      "board": "---QK-NRPP-B-PPP----P------P-----q-p--------pn--pp---ppprnR-kb-r",
+      "observation": "?????-???P??-???--?-????---?-?-?-q-p-?------pn--pp?--ppprn?-kb-r",
+      "hidden_arrival_context": {
+        "opponent_move": "c1c8",
+        "attacker_squares": [
+          "c8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "qurbdkrq",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 39,
+      "move": "f8d8",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 27,
+      "safe_alternatives": [
+        "c8b8",
+        "c8d8",
+        "f7f5"
+      ],
+      "board": "---R--K-PPP--P-P-------B---p-P------B--p--------ppp-bpp---k--r--",
+      "observation": "????????????????-??-?????-?p???----??--p----?--?ppp-bpp??-k--r--",
+      "hidden_arrival_context": {
+        "opponent_move": "f1h3",
+        "attacker_squares": [
+          "h3"
+        ],
+        "attacker_pieces": [
+          "B"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "0dbrdj9l",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 58,
+      "move": "a7a1",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 41,
+      "safe_alternatives": [
+        "c4f1",
+        "g1h2"
+      ],
+      "board": "---r--K---P--PP--P--P--P--Q-p--------p-p--------R-----p------q-k",
+      "observation": "-????-K--?P?-PP--P--P--P--Q-p-------????-?-?-???R-----p?-?-???-?",
+      "hidden_arrival_context": {
+        "opponent_move": "d8d1",
+        "attacker_squares": [
+          "d1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "qzve2h6y",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 67,
+      "move": "a5a4",
+      "king_move": false,
+      "safe_count": 4,
+      "legal_count": 7,
+      "safe_alternatives": [
+        "h7g6",
+        "h7g8",
+        "h7h6",
+        "h7h8"
+      ],
+      "board": "-------K------P-P------------P-PppB--p-p-----p-----R---k--------",
+      "observation": "????????????????????????--??????pp???p?p?????p--??????-k??????--",
+      "hidden_arrival_context": {
+        "opponent_move": "d6d7",
+        "attacker_squares": [
+          "d7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "g194c6qs",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 54,
+      "move": "b3c2",
+      "king_move": true,
+      "safe_count": 34,
+      "legal_count": 38,
+      "safe_alternatives": [
+        "a2a3",
+        "a2a4",
+        "b3a4",
+        "b3b4",
+        "d1a1",
+        "d1b1",
+        "d1c1",
+        "d1d2"
+      ],
+      "board": "---R----P--------KP-------n-qP---------P-p--pb-Pp--pkp-p------Q-",
+      "observation": "---R----P---??-?-KP-??-?--n-?P-????-?--P???-??-P???p?p-p------Q-",
+      "hidden_arrival_context": {
+        "opponent_move": "c6e4",
+        "attacker_squares": [
+          "e4"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "9j1e98y6",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 53,
+      "move": "c3c2",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 12,
+      "safe_alternatives": [
+        "e7d8",
+        "e7e8",
+        "e7f8"
+      ],
+      "board": "--R---K--P----PP-pp-P--------P------P----p--p-p--R--kp----------",
+      "observation": "?????????P-??????pp??????????????-???--??p?-p-p????-kp?????---??",
+      "hidden_arrival_context": {
+        "opponent_move": "b8b7",
+        "attacker_squares": [
+          "b7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "qv7s3yas",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 27,
+      "move": "c5d4",
+      "king_move": false,
+      "safe_count": 9,
+      "legal_count": 39,
+      "safe_alternatives": [
+        "b7b5",
+        "e5c6",
+        "e5d7",
+        "e8c8",
+        "e8d8",
+        "e8e7",
+        "e8f8",
+        "e8g8"
+      ],
+      "board": "R-B---K-PP---PPP--PP----Q--N------bpn---p----n---p---pppr---k--r",
+      "observation": "????????????????-??P?-???--N-?-?--bpn?--p---?n---p?--pppr---k--r",
+      "hidden_arrival_context": {
+        "opponent_move": "d1a4",
+        "attacker_squares": [
+          "a4"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "9jedtbqc",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 62,
+      "move": "b2b4",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 10,
+      "safe_alternatives": [
+        "c2b1",
+        "c2c1",
+        "c2d1"
+      ],
+      "board": "--------PPK--r----P-----p---p------------pn-------p---bp------k-",
+      "observation": "?---????PPK-????--P-?????--?????????????????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "f1f2",
+        "attacker_squares": [
+          "f2"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "wfen8uqi",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 53,
+      "move": "b2a2",
+      "king_move": false,
+      "safe_count": 4,
+      "legal_count": 30,
+      "safe_alternatives": [
+        "e6g4",
+        "g7f8",
+        "g7h6",
+        "g7h8"
+      ],
+      "board": "--------Pr--BKPP------R------P--------------bp--pp---pkp--------",
+      "observation": "?-??????Pr--B????-?????-?--???-?--?-?-?---??bp--pp?-?pkp??-??---",
+      "hidden_arrival_context": {
+        "opponent_move": "a3g3",
+        "attacker_squares": [
+          "g3"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "rjaerwc3",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 69,
+      "move": "b6b5",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 32,
+      "safe_alternatives": [
+        "h6g5",
+        "h6g7"
+      ],
+      "board": "--K-----PP---P-P--P-N-------q--p--p------p----pkp--------------R",
+      "observation": "?-?????-??-???-????-N-?-----q--p--p------p-?-?pkp-??-?---???-???",
+      "hidden_arrival_context": {
+        "opponent_move": "d8h8",
+        "attacker_squares": [
+          "h8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "p4eg4e17",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 57,
+      "move": "f7f6",
+      "king_move": true,
+      "safe_count": 16,
+      "legal_count": 19,
+      "safe_alternatives": [
+        "a7a5",
+        "a7a6",
+        "e2c1",
+        "e2c3",
+        "e2d4",
+        "e2f4",
+        "e2g1",
+        "e2g3"
+      ],
+      "board": "-------KPP--nPPP-----N---------------------R----p----kpp--------",
+      "observation": "??-???-?????n?????-???-????-?-??-?????---???----p???-kpp????---?",
+      "hidden_arrival_context": {
+        "opponent_move": "d8d6",
+        "attacker_squares": [
+          "d6"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "7aov7279",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 65,
+      "move": "h6h5",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 14,
+      "safe_alternatives": [
+        "f8g7"
+      ],
+      "board": "----R--KP----P-P------P--BP--------B--p-p-P---pp----------r--k--",
+      "observation": "??????????????????????????????-?-?????p-p?P???pp??-?---?--r--k-?",
+      "hidden_arrival_context": {
+        "opponent_move": "c3b4",
+        "attacker_squares": [
+          "b4"
+        ],
+        "attacker_pieces": [
+          "B"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "uo17elr2",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 64,
+      "move": "g2g1",
+      "king_move": true,
+      "safe_count": 7,
+      "legal_count": 12,
+      "safe_alternatives": [
+        "a2a3",
+        "a2a4",
+        "e3e4",
+        "g2f2",
+        "g2g3",
+        "h2h3",
+        "h2h4"
+      ],
+      "board": "--r-----Pb----KP----P---------p-----n---------p-pp---k-p--------",
+      "observation": "?????---P????-KP-???P----???-??-????????????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "c8c1",
+        "attacker_squares": [
+          "c1"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "1k5t2uvl",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 59,
+      "move": "a3a2",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 38,
+      "safe_alternatives": [
+        "e7f8",
+        "e8d7"
+      ],
+      "board": "R-----K-----N--Np--P----q--P-PP--b-pP---p---p-------bpp---r-k--Q",
+      "observation": "??--????-?-?????p--P????q--P???--b-p?--?p?--p--???--bpp?--r-k-??",
+      "hidden_arrival_context": {
+        "opponent_move": "h3h8",
+        "attacker_squares": [
+          "h8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "xhv5wh8a",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 67,
+      "move": "b4b3",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 8,
+      "safe_alternatives": [
+        "g8g7"
+      ],
+      "board": "-----RK------------B--P--pP----PB-------p-----p--------p--Q---k-",
+      "observation": "?????????????????-???????p????????????--p?????p-?????--p?????-k-",
+      "hidden_arrival_context": {
+        "opponent_move": "d7c8",
+        "attacker_squares": [
+          "c8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "5wsart3r",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 48,
+      "move": "f2g3",
+      "king_move": true,
+      "safe_count": 30,
+      "legal_count": 31,
+      "safe_alternatives": [
+        "b2b3",
+        "b2b4",
+        "c2c3",
+        "c2c4",
+        "e4a4",
+        "e4b4",
+        "e4c4",
+        "e4c6"
+      ],
+      "board": "---------PP--KPP----PP------Q-------------pq-b--p-p--ppp---r--k-",
+      "observation": "????---??PP?-KPP?---PP------Q---???---????p?-?-?????-??p????-???",
+      "hidden_arrival_context": {
+        "opponent_move": "d1d6",
+        "attacker_squares": [
+          "d6"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "figcf5a8",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 62,
+      "move": "h2g3",
+      "king_move": true,
+      "safe_count": 8,
+      "legal_count": 12,
+      "safe_alternatives": [
+        "b7b8b",
+        "b7b8n",
+        "b7b8q",
+        "b7b8r",
+        "f3f4",
+        "g2g3",
+        "g2g4",
+        "h6g7"
+      ],
+      "board": "-r--q---------PK-----P--------------P-----p-b--P-P---ppp----r-k-",
+      "observation": "??????--??????PK?????P--?????--?????P??????????P?P????p??-??????",
+      "hidden_arrival_context": {
+        "opponent_move": "d1e1",
+        "attacker_squares": [
+          "e1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "lftf1jwc",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 25,
+      "move": "e5g6",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 34,
+      "safe_alternatives": [
+        "e7d6"
+      ],
+      "board": "R---K--RPP--NPPP--P--------P-------pn-B-p---p-Q--ppbk-p-r--q-b-r",
+      "observation": "???????????????P???-?-?--?-???-----pn??-p---p-Q--ppbk-p-r--q-b-r",
+      "hidden_arrival_context": {
+        "opponent_move": "c1g5",
+        "attacker_squares": [
+          "g5"
+        ],
+        "attacker_pieces": [
+          "B"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "053pp843",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 67,
+      "move": "d3b2",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 16,
+      "safe_alternatives": [
+        "h8h7"
+      ],
+      "board": "---R--K-P-----PP---nPR-----------------p-p----p-p------------Q-k",
+      "observation": "??-?-????-???-?????n?????-???-?----?-?-p-p????p?p?????--??????-k",
+      "hidden_arrival_context": {
+        "opponent_move": "f7f8",
+        "attacker_squares": [
+          "f8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "m8ktf3ox",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 62,
+      "move": "g2h3",
+      "king_move": true,
+      "safe_count": 22,
+      "legal_count": 26,
+      "safe_alternatives": [
+        "a1a2",
+        "a1a3",
+        "a1b1",
+        "a1c1",
+        "a1d1",
+        "a1e1",
+        "a1f1",
+        "a1g1"
+      ],
+      "board": "R--------P----K-------N-P--Pp---------------p--qpp----p-------k-",
+      "observation": "R--------P??--K---???-N-P-?Pp???-??-?-?-????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "e3h6",
+        "attacker_squares": [
+          "h6"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "ecoafdaa",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 65,
+      "move": "d5d4",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 9,
+      "safe_alternatives": [
+        "h7h8"
+      ],
+      "board": "------K-PPB--P--------P------------p------p---pp-p--NR-k--------",
+      "observation": "???????????????????????????-?????--p??--?-p???pp?p????-k??????--",
+      "hidden_arrival_context": {
+        "opponent_move": "f8f7",
+        "attacker_squares": [
+          "f7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "gk4dgsit",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 65,
+      "move": "h7g7",
+      "king_move": true,
+      "safe_count": 5,
+      "legal_count": 8,
+      "safe_alternatives": [
+        "a5a4",
+        "f7f5",
+        "f7f6",
+        "h6h5",
+        "h7h8"
+      ],
+      "board": "----R-K-P----PPP------R---------p---N----------p-----p-k--------",
+      "observation": "????????????????????????-???????p????-?-?????--p?????p-k??????--",
+      "hidden_arrival_context": {
+        "opponent_move": "c3g3",
+        "attacker_squares": [
+          "g3"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "m8vt44ho",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 63,
+      "move": "h5h4",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 9,
+      "safe_alternatives": [
+        "d8d7",
+        "d8e7"
+      ],
+      "board": "--------------PP----KPB-P--P-------p-p-pp---p--------------k--R-",
+      "observation": "?????????????????????????????-?--??p-p?pp???p?????---?????-k-???",
+      "hidden_arrival_context": {
+        "opponent_move": "g7g8",
+        "attacker_squares": [
+          "g8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "mhzsv4k3",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 59,
+      "move": "e8d7",
+      "king_move": true,
+      "safe_count": 16,
+      "legal_count": 19,
+      "safe_alternatives": [
+        "a6a5",
+        "b7b5",
+        "b7b6",
+        "d8a8",
+        "d8b8",
+        "d8c8",
+        "d8d6",
+        "d8d7"
+      ],
+      "board": "-K-------PP-----------b-P------P----Pp-pp--P-----p----R----rk---",
+      "observation": "????-????????-?-??????b??????-?P--??Pp?pp-?P?????p?---??---rk-??",
+      "hidden_arrival_context": {
+        "opponent_move": "g6g7",
+        "attacker_squares": [
+          "g7"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "jd27fhfx",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 53,
+      "move": "b7b5",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 14,
+      "safe_alternatives": [
+        "e8d7",
+        "e8f7"
+      ],
+      "board": "----R-K-P-----PP-------------------p------------pp--P-pp--R-k---",
+      "observation": "???????????????????????????-????--?p??----????--pp?-P-pp???-k-??",
+      "hidden_arrival_context": {
+        "opponent_move": "c1c8",
+        "attacker_squares": [
+          "c8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "orkivj8b",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 68,
+      "move": "g1g3",
+      "king_move": false,
+      "safe_count": 4,
+      "legal_count": 28,
+      "safe_alternatives": [
+        "g1g4",
+        "h3g2",
+        "h3g3",
+        "h3h4"
+      ],
+      "board": "------Q-P-P----P-------K-----------P-q---------pppp---p--------k",
+      "observation": "------Q-P?P??--P-?-?-?-K-?--??--??-P??-??-?-??-?p?????p?????????",
+      "hidden_arrival_context": {
+        "opponent_move": "e4f5",
+        "attacker_squares": [
+          "f5"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "fs0aub8s",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 69,
+      "move": "f5d7",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 22,
+      "safe_alternatives": [
+        "f5c8",
+        "f5f8",
+        "h8g7"
+      ],
+      "board": "------K---P--P---------PP----------p-q-p------P----------R-----k",
+      "observation": "??????????P??P?????-?-?P???-----???p-q-p????--P????-?---??-??--k",
+      "hidden_arrival_context": {
+        "opponent_move": "b1b8",
+        "attacker_squares": [
+          "b8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "wq12zy26",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 65,
+      "move": "f6e7",
+      "king_move": true,
+      "safe_count": 3,
+      "legal_count": 9,
+      "safe_alternatives": [
+        "f6e5",
+        "f6e6",
+        "f6g6"
+      ],
+      "board": "--R---K--P----PP-P----------------------p----k-B-------p-----Q--",
+      "observation": "????????????????????????????????-???---?p???-k-?????---p????????",
+      "hidden_arrival_context": {
+        "opponent_move": "g8f8",
+        "attacker_squares": [
+          "f8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "1qnsuo1a",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 45,
+      "move": "a7a6",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 18,
+      "safe_alternatives": [
+        "c8c7"
+      ],
+      "board": "RN----K--P---PPP--P-----P--------Bn---------p---pp----pp--k--Q--",
+      "observation": "?????????????????-?-????P???-???-?n?-?----??p?--pp--??pp?-k-????",
+      "hidden_arrival_context": {
+        "opponent_move": "f3f8",
+        "attacker_squares": [
+          "f8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "6jpnq94e",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 61,
+      "move": "b6c5",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 8,
+      "safe_alternatives": [
+        "a8a7"
+      ],
+      "board": "R-----K-P-P---PP----------P-------B-P--ppp-Np-p---------k----R--",
+      "observation": "???????????????????????????????---B???-ppp??p?p?--??????k-??????",
+      "hidden_arrival_context": {
+        "opponent_move": "f7f8",
+        "attacker_squares": [
+          "f8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "g5mjya0h",
+      "opponent": "duck",
+      "outcome": "loss",
+      "ply": 61,
+      "move": "b6b5",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 8,
+      "safe_alternatives": [
+        "h6g5"
+      ],
+      "board": "------K-P----P-------P-P--------p---p--p-p----pk--R------------R",
+      "observation": "????????????????????????-???-??-p-??p?-p?p????pk??????--????????",
+      "hidden_arrival_context": {
+        "opponent_move": "f8h8",
+        "attacker_squares": [
+          "h8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "onimatrd",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 53,
+      "move": "f2d2",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 28,
+      "safe_alternatives": [
+        "e8e7"
+      ],
+      "board": "------K--P---rPP----P----P-Pn--p---pN-------p--pp--------R--k---",
+      "observation": "?????-???P---rP???-??---????n-?p-?-p?----??-p-?pp??---?????-k-??",
+      "hidden_arrival_context": {
+        "opponent_move": "b7b8",
+        "attacker_squares": [
+          "b8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "g5xz6er2",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 59,
+      "move": "d8e8",
+      "king_move": true,
+      "safe_count": 8,
+      "legal_count": 10,
+      "safe_alternatives": [
+        "a5a4",
+        "c6c5",
+        "d8c7",
+        "d8c8",
+        "e7e6",
+        "g6g5",
+        "h7h5",
+        "h7h6"
+      ],
+      "board": "------K-PP-----P----B------P-P--p--pN-----p---p-----pQ-p---k----",
+      "observation": "????????????????????????-???????p?-p??--??p?-?p-??--p??p??-k-???",
+      "hidden_arrival_context": {
+        "opponent_move": "e6f7",
+        "attacker_squares": [
+          "f7"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "1w0ivuae",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 56,
+      "move": "f3g5",
+      "king_move": false,
+      "safe_count": 4,
+      "legal_count": 26,
+      "safe_alternatives": [
+        "d2c1",
+        "d2d1",
+        "d2d3",
+        "d2e1"
+      ],
+      "board": "--------r--K-P---pP-PN-----P-P-----p-p----bbp--Q--p-q--p------rk",
+      "observation": "??---?--??-K-P?-??P-PN?-??-P-P?-????-?--????p--Q??????-p?????-??",
+      "hidden_arrival_context": {
+        "opponent_move": "a8a2",
+        "attacker_squares": [
+          "a2"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "87j82hyp",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 41,
+      "move": "g6f8",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 25,
+      "safe_alternatives": [
+        "b7b5",
+        "c7c6",
+        "e8f8"
+      ],
+      "board": "--KR----PP---PPP----BN--B---------P----pp-----n--pp-bpp-----k--r",
+      "observation": "?????????????????????????????-?---P?---pp---?-n-?pp-bpp-???-k--r",
+      "hidden_arrival_context": {
+        "opponent_move": "c2a4",
+        "attacker_squares": [
+          "a4"
+        ],
+        "attacker_pieces": [
+          "B"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "sippfoaf",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 53,
+      "move": "e4c3",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 34,
+      "safe_alternatives": [
+        "g8g7"
+      ],
+      "board": "-R----K------PP-----P----p-PnB-----p--------p--N----bpPp--r---k-",
+      "observation": "??-???????--?P???--???-??p-?n??-??-p---???--p-????-?bpPp--r---k-",
+      "hidden_arrival_context": {
+        "opponent_move": "g4h6",
+        "attacker_squares": [
+          "h6"
+        ],
+        "attacker_pieces": [
+          "N"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "teyfakqk",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 50,
+      "move": "a2a4",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 29,
+      "safe_alternatives": [
+        "b1c2"
+      ],
+      "board": "-K--q---PPn---P---PB---R------------------------ppp---ppr----rk-",
+      "observation": "-K-??-?-PPn?-?P---PB---R---?-?--?-???-?--?????--???????p????????",
+      "hidden_arrival_context": {
+        "opponent_move": "e6e1",
+        "attacker_squares": [
+          "e1"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "yrp18nyi",
+      "opponent": "Strongly Invisible",
+      "outcome": "loss",
+      "ply": 66,
+      "move": "h2g2",
+      "king_move": true,
+      "safe_count": 1,
+      "legal_count": 9,
+      "safe_alternatives": [
+        "h2h3"
+      ],
+      "board": "-----r----Pr---K----P-P--------P-bp-P-------k-p-p------p--------",
+      "observation": "??????--??P???-K??-?P?P-??-?-?-P????P??-????????????????????????",
+      "hidden_arrival_context": {
+        "opponent_move": "d8d2",
+        "attacker_squares": [
+          "d2"
+        ],
+        "attacker_pieces": [
+          "r"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "ghtd43iy",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 67,
+      "move": "c4d3",
+      "king_move": false,
+      "safe_count": 3,
+      "legal_count": 10,
+      "safe_alternatives": [
+        "g8f7",
+        "g8g7",
+        "g8h7"
+      ],
+      "board": "R-----------PK-----P-N-PN-p-----p-p-------p--p------p-P--R----k-",
+      "observation": "??????????????????-P??????p?????p?p?--????p?-p??????p-P-?????-k-",
+      "hidden_arrival_context": {
+        "opponent_move": "b1b8",
+        "attacker_squares": [
+          "b8"
+        ],
+        "attacker_pieces": [
+          "R"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "m1jrlvze",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 49,
+      "move": "f5c2",
+      "king_move": false,
+      "safe_count": 1,
+      "legal_count": 20,
+      "safe_alternatives": [
+        "c8c7"
+      ],
+      "board": "--KR-----PP--P--P--------------------b----p---p-pp---p-p--k-Q---",
+      "observation": "??????????P????????-???-????-?-?---??b----p?--p-pp--?p?p?-k-????",
+      "hidden_arrival_context": {
+        "opponent_move": "e5e8",
+        "attacker_squares": [
+          "e8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "bev10tfo",
+      "opponent": "Instructors",
+      "outcome": "loss",
+      "ply": 66,
+      "move": "a1g1",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 27,
+      "safe_alternatives": [
+        "h2g1",
+        "h2g2"
+      ],
+      "board": "R--------P--pP-KP-B------------q----------------pp-----pr-----k-",
+      "observation": "R--------P?-?P-KP-B??-----?-?-??-???-????????-????????-????????-",
+      "hidden_arrival_context": {
+        "opponent_move": "g4h4",
+        "attacker_squares": [
+          "h4"
+        ],
+        "attacker_pieces": [
+          "q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    },
+    {
+      "game": "4057x5np",
+      "opponent": "Decent Chess Bot",
+      "outcome": "loss",
+      "ply": 45,
+      "move": "d5e6",
+      "king_move": false,
+      "safe_count": 2,
+      "legal_count": 34,
+      "safe_alternatives": [
+        "d5d8",
+        "g8h7"
+      ],
+      "board": "--R-K--RP---BPPP---------P---------q-----------ppp---pp---Q---k-",
+      "observation": "???-????P??-??P??-?-?-????---???---q-----------ppp?-?pp-???-?-k-",
+      "hidden_arrival_context": {
+        "opponent_move": "c2c8",
+        "attacker_squares": [
+          "c8"
+        ],
+        "attacker_pieces": [
+          "Q"
+        ],
+        "origin_hidden_before": true,
+        "destination_hidden_after": true
+      }
+    }
+  ],
+  "limits": [
+    "Selected from recorded losing decisions with at least one true-board immediate-safe actor-legal alternative.",
+    "This is a targeted failure subset, not a random sample or strength estimate.",
+    "A changed action is only labeled for immediate true-board king fatality; no counterfactual game is played."
+  ]
+}

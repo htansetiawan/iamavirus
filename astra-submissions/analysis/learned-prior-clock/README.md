@@ -19,5 +19,13 @@ has been tested here. The follow-up in `r10d-design.json` repeats four pairs
 on the corrected archive using new seeds 22000–22007. Both arms use identical
 book and model bytes. Results will remain separate from the old comparison.
 
+The r10d follow-up is complete: **4 wins, 0 draws and 4 losses**, score 50%,
+with a pair-bootstrap 95% interval of **12.5–87.5%**. All eight games ended
+with a capturable king and both clocks positive; no six-ply trap occurred.
+The frozen runtime remained unchanged and all replay hashes were verified.
+`r10d-result.json` retains the full receipt. This result does not justify
+changing the learned prior to the default. The older r10c score remains
+separate because the engine/book bytes and seeds changed.
+
 No release ZIP is produced by these runners. A useful result still needs
 broader opponents and independent evidence before changing the arena default.

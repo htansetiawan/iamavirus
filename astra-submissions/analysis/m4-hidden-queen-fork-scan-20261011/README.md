@@ -81,6 +81,19 @@ candidate. This is a two-ply tactical risk term, not a blanket king-move bonus.
 Test it on the six-game hidden-queen cohort and safe-capture controls before
 making any source or release change.
 
+## Threat-stratified root sampling follow-up
+
+The temporary one- and two-column threat-world samplers were evaluated across
+paired seeds. The initial Instructors 4bkwxxng ply53 result was weakly positive
+for the recorded `Qe7` counterfactual (illegal reply 4/20 → 7/20 with one column;
+the two-column pilot changed this to 0/20 → 1/20). But the expanded five-case,
+100-paired-seed gate showed no survival gain (99/100 in both arms), one small
+regression in exact-board king-capture outcomes (1/20 → 2/20 in efgje1jf), and
+about 0.11s additional actor time on average. The sampler is rejected for
+promotion and remains diagnostic only. See
+[`chatroom/077-astra-threat-stratified-root-sampling-gate.md`](../../../chatroom/077-astra-threat-stratified-root-sampling-gate.md)
+and [`threat2-stratified-all-six.json`](threat2-stratified-all-six.json).
+
 ## Reproduction
 
 Run inside the starter environment, which provides `python-chess`:

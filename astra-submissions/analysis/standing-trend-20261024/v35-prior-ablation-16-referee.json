@@ -1,0 +1,4137 @@
+{
+  "classification": "four-case search/risk guard screen; not policy strength or Elo",
+  "scope": "Same four v35 losses, same archive, inputs, seed, clock and exact belief prefixes; only MIST_KING_GUARD differs.",
+  "arms": [
+    {
+      "arm": "baseline",
+      "trace": "astra-submissions/analysis/standing-trend-20261024/v35-prior-ablation-16-baseline.json",
+      "games": 16,
+      "chosen_fatal": 16,
+      "same_recorded_fatal": 16,
+      "choices": [
+        {
+          "move": "d8c7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1312,
+            "queen_risk": "0.001",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.87",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.03222 rank=13"
+          }
+        },
+        {
+          "move": "f3e2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d2e2",
+              "from": "d2",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3f6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1795,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "2.41",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 42,
+            "particles": 2000,
+            "report": "LOST"
+          }
+        },
+        {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1088,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.23",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 36777,
+            "report": "share=0.00434 rank=36"
+          }
+        },
+        {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1549,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.78",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.06901 rank=2"
+          }
+        },
+        {
+          "move": "d4b4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8c1",
+              "from": "c8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c7b8",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0041,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.34",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00102 rank=122"
+          }
+        },
+        {
+          "move": "f7f6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6f6",
+              "from": "d6",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d8d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.074,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.48",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.05168 rank=6"
+          }
+        },
+        {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0004,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.96",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00036 rank=472"
+          }
+        },
+        {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0466,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01358 rank=20"
+          }
+        },
+        {
+          "move": "b8c6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0009,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00090 rank=65"
+          }
+        },
+        {
+          "move": "g2g1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c1g1",
+              "from": "c1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "g4h3",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0246,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "1.95",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.00788 rank=18"
+          }
+        },
+        {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1368,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.73",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.06865 rank=6"
+          }
+        },
+        {
+          "move": "f3g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6g4",
+              "from": "f6",
+              "piece": "n"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "f1h1",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.2148,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.77",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 56,
+            "particles": 3763,
+            "report": "LOST"
+          }
+        },
+        {
+          "move": "e5g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0646,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-8.42",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 25,
+            "particles": 2859,
+            "report": "share=0.00007 rank=423"
+          }
+        },
+        {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.20248 rank=3"
+          }
+        },
+        {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.003,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.30",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00302 rank=72"
+          }
+        },
+        {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.01,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.97",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00021 rank=407"
+          }
+        }
+      ]
+    },
+    {
+      "arm": "table-off-model-on",
+      "trace": "astra-submissions/analysis/standing-trend-20261024/v35-prior-ablation-16-history-off.json",
+      "games": 16,
+      "chosen_fatal": 14,
+      "same_recorded_fatal": 11,
+      "choices": [
+        {
+          "move": "d4c3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.00362 rank=47"
+          }
+        },
+        {
+          "move": "c7c5",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.0,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.52",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 42,
+            "particles": 4,
+            "report": "LOST"
+          }
+        },
+        {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1095,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.28",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 36174,
+            "report": "share=0.00282 rank=46"
+          }
+        },
+        {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1549,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.78",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.06901 rank=2"
+          }
+        },
+        {
+          "move": "d4b4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8c1",
+              "from": "c8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c7b8",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0041,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.34",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00102 rank=122"
+          }
+        },
+        {
+          "move": "f7f6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6f6",
+              "from": "d6",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d8d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.074,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.48",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.05168 rank=6"
+          }
+        },
+        {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0004,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.96",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00036 rank=472"
+          }
+        },
+        {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0466,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01358 rank=20"
+          }
+        },
+        {
+          "move": "b8d7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00019 rank=362"
+          }
+        },
+        {
+          "move": "g2g1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c1g1",
+              "from": "c1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "g4h3",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0246,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "1.95",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.00788 rank=18"
+          }
+        },
+        {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0581,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.88",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.02911 rank=7"
+          }
+        },
+        {
+          "move": "f3f4",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.245,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.74",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 56,
+            "particles": 4138,
+            "report": "LOST"
+          }
+        },
+        {
+          "move": "c7c5",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 25,
+            "particles": 3518,
+            "report": "share=0.00007 rank=534"
+          }
+        },
+        {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.20191 rank=3"
+          }
+        },
+        {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.003,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.30",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00302 rank=72"
+          }
+        },
+        {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.01,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.97",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00021 rank=407"
+          }
+        }
+      ]
+    },
+    {
+      "arm": "no-prior",
+      "trace": "astra-submissions/analysis/standing-trend-20261024/v35-prior-ablation-16-model-off.json",
+      "games": 16,
+      "chosen_fatal": 12,
+      "same_recorded_fatal": 9,
+      "choices": [
+        {
+          "move": "d4c3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.00100 rank=220"
+          }
+        },
+        {
+          "move": "h1b1",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 42,
+            "particles": 15,
+            "report": "share=0.13361 rank=1"
+          }
+        },
+        {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0083,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.40",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 29901,
+            "report": "share=0.00001 rank=10827"
+          }
+        },
+        {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.05,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.82",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.02794 rank=1"
+          }
+        },
+        {
+          "move": "d4c4",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.0,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.53",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00285 rank=105"
+          }
+        },
+        {
+          "move": "f7e7",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.00344 rank=51"
+          }
+        },
+        {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0006,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.90",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00064 rank=396"
+          }
+        },
+        {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0535,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01139 rank=30"
+          }
+        },
+        {
+          "move": "b5d7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00034 rank=721"
+          }
+        },
+        {
+          "move": "g2h3",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.141,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-0.17",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.02564 rank=6"
+          }
+        },
+        {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.009,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.01",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.00232 rank=62"
+          }
+        },
+        {
+          "move": "e4e5",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "h1f3",
+              "from": "h1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "f1h1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 56,
+            "particles": 4398,
+            "report": "LOST"
+          }
+        },
+        {
+          "move": "e5g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0562,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-8.49",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 25,
+            "particles": 3011,
+            "report": "share=0.00011 rank=1467"
+          }
+        },
+        {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.14516 rank=1"
+          }
+        },
+        {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0034,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.03",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00252 rank=95"
+          }
+        },
+        {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0033,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.98",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00011 rank=1073"
+          }
+        }
+      ]
+    },
+    {
+      "arm": "temp1",
+      "trace": "astra-submissions/analysis/standing-trend-20261024/v35-prior-ablation-16-temp1.json",
+      "games": 16,
+      "chosen_fatal": 14,
+      "same_recorded_fatal": 13,
+      "choices": [
+        {
+          "move": "d8c7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1063,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.90",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.02268 rank=15"
+          }
+        },
+        {
+          "move": "h1b1",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 42,
+            "particles": 12,
+            "report": "share=0.11053 rank=4"
+          }
+        },
+        {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0377,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.35",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 36156,
+            "report": "share=0.00181 rank=71"
+          }
+        },
+        {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0978,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.81",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.04954 rank=2"
+          }
+        },
+        {
+          "move": "d4b4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8c1",
+              "from": "c8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c7b8",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0074,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.16",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00215 rank=136"
+          }
+        },
+        {
+          "move": "f7f6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6f6",
+              "from": "d6",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d8d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0669,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.45",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.04492 rank=6"
+          }
+        },
+        {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0006,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.93",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00055 rank=472"
+          }
+        },
+        {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0537,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01359 rank=16"
+          }
+        },
+        {
+          "move": "b8d7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00323 rank=59"
+          }
+        },
+        {
+          "move": "g2g1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c1g1",
+              "from": "c1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "g4h3",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0799,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "1.84",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.01802 rank=19"
+          }
+        },
+        {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.099,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.81",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.04761 rank=6"
+          }
+        },
+        {
+          "move": "f3f4",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.0428,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.93",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 56,
+            "particles": 27,
+            "report": "share=0.04244 rank=7"
+          }
+        },
+        {
+          "move": "e5g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0705,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-8.36",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 25,
+            "particles": 2861,
+            "report": "share=0.00032 rank=598"
+          }
+        },
+        {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.20536 rank=3"
+          }
+        },
+        {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.004,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.68",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00389 rank=89"
+          }
+        },
+        {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0109,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.96",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00046 rank=401"
+          }
+        }
+      ]
+    }
+  ],
+  "paired": [
+    {
+      "game": "0ghuci4v",
+      "ply": 19,
+      "arms": {
+        "baseline": {
+          "move": "b8c6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0009,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00090 rank=65"
+          }
+        },
+        "table-off-model-on": {
+          "move": "b8d7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00019 rank=362"
+          }
+        },
+        "no-prior": {
+          "move": "b5d7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00034 rank=721"
+          }
+        },
+        "temp1": {
+          "move": "b8d7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8e8",
+              "from": "c8",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1c8",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 19,
+            "particles": 950,
+            "report": "share=0.00323 rank=59"
+          }
+        }
+      }
+    },
+    {
+      "game": "39uf3h5p",
+      "ply": 36,
+      "arms": {
+        "baseline": {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.20248 rank=3"
+          }
+        },
+        "table-off-model-on": {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.20191 rank=3"
+          }
+        },
+        "no-prior": {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.14516 rank=1"
+          }
+        },
+        "temp1": {
+          "move": "c1d2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1d2",
+              "from": "e1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3e1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.5,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.50",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 36,
+            "particles": 8,
+            "report": "share=0.20536 rank=3"
+          }
+        }
+      }
+    },
+    {
+      "game": "5uy38d1w",
+      "ply": 40,
+      "arms": {
+        "baseline": {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.01,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.97",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00021 rank=407"
+          }
+        },
+        "table-off-model-on": {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.01,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.97",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00021 rank=407"
+          }
+        },
+        "no-prior": {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0033,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.98",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00011 rank=1073"
+          }
+        },
+        "temp1": {
+          "move": "c1b2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "b8b2",
+              "from": "b8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "b7b2",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0109,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-4.96",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 40,
+            "particles": 5064,
+            "report": "share=0.00046 rank=401"
+          }
+        }
+      }
+    },
+    {
+      "game": "5wsart3r",
+      "ply": 48,
+      "arms": {
+        "baseline": {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1549,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.78",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.06901 rank=2"
+          }
+        },
+        "table-off-model-on": {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1549,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.78",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.06901 rank=2"
+          }
+        },
+        "no-prior": {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.05,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.82",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.02794 rank=1"
+          }
+        },
+        "temp1": {
+          "move": "f2g3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6g3",
+              "from": "d6",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0978,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.81",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 98,
+            "report": "share=0.04954 rank=2"
+          }
+        }
+      }
+    },
+    {
+      "game": "c0iwaal5",
+      "ply": 42,
+      "arms": {
+        "baseline": {
+          "move": "f3e2",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d2e2",
+              "from": "d2",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c3f6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1795,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "2.41",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 42,
+            "particles": 2000,
+            "report": "LOST"
+          }
+        },
+        "table-off-model-on": {
+          "move": "c7c5",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.0,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.52",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 42,
+            "particles": 4,
+            "report": "LOST"
+          }
+        },
+        "no-prior": {
+          "move": "h1b1",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 42,
+            "particles": 15,
+            "report": "share=0.13361 rank=1"
+          }
+        },
+        "temp1": {
+          "move": "h1b1",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 42,
+            "particles": 12,
+            "report": "share=0.11053 rank=4"
+          }
+        }
+      }
+    },
+    {
+      "game": "dijh2p38",
+      "ply": 56,
+      "arms": {
+        "baseline": {
+          "move": "f3g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6g4",
+              "from": "f6",
+              "piece": "n"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "f1h1",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.2148,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.77",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 56,
+            "particles": 3763,
+            "report": "LOST"
+          }
+        },
+        "table-off-model-on": {
+          "move": "f3f4",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.245,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.74",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 56,
+            "particles": 4138,
+            "report": "LOST"
+          }
+        },
+        "no-prior": {
+          "move": "e4e5",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "h1f3",
+              "from": "h1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "f1h1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 56,
+            "particles": 4398,
+            "report": "LOST"
+          }
+        },
+        "temp1": {
+          "move": "f3f4",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.0428,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.93",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 56,
+            "particles": 27,
+            "report": "share=0.04244 rank=7"
+          }
+        }
+      }
+    },
+    {
+      "game": "lftf1jwc",
+      "ply": 25,
+      "arms": {
+        "baseline": {
+          "move": "e5g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0646,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-8.42",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 25,
+            "particles": 2859,
+            "report": "share=0.00007 rank=423"
+          }
+        },
+        "table-off-model-on": {
+          "move": "c7c5",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 25,
+            "particles": 3518,
+            "report": "share=0.00007 rank=534"
+          }
+        },
+        "no-prior": {
+          "move": "e5g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0562,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-8.49",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 25,
+            "particles": 3011,
+            "report": "share=0.00011 rank=1467"
+          }
+        },
+        "temp1": {
+          "move": "e5g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g5e7",
+              "from": "g5",
+              "piece": "B"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c1g5",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0705,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-8.36",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 25,
+            "particles": 2861,
+            "report": "share=0.00032 rank=598"
+          }
+        }
+      }
+    },
+    {
+      "game": "p4eg4e17",
+      "ply": 57,
+      "arms": {
+        "baseline": {
+          "move": "f7f6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6f6",
+              "from": "d6",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d8d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.074,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.48",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.05168 rank=6"
+          }
+        },
+        "table-off-model-on": {
+          "move": "f7f6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6f6",
+              "from": "d6",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d8d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.074,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.48",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.05168 rank=6"
+          }
+        },
+        "no-prior": {
+          "move": "f7e7",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.00344 rank=51"
+          }
+        },
+        "temp1": {
+          "move": "f7f6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "d6f6",
+              "from": "d6",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d8d6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0669,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.45",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 57,
+            "particles": 548,
+            "report": "share=0.04492 rank=6"
+          }
+        }
+      }
+    },
+    {
+      "game": "qj2x0m0y",
+      "ply": 39,
+      "arms": {
+        "baseline": {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1088,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.23",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 36777,
+            "report": "share=0.00434 rank=36"
+          }
+        },
+        "table-off-model-on": {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1095,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.28",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 36174,
+            "report": "share=0.00282 rank=46"
+          }
+        },
+        "no-prior": {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0083,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.40",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 29901,
+            "report": "share=0.00001 rank=10827"
+          }
+        },
+        "temp1": {
+          "move": "c8g4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "f6h5",
+              "from": "f6",
+              "piece": "N"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e4f6",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0377,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.35",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 39,
+            "particles": 36156,
+            "report": "share=0.00181 rank=71"
+          }
+        }
+      }
+    },
+    {
+      "game": "qv7s3yas",
+      "ply": 27,
+      "arms": {
+        "baseline": {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.003,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.30",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00302 rank=72"
+          }
+        },
+        "table-off-model-on": {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.003,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.30",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00302 rank=72"
+          }
+        },
+        "no-prior": {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0034,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.03",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00252 rank=95"
+          }
+        },
+        "temp1": {
+          "move": "c5d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "a4e8",
+              "from": "a4",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "d1a4",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.004,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.68",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 400,
+            "report": "share=0.00389 rank=89"
+          }
+        }
+      }
+    },
+    {
+      "game": "s01y4crt",
+      "ply": 28,
+      "arms": {
+        "baseline": {
+          "move": "d4b4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8c1",
+              "from": "c8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c7b8",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0041,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.34",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00102 rank=122"
+          }
+        },
+        "table-off-model-on": {
+          "move": "d4b4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8c1",
+              "from": "c8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c7b8",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0041,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.34",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00102 rank=122"
+          }
+        },
+        "no-prior": {
+          "move": "d4c4",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.0,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.53",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00285 rank=105"
+          }
+        },
+        "temp1": {
+          "move": "d4b4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c8c1",
+              "from": "c8",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "c7b8",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0074,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.16",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 28,
+            "particles": 199,
+            "report": "share=0.00215 rank=136"
+          }
+        }
+      }
+    },
+    {
+      "game": "t70ql5ki",
+      "ply": 27,
+      "arms": {
+        "baseline": {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1368,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.73",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.06865 rank=6"
+          }
+        },
+        "table-off-model-on": {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0581,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.88",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.02911 rank=7"
+          }
+        },
+        "no-prior": {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.009,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.01",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.00232 rank=62"
+          }
+        },
+        "temp1": {
+          "move": "f7g6",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "R"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e5g6",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.099,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-1.81",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 27,
+            "particles": 66,
+            "report": "share=0.04761 rank=6"
+          }
+        }
+      }
+    },
+    {
+      "game": "unkjjuzz",
+      "ply": 33,
+      "arms": {
+        "baseline": {
+          "move": "d8c7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1312,
+            "queen_risk": "0.001",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.87",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.03222 rank=13"
+          }
+        },
+        "table-off-model-on": {
+          "move": "d4c3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.00362 rank=47"
+          }
+        },
+        "no-prior": {
+          "move": "d4c3",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": null,
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.00100 rank=220"
+          }
+        },
+        "temp1": {
+          "move": "d8c7",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e1e8",
+              "from": "e1",
+              "piece": "Q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g5",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": true,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.1063,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.90",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 33,
+            "particles": 285,
+            "report": "share=0.02268 rank=15"
+          }
+        }
+      }
+    },
+    {
+      "game": "yf7hdgad",
+      "ply": 38,
+      "arms": {
+        "baseline": {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0004,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.96",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00036 rank=472"
+          }
+        },
+        "table-off-model-on": {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0004,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.96",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00036 rank=472"
+          }
+        },
+        "no-prior": {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0006,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.90",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00064 rank=396"
+          }
+        },
+        "temp1": {
+          "move": "b2d4",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "e3g3",
+              "from": "e3",
+              "piece": "r"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e8e3",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0006,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-2.93",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 38,
+            "particles": 649,
+            "report": "share=0.00055 rank=472"
+          }
+        }
+      }
+    },
+    {
+      "game": "yfijtgfy",
+      "ply": 64,
+      "arms": {
+        "baseline": {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0466,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01358 rank=20"
+          }
+        },
+        "table-off-model-on": {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0466,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01358 rank=20"
+          }
+        },
+        "no-prior": {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0535,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01139 rank=30"
+          }
+        },
+        "temp1": {
+          "move": "e1f1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "g1f1",
+              "from": "g1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "e3g1",
+              "last_move_destination_is_attacker_square": true,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": false
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0537,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "0.00",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 64,
+            "particles": 274,
+            "report": "share=0.01359 rank=16"
+          }
+        }
+      }
+    },
+    {
+      "game": "yk7d8c5i",
+      "ply": 48,
+      "arms": {
+        "baseline": {
+          "move": "g2g1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c1g1",
+              "from": "c1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "g4h3",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0246,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "1.95",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.00788 rank=18"
+          }
+        },
+        "table-off-model-on": {
+          "move": "g2g1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c1g1",
+              "from": "c1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "g4h3",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0246,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "1.95",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.00788 rank=18"
+          }
+        },
+        "no-prior": {
+          "move": "g2h3",
+          "immediate_fatal": false,
+          "attackers": [],
+          "attacker_visibility_context": [],
+          "matches_recorded_fatal_move": false,
+          "logged_risk": {
+            "king_risk": 0.141,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "-0.17",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.02564 rank=6"
+          }
+        },
+        "temp1": {
+          "move": "g2g1",
+          "immediate_fatal": true,
+          "attackers": [
+            {
+              "move": "c1g1",
+              "from": "c1",
+              "piece": "q"
+            }
+          ],
+          "attacker_visibility_context": [
+            {
+              "last_opponent_move": "g4h3",
+              "last_move_destination_is_attacker_square": false,
+              "attacker_square_seen_before_last_move": false,
+              "attacker_square_seen_after_last_move": false,
+              "last_move_origin_seen_before": false,
+              "last_move_destination_seen_after": true
+            }
+          ],
+          "matches_recorded_fatal_move": true,
+          "logged_risk": {
+            "king_risk": 0.0799,
+            "queen_risk": "0.000",
+            "queen_risk_sharp": "0.000",
+            "material_risk": "1.84",
+            "chosen": true
+          },
+          "truth_rank": {
+            "view": 48,
+            "particles": 41,
+            "report": "share=0.01802 rank=19"
+          }
+        }
+      }
+    }
+  ],
+  "limits": [
+    "Four selected fatal decisions only; all were chosen for diagnostic development.",
+    "Different candidate move is checked for immediate truth-board fatality only.",
+    "No changed action was branched through an opponent response; no strength claim."
+  ]
+}

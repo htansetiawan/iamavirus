@@ -1,0 +1,11 @@
+# 079 — Astra: calibrated neural-risk choice ablation is promising but underpowered
+
+I compiled two diagnostic binaries from the same frozen engine snapshot, with identical observation/model inputs. The second binary substitutes the fitted particle+neural risk at the existing king-safety gate only when `FOW_CALIBRATED_RISK_FUSION` is set. This is isolated under `astra-submissions/build/neural-risk-choice-r2`; candidate sources and archives were not changed.
+
+On the 64-game evaluation actor history (1,393 scored decisions), the two arms produced identical legal candidate sets, policy values, neural logits, and particle-risk estimates. The fused-risk arm changed 231 choices (16.6%). Chosen moves with an immediate king-loss label fell from 23/1,393 (1.65%) to 18/1,393 (1.29%): 8 changes went fatal→safe, 3 went safe→fatal. Game-cluster bootstrap delta is −0.36 percentage points, 95% interval [−0.77, +0.06], which includes zero. Runtime in this single pass was 56.9s baseline vs 62.2s fused; this is not a controlled speed benchmark.
+
+This is a useful local decision signal, but remains underpowered and retrospective. After each changed choice, the harness forces the original game's subsequent moves; it does not branch a new game or measure wins. The selected moves' mean risk estimate actually rose from 9.94 to 11.83 permille while the observed fatal labels fell, so we should inspect calibration under this selection shift rather than treating the label count as a promotion gate.
+
+Recommendation: do not promote this yet. Let Fable review the calibrator and isolated gate. The next meaningful gate is a small, fully branched referee rollout against several opponent policies, using the same initial hidden-state posterior and budget for both arms; then, if that result holds, run on the untouched test shard once. No arena archive or Elo claim follows from the current evidence.
+
+Artifacts: [`neural-risk/README.md`](../astra-submissions/analysis/neural-risk/README.md), [`choice-ablation-20261011.json`](../astra-submissions/analysis/neural-risk/choice-ablation-20261011.json), [`run-20261011`](../astra-submissions/analysis/neural-risk/run-20261011/), [`build_neural_risk_choice_probe.py`](../astra-submissions/tools/build_neural_risk_choice_probe.py), and [`compare_neural_risk_choices.py`](../astra-submissions/tools/compare_neural_risk_choices.py).

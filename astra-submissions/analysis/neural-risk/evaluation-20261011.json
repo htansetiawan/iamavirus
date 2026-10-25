@@ -1,0 +1,343 @@
+{
+  "classification": "actor-only held-out validation; model predictions fixed before label join; no move selection changed",
+  "calibration_games": 64,
+  "evaluation_games": 64,
+  "calibration_decisions": 1258,
+  "evaluation_decisions": 1393,
+  "calibration_candidates": 38264,
+  "evaluation_candidates": 41030,
+  "calibration_positive_candidates": 1579,
+  "evaluation_positive_candidates": 1744,
+  "decision_weighting": "each sampled decision has total weight 1, divided equally among its legal candidates",
+  "provenance": {
+    "calibration_sha256": "80732d28f14a23112d401d58608a83fc4f6c7b7cc19abbb20fc1466b78369df8",
+    "evaluation_sha256": "089e300ed1f18cbaafbc1ffde2ba97d73fc4dc6329130dcdcb813a98d7bcc851",
+    "collection_state_sha256": "020fa37ede3f627feb41a4f3a5ecf153f5426933f3bd4a920bc64c3127ae75ea",
+    "collection_inputs": {
+      "/home/henrytan/git/iamavirus/data/manifests/v4/train.jsonl.gz": "dff01e26e8d0bf959b8e08d179e901493308f51da78f25f9e289dbc9c45cf426",
+      "/home/henrytan/git/iamavirus/data/manifests/v4/validation.jsonl.gz": "499f4454f517994f7ba93bc888a41cd9420522103d5ad1af714f7631043e1b15",
+      "/tmp/neural-risk-pilot-report.json": "48e4de579a701f9d3486c1f732f4a0671eff109cf4ecbcffbb71a5fe617c6875",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/neural-risk-r1/probe": "2692aabded41b5c1d913298eb7389e27e016f9d5a36f272a1f2f35bf42940e8d",
+      "/home/henrytan/git/iamavirus/astra-submissions/build/neural-risk-r1/probe-build.json": "2cf933b29b0e8f736b51bf84f6d53f37f6e93a5c69bdf2269349925d45b93543",
+      "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008/attention-small-export/model_manifest.json": "c36c6fb5d468dc0e6bc2ddc00283153918042fe07d311a513d3e66eb47180ed9",
+      "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008/attention-small-export/observe.onnx": "fcf413ec4593b655b45f2a9e344e280f9524440c43acea21b700a12b86f12c2d",
+      "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008/attention-small-export/score.onnx": "f66cca490da210d0465f731029936024255fa555c6816b4f8dd5d3630097e201"
+    },
+    "model_checkpoint_sha256": "2e0af1ccd8e1f05f3beadac96151099342c0ede691e331e8272ba327f19addaf",
+    "model_graphs": {
+      "observe": {
+        "sha256": "fcf413ec4593b655b45f2a9e344e280f9524440c43acea21b700a12b86f12c2d",
+        "bytes": 6461591
+      },
+      "score": {
+        "sha256": "f66cca490da210d0465f731029936024255fa555c6816b4f8dd5d3630097e201",
+        "bytes": 244737
+      }
+    },
+    "probe_sha256": "2692aabded41b5c1d913298eb7389e27e016f9d5a36f272a1f2f35bf42940e8d",
+    "test_shard_used": false,
+    "bootstrap_seed": 20261011,
+    "bootstrap_replicates": 10000
+  },
+  "feature_standardization": {
+    "weighted_mean": [
+      -7.517638158706673,
+      -4.371608445186078
+    ],
+    "weighted_std": [
+      3.969818840954452,
+      1.9247721446288066
+    ]
+  },
+  "ridge": 0.001,
+  "calibrators": {
+    "particle_only": {
+      "beta": [
+        -5.593842310547743,
+        2.550914258875282,
+        0.0
+      ],
+      "active_features": [
+        1
+      ],
+      "objective": 78.68476745397155
+    },
+    "neural_only": {
+      "beta": [
+        -4.3812891299470476,
+        0.0,
+        1.8851121523808358
+      ],
+      "active_features": [
+        2
+      ],
+      "objective": 173.975441457357
+    },
+    "fused": {
+      "beta": [
+        -5.978763575012023,
+        2.2100208097040195,
+        0.7867547456969005
+      ],
+      "active_features": [
+        1,
+        2
+      ],
+      "objective": 74.57902282507125
+    }
+  },
+  "evaluation": {
+    "raw_particle": {
+      "decisions": 1393,
+      "brier": 0.018610190998433807,
+      "log_loss": 0.10500321653716288
+    },
+    "calibrated_particle": {
+      "decisions": 1393,
+      "brier": 0.017360935149053236,
+      "log_loss": 0.06822304682221403
+    },
+    "calibrated_neural": {
+      "decisions": 1393,
+      "brier": 0.039913130903366414,
+      "log_loss": 0.14333480903213938
+    },
+    "fused": {
+      "decisions": 1393,
+      "brier": 0.01676046616369461,
+      "log_loss": 0.06324674240072563
+    }
+  },
+  "fused_minus_calibrated_particle": {
+    "brier": {
+      "mean_delta_b_minus_a": -0.0006004689853586235,
+      "game_bootstrap_95pct": [
+        -0.0011855193660771507,
+        1.6876868972080963e-05
+      ]
+    },
+    "log_loss": {
+      "mean_delta_b_minus_a": -0.004976304421488405,
+      "game_bootstrap_95pct": [
+        -0.007229814952034491,
+        -0.0026551506602023665
+      ]
+    }
+  },
+  "operating_points": {
+    "raw_particle": {
+      "0.01": {
+        "calibration": {
+          "threshold": 0.42919921875,
+          "false_positive_rate": 0.00987794933344074,
+          "recall": 0.7005402355752458,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.42919921875,
+          "false_positive_rate": 0.011180663872036908,
+          "recall": 0.7224798118203125,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      },
+      "0.05": {
+        "calibration": {
+          "threshold": 0.14306640625,
+          "false_positive_rate": 0.04982711118139289,
+          "recall": 0.8598131509269612,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.14306640625,
+          "false_positive_rate": 0.06506759800943542,
+          "recall": 0.8656641118968668,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      }
+    },
+    "calibrated_particle": {
+      "0.01": {
+        "calibration": {
+          "threshold": 0.27961101275536393,
+          "false_positive_rate": 0.00987794933344074,
+          "recall": 0.7005402355752458,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.27961101275536393,
+          "false_positive_rate": 0.011180663872036908,
+          "recall": 0.7224798118203125,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      },
+      "0.05": {
+        "calibration": {
+          "threshold": 0.12859634614972854,
+          "false_positive_rate": 0.04982711118139289,
+          "recall": 0.8598131509269612,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.12859634614972854,
+          "false_positive_rate": 0.06506759800943542,
+          "recall": 0.8656641118968668,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      }
+    },
+    "calibrated_neural": {
+      "0.01": {
+        "calibration": {
+          "threshold": 0.4181039799723835,
+          "false_positive_rate": 0.009952340193897635,
+          "recall": 0.28075836132649873,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.4181039799723835,
+          "false_positive_rate": 0.01414029502608287,
+          "recall": 0.2572458595583229,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      },
+      "0.05": {
+        "calibration": {
+          "threshold": 0.21881008879120764,
+          "false_positive_rate": 0.04989921412809762,
+          "recall": 0.5054458357929275,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.21881008879120764,
+          "false_positive_rate": 0.06708050120381034,
+          "recall": 0.5980727666459623,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      }
+    },
+    "fused": {
+      "0.01": {
+        "calibration": {
+          "threshold": 0.308579470363573,
+          "false_positive_rate": 0.009957199801776777,
+          "recall": 0.7390906992948746,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.308579470363573,
+          "false_positive_rate": 0.011398717608587945,
+          "recall": 0.7427510672082308,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      },
+      "0.05": {
+        "calibration": {
+          "threshold": 0.11634743893622129,
+          "false_positive_rate": 0.0499870573827988,
+          "recall": 0.8728822684875193,
+          "positive_weight": 66.93067079944295,
+          "negative_weight": 1191.0693292003411
+        },
+        "evaluation": {
+          "threshold": 0.11634743893622129,
+          "false_positive_rate": 0.06441375404386168,
+          "recall": 0.8991181955806092,
+          "positive_weight": 74.05408636804015,
+          "negative_weight": 1318.945913631739
+        }
+      }
+    }
+  },
+  "subgroups": {
+    "zero_particle_risk": {
+      "decisions": 1251,
+      "candidates": 33618,
+      "calibrated_particle": {
+        "decisions": 1251,
+        "brier": 0.003178950505686992,
+        "log_loss": 0.02253603790167077
+      },
+      "fused": {
+        "decisions": 1251,
+        "brier": 0.003157686033961825,
+        "log_loss": 0.018366237879892847
+      }
+    },
+    "king_moves": {
+      "decisions": 1244,
+      "candidates": 4255,
+      "calibrated_particle": {
+        "decisions": 1244,
+        "brier": 0.041568146928763886,
+        "log_loss": 0.15212104967376114
+      },
+      "fused": {
+        "decisions": 1244,
+        "brier": 0.04129308180966776,
+        "log_loss": 0.1470498390885213
+      }
+    },
+    "early_ply_lt20": {
+      "decisions": 380,
+      "candidates": 11244,
+      "calibrated_particle": {
+        "decisions": 380,
+        "brier": 0.0014057338071190796,
+        "log_loss": 0.008447913710347824
+      },
+      "fused": {
+        "decisions": 380,
+        "brier": 0.0015430506826616403,
+        "log_loss": 0.007393439090972174
+      }
+    },
+    "middle_ply_20_59": {
+      "decisions": 524,
+      "candidates": 18644,
+      "calibrated_particle": {
+        "decisions": 524,
+        "brier": 0.011022662502800549,
+        "log_loss": 0.0485386750361836
+      },
+      "fused": {
+        "decisions": 524,
+        "brier": 0.010679982159766547,
+        "log_loss": 0.043965671834539435
+      }
+    },
+    "late_ply_ge60": {
+      "decisions": 489,
+      "candidates": 11142,
+      "calibrated_particle": {
+        "decisions": 489,
+        "brier": 0.03655159236085565,
+        "log_loss": 0.13576734416043287
+      },
+      "fused": {
+        "decisions": 489,
+        "brier": 0.03510155307750001,
+        "log_loss": 0.1273112336775925
+      }
+    }
+  },
+  "limitations": [
+    "One trained model and one particle-filter seed.",
+    "Validation-development data, not sealed test data.",
+    "Calibration targets immediate king-capturable labels only.",
+    "Calibrated risk is not a joint posterior or multi-ply forced-loss probability."
+  ]
+}

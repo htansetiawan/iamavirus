@@ -1,0 +1,401 @@
+{
+  "classification": "diagnostic replay of exact submitted v35 bytes; no alternative move is played",
+  "archive": "/home/henrytan/git/iamavirus/fable-submissions/iamavirus-v35-mist-c-v14.zip",
+  "archive_sha256": "24791ca64a429f5ae931466ce3c1af36c6974e1295203e99a00a991976955b4c",
+  "binary_sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+  "audit_sha256": "c93379e93c4fbcebd94a762787cf26687b0278cebaf61227d482d36e770e1339",
+  "parameters": {
+    "per_opponent": 1,
+    "seed": 20261025,
+    "max_ply": 70,
+    "max_seconds": 10.0,
+    "MIST_KING_GUARD": 0.0001,
+    "MIST_CAP": 200000,
+    "MIST_RISK": true,
+    "MIST_TIMING": true
+  },
+  "attempted": 4,
+  "completed": 4,
+  "errors": [],
+  "traces": [
+    {
+      "game": "unkjjuzz",
+      "opponent": "Decent Chess Bot",
+      "ply": 33,
+      "actual_fatal_move": "d8c7",
+      "actual_is_king_move": false,
+      "true_board_safe_alternatives": [
+        "d7e6",
+        "d8e7",
+        "e8f8",
+        "e8g8"
+      ],
+      "true_attackers_after_actual_move": [
+        {
+          "move": "e1e8",
+          "from": "e1",
+          "piece": "Q"
+        }
+      ],
+      "hidden_attackers_from_actor_view": [
+        {
+          "move": "e1e8",
+          "from": "e1",
+          "piece": "Q"
+        }
+      ],
+      "v35_replayed_choice": "d8b8",
+      "replayed_choice_matches_actual": false,
+      "v35_truth_rank_at_target": {
+        "view": 33,
+        "particles": 285,
+        "report": "share=0.03222 rank=13"
+      },
+      "actual_move_risk": {
+        "king_risk": 0.1312,
+        "queen_risk": "0.001",
+        "queen_risk_sharp": "0.000",
+        "material_risk": "0.87",
+        "chosen": false
+      },
+      "safe_alternative_risks": {
+        "d7e6": {
+          "king_risk": 0.0,
+          "queen_risk": "1.000",
+          "queen_risk_sharp": "1.000",
+          "material_risk": "6.00",
+          "chosen": false
+        },
+        "d8e7": {
+          "king_risk": 0.0,
+          "queen_risk": "1.000",
+          "queen_risk_sharp": "1.000",
+          "material_risk": "6.00",
+          "chosen": false
+        },
+        "e8f8": {
+          "king_risk": 0.0,
+          "queen_risk": "1.000",
+          "queen_risk_sharp": "1.000",
+          "material_risk": "6.00",
+          "chosen": false
+        },
+        "e8g8": {
+          "king_risk": 0.0,
+          "queen_risk": "1.000",
+          "queen_risk_sharp": "1.000",
+          "material_risk": "6.00",
+          "chosen": false
+        }
+      },
+      "minimum_logged_king_risk": 0.0,
+      "risk_candidate_count": 36,
+      "summary_lines": [
+        "mist: truth v=25 |P|=3285 share=0.88541 rank=1",
+        "mist: played h7h6 risk 0.0000 least 0.0000 |P|=3285",
+        "mist: timing own update 0.003 s |P| 3285 -> 3285",
+        "mist: truth v=26 |P|=3285 share=0.88541 rank=1",
+        "mist: timing opp update 0.090 s |P| 3285 -> 2924",
+        "mist: truth v=27 |P|=2924 share=0.90888 rank=1",
+        "mist: played c6d4 risk 0.0000 least 0.0000 |P|=2924",
+        "mist: timing own update 0.001 s |P| 2924 -> 1187",
+        "mist: truth v=28 |P|=1187 share=0.92858 rank=1",
+        "mist: timing opp update 0.038 s |P| 1187 -> 2494",
+        "mist: truth v=29 |P|=2494 share=0.83086 rank=1",
+        "mist: played e6e5 risk 0.0000 least 0.0000 |P|=2494",
+        "mist: timing own update 0.001 s |P| 2494 -> 875",
+        "mist: truth v=30 |P|=875 share=0.93877 rank=1",
+        "mist: timing opp update 0.042 s |P| 875 -> 9574",
+        "mist: truth v=31 |P|=9574 share=0.02475 rank=21",
+        "mist: played e5d4 risk 0.0004 least 0.0000 |P|=9574",
+        "mist: timing own update 0.001 s |P| 9574 -> 285",
+        "mist: truth v=32 |P|=285 share=0.03214 rank=15",
+        "mist: timing opp update 0.010 s |P| 285 -> 285",
+        "mist: truth v=33 |P|=285 share=0.03222 rank=13",
+        "mist: timing queen guard 0.005 s |P| 285 moves 36",
+        "mist: king guard left out 30 of 36 moves (safest 0.135, sharper 0.131)",
+        "mist: queen guard left out 4 of 36 moves (safest 0.000, sharper 0.000)",
+        "mist: n=17 |P|=285 samples=15 moves=6 infosets=1144 nodes=107246 iters=1220 p=0.59 v=-0.964 lead=-2 clock=95.0 sf=2734/8.6s mr=0.87/0.00 hist=38/11738 move=d8b8"
+      ],
+      "returncode": 0
+    },
+    {
+      "game": "s01y4crt",
+      "opponent": "Instructors",
+      "ply": 28,
+      "actual_fatal_move": "d4b4",
+      "actual_is_king_move": false,
+      "true_board_safe_alternatives": [
+        "c1d1",
+        "d4c4",
+        "e5c4",
+        "e5c6",
+        "f1c4"
+      ],
+      "true_attackers_after_actual_move": [
+        {
+          "move": "c8c1",
+          "from": "c8",
+          "piece": "r"
+        }
+      ],
+      "hidden_attackers_from_actor_view": [
+        {
+          "move": "c8c1",
+          "from": "c8",
+          "piece": "r"
+        }
+      ],
+      "v35_replayed_choice": "d4c4",
+      "replayed_choice_matches_actual": false,
+      "v35_truth_rank_at_target": {
+        "view": 28,
+        "particles": 199,
+        "report": "share=0.00102 rank=122"
+      },
+      "actual_move_risk": {
+        "king_risk": 0.0041,
+        "queen_risk": "0.000",
+        "queen_risk_sharp": "0.000",
+        "material_risk": "-2.34",
+        "chosen": false
+      },
+      "safe_alternative_risks": {
+        "c1d1": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.32",
+          "chosen": false
+        },
+        "d4c4": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.53",
+          "chosen": true
+        },
+        "e5c4": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.01",
+          "chosen": false
+        },
+        "e5c6": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "2.99",
+          "chosen": false
+        },
+        "f1c4": {
+          "king_risk": 0.0,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.11",
+          "chosen": false
+        }
+      },
+      "minimum_logged_king_risk": 0.0,
+      "risk_candidate_count": 41,
+      "summary_lines": [
+        "mist: timing opp update 0.001 s |P| 19 -> 193",
+        "mist: truth v=20 |P|=193 share=0.00044 rank=140",
+        "mist: played d2b4 risk 0.0000 least 0.0000 |P|=193",
+        "mist: timing own update 0.000 s |P| 193 -> 27",
+        "mist: truth v=21 |P|=27 share=0.01416 rank=14",
+        "mist: timing opp update 0.001 s |P| 27 -> 26",
+        "mist: truth v=22 |P|=26 share=0.01465 rank=14",
+        "mist: played b5c7 risk 0.0000 least 0.0000 |P|=26",
+        "mist: timing own update 0.000 s |P| 26 -> 3",
+        "mist: truth v=23 |P|=3 share=0.54812 rank=1",
+        "mist: timing opp update 0.000 s |P| 3 -> 2",
+        "mist: truth v=24 |P|=2 share=0.76566 rank=1",
+        "mist: played f3e5 risk 0.0000 least 0.0000 |P|=2",
+        "mist: timing own update 0.000 s |P| 2 -> 2",
+        "mist: truth v=25 |P|=2 share=0.76566 rank=1",
+        "mist: timing opp update 0.000 s |P| 2 -> 25",
+        "mist: truth v=26 |P|=25 share=0.01265 rank=13",
+        "mist: played d1d4 risk 0.0000 least 0.0000 |P|=25",
+        "mist: timing own update 0.000 s |P| 25 -> 25",
+        "mist: truth v=27 |P|=25 share=0.01265 rank=13",
+        "mist: timing opp update 0.001 s |P| 25 -> 199",
+        "mist: truth v=28 |P|=199 share=0.00102 rank=122",
+        "mist: timing queen guard 0.001 s |P| 199 moves 41",
+        "mist: king guard left out 36 of 41 moves (safest 0.000, sharper 0.000)",
+        "mist: n=15 |P|=199 samples=25 moves=5 infosets=2051 nodes=147833 iters=1540 p=0.66 v=-0.618 lead=-2 clock=104.5 sf=3810/8.3s mr=0.53/-2.34 hist=84/516 move=d4c4"
+      ],
+      "returncode": 0
+    },
+    {
+      "game": "0ghuci4v",
+      "opponent": "Strongly Invisible",
+      "ply": 19,
+      "actual_fatal_move": "b8c6",
+      "actual_is_king_move": false,
+      "true_board_safe_alternatives": [
+        "e8d7",
+        "e8e7"
+      ],
+      "true_attackers_after_actual_move": [
+        {
+          "move": "c8e8",
+          "from": "c8",
+          "piece": "R"
+        }
+      ],
+      "hidden_attackers_from_actor_view": [
+        {
+          "move": "c8e8",
+          "from": "c8",
+          "piece": "R"
+        }
+      ],
+      "v35_replayed_choice": "e8e7",
+      "replayed_choice_matches_actual": false,
+      "v35_truth_rank_at_target": {
+        "view": 19,
+        "particles": 950,
+        "report": "share=0.00090 rank=65"
+      },
+      "actual_move_risk": {
+        "king_risk": 0.0009,
+        "queen_risk": "0.000",
+        "queen_risk_sharp": "0.000",
+        "material_risk": "0.00",
+        "chosen": false
+      },
+      "safe_alternative_risks": {
+        "e8d7": {
+          "king_risk": 0.0004,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": false
+        },
+        "e8e7": {
+          "king_risk": 0.0004,
+          "queen_risk": "0.000",
+          "queen_risk_sharp": "0.000",
+          "material_risk": "0.00",
+          "chosen": true
+        }
+      },
+      "minimum_logged_king_risk": 0.0004,
+      "risk_candidate_count": 39,
+      "summary_lines": [
+        "mist: timing opp update 0.010 s |P| 272 -> 2274",
+        "mist: truth v=11 |P|=2274 share=0.00517 rank=8",
+        "mist: played d8b6 risk 0.0000 least 0.0000 |P|=2274",
+        "mist: timing own update 0.001 s |P| 2274 -> 1383",
+        "mist: truth v=12 |P|=1383 share=0.00518 rank=8",
+        "mist: timing opp update 0.051 s |P| 1383 -> 7794",
+        "mist: truth v=13 |P|=7794 share=0.01206 rank=7",
+        "mist: played e7e6 risk 0.0000 least 0.0000 |P|=7794",
+        "mist: timing own update 0.003 s |P| 7794 -> 5418",
+        "mist: truth v=14 |P|=5418 share=0.01208 rank=7",
+        "mist: timing opp update 0.077 s |P| 5418 -> 624",
+        "mist: truth v=15 |P|=624 share=0.00748 rank=5",
+        "mist: played d7b5 risk 0.0000 least 0.0000 |P|=624",
+        "mist: timing own update 0.000 s |P| 624 -> 559",
+        "mist: truth v=16 |P|=559 share=0.00748 rank=5",
+        "mist: timing opp update 0.015 s |P| 559 -> 105",
+        "mist: truth v=17 |P|=105 share=0.00921 rank=5",
+        "mist: played b6b5 risk 0.0000 least 0.0000 |P|=105",
+        "mist: timing own update 0.000 s |P| 105 -> 105",
+        "mist: truth v=18 |P|=105 share=0.00921 rank=5",
+        "mist: timing opp update 0.004 s |P| 105 -> 950",
+        "mist: truth v=19 |P|=950 share=0.00090 rank=65",
+        "mist: timing queen guard 0.014 s |P| 950 moves 39",
+        "mist: king guard left out 38 of 39 moves (safest 0.003, sharper 0.000)",
+        "mist: n=10 |P|=950 samples=13 moves=1 infosets=3126 nodes=240559 iters=2400 p=1.00 v=+0.339 lead=+3 clock=125.8 sf=6687/8.3s mr=0.00/0.00 hist=40/7781 move=e8e7"
+      ],
+      "returncode": 0
+    },
+    {
+      "game": "lftf1jwc",
+      "opponent": "duck",
+      "ply": 25,
+      "actual_fatal_move": "e5g6",
+      "actual_is_king_move": false,
+      "true_board_safe_alternatives": [
+        "e7d6"
+      ],
+      "true_attackers_after_actual_move": [
+        {
+          "move": "g5e7",
+          "from": "g5",
+          "piece": "B"
+        }
+      ],
+      "hidden_attackers_from_actor_view": [
+        {
+          "move": "g5e7",
+          "from": "g5",
+          "piece": "B"
+        }
+      ],
+      "v35_replayed_choice": "e7d6",
+      "replayed_choice_matches_actual": false,
+      "v35_truth_rank_at_target": {
+        "view": 25,
+        "particles": 2859,
+        "report": "share=0.00007 rank=423"
+      },
+      "actual_move_risk": {
+        "king_risk": 0.0646,
+        "queen_risk": "0.000",
+        "queen_risk_sharp": "0.000",
+        "material_risk": "-8.42",
+        "chosen": false
+      },
+      "safe_alternative_risks": {
+        "e7d6": {
+          "king_risk": 0.0045,
+          "queen_risk": "0.069",
+          "queen_risk_sharp": "0.060",
+          "material_risk": "2.23",
+          "chosen": true
+        }
+      },
+      "minimum_logged_king_risk": 0.0045,
+      "risk_candidate_count": 34,
+      "summary_lines": [
+        "mist: timing opp update 0.832 s |P| 92400 -> 200000",
+        "mist: truth v=17 |P|=200000(capped) share=0.00000 rank=30611",
+        "mist: played f6e5 risk 0.0000 least 0.0000 |P|=200000(capped)",
+        "mist: timing own update 0.131 s |P| 200000 -> 200000",
+        "mist: truth v=18 |P|=200000(capped) share=0.00000 rank=30611",
+        "mist: timing opp update 0.288 s |P| 200000 -> 30786",
+        "mist: truth v=19 |P|=30786(capped) share=0.00000 rank=8203",
+        "mist: played h7g6 risk 0.0000 least 0.0000 |P|=30786(capped)",
+        "mist: timing own update 0.011 s |P| 30786 -> 20721",
+        "mist: truth v=20 |P|=20721(capped) share=0.00000 rank=5582",
+        "mist: timing opp update 0.027 s |P| 20721 -> 1828",
+        "mist: truth v=21 |P|=1828(capped) share=0.00011 rank=361",
+        "mist: played e8e7 risk 0.0000 least 0.0000 |P|=1828(capped)",
+        "mist: timing own update 0.002 s |P| 1828 -> 1828",
+        "mist: truth v=22 |P|=1828(capped) share=0.00011 rank=361",
+        "mist: timing opp update 0.059 s |P| 1828 -> 368",
+        "mist: truth v=23 |P|=368(capped) share=0.00010 rank=118",
+        "mist: played c6e5 risk 0.0000 least 0.0000 |P|=368(capped)",
+        "mist: timing own update 0.000 s |P| 368 -> 291",
+        "mist: truth v=24 |P|=291(capped) share=0.00011 rank=102",
+        "mist: timing opp update 0.012 s |P| 291 -> 2859",
+        "mist: truth v=25 |P|=2859(capped) share=0.00007 rank=423",
+        "mist: timing queen guard 0.031 s |P| 2859 moves 34",
+        "mist: king guard left out 33 of 34 moves (safest 0.069, sharper 0.059)",
+        "mist: n=13 |P|=2859(capped) samples=27 moves=1 infosets=2093 nodes=190802 iters=2170 p=1.00 v=-0.683 lead=+2 clock=106.8 sf=5189/8.4s mr=2.23/-8.42 hist=38/337344 move=e7d6"
+      ],
+      "returncode": 0
+    }
+  ],
+  "limits": [
+    "The true board is supplied only through v35's diagnostic stderr hook.",
+    "Recorded own moves are forced before the target choice; observed views recreate the actor input.",
+    "The opponent policy is not simulated because observations are replayed from recorded games.",
+    "A fresh process and deterministic local seed may not reproduce the arena's hidden RNG.",
+    "A changed move is not branched into a new game; this traces belief and selection only."
+  ]
+}

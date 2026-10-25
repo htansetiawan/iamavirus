@@ -1,0 +1,987 @@
+{
+  "classification": "held-out empirical history-table coverage audit; not a strength estimate",
+  "table": {
+    "path": "/media/henrytan/seagate1/iamavirus-data/derived/moves/history-train.bin",
+    "sha256": "5ed8c2b5478d5f019217728a2266b1036ff60e874620b87757c477a4142da4c1",
+    "history_keys": 87973,
+    "record_count": 151316,
+    "min_count": 3
+  },
+  "split": {
+    "train_games": 72989,
+    "test_games": 12923,
+    "overlap_games": 0,
+    "processed_test_games": 12923,
+    "missing_replays": 0,
+    "malformed_replays": 0,
+    "processed_plies": 991287,
+    "limit_games": null
+  },
+  "inputs": {
+    "train_list_sha256": "08fe641f3e3929dde4f18655c7fc6813e577fed868916516b91f455093938fcd",
+    "test_list_sha256": "f90fd9d92c03eaaf37fd5119a0ac3806e358144de8ab5d9b29dacb594b44ee7c"
+  },
+  "overall": {
+    "decisions": 991287,
+    "table_present": 140758,
+    "lookup_eligible_n_ge_3": 133490,
+    "actual_action_in_table": 127562,
+    "top1_correct": 73030,
+    "top4_correct": 112759,
+    "count_sum": 1917837689,
+    "eligible_rate": 0.1346633215204073,
+    "action_coverage_given_eligible": 0.9555921791894524,
+    "top1_accuracy_given_eligible": 0.5470821784403326,
+    "top4_accuracy_given_eligible": 0.8446999775264065,
+    "mean_cached_count_when_present": 13625.070610551444,
+    "ply_bins": {
+      "0-9": {
+        "decisions": 129063,
+        "eligible": 108121,
+        "eligible_rate": 0.837738158883646,
+        "action_hits": 104017,
+        "action_coverage_given_eligible": 0.9620425264287233
+      },
+      "10-19": {
+        "decisions": 125772,
+        "eligible": 22941,
+        "eligible_rate": 0.1824014884075947,
+        "action_hits": 21265,
+        "action_coverage_given_eligible": 0.9269430277668803
+      },
+      "20-39": {
+        "decisions": 230677,
+        "eligible": 2409,
+        "eligible_rate": 0.010443173788457454,
+        "action_hits": 2262,
+        "action_coverage_given_eligible": 0.9389788293897883
+      },
+      "40+": {
+        "decisions": 505775,
+        "eligible": 19,
+        "eligible_rate": 3.7566111413177796e-05,
+        "action_hits": 18,
+        "action_coverage_given_eligible": 0.9473684210526315
+      }
+    }
+  },
+  "teams": {
+    "Apricot Squad": {
+      "decisions": 35061,
+      "table_present": 4811,
+      "lookup_eligible_n_ge_3": 4658,
+      "actual_action_in_table": 3987,
+      "top1_correct": 498,
+      "top4_correct": 1680,
+      "count_sum": 115273782,
+      "eligible_rate": 0.1328541684492741,
+      "action_coverage_given_eligible": 0.8559467582653499,
+      "top1_accuracy_given_eligible": 0.10691283812795191,
+      "top4_accuracy_given_eligible": 0.360669815371404,
+      "mean_cached_count_when_present": 23960.46185824153,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 8187,
+          "eligible": 4649,
+          "eligible_rate": 0.5678514718456089,
+          "action_hits": 3981,
+          "action_coverage_given_eligible": 0.8563131856313185
+        },
+        "10-19": {
+          "decisions": 7653,
+          "eligible": 9,
+          "eligible_rate": 0.0011760094080752645,
+          "action_hits": 6,
+          "action_coverage_given_eligible": 0.6666666666666666
+        },
+        "20-39": {
+          "decisions": 11129,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 8092,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Crimson Fog": {
+      "decisions": 935,
+      "table_present": 109,
+      "lookup_eligible_n_ge_3": 103,
+      "actual_action_in_table": 96,
+      "top1_correct": 40,
+      "top4_correct": 73,
+      "count_sum": 1894869,
+      "eligible_rate": 0.11016042780748662,
+      "action_coverage_given_eligible": 0.9320388349514563,
+      "top1_accuracy_given_eligible": 0.3883495145631068,
+      "top4_accuracy_given_eligible": 0.7087378640776699,
+      "mean_cached_count_when_present": 17384.119266055044,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 130,
+          "eligible": 98,
+          "eligible_rate": 0.7538461538461538,
+          "action_hits": 92,
+          "action_coverage_given_eligible": 0.9387755102040817
+        },
+        "10-19": {
+          "decisions": 126,
+          "eligible": 5,
+          "eligible_rate": 0.03968253968253968,
+          "action_hits": 4,
+          "action_coverage_given_eligible": 0.8
+        },
+        "20-39": {
+          "decisions": 226,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 453,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Czechmate": {
+      "decisions": 1912,
+      "table_present": 283,
+      "lookup_eligible_n_ge_3": 249,
+      "actual_action_in_table": 206,
+      "top1_correct": 0,
+      "top4_correct": 0,
+      "count_sum": 7294120,
+      "eligible_rate": 0.13023012552301255,
+      "action_coverage_given_eligible": 0.8273092369477911,
+      "top1_accuracy_given_eligible": 0.0,
+      "top4_accuracy_given_eligible": 0.0,
+      "mean_cached_count_when_present": 25774.27561837456,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 514,
+          "eligible": 249,
+          "eligible_rate": 0.48443579766536965,
+          "action_hits": 206,
+          "action_coverage_given_eligible": 0.8273092369477911
+        },
+        "10-19": {
+          "decisions": 444,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "20-39": {
+          "decisions": 614,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 340,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Decent Chess Bot": {
+      "decisions": 82952,
+      "table_present": 10767,
+      "lookup_eligible_n_ge_3": 10076,
+      "actual_action_in_table": 9715,
+      "top1_correct": 5136,
+      "top4_correct": 8925,
+      "count_sum": 142796573,
+      "eligible_rate": 0.12146783682129424,
+      "action_coverage_given_eligible": 0.9641722905915046,
+      "top1_accuracy_given_eligible": 0.5097260817784836,
+      "top4_accuracy_given_eligible": 0.8857681619690353,
+      "mean_cached_count_when_present": 13262.428996006316,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 9457,
+          "eligible": 8554,
+          "eligible_rate": 0.9045151739452257,
+          "action_hits": 8353,
+          "action_coverage_given_eligible": 0.9765022211830723
+        },
+        "10-19": {
+          "decisions": 9406,
+          "eligible": 1479,
+          "eligible_rate": 0.15724005953646608,
+          "action_hits": 1323,
+          "action_coverage_given_eligible": 0.8945233265720081
+        },
+        "20-39": {
+          "decisions": 18296,
+          "eligible": 43,
+          "eligible_rate": 0.00235024048972453,
+          "action_hits": 39,
+          "action_coverage_given_eligible": 0.9069767441860465
+        },
+        "40+": {
+          "decisions": 45793,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Gravel Road": {
+      "decisions": 27815,
+      "table_present": 3766,
+      "lookup_eligible_n_ge_3": 3626,
+      "actual_action_in_table": 3346,
+      "top1_correct": 1717,
+      "top4_correct": 3069,
+      "count_sum": 57816254,
+      "eligible_rate": 0.1303613158367787,
+      "action_coverage_given_eligible": 0.9227799227799228,
+      "top1_accuracy_given_eligible": 0.47352454495311636,
+      "top4_accuracy_given_eligible": 0.8463872035300607,
+      "mean_cached_count_when_present": 15352.16516197557,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 3968,
+          "eligible": 3199,
+          "eligible_rate": 0.8061995967741935,
+          "action_hits": 3013,
+          "action_coverage_given_eligible": 0.9418568302594561
+        },
+        "10-19": {
+          "decisions": 3837,
+          "eligible": 421,
+          "eligible_rate": 0.10972113630440448,
+          "action_hits": 329,
+          "action_coverage_given_eligible": 0.7814726840855107
+        },
+        "20-39": {
+          "decisions": 6941,
+          "eligible": 6,
+          "eligible_rate": 0.000864428756663305,
+          "action_hits": 4,
+          "action_coverage_given_eligible": 0.6666666666666666
+        },
+        "40+": {
+          "decisions": 13069,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Greek Gift": {
+      "decisions": 76766,
+      "table_present": 11481,
+      "lookup_eligible_n_ge_3": 10784,
+      "actual_action_in_table": 10534,
+      "top1_correct": 7315,
+      "top4_correct": 10080,
+      "count_sum": 126741462,
+      "eligible_rate": 0.14047885782768413,
+      "action_coverage_given_eligible": 0.9768175074183977,
+      "top1_accuracy_given_eligible": 0.6783197329376854,
+      "top4_accuracy_given_eligible": 0.9347181008902077,
+      "mean_cached_count_when_present": 11039.235432453619,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 8298,
+          "eligible": 7960,
+          "eligible_rate": 0.9592672933236924,
+          "action_hits": 7912,
+          "action_coverage_given_eligible": 0.9939698492462311
+        },
+        "10-19": {
+          "decisions": 8243,
+          "eligible": 2588,
+          "eligible_rate": 0.3139633628533301,
+          "action_hits": 2402,
+          "action_coverage_given_eligible": 0.9281298299845441
+        },
+        "20-39": {
+          "decisions": 16133,
+          "eligible": 236,
+          "eligible_rate": 0.01462840141325234,
+          "action_hits": 220,
+          "action_coverage_given_eligible": 0.9322033898305084
+        },
+        "40+": {
+          "decisions": 44092,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "HYPOTHERMIA": {
+      "decisions": 39031,
+      "table_present": 3196,
+      "lookup_eligible_n_ge_3": 3107,
+      "actual_action_in_table": 2734,
+      "top1_correct": 1187,
+      "top4_correct": 1945,
+      "count_sum": 60496112,
+      "eligible_rate": 0.07960339217545029,
+      "action_coverage_given_eligible": 0.8799485033794657,
+      "top1_accuracy_given_eligible": 0.38204055358867073,
+      "top4_accuracy_given_eligible": 0.6260057933698101,
+      "mean_cached_count_when_present": 18928.6958698373,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 4036,
+          "eligible": 2904,
+          "eligible_rate": 0.7195242814667988,
+          "action_hits": 2565,
+          "action_coverage_given_eligible": 0.8832644628099173
+        },
+        "10-19": {
+          "decisions": 3960,
+          "eligible": 201,
+          "eligible_rate": 0.05075757575757576,
+          "action_hits": 167,
+          "action_coverage_given_eligible": 0.8308457711442786
+        },
+        "20-39": {
+          "decisions": 7681,
+          "eligible": 2,
+          "eligible_rate": 0.0002603827626611118,
+          "action_hits": 2,
+          "action_coverage_given_eligible": 1.0
+        },
+        "40+": {
+          "decisions": 23354,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "IAmAVirus": {
+      "decisions": 59504,
+      "table_present": 6246,
+      "lookup_eligible_n_ge_3": 6010,
+      "actual_action_in_table": 5407,
+      "top1_correct": 2465,
+      "top4_correct": 4401,
+      "count_sum": 107366861,
+      "eligible_rate": 0.10100161333691852,
+      "action_coverage_given_eligible": 0.8996672212978369,
+      "top1_accuracy_given_eligible": 0.4101497504159734,
+      "top4_accuracy_given_eligible": 0.7322795341098169,
+      "mean_cached_count_when_present": 17189.699167467177,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 7102,
+          "eligible": 5645,
+          "eligible_rate": 0.7948465221064489,
+          "action_hits": 5152,
+          "action_coverage_given_eligible": 0.912666076173605
+        },
+        "10-19": {
+          "decisions": 7031,
+          "eligible": 365,
+          "eligible_rate": 0.05191295690513441,
+          "action_hits": 255,
+          "action_coverage_given_eligible": 0.6986301369863014
+        },
+        "20-39": {
+          "decisions": 13479,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 31892,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "In Pawn Sight": {
+      "decisions": 12720,
+      "table_present": 1085,
+      "lookup_eligible_n_ge_3": 1021,
+      "actual_action_in_table": 874,
+      "top1_correct": 109,
+      "top4_correct": 376,
+      "count_sum": 29022068,
+      "eligible_rate": 0.08026729559748427,
+      "action_coverage_given_eligible": 0.8560235063663075,
+      "top1_accuracy_given_eligible": 0.10675808031341821,
+      "top4_accuracy_given_eligible": 0.3682664054848188,
+      "mean_cached_count_when_present": 26748.449769585255,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 2097,
+          "eligible": 1021,
+          "eligible_rate": 0.4868860276585599,
+          "action_hits": 874,
+          "action_coverage_given_eligible": 0.8560235063663075
+        },
+        "10-19": {
+          "decisions": 1925,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "20-39": {
+          "decisions": 3355,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 5343,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Instructors": {
+      "decisions": 83392,
+      "table_present": 10152,
+      "lookup_eligible_n_ge_3": 9687,
+      "actual_action_in_table": 9275,
+      "top1_correct": 4899,
+      "top4_correct": 8344,
+      "count_sum": 141474439,
+      "eligible_rate": 0.11616222179585571,
+      "action_coverage_given_eligible": 0.9574687725818106,
+      "top1_accuracy_given_eligible": 0.5057293279653143,
+      "top4_accuracy_given_eligible": 0.8613605863528441,
+      "mean_cached_count_when_present": 13935.62243892829,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 9524,
+          "eligible": 8422,
+          "eligible_rate": 0.8842923141537169,
+          "action_hits": 8177,
+          "action_coverage_given_eligible": 0.9709095226786987
+        },
+        "10-19": {
+          "decisions": 9415,
+          "eligible": 1245,
+          "eligible_rate": 0.13223579394583113,
+          "action_hits": 1082,
+          "action_coverage_given_eligible": 0.8690763052208835
+        },
+        "20-39": {
+          "decisions": 18282,
+          "eligible": 20,
+          "eligible_rate": 0.001093972213105787,
+          "action_hits": 16,
+          "action_coverage_given_eligible": 0.8
+        },
+        "40+": {
+          "decisions": 46171,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Knight Vision": {
+      "decisions": 77072,
+      "table_present": 11370,
+      "lookup_eligible_n_ge_3": 10586,
+      "actual_action_in_table": 10366,
+      "top1_correct": 7126,
+      "top4_correct": 9521,
+      "count_sum": 135750696,
+      "eligible_rate": 0.13735208636080548,
+      "action_coverage_given_eligible": 0.9792178348762517,
+      "top1_accuracy_given_eligible": 0.6731532212355942,
+      "top4_accuracy_given_eligible": 0.8993954279236728,
+      "mean_cached_count_when_present": 11939.375197889181,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 9073,
+          "eligible": 8058,
+          "eligible_rate": 0.8881296153422242,
+          "action_hits": 7896,
+          "action_coverage_given_eligible": 0.9798957557706627
+        },
+        "10-19": {
+          "decisions": 8922,
+          "eligible": 2072,
+          "eligible_rate": 0.23223492490472988,
+          "action_hits": 2020,
+          "action_coverage_given_eligible": 0.974903474903475
+        },
+        "20-39": {
+          "decisions": 17205,
+          "eligible": 448,
+          "eligible_rate": 0.026038942167974425,
+          "action_hits": 442,
+          "action_coverage_given_eligible": 0.9866071428571429
+        },
+        "40+": {
+          "decisions": 41872,
+          "eligible": 8,
+          "eligible_rate": 0.00019105846388995032,
+          "action_hits": 8,
+          "action_coverage_given_eligible": 1.0
+        }
+      }
+    },
+    "Lost Signal": {
+      "decisions": 37700,
+      "table_present": 3638,
+      "lookup_eligible_n_ge_3": 3513,
+      "actual_action_in_table": 3272,
+      "top1_correct": 1518,
+      "top4_correct": 2935,
+      "count_sum": 58158481,
+      "eligible_rate": 0.09318302387267904,
+      "action_coverage_given_eligible": 0.9313976658126957,
+      "top1_accuracy_given_eligible": 0.43210930828351835,
+      "top4_accuracy_given_eligible": 0.8354682607458013,
+      "mean_cached_count_when_present": 15986.388400219901,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 3805,
+          "eligible": 3241,
+          "eligible_rate": 0.8517739816031538,
+          "action_hits": 3074,
+          "action_coverage_given_eligible": 0.9484726936130824
+        },
+        "10-19": {
+          "decisions": 3758,
+          "eligible": 272,
+          "eligible_rate": 0.07237892496008515,
+          "action_hits": 198,
+          "action_coverage_given_eligible": 0.7279411764705882
+        },
+        "20-39": {
+          "decisions": 7244,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 22893,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Mist Opportunities": {
+      "decisions": 52729,
+      "table_present": 7457,
+      "lookup_eligible_n_ge_3": 7103,
+      "actual_action_in_table": 6950,
+      "top1_correct": 4832,
+      "top4_correct": 6087,
+      "count_sum": 86079100,
+      "eligible_rate": 0.13470765612850613,
+      "action_coverage_given_eligible": 0.9784598057158946,
+      "top1_accuracy_given_eligible": 0.6802759397437702,
+      "top4_accuracy_given_eligible": 0.8569618471068563,
+      "mean_cached_count_when_present": 11543.395467346118,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 5543,
+          "eligible": 5199,
+          "eligible_rate": 0.9379397438210355,
+          "action_hits": 5164,
+          "action_coverage_given_eligible": 0.9932679361415657
+        },
+        "10-19": {
+          "decisions": 5457,
+          "eligible": 1787,
+          "eligible_rate": 0.327469305479201,
+          "action_hits": 1687,
+          "action_coverage_given_eligible": 0.9440402909904868
+        },
+        "20-39": {
+          "decisions": 10629,
+          "eligible": 117,
+          "eligible_rate": 0.01100762066045724,
+          "action_hits": 99,
+          "action_coverage_given_eligible": 0.8461538461538461
+        },
+        "40+": {
+          "decisions": 31100,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Sausage": {
+      "decisions": 25191,
+      "table_present": 3015,
+      "lookup_eligible_n_ge_3": 2924,
+      "actual_action_in_table": 2624,
+      "top1_correct": 672,
+      "top4_correct": 1536,
+      "count_sum": 63413955,
+      "eligible_rate": 0.11607320074629827,
+      "action_coverage_given_eligible": 0.8974008207934336,
+      "top1_accuracy_given_eligible": 0.22982216142270862,
+      "top4_accuracy_given_eligible": 0.5253077975376197,
+      "mean_cached_count_when_present": 21032.82089552239,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 4370,
+          "eligible": 2890,
+          "eligible_rate": 0.6613272311212814,
+          "action_hits": 2605,
+          "action_coverage_given_eligible": 0.9013840830449827
+        },
+        "10-19": {
+          "decisions": 4146,
+          "eligible": 34,
+          "eligible_rate": 0.008200675349734683,
+          "action_hits": 19,
+          "action_coverage_given_eligible": 0.5588235294117647
+        },
+        "20-39": {
+          "decisions": 7059,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 9616,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "Strongly Invisible": {
+      "decisions": 91217,
+      "table_present": 11548,
+      "lookup_eligible_n_ge_3": 10967,
+      "actual_action_in_table": 10705,
+      "top1_correct": 6418,
+      "top4_correct": 10268,
+      "count_sum": 138544401,
+      "eligible_rate": 0.12022978172928292,
+      "action_coverage_given_eligible": 0.9761101486277013,
+      "top1_accuracy_given_eligible": 0.5852101759824929,
+      "top4_accuracy_given_eligible": 0.9362633354609282,
+      "mean_cached_count_when_present": 11997.263682022862,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 9146,
+          "eligible": 8663,
+          "eligible_rate": 0.9471900284277279,
+          "action_hits": 8567,
+          "action_coverage_given_eligible": 0.9889183885490015
+        },
+        "10-19": {
+          "decisions": 9081,
+          "eligible": 2237,
+          "eligible_rate": 0.24633850897478252,
+          "action_hits": 2080,
+          "action_coverage_given_eligible": 0.9298167188198481
+        },
+        "20-39": {
+          "decisions": 17755,
+          "eligible": 67,
+          "eligible_rate": 0.0037735849056603774,
+          "action_hits": 58,
+          "action_coverage_given_eligible": 0.8656716417910447
+        },
+        "40+": {
+          "decisions": 55235,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "TA Baseline A": {
+      "decisions": 63920,
+      "table_present": 13600,
+      "lookup_eligible_n_ge_3": 12776,
+      "actual_action_in_table": 12642,
+      "top1_correct": 9161,
+      "top4_correct": 12310,
+      "count_sum": 142028577,
+      "eligible_rate": 0.19987484355444304,
+      "action_coverage_given_eligible": 0.9895115842204133,
+      "top1_accuracy_given_eligible": 0.7170475892298059,
+      "top4_accuracy_given_eligible": 0.9635253600500939,
+      "mean_cached_count_when_present": 10443.277720588236,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 9572,
+          "eligible": 8786,
+          "eligible_rate": 0.9178854993731718,
+          "action_hits": 8756,
+          "action_coverage_given_eligible": 0.9965854768950603
+        },
+        "10-19": {
+          "decisions": 9402,
+          "eligible": 3310,
+          "eligible_rate": 0.35205275473303554,
+          "action_hits": 3232,
+          "action_coverage_given_eligible": 0.9764350453172206
+        },
+        "20-39": {
+          "decisions": 17207,
+          "eligible": 672,
+          "eligible_rate": 0.03905387342360667,
+          "action_hits": 647,
+          "action_coverage_given_eligible": 0.9627976190476191
+        },
+        "40+": {
+          "decisions": 27739,
+          "eligible": 8,
+          "eligible_rate": 0.0002884026100436209,
+          "action_hits": 7,
+          "action_coverage_given_eligible": 0.875
+        }
+      }
+    },
+    "TA Baseline P": {
+      "decisions": 56338,
+      "table_present": 11552,
+      "lookup_eligible_n_ge_3": 10930,
+      "actual_action_in_table": 10684,
+      "top1_correct": 6855,
+      "top4_correct": 9795,
+      "count_sum": 139956804,
+      "eligible_rate": 0.1940075970037985,
+      "action_coverage_given_eligible": 0.9774931381518756,
+      "top1_accuracy_given_eligible": 0.6271729185727356,
+      "top4_accuracy_given_eligible": 0.8961573650503202,
+      "mean_cached_count_when_present": 12115.374307479224,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 9463,
+          "eligible": 8374,
+          "eligible_rate": 0.8849202155764556,
+          "action_hits": 8266,
+          "action_coverage_given_eligible": 0.9871029376641988
+        },
+        "10-19": {
+          "decisions": 9146,
+          "eligible": 2283,
+          "eligible_rate": 0.24961731904657775,
+          "action_hits": 2169,
+          "action_coverage_given_eligible": 0.9500657030223391
+        },
+        "20-39": {
+          "decisions": 16153,
+          "eligible": 272,
+          "eligible_rate": 0.016838977279762274,
+          "action_hits": 248,
+          "action_coverage_given_eligible": 0.9117647058823529
+        },
+        "40+": {
+          "decisions": 21576,
+          "eligible": 1,
+          "eligible_rate": 4.6347793845012975e-05,
+          "action_hits": 1,
+          "action_coverage_given_eligible": 1.0
+        }
+      }
+    },
+    "TA Baseline S": {
+      "decisions": 72575,
+      "table_present": 13366,
+      "lookup_eligible_n_ge_3": 12621,
+      "actual_action_in_table": 12330,
+      "top1_correct": 7708,
+      "top4_correct": 12170,
+      "count_sum": 147174795,
+      "eligible_rate": 0.1739028591112642,
+      "action_coverage_given_eligible": 0.9769431899215593,
+      "top1_accuracy_given_eligible": 0.6107281514935425,
+      "top4_accuracy_given_eligible": 0.9642659060296331,
+      "mean_cached_count_when_present": 11011.132350740685,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 9830,
+          "eligible": 9210,
+          "eligible_rate": 0.9369277721261444,
+          "action_hits": 9120,
+          "action_coverage_given_eligible": 0.990228013029316
+        },
+        "10-19": {
+          "decisions": 9667,
+          "eligible": 2958,
+          "eligible_rate": 0.30598944863970207,
+          "action_hits": 2782,
+          "action_coverage_given_eligible": 0.940500338066261
+        },
+        "20-39": {
+          "decisions": 17750,
+          "eligible": 451,
+          "eligible_rate": 0.02540845070422535,
+          "action_hits": 426,
+          "action_coverage_given_eligible": 0.9445676274944568
+        },
+        "40+": {
+          "decisions": 35328,
+          "eligible": 2,
+          "eligible_rate": 5.661231884057971e-05,
+          "action_hits": 2,
+          "action_coverage_given_eligible": 1.0
+        }
+      }
+    },
+    "Uniform": {
+      "decisions": 25,
+      "table_present": 6,
+      "lookup_eligible_n_ge_3": 6,
+      "actual_action_in_table": 5,
+      "top1_correct": 0,
+      "top4_correct": 1,
+      "count_sum": 136895,
+      "eligible_rate": 0.24,
+      "action_coverage_given_eligible": 0.8333333333333334,
+      "top1_accuracy_given_eligible": 0.0,
+      "top4_accuracy_given_eligible": 0.16666666666666666,
+      "mean_cached_count_when_present": 22815.833333333332,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 10,
+          "eligible": 6,
+          "eligible_rate": 0.6,
+          "action_hits": 5,
+          "action_coverage_given_eligible": 0.8333333333333334
+        },
+        "10-19": {
+          "decisions": 10,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "20-39": {
+          "decisions": 5,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "baseline.py": {
+      "decisions": 25681,
+      "table_present": 3707,
+      "lookup_eligible_n_ge_3": 3574,
+      "actual_action_in_table": 2940,
+      "top1_correct": 216,
+      "top4_correct": 742,
+      "count_sum": 95237458,
+      "eligible_rate": 0.1391690354736965,
+      "action_coverage_given_eligible": 0.8226077224398433,
+      "top1_accuracy_given_eligible": 0.0604364857302742,
+      "top4_accuracy_given_eligible": 0.2076105204252938,
+      "mean_cached_count_when_present": 25691.248448880495,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 6840,
+          "eligible": 3574,
+          "eligible_rate": 0.5225146198830409,
+          "action_hits": 2940,
+          "action_coverage_given_eligible": 0.8226077224398433
+        },
+        "10-19": {
+          "decisions": 6104,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "20-39": {
+          "decisions": 7972,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        },
+        "40+": {
+          "decisions": 4765,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    },
+    "duck": {
+      "decisions": 68751,
+      "table_present": 9603,
+      "lookup_eligible_n_ge_3": 9169,
+      "actual_action_in_table": 8870,
+      "top1_correct": 5158,
+      "top4_correct": 8501,
+      "count_sum": 121179987,
+      "eligible_rate": 0.13336533286788554,
+      "action_coverage_given_eligible": 0.9673901188788309,
+      "top1_accuracy_given_eligible": 0.5625477151270586,
+      "top4_accuracy_given_eligible": 0.9271458174282909,
+      "mean_cached_count_when_present": 12618.971883786317,
+      "ply_bins": {
+        "0-9": {
+          "decisions": 8098,
+          "eligible": 7419,
+          "eligible_rate": 0.9161521363299581,
+          "action_hits": 7299,
+          "action_coverage_given_eligible": 0.9838253133845531
+        },
+        "10-19": {
+          "decisions": 8039,
+          "eligible": 1675,
+          "eligible_rate": 0.208359248662769,
+          "action_hits": 1510,
+          "action_coverage_given_eligible": 0.9014925373134328
+        },
+        "20-39": {
+          "decisions": 15562,
+          "eligible": 75,
+          "eligible_rate": 0.004819431949620871,
+          "action_hits": 61,
+          "action_coverage_given_eligible": 0.8133333333333334
+        },
+        "40+": {
+          "decisions": 37052,
+          "eligible": 0,
+          "eligible_rate": 0.0,
+          "action_hits": 0,
+          "action_coverage_given_eligible": null
+        }
+      }
+    }
+  }
+}
