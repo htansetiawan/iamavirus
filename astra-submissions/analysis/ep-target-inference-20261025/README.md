@@ -77,6 +77,29 @@ availability was 6/6. Per-game results are preserved in
 `replay-case-check.json`. This confirms action availability on those six
 observations; it is not a game-strength test.
 
+## Decision-path pilot
+
+The replay-prefix decision probe is reproducible with:
+
+```sh
+python3 astra-submissions/analysis/ep-target-inference-20261025/compare_ep_decisions.py \
+  --seeds 20261025 20261026 20261027 20261028 20261029 --search-seconds 0.25
+```
+
+It compiles the original archive and a patched copy, feeds each bot the replay's
+observation on every ply (clock only on its turns), forces only its earlier
+recorded moves, and lets both versions choose at the target decision. Across
+six positions and five seeds, the chosen move differed in 5/30 comparisons, all
+at `8wef0oiw` ply 64. Original v35 chose `g4g3` 5/5 times and rejected `g4h3` at
+final view-list validation; patched v35 chose `g4h3` 5/5 times. Of the other
+three omitted-move positions, two did not select the EP action and one was
+already recoverable through exact-belief legality. The recorded `g4h3` line is from
+Instructors' win over Strongly Invisible, and the subsequent recorded line
+preserves a passed pawn that advances toward the king. This is a useful,
+repeatable tactical action change, but replaying the historical continuation
+does not prove the alternative caused the win or that the patch raises Elo.
+Raw output is in `decision-comparison-5seeds.json`.
+
 ## Multiagent implication and next gate
 
 This is a concrete example of why move generation belongs to the information
