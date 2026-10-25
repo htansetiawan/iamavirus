@@ -1,0 +1,86 @@
+{
+  "classification": "independent sample audit and descriptive analysis, not an Elo estimate",
+  "path_list_sha256": "a04a2a1f8f1baa59f7b610ddf29111496618cc354c5320f705ff5310e2303547",
+  "census_sha256": "002d3e4a92119148bb7e407898b3fe927231e083373c5df8b9012e8a265b4525",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "scanner_sha256": "25d50374d5f0d2bea189aa08cf97c8c358a68302a437a317d966263d0914382a",
+  "seed": 20261025,
+  "population_games": 123251,
+  "sampled_games": 512,
+  "validated_games": 512,
+  "validated_frames": 40348,
+  "games_without_complete_clock_metadata": 1,
+  "attacker_set_comparisons": 80696,
+  "validated_events": 1336,
+  "failures": [],
+  "answered_events_without_safe_reply": {
+    "fully_hidden": 43,
+    "visible": 42
+  },
+  "all_answered_events": {
+    "rates": {
+      "visible": 0.143646408839779,
+      "fully_hidden": 0.3660245183887916,
+      "mixed": 0.0
+    },
+    "counts": {
+      "visible": {
+        "answered": 724,
+        "attack_survived": 104
+      },
+      "fully_hidden": {
+        "answered": 571,
+        "attack_survived": 209
+      },
+      "mixed": {
+        "answered": 5,
+        "attack_survived": 0
+      }
+    },
+    "difference": {
+      "hidden_minus_visible": 0.22237810954901258,
+      "cluster_standard_error": 0.023725917001623343,
+      "approximate_95_percent_interval": [
+        0.17587531222583083,
+        0.26888090687219435
+      ],
+      "clusters": 512
+    }
+  },
+  "events_with_at_least_one_safe_reply": {
+    "rates": {
+      "visible": 0.09090909090909091,
+      "fully_hidden": 0.3143939393939394,
+      "mixed": 0.0
+    },
+    "counts": {
+      "visible": {
+        "answered": 682,
+        "attack_survived": 62
+      },
+      "fully_hidden": {
+        "answered": 528,
+        "attack_survived": 166
+      },
+      "mixed": {
+        "answered": 5,
+        "attack_survived": 0
+      }
+    },
+    "difference": {
+      "hidden_minus_visible": 0.22348484848484848,
+      "cluster_standard_error": 0.02242801530384889,
+      "approximate_95_percent_interval": [
+        0.17952593848930465,
+        0.2674437584803923
+      ],
+      "clusters": 512
+    }
+  },
+  "limitations": [
+    "Random sample of an existing top-name-filtered corpus, not all arena games.",
+    "Cluster intervals are approximate and do not remove opponent or position confounding.",
+    "Safe means avoids immediate king loss; no claim of eventual winning value.",
+    "Diagnostic sample is not guaranteed unseen by earlier fitted models."
+  ]
+}

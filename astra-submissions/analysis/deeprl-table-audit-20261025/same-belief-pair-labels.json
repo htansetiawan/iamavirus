@@ -1,0 +1,129 @@
+{
+  "input_sha256": "5338b1f73ab7c496a602259cb95f9ebfe14e99e1aa05914d1fbc627a915304a8",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "classification": "privileged post-hoc labels; never actor input",
+  "paired_counts": {
+    "null": {
+      "pairs": 1,
+      "base_unsafe": 1,
+      "teacher_unsafe": 1,
+      "rescued": 0,
+      "regressed": 0,
+      "both_unsafe": 1,
+      "both_safe": 0,
+      "no_safe_action_in_root": 0,
+      "attack_absent_from_sample": 1,
+      "unsafe_rate_reduction": 0.0,
+      "exact_discordant_pair_p_two_sided": 1
+    },
+    "all": {
+      "pairs": 1,
+      "base_unsafe": 1,
+      "teacher_unsafe": 1,
+      "rescued": 0,
+      "regressed": 0,
+      "both_unsafe": 1,
+      "both_safe": 0,
+      "no_safe_action_in_root": 0,
+      "attack_absent_from_sample": 1,
+      "unsafe_rate_reduction": 0.0,
+      "exact_discordant_pair_p_two_sided": 1
+    }
+  },
+  "cases": [
+    {
+      "replay": "astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair8-candidate-white.json",
+      "frame": 54,
+      "side": "white",
+      "slice": null,
+      "role": "base",
+      "frontend_move_checked": true,
+      "budget_seconds": 0.4,
+      "nodes": 24738,
+      "iterations": 420,
+      "candidate_count": 17,
+      "true_current_king_attacked": true,
+      "sampled_worlds": 22,
+      "sampled_current_king_attacked_mass": 0,
+      "sampled_true_board_mass": 0,
+      "chosen": {
+        "uci": "c7e6",
+        "probability": 1,
+        "cf_q": -0.9424306748316101,
+        "q": -0.9424306748316101,
+        "advantage": 0,
+        "true_legal": true,
+        "true_king_fatal": true
+      },
+      "true_safe_actions": [
+        {
+          "uci": "f1e2",
+          "probability": 0,
+          "cf_q": -0.9450755955841814,
+          "q": -0.9450755955841814,
+          "advantage": -0.002644920752571278,
+          "true_legal": true,
+          "true_king_fatal": false
+        },
+        {
+          "uci": "f1g2",
+          "probability": 0,
+          "cf_q": -0.949088948288877,
+          "q": -0.949088948288877,
+          "advantage": -0.006658273457266883,
+          "true_legal": true,
+          "true_king_fatal": false
+        }
+      ],
+      "true_fatal_action_count": 15,
+      "true_illegal_action_count": 0
+    },
+    {
+      "replay": "astra-submissions/analysis/hidden-slider-zone-20261025/v35-guard0001-fullclock-extra-20pairs-seed20261042-pair8-candidate-white.json",
+      "frame": 54,
+      "side": "white",
+      "slice": null,
+      "role": "teacher_4B",
+      "frontend_move_checked": false,
+      "budget_seconds": 1.6,
+      "nodes": 69552,
+      "iterations": 1160,
+      "candidate_count": 17,
+      "true_current_king_attacked": true,
+      "sampled_worlds": 22,
+      "sampled_current_king_attacked_mass": 0,
+      "sampled_true_board_mass": 0,
+      "chosen": {
+        "uci": "c7a8",
+        "probability": 1,
+        "cf_q": -0.9430399475577435,
+        "q": -0.9430399475577435,
+        "advantage": 0,
+        "true_legal": true,
+        "true_king_fatal": true
+      },
+      "true_safe_actions": [
+        {
+          "uci": "f1e2",
+          "probability": 0,
+          "cf_q": -0.9440649550403597,
+          "q": -0.9440649550403597,
+          "advantage": -0.001025007482616247,
+          "true_legal": true,
+          "true_king_fatal": false
+        },
+        {
+          "uci": "f1g2",
+          "probability": 0,
+          "cf_q": -0.9449907085213505,
+          "q": -0.9449907085213505,
+          "advantage": -0.0019507609636070233,
+          "true_legal": true,
+          "true_king_fatal": false
+        }
+      ],
+      "true_fatal_action_count": 15,
+      "true_illegal_action_count": 0
+    }
+  ]
+}

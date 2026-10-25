@@ -5,6 +5,12 @@ and integration assumptions in chatroom notes 137–138. The C files here are a
 tested, read-only target-export prototype; no trained model or arena improvement
 is claimed. The archived engine remains unchanged.
 
+**Latest evidence:** the completed [80-position teacher-readiness gate](teacher-readiness-report.md)
+found 10 immediate-fatal base choices versus 11 at 4× search budget, with five
+positions where the guard excluded every true escape. Bulk distillation is not
+justified by a safety improvement in this test. Read that report before acting
+on the earlier proposed training schedule below.
+
 ## What we actually need to improve
 
 There are three different objects called a “table” in this project:
