@@ -1,0 +1,31 @@
+--- a/src/belief.c
++++ b/src/belief.c
+@@ -781,9 +781,15 @@
+         }
+         if (ok) out->moves[out->count++] = m;
+     }
+-    /* En passant: an enemy pawn beside ours that we see although none of our
+-     * pieces attacks its square can only be seen as the pawn an en passant
+-     * capture takes, so that capture is legal. */
++    /* Every visible empty destination in the observation must be either an
++     * ordinary move destination or an en-passant destination. Keep the ordinary
++     * destinations to detect the latter when another own piece also sees the
++     * captured pawn's square. */
++    bb_t ordinary_visible = p.by_color[us];
++    for (int i = 0; i < out->count; ++i) ordinary_visible |= (bb_t)1 << MOVE_TO(out->moves[i]);
++    /* En passant: the adjacent pawn may already be visible through another
++     * attack. If its empty EP destination is visible but no ordinary move can
++     * see that square, the EP right is the only remaining explanation. */
+     const int dr = us == WHITE ? 8 : -8, fifth = us == WHITE ? 4 : 3;
+     const char enemy_pawn = us == WHITE ? 'p' : 'P';
+     for (bb_t b = p.by_type[PAWN] & p.by_color[us]; b; b &= b - 1) {
+@@ -792,7 +798,8 @@
+         for (int df = -1; df <= 1; df += 2) {
+             if (f + df < 0 || f + df > 7) continue;
+             const int beside = from + df, to = beside + dr;
+-            if (view[beside] == enemy_pawn && view[to] == '-' && !is_attacked(&p, beside, us))
++            if (view[beside] == enemy_pawn && view[to] == '-' &&
++                (!is_attacked(&p, beside, us) || !(ordinary_visible & ((bb_t)1 << to))))
+                 out->moves[out->count++] = MAKE_MOVE(from, to, NO_PIECE);
+         }
+     }

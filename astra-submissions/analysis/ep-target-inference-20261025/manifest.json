@@ -1,0 +1,32 @@
+{
+  "date_utc": "2026-10-25",
+  "classification": "unpackaged research experiment; not an arena-strength claim",
+  "baseline_archive": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+  "baseline_archive_sha256": "24791ca64a429f5ae931466ce3c1af36c6974e1295203e99a00a991976955b4c",
+  "patch": "belief-ep-observation.patch",
+  "patch_sha256": "13c61dc22657db124b17880def562dafeab5c838c240205034dce69a549b0d46",
+  "audit_source": "audit_ep_view_moves.c",
+  "audit_source_sha256": "fc917c72cb14ed81ab99f8cc9dcf4e0563caa40df6e944c81f693ebd129b3fac",
+  "runner": "run_audit.py",
+  "runner_sha256": "037819b63f2a01e1a75686859f7fa36bff601894c29a4c6dd9dc434b8dbf45d4",
+  "patched_source_sha256": "a6b5638ef9a2a99023bfe8cf65e92bb40e21bdadb0c473e228c9d01cfc33ffe7",
+  "patched_binary_sha256": "9a174cbd966f14b296896a233eb90a9f041c484eb2305d4fe7114377012d3d9e",
+  "build": "GCC build.sh completed successfully on extracted full archive",
+  "audit_command": "python3 astra-submissions/analysis/ep-target-inference-20261025/run_audit.py --games 2500 --seed 1332956945",
+  "audit_result": {
+    "random_legal_games": 2500,
+    "positions": 264896,
+    "legal_en_passant_actions": 1195,
+    "baseline_omitted": 655,
+    "patched_recovered": 554,
+    "same_current_observation_without_ep_right": 101,
+    "baseline_illegal_candidates": 0,
+    "patched_illegal_candidates": 0
+  },
+  "limitations": [
+    "Random legal playout positions are not sampled from arena policy games.",
+    "Zero illegal additions in this finite sample is not a proof.",
+    "The 101 current-observation ambiguities do not establish whether full actor histories differ.",
+    "No paired match or arena run yet."
+  ]
+}
