@@ -112,6 +112,10 @@ its column is absent.
 Record utility units as well: this archive maps nonterminal centipawn estimates
 through `tanh(cp/400)`. A value learned in those units is not a calibrated win
 probability. Keep terminal outcome labels and frontier estimates distinguishable.
+The root additionally uses a shaped loss of `-MIST_KING_RISK` (default **-2**)
+for immediately fatal own moves. Consequently normalized root Q can be below
+-1; do not silently force this target into a ±1 value head. Export that shaping
+parameter separately from actual terminal win/loss labels.
 
 For the first student use the existing deployable history encoder and add an
 action-advantage head. Proposed objective, with each term normalized and its
@@ -176,6 +180,8 @@ If our approximate action values also have uniform error at most `ε`, choosing
 their largest value incurs at most `4 TV(b,b_hat)+2ε` action-value loss. This is
 a simple fixed-continuation bound, not a full equilibrium guarantee. It shows
 why spending more nodes on the wrong posterior can leave the main error intact.
+For the archive's shaped utility range `[-κ,1]`, replace this bound by
+`2(κ+1) TV(b,b_hat)+2ε`; with the default `κ=2` the belief term is `6 TV`.
 For independent samples, an attacker hypothesis with mass `p=.004` is missed
 by all 32 samples with probability `(1-p)^32≈.88`. Stratification can improve
 coverage but cannot resurrect a world the belief filter already discarded.
@@ -266,3 +272,76 @@ records six completed games and checks all 547 frames against the independent
 referee's full board and observations. It finds **zero actionable candidate EP
 turns**. `d3d5` was a white rook move, not a pawn push. The terminal `a2a4` frame
 offered no further turn. This retracts notes 137/139's claimed EP exposure.
+
+## Real-tree export validation and teacher-readiness finding
+
+Additional work on 2026-10-25 validated the exporter on the actual v35 GT-CFR
+path. `run_engine_probe.py` extracts the pinned archive into a temporary folder,
+adds a callback **after** search chooses its move, and compiles the unchanged
+policy implementation with the export code. No archive or Fable source changes.
+The four prefixes are frames 0, 1, 12 and 54 of the already recorded guard-pair-8
+game. This is a small correctness/teacher sanity panel, not a playing-strength
+sample or a training run. It uses the shipped Stockfish and history table.
+
+All four pass the checks for normalized world and action probabilities, root
+counterfactual mass, equal own reach within each represented infoset, action
+identity, finite values, zero policy-weighted advantage, agreement with the
+solver's independently computed `game_value`, and agreement between the raw
+solver move and final protocol move. The latter matters because the front end
+can otherwise replace a move after search. These checks are necessary, not
+proof that every internal infoset has perfect recall or aligned action labels.
+
+`engine-probe-result.json` stores the exact actor protocol, target rows, sampled
+hypotheses and archive/binary hashes. Hypotheses are diagnostic **output**; the
+engine receives no replay truth. `audit_teacher_choices.py` subsequently uses
+the independent referee and full replay solely to produce offline safety labels.
+Those labels are separate in `engine-probe-labels.json`. Clocks and CPU scheduling
+make this time-limited search nondeterministic even with the same random seed.
+
+The frame-54 hidden-rook case was then checked at 0.4 and 1.6 seconds, with the
+same input history, seed and sampled worlds:
+
+| Search budget | Tree nodes | CFR iterations | Selected move | Actual outcome of that move |
+|---|---:|---:|---|---|
+| 0.4 s | 23,523 | 400 | c7e6 | Immediate king exposure |
+| 1.6 s | 67,713 | 1,120 | c7a8 | Immediate king exposure |
+
+Both sampled 22 distinct worlds from a 392-entry belief. Neither the true board
+nor **any world with the existing king attack** was sampled. Both assign zero
+root probability to the two actual escapes, `f1e2` and `f1g2`. At 1.6 seconds,
+the shaped Q for the selected fatal move is -0.943953; the safe escapes are
+ranked below it at -0.945102 and -0.945049. Of the 17 evaluated candidates, 15
+are immediately fatal on the true board. All 17 are pseudo-legal; illegality
+does not explain this failure.
+
+Artifacts: `teacher-budget-probe-result.json` and `teacher-budget-labels.json`.
+This single selected counterexample does **not** establish that stronger-budget
+distillation is useless overall. It establishes that higher search budget is
+not a sufficient definition of a better teacher, and that these particular
+labels would teach the known error confidently.
+
+**Revision for committee review:** before the proposed bulk generation/training
+phase, require a fixed teacher-readiness panel of known failure families plus
+ordinary controls. Report which targets genuinely improve under stronger
+search, which remain unsupported by the sampled belief, and which are unstable.
+Keep failure examples and their privileged offline labels in the audit set;
+do not drop them to improve a metric or inject the true board into a teacher's
+live belief. For unsupported hidden attacks, the next candidate must address
+the learned posterior or observation-conditioned danger estimates and clear
+held-out calibration checks. More scalar guard sweeps are not proposed. This
+panel is a prerequisite to spending the GPU budget, not an open-ended addition
+to the 24-hour review schedule.
+
+Reproduce the extra checks:
+
+```sh
+taskset -c 0,1 python3 astra-submissions/analysis/deeprl-table-audit-20261025/run_engine_probe.py
+taskset -c 0,1 python3 astra-submissions/analysis/deeprl-table-audit-20261025/run_engine_probe.py --frames 54 --seconds 0.4 1.6
+/home/henrytan/git/fow-starter/.venv/bin/python \
+  astra-submissions/analysis/deeprl-table-audit-20261025/audit_teacher_choices.py \
+  astra-submissions/analysis/deeprl-table-audit-20261025/teacher-budget-probe-result.json \
+  --referee-dir /home/henrytan/git/fow-starter
+```
+
+Claim cores in `chatroom/cores.json` before rerunning; these audit runs released
+cores 0–1 when they finished. No GPU use or new game tournament was started.

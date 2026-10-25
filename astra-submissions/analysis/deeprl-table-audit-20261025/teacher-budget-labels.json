@@ -1,0 +1,91 @@
+{
+  "input_sha256": "e66939f507c73d193cd79e9ffa22201615a1f8f32bf216ebaad9c2270f99ad78",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "classification": "privileged post-hoc labels; never actor input",
+  "cases": [
+    {
+      "frame": 54,
+      "side": "white",
+      "budget_seconds": 0.4,
+      "nodes": 23523,
+      "iterations": 400,
+      "candidate_count": 17,
+      "sampled_worlds": 22,
+      "sampled_current_king_attacked_mass": 0,
+      "sampled_true_board_mass": 0,
+      "chosen": {
+        "uci": "c7e6",
+        "probability": 1,
+        "cf_q": -0.9376165846738891,
+        "q": -0.9376165846738891,
+        "advantage": 0,
+        "true_legal": true,
+        "true_king_fatal": true
+      },
+      "true_safe_actions": [
+        {
+          "uci": "f1e2",
+          "probability": 0,
+          "cf_q": -0.944908162789361,
+          "q": -0.944908162789361,
+          "advantage": -0.007291578115471875,
+          "true_legal": true,
+          "true_king_fatal": false
+        },
+        {
+          "uci": "f1g2",
+          "probability": 0,
+          "cf_q": -0.9510190773132503,
+          "q": -0.9510190773132503,
+          "advantage": -0.013402492639361219,
+          "true_legal": true,
+          "true_king_fatal": false
+        }
+      ],
+      "true_fatal_action_count": 15,
+      "true_illegal_action_count": 0
+    },
+    {
+      "frame": 54,
+      "side": "white",
+      "budget_seconds": 1.6,
+      "nodes": 67713,
+      "iterations": 1120,
+      "candidate_count": 17,
+      "sampled_worlds": 22,
+      "sampled_current_king_attacked_mass": 0,
+      "sampled_true_board_mass": 0,
+      "chosen": {
+        "uci": "c7a8",
+        "probability": 1,
+        "cf_q": -0.9439531690692767,
+        "q": -0.9439531690692767,
+        "advantage": 0,
+        "true_legal": true,
+        "true_king_fatal": true
+      },
+      "true_safe_actions": [
+        {
+          "uci": "f1e2",
+          "probability": 0,
+          "cf_q": -0.9451023585989254,
+          "q": -0.9451023585989254,
+          "advantage": -0.0011491895296487087,
+          "true_legal": true,
+          "true_king_fatal": false
+        },
+        {
+          "uci": "f1g2",
+          "probability": 0,
+          "cf_q": -0.9450486135708882,
+          "q": -0.9450486135708882,
+          "advantage": -0.0010954445016114756,
+          "true_legal": true,
+          "true_king_fatal": false
+        }
+      ],
+      "true_fatal_action_count": 15,
+      "true_illegal_action_count": 0
+    }
+  ]
+}
