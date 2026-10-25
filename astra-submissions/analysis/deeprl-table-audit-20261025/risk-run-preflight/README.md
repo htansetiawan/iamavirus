@@ -8,6 +8,12 @@ candidate labels. The initial CNN has overall ranking AUC 0.923 but hidden-attac
 AUC 0.557. This is CPU evaluation of the unchanged starting checkpoint, not a
 training result. The paired evaluator is ready for both future arms.
 
+[Current arena and replica-version audit](../../arena-refresh-20261025-review/README.md)
+confirms another scope limit: the frozen duck replica has no explicitly labeled
+duck-v6 training episodes; the live opponent is v6. The Instructors replica does
+cover current v4. Keep the common league fixed for this mechanism comparison,
+and do not interpret wins over its replicas as wins over the current arena bots.
+
 ## Fixed experiment
 
 | Setting | Both arms |
