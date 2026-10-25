@@ -49,6 +49,17 @@ capture, one changed a pawn capture to no capture, and one changed a pawn
 capture to a bishop capture. Capture values here are simple immediate piece
 values only. This is not a material-loss or tactical continuation evaluation.
 
+A branch audit then enumerated all immediate legal opponent captures of
+visible pieces after each root choice. On the 138 ordinary controls, six
+candidate positions added a capturable target and five removed one; aggregate
+visible capturable piece value changed by only +2 pawn-equivalents. In the four
+loss-target positions where both root choices were nonfatal, this measure was
+unchanged. A target is counted once even if multiple replies can take it, so
+the aggregate is an exposure tally, not expected loss. Full rows are in
+`guard-reply-tactics-229.json` (SHA-256
+`46fd4e9086e24011011970f057e99d316000a4e9ac55ab50ced6f78381e07142`); the
+analyzer is `astra-submissions/tools/audit_guard_reply_tactics.py`.
+
 ## Limits and decision
 
 The games were deliberately stratified by past outcome and color; the total
