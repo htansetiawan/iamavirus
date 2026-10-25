@@ -100,6 +100,57 @@ repeatable tactical action change, but replaying the historical continuation
 does not prove the alternative caused the win or that the patch raises Elo.
 Raw output is in `decision-comparison-5seeds.json`.
 
+## Cached top-opponent replay census
+
+I scanned the local public replay cache for the leading teams, then verified
+candidate EP coordinates against the true before/after replay boards. Of
+123,251 cached games matching the top-opponent name filter, 91,972 included a
+diagonal pawn move on an EP rank; board-transition checks identified 8,056
+actual EP actions across 7,827 games.
+
+| Measure | v35 | Patched |
+|---|---:|---:|
+| Actual EP actions present in `view_moves` | 3,329 / 8,056 | 7,431 / 8,056 |
+| Actual EP actions omitted | 4,727 (58.7%) | 625 (7.8%) |
+| Baseline omissions recovered | — | 4,102 / 4,727 (86.8%) |
+
+The omission appeared in winning, losing, and drawn replay seats: among the
+8,056 EP actions, the mover eventually won 5,398 times (2,842 omissions
+recovered), lost 2,359 times (1,115 recovered), and drew 299 times (145
+recovered). This supports a broad action-coverage defect; it does not show that
+the omissions caused those outcomes.
+
+Selected counts by moving top bot:
+
+| Bot | EP actions | v35 omitted | Patch recovers | Still omitted |
+|---|---:|---:|---:|---:|
+| Strongly Invisible | 1,806 | 1,166 | 1,020 | 146 |
+| Instructors | 1,550 | 942 | 840 | 102 |
+| Knight Vision | 1,331 | 765 | 646 | 119 |
+| Decent Chess Bot | 631 | 348 | 320 | 28 |
+| Greek Gift | 426 | 262 | 221 | 41 |
+| duck | 380 | 251 | 205 | 46 |
+
+The 8,056 derived event rows preserve game ID, side, ply, action, observation,
+result, and original/patched availability in
+`top-opponent-ep-action-coverage.jsonl`; aggregate counts are in
+`top-opponent-ep-coverage-summary.json`. This is cached public replay data; the
+analysis did not query the API. The six exact replay cases and the seeded
+random legal-playout audit separately check the inference logic. The corpus
+probe only tests whether each recorded true EP action is present; it is not a
+full false-positive audit, and 625 actions remain absent from the current-view
+candidate list.
+
+To regenerate the corpus event set, first create the cached top-team filename
+list and the cheaper diagonal-pawn prefilter, then run the two scripts:
+
+```sh
+rg -l --glob replay.json '"(white|black)"\s*:\s*"(Greek Gift|Instructors|Knight Vision|Decent Chess Bot|Strongly Invisible|duck|TA Baseline [ASP])"' data/raw/games > /tmp/top-team-games.txt
+xargs -d '\n' -n 250 rg -l --no-messages --glob replay.json -e '"move"\s*:\s*"(a5b6|b5a6|b5c6|c5b6|c5d6|d5c6|d5e6|e5d6|e5f6|f5e6|f5g6|g5f6|g5h6|h5g6|a4b3|b4a3|b4c3|c4b3|c4d3|d4c3|d4e3|e4d3|e4f3|f4e3|f4g3|g4f3|g4h3|h4g3)"' < /tmp/top-team-games.txt | sort -u > /tmp/top-team-diagonal-pawn-games.txt
+python3 astra-submissions/analysis/ep-target-inference-20261025/scan_top_opponent_ep.py --files /tmp/top-team-diagonal-pawn-games.txt --out /tmp/top-team-ep-events.jsonl
+python3 astra-submissions/analysis/ep-target-inference-20261025/check_ep_event_corpus.py --events /tmp/top-team-ep-events.jsonl --out /tmp/top-team-ep-coverage.jsonl
+```
+
 ## Multiagent implication and next gate
 
 This is a concrete example of why move generation belongs to the information
