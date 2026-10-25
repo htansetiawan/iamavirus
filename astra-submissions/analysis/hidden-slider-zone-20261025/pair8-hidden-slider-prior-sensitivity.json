@@ -1,0 +1,180 @@
+{
+  "classification": "single held-out loss diagnostic; not a strength comparison",
+  "game": "e32c5495-7a12-48c3-8b47-a1b5adf163b2",
+  "target_frame": 54,
+  "candidate_side": "white",
+  "recorded_move": "c7a8",
+  "true_safe_moves": [
+    "f1e2",
+    "f1g2"
+  ],
+  "baseline_v35": {
+    "theta_full_hidden_slider_zone": null,
+    "feature_value": 0.125,
+    "approx_move_odds_multiplier": 1.0,
+    "binary_sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+    "chosen": "c7a8",
+    "truth_at_target": "mist: truth v=54 |P|=392 share=0.00001 rank=158",
+    "guard_messages": [
+      "mist: king guard left out 2 of 19 moves (safest 0.001, sharper 0.000)"
+    ],
+    "risk_by_move": {
+      "c7a8": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": -2.28,
+        "chosen": true
+      },
+      "f1e1": {
+        "king_risk": 0.002,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1e2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1g2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      }
+    },
+    "decision_summary": "mist: n=28 |P|=392 samples=22 moves=17 infosets=2813 nodes=122440 iters=2000 p=1.00 v=-0.942 lead=-9 clock=65.2 sf=5896/4.3s mr=-2.28/-2.28 hist=15/2099 move=c7a8"
+  },
+  "fitted_hidden_slider_prior": {
+    "theta_full_hidden_slider_zone": 0.325002105,
+    "feature_value": 0.125,
+    "approx_move_odds_multiplier": 1.04,
+    "binary_sha256": "43125879c397f875d1f69838eaa35bacf82a2b10381349ef007beb68bdedd7f9",
+    "chosen": "c7a8",
+    "truth_at_target": "mist: truth v=54 |P|=392 share=0.00001 rank=154",
+    "guard_messages": [
+      "mist: king guard left out 2 of 19 moves (safest 0.001, sharper 0.000)"
+    ],
+    "risk_by_move": {
+      "c7a8": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": -2.27,
+        "chosen": true
+      },
+      "f1e1": {
+        "king_risk": 0.0019,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1e2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1g2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      }
+    },
+    "decision_summary": "mist: n=28 |P|=392 samples=19 moves=17 infosets=2734 nodes=117559 iters=1920 p=1.00 v=-0.945 lead=-9 clock=65.2 sf=5668/4.3s mr=-2.27/-2.27 hist=15/2099 move=c7a8"
+  },
+  "tenfold_full_prior_intervention": {
+    "theta_full_hidden_slider_zone": 18.42068074,
+    "feature_value": 0.125,
+    "approx_move_odds_multiplier": 10.0,
+    "binary_sha256": "37516e766cfb991eaa871736e98053e345b640235d333f1626cb9fef96850ad8",
+    "chosen": "c7a8",
+    "truth_at_target": "mist: truth v=54 |P|=392 share=0.00014 rank=14",
+    "guard_messages": [
+      "mist: king guard left out 4 of 19 moves (safest 0.006, sharper 0.000)"
+    ],
+    "risk_by_move": {
+      "c7a8": {
+        "king_risk": 0.0001,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": -3.84,
+        "chosen": true
+      },
+      "f1e1": {
+        "king_risk": 0.0003,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.0,
+        "chosen": false
+      },
+      "f1e2": {
+        "king_risk": 0.9187,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.09,
+        "chosen": false
+      },
+      "f1g2": {
+        "king_risk": 0.9186,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.09,
+        "chosen": false
+      }
+    },
+    "decision_summary": "mist: n=28 |P|=392 samples=2 moves=15 infosets=3623 nodes=131345 iters=2570 p=0.51 v=-0.970 lead=-9 clock=65.2 sf=5377/4.0s mr=-3.84/-3.84 hist=15/2099 move=c7a8"
+  },
+  "hundredfold_full_prior_intervention": {
+    "theta_full_hidden_slider_zone": 36.84068074,
+    "feature_value": 0.125,
+    "approx_move_odds_multiplier": 100.0,
+    "binary_sha256": "018b7d3d780082a373119d5a067d8abe3c8836533b49013b821c3c7434014a82",
+    "chosen": "f1e1",
+    "truth_at_target": "mist: truth v=54 |P|=392 share=0.00000 rank=20",
+    "guard_messages": [
+      "mist: king guard left out 4 of 19 moves (safest 0.000, sharper 0.000)"
+    ],
+    "risk_by_move": {
+      "c7a8": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": -4.0,
+        "chosen": false
+      },
+      "f1e1": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.0,
+        "chosen": true
+      },
+      "f1e2": {
+        "king_risk": 0.9993,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.0,
+        "chosen": false
+      },
+      "f1g2": {
+        "king_risk": 0.9993,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.0,
+        "chosen": false
+      }
+    },
+    "decision_summary": "mist: n=28 |P|=392 samples=1 moves=15 infosets=3629 nodes=131000 iters=2680 p=0.37 v=-0.970 lead=-9 clock=65.2 sf=5296/4.2s mr=1.00/-4.00 hist=15/2099 move=f1e1"
+  },
+  "interpretation": "10x raises truth posterior but leaves fatal choice; 100x shifts to a different fatal square and makes the two true safe king moves appear highly risky. Do not use global coefficient scaling as a release change."
+}

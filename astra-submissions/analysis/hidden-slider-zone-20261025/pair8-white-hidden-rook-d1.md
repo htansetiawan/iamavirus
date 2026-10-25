@@ -28,6 +28,13 @@ moves. This selected counterexample shows the fitted feature did not materially
 repair this posterior either. Retain it as a regression case before changing
 thresholds.
 
+A one-position coefficient sensitivity probe increased the full-prior hidden
+slider-zone weight 10× and 100×. The 10× version increased true-board mass to
+`0.00014` (rank 14/392) but still chose `c7a8`; at 100× it chose `f1e1`, still
+on the rook's attack line. The stronger weight inflated risk on the two truly
+safe king moves instead. This rejects global feature scaling as the fix. See
+[`pair8-hidden-slider-prior-sensitivity.md`](pair8-hidden-slider-prior-sensitivity.md).
+
 Reproduce the guard comparison (and substitute the hidden-slider-prior binary
 for the candidate to reproduce that check) with:
 
