@@ -21,6 +21,8 @@ observation steps (truncated at the stored state, as in stored-state recurrent R
 from __future__ import annotations
 
 import argparse
+import collections
+import copy
 import json
 import math
 import random
@@ -45,6 +47,67 @@ class Member:
     name: str
     model: FogPolicy
     weight: float
+    group: str = "default"
+
+
+def validate_group_weights(league: list[Member], group_weights: dict[str, float] | None) -> None:
+    """Validate an optional two-stage group/opponent sampling distribution."""
+    if not group_weights:
+        return
+    if not isinstance(group_weights, dict):
+        raise ValueError("league group_weights must be a mapping")
+    if any(not isinstance(k, str) or not math.isfinite(float(v)) or float(v) < 0
+           for k, v in group_weights.items()):
+        raise ValueError("league group weights must be finite and nonnegative")
+    total = sum(float(v) for v in group_weights.values())
+    if total <= 0 or not math.isclose(total, 1.0, rel_tol=0.0, abs_tol=1e-6):
+        raise ValueError(f"league group weights must sum to 1, got {total}")
+    unknown = sorted({m.group for m in league} - set(group_weights))
+    if unknown:
+        raise ValueError(f"league members use groups with no configured weight: {unknown}")
+    if any(not math.isfinite(float(m.weight)) or float(m.weight) < 0 for m in league):
+        raise ValueError("league member weights must be finite and nonnegative")
+    if not any(m.weight > 0 for m in league):
+        raise ValueError("league has no positive-weight members")
+
+
+def sample_member_index(league: list[Member], rng, group_weights: dict[str, float] | None = None) -> int:
+    """Sample a group first, then a member within it; legacy flat sampling is retained."""
+    if not league:
+        raise ValueError("cannot sample an empty league")
+    if not group_weights:
+        weights = [float(m.weight) for m in league]
+        if not any(w > 0 for w in weights):
+            raise ValueError("league has no positive-weight members")
+        return rng.choices(range(len(league)), weights=weights)[0]
+    validate_group_weights(league, group_weights)
+    groups = []
+    group_mass = []
+    for group, weight in group_weights.items():
+        if weight <= 0:
+            continue
+        if any(m.group == group and m.weight > 0 for m in league):
+            groups.append(group)
+            group_mass.append(float(weight))
+    if not groups:
+        raise ValueError("no configured league group has an active member")
+    selected_group = rng.choices(groups, weights=group_mass)[0]
+    indices = [i for i, member in enumerate(league)
+               if member.group == selected_group and member.weight > 0]
+    return rng.choices(indices, weights=[float(league[i].weight) for i in indices])[0]
+
+
+def bound_snapshot_sampling(league: list[Member], capacity: int) -> None:
+    """Keep only the newest `capacity` self-play snapshots eligible for sampling.
+
+    Indices remain stable because games already in flight still refer to their
+    assigned member. Retired snapshots keep weight zero for future assignments.
+    """
+    if capacity < 1:
+        raise ValueError("snapshot capacity must be at least one")
+    snapshots = [m for m in league if m.group == "self_play"]
+    for member in snapshots[:-capacity]:
+        member.weight = 0.0
 
 
 def load_policy(path: str, device) -> FogPolicy:
@@ -58,8 +121,11 @@ def load_policy(path: str, device) -> FogPolicy:
 class Rollout:
     """Collects learner transitions from G parallel games."""
 
-    def __init__(self, env: BatchEnv, learner: FogPolicy, reference: FogPolicy, league: list[Member], device, rng):
+    def __init__(self, env: BatchEnv, learner: FogPolicy, reference: FogPolicy, league: list[Member], device, rng,
+                 group_weights: dict[str, float] | None = None):
         self.env, self.learner, self.reference, self.league, self.device, self.rng = env, learner, reference, league, device, rng
+        self.group_weights = group_weights
+        validate_group_weights(league, group_weights)
         G = env.n
         self.h_learner = torch.zeros(G, learner.hidden, device=device)
         self.h_ref = torch.zeros(G, reference.hidden, device=device)
@@ -67,6 +133,7 @@ class Rollout:
         # including for snapshots appended after this collector was created.
         self.h_opp: dict[int, torch.Tensor] = {}
         self.bootstrap_states: dict[int, dict] = {}
+        self.last_decision_counts: dict[str, int] = {}
         self.learner_side = np.zeros(G, np.int64)
         self.opponent = [None] * G
         self.open_index = [[] for _ in range(G)]                # indices of this game's transitions
@@ -75,8 +142,7 @@ class Rollout:
 
     def _assign(self, i):
         self.learner_side[i] = self.rng.randrange(2)
-        weights = [m.weight for m in self.league]
-        self.opponent[i] = self.rng.choices(range(len(self.league)), weights=weights)[0]
+        self.opponent[i] = sample_member_index(self.league, self.rng, self.group_weights)
         self.h_learner[i].zero_()
         self.h_ref[i].zero_()
         self._opponent_memory(self.opponent[i])[i].zero_()
@@ -106,6 +172,7 @@ class Rollout:
         env, dev = self.env, self.device
         trans = []          # dicts per learner decision
         results = []        # (opponent index, learner score)
+        decision_counts = collections.Counter()
         decisions = 0
         # Games continue across iterations; their earlier decisions were bootstrapped by the
         # critic at the end of the last batch, so only this batch's indices are tracked.
@@ -150,6 +217,8 @@ class Rollout:
                                   "temperature": temperature,
                                   "board": board, "side": int(self.learner_side[i]), "reward": 0.0, "done": False})
                     self.open_index[i].append(len(trans) - 1)
+                    member = self.league[self.opponent[i]]
+                    decision_counts[f"{member.group}:{member.name}"] += 1
                 decisions += len(learner_games)
             # --- opponents, grouped by league member ---
             by_member = {}
@@ -188,6 +257,7 @@ class Rollout:
                 # Do not consume its observation events: the next collect()
                 # needs to deliver those to the recurrent actor exactly once.
                 self.bootstrap_states[i] = {"board": env.board(i), "side": side}
+        self.last_decision_counts = dict(sorted(decision_counts.items()))
         return trans, results
 
     def _run_events(self, model, H, idx, evs):
@@ -370,17 +440,43 @@ def main() -> None:
     learner, payload = load_model(Path(cfg.get("resume") or cfg["init"]), device)
     learner.train()
     reference = load_policy(cfg["init"], device)     # the KL magnet stays the imitation policy
-    league = [Member("reference", reference, cfg["league"].get("reference", 1.0))]
+    league_cfg = cfg["league"]
+    group_weights = league_cfg.get("group_weights")
+    member_groups = league_cfg.get("member_groups", {})
+
+    def group_for(name: str) -> str:
+        if not group_weights:
+            return "default"
+        if name.startswith("snapshot-") and "self_play" in group_weights:
+            return "self_play"
+        if name not in member_groups:
+            raise ValueError(f"league member {name!r} has no configured group")
+        return member_groups[name]
+
+    league = [Member("reference", reference, league_cfg.get("reference", 1.0), group_for("reference"))]
     for name, path in (cfg["league"].get("replicas") or {}).items():
-        league.append(Member(name, load_policy(path, device), cfg["league"].get("replica_weight", 1.0)))
+        league.append(Member(name, load_policy(path, device), league_cfg.get("replica_weight", 1.0), group_for(name)))
     for path in cfg["league"].get("snapshots") or []:
-        league.append(Member(Path(path).stem, load_policy(path, device), cfg["league"].get("snapshot_weight", 1.0)))
+        name = Path(path).stem
+        league.append(Member(name, load_policy(path, device), league_cfg.get("snapshot_weight", 1.0),
+                             group_for(name)))
+    snapshot_sample_capacity = league_cfg.get("snapshot_sample_capacity")
+    if group_weights:
+        # Seed a self-play group before the first periodic checkpoint exists.
+        initial_snapshot = copy.deepcopy(learner).eval()
+        for parameter in initial_snapshot.parameters():
+            parameter.requires_grad_(False)
+        league.append(Member("snapshot-initial", initial_snapshot,
+                             league_cfg.get("snapshot_weight", 1.0), "self_play"))
+        if snapshot_sample_capacity is not None:
+            bound_snapshot_sampling(league, int(snapshot_sample_capacity))
+        validate_group_weights(league, group_weights)
     critic = Critic().to(device)
     critic.load_state_dict(torch.load(cfg["critic_init"], map_location=device, weights_only=False)["state_dict"])
     opt_a = torch.optim.Adam(learner.parameters(), lr=cfg["lr"])
     opt_c = torch.optim.Adam(critic.parameters(), lr=cfg["critic_lr"])
     env = BatchEnv(cfg["games"], max_plies=cfg["max_plies"], threads=cfg.get("env_threads", 1))
-    roll = Rollout(env, learner, reference, league, device, rng)
+    roll = Rollout(env, learner, reference, league, device, rng, group_weights)
     args.output.mkdir(parents=True, exist_ok=True)
     log = open(args.output / "rl_log.jsonl", "a")
     iterations = args.iterations or cfg["iterations"]
@@ -402,7 +498,8 @@ def main() -> None:
                   "bootstrapped_games": len(bootstraps),
                   "rollout_seconds": round(t1 - t0, 1), "update_seconds": round(t2 - t1, 1),
                   "decisions_per_second": round(len(trans) / max(t1 - t0, 1e-6), 1),
-                  "score_vs": {k: [round(float(np.mean(v)), 3), len(v)] for k, v in by.items()}, **stats}
+                  "score_vs": {k: [round(float(np.mean(v)), 3), len(v)] for k, v in by.items()},
+                  "league_decisions": roll.last_decision_counts, **stats}
         log.write(json.dumps(record) + "\n")
         log.flush()
         print(json.dumps(record), flush=True)
@@ -412,7 +509,10 @@ def main() -> None:
                     "step": it, "epoch": 0, "rl": cfg}, args.output / "latest.pt")
         if it % snapshot_every == 0:
             snap = load_policy(str(args.output / "latest.pt"), device)
-            league.append(Member(f"snapshot-{it}", snap, cfg["league"].get("snapshot_weight", 1.0)))
+            group = "self_play" if group_weights else "default"
+            league.append(Member(f"snapshot-{it}", snap, league_cfg.get("snapshot_weight", 1.0), group))
+            if snapshot_sample_capacity is not None and group_weights:
+                bound_snapshot_sampling(league, int(snapshot_sample_capacity))
             torch.save(torch.load(args.output / "latest.pt", weights_only=False), args.output / f"snapshot-{it}.pt")
     log.close()
 

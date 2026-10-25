@@ -95,9 +95,10 @@ def model(hidden=16, channels=4):
     return FogPolicy(channels=channels, blocks=0, hidden=hidden, cand_width=8).eval()
 
 
-def collector(env, learner=None, reference=None, league=None):
+def collector(env, learner=None, reference=None, league=None, group_weights=None):
     return Rollout(env, learner or model(), reference or model(),
-                   league or [Member("opponent", model(), 1.0)], torch.device("cpu"), FixedRandom())
+                   league or [Member("opponent", model(), 1.0)], torch.device("cpu"), FixedRandom(),
+                   group_weights)
 
 
 def test_cutoff_finishes_reply_without_consuming_next_learner_observation():
@@ -105,12 +106,21 @@ def test_cutoff_finishes_reply_without_consuming_next_learner_observation():
     roll = collector(env)
     trans, results = roll.collect(1)
     assert len(trans) == 1 and not results and not trans[0]["done"]
+    assert roll.last_decision_counts == {"default:opponent": 1}
     assert env.ply == 2
     assert roll.bootstrap_states == {0: {"board": "episode=0,ply=2", "side": 0}}
     assert env.events_taken == [(0, 0, 0), (0, 1, 1)]
     more, _ = roll.collect(1)
     assert more[0]["board"] == "episode=0,ply=2"
     assert roll.bootstrap_states[0]["board"] == "episode=0,ply=4"
+
+
+def test_rollout_logs_actual_learner_decision_exposure_by_group_and_member():
+    league = [Member("target-bot", model(), 1.0, "targets")]
+    roll = collector(ScriptedEnv(), league=league, group_weights={"targets": 1.0})
+    trans, _ = roll.collect(1)
+    assert len(trans) == 1
+    assert roll.last_decision_counts == {"targets:target-bot": 1}
 
 
 @pytest.mark.parametrize("terminal_ply,status,reward", [(1, 2, -1), (2, 1, 1), (2, 3, 0)])
