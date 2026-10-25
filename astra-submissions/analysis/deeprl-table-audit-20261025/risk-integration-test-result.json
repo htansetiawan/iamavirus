@@ -1,0 +1,24 @@
+{
+  "classification": "CPU mathematical and PPO integration correctness; no checkpoint training or strength estimate",
+  "completed_at": "2026-10-25T18:41:15.024487+00:00",
+  "command": "PYTHONPATH=astra-submissions:. taskset -c 0,1 .venv/bin/python -m unittest learning_experiments.test_risk_auxiliary learning_experiments.test_rl_risk_integration -v",
+  "tests_run": 11,
+  "failures": 0,
+  "errors": 0,
+  "unittest_seconds": 0.888,
+  "torch_version": "2.11.0+cu128",
+  "device": "cpu",
+  "native_simulator_used": false,
+  "source_sha256": {
+    "astra-submissions/learning_experiments/risk_auxiliary.py": "9aa44705d3d3203ab892ec298321f15530852a4b612df674db21eb4c5f46cba3",
+    "astra-submissions/learning_experiments/test_risk_auxiliary.py": "fd66947c149583015a1a4c7b9f52eca31f95c1cc8a236d4fcaa8e7dd62221c6a",
+    "astra-submissions/learning_experiments/test_rl_risk_integration.py": "b2a83fe7e5062942ced97e3c737a68fbff7d63c32c4bde36ea35192b38cff084",
+    "astra-submissions/learning_experiments/rl_risk_auxiliary.patch": "79dcb403fb393ee3b9b67455220c695eea51825da48d9f1743d7a223cbd2df95",
+    "astra-submissions/learning_experiments/rl-risk-integration-manifest.json": "c4ab892c5d99ae70f7b72f51f191266d81878e79790c917fc0b5bf1a36a3667a"
+  },
+  "limits": [
+    "Integration applies a pinned patch to a temporary source copy; Fable source remains unchanged.",
+    "Real rollout/update bodies and recurrent actor, with a deterministic simulator double.",
+    "Does not certify native label parity, GPU throughput, training convergence, calibration, or playing strength."
+  ]
+}

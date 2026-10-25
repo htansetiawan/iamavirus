@@ -11,6 +11,11 @@ positions where the guard excluded every true escape. Bulk distillation is not
 justified by a safety improvement in this test. Read that report before acting
 on the earlier proposed training schedule below.
 
+**Follow-up:** [risk-head evidence and a tested PPO auxiliary patch](risk-learning-report.md)
+identify a shared-representation training gap and derive an O(M) action-ranking
+loss. The patch is ready for review but unapplied; no model/arena improvement
+is claimed, and it does not bypass the teacher or deployment gates.
+
 ## What we actually need to improve
 
 There are three different objects called a “table” in this project:

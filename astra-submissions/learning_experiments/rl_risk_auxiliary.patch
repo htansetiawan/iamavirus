@@ -1,0 +1,58 @@
+--- a/learning/rl_train.py
++++ b/learning/rl_train.py
+@@ -120,0 +121,11 @@
++def risk_coefficients(cfg):
++    """Optional auxiliary supervision; legacy PPO is unchanged when disabled."""
++    coef = float(cfg.get("risk_aux_coef", 0.0))
++    separation = float(cfg.get("risk_separation_coef", 0.0))
++    if not all(math.isfinite(x) and x >= 0 for x in (coef, separation)):
++        raise ValueError("risk coefficients must be finite and nonnegative")
++    if coef == 0 and separation != 0:
++        raise ValueError("risk_separation_coef requires positive risk_aux_coef")
++    return coef, separation
++
++
+@@ -125 +136 @@
+-                 group_weights: dict[str, float] | None = None):
++                 group_weights: dict[str, float] | None = None, collect_risk: bool = False):
+@@ -127,0 +139 @@
++        self.collect_risk = collect_risk
+@@ -218,0 +231,7 @@
++                    if self.collect_risk:
++                        # Candidate order is the same as env.candidates above.
++                        # Query before step_all; these labels never enter actor inputs.
++                        danger = np.asarray(env.danger(i), dtype=np.float32)
++                        if danger.shape != (n,) or not np.isin(danger, [0., 1.]).all():
++                            raise ValueError("risk labels must be binary and match candidate order/length")
++                        trans[-1]["danger"] = danger.copy()
+@@ -355,0 +375,3 @@
++    risk_coef, separation_coef = risk_coefficients(cfg)
++    if risk_coef:
++        from learning_experiments.risk_auxiliary import candidate_risk_loss
+@@ -359,0 +382,2 @@
++    if risk_coef:
++        stats.update(risk_bce=[], risk_separation=[], risk_contrast_decisions=[])
+@@ -394 +418 @@
+-            logits, _ = learner.score(h, spatial, cf, ct, cp)
++            logits, danger_logits = learner.score(h, spatial, cf, ct, cp)
+@@ -409,0 +434,15 @@
++            if risk_coef:
++                targets = torch.zeros_like(danger_logits)
++                for k, t in enumerate(batch):
++                    if "danger" not in t:
++                        raise ValueError("risk-enabled updates require labels collected before each move")
++                    labels = np.asarray(t["danger"], dtype=np.float32)
++                    if labels.shape != (len(t["cand"][0]),):
++                        raise ValueError("risk labels do not match stored candidates")
++                    targets[k, :len(labels)] = torch.from_numpy(labels).to(device)
++                risk = candidate_risk_loss(danger_logits, targets, mask,
++                                           separation_coef=separation_coef)
++                loss = loss + risk_coef * risk.total
++                stats["risk_bce"].append(float(risk.bce.detach()))
++                stats["risk_separation"].append(float(risk.separation.detach()))
++                stats["risk_contrast_decisions"].append(risk.contrast_decisions)
+@@ -435,0 +475 @@
++    risk_coef, _ = risk_coefficients(cfg)
+@@ -479 +519 @@
+-    roll = Rollout(env, learner, reference, league, device, rng, group_weights)
++    roll = Rollout(env, learner, reference, league, device, rng, group_weights, collect_risk=risk_coef > 0)

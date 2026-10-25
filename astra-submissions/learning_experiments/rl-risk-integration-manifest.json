@@ -1,0 +1,13 @@
+{
+  "classification": "unapplied review patch; no training or deployment",
+  "source_path": "learning/rl_train.py",
+  "source_sha256": "a8f2f5e89a289c720ac73a27acef2ddcb6ae15b00fde0d41d4bcd171ae2e06b5",
+  "patched_sha256": "bd3c78e8c6daac60fd6a727d8efed1f22b0d6259c523a405050903a20f552ebb",
+  "patch_sha256": "79dcb403fb393ee3b9b67455220c695eea51825da48d9f1743d7a223cbd2df95",
+  "base_commit": "84c3150778864c39964fe004419c3e5d3cee9613",
+  "defaults": {
+    "risk_aux_coef": 0.0,
+    "risk_separation_coef": 0.0
+  },
+  "runtime_dependency": "PYTHONPATH=astra-submissions:. for opt-in candidate_risk_loss import"
+}
