@@ -96,4 +96,6 @@ no immediate-fatal move, the terminal-loss postmortem found no changed choice
 in any of the candidate's four losses. Keep the archived feature as a rejected
 research experiment. The next useful test should connect newly hidden slider
 arrival evidence to the defender's king-risk decision, rather than only
-changing the opponent move likelihood.
+changing the opponent move likelihood. The separate Astra v36 archive changes
+only the king-guard default; it does not include this rejected hidden-slider
+feature. Follow its evidence at `astra-submissions/v36-kingguard0001.md`.
