@@ -1,0 +1,301 @@
+{
+  "games": 5915,
+  "positions": 59195,
+  "invalid_groups": 0,
+  "split_games": {
+    "train": 3549,
+    "validation": 1183,
+    "test": 1183
+  },
+  "split_positions": {
+    "train": 35481,
+    "validation": 11783,
+    "test": 11931
+  },
+  "lambda": 1.0,
+  "validation_grid_mean_nll": [
+    [
+      2.874917949357627,
+      0.0001
+    ],
+    [
+      2.874917913360613,
+      0.001
+    ],
+    [
+      2.8749175534466063,
+      0.01
+    ],
+    [
+      2.874913932111083,
+      0.1
+    ],
+    [
+      2.8748803485413217,
+      1.0
+    ]
+  ],
+  "frozen_v35": {
+    "positions": 11931,
+    "nll": 2.8149034314759525,
+    "top1": 0.2345989439275836,
+    "brier": 0.8713365193503742,
+    "candidate_ece_10bin": 0.0011065251512870022,
+    "true_hidden_threat_positions": 1042,
+    "hidden_nll": 3.3299470886869305,
+    "hidden_top1": 0.16602687140115163
+  },
+  "fitted_cheap": {
+    "positions": 11931,
+    "nll": 2.8097524249242154,
+    "top1": 0.24130416561897577,
+    "brier": 0.8701791219407203,
+    "candidate_ece_10bin": 0.0010365527486749316,
+    "true_hidden_threat_positions": 1042,
+    "hidden_nll": 3.3465720327439326,
+    "hidden_top1": 0.16314779270633398
+  },
+  "fitted_cheap_by_actor": {
+    "Apricot Squad": {
+      "positions": 99,
+      "nll": 3.3036300075532985,
+      "top1": 0.12121212121212122,
+      "brier": 0.9766955902191259,
+      "candidate_ece_10bin": 0.007601513481460533,
+      "true_hidden_threat_positions": 8,
+      "hidden_nll": 2.7510530583454686,
+      "hidden_top1": 0.25
+    },
+    "Crimson Fog": {
+      "positions": 336,
+      "nll": 2.941209034518641,
+      "top1": 0.21726190476190477,
+      "brier": 0.8877885810330539,
+      "candidate_ece_10bin": 0.0012647124906757742,
+      "true_hidden_threat_positions": 34,
+      "hidden_nll": 3.7979543102558218,
+      "hidden_top1": 0.08823529411764706
+    },
+    "Czechmate": {
+      "positions": 75,
+      "nll": 2.6305228424072014,
+      "top1": 0.29333333333333333,
+      "brier": 0.8245018021507717,
+      "candidate_ece_10bin": 0.009470157726159298,
+      "true_hidden_threat_positions": 2,
+      "hidden_nll": 3.0121452475642636,
+      "hidden_top1": 0.0
+    },
+    "Decent Chess Bot": {
+      "positions": 991,
+      "nll": 2.898765000360616,
+      "top1": 0.22704339051463168,
+      "brier": 0.8872005335353835,
+      "candidate_ece_10bin": 0.001156992881564405,
+      "true_hidden_threat_positions": 103,
+      "hidden_nll": 3.4366336623458342,
+      "hidden_top1": 0.10679611650485436
+    },
+    "Gravel Road": {
+      "positions": 462,
+      "nll": 2.743896801171772,
+      "top1": 0.23809523809523808,
+      "brier": 0.8610815380614008,
+      "candidate_ece_10bin": 0.003425499502271498,
+      "true_hidden_threat_positions": 39,
+      "hidden_nll": 3.4286115794433933,
+      "hidden_top1": 0.15384615384615385
+    },
+    "Greek Gift": {
+      "positions": 939,
+      "nll": 2.9913056223309082,
+      "top1": 0.20979765708200213,
+      "brier": 0.8943815950845387,
+      "candidate_ece_10bin": 0.001464280911494089,
+      "true_hidden_threat_positions": 99,
+      "hidden_nll": 3.307499442119553,
+      "hidden_top1": 0.1717171717171717
+    },
+    "HYPOTHERMIA": {
+      "positions": 667,
+      "nll": 2.772286534857699,
+      "top1": 0.23238380809595202,
+      "brier": 0.8746620526967777,
+      "candidate_ece_10bin": 0.002090845128477679,
+      "true_hidden_threat_positions": 58,
+      "hidden_nll": 3.349058511684555,
+      "hidden_top1": 0.1724137931034483
+    },
+    "In Pawn Sight": {
+      "positions": 292,
+      "nll": 3.0858063647442235,
+      "top1": 0.1643835616438356,
+      "brier": 0.9273355234406352,
+      "candidate_ece_10bin": 0.008909957439846936,
+      "true_hidden_threat_positions": 39,
+      "hidden_nll": 3.6002166070613555,
+      "hidden_top1": 0.1282051282051282
+    },
+    "Instructors": {
+      "positions": 894,
+      "nll": 2.863022976752996,
+      "top1": 0.21364653243847875,
+      "brier": 0.8771536149731822,
+      "candidate_ece_10bin": 0.0009895892320191696,
+      "true_hidden_threat_positions": 74,
+      "hidden_nll": 3.6071405665114966,
+      "hidden_top1": 0.0945945945945946
+    },
+    "Knight Vision": {
+      "positions": 879,
+      "nll": 2.862882982768954,
+      "top1": 0.24232081911262798,
+      "brier": 0.8674114365128721,
+      "candidate_ece_10bin": 0.0010484575050022772,
+      "true_hidden_threat_positions": 87,
+      "hidden_nll": 3.288167847872347,
+      "hidden_top1": 0.1724137931034483
+    },
+    "Lost Signal": {
+      "positions": 617,
+      "nll": 2.8220263493685693,
+      "top1": 0.23176661264181522,
+      "brier": 0.8741403307307399,
+      "candidate_ece_10bin": 0.0015531333596579778,
+      "true_hidden_threat_positions": 44,
+      "hidden_nll": 3.276586394829687,
+      "hidden_top1": 0.18181818181818182
+    },
+    "Mist Opportunities": {
+      "positions": 1140,
+      "nll": 2.834347342516455,
+      "top1": 0.2236842105263158,
+      "brier": 0.8803679882173682,
+      "candidate_ece_10bin": 0.001938808859484538,
+      "true_hidden_threat_positions": 87,
+      "hidden_nll": 3.4634089290767247,
+      "hidden_top1": 0.12643678160919541
+    },
+    "Sausage": {
+      "positions": 322,
+      "nll": 2.7451487572239603,
+      "top1": 0.2515527950310559,
+      "brier": 0.8580153561871593,
+      "candidate_ece_10bin": 0.0007737802881051748,
+      "true_hidden_threat_positions": 20,
+      "hidden_nll": 2.482325453247552,
+      "hidden_top1": 0.35
+    },
+    "Strongly Invisible": {
+      "positions": 1075,
+      "nll": 2.8613693374062232,
+      "top1": 0.2241860465116279,
+      "brier": 0.8802073586495723,
+      "candidate_ece_10bin": 0.001623187643254419,
+      "true_hidden_threat_positions": 95,
+      "hidden_nll": 3.3537026500823655,
+      "hidden_top1": 0.17894736842105263
+    },
+    "TA Baseline A": {
+      "positions": 811,
+      "nll": 2.4797547185901982,
+      "top1": 0.31812577065351416,
+      "brier": 0.805659988438799,
+      "candidate_ece_10bin": 0.006026558719098273,
+      "true_hidden_threat_positions": 49,
+      "hidden_nll": 2.827830269451738,
+      "hidden_top1": 0.30612244897959184
+    },
+    "TA Baseline P": {
+      "positions": 603,
+      "nll": 2.536261899751009,
+      "top1": 0.33499170812603646,
+      "brier": 0.810216853743611,
+      "candidate_ece_10bin": 0.005857788133283923,
+      "true_hidden_threat_positions": 41,
+      "hidden_nll": 3.102602287916409,
+      "hidden_top1": 0.21951219512195122
+    },
+    "TA Baseline S": {
+      "positions": 754,
+      "nll": 2.6714634850053223,
+      "top1": 0.3050397877984085,
+      "brier": 0.8531541993082472,
+      "candidate_ece_10bin": 0.00450896600106364,
+      "true_hidden_threat_positions": 70,
+      "hidden_nll": 3.1924895966025146,
+      "hidden_top1": 0.21428571428571427
+    },
+    "baseline.py": {
+      "positions": 84,
+      "nll": 2.51697068918735,
+      "top1": 0.2976190476190476,
+      "brier": 0.7975587952926547,
+      "candidate_ece_10bin": 0.00664146605837883,
+      "true_hidden_threat_positions": 5,
+      "hidden_nll": 1.5637925052270638,
+      "hidden_top1": 0.6
+    },
+    "duck": {
+      "positions": 891,
+      "nll": 2.8471038289237462,
+      "top1": 0.2222222222222222,
+      "brier": 0.8865501841689903,
+      "candidate_ece_10bin": 0.002031671950553318,
+      "true_hidden_threat_positions": 88,
+      "hidden_nll": 3.5952526892956835,
+      "hidden_top1": 0.10227272727272728
+    }
+  },
+  "coefficients_18": [
+    0.515819213820723,
+    4.442379046797367,
+    0.0,
+    -0.6389638410261731,
+    -0.7303737261843423,
+    -0.26619173811224567,
+    -0.7356102323751942,
+    -0.36234955724898954,
+    0.08394184887376518,
+    2.41448380342841,
+    1.7972019285841678,
+    -1.855931516791699,
+    -1.5185892129287941,
+    -0.12368144376992075,
+    0.7099192833665463,
+    1.7489802012377365,
+    1.792540033039669,
+    1.2244369536737905
+  ],
+  "coefficients_28": [
+    0.515819213820723,
+    4.442379046797367,
+    0.0,
+    -0.6389638410261731,
+    -0.7303737261843423,
+    -0.26619173811224567,
+    -0.7356102323751942,
+    -0.36234955724898954,
+    0.08394184887376518,
+    2.41448380342841,
+    1.7972019285841678,
+    -1.855931516791699,
+    -1.5185892129287941,
+    -0.12368144376992075,
+    0.7099192833665463,
+    1.7489802012377365,
+    1.792540033039669,
+    1.2244369536737905,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "caveat": "Chronological held-out predictive fit; not playing-strength evidence."
+}

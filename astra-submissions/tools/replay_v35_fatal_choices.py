@@ -178,6 +178,7 @@ def run_case(case: dict, replay: dict, binary_dir: Path, max_seconds: float,
     safe_risks = {m: risks.get(m) for m in case["safe_alternatives"]}
     return {
         "game": case["game"], "opponent": case["opponent"], "ply": case["ply"],
+        "recorded_outcome": case.get("outcome"),
         "actual_fatal_move": case["move"], "actual_is_king_move": case["king_move"],
         "true_board_safe_alternatives": case["safe_alternatives"],
         "true_attackers_after_actual_move": actual_attackers,

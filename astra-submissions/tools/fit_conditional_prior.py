@@ -29,16 +29,18 @@ def load_groups(path):
         for line in f:
             row = json.loads(line)
             key = (row["game"], row["ply"])
-            groups[key].append((row["features"], row["label"], row["candidate"]))
+            actor = row.get("white") if row["ply"] % 2 == 0 else row.get("black")
+            groups[key].append((row["features"], row["label"], row["candidate"], actor))
             meta[row["game"]] = (row.get("at", ""), row.get("white", ""), row.get("black", ""))
     result = []
     bad = 0
     for key, rows in groups.items():
-        ys = [i for i, (_, y, _) in enumerate(rows) if y]
+        ys = [i for i, row in enumerate(rows) if row[1]]
         if len(ys) != 1:
             bad += 1
             continue
-        result.append({"key": key, "game": key[0], "rows": rows, "label": ys[0]})
+        result.append({"key": key, "game": key[0], "rows": rows, "label": ys[0],
+                       "actor": rows[0][3]})
     return result, meta, bad
 
 

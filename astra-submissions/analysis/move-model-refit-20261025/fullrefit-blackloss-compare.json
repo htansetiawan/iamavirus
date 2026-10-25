@@ -1,0 +1,183 @@
+{
+  "classification": "fixed-prefix diagnostic on selected replay cases; exact own-move and one-reply king-capture labels, no strength claim",
+  "baseline_sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+  "candidate_sha256": "a4a5aaf26fc9c2d86132da59a36defeff733555ae784519da0b9161b9dd42e04",
+  "baseline": {
+    "positions": 4,
+    "referee_fatal_choices": 3,
+    "known_safe_alt_choices": 1,
+    "moves_allowing_immediate_king_capture_reply": 0,
+    "changed_from_recorded_fatal": 2,
+    "median_truth_mass": 0.009455,
+    "median_truth_rank": 54.0
+  },
+  "candidate": {
+    "positions": 4,
+    "referee_fatal_choices": 4,
+    "known_safe_alt_choices": 0,
+    "moves_allowing_immediate_king_capture_reply": 0,
+    "changed_from_recorded_fatal": 2,
+    "median_truth_mass": 0.012695,
+    "median_truth_rank": 62.5
+  },
+  "positions_in_both": 4,
+  "per_position": [
+    {
+      "baseline": {
+        "game": "4c46d53f-1657-4249-8070-9e0625efffec",
+        "opponent": "selfplay-2",
+        "ply": 83,
+        "recorded_outcome": null,
+        "recorded_move": "h6g7",
+        "choice": "b3c5",
+        "choice_is_recorded_fatal_move": false,
+        "choice_is_referee_fatal": false,
+        "choice_is_known_safe_alt": true,
+        "opponent_reply_count": 23,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 0.00225,
+        "truth_rank": 101,
+        "belief_particles": 17610
+      },
+      "candidate": {
+        "game": "4c46d53f-1657-4249-8070-9e0625efffec",
+        "opponent": "selfplay-2",
+        "ply": 83,
+        "recorded_outcome": null,
+        "recorded_move": "h6g7",
+        "choice": "h6g7",
+        "choice_is_recorded_fatal_move": true,
+        "choice_is_referee_fatal": true,
+        "choice_is_known_safe_alt": false,
+        "opponent_reply_count": 0,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 0.00199,
+        "truth_rank": 120,
+        "belief_particles": 17610
+      },
+      "choice_changed": true,
+      "fatality_changed": true,
+      "truth_rank_changed": true,
+      "truth_mass_changed": true
+    },
+    {
+      "baseline": {
+        "game": "666955b5-9f09-447a-89c0-183d5a34e3fc",
+        "opponent": "selfplay-0",
+        "ply": 67,
+        "recorded_outcome": null,
+        "recorded_move": "a1b1",
+        "choice": "a1b1",
+        "choice_is_recorded_fatal_move": true,
+        "choice_is_referee_fatal": true,
+        "choice_is_known_safe_alt": false,
+        "opponent_reply_count": 0,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 0.03608,
+        "truth_rank": 6,
+        "belief_particles": 97
+      },
+      "candidate": {
+        "game": "666955b5-9f09-447a-89c0-183d5a34e3fc",
+        "opponent": "selfplay-0",
+        "ply": 67,
+        "recorded_outcome": null,
+        "recorded_move": "a1b1",
+        "choice": "a1b1",
+        "choice_is_recorded_fatal_move": true,
+        "choice_is_referee_fatal": true,
+        "choice_is_known_safe_alt": false,
+        "opponent_reply_count": 0,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 0.04038,
+        "truth_rank": 5,
+        "belief_particles": 97
+      },
+      "choice_changed": false,
+      "fatality_changed": false,
+      "truth_rank_changed": true,
+      "truth_mass_changed": true
+    },
+    {
+      "baseline": {
+        "game": "a5e2c9ed-7da7-456a-ba0e-2f45764685cb",
+        "opponent": "selfplay-3",
+        "ply": 47,
+        "recorded_outcome": null,
+        "recorded_move": "g7g6",
+        "choice": "b3d5",
+        "choice_is_recorded_fatal_move": false,
+        "choice_is_referee_fatal": true,
+        "choice_is_known_safe_alt": false,
+        "opponent_reply_count": 0,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 4e-05,
+        "truth_rank": 1906,
+        "belief_particles": 9990
+      },
+      "candidate": {
+        "game": "a5e2c9ed-7da7-456a-ba0e-2f45764685cb",
+        "opponent": "selfplay-3",
+        "ply": 47,
+        "recorded_outcome": null,
+        "recorded_move": "g7g6",
+        "choice": "b3d5",
+        "choice_is_recorded_fatal_move": false,
+        "choice_is_referee_fatal": true,
+        "choice_is_known_safe_alt": false,
+        "opponent_reply_count": 0,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 6e-05,
+        "truth_rank": 1569,
+        "belief_particles": 9990
+      },
+      "choice_changed": false,
+      "fatality_changed": false,
+      "truth_rank_changed": true,
+      "truth_mass_changed": true
+    },
+    {
+      "baseline": {
+        "game": "c73776d5-c45b-49df-b0e7-5ee9225c550c",
+        "opponent": "selfplay-1",
+        "ply": 79,
+        "recorded_outcome": null,
+        "recorded_move": "a5b4",
+        "choice": "a5b4",
+        "choice_is_recorded_fatal_move": true,
+        "choice_is_referee_fatal": true,
+        "choice_is_known_safe_alt": false,
+        "opponent_reply_count": 0,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 0.01666,
+        "truth_rank": 7,
+        "belief_particles": 2741
+      },
+      "candidate": {
+        "game": "c73776d5-c45b-49df-b0e7-5ee9225c550c",
+        "opponent": "selfplay-1",
+        "ply": 79,
+        "recorded_outcome": null,
+        "recorded_move": "a5b4",
+        "choice": "f5f4",
+        "choice_is_recorded_fatal_move": false,
+        "choice_is_referee_fatal": true,
+        "choice_is_known_safe_alt": false,
+        "opponent_reply_count": 0,
+        "opponent_replies_capturing_our_king": [],
+        "truth_mass": 0.0234,
+        "truth_rank": 3,
+        "belief_particles": 2741
+      },
+      "choice_changed": true,
+      "fatality_changed": false,
+      "truth_rank_changed": true,
+      "truth_mass_changed": true
+    }
+  ],
+  "limits": [
+    "Targeted loss cases, not a random sample.",
+    "Opponent replies are enumerated on the true board only to detect immediate king capture; no reply policy or deeper continuation is simulated.",
+    "Material, win probability and longer-term value are not measured."
+  ]
+}

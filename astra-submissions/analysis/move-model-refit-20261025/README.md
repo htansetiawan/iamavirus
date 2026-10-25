@@ -37,17 +37,191 @@ top-1 modestly while worsening hidden-threat NLL. No model dominates. These
 differences are not strength evidence, and 62 hidden-threat examples are too
 few for a release decision.
 
+## Exact sequential-belief and one-reply referee gate
+
+The two-feature candidate was built from the exact v35 archive, changing only
+the two `theta_full` coefficients. On the same 16 targeted unseen-arrival
+prefixes and identical search parameters, baseline v35 selected a referee
+fatal move in 16/16. The candidate selected 7/16 recorded nonfatal legal
+alternatives; 9/16 remained immediately fatal. Exact sequential belief traces
+showed median true-board posterior share rising from 0.0675% to 0.478% and
+median truth rank improving from 273.5 to 33. This is strong evidence that the
+prior update affects the intended narrow failure family, but it is selected
+loss data. Exact enumeration found no immediate king-capture reply to any of
+the seven rescued moves. Opponent replies are enumerated on the true board
+only for that terminal check; no reply policy, material value, or deeper
+continuation is modeled, so this is not a playing-strength estimate.
+
+On 12 previously selected nonfatal king-move controls, frozen v35 and the
+two-feature candidate both chose 0/12 immediately fatal moves. Neither
+selection allowed an immediate opponent king-capture reply. The candidate
+changed its move relative to baseline in 6/12 controls; all six were still
+immediately safe. This is encouraging but a tiny, selected control set, not a
+strategic safety result.
+The candidate builder reproduces the tested binary hash
+`4793cd6d9b5c7beb6962423c13f154024a72b2830b804fe7ac9bdc1e9d8715f4` from the
+two coefficients above.
+
 ## Decision
 
-Do not change the submitted v35 coefficients. Next, run the candidate weights
-through the exact sequential belief update on game-disjoint replays, measure
-truth support/rank and fatal-move decisions, then branch changed actions
-through the referee. Expand the corpus with current public replays when API
-access is available. Keep arena evaluation as the promotion gate.
+Do not change the submitted v35 coefficients or ZIP based on this pilot. The
+candidate passes these narrow immediate-safety controls; broader recent-data
+fit and deeper continuation gates are still underway. Keep arena evaluation as
+the promotion gate.
+
+## Recent hidden-only fit: sequential safety evidence, with overlap caveat
+
+The Oct 18–24 fit's two hidden-threat coefficients were rebuilt in isolation
+from the exact v35 archive (full coefficients only; cheap prior unchanged):
+`MM_CHECK_UNSEEN=1.3592952`, `MM_THREAT_UNSEEN=0.5914142`, binary SHA-256
+`adbbb2a4dc998d2485844ccaf8ad3a4783e9f5f6b5efbb14b4cc3df8ee298ff9`.
+
+On the 16-case hidden-arrival slice, baseline v35 selected 16 referee-fatal
+moves; the recent hidden-only candidate selected 9 fatal moves and 7 known-safe
+alternatives. On the same 12 selected nonfatal controls, both baseline and
+candidate selected zero fatal moves and two known-safe alternatives. No chosen
+candidate move on either slice allowed an immediate king-capture reply. These
+are fixed-prefix, one-ply diagnostics; no changed move was branched into an
+opponent policy or longer continuation.
+
+The wider 91-case hidden-arrival diagnostic at a five-second search cap found
+baseline 83/91 fatal choices and 7/91 known-safe alternatives, versus candidate
+43/91 and 48/91. By opponent, fatal choices were Duck 25→18 (n=27), Strongly
+Invisible 22→7 (n=22), Decent Chess Bot 20→10 (n=24), and Instructors 16→8
+(n=18). The candidate had no immediate king-capture replies after any of its
+chosen moves. This is a large selected-loss safety signal, not a strength
+estimate.
+
+**Data overlap was detected.** Twenty-six of the 91 target games were in the
+5,940-game fit sample, and in four target cases the immediately preceding
+opponent decision was among the stride-8 training rows. The 91-case result is
+therefore provisional. Before treating it as held-out evidence, refit after
+excluding all 91 target games, then repeat the 91-case candidate and baseline
+traces with the same search budget. Even a clean repeat still needs broader
+nonfatal controls and branched/self-play strength validation. No ZIP or arena
+version is cleared.
+
+To remove this overlap, I created a second Seagate dataset excluding all 91
+target game IDs (3,523 candidate rows removed; 5,889 games and 59,100 positions
+remain). On its new game-disjoint Oct 23–24 test split, the hidden-only refit
+has overall NLL 2.6475 vs frozen v35 2.6420, but hidden-action NLL 2.2229 vs
+2.7175 and hidden top-1 37.70% vs 24.69%. The refitted weights remain close at
+1.3541 and 0.5908. This supports a specialized predictive signal while
+showing a small overall trade-off.
+
+The fresh 91-position search replay using these game-excluded weights is
+complete: baseline fatal choices 83/91 vs candidate 47/91; known-safe
+alternatives 7/91 vs 44/91; no chosen candidate move allowed immediate king
+capture on the true board. Per opponent, fatal choices were Duck 25→19,
+Strongly Invisible 22→8, Decent Chess Bot 20→12, and Instructors 16→8. Median
+true-board mass increased 0.036%→0.078%, and median truth rank improved
+418→151. This removes direct game overlap from the fit, but the sample still
+contains only loss-selected cases and the analysis remains one-ply. The
+candidate changed 58/91 choices, so nonfatal controls and continuation quality
+are necessary before considering a version.
+
+The candidate and baseline were also replayed on 25 nonfatal king-move controls
+from 25 distinct games, all disjoint from the fit corpus. At five seconds per
+decision, both selected 0/25 referee-fatal moves; neither selection permitted
+an immediate king-capture reply. The hidden-only candidate chose one of the
+listed safe non-king alternatives in 1/25 versus baseline 4/25 (the list holds
+at most five examples, so this is not a full strategic-choice score). It
+changed 6/25 moves versus baseline's 9/25 changes from the recorded safe king
+move. These controls show no immediate king-safety regression in this sample,
+but they do not bound material loss, long-term position quality, or policy
+strength. The next gate is paired full-game self-play against the frozen v35
+binary, followed by opponent-reply continuations for rescued tactical moves.
+
+Artifacts: `recent-hidden-only-hidden-arrival-compare.json`,
+`recent-hidden-only-controls-12-referee.json`,
+`recent-hidden-only-wide-compare-91-5s.json`, and the individual traces in
+this directory. A Fable handoff is in
+[`chatroom/104-astra-hidden-prior-wide-replay-provisional.md`](../../../chatroom/104-astra-hidden-prior-wide-replay-provisional.md).
+
+## Expanded recent data in progress
+
+The repository contains 154,179 accepted game records through Oct 24. A
+stratified manifest selects up to 800 games for each of ten strong teams and
+TA baselines over Oct 18–24, yielding 5,940 unique games with 820–866 per day.
+The exact feature oracle sampled every eighth decision per actor, excluded
+IAmAVirus decisions, and verified all recorded moves: 59,195 positions and
+1,787,677 legal candidates. The 485 MB JSONL is on Seagate at
+`/media/henrytan/seagate1/iamavirus/move-model-20261024/top-opponent-20261018-24-stride8.jsonl`;
+SHA-256 `075d8f009502bd895492153beff16b82eaeb6dce61ddb8f9278d137154d8c35e`.
+The game manifest is `recent-game-sample.jsonl`; selection is reproducible
+with `tools/select_recent_opponent_games.py`. The recent chronological fit is
+complete and is the main predictive result below.
+
+### Recent held-out fit
+
+The game-disjoint split has 3,549 train / 1,183 validation / 1,183 test games,
+with 35,481 / 11,783 / 11,931 sampled decisions. The held-out games fall on
+Oct 23–24. There are 1,042 held-out decisions whose actual move activates at
+least one hidden-threat feature. Validation selected L2 strength 1.0.
+
+| Full prior | Overall NLL ↓ | Top-1 | Brier ↓ | Hidden NLL ↓ | Hidden top-1 |
+|---|---:|---:|---:|---:|---:|
+| Frozen v35 | 2.6423 | 26.31% | 0.8471 | 2.7186 | 24.66% |
+| v35 plus only the two omitted weights | 2.6477 | 25.72% | 0.8517 | **2.2223** | **37.72%** |
+| Regularized full refit | **2.6254** | **26.97%** | **0.8436** | 2.4583 | 32.73% |
+
+The full refit improves overall NLL, top-1 and Brier, and improves overall NLL
+for each of Duck (891 test decisions), Instructors (894), Greek Gift (939),
+Knight Vision (879), Strongly Invisible (1,075), Decent Chess Bot (991), Mist
+Opportunities (1,140), and all three TA baselines. It also improves hidden
+move NLL for every one of those teams. The two-weight update has the best
+aggregate hidden-threat slice, but loses slightly on overall metrics. These
+are predictive held-out gains from a replay sample, not Elo estimates.
+
+The separately refitted cheap prior slightly improves its own held-out NLL
+(2.8149→2.8098) and top-1 (23.46%→24.13%), while its hidden-threat NLL is
+slightly worse (3.3299→3.3466). Full and cheap arrays are now combined in a
+research binary for exact sequential-belief checks; nothing is submitted.
+
+### Excluded-game full-prior candidate and full-clock gate
+
+To compare the broad predictive fit with the hidden-only intervention, I built
+a second candidate with all 28 full-prior weights refit on the dataset that
+excludes all 91 selected hidden-arrival target games; the cheap prior remained
+frozen. Its candidate binary SHA-256 is
+`a4a5aaf26fc9c2d86132da59a36defeff733555ae784519da0b9161b9dd42e04`. On the
+game-disjoint test set it improves overall NLL 2.6420→2.6252 and hidden-action
+NLL 2.7175→2.4587. On the selected 91 hidden-arrival loss positions it reduces
+referee-fatal choices only 83→73 (versus 83→47 for the hidden-only candidate).
+On 25 nonfatal king-move controls, it and v35 both choose 0 immediately fatal
+moves; each chooses a listed safe non-king alternative in 4/25.
+
+The four-pair full-clock color-swapped self-play screen finished **3–5** for
+the full refit: candidate White 3–1, candidate Black 0–4; paired scores
+0.5, 0.5, 0.5, 0.0. White won 7/8 games, so the strong seat effect makes this
+small sample noisy; nevertheless the candidate loses the head-to-head screen
+and is not ready to promote. It is research-only.
+
+I audited the four candidate-as-Black terminal decisions. Three came directly
+after a White rook arrived on a square unseen by Black, then Black made a move
+that left its king capturable. In one case the true-board audit found no
+immediately safe legal alternative. In the other three, safe alternatives
+existed. Replaying those exact prefixes with frozen v35 versus the full-refit
+candidate found 3/4 versus 4/4 immediately fatal choices; on one case v35 chose
+a safe move while the full refit chose a fatal move. The hidden-only candidate
+rescued only one of the four; a very low king-guard setting also rescued only
+one. This is a tiny self-play-selected failure set, but it directly rejects
+the idea that better average opponent-move prediction alone fixes the
+invisible-rook defense.
+
+Artifacts: `exclude-hidden91-fullrefit-manifest.json`,
+`exclude-hidden91-fullrefit-wide-compare-91-5s.json`,
+`exclude-hidden91-fullrefit-controls-compare-25-5s.json`,
+`exclude-hidden91-fullrefit-selfplay-4pairs.json`,
+`fullrefit-blackloss-compare.json`, `hiddenonly-blackloss-compare.json`, and
+`fullrefit-guard-blackloss-compare.json`. No submission ZIP changed. A
+promising next intervention needs to model the danger of an
+opponent's newly hidden slider arrival directly or use a calibrated tail-risk
+safety decision; it must pass full-game tests before promotion.
 
 ## Reproduction
 
-The large extracted candidate dataset is on the user-authorized Seagate disk:
+The small pilot dataset is on the user-authorized Seagate disk:
 `/media/henrytan/seagate1/iamavirus/move-model-20261024/candidates.jsonl`.
 Its SHA-256 is `a7c8670b7052a746ffe010f235c9b15792b453801291051677da9d7515dd0f81`.
 The feature-oracle source hashes are `board.c`:
@@ -74,4 +248,10 @@ python3 astra-submissions/tools/extract_move_model_dataset.py \
 python3 astra-submissions/tools/fit_conditional_prior.py \
   /media/henrytan/seagate1/iamavirus/move-model-20261024/candidates.jsonl \
   --out astra-submissions/analysis/move-model-refit-20261025/prior-fit-report.json
+python3 astra-submissions/tools/build_hidden_prior_candidate.py \
+  /tmp/iamavirus-v35-exact-trace /tmp/iamavirus-v35-hiddenprior
 ```
+
+For the recent sample, run the selector against `data/raw/accepted.jsonl`, then
+pass its manifest via `--game-list` with
+`--decision-stride 8` and `--replay-root data/raw/games` to the extractor.

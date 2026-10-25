@@ -7,9 +7,9 @@ features match the archived C engine. Games, not plies, define the split.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import gzip
 import json
-import os
 import subprocess
 import sys
 from pathlib import Path
@@ -73,16 +73,29 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--replay-root", action="append", required=True,
                     help="directory recursively containing replay JSON/JSON.GZ")
+    ap.add_argument("--game-list", help="JSONL from select_recent_opponent_games.py; avoids scanning unrelated replays")
     ap.add_argument("--probe", required=True, help="compiled move_model_features_probe")
     ap.add_argument("--out", required=True, help="output JSONL, one record per candidate move")
     ap.add_argument("--min-ply", type=int, default=0)
     ap.add_argument("--teams", nargs="*", default=[], help="optional opponent/team names to retain")
     ap.add_argument("--exclude-teams", nargs="*", default=[], help="exclude decisions made by these teams")
+    ap.add_argument("--decision-stride", type=int, default=1,
+                    help="retain one deterministic ply class per N decisions by each actor")
     args = ap.parse_args()
+    if args.decision_stride < 1:
+        raise SystemExit("--decision-stride must be >= 1")
     paths = set()
-    for root in args.replay_root:
-        paths.update(Path(root).rglob("*.json"))
-        paths.update(Path(root).rglob("*.json.gz"))
+    if args.game_list:
+        ids = [json.loads(line)["id"] for line in Path(args.game_list).open()]
+        for root in args.replay_root:
+            root = Path(root)
+            for gid in ids:
+                for candidate in (root / gid / "replay.json", root / "games" / gid / "replay.json"):
+                    if candidate.is_file(): paths.add(candidate)
+    else:
+        for root in args.replay_root:
+            paths.update(Path(root).rglob("*.json"))
+            paths.update(Path(root).rglob("*.json.gz"))
     games = {}
     bad = 0
     for path in sorted(paths):
@@ -102,6 +115,9 @@ def main():
         if args.exclude_teams:
             excluded = set(args.exclude_teams)
             game_rows = [r for r in game_rows if (r[8] if r[2] == 0 else r[9]) not in excluded]
+        if args.decision_stride > 1:
+            offset = int.from_bytes(hashlib.sha256(gid.encode()).digest()[:4], "big") % args.decision_stride
+            game_rows = [r for r in game_rows if (r[10] // 2) % args.decision_stride == offset]
         if game_rows:
             kept_games += 1
             rows.extend(game_rows)
