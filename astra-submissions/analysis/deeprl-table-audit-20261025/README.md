@@ -21,6 +21,12 @@ now confirm 163,946 candidate labels against the independent referee and identif
 four training-overlap cases in the old-head diagnostic. This closes the native
 label prerequisite; a training run and deployed-strength evidence remain pending.
 
+[Persistent teacher collection](persistent-teacher-report.md) now reuses a
+game-side history across queried decisions. The six-query pilot took 6.87 s
+versus 18.56 s for fresh processes, with matching input/support checks and three
+different timed-search choices. This is producer evidence, not teacher-quality
+or playing-strength evidence.
+
 ## What we actually need to improve
 
 There are three different objects called a “table” in this project:
