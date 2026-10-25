@@ -141,6 +141,69 @@ probe only tests whether each recorded true EP action is present; it is not a
 full false-positive audit, and 625 actions remain absent from the current-view
 candidate list.
 
+### Full legal-move-set replay audit
+
+To check both omissions and false additions, I replayed `view_moves` against
+the true board at every frame of those same games. This compares the
+observation-derived candidate set with the referee engine's pseudo-legal move
+set at each position, including all moves that were available but not chosen.
+The archive-based audit is reproducible with:
+
+```sh
+python3 astra-submissions/analysis/ep-target-inference-20261025/audit_replay_move_sets.py \
+  --out astra-submissions/analysis/ep-target-inference-20261025/top-opponent-replay-move-set-audit.jsonl.gz
+```
+
+| Measure | v35 | Observation patch | Observation + history |
+|---|---:|---:|---:|
+| Replay games / positions | 7,827 / 737,730 | same | same |
+| Positions with an EP right | 54,213 | same | same |
+| False candidate moves | 0 | 0 | 0 |
+| Missed legal EP moves | 5,179 | 657 | 438 |
+| Missed non-EP moves | 0 | 0 | 0 |
+
+The observation patch makes 4,522 additional legal EP actions available. The
+history extension adds a second proof from consecutive views: the prior
+same-side observation shows an enemy pawn on its home square and its transit
+and landing squares empty; after the opponent's one move, that pawn is visible
+on the landing square. The referee sends a view after each ply, so the bot has
+this immediate before/after pair. This extends the candidate set by 1,337
+actions in the corpus; all 1,337 correspond to true EP rights. Of these, 219
+were absent from the observation-only list. The combined helper therefore
+makes 4,741 additional legal EP moves available (91.5% of v35's omissions),
+with zero false candidates observed in all 737,730 positions. It still misses
+438 legal EP actions. The compiled helper result is in
+`top-opponent-replay-history-move-audit.summary.json`; the observation-only
+position rows remain in `top-opponent-replay-move-set-audit.jsonl.gz`.
+
+On the 8,056 actual EP actions played in those games, the observation patch
+left 625 unexposed; the history proof covers 210 more and leaves 415. The
+joined action rows and by-team/outcome summary are
+`top-opponent-ep-history-event-coverage.jsonl` and
+`top-opponent-ep-history-event-coverage.summary.json`. These are finite
+replay/action-coverage results, not a strength or Elo estimate. Zero false
+candidates in this corpus is strong finite evidence, not proof over all
+possible positions.
+
+The candidate implementation is reproducible without editing Fable's ZIP:
+
+```sh
+python3 astra-submissions/analysis/ep-target-inference-20261025/apply_ep_history_candidate.py \
+  --source-root /tmp/iamavirus-v35-ep-history
+bash /tmp/iamavirus-v35-ep-history/build.sh
+```
+
+`audit_ep_history_engine.py` extracts the untouched v35 archive to a temporary
+directory, applies the current-view and history changes, compiles the helper,
+and checks every replay position against the true board. It is the source of
+the compiled-helper counts above.
+
+The full v35-derived candidate also built and completed a 20-ply local
+referee protocol smoke against `baseline.py` at 3+0. There was no illegal move,
+forfeit, or process failure; the referee stopped at the configured move limit.
+Replay: `protocol-smoke-20plies.json` (24,644 bytes). This is a protocol smoke,
+not a strength comparison.
+
 To regenerate the corpus event set, first create the cached top-team filename
 list and the cheaper diagonal-pawn prefilter, then run the two scripts:
 
@@ -163,11 +226,11 @@ fusion path if the *full* acting-player histories do not reveal the right. This
 random-position audit does not prove that such full histories occur in the
 actual tree; construct and test those histories before claiming a CFR defect.
 
-Next, test two cases separately: (1) patch integration against exact referee
-positions and archive protocol; (2) a bounded full-clock paired gate only after
-the existing v35/v36 king-guard run frees cores. Also add an exact belief case
-where all boards agree on en-passant legality and an overflowed belief case
-where the observation alone proves it. Keep the v36 guard and en-passant arms
-separate initially so any result remains attributable.
+Next, test patch integration against exact referee positions and archive
+protocol, then run a bounded full-clock paired gate only after the existing
+v35/v36 king-guard run frees cores. Also add an exact-belief case where all
+boards agree on en-passant legality and an overflowed-belief case where the
+observation/history proves it. Keep guard and EP arms separate so any result
+remains attributable.
 
 No release ZIP was changed and no arena version was reserved for this idea.

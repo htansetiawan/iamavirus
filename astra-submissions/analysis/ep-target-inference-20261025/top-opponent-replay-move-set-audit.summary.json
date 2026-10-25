@@ -1,0 +1,38 @@
+{
+  "archive": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+  "unique_game_ids_requested": 7827,
+  "games_unavailable_or_invalid": 0,
+  "positions_checked": 737730,
+  "positions_with_ep_right": 54213,
+  "aggregate": {
+    "baseline": {
+      "false_candidates": 0,
+      "false_ep_candidates": 0,
+      "false_other_candidates": 0,
+      "missed_true_moves": 5179,
+      "missed_ep_moves": 5179,
+      "missed_other_moves": 0,
+      "positions_with_false": 0,
+      "positions_with_missed": 5061,
+      "ep_positions": 54213
+    },
+    "patched": {
+      "false_candidates": 0,
+      "false_ep_candidates": 0,
+      "false_other_candidates": 0,
+      "missed_true_moves": 657,
+      "missed_ep_moves": 657,
+      "missed_other_moves": 0,
+      "positions_with_false": 0,
+      "positions_with_missed": 648,
+      "ep_positions": 54213
+    }
+  },
+  "false_examples": {
+    "baseline": [],
+    "patched": []
+  },
+  "event_rows_source": "astra-submissions/analysis/ep-target-inference-20261025/top-opponent-ep-action-coverage.jsonl",
+  "position_rows": "astra-submissions/analysis/ep-target-inference-20261025/top-opponent-replay-move-set-audit.jsonl.gz",
+  "meaning": "Compare observation-derived candidate move sets with true replay legal moves; not an Elo estimate."
+}

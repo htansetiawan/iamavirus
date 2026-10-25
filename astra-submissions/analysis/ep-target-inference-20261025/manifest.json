@@ -28,5 +28,75 @@
     "Zero illegal additions in this finite sample is not a proof.",
     "The 101 current-observation ambiguities do not establish whether full actor histories differ.",
     "No paired match or arena run yet."
-  ]
+  ],
+  "history_extension": {
+    "classification": "compiled experimental candidate; not uploaded or an Elo result",
+    "implementation": "apply_ep_history_candidate.py applies conservative current-view patch, adds one-ply observation-history inference, and updates main.c to retain the immediately previous observation",
+    "candidate_binary_sha256": "e2f674df8fa74a2b64ab1772ab9a5df684577fed50cc47efc37b1ce6e309a90b",
+    "candidate_source_sha256": {
+      "belief.c": "ea50b7da856fdadd433c257f772c7641a8a735238ee6d2613aa6d51b2beb1dc6",
+      "belief.h": "0e7685b300ab91fa6ac87533524a1682cf0a6a58a6c8a06940e744069aaee4bf",
+      "main.c": "0d359c941a960102d10a1fbb858231216f364817a6a06d6119c9b8149ac7351c"
+    },
+    "implementation_script_sha256": "f250fbe4a8d8f017716ad18cdc484c31ee76c1a368f5fd9180b5133c7aa66b79",
+    "compiled_replay_audit": {
+      "script": "audit_ep_history_engine.py",
+      "C_probe": "audit_history_moves.c",
+      "games": 7827,
+      "positions": 737730,
+      "positions_with_ep_right": 54213,
+      "baseline_v35_missed_ep": 5179,
+      "observation_patch_missed_ep": 657,
+      "history_extension_missed_ep": 438,
+      "false_candidates_all_versions": 0,
+      "missed_non_ep_moves_all_versions": 0,
+      "output": "top-opponent-replay-history-move-audit.jsonl.gz",
+      "summary_sha256": "170cf724a653000fd14acb50939b9143fbedf49828bcf32a893a021174db8c9e"
+    },
+    "history_classifier": {
+      "candidate_actions": 1337,
+      "true_ep_candidates": 1337,
+      "false_ep_candidates": 0,
+      "additional_true_actions_over_observation_patch": 219,
+      "misses_remaining": 438,
+      "summary": "ep-history-rule-audit.json",
+      "candidate_rows": "ep-history-candidate-actions.jsonl"
+    },
+    "played_event_coverage": {
+      "total_ep_actions": 8056,
+      "v35_omitted": 4727,
+      "after_observation_patch_omitted": 625,
+      "history_recovered_from_patch_residual": 210,
+      "after_history_omitted": 415,
+      "output": "top-opponent-ep-history-event-coverage.jsonl",
+      "summary_sha256": "aa6b0e201b69f17b8f199497c1105293ba0493f34f04395135825d6f6d2d7927"
+    },
+    "protocol_smoke": {
+      "base_seconds": 3,
+      "increment_seconds": 0,
+      "plies": 20,
+      "result": "1/2-1/2",
+      "reason": "Move limit reached",
+      "failures": 0,
+      "replay": "protocol-smoke-20plies.json",
+      "replay_sha256": "ed2125cbf3d7e5b7b5fa887bad37b52579899fda14a64bf71666a5fda6a0d402"
+    },
+    "limitations": [
+      "Zero false positives are finite evidence over this cached corpus, not a universal proof.",
+      "Action coverage is not evidence of a win-rate or Elo gain.",
+      "No paired 180+2 strength evaluation yet; the core pair is reserved by the separate king-guard run.",
+      "No submission archive has been created and no arena version has been claimed."
+    ],
+    "research_files": {
+      "apply_ep_history_candidate.py": "f250fbe4a8d8f017716ad18cdc484c31ee76c1a368f5fd9180b5133c7aa66b79",
+      "audit_history_moves.c": "72356779ea71d40f34375715cd24f2b99797de4de1909535fc954f7331a2f6e9",
+      "audit_ep_history_engine.py": "b686313adb9b58542e10c5095fb8c376e6a5acca7b2cff7d1bb440068a2a3db4",
+      "classify_ep_history.py": "c033915d5962e98d270a639a9d1713dbca320d57e4b00de930a0180f9b72e54b",
+      "summarize_ep_history_events.py": "8a01fac261f4b9edda0229919eb2355cf68e9401ba9ea7c0201fe06865b4418d",
+      "top-opponent-replay-history-move-audit.summary.json": "170cf724a653000fd14acb50939b9143fbedf49828bcf32a893a021174db8c9e",
+      "top-opponent-ep-history-event-coverage.summary.json": "aa6b0e201b69f17b8f199497c1105293ba0493f34f04395135825d6f6d2d7927",
+      "ep-history-rule-audit.json": "68860ed2f4ce5c35cb8be1c19f4d0fa911549bdd615fa338dce7ed22245d497f",
+      "protocol-smoke-20plies.json": "ed2125cbf3d7e5b7b5fa887bad37b52579899fda14a64bf71666a5fda6a0d402"
+    }
+  }
 }

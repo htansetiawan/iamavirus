@@ -1,0 +1,135 @@
+{
+  "games": 7827,
+  "positions": 737730,
+  "candidate_additions": 1337,
+  "true_en_passant": 1337,
+  "false_en_passant": 0,
+  "patch_missed_true_actions_recovered": 219,
+  "patch_missed_true_actions_total": 657,
+  "patch_missed_true_actions_remaining": 438,
+  "examples_false": [],
+  "examples_true": [
+    {
+      "game": "00s2avb9",
+      "ply": 37,
+      "move": "g4f3",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "07vn0vos",
+      "ply": 81,
+      "move": "d4c3",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0973spvg",
+      "ply": 10,
+      "move": "e5d6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "09sknqj9",
+      "ply": 42,
+      "move": "d5c6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0aa9cuzo",
+      "ply": 40,
+      "move": "d5e6",
+      "would_recover_patch_miss": true
+    },
+    {
+      "game": "0b9omihu",
+      "ply": 42,
+      "move": "e5f6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0besnse7",
+      "ply": 62,
+      "move": "a5b6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0cz4a1p4",
+      "ply": 58,
+      "move": "d5e6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0d31c1wz",
+      "ply": 10,
+      "move": "c5d6",
+      "would_recover_patch_miss": true
+    },
+    {
+      "game": "0d31c1wz",
+      "ply": 49,
+      "move": "d4c3",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0dvknfu9",
+      "ply": 47,
+      "move": "d4c3",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0f1rlnm5",
+      "ply": 44,
+      "move": "e5f6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0h9qhap3",
+      "ply": 18,
+      "move": "e5d6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0hui1x06",
+      "ply": 90,
+      "move": "h5g6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0hw436rx",
+      "ply": 22,
+      "move": "c5d6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0iprw2cc",
+      "ply": 8,
+      "move": "e5d6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0j1q890r",
+      "ply": 23,
+      "move": "e4f3",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0jssta05",
+      "ply": 44,
+      "move": "e5d6",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0k8kvajh",
+      "ply": 31,
+      "move": "f4g3",
+      "would_recover_patch_miss": false
+    },
+    {
+      "game": "0kb6liah",
+      "ply": 45,
+      "move": "h4g3",
+      "would_recover_patch_miss": false
+    }
+  ],
+  "method": "For consecutive own-side observations separated by the opponent's one move, test visible enemy-pawn home square, transit square, and current landing square. This is a replay-history candidate rule, not integrated code or strength evidence.",
+  "candidate_actions": "astra-submissions/analysis/ep-target-inference-20261025/ep-history-candidate-actions.jsonl"
+}
