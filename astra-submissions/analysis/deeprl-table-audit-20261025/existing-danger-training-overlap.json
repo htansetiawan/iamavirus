@@ -1,0 +1,1495 @@
+{
+  "classification": "post-hoc recorded-data overlap audit; no fitting or model selection",
+  "run_sha256": "d939d796b16b757d7f576e931a0de64648b8386fa535ffeda0d2089a2b93ce4d",
+  "manifest_sha256": "b508656865e396cf85d29e1f6c384c66449d5fc0d458222b8cb2bca66033b444",
+  "analyzed_prediction_sha256": "84081e0e8f02e28dcf6fc0274ad14f6cd902523b662e648a4680301cf88e4475",
+  "analysis_sha256": "b5f8f1f3c62846814cb3644b97b1b4a2b17d929f95132c9c891ded5a86e926d9",
+  "auditor_sha256": "0ef90e1eff4e70453259c37d9baf28d21bcf73e480d2de0c020b21fc5a3a0d24",
+  "partition_provenance": {
+    "train": {
+      "recorded_path": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008/dataset/train.jsonl.gz",
+      "resolved_path": "/media/henrytan/seagate1/iamavirus/astra/representations/capacity-v4-full3766-20261008/dataset/train.jsonl.gz",
+      "sha256": "dff01e26e8d0bf959b8e08d179e901493308f51da78f25f9e289dbc9c45cf426",
+      "all_games": 3766,
+      "selected_games": 3766
+    },
+    "validation": {
+      "recorded_path": "/media/henrytan/seagate/iamavirus/astra/representations/capacity-v4-full3766-20261008/dataset/validation.jsonl.gz",
+      "resolved_path": "/media/henrytan/seagate1/iamavirus/astra/representations/capacity-v4-full3766-20261008/dataset/validation.jsonl.gz",
+      "sha256": "499f4454f517994f7ba93bc888a41cd9420522103d5ad1af714f7631043e1b15",
+      "all_games": 472,
+      "selected_games": 64
+    }
+  },
+  "summary": {
+    "no_recorded_training_or_validation_overlap": {
+      "cases": 76,
+      "v35_base_fatal": 9,
+      "min_risk_all_native_fatal": 36,
+      "min_risk_current_root_fatal": 7
+    },
+    "training_overlap": {
+      "cases": 4,
+      "v35_base_fatal": 1,
+      "min_risk_all_native_fatal": 2,
+      "min_risk_current_root_fatal": 1
+    }
+  },
+  "wall_seconds": 2.0525915649486706,
+  "cases": [
+    {
+      "game": "xfs0d0k6",
+      "frame": 29,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-09-24T04:38:57.034278459+00:00",
+      "complete_move_sha256": "f1975cd23748f4026b0babf960235f539f03241ce610881ad1c494dd1c325944",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "5osaf68l",
+      "frame": 77,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-16T10:27:28.108261690+00:00",
+      "complete_move_sha256": "184ed897064cdc24cefe23d8c241613b23c4d39c45703d74e8137942c05eefa6",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "njccfnw8",
+      "frame": 60,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-01T23:36:44.837421905+00:00",
+      "complete_move_sha256": "afcaa0a8404a96c6cdc7ca60147861a4335b899592fa4d143eeef4ce00eaede1",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "xg494buf",
+      "frame": 99,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-24T21:07:05.133660115+00:00",
+      "complete_move_sha256": "009685da71a98a5cdf68266c77edb5d26c1471373309d601a7e577ecece97f55",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "xo3bv857",
+      "frame": 131,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-09-29T04:14:56.012690506+00:00",
+      "complete_move_sha256": "22d5741a8b5383d534ff8d1a61eb047ca4b873270ff9857dd8ebf094a2bc47cc",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "x1togzlk",
+      "frame": 64,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-18T17:22:42.220169938+00:00",
+      "complete_move_sha256": "7e302650a67e9f8ba213f5da1bc1595a5754a2bcf3ebe0f6bbe532b8e46b460c",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "2w26eevv",
+      "frame": 71,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-13T10:52:29.917546177+00:00",
+      "complete_move_sha256": "5eeb000d8173fc8dd303df146dad4dea1de36405f32fe550b4b42fbc949669e2",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "1hcyolra",
+      "frame": 78,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-07T21:06:38.099824974+00:00",
+      "complete_move_sha256": "a6691af04397b12178279da6053138892e19f772659119f07320f105028f14db",
+      "overlap": {
+        "train": {
+          "id_match": true,
+          "same_complete_moves": [
+            "1hcyolra"
+          ]
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "training_overlap"
+    },
+    {
+      "game": "fye0cwzy",
+      "frame": 89,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-09-27T20:55:57.743526724+00:00",
+      "complete_move_sha256": "ccc4d1876eb08e8410b26d3e2603565dfbb8aca70bb79d2d33bc8bb07c7c3a37",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "ob3vxglp",
+      "frame": 89,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-05T06:41:50.529848520+00:00",
+      "complete_move_sha256": "99134c7a8327e2a6cfe975ee544c15f6b2651b1f052930677af5a895087122d3",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "ue2cnml6",
+      "frame": 120,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-04T01:52:58.603050446+00:00",
+      "complete_move_sha256": "c67ac8fc506cea26b719da7079569fe59ace24f987d3a21ffea2c2670140920a",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "umnfjemu",
+      "frame": 45,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-22T22:29:16.540990169+00:00",
+      "complete_move_sha256": "65e617ad466b156d555e2e258e2e48c8a122eb4c020b80d23fb6f4f9a30b7691",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "jeoowbe2",
+      "frame": 168,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-25T01:16:22.093387277+00:00",
+      "complete_move_sha256": "ffae21bce1633ce2f3704660fab739a2e777a0082bd0b25e1d3b47e76133daf4",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "ycgeb8p0",
+      "frame": 79,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-19T22:47:04.031008569+00:00",
+      "complete_move_sha256": "c713c30e873d7b2424e54b1ddafdb43638ecec6faf911f329e0c6fb8ce8a04e9",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "1ocve21m",
+      "frame": 83,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-21T06:39:12.203325547+00:00",
+      "complete_move_sha256": "df20e05bd6775404bf0ef901139710a44207bbf79413bfdc810044bb8b1d00f4",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "62k4bany",
+      "frame": 83,
+      "slice": "hidden_missed_escape",
+      "created_at": "2026-10-01T08:30:44.755227713+00:00",
+      "complete_move_sha256": "7283a2a70836d0c2d0df9c9f70e7b1a0c8ebe8872ecb2909c618516551c08706",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "4z4bzk1g",
+      "frame": 51,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-09-20T02:32:24.404827470+00:00",
+      "complete_move_sha256": "9c5d4247935a13af253ea1db67fcfb7fc371d80eefbfc2fd000314202ab20fae",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "aqapoz64",
+      "frame": 19,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-09-20T01:39:57.905788236+00:00",
+      "complete_move_sha256": "2750768d70fc8bef2932b6bc964b6f4d597d50beddca2651f52c4d37c491e38a",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "26gsqbbm",
+      "frame": 65,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-20T13:03:33.640308342+00:00",
+      "complete_move_sha256": "3e45dd26fb14037defb1fef5f9c4800b2fcb38402f81c880af40f89a109c8481",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "4fli4gq8",
+      "frame": 36,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-09-30T06:35:22.732917549+00:00",
+      "complete_move_sha256": "94601c96af4c18b741e6d0c04dde991af42be6a05bb955eaa8a23ae6e166f35c",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "i8cvrnvj",
+      "frame": 146,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-09-22T14:21:22.400112141+00:00",
+      "complete_move_sha256": "cc125b66d64f03e6e183e06046f76345de7d600dbe17964bbdbf2f059491d8ba",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "ktv4ck6l",
+      "frame": 24,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-04T16:12:52.930091077+00:00",
+      "complete_move_sha256": "121158226ae445565d4f73563dafe92c94c82639129fefaa57e0c9bb2b189565",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "pqav7cf6",
+      "frame": 64,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-09T04:17:50.697446208+00:00",
+      "complete_move_sha256": "755803cf85330ae24dbdeecb0178f9a53d5b95b3e8f8fc1eb2877342bac5125c",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "e38y4las",
+      "frame": 46,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-06T14:13:44.931650329+00:00",
+      "complete_move_sha256": "9cf6ce4ad1130208233d7b3aff82ad3f3e595dbe6928735347b6b3669c521d88",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "gvt1zf08",
+      "frame": 51,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-15T17:20:32.016624691+00:00",
+      "complete_move_sha256": "5e7b3e89befccd2a19d7b83cdb78e72053d3adb378413b16cd0ae1fea79bce56",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "ffledclc",
+      "frame": 32,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-05T09:24:32.567247907+00:00",
+      "complete_move_sha256": "ceb51573c180026bcae41ff4817e54c9fcb1eba67a25e00103fb31e5f050bc77",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "xmw8fxkz",
+      "frame": 8,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-09-20T10:28:52.046184478+00:00",
+      "complete_move_sha256": "242d0dbc9b0ed2198998819b8686647130e445a844a07bfcc37e9294e433ccef",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "03c5j2pj",
+      "frame": 32,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-03T06:03:27.938727909+00:00",
+      "complete_move_sha256": "34fad1dc9f22a31e12bfe2e39e33fe1e4c6a6f4dc55ee6047c2faad7f58003a9",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "afoe9v23",
+      "frame": 95,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-09-26T06:08:49.213184605+00:00",
+      "complete_move_sha256": "c5efe12c418ef60b1d2346c02808570eb35fa10816f4514d04d7ae8c251adb2d",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "rmj9jpwi",
+      "frame": 29,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-07T08:22:13.368417101+00:00",
+      "complete_move_sha256": "ae0656c65bc222f893041eaa29b2a4a1ddd93498aa70a3529c4eb59e3eed600f",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "syyh0cbl",
+      "frame": 113,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-04T04:14:43.979642703+00:00",
+      "complete_move_sha256": "c55865f3c765f57a3a3bbe86af493959cd582840ec7a20543d683afd1e4b92ad",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "yryzamt5",
+      "frame": 52,
+      "slice": "visible_missed_escape",
+      "created_at": "2026-10-10T07:34:52.076378610+00:00",
+      "complete_move_sha256": "fa8842a705faffe98d39650c64a6150aaf584e3d3cc8923174e504fbaa578095",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "x3cguequ",
+      "frame": 115,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-12T07:30:20.081650535+00:00",
+      "complete_move_sha256": "0c27419b5fd2c346f46cc0ad362d994eafc4b10e40d60e7e6808d5540090e5b7",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "tkthtoli",
+      "frame": 54,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-05T23:51:37.043262925+00:00",
+      "complete_move_sha256": "642e99c41d285804f4d76a74f0ddf95461bed0f919abc132f918a466744665e5",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "1jyayek4",
+      "frame": 6,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-15T05:18:58.015625566+00:00",
+      "complete_move_sha256": "5d448d7d4a554c8991d041b6c763300620e5d7a7fb33d45d339646e79ebc5bdf",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "nupj1qzy",
+      "frame": 57,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-15T12:38:00.566469954+00:00",
+      "complete_move_sha256": "490e9b9130651dea3fd3b7f21057c0b068880c07eb449c08a745fe861945ec68",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "y4ysglxn",
+      "frame": 62,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-06T23:09:13.579843149+00:00",
+      "complete_move_sha256": "1fafd5f9730af60b87dfd19edece6b62c1f2207f96e23b11f4c0ab5232f71ad6",
+      "overlap": {
+        "train": {
+          "id_match": true,
+          "same_complete_moves": [
+            "y4ysglxn"
+          ]
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "training_overlap"
+    },
+    {
+      "game": "csij4p5w",
+      "frame": 13,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-16T13:13:10.722451800+00:00",
+      "complete_move_sha256": "9995e73ed413fac65eb35d7e64aed5a74656742e5cf07518680a8e7b5622a413",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "7ltjbpno",
+      "frame": 25,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-04T10:48:11.700513592+00:00",
+      "complete_move_sha256": "ed05080edcdd9af79e0d30f89af2fb24bbdef6fc370d8dcce881aa23899215e3",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "uf42wl1t",
+      "frame": 112,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-03T05:24:12.162102249+00:00",
+      "complete_move_sha256": "3e1efc5c1585048206575caa76a280d07cc0698b389b34521877f0b361babc5c",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "ecrdf4z2",
+      "frame": 16,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-07T15:47:40.026038170+00:00",
+      "complete_move_sha256": "d19d50f3a579391060452f091d2bd2b6789f8829105a218a846607f1b824153b",
+      "overlap": {
+        "train": {
+          "id_match": true,
+          "same_complete_moves": [
+            "ecrdf4z2"
+          ]
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "training_overlap"
+    },
+    {
+      "game": "ngx7fga2",
+      "frame": 100,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-09T02:45:58.410541380+00:00",
+      "complete_move_sha256": "ce6fa8cff4a176c7ed951c6832799dd9ee40664ccefc19d132f83295aa5d6ccd",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "36bt227x",
+      "frame": 83,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-06T10:08:05.456653496+00:00",
+      "complete_move_sha256": "9c42f22e09d7c40049408c6a383a70b36ad6ff9fd4250b64afe79f107797d89b",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "4kmcpjzc",
+      "frame": 104,
+      "slice": "hidden_escaped",
+      "created_at": "2026-09-26T23:57:27.558108068+00:00",
+      "complete_move_sha256": "8ba1b0f1e5d5ed4d220175870d5f7730e072e520a5f9bc2832936334c102b340",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "tr4q521j",
+      "frame": 81,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-25T01:29:26.415936346+00:00",
+      "complete_move_sha256": "0bd1aca0b0a8b937144c2a4412a3fd37de85bbfb532a2b2425468ef93a063162",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "qk070i05",
+      "frame": 273,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-05T11:53:31.447145940+00:00",
+      "complete_move_sha256": "ebe3bcee1454e2cf0cf7ba42401186f96359e7b50a3ff210b2ad18f12937a4ad",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "9t98amr1",
+      "frame": 33,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-13T20:25:40.344714054+00:00",
+      "complete_move_sha256": "1be360a538bcc5897717546b4268b8d911535394f7738994789b952ac635e49d",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "tvoe6n75",
+      "frame": 80,
+      "slice": "hidden_escaped",
+      "created_at": "2026-10-14T14:34:41.957302651+00:00",
+      "complete_move_sha256": "37fcbcda486e9b10b9b0df873c0f4380c8c06a220a22136ae38d0b82b405d19c",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "318fb6hd",
+      "frame": 14,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-05T01:34:10.686093591+00:00",
+      "complete_move_sha256": "52548faefcb2ded9b09d4b72d314570ddf53b1eeefcb69543f4c9432cbef5a68",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "mjhrnjhv",
+      "frame": 20,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-18T20:00:27.696917007+00:00",
+      "complete_move_sha256": "289e1a23c521f95b15966e6308f8dd206998e8666f89cd6ca4a09ebb26215988",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "zemvm03e",
+      "frame": 61,
+      "slice": "visible_escaped",
+      "created_at": "2026-09-27T12:01:48.455527231+00:00",
+      "complete_move_sha256": "7095e52b23f798caa1fc7ad06e8b7539de6d07112cff84e1880df27e3f013fa9",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "hfb0em3v",
+      "frame": 93,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-23T20:53:59.822916241+00:00",
+      "complete_move_sha256": "7e640cb025207c9f1b02ec62a1a2e9bad49da87b7774f7f6a9e1a2b8761ea457",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "idybxszb",
+      "frame": 8,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-12T21:55:27.470258220+00:00",
+      "complete_move_sha256": "6162a96a98bbfd3cec738ba0e3168aea09e74b164f2e875d90cc970bb27ad8d2",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "fg3u1729",
+      "frame": 66,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-22T23:11:46.312605781+00:00",
+      "complete_move_sha256": "0dcab6843440ca6f00d1d31fcf4e29f58e0ab5ef4e8c4695994c48db5d78be18",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "aberhtfa",
+      "frame": 21,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-02T01:44:46.403555227+00:00",
+      "complete_move_sha256": "5b5de29466fcdbee026614c36a06c6de413442678f03c52a3b792757ac14f651",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "m5keri4u",
+      "frame": 82,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-15T10:30:38.389942933+00:00",
+      "complete_move_sha256": "94ad8a2d1fe90364dcd6319e69feef5c06cbc2de15085f2ab4eca80c53ac630b",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "7c9vcmy5",
+      "frame": 49,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-23T07:05:52.014600451+00:00",
+      "complete_move_sha256": "4576fd01b21aa0bcee4557416581de5c48e01bededfaa10dbd5cef2d7b12f4e3",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "8o5ntp10",
+      "frame": 76,
+      "slice": "visible_escaped",
+      "created_at": "2026-09-22T23:26:19.560743961+00:00",
+      "complete_move_sha256": "a1ee43b353120f24ea192f8413f4f06dbc74725e40ef44e5733445feae77508e",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "rey4d6a7",
+      "frame": 74,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-02T19:49:12.320933708+00:00",
+      "complete_move_sha256": "c24ed011135d8d5c8964e6fa9e7469167e08ed66364b42a20b51062f7bd0c839",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "28rxebxo",
+      "frame": 35,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-13T21:28:25.292156787+00:00",
+      "complete_move_sha256": "0bb5959a41286cd2eed0b6dc9cdc141c06160434f04bc67ae24f569ce2a6cb9f",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "c4edec69",
+      "frame": 85,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-12T06:58:40.229453195+00:00",
+      "complete_move_sha256": "7e191ae96e3fa73ce1fa8ca536eaf6df564b849c63ac3c191a286ec8efbaed2f",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "cer8n1a0",
+      "frame": 14,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-01T16:39:27.529562869+00:00",
+      "complete_move_sha256": "eab36171b09292ee016802c95a94e9dd186c7500458403fca0e32a3479ab7549",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "6oufkb02",
+      "frame": 31,
+      "slice": "visible_escaped",
+      "created_at": "2026-09-21T23:42:24.641710296+00:00",
+      "complete_move_sha256": "76930d56acf0787793ed01ac3a9c988b74c02126be6db78966ddf18483daab64",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "zexsl3xa",
+      "frame": 58,
+      "slice": "visible_escaped",
+      "created_at": "2026-10-23T12:39:45.143320180+00:00",
+      "complete_move_sha256": "bad82a874f009ad8a2860c1cf2569f56fe6359003773871c0561c2c5a5924592",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "c3bqoanw",
+      "frame": 75,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-12T16:17:52.600654791+00:00",
+      "complete_move_sha256": "179ae2a87f81398b08b42eda72f626e0da1db6688e9be1a94242fe371a454ee5",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "3pgxtbb0",
+      "frame": 71,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-11T10:48:27.171503854+00:00",
+      "complete_move_sha256": "a299b3af23151a61f0dc9cee9819ba91a7acda04ec825da303f39aa1b78d2861",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "qf04h0t2",
+      "frame": 73,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-12T21:13:45.823758028+00:00",
+      "complete_move_sha256": "36de08ea5fe19bd036c0d9b1239db01b2ea35abd6797c8ccce94f2f0b5b847d2",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "z6t071ne",
+      "frame": 39,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-08T06:18:43.575851272+00:00",
+      "complete_move_sha256": "b61f45526f3f78db153204d7bee66d352af93897bbd9dd53d5087b4b19cf43ac",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "59jodrbm",
+      "frame": 57,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-07T15:59:52.496964330+00:00",
+      "complete_move_sha256": "b7bf60fc90ea4ea1f2090a1b9afefa57cd8b8ab1eb41382d66a497d4574140c6",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "wwi3reu7",
+      "frame": 73,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-13T10:37:38.277255791+00:00",
+      "complete_move_sha256": "d95f5c4e7487802c518322893b3787425bb905b35aff9b2561f4e20f7e9e73eb",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "p9gi0hwm",
+      "frame": 107,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-05T11:59:37.634003747+00:00",
+      "complete_move_sha256": "20824504ae7d3c566e5570755ef422f901290578badb109c31e4f0d8b9bb1ae9",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "324se006",
+      "frame": 67,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-09T10:57:22.457406148+00:00",
+      "complete_move_sha256": "8ce90ceed45d0dc8059d98fc59a1936bc447817f08c7d92121762c8d1dc7b2b0",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "rxyz5nx0",
+      "frame": 79,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-24T22:26:47.699216786+00:00",
+      "complete_move_sha256": "2d6b5a8d1123d4f6fffea8d02b06fd4d48fb103be75b5f2a7be7af3df7a1ecfa",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "hmnf3gip",
+      "frame": 32,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-09-24T18:08:52.497635781+00:00",
+      "complete_move_sha256": "73f00f900d7c674f417528a1b98a65cc3fd7a8879a4a7ef8d229f77de3bfff1b",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "79gomag8",
+      "frame": 11,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-20T08:35:33.312987347+00:00",
+      "complete_move_sha256": "ced8d5ea1ee658cd2b93e655ef51191b6b18acfbb553c6162833d7baa0d97326",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "on1kcbi0",
+      "frame": 24,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-24T03:22:28.680158058+00:00",
+      "complete_move_sha256": "9cc02806425968bc42edef34dc1e4b81b3a4b2ddd5f5ca46ba18010d7833a331",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "gamfp0jq",
+      "frame": 101,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-09-29T14:13:01.002390006+00:00",
+      "complete_move_sha256": "c52e61c69cc9faaa00281203cca01b955ba5d19b29a9ce76ec1492b2329f9225",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "mr42ihev",
+      "frame": 8,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-13T08:49:11.045187185+00:00",
+      "complete_move_sha256": "ab83b1e387a89ede0d37fcf740fca5327ad263e75c07b96316a2c37f7647c66e",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    },
+    {
+      "game": "7d35omev",
+      "frame": 94,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-07T12:42:48.214372036+00:00",
+      "complete_move_sha256": "e73e83e174e50182c339117b2aeb29e11ee7049ec4569e7a9bd5b28d9e12fb5b",
+      "overlap": {
+        "train": {
+          "id_match": true,
+          "same_complete_moves": [
+            "7d35omev"
+          ]
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "training_overlap"
+    },
+    {
+      "game": "i5fa63iv",
+      "frame": 59,
+      "slice": "ordinary_no_current_king_attack",
+      "created_at": "2026-10-15T12:44:14.994959049+00:00",
+      "complete_move_sha256": "bfd0037700d8ed902dce82eef5fcc77d034c2104ebced7d56f7319e652995fd7",
+      "overlap": {
+        "train": {
+          "id_match": false,
+          "same_complete_moves": []
+        },
+        "validation": {
+          "id_match": false,
+          "same_complete_moves": []
+        }
+      },
+      "category": "no_recorded_training_or_validation_overlap"
+    }
+  ],
+  "limits": [
+    "No-overlap is limited to the recorded training and selected validation histories.",
+    "Does not prove absence from other experiments, pretraining, or human analysis.",
+    "Shared shorter prefixes, transpositions, and related positions remain possible.",
+    "The 80-position panel remains balanced and selected, not a population-calibration set."
+  ]
+}

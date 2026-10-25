@@ -16,6 +16,11 @@ identify a shared-representation training gap and derive an O(M) action-ranking
 loss. The patch is ready for review but unapplied; no model/arena improvement
 is claimed, and it does not bypass the teacher or deployment gates.
 
+[Native label validation and recorded-training overlap](native-risk-readiness.md)
+now confirm 163,946 candidate labels against the independent referee and identify
+four training-overlap cases in the old-head diagnostic. This closes the native
+label prerequisite; a training run and deployed-strength evidence remain pending.
+
 ## What we actually need to improve
 
 There are three different objects called a “table” in this project:

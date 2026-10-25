@@ -1,0 +1,9218 @@
+{
+  "classification": "native simulator / independent referee conformance; no model training or strength estimate",
+  "completed_at": "2026-10-25T18:44:54.570511+00:00",
+  "panel_sha256": "59ea1a291f7b5492c532b5d241ea4bfbaf6dcaff79f193467a70f2a9b0afa696",
+  "validator_sha256": "3124e9a93c9524a261b3458d0260714d9cb5250d43e73078ff567add54afb9c2",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "batch_env_wrapper_sha256": "faea55b6804b15d9cf84d4dc945d5c19cfd2f0605a1ca63c690fd2e5806a2e9d",
+  "action_codec_sha256": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+  "native": {
+    "sources": {
+      "rules_capi.cc": "26794cb3062e5bdd881ed07858e0821cfa5abd907707cc4f80b0e2c75c5cb31e",
+      "engine.cc": "bb9a604a289809da1e23ec30beb0513f6ec3fd944e591113d0317148a9049f24",
+      "belief.cc": "3236280f734e65951276a41755f1149207d210c0b11ab4539cda6f1a4bcf9f7e",
+      "search.cc": "fa8a64876248c695aebbeec504efa73e9d1a1040cb280f7e86ff6299fb3e153a",
+      "evaluation.cc": "c7ffc3e23fe0303121bf2c9885cdade0531706be6764ce1d5574d523258a179a",
+      "observation.cc": "cdf3a5316aedf4a764f9c94827816ab6bb87369cf8c3020c8af5a8ff5489c5ca",
+      "transposition.cc": "92467ff1857fb681c57e81a857b03dbd7bb22fe0b85cc8b17e95e2a8d51b466e",
+      "regret.cc": "6e166aa11721d718ddfdff9772228dc8e5acda5ecf00e8e52d8e02fc9d4e906a",
+      "position.cc": "313bf6a101c35a328272c9b3d48790d76559c684100123f756a6bba3876f9932",
+      "move.cc": "46850dec45e2804b560f9af6b7ad4a48e03ed1327075cecf76bf93813a999d9b",
+      "bitboard.cc": "9792ddbfb2fa9aa21ba5f1c12de4e6862ddca7ed01c947445b21c623d3755b8e",
+      "opponent_model.cc": "d9ef2083e3482af4ee4dbf642dff5a98ae75950730b660527b425530548c1597",
+      "neural_observation.cc": "7abb02336b2e262e1f37a907c35164663b8bafb4da1795be88a792dc26aa9ba2",
+      "batch_env.cc": "f822866e4c3172d996075e1e9b9e9632ba2b4e990ee0a5412c91969eb5ba7142",
+      "bitboard.h": "8e44e16445d783bb10df53533d54039d345893fccd1b5b0e40a40c771fa5aa0d",
+      "move.h": "d9df0633b6449f6156b7ce5aeba762a11629834ffe8276a5a14336b5bda411fb",
+      "position.h": "4779d19bc65b7f083c9cb85cc08de760ba723dd17b3447b276ee9eef356e02a7",
+      "observation.h": "1a2c3499673f10426a30e1182af2c3cc0fa1e3ac88b1edbb3ec18f118fd3a9dd",
+      "evaluation.h": "58d68872baebedc8359bf85374bcdf4b12e46637e2015f3f1b9fe2c37ee8fa6a",
+      "transposition.h": "63e49121e2fcec3ee7ccc79c3680e98670ebe535359c314d70c08cc82267f295",
+      "search.h": "727cfce37e60e7d2aefa94c7f3b0528f4b564a01ebafe473c88adc69d0073687",
+      "belief.h": "9cda8cab44fa0870f60f6c15e8184602b415cc9d45847be4f4f6a368340305ea",
+      "regret.h": "6c4a1bfd814cf8ec8cd3c48cd6c473ce2bad0d9b60cf17af2af5d6ccdc004712",
+      "engine.h": "0acb58ec83150806694374b24b08d531278797011da4748318100304b934ccdf",
+      "piece_square.h": "2c7deec8b737fbd450ed8fdc0e456139f2dad564e5792c98b201e336aaef01dc",
+      "opponent_model.h": "1b3443eb9cd394b2897a71ed2daf3a0544ee41794f68cc0c8fe5de9b0ad9ff54",
+      "opponent_weights.h": "a93041d41ac93b79f85b2c138fd05da9add9c768ad5309d08368d7dc9b506c05",
+      "neural_observation.h": "f39ec7924043609b253b63436e06ce6c49bbe5d66014fad8db22f9ee7d321802"
+    },
+    "library_sha256": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+    "prepare_seconds": 14.871184868039563,
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "build_directory": "/home/henrytan/git/iamavirus/astra-submissions/build/native-risk-labels-20261025"
+  },
+  "requested_cases": 80,
+  "completed_cases": 80,
+  "counts": {
+    "candidate_labels": 163946,
+    "fatal_candidate_labels": 6746,
+    "decisions": 5279,
+    "white_decisions": 2657,
+    "black_decisions": 2622,
+    "castling_candidates": 456,
+    "promotion_candidates": 212,
+    "en_passant_candidates": 7
+  },
+  "failures": [],
+  "native_danger_query_seconds": 0.062255700933746994,
+  "wall_seconds": 22.271439039031975,
+  "wall_cap_seconds": 180.0,
+  "cases": [
+    {
+      "game": "xfs0d0k6",
+      "frame": 29,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "60077945889137d4fba54870ff63ab42c352b536c8883f24bd1d62a0aaf3d5ae",
+      "counts": {
+        "candidate_labels": 975,
+        "fatal_candidate_labels": 59,
+        "decisions": 30,
+        "white_decisions": 15,
+        "black_decisions": 15
+      },
+      "special_candidates": {
+        "castling_candidates": 9
+      },
+      "target_labels": [
+        {
+          "move": "d7a4",
+          "fatal": true
+        },
+        {
+          "move": "d7b5",
+          "fatal": true
+        },
+        {
+          "move": "d7c6",
+          "fatal": true
+        },
+        {
+          "move": "d7c8",
+          "fatal": true
+        },
+        {
+          "move": "d7e8",
+          "fatal": true
+        },
+        {
+          "move": "e7d6",
+          "fatal": true
+        },
+        {
+          "move": "e7f6",
+          "fatal": false
+        },
+        {
+          "move": "e7f7",
+          "fatal": true
+        },
+        {
+          "move": "e7d8",
+          "fatal": true
+        },
+        {
+          "move": "e7e8",
+          "fatal": false
+        },
+        {
+          "move": "e7f8",
+          "fatal": true
+        },
+        {
+          "move": "a8a6",
+          "fatal": true
+        },
+        {
+          "move": "a8a7",
+          "fatal": true
+        },
+        {
+          "move": "a8b8",
+          "fatal": true
+        },
+        {
+          "move": "a8c8",
+          "fatal": true
+        },
+        {
+          "move": "a8d8",
+          "fatal": true
+        },
+        {
+          "move": "a8e8",
+          "fatal": true
+        },
+        {
+          "move": "a8f8",
+          "fatal": true
+        },
+        {
+          "move": "g8f6",
+          "fatal": true
+        },
+        {
+          "move": "g8h6",
+          "fatal": true
+        },
+        {
+          "move": "a5a4",
+          "fatal": true
+        },
+        {
+          "move": "b6b5",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7h5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "5osaf68l",
+      "frame": 77,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "faac1ad2dea0eb17ed7b035c71e8e2e396f6a0b824e9f3d0a3c276a5449e9592",
+      "counts": {
+        "candidate_labels": 3082,
+        "fatal_candidate_labels": 250,
+        "decisions": 78,
+        "white_decisions": 39,
+        "black_decisions": 39
+      },
+      "special_candidates": {
+        "castling_candidates": 14
+      },
+      "target_labels": [
+        {
+          "move": "f3e1",
+          "fatal": true
+        },
+        {
+          "move": "f3g1",
+          "fatal": true
+        },
+        {
+          "move": "f3d2",
+          "fatal": true
+        },
+        {
+          "move": "f3h2",
+          "fatal": true
+        },
+        {
+          "move": "f3d4",
+          "fatal": true
+        },
+        {
+          "move": "f3h4",
+          "fatal": true
+        },
+        {
+          "move": "f3e5",
+          "fatal": true
+        },
+        {
+          "move": "f3g5",
+          "fatal": true
+        },
+        {
+          "move": "f5e4",
+          "fatal": true
+        },
+        {
+          "move": "f5f4",
+          "fatal": true
+        },
+        {
+          "move": "f5g4",
+          "fatal": false
+        },
+        {
+          "move": "f5e5",
+          "fatal": true
+        },
+        {
+          "move": "f5g5",
+          "fatal": false
+        },
+        {
+          "move": "f5e6",
+          "fatal": true
+        },
+        {
+          "move": "f5f6",
+          "fatal": true
+        },
+        {
+          "move": "f5g6",
+          "fatal": true
+        },
+        {
+          "move": "c6a4",
+          "fatal": true
+        },
+        {
+          "move": "c6e4",
+          "fatal": true
+        },
+        {
+          "move": "c6b5",
+          "fatal": true
+        },
+        {
+          "move": "c6d5",
+          "fatal": true
+        },
+        {
+          "move": "c6d7",
+          "fatal": true
+        },
+        {
+          "move": "c6e8",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7b5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "njccfnw8",
+      "frame": 60,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "2d46c5fe8888156dac7aa5637b608a12633cba9a5ed22ca2b47766f7a8135067",
+      "counts": {
+        "candidate_labels": 2152,
+        "fatal_candidate_labels": 148,
+        "decisions": 61,
+        "white_decisions": 31,
+        "black_decisions": 30
+      },
+      "special_candidates": {
+        "castling_candidates": 3
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": false
+        },
+        {
+          "move": "a1b2",
+          "fatal": true
+        },
+        {
+          "move": "g1b1",
+          "fatal": true
+        },
+        {
+          "move": "g1c1",
+          "fatal": true
+        },
+        {
+          "move": "g1d1",
+          "fatal": true
+        },
+        {
+          "move": "g1e1",
+          "fatal": true
+        },
+        {
+          "move": "g1f1",
+          "fatal": true
+        },
+        {
+          "move": "g1g2",
+          "fatal": true
+        },
+        {
+          "move": "g1g3",
+          "fatal": true
+        },
+        {
+          "move": "g1g4",
+          "fatal": true
+        },
+        {
+          "move": "g1g5",
+          "fatal": true
+        },
+        {
+          "move": "g1g6",
+          "fatal": true
+        },
+        {
+          "move": "g1g7",
+          "fatal": true
+        },
+        {
+          "move": "h1h2",
+          "fatal": true
+        },
+        {
+          "move": "h1h3",
+          "fatal": true
+        },
+        {
+          "move": "h1h4",
+          "fatal": true
+        },
+        {
+          "move": "f5h3",
+          "fatal": true
+        },
+        {
+          "move": "f5g4",
+          "fatal": true
+        },
+        {
+          "move": "f5e6",
+          "fatal": true
+        },
+        {
+          "move": "f5g6",
+          "fatal": true
+        },
+        {
+          "move": "f5d7",
+          "fatal": true
+        },
+        {
+          "move": "f5h7",
+          "fatal": true
+        },
+        {
+          "move": "f5c8",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "f3f4",
+          "fatal": true
+        },
+        {
+          "move": "b4b5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "xg494buf",
+      "frame": 99,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "e07791e78beb5e489a8986beb25cbb87b3c95aa44586f37f6e254902766d2b37",
+      "counts": {
+        "candidate_labels": 3005,
+        "fatal_candidate_labels": 226,
+        "decisions": 100,
+        "white_decisions": 50,
+        "black_decisions": 50
+      },
+      "special_candidates": {
+        "castling_candidates": 4,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "g5f4",
+          "fatal": true
+        },
+        {
+          "move": "g5h4",
+          "fatal": false
+        },
+        {
+          "move": "g5f5",
+          "fatal": true
+        },
+        {
+          "move": "g5f6",
+          "fatal": false
+        },
+        {
+          "move": "g5g6",
+          "fatal": true
+        },
+        {
+          "move": "g5h6",
+          "fatal": true
+        },
+        {
+          "move": "g4g3",
+          "fatal": true
+        },
+        {
+          "move": "h5h4",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "xo3bv857",
+      "frame": 131,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "e1578e0b7f7c42efa882da477586f8740e6f25fa4b94b00b092893a7d15c15ee",
+      "counts": {
+        "candidate_labels": 2978,
+        "fatal_candidate_labels": 127,
+        "decisions": 132,
+        "white_decisions": 66,
+        "black_decisions": 66
+      },
+      "special_candidates": {
+        "castling_candidates": 2,
+        "promotion_candidates": 8
+      },
+      "target_labels": [
+        {
+          "move": "d5c3",
+          "fatal": true
+        },
+        {
+          "move": "d5e3",
+          "fatal": true
+        },
+        {
+          "move": "d5b4",
+          "fatal": true
+        },
+        {
+          "move": "d5f4",
+          "fatal": true
+        },
+        {
+          "move": "d5b6",
+          "fatal": true
+        },
+        {
+          "move": "d5f6",
+          "fatal": true
+        },
+        {
+          "move": "d5c7",
+          "fatal": true
+        },
+        {
+          "move": "d5e7",
+          "fatal": true
+        },
+        {
+          "move": "c6b5",
+          "fatal": true
+        },
+        {
+          "move": "c6c5",
+          "fatal": true
+        },
+        {
+          "move": "c6b6",
+          "fatal": false
+        },
+        {
+          "move": "c6d6",
+          "fatal": true
+        },
+        {
+          "move": "c6b7",
+          "fatal": false
+        },
+        {
+          "move": "c6c7",
+          "fatal": true
+        },
+        {
+          "move": "c6d7",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "x1togzlk",
+      "frame": 64,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "3abc4e306e4690ef2e7bcd84d9ccea628f8e08a451813c0f0974f6bc6fef246d",
+      "counts": {
+        "candidate_labels": 2060,
+        "fatal_candidate_labels": 28,
+        "decisions": 65,
+        "white_decisions": 33,
+        "black_decisions": 32
+      },
+      "special_candidates": {
+        "castling_candidates": 2,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "f1e1",
+          "fatal": true
+        },
+        {
+          "move": "f1g1",
+          "fatal": true
+        },
+        {
+          "move": "f1e2",
+          "fatal": true
+        },
+        {
+          "move": "f1f2",
+          "fatal": false
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "c3c4",
+          "fatal": true
+        },
+        {
+          "move": "f3f4",
+          "fatal": true
+        },
+        {
+          "move": "h4h5",
+          "fatal": true
+        },
+        {
+          "move": "b5b6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "2w26eevv",
+      "frame": 71,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "6fea743176399591aa43801be4a5e234f817ac52a1387546db8615cc7a09a405",
+      "counts": {
+        "candidate_labels": 2186,
+        "fatal_candidate_labels": 42,
+        "decisions": 72,
+        "white_decisions": 36,
+        "black_decisions": 36
+      },
+      "special_candidates": {
+        "castling_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "b8a7",
+          "fatal": false
+        },
+        {
+          "move": "b8b7",
+          "fatal": false
+        },
+        {
+          "move": "b8c7",
+          "fatal": false
+        },
+        {
+          "move": "b8a8",
+          "fatal": true
+        },
+        {
+          "move": "b8c8",
+          "fatal": true
+        },
+        {
+          "move": "a4a3",
+          "fatal": true
+        },
+        {
+          "move": "e4e3",
+          "fatal": true
+        },
+        {
+          "move": "e6e5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "1hcyolra",
+      "frame": 78,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "6eeb3a3abac7e485fa3a7b3c7531dfa4fa85e97d7012e043400ef75b6ca69d09",
+      "counts": {
+        "candidate_labels": 2364,
+        "fatal_candidate_labels": 80,
+        "decisions": 79,
+        "white_decisions": 40,
+        "black_decisions": 39
+      },
+      "special_candidates": {
+        "castling_candidates": 6,
+        "en_passant_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "d2c1",
+          "fatal": true
+        },
+        {
+          "move": "d2e1",
+          "fatal": true
+        },
+        {
+          "move": "d2c3",
+          "fatal": true
+        },
+        {
+          "move": "d2e3",
+          "fatal": true
+        },
+        {
+          "move": "d2b4",
+          "fatal": true
+        },
+        {
+          "move": "d2f4",
+          "fatal": true
+        },
+        {
+          "move": "d2a5",
+          "fatal": true
+        },
+        {
+          "move": "g2f1",
+          "fatal": false
+        },
+        {
+          "move": "g2g1",
+          "fatal": true
+        },
+        {
+          "move": "g2h1",
+          "fatal": false
+        },
+        {
+          "move": "g2f2",
+          "fatal": false
+        },
+        {
+          "move": "g2h2",
+          "fatal": false
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2h3",
+          "fatal": false
+        },
+        {
+          "move": "c4b2",
+          "fatal": true
+        },
+        {
+          "move": "c4a3",
+          "fatal": true
+        },
+        {
+          "move": "c4e3",
+          "fatal": true
+        },
+        {
+          "move": "c4a5",
+          "fatal": true
+        },
+        {
+          "move": "c4e5",
+          "fatal": true
+        },
+        {
+          "move": "c4b6",
+          "fatal": true
+        },
+        {
+          "move": "c4d6",
+          "fatal": true
+        },
+        {
+          "move": "h5h6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "fye0cwzy",
+      "frame": 89,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "f38a327bc8035a0ef891c47fd538162c20275f0dd64c5b32c7c2c0015e5595c5",
+      "counts": {
+        "candidate_labels": 2723,
+        "fatal_candidate_labels": 59,
+        "decisions": 90,
+        "white_decisions": 45,
+        "black_decisions": 45
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "g5f4",
+          "fatal": false
+        },
+        {
+          "move": "g5g4",
+          "fatal": true
+        },
+        {
+          "move": "g5h4",
+          "fatal": false
+        },
+        {
+          "move": "g5f5",
+          "fatal": false
+        },
+        {
+          "move": "g5h5",
+          "fatal": false
+        },
+        {
+          "move": "g5f6",
+          "fatal": false
+        },
+        {
+          "move": "g5g6",
+          "fatal": true
+        },
+        {
+          "move": "g5h6",
+          "fatal": false
+        },
+        {
+          "move": "g3g2",
+          "fatal": true
+        },
+        {
+          "move": "g3h2",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "ob3vxglp",
+      "frame": 89,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "ad7a238f25ed0dd1bc88a14383350f7d8e9e356115accd809404360a942a6bbd",
+      "counts": {
+        "candidate_labels": 2481,
+        "fatal_candidate_labels": 17,
+        "decisions": 90,
+        "white_decisions": 45,
+        "black_decisions": 45
+      },
+      "special_candidates": {
+        "castling_candidates": 10
+      },
+      "target_labels": [
+        {
+          "move": "h7g6",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7g7",
+          "fatal": false
+        },
+        {
+          "move": "h7g8",
+          "fatal": true
+        },
+        {
+          "move": "h7h8",
+          "fatal": true
+        },
+        {
+          "move": "f4f3",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "ue2cnml6",
+      "frame": 120,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "f0a6bbd3f66cc32fa52a6e83f9ef9193bf0275c10eb725ccf11373c22298fefc",
+      "counts": {
+        "candidate_labels": 2643,
+        "fatal_candidate_labels": 254,
+        "decisions": 121,
+        "white_decisions": 61,
+        "black_decisions": 60
+      },
+      "special_candidates": {
+        "castling_candidates": 1,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "a5a4",
+          "fatal": false
+        },
+        {
+          "move": "a5b4",
+          "fatal": true
+        },
+        {
+          "move": "a5b5",
+          "fatal": true
+        },
+        {
+          "move": "a5b6",
+          "fatal": true
+        },
+        {
+          "move": "h4h5",
+          "fatal": true
+        },
+        {
+          "move": "a6a7",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "umnfjemu",
+      "frame": 45,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "76f496b486175a1d247b40908c81d15a766bbaabcc3e36098a165c3776c12f35",
+      "counts": {
+        "candidate_labels": 1636,
+        "fatal_candidate_labels": 188,
+        "decisions": 46,
+        "white_decisions": 23,
+        "black_decisions": 23
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "b6b2",
+          "fatal": true
+        },
+        {
+          "move": "b6f2",
+          "fatal": true
+        },
+        {
+          "move": "b6b3",
+          "fatal": true
+        },
+        {
+          "move": "b6e3",
+          "fatal": true
+        },
+        {
+          "move": "b6b4",
+          "fatal": true
+        },
+        {
+          "move": "b6d4",
+          "fatal": true
+        },
+        {
+          "move": "b6b5",
+          "fatal": true
+        },
+        {
+          "move": "b6c5",
+          "fatal": true
+        },
+        {
+          "move": "b6a6",
+          "fatal": true
+        },
+        {
+          "move": "b6a7",
+          "fatal": true
+        },
+        {
+          "move": "b6c7",
+          "fatal": true
+        },
+        {
+          "move": "b6d8",
+          "fatal": true
+        },
+        {
+          "move": "h7g6",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7g7",
+          "fatal": true
+        },
+        {
+          "move": "h7g8",
+          "fatal": true
+        },
+        {
+          "move": "h7h8",
+          "fatal": false
+        },
+        {
+          "move": "a8a6",
+          "fatal": true
+        },
+        {
+          "move": "a8a7",
+          "fatal": true
+        },
+        {
+          "move": "a8b8",
+          "fatal": true
+        },
+        {
+          "move": "a8c8",
+          "fatal": true
+        },
+        {
+          "move": "a8d8",
+          "fatal": true
+        },
+        {
+          "move": "e8e1",
+          "fatal": true
+        },
+        {
+          "move": "e8e2",
+          "fatal": true
+        },
+        {
+          "move": "e8e3",
+          "fatal": true
+        },
+        {
+          "move": "e8e4",
+          "fatal": true
+        },
+        {
+          "move": "e8e5",
+          "fatal": true
+        },
+        {
+          "move": "e8e6",
+          "fatal": true
+        },
+        {
+          "move": "e8e7",
+          "fatal": true
+        },
+        {
+          "move": "e8b8",
+          "fatal": true
+        },
+        {
+          "move": "e8c8",
+          "fatal": true
+        },
+        {
+          "move": "e8d8",
+          "fatal": true
+        },
+        {
+          "move": "e8f8",
+          "fatal": true
+        },
+        {
+          "move": "e8g8",
+          "fatal": true
+        },
+        {
+          "move": "e8h8",
+          "fatal": true
+        },
+        {
+          "move": "a5a4",
+          "fatal": true
+        },
+        {
+          "move": "c6c5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "jeoowbe2",
+      "frame": 168,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "b890f0db9960ea28990c807559f1d4b3f94564fe4e241eeaab3d6643d51386bb",
+      "counts": {
+        "candidate_labels": 4785,
+        "fatal_candidate_labels": 173,
+        "decisions": 169,
+        "white_decisions": 85,
+        "black_decisions": 84
+      },
+      "special_candidates": {
+        "castling_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "h1g2",
+          "fatal": false
+        },
+        {
+          "move": "h1h2",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "ycgeb8p0",
+      "frame": 79,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "b4423d80a12eef0e0dca35a5117743fa94f3328e58968498ce352b4ebafa33c1",
+      "counts": {
+        "candidate_labels": 2672,
+        "fatal_candidate_labels": 88,
+        "decisions": 80,
+        "white_decisions": 40,
+        "black_decisions": 40
+      },
+      "special_candidates": {
+        "castling_candidates": 9,
+        "promotion_candidates": 12
+      },
+      "target_labels": [
+        {
+          "move": "h7g6",
+          "fatal": true
+        },
+        {
+          "move": "g8f7",
+          "fatal": false
+        },
+        {
+          "move": "g8g7",
+          "fatal": false
+        },
+        {
+          "move": "g8f8",
+          "fatal": true
+        },
+        {
+          "move": "g8h8",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "1ocve21m",
+      "frame": 83,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "489dd8c254ab26bd777cc2896c59738bebf324b27159eb2ee64660f3145a8a6b",
+      "counts": {
+        "candidate_labels": 2739,
+        "fatal_candidate_labels": 54,
+        "decisions": 84,
+        "white_decisions": 42,
+        "black_decisions": 42
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "d7a4",
+          "fatal": true
+        },
+        {
+          "move": "d7b5",
+          "fatal": true
+        },
+        {
+          "move": "d7c6",
+          "fatal": true
+        },
+        {
+          "move": "d7e6",
+          "fatal": true
+        },
+        {
+          "move": "d7e8",
+          "fatal": true
+        },
+        {
+          "move": "f7f6",
+          "fatal": true
+        },
+        {
+          "move": "f7e7",
+          "fatal": true
+        },
+        {
+          "move": "f7g7",
+          "fatal": true
+        },
+        {
+          "move": "f7f8",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7g7",
+          "fatal": true
+        },
+        {
+          "move": "h7g8",
+          "fatal": false
+        },
+        {
+          "move": "h7h8",
+          "fatal": true
+        },
+        {
+          "move": "c8b6",
+          "fatal": true
+        },
+        {
+          "move": "c8e7",
+          "fatal": true
+        },
+        {
+          "move": "a6a5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "62k4bany",
+      "frame": 83,
+      "slice": "hidden_missed_escape",
+      "replay_sha256": "6b63c508159c65fd1674883607c439c78a9b7e1a9d5a858425baf406ee6420d1",
+      "counts": {
+        "candidate_labels": 3095,
+        "fatal_candidate_labels": 258,
+        "decisions": 84,
+        "white_decisions": 42,
+        "black_decisions": 42
+      },
+      "special_candidates": {
+        "castling_candidates": 5,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "d2d1",
+          "fatal": true
+        },
+        {
+          "move": "d2c2",
+          "fatal": true
+        },
+        {
+          "move": "d2e2",
+          "fatal": true
+        },
+        {
+          "move": "d2f2",
+          "fatal": true
+        },
+        {
+          "move": "d2g2",
+          "fatal": true
+        },
+        {
+          "move": "d2h2",
+          "fatal": true
+        },
+        {
+          "move": "d2d3",
+          "fatal": false
+        },
+        {
+          "move": "d2d4",
+          "fatal": true
+        },
+        {
+          "move": "d2d5",
+          "fatal": true
+        },
+        {
+          "move": "d2d6",
+          "fatal": true
+        },
+        {
+          "move": "d2d7",
+          "fatal": true
+        },
+        {
+          "move": "d2d8",
+          "fatal": true
+        },
+        {
+          "move": "e3e2",
+          "fatal": false
+        },
+        {
+          "move": "e3f2",
+          "fatal": true
+        },
+        {
+          "move": "e3d3",
+          "fatal": true
+        },
+        {
+          "move": "e3f3",
+          "fatal": true
+        },
+        {
+          "move": "e3d4",
+          "fatal": true
+        },
+        {
+          "move": "e3e4",
+          "fatal": false
+        },
+        {
+          "move": "e3f4",
+          "fatal": true
+        },
+        {
+          "move": "b2b1q",
+          "fatal": true
+        },
+        {
+          "move": "b2b1r",
+          "fatal": true
+        },
+        {
+          "move": "b2b1b",
+          "fatal": true
+        },
+        {
+          "move": "b2b1n",
+          "fatal": true
+        },
+        {
+          "move": "e5e4",
+          "fatal": true
+        },
+        {
+          "move": "h5h4",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "4z4bzk1g",
+      "frame": 51,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "44b87276eec3393e5a2e2bafb73080fae748201a402700f9d8453af13c8d609d",
+      "counts": {
+        "candidate_labels": 1519,
+        "fatal_candidate_labels": 27,
+        "decisions": 52,
+        "white_decisions": 26,
+        "black_decisions": 26
+      },
+      "special_candidates": {
+        "castling_candidates": 14,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "a7a4",
+          "fatal": true
+        },
+        {
+          "move": "a7a5",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "a7b7",
+          "fatal": true
+        },
+        {
+          "move": "a7a8",
+          "fatal": true
+        },
+        {
+          "move": "c7d6",
+          "fatal": false
+        },
+        {
+          "move": "c7b7",
+          "fatal": false
+        },
+        {
+          "move": "c7d7",
+          "fatal": false
+        },
+        {
+          "move": "c7c8",
+          "fatal": false
+        },
+        {
+          "move": "c7d8",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7d7",
+          "fatal": true
+        },
+        {
+          "move": "h7e7",
+          "fatal": true
+        },
+        {
+          "move": "h7f7",
+          "fatal": true
+        },
+        {
+          "move": "h7g7",
+          "fatal": true
+        },
+        {
+          "move": "h7h8",
+          "fatal": true
+        },
+        {
+          "move": "b8a6",
+          "fatal": true
+        },
+        {
+          "move": "b8d7",
+          "fatal": true
+        },
+        {
+          "move": "f8d6",
+          "fatal": false
+        },
+        {
+          "move": "f8h6",
+          "fatal": true
+        },
+        {
+          "move": "f8e7",
+          "fatal": true
+        },
+        {
+          "move": "f8g7",
+          "fatal": true
+        },
+        {
+          "move": "b6b5",
+          "fatal": true
+        },
+        {
+          "move": "c6c5",
+          "fatal": true
+        },
+        {
+          "move": "g6g5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "aqapoz64",
+      "frame": 19,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "f87c2064d369a4ac2927f62537145df3fb109b72b662ba049a1ca50ea8260962",
+      "counts": {
+        "candidate_labels": 568,
+        "fatal_candidate_labels": 38,
+        "decisions": 20,
+        "white_decisions": 10,
+        "black_decisions": 10
+      },
+      "special_candidates": {},
+      "target_labels": [
+        {
+          "move": "f6e4",
+          "fatal": true
+        },
+        {
+          "move": "f6g4",
+          "fatal": true
+        },
+        {
+          "move": "f6d5",
+          "fatal": true
+        },
+        {
+          "move": "f6h5",
+          "fatal": true
+        },
+        {
+          "move": "f6h7",
+          "fatal": true
+        },
+        {
+          "move": "f6e8",
+          "fatal": true
+        },
+        {
+          "move": "f6g8",
+          "fatal": true
+        },
+        {
+          "move": "c7c2",
+          "fatal": true
+        },
+        {
+          "move": "c7c3",
+          "fatal": true
+        },
+        {
+          "move": "c7c4",
+          "fatal": true
+        },
+        {
+          "move": "c7a5",
+          "fatal": true
+        },
+        {
+          "move": "c7c5",
+          "fatal": true
+        },
+        {
+          "move": "c7b6",
+          "fatal": true
+        },
+        {
+          "move": "c7c6",
+          "fatal": true
+        },
+        {
+          "move": "c7d6",
+          "fatal": true
+        },
+        {
+          "move": "c7a7",
+          "fatal": true
+        },
+        {
+          "move": "c7b7",
+          "fatal": true
+        },
+        {
+          "move": "c7d8",
+          "fatal": true
+        },
+        {
+          "move": "e7d6",
+          "fatal": true
+        },
+        {
+          "move": "e7e6",
+          "fatal": false
+        },
+        {
+          "move": "e7d8",
+          "fatal": true
+        },
+        {
+          "move": "e7e8",
+          "fatal": true
+        },
+        {
+          "move": "e7f8",
+          "fatal": false
+        },
+        {
+          "move": "b8c6",
+          "fatal": true
+        },
+        {
+          "move": "c8b7",
+          "fatal": true
+        },
+        {
+          "move": "e5e4",
+          "fatal": true
+        },
+        {
+          "move": "a6a5",
+          "fatal": true
+        },
+        {
+          "move": "d7d6",
+          "fatal": true
+        },
+        {
+          "move": "d7d5",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "26gsqbbm",
+      "frame": 65,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "f4f1b11dcbca5b0c94634b5ade26a3327ebe0682fe7ac069f3a05a34bb16cb04",
+      "counts": {
+        "candidate_labels": 2128,
+        "fatal_candidate_labels": 164,
+        "decisions": 66,
+        "white_decisions": 33,
+        "black_decisions": 33
+      },
+      "special_candidates": {
+        "castling_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "h5d1",
+          "fatal": true
+        },
+        {
+          "move": "h5e2",
+          "fatal": true
+        },
+        {
+          "move": "h5f3",
+          "fatal": true
+        },
+        {
+          "move": "h5h3",
+          "fatal": false
+        },
+        {
+          "move": "h5g4",
+          "fatal": false
+        },
+        {
+          "move": "h5h4",
+          "fatal": true
+        },
+        {
+          "move": "h5g5",
+          "fatal": true
+        },
+        {
+          "move": "h5g6",
+          "fatal": true
+        },
+        {
+          "move": "h5h6",
+          "fatal": true
+        },
+        {
+          "move": "h5f7",
+          "fatal": true
+        },
+        {
+          "move": "h5h7",
+          "fatal": true
+        },
+        {
+          "move": "h5e8",
+          "fatal": true
+        },
+        {
+          "move": "h5h8",
+          "fatal": true
+        },
+        {
+          "move": "d7c6",
+          "fatal": false
+        },
+        {
+          "move": "d7e6",
+          "fatal": true
+        },
+        {
+          "move": "d7c7",
+          "fatal": true
+        },
+        {
+          "move": "d7e7",
+          "fatal": true
+        },
+        {
+          "move": "d7c8",
+          "fatal": true
+        },
+        {
+          "move": "d7d8",
+          "fatal": false
+        },
+        {
+          "move": "d7e8",
+          "fatal": false
+        },
+        {
+          "move": "b5b4",
+          "fatal": true
+        },
+        {
+          "move": "c5c4",
+          "fatal": true
+        },
+        {
+          "move": "a6a5",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "4fli4gq8",
+      "frame": 36,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "9ec5fb1ec470f823b8902a18baad55cdbf53042dc43bd8a972fbca0405afddce",
+      "counts": {
+        "candidate_labels": 1462,
+        "fatal_candidate_labels": 87,
+        "decisions": 37,
+        "white_decisions": 19,
+        "black_decisions": 18
+      },
+      "special_candidates": {
+        "castling_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "c1b2",
+          "fatal": true
+        },
+        {
+          "move": "c1d2",
+          "fatal": true
+        },
+        {
+          "move": "c1a3",
+          "fatal": true
+        },
+        {
+          "move": "c1e3",
+          "fatal": true
+        },
+        {
+          "move": "c1f4",
+          "fatal": true
+        },
+        {
+          "move": "c1g5",
+          "fatal": true
+        },
+        {
+          "move": "c1h6",
+          "fatal": true
+        },
+        {
+          "move": "c2b1",
+          "fatal": false
+        },
+        {
+          "move": "c2d1",
+          "fatal": false
+        },
+        {
+          "move": "c2b2",
+          "fatal": false
+        },
+        {
+          "move": "c2d2",
+          "fatal": false
+        },
+        {
+          "move": "c2b3",
+          "fatal": false
+        },
+        {
+          "move": "c2d3",
+          "fatal": true
+        },
+        {
+          "move": "e2e1",
+          "fatal": true
+        },
+        {
+          "move": "e2d2",
+          "fatal": true
+        },
+        {
+          "move": "e2f2",
+          "fatal": true
+        },
+        {
+          "move": "e2g2",
+          "fatal": true
+        },
+        {
+          "move": "e2h2",
+          "fatal": true
+        },
+        {
+          "move": "e2e3",
+          "fatal": true
+        },
+        {
+          "move": "a4a3",
+          "fatal": true
+        },
+        {
+          "move": "a4b3",
+          "fatal": true
+        },
+        {
+          "move": "a4b4",
+          "fatal": true
+        },
+        {
+          "move": "a4c4",
+          "fatal": true
+        },
+        {
+          "move": "a4d4",
+          "fatal": true
+        },
+        {
+          "move": "a4a5",
+          "fatal": true
+        },
+        {
+          "move": "a4b5",
+          "fatal": true
+        },
+        {
+          "move": "a4a6",
+          "fatal": true
+        },
+        {
+          "move": "a4c6",
+          "fatal": true
+        },
+        {
+          "move": "a4a7",
+          "fatal": true
+        },
+        {
+          "move": "e4d2",
+          "fatal": true
+        },
+        {
+          "move": "e4f2",
+          "fatal": true
+        },
+        {
+          "move": "e4g3",
+          "fatal": true
+        },
+        {
+          "move": "e4c5",
+          "fatal": true
+        },
+        {
+          "move": "e4g5",
+          "fatal": true
+        },
+        {
+          "move": "e4d6",
+          "fatal": true
+        },
+        {
+          "move": "e4f6",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "c3c4",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "i8cvrnvj",
+      "frame": 146,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "59f12d9d0e0d762df25292059a075c126216f24af59ce0ecf5cf3e70e7973e35",
+      "counts": {
+        "candidate_labels": 4156,
+        "fatal_candidate_labels": 114,
+        "decisions": 147,
+        "white_decisions": 74,
+        "black_decisions": 73
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "d1c1",
+          "fatal": false
+        },
+        {
+          "move": "d1e1",
+          "fatal": true
+        },
+        {
+          "move": "d1c2",
+          "fatal": true
+        },
+        {
+          "move": "d1d2",
+          "fatal": true
+        },
+        {
+          "move": "d1e2",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "ktv4ck6l",
+      "frame": 24,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "91444b5905ce3b319e1f4a2e13860580fe0143379b44fd58e23581c588819110",
+      "counts": {
+        "candidate_labels": 831,
+        "fatal_candidate_labels": 38,
+        "decisions": 25,
+        "white_decisions": 13,
+        "black_decisions": 12
+      },
+      "special_candidates": {
+        "en_passant_candidates": 1,
+        "castling_candidates": 5
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "a1c1",
+          "fatal": true
+        },
+        {
+          "move": "d1b1",
+          "fatal": true
+        },
+        {
+          "move": "d1c1",
+          "fatal": true
+        },
+        {
+          "move": "d1c2",
+          "fatal": true
+        },
+        {
+          "move": "d1d2",
+          "fatal": true
+        },
+        {
+          "move": "d1e2",
+          "fatal": true
+        },
+        {
+          "move": "d1b3",
+          "fatal": true
+        },
+        {
+          "move": "d1d3",
+          "fatal": true
+        },
+        {
+          "move": "d1f3",
+          "fatal": true
+        },
+        {
+          "move": "d1a4",
+          "fatal": true
+        },
+        {
+          "move": "d1g4",
+          "fatal": true
+        },
+        {
+          "move": "d1h5",
+          "fatal": true
+        },
+        {
+          "move": "e1d2",
+          "fatal": false
+        },
+        {
+          "move": "e1e2",
+          "fatal": false
+        },
+        {
+          "move": "e1f2",
+          "fatal": false
+        },
+        {
+          "move": "f1e2",
+          "fatal": true
+        },
+        {
+          "move": "f1d3",
+          "fatal": true
+        },
+        {
+          "move": "f1c4",
+          "fatal": true
+        },
+        {
+          "move": "f1b5",
+          "fatal": true
+        },
+        {
+          "move": "f1a6",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "d4c2",
+          "fatal": true
+        },
+        {
+          "move": "d4e2",
+          "fatal": true
+        },
+        {
+          "move": "d4b3",
+          "fatal": true
+        },
+        {
+          "move": "d4f3",
+          "fatal": true
+        },
+        {
+          "move": "d4b5",
+          "fatal": true
+        },
+        {
+          "move": "d4f5",
+          "fatal": true
+        },
+        {
+          "move": "d4c6",
+          "fatal": true
+        },
+        {
+          "move": "d4e6",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "b2b3",
+          "fatal": true
+        },
+        {
+          "move": "b2b4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "pqav7cf6",
+      "frame": 64,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "dea20b45105d28e04e6ecfc53c1bb1fbf93f45f9ec24a35937a812f11e8b8ecb",
+      "counts": {
+        "candidate_labels": 2321,
+        "fatal_candidate_labels": 86,
+        "decisions": 65,
+        "white_decisions": 33,
+        "black_decisions": 32
+      },
+      "special_candidates": {
+        "castling_candidates": 20
+      },
+      "target_labels": [
+        {
+          "move": "d2c1",
+          "fatal": true
+        },
+        {
+          "move": "d2e1",
+          "fatal": true
+        },
+        {
+          "move": "d2c3",
+          "fatal": true
+        },
+        {
+          "move": "d2e3",
+          "fatal": true
+        },
+        {
+          "move": "d2b4",
+          "fatal": true
+        },
+        {
+          "move": "d2a5",
+          "fatal": true
+        },
+        {
+          "move": "d4c3",
+          "fatal": true
+        },
+        {
+          "move": "d4d3",
+          "fatal": true
+        },
+        {
+          "move": "d4e3",
+          "fatal": false
+        },
+        {
+          "move": "d4c4",
+          "fatal": true
+        },
+        {
+          "move": "d4e4",
+          "fatal": true
+        },
+        {
+          "move": "d4c5",
+          "fatal": true
+        },
+        {
+          "move": "d4d5",
+          "fatal": true
+        },
+        {
+          "move": "d4e5",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "g3g4",
+          "fatal": true
+        },
+        {
+          "move": "d6d7",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "e38y4las",
+      "frame": 46,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "99079d30930b6802ef752d5ecc2504c4bbb9cad65d9b1ac2a3f6f1abdbabc657",
+      "counts": {
+        "candidate_labels": 1440,
+        "fatal_candidate_labels": 27,
+        "decisions": 47,
+        "white_decisions": 24,
+        "black_decisions": 23
+      },
+      "special_candidates": {
+        "castling_candidates": 16,
+        "promotion_candidates": 32
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": false
+        },
+        {
+          "move": "f1e1",
+          "fatal": true
+        },
+        {
+          "move": "f1g1",
+          "fatal": true
+        },
+        {
+          "move": "f1e2",
+          "fatal": false
+        },
+        {
+          "move": "f1f2",
+          "fatal": true
+        },
+        {
+          "move": "f1g2",
+          "fatal": false
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "b4b5",
+          "fatal": true
+        },
+        {
+          "move": "f4f5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "gvt1zf08",
+      "frame": 51,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "6ede43818875a71f83ca85f8ac55495403d73d550f8e8080b941fdc8f609fee5",
+      "counts": {
+        "candidate_labels": 1940,
+        "fatal_candidate_labels": 63,
+        "decisions": 52,
+        "white_decisions": 26,
+        "black_decisions": 26
+      },
+      "special_candidates": {
+        "castling_candidates": 7
+      },
+      "target_labels": [
+        {
+          "move": "c8c6",
+          "fatal": true
+        },
+        {
+          "move": "c8c7",
+          "fatal": true
+        },
+        {
+          "move": "c8a8",
+          "fatal": true
+        },
+        {
+          "move": "c8b8",
+          "fatal": true
+        },
+        {
+          "move": "d8h4",
+          "fatal": true
+        },
+        {
+          "move": "d8g5",
+          "fatal": true
+        },
+        {
+          "move": "d8f6",
+          "fatal": true
+        },
+        {
+          "move": "d8c7",
+          "fatal": true
+        },
+        {
+          "move": "d8e7",
+          "fatal": true
+        },
+        {
+          "move": "d8e8",
+          "fatal": true
+        },
+        {
+          "move": "d8f8",
+          "fatal": true
+        },
+        {
+          "move": "g8f7",
+          "fatal": true
+        },
+        {
+          "move": "g8g7",
+          "fatal": true
+        },
+        {
+          "move": "g8h7",
+          "fatal": true
+        },
+        {
+          "move": "g8f8",
+          "fatal": true
+        },
+        {
+          "move": "g8h8",
+          "fatal": false
+        },
+        {
+          "move": "a5a4",
+          "fatal": true
+        },
+        {
+          "move": "c5c4",
+          "fatal": true
+        },
+        {
+          "move": "b6b5",
+          "fatal": true
+        },
+        {
+          "move": "e6e5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "ffledclc",
+      "frame": 32,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "3ab2326ee1ec9660f335825448852a009350991444cdfa6294f4d318775e19d9",
+      "counts": {
+        "candidate_labels": 1052,
+        "fatal_candidate_labels": 31,
+        "decisions": 33,
+        "white_decisions": 17,
+        "black_decisions": 16
+      },
+      "special_candidates": {
+        "castling_candidates": 3
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "c1d2",
+          "fatal": true
+        },
+        {
+          "move": "d1e1",
+          "fatal": true
+        },
+        {
+          "move": "d1f1",
+          "fatal": true
+        },
+        {
+          "move": "d1g1",
+          "fatal": true
+        },
+        {
+          "move": "d1d2",
+          "fatal": true
+        },
+        {
+          "move": "d1d3",
+          "fatal": true
+        },
+        {
+          "move": "d1d4",
+          "fatal": true
+        },
+        {
+          "move": "d1d5",
+          "fatal": true
+        },
+        {
+          "move": "h1e1",
+          "fatal": true
+        },
+        {
+          "move": "h1f1",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "h1h2",
+          "fatal": true
+        },
+        {
+          "move": "e2e1",
+          "fatal": false
+        },
+        {
+          "move": "e2f1",
+          "fatal": false
+        },
+        {
+          "move": "e2d2",
+          "fatal": false
+        },
+        {
+          "move": "e2f2",
+          "fatal": false
+        },
+        {
+          "move": "e2d3",
+          "fatal": false
+        },
+        {
+          "move": "e2f3",
+          "fatal": true
+        },
+        {
+          "move": "a3b1",
+          "fatal": true
+        },
+        {
+          "move": "a3c4",
+          "fatal": true
+        },
+        {
+          "move": "a3b5",
+          "fatal": true
+        },
+        {
+          "move": "c3b1",
+          "fatal": true
+        },
+        {
+          "move": "c3a4",
+          "fatal": true
+        },
+        {
+          "move": "c3e4",
+          "fatal": true
+        },
+        {
+          "move": "c3b5",
+          "fatal": true
+        },
+        {
+          "move": "c3d5",
+          "fatal": true
+        },
+        {
+          "move": "h3f1",
+          "fatal": true
+        },
+        {
+          "move": "h3g2",
+          "fatal": true
+        },
+        {
+          "move": "h3g4",
+          "fatal": true
+        },
+        {
+          "move": "h3f5",
+          "fatal": true
+        },
+        {
+          "move": "h3e6",
+          "fatal": true
+        },
+        {
+          "move": "b2b3",
+          "fatal": true
+        },
+        {
+          "move": "b2b4",
+          "fatal": true
+        },
+        {
+          "move": "e3e4",
+          "fatal": true
+        },
+        {
+          "move": "h5h6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "xmw8fxkz",
+      "frame": 8,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "ca876a44f07de50b5fc407db6b23f3f6f0781d824db4a686e73cc0b359aeb1c1",
+      "counts": {
+        "candidate_labels": 217,
+        "fatal_candidate_labels": 20,
+        "decisions": 9,
+        "white_decisions": 5,
+        "black_decisions": 4
+      },
+      "special_candidates": {},
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "a1c1",
+          "fatal": true
+        },
+        {
+          "move": "d1c1",
+          "fatal": true
+        },
+        {
+          "move": "e1f2",
+          "fatal": true
+        },
+        {
+          "move": "g1f3",
+          "fatal": true
+        },
+        {
+          "move": "g1h3",
+          "fatal": true
+        },
+        {
+          "move": "h1h2",
+          "fatal": true
+        },
+        {
+          "move": "h1h3",
+          "fatal": true
+        },
+        {
+          "move": "h1h4",
+          "fatal": false
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "c2c3",
+          "fatal": true
+        },
+        {
+          "move": "c2c4",
+          "fatal": true
+        },
+        {
+          "move": "d2d3",
+          "fatal": true
+        },
+        {
+          "move": "d2d4",
+          "fatal": true
+        },
+        {
+          "move": "e2e3",
+          "fatal": true
+        },
+        {
+          "move": "e2e4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": false
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "b3b4",
+          "fatal": true
+        },
+        {
+          "move": "f4f5",
+          "fatal": true
+        },
+        {
+          "move": "f4e5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "03c5j2pj",
+      "frame": 32,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "ae2a1027815c0d278367f8ecbf52b5af10178e74812b02a04dc7b415cae406a3",
+      "counts": {
+        "candidate_labels": 988,
+        "fatal_candidate_labels": 21,
+        "decisions": 33,
+        "white_decisions": 17,
+        "black_decisions": 16
+      },
+      "special_candidates": {
+        "castling_candidates": 1,
+        "promotion_candidates": 16
+      },
+      "target_labels": [
+        {
+          "move": "g1h1",
+          "fatal": true
+        },
+        {
+          "move": "a2a1",
+          "fatal": true
+        },
+        {
+          "move": "a2b2",
+          "fatal": true
+        },
+        {
+          "move": "a2c2",
+          "fatal": true
+        },
+        {
+          "move": "a2d2",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "e2d1",
+          "fatal": true
+        },
+        {
+          "move": "e2e1",
+          "fatal": false
+        },
+        {
+          "move": "e2d2",
+          "fatal": true
+        },
+        {
+          "move": "e2f3",
+          "fatal": false
+        },
+        {
+          "move": "f2f3",
+          "fatal": true
+        },
+        {
+          "move": "f2f4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "b3b4",
+          "fatal": true
+        },
+        {
+          "move": "c3c4",
+          "fatal": true
+        },
+        {
+          "move": "d3d4",
+          "fatal": true
+        },
+        {
+          "move": "e3e4",
+          "fatal": true
+        },
+        {
+          "move": "h3h4",
+          "fatal": true
+        },
+        {
+          "move": "a4a5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "afoe9v23",
+      "frame": 95,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "dfaa90170ed643d51091c35ac8b85ae78e196a54168042f7a5094285bf860d8b",
+      "counts": {
+        "candidate_labels": 2507,
+        "fatal_candidate_labels": 162,
+        "decisions": 96,
+        "white_decisions": 48,
+        "black_decisions": 48
+      },
+      "special_candidates": {
+        "castling_candidates": 8
+      },
+      "target_labels": [
+        {
+          "move": "g5f4",
+          "fatal": true
+        },
+        {
+          "move": "g5g4",
+          "fatal": true
+        },
+        {
+          "move": "g5h4",
+          "fatal": true
+        },
+        {
+          "move": "g5f5",
+          "fatal": true
+        },
+        {
+          "move": "g5h5",
+          "fatal": true
+        },
+        {
+          "move": "g5g6",
+          "fatal": false
+        },
+        {
+          "move": "a6f1",
+          "fatal": true
+        },
+        {
+          "move": "a6e2",
+          "fatal": true
+        },
+        {
+          "move": "a6d3",
+          "fatal": true
+        },
+        {
+          "move": "a6c4",
+          "fatal": true
+        },
+        {
+          "move": "a6b5",
+          "fatal": true
+        },
+        {
+          "move": "f6f5",
+          "fatal": true
+        },
+        {
+          "move": "h6h5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "rmj9jpwi",
+      "frame": 29,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "382844920e3dbb75829207364758ded1b7467f04c1b5c76f0460ddb497fa932f",
+      "counts": {
+        "candidate_labels": 910,
+        "fatal_candidate_labels": 30,
+        "decisions": 30,
+        "white_decisions": 15,
+        "black_decisions": 15
+      },
+      "special_candidates": {
+        "castling_candidates": 5,
+        "en_passant_candidates": 1
+      },
+      "target_labels": [
+        {
+          "move": "a6b4",
+          "fatal": true
+        },
+        {
+          "move": "a6c7",
+          "fatal": true
+        },
+        {
+          "move": "b7c6",
+          "fatal": true
+        },
+        {
+          "move": "b7a8",
+          "fatal": true
+        },
+        {
+          "move": "b7c8",
+          "fatal": true
+        },
+        {
+          "move": "f7f6",
+          "fatal": false
+        },
+        {
+          "move": "f7g6",
+          "fatal": true
+        },
+        {
+          "move": "f7e7",
+          "fatal": true
+        },
+        {
+          "move": "f7e8",
+          "fatal": true
+        },
+        {
+          "move": "f7g8",
+          "fatal": false
+        },
+        {
+          "move": "b8a8",
+          "fatal": true
+        },
+        {
+          "move": "b8c8",
+          "fatal": true
+        },
+        {
+          "move": "d8d6",
+          "fatal": true
+        },
+        {
+          "move": "d8f6",
+          "fatal": true
+        },
+        {
+          "move": "d8c7",
+          "fatal": true
+        },
+        {
+          "move": "d8d7",
+          "fatal": true
+        },
+        {
+          "move": "d8e7",
+          "fatal": true
+        },
+        {
+          "move": "d8c8",
+          "fatal": true
+        },
+        {
+          "move": "d8e8",
+          "fatal": true
+        },
+        {
+          "move": "f8d6",
+          "fatal": true
+        },
+        {
+          "move": "f8e7",
+          "fatal": true
+        },
+        {
+          "move": "h8h5",
+          "fatal": true
+        },
+        {
+          "move": "h8h6",
+          "fatal": true
+        },
+        {
+          "move": "h8h7",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "h4h3",
+          "fatal": true
+        },
+        {
+          "move": "c5c4",
+          "fatal": true
+        },
+        {
+          "move": "d5d4",
+          "fatal": true
+        },
+        {
+          "move": "b6b5",
+          "fatal": true
+        },
+        {
+          "move": "e6e5",
+          "fatal": true
+        },
+        {
+          "move": "g7f6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "syyh0cbl",
+      "frame": 113,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "0d856248db6f6b006594e84096fda5c2764b55b4506c3cacccbb3f5094662463",
+      "counts": {
+        "candidate_labels": 3707,
+        "fatal_candidate_labels": 138,
+        "decisions": 114,
+        "white_decisions": 57,
+        "black_decisions": 57
+      },
+      "special_candidates": {
+        "castling_candidates": 8,
+        "promotion_candidates": 12
+      },
+      "target_labels": [
+        {
+          "move": "b7a6",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7c6",
+          "fatal": false
+        },
+        {
+          "move": "b7a7",
+          "fatal": true
+        },
+        {
+          "move": "b7a8",
+          "fatal": true
+        },
+        {
+          "move": "b7b8",
+          "fatal": false
+        },
+        {
+          "move": "b7c8",
+          "fatal": false
+        },
+        {
+          "move": "c7c1",
+          "fatal": true
+        },
+        {
+          "move": "c7c2",
+          "fatal": true
+        },
+        {
+          "move": "c7c3",
+          "fatal": true
+        },
+        {
+          "move": "c7c4",
+          "fatal": true
+        },
+        {
+          "move": "c7c5",
+          "fatal": true
+        },
+        {
+          "move": "c7c6",
+          "fatal": true
+        },
+        {
+          "move": "c7d7",
+          "fatal": true
+        },
+        {
+          "move": "c7e7",
+          "fatal": true
+        },
+        {
+          "move": "c7f7",
+          "fatal": true
+        },
+        {
+          "move": "c7g7",
+          "fatal": true
+        },
+        {
+          "move": "c7h7",
+          "fatal": true
+        },
+        {
+          "move": "c7c8",
+          "fatal": true
+        },
+        {
+          "move": "e6e5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "yryzamt5",
+      "frame": 52,
+      "slice": "visible_missed_escape",
+      "replay_sha256": "307d1c94a05780bdce5d2ed95336b84c433411de92cfe8e2da22a81221b37551",
+      "counts": {
+        "candidate_labels": 1815,
+        "fatal_candidate_labels": 41,
+        "decisions": 53,
+        "white_decisions": 27,
+        "black_decisions": 26
+      },
+      "special_candidates": {
+        "en_passant_candidates": 1,
+        "castling_candidates": 1
+      },
+      "target_labels": [
+        {
+          "move": "c1b2",
+          "fatal": true
+        },
+        {
+          "move": "h1d1",
+          "fatal": true
+        },
+        {
+          "move": "h1e1",
+          "fatal": true
+        },
+        {
+          "move": "h1f1",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "h1h2",
+          "fatal": true
+        },
+        {
+          "move": "h1h3",
+          "fatal": true
+        },
+        {
+          "move": "d2d1",
+          "fatal": false
+        },
+        {
+          "move": "d2e1",
+          "fatal": false
+        },
+        {
+          "move": "d2c2",
+          "fatal": false
+        },
+        {
+          "move": "d2e2",
+          "fatal": false
+        },
+        {
+          "move": "d2c3",
+          "fatal": true
+        },
+        {
+          "move": "d2d3",
+          "fatal": true
+        },
+        {
+          "move": "d2e3",
+          "fatal": false
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "h4h5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "x3cguequ",
+      "frame": 115,
+      "slice": "hidden_escaped",
+      "replay_sha256": "a9534f4fb549a46abb4acf43cf1f52d59438c652b1371aa221e823f6b7fbe663",
+      "counts": {
+        "candidate_labels": 2503,
+        "fatal_candidate_labels": 267,
+        "decisions": 116,
+        "white_decisions": 58,
+        "black_decisions": 58
+      },
+      "special_candidates": {
+        "castling_candidates": 4,
+        "promotion_candidates": 8
+      },
+      "target_labels": [
+        {
+          "move": "g6g5",
+          "fatal": true
+        },
+        {
+          "move": "g6h5",
+          "fatal": false
+        },
+        {
+          "move": "g6f6",
+          "fatal": true
+        },
+        {
+          "move": "g6h6",
+          "fatal": true
+        },
+        {
+          "move": "g6f7",
+          "fatal": false
+        },
+        {
+          "move": "g6g7",
+          "fatal": false
+        },
+        {
+          "move": "g6h7",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "tkthtoli",
+      "frame": 54,
+      "slice": "hidden_escaped",
+      "replay_sha256": "c65d0dc9942720bd144652981b1f122a8633a0174fbadef7909afcf43c571c36",
+      "counts": {
+        "candidate_labels": 1958,
+        "fatal_candidate_labels": 122,
+        "decisions": 55,
+        "white_decisions": 28,
+        "black_decisions": 27
+      },
+      "special_candidates": {
+        "castling_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "b1a1",
+          "fatal": true
+        },
+        {
+          "move": "b1c1",
+          "fatal": true
+        },
+        {
+          "move": "b1a2",
+          "fatal": false
+        },
+        {
+          "move": "b1b2",
+          "fatal": false
+        },
+        {
+          "move": "b1c2",
+          "fatal": false
+        },
+        {
+          "move": "d3d1",
+          "fatal": false
+        },
+        {
+          "move": "d3d2",
+          "fatal": true
+        },
+        {
+          "move": "d3b3",
+          "fatal": true
+        },
+        {
+          "move": "d3c3",
+          "fatal": true
+        },
+        {
+          "move": "d3d4",
+          "fatal": true
+        },
+        {
+          "move": "d3d5",
+          "fatal": true
+        },
+        {
+          "move": "d3d6",
+          "fatal": true
+        },
+        {
+          "move": "d3d7",
+          "fatal": true
+        },
+        {
+          "move": "d3d8",
+          "fatal": true
+        },
+        {
+          "move": "a3a4",
+          "fatal": true
+        },
+        {
+          "move": "e3e4",
+          "fatal": true
+        },
+        {
+          "move": "b4b5",
+          "fatal": true
+        },
+        {
+          "move": "g4g5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "1jyayek4",
+      "frame": 6,
+      "slice": "hidden_escaped",
+      "replay_sha256": "55ef2950b429a653bd51e7268ab924d9e079692b2a13b6acab4e426dfa88717c",
+      "counts": {
+        "candidate_labels": 179,
+        "fatal_candidate_labels": 25,
+        "decisions": 7,
+        "white_decisions": 4,
+        "black_decisions": 3
+      },
+      "special_candidates": {},
+      "target_labels": [
+        {
+          "move": "b1d2",
+          "fatal": false
+        },
+        {
+          "move": "b1a3",
+          "fatal": true
+        },
+        {
+          "move": "b1c3",
+          "fatal": false
+        },
+        {
+          "move": "c1d2",
+          "fatal": false
+        },
+        {
+          "move": "c1e3",
+          "fatal": true
+        },
+        {
+          "move": "c1f4",
+          "fatal": true
+        },
+        {
+          "move": "c1g5",
+          "fatal": true
+        },
+        {
+          "move": "c1h6",
+          "fatal": true
+        },
+        {
+          "move": "d1c2",
+          "fatal": true
+        },
+        {
+          "move": "d1d2",
+          "fatal": false
+        },
+        {
+          "move": "d1b3",
+          "fatal": true
+        },
+        {
+          "move": "d1d3",
+          "fatal": true
+        },
+        {
+          "move": "d1a4",
+          "fatal": true
+        },
+        {
+          "move": "e1d2",
+          "fatal": true
+        },
+        {
+          "move": "g1f3",
+          "fatal": true
+        },
+        {
+          "move": "g1h3",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "b2b3",
+          "fatal": true
+        },
+        {
+          "move": "b2b4",
+          "fatal": false
+        },
+        {
+          "move": "e2e3",
+          "fatal": true
+        },
+        {
+          "move": "e2e4",
+          "fatal": true
+        },
+        {
+          "move": "f2f3",
+          "fatal": true
+        },
+        {
+          "move": "f2f4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "d5d6",
+          "fatal": true
+        },
+        {
+          "move": "d5c6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "nupj1qzy",
+      "frame": 57,
+      "slice": "hidden_escaped",
+      "replay_sha256": "6cf20027d2f241ad641c1f7e655c62333f58c5ed3e1c3f063988608095c9b465",
+      "counts": {
+        "candidate_labels": 2068,
+        "fatal_candidate_labels": 243,
+        "decisions": 58,
+        "white_decisions": 29,
+        "black_decisions": 29
+      },
+      "special_candidates": {
+        "castling_candidates": 14
+      },
+      "target_labels": [
+        {
+          "move": "h8h7",
+          "fatal": false
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "c5c4",
+          "fatal": true
+        },
+        {
+          "move": "h6h5",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "y4ysglxn",
+      "frame": 62,
+      "slice": "hidden_escaped",
+      "replay_sha256": "9c8f2befa2a59ce394a92c70d039e40cb9e6a5561138146cc79faf30d9005e74",
+      "counts": {
+        "candidate_labels": 2085,
+        "fatal_candidate_labels": 23,
+        "decisions": 63,
+        "white_decisions": 32,
+        "black_decisions": 31
+      },
+      "special_candidates": {
+        "castling_candidates": 13,
+        "promotion_candidates": 16
+      },
+      "target_labels": [
+        {
+          "move": "e1d1",
+          "fatal": true
+        },
+        {
+          "move": "e1f1",
+          "fatal": true
+        },
+        {
+          "move": "e1e2",
+          "fatal": false
+        },
+        {
+          "move": "e1f2",
+          "fatal": true
+        },
+        {
+          "move": "h2h1",
+          "fatal": true
+        },
+        {
+          "move": "h2e2",
+          "fatal": true
+        },
+        {
+          "move": "h2f2",
+          "fatal": true
+        },
+        {
+          "move": "h2g2",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "h2h5",
+          "fatal": true
+        },
+        {
+          "move": "d2d3",
+          "fatal": true
+        },
+        {
+          "move": "d2d4",
+          "fatal": true
+        },
+        {
+          "move": "e3e4",
+          "fatal": true
+        },
+        {
+          "move": "g3g4",
+          "fatal": true
+        },
+        {
+          "move": "a4a5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "csij4p5w",
+      "frame": 13,
+      "slice": "hidden_escaped",
+      "replay_sha256": "74f3153f9094fdb62a3fd89b7b5441bc665ba4928ef8cace4af757feda33bc3a",
+      "counts": {
+        "candidate_labels": 436,
+        "fatal_candidate_labels": 31,
+        "decisions": 14,
+        "white_decisions": 7,
+        "black_decisions": 7
+      },
+      "special_candidates": {
+        "castling_candidates": 3
+      },
+      "target_labels": [
+        {
+          "move": "f5c2",
+          "fatal": true
+        },
+        {
+          "move": "f5d3",
+          "fatal": true
+        },
+        {
+          "move": "f5h3",
+          "fatal": true
+        },
+        {
+          "move": "f5e4",
+          "fatal": true
+        },
+        {
+          "move": "f5g4",
+          "fatal": true
+        },
+        {
+          "move": "f5g6",
+          "fatal": true
+        },
+        {
+          "move": "f6e4",
+          "fatal": true
+        },
+        {
+          "move": "f6g4",
+          "fatal": true
+        },
+        {
+          "move": "f6h5",
+          "fatal": true
+        },
+        {
+          "move": "f6d7",
+          "fatal": false
+        },
+        {
+          "move": "f6g8",
+          "fatal": true
+        },
+        {
+          "move": "e7c5",
+          "fatal": true
+        },
+        {
+          "move": "e7d6",
+          "fatal": true
+        },
+        {
+          "move": "e7f8",
+          "fatal": true
+        },
+        {
+          "move": "b8a6",
+          "fatal": true
+        },
+        {
+          "move": "b8c6",
+          "fatal": false
+        },
+        {
+          "move": "b8d7",
+          "fatal": false
+        },
+        {
+          "move": "d8a5",
+          "fatal": true
+        },
+        {
+          "move": "d8b6",
+          "fatal": true
+        },
+        {
+          "move": "d8d6",
+          "fatal": true
+        },
+        {
+          "move": "d8c7",
+          "fatal": true
+        },
+        {
+          "move": "d8d7",
+          "fatal": false
+        },
+        {
+          "move": "d8c8",
+          "fatal": true
+        },
+        {
+          "move": "e8d7",
+          "fatal": true
+        },
+        {
+          "move": "e8f8",
+          "fatal": false
+        },
+        {
+          "move": "h8f8",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "e8g8",
+          "fatal": false
+        },
+        {
+          "move": "d5d4",
+          "fatal": true
+        },
+        {
+          "move": "e6e5",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "a7a5",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7h5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "7ltjbpno",
+      "frame": 25,
+      "slice": "hidden_escaped",
+      "replay_sha256": "8b0868b3c463cbf54039d47e7daa1a3a38b4fea8434361523b70181e354a1a5e",
+      "counts": {
+        "candidate_labels": 859,
+        "fatal_candidate_labels": 91,
+        "decisions": 26,
+        "white_decisions": 13,
+        "black_decisions": 13
+      },
+      "special_candidates": {
+        "castling_candidates": 6
+      },
+      "target_labels": [
+        {
+          "move": "c6b4",
+          "fatal": true
+        },
+        {
+          "move": "c6d4",
+          "fatal": false
+        },
+        {
+          "move": "c6a5",
+          "fatal": true
+        },
+        {
+          "move": "c6e7",
+          "fatal": true
+        },
+        {
+          "move": "c6b8",
+          "fatal": true
+        },
+        {
+          "move": "e6a2",
+          "fatal": true
+        },
+        {
+          "move": "e6b3",
+          "fatal": true
+        },
+        {
+          "move": "e6h3",
+          "fatal": true
+        },
+        {
+          "move": "e6c4",
+          "fatal": true
+        },
+        {
+          "move": "e6g4",
+          "fatal": true
+        },
+        {
+          "move": "e6d5",
+          "fatal": false
+        },
+        {
+          "move": "e6f5",
+          "fatal": true
+        },
+        {
+          "move": "e6d7",
+          "fatal": false
+        },
+        {
+          "move": "e6c8",
+          "fatal": true
+        },
+        {
+          "move": "f6e4",
+          "fatal": true
+        },
+        {
+          "move": "f6g4",
+          "fatal": true
+        },
+        {
+          "move": "f6d5",
+          "fatal": false
+        },
+        {
+          "move": "f6h5",
+          "fatal": true
+        },
+        {
+          "move": "f6d7",
+          "fatal": false
+        },
+        {
+          "move": "f6e8",
+          "fatal": true
+        },
+        {
+          "move": "f6g8",
+          "fatal": true
+        },
+        {
+          "move": "d8c7",
+          "fatal": false
+        },
+        {
+          "move": "d8d7",
+          "fatal": true
+        },
+        {
+          "move": "d8e7",
+          "fatal": false
+        },
+        {
+          "move": "d8c8",
+          "fatal": false
+        },
+        {
+          "move": "d8e8",
+          "fatal": false
+        },
+        {
+          "move": "f8a3",
+          "fatal": true
+        },
+        {
+          "move": "f8b4",
+          "fatal": true
+        },
+        {
+          "move": "f8c5",
+          "fatal": true
+        },
+        {
+          "move": "f8d6",
+          "fatal": false
+        },
+        {
+          "move": "f8e7",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "e5e4",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "a7a5",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7b5",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7h5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "uf42wl1t",
+      "frame": 112,
+      "slice": "hidden_escaped",
+      "replay_sha256": "933fd7377f281a0da091180f7879b78f838ee3b75bedca678d2cee35a31365a9",
+      "counts": {
+        "candidate_labels": 3642,
+        "fatal_candidate_labels": 188,
+        "decisions": 113,
+        "white_decisions": 57,
+        "black_decisions": 56
+      },
+      "special_candidates": {
+        "castling_candidates": 1
+      },
+      "target_labels": [
+        {
+          "move": "h2g1",
+          "fatal": false
+        },
+        {
+          "move": "h2h1",
+          "fatal": false
+        },
+        {
+          "move": "h2g2",
+          "fatal": true
+        },
+        {
+          "move": "h2g3",
+          "fatal": true
+        },
+        {
+          "move": "g4d1",
+          "fatal": true
+        },
+        {
+          "move": "g4e2",
+          "fatal": false
+        },
+        {
+          "move": "g4f3",
+          "fatal": true
+        },
+        {
+          "move": "g4f5",
+          "fatal": true
+        },
+        {
+          "move": "g4h5",
+          "fatal": true
+        },
+        {
+          "move": "g4e6",
+          "fatal": true
+        },
+        {
+          "move": "b3b4",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "ecrdf4z2",
+      "frame": 16,
+      "slice": "hidden_escaped",
+      "replay_sha256": "639ea5e27009d11939284f26d51295e35a09707ad4cd50f3d2318b3188338813",
+      "counts": {
+        "candidate_labels": 526,
+        "fatal_candidate_labels": 29,
+        "decisions": 17,
+        "white_decisions": 9,
+        "black_decisions": 8
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "c1d2",
+          "fatal": false
+        },
+        {
+          "move": "d1d2",
+          "fatal": false
+        },
+        {
+          "move": "d1e2",
+          "fatal": true
+        },
+        {
+          "move": "d1d3",
+          "fatal": true
+        },
+        {
+          "move": "d1f3",
+          "fatal": true
+        },
+        {
+          "move": "d1d4",
+          "fatal": true
+        },
+        {
+          "move": "d1g4",
+          "fatal": true
+        },
+        {
+          "move": "d1d5",
+          "fatal": true
+        },
+        {
+          "move": "d1h5",
+          "fatal": true
+        },
+        {
+          "move": "e1f1",
+          "fatal": false
+        },
+        {
+          "move": "e1d2",
+          "fatal": true
+        },
+        {
+          "move": "e1e2",
+          "fatal": false
+        },
+        {
+          "move": "h1f1",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "b5a3",
+          "fatal": true
+        },
+        {
+          "move": "b5c3",
+          "fatal": false
+        },
+        {
+          "move": "b5d4",
+          "fatal": true
+        },
+        {
+          "move": "b5d6",
+          "fatal": true
+        },
+        {
+          "move": "b5a7",
+          "fatal": true
+        },
+        {
+          "move": "b5c7",
+          "fatal": true
+        },
+        {
+          "move": "e1g1",
+          "fatal": false
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "b2b3",
+          "fatal": true
+        },
+        {
+          "move": "b2b4",
+          "fatal": false
+        },
+        {
+          "move": "c2c3",
+          "fatal": false
+        },
+        {
+          "move": "c2c4",
+          "fatal": true
+        },
+        {
+          "move": "f2f3",
+          "fatal": true
+        },
+        {
+          "move": "f2f4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "e5e6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "ngx7fga2",
+      "frame": 100,
+      "slice": "hidden_escaped",
+      "replay_sha256": "2c5744ec31d49c9a2548ad99a57d24a7364ccc084e62b8007f7a89131b51e932",
+      "counts": {
+        "candidate_labels": 3060,
+        "fatal_candidate_labels": 69,
+        "decisions": 101,
+        "white_decisions": 51,
+        "black_decisions": 50
+      },
+      "special_candidates": {
+        "castling_candidates": 12,
+        "promotion_candidates": 8
+      },
+      "target_labels": [
+        {
+          "move": "c1b1",
+          "fatal": true
+        },
+        {
+          "move": "c1d1",
+          "fatal": true
+        },
+        {
+          "move": "c1b2",
+          "fatal": false
+        },
+        {
+          "move": "c1c2",
+          "fatal": false
+        },
+        {
+          "move": "c1d2",
+          "fatal": false
+        },
+        {
+          "move": "c3b1",
+          "fatal": true
+        },
+        {
+          "move": "c3d1",
+          "fatal": false
+        },
+        {
+          "move": "c3a2",
+          "fatal": true
+        },
+        {
+          "move": "c3e2",
+          "fatal": true
+        },
+        {
+          "move": "c3a4",
+          "fatal": true
+        },
+        {
+          "move": "c3e4",
+          "fatal": true
+        },
+        {
+          "move": "c3b5",
+          "fatal": true
+        },
+        {
+          "move": "c3d5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "36bt227x",
+      "frame": 83,
+      "slice": "hidden_escaped",
+      "replay_sha256": "d4a0df58bee6c5483f216589e8cedf0a47116e64efe6e61bb06fdd888f5905a7",
+      "counts": {
+        "candidate_labels": 2393,
+        "fatal_candidate_labels": 21,
+        "decisions": 84,
+        "white_decisions": 42,
+        "black_decisions": 42
+      },
+      "special_candidates": {
+        "castling_candidates": 10,
+        "en_passant_candidates": 1
+      },
+      "target_labels": [
+        {
+          "move": "f5e3",
+          "fatal": true
+        },
+        {
+          "move": "f5g3",
+          "fatal": true
+        },
+        {
+          "move": "f5d4",
+          "fatal": true
+        },
+        {
+          "move": "f5h4",
+          "fatal": true
+        },
+        {
+          "move": "f5d6",
+          "fatal": true
+        },
+        {
+          "move": "f5h6",
+          "fatal": true
+        },
+        {
+          "move": "f5e7",
+          "fatal": true
+        },
+        {
+          "move": "f5g7",
+          "fatal": false
+        },
+        {
+          "move": "b8b4",
+          "fatal": true
+        },
+        {
+          "move": "b8b5",
+          "fatal": true
+        },
+        {
+          "move": "b8b6",
+          "fatal": true
+        },
+        {
+          "move": "b8b7",
+          "fatal": true
+        },
+        {
+          "move": "b8a8",
+          "fatal": true
+        },
+        {
+          "move": "b8c8",
+          "fatal": true
+        },
+        {
+          "move": "b8d8",
+          "fatal": true
+        },
+        {
+          "move": "b8e8",
+          "fatal": true
+        },
+        {
+          "move": "b8f8",
+          "fatal": true
+        },
+        {
+          "move": "g8f7",
+          "fatal": false
+        },
+        {
+          "move": "g8g7",
+          "fatal": true
+        },
+        {
+          "move": "g8h7",
+          "fatal": true
+        },
+        {
+          "move": "g8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8h8",
+          "fatal": true
+        },
+        {
+          "move": "e6e5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "4kmcpjzc",
+      "frame": 104,
+      "slice": "hidden_escaped",
+      "replay_sha256": "cfeb92462437b9513b40580b4c646538feaf089af3755eb8bd1405fd9ac2ad6f",
+      "counts": {
+        "candidate_labels": 2890,
+        "fatal_candidate_labels": 149,
+        "decisions": 105,
+        "white_decisions": 53,
+        "black_decisions": 52
+      },
+      "special_candidates": {
+        "castling_candidates": 16,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "a6a5",
+          "fatal": false
+        },
+        {
+          "move": "a6b5",
+          "fatal": true
+        },
+        {
+          "move": "a6b6",
+          "fatal": false
+        },
+        {
+          "move": "a6a7",
+          "fatal": false
+        },
+        {
+          "move": "a6b7",
+          "fatal": false
+        },
+        {
+          "move": "a4a5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "tr4q521j",
+      "frame": 81,
+      "slice": "hidden_escaped",
+      "replay_sha256": "c2c67736474dc2681b86abb84b4ff58f5b5356cd5e9becb4ba809c2b0a78ec62",
+      "counts": {
+        "candidate_labels": 2746,
+        "fatal_candidate_labels": 82,
+        "decisions": 82,
+        "white_decisions": 41,
+        "black_decisions": 41
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "f6e4",
+          "fatal": false
+        },
+        {
+          "move": "f6g4",
+          "fatal": true
+        },
+        {
+          "move": "f6d5",
+          "fatal": true
+        },
+        {
+          "move": "f6d7",
+          "fatal": true
+        },
+        {
+          "move": "f6h7",
+          "fatal": true
+        },
+        {
+          "move": "f6e8",
+          "fatal": true
+        },
+        {
+          "move": "f6g8",
+          "fatal": true
+        },
+        {
+          "move": "g6f5",
+          "fatal": true
+        },
+        {
+          "move": "g6g5",
+          "fatal": false
+        },
+        {
+          "move": "g6h6",
+          "fatal": false
+        },
+        {
+          "move": "g6f7",
+          "fatal": false
+        },
+        {
+          "move": "g6h7",
+          "fatal": true
+        },
+        {
+          "move": "g7c7",
+          "fatal": true
+        },
+        {
+          "move": "g7d7",
+          "fatal": true
+        },
+        {
+          "move": "g7e7",
+          "fatal": true
+        },
+        {
+          "move": "g7f7",
+          "fatal": true
+        },
+        {
+          "move": "g7h7",
+          "fatal": true
+        },
+        {
+          "move": "g7g8",
+          "fatal": true
+        },
+        {
+          "move": "h5h4",
+          "fatal": true
+        },
+        {
+          "move": "e6e5",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "a7a5",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7b5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "qk070i05",
+      "frame": 273,
+      "slice": "hidden_escaped",
+      "replay_sha256": "95e6bc1d45a4cc4417c1a1976aa5ab9f21e5564b19ed896407f944b658bb316a",
+      "counts": {
+        "candidate_labels": 5668,
+        "fatal_candidate_labels": 131,
+        "decisions": 274,
+        "white_decisions": 137,
+        "black_decisions": 137
+      },
+      "special_candidates": {
+        "castling_candidates": 5,
+        "promotion_candidates": 52
+      },
+      "target_labels": [
+        {
+          "move": "h7g6",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7g7",
+          "fatal": true
+        },
+        {
+          "move": "h7g8",
+          "fatal": false
+        },
+        {
+          "move": "h7h8",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "9t98amr1",
+      "frame": 33,
+      "slice": "hidden_escaped",
+      "replay_sha256": "e3bc96ba355e317b0f5c7fd5ec3d03c1d1f284056c61b4c46a7b82c6b5c39712",
+      "counts": {
+        "candidate_labels": 1282,
+        "fatal_candidate_labels": 56,
+        "decisions": 34,
+        "white_decisions": 17,
+        "black_decisions": 17
+      },
+      "special_candidates": {
+        "castling_candidates": 10
+      },
+      "target_labels": [
+        {
+          "move": "b6b2",
+          "fatal": true
+        },
+        {
+          "move": "b6b3",
+          "fatal": true
+        },
+        {
+          "move": "b6b4",
+          "fatal": true
+        },
+        {
+          "move": "b6d4",
+          "fatal": true
+        },
+        {
+          "move": "b6a5",
+          "fatal": true
+        },
+        {
+          "move": "b6b5",
+          "fatal": true
+        },
+        {
+          "move": "b6c5",
+          "fatal": true
+        },
+        {
+          "move": "b6a6",
+          "fatal": true
+        },
+        {
+          "move": "b6c6",
+          "fatal": true
+        },
+        {
+          "move": "b6c7",
+          "fatal": true
+        },
+        {
+          "move": "b6d8",
+          "fatal": true
+        },
+        {
+          "move": "d6h2",
+          "fatal": true
+        },
+        {
+          "move": "d6a3",
+          "fatal": true
+        },
+        {
+          "move": "d6g3",
+          "fatal": true
+        },
+        {
+          "move": "d6b4",
+          "fatal": true
+        },
+        {
+          "move": "d6f4",
+          "fatal": true
+        },
+        {
+          "move": "d6c5",
+          "fatal": true
+        },
+        {
+          "move": "d6e5",
+          "fatal": false
+        },
+        {
+          "move": "d6c7",
+          "fatal": true
+        },
+        {
+          "move": "d6e7",
+          "fatal": false
+        },
+        {
+          "move": "d6b8",
+          "fatal": true
+        },
+        {
+          "move": "d6f8",
+          "fatal": true
+        },
+        {
+          "move": "d7h3",
+          "fatal": true
+        },
+        {
+          "move": "d7a4",
+          "fatal": true
+        },
+        {
+          "move": "d7g4",
+          "fatal": true
+        },
+        {
+          "move": "d7b5",
+          "fatal": true
+        },
+        {
+          "move": "d7f5",
+          "fatal": true
+        },
+        {
+          "move": "d7c6",
+          "fatal": true
+        },
+        {
+          "move": "d7e6",
+          "fatal": false
+        },
+        {
+          "move": "d7c8",
+          "fatal": true
+        },
+        {
+          "move": "e8e7",
+          "fatal": true
+        },
+        {
+          "move": "e8d8",
+          "fatal": false
+        },
+        {
+          "move": "e8f8",
+          "fatal": false
+        },
+        {
+          "move": "h8h7",
+          "fatal": true
+        },
+        {
+          "move": "h8f8",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "e8g8",
+          "fatal": false
+        },
+        {
+          "move": "h6h5",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "a7a5",
+          "fatal": true
+        },
+        {
+          "move": "f7f6",
+          "fatal": true
+        },
+        {
+          "move": "f7f5",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "tvoe6n75",
+      "frame": 80,
+      "slice": "hidden_escaped",
+      "replay_sha256": "3bdaf5ffd566646f8d672c88f23d2ce0fab9afe122e4a9e4e17a37c2e77ba404",
+      "counts": {
+        "candidate_labels": 2700,
+        "fatal_candidate_labels": 272,
+        "decisions": 81,
+        "white_decisions": 41,
+        "black_decisions": 40
+      },
+      "special_candidates": {
+        "castling_candidates": 2,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "d2c1",
+          "fatal": true
+        },
+        {
+          "move": "d2e1",
+          "fatal": true
+        },
+        {
+          "move": "d2c3",
+          "fatal": false
+        },
+        {
+          "move": "d2e3",
+          "fatal": false
+        },
+        {
+          "move": "d2b4",
+          "fatal": true
+        },
+        {
+          "move": "d2f4",
+          "fatal": true
+        },
+        {
+          "move": "d2a5",
+          "fatal": true
+        },
+        {
+          "move": "d2g5",
+          "fatal": true
+        },
+        {
+          "move": "d2h6",
+          "fatal": true
+        },
+        {
+          "move": "f3e2",
+          "fatal": false
+        },
+        {
+          "move": "f3e3",
+          "fatal": true
+        },
+        {
+          "move": "f3g3",
+          "fatal": true
+        },
+        {
+          "move": "f3e4",
+          "fatal": true
+        },
+        {
+          "move": "f3f4",
+          "fatal": false
+        },
+        {
+          "move": "f3g4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "d4d5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "318fb6hd",
+      "frame": 14,
+      "slice": "visible_escaped",
+      "replay_sha256": "a933ab5d77a736f346d846b34566f1b18dde4479ae7da4736948b507c72c27c9",
+      "counts": {
+        "candidate_labels": 459,
+        "fatal_candidate_labels": 31,
+        "decisions": 15,
+        "white_decisions": 8,
+        "black_decisions": 7
+      },
+      "special_candidates": {},
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "c1d2",
+          "fatal": true
+        },
+        {
+          "move": "c1e3",
+          "fatal": true
+        },
+        {
+          "move": "c1f4",
+          "fatal": true
+        },
+        {
+          "move": "c1g5",
+          "fatal": true
+        },
+        {
+          "move": "c1h6",
+          "fatal": true
+        },
+        {
+          "move": "e1d1",
+          "fatal": false
+        },
+        {
+          "move": "e1d2",
+          "fatal": true
+        },
+        {
+          "move": "e1e2",
+          "fatal": true
+        },
+        {
+          "move": "f1e2",
+          "fatal": true
+        },
+        {
+          "move": "f1d3",
+          "fatal": true
+        },
+        {
+          "move": "f1c4",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "c3b1",
+          "fatal": true
+        },
+        {
+          "move": "c3d1",
+          "fatal": false
+        },
+        {
+          "move": "c3e2",
+          "fatal": true
+        },
+        {
+          "move": "c3a4",
+          "fatal": true
+        },
+        {
+          "move": "c3b5",
+          "fatal": true
+        },
+        {
+          "move": "c3d5",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "b2b3",
+          "fatal": true
+        },
+        {
+          "move": "b2b4",
+          "fatal": true
+        },
+        {
+          "move": "f2f3",
+          "fatal": true
+        },
+        {
+          "move": "f2f4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "e5e6",
+          "fatal": true
+        },
+        {
+          "move": "e5f6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "mjhrnjhv",
+      "frame": 20,
+      "slice": "visible_escaped",
+      "replay_sha256": "e4d284010844c9a6747cbcb01e268cbe7869aa9bedce43f0f14af2ce594bcbac",
+      "counts": {
+        "candidate_labels": 637,
+        "fatal_candidate_labels": 44,
+        "decisions": 21,
+        "white_decisions": 11,
+        "black_decisions": 10
+      },
+      "special_candidates": {
+        "castling_candidates": 1
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "a1a2",
+          "fatal": true
+        },
+        {
+          "move": "c1b2",
+          "fatal": true
+        },
+        {
+          "move": "c1d2",
+          "fatal": true
+        },
+        {
+          "move": "c1e3",
+          "fatal": true
+        },
+        {
+          "move": "c1f4",
+          "fatal": true
+        },
+        {
+          "move": "c1g5",
+          "fatal": true
+        },
+        {
+          "move": "c1h6",
+          "fatal": true
+        },
+        {
+          "move": "d1e1",
+          "fatal": true
+        },
+        {
+          "move": "d1d2",
+          "fatal": true
+        },
+        {
+          "move": "d1e2",
+          "fatal": true
+        },
+        {
+          "move": "d1d3",
+          "fatal": true
+        },
+        {
+          "move": "d1d4",
+          "fatal": true
+        },
+        {
+          "move": "f1e1",
+          "fatal": true
+        },
+        {
+          "move": "f1f2",
+          "fatal": false
+        },
+        {
+          "move": "g1h1",
+          "fatal": false
+        },
+        {
+          "move": "g1f2",
+          "fatal": false
+        },
+        {
+          "move": "c3b1",
+          "fatal": true
+        },
+        {
+          "move": "c3a2",
+          "fatal": true
+        },
+        {
+          "move": "c3e2",
+          "fatal": true
+        },
+        {
+          "move": "c3a4",
+          "fatal": true
+        },
+        {
+          "move": "c3e4",
+          "fatal": true
+        },
+        {
+          "move": "f3e1",
+          "fatal": true
+        },
+        {
+          "move": "f3d2",
+          "fatal": true
+        },
+        {
+          "move": "f3d4",
+          "fatal": true
+        },
+        {
+          "move": "f3h4",
+          "fatal": true
+        },
+        {
+          "move": "f3g5",
+          "fatal": true
+        },
+        {
+          "move": "b5e2",
+          "fatal": true
+        },
+        {
+          "move": "b5d3",
+          "fatal": true
+        },
+        {
+          "move": "b5a4",
+          "fatal": true
+        },
+        {
+          "move": "b5c4",
+          "fatal": true
+        },
+        {
+          "move": "b5a6",
+          "fatal": true
+        },
+        {
+          "move": "b5c6",
+          "fatal": true
+        },
+        {
+          "move": "b5d7",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "a3a4",
+          "fatal": true
+        },
+        {
+          "move": "b4a5",
+          "fatal": true
+        },
+        {
+          "move": "d5d6",
+          "fatal": true
+        },
+        {
+          "move": "d5e6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "zemvm03e",
+      "frame": 61,
+      "slice": "visible_escaped",
+      "replay_sha256": "b085726cc2b63f17fa69c3b2da3f2c6d6dc773af56bf2c2ed5bd7c474d3ca530",
+      "counts": {
+        "candidate_labels": 2174,
+        "fatal_candidate_labels": 38,
+        "decisions": 62,
+        "white_decisions": 31,
+        "black_decisions": 31
+      },
+      "special_candidates": {
+        "castling_candidates": 3
+      },
+      "target_labels": [
+        {
+          "move": "h7g5",
+          "fatal": true
+        },
+        {
+          "move": "h7f6",
+          "fatal": true
+        },
+        {
+          "move": "h7f8",
+          "fatal": true
+        },
+        {
+          "move": "g8f7",
+          "fatal": false
+        },
+        {
+          "move": "g8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8h8",
+          "fatal": false
+        },
+        {
+          "move": "a4a3",
+          "fatal": true
+        },
+        {
+          "move": "b4b3",
+          "fatal": true
+        },
+        {
+          "move": "h5h4",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "hfb0em3v",
+      "frame": 93,
+      "slice": "visible_escaped",
+      "replay_sha256": "f9d12d5486c7e0bd3ccab34cfcc552eddfdc7f5cb7e92802316ee587b88b0ba8",
+      "counts": {
+        "candidate_labels": 3310,
+        "fatal_candidate_labels": 134,
+        "decisions": 94,
+        "white_decisions": 47,
+        "black_decisions": 47
+      },
+      "special_candidates": {
+        "castling_candidates": 10
+      },
+      "target_labels": [
+        {
+          "move": "a6b4",
+          "fatal": true
+        },
+        {
+          "move": "a6c5",
+          "fatal": true
+        },
+        {
+          "move": "a6c7",
+          "fatal": true
+        },
+        {
+          "move": "h7h1",
+          "fatal": true
+        },
+        {
+          "move": "h7h2",
+          "fatal": true
+        },
+        {
+          "move": "h7h3",
+          "fatal": true
+        },
+        {
+          "move": "h7h4",
+          "fatal": true
+        },
+        {
+          "move": "h7h5",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7d7",
+          "fatal": false
+        },
+        {
+          "move": "h7e7",
+          "fatal": true
+        },
+        {
+          "move": "h7f7",
+          "fatal": true
+        },
+        {
+          "move": "h7g7",
+          "fatal": true
+        },
+        {
+          "move": "h7h8",
+          "fatal": true
+        },
+        {
+          "move": "b8a7",
+          "fatal": true
+        },
+        {
+          "move": "b8b7",
+          "fatal": true
+        },
+        {
+          "move": "b8c7",
+          "fatal": true
+        },
+        {
+          "move": "b8a8",
+          "fatal": true
+        },
+        {
+          "move": "b8c8",
+          "fatal": true
+        },
+        {
+          "move": "g4g3",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "idybxszb",
+      "frame": 8,
+      "slice": "visible_escaped",
+      "replay_sha256": "1809118d4a4b46d4ba4a3c4ee3c5639bc85c648f4f3d8fd2cf06b068b530394b",
+      "counts": {
+        "candidate_labels": 229,
+        "fatal_candidate_labels": 51,
+        "decisions": 9,
+        "white_decisions": 5,
+        "black_decisions": 4
+      },
+      "special_candidates": {},
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": true
+        },
+        {
+          "move": "a1a2",
+          "fatal": true
+        },
+        {
+          "move": "d1e1",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "f2e1",
+          "fatal": true
+        },
+        {
+          "move": "f2g1",
+          "fatal": false
+        },
+        {
+          "move": "f2e3",
+          "fatal": false
+        },
+        {
+          "move": "f2g3",
+          "fatal": true
+        },
+        {
+          "move": "c3b1",
+          "fatal": true
+        },
+        {
+          "move": "c3a2",
+          "fatal": true
+        },
+        {
+          "move": "c3a4",
+          "fatal": true
+        },
+        {
+          "move": "c3e4",
+          "fatal": true
+        },
+        {
+          "move": "c3b5",
+          "fatal": true
+        },
+        {
+          "move": "c3d5",
+          "fatal": true
+        },
+        {
+          "move": "f3e1",
+          "fatal": true
+        },
+        {
+          "move": "f3g1",
+          "fatal": true
+        },
+        {
+          "move": "f3d4",
+          "fatal": true
+        },
+        {
+          "move": "f3h4",
+          "fatal": false
+        },
+        {
+          "move": "f3e5",
+          "fatal": true
+        },
+        {
+          "move": "f3g5",
+          "fatal": true
+        },
+        {
+          "move": "b2b3",
+          "fatal": true
+        },
+        {
+          "move": "b2b4",
+          "fatal": true
+        },
+        {
+          "move": "d2d3",
+          "fatal": true
+        },
+        {
+          "move": "d2d4",
+          "fatal": true
+        },
+        {
+          "move": "e2e3",
+          "fatal": true
+        },
+        {
+          "move": "e2e4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": false
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "a3a4",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "fg3u1729",
+      "frame": 66,
+      "slice": "visible_escaped",
+      "replay_sha256": "a25d88985679e69411022ae65599b92c7c7d1bd0ce43b46102a3c91cbfd69eb6",
+      "counts": {
+        "candidate_labels": 2152,
+        "fatal_candidate_labels": 62,
+        "decisions": 67,
+        "white_decisions": 34,
+        "black_decisions": 33
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "c1b2",
+          "fatal": true
+        },
+        {
+          "move": "c1d2",
+          "fatal": true
+        },
+        {
+          "move": "c1a3",
+          "fatal": true
+        },
+        {
+          "move": "c1e3",
+          "fatal": true
+        },
+        {
+          "move": "c1f4",
+          "fatal": true
+        },
+        {
+          "move": "c1g5",
+          "fatal": true
+        },
+        {
+          "move": "c1h6",
+          "fatal": true
+        },
+        {
+          "move": "e1d1",
+          "fatal": true
+        },
+        {
+          "move": "e1f1",
+          "fatal": true
+        },
+        {
+          "move": "e1g1",
+          "fatal": true
+        },
+        {
+          "move": "e1e2",
+          "fatal": true
+        },
+        {
+          "move": "e1e3",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": false
+        },
+        {
+          "move": "h1h2",
+          "fatal": false
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "b5b6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "aberhtfa",
+      "frame": 21,
+      "slice": "visible_escaped",
+      "replay_sha256": "7b6518148d38a2692af736e4f936f02387c0945e39104d239f568db3c20ecf48",
+      "counts": {
+        "candidate_labels": 699,
+        "fatal_candidate_labels": 33,
+        "decisions": 22,
+        "white_decisions": 11,
+        "black_decisions": 11
+      },
+      "special_candidates": {
+        "castling_candidates": 7
+      },
+      "target_labels": [
+        {
+          "move": "g6f4",
+          "fatal": true
+        },
+        {
+          "move": "g6h4",
+          "fatal": true
+        },
+        {
+          "move": "g6e5",
+          "fatal": true
+        },
+        {
+          "move": "g6f8",
+          "fatal": true
+        },
+        {
+          "move": "e7a3",
+          "fatal": true
+        },
+        {
+          "move": "e7b4",
+          "fatal": true
+        },
+        {
+          "move": "e7h4",
+          "fatal": true
+        },
+        {
+          "move": "e7c5",
+          "fatal": true
+        },
+        {
+          "move": "e7e5",
+          "fatal": true
+        },
+        {
+          "move": "e7g5",
+          "fatal": true
+        },
+        {
+          "move": "e7d6",
+          "fatal": true
+        },
+        {
+          "move": "e7e6",
+          "fatal": true
+        },
+        {
+          "move": "e7f6",
+          "fatal": true
+        },
+        {
+          "move": "e7f7",
+          "fatal": false
+        },
+        {
+          "move": "e7d8",
+          "fatal": true
+        },
+        {
+          "move": "e7f8",
+          "fatal": true
+        },
+        {
+          "move": "g7e5",
+          "fatal": true
+        },
+        {
+          "move": "g7f6",
+          "fatal": true
+        },
+        {
+          "move": "g7f8",
+          "fatal": true
+        },
+        {
+          "move": "a8b8",
+          "fatal": true
+        },
+        {
+          "move": "e8f7",
+          "fatal": true
+        },
+        {
+          "move": "e8d8",
+          "fatal": false
+        },
+        {
+          "move": "e8f8",
+          "fatal": true
+        },
+        {
+          "move": "h8f8",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "e8g8",
+          "fatal": true
+        },
+        {
+          "move": "h6h5",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "a7a5",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7b5",
+          "fatal": true
+        },
+        {
+          "move": "c7c6",
+          "fatal": true
+        },
+        {
+          "move": "c7c5",
+          "fatal": true
+        },
+        {
+          "move": "d7d6",
+          "fatal": true
+        },
+        {
+          "move": "d7d5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "m5keri4u",
+      "frame": 82,
+      "slice": "visible_escaped",
+      "replay_sha256": "aca122d9e6a5c803f997fae77ed0a15835e93a6c23c02a7b9b208c265b4e6134",
+      "counts": {
+        "candidate_labels": 2919,
+        "fatal_candidate_labels": 109,
+        "decisions": 83,
+        "white_decisions": 42,
+        "black_decisions": 41
+      },
+      "special_candidates": {
+        "castling_candidates": 2,
+        "en_passant_candidates": 1,
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "c1b1",
+          "fatal": true
+        },
+        {
+          "move": "c1d1",
+          "fatal": true
+        },
+        {
+          "move": "c1b2",
+          "fatal": true
+        },
+        {
+          "move": "c1c2",
+          "fatal": false
+        },
+        {
+          "move": "c1d2",
+          "fatal": true
+        },
+        {
+          "move": "h1e1",
+          "fatal": false
+        },
+        {
+          "move": "h1f1",
+          "fatal": true
+        },
+        {
+          "move": "h1g1",
+          "fatal": true
+        },
+        {
+          "move": "h1h2",
+          "fatal": true
+        },
+        {
+          "move": "h1h3",
+          "fatal": true
+        },
+        {
+          "move": "h1h4",
+          "fatal": true
+        },
+        {
+          "move": "b3b4",
+          "fatal": true
+        },
+        {
+          "move": "f4f5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "7c9vcmy5",
+      "frame": 49,
+      "slice": "visible_escaped",
+      "replay_sha256": "639e9481bbfebdcf7bae3f359a9417033b997fcc2df947813b6c318d41f1cfbb",
+      "counts": {
+        "candidate_labels": 1980,
+        "fatal_candidate_labels": 137,
+        "decisions": 50,
+        "white_decisions": 25,
+        "black_decisions": 25
+      },
+      "special_candidates": {
+        "castling_candidates": 11
+      },
+      "target_labels": [
+        {
+          "move": "h6e3",
+          "fatal": true
+        },
+        {
+          "move": "h6f4",
+          "fatal": true
+        },
+        {
+          "move": "h6g5",
+          "fatal": true
+        },
+        {
+          "move": "h6g7",
+          "fatal": true
+        },
+        {
+          "move": "h6f8",
+          "fatal": true
+        },
+        {
+          "move": "c8b7",
+          "fatal": false
+        },
+        {
+          "move": "c8d7",
+          "fatal": false
+        },
+        {
+          "move": "c8b8",
+          "fatal": true
+        },
+        {
+          "move": "d8d4",
+          "fatal": true
+        },
+        {
+          "move": "d8d5",
+          "fatal": true
+        },
+        {
+          "move": "d8d6",
+          "fatal": true
+        },
+        {
+          "move": "d8d7",
+          "fatal": true
+        },
+        {
+          "move": "d8e8",
+          "fatal": true
+        },
+        {
+          "move": "d8f8",
+          "fatal": true
+        },
+        {
+          "move": "d8g8",
+          "fatal": true
+        },
+        {
+          "move": "h8h7",
+          "fatal": true
+        },
+        {
+          "move": "h8e8",
+          "fatal": true
+        },
+        {
+          "move": "h8f8",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "h4h3",
+          "fatal": true
+        },
+        {
+          "move": "h4g3",
+          "fatal": true
+        },
+        {
+          "move": "b6b5",
+          "fatal": true
+        },
+        {
+          "move": "c7c6",
+          "fatal": true
+        },
+        {
+          "move": "c7c5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "8o5ntp10",
+      "frame": 76,
+      "slice": "visible_escaped",
+      "replay_sha256": "cc5a66d1de5aeebcf43cfe0caef4fef668e3337bb290dd70ffd8fc77d3e95549",
+      "counts": {
+        "candidate_labels": 2728,
+        "fatal_candidate_labels": 131,
+        "decisions": 77,
+        "white_decisions": 39,
+        "black_decisions": 38
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "d1b2",
+          "fatal": true
+        },
+        {
+          "move": "d1f2",
+          "fatal": true
+        },
+        {
+          "move": "d1c3",
+          "fatal": true
+        },
+        {
+          "move": "d1e3",
+          "fatal": true
+        },
+        {
+          "move": "g1f1",
+          "fatal": false
+        },
+        {
+          "move": "g1h1",
+          "fatal": true
+        },
+        {
+          "move": "g1f2",
+          "fatal": true
+        },
+        {
+          "move": "a3a1",
+          "fatal": true
+        },
+        {
+          "move": "a3c1",
+          "fatal": true
+        },
+        {
+          "move": "a3a2",
+          "fatal": true
+        },
+        {
+          "move": "a3b2",
+          "fatal": true
+        },
+        {
+          "move": "a3b3",
+          "fatal": true
+        },
+        {
+          "move": "a3c3",
+          "fatal": true
+        },
+        {
+          "move": "a3d3",
+          "fatal": true
+        },
+        {
+          "move": "a3e3",
+          "fatal": true
+        },
+        {
+          "move": "a3f3",
+          "fatal": true
+        },
+        {
+          "move": "a3g3",
+          "fatal": true
+        },
+        {
+          "move": "a3h3",
+          "fatal": true
+        },
+        {
+          "move": "a3a4",
+          "fatal": true
+        },
+        {
+          "move": "a3b4",
+          "fatal": true
+        },
+        {
+          "move": "a3a5",
+          "fatal": true
+        },
+        {
+          "move": "a3c5",
+          "fatal": true
+        },
+        {
+          "move": "a3a6",
+          "fatal": true
+        },
+        {
+          "move": "a3d6",
+          "fatal": true
+        },
+        {
+          "move": "a3a7",
+          "fatal": true
+        },
+        {
+          "move": "a3e7",
+          "fatal": true
+        },
+        {
+          "move": "a3a8",
+          "fatal": true
+        },
+        {
+          "move": "a3f8",
+          "fatal": true
+        },
+        {
+          "move": "c2c3",
+          "fatal": true
+        },
+        {
+          "move": "c2c4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "d4d5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "rey4d6a7",
+      "frame": 74,
+      "slice": "visible_escaped",
+      "replay_sha256": "3e6550d8147effe4337478219c6f092b95657a4d8eb06ec52ad99ee0b4e8d440",
+      "counts": {
+        "candidate_labels": 2166,
+        "fatal_candidate_labels": 121,
+        "decisions": 75,
+        "white_decisions": 38,
+        "black_decisions": 37
+      },
+      "special_candidates": {
+        "castling_candidates": 24,
+        "promotion_candidates": 12
+      },
+      "target_labels": [
+        {
+          "move": "b1a1",
+          "fatal": true
+        },
+        {
+          "move": "b1c1",
+          "fatal": true
+        },
+        {
+          "move": "b1d1",
+          "fatal": true
+        },
+        {
+          "move": "b1e1",
+          "fatal": true
+        },
+        {
+          "move": "b1f1",
+          "fatal": true
+        },
+        {
+          "move": "b1g1",
+          "fatal": false
+        },
+        {
+          "move": "f2e1",
+          "fatal": true
+        },
+        {
+          "move": "f2f1",
+          "fatal": true
+        },
+        {
+          "move": "f2g1",
+          "fatal": false
+        },
+        {
+          "move": "f2e2",
+          "fatal": false
+        },
+        {
+          "move": "f2g2",
+          "fatal": true
+        },
+        {
+          "move": "f2e3",
+          "fatal": true
+        },
+        {
+          "move": "f2f3",
+          "fatal": false
+        },
+        {
+          "move": "f2g3",
+          "fatal": true
+        },
+        {
+          "move": "c8c1",
+          "fatal": true
+        },
+        {
+          "move": "c8c2",
+          "fatal": true
+        },
+        {
+          "move": "c8c3",
+          "fatal": true
+        },
+        {
+          "move": "c8h3",
+          "fatal": true
+        },
+        {
+          "move": "c8c4",
+          "fatal": true
+        },
+        {
+          "move": "c8g4",
+          "fatal": true
+        },
+        {
+          "move": "c8c5",
+          "fatal": true
+        },
+        {
+          "move": "c8f5",
+          "fatal": true
+        },
+        {
+          "move": "c8a6",
+          "fatal": true
+        },
+        {
+          "move": "c8c6",
+          "fatal": true
+        },
+        {
+          "move": "c8e6",
+          "fatal": true
+        },
+        {
+          "move": "c8b7",
+          "fatal": true
+        },
+        {
+          "move": "c8c7",
+          "fatal": true
+        },
+        {
+          "move": "c8d7",
+          "fatal": true
+        },
+        {
+          "move": "c8a8",
+          "fatal": true
+        },
+        {
+          "move": "c8b8",
+          "fatal": true
+        },
+        {
+          "move": "d8d1",
+          "fatal": true
+        },
+        {
+          "move": "d8d2",
+          "fatal": true
+        },
+        {
+          "move": "d8d3",
+          "fatal": true
+        },
+        {
+          "move": "d8d4",
+          "fatal": true
+        },
+        {
+          "move": "d8d5",
+          "fatal": true
+        },
+        {
+          "move": "d8d6",
+          "fatal": true
+        },
+        {
+          "move": "d8d7",
+          "fatal": true
+        },
+        {
+          "move": "d8e8",
+          "fatal": true
+        },
+        {
+          "move": "d8f8",
+          "fatal": true
+        },
+        {
+          "move": "d8g8",
+          "fatal": true
+        },
+        {
+          "move": "d8h8",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "b2b3",
+          "fatal": true
+        },
+        {
+          "move": "b2b4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "28rxebxo",
+      "frame": 35,
+      "slice": "visible_escaped",
+      "replay_sha256": "5b152873a708327db07f7277a6d58235d44b292834310311c58bd50da65db32b",
+      "counts": {
+        "candidate_labels": 1302,
+        "fatal_candidate_labels": 87,
+        "decisions": 36,
+        "white_decisions": 18,
+        "black_decisions": 18
+      },
+      "special_candidates": {
+        "castling_candidates": 20
+      },
+      "target_labels": [
+        {
+          "move": "a5a2",
+          "fatal": true
+        },
+        {
+          "move": "a5a3",
+          "fatal": true
+        },
+        {
+          "move": "a5c3",
+          "fatal": true
+        },
+        {
+          "move": "a5a4",
+          "fatal": true
+        },
+        {
+          "move": "a5b4",
+          "fatal": true
+        },
+        {
+          "move": "a5b5",
+          "fatal": true
+        },
+        {
+          "move": "a5a6",
+          "fatal": true
+        },
+        {
+          "move": "a5b6",
+          "fatal": true
+        },
+        {
+          "move": "a5c7",
+          "fatal": true
+        },
+        {
+          "move": "a5d8",
+          "fatal": true
+        },
+        {
+          "move": "d5c3",
+          "fatal": true
+        },
+        {
+          "move": "d5e3",
+          "fatal": true
+        },
+        {
+          "move": "d5b4",
+          "fatal": true
+        },
+        {
+          "move": "d5f4",
+          "fatal": true
+        },
+        {
+          "move": "d5b6",
+          "fatal": true
+        },
+        {
+          "move": "d5f6",
+          "fatal": true
+        },
+        {
+          "move": "d5c7",
+          "fatal": true
+        },
+        {
+          "move": "d5e7",
+          "fatal": false
+        },
+        {
+          "move": "a8b8",
+          "fatal": true
+        },
+        {
+          "move": "a8c8",
+          "fatal": true
+        },
+        {
+          "move": "a8d8",
+          "fatal": true
+        },
+        {
+          "move": "e8d7",
+          "fatal": false
+        },
+        {
+          "move": "e8e7",
+          "fatal": true
+        },
+        {
+          "move": "e8d8",
+          "fatal": false
+        },
+        {
+          "move": "e8f8",
+          "fatal": false
+        },
+        {
+          "move": "h8f8",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "e8g8",
+          "fatal": false
+        },
+        {
+          "move": "e8c8",
+          "fatal": false
+        },
+        {
+          "move": "c5c4",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7b5",
+          "fatal": true
+        },
+        {
+          "move": "f7f6",
+          "fatal": true
+        },
+        {
+          "move": "f7f5",
+          "fatal": true
+        },
+        {
+          "move": "f7e6",
+          "fatal": false
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7h5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "c4edec69",
+      "frame": 85,
+      "slice": "visible_escaped",
+      "replay_sha256": "53c9993c37ec2613f1f00b23bbdee40d808e83eb2cf97f9dda504a9098f376dc",
+      "counts": {
+        "candidate_labels": 3197,
+        "fatal_candidate_labels": 111,
+        "decisions": 86,
+        "white_decisions": 43,
+        "black_decisions": 43
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "e5a1",
+          "fatal": true
+        },
+        {
+          "move": "e5b2",
+          "fatal": true
+        },
+        {
+          "move": "e5c3",
+          "fatal": true
+        },
+        {
+          "move": "e5d4",
+          "fatal": true
+        },
+        {
+          "move": "e5f4",
+          "fatal": true
+        },
+        {
+          "move": "e5d6",
+          "fatal": true
+        },
+        {
+          "move": "e5f6",
+          "fatal": true
+        },
+        {
+          "move": "e5c7",
+          "fatal": true
+        },
+        {
+          "move": "e5b8",
+          "fatal": true
+        },
+        {
+          "move": "e6a2",
+          "fatal": true
+        },
+        {
+          "move": "e6b3",
+          "fatal": true
+        },
+        {
+          "move": "e6h3",
+          "fatal": true
+        },
+        {
+          "move": "e6c4",
+          "fatal": true
+        },
+        {
+          "move": "e6g4",
+          "fatal": true
+        },
+        {
+          "move": "e6d5",
+          "fatal": true
+        },
+        {
+          "move": "e6f5",
+          "fatal": true
+        },
+        {
+          "move": "e6a6",
+          "fatal": true
+        },
+        {
+          "move": "e6b6",
+          "fatal": true
+        },
+        {
+          "move": "e6c6",
+          "fatal": true
+        },
+        {
+          "move": "e6d6",
+          "fatal": true
+        },
+        {
+          "move": "e6f6",
+          "fatal": true
+        },
+        {
+          "move": "e6g6",
+          "fatal": true
+        },
+        {
+          "move": "e6h6",
+          "fatal": true
+        },
+        {
+          "move": "e6d7",
+          "fatal": true
+        },
+        {
+          "move": "e6e7",
+          "fatal": true
+        },
+        {
+          "move": "e6f7",
+          "fatal": true
+        },
+        {
+          "move": "e6c8",
+          "fatal": true
+        },
+        {
+          "move": "e6e8",
+          "fatal": true
+        },
+        {
+          "move": "e6g8",
+          "fatal": false
+        },
+        {
+          "move": "h8g8",
+          "fatal": false
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7b5",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "cer8n1a0",
+      "frame": 14,
+      "slice": "visible_escaped",
+      "replay_sha256": "225e076b874c163a74490287d7698ac8f9d0d8db8ef95e0ff7cfb3877c14f67b",
+      "counts": {
+        "candidate_labels": 436,
+        "fatal_candidate_labels": 24,
+        "decisions": 15,
+        "white_decisions": 8,
+        "black_decisions": 7
+      },
+      "special_candidates": {
+        "promotion_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "b1a3",
+          "fatal": true
+        },
+        {
+          "move": "b1c3",
+          "fatal": true
+        },
+        {
+          "move": "c1b2",
+          "fatal": true
+        },
+        {
+          "move": "c1a3",
+          "fatal": true
+        },
+        {
+          "move": "d1c2",
+          "fatal": true
+        },
+        {
+          "move": "d1b3",
+          "fatal": true
+        },
+        {
+          "move": "d1a4",
+          "fatal": true
+        },
+        {
+          "move": "e1f2",
+          "fatal": false
+        },
+        {
+          "move": "g1f3",
+          "fatal": true
+        },
+        {
+          "move": "g1h3",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "d2d3",
+          "fatal": true
+        },
+        {
+          "move": "d2d4",
+          "fatal": true
+        },
+        {
+          "move": "e2e3",
+          "fatal": true
+        },
+        {
+          "move": "e2e4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "h2h3",
+          "fatal": true
+        },
+        {
+          "move": "h2h4",
+          "fatal": true
+        },
+        {
+          "move": "a7b8q",
+          "fatal": true
+        },
+        {
+          "move": "a7b8r",
+          "fatal": true
+        },
+        {
+          "move": "a7b8b",
+          "fatal": true
+        },
+        {
+          "move": "a7b8n",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "6oufkb02",
+      "frame": 31,
+      "slice": "visible_escaped",
+      "replay_sha256": "e561fb3fab3ffc186d6ce24deb30172c9f0f9a14e76427d11ba3dfda5429b4f8",
+      "counts": {
+        "candidate_labels": 974,
+        "fatal_candidate_labels": 32,
+        "decisions": 32,
+        "white_decisions": 16,
+        "black_decisions": 16
+      },
+      "special_candidates": {
+        "castling_candidates": 9
+      },
+      "target_labels": [
+        {
+          "move": "f5h3",
+          "fatal": true
+        },
+        {
+          "move": "f5g4",
+          "fatal": true
+        },
+        {
+          "move": "f5e6",
+          "fatal": true
+        },
+        {
+          "move": "f5g6",
+          "fatal": true
+        },
+        {
+          "move": "f5d7",
+          "fatal": true
+        },
+        {
+          "move": "e7a3",
+          "fatal": true
+        },
+        {
+          "move": "e7b4",
+          "fatal": true
+        },
+        {
+          "move": "e7h4",
+          "fatal": true
+        },
+        {
+          "move": "e7c5",
+          "fatal": true
+        },
+        {
+          "move": "e7g5",
+          "fatal": true
+        },
+        {
+          "move": "e7d6",
+          "fatal": true
+        },
+        {
+          "move": "e7f6",
+          "fatal": true
+        },
+        {
+          "move": "e7d8",
+          "fatal": false
+        },
+        {
+          "move": "e7f8",
+          "fatal": true
+        },
+        {
+          "move": "c8c7",
+          "fatal": false
+        },
+        {
+          "move": "c8d7",
+          "fatal": true
+        },
+        {
+          "move": "c8b8",
+          "fatal": true
+        },
+        {
+          "move": "c8d8",
+          "fatal": false
+        },
+        {
+          "move": "h8d8",
+          "fatal": false
+        },
+        {
+          "move": "h8e8",
+          "fatal": true
+        },
+        {
+          "move": "h8f8",
+          "fatal": true
+        },
+        {
+          "move": "h8g8",
+          "fatal": true
+        },
+        {
+          "move": "c6c5",
+          "fatal": true
+        },
+        {
+          "move": "a7a6",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": true
+        },
+        {
+          "move": "b7b5",
+          "fatal": true
+        },
+        {
+          "move": "f7f6",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": true
+        },
+        {
+          "move": "g7g5",
+          "fatal": true
+        },
+        {
+          "move": "h7h6",
+          "fatal": true
+        },
+        {
+          "move": "h7h5",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "zexsl3xa",
+      "frame": 58,
+      "slice": "visible_escaped",
+      "replay_sha256": "513efe07da31871b27da0dfc9c682772080ff986b360a2197960204f29439ca7",
+      "counts": {
+        "candidate_labels": 1943,
+        "fatal_candidate_labels": 82,
+        "decisions": 59,
+        "white_decisions": 30,
+        "black_decisions": 29
+      },
+      "special_candidates": {
+        "castling_candidates": 3
+      },
+      "target_labels": [
+        {
+          "move": "g1f1",
+          "fatal": false
+        },
+        {
+          "move": "g1h1",
+          "fatal": false
+        },
+        {
+          "move": "g1f2",
+          "fatal": false
+        },
+        {
+          "move": "g1h2",
+          "fatal": false
+        },
+        {
+          "move": "c2c1",
+          "fatal": true
+        },
+        {
+          "move": "c2b2",
+          "fatal": true
+        },
+        {
+          "move": "c2d2",
+          "fatal": true
+        },
+        {
+          "move": "c2e2",
+          "fatal": true
+        },
+        {
+          "move": "c2f2",
+          "fatal": false
+        },
+        {
+          "move": "c2c3",
+          "fatal": true
+        },
+        {
+          "move": "c2c4",
+          "fatal": true
+        },
+        {
+          "move": "c2c5",
+          "fatal": true
+        },
+        {
+          "move": "c2c6",
+          "fatal": true
+        },
+        {
+          "move": "c2c7",
+          "fatal": true
+        },
+        {
+          "move": "c2c8",
+          "fatal": true
+        },
+        {
+          "move": "h5d1",
+          "fatal": true
+        },
+        {
+          "move": "h5e2",
+          "fatal": true
+        },
+        {
+          "move": "h5f3",
+          "fatal": true
+        },
+        {
+          "move": "h5g4",
+          "fatal": true
+        },
+        {
+          "move": "h5g6",
+          "fatal": true
+        },
+        {
+          "move": "h5f7",
+          "fatal": true
+        },
+        {
+          "move": "h5e8",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": true
+        },
+        {
+          "move": "a2a4",
+          "fatal": true
+        },
+        {
+          "move": "g2g3",
+          "fatal": true
+        },
+        {
+          "move": "g2g4",
+          "fatal": true
+        },
+        {
+          "move": "b3b4",
+          "fatal": true
+        },
+        {
+          "move": "h3h4",
+          "fatal": true
+        }
+      ]
+    },
+    {
+      "game": "c3bqoanw",
+      "frame": 75,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "0bfcfda28b5abbeeeea882a4523e241c2fae02b58dd5c657e0039a0fe1febd73",
+      "counts": {
+        "candidate_labels": 2417,
+        "fatal_candidate_labels": 59,
+        "decisions": 76,
+        "white_decisions": 38,
+        "black_decisions": 38
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "d7h3",
+          "fatal": false
+        },
+        {
+          "move": "d7g4",
+          "fatal": false
+        },
+        {
+          "move": "d7b5",
+          "fatal": false
+        },
+        {
+          "move": "d7f5",
+          "fatal": false
+        },
+        {
+          "move": "d7c6",
+          "fatal": false
+        },
+        {
+          "move": "d7e6",
+          "fatal": false
+        },
+        {
+          "move": "d7c8",
+          "fatal": false
+        },
+        {
+          "move": "d7e8",
+          "fatal": false
+        },
+        {
+          "move": "f7e6",
+          "fatal": false
+        },
+        {
+          "move": "f7f6",
+          "fatal": true
+        },
+        {
+          "move": "f7e7",
+          "fatal": false
+        },
+        {
+          "move": "f7g7",
+          "fatal": false
+        },
+        {
+          "move": "f7e8",
+          "fatal": false
+        },
+        {
+          "move": "f7f8",
+          "fatal": false
+        },
+        {
+          "move": "f7g8",
+          "fatal": false
+        },
+        {
+          "move": "g6g5",
+          "fatal": false
+        },
+        {
+          "move": "h6h5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "3pgxtbb0",
+      "frame": 71,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "ba91d8454496a0b8166dffa3a645b0d87d491131c2f45a2291c7bbfb9aa75953",
+      "counts": {
+        "candidate_labels": 2639,
+        "fatal_candidate_labels": 55,
+        "decisions": 72,
+        "white_decisions": 36,
+        "black_decisions": 36
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "d3c1",
+          "fatal": false
+        },
+        {
+          "move": "d3e1",
+          "fatal": false
+        },
+        {
+          "move": "d3b2",
+          "fatal": false
+        },
+        {
+          "move": "d3f2",
+          "fatal": false
+        },
+        {
+          "move": "d3b4",
+          "fatal": false
+        },
+        {
+          "move": "d3f4",
+          "fatal": false
+        },
+        {
+          "move": "d3c5",
+          "fatal": false
+        },
+        {
+          "move": "d3e5",
+          "fatal": false
+        },
+        {
+          "move": "f5f2",
+          "fatal": false
+        },
+        {
+          "move": "f5f3",
+          "fatal": false
+        },
+        {
+          "move": "f5h3",
+          "fatal": false
+        },
+        {
+          "move": "f5e4",
+          "fatal": false
+        },
+        {
+          "move": "f5f4",
+          "fatal": false
+        },
+        {
+          "move": "f5g4",
+          "fatal": false
+        },
+        {
+          "move": "f5c5",
+          "fatal": false
+        },
+        {
+          "move": "f5d5",
+          "fatal": false
+        },
+        {
+          "move": "f5e5",
+          "fatal": false
+        },
+        {
+          "move": "f5g5",
+          "fatal": false
+        },
+        {
+          "move": "f5h5",
+          "fatal": false
+        },
+        {
+          "move": "f5e6",
+          "fatal": false
+        },
+        {
+          "move": "f5g6",
+          "fatal": false
+        },
+        {
+          "move": "f5d7",
+          "fatal": false
+        },
+        {
+          "move": "f5h7",
+          "fatal": false
+        },
+        {
+          "move": "f5c8",
+          "fatal": false
+        },
+        {
+          "move": "d6a3",
+          "fatal": false
+        },
+        {
+          "move": "d6g3",
+          "fatal": false
+        },
+        {
+          "move": "d6b4",
+          "fatal": false
+        },
+        {
+          "move": "d6f4",
+          "fatal": false
+        },
+        {
+          "move": "d6c5",
+          "fatal": false
+        },
+        {
+          "move": "d6e5",
+          "fatal": false
+        },
+        {
+          "move": "d6c7",
+          "fatal": false
+        },
+        {
+          "move": "d6b8",
+          "fatal": false
+        },
+        {
+          "move": "e7e1",
+          "fatal": false
+        },
+        {
+          "move": "e7e2",
+          "fatal": false
+        },
+        {
+          "move": "e7e3",
+          "fatal": false
+        },
+        {
+          "move": "e7e4",
+          "fatal": false
+        },
+        {
+          "move": "e7e5",
+          "fatal": false
+        },
+        {
+          "move": "e7e6",
+          "fatal": false
+        },
+        {
+          "move": "e7c7",
+          "fatal": false
+        },
+        {
+          "move": "e7d7",
+          "fatal": false
+        },
+        {
+          "move": "e7f7",
+          "fatal": false
+        },
+        {
+          "move": "e8a8",
+          "fatal": false
+        },
+        {
+          "move": "e8b8",
+          "fatal": false
+        },
+        {
+          "move": "e8c8",
+          "fatal": false
+        },
+        {
+          "move": "e8d8",
+          "fatal": false
+        },
+        {
+          "move": "e8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8f7",
+          "fatal": false
+        },
+        {
+          "move": "g8h7",
+          "fatal": false
+        },
+        {
+          "move": "g8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8h8",
+          "fatal": false
+        },
+        {
+          "move": "b5b4",
+          "fatal": false
+        },
+        {
+          "move": "b7b6",
+          "fatal": false
+        },
+        {
+          "move": "g7g6",
+          "fatal": false
+        },
+        {
+          "move": "g7g5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "qf04h0t2",
+      "frame": 73,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "88242875aabe5ef4e2db98f2fd0421f82cd8d4ff6e4a78d5b05fd986e8721e8f",
+      "counts": {
+        "candidate_labels": 2745,
+        "fatal_candidate_labels": 48,
+        "decisions": 74,
+        "white_decisions": 37,
+        "black_decisions": 37
+      },
+      "special_candidates": {
+        "castling_candidates": 3
+      },
+      "target_labels": [
+        {
+          "move": "b4b1",
+          "fatal": false
+        },
+        {
+          "move": "b4e1",
+          "fatal": false
+        },
+        {
+          "move": "b4b2",
+          "fatal": false
+        },
+        {
+          "move": "b4d2",
+          "fatal": false
+        },
+        {
+          "move": "b4a3",
+          "fatal": false
+        },
+        {
+          "move": "b4b3",
+          "fatal": false
+        },
+        {
+          "move": "b4c3",
+          "fatal": false
+        },
+        {
+          "move": "b4a4",
+          "fatal": false
+        },
+        {
+          "move": "b4c4",
+          "fatal": false
+        },
+        {
+          "move": "b4d4",
+          "fatal": false
+        },
+        {
+          "move": "b4e4",
+          "fatal": false
+        },
+        {
+          "move": "b4f4",
+          "fatal": false
+        },
+        {
+          "move": "b4g4",
+          "fatal": false
+        },
+        {
+          "move": "b4h4",
+          "fatal": false
+        },
+        {
+          "move": "b4b5",
+          "fatal": false
+        },
+        {
+          "move": "b4c5",
+          "fatal": false
+        },
+        {
+          "move": "b4d6",
+          "fatal": false
+        },
+        {
+          "move": "b4e7",
+          "fatal": false
+        },
+        {
+          "move": "b4f8",
+          "fatal": false
+        },
+        {
+          "move": "d5a2",
+          "fatal": false
+        },
+        {
+          "move": "d5b3",
+          "fatal": false
+        },
+        {
+          "move": "d5f3",
+          "fatal": false
+        },
+        {
+          "move": "d5c4",
+          "fatal": false
+        },
+        {
+          "move": "d5e4",
+          "fatal": false
+        },
+        {
+          "move": "d5c6",
+          "fatal": false
+        },
+        {
+          "move": "d5b7",
+          "fatal": false
+        },
+        {
+          "move": "d5a8",
+          "fatal": false
+        },
+        {
+          "move": "f6a1",
+          "fatal": false
+        },
+        {
+          "move": "f6b2",
+          "fatal": false
+        },
+        {
+          "move": "f6c3",
+          "fatal": false
+        },
+        {
+          "move": "f6d4",
+          "fatal": false
+        },
+        {
+          "move": "f6h4",
+          "fatal": false
+        },
+        {
+          "move": "f6e5",
+          "fatal": false
+        },
+        {
+          "move": "f6g5",
+          "fatal": false
+        },
+        {
+          "move": "f6e7",
+          "fatal": false
+        },
+        {
+          "move": "f6d8",
+          "fatal": false
+        },
+        {
+          "move": "g7h6",
+          "fatal": false
+        },
+        {
+          "move": "g7h7",
+          "fatal": false
+        },
+        {
+          "move": "g7f8",
+          "fatal": false
+        },
+        {
+          "move": "g7g8",
+          "fatal": false
+        },
+        {
+          "move": "g7h8",
+          "fatal": false
+        },
+        {
+          "move": "h5h4",
+          "fatal": false
+        },
+        {
+          "move": "e6e5",
+          "fatal": false
+        },
+        {
+          "move": "g6g5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "z6t071ne",
+      "frame": 39,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "9cfd63cb4a6d77848ee9de59d8beb87f864bccf3d19f49d0a659ff3487942097",
+      "counts": {
+        "candidate_labels": 1343,
+        "fatal_candidate_labels": 3,
+        "decisions": 40,
+        "white_decisions": 20,
+        "black_decisions": 20
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "c6b4",
+          "fatal": false
+        },
+        {
+          "move": "c6d4",
+          "fatal": false
+        },
+        {
+          "move": "c6e5",
+          "fatal": false
+        },
+        {
+          "move": "c6a7",
+          "fatal": false
+        },
+        {
+          "move": "c6e7",
+          "fatal": false
+        },
+        {
+          "move": "c6b8",
+          "fatal": false
+        },
+        {
+          "move": "a8a6",
+          "fatal": false
+        },
+        {
+          "move": "a8a7",
+          "fatal": false
+        },
+        {
+          "move": "a8b8",
+          "fatal": false
+        },
+        {
+          "move": "a8c8",
+          "fatal": false
+        },
+        {
+          "move": "d8h4",
+          "fatal": false
+        },
+        {
+          "move": "d8d5",
+          "fatal": false
+        },
+        {
+          "move": "d8g5",
+          "fatal": false
+        },
+        {
+          "move": "d8d6",
+          "fatal": false
+        },
+        {
+          "move": "d8f6",
+          "fatal": false
+        },
+        {
+          "move": "d8d7",
+          "fatal": false
+        },
+        {
+          "move": "d8e7",
+          "fatal": false
+        },
+        {
+          "move": "d8b8",
+          "fatal": false
+        },
+        {
+          "move": "d8c8",
+          "fatal": false
+        },
+        {
+          "move": "e8e2",
+          "fatal": false
+        },
+        {
+          "move": "e8e3",
+          "fatal": false
+        },
+        {
+          "move": "e8e4",
+          "fatal": false
+        },
+        {
+          "move": "e8e5",
+          "fatal": false
+        },
+        {
+          "move": "e8e6",
+          "fatal": false
+        },
+        {
+          "move": "e8e7",
+          "fatal": false
+        },
+        {
+          "move": "e8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8g7",
+          "fatal": false
+        },
+        {
+          "move": "g8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8h8",
+          "fatal": false
+        },
+        {
+          "move": "g6g5",
+          "fatal": false
+        },
+        {
+          "move": "b7b6",
+          "fatal": false
+        },
+        {
+          "move": "b7b5",
+          "fatal": false
+        },
+        {
+          "move": "f7f6",
+          "fatal": false
+        },
+        {
+          "move": "f7f5",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7h5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "59jodrbm",
+      "frame": 57,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "f6613c4d5d3968598413a1ffd50a49901a168191861fba8e68d9611912e4fa01",
+      "counts": {
+        "candidate_labels": 1977,
+        "fatal_candidate_labels": 9,
+        "decisions": 58,
+        "white_decisions": 29,
+        "black_decisions": 29
+      },
+      "special_candidates": {
+        "castling_candidates": 2
+      },
+      "target_labels": [
+        {
+          "move": "d4c2",
+          "fatal": false
+        },
+        {
+          "move": "d4e2",
+          "fatal": false
+        },
+        {
+          "move": "d4b3",
+          "fatal": false
+        },
+        {
+          "move": "d4f3",
+          "fatal": false
+        },
+        {
+          "move": "d4b5",
+          "fatal": false
+        },
+        {
+          "move": "d4c6",
+          "fatal": false
+        },
+        {
+          "move": "d4e6",
+          "fatal": false
+        },
+        {
+          "move": "e7a3",
+          "fatal": false
+        },
+        {
+          "move": "e7b4",
+          "fatal": false
+        },
+        {
+          "move": "e7h4",
+          "fatal": false
+        },
+        {
+          "move": "e7c5",
+          "fatal": false
+        },
+        {
+          "move": "e7g5",
+          "fatal": false
+        },
+        {
+          "move": "e7d6",
+          "fatal": false
+        },
+        {
+          "move": "e7f6",
+          "fatal": false
+        },
+        {
+          "move": "d8d5",
+          "fatal": false
+        },
+        {
+          "move": "d8b6",
+          "fatal": false
+        },
+        {
+          "move": "d8d6",
+          "fatal": false
+        },
+        {
+          "move": "d8c7",
+          "fatal": false
+        },
+        {
+          "move": "d8d7",
+          "fatal": false
+        },
+        {
+          "move": "d8a8",
+          "fatal": false
+        },
+        {
+          "move": "d8b8",
+          "fatal": false
+        },
+        {
+          "move": "d8c8",
+          "fatal": false
+        },
+        {
+          "move": "d8e8",
+          "fatal": false
+        },
+        {
+          "move": "f8f7",
+          "fatal": false
+        },
+        {
+          "move": "f8e8",
+          "fatal": false
+        },
+        {
+          "move": "f8g8",
+          "fatal": false
+        },
+        {
+          "move": "h8h6",
+          "fatal": false
+        },
+        {
+          "move": "h8h7",
+          "fatal": false
+        },
+        {
+          "move": "h8g8",
+          "fatal": false
+        },
+        {
+          "move": "f5f4",
+          "fatal": false
+        },
+        {
+          "move": "f5e4",
+          "fatal": true
+        },
+        {
+          "move": "g7g6",
+          "fatal": false
+        },
+        {
+          "move": "g7g5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "wwi3reu7",
+      "frame": 73,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "8770f93f4452fd1e3bc9953d1819d2480bd0c72c53f36bf8a94042427658b115",
+      "counts": {
+        "candidate_labels": 2784,
+        "fatal_candidate_labels": 99,
+        "decisions": 74,
+        "white_decisions": 37,
+        "black_decisions": 37
+      },
+      "special_candidates": {
+        "castling_candidates": 4
+      },
+      "target_labels": [
+        {
+          "move": "d5c3",
+          "fatal": false
+        },
+        {
+          "move": "d5e3",
+          "fatal": false
+        },
+        {
+          "move": "d5b4",
+          "fatal": false
+        },
+        {
+          "move": "d5f4",
+          "fatal": false
+        },
+        {
+          "move": "d5b6",
+          "fatal": false
+        },
+        {
+          "move": "d5f6",
+          "fatal": false
+        },
+        {
+          "move": "d5c7",
+          "fatal": false
+        },
+        {
+          "move": "d5e7",
+          "fatal": false
+        },
+        {
+          "move": "f7f2",
+          "fatal": false
+        },
+        {
+          "move": "f7f3",
+          "fatal": false
+        },
+        {
+          "move": "f7f4",
+          "fatal": false
+        },
+        {
+          "move": "f7f5",
+          "fatal": false
+        },
+        {
+          "move": "f7e6",
+          "fatal": false
+        },
+        {
+          "move": "f7f6",
+          "fatal": false
+        },
+        {
+          "move": "f7g6",
+          "fatal": false
+        },
+        {
+          "move": "f7c7",
+          "fatal": false
+        },
+        {
+          "move": "f7d7",
+          "fatal": false
+        },
+        {
+          "move": "f7e7",
+          "fatal": false
+        },
+        {
+          "move": "f7g7",
+          "fatal": false
+        },
+        {
+          "move": "f7h7",
+          "fatal": false
+        },
+        {
+          "move": "f7e8",
+          "fatal": false
+        },
+        {
+          "move": "f7f8",
+          "fatal": false
+        },
+        {
+          "move": "f7g8",
+          "fatal": false
+        },
+        {
+          "move": "c8c7",
+          "fatal": false
+        },
+        {
+          "move": "c8d7",
+          "fatal": false
+        },
+        {
+          "move": "c8b8",
+          "fatal": false
+        },
+        {
+          "move": "c8d8",
+          "fatal": false
+        },
+        {
+          "move": "g5g4",
+          "fatal": false
+        },
+        {
+          "move": "c6c5",
+          "fatal": false
+        },
+        {
+          "move": "b7b6",
+          "fatal": false
+        },
+        {
+          "move": "b7b5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "p9gi0hwm",
+      "frame": 107,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "1d7ee40e3ded03e9b78326e838c778c9cfb6763b569fb4d5a57f2420fa7eb831",
+      "counts": {
+        "candidate_labels": 3316,
+        "fatal_candidate_labels": 54,
+        "decisions": 108,
+        "white_decisions": 54,
+        "black_decisions": 54
+      },
+      "special_candidates": {
+        "castling_candidates": 5
+      },
+      "target_labels": [
+        {
+          "move": "d6c4",
+          "fatal": false
+        },
+        {
+          "move": "d6e4",
+          "fatal": false
+        },
+        {
+          "move": "d6b5",
+          "fatal": false
+        },
+        {
+          "move": "d6f5",
+          "fatal": false
+        },
+        {
+          "move": "d6b7",
+          "fatal": false
+        },
+        {
+          "move": "d6f7",
+          "fatal": false
+        },
+        {
+          "move": "d6c8",
+          "fatal": false
+        },
+        {
+          "move": "d6e8",
+          "fatal": false
+        },
+        {
+          "move": "a8h1",
+          "fatal": false
+        },
+        {
+          "move": "a8g2",
+          "fatal": false
+        },
+        {
+          "move": "a8f3",
+          "fatal": false
+        },
+        {
+          "move": "a8e4",
+          "fatal": false
+        },
+        {
+          "move": "a8d5",
+          "fatal": false
+        },
+        {
+          "move": "a8a6",
+          "fatal": false
+        },
+        {
+          "move": "a8c6",
+          "fatal": false
+        },
+        {
+          "move": "a8a7",
+          "fatal": false
+        },
+        {
+          "move": "a8b7",
+          "fatal": false
+        },
+        {
+          "move": "b8b3",
+          "fatal": false
+        },
+        {
+          "move": "b8b4",
+          "fatal": false
+        },
+        {
+          "move": "b8b5",
+          "fatal": false
+        },
+        {
+          "move": "b8b6",
+          "fatal": false
+        },
+        {
+          "move": "b8b7",
+          "fatal": false
+        },
+        {
+          "move": "b8c8",
+          "fatal": false
+        },
+        {
+          "move": "b8d8",
+          "fatal": false
+        },
+        {
+          "move": "b8e8",
+          "fatal": false
+        },
+        {
+          "move": "b8f8",
+          "fatal": false
+        },
+        {
+          "move": "b8g8",
+          "fatal": false
+        },
+        {
+          "move": "h8h7",
+          "fatal": false
+        },
+        {
+          "move": "h8g8",
+          "fatal": false
+        },
+        {
+          "move": "a5a4",
+          "fatal": false
+        },
+        {
+          "move": "e6e5",
+          "fatal": false
+        },
+        {
+          "move": "f6f5",
+          "fatal": false
+        },
+        {
+          "move": "g7g6",
+          "fatal": false
+        },
+        {
+          "move": "g7g5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "324se006",
+      "frame": 67,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "100ef0e88e6c8773820f3e6109f2021ee40069f9e5e892b34718e9af5224d50b",
+      "counts": {
+        "candidate_labels": 1863,
+        "fatal_candidate_labels": 34,
+        "decisions": 68,
+        "white_decisions": 34,
+        "black_decisions": 34
+      },
+      "special_candidates": {
+        "castling_candidates": 7
+      },
+      "target_labels": [
+        {
+          "move": "d5a2",
+          "fatal": false
+        },
+        {
+          "move": "d5b3",
+          "fatal": false
+        },
+        {
+          "move": "d5c4",
+          "fatal": false
+        },
+        {
+          "move": "d5c6",
+          "fatal": false
+        },
+        {
+          "move": "d5e6",
+          "fatal": false
+        },
+        {
+          "move": "d5b7",
+          "fatal": false
+        },
+        {
+          "move": "d5f7",
+          "fatal": false
+        },
+        {
+          "move": "d5a8",
+          "fatal": false
+        },
+        {
+          "move": "d5g8",
+          "fatal": false
+        },
+        {
+          "move": "c7c4",
+          "fatal": false
+        },
+        {
+          "move": "c7c5",
+          "fatal": false
+        },
+        {
+          "move": "c7c6",
+          "fatal": false
+        },
+        {
+          "move": "c7a7",
+          "fatal": false
+        },
+        {
+          "move": "c7b7",
+          "fatal": false
+        },
+        {
+          "move": "c7d7",
+          "fatal": false
+        },
+        {
+          "move": "c7e7",
+          "fatal": false
+        },
+        {
+          "move": "c7f7",
+          "fatal": false
+        },
+        {
+          "move": "c8a8",
+          "fatal": false
+        },
+        {
+          "move": "c8b8",
+          "fatal": false
+        },
+        {
+          "move": "c8d8",
+          "fatal": false
+        },
+        {
+          "move": "c8e8",
+          "fatal": false
+        },
+        {
+          "move": "c8f8",
+          "fatal": false
+        },
+        {
+          "move": "c8g8",
+          "fatal": false
+        },
+        {
+          "move": "h8g8",
+          "fatal": false
+        },
+        {
+          "move": "a6a5",
+          "fatal": false
+        },
+        {
+          "move": "g7g6",
+          "fatal": false
+        },
+        {
+          "move": "g7g5",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7h5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "rxyz5nx0",
+      "frame": 79,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "ec808d3e62f94db3d9b4334d317ec0f736bc1c1712369d054167bddbc8cf7e9c",
+      "counts": {
+        "candidate_labels": 2883,
+        "fatal_candidate_labels": 45,
+        "decisions": 80,
+        "white_decisions": 40,
+        "black_decisions": 40
+      },
+      "special_candidates": {
+        "castling_candidates": 9
+      },
+      "target_labels": [
+        {
+          "move": "c8c1",
+          "fatal": false
+        },
+        {
+          "move": "c8c2",
+          "fatal": false
+        },
+        {
+          "move": "c8c3",
+          "fatal": false
+        },
+        {
+          "move": "c8c4",
+          "fatal": false
+        },
+        {
+          "move": "c8c5",
+          "fatal": false
+        },
+        {
+          "move": "c8c6",
+          "fatal": false
+        },
+        {
+          "move": "c8c7",
+          "fatal": false
+        },
+        {
+          "move": "c8a8",
+          "fatal": false
+        },
+        {
+          "move": "c8b8",
+          "fatal": false
+        },
+        {
+          "move": "c8d8",
+          "fatal": false
+        },
+        {
+          "move": "e8e3",
+          "fatal": false
+        },
+        {
+          "move": "e8a4",
+          "fatal": false
+        },
+        {
+          "move": "e8e4",
+          "fatal": false
+        },
+        {
+          "move": "e8b5",
+          "fatal": false
+        },
+        {
+          "move": "e8e5",
+          "fatal": false
+        },
+        {
+          "move": "e8h5",
+          "fatal": false
+        },
+        {
+          "move": "e8c6",
+          "fatal": false
+        },
+        {
+          "move": "e8e6",
+          "fatal": false
+        },
+        {
+          "move": "e8g6",
+          "fatal": false
+        },
+        {
+          "move": "e8d7",
+          "fatal": false
+        },
+        {
+          "move": "e8e7",
+          "fatal": false
+        },
+        {
+          "move": "e8f7",
+          "fatal": false
+        },
+        {
+          "move": "e8d8",
+          "fatal": false
+        },
+        {
+          "move": "e8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8f7",
+          "fatal": true
+        },
+        {
+          "move": "g8f8",
+          "fatal": false
+        },
+        {
+          "move": "g8h8",
+          "fatal": false
+        },
+        {
+          "move": "g7g6",
+          "fatal": false
+        },
+        {
+          "move": "g7g5",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "hmnf3gip",
+      "frame": 32,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "cee77dc76dfd54715588d158405c368adca0ea1357e0a314e06c7b343de18265",
+      "counts": {
+        "candidate_labels": 1145,
+        "fatal_candidate_labels": 0,
+        "decisions": 33,
+        "white_decisions": 17,
+        "black_decisions": 16
+      },
+      "special_candidates": {
+        "castling_candidates": 5
+      },
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": false
+        },
+        {
+          "move": "a1a2",
+          "fatal": false
+        },
+        {
+          "move": "a1a3",
+          "fatal": false
+        },
+        {
+          "move": "c1b2",
+          "fatal": false
+        },
+        {
+          "move": "c1d2",
+          "fatal": false
+        },
+        {
+          "move": "c1a3",
+          "fatal": false
+        },
+        {
+          "move": "c1e3",
+          "fatal": false
+        },
+        {
+          "move": "c1f4",
+          "fatal": false
+        },
+        {
+          "move": "c1g5",
+          "fatal": false
+        },
+        {
+          "move": "c1h6",
+          "fatal": false
+        },
+        {
+          "move": "e1d1",
+          "fatal": false
+        },
+        {
+          "move": "e1e2",
+          "fatal": false
+        },
+        {
+          "move": "e1e3",
+          "fatal": false
+        },
+        {
+          "move": "e1e4",
+          "fatal": false
+        },
+        {
+          "move": "e1e5",
+          "fatal": false
+        },
+        {
+          "move": "e1e6",
+          "fatal": false
+        },
+        {
+          "move": "f1e2",
+          "fatal": false
+        },
+        {
+          "move": "f1d3",
+          "fatal": false
+        },
+        {
+          "move": "f1c4",
+          "fatal": false
+        },
+        {
+          "move": "g1h1",
+          "fatal": false
+        },
+        {
+          "move": "c2b1",
+          "fatal": false
+        },
+        {
+          "move": "c2d1",
+          "fatal": false
+        },
+        {
+          "move": "c2a2",
+          "fatal": false
+        },
+        {
+          "move": "c2b2",
+          "fatal": false
+        },
+        {
+          "move": "c2d2",
+          "fatal": false
+        },
+        {
+          "move": "c2e2",
+          "fatal": false
+        },
+        {
+          "move": "c2b3",
+          "fatal": false
+        },
+        {
+          "move": "c2d3",
+          "fatal": false
+        },
+        {
+          "move": "c2e4",
+          "fatal": false
+        },
+        {
+          "move": "c2f5",
+          "fatal": false
+        },
+        {
+          "move": "g2g3",
+          "fatal": false
+        },
+        {
+          "move": "g2g4",
+          "fatal": false
+        },
+        {
+          "move": "g2f3",
+          "fatal": false
+        },
+        {
+          "move": "h2h3",
+          "fatal": false
+        },
+        {
+          "move": "h2h4",
+          "fatal": false
+        },
+        {
+          "move": "c3c4",
+          "fatal": false
+        },
+        {
+          "move": "a4a5",
+          "fatal": false
+        },
+        {
+          "move": "d4d5",
+          "fatal": false
+        },
+        {
+          "move": "b5b6",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "79gomag8",
+      "frame": 11,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "ef97d854d35b0a4b15e2070dfd4ed97dfba6f01ff0a5e8041168a470d4f87ea3",
+      "counts": {
+        "candidate_labels": 333,
+        "fatal_candidate_labels": 0,
+        "decisions": 12,
+        "white_decisions": 6,
+        "black_decisions": 6
+      },
+      "special_candidates": {},
+      "target_labels": [
+        {
+          "move": "f6e4",
+          "fatal": false
+        },
+        {
+          "move": "f6g4",
+          "fatal": false
+        },
+        {
+          "move": "f6h5",
+          "fatal": false
+        },
+        {
+          "move": "f6g8",
+          "fatal": false
+        },
+        {
+          "move": "d7h3",
+          "fatal": false
+        },
+        {
+          "move": "d7a4",
+          "fatal": false
+        },
+        {
+          "move": "d7g4",
+          "fatal": false
+        },
+        {
+          "move": "d7b5",
+          "fatal": false
+        },
+        {
+          "move": "d7f5",
+          "fatal": false
+        },
+        {
+          "move": "d7c6",
+          "fatal": false
+        },
+        {
+          "move": "d7e6",
+          "fatal": false
+        },
+        {
+          "move": "d7c8",
+          "fatal": false
+        },
+        {
+          "move": "b8a6",
+          "fatal": false
+        },
+        {
+          "move": "b8c6",
+          "fatal": false
+        },
+        {
+          "move": "d8a5",
+          "fatal": false
+        },
+        {
+          "move": "d8b6",
+          "fatal": false
+        },
+        {
+          "move": "d8c7",
+          "fatal": false
+        },
+        {
+          "move": "d8c8",
+          "fatal": false
+        },
+        {
+          "move": "h8g8",
+          "fatal": false
+        },
+        {
+          "move": "a7a6",
+          "fatal": false
+        },
+        {
+          "move": "a7a5",
+          "fatal": false
+        },
+        {
+          "move": "b7b6",
+          "fatal": false
+        },
+        {
+          "move": "b7b5",
+          "fatal": false
+        },
+        {
+          "move": "e7e6",
+          "fatal": false
+        },
+        {
+          "move": "g7g6",
+          "fatal": false
+        },
+        {
+          "move": "g7g5",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7h5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "on1kcbi0",
+      "frame": 24,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "902eaa48cfd19c426a79c7b0fb92e43894d0fd4deba5db5c2a105752c589a40c",
+      "counts": {
+        "candidate_labels": 834,
+        "fatal_candidate_labels": 6,
+        "decisions": 25,
+        "white_decisions": 13,
+        "black_decisions": 12
+      },
+      "special_candidates": {
+        "castling_candidates": 6
+      },
+      "target_labels": [
+        {
+          "move": "c1a1",
+          "fatal": false
+        },
+        {
+          "move": "c1b1",
+          "fatal": false
+        },
+        {
+          "move": "c1d1",
+          "fatal": false
+        },
+        {
+          "move": "e1d1",
+          "fatal": false
+        },
+        {
+          "move": "e1f1",
+          "fatal": false
+        },
+        {
+          "move": "e1d2",
+          "fatal": false
+        },
+        {
+          "move": "e1e2",
+          "fatal": false
+        },
+        {
+          "move": "h1f1",
+          "fatal": false
+        },
+        {
+          "move": "h1g1",
+          "fatal": false
+        },
+        {
+          "move": "g2f1",
+          "fatal": false
+        },
+        {
+          "move": "g2h3",
+          "fatal": false
+        },
+        {
+          "move": "f3g1",
+          "fatal": false
+        },
+        {
+          "move": "f3d2",
+          "fatal": false
+        },
+        {
+          "move": "f3d4",
+          "fatal": false
+        },
+        {
+          "move": "f3h4",
+          "fatal": false
+        },
+        {
+          "move": "f3e5",
+          "fatal": false
+        },
+        {
+          "move": "f3g5",
+          "fatal": false
+        },
+        {
+          "move": "f4e2",
+          "fatal": false
+        },
+        {
+          "move": "f4d3",
+          "fatal": false
+        },
+        {
+          "move": "f4h3",
+          "fatal": false
+        },
+        {
+          "move": "f4d5",
+          "fatal": false
+        },
+        {
+          "move": "f4h5",
+          "fatal": false
+        },
+        {
+          "move": "f4e6",
+          "fatal": false
+        },
+        {
+          "move": "f4g6",
+          "fatal": false
+        },
+        {
+          "move": "e1g1",
+          "fatal": false
+        },
+        {
+          "move": "a2a3",
+          "fatal": false
+        },
+        {
+          "move": "a2a4",
+          "fatal": false
+        },
+        {
+          "move": "b2b3",
+          "fatal": false
+        },
+        {
+          "move": "b2b4",
+          "fatal": false
+        },
+        {
+          "move": "c2c3",
+          "fatal": false
+        },
+        {
+          "move": "c2c4",
+          "fatal": false
+        },
+        {
+          "move": "h2h3",
+          "fatal": false
+        },
+        {
+          "move": "h2h4",
+          "fatal": false
+        },
+        {
+          "move": "g3g4",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "gamfp0jq",
+      "frame": 101,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "aed7cd27afbec7bccd22efbfc85c20e2231603158712021b46113d3888096d7e",
+      "counts": {
+        "candidate_labels": 3519,
+        "fatal_candidate_labels": 37,
+        "decisions": 102,
+        "white_decisions": 51,
+        "black_decisions": 51
+      },
+      "special_candidates": {
+        "castling_candidates": 13
+      },
+      "target_labels": [
+        {
+          "move": "f4e2",
+          "fatal": false
+        },
+        {
+          "move": "f4g2",
+          "fatal": false
+        },
+        {
+          "move": "f4d3",
+          "fatal": false
+        },
+        {
+          "move": "f4h3",
+          "fatal": false
+        },
+        {
+          "move": "f4d5",
+          "fatal": false
+        },
+        {
+          "move": "f4h5",
+          "fatal": false
+        },
+        {
+          "move": "f4e6",
+          "fatal": false
+        },
+        {
+          "move": "f4g6",
+          "fatal": false
+        },
+        {
+          "move": "f8f5",
+          "fatal": false
+        },
+        {
+          "move": "f8f6",
+          "fatal": false
+        },
+        {
+          "move": "f8f7",
+          "fatal": false
+        },
+        {
+          "move": "f8a8",
+          "fatal": false
+        },
+        {
+          "move": "f8b8",
+          "fatal": false
+        },
+        {
+          "move": "f8c8",
+          "fatal": false
+        },
+        {
+          "move": "f8d8",
+          "fatal": false
+        },
+        {
+          "move": "f8e8",
+          "fatal": false
+        },
+        {
+          "move": "g8f7",
+          "fatal": false
+        },
+        {
+          "move": "g8g7",
+          "fatal": true
+        },
+        {
+          "move": "g8h8",
+          "fatal": true
+        },
+        {
+          "move": "b7b6",
+          "fatal": false
+        },
+        {
+          "move": "b7b5",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7h5",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "mr42ihev",
+      "frame": 8,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "24fb5e093b3afd64ecd78193532972faf2670ad8d1c56bc7fbebdc8234df1b9b",
+      "counts": {
+        "candidate_labels": 240,
+        "fatal_candidate_labels": 30,
+        "decisions": 9,
+        "white_decisions": 5,
+        "black_decisions": 4
+      },
+      "special_candidates": {},
+      "target_labels": [
+        {
+          "move": "a1b1",
+          "fatal": false
+        },
+        {
+          "move": "c1d2",
+          "fatal": false
+        },
+        {
+          "move": "c1e3",
+          "fatal": false
+        },
+        {
+          "move": "c1f4",
+          "fatal": false
+        },
+        {
+          "move": "c1g5",
+          "fatal": false
+        },
+        {
+          "move": "c1h6",
+          "fatal": false
+        },
+        {
+          "move": "d1c2",
+          "fatal": false
+        },
+        {
+          "move": "d1d2",
+          "fatal": false
+        },
+        {
+          "move": "d1b3",
+          "fatal": false
+        },
+        {
+          "move": "d1d3",
+          "fatal": false
+        },
+        {
+          "move": "d1a4",
+          "fatal": false
+        },
+        {
+          "move": "e1d2",
+          "fatal": false
+        },
+        {
+          "move": "g1f3",
+          "fatal": false
+        },
+        {
+          "move": "g1h3",
+          "fatal": false
+        },
+        {
+          "move": "c3b1",
+          "fatal": true
+        },
+        {
+          "move": "c3a4",
+          "fatal": true
+        },
+        {
+          "move": "c3e4",
+          "fatal": true
+        },
+        {
+          "move": "c3b5",
+          "fatal": true
+        },
+        {
+          "move": "c3d5",
+          "fatal": true
+        },
+        {
+          "move": "a2a3",
+          "fatal": false
+        },
+        {
+          "move": "a2a4",
+          "fatal": false
+        },
+        {
+          "move": "b2b3",
+          "fatal": false
+        },
+        {
+          "move": "b2b4",
+          "fatal": false
+        },
+        {
+          "move": "e2e3",
+          "fatal": false
+        },
+        {
+          "move": "e2e4",
+          "fatal": false
+        },
+        {
+          "move": "f2f3",
+          "fatal": false
+        },
+        {
+          "move": "f2f4",
+          "fatal": false
+        },
+        {
+          "move": "g2g3",
+          "fatal": false
+        },
+        {
+          "move": "g2g4",
+          "fatal": false
+        },
+        {
+          "move": "h2h3",
+          "fatal": false
+        },
+        {
+          "move": "h2h4",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "7d35omev",
+      "frame": 94,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "3036d634242d4d4de4f0512f31e57a9182c236be93ccd811ba132593304ca59b",
+      "counts": {
+        "candidate_labels": 2538,
+        "fatal_candidate_labels": 33,
+        "decisions": 95,
+        "white_decisions": 48,
+        "black_decisions": 47
+      },
+      "special_candidates": {
+        "castling_candidates": 8
+      },
+      "target_labels": [
+        {
+          "move": "e2e1",
+          "fatal": false
+        },
+        {
+          "move": "e2a2",
+          "fatal": false
+        },
+        {
+          "move": "e2b2",
+          "fatal": false
+        },
+        {
+          "move": "e2c2",
+          "fatal": false
+        },
+        {
+          "move": "e2d2",
+          "fatal": false
+        },
+        {
+          "move": "e2f2",
+          "fatal": false
+        },
+        {
+          "move": "e2g2",
+          "fatal": false
+        },
+        {
+          "move": "e2e3",
+          "fatal": false
+        },
+        {
+          "move": "e2e4",
+          "fatal": false
+        },
+        {
+          "move": "h2g1",
+          "fatal": false
+        },
+        {
+          "move": "h2h1",
+          "fatal": false
+        },
+        {
+          "move": "h2g2",
+          "fatal": false
+        },
+        {
+          "move": "h2h3",
+          "fatal": false
+        },
+        {
+          "move": "g3g4",
+          "fatal": false
+        },
+        {
+          "move": "f4f5",
+          "fatal": false
+        },
+        {
+          "move": "e5e6",
+          "fatal": false
+        },
+        {
+          "move": "d6d7",
+          "fatal": false
+        }
+      ]
+    },
+    {
+      "game": "i5fa63iv",
+      "frame": 59,
+      "slice": "ordinary_no_current_king_attack",
+      "replay_sha256": "8f7e2a22c763db6cfe27223eedb747fd824194d7eb3b60b5c1de3b49f7d477fb",
+      "counts": {
+        "candidate_labels": 1933,
+        "fatal_candidate_labels": 70,
+        "decisions": 60,
+        "white_decisions": 30,
+        "black_decisions": 30
+      },
+      "special_candidates": {
+        "castling_candidates": 11
+      },
+      "target_labels": [
+        {
+          "move": "e6e1",
+          "fatal": false
+        },
+        {
+          "move": "e6e2",
+          "fatal": false
+        },
+        {
+          "move": "e6e3",
+          "fatal": false
+        },
+        {
+          "move": "e6e4",
+          "fatal": false
+        },
+        {
+          "move": "e6e5",
+          "fatal": false
+        },
+        {
+          "move": "e6c6",
+          "fatal": false
+        },
+        {
+          "move": "e6d6",
+          "fatal": false
+        },
+        {
+          "move": "e6e7",
+          "fatal": false
+        },
+        {
+          "move": "e6e8",
+          "fatal": false
+        },
+        {
+          "move": "b7a6",
+          "fatal": false
+        },
+        {
+          "move": "b7c6",
+          "fatal": false
+        },
+        {
+          "move": "b7a8",
+          "fatal": false
+        },
+        {
+          "move": "b7c8",
+          "fatal": false
+        },
+        {
+          "move": "d7c6",
+          "fatal": false
+        },
+        {
+          "move": "d7d6",
+          "fatal": false
+        },
+        {
+          "move": "d7c7",
+          "fatal": false
+        },
+        {
+          "move": "d7e7",
+          "fatal": false
+        },
+        {
+          "move": "d7c8",
+          "fatal": false
+        },
+        {
+          "move": "d7d8",
+          "fatal": false
+        },
+        {
+          "move": "d7e8",
+          "fatal": false
+        },
+        {
+          "move": "f7e7",
+          "fatal": false
+        },
+        {
+          "move": "f7g7",
+          "fatal": false
+        },
+        {
+          "move": "f7f8",
+          "fatal": false
+        },
+        {
+          "move": "d5d4",
+          "fatal": false
+        },
+        {
+          "move": "b6b5",
+          "fatal": false
+        },
+        {
+          "move": "f6f5",
+          "fatal": false
+        },
+        {
+          "move": "h7h6",
+          "fatal": false
+        },
+        {
+          "move": "h7h5",
+          "fatal": false
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Replay-prefix conformance does not prove all legal histories or training convergence.",
+    "Case wall time includes independent Python referee work and is not simulator throughput.",
+    "Terminal-history replay frames beyond the selected decision are not tested."
+  ]
+}
