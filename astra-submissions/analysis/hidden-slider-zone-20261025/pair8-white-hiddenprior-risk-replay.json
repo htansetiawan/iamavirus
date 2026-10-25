@@ -1,0 +1,336 @@
+{
+  "classification": "same-history diagnostic replay; not a strength test",
+  "game": "e32c5495-7a12-48c3-8b47-a1b5adf163b2",
+  "target_frame": 54,
+  "side": "white",
+  "recorded_move": "c7a8",
+  "true_observation": "????-K-?P?P?---P-?-????--?-??PP-?p?-?--?-???-?????N?????r???-???",
+  "baseline": {
+    "binary": "/home/henrytan/git/iamavirus/data/arena_local/builds/iamavirus-v35-mist-c-v14/mist",
+    "binary_sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+    "returncode": 0,
+    "chosen": "c7a8",
+    "risk_by_move": {
+      "f1e1": {
+        "king_risk": 0.002,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1g1": {
+        "king_risk": 0.7768,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.24,
+        "chosen": false
+      },
+      "f1e2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1f2": {
+        "king_risk": 0.7768,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.24,
+        "chosen": false
+      },
+      "f1g2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "a2a3": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.95,
+        "chosen": false
+      },
+      "a2a4": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.45,
+        "chosen": false
+      },
+      "c2c3": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.38,
+        "chosen": false
+      },
+      "c2c4": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.45,
+        "chosen": false
+      },
+      "h2h3": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.73,
+        "chosen": false
+      },
+      "h2h4": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f4f5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "g4g5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.82,
+        "chosen": false
+      },
+      "c7b5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.59,
+        "chosen": false
+      },
+      "c7d5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.31,
+        "chosen": false
+      },
+      "c7a6": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.57,
+        "chosen": false
+      },
+      "c7e6": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 3.0,
+        "chosen": false
+      },
+      "c7a8": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": -2.28,
+        "chosen": true
+      },
+      "c7e8": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 3.0,
+        "chosen": false
+      }
+    },
+    "truth_at_target": "mist: truth v=54 |P|=392 share=0.00001 rank=158",
+    "guard_messages": [
+      "mist: king guard left out 2 of 19 moves (safest 0.001, sharper 0.000)"
+    ],
+    "decision_summary": "mist: n=28 |P|=392 samples=22 moves=17 infosets=2813 nodes=122440 iters=2000 p=1.00 v=-0.942 lead=-9 clock=65.2 sf=5896/4.3s mr=-2.28/-2.28 hist=15/2099 move=c7a8",
+    "stderr_tail": [
+      "mist: risk a2a3 0.0000 qrisk 0.000/0.000 mrisk 0.95",
+      "mist: risk a2a4 0.0000 qrisk 0.000/0.000 mrisk 1.45",
+      "mist: risk c2c3 0.0000 qrisk 0.000/0.000 mrisk 1.38",
+      "mist: risk c2c4 0.0000 qrisk 0.000/0.000 mrisk 1.45",
+      "mist: risk h2h3 0.0000 qrisk 0.000/0.000 mrisk 0.73",
+      "mist: risk h2h4 0.0000 qrisk 0.000/0.000 mrisk 0.79",
+      "mist: risk f4f5 0.0000 qrisk 0.000/0.000 mrisk 0.79",
+      "mist: risk g4g5 0.0000 qrisk 0.000/0.000 mrisk 0.82",
+      "mist: risk c7b5 0.0000 qrisk 0.000/0.000 mrisk 0.59",
+      "mist: risk c7d5 0.0000 qrisk 0.000/0.000 mrisk 0.31",
+      "mist: risk c7a6 0.0000 qrisk 0.000/0.000 mrisk 0.57",
+      "mist: risk c7e6 0.0000 qrisk 0.000/0.000 mrisk 3.00",
+      "mist: risk c7a8 0.0000 qrisk 0.000/0.000 mrisk -2.28 (chosen)",
+      "mist: risk c7e8 0.0000 qrisk 0.000/0.000 mrisk 3.00",
+      "mist: queen risk chosen 0.000/0.000 least 0.000/0.000",
+      "mist: n=28 |P|=392 samples=22 moves=17 infosets=2813 nodes=122440 iters=2000 p=1.00 v=-0.942 lead=-9 clock=65.2 sf=5896/4.3s mr=-2.28/-2.28 hist=15/2099 move=c7a8"
+    ]
+  },
+  "candidate": {
+    "binary": "/tmp/iamavirus-v35-hidden-slider-zone-exclude91-cheap-v2/mist",
+    "binary_sha256": "43125879c397f875d1f69838eaa35bacf82a2b10381349ef007beb68bdedd7f9",
+    "returncode": 0,
+    "chosen": "c7a8",
+    "risk_by_move": {
+      "f1e1": {
+        "king_risk": 0.0019,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1g1": {
+        "king_risk": 0.8052,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.21,
+        "chosen": false
+      },
+      "f1e2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f1f2": {
+        "king_risk": 0.8052,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.21,
+        "chosen": false
+      },
+      "f1g2": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "a2a3": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.96,
+        "chosen": false
+      },
+      "a2a4": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.45,
+        "chosen": false
+      },
+      "c2c3": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.37,
+        "chosen": false
+      },
+      "c2c4": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 1.45,
+        "chosen": false
+      },
+      "h2h3": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.74,
+        "chosen": false
+      },
+      "h2h4": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "f4f5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.79,
+        "chosen": false
+      },
+      "g4g5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.82,
+        "chosen": false
+      },
+      "c7b5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.58,
+        "chosen": false
+      },
+      "c7d5": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.3,
+        "chosen": false
+      },
+      "c7a6": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 0.56,
+        "chosen": false
+      },
+      "c7e6": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 3.0,
+        "chosen": false
+      },
+      "c7a8": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": -2.27,
+        "chosen": true
+      },
+      "c7e8": {
+        "king_risk": 0.0,
+        "queen_risk": 0.0,
+        "queen_risk_sharp": 0.0,
+        "material_risk": 3.0,
+        "chosen": false
+      }
+    },
+    "truth_at_target": "mist: truth v=54 |P|=392 share=0.00001 rank=154",
+    "guard_messages": [
+      "mist: king guard left out 2 of 19 moves (safest 0.001, sharper 0.000)"
+    ],
+    "decision_summary": "mist: n=28 |P|=392 samples=19 moves=17 infosets=2734 nodes=117559 iters=1920 p=1.00 v=-0.945 lead=-9 clock=65.2 sf=5668/4.3s mr=-2.27/-2.27 hist=15/2099 move=c7a8",
+    "stderr_tail": [
+      "mist: risk a2a3 0.0000 qrisk 0.000/0.000 mrisk 0.96",
+      "mist: risk a2a4 0.0000 qrisk 0.000/0.000 mrisk 1.45",
+      "mist: risk c2c3 0.0000 qrisk 0.000/0.000 mrisk 1.37",
+      "mist: risk c2c4 0.0000 qrisk 0.000/0.000 mrisk 1.45",
+      "mist: risk h2h3 0.0000 qrisk 0.000/0.000 mrisk 0.74",
+      "mist: risk h2h4 0.0000 qrisk 0.000/0.000 mrisk 0.79",
+      "mist: risk f4f5 0.0000 qrisk 0.000/0.000 mrisk 0.79",
+      "mist: risk g4g5 0.0000 qrisk 0.000/0.000 mrisk 0.82",
+      "mist: risk c7b5 0.0000 qrisk 0.000/0.000 mrisk 0.58",
+      "mist: risk c7d5 0.0000 qrisk 0.000/0.000 mrisk 0.30",
+      "mist: risk c7a6 0.0000 qrisk 0.000/0.000 mrisk 0.56",
+      "mist: risk c7e6 0.0000 qrisk 0.000/0.000 mrisk 3.00",
+      "mist: risk c7a8 0.0000 qrisk 0.000/0.000 mrisk -2.27 (chosen)",
+      "mist: risk c7e8 0.0000 qrisk 0.000/0.000 mrisk 3.00",
+      "mist: queen risk chosen 0.000/0.000 least 0.000/0.000",
+      "mist: n=28 |P|=392 samples=19 moves=17 infosets=2734 nodes=117559 iters=1920 p=1.00 v=-0.945 lead=-9 clock=65.2 sf=5668/4.3s mr=-2.27/-2.27 hist=15/2099 move=c7a8"
+    ]
+  }
+}
