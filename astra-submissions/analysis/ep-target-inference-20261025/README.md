@@ -64,6 +64,19 @@ GCC. Patched binary SHA-256:
 The input v35 ZIP SHA-256 is
 `24791ca64a429f5ae931466ce3c1af36c6974e1295203e99a00a991976955b4c`.
 
+An archive-based exact-replay check is reproducible with:
+
+```sh
+python3 astra-submissions/analysis/ep-target-inference-20261025/check_replay_ep.py
+```
+
+It extracts v35 into a temporary directory, compiles the original and patched
+`view_moves`, reconstructs castling rights from each replay prefix, and checks
+the six recorded pre-move observations. Baseline availability was 2/6; patched
+availability was 6/6. Per-game results are preserved in
+`replay-case-check.json`. This confirms action availability on those six
+observations; it is not a game-strength test.
+
 ## Multiagent implication and next gate
 
 This is a concrete example of why move generation belongs to the information
