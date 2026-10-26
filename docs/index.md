@@ -2,11 +2,22 @@
 
 *Team IAmAVirus in the [MIT 6.7980 Fog of War Challenge](https://www.mit.edu/~6.7980/fow/) (Topics in Multiagent Learning, Fall 2026). This site records the architecture, the methods and the algorithms we have used, version by version, with the evidence for each. It is written for people who want to know what we built and why, including what did not work.*
 
+## Start here: human review, 25 October 2026
+
+Two short briefs provide the starting point for reviewing the project:
+
+- [What we have](https://github.com/htansetiawan/iamavirus/blob/main/docs/review-current-state.md): the v35 move lifecycle, deployed versus experimental components, dated standings, and the main findings.
+- [Architectural choices](https://github.com/htansetiawan/iamavirus/blob/main/docs/review-options.md): competing approaches, the proposed comparison, and decisions for human review.
+
+**Historical overview below:** the narrative and results that follow describe
+the project through v34 on 13 October. Use the dated review briefs for the later
+v35 assessment; older pages are retained as the implementation history.
+
 [TOC]
 
 ## The game and the arena
 
-Fog of War chess is chess with hidden information: a player sees only the squares its own pieces could move to, there is no check, and capturing the king wins. The course arena pairs bots continuously at 180 s + 2 s per move on a machine with 2 cores and 4 GiB, offline, with a 15-second start-up limit. A bot is a zip; each upload becomes a numbered **arena version**, and only one version is active at a time. Our active version is 34; the leaderboard's top six are Greek Gift, Knight Vision, Strongly Invisible, Decent Chess Bot, duck and Instructors, with Mist Opportunities, an Obscuro-based bot, seventh and us eighth.
+Fog of War chess is chess with hidden information: a player sees only the squares its own pieces could move to, there is no check, and capturing the king wins. The course arena pairs bots continuously at 180 s + 2 s per move on a machine with 2 cores and 4 GiB, offline, with a 15-second start-up limit. A bot is a zip; each upload becomes a numbered **arena version**, and only one version is active at a time. At that historical snapshot, our active version was 34; the leaderboard's top six were Greek Gift, Knight Vision, Strongly Invisible, Decent Chess Bot, duck and Instructors, with Mist Opportunities seventh and us eighth. Mist Opportunities' implementation has not been conclusively identified with the public Misty engine.
 
 ## Four eras in one week
 
