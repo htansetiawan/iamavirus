@@ -66,17 +66,24 @@ def queen_event(fr, col):
 
 def parse_utc(s):
     """UTC instant from a snapshot directory name ('2026-10-25T101243.632817Z0000') or a game's
-    createdAt ('2026-10-21T12:00:03.136818998+00:00'); None if unparseable."""
-    m = re.match(r"(\d{4})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2})?", s or "")
-    if not m:
+    createdAt ('2026-10-21T12:00:03.136818998+00:00'). Preserves microseconds,
+    normalizes offsets, and returns None for invalid or timezone-naive input."""
+    if not isinstance(s, str):
         return None
-    y, mo, d, h, mi, sec = (int(x or 0) for x in m.groups())
-    return datetime.datetime(y, mo, d, h, mi, sec, tzinfo=datetime.timezone.utc)
+    if re.fullmatch(r"\d{4}-\d{2}-\d{2}T\d{6}(?:\.\d+)?Z0000", s):
+        s = s[:-5] + "+00:00"
+    try:
+        parsed = datetime.datetime.fromisoformat(s.replace("Z", "+00:00"))
+        return parsed.astimezone(datetime.timezone.utc) if parsed.tzinfo else None
+    except ValueError:
+        return None
 
 
 def rating_before(series, t):
     """The (time, rating) of the latest snapshot strictly before t, or None when no snapshot
     precedes it. series: sorted [(datetime, rating)]."""
+    if t is None:
+        return None
     i = bisect.bisect_left(series, (t,))
     return series[i - 1] if i > 0 else None
 
@@ -87,28 +94,31 @@ def main():
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args()
     now = datetime.datetime.now(datetime.timezone.utc)
-    cut7 = (now - datetime.timedelta(days=args.days)).isoformat()
-    cut3 = (now - datetime.timedelta(days=3)).isoformat()
+    cut7 = now - datetime.timedelta(days=args.days)
+    cut3 = now - datetime.timedelta(days=3)
     snaps = sorted(glob.glob(os.path.join(args.raw, "snapshots", "*", "leaderboard.json")))
     ts = collections.defaultdict(list); active = {}; latest_t = None; latest_rows = []
     t0 = now - datetime.timedelta(days=args.days + 2)   # snapshots from before the window, for the first games
     for p in snaps:
         t = parse_utc(p.split("/")[-2])
-        if t is None or t < t0:
+        if t is None or t < t0 or t > now:
             continue
         try:
             d = json.load(open(p))
         except Exception:
             continue
         rows = d["leaderboard"]["players"] if isinstance(d["leaderboard"], dict) else d["leaderboard"]
-        latest_t, latest_rows = t, rows
+        if latest_t is None or t > latest_t:
+            latest_t, latest_rows = t, rows
+            active = {r["name"]: r.get("activeVersion") for r in rows}
         for r in rows:
             if r.get("rating") is not None:
                 ts[r["name"]].append((t, r["rating"]))
-            active[r["name"]] = r.get("activeVersion")
     for k in ts:
         ts[k].sort()
-    leaders_now = [r["name"] for r in sorted(latest_rows, key=lambda r: -(r.get("rating") or 0)) if r["name"] != ME][:6]
+    leaders_now = [r["name"] for r in sorted(
+        (r for r in latest_rows if r.get("rating") is not None),
+        key=lambda r: -r["rating"]) if r["name"] != ME][:6]
 
     our_version = active.get(ME)
     listings = []
@@ -117,10 +127,12 @@ def main():
             r = json.load(open(g))
         except Exception:
             continue
-        if r.get("createdAt", "") < cut7:
+        completed_at = parse_utc(r.get("createdAt"))
+        if completed_at is None or not cut7 <= completed_at <= now:
             continue
+        r["_completed_at"] = completed_at
         listings.append(r)
-    listings.sort(key=lambda r: r["createdAt"])
+    listings.sort(key=lambda r: r["_completed_at"])
     out = [f"# Arena insights, {now.strftime('%Y-%m-%d %H:%M')} UTC", "",
            f"Our active version: v{our_version}. Window: {args.days} days ({len(listings)} games of all teams).", "",
            f"Current leaders at the latest snapshot ({latest_t.strftime('%Y-%m-%d %H:%M') + ' UTC' if latest_t else 'none'}): {', '.join(leaders_now)}. "
@@ -154,7 +166,7 @@ def main():
         if r.get("whiteVersion" if usw else "blackVersion") != our_version:
             continue
         them = r["black"] if usw else r["white"]
-        t = parse_utc(r["createdAt"])
+        t = r["_completed_at"]
         rw = rating_before(ts.get(r["white"], []), t); rb = rating_before(ts.get(r["black"], []), t)
         s = 1.0 if r["result"] == "1-0" else 0.0 if r["result"] == "0-1" else 0.5; s = s if usw else 1 - s
         if rw is None or rb is None:
@@ -179,7 +191,7 @@ def main():
     qe = collections.defaultdict(list); km = {"us": collections.Counter(), "them": collections.Counter()}; mv = {"us": collections.Counter(), "them": collections.Counter()}
     haz = collections.defaultdict(lambda: [0, 0]); short = []
     for r in listings:
-        if r["createdAt"] < cut3 or ME not in (r["white"], r["black"]):
+        if r["_completed_at"] < cut3 or ME not in (r["white"], r["black"]):
             continue
         usw = r["white"] == ME; them = r["black"] if usw else r["white"]
         if r.get("whiteVersion" if usw else "blackVersion") != our_version:

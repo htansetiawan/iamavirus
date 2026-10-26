@@ -5,6 +5,22 @@
 # stashing and restoring any uncommitted work of the other agent around it.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
+# The interactive gh account is shared with other projects. Use the stored
+# repository-owner credential for this process only when no explicit token
+# was supplied. Never switch the shared active account (daily timer has no
+# interactive environment and otherwise inherits an unrelated account).
+if [ -z "${GH_TOKEN:-}" ] && command -v gh >/dev/null 2>&1; then
+  push_owner=""
+  case "$(git remote get-url origin)" in
+    https://github.com/*) push_owner="$(git remote get-url origin)"; push_owner="${push_owner#https://github.com/}"; push_owner="${push_owner%%/*}" ;;
+    git@github.com:*) push_owner="$(git remote get-url origin)"; push_owner="${push_owner#git@github.com:}"; push_owner="${push_owner%%/*}" ;;
+  esac
+  if [ -n "$push_owner" ]; then
+    push_token="$(gh auth token --user "$push_owner" 2>/dev/null || true)"
+    if [ -n "$push_token" ]; then export GH_TOKEN="$push_token"; fi
+    unset push_token
+  fi
+fi
 git fetch -q origin
 if git merge-base --is-ancestor origin/main HEAD; then
   git push -q origin main

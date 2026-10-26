@@ -14,11 +14,17 @@ Dense planes are built per minibatch by `features.replay_events`.
 from __future__ import annotations
 
 import argparse
+from contextlib import ExitStack
+import datetime
 import gzip
 import hashlib
 import json
+import os
 import random
+import shutil
 import sys
+import tempfile
+import uuid
 from collections import Counter, defaultdict
 from dataclasses import dataclass
 from pathlib import Path
@@ -59,45 +65,99 @@ def assign_splits(rows: list[dict], fractions=(0.8, 0.1, 0.1), seed: int = 0,
 
 def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 0.1, 0.1),
                   seed: int = 0, limit: int | None = None) -> dict:
+    """Publish a complete immutable generation, preserving the last dataset on failure.
+
+    Resolve an existing manifest symlink before replacing its target. A new
+    generation never truncates shards referenced by a published manifest.
+    Interrupted builds can leave an unreferenced generation, but readers keep
+    the previous manifest and its files until atomic publication succeeds.
+    """
+    if not version or Path(version).name != version or version in (".", ".."):
+        raise ValueError("version must be a single directory name")
+    manifest_path = manifest_path.resolve()
+    out_dir = manifest_path.parent / version
+    out_dir.mkdir(parents=True, exist_ok=True)
+    generation = out_dir / f"generation-{uuid.uuid4().hex}"
+    generation.mkdir()
+    temporary_manifest = None
+    published = False
+    try:
+        manifest = _build_dataset_generation(raw, generation, version, fractions, seed, limit)
+        hashes = {}
+        for split, path in manifest["shards"].items():
+            # Reading through EOF validates gzip trailers, including failures
+            # during compression close or writes to removable storage.
+            with gzip.open(path, "rt") as handle:
+                count = sum(1 for line in handle if line.strip())
+            if count != manifest["counts"][split].get("episodes", 0):
+                raise ValueError(f"{split} shard count differs from manifest")
+            digest = hashlib.sha256()
+            with open(path, "rb") as handle:
+                for chunk in iter(lambda: handle.read(1024 * 1024), b""):
+                    digest.update(chunk)
+                os.fsync(handle.fileno())
+            hashes[split] = digest.hexdigest()
+        manifest["shard_sha256"] = hashes
+        manifest["created_at"] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+        with tempfile.NamedTemporaryFile(mode="w", dir=manifest_path.parent,
+                                         prefix=f".{manifest_path.name}-", delete=False) as handle:
+            temporary_manifest = Path(handle.name)
+            json.dump(manifest, handle, indent=1, sort_keys=True)
+            handle.write("\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary_manifest, manifest_path)
+        published = True
+        return manifest
+    finally:
+        if temporary_manifest is not None:
+            temporary_manifest.unlink(missing_ok=True)
+        if not published:
+            shutil.rmtree(generation)
+
+
+def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions, seed, limit) -> dict:
     store = ingest.RawStore(raw)
     rows = [json.loads(line) for line in store.accepted.read_text().splitlines() if line.strip()]
     if limit:
         rows = rows[:limit]
     assignment = assign_splits(rows, fractions, seed)
-    out_dir = manifest_path.parent / version
-    out_dir.mkdir(parents=True, exist_ok=True)
-    writers = {split: gzip.open(out_dir / f"{split}.jsonl.gz", "wt") for split in SPLITS}
     stats: dict = {split: Counter() for split in SPLITS}
     by_opponent: dict = {split: Counter() for split in SPLITS}
     mismatches = []
     hasher = hashlib.sha256()
-    for row in rows:
-        replay = json.loads((store.games / row["id"] / "replay.json").read_text())
-        states, problems = ingest.validate_replay(replay)
-        if problems:
-            continue
-        split = assignment[row["id"]]
-        source_hash = hashlib.sha256((store.games / row["id"] / "replay.json").read_bytes()).hexdigest()
-        for side in (rules.WHITE, rules.BLACK):
-            episode = histories.build_episode(replay, states, side, ingest.RULES_FINGERPRINT, source_hash)
-            episode.metadata.split = split
-            if episode.metadata.candidate_mismatches:
-                mismatches.append({"game": row["id"], "side": side,
-                                   "cases": episode.metadata.candidate_mismatches})
-            line = json.dumps(episode.to_dict(), separators=(",", ":"))
-            writers[split].write(line + "\n")
-            hasher.update(line.encode())
-            s = stats[split]
-            s["episodes"] += 1
-            s["games"] += 0.5
-            s["decisions"] += episode.num_decisions
-            s["events"] += len(episode.actor.observations)
-            s[f"color_{'white' if side == 0 else 'black'}"] += 1
-            s[f"outcome_{episode.metadata.result}"] += 0.5
-            s[f"termination_{episode.metadata.termination}"] += 0.5
-            by_opponent[split][f"{episode.metadata.opponent_id}@v{episode.metadata.opponent_version}"] += 1
-    for writer in writers.values():
-        writer.close()
+    with ExitStack() as stack:
+        writers = {split: stack.enter_context(gzip.open(out_dir / f"{split}.jsonl.gz", "wt"))
+                   for split in SPLITS}
+        for row_index, row in enumerate(rows, 1):
+            replay_path = store.games / row["id"] / "replay.json"
+            replay_bytes = replay_path.read_bytes()
+            replay = json.loads(replay_bytes)
+            states, problems = ingest.validate_replay(replay)
+            if problems:
+                continue
+            split = assignment[row["id"]]
+            source_hash = hashlib.sha256(replay_bytes).hexdigest()
+            for side in (rules.WHITE, rules.BLACK):
+                episode = histories.build_episode(replay, states, side, ingest.RULES_FINGERPRINT, source_hash)
+                episode.metadata.split = split
+                if episode.metadata.candidate_mismatches:
+                    mismatches.append({"game": row["id"], "side": side,
+                                       "cases": episode.metadata.candidate_mismatches})
+                line = json.dumps(episode.to_dict(), separators=(",", ":"))
+                writers[split].write(line + "\n")
+                hasher.update(line.encode())
+                s = stats[split]
+                s["episodes"] += 1
+                s["games"] += 0.5
+                s["decisions"] += episode.num_decisions
+                s["events"] += len(episode.actor.observations)
+                s[f"color_{'white' if side == 0 else 'black'}"] += 1
+                s[f"outcome_{episode.metadata.result}"] += 0.5
+                s[f"termination_{episode.metadata.termination}"] += 0.5
+                by_opponent[split][f"{episode.metadata.opponent_id}@v{episode.metadata.opponent_version}"] += 1
+            if row_index % 1000 == 0:
+                print(f"dataset: {row_index}/{len(rows)} source games processed", file=sys.stderr, flush=True)
     manifest = {
         "version": version, "raw": str(raw), "feature_version": features.FEATURE_VERSION,
         "action_version": features.ACTION_VERSION, "rules_fingerprint": ingest.RULES_FINGERPRINT,
@@ -106,9 +166,11 @@ def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 
         "counts": {split: dict(stats[split]) for split in SPLITS},
         "opponents": {split: dict(by_opponent[split]) for split in SPLITS},
         "candidate_mismatches": mismatches,
+        "source_games": len(rows),
+        "undated_source_games": sum(not row.get("createdAt") for row in rows),
+        "split_method": "chronological_duplicate_groups" if all(row.get("createdAt") for row in rows)
+                        else "seeded_duplicate_groups_missing_timestamps",
     }
-    manifest_path.parent.mkdir(parents=True, exist_ok=True)
-    manifest_path.write_text(json.dumps(manifest, indent=1, sort_keys=True))
     return manifest
 
 

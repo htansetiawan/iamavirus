@@ -1,0 +1,71 @@
+{
+  "classification": "closed local paired screen; not an Elo estimate",
+  "audited_at": "2026-10-26T15:01:15.121227+00:00",
+  "manifest_sha256": "c26dce3ac7fb636de4a7807517068eb9b4eb012efa05155284199750c36b9bcc",
+  "auditor_sha256": "317f1813fff8a5377ff6041defa200904d8248d960d506514fb864c4f3d67263",
+  "identities": {
+    "candidate_binary_sha256": "e2f674df8fa74a2b64ab1772ab9a5df684577fed50cc47efc37b1ce6e309a90b",
+    "baseline_binary_sha256": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+    "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+  },
+  "games": 40,
+  "frames_verified": 3374,
+  "by_color": {
+    "white": {
+      "losses": 7,
+      "wins": 10,
+      "draws": 3
+    },
+    "black": {
+      "wins": 8,
+      "losses": 12
+    }
+  },
+  "candidate_score": 0.4875,
+  "pair_scores": [
+    0.5,
+    1.0,
+    0.5,
+    0.0,
+    0.75,
+    1.0,
+    0.5,
+    0.0,
+    0.5,
+    0.75,
+    0.0,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.5,
+    0.25
+  ],
+  "pair_bootstrap_95": [
+    0.375,
+    0.6
+  ],
+  "reasons": {
+    "King capturable": 37,
+    "Threefold repetition": 3
+  },
+  "ep_candidate_opportunities": [
+    {
+      "replay": "ep-history-14-candidate-black.json",
+      "ply": 65,
+      "options": [
+        "c4b3"
+      ],
+      "played": "b6e6",
+      "selected_ep": false
+    }
+  ],
+  "ep_candidate_selections": 0,
+  "exposure_limit": "All true legal EP opportunities, not proof that baseline view_moves omitted each one or that the candidate would choose differently.",
+  "elapsed_game_seconds": 17592.362594904844,
+  "median_plies": 81.5,
+  "completed_at": "2026-10-25T21:29:32Z"
+}

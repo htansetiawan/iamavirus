@@ -1,0 +1,74 @@
+{
+  "classification": "full gzip integrity read before rebuild",
+  "manifest_sha256": "86442109f29d3d446646956bb1b8378997f537cb8f6da4becafbe09f9d8fd192",
+  "manifest_counts": {
+    "test": {
+      "color_black": 14929,
+      "color_white": 14929,
+      "decisions": 1023138,
+      "episodes": 29858,
+      "events": 2046348,
+      "games": 14929.0,
+      "outcome_0-1": 6886.0,
+      "outcome_1-0": 7616.0,
+      "outcome_1/2-1/2": 427.0,
+      "termination_crash": 7.0,
+      "termination_illegal": 1.0,
+      "termination_normal": 14893.0,
+      "termination_time": 27.0,
+      "termination_unknown": 1.0
+    },
+    "train": {
+      "color_black": 119752,
+      "color_white": 119752,
+      "decisions": 8167413,
+      "episodes": 239504,
+      "events": 16335470,
+      "games": 119752.0,
+      "outcome_0-1": 54851.0,
+      "outcome_1-0": 61439.0,
+      "outcome_1/2-1/2": 3462.0,
+      "termination_crash": 76.0,
+      "termination_illegal": 8.0,
+      "termination_normal": 119430.0,
+      "termination_time": 235.0,
+      "termination_unknown": 3.0
+    },
+    "validation": {
+      "color_black": 15150,
+      "color_white": 15150,
+      "decisions": 1017353,
+      "episodes": 30300,
+      "events": 2035176,
+      "games": 15150.0,
+      "outcome_0-1": 6897.0,
+      "outcome_1-0": 7838.0,
+      "outcome_1/2-1/2": 415.0,
+      "termination_crash": 203.0,
+      "termination_normal": 14915.0,
+      "termination_time": 31.0,
+      "termination_unknown": 1.0
+    }
+  },
+  "shards": {
+    "test": {
+      "path": "data/manifests/arena-latest/test.jsonl.gz",
+      "sha256": "5b14ad230f64b49d1b9b7cda8d1a057af702d7c7a269be78e635f6c7ae1250a0",
+      "complete_records_before_error": 2107,
+      "error": "EOFError: Compressed file ended before the end-of-stream marker was reached"
+    },
+    "train": {
+      "path": "data/manifests/arena-latest/train.jsonl.gz",
+      "sha256": "13e8dff69822b851b20a1bef32c0d4cc5a5a3533ed07393e122e45e027620ed2",
+      "complete_records_before_error": 14323,
+      "error": "EOFError: Compressed file ended before the end-of-stream marker was reached"
+    },
+    "validation": {
+      "path": "data/manifests/arena-latest/validation.jsonl.gz",
+      "sha256": "1e0e79db40bcb46fb2f182a6b7919c2e966b138a41c51e284f7c2c785644cbb9",
+      "complete_records_before_error": 2106,
+      "error": "EOFError: Compressed file ended before the end-of-stream marker was reached"
+    }
+  },
+  "recorded_at": "2026-10-26T15:07:49.563482+00:00"
+}
