@@ -13,14 +13,14 @@ integrity problem. The active arena engine remains v35.
 |---|---|---|---|
 | 1 | Correct historical rating lookup and label cohorts | Fable's fix published; Astra's UTC-offset/fraction/invalid-date follow-up passes | Recomputed report uses strictly earlier snapshots and discloses missing/stale ratings |
 | 2 | Prevent interrupted exports from corrupting training data | Astra implemented immutable generations and atomic manifest publication | Failure-injection tests preserve the previous manifest and shards; all new gzip files validate |
-| 3 | Restore fresh, usable data | Astra's fresh move export and chronological curation complete; full episode rebuild running with a 90-minute cap | Verified counts/hashes and explicit split provenance, not merely repaired disk links |
-| 4 | Restore unattended publishing | Astra's process-scoped GitHub credential selection passes stubbed tests | Actual push succeeds without switching the shared active account |
+| 3 | Restore fresh, usable data | Complete: 162,927 games rebuilt into 325,854 episodes; separate dated move curation complete | Gzip EOF, counts and hashes verified before publication; split provenance recorded |
+| 4 | Restore unattended publishing | Complete: process-scoped credential selection tested; actual push of e977638 succeeded | Published to both configured repositories without switching the shared active account |
 | 5 | Close existing experimental work | Astra audited the completed EP gate: 18W–3D–19L | No promotion claim; stale core reservation released; no further matches added |
 | 6 | Choose one engine-facing learning experiment | Astra proposed a history-conditioned opponent prior combining class modelling with reusable hidden-threat motifs; Fable acknowledgement pending | One interface, frozen data, baseline, compute cap and rejection rule agreed |
 
 The first five are fixes and completion work. They are not claims of increased
-playing strength. The broad rebuild may still include historical undated games;
-its manifest now identifies that split mode. Use the separately curated dated
+playing strength. The broad rebuild includes 164 historical undated records;
+its manifest identifies the seeded duplicate-group split mode. Use the separately curated dated
 move data for chronological model comparisons.
 
 ## What changed our assessment
@@ -31,6 +31,11 @@ episodes. The dataset builder had overwritten the live shards before publishing
 the new manifest. Restoring the mount could not repair that. A failed rebuild
 now leaves the published generation intact; hashes and record counts are
 verified before replacing the manifest.
+
+The full rebuild completed in about 31 minutes on October 26 at 15:27 UTC:
+**325,854 episodes and 11,206,884 decisions**. Its manifest symlink is preserved,
+the damaged old files are retained as evidence, and the temporary CPU
+reservation is released. No GPU or new match run was needed.
 
 The new move export contains **85,435 games**, through October 26 10:12 UTC.
 Its original game-ID split had **141 identical move sequences crossing

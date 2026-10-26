@@ -1,0 +1,80 @@
+{
+  "manifest_sha256": "de56aa5aedfbc6ae76b97f5c390f868cc53844bf98c2f617f869aceebb84eab6",
+  "manifest_target": "/media/henrytan/seagate1/iamavirus-data/manifests/arena-latest.json",
+  "manifest_symlink_preserved": true,
+  "created_at": "2026-10-26T15:27:46.787234+00:00",
+  "content_sha256": "7ce383ec9cd7bd6b7998f6cf5a5684a853bee1226d9027d204d537c8527032e7",
+  "source_games": 162927,
+  "undated_source_games": 164,
+  "split_method": "seeded_duplicate_groups_missing_timestamps",
+  "counts": {
+    "test": {
+      "color_black": 16228,
+      "color_white": 16228,
+      "decisions": 1123865,
+      "episodes": 32456,
+      "events": 2247812,
+      "games": 16228.0,
+      "outcome_0-1": 7470.0,
+      "outcome_1-0": 8298.0,
+      "outcome_1/2-1/2": 460.0,
+      "termination_crash": 7.0,
+      "termination_illegal": 2.0,
+      "termination_normal": 16187.0,
+      "termination_time": 31.0,
+      "termination_unknown": 1.0
+    },
+    "train": {
+      "color_black": 130220,
+      "color_white": 130220,
+      "decisions": 8958883,
+      "episodes": 260440,
+      "events": 17918446,
+      "games": 130220.0,
+      "outcome_0-1": 59587.0,
+      "outcome_1-0": 66861.0,
+      "outcome_1/2-1/2": 3772.0,
+      "termination_crash": 81.0,
+      "termination_illegal": 9.0,
+      "termination_normal": 129880.0,
+      "termination_time": 247.0,
+      "termination_unknown": 3.0
+    },
+    "validation": {
+      "color_black": 16479,
+      "color_white": 16479,
+      "decisions": 1124136,
+      "episodes": 32958,
+      "events": 2248758,
+      "games": 16479.0,
+      "outcome_0-1": 7554.0,
+      "outcome_1-0": 8440.0,
+      "outcome_1/2-1/2": 485.0,
+      "termination_crash": 206.0,
+      "termination_normal": 16236.0,
+      "termination_time": 36.0,
+      "termination_unknown": 1.0
+    }
+  },
+  "shards": {
+    "test": {
+      "path": "/media/henrytan/seagate1/iamavirus-data/manifests/arena-latest/generation-1ca4c9f2705f4635b67afb704001a848/test.jsonl.gz",
+      "bytes": 57421435,
+      "sha256": "d0bf1cd450c3fdd4daa56086f33473cae503e3c5b21de582f9ae863398bd0955",
+      "first_game": "22ei7259"
+    },
+    "train": {
+      "path": "/media/henrytan/seagate1/iamavirus-data/manifests/arena-latest/generation-1ca4c9f2705f4635b67afb704001a848/train.jsonl.gz",
+      "bytes": 456502987,
+      "sha256": "09c3bdf2d6f63b1a81222427867ade80ac0f3d6d48d3e9b35eb8016e9d48b321",
+      "first_game": "13r3tgga"
+    },
+    "validation": {
+      "path": "/media/henrytan/seagate1/iamavirus-data/manifests/arena-latest/generation-1ca4c9f2705f4635b67afb704001a848/validation.jsonl.gz",
+      "bytes": 57429318,
+      "sha256": "9434de092ffc3438b9cfbf6cd6a4ad5c4a4152c51762cc3ff2d18ee04b1cd671",
+      "first_game": "1csggk6g"
+    }
+  },
+  "verification": "Publisher read every gzip stream through EOF, checked complete-record counts and computed shard hashes before publication; post-run check verified manifest link, shard availability and first record from each."
+}
