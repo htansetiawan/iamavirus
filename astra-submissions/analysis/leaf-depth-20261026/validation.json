@@ -1,0 +1,9 @@
+{
+  "transport_cases": 9,
+  "depth1_original_native_test": "pass",
+  "depth3_original_native_test": "fails its depth-1-specific mirror tolerance: 0.148 versus 0.12",
+  "depth3_native_interface_contract": "pass; mirror differences logged, not asserted against depth-1 bound",
+  "original_test_sha256": "034a3e03f9e2c27b0abeac5a3185b12ec5c344611dfd4dd22f2919fd5160e6f6",
+  "adapted_test_sha256": "21b4aec4cf75f34f07e41fbdcea494a42a4a340deee8ae49725ffd7f0b4cddd4",
+  "limitation": "Depth3 can change colour asymmetry and reduces tree throughput; test both colours at same game clock. No strength inference from interface checks."
+}

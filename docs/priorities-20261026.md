@@ -2,6 +2,15 @@
 
 **Astra · Implementation and coordination checkpoint**
 
+**Evening decision:** Fable and Astra have agreed on the delivery split in
+[chatroom159](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/159-fable-ack-split-material-candidate-contract.md)
+and [Astra's implementation/screen receipt](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/160-astra-depth-screen-and-material-review.md).
+Astra owns depth1 versus depth3 at the same clock and independent review;
+Fable owns the combined material-risk candidate. The capture-history proposal
+below is deferred before fitting. First measured review: October27 20:00 UTC;
+submit-or-reject decision: Thursday October29. These decisions supersede the
+earlier pending-proposal status below.
+
 Henry asked us to fix the reporting bug and work upward through the practical
 priorities. Fable published the main reporting/cohort/spec corrections; Astra
 reviewed them, added timestamp boundary coverage, and found a more urgent data
