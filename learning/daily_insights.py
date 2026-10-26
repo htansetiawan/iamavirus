@@ -3,20 +3,29 @@
 
 Writes data/reports/daily/insights-<date>.md and insights-latest.md with:
   1. opponents' version changes in the last 7 days and our score against each version
-  2. our rating point flow per opponent for the active version (Elo, K = 8)
-  3. first queen event per game against the top six (lost outright / trades / theirs)
-  4. king moves per 100 moves by phase, us vs the top six, last 3 days
+  2. our rating point flow per opponent for the active version (Elo, K = 8), each game
+     scored against the latest leaderboard snapshot before it (an approximation of the
+     pre-game ratings; snapshots are a few hours apart). Until 26 October the lookup
+     compared hyphenated snapshot keys with unhyphenated game keys and always took the
+     latest snapshot, so earlier totals are not historical flows.
+  3. first queen event per game against a fixed cohort, the 13 October top six
+     (lost outright / trades / theirs); the current leaders are listed beside it
+  4. king moves per 100 moves by phase, us vs that cohort in the same games, last 3 days
   5. the four-ply king-capture rate after our move by fog lines and phase (the hazard table)
   6. our losses in 20 plies or fewer, with the moves
 
 usage: python -m learning.daily_insights [--raw data/raw] [--out data/reports/daily] [--days 7]
 """
 from __future__ import annotations
-import argparse, bisect, collections, datetime, glob, json, os, sys
+import argparse, bisect, collections, datetime, glob, json, os, re, statistics, sys
 import chess
 from learning.move_taxonomy import fen
 
+# A fixed cohort: the leaderboard's top six on 13 October, when the report was designed. Kept
+# fixed so sections 3 and 4 compare like with like over time; the current leaders (which may
+# differ, e.g. Crimson Fog and Mist Opportunities) are listed in the report next to it.
 TOP6 = ["Greek Gift", "Knight Vision", "Strongly Invisible", "Decent Chess Bot", "duck", "Instructors"]
+TOP6_LABEL = "the fixed 13 October top six"
 VAL = {chess.KNIGHT: 3, chess.BISHOP: 3, chess.ROOK: 5, chess.QUEEN: 9}
 DIRS = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1)]
 ME = "IAmAVirus"
@@ -55,6 +64,23 @@ def queen_event(fr, col):
     return "no queen event"
 
 
+def parse_utc(s):
+    """UTC instant from a snapshot directory name ('2026-10-25T101243.632817Z0000') or a game's
+    createdAt ('2026-10-21T12:00:03.136818998+00:00'); None if unparseable."""
+    m = re.match(r"(\d{4})-?(\d{2})-?(\d{2})T(\d{2}):?(\d{2}):?(\d{2})?", s or "")
+    if not m:
+        return None
+    y, mo, d, h, mi, sec = (int(x or 0) for x in m.groups())
+    return datetime.datetime(y, mo, d, h, mi, sec, tzinfo=datetime.timezone.utc)
+
+
+def rating_before(series, t):
+    """The (time, rating) of the latest snapshot strictly before t, or None when no snapshot
+    precedes it. series: sorted [(datetime, rating)]."""
+    i = bisect.bisect_left(series, (t,))
+    return series[i - 1] if i > 0 else None
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", default="data/raw"); ap.add_argument("--out", default="data/reports/daily")
@@ -64,27 +90,25 @@ def main():
     cut7 = (now - datetime.timedelta(days=args.days)).isoformat()
     cut3 = (now - datetime.timedelta(days=3)).isoformat()
     snaps = sorted(glob.glob(os.path.join(args.raw, "snapshots", "*", "leaderboard.json")))
-    ts = collections.defaultdict(list); active = {}
-    for p in snaps[-600:]:
+    ts = collections.defaultdict(list); active = {}; latest_t = None; latest_rows = []
+    t0 = now - datetime.timedelta(days=args.days + 2)   # snapshots from before the window, for the first games
+    for p in snaps:
+        t = parse_utc(p.split("/")[-2])
+        if t is None or t < t0:
+            continue
         try:
             d = json.load(open(p))
         except Exception:
             continue
         rows = d["leaderboard"]["players"] if isinstance(d["leaderboard"], dict) else d["leaderboard"]
-        t = p.split("/")[-2][:16]
+        latest_t, latest_rows = t, rows
         for r in rows:
             if r.get("rating") is not None:
                 ts[r["name"]].append((t, r["rating"]))
             active[r["name"]] = r.get("activeVersion")
     for k in ts:
         ts[k].sort()
-
-    def rating_at(team, t):
-        s = ts.get(team)
-        if not s:
-            return None
-        i = bisect.bisect_left(s, (t,)); i = min(max(i - 1, 0), len(s) - 1)
-        return s[i][1]
+    leaders_now = [r["name"] for r in sorted(latest_rows, key=lambda r: -(r.get("rating") or 0)) if r["name"] != ME][:6]
 
     our_version = active.get(ME)
     listings = []
@@ -98,7 +122,10 @@ def main():
         listings.append(r)
     listings.sort(key=lambda r: r["createdAt"])
     out = [f"# Arena insights, {now.strftime('%Y-%m-%d %H:%M')} UTC", "",
-           f"Our active version: v{our_version}. Window: {args.days} days ({len(listings)} games of all teams)."]
+           f"Our active version: v{our_version}. Window: {args.days} days ({len(listings)} games of all teams).", "",
+           f"Current leaders at the latest snapshot ({latest_t.strftime('%Y-%m-%d %H:%M') + ' UTC' if latest_t else 'none'}): {', '.join(leaders_now)}. "
+           f"Sections 3 and 4 use {TOP6_LABEL} ({', '.join(TOP6)}), kept fixed for comparison over time"
+           + (f"; not in today's top six: {', '.join(x for x in TOP6 if x not in leaders_now)}; in today's but not the cohort: {', '.join(x for x in leaders_now if x not in TOP6)}." if set(leaders_now) != set(TOP6) else ".")]
 
     # 1. version changes
     versions = collections.defaultdict(collections.Counter); ours_by = collections.defaultdict(lambda: [0.0, 0])
@@ -119,7 +146,7 @@ def main():
         out.append(f"| {team}{flag} | " + ", ".join(f"v{v} ({n})" for v, n in sorted(c.items(), key=lambda kv: (kv[0] is None, kv[0]))) + f" | {ours} |")
 
     # 2. point flow (active version)
-    flow = collections.defaultdict(lambda: [0, 0.0, 0.0])
+    flow = collections.defaultdict(lambda: [0, 0.0, 0.0]); gaps = []; missing = 0
     for r in listings:
         if ME not in (r["white"], r["black"]):
             continue
@@ -127,18 +154,26 @@ def main():
         if r.get("whiteVersion" if usw else "blackVersion") != our_version:
             continue
         them = r["black"] if usw else r["white"]
-        tkey = r["createdAt"][:4] + r["createdAt"][5:7] + r["createdAt"][8:10] + "T" + r["createdAt"][11:13] + r["createdAt"][14:16]
-        rw = rating_at(r["white"], tkey); rb = rating_at(r["black"], tkey)
+        t = parse_utc(r["createdAt"])
+        rw = rating_before(ts.get(r["white"], []), t); rb = rating_before(ts.get(r["black"], []), t)
         s = 1.0 if r["result"] == "1-0" else 0.0 if r["result"] == "0-1" else 0.5; s = s if usw else 1 - s
         if rw is None or rb is None:
+            missing += 1
             continue
-        mine, theirs = (rw, rb) if usw else (rb, rw)
+        gaps.append((t - min(rw[0], rb[0])).total_seconds() / 3600)   # age of the older snapshot used
+        mine, theirs = (rw[1], rb[1]) if usw else (rb[1], rw[1])
         e = 1 / (1 + 10 ** ((theirs - mine) / 400))
         f = flow[them]; f[0] += 1; f[1] += s; f[2] += s - e
-    out += ["", f"## 2. Rating point flow per opponent, v{our_version} (Elo, K = 8)", "", "| opponent | games | score | Elo expects | net points |", "|---|---|---|---|---|"]
+    out += ["", f"## 2. Rating point flow per opponent, v{our_version} (Elo, K = 8; an approximation)", "",
+            f"Each game is scored against both players' ratings in the latest leaderboard snapshot before it "
+            f"({len(gaps)} games; snapshot age median {statistics.median(gaps) if gaps else 0:.1f} h, max {max(gaps) if gaps else 0:.1f} h; "
+            f"{missing} games skipped with no earlier snapshot). Until 26 October this table used the latest snapshot for every game, so earlier totals are not historical flows. "
+            f"Cohort: hist = {TOP6_LABEL}, now = today's top six.", "",
+            "| opponent | games | score | Elo expects | net points | cohort |", "|---|---|---|---|---|---|"]
     for them, (n, s, se) in sorted(flow.items(), key=lambda kv: kv[1][2]):
-        out.append(f"| {them} | {n} | {s/n:.2f} | {(s-se)/n:.2f} | {8*se:+.0f} |")
-    out.append(f"| **total** | {sum(v[0] for v in flow.values())} | | | {8*sum(v[2] for v in flow.values()):+.0f} |")
+        cohort = ", ".join(x for x, ok in (("hist", them in TOP6), ("now", them in leaders_now)) if ok)
+        out.append(f"| {them} | {n} | {s/n:.2f} | {(s-se)/n:.2f} | {8*se:+.0f} | {cohort} |")
+    out.append(f"| **total** | {sum(v[0] for v in flow.values())} | | | {8*sum(v[2] for v in flow.values()):+.0f} | |")
 
     # 3-6 need replays: our games of the active version in the last 3 days, and top-six games
     qe = collections.defaultdict(list); km = {"us": collections.Counter(), "them": collections.Counter()}; mv = {"us": collections.Counter(), "them": collections.Counter()}
@@ -167,7 +202,7 @@ def main():
             bp = boards[k - 1]; pc = bp.piece_at(chess.parse_square(fr[k]["move"][:2]))
             np_ = sum(len(bp.pieces(t, not c)) * v for t, v in VAL.items())
             ph = "late" if np_ <= 13 else ("middle" if k >= 30 else "opening")
-            if them in TOP6 or who == "us":
+            if them in TOP6:   # both sides counted from the same games, so the populations match
                 mv[who][ph] += 1
                 if pc and pc.piece_type == chess.KING:
                     km[who][ph] += 1
@@ -178,11 +213,11 @@ def main():
                 L = min(fog_lines(fr[k][us], ks), 3)
                 h = haz[(ph if ph != "opening" else "middle", L)]; h[0] += 1; h[1] += (lost and end - k <= 4)
     n3 = sum(len(v) for v in qe.values())
-    out += ["", f"## 3. First queen event against the top six, v{our_version}, last 3 days ({n3} games)", "", "| event | games | share | our score |", "|---|---|---|---|"]
+    out += ["", f"## 3. First queen event against {TOP6_LABEL}, v{our_version}, last 3 days ({n3} games)", "", "| event | games | share | our score |", "|---|---|---|---|"]
     for k, v in sorted(qe.items(), key=lambda kv: -len(kv[1])):
         out.append(f"| {k} | {len(v)} | {100*len(v)/max(1,n3):.0f}% | {sum(v)/len(v):.2f} |")
-    out += ["", "## 4. King moves per 100 moves by phase, last 3 days (us: all games; them: the top six in our games)", "", "| side | opening | middle | late |", "|---|---|---|---|"]
-    for who, name in (("us", "IAmAVirus"), ("them", "top six")):
+    out += ["", f"## 4. King moves per 100 moves by phase, last 3 days, in our games against {TOP6_LABEL} (both sides from the same games)", "", "| side | opening | middle | late |", "|---|---|---|---|"]
+    for who, name in (("us", "IAmAVirus"), ("them", "the fixed top six")):
         out.append(f"| {name} | " + " | ".join(f"{100*km[who][ph]/max(1,mv[who][ph]):.1f}" for ph in ("opening", "middle", "late")) + " |")
     out += ["", "## 5. Our king captured within four plies of our move, by fog lines from the king (last 3 days)", "", "| phase | 0 lines | 1 | 2 | 3+ |", "|---|---|---|---|---|"]
     for ph in ("middle", "late"):

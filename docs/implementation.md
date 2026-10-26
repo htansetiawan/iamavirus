@@ -1,6 +1,6 @@
 # IAmAVirus: current implementation
 
-*Revision 2, 26 October 2026. A descriptive specification of what exists, for team members joining the project. Revise it when the deployed version or the pipeline changes; record the change in the table at the end.*
+*Revision 3, 26 October 2026. A descriptive specification of what exists, for team members joining the project. Revise it when the deployed version or the pipeline changes; record the change in the table at the end.*
 
 [TOC]
 
@@ -23,7 +23,7 @@ mist-c is a single C11 program (`src/`, 3,603 lines, no dependencies beyond libm
 
 **Rules and board** (`board.c`, `fow.h`). Bitboards with 64-square piece and colour arrays, Fog of War move generation (king capture ends the game, no check rule, castling, en passant, promotion), make and unmake, the visibility rule (a side sees the squares its pieces could move to) and the referee's 64-character observation string. Verified against the course referee on 13,467 positions with no mismatch (`tests/vectors.txt`).
 
-**Belief** (`belief.c`). The set P of full boards consistent with every observation so far, each with a log-weight. After an opponent move, every board in P is expanded by all opponent moves consistent with the new view; boards that would require the opponent to have left its king capturable are dropped; boards reached by several histories merge their weights. Past a cap (`MIST_CAP`, 200,000) P is thinned by weighted sampling; the opponent update runs on two threads (`MIST_THREADS`) and is paid from the clock (P is thinned to what half the move budget can expand). If P ever empties, it is rebuilt from the current view. Weights come from two sources: a conditional-logit opponent move model (`movemodel.c`, fitted by `tools/fit_move_model.py` on 2,029 arena games, +0.63 nats per move over uniform), sharpened by `MIST_MODEL_TEMP` (2.0), and an empirical prior keyed by a hash of the opponent's own view-and-move history (`data/history.bin`, 2.4 MB, built by `tools/history_table.c` from arena counts; blend `(count + n0·model)/(N + n0)`, `MIST_HISTORY_N0` 4, `MIST_HISTORY_MIN` 3).
+**Belief** (`belief.c`). The set P of full boards consistent with every observation so far, each with a log-weight. After an opponent move, every board in P is expanded by all opponent moves consistent with the new view; boards that would require the opponent to have left its king capturable are dropped; boards reached by several opponent histories are merged by position: their weights are summed and the first history to reach the board is kept as its representative (keeping histories apart grew P from 11.8k to 28.6k positions on the arena traces). Two opponent information states that reach the same board are therefore not told apart downstream, and the sharpened second weighting the guards use is approximate after merges. Past a cap (`MIST_CAP`, 200,000) P is thinned by weighted sampling; the opponent update runs on two threads (`MIST_THREADS`) and is paid from the clock (P is thinned to what half the move budget can expand). If P ever empties, it is rebuilt from the current view. Weights come from two sources: a conditional-logit opponent move model (`movemodel.c`, fitted by `tools/fit_move_model.py` on 2,029 arena games, +0.63 nats per move over uniform), sharpened by `MIST_MODEL_TEMP` (2.0), and an empirical prior keyed by a hash of the opponent's own view-and-move history (`data/history.bin`, 2.4 MB, built by `tools/history_table.c` from arena counts; blend `(count + n0·model)/(N + n0)`, `MIST_HISTORY_N0` 4, `MIST_HISTORY_MIN` 3).
 
 **Search** (`gtcfr.c`, `cfr.c`). Each decision samples 32 worlds from P by weight (`MIST_SAMPLES`; 128 to 256 without Stockfish) and builds a public game tree whose information sets are keyed by each player's own observation history. The solver is predictive regret matching+ with last-iterate play; the tree grows between solver rounds where the current strategy and a visit bonus lead (growing-tree CFR), about 310,000 nodes per move on two cores, 1,500,000 cap. New information sets start on their best child by leaf value (`MIST_BEST_INIT`). A root move that leaves our king capturable is scored as `MIST_KING_RISK` (2.0) losses. The root strategy is purified to one move.
 
@@ -44,7 +44,7 @@ Steps, in order, each logged to `data/logs/daily/<date>.log`:
 1. `learning.ingest`: our newest 1,000 games and all teams' newest 6,000 (the arena plays about 4,000 a day); validation and quarantine of malformed replays.
 2. Training data rebuilt from all of `data/raw`: `data/manifests/arena-latest.json` with shards (imitation and RL episodes) and `data/derived/moves/arena-latest-{train,test}.txt` (the opponent-move export mist-c's model is fitted on, last 21 days).
 3. `learning.daily_report`: `data/reports/daily/<date>.md` and `latest.md`: standings, our results by version and opponent over 24 hours and 7 days, the 19-tag move taxonomy per team per 100 moves over 3 days, and us against the teams above us.
-4. `learning.daily_insights` (added 17 October): `insights-<date>.md` and `insights-latest.md`: opponents' version changes with our score per version, rating point flow per opponent (Elo, K = 8), the first queen event per game against the top six, king moves per 100 by phase, the four-ply king-capture rate by fog lines, and every loss in 20 plies or fewer with its moves.
+4. `learning.daily_insights` (added 17 October): `insights-<date>.md` and `insights-latest.md`: opponents' version changes with our score per version, rating point flow per opponent (Elo, K = 8, each game against the nearest earlier snapshot's ratings; corrected 26 October), the first queen event per game against a fixed cohort (the 13 October top six, listed beside the current leaders), king moves per 100 by phase, the four-ply king-capture rate by fog lines, and every loss in 20 plies or fewer with its moves.
 5. Archive to the external disk (`tools/mirror_raw.py`: a base tarball plus one per day) and a path-limited commit and push of the reports.
 
 Storage of record is `{storage}/iamavirus-data`, where `{storage}` is the bulk-storage drive of whichever machine runs the pipeline. The path is per machine, not shared: each team member sets their own through the `STORE` environment variable or the untracked file `data/store` (one line, the path). `data/derived` and `data/manifests/arena-latest*` are symlinks into it. On the lead's machine the drive faulted on 24 October and came back under a new mount name, so steps 2 and 5 did not run on 25 October; the setting and the symlinks were repointed on 26 October. Ingest, reports and insights were unaffected.
@@ -83,6 +83,7 @@ Four instruments, in the order a change passes through them.
 - **Suite load sensitivity.** Belief thinning is paid from measured wall-clock time, so oversubscribed cores shrink the belief and change every risk number; calibration runs need one worker per core pair.
 - **Replicas are stale.** The behaviour-cloned opponent replicas were trained on games up to 7 October (duck v4/v5, Instructors v4); Crimson Fog has no replica.
 - **Storage is per machine.** `{storage}` is a local setting; the drive's data products (archive, training data, derived moves) exist on one machine and are mirrored nowhere else. A drive fault on 24 October stopped the training-data export and the daily archive for two days until the path was repointed.
+- **Reporting defect, corrected 26 October.** Until then the daily point-flow table scored every game against the latest leaderboard snapshot instead of the ratings before the game (a date-key mismatch found by Astra, note 152), so totals and per-opponent flows quoted from it before that date, including in the rating-mechanics notes, are not historical flows; the result counts were unaffected. The report's "top six" is the fixed 13 October cohort and omits Crimson Fog and Mist Opportunities; it is now labelled as such next to the current leaders.
 - **Not deployed.** The fitted hazard models, the uniform-weighting clause, the material guard, Astra's 2-KLUSS subgame branch, the en-passant history inference (paired gate run on 25 October), the PPO risk-prediction head and the search-teacher collection are all measured or in progress but not in the active engine.
 - **Clock margin under load.** The lowest clock seen in a bench is 19.8 s under the bench's double load; in the arena no forfeit has occurred, and the time budget has no explicit safety reserve (`MIST_RESERVE` 0).
 
@@ -98,7 +99,7 @@ flowchart LR
   Y["Misty (Brian Liou)<br/>data/zoo/misty-v16.zip<br/>bench opponent only"] -. never read for mist-c .-> M
 ```
 
-The arena zip is a snapshot of mist-c at one commit, packaged with Stockfish and the history table; the checkout keeps moving, so its files are not the deployed version. What plays in the arena today is version 35 = mist-c v14, commit `97b60f1`; `main` is eight commits past it (v15 to v19, all opt-in and off by default).
+The arena zip is a snapshot of mist-c at one commit, packaged with Stockfish and the history table; the checkout keeps moving, so its files are not the deployed version. What plays in the arena today is version 35 = mist-c v14, commit `97b60f1`; `main` is eight commits past it (v15 to v19). Their knobs are opt-in except one: the checkout's `MIST_FOG_HAZARD` defaults to 0.5, so a checkout build is not behaviour-equivalent to v35 unless it is set to 0.
 
 | name | what it is | where | who edits it |
 | --- | --- | --- | --- |
@@ -116,11 +117,11 @@ Every limit below is a consequence of the arena box (2 cores, 4 GiB, 15 s start-
 
 | component | today (v35) | the limit it imposes | ideal, unlimited memory and compute | what it takes |
 | --- | --- | --- | --- | --- |
-| belief | exact set of consistent boards, capped at 200,000, thinned by weighted sampling, paid from the clock | past the cap the true board can be dropped (in 24 of 40 recorded games at 100k); thinning depends on measured wall-clock, so load changes the belief | the exact set always, with exact weights, never thinned; the update off the critical path | memory (the set reaches millions mid-game) and a parallel update |
+| belief | exact set of consistent boards, capped at 200,000, thinned by weighted sampling, paid from the clock | past the cap the true board can be dropped (24 of 40 recorded arena traces exceeded a 100k cap; that counts overflow, not confirmed loss of the true board, which was measured separately per ply); boards are merged by position with one representative opponent history; thinning depends on measured wall-clock, so load changes the belief | the exact set always, with exact weights, never thinned; the update off the critical path | memory (the set reaches millions mid-game) and a parallel update |
 | belief weights | one conditional logit fitted on 2,029 games, sharpened ×2, plus a history prior keyed by the opponent's information history | a deliberate low-probability move (an early queen sortie) gets weight 0.0006; new opponents have no history | a per-opponent model trained on all 158,000 games, updated online as the opponent is identified from its first plies; calibrated so no legal line falls below a floor | the week-2 work of the plan; no hardware needed |
 | worlds searched | 32 sampled by weight per decision | rare attackers are under-represented by construction; the guards exist to cover this | every board in the belief, or thousands sampled with disagreement weighting | compute per decision scales with the number of worlds |
 | search | growing-tree PCFR+, about 310,000 nodes per move, one solver thread; the tree is rebuilt every move | shallow where the hidden tactics are; no carry-over between turns | tens of millions of nodes per move on many threads; the tree and regrets carried over between turns; safe re-solving with the 2-KLUSS, resolve and max-margin gadgets of Obscuro section 4 (Astra's `astra/m4` branch, unmerged) | cores, memory for the tree, and finishing M4 |
-| frontier value | Stockfish 19 at depth 1 per leaf, a perfect-information value | the one measured systematic bias: an exposed king scores as active; per-leaf hazard corrections double-count and were withdrawn | a Fog of War value and policy network trained by self-play GT-CFR (the Player of Games recipe), or Stockfish at depth 10+ where the world is known | GPU training time and a self-play generator; depth costs compute per leaf |
+| frontier value | Stockfish 19 at depth 1 per leaf, a perfect-information value | the one measured systematic bias: an exposed king scores as active; three per-leaf hazard corrections were withdrawn after benching worse. That a per-leaf term double-counts risk already carried by the sampled worlds is the working explanation, not an established one | a Fog of War value and policy network trained by self-play GT-CFR (the Player of Games recipe), or Stockfish at depth 10+ where the world is known | GPU training time and a self-play generator; depth costs compute per leaf |
 | root decision | the solver's last iterate, purified to one move; guards remove moves whose king-or-queen risk over the whole belief exceeds a margin | mixing the equilibrium calls for is discarded at the root; the guards are hand-set thresholds | play the mixed strategy; risk handled inside the solver by a value that already prices hidden-information hazard, no guards | a correct frontier value removes the need |
 | opponent modelling | the move model and the history prior; no online adaptation; exploitation only through those weights | the intransitive matchups (Instructors beats us 0.67 while level with Mist) are not addressed | an opponent classifier from the first plies, a per-class model, and safe exploitation (deviate from equilibrium only where the model is confident and the downside is bounded) | the data exists; it is modelling work |
 | material and piece safety | the queen guard; nothing for rooks and minors; the one-ply material guard measured worse | games against the top six are now queen trades lost later on material | one fitted material-risk model for every piece inside the solver's value, not a guard | the fitted model exists; needs the right place to apply it |
@@ -132,7 +133,7 @@ Every limit below is a consequence of the arena box (2 cores, 4 GiB, 15 s start-
 
 ## 9. Appendix: engine knobs and file map
 
-Every knob is an environment variable read once at start; the arena zip sets only `MIST_STOCKFISH` and `MIST_HISTORY_TABLE`. Defaults are the deployed v35 values.
+Every knob is an environment variable read once at start; the arena zip sets only `MIST_STOCKFISH` and `MIST_HISTORY_TABLE`. The first table lists the knobs present in v35 (commit `97b60f1`) with their deployed defaults. Knobs added since (v15 to v19) exist only in the checkout and are listed separately: they are not in the arena zip.
 
 | knob | default | what it sets |
 | --- | --- | --- |
@@ -146,13 +147,21 @@ Every knob is an environment variable read once at start; the arena zip sets onl
 | `MIST_STOCKFISH` / `MIST_SF_WORKERS` / `MIST_SF_MULTIPV` | path / 2 / 256 | leaf evaluator and its workers |
 | `MIST_KING_GUARD` / `MIST_GUARD_TEMP` | 0.02 / belief temp | guard margin and the sharper weighting |
 | `MIST_QUEEN_GUARD` / `MIST_QUEEN_WEIGHT` / `MIST_QUEEN_LOSS` / `MIST_QUEEN_CAP` | 0.05 / 0.9 / 4 / 20000 | queen guard on, its weight in the combined risk, the loss threshold, boards measured |
-| `MIST_MATERIAL_GUARD` / `MIST_MATERIAL_CAP` / `MIST_GUARD_UNIFORM` | off / 5000 / off | one-ply material guard; uniform-weighting clause |
-| `MIST_FOG_HAZARD` / `MIST_FOG_HAZARD_THEM` / `MIST_KING_MOVE_HAZARD` / `MIST_HAZARD` / `MIST_HAZARD_MATERIAL` | 0.5 / 0 / 0 / 0 / 0 | leaf hazard terms (v17 to v19) |
+| `MIST_MATERIAL_GUARD` / `MIST_MATERIAL_CAP` | off / 5000 | one-ply material guard |
 | `MIST_FOG_LINE` / `MIST_FOG_KNIGHT` | 0 / 0 | fog terms in the fallback evaluator |
 | `MIST_DIVISOR` / `MIST_RESERVE` / `MIST_MAX_SECONDS` | 20 / 0 / 10 | clock budget |
 | `MIST_REPEAT_LEAD` | 2 | lead at which a third repetition is avoided |
 | `MIST_SEARCH` / `MIST_TWOPLY` / `MIST_PRUNE_CAPTURABLE` | gtcfr / — / — | the fixed two-ply search and pruning (diagnostic) |
 | `MIST_FORCE_MOVES` / `MIST_TRUTH_SEQ` / `MIST_RISK` / `MIST_TIMING` / `MIST_MATERIAL_DIAG` / `FOW_SEED` | — | replay and diagnostics |
+
+Checkout-only knobs, not in v35:
+
+| knob | checkout default | what it sets |
+| --- | --- | --- |
+| `MIST_GUARD_UNIFORM` | off | uniform-weighting clause in the guards (v15, v16) |
+| `MIST_FOG_HAZARD` / `MIST_FOG_HAZARD_THEM` | 0.5 (0 when `MIST_HAZARD` > 0) / 0 | standing fog-exposure leaf term (v17) |
+| `MIST_KING_MOVE_HAZARD` | 0 | king-move leaf charge (v18) |
+| `MIST_HAZARD` / `MIST_HAZARD_MATERIAL` | 0 / 0 | fitted king-capture and material-loss hazard terms (v19) |
 
 **File map, mist-c `src/`:** `fow.h` types and the board API; `board.c` rules, moves, visibility, observations; `belief.c`/`.h` the belief and its updates, resampling and history prior; `movemodel.c`/`.h` the fitted move model; `cfr.c`/`.h` PCFR+ on a generic game tree; `gtcfr.c`/`.h` growing-tree search, children scoring, hazards; `search.c`/`.h` the earlier fixed two-ply search; `eval.c`/`.h` the fallback evaluator, fog lines, fitted hazard models; `sfeval.c`/`.h` Stockfish workers; `front.c`/`.h` the view-legal move set, repetition and lead tracking, the last-resort move; `main.c` protocol, clock, guards, diagnostics.
 
@@ -164,3 +173,4 @@ Every knob is an environment variable read once at start; the arena zip sets onl
 | --- | --- | --- | --- |
 | 1 | 2026-10-25 | Fable | first version, at arena v35 / mist-c v14 |
 | 2 | 2026-10-26 | Fable | storage written as the per-machine `{storage}` placeholder; `STORE` read from the environment or `data/store` |
+| 3 | 2026-10-26 | Fable | corrections from Astra's review (note 152): v35 knobs separated from checkout-only knobs; belief merges by position with one representative history; 24/40 is cap overflow; hazard double-counting stated as a hypothesis; the point-flow reporting defect recorded |
