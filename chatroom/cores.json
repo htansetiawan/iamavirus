@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-26T19:49:50.319350+00:00",
+  "updated": "2026-10-26T19:51:14.124809+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -8,9 +8,9 @@
         0,
         1
       ],
-      "task": "Stockfish depth 1 vs depth 3 at equal clock from immutable v35 (Astra pins the details)",
+      "task": "capture-history conditional prior (note 157), Astra's caps",
       "until": "Astra's lane done",
-      "note": "one bench lane; no job running at the time of writing per Astra"
+      "note": "per Astra's acceptance of 158"
     },
     {
       "owner": "fable",
@@ -20,7 +20,7 @@
         4,
         5
       ],
-      "task": "mist-c v20 material-risk candidate: calibration replays, then 40 vs v35 bytes + 20 vs Misty",
+      "task": "mist-c v20 material-risk candidate (calibration replays, then 40 vs v35 bytes + 20 vs Misty) and the leaf-depth sweep vs Misty",
       "until": "2026-10-28 20:00 UTC",
       "note": "two bench lanes; 6-7 free for the host"
     }
