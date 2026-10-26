@@ -1,0 +1,238 @@
+{
+  "kind": "source and reporting audit; no strength experiment",
+  "archive_sha256": "24791ca64a429f5ae931466ce3c1af36c6974e1295203e99a00a991976955b4c",
+  "release_source_matches_97b60f1": {
+    "src/main.c": true,
+    "src/belief.c": true,
+    "src/gtcfr.c": true,
+    "src/eval.c": true
+  },
+  "knob_present_in_v35_sources": {
+    "MIST_FOG_HAZARD": false,
+    "MIST_KING_MOVE_HAZARD": false,
+    "MIST_HAZARD": false,
+    "MIST_GUARD_UNIFORM": false,
+    "MIST_MATERIAL_GUARD": true
+  },
+  "board_history_merge_source": [
+    "/* Entries are deduplicated by position only: keeping every history apart grew",
+    " * P from 11.8k to 28.6k positions on the arena traces (38/40 games over a 100k",
+    " * cap instead of 24/40). Each position keeps the first history that reached",
+    " * it as its representative, so search still keys the opponent by history. */",
+    "static uint64_t entry_key(const Position *p, uint64_t hist) { (void)hist; return position_key(p); }"
+  ],
+  "timestamp_lookup_reproductions": [
+    {
+      "game_timestamp_example": "2026-10-18T12:00:00+00:00",
+      "query_key": "20261018T1200",
+      "existing_lookup_snapshot": "2026-10-25T101243.632817Z0000",
+      "prior_snapshot_by_utc": "2026-10-17T101513.357047Z0000"
+    },
+    {
+      "game_timestamp_example": "2026-10-21T12:00:00+00:00",
+      "query_key": "20261021T1200",
+      "existing_lookup_snapshot": "2026-10-25T101243.632817Z0000",
+      "prior_snapshot_by_utc": "2026-10-21T101531.701311Z0000"
+    },
+    {
+      "game_timestamp_example": "2026-10-24T12:00:00+00:00",
+      "query_key": "20261024T1200",
+      "existing_lookup_snapshot": "2026-10-25T101243.632817Z0000",
+      "prior_snapshot_by_utc": "2026-10-24T101252.742966Z0000"
+    }
+  ],
+  "daily_insights_sha256": "f70c65f886b0ae8e40054c8be15d0390339b2c326a079dfcc1cc82fcbff27e2a",
+  "report_fixed_top6": [
+    "Greek Gift",
+    "Knight Vision",
+    "Strongly Invisible",
+    "Decent Chess Bot",
+    "duck",
+    "Instructors"
+  ],
+  "snapshot_utc": "2026-10-26T04:09:40Z",
+  "snapshot_boston": "2026-10-26 00:09 EDT",
+  "leaders": [
+    {
+      "rank": 1,
+      "name": "Greek Gift",
+      "elo": 2379.300426358504,
+      "active_version": 25
+    },
+    {
+      "rank": 2,
+      "name": "Strongly Invisible",
+      "elo": 2117.389890721247,
+      "active_version": 37
+    },
+    {
+      "rank": 3,
+      "name": "Knight Vision",
+      "elo": 2107.2795751515346,
+      "active_version": 36
+    },
+    {
+      "rank": 4,
+      "name": "Decent Chess Bot",
+      "elo": 2087.4366725162863,
+      "active_version": 7
+    },
+    {
+      "rank": 5,
+      "name": "Crimson Fog",
+      "elo": 2070.8270965884626,
+      "active_version": 3
+    },
+    {
+      "rank": 6,
+      "name": "Mist Opportunities",
+      "elo": 2000.4329643652345,
+      "active_version": 2
+    },
+    {
+      "rank": 7,
+      "name": "Instructors",
+      "elo": 1984.0026374990168,
+      "active_version": 4
+    },
+    {
+      "rank": 8,
+      "name": "duck",
+      "elo": 1965.9967799482968,
+      "active_version": 6
+    },
+    {
+      "rank": 9,
+      "name": "HYPOTHERMIA",
+      "elo": 1915.359657258233,
+      "active_version": 3
+    },
+    {
+      "rank": 10,
+      "name": "IAmAVirus",
+      "elo": 1908.9529562245941,
+      "active_version": 35
+    }
+  ],
+  "latest100_wdl": [
+    {
+      "opponent": "Apricot Squad",
+      "version": 9,
+      "wins": 4,
+      "draws": 0,
+      "losses": 0
+    },
+    {
+      "opponent": "Crimson Fog",
+      "version": 3,
+      "wins": 2,
+      "draws": 0,
+      "losses": 6
+    },
+    {
+      "opponent": "Czechmate",
+      "version": 3,
+      "wins": 2,
+      "draws": 0,
+      "losses": 0
+    },
+    {
+      "opponent": "Decent Chess Bot",
+      "version": 7,
+      "wins": 0,
+      "draws": 0,
+      "losses": 2
+    },
+    {
+      "opponent": "Gravel Road",
+      "version": 4,
+      "wins": 6,
+      "draws": 0,
+      "losses": 2
+    },
+    {
+      "opponent": "Greek Gift",
+      "version": 25,
+      "wins": 0,
+      "draws": 0,
+      "losses": 2
+    },
+    {
+      "opponent": "HYPOTHERMIA",
+      "version": 3,
+      "wins": 6,
+      "draws": 0,
+      "losses": 2
+    },
+    {
+      "opponent": "In Pawn Sight",
+      "version": 4,
+      "wins": 2,
+      "draws": 0,
+      "losses": 0
+    },
+    {
+      "opponent": "Instructors",
+      "version": 4,
+      "wins": 6,
+      "draws": 0,
+      "losses": 8
+    },
+    {
+      "opponent": "Knight Vision",
+      "version": 36,
+      "wins": 1,
+      "draws": 0,
+      "losses": 3
+    },
+    {
+      "opponent": "Lost Signal",
+      "version": 19,
+      "wins": 5,
+      "draws": 1,
+      "losses": 0
+    },
+    {
+      "opponent": "Mist Opportunities",
+      "version": 2,
+      "wins": 4,
+      "draws": 0,
+      "losses": 4
+    },
+    {
+      "opponent": "Strongly Invisible",
+      "version": 37,
+      "wins": 2,
+      "draws": 0,
+      "losses": 4
+    },
+    {
+      "opponent": "TA Baseline A",
+      "version": 5,
+      "wins": 4,
+      "draws": 1,
+      "losses": 1
+    },
+    {
+      "opponent": "TA Baseline P",
+      "version": 5,
+      "wins": 4,
+      "draws": 0,
+      "losses": 0
+    },
+    {
+      "opponent": "TA Baseline S",
+      "version": 3,
+      "wins": 5,
+      "draws": 0,
+      "losses": 1
+    },
+    {
+      "opponent": "duck",
+      "version": 6,
+      "wins": 1,
+      "draws": 1,
+      "losses": 8
+    }
+  ]
+}

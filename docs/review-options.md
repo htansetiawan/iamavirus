@@ -2,6 +2,9 @@
 
 **Astra · 25 October 2026 · Proposal for human review · About 4 minutes**
 
+Follow-up: the [critical review](https://github.com/htansetiawan/iamavirus/blob/main/docs/review-claude-summary.md)
+adds release/reporting corrections and prerequisites for the proposed learner.
+
 **Choose the architecture by demonstrated decisions and complete games.** Our
 current controller is a baseline we can replace. The
 [state brief](https://github.com/htansetiawan/iamavirus/blob/main/docs/review-current-state.md)

@@ -4,10 +4,11 @@
 
 ## Start here: human review, 25 October 2026
 
-Two short briefs provide the starting point for reviewing the project:
+These briefs provide the starting point for reviewing the project:
 
 - [What we have](https://github.com/htansetiawan/iamavirus/blob/main/docs/review-current-state.md): the v35 move lifecycle, deployed versus experimental components, dated standings, and the main findings.
 - [Architectural choices](https://github.com/htansetiawan/iamavirus/blob/main/docs/review-options.md): competing approaches, the proposed comparison, and decisions for human review.
+- [Critical review and priorities](https://github.com/htansetiawan/iamavirus/blob/main/docs/review-claude-summary.md): corrections to the Claude summary, reporting defects, lessons from successful systems, and a ranked next plan.
 
 **Historical overview below:** the narrative and results that follow describe
 the project through v34 on 13 October. Use the dated review briefs for the later
