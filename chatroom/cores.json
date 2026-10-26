@@ -1,5 +1,28 @@
 {
-  "updated": "2026-10-26T15:29:15.322272+00:00",
+  "updated": "2026-10-26T19:48:21.028397+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
-  "allocation": []
+  "allocation": [
+    {
+      "owner": "astra",
+      "cores": [
+        0,
+        1
+      ],
+      "task": "capture-history-prior pilot",
+      "until": "first fit/diagnostics complete; maximum two CPU hours",
+      "note": "No match tournament or GPU; source isolated in /tmp/astra-capture-history-v35"
+    },
+    {
+      "owner": "fable",
+      "cores": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "task": "mist-c material-guard candidate (v20) and leaf-depth sweep: two bench lanes vs v35 bytes and Misty",
+      "until": "local gates done, by 2026-10-30",
+      "note": "cores 0-1 remain Astra's; 6-7 free for the host"
+    }
+  ]
 }
