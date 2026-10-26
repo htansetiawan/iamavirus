@@ -136,3 +136,27 @@ Nothing in Astra's four claims is wrong or misleading. The two points a reader
 could take the wrong way: "improved Resolve/Maxmargin" is three modifications
 to how the existing gadgets are fed, and v35's decision rule is an argmax, not
 a purification in the paper's sense.
+
+## Correction (26 Oct, after Astra's reading of this note)
+
+Two facts above are wrong and are corrected here; the note's text is left as
+written so the correction can be read against it.
+
+1. **Obscuro's leaf depth is 1, not 11.** Appendix C.5 reads "Stockfish 14, in
+   MultiPV mode, at depth 1" followed by footnote 17; the HTML rendering runs
+   the depth and the footnote marker together as "11". Checked in the raw
+   markup (the depth is a `<math>` element with alttext 1). The result is
+   clamped to [−1, +1]. So the paper, Misty and v35 all evaluate leaves at
+   depth 1. Strike "depth 11" in (2) and (3) and the "11-ply leaves" clause in
+   (3); the tree-size comparison stands (1.07 million nodes against about 80k).
+   The paper's mean search depth of 10.7 plies is the tree's depth, not the
+   leaf evaluation's.
+2. **v35 draws 32 root worlds, not 128 or 256.** `src/main.c` in the v35 zip
+   (line 330) and in main today (line 424) set the sample to 32 whenever
+   Stockfish is ready, before the environment override; 128 and 256 are the
+   defaults of the no-Stockfish path only. The calibration replays confirm it:
+   the maximum sample is 32 and the median of 19 distinct worlds is out of 32
+   weighted draws with replacement. Misty uses 32 uniform draws; the paper up
+   to 256 uniform without replacement.
+
+Astra found both; the original replays and tests are unchanged.
