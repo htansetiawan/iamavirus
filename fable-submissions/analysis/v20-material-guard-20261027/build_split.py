@@ -14,7 +14,10 @@ Three suites in tools/suite_run.py's format (feed, forced, board, played, kind):
   control.json  our v35 wins and draws against the same opponents in both periods: every
                 4th decision from our 6th on, where no material was lost within two plies
                 and the king was safe (kind "control"), at most 3 per game, 400 in all
-split.json lists the game ids and decision counts of the three sets.
+  control-loss.json  the same sampling from our v35 losses in both periods, but only decisions
+                before the game's first material event of ours (queen or clean piece loss), so
+                the controls are not only positions we were winning (Astra, note 160)
+split.json lists the game ids and decision counts of the four sets.
 """
 import argparse, json, os, sys
 sys.path.insert(0, os.path.expanduser("~/git/fowsearch-c/tools"))
@@ -62,11 +65,13 @@ def decisions(raw, gid, side, want):
         if want == "piece" and not fatal and swing >= 3 and piece_gone and before >= -3:
             entry.update(kind="piece", kinds=["piece"], before=before); yield entry
             return   # the first clean piece loss of the game only
-        if want == "control":
+        if want in ("control", "control-loss"):
+            if want == "control-loss" and (c2["q"] < c0["q"] or (piece_gone and swing >= 3)):
+                return   # the first material event: nothing after it is an ordinary position
             since += 1
             if k >= 6 and not fatal and swing <= 0 and not piece_gone and since >= 4 and taken < 3:
                 since = 0; taken += 1
-                entry.update(kind="control", kinds=["control"]); yield entry
+                entry.update(kind=want, kinds=[want]); yield entry
         forced.append(played)
 
 
@@ -86,13 +91,16 @@ def main():
                     continue
                 games.append((created, r["id"], side, r[other], s))
     games.sort()
-    suites = {"calib": [], "oos": [], "control": []}
+    suites = {"calib": [], "oos": [], "control": [], "control-loss": []}
     for created, gid, side, opp, s in games:
         try:
             if s == 0:
                 dest = "calib" if created <= CALIB_END else "oos"
                 for e in decisions(a.raw, gid, side, "piece"):
                     e.update(opponent=opp, created=created, version=a.version); suites[dest].append(e)
+                if len(suites["control-loss"]) < a.controls and int(gid[-1], 36) % 3 == 0:   # every third loss
+                    for e in decisions(a.raw, gid, side, "control-loss"):
+                        e.update(opponent=opp, created=created, version=a.version); suites["control-loss"].append(e)
             elif len(suites["control"]) < a.controls:
                 for e in decisions(a.raw, gid, side, "control"):
                     e.update(opponent=opp, created=created, version=a.version); suites["control"].append(e)
