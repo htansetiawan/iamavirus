@@ -1,6 +1,8 @@
 """Mirror data/raw to the archive drive as gzip tarballs.
 
-    python tools/mirror_raw.py [--raw data/raw] [--store /media/henrytan/seagate/iamavirus-data/raw-archive]
+    python tools/mirror_raw.py [--raw data/raw] [--store {storage}/iamavirus-data/raw-archive]
+
+--store defaults to $STORE/raw-archive; the drive path is per machine.
 
 The drive is exFAT with 128 KB clusters, where the replay tree (hundreds of
 thousands of small files) takes about 15 times its size and a file-by-file
@@ -25,7 +27,9 @@ import time
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--raw", default="data/raw")
-    ap.add_argument("--store", default="/media/henrytan/seagate/iamavirus-data/raw-archive")
+    store = os.environ.get("STORE")
+    ap.add_argument("--store", default=f"{store}/raw-archive" if store else None, required=not store,
+                    help="archive directory (default $STORE/raw-archive)")
     args = ap.parse_args()
     os.makedirs(args.store, exist_ok=True)
     state_path = os.path.join(args.store, "mirror-state.json")

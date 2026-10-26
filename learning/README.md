@@ -90,7 +90,7 @@ bash package.sh /tmp/iamavirus.zip releases/v1      # bundles model/ into the ZI
 ```
 
 Storage: the root disk is small, so large local artefacts live on the external
-drive and are symlinked into the repository: `checkpoints -> /media/henrytan/seagate/iamavirus/checkpoints`,
+drive and are symlinked into the repository: `checkpoints -> {storage}/iamavirus/checkpoints` (`{storage}` is each member's own bulk drive),
 and `data/` moves there the same way between runs (`rsync -a --remove-source-files data/ <drive>/data/ && ln -s`).
 Both are git-ignored either way.
 

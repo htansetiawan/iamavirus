@@ -1,6 +1,6 @@
 # IAmAVirus: current implementation
 
-*Revision 1, 25 October 2026. A descriptive specification of what exists, for team members joining the project. Revise it when the deployed version or the pipeline changes; record the change in the table at the end.*
+*Revision 2, 26 October 2026. A descriptive specification of what exists, for team members joining the project. Revise it when the deployed version or the pipeline changes; record the change in the table at the end.*
 
 [TOC]
 
@@ -47,9 +47,9 @@ Steps, in order, each logged to `data/logs/daily/<date>.log`:
 4. `learning.daily_insights` (added 17 October): `insights-<date>.md` and `insights-latest.md`: opponents' version changes with our score per version, rating point flow per opponent (Elo, K = 8), the first queen event per game against the top six, king moves per 100 by phase, the four-ply king-capture rate by fog lines, and every loss in 20 plies or fewer with its moves.
 5. Archive to the external disk (`tools/mirror_raw.py`: a base tarball plus one per day) and a path-limited commit and push of the reports.
 
-Storage of record is the Seagate at `/media/henrytan/seagate/iamavirus-data` (`STORE` in the script); `data/derived` and `data/manifests/arena-latest*` are symlinks into it. After the disk's I/O fault on 24 October the drive remounted at `/media/henrytan/seagate1`; `data/derived` currently returns an I/O error and the 25 October log shows no training-data or archive step, so steps 2 and 5 are not running until the mount is repaired. Ingest, reports and insights are unaffected.
+Storage of record is `{storage}/iamavirus-data`, where `{storage}` is the bulk-storage drive of whichever machine runs the pipeline. The path is per machine, not shared: each team member sets their own through the `STORE` environment variable or the untracked file `data/store` (one line, the path). `data/derived` and `data/manifests/arena-latest*` are symlinks into it. On the lead's machine the drive faulted on 24 October and came back under a new mount name, so steps 2 and 5 did not run on 25 October; the setting and the symlinks were repointed on 26 October. Ingest, reports and insights were unaffected.
 
-Other data products: `data/zoo/` (opponent zips: Misty v16, our earlier versions), `releases/` (hybrid-era model releases and behaviour-cloned opponent replicas; the replicas' training games end on 7 October), the suite files under `~/fable-persist/suite/` (persisted outside the repository, tarred to the Seagate), and `data/derived/hazard/hazard-fit.json` (the fitted hazard coefficients).
+Other data products: `data/zoo/` (opponent zips: Misty v16, our earlier versions), `releases/` (hybrid-era model releases and behaviour-cloned opponent replicas; the replicas' training games end on 7 October), the suite files under `~/fable-persist/suite/` (persisted outside the repository, tarred to `{storage}`), and `data/derived/hazard/hazard-fit.json` (the fitted hazard coefficients).
 
 ## 4. Evaluation tooling
 
@@ -82,7 +82,7 @@ Four instruments, in the order a change passes through them.
 - **Self-play benches against our own bytes do not predict arena results** against the top six (v32: 0.55 locally, 0.14 in the arena); Misty is the better local judge for search-level changes; opponent-specific changes are only readable in the arena.
 - **Suite load sensitivity.** Belief thinning is paid from measured wall-clock time, so oversubscribed cores shrink the belief and change every risk number; calibration runs need one worker per core pair.
 - **Replicas are stale.** The behaviour-cloned opponent replicas were trained on games up to 7 October (duck v4/v5, Instructors v4); Crimson Fog has no replica.
-- **Storage fault.** `data/derived` and the manifests point at the Seagate mount that faulted on 24 October; the training-data export and the daily archive have not run since; ingest and reports are unaffected.
+- **Storage is per machine.** `{storage}` is a local setting; the drive's data products (archive, training data, derived moves) exist on one machine and are mirrored nowhere else. A drive fault on 24 October stopped the training-data export and the daily archive for two days until the path was repointed.
 - **Not deployed.** The fitted hazard models, the uniform-weighting clause, the material guard, Astra's 2-KLUSS subgame branch, the en-passant history inference (paired gate run on 25 October), the PPO risk-prediction head and the search-teacher collection are all measured or in progress but not in the active engine.
 - **Clock margin under load.** The lowest clock seen in a bench is 19.8 s under the bench's double load; in the arena no forfeit has occurred, and the time budget has no explicit safety reserve (`MIST_RESERVE` 0).
 
@@ -163,3 +163,4 @@ Every knob is an environment variable read once at start; the arena zip sets onl
 | revision | date | author | change |
 | --- | --- | --- | --- |
 | 1 | 2026-10-25 | Fable | first version, at arena v35 / mist-c v14 |
+| 2 | 2026-10-26 | Fable | storage written as the per-machine `{storage}` placeholder; `STORE` read from the environment or `data/store` |

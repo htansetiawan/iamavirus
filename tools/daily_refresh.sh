@@ -4,9 +4,11 @@
 #
 #   bash tools/daily_refresh.sh [--no-dataset] [--no-push]
 #
-# Storage: the Seagate (/media/henrytan/seagate/iamavirus-data, exFAT) is the
-# storage of record. data/derived and data/manifests/arena-latest{,.json} are
-# symlinks to it (the small tracked manifests stay in the repo); the
+# Storage: {storage}/iamavirus-data on the machine's bulk drive is the storage
+# of record. The path is per machine: set STORE in the environment or write it,
+# one line, to the untracked file data/store. data/derived and
+# data/manifests/arena-latest{,.json} are symlinks to it (the small tracked
+# manifests stay in the repo); the
 # replays stay on the local SSD as the working copy (a random replay read is
 # 0.1 ms there, about 50 ms on the USB disk) and are archived to it after every
 # run (tools/mirror_raw.py: a base tarball plus one per day). Without the
@@ -35,9 +37,9 @@ LOG="data/logs/daily/$(date -u +%F).log"
 exec 9>data/logs/daily/.lock
 flock -n 9 || { echo "daily refresh already running" >&2; exit 0; }
 step() { echo "== $(date -u +%H:%M:%S) $*" >>"$LOG"; }
-STORE="${STORE:-/media/henrytan/seagate/iamavirus-data}"
-SEAGATE=0; [ -d "$STORE/raw-archive" ] && SEAGATE=1
-[ "$SEAGATE" = 1 ] || step "$STORE not available (drive not mounted?): training data and mirror skipped"
+STORE="${STORE:-$(head -n1 data/store 2>/dev/null)}"
+SEAGATE=0; [ -n "$STORE" ] && [ -d "$STORE/raw-archive" ] && SEAGATE=1
+[ "$SEAGATE" = 1 ] || step "storage ${STORE:-unset (STORE or data/store)} not available (drive not mounted?): training data and mirror skipped"
 run() { "$@" >>"$LOG" 2>&1 || echo "   step failed (exit $?): $*" >>"$LOG"; }
 
 step "ingest ours";      run nice -n 10 $PY -m learning.ingest --team IAmAVirus --output data/raw --limit 1000

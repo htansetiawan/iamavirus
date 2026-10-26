@@ -1,7 +1,7 @@
 """Feature cache: every episode's input planes and labels computed once, stored as
 compact arrays, and batched without re-running the Python feature code.
 
-    python -m learning.feature_cache build --manifest data/manifests/v4.json --out /media/henrytan/seagate/iamavirus/feature-cache/v4
+    python -m learning.feature_cache build --manifest data/manifests/v4.json --out {storage}/iamavirus/feature-cache/v4
     # then add `feature_cache: <out>` to a pretrain config
 
 Planes are exact multiples of 1/100 in [0, 1], so they are stored as uint8 (x100)

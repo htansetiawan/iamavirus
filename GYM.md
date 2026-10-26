@@ -68,7 +68,7 @@ The zoo and the opening suite drive self-play leagues; exam positions become cur
 
 - **Mirror the arena.** The public listing holds 93,805 games (2026-10-08 22:25 UTC); we had 5,337. `learning.ingest --all` downloads them newest first at one request per second (the client's floor), validating every replay frame by frame against our rules; mismatches are quarantined, never patched. First 30,000 overnight, the rest the following day, then a daily incremental sync.
 - **What the data feeds:** per-team replica training (each top team has thousands of games, not hundreds), the move taxonomy and fingerprints, the exam corpora (cut again from the larger pool), the opening suite, opponent-move models for the belief (level-2), and the rating model's priors.
-- **Dataset v6 (04:11 UTC, 2026-10-09):** 25,070 validated games → 40,120 training episodes (20,060 games), 1,470,454 training decisions, five times dataset v4; game-disjoint validation (2,506 games) and test (2,504 games) splits; manifest `data/manifests/v6.json` (content `2b894fb16833`); feature cache 7.8 GB at `/media/henrytan/seagate/iamavirus/feature-cache/v6`, built in 6 minutes.
+- **Dataset v6 (04:11 UTC, 2026-10-09):** 25,070 validated games → 40,120 training episodes (20,060 games), 1,470,454 training decisions, five times dataset v4; game-disjoint validation (2,506 games) and test (2,504 games) splits; manifest `data/manifests/v6.json` (content `2b894fb16833`); feature cache 7.8 GB at `{storage}/iamavirus/feature-cache/v6`, built in 6 minutes.
 - **Versions matter:** listings carry each side's submission version, so replicas can be trained on a team's recent versions only, and our panel can be matched to the opponent versions it actually faced.
 
 ### 3.7 Training infrastructure on the GPU
