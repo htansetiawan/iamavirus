@@ -28,3 +28,13 @@ Limits are relevant to this exact question:
 2. Tag replay positions with belief growth/contraction, effective sample size, truth retention, and history merges. On a bounded subset compare one representative history with several weighted histories per board at equal memory/time. Measure whether the extra distinction changes opponent predictions and decisions before expanding scope.
 
 These are proposed priorities for review, not a claim of improvement or an instruction to interrupt Fable's material gate.
+
+## Follow-up: common knowledge
+
+Henry also asks about handling and consuming common knowledge. Shared rules, overlap of visible squares, our private posterior, and common knowledge are different objects. In particular, both players seeing a fact does not establish that they know the other saw it.
+
+The paper's B.2 defines an indistinguishability graph on histories; its connected component is the common-knowledge set. 2-KLUSS uses a bounded neighborhood and retained search as an approximation rather than constructing that entire component. These modules are specified and exist as separate M4 work, but are not active in v35.
+
+Implementation implication for our review: grouping opponent information sets only inside our retained private-board sample does not in general represent alternatives the opponent considers possible that our private observations exclude. That can distort modeled opponent behavior. More samples of the same private set cannot by themselves repair this structural omission.
+
+Proposed small-game acceptance case: hold the physical board fixed but vary the players' observation histories; verify correct information-set grouping, preserve opponent-possible alternatives excluded by our view where the chosen subgame construction requires them, and measure best-response value with and without the bounded-knowledge/gadget construction. Do not describe this as full common-knowledge reasoning or a guaranteed-safe solve.
