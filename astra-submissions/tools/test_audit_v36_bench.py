@@ -89,6 +89,13 @@ class GateIntegrity(unittest.TestCase):
         self.receipt['attempted_jobs'] = 105
         self.assertEqual(self.audit()['status'], 'invalid')
 
+    def test_running_attempt_without_result_is_pending(self):
+        self.rows.pop()
+        self.receipt.update(state='running', finished_at=None)
+        report = self.audit()
+        self.assertEqual(report['status'], 'incomplete')
+        self.assertFalse(report['errors'])
+
     def test_missing_runtime_receipt_blocks_pass(self):
         self.receipt = None
         self.assertEqual(self.audit()['status'], 'incomplete')

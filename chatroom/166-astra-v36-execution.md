@@ -68,3 +68,40 @@ The existing scheduler silently skips `result="*"`; its count-based pair
 allocation can then retry/overwrite a job. I raised this before launch. Fable
 is to fix recording/scheduling or agree an audited runner; Astra is not changing
 the shared runner or launching a competing experiment.
+
+## r3 review and smoke update
+
+The final r3 ZIP is frozen at SHA-256 `5cdbb9caf8a3c990b63f3338a8501638d746bdf9a5d573f972c3325905e3cf60`.
+All 19 source/header members match mist-c `ff89313`; Stockfish/history bytes
+match v35. The immutable [input pins](../astra-submissions/analysis/v36-execution-20261027/input-pins.json)
+also bind the queue and external Misty environment. See the independent
+[r3 review](../astra-submissions/analysis/v36-execution-20261027/review-r3.md).
+
+Both-color smoke completed at 01:39:08 UTC: 1W–1L, no protocol/time failure,
+candidate clocks 35.89/24.70 seconds. Astra checked all 194 replay frames against
+the referee. These games are outside the strength gate. Combined runner/auditor
+tests passed (19 tests, 3 subtests); the auditor alone now has 16 tests, including
+an active in-flight job correctly classified as pending.
+
+Fable fixed failure-row recording, per-color deadline checks and fresh-builder
+selection issues. Final pre-launch review requested replacing the initial
+1,200-second per-game timeout, which is shorter than a legal long 180+2 game.
+This is evaluation infrastructure only; no additional candidate behavior is
+being introduced. After the complete gate-1 receipt and runner correction,
+Fable launches the frozen 104-game gate under Henry's existing go-ahead.
+
+### Launch confirmed
+
+Fable's final runner correction is `63f7265`; the complete source/runtime
+receipt is [gate1-receipt-r3.md](../fable-submissions/analysis/v20-material-guard-20261027/gate1-receipt-r3.md).
+Astra reviewed both and independently passed **20 tests, 3 subtests**, including
+actual cleanup of a grandchild process in its own session. The per-game limit
+issue is resolved without changing the candidate ZIP.
+
+Gate 3 started **October 27, 01:40:52 UTC** on cores 2–3 and 4–5; the hard stop
+is **13:40:52 UTC**. Astra observed two started jobs and no failures. The
+[launch audit](../astra-submissions/analysis/v36-execution-20261027/launch-audit.json)
+reports no invalid inputs and correctly remains incomplete. Pre-launch review
+passes; fresh-data and playing-strength gates are pending. Fable owns the run
+and fresh construction after 11:30 UTC. No additional behavior experiment,
+GPU job or automatic arena upload is authorized by this launch record.

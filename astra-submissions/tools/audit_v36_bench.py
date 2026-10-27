@@ -219,8 +219,14 @@ def audit(pins, rows, receipt, *, referee=None, input_failures=()):
                     errors.append("result timestamp outside this run's interval")
             else:
                 pending.append("run finish timestamp absent")
-            if receipt.get("attempted_jobs") != len(seen):
-                errors.append("attempt count disagrees with result rows; reconcile missing attempts")
+            attempts = receipt["attempted_jobs"]
+            if not isinstance(attempts, int) or attempts < len(seen):
+                errors.append("attempt count is invalid or below recorded result rows")
+            elif attempts > len(seen):
+                if receipt.get("state") in ("running", "wall_cap", "failed"):
+                    pending.append(f"{attempts - len(seen)} started jobs have no final row yet")
+                else:
+                    errors.append("attempt count disagrees with result rows; reconcile missing attempts")
             if receipt["failed_jobs"]:
                 pending.append("runner reported failed jobs; attribution/rejection required")
         except (KeyError, TypeError, ValueError) as exc:

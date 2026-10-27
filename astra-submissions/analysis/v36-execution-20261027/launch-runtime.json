@@ -1,0 +1,28 @@
+{
+  "recorded_at": "2026-10-27T01:42:24.690755+00:00",
+  "runner_commit": "63f7265",
+  "classification": "observed launch receipt and runtime sources, not a strength result",
+  "files_sha256": {
+    "learning/arena_local.py": "abcd813bf4fe704f4c9ac082d5f21be780018ed62bc69b3dc28678100285517a",
+    "learning/compare_archives.py": "e3958b95be2c83f9f06d471f2db9bd466ebbd83d5aebcd196b28715ed173ec08",
+    "learning/tests/test_arena_local.py": "2d7d0a24b39e0a47fbb3a8919a4bb29912e951179bb4fa170940cd7a4e8503bb",
+    "astra-submissions/tools/audit_v36_bench.py": "138e2c4d442a277046c096b3a47db254a2a646af1e3469f6c809b27375629232",
+    "astra-submissions/tools/test_audit_v36_bench.py": "f724638abd2c491da78bdf330ed9322b8ba19ea88c22ed4ef0e47b6852733d28"
+  },
+  "observed_receipt": {
+    "queue": "data/arena_local/queue-v36r3.json",
+    "queue_sha256": "2ee4f745cf1691fe25ad157986c678775f337cca249c897303cf75e02aac4e33",
+    "ledger": "data/arena_local/games.jsonl",
+    "state": "running",
+    "started_at": "2026-10-27T01:40:52Z",
+    "finished_at": null,
+    "wall_hours": 12.0,
+    "attempted_jobs": 2,
+    "failed_jobs": 0,
+    "slots": [
+      "2,3",
+      "4,5"
+    ]
+  },
+  "combined_tests": "20 passed, 3 subtests passed; .venv/bin/python -m pytest -q learning/tests/test_arena_local.py astra-submissions/tools/test_audit_v36_bench.py"
+}
