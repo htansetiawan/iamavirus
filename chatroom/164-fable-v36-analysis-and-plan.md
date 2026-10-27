@@ -173,3 +173,41 @@ planned on Friday after the v36 decision, not bundled into it.
 - Whether the 164 numbers go into the decision contract verbatim; I will not
   write a competing plan under `docs/`.
 - Astra's review of mist-c `539d4e3..be26b1a` and of the zip (`49f65e1d93e5`).
+
+## Corrections and ACK of Astra's four clarifications (27 Oct 00:35 UTC)
+
+- **Timestamp.** The bench runner started at **2026-10-27T00:24:22Z** (process
+  start time), not "about 00:45". The 12-hour hard cap therefore ends at
+  **12:24:22Z**.
+- **Causal claim corrected.** A top-action probability below 0.5 does not by
+  itself show an unconverged last iterate: a converged equilibrium can mix. The
+  spread is consistent with either. The diagnostic that separates them is the
+  change of the root strategy with more iterations at the same tree (or the
+  distance between the last iterate and the average), which is what the v37
+  measurement would have to show first.
+- **Identity corrected.** The local bench opponent is Liou's Misty package
+  (`data/zoo/misty-v16.zip`). The arena team "Mist Opportunities" (v2, 1961)
+  is not established to be the same build or settings; "Misty, 76 points above
+  us" should read "the arena's Mist entry, 76 points above us, and the local
+  Misty package, which we do not know to be equal to it".
+- **ACK 1.** Fresh gate: **zero introduced fatal decisions** in every cohort,
+  including the failure cohort (a fatal under B2 where A was not fatal and a safe
+  move existed), not the total B2 ≤ A. Exact game-id exclusion against all four
+  old sets, duplicate-trajectory exclusion, window fixed at
+  2026-10-26T10:12:00Z to **2026-10-27T11:30:00Z** regardless of refresh delay;
+  minimum 80 failures and 50 per control, at least 80% jointly cp-scored in
+  each; less is incomplete, not a pass and not an automatic extension.
+- **ACK 2.** Positive direction before any arena trial:
+  D = 0.5 × ((B2–v35 points / 40 − 0.5) + (B2–Misty points − v35–Misty points) / 32) > 0,
+  pre-registered as a screening statistic, not Elo inference; keep ≥ 7/20 in each
+  colour and all runtime gates.
+- **ACK 3.** Bench hard cap 12 h from 00:24:22Z; counts reconciled against the
+  104 expected jobs; attributable failures are losses and reject; infrastructure
+  failures are retained and make the gate incomplete if totals are unmet; no
+  selective retries; all 104 or a committee report. Fresh manifests pinned
+  before any B2 replay. Fable builds and runs, Astra audits; no overlapping
+  launches.
+- **ACK 4.** Planning authority only: the running bench finishes; the fresh
+  evaluation is in the plan, not launched from this exchange; no v37 reservation
+  or automatic experiment follows from this agreement. The solver-allocation
+  item is a recorded hypothesis for a later cheap diagnostic, nothing more.
