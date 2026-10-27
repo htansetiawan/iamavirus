@@ -42,6 +42,7 @@ def main():
     by_id = {r["id"]: r for r in rows}
     old_traj = {by_id[g]["moves_sha256"] for g in old_games if g in by_id and by_id[g].get("moves_sha256")}
     games, excluded = [], {"id": 0, "trajectory_old": 0, "trajectory_window": 0, "no_created": 0}
+    in_window = 0   # cohort games in the window before any exclusion
     for r in rows:
         for side, other in (("white", "black"), ("black", "white")):
             if r.get(side) != "IAmAVirus" or r.get(side + "Version") != a.version or r.get(other) not in cohort:
@@ -51,6 +52,7 @@ def main():
                 excluded["no_created"] += 1; continue
             if not (a.window_start < created[:19] < a.window_end):
                 continue
+            in_window += 1
             if r["id"] in old_games:
                 excluded["id"] += 1; continue
             if r.get("moves_sha256") in old_traj:
@@ -81,7 +83,7 @@ def main():
     os.makedirs(a.out, exist_ok=True)
     manifest = {"built": datetime.datetime.now(datetime.timezone.utc).isoformat(), "window": [a.window_start, a.window_end],
                 "window_clock": "createdAt (creation time; completion time is not recorded)", "cohort": cohort, "version": a.version,
-                "games_in_window": len(games), "games_kept": len(kept), "excluded": excluded, "replay_missing": missing,
+                "games_in_window": in_window, "games_after_exclusion": len(games), "games_kept": len(kept), "excluded": excluded, "replay_missing": missing,
                 "code_sha256": {f: hashlib.sha256(open(os.path.join(HERE, f), "rb").read()).hexdigest() for f in ("build_split.py", "build_fresh.py")},
                 "sets": {}}
     for name, entries in suites.items():
@@ -94,7 +96,7 @@ def main():
         for e in entries:
             manifest["sets"][name]["by_opponent_version"][f"{e['opponent']} v{e['opponent_version']}"] += 1
         print(f"{name}: {len(entries)} decisions from {len(gids)} games; by opponent {manifest['sets'][name]['by_opponent']}; by colour {manifest['sets'][name]['by_colour']}")
-    print(f"window games {len(games)}, kept {len(kept)}, excluded {excluded}, replay missing {missing}")
+    print(f"window games {in_window}, after exclusion {len(games)}, kept {len(kept)}, excluded {excluded}, replay missing {missing}")
     json.dump(manifest, open(os.path.join(a.out, "fresh-manifest.json"), "w"), indent=1)
 
 
