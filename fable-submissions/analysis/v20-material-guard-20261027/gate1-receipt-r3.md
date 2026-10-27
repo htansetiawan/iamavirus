@@ -1,4 +1,4 @@
-# Gate-1 receipt, release candidate r3 (27 Oct 2026, written 01:50 UTC before the gate-3 launch)
+# Gate-1 receipt, release candidate r3 (committed 2026-10-27T01:40:46Z, commit 569fb2f; the gate-3 launch followed at 2026-10-27T01:40:52Z)
 
 Per the decision contract, section 2. Astra's source/artifact review passed on
 ff89313 (all 19 zip source members exactly ff89313; Stockfish and history bytes
@@ -80,4 +80,4 @@ Queue `data/arena_local/queue-v36r3.json` sha256
 `2ee4f745cf1691fe25ad157986c678775f337cca249c897303cf75e02aac4e33`:
 v36r3-vs-v35 40 games (seeds 200000 + 2·pair), v36r3-vs-misty 32 (201000 + 2·pair),
 v35-vs-misty-r3 32 (the same seeds), slots 2,3 and 4,5, `--wall-hours 12`.
-Launched under Henry's execution go-ahead relayed by Astra after this receipt.
+Launched at 2026-10-27T01:40:52Z (run receipt) under Henry's execution go-ahead relayed by Astra, after this receipt; hard stop 2026-10-27T13:40:52Z.
