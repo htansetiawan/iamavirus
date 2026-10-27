@@ -77,20 +77,25 @@ def ledger_games(matchup_id: str) -> list[dict]:
 
 
 def summary(m: dict) -> dict:
-    games = ledger_games(m["id"])
+    """Scores count only valid results; `attempted` counts every recorded attempt (a failed or
+    unknown result is recorded with a_score null and attempt "failed"), so a failed pair is
+    never played again and the cap counts attempts, not successes."""
+    rows = ledger_games(m["id"])
+    games = [g for g in rows if g.get("a_score") is not None]
     scores = [g["a_score"] for g in games]
     sp = m.get("sprt", {"elo0": 0, "elo1": 35, "alpha": 0.05, "beta": 0.05})
     llr = sprt_llr(scores, sp["elo0"], sp["elo1"])
     lo, hi = sprt_bounds(sp["alpha"], sp["beta"])
     verdict = sprt_verdict(scores, sp["elo0"], sp["elo1"], sp["alpha"], sp["beta"])
-    if len(games) >= m.get("max_games", 400) and verdict == "running":
+    if len(rows) >= m.get("max_games", 400) and verdict == "running":
         verdict = "max games reached"
     n = len(scores)
     mean = sum(scores) / n if n else 0.0
     w = sum(1 for x in scores if x == 1.0)
     d = sum(1 for x in scores if x == 0.5)
     elo = -400 * math.log10(1 / mean - 1) if 0 < mean < 1 else float("nan")
-    return {"id": m["id"], "games": n, "w-d-l": f"{w}-{d}-{n - w - d}", "score": round(mean, 3),
+    return {"id": m["id"], "games": n, "attempted": len(rows), "failed": len(rows) - n,
+            "w-d-l": f"{w}-{d}-{n - w - d}", "score": round(mean, 3),
             "elo_diff": round(elo, 1) if elo == elo else None, "llr": round(llr, 2), "bounds": [round(lo, 2), round(hi, 2)],
             "verdict": verdict}
 
@@ -154,7 +159,7 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
                 if s["verdict"] != "running":
                     continue
                 inflight = m.setdefault("_inflight", 0)
-                n = s["games"] + 2 * inflight
+                n = s["attempted"] + 2 * inflight   # attempts, so a failed pair is not retried
                 if n >= m.get("max_games", 400):
                     continue
                 if best is None or n < best[1]:
@@ -187,11 +192,12 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
                 except Exception as error:  # keep the arena running; record the failure
                     g = {"result": "*", "reason": f"runner error {error!r}", "plies": 0, "seconds": 0, "clocks": None}
                 score = {"1-0": 1.0, "0-1": 0.0, "1/2-1/2": 0.5}.get(g["result"])
-                if score is None:
-                    continue
-                a_score = score if a_white else 1 - score
+                # every attempt is recorded: a failed or unknown result keeps its row (a_score null,
+                # attempt "failed") so the audit sees it and the pair is never played again
+                a_score = (score if a_white else 1 - score) if score is not None else None
                 rec = {"matchup": m["id"], "pair": pair, "seed": seed, "a_colour": "white" if a_white else "black",
-                       "a_score": a_score, "result": g["result"], "reason": g["reason"], "plies": g["plies"],
+                       "a_score": a_score, "attempt": "ok" if score is not None else "failed",
+                       "result": g["result"], "reason": g["reason"], "plies": g["plies"],
                        "seconds": round(g["seconds"], 1), "clocks": g["clocks"], "slot": slot,
                        "a": str(m["a"]), "b": str(m["b"]), "a_sha": sha12(Path(m["a"])), "b_sha": sha12(Path(m["b"])),
                        "a_env": m.get("a_env", []), "b_env": m.get("b_env", []), "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
