@@ -35,6 +35,7 @@ def elo_to_score(elo: float) -> float:
     return 1.0 / (1.0 + 10 ** (-elo / 400.0))
 
 
+GAME_BOUND_SECONDS = 1200   # a 180+2 game with its start-up: no game starts unless this fits before the cap
 MIN_GAMES = 20          # no verdict before ten colour-swapped pairs
 PRIOR_GAMES = 20        # pseudo-games of variance PRIOR_VAR blended into the sample variance
 PRIOR_VAR = 0.22        # per-game score variance of a near-even match with a few draws
@@ -110,10 +111,11 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0, wall_hour
     RECEIPTS.mkdir(parents=True, exist_ok=True)
     receipt_path = RECEIPTS / f"{queue_path.stem}.json"
     receipt = {"queue": str(queue_path), "queue_sha256": hashlib.sha256(queue_path.read_bytes()).hexdigest(),
-               "ledger": str(LEDGER.relative_to(ROOT)), "state": "running",
+               "ledger": str(LEDGER.relative_to(ROOT)) if LEDGER.is_relative_to(ROOT) else str(LEDGER), "state": "running",
                "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "finished_at": None,
                "wall_hours": wall_hours, "attempted_jobs": 0, "failed_jobs": 0, "slots": slots}
     started = time.time()
+    deadline = started + 3600 * wall_hours if wall_hours is not None else None
 
     def write_receipt():   # caller holds _lock
         tmp = receipt_path.with_suffix(".tmp")
@@ -170,10 +172,10 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0, wall_hour
     def next_job():
         """The matchup with the fewest games that is still running; its next pair index."""
         with _lock:
-            if wall_hours is not None and time.time() > started + 3600 * wall_hours:
+            if deadline is not None and time.time() + GAME_BOUND_SECONDS > deadline:
                 if receipt["state"] == "running":
                     receipt["state"] = "wall_cap"; write_receipt()
-                return None   # the cap: no new job; games in flight finish and are recorded
+                return None   # the cap: no new pair; a game in flight is bounded by its timeout
             reload_queue()
             best = None
             for m in queue["matchups"]:
@@ -210,9 +212,16 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0, wall_hour
                 white, black = (a, b) if a_white else (b, a)
                 wenv, benv = (a_env, b_env) if a_white else (b_env, a_env)
                 with _lock:
+                    # the cap is checked before EACH game: the second colour of a pair does not start
+                    # either, and a game in flight is killed at the deadline (recorded as failed)
+                    if deadline is not None and time.time() + GAME_BOUND_SECONDS > deadline:
+                        if receipt["state"] == "running":
+                            receipt["state"] = "wall_cap"; write_receipt()
+                        break
                     receipt["attempted_jobs"] += 1; write_receipt()   # a started game, scored or not
+                    timeout = min(GAME_BOUND_SECONDS, deadline - time.time()) if deadline is not None else None
                 try:
-                    g = ca.play(white, black, seed, KIT, out, slot, wenv, benv)
+                    g = ca.play(white, black, seed, KIT, out, slot, wenv, benv, timeout=timeout)
                 except Exception as error:  # keep the arena running; record the failure
                     g = {"result": "*", "reason": f"runner error {error!r}", "plies": 0, "seconds": 0, "clocks": None}
                 score = {"1-0": 1.0, "0-1": 0.0, "1/2-1/2": 0.5}.get(g["result"])
@@ -244,7 +253,7 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0, wall_hour
             receipt["state"] = "complete"
         receipt["finished_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
         write_receipt()
-    print(f"run receipt: {receipt_path.relative_to(ROOT)} state {receipt['state']} attempted {receipt['attempted_jobs']} failed {receipt['failed_jobs']}", flush=True)
+    print(f"run receipt: {receipt_path} state {receipt['state']} attempted {receipt['attempted_jobs']} failed {receipt['failed_jobs']}", flush=True)
     for m in queue["matchups"]:
         print(json.dumps(summary(m)))
 

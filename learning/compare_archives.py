@@ -14,6 +14,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import signal
 import subprocess
 import sys
 import time
@@ -41,8 +42,39 @@ def build(archive: Path, workdir: Path) -> Path:
     return target
 
 
+def descendants(pid: int) -> list[int]:
+    """Every process below pid, deepest first, from /proc (the referee starts its bots in
+    their own sessions, so a process-group kill would orphan them)."""
+    children: dict[int, list[int]] = {}
+    for entry in os.listdir("/proc"):
+        if not entry.isdigit():
+            continue
+        try:
+            with open(f"/proc/{entry}/stat") as f:
+                fields = f.read().rsplit(")", 1)[1].split()
+            children.setdefault(int(fields[1]), []).append(int(entry))   # fields[1] = ppid
+        except (OSError, IndexError, ValueError):
+            continue
+    found, stack = [], [pid]
+    while stack:
+        q = stack.pop()
+        for c in children.get(q, []):
+            found.append(c); stack.append(c)
+    return found[::-1]
+
+
+def kill_tree(pid: int) -> None:
+    for q in descendants(pid) + [pid]:
+        try:
+            os.kill(q, signal.SIGKILL)
+        except ProcessLookupError:
+            pass
+
+
 def play(white: Path, black: Path, seed: int, kit: Path, out: Path, cores: str | None,
-         white_env: str = "", black_env: str = "") -> dict:
+         white_env: str = "", black_env: str = "", timeout: float | None = None) -> dict:
+    """One referee game. With `timeout` (seconds) the game and every process it started are
+    killed at the deadline and a RuntimeError says so; the caller records a failed attempt."""
     python = kit / ".venv" / "bin" / "python"
     prefix = ["taskset", "-c", cores] if cores else []
     cmd = prefix + [str(python), str(kit / "referee.py"), "--trusted-local",
@@ -51,7 +83,15 @@ def play(white: Path, black: Path, seed: int, kit: Path, out: Path, cores: str |
                     "--white-name", white.name, "--black-name", black.name,
                     "--base-time", "180", "--increment", "2", "--max-plies", "1000", "--output", str(out)]
     started = time.time()
-    subprocess.run(cmd, check=True, capture_output=True, text=True)
+    proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    try:
+        _, err = proc.communicate(timeout=timeout)
+    except subprocess.TimeoutExpired:
+        kill_tree(proc.pid)
+        proc.wait()
+        raise RuntimeError(f"wall cap: game killed after {time.time() - started:.0f} s") from None
+    if proc.returncode != 0:
+        raise RuntimeError(f"referee exit {proc.returncode}: {err[-400:]}")
     replay = json.loads(out.read_text())
     return {"result": replay["result"], "reason": replay["reason"], "plies": len(replay["frames"]) - 1,
             "seconds": time.time() - started, "clocks": replay["frames"][-1]["clocks"]}

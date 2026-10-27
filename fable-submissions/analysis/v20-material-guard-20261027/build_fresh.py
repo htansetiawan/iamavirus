@@ -1,14 +1,15 @@
 """The fresh confirmation set for the v36 decision contract (gate 2), built once.
 
 Selection, frozen before the data existed (chatroom 164, decision contract):
-  window   IAmAVirus v35 games created strictly after --window-start and before
-           --window-end (the ledger records creation time; completion time is not
-           recorded, so creation is the window's clock and is said so here)
+  window   IAmAVirus v35 games whose completion time (the API's replay.createdAt,
+           copied by the ingest) is strictly after --window-start and before
+           --window-end, compared as timezone-aware instants
   cohort   the fixed six plus Crimson Fog (--cohort), any opponent version
   exclude  every game id in the four earlier sets (--exclude-split split.json)
-           and every game whose exact move trajectory (moves_sha256 in
-           accepted.jsonl) occurs in those sets; within the window the earliest
-           (created, id) per trajectory is kept
+           and every game whose exact move trajectory (moves_sha256, recomputed
+           from the replay when the ledger lacks it; a game with neither is
+           quarantined and counted) occurs in those sets; within the window the
+           earliest (completed, id) per trajectory is kept
   failure  the first clean rook/minor loss in each lost game, lead >= -3
            before, recorded move not fatal, truth available (build_split.decisions)
   controls ordinary win/draw decisions and ordinary pre-event decisions of
@@ -17,10 +18,33 @@ Selection, frozen before the data existed (chatroom 164, decision contract):
 Writes fresh-failures.json, fresh-control.json, fresh-control-loss.json and
 fresh-manifest.json (ids, games, coverage, exclusions, code hashes) to --out.
 """
-import argparse, hashlib, json, os, sys, datetime
+import argparse, hashlib, json, os, re, sys, datetime
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+sys.path.insert(0, os.path.abspath(os.path.join(HERE, "..", "..", "..")))
 from build_split import decisions, TOP6  # noqa: E402
+from learning.ingest import replay_hash  # noqa: E402
+
+
+def parse_ts(text):
+    """An ISO instant as an aware UTC datetime: fractions of any length, an offset or Z,
+    or none (taken as UTC)."""
+    t = text.strip().replace("Z", "+00:00")
+    t = re.sub(r"(\.\d{6})\d+", r"\1", t)
+    d = datetime.datetime.fromisoformat(t)
+    if d.tzinfo is None:
+        d = d.replace(tzinfo=datetime.timezone.utc)
+    return d.astimezone(datetime.timezone.utc)
+
+
+def trajectory(raw, r):
+    """The game's moves_sha256 from the ledger, else recomputed from its replay, else None."""
+    if r.get("moves_sha256"):
+        return r["moves_sha256"]
+    try:
+        return replay_hash(json.load(open(os.path.join(raw, "games", r["id"], "replay.json"))))
+    except (OSError, ValueError, KeyError):
+        return None
 
 
 def main():
@@ -34,14 +58,23 @@ def main():
     ap.add_argument("--controls", type=int, default=100)
     a = ap.parse_args()
     cohort = a.cohort.split(",")
+    if os.path.exists(os.path.join(a.out, "fresh-manifest.json")):
+        sys.exit(f"refusing to rebuild: {a.out}/fresh-manifest.json exists (the fresh set is built once)")
+    start, end = parse_ts(a.window_start), parse_ts(a.window_end)
     split = json.load(open(a.exclude_split))
     old_games = set()
     for name in ("calib", "oos", "control", "control-loss"):
         old_games |= {i.split(":")[0] for i in split[name]["ids"]}
     rows = [json.loads(l) for l in open(os.path.join(a.raw, "accepted.jsonl")) if l.strip()]
     by_id = {r["id"]: r for r in rows}
-    old_traj = {by_id[g]["moves_sha256"] for g in old_games if g in by_id and by_id[g].get("moves_sha256")}
-    games, excluded = [], {"id": 0, "trajectory_old": 0, "trajectory_window": 0, "no_created": 0}
+    old_traj, quarantined_old = set(), 0
+    for g in old_games:
+        h = trajectory(a.raw, by_id[g]) if g in by_id else None
+        if h is None:
+            quarantined_old += 1
+        else:
+            old_traj.add(h)
+    games, excluded = [], {"id": 0, "trajectory_old": 0, "trajectory_window": 0, "no_created": 0, "no_trajectory": 0}
     in_window = 0   # cohort games in the window before any exclusion
     for r in rows:
         for side, other in (("white", "black"), ("black", "white")):
@@ -50,15 +83,18 @@ def main():
             created = r.get("createdAt") or ""
             if not created:
                 excluded["no_created"] += 1; continue
-            if not (a.window_start < created[:19] < a.window_end):
+            if not (start < parse_ts(created) < end):
                 continue
             in_window += 1
             if r["id"] in old_games:
                 excluded["id"] += 1; continue
-            if r.get("moves_sha256") in old_traj:
+            h = trajectory(a.raw, r)
+            if h is None:
+                excluded["no_trajectory"] += 1; continue   # quarantined, never merged with another missing hash
+            if h in old_traj:
                 excluded["trajectory_old"] += 1; continue
             s = {"1-0": 1, "0-1": 0}.get(r["result"], 0.5); s = s if side == "white" else 1 - s
-            games.append((created, r["id"], side, r[other], r.get(other + "Version"), s, r.get("moves_sha256")))
+            games.append((parse_ts(created).isoformat(), r["id"], side, r[other], r.get(other + "Version"), s, h))
     games.sort()
     seen = set(); kept = []
     for g in games:
@@ -74,15 +110,20 @@ def main():
                     e.update(opponent=opp, opponent_version=oppv, created=created, version=a.version); suites["fresh-failures"].append(e)
                 if len(suites["fresh-control-loss"]) < a.controls and int(gid[-1], 36) % 3 == 0:
                     for e in decisions(a.raw, gid, side, "control-loss"):
+                        if len(suites["fresh-control-loss"]) >= a.controls:
+                            break   # the cap holds inside a game too
                         e.update(opponent=opp, opponent_version=oppv, created=created, version=a.version); suites["fresh-control-loss"].append(e)
             elif len(suites["fresh-control"]) < a.controls:
                 for e in decisions(a.raw, gid, side, "control"):
+                    if len(suites["fresh-control"]) >= a.controls:
+                        break
                     e.update(opponent=opp, opponent_version=oppv, created=created, version=a.version); suites["fresh-control"].append(e)
         except FileNotFoundError:
             missing += 1
     os.makedirs(a.out, exist_ok=True)
     manifest = {"built": datetime.datetime.now(datetime.timezone.utc).isoformat(), "window": [a.window_start, a.window_end],
-                "window_clock": "createdAt (creation time; completion time is not recorded)", "cohort": cohort, "version": a.version,
+                "window_clock": "replay.createdAt = the API's recorded completion time, aware UTC, strict endpoints", "cohort": cohort, "version": a.version,
+                "quarantined_old_games_without_trajectory": quarantined_old,
                 "games_in_window": in_window, "games_after_exclusion": len(games), "games_kept": len(kept), "excluded": excluded, "replay_missing": missing,
                 "code_sha256": {f: hashlib.sha256(open(os.path.join(HERE, f), "rb").read()).hexdigest() for f in ("build_split.py", "build_fresh.py")},
                 "sets": {}}
