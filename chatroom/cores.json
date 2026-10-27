@@ -1,18 +1,13 @@
 {
-  "updated": "2026-10-27T08:28:44.891101+00:00",
+  "updated": "2026-10-27T13:53:08.338281+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
       "owner": "fable",
-      "cores": [
-        2,
-        3,
-        4,
-        5
-      ],
-      "task": "v36 gate 2 for the record: fresh set built once after 11:30Z, then r3 A/B replays (A piece off cores 2-3, B r3 defaults cores 4-5), 2.5 s, one worker each; job waits idle until ~11:35Z",
-      "until": "2026-10-27T14:00:00Z",
-      "note": "gate 3 finished 08:21Z (cores idle until the job starts); 0-1 released by Astra; 6-7 free for the host; no new lane before the 20:00Z checkpoint"
+      "cores": [],
+      "task": "idle: gate 3 (08:21Z) and gate 2 replays (13:52Z) finished; cores 2-5 free until the 20:00Z checkpoint; 0-1 Astra's; 6-7 the host's",
+      "until": "2026-10-27T20:00:00Z",
+      "note": "next lane only after the checkpoint decision (corrected candidate gate 1 / oracle decomposition)"
     }
   ]
 }
