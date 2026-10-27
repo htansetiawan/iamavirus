@@ -1,0 +1,75 @@
+make test on dd89907, core 6, 2026-10-27T22:06:34Z
+./build/test_rules tests/vectors.txt
+positions 13467: move-set mismatches 0, view mismatches 0, make/unmake mismatches 0
+./build/test_guard tests/traces.txt
+vs TA-P, ply 45 (Black): 44 view moves, d2d1q excluded; rebuilt 64 positions, none allows it
+vs TA-P, ply 45 (White): 44 view moves, d7d8q excluded; rebuilt 64 positions, none allows it
+vs v25, ply 75 (Black): 16 view moves, g6g5 excluded; rebuilt 64 positions, none allows it
+vs v25, ply 75 (White): 16 view moves, g3g4 excluded; rebuilt 64 positions, none allows it
+as White: 692 decisions; view_moves illegal 0, missed 0 (+1 en passant); rebuilt 228 times: none fit 0, view mismatch 0, illegal moves 0, true board among them 16
+as Black: 924 decisions; view_moves illegal 0, missed 0 (+0 en passant); rebuilt 311 times: none fit 0, view mismatch 0, illegal moves 0, true board among them 6
+test_guard: passed
+./build/test_front
+as White: done
+as Black: done
+test_front: passed
+./build/test_rule
+as White: done
+as Black: done
+test_rule: passed
+./build/test_eval
+castled king                       white: lines 0 knight squares 1 | mirrored for black: 0 1
+castled king, no enemy knights     white: lines 0 knight squares 0 | mirrored for black: 0 0
+bare king in the centre            white: lines 5 knight squares 4 | mirrored for black: 5 4
+bare king against a bishop         white: lines 2 knight squares 0 | mirrored for black: 2 0
+bare black king in the centre      black: lines 5 knight squares 4 | mirrored for white: 5 4
+test_eval: passed
+./build/test_sf
+test_sf: MIST_STOCKFISH not set, Stockfish checks skipped
+./build/test_belief tests/traces.txt 100000
+  game 1: P became empty at ply 92 after the cap
+  game 2: P became empty at ply 188 after the cap
+  game 3: P became empty at ply 202 after the cap
+  game 4: P became empty at ply 245 after the cap
+  game 5: P became empty at ply 310 after the cap
+  game 6: P became empty at ply 381 after the cap
+  game 7: P became empty at ply 454 after the cap
+  game 8: P became empty at ply 548 after the cap
+  game 9: P became empty at ply 591 after the cap
+  game 10: P became empty at ply 657 after the cap
+  game 11: P became empty at ply 742 after the cap
+  game 12: P became empty at ply 835 after the cap
+  game 13: P became empty at ply 907 after the cap
+  game 14: P became empty at ply 978 after the cap
+  game 15: P became empty at ply 1012 after the cap
+  game 17: P became empty at ply 1238 after the cap
+  game 18: P became empty at ply 1344 after the cap
+  game 19: P became empty at ply 1418 after the cap
+  game 20: P became empty at ply 1484 after the cap
+  game 21: P became empty at ply 1582 after the cap
+  game 22: P became empty at ply 1624 after the cap
+  game 23: P became empty at ply 1700 after the cap
+  game 24: P became empty at ply 1745 after the cap
+  game 26: P became empty at ply 1983 after the cap
+  game 28: P became empty at ply 2141 after the cap
+  game 31: P became empty at ply 2361 after the cap
+  game 33: P became empty at ply 2547 after the cap
+  game 34: P became empty at ply 2660 after the cap
+  game 36: P became empty at ply 2851 after the cap
+  game 38: P became empty at ply 3027 after the cap
+  game 40: P became empty at ply 3161 after the cap
+games 40, plies 3161: true position missing 0 times while exact (192 after the cap); |P| mean 11547 max 100000; update mean 0.0587 s max 1.735 s; games that hit the cap 24 (cap 100000)
+truth's weight share while exact (|P| > 1, 1605 plies): geometric mean 0.0110 vs uniform 0.0047 (x2.3); in a 64-world sample 63.9%
+./build/test_cfr
+uniform random play: value +0.12500 exploitability 0.91667
+t= 100  last iterate: value -0.05556 exploitability 0.00000 | average: value -0.05564 exploitability 0.00056  (target -0.05556)
+t=1000  last iterate: value -0.05556 exploitability 0.00000 | average: value -0.05556 exploitability 0.00001  (target -0.05556)
+t=4000  last iterate: value -0.05556 exploitability 0.00000 | average: value -0.05556 exploitability 0.00000  (target -0.05556)
+test_cfr: passed
+./build/test_search tests/traces.txt 3 25
+king capture test: chose h1h8 (value +1.000)
+gtcfr king capture test: chose h1h8 (value +1.000, 9074 nodes, 4850 iterations)
+3 games, 57 decisions: illegal 0; left our king capturable on the true board 0 (a safe move existed in 0); time per decision mean 0.075 s, max 0.208 s
+test_search: passed
+exit 0
+done 2026-10-27T22:09:48Z

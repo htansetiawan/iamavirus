@@ -1,0 +1,350 @@
+[
+  {
+    "label": "exact build.sh (gcc)",
+    "argv": [
+      "bash",
+      "build.sh"
+    ],
+    "seconds": 2.063607805990614,
+    "returncode": 0,
+    "stdout": "build: done (gcc)\n",
+    "stderr": ""
+  },
+  {
+    "label": "gcc handshake w",
+    "executable_sha256": "65162c2c780c36efd590f5458db73ee8723e407252f7dcf82bae712bc8299623",
+    "seconds": 0.6784420430194587,
+    "returncode": 0,
+    "stdout": "ready\n",
+    "stderr": "mist: history table /tmp/astra-v36-r4-gate1-m0m964m4/gcc/data/history.bin: 151316 records\nmist: stockfish ready\n"
+  },
+  {
+    "label": "gcc handshake b",
+    "executable_sha256": "65162c2c780c36efd590f5458db73ee8723e407252f7dcf82bae712bc8299623",
+    "seconds": 0.6762001459719613,
+    "returncode": 0,
+    "stdout": "ready\n",
+    "stderr": "mist: history table /tmp/astra-v36-r4-gate1-m0m964m4/gcc/data/history.bin: 151316 records\nmist: stockfish ready\n"
+  },
+  {
+    "label": "compile focused tests",
+    "argv": [
+      "make",
+      "build/test_rule",
+      "build/test_front"
+    ],
+    "seconds": 3.5503626769641414,
+    "returncode": 0,
+    "stdout": "mkdir -p build && cc -O2 -std=c11 -Wall -Wextra -Wpedantic -pthread src/board.c src/belief.c src/movemodel.c src/cfr.c src/eval.c src/search.c src/gtcfr.c src/front.c src/sfeval.c tests/test_rule.c -lm -o build/test_rule\nmkdir -p build && cc -O2 -std=c11 -Wall -Wextra -Wpedantic -pthread src/board.c src/belief.c src/movemodel.c src/cfr.c src/eval.c src/search.c src/gtcfr.c src/front.c src/sfeval.c tests/test_front.c -lm -o build/test_front\n",
+    "stderr": "src/cfr.c: In function \u2018pcfr_iteration\u2019:\nsrc/cfr.c:164:9: warning: \u2018x\u2019 may be used uninitialized [-Wmaybe-uninitialized]\n  164 |         traverse(g, g->root, player, 1.0, x, inst);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nsrc/cfr.c:126:15: note: by argument 5 of type \u2018const double *\u2019 to \u2018traverse\u2019 declared here\n  126 | static double traverse(const Game *g, int node, int player, double reach_others, const double *x, double *inst) {\n      |               ^~~~~~~~\nsrc/cfr.c: In function \u2018pcfr_iteration\u2019:\nsrc/cfr.c:164:9: warning: \u2018x\u2019 may be used uninitialized [-Wmaybe-uninitialized]\n  164 |         traverse(g, g->root, player, 1.0, x, inst);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nsrc/cfr.c:126:15: note: by argument 5 of type \u2018const double *\u2019 to \u2018traverse\u2019 declared here\n  126 | static double traverse(const Game *g, int node, int player, double reach_others, const double *x, double *inst) {\n      |               ^~~~~~~~\n"
+  },
+  {
+    "label": "test_rule",
+    "argv": [
+      "./build/test_rule"
+    ],
+    "seconds": 0.005177173065021634,
+    "returncode": 0,
+    "stdout": "as White: done\nas Black: done\ntest_rule: passed\n",
+    "stderr": ""
+  },
+  {
+    "label": "test_front",
+    "argv": [
+      "./build/test_front"
+    ],
+    "seconds": 0.0007229140028357506,
+    "returncode": 0,
+    "stdout": "as White: done\nas Black: done\ntest_front: passed\n",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/board.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/board.c",
+      "-o",
+      "board.o"
+    ],
+    "seconds": 0.14568734704516828,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/belief.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/belief.c",
+      "-o",
+      "belief.o"
+    ],
+    "seconds": 0.41698940901551396,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/movemodel.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/movemodel.c",
+      "-o",
+      "movemodel.o"
+    ],
+    "seconds": 0.06171533197630197,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/cfr.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/cfr.c",
+      "-o",
+      "cfr.o"
+    ],
+    "seconds": 0.13866101298481226,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/eval.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/eval.c",
+      "-o",
+      "eval.o"
+    ],
+    "seconds": 0.12070916104130447,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/search.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/search.c",
+      "-o",
+      "search.o"
+    ],
+    "seconds": 0.0700652259401977,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/gtcfr.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/gtcfr.c",
+      "-o",
+      "gtcfr.o"
+    ],
+    "seconds": 0.2426867219619453,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/front.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/front.c",
+      "-o",
+      "front.o"
+    ],
+    "seconds": 0.0965009470237419,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/sfeval.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/sfeval.c",
+      "-o",
+      "sfeval.o"
+    ],
+    "seconds": 0.15722656599245965,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C compile src/main.c",
+    "argv": [
+      "g++",
+      "-x",
+      "c",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "src/main.c",
+      "-o",
+      "main.o"
+    ],
+    "seconds": 0.3959700259147212,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ C link",
+    "argv": [
+      "g++",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "belief.o",
+      "board.o",
+      "cfr.o",
+      "eval.o",
+      "front.o",
+      "gtcfr.o",
+      "main.o",
+      "movemodel.o",
+      "search.o",
+      "sfeval.o",
+      "-lm",
+      "-o",
+      "mist"
+    ],
+    "seconds": 0.023832233040593565,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ -x c handshake w",
+    "executable_sha256": "7d5105abdaaac87a6a6946a81dd7f955d6918c0b04b1d8a4e1a8c08b09913dcf",
+    "seconds": 0.6960663840873167,
+    "returncode": 0,
+    "stdout": "ready\n",
+    "stderr": "mist: history table /tmp/astra-v36-r4-gate1-m0m964m4/gpp/data/history.bin: 151316 records\nmist: stockfish ready\n"
+  },
+  {
+    "label": "g++ -x c handshake b",
+    "executable_sha256": "7d5105abdaaac87a6a6946a81dd7f955d6918c0b04b1d8a4e1a8c08b09913dcf",
+    "seconds": 0.6893216859316453,
+    "returncode": 0,
+    "stdout": "ready\n",
+    "stderr": "mist: history table /tmp/astra-v36-r4-gate1-m0m964m4/gpp/data/history.bin: 151316 records\nmist: stockfish ready\n"
+  },
+  {
+    "label": "g++ C++ fallback",
+    "argv": [
+      "g++",
+      "-x",
+      "c++",
+      "-std=c++20",
+      "-fpermissive",
+      "-w",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "src/board.c",
+      "src/belief.c",
+      "src/movemodel.c",
+      "src/cfr.c",
+      "src/eval.c",
+      "src/search.c",
+      "src/gtcfr.c",
+      "src/front.c",
+      "src/sfeval.c",
+      "src/main.c",
+      "-lm",
+      "-o",
+      "mist"
+    ],
+    "seconds": 2.938272599945776,
+    "returncode": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "g++ -x c++ handshake w",
+    "executable_sha256": "83b0cd710a7d4de57f9dfd53d04f9ef70cbae963108bbab838a3b16ca1e3c1c7",
+    "seconds": 0.7299785200739279,
+    "returncode": 0,
+    "stdout": "ready\n",
+    "stderr": "mist: history table /tmp/astra-v36-r4-gate1-m0m964m4/gpp/data/history.bin: 151316 records\nmist: stockfish ready\n"
+  },
+  {
+    "label": "g++ -x c++ handshake b",
+    "executable_sha256": "83b0cd710a7d4de57f9dfd53d04f9ef70cbae963108bbab838a3b16ca1e3c1c7",
+    "seconds": 0.7281322220806032,
+    "returncode": 0,
+    "stdout": "ready\n",
+    "stderr": "mist: history table /tmp/astra-v36-r4-gate1-m0m964m4/gpp/data/history.bin: 151316 records\nmist: stockfish ready\n"
+  }
+]

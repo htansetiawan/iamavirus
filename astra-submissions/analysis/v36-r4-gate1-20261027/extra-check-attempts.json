@@ -1,0 +1,14 @@
+{
+  "classification": "diagnostic harness attempts, not candidate results",
+  "attempts": [
+    {
+      "method": "suite_run.py default kinds",
+      "outcome": "zero records: piece cases filtered by defaults; not accepted as a test pass"
+    },
+    {
+      "method": "suite_run.py --kinds piece, seed2, with CP scoring",
+      "outcome": "outer harness timeout after180s; no accepted results; no cause assigned to engine"
+    }
+  ],
+  "replacement": "direct native-binary protocol replays of the same three inputs, seeds2/3, count6 required, true-board king-safety checked; see b1-extra-seeds-direct.json"
+}

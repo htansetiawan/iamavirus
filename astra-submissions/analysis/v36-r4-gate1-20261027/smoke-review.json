@@ -1,0 +1,93 @@
+{
+  "classification": "gate1 two-color smoke passes; not strength evidence",
+  "receipt": {
+    "queue": "data/arena_local/smoke-v36r4.json",
+    "queue_sha256": "6e9d0791acfb00951337f72f1680f4667303ac0e46da4981a47ba62138aabc53",
+    "ledger": "data/arena_local/games.jsonl",
+    "state": "complete",
+    "started_at": "2026-10-27T22:06:28Z",
+    "finished_at": "2026-10-27T22:17:32Z",
+    "wall_hours": 1.0,
+    "attempted_jobs": 2,
+    "failed_jobs": 0,
+    "slots": [
+      "2,3"
+    ]
+  },
+  "checks": [
+    {
+      "row": {
+        "matchup": "smoke-v36r4-vs-v35",
+        "pair": 0,
+        "seed": 299000,
+        "a_colour": "white",
+        "a_score": 1.0,
+        "attempt": "ok",
+        "result": "1-0",
+        "reason": "King capturable",
+        "plies": 54,
+        "seconds": 340.1,
+        "clocks": [
+          64.557425,
+          64.742008
+        ],
+        "slot": "2,3",
+        "a": "data/candidates/iamavirus-v36-candidate-mist-c-v20-r4.zip",
+        "b": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+        "a_sha": "1649dfbfe23b",
+        "b_sha": "24791ca64a42",
+        "a_env": [],
+        "b_env": [],
+        "ts": "2026-10-27T22:12:13Z",
+        "replay": "data/arena_local/builds/smoke-v36r4-vs-v35-p0-a-white.json"
+      },
+      "check": {
+        "sha256": "b2cd5f094c0ad2970146ca70997ec38ffd08ada653e30dcc56b1e67f36fef4f7",
+        "frames": 55,
+        "normal_board_termination": true,
+        "valid_move_limit_draw": false,
+        "minimum_recorded_clocks": [
+          64.557425,
+          64.742008
+        ]
+      }
+    },
+    {
+      "row": {
+        "matchup": "smoke-v36r4-vs-v35",
+        "pair": 0,
+        "seed": 299000,
+        "a_colour": "black",
+        "a_score": 0.0,
+        "attempt": "ok",
+        "result": "1-0",
+        "reason": "King capturable",
+        "plies": 48,
+        "seconds": 318.1,
+        "clocks": [
+          71.726873,
+          67.459267
+        ],
+        "slot": "2,3",
+        "a": "data/candidates/iamavirus-v36-candidate-mist-c-v20-r4.zip",
+        "b": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+        "a_sha": "1649dfbfe23b",
+        "b_sha": "24791ca64a42",
+        "a_env": [],
+        "b_env": [],
+        "ts": "2026-10-27T22:17:32Z",
+        "replay": "data/arena_local/builds/smoke-v36r4-vs-v35-p0-b-white.json"
+      },
+      "check": {
+        "sha256": "eed63bdca81097e90d7ba294fc7474b7638e928e2d87f8eb00709e5ef20463db",
+        "frames": 49,
+        "normal_board_termination": true,
+        "valid_move_limit_draw": false,
+        "minimum_recorded_clocks": [
+          71.726873,
+          67.459267
+        ]
+      }
+    }
+  ]
+}

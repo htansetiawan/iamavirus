@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "created_at": "2026-10-27T22:07:48+00:00",
+  "classification": "pre-run input pins; not a gate result",
+  "queue_path": "/home/henrytan/git/iamavirus/data/arena_local/queue-v36r4.json",
+  "queue_sha256": "0b92a8cf16f2a1769b1a9ded2e5d28a8444cfa59c6227fbf6e23e616515a0ece",
+  "queue": {
+    "matchups": [
+      {
+        "id": "v36r4-vs-v35",
+        "a": "data/candidates/iamavirus-v36-candidate-mist-c-v20-r4.zip",
+        "a_env": [],
+        "b": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+        "b_env": [],
+        "max_games": 40,
+        "seed": 300000,
+        "sprt": {
+          "elo0": 0,
+          "elo1": 35,
+          "alpha": 1e-12,
+          "beta": 1e-12
+        }
+      },
+      {
+        "id": "v36r4-vs-misty",
+        "a": "data/candidates/iamavirus-v36-candidate-mist-c-v20-r4.zip",
+        "a_env": [],
+        "b": "data/zoo/misty-v16.zip",
+        "b_env": [],
+        "max_games": 32,
+        "seed": 301000,
+        "sprt": {
+          "elo0": 0,
+          "elo1": 35,
+          "alpha": 1e-12,
+          "beta": 1e-12
+        }
+      },
+      {
+        "id": "v35-vs-misty-r4",
+        "a": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+        "a_env": [],
+        "b": "data/zoo/misty-v16.zip",
+        "b_env": [],
+        "max_games": 32,
+        "seed": 301000,
+        "sprt": {
+          "elo0": 0,
+          "elo1": 35,
+          "alpha": 1e-12,
+          "beta": 1e-12
+        }
+      }
+    ]
+  },
+  "roles": {
+    "direct": "v36r4-vs-v35",
+    "candidate_misty": "v36r4-vs-misty",
+    "baseline_misty": "v35-vs-misty-r4"
+  },
+  "artifacts_sha256": {
+    "/home/henrytan/git/iamavirus/data/candidates/iamavirus-v36-candidate-mist-c-v20-r4.zip": "1649dfbfe23b36991bfc6d6fd16c54383bc4079f30b033845e9bfa550e52dbf2",
+    "/home/henrytan/git/iamavirus/fable-submissions/iamavirus-v35-mist-c-v14.zip": "24791ca64a429f5ae931466ce3c1af36c6974e1295203e99a00a991976955b4c",
+    "/home/henrytan/git/iamavirus/data/zoo/misty-v16.zip": "62d8d389c2ed830d2c47c83739f4c033d432861a4a95f0d3e6ddb82bdee63757"
+  },
+  "referee": "/home/henrytan/git/fow-starter/referee.py",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "opponent_environment": "/home/henrytan/git/iamavirus/astra-submissions/analysis/v36-plan-20261026/opponent-environment.json",
+  "opponent_environment_sha256": "2cbe04deb32ab3264bc2531fd21da9ead981fa5a2c9c41cd78d2b0e7549c345b",
+  "wall_cap_seconds": 43200
+}

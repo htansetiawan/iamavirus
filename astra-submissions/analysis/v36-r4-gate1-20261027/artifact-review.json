@@ -1,0 +1,34 @@
+{
+  "source_commit": "dd8990739c8b37e80853bc31046746b4f82fa2ef",
+  "zip_sha256": "1649dfbfe23b36991bfc6d6fd16c54383bc4079f30b033845e9bfa550e52dbf2",
+  "queue_sha256": "0b92a8cf16f2a1769b1a9ded2e5d28a8444cfa59c6227fbf6e23e616515a0ece",
+  "source_members": {
+    "src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "src/front.c": "489f84128c895309fe532cf5f5ee42472159a1333f8057f1f21be62d77d2b930",
+    "src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+    "src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d",
+    "src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+    "src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "src/gtcfr.c": "f146eb44a3e4a40cf2dc92ef16a4133aa4fa8f0da3b796421aba5a07f15719d8",
+    "src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+    "src/movemodel.c": "fb80064af6f7a2e7cf0b268ae7fc41657b0246c7ac07781968c176cccdf7f89d",
+    "src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "src/main.c": "c8916434655ca87d482a60cf01e3463382352227884fe6f5a9d5c20566df621e",
+    "src/eval.h": "612e6c18b24d055d10678d6b25c476641075dd5e6cc04ad1d6207eaaa31ec030",
+    "src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+    "src/eval.c": "d51146b9557df5f05c2f9e4b135c8338e162f98dd45ddc7bc76650ec18a77b0e",
+    "src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+    "src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+    "src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+    "src/front.h": "15ffaeb6f15c0396c15fc14f1b2ab90398493d93de3fb66d6f2039ecea48a663"
+  },
+  "changed_from_r3": [
+    "src/main.c"
+  ],
+  "stockfish_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "history_sha256": "5ed8c2b5478d5f019217728a2266b1036ff60e874620b87757c477a4142da4c1",
+  "build_script": "#!/bin/bash\n# mist-c: compile the referee front end. The course runtime lists g++ 12.2.0;\n# C11 with gcc or cc when present, else g++'s C front end, else as C++.\nset -uo pipefail\ncd \"$(dirname \"$0\")\"\n[ -f bin/stockfish ] && chmod +x bin/stockfish\nSOURCES=\"src/board.c src/belief.c src/movemodel.c src/cfr.c src/eval.c src/search.c src/gtcfr.c src/front.c src/sfeval.c src/main.c\"\nFLAGS=\"-O2 -pthread -D_POSIX_C_SOURCE=199309L\"\nfor CC in gcc cc; do\n    if command -v \"$CC\" >/dev/null 2>&1 && \"$CC\" -std=c11 $FLAGS $SOURCES -lm -o mist; then echo \"build: done ($CC)\"; exit 0; fi\ndone\n# g++'s C front end: one file per call, since -x c covers only the first of\n# several sources on g++ 12\nif (rm -rf build-xc && mkdir build-xc && for f in $SOURCES; do g++ -x c -std=c11 $FLAGS -c \"$f\" -o \"build-xc/$(basename \"$f\" .c).o\" || exit 1; done && g++ $FLAGS build-xc/*.o -lm -o mist) 2>/dev/null; then echo \"build: done (g++ -x c)\"; exit 0; fi\nif g++ -x c++ -std=c++20 -fpermissive -w $FLAGS $SOURCES -lm -o mist; then echo \"build: done (g++ as C++)\"; exit 0; fi\necho \"build: failed\" >&2\nexit 1\n",
+  "run_script": "#!/bin/bash\ncd \"$(dirname \"$0\")\"\n# Stockfish, when shipped in bin/, scores the search's leaves (paper, 3.3)\nif [ -x bin/stockfish ]; then export MIST_STOCKFISH=\"$PWD/bin/stockfish\"; fi\n# the empirical opponent prior, when shipped in data/ (tools/history_table.c)\nif [ -f data/history.bin ]; then export MIST_HISTORY_TABLE=\"$PWD/data/history.bin\"; fi\nexec ./mist\n",
+  "scratch": "/tmp/astra-v36-r4-gate1-m0m964m4"
+}
