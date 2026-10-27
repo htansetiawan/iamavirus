@@ -35,7 +35,9 @@ def elo_to_score(elo: float) -> float:
     return 1.0 / (1.0 + 10 ** (-elo / 400.0))
 
 
-GAME_BOUND_SECONDS = 1200   # a 180+2 game with its start-up: no game starts unless this fits before the cap
+GAME_BOUND_SECONDS = 2450   # the longest legal 180+2 game (1000 plies: 360 s + 2,000 s of increments) with its
+                            # start-up: no game starts unless this fits before the cap, so a legal game is never cut
+CLEANUP_RESERVE_SECONDS = 30   # the in-flight game's timeout keeps this much of the cap for recording and cleanup
 MIN_GAMES = 20          # no verdict before ten colour-swapped pairs
 PRIOR_GAMES = 20        # pseudo-games of variance PRIOR_VAR blended into the sample variance
 PRIOR_VAR = 0.22        # per-game score variance of a near-even match with a few draws
@@ -219,7 +221,8 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0, wall_hour
                             receipt["state"] = "wall_cap"; write_receipt()
                         break
                     receipt["attempted_jobs"] += 1; write_receipt()   # a started game, scored or not
-                    timeout = min(GAME_BOUND_SECONDS, deadline - time.time()) if deadline is not None else None
+                    # a hung game is killed at the cap (minus the reserve); a legal game always fits
+                    timeout = max(1.0, deadline - time.time() - CLEANUP_RESERVE_SECONDS) if deadline is not None else None
                 try:
                     g = ca.play(white, black, seed, KIT, out, slot, wenv, benv, timeout=timeout)
                 except Exception as error:  # keep the arena running; record the failure

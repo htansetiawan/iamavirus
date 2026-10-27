@@ -50,11 +50,11 @@ def test_failed_attempt_is_recorded_and_never_retried(tmp_path, monkeypatch):
 
 
 def test_wall_cap_stops_before_the_second_colour(tmp_path, monkeypatch):
-    # 1,500 s of cap: the first game (700 s) fits (1,200 s bound), the second colour does not
+    # 3,000 s of cap: the first game (700 s) fits the 2,450 s bound, the second colour does not
     queue, calls, _ = _setup(tmp_path, monkeypatch, ["*", "1-0"])
-    al.run(queue, ["0,1"], wall_hours=1500 / 3600)
+    al.run(queue, ["0,1"], wall_hours=3000 / 3600)
     rows = _rows(tmp_path)
-    assert len(calls) == 1 and calls[0]["timeout"] == 1200
+    assert len(calls) == 1 and calls[0]["timeout"] == 3000 - al.CLEANUP_RESERVE_SECONDS
     assert len(rows) == 1 and rows[0]["attempt"] == "failed"   # the failed first game is kept
     receipt = json.loads((tmp_path / "receipts" / "queue.json").read_text())
     assert receipt["state"] == "wall_cap" and receipt["attempted_jobs"] == 1 and receipt["failed_jobs"] == 1
@@ -62,5 +62,28 @@ def test_wall_cap_stops_before_the_second_colour(tmp_path, monkeypatch):
 
 def test_game_in_flight_is_bounded_by_the_remaining_time(tmp_path, monkeypatch):
     queue, calls, _ = _setup(tmp_path, monkeypatch, ["1-0"], game_seconds=100.0)
-    al.run(queue, ["0,1"], wall_hours=1300 / 3600)   # 1,300 s: the first game fits, with 1,300 s left
-    assert calls[0]["timeout"] == 1200                            # min(bound, remaining)
+    al.run(queue, ["0,1"], wall_hours=2500 / 3600)   # 2,500 s: the first game fits (2,450 s bound)
+    assert calls[0]["timeout"] == 2500 - al.CLEANUP_RESERVE_SECONDS   # the remaining cap, less the reserve
+    assert len(calls) == 1                                            # 2,400 s left: no second game
+
+
+def test_kill_tree_reaches_a_grandchild_in_its_own_session(tmp_path):
+    import subprocess, time as _time, os as _os
+    import learning.compare_archives as ca
+    # a child that starts a grandchild in a new session (as the referee starts its bots) and waits
+    proc = subprocess.Popen(["bash", "-c", "setsid sleep 300 & echo $! > " + str(tmp_path / "gc.pid") + "; wait"])
+    for _ in range(50):
+        if (tmp_path / "gc.pid").exists() and (tmp_path / "gc.pid").read_text().strip():
+            break
+        _time.sleep(0.1)
+    grandchild = int((tmp_path / "gc.pid").read_text().strip())
+    assert grandchild in ca.descendants(proc.pid)
+    ca.kill_tree(proc.pid)
+    proc.wait(timeout=5)
+    _time.sleep(0.2)
+    gone = False
+    try:
+        _os.kill(grandchild, 0)
+    except ProcessLookupError:
+        gone = True
+    assert gone, "the grandchild in its own session is killed too"

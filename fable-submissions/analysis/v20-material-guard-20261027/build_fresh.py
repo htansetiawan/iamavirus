@@ -74,6 +74,8 @@ def main():
             quarantined_old += 1
         else:
             old_traj.add(h)
+    if quarantined_old:
+        sys.exit(f"refusing to build: {quarantined_old} earlier-set games have no trajectory hash, so the exclusion would not cover them")
     games, excluded = [], {"id": 0, "trajectory_old": 0, "trajectory_window": 0, "no_created": 0, "no_trajectory": 0}
     in_window = 0   # cohort games in the window before any exclusion
     for r in rows:
