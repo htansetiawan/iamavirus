@@ -1,13 +1,18 @@
 {
-  "updated": "2026-10-27T13:53:08.338281+00:00",
+  "updated": "2026-10-27T16:22:39.760516+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
       "owner": "fable",
-      "cores": [],
-      "task": "idle: gate 3 (08:21Z) and gate 2 replays (13:52Z) finished; cores 2-5 free until the 20:00Z checkpoint; 0-1 Astra's; 6-7 the host's",
-      "until": "2026-10-27T20:00:00Z",
-      "note": "next lane only after the checkpoint decision (corrected candidate gate 1 / oracle decomposition)"
+      "cores": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "task": "r4 development replays (mist-c dd89907, zip 1649dfbfe23b): A piece-off on 2-3, B defaults on 4-5; fresh sets then the four frozen sets (2,682 decisions per lane, ~2.7 h); 0-1 Astra's; 6-7 the host's",
+      "until": "2026-10-27T19:50:00Z",
+      "note": "the lanes free the cores at the 20:00Z checkpoint; the r4 bench (gate 3) only after Astra's gate-1 review of the bytes"
     }
   ]
 }
