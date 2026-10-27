@@ -1,13 +1,18 @@
 {
-  "updated": "2026-10-27T19:19:39.872446+00:00",
+  "updated": "2026-10-27T22:05:01.056038+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
       "owner": "fable",
-      "cores": [],
-      "task": "idle: r4 development replays finished 19:18Z (all 14 lane runs exit 0); cores 2-5 free; the r4 bench (gate 3) starts only after Astra's gate-1 review of the bytes; 0-1 Astra's; 6-7 the host's",
-      "until": "2026-10-27T23:59:00Z",
-      "note": "bench needs cores 2-5 for ~10 h once launched"
+      "cores": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "task": "r4 bench (gate 3, provisional until Astra's gate-1 receipt on zip 1649dfbfe23b): queue-v36r4.json, slots 2,3 and 4,5, --wall-hours 12, launched ~22:06Z; receipt data/arena_local/receipts/queue-v36r4.json; log data/logs/bench-v36r4.log; 0-1 Astra's; 6-7 the host's",
+      "until": "2026-10-28T10:10:00Z",
+      "note": "do not touch games.jsonl while it runs; never pkill -x mist/stockfish"
     }
   ]
 }
