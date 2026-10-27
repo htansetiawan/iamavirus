@@ -211,3 +211,63 @@ planned on Friday after the v36 decision, not bundled into it.
   evaluation is in the plan, not launched from this exchange; no v37 reservation
   or automatic experiment follows from this agreement. The solver-allocation
   item is a recorded hypothesis for a later cheap diagnostic, nothing more.
+
+## Review of the decision contract and the two source findings (27 Oct 01:05 UTC)
+
+Contract (`astra-submissions/analysis/v36-plan-20261026/decision-contract.md`)
+accepted as written, with these facts and one amendment it now needs.
+
+- **(a) Search mode.** Confirmed: `MIST_ASYNC` is unset in the replays, the
+  bench and the zip's run.sh, and my shell exports no `MIST_` or `FOW_`
+  variable. The deployed loop is the round loop: 10 PCFR+ iterations, then up
+  to 32 expansions in waves of two Stockfish calls (`iterations_per_round` 10,
+  `expansions_per_round` 32, literals in main.c). `MIST_ITERS` is read only in
+  the async branch, so `MIST_ITERS` alone is a no-op; the solver-allocation
+  hypothesis would need a knob for the round loop or async mode, i.e. source,
+  and stays out of v36. My "pipelined, 0.3 iterations per expansion" wording in
+  notes 162 and 164 was wrong for the deployed engine; the ratio 10/32 is the
+  same, the mechanism is not.
+- **(b) The emitted move.** Confirmed from source, and corrected in a separate
+  commit: mist-c `a71035e` (on top of `be26b1a`): the repetition rule yields
+  when its exclusions and the guards' together would leave no move (v35
+  reopened every move there), and the view-legality fallback skips the guards'
+  exclusions unless nothing is left. Both are pure functions in `front.c`
+  (`front_exclusions`, `front_best_allowed_avoiding`), unit tested as White and
+  as Black in `tests/test_front.c` with Astra's counterexample shape (every
+  move but one repeats, the guards exclude that one: the repetition rule
+  yields; the union otherwise; a move in both lists once; everything excluded
+  excludes nothing; the fallback skips an excluded move and ignores the
+  exclusions only when all are excluded). With the piece term off the engine
+  now differs from v35 on exactly those two paths. In 4,828 stored replay
+  records neither path fired (no restore-all, no legality fallback), so the
+  existing replay evidence is unaffected; it is a release-safety property.
+  Packaged separately as `data/candidates/iamavirus-v36-candidate-mist-c-v20-r2.zip`,
+  **sha256 `b2a2000c48da`**, same Stockfish and history bytes. Not benched.
+- **Amendment needed in the contract's gate 3.** I stopped the bench of
+  `49f65e1d93e5` at about 00:40 UTC, before Astra's scope message arrived, with
+  three games recorded (`v36c-vs-v35` pair 0 as White: won in 66 plies, clocks
+  53.8/49.3 s; `v36c-vs-misty` pair 0: won as White, lost as Black). Per
+  Astra's message that candidate is **superseded** by the corrected one; the
+  three games stay in `data/arena_local/games.jsonl` as diagnostics, not a
+  gate. The frozen queue and start/stop times in gate 3 must be re-pinned to
+  the release candidate when its run is approved; no run has been started.
+- **Gate 1 plan, exact.** The remaining obligations need the guard rule to be
+  callable from a test: I will move the rule (risk arrays in, allowed set out)
+  into a static function in main.c without changing behaviour, then add
+  `tests/test_rule.c` covering: the three B1 counterexamples as synthetic risk
+  arrays (S36 ⊆ S35, c5d7 excluded, g7h8 kept), event disjointness of K, Q and
+  P on fixed beliefs (the sum of the three shares ≤ 1 on every move; a world
+  charged to K or Q is not counted by P), disabled mode = v35's exclusions on
+  the same arrays, and the empty-intersection fallback. Then the three recorded
+  B1 cases replayed with the release binary (three seeds each, no fatal move,
+  not the B1 move), the build under gcc and the g++-as-C fallback with the
+  executable hash, a both-colours smoke game, the effective `MIST_*`/`FOW_*`
+  settings, and the whole-turn clock from the bench. That extraction is the
+  last source change; **one artifact (r3) is then frozen and all gates run on
+  it.** Its bench starts only on the committee's approval, which I am asking
+  Henry for now; otherwise at the 27 October 20:00 UTC checkpoint, ending
+  12 hours later, with the fresh-set replays after it.
+- **External Misty freeze.** Agreed: the venv at
+  `~/fable-persist/scratchpad/misty` and its Stockfish are not touched for the
+  duration; the gate-1 receipt records the interpreter version, the installed
+  packages and the binary hash as in Astra's `opponent-environment.json`.
