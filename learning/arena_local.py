@@ -26,6 +26,7 @@ from . import compare_archives as ca
 
 ROOT = Path(__file__).resolve().parents[1]
 LEDGER = ROOT / "data" / "arena_local" / "games.jsonl"
+RECEIPTS = ROOT / "data" / "arena_local" / "receipts"
 KIT = Path.home() / "git" / "fow-starter"
 _lock = threading.Lock()
 
@@ -100,10 +101,27 @@ def summary(m: dict) -> dict:
             "verdict": verdict}
 
 
-def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
+def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0, wall_hours: float | None = None) -> None:
     queue = json.loads(queue_path.read_text())
     state = {"mtime": queue_path.stat().st_mtime}
     linger_until = time.time() + 3600 * linger_hours
+    # the run receipt (for an audit): attempted_jobs counts STARTED games, failed_jobs the recorded
+    # failed or unknown results; state running -> complete | wall_cap (no new job after --wall-hours)
+    RECEIPTS.mkdir(parents=True, exist_ok=True)
+    receipt_path = RECEIPTS / f"{queue_path.stem}.json"
+    receipt = {"queue": str(queue_path), "queue_sha256": hashlib.sha256(queue_path.read_bytes()).hexdigest(),
+               "ledger": str(LEDGER.relative_to(ROOT)), "state": "running",
+               "started_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "finished_at": None,
+               "wall_hours": wall_hours, "attempted_jobs": 0, "failed_jobs": 0, "slots": slots}
+    started = time.time()
+
+    def write_receipt():   # caller holds _lock
+        tmp = receipt_path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(receipt, indent=1))
+        tmp.replace(receipt_path)
+
+    with _lock:
+        write_receipt()
     LEDGER.parent.mkdir(parents=True, exist_ok=True)
     workdir = ROOT / "data" / "arena_local" / "builds"
     built = {}
@@ -152,6 +170,10 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
     def next_job():
         """The matchup with the fewest games that is still running; its next pair index."""
         with _lock:
+            if wall_hours is not None and time.time() > started + 3600 * wall_hours:
+                if receipt["state"] == "running":
+                    receipt["state"] = "wall_cap"; write_receipt()
+                return None   # the cap: no new job; games in flight finish and are recorded
             reload_queue()
             best = None
             for m in queue["matchups"]:
@@ -187,6 +209,8 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
                 out = workdir / f"{m['id']}-p{pair}-{'a' if a_white else 'b'}-white.json"
                 white, black = (a, b) if a_white else (b, a)
                 wenv, benv = (a_env, b_env) if a_white else (b_env, a_env)
+                with _lock:
+                    receipt["attempted_jobs"] += 1; write_receipt()   # a started game, scored or not
                 try:
                     g = ca.play(white, black, seed, KIT, out, slot, wenv, benv)
                 except Exception as error:  # keep the arena running; record the failure
@@ -203,6 +227,9 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
                        "a_env": m.get("a_env", []), "b_env": m.get("b_env", []), "ts": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
                        "replay": str(out.relative_to(ROOT))}
                 with _lock:
+                    if rec["attempt"] == "failed":
+                        receipt["failed_jobs"] += 1
+                    write_receipt()
                     with LEDGER.open("a") as f:
                         f.write(json.dumps(rec) + "\n")
             with _lock:
@@ -212,6 +239,12 @@ def run(queue_path: Path, slots: list[str], linger_hours: float = 0.0) -> None:
 
     with cf.ThreadPoolExecutor(max_workers=len(slots)) as pool:
         list(pool.map(worker, slots))
+    with _lock:
+        if receipt["state"] == "running":
+            receipt["state"] = "complete"
+        receipt["finished_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        write_receipt()
+    print(f"run receipt: {receipt_path.relative_to(ROOT)} state {receipt['state']} attempted {receipt['attempted_jobs']} failed {receipt['failed_jobs']}", flush=True)
     for m in queue["matchups"]:
         print(json.dumps(summary(m)))
 
@@ -221,11 +254,12 @@ def main() -> None:
     ap.add_argument("command", choices=["run", "status"])
     ap.add_argument("queue", type=Path)
     ap.add_argument("--slots", nargs="*", default=["0,1", "2,3", "4,5", "6,7"])
+    ap.add_argument("--wall-hours", type=float, default=None, help="no new game after this many hours; the receipt says wall_cap")
     ap.add_argument("--linger-hours", type=float, default=0.0,
                     help="when nothing is left to play, keep watching the queue file this long")
     args = ap.parse_args()
     if args.command == "run":
-        run(args.queue, args.slots, args.linger_hours)
+        run(args.queue, args.slots, args.linger_hours, args.wall_hours)
     else:
         for m in json.loads(args.queue.read_text())["matchups"]:
             print(json.dumps(summary(m)))
