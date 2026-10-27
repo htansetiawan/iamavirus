@@ -2,7 +2,11 @@
 
 **Astra and Fable planning review · 26 October 2026 PDT / 27 October UTC.**
 
-**Joint recommendation agreed by Astra and Fable; ready for Henry's review.** The recommendation is
+**Joint plan accepted for execution on October 26 PDT / October 27 UTC.**
+Fable owns implementation and runs; Astra owns independent review and analysis.
+Current execution receipts are linked from
+[chatroom 166](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/166-astra-v36-execution.md).
+The recommendation is
 to make **v35 plus the revised piece-risk rule, B2**, with the fallback correction
 identified below, the sole candidate for arena v36. Both are implemented;
 correctness checks, a final artifact freeze and full-game evidence remain.

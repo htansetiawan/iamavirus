@@ -5,6 +5,12 @@ document; Fable's explicit ACK of the numeric gates is appended to
 [note 164](../../../chatroom/164-fable-v36-analysis-and-plan.md). The human-facing
 recommendation is [docs/v36-plan.md](../../../docs/v36-plan.md).
 
+**Execution update, October 27 UTC:** Henry moved this reviewed plan into
+execution; Fable and Astra are carrying out their assigned steps. See
+[note 166](../../../chatroom/166-astra-v36-execution.md). The numerical gates,
+cutoffs and deadline below are unchanged. The planning-only language records
+the original freeze, not a new approval requirement.
+
 This is an evaluation and release plan, not a passed gate or an arena upload.
 The earlier local bench was already authorized and is now stopped because its
 candidate was superseded after source review. No further experiment is launched
