@@ -1,0 +1,110 @@
+{
+  "checked_at": "2026-10-27T22:22:01.500181+00:00",
+  "classification": "launch verified; strength gate in progress",
+  "run_receipt": {
+    "queue": "data/arena_local/queue-v36r4.json",
+    "queue_sha256": "0b92a8cf16f2a1769b1a9ded2e5d28a8444cfa59c6227fbf6e23e616515a0ece",
+    "ledger": "data/arena_local/games.jsonl",
+    "state": "running",
+    "started_at": "2026-10-27T22:21:06Z",
+    "finished_at": null,
+    "wall_hours": 12.0,
+    "attempted_jobs": 2,
+    "failed_jobs": 0,
+    "slots": [
+      "2,3",
+      "4,5"
+    ]
+  },
+  "wall_deadline": "2026-10-28T10:21:06Z",
+  "gate1_ledger_at": "2026-10-27T22:20:29.626747+00:00",
+  "processes": [
+    {
+      "pid": 13976,
+      "role": "runner",
+      "argv": [
+        ".venv/bin/python",
+        "-m",
+        "learning.arena_local",
+        "run",
+        "data/arena_local/queue-v36r4.json",
+        "--slots",
+        "2,3",
+        "4,5",
+        "--wall-hours",
+        "12"
+      ],
+      "affinity": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "pid": 14084,
+      "role": "referee",
+      "argv": [
+        "/home/henrytan/git/fow-starter/.venv/bin/python",
+        "/home/henrytan/git/fow-starter/referee.py",
+        "--trusted-local",
+        "--white",
+        "env FOW_SEED=300000 bash /home/henrytan/git/iamavirus/data/arena_local/builds/iamavirus-v36-candidate-mist-c-v20-r4/run.sh",
+        "--black",
+        "env FOW_SEED=300001 bash /home/henrytan/git/iamavirus/data/arena_local/builds/iamavirus-v35-mist-c-v14/run.sh",
+        "--white-name",
+        "iamavirus-v36-candidate-mist-c-v20-r4",
+        "--black-name",
+        "iamavirus-v35-mist-c-v14",
+        "--base-time",
+        "180",
+        "--increment",
+        "2",
+        "--max-plies",
+        "1000",
+        "--output",
+        "/home/henrytan/git/iamavirus/data/arena_local/builds/v36r4-vs-v35-p0-a-white.json"
+      ],
+      "affinity": [
+        2,
+        3
+      ]
+    },
+    {
+      "pid": 14085,
+      "role": "referee",
+      "argv": [
+        "/home/henrytan/git/fow-starter/.venv/bin/python",
+        "/home/henrytan/git/fow-starter/referee.py",
+        "--trusted-local",
+        "--white",
+        "env FOW_SEED=301000 bash /home/henrytan/git/iamavirus/data/arena_local/builds/iamavirus-v36-candidate-mist-c-v20-r4/run.sh",
+        "--black",
+        "env FOW_SEED=301001 bash /home/henrytan/git/iamavirus/data/arena_local/builds/misty-v16/run.sh",
+        "--white-name",
+        "iamavirus-v36-candidate-mist-c-v20-r4",
+        "--black-name",
+        "misty-v16",
+        "--base-time",
+        "180",
+        "--increment",
+        "2",
+        "--max-plies",
+        "1000",
+        "--output",
+        "/home/henrytan/git/iamavirus/data/arena_local/builds/v36r4-vs-misty-p0-a-white.json"
+      ],
+      "affinity": [
+        4,
+        5
+      ]
+    }
+  ],
+  "initial_audit": "launch-audit.json",
+  "initial_audit_status": "incomplete",
+  "errors": []
+}

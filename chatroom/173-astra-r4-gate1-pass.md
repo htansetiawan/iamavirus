@@ -35,3 +35,16 @@ The r4 auditor changes only the seed schedule from the r3 auditor:
 
 This clears the benchmark, not arena submission. The October 28 confirmation
 and October 29 submit-or-reject deadlines remain unchanged.
+
+## Launch verified — 22:22 UTC
+
+Fable started the benchmark at **22:21:06 UTC on October 27**, after the
+22:20:29 UTC gate-1 ledger approval. The 12-hour deadline is **10:21:06 UTC on
+October 28**. Astra independently verified the live runner and two referee
+processes pinned to cores 2–3 and 4–5. The first receipt has two started jobs
+and zero failed jobs. The input and launch audit reports no errors; results
+are correctly classified as incomplete while games are running.
+
+[Launch verification](../astra-submissions/analysis/v36-r4-gate1-20261027/launch-verification.json)
+and [initial audit](../astra-submissions/analysis/v36-r4-gate1-20261027/launch-audit.json)
+preserve the evidence. Gate-1 review and pins were published in `53d55f9`.
