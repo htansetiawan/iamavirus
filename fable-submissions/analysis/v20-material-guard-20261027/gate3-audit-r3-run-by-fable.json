@@ -1,0 +1,1118 @@
+{
+  "status": "rejected",
+  "classification": "local v36 screen only; gates 1/2 and arena strength separate",
+  "errors": [],
+  "rejections": [
+    "non-board termination requires failure review: v36r3-vs-misty:6:black: Time forfeit",
+    "non-board termination requires failure review: v36r3-vs-misty:13:white: Time forfeit",
+    "head-to-head score below 18/40",
+    "head-to-head color score below 7/20",
+    "combined score direction is not positive"
+  ],
+  "pending": [],
+  "expected_jobs": 104,
+  "seen_jobs": 104,
+  "valid_jobs": 104,
+  "missing_jobs": [],
+  "matchups": {
+    "direct": {
+      "games": 40,
+      "points": 15.5,
+      "color_points": {
+        "white": 11.5,
+        "black": 4.0
+      },
+      "wdl": {
+        "1": 15,
+        "0.5": 1,
+        "0": 24
+      }
+    },
+    "candidate_misty": {
+      "games": 32,
+      "points": 21.5,
+      "color_points": {
+        "white": 11.0,
+        "black": 10.5
+      },
+      "wdl": {
+        "1": 19,
+        "0.5": 5,
+        "0": 8
+      }
+    },
+    "baseline_misty": {
+      "games": 32,
+      "points": 23.0,
+      "color_points": {
+        "white": 12.5,
+        "black": 10.5
+      },
+      "wdl": {
+        "1": 21,
+        "0.5": 4,
+        "0": 7
+      }
+    }
+  },
+  "metrics": {
+    "combined_direction_D": -0.0796875,
+    "end_clock_medians": {
+      "direct": 31.730048500000002,
+      "candidate_misty": 36.083684500000004,
+      "baseline_misty": 35.633429
+    },
+    "direct_baseline_end_clock_median": 33.260407,
+    "candidate_minimum_end_clock": 19.666022,
+    "direction_pair_bootstrap_95": [
+      -0.215625,
+      0.03593750000000001
+    ]
+  },
+  "replay_audits": {
+    "v36r3-vs-misty:0:white": {
+      "sha256": "bae189ec968a47479ddd4a74b3dd39c8c35c265a378b7706892ab6ea96cd377c",
+      "frames": 70,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        49.50707,
+        59.640106
+      ]
+    },
+    "v36r3-vs-v35:0:white": {
+      "sha256": "5c87a17f5a1365be3948ab08a045bd9d468f750f67f5644b085c472eb42af7f8",
+      "frames": 108,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        29.041926,
+        29.409906
+      ]
+    },
+    "v36r3-vs-misty:0:black": {
+      "sha256": "278fd1e044d64304f285d5b1c7a14082beab9cf7ac751cbde27da6377c254a2a",
+      "frames": 87,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        71.557192,
+        39.348504
+      ]
+    },
+    "v36r3-vs-v35:0:black": {
+      "sha256": "cc790a70defa0fbae5f194debd48fd15f20a35ec057281d0bffd79008bccd3f0",
+      "frames": 59,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        61.085088,
+        53.726453
+      ]
+    },
+    "v36r3-vs-v35:1:white": {
+      "sha256": "bc86c3031e10a2099ee22b772ed19d4f82e819a0a75f75878912c1f48458c592",
+      "frames": 93,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        33.92146,
+        35.324364
+      ]
+    },
+    "v35-vs-misty-r3:0:white": {
+      "sha256": "e36a9c72e411b9ea8947045948f1dd6806a1eb69e626c663c355de53ca31fac1",
+      "frames": 127,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        23.633621,
+        8.125119
+      ]
+    },
+    "v36r3-vs-v35:1:black": {
+      "sha256": "ce669a4d66d75ff2224ee9328ef2db7d6fa7a1f0b74d5d4963b27f327e64bc56",
+      "frames": 57,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        61.751548,
+        55.903607
+      ]
+    },
+    "v35-vs-misty-r3:0:black": {
+      "sha256": "8aadd131f3e8c4a953ed58b5a7775a759d662616ad79787bf50a8c72cb6c6ae9",
+      "frames": 92,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        41.183128,
+        34.84666
+      ]
+    },
+    "v36r3-vs-misty:1:white": {
+      "sha256": "79225d65ca83a129b35d95b3bee46ff3850573d614111df2d98ba05ba8cdac77",
+      "frames": 104,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        30.575679,
+        71.85614
+      ]
+    },
+    "v35-vs-misty-r3:1:white": {
+      "sha256": "3958805aeb3761731318d1aa33a7e18c5a0f12004fe162e7b327297dbd72b2c8",
+      "frames": 101,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        32.964891,
+        30.589688
+      ]
+    },
+    "v36r3-vs-misty:1:black": {
+      "sha256": "d8393bad4fa71f9baf5b477a9e6fa92acf5165a73024dd9542d57a8fba95f693",
+      "frames": 80,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        48.821121,
+        41.471159
+      ]
+    },
+    "v35-vs-misty-r3:1:black": {
+      "sha256": "5ed0ba3cac9d924ff933ad3306ef124a775c815ac5a8e85e2c48e55c1cea34f6",
+      "frames": 78,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        58.348127,
+        44.144779
+      ]
+    },
+    "v36r3-vs-v35:2:white": {
+      "sha256": "f4e57936450c084e95ecf4b7dd3a3a861cf8ba57852f9a61bdd9e7f63113731a",
+      "frames": 91,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        34.324383,
+        35.913688
+      ]
+    },
+    "v36r3-vs-misty:2:white": {
+      "sha256": "4988a3c326ee2e6818a6f40da1de61b8ba595bedfadd14a387337825bc00a84c",
+      "frames": 77,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        43.812066,
+        56.311145
+      ]
+    },
+    "v36r3-vs-v35:2:black": {
+      "sha256": "ed3b6840046234842872082a40d09562eecc3d4bd4f34f980688e38f5b8c555d",
+      "frames": 81,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        42.379615,
+        39.069559
+      ]
+    },
+    "v36r3-vs-misty:2:black": {
+      "sha256": "a9c10e2361aeaf3b725010b7a267ae93ea0661b76f3eb2ca3b53f5990887beb8",
+      "frames": 87,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        68.602093,
+        34.934579
+      ]
+    },
+    "v35-vs-misty-r3:2:white": {
+      "sha256": "19e31dafdba1897399b51e55a05145aeeb3cab0a046df46fa463e1831b1b0d71",
+      "frames": 75,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        46.670641,
+        84.423398
+      ]
+    },
+    "v36r3-vs-v35:3:white": {
+      "sha256": "6002fe0dc36c8f8b95173035840722de9b4ba966cdc9f6cd70d764057df7922e",
+      "frames": 68,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        51.060991,
+        51.974982
+      ]
+    },
+    "v35-vs-misty-r3:2:black": {
+      "sha256": "9334b69631514973b74251bf7bc915126a3e674cc193be2b00151d3b25de0c79",
+      "frames": 65,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        93.078549,
+        55.247336
+      ]
+    },
+    "v36r3-vs-v35:3:black": {
+      "sha256": "56fc3e113c6abb50295a8d247c44266ac3f26c72228dbe16f871bf60888b9b8b",
+      "frames": 89,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        38.303405,
+        38.461819
+      ]
+    },
+    "v36r3-vs-misty:3:white": {
+      "sha256": "8a21cb12c99001446065f3ae7b8543202b1041573820ec09855e27e81ed08bab",
+      "frames": 63,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        57.071056,
+        84.133021
+      ]
+    },
+    "v35-vs-misty-r3:3:white": {
+      "sha256": "216223e7126ea702f4556adbc7c6afbfce6ccb07b3f7780bc0b449327f9bec3c",
+      "frames": 108,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        27.772322,
+        40.840996
+      ]
+    },
+    "v36r3-vs-misty:3:black": {
+      "sha256": "b794bf1161e3f8ecb60ac28e158e5b17e83532eab63e36d58a2b734d1dccf6e9",
+      "frames": 84,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        68.678763,
+        36.902244
+      ]
+    },
+    "v35-vs-misty-r3:3:black": {
+      "sha256": "0b788ba2b1975ea09122c6aa91f78bc4adc5222e1b574d4d9514871d8b5876b5",
+      "frames": 76,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        78.632325,
+        45.666766
+      ]
+    },
+    "v36r3-vs-v35:4:white": {
+      "sha256": "6ad5f59b3ecc25a6551b5755c7cbea33a9fd741ea73b3a6899c0c10ac627b8b3",
+      "frames": 118,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        19.769966,
+        23.612838
+      ]
+    },
+    "v36r3-vs-misty:4:white": {
+      "sha256": "9251f98c73ca4cf588ac93bda01e3802529507cb669b47d2f7f1fbd444654874",
+      "frames": 121,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        26.198633,
+        21.248995
+      ]
+    },
+    "v36r3-vs-v35:4:black": {
+      "sha256": "bb768e082ba108badb870ae10b90c6da08ed132dcfca89a2c508d48d81d99d32",
+      "frames": 103,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        30.646947,
+        21.685914
+      ]
+    },
+    "v36r3-vs-misty:4:black": {
+      "sha256": "8ebbbd281fd223697ddce71a9c63eff06e4448ed9fbe2db40a6f0034d07f445b",
+      "frames": 94,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        80.710101,
+        34.534946
+      ]
+    },
+    "v35-vs-misty-r3:4:white": {
+      "sha256": "8826dbb1eb4ed567a3eec6b708f99b43f7e120834b8626c13d00d64a02eb1d2b",
+      "frames": 77,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        44.530819,
+        54.133438
+      ]
+    },
+    "v35-vs-misty-r3:4:black": {
+      "sha256": "64c1c52c77bc4b7a55ee9f91f315edbf4b595a8f064184f6ae704689b6b885f0",
+      "frames": 56,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        102.779639,
+        65.100659
+      ]
+    },
+    "v36r3-vs-v35:5:white": {
+      "sha256": "6a9e26f3abb4df253e6fa563279e4ac35a51923df07a5ac1abc27eb0a2c3cc0d",
+      "frames": 101,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        28.652182,
+        29.814683
+      ]
+    },
+    "v36r3-vs-misty:5:white": {
+      "sha256": "52c5bb2d7e7419bc8a9d0d966ee285226b76372a3380cbf12ad70a86331483c2",
+      "frames": 63,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        56.665475,
+        65.27838
+      ]
+    },
+    "v36r3-vs-v35:5:black": {
+      "sha256": "5bb4c19c5d2201c6debeb3b9d0783ef153cf8c3f5beb9b624044e374af36d41e",
+      "frames": 90,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        37.4422,
+        34.884826
+      ]
+    },
+    "v35-vs-misty-r3:5:white": {
+      "sha256": "b8608a904f53fd6f2d3a3671e4374d356d56250943c314d3a091e07247dd1b8b",
+      "frames": 47,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        72.99284,
+        100.963419
+      ]
+    },
+    "v36r3-vs-misty:5:black": {
+      "sha256": "ccad9468acd04192253d5fbf5189787780a7acc54d6f3f3741da25924cae78c5",
+      "frames": 115,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        63.525602,
+        26.449251
+      ]
+    },
+    "v35-vs-misty-r3:5:black": {
+      "sha256": "0637d7c5b3ece021fee55f77e6a7cb2e9dc7946852add7230102a2dc8beecb94",
+      "frames": 66,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        93.174448,
+        54.897336
+      ]
+    },
+    "v36r3-vs-v35:6:white": {
+      "sha256": "d3e4c4d17a8b7d4227198f67b1486f27f20e4b9d3b7ef8beab9b3ab19f42ad3a",
+      "frames": 121,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        26.529972,
+        21.285404
+      ]
+    },
+    "v36r3-vs-misty:6:white": {
+      "sha256": "044cb85c23e339291ab04331a2d728082afe99cd340c868d3806dde68e0abbcf",
+      "frames": 68,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        42.186645,
+        69.176106
+      ]
+    },
+    "v36r3-vs-v35:6:black": {
+      "sha256": "1f7ce51a496c0356cdd9af7a9834ac0f5b137da269d8ffb06f3d86d75b3fcc74",
+      "frames": 95,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        33.121913,
+        21.278106
+      ]
+    },
+    "v36r3-vs-misty:6:black": {
+      "sha256": "83eb60d53e53ed036e00eaf32a2fd74a811301794121403f4380494416630681",
+      "frames": 95,
+      "normal_board_termination": false,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        9.680779,
+        32.692362
+      ]
+    },
+    "v35-vs-misty-r3:6:white": {
+      "sha256": "689d8390a14a3dcf7c04ddafad727995097d81e1fd4b2f7a574eb14e0d063fbb",
+      "frames": 109,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        30.110461,
+        21.901359
+      ]
+    },
+    "v36r3-vs-v35:7:white": {
+      "sha256": "cf58abb0b8fe75c86b844462173459eabf715ddc3a3118c140741e189c8b9c06",
+      "frames": 81,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        43.080462,
+        43.102783
+      ]
+    },
+    "v35-vs-misty-r3:6:black": {
+      "sha256": "b76b17f7d6e77701a3d4498b4b23fc9f3271b7b4a1b39a445f58a905db36c0b1",
+      "frames": 82,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        60.253371,
+        43.061217
+      ]
+    },
+    "v36r3-vs-v35:7:black": {
+      "sha256": "2b32da23a996426bf88c52ebec2b12dcadc2d7ca743f6fb3db4318fe310c8548",
+      "frames": 141,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        22.08755,
+        19.822013
+      ]
+    },
+    "v36r3-vs-misty:7:white": {
+      "sha256": "1f275c78d97f4e01cc612532a33954d3d8a8ed1c69692a06f2612e487850a5e1",
+      "frames": 130,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        19.998344,
+        27.663631
+      ]
+    },
+    "v35-vs-misty-r3:7:white": {
+      "sha256": "13a114160cbd9508239ff3df9f47c3a17d9d7994bed031b35dd6a8ee24952ac9",
+      "frames": 93,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        36.420198,
+        67.358181
+      ]
+    },
+    "v36r3-vs-misty:7:black": {
+      "sha256": "66590f8f8f75b6f589675da4afd42ae96402ca942b9268269865b29323cedac9",
+      "frames": 90,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        26.922079,
+        37.334625
+      ]
+    },
+    "v35-vs-misty-r3:7:black": {
+      "sha256": "8ccbf0a2e2114769b36bfee798ff1b26c3fd32554ae563476c7c081eebb9954d",
+      "frames": 81,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        83.206446,
+        42.533483
+      ]
+    },
+    "v36r3-vs-misty:8:white": {
+      "sha256": "6d9b7501367c6b8b5ffbf34bb9e136b37cf895839ef81364a72ee77fb21fddef",
+      "frames": 51,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        68.275767,
+        84.092907
+      ]
+    },
+    "v36r3-vs-v35:8:white": {
+      "sha256": "42d10a549e267ec8c5e6f934efe3ffd7730e4a1766e5f026f7248ec635b45463",
+      "frames": 98,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        33.235667,
+        32.949916
+      ]
+    },
+    "v36r3-vs-misty:8:black": {
+      "sha256": "0170ab58f240ac85f5dedf85d92806af48b262597d5a923b1cb9730e2ca02c33",
+      "frames": 78,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        75.767388,
+        45.563768
+      ]
+    },
+    "v36r3-vs-v35:8:black": {
+      "sha256": "bf7444b6c2459f997ebf7f324c29986cae5704d0d59e07dbfaac5e00237ca48b",
+      "frames": 77,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        45.359426,
+        40.701679
+      ]
+    },
+    "v35-vs-misty-r3:8:white": {
+      "sha256": "dea5588e68432b01f1413a90a761428078669ac4144a05d72c56d6c5dffb4f1f",
+      "frames": 123,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        21.363164,
+        35.45647
+      ]
+    },
+    "v36r3-vs-v35:9:white": {
+      "sha256": "5e1a881e10bd8888605e5f40e4eae3af42ac497961d633debd8a7163d172e840",
+      "frames": 83,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        41.029059,
+        39.276623
+      ]
+    },
+    "v35-vs-misty-r3:8:black": {
+      "sha256": "ad2d29caf30d2c494f3cec0633c650e9e655bc553d996297af3a5285b8cd10f5",
+      "frames": 97,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        73.296216,
+        31.402263
+      ]
+    },
+    "v36r3-vs-v35:9:black": {
+      "sha256": "c882584bb79dc597c0d2a8fc20dc130cfdf1b90b1e87dbda2339bf1814c7e733",
+      "frames": 99,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        33.578004,
+        19.666022
+      ]
+    },
+    "v36r3-vs-misty:9:white": {
+      "sha256": "0c54a71c95a88bcfa1f3fa786f99e38b58a0c400ef3de02ee76c4ffccd0fe4a3",
+      "frames": 103,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        29.335126,
+        71.09603
+      ]
+    },
+    "v35-vs-misty-r3:9:white": {
+      "sha256": "04d4aa0a765ad08424d90830fd60ed12732f380f25dacebf779542c2857f1ba4",
+      "frames": 101,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        32.7293,
+        48.219381
+      ]
+    },
+    "v36r3-vs-misty:9:black": {
+      "sha256": "1d4c70068c07252640f46c40562021ba7bb99de4d180e796bf7f6a5c99dc84c7",
+      "frames": 116,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        26.766136,
+        27.70486
+      ]
+    },
+    "v35-vs-misty-r3:9:black": {
+      "sha256": "c2867efa064d1987202405d257cc0e0eaaa3bd40b18ae9f94b6ea5a41df5f4e0",
+      "frames": 135,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        46.507366,
+        22.413309
+      ]
+    },
+    "v36r3-vs-v35:10:white": {
+      "sha256": "ac326e539ca70823c9124e98b9a1b32ee46ff574824abd95685bb1c0ee541cac",
+      "frames": 102,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        23.500385,
+        31.582156
+      ]
+    },
+    "v36r3-vs-misty:10:white": {
+      "sha256": "1b259f021b52b8d3ddc2fe3672261ddf0436118dad6523cd6ab4f6513f3390cb",
+      "frames": 109,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        29.940627,
+        45.069718
+      ]
+    },
+    "v36r3-vs-v35:10:black": {
+      "sha256": "ee20e20a81847e72f94bb19ce37940dd6e5626e9016236ed2a782c608e00847d",
+      "frames": 83,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        41.804243,
+        36.752853
+      ]
+    },
+    "v36r3-vs-misty:10:black": {
+      "sha256": "4ac2f8572e8256f6d38a5effd5ab13f6c86d359afbb029cdcf8ee1681a044a6e",
+      "frames": 88,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        62.791229,
+        34.324342
+      ]
+    },
+    "v35-vs-misty-r3:10:white": {
+      "sha256": "455f3a06f280cb8c31f633ecb96a8981da12b89940eb3e3faa944d30796b1cad",
+      "frames": 131,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        23.879083,
+        24.692871
+      ]
+    },
+    "v36r3-vs-v35:11:white": {
+      "sha256": "abcd45f59a4d843abd72df69038612246ec478c10a3b4ee3f8ba3a1707aef592",
+      "frames": 102,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        28.01964,
+        32.226601
+      ]
+    },
+    "v35-vs-misty-r3:10:black": {
+      "sha256": "244a50c886e84ee3d4a8f86ea8d6594157165af18831b6c72d15385eaf6744ca",
+      "frames": 86,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        57.71534,
+        38.391198
+      ]
+    },
+    "v36r3-vs-v35:11:black": {
+      "sha256": "fd7234893ac29b45604ea212e9505c538590a7091a937d0bad7a1a0fd843bf76",
+      "frames": 111,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        28.913352,
+        24.747852
+      ]
+    },
+    "v36r3-vs-misty:11:white": {
+      "sha256": "05cca5c85d6dd6316f03306d30b77067c5394f23be90e69a9cea9100432dea5f",
+      "frames": 57,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        59.384725,
+        80.996459
+      ]
+    },
+    "v35-vs-misty-r3:11:white": {
+      "sha256": "bcb3d7e3b840abd4a0dd8f1ddf97d6ba88dafdc3cab0a57acec83bdbe661b76e",
+      "frames": 49,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        72.717261,
+        107.500314
+      ]
+    },
+    "v36r3-vs-misty:11:black": {
+      "sha256": "84220a495f0067cf9f3ac8578a477080c8ae22303723d469e784104e3436d45f",
+      "frames": 120,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        35.093959,
+        20.986443
+      ]
+    },
+    "v35-vs-misty-r3:11:black": {
+      "sha256": "36fd0c6b55e2da7f5000da51dd08b37d52eed62155ac9973ab7cffc5bf7ab17d",
+      "frames": 97,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        78.405987,
+        33.500483
+      ]
+    },
+    "v36r3-vs-v35:12:white": {
+      "sha256": "5eff47181ee1214caa7308a30c88773c7776c4f32c7a5bd79c5249314f571523",
+      "frames": 85,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        40.962692,
+        38.782225
+      ]
+    },
+    "v36r3-vs-misty:12:white": {
+      "sha256": "0912e5c1e184c10ea86d31d893f834a15c43b900ddf05f806031d97fe3633f94",
+      "frames": 91,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        35.265125,
+        43.579948
+      ]
+    },
+    "v36r3-vs-misty:12:black": {
+      "sha256": "422d36483ff5ce7ba8b920bd5e23d96fb8d927535c39c84ddbf7c200fcedb527",
+      "frames": 30,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        125.014978,
+        103.754156
+      ]
+    },
+    "v36r3-vs-v35:12:black": {
+      "sha256": "c0e8a91386527769e03a80bb6fd154936d47b94764de56a1e8aa5c1fceb33543",
+      "frames": 151,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        20.774437,
+        19.920463
+      ]
+    },
+    "v35-vs-misty-r3:12:white": {
+      "sha256": "ae0a1debaa605c472c5df1721c8334b32acbd3c7d7ccabcc81b19fe3e3995571",
+      "frames": 122,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        24.828579,
+        48.443403
+      ]
+    },
+    "v35-vs-misty-r3:12:black": {
+      "sha256": "f09e0b4ca61b2b9f875ce7be7a09ee90fc1762563c1b40f177417ed2f261fa56",
+      "frames": 56,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        71.888263,
+        65.245508
+      ]
+    },
+    "v36r3-vs-v35:13:white": {
+      "sha256": "dbf0f636cecd996aafb85a6c718106f211ef70dd970fa0a71ca6d81f5d5d23f3",
+      "frames": 172,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        19.798316,
+        19.943075
+      ]
+    },
+    "v36r3-vs-misty:13:white": {
+      "sha256": "116cfa8f009d30c741f58c7720e52e3bffff96b59d00a2dc85fb629819e1c62d",
+      "frames": 68,
+      "normal_board_termination": false,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        46.09865,
+        6.728183
+      ]
+    },
+    "v36r3-vs-v35:13:black": {
+      "sha256": "bce4b93f6845b576a76b85a22e95a3e6434aa5d5ff94340c0628cbfe41274e1c",
+      "frames": 137,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        22.91333,
+        20.432662
+      ]
+    },
+    "v36r3-vs-misty:13:black": {
+      "sha256": "c999a261c9c2ff5e2b1d2863ec7c5f1e8bb5040b636ade3036c6acd223377cca",
+      "frames": 89,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        52.981402,
+        29.116921
+      ]
+    },
+    "v35-vs-misty-r3:13:white": {
+      "sha256": "3e52a5cc440f35a66493aee6b60ed038cba2698d04af749f7cb0bfe11b66e182",
+      "frames": 61,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        59.30873,
+        97.01255
+      ]
+    },
+    "v36r3-vs-v35:14:white": {
+      "sha256": "c582e32ec2f1f68f570110ee25be93301a9a6db8eeffa374e53d5289a9fa20f9",
+      "frames": 98,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        24.678027,
+        28.488404
+      ]
+    },
+    "v35-vs-misty-r3:13:black": {
+      "sha256": "b8ff956134abf54ce31d8f845ee0b60844a901d230fa7b44d87a9f2fe9ce9c3a",
+      "frames": 93,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        74.624028,
+        33.279263
+      ]
+    },
+    "v36r3-vs-misty:14:white": {
+      "sha256": "141324ad559e32673aa9ad23d0be4f0b1a077fbd9fb60d1a7fd0c0dfe4328fe9",
+      "frames": 65,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        52.292091,
+        77.525542
+      ]
+    },
+    "v36r3-vs-v35:14:black": {
+      "sha256": "efc319385bcc099ca261a1c92a9f34f24323034fbb1e281fbff1b246d17db15f",
+      "frames": 102,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        30.411135,
+        32.557248
+      ]
+    },
+    "v35-vs-misty-r3:14:white": {
+      "sha256": "81fa2392dbfdea21ab72938e156c6465d1d641947f385236e39a81535b03f40d",
+      "frames": 68,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        51.380458,
+        85.985427
+      ]
+    },
+    "v36r3-vs-misty:14:black": {
+      "sha256": "d41a638a8dc3417d01ad64b0306071243d59cd0a7a6b259fc364e1fc995bf57d",
+      "frames": 88,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        60.172826,
+        37.883102
+      ]
+    },
+    "v35-vs-misty-r3:14:black": {
+      "sha256": "25b169146e2965b38c3619747ba8f447f53ce37e6eb9ac00e9f0e3971668acf7",
+      "frames": 106,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        49.67831,
+        31.558106
+      ]
+    },
+    "v36r3-vs-v35:15:white": {
+      "sha256": "96306f519152127ea7e14c14fdf51a995f0fc00529dcd6dfcd44a9c2ef96693b",
+      "frames": 87,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        39.818895,
+        35.516044
+      ]
+    },
+    "v36r3-vs-v35:15:black": {
+      "sha256": "b97093624237c8f420aff018a45720c8290370cf2f95c36be67823e9d44862bc",
+      "frames": 79,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        44.20412,
+        35.540881
+      ]
+    },
+    "v36r3-vs-misty:15:white": {
+      "sha256": "b235d62271f2205d02ab8e1f8e6c3723afc1bcb39f436d03c175cf0ab8c63eca",
+      "frames": 135,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        19.759131,
+        40.677059
+      ]
+    },
+    "v35-vs-misty-r3:15:white": {
+      "sha256": "f4e747cdc86b85b6086c31fcc8c8bd7e0cacc6084f64d594180ce732a4c2a206",
+      "frames": 118,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        20.00602,
+        31.307072
+      ]
+    },
+    "v36r3-vs-misty:15:black": {
+      "sha256": "5c59f409ed68e9f846539855820becd02148468a6cbe227445aa990732a1b969",
+      "frames": 104,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        46.764343,
+        25.860941
+      ]
+    },
+    "v35-vs-misty-r3:15:black": {
+      "sha256": "6d19e3f56e88991d6bb7e33029aba938495a8fdaf5d2bbdc811051199040cb45",
+      "frames": 104,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        54.872227,
+        29.802804
+      ]
+    },
+    "v36r3-vs-v35:16:white": {
+      "sha256": "4c3f9b6ea48f65b205fe97198a1f9ffb8ad810605a2bb0f9272d726138fe4e8c",
+      "frames": 107,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        30.902849,
+        25.535272
+      ]
+    },
+    "v36r3-vs-v35:17:white": {
+      "sha256": "e3441521c6ea38d2e827a1838b7e05994687fb4c28abf17570b8ad8770ed8d06",
+      "frames": 74,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        39.938578,
+        45.24639
+      ]
+    },
+    "v36r3-vs-v35:16:black": {
+      "sha256": "8e4baabaf488c7bcf3f913c9c29f846d16346452bf9c02fd10314cbb426a6687",
+      "frames": 106,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        28.458571,
+        28.87103
+      ]
+    },
+    "v36r3-vs-v35:17:black": {
+      "sha256": "034310c426fad0ca24e14d90a01311686711ed95ed82114c9845ff76555675a8",
+      "frames": 91,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        33.398901,
+        22.58499
+      ]
+    },
+    "v36r3-vs-v35:18:white": {
+      "sha256": "a012c6443951fc188903c7026519ffab6cf030facecc87e77bde4ee589bc6576",
+      "frames": 209,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        19.795433,
+        19.724562
+      ]
+    },
+    "v36r3-vs-v35:19:white": {
+      "sha256": "2a28fe9d993754686c32d3694860d2d85b6e779cd568d7ace0b29ba0997f7291",
+      "frames": 97,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        33.811191,
+        34.340726
+      ]
+    },
+    "v36r3-vs-v35:18:black": {
+      "sha256": "2c81898d3562fa5cc511e30913d5cd250835892f4f499fbc9a4af4418f99053d",
+      "frames": 69,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        51.933432,
+        49.925144
+      ]
+    },
+    "v36r3-vs-v35:19:black": {
+      "sha256": "48b6b72907973fc15f4286ad1e611a2fee003e0a7abb3ed8bda8178f8ecca157",
+      "frames": 132,
+      "normal_board_termination": true,
+      "valid_move_limit_draw": false,
+      "minimum_recorded_clocks": [
+        23.444513,
+        23.980745
+      ]
+    }
+  },
+  "limits": "Replay checks reuse the referee; bootstrap assumes representative independent seed blocks. No arena Elo inference.",
+  "audited_at": "2026-10-27T08:22:55.972937+00:00",
+  "pins_sha256": "b3835595ea51a4e9711d0748d5b3202a118774cffcb07c3597b2c76ba981730b",
+  "auditor_sha256": "138e2c4d442a277046c096b3a47db254a2a646af1e3469f6c809b27375629232"
+}

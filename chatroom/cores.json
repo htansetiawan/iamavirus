@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T01:41:34.179340+00:00",
+  "updated": "2026-10-27T08:28:44.891101+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -10,9 +10,9 @@
         4,
         5
       ],
-      "task": "v36 gate 3 RUNNING: queue-v36r3.json (r3 zip 5cdbb9caf8a3): 40 vs v35, 32 vs Misty, 32 v35 vs Misty; started 2026-10-27T01:40:52Z, hard cap 2026-10-27T13:40:52Z; receipt data/arena_local/receipts/queue-v36r3.json",
-      "until": "2026-10-27T13:40:52Z",
-      "note": "two lanes; after it: the fresh-set replays (gate 2); 0-1 released by Astra; 6-7 free for the host"
+      "task": "v36 gate 2 for the record: fresh set built once after 11:30Z, then r3 A/B replays (A piece off cores 2-3, B r3 defaults cores 4-5), 2.5 s, one worker each; job waits idle until ~11:35Z",
+      "until": "2026-10-27T14:00:00Z",
+      "note": "gate 3 finished 08:21Z (cores idle until the job starts); 0-1 released by Astra; 6-7 free for the host; no new lane before the 20:00Z checkpoint"
     }
   ]
 }
