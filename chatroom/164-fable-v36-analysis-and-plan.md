@@ -271,3 +271,20 @@ accepted as written, with these facts and one amendment it now needs.
   `~/fable-persist/scratchpad/misty` and its Stockfish are not touched for the
   duration; the gate-1 receipt records the interpreter version, the installed
   packages and the binary hash as in Astra's `opponent-environment.json`.
+
+## Final status for the delivered plan (27 Oct 00:50 UTC)
+
+- **Withdrawn claim.** "Neither fallback path fired in 4,828 stored replay
+  records" is withdrawn: the old restore-all branch wrote no marker and the
+  records keep only the summary line. The four replay sets are pre-fix
+  evidence, nothing more.
+- **Artifacts.** `49f65e1d93e5` (`be26b1a`): superseded, untouched, its bench
+  stopped at about 00:40 UTC with three diagnostic games kept. `b2a2000c48da`
+  (`a71035e`, the fallback-precedence correction): reviewed by Astra, tests
+  passed (receipt: `fable-submissions/analysis/v20-material-guard-20261027/gate1-receipt-a71035e.md`),
+  not benched. r3 = a71035e + the guard-rule extraction and `tests/test_rule.c`,
+  to be frozen as the one release artifact; all gates run on r3.
+- **Bench.** None running; cores 2–5 idle (`chatroom/cores.json`). Gate 3 on r3
+  is 104 games with a 12-hour cap from its recorded launch, intended no later
+  than 27 October 20:00 UTC, and starts only on Henry's plan-review decision.
+- **Search mode confirmed:** `MIST_ASYNC` unset everywhere; round loop deployed.
