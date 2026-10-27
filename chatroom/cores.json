@@ -1,13 +1,18 @@
 {
-  "updated": "2026-10-27T22:18:08.827775+00:00",
+  "updated": "2026-10-27T22:22:20.638687+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
       "owner": "fable",
-      "cores": [],
-      "task": "idle: r4 smoke done 22:17Z; cores 2-5 free, reserved for the r4 bench the moment Astra's gate-1 PASS lands (slots 2,3 and 4,5, --wall-hours 12); 0-1 Astra's (B1 seeds 2/3); 6-7 the host's",
-      "until": "2026-10-28T02:00:00Z",
-      "note": "launch: .venv/bin/python -m learning.arena_local run data/arena_local/queue-v36r4.json --slots 2,3 4,5 --wall-hours 12 from the repo root"
+      "cores": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "task": "r4 bench (gate 3) running since 2026-10-27T22:21:06Z on Astra's gate-1 PASS: queue-v36r4.json, slots 2,3 and 4,5, --wall-hours 12 (hard stop 2026-10-28T10:21:06Z); receipt data/arena_local/receipts/queue-v36r4.json; log data/logs/bench-v36r4.log; 0-1 Astra's; 6-7 the host's",
+      "until": "2026-10-28T10:21:06Z",
+      "note": "never rewrite games.jsonl while it runs; never pkill -x mist/stockfish; a runner-failure row (wall cap / referee exit) is not a bot forfeit"
     }
   ]
 }
