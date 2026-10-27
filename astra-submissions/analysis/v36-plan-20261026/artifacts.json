@@ -1,0 +1,168 @@
+{
+  "scope": "Frozen planning inputs, not a passed release gate",
+  "baseline_source": "97b60f17b64333e87e9bf7dede5fe00dec9481b7",
+  "artifacts": {
+    "baseline": {
+      "path": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+      "sha256": "24791ca64a429f5ae931466ce3c1af36c6974e1295203e99a00a991976955b4c",
+      "bytes": 82098198,
+      "members_sha256": {
+        "bin/stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+        "build.sh": "e83c84a58ea6cf581528e7295f7ca2ba5000350c393eab7d10a2bb59854c4ab1",
+        "data/history.bin": "5ed8c2b5478d5f019217728a2266b1036ff60e874620b87757c477a4142da4c1",
+        "run.sh": "dbcb6867cddeaf08553601fa608fa1facfbf7644af59e07cbd4380e0b3d8b0a0",
+        "src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+        "src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+        "src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+        "src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+        "src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+        "src/eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+        "src/eval.h": "4020fcce58269aaac95642fd23781e5af5babcddbd4189a7614ce9f10b6d6e76",
+        "src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+        "src/front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+        "src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+        "src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+        "src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+        "src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+        "src/movemodel.c": "fb80064af6f7a2e7cf0b268ae7fc41657b0246c7ac07781968c176cccdf7f89d",
+        "src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+        "src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+        "src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+        "src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+        "src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d"
+      },
+      "run_sh": "#!/bin/bash\ncd \"$(dirname \"$0\")\"\n# Stockfish, when shipped in bin/, scores the search's leaves (paper, 3.3)\nif [ -x bin/stockfish ]; then export MIST_STOCKFISH=\"$PWD/bin/stockfish\"; fi\n# the empirical opponent prior, when shipped in data/ (tools/history_table.c)\nif [ -f data/history.bin ]; then export MIST_HISTORY_TABLE=\"$PWD/data/history.bin\"; fi\nexec ./mist\n"
+    },
+    "opponent": {
+      "path": "data/zoo/misty-v16.zip",
+      "sha256": "62d8d389c2ed830d2c47c83739f4c033d432861a4a95f0d3e6ddb82bdee63757",
+      "bytes": 2702,
+      "members_sha256": {
+        "build.sh": "0908df2b0123e82719ce9c27474ad6792c7fff565de056fb1c0ab5f2735f5684",
+        "run.sh": "326ac1074bcb65abe947f20ff7288168efb2d8e384d33c971d3c5c44cce89068"
+      }
+    },
+    "pre_fix_candidate": {
+      "path": "data/candidates/iamavirus-v36-candidate-mist-c-v20.zip",
+      "sha256": "49f65e1d93e5abaa3ff06f2114c91c448745d658692b6643671814c1f787b15c",
+      "bytes": 82103541,
+      "members_sha256": {
+        "bin/stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+        "build.sh": "e83c84a58ea6cf581528e7295f7ca2ba5000350c393eab7d10a2bb59854c4ab1",
+        "data/history.bin": "5ed8c2b5478d5f019217728a2266b1036ff60e874620b87757c477a4142da4c1",
+        "run.sh": "dbcb6867cddeaf08553601fa608fa1facfbf7644af59e07cbd4380e0b3d8b0a0",
+        "src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+        "src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+        "src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+        "src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+        "src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+        "src/eval.c": "d51146b9557df5f05c2f9e4b135c8338e162f98dd45ddc7bc76650ec18a77b0e",
+        "src/eval.h": "612e6c18b24d055d10678d6b25c476641075dd5e6cc04ad1d6207eaaa31ec030",
+        "src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+        "src/front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+        "src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+        "src/gtcfr.c": "f146eb44a3e4a40cf2dc92ef16a4133aa4fa8f0da3b796421aba5a07f15719d8",
+        "src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+        "src/main.c": "a5cc50c3daf3978395ac992370329a5b9191bc4f4ff248d4786b912b4b27fa9a",
+        "src/movemodel.c": "fb80064af6f7a2e7cf0b268ae7fc41657b0246c7ac07781968c176cccdf7f89d",
+        "src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+        "src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+        "src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+        "src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+        "src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d"
+      },
+      "run_sh": "#!/bin/bash\ncd \"$(dirname \"$0\")\"\n# Stockfish, when shipped in bin/, scores the search's leaves (paper, 3.3)\nif [ -x bin/stockfish ]; then export MIST_STOCKFISH=\"$PWD/bin/stockfish\"; fi\n# the empirical opponent prior, when shipped in data/ (tools/history_table.c)\nif [ -f data/history.bin ]; then export MIST_HISTORY_TABLE=\"$PWD/data/history.bin\"; fi\nexec ./mist\n",
+      "status": "superseded; bench stopped after 3 recorded diagnostic games; not release evidence"
+    },
+    "corrected_candidate": {
+      "path": "data/candidates/iamavirus-v36-candidate-mist-c-v20-r2.zip",
+      "sha256": "b2a2000c48da14ca76a4d580e44fe9ef1a100c8fc04be7dba613c1708007ed12",
+      "bytes": 82104432,
+      "source": "a71035e43f0d642b187522582d66171c0b0cc70d",
+      "status": "fallback correction and both-color helper unit tests reported by Fable; not benched; final rule-test extraction/release freeze pending",
+      "members_sha256": {
+        "bin/stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+        "build.sh": "e83c84a58ea6cf581528e7295f7ca2ba5000350c393eab7d10a2bb59854c4ab1",
+        "data/history.bin": "5ed8c2b5478d5f019217728a2266b1036ff60e874620b87757c477a4142da4c1",
+        "run.sh": "dbcb6867cddeaf08553601fa608fa1facfbf7644af59e07cbd4380e0b3d8b0a0",
+        "src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+        "src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+        "src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+        "src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+        "src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+        "src/eval.c": "d51146b9557df5f05c2f9e4b135c8338e162f98dd45ddc7bc76650ec18a77b0e",
+        "src/eval.h": "612e6c18b24d055d10678d6b25c476641075dd5e6cc04ad1d6207eaaa31ec030",
+        "src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+        "src/front.c": "489f84128c895309fe532cf5f5ee42472159a1333f8057f1f21be62d77d2b930",
+        "src/front.h": "15ffaeb6f15c0396c15fc14f1b2ab90398493d93de3fb66d6f2039ecea48a663",
+        "src/gtcfr.c": "f146eb44a3e4a40cf2dc92ef16a4133aa4fa8f0da3b796421aba5a07f15719d8",
+        "src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+        "src/main.c": "525a61b93bfaf289b81ebe4d41b2a700d44e2f521cb7b0073fece0d7a930f19d",
+        "src/movemodel.c": "fb80064af6f7a2e7cf0b268ae7fc41657b0246c7ac07781968c176cccdf7f89d",
+        "src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+        "src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+        "src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+        "src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+        "src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d"
+      },
+      "run_sh": "#!/bin/bash\ncd \"$(dirname \"$0\")\"\n# Stockfish, when shipped in bin/, scores the search's leaves (paper, 3.3)\nif [ -x bin/stockfish ]; then export MIST_STOCKFISH=\"$PWD/bin/stockfish\"; fi\n# the empirical opponent prior, when shipped in data/ (tools/history_table.c)\nif [ -f data/history.bin ]; then export MIST_HISTORY_TABLE=\"$PWD/data/history.bin\"; fi\nexec ./mist\n"
+    }
+  },
+  "queue": {
+    "path": "data/arena_local/queue-v36c.json",
+    "sha256": "b7f4c8c5d0ff555f0938626b6447926866a884594620b5436783e332783d228e",
+    "content": {
+      "matchups": [
+        {
+          "id": "v36c-vs-v35",
+          "a": "data/candidates/iamavirus-v36-candidate-mist-c-v20.zip",
+          "a_env": [],
+          "b": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+          "max_games": 40,
+          "seed": 200000,
+          "sprt": {
+            "elo0": 0,
+            "elo1": 35,
+            "alpha": 1e-12,
+            "beta": 1e-12
+          }
+        },
+        {
+          "id": "v36c-vs-misty",
+          "a": "data/candidates/iamavirus-v36-candidate-mist-c-v20.zip",
+          "a_env": [],
+          "b": "data/zoo/misty-v16.zip",
+          "max_games": 32,
+          "seed": 201000,
+          "sprt": {
+            "elo0": 0,
+            "elo1": 35,
+            "alpha": 1e-12,
+            "beta": 1e-12
+          }
+        },
+        {
+          "id": "v35-vs-misty-control",
+          "a": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+          "a_env": [],
+          "b": "data/zoo/misty-v16.zip",
+          "max_games": 32,
+          "seed": 201000,
+          "sprt": {
+            "elo0": 0,
+            "elo1": 35,
+            "alpha": 1e-12,
+            "beta": 1e-12
+          }
+        }
+      ]
+    },
+    "status": "superseded queue retained as provenance; stopped after 3 completed results, no active release gate",
+    "start": "2026-10-27T00:24:22Z",
+    "stop_reported_by_fable": "approximately 2026-10-27T00:40:00Z",
+    "recorded_games": 3
+  },
+  "pre_fix_source": "be26b1aad48ecf256f5d43ac801461a83dd1bc3d",
+  "final_release_artifact": null,
+  "release_gate_status": "planned; final artifact and queue must be pinned before approved execution"
+}

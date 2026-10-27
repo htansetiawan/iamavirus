@@ -1,0 +1,263 @@
+{
+  "created_at": "2026-10-27T00:15:02.760465+00:00",
+  "classification": "post-revision development diagnostics; not untouched confirmation or Elo evidence",
+  "method": "paired CP support only; percentile bootstrap resamples games, retaining their decisions; fixed 2000 replicates",
+  "suites": {
+    "calib": {
+      "status": "complete",
+      "paths": {
+        "suite": "/home/henrytan/fable-persist/suite/v20/calib.json",
+        "baseline": "/home/henrytan/fable-persist/suite/v20/calib-A.json",
+        "candidate": "/home/henrytan/fable-persist/suite/v20/calib-B2.json"
+      },
+      "sha256": {
+        "suite": "e8cff30602fef524c92022d716dc5ea01bd7f0d98cabbb9c62e95a8aed147dd9",
+        "baseline": "81d3c1e2708d94fd1c76d839cfa270ef63a03e17902e9e40e0ebb4594f54dac7",
+        "candidate": "4d5b31d280d4a03f853cdf3968d4bac09c95fcdbf9dbfc028b829d2f3203f90a"
+      },
+      "planned_decisions": 796,
+      "paired_decisions": 796,
+      "paired_games": 796,
+      "errors": {
+        "baseline": 0,
+        "candidate": 0
+      },
+      "cp_jointly_scored": 732,
+      "cp_mean_baseline": 187.47814207650273,
+      "cp_mean_candidate": 144.94398907103826,
+      "cp_mean_delta_candidate_minus_baseline": -42.53415300546448,
+      "cp_delta_game_cluster_bootstrap_95": [
+        -58.09153005464481,
+        -26.57377049180328
+      ],
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20261026036,
+      "cp_delta_by_opponent": {
+        "Decent Chess Bot": {
+          "n": 112,
+          "mean": -79.58928571428571
+        },
+        "Greek Gift": {
+          "n": 108,
+          "mean": -40.25925925925926
+        },
+        "Instructors": {
+          "n": 114,
+          "mean": -15.008771929824562
+        },
+        "Knight Vision": {
+          "n": 123,
+          "mean": -51.91869918699187
+        },
+        "Strongly Invisible": {
+          "n": 137,
+          "mean": -36.10948905109489
+        },
+        "duck": {
+          "n": 138,
+          "mean": -34.992753623188406
+        }
+      },
+      "repeat_baseline": 0.585427135678392,
+      "repeat_candidate": 0.45603015075376885,
+      "safe_decisions": 796,
+      "fatal_baseline": 1,
+      "fatal_candidate": 1,
+      "fatal_fixed": [],
+      "fatal_broken": [],
+      "candidate_veto_recorded_rate": 0.23618090452261306
+    },
+    "oos": {
+      "status": "complete",
+      "paths": {
+        "suite": "/home/henrytan/fable-persist/suite/v20/oos.json",
+        "baseline": "/home/henrytan/fable-persist/suite/v20/oos-A.json",
+        "candidate": "/home/henrytan/fable-persist/suite/v20/oos-B2.json"
+      },
+      "sha256": {
+        "suite": "7ee056e0bcf87f127b84d751bcaf30d3ee04c40bd7fa5f00ae3c53509f3d5323",
+        "baseline": "ed2143e7c05043b50a40280b5f06a6a24138df5252dd8db32078f9cc23d1a65d",
+        "candidate": "44a89b8f18d08ff8bcc8cf9b2625b3b83ad866a774546afea0693bf884fe3443"
+      },
+      "planned_decisions": 818,
+      "paired_decisions": 818,
+      "paired_games": 818,
+      "errors": {
+        "baseline": 0,
+        "candidate": 0
+      },
+      "cp_jointly_scored": 728,
+      "cp_mean_baseline": 166.26098901098902,
+      "cp_mean_candidate": 126.68818681318682,
+      "cp_mean_delta_candidate_minus_baseline": -39.5728021978022,
+      "cp_delta_game_cluster_bootstrap_95": [
+        -53.81868131868132,
+        -26.14010989010989
+      ],
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20261026036,
+      "cp_delta_by_opponent": {
+        "Decent Chess Bot": {
+          "n": 119,
+          "mean": -60.91596638655462
+        },
+        "Greek Gift": {
+          "n": 102,
+          "mean": -24.862745098039216
+        },
+        "Instructors": {
+          "n": 107,
+          "mean": -32.850467289719624
+        },
+        "Knight Vision": {
+          "n": 127,
+          "mean": -55.346456692913385
+        },
+        "Strongly Invisible": {
+          "n": 151,
+          "mean": -26.364238410596027
+        },
+        "duck": {
+          "n": 122,
+          "mean": -36.877049180327866
+        }
+      },
+      "repeat_baseline": 0.6198044009779952,
+      "repeat_candidate": 0.46454767726161367,
+      "safe_decisions": 818,
+      "fatal_baseline": 0,
+      "fatal_candidate": 0,
+      "fatal_fixed": [],
+      "fatal_broken": [],
+      "candidate_veto_recorded_rate": 0.22493887530562348
+    },
+    "control": {
+      "status": "complete",
+      "paths": {
+        "suite": "/home/henrytan/fable-persist/suite/v20/control.json",
+        "baseline": "/home/henrytan/fable-persist/suite/v20/control-A.json",
+        "candidate": "/home/henrytan/fable-persist/suite/v20/control-B2.json"
+      },
+      "sha256": {
+        "suite": "0349b69f1060497a71d2a99a7310780c05a9de15db784b9ece60f465b1b7d48d",
+        "baseline": "d7209804a11124f2e779761b639726b887dd8b1702e0fdbdf901f4a1e0940610",
+        "candidate": "46dfabaa1da562b966e6e8f9dbbc58cada77e01dd9a1df07e14fd6e70563c8d2"
+      },
+      "planned_decisions": 400,
+      "paired_decisions": 400,
+      "paired_games": 134,
+      "errors": {
+        "baseline": 0,
+        "candidate": 0
+      },
+      "cp_jointly_scored": 355,
+      "cp_mean_baseline": 50.738028169014086,
+      "cp_mean_candidate": 49.58028169014084,
+      "cp_mean_delta_candidate_minus_baseline": -1.1577464788732394,
+      "cp_delta_game_cluster_bootstrap_95": [
+        -9.917142857142856,
+        7.0539772727272725
+      ],
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20261026036,
+      "cp_delta_by_opponent": {
+        "Decent Chess Bot": {
+          "n": 83,
+          "mean": 8.975903614457831
+        },
+        "Greek Gift": {
+          "n": 14,
+          "mean": -2.9285714285714284
+        },
+        "Instructors": {
+          "n": 64,
+          "mean": -0.0625
+        },
+        "Knight Vision": {
+          "n": 59,
+          "mean": 2.4237288135593222
+        },
+        "Strongly Invisible": {
+          "n": 49,
+          "mean": 4.73469387755102
+        },
+        "duck": {
+          "n": 86,
+          "mean": -17.27906976744186
+        }
+      },
+      "repeat_baseline": 0.64,
+      "repeat_candidate": 0.6425,
+      "safe_decisions": 400,
+      "fatal_baseline": 0,
+      "fatal_candidate": 0,
+      "fatal_fixed": [],
+      "fatal_broken": [],
+      "candidate_veto_recorded_rate": 0.05
+    },
+    "control-loss": {
+      "status": "complete",
+      "paths": {
+        "suite": "/home/henrytan/fable-persist/suite/v20/control-loss.json",
+        "baseline": "/home/henrytan/fable-persist/suite/v20/control-loss-A.json",
+        "candidate": "/home/henrytan/fable-persist/suite/v20/control-loss-B2.json"
+      },
+      "sha256": {
+        "suite": "9fd87fac842b4968b2d2491889775c295af4a841ac8de757f584b4845d95e16d",
+        "baseline": "bcbf8d666a668d33690491f0ff39b1e6b0ed07e1ee7fd7565fdc6a070832ca71",
+        "candidate": "d1d4abb62180aa715da0587b1d6999a8bc944348a49df488fec96b687c9a67dc"
+      },
+      "planned_decisions": 400,
+      "paired_decisions": 400,
+      "paired_games": 175,
+      "errors": {
+        "baseline": 0,
+        "candidate": 0
+      },
+      "cp_jointly_scored": 352,
+      "cp_mean_baseline": 51.90340909090909,
+      "cp_mean_candidate": 51.25,
+      "cp_mean_delta_candidate_minus_baseline": -0.6534090909090909,
+      "cp_delta_game_cluster_bootstrap_95": [
+        -7.921568627450981,
+        6.00828729281768
+      ],
+      "bootstrap_replicates": 2000,
+      "bootstrap_seed": 20261026036,
+      "cp_delta_by_opponent": {
+        "Decent Chess Bot": {
+          "n": 73,
+          "mean": -7.835616438356165
+        },
+        "Greek Gift": {
+          "n": 58,
+          "mean": -2.4482758620689653
+        },
+        "Instructors": {
+          "n": 46,
+          "mean": 9.934782608695652
+        },
+        "Knight Vision": {
+          "n": 52,
+          "mean": 22.403846153846153
+        },
+        "Strongly Invisible": {
+          "n": 69,
+          "mean": -8.173913043478262
+        },
+        "duck": {
+          "n": 54,
+          "mean": -10.62962962962963
+        }
+      },
+      "repeat_baseline": 0.5475,
+      "repeat_candidate": 0.5525,
+      "safe_decisions": 400,
+      "fatal_baseline": 0,
+      "fatal_candidate": 0,
+      "fatal_fixed": [],
+      "fatal_broken": [],
+      "candidate_veto_recorded_rate": 0.03
+    }
+  }
+}
