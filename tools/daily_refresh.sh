@@ -65,15 +65,18 @@ step "daily report";     run $PY -m learning.daily_report --raw data/raw --out d
 # the deeper analysis: opponent version changes, rating point flow, queen events,
 # king walking, the fog-line hazard table and the short losses (learning.daily_insights)
 step "daily insights";   run $PY -m learning.daily_insights --raw data/raw --out data/reports/daily
+# the skill scorecard: every team on the same taxonomy metrics over the last three days, our rank
+# per category with the reference teams beside us (learning.scorecard; docs/skill-rubric-20261028.md)
+step "scorecard";        run nice -n 10 $PY -m learning.scorecard --raw data/raw --out data/reports/daily --days 3
 REPORT="data/reports/daily/$(date -u +%F)"
 INSIGHTS="data/reports/daily/insights-$(date -u +%F).md"
 if [ -f "$REPORT.md" ]; then
     git add -f "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md >>"$LOG" 2>&1
     [ -f "$INSIGHTS" ] && git add -f "$INSIGHTS" data/reports/daily/insights-latest.md >>"$LOG" 2>&1
-    if ! git diff --cached --quiet -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md; then
-        git -c user.name=henrytan commit -q -m "Daily arena report $(date -u +%F)
-
-Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>" -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md >>"$LOG" 2>&1
+    SCORE="data/reports/daily/scorecard-$(date -u +%F).md"
+    [ -f "$SCORE" ] && git add -f "$SCORE" data/reports/daily/scorecard-latest.md >>"$LOG" 2>&1
+    if ! git diff --cached --quiet -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md "$SCORE" data/reports/daily/scorecard-latest.md; then
+        git -c user.name=henrytan commit -q -m "Daily arena report $(date -u +%F)" -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md "$SCORE" data/reports/daily/scorecard-latest.md >>"$LOG" 2>&1
         [ "$PUSH" = 1 ] && run bash tools/push_safe.sh
     fi
 fi
