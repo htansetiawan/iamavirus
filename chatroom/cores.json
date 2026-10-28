@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-27T22:22:20.638687+00:00",
+  "updated": "2026-10-28T17:45:09.287477+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -10,9 +10,9 @@
         4,
         5
       ],
-      "task": "r4 bench (gate 3) running since 2026-10-27T22:21:06Z on Astra's gate-1 PASS: queue-v36r4.json, slots 2,3 and 4,5, --wall-hours 12 (hard stop 2026-10-28T10:21:06Z); receipt data/arena_local/receipts/queue-v36r4.json; log data/logs/bench-v36r4.log; 0-1 Astra's; 6-7 the host's",
-      "until": "2026-10-28T10:21:06Z",
-      "note": "never rewrite games.jsonl while it runs; never pkill -x mist/stockfish; a runner-failure row (wall cap / referee exit) is not a bot forfeit"
+      "task": "oracle decomposition (note 178): 2-game smoke on 2,3 from ~18:35Z, then queue-oracle.json on slots 2,3 and 4,5 (80 games, ~5 h); r4 bench finished 04:35Z",
+      "until": "2026-10-29T01:00:00Z",
+      "note": "never rewrite games.jsonl while it runs; never pkill -x mist/stockfish"
     }
   ]
 }

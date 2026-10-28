@@ -1,0 +1,38 @@
+{
+ "matchups": [
+  {
+   "id": "oracle-vs-control",
+   "a": "data/candidates/mist-c-v21-oracle.zip",
+   "a_env": [
+    "MIST_ORACLE_FILE={truth}"
+   ],
+   "b": "data/candidates/mist-c-v21-control.zip",
+   "b_env": [],
+   "max_games": 40,
+   "seed": 400000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  },
+  {
+   "id": "oracle-vs-v35",
+   "a": "data/candidates/mist-c-v21-oracle.zip",
+   "a_env": [
+    "MIST_ORACLE_FILE={truth}"
+   ],
+   "b": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+   "b_env": [],
+   "max_games": 40,
+   "seed": 401000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  }
+ ]
+}

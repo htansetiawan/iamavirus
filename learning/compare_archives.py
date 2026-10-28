@@ -77,7 +77,9 @@ def play(white: Path, black: Path, seed: int, kit: Path, out: Path, cores: str |
     killed at the deadline and a RuntimeError says so; the caller records a failed attempt."""
     python = kit / ".venv" / "bin" / "python"
     prefix = ["taskset", "-c", cores] if cores else []
-    cmd = prefix + [str(python), str(kit / "referee.py"), "--trusted-local",
+    # FOW_REFEREE: a wrapper around the kit's referee (learning/oracle_referee.py), experiments only
+    referee = Path(os.environ["FOW_REFEREE"]) if os.environ.get("FOW_REFEREE") else kit / "referee.py"
+    cmd = prefix + [str(python), str(referee), "--trusted-local",
                     "--white", f"env FOW_SEED={seed} {white_env} bash {white / 'run.sh'}".replace("  ", " "),
                     "--black", f"env FOW_SEED={seed + 1} {black_env} bash {black / 'run.sh'}".replace("  ", " "),
                     "--white-name", white.name, "--black-name", black.name,

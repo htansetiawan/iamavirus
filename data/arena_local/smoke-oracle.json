@@ -1,0 +1,21 @@
+{
+ "matchups": [
+  {
+   "id": "smoke-oracle",
+   "a": "data/candidates/mist-c-v21-oracle.zip",
+   "a_env": [
+    "MIST_ORACLE_FILE={truth}"
+   ],
+   "b": "data/candidates/mist-c-v21-control.zip",
+   "b_env": [],
+   "max_games": 2,
+   "seed": 399000,
+   "sprt": {
+    "elo0": 0,
+    "elo1": 35,
+    "alpha": 1e-12,
+    "beta": 1e-12
+   }
+  }
+ ]
+}
