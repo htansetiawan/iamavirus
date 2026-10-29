@@ -1,0 +1,826 @@
+{
+  "as_of": "2026-10-29T15:33:17.315536+00:00",
+  "data_sources": [
+    "leaderboard.json",
+    "history.json",
+    "*-recent-games.json",
+    "*-aligned-history.json",
+    "hypothermia-version-comparison.json"
+  ],
+  "alignment_method": "Anchor each latest-200 rating list to completed-game list using total-game-count difference; first aligned value has no preceding delta. Validate all later delta signs against game outcomes and abs(delta)<=K. Not a separately timestamped historical leaderboard.",
+  "peak": {
+    "id": "59xi229c",
+    "at": "2026-10-29T02:28:08.495636576+00:00",
+    "rating": 1991.9551756468375,
+    "delta": 5.466859095155314,
+    "opponent": "Strongly Invisible",
+    "opponent_version": 41,
+    "our_version": 35,
+    "side": "white",
+    "score": 1,
+    "reason": "King capturable",
+    "plies": 132
+  },
+  "current": {
+    "staff": false,
+    "external": false,
+    "id": "a2c35173659545c99752376a70418438",
+    "name": "IAmAVirus",
+    "notes": [],
+    "rating": 1904.7586981810905,
+    "wins": 5729,
+    "draws": 392,
+    "losses": 5725,
+    "games": 11846,
+    "activeRecord": {
+      "games": 7300,
+      "wins": 3705,
+      "draws": 196,
+      "losses": 3399
+    },
+    "history": [
+      1976.4078935087405,
+      1975.6011262183783,
+      1974.8010717653663,
+      1974.0076252176636,
+      1978.0536864993362,
+      1973.9750723624322,
+      1977.9903615879705,
+      1973.9132050082019,
+      1979.6116536524657,
+      1985.2010679512725,
+      1987.871904997132,
+      1986.4883165516821,
+      1991.9551756468375,
+      1989.0858325364309,
+      1986.4716575929149,
+      1991.6146156322973,
+      1989.001305720482,
+      1986.4406590901485,
+      1990.2335832179283,
+      1985.9395182486908,
+      1983.166545308422,
+      1988.4774051475524,
+      1986.0495295160745,
+      1989.7412950498997,
+      1987.3399347782788,
+      1986.5038985683773,
+      1981.210488011788,
+      1974.7617389269853,
+      1973.9817734184885,
+      1976.874956565492,
+      1970.5053125265476,
+      1966.333028819251,
+      1970.238430171914,
+      1966.0540195118433,
+      1971.5958161054716,
+      1969.0276516517526,
+      1969.6779393284169,
+      1970.321237134434,
+      1972.4988949897227,
+      1966.6370455873553,
+      1968.8282526208825,
+      1962.9881503744052,
+      1964.3325379725613,
+      1965.629126067483,
+      1961.3386268576212,
+      1957.1465555129334,
+      1954.9541205313747,
+      1952.801629451715,
+      1954.5631877951605,
+      1956.2825811903292,
+      1952.0859352388786,
+      1950.0287024232448,
+      1945.9522232538939,
+      1945.202320829551,
+      1943.2529062176145,
+      1942.5163892079188,
+      1941.785522920131,
+      1941.0602254233454,
+      1937.348229363151,
+      1933.7211185565372,
+      1934.2713540486818,
+      1934.8183524919534,
+      1928.280898414677,
+      1921.8355541977764,
+      1918.290976028215,
+      1914.8267589401264,
+      1917.014901386664,
+      1915.16322686598,
+      1911.701427379935,
+      1912.3524956071738,
+      1912.9990948350542,
+      1913.6315674594107,
+      1910.2498328475795,
+      1906.943867688898,
+      1907.6069475095214,
+      1910.453694985915,
+      1911.102312633326,
+      1915.7778861211577,
+      1920.3484194010769,
+      1915.032827754322,
+      1911.543824587751,
+      1908.1336347822487,
+      1910.5947817864362,
+      1913.007911119317,
+      1916.5453815259373,
+      1912.002687605633,
+      1914.8451623932935,
+      1909.627955617685,
+      1911.8501367011959,
+      1905.8315728059995,
+      1900.0986931479033,
+      1902.2144714908109,
+      1906.9908614966794,
+      1903.6608735384616,
+      1900.4746648791838,
+      1897.3585154447815,
+      1903.7501812328858,
+      1901.7919933590656,
+      1908.1020923243836,
+      1906.123454871812,
+      1902.970543665957,
+      1903.0316756813547,
+      1899.9470348464563,
+      1900.00921010241,
+      1904.8012299561792,
+      1909.4866804237656,
+      1906.2236296921003,
+      1911.0329043614847,
+      1911.5432428146278,
+      1912.0507812447984,
+      1916.7567949254387,
+      1913.3573459543918,
+      1914.2992353509703,
+      1915.232150806487,
+      1916.7282690637019,
+      1914.2035493953836,
+      1912.3688490776249,
+      1910.576070188717,
+      1907.4087318224915,
+      1904.31089234706,
+      1906.5771711451428,
+      1904.6256240373991,
+      1906.8911688218195,
+      1904.9534967227073,
+      1903.0483923450827,
+      1901.1749395174174,
+      1897.944363142377,
+      1902.7954828877591,
+      1898.5590207457756,
+      1894.4198868729818,
+      1899.284582679781,
+      1896.041877167838,
+      1891.9002377444463,
+      1895.8539059220784,
+      1892.8150532754487,
+      1889.8418501164058,
+      1887.017600728645,
+      1888.2524757231163,
+      1885.320478368763,
+      1890.4508927011493,
+      1895.6538576831329,
+      1899.1551738096493,
+      1902.5773318541806,
+      1907.596221049107,
+      1901.0991107978202,
+      1902.6954369869368,
+      1905.7889289841903,
+      1900.8151277555503,
+      1907.0144051161585,
+      1907.8455973813234,
+      1908.669688977701,
+      1906.7970628193812,
+      1907.622109951268,
+      1908.4401548765165,
+      1902.8277610349962,
+      1905.3249884148695,
+      1903.403538922502,
+      1901.514199930661,
+      1898.5665215786782,
+      1895.7027602732192,
+      1896.3092819828228,
+      1888.916610903834,
+      1892.6247270755985,
+      1896.248060293904,
+      1896.925167057758,
+      1897.6065076893342,
+      1892.2416383990724,
+      1894.9884315440836,
+      1890.1534515451867,
+      1892.4344791547846,
+      1894.6729267091735,
+      1895.3567684810296,
+      1896.0357026118513,
+      1899.2350034419376,
+      1901.634533916604,
+      1903.987916528666,
+      1906.2965455891338,
+      1908.5617674413538,
+      1910.7848817196045,
+      1912.9600589062372,
+      1906.9498299779907,
+      1905.1210718828274,
+      1899.2323884153586,
+      1894.2660217924968,
+      1889.4080546557034,
+      1891.73182522209,
+      1893.2529356555397,
+      1894.7248870288345,
+      1895.6612843659366,
+      1896.5888050582505,
+      1899.3836692259817,
+      1898.1550085720928,
+      1900.3389499643888,
+      1902.472450325148,
+      1903.115013086988,
+      1903.7532176690547,
+      1907.0077749171624,
+      1908.3172506868668,
+      1911.4852967455204,
+      1904.7586981810905
+    ],
+    "activeSubmissionId": "a2c35173659545c99752376a70418438-v35",
+    "activeVersion": 35,
+    "provisional": false
+  },
+  "since_peak": {
+    "games": 187,
+    "wins": 92,
+    "draws": 6,
+    "losses": 89,
+    "actual_points": 95.0,
+    "elo_expected_points": 105.89955968321837,
+    "elo_delta": -87.19647746574697,
+    "by_opponent": {
+      "Crimson Fog": {
+        "games": 2,
+        "wins": 1,
+        "draws": 0,
+        "losses": 1,
+        "score": 1.0,
+        "elo_delta": 2.273614928975803
+      },
+      "Strongly Invisible": {
+        "games": 9,
+        "wins": 2,
+        "draws": 0,
+        "losses": 7,
+        "score": 2.0,
+        "elo_delta": -3.4379402210311127
+      },
+      "Mist Opportunities": {
+        "games": 16,
+        "wins": 5,
+        "draws": 0,
+        "losses": 11,
+        "score": 5.0,
+        "elo_delta": -13.883972089489134
+      },
+      "Decent Chess Bot": {
+        "games": 14,
+        "wins": 3,
+        "draws": 0,
+        "losses": 11,
+        "score": 3.0,
+        "elo_delta": -5.5772199816865395
+      },
+      "Knight Vision": {
+        "games": 6,
+        "wins": 0,
+        "draws": 1,
+        "losses": 5,
+        "score": 0.5,
+        "elo_delta": -7.961702638541965
+      },
+      "Instructors": {
+        "games": 20,
+        "wins": 6,
+        "draws": 1,
+        "losses": 13,
+        "score": 6.5,
+        "elo_delta": -17.936935576813312
+      },
+      "Greek Gift": {
+        "games": 6,
+        "wins": 0,
+        "draws": 0,
+        "losses": 6,
+        "score": 0.0,
+        "elo_delta": -4.558584937010437
+      },
+      "Lost Signal": {
+        "games": 12,
+        "wins": 7,
+        "draws": 0,
+        "losses": 5,
+        "score": 7.0,
+        "elo_delta": 2.2859053773108826
+      },
+      "Farsight": {
+        "games": 8,
+        "wins": 5,
+        "draws": 0,
+        "losses": 3,
+        "score": 5.0,
+        "elo_delta": -3.1571926487281416
+      },
+      "Foggy Fischer": {
+        "games": 8,
+        "wins": 8,
+        "draws": 0,
+        "losses": 0,
+        "score": 8.0,
+        "elo_delta": 6.45587943077544
+      },
+      "Gravel Road": {
+        "games": 12,
+        "wins": 5,
+        "draws": 0,
+        "losses": 7,
+        "score": 5.0,
+        "elo_delta": -23.881305909379762
+      },
+      "HYPOTHERMIA": {
+        "games": 12,
+        "wins": 7,
+        "draws": 1,
+        "losses": 4,
+        "score": 7.5,
+        "elo_delta": -18.695269062353873
+      },
+      "Mu1tip13 @g3nt$": {
+        "games": 12,
+        "wins": 11,
+        "draws": 0,
+        "losses": 1,
+        "score": 11.0,
+        "elo_delta": 17.835045233128312
+      },
+      "duck": {
+        "games": 14,
+        "wins": 4,
+        "draws": 1,
+        "losses": 9,
+        "score": 4.5,
+        "elo_delta": -10.491963288402076
+      },
+      "Trojan Horse": {
+        "games": 6,
+        "wins": 6,
+        "draws": 0,
+        "losses": 0,
+        "score": 6.0,
+        "elo_delta": 3.8184572335242137
+      },
+      "RATIRL": {
+        "games": 10,
+        "wins": 5,
+        "draws": 2,
+        "losses": 3,
+        "score": 6.0,
+        "elo_delta": -7.341269741787073
+      },
+      "Sausage": {
+        "games": 6,
+        "wins": 6,
+        "draws": 0,
+        "losses": 0,
+        "score": 6.0,
+        "elo_delta": 3.890132267060153
+      },
+      "Resting Bishop Faces": {
+        "games": 2,
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "score": 2.0,
+        "elo_delta": 0.12330727135145025
+      },
+      "TA Baseline P": {
+        "games": 4,
+        "wins": 3,
+        "draws": 0,
+        "losses": 1,
+        "score": 3.0,
+        "elo_delta": -5.76827248607151
+      },
+      "In Pawn Sight": {
+        "games": 2,
+        "wins": 2,
+        "draws": 0,
+        "losses": 0,
+        "score": 2.0,
+        "elo_delta": 1.874804852095167
+      },
+      "TA Baseline S": {
+        "games": 6,
+        "wins": 4,
+        "draws": 0,
+        "losses": 2,
+        "score": 4.0,
+        "elo_delta": -3.0619954786734525
+      }
+    }
+  },
+  "estimated_peak_ranking_from_sampled_history": [
+    {
+      "name": "Greek Gift",
+      "rating": 2352.560120621621,
+      "sample_at": 1793232855294
+    },
+    {
+      "name": "Knight Vision",
+      "rating": 2147.5905963897626,
+      "sample_at": 1793233511828
+    },
+    {
+      "name": "Strongly Invisible",
+      "rating": 2117.37909020289,
+      "sample_at": 1793221643261
+    },
+    {
+      "name": "Crimson Fog",
+      "rating": 2092.0080116437075,
+      "sample_at": 1793240790269
+    },
+    {
+      "name": "Decent Chess Bot",
+      "rating": 2085.0867588752385,
+      "sample_at": 1793232709631
+    },
+    {
+      "name": "IAmAVirus",
+      "rating": 1991.9551756468375,
+      "sample_at": 1793238126367
+    },
+    {
+      "name": "Mist Opportunities",
+      "rating": 1977.517078274785,
+      "sample_at": 1793240022013
+    },
+    {
+      "name": "Instructors",
+      "rating": 1966.9573234929649,
+      "sample_at": 1793234196463
+    },
+    {
+      "name": "duck",
+      "rating": 1951.512567634088,
+      "sample_at": 1793236388798
+    },
+    {
+      "name": "Lost Signal",
+      "rating": 1867.5032966515716,
+      "sample_at": 1793238795592
+    },
+    {
+      "name": "Gravel Road",
+      "rating": 1791.8894946937278,
+      "sample_at": 1793240401676
+    },
+    {
+      "name": "Farsight",
+      "rating": 1743.9436182103286,
+      "sample_at": 1793240730821
+    },
+    {
+      "name": "Mu1tip13 @g3nt$",
+      "rating": 1734.244852933952,
+      "sample_at": 1793240571950
+    },
+    {
+      "name": "RATIRL",
+      "rating": 1725.2274033978333,
+      "sample_at": 1793240816321
+    },
+    {
+      "name": "TA Baseline S",
+      "rating": 1701.7974144525301,
+      "sample_at": 1793237791134
+    },
+    {
+      "name": "HYPOTHERMIA",
+      "rating": 1661.5427419095624,
+      "sample_at": 1793240339844
+    },
+    {
+      "name": "TA Baseline A",
+      "rating": 1588.3442740807714,
+      "sample_at": 1793235975481
+    },
+    {
+      "name": "Foggy Fischer",
+      "rating": 1546.8696466448725,
+      "sample_at": 1793240868815
+    },
+    {
+      "name": "In Pawn Sight",
+      "rating": 1541.6771374796238,
+      "sample_at": 1793239820603
+    },
+    {
+      "name": "Trojan Horse",
+      "rating": 1497.3288135854286,
+      "sample_at": 1793239907731
+    },
+    {
+      "name": "Sausage",
+      "rating": 1477.5993249969608,
+      "sample_at": 1793239069516
+    },
+    {
+      "name": "TA Baseline P",
+      "rating": 1449.8176010309826,
+      "sample_at": 1793239194692
+    },
+    {
+      "name": "Apricot Squad",
+      "rating": 1247.3611854582437,
+      "sample_at": 1793237770480
+    },
+    {
+      "name": "Bit Gambit",
+      "rating": 1245.3761877246502,
+      "sample_at": 1793240296345
+    },
+    {
+      "name": "Czechmate",
+      "rating": 1047.1547355541848,
+      "sample_at": 1793240394681
+    },
+    {
+      "name": "Resting Bishop Faces",
+      "rating": 1020.7115136390137,
+      "sample_at": 1793239575928
+    },
+    {
+      "name": "baseline.py",
+      "rating": 1000.0,
+      "sample_at": 1793233897571
+    }
+  ],
+  "peak_rank_caveat": "Sampled histories are not synchronized snapshots; this reconstruction supports but does not independently certify the exact #6 display. Exact own rating peak, dated games, and nearby Instructors/duck values are aligned from last-200 per-game ratings. Misty bound at peak is <1984.94 from its 02:39 rating and 2 intervening games at K=8.",
+  "history_cache_age_seconds": 22.23685498046875,
+  "hypothermia_comparison": {
+    "by_version": {
+      "4": {
+        "games": 918,
+        "score": 493.0,
+        "opponents": {
+          "Apricot Squad": {
+            "games": 10,
+            "score": 10
+          },
+          "Crimson Fog": {
+            "games": 56,
+            "score": 15.0
+          },
+          "Czechmate": {
+            "games": 2,
+            "score": 2
+          },
+          "Decent Chess Bot": {
+            "games": 50,
+            "score": 10.5
+          },
+          "Farsight": {
+            "games": 10,
+            "score": 6.5
+          },
+          "Foggy Fischer": {
+            "games": 22,
+            "score": 18.5
+          },
+          "Gravel Road": {
+            "games": 54,
+            "score": 33.5
+          },
+          "Greek Gift": {
+            "games": 42,
+            "score": 1.5
+          },
+          "IAmAVirus": {
+            "games": 60,
+            "score": 37.0
+          },
+          "In Pawn Sight": {
+            "games": 42,
+            "score": 41.5
+          },
+          "Instructors": {
+            "games": 60,
+            "score": 24.5
+          },
+          "Knight Vision": {
+            "games": 62,
+            "score": 20.5
+          },
+          "Lost Signal": {
+            "games": 66,
+            "score": 37.0
+          },
+          "Mist Opportunities": {
+            "games": 78,
+            "score": 35.0
+          },
+          "Mu1tip13 @g3nt$": {
+            "games": 20,
+            "score": 17
+          },
+          "Sausage": {
+            "games": 38,
+            "score": 38
+          },
+          "Strongly Invisible": {
+            "games": 40,
+            "score": 9.5
+          },
+          "TA Baseline A": {
+            "games": 32,
+            "score": 29
+          },
+          "TA Baseline P": {
+            "games": 24,
+            "score": 20
+          },
+          "TA Baseline S": {
+            "games": 60,
+            "score": 46.0
+          },
+          "baseline.py": {
+            "games": 6,
+            "score": 6
+          },
+          "duck": {
+            "games": 84,
+            "score": 34.5
+          }
+        }
+      },
+      "6": {
+        "games": 454,
+        "score": 178.0,
+        "opponents": {
+          "Apricot Squad": {
+            "games": 12,
+            "score": 11
+          },
+          "Bit Gambit": {
+            "games": 6,
+            "score": 6
+          },
+          "Crimson Fog": {
+            "games": 20,
+            "score": 0
+          },
+          "Czechmate": {
+            "games": 6,
+            "score": 6
+          },
+          "Decent Chess Bot": {
+            "games": 18,
+            "score": 0.5
+          },
+          "Farsight": {
+            "games": 14,
+            "score": 4
+          },
+          "Foggy Fischer": {
+            "games": 22,
+            "score": 17.5
+          },
+          "Gravel Road": {
+            "games": 30,
+            "score": 5.5
+          },
+          "Greek Gift": {
+            "games": 4,
+            "score": 0
+          },
+          "IAmAVirus": {
+            "games": 26,
+            "score": 8.0
+          },
+          "In Pawn Sight": {
+            "games": 26,
+            "score": 12
+          },
+          "Instructors": {
+            "games": 8,
+            "score": 3
+          },
+          "Knight Vision": {
+            "games": 8,
+            "score": 0
+          },
+          "Lost Signal": {
+            "games": 18,
+            "score": 4.5
+          },
+          "Mist Opportunities": {
+            "games": 26,
+            "score": 5.0
+          },
+          "Mu1tip13 @g3nt$": {
+            "games": 32,
+            "score": 7.5
+          },
+          "RATIRL": {
+            "games": 20,
+            "score": 5.0
+          },
+          "Resting Bishop Faces": {
+            "games": 8,
+            "score": 8
+          },
+          "Sausage": {
+            "games": 18,
+            "score": 12
+          },
+          "Strongly Invisible": {
+            "games": 16,
+            "score": 0.5
+          },
+          "TA Baseline A": {
+            "games": 30,
+            "score": 15.5
+          },
+          "TA Baseline P": {
+            "games": 18,
+            "score": 11
+          },
+          "TA Baseline S": {
+            "games": 24,
+            "score": 5.5
+          },
+          "Trojan Horse": {
+            "games": 28,
+            "score": 26.0
+          },
+          "baseline.py": {
+            "games": 2,
+            "score": 1
+          },
+          "duck": {
+            "games": 14,
+            "score": 3.0
+          }
+        }
+      },
+      "5": {
+        "games": 18,
+        "score": 6.5,
+        "opponents": {
+          "IAmAVirus": {
+            "games": 2,
+            "score": 1
+          },
+          "In Pawn Sight": {
+            "games": 2,
+            "score": 1
+          },
+          "Knight Vision": {
+            "games": 2,
+            "score": 0
+          },
+          "Lost Signal": {
+            "games": 2,
+            "score": 0
+          },
+          "Mu1tip13 @g3nt$": {
+            "games": 2,
+            "score": 1.5
+          },
+          "Sausage": {
+            "games": 2,
+            "score": 1
+          },
+          "TA Baseline P": {
+            "games": 2,
+            "score": 0
+          },
+          "TA Baseline S": {
+            "games": 2,
+            "score": 0
+          },
+          "baseline.py": {
+            "games": 2,
+            "score": 2
+          }
+        }
+      }
+    },
+    "common_opponent_version_min_v4_games": 5,
+    "matched_v6_games": 372,
+    "matched_v6_score": 123.0,
+    "v4_expected_score_on_matched_v6_schedule": 242.85882068648198,
+    "caveat": "Historical opponent-version matched comparison, not randomized; baseline and schedule uncertainty remain."
+  },
+  "interpretation": [
+    "No candidate/code change explains the IAmAVirus swing: all aligned games are v35.",
+    "Actual completed-game results and rival rating moves explain the swing; scheduler internals are unavailable, so no server-delay diagnosis is established.",
+    "Opponent changes affect strength; HYPOTHERMIA v6 differs sharply from the prior v4 reference.",
+    "The observed peak is not sufficient evidence of sustained top-six strength."
+  ]
+}
