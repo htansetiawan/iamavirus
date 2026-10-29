@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-29T21:46:52.605635+00:00",
+  "updated": "2026-10-29T23:42:09.149495+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -7,20 +7,12 @@
       "cores": [
         2,
         3,
-        4
-      ],
-      "task": "guard-margin grid on the regression suite (check+fatal, 2.5 s, 2 workers): baseline, MIST_KING_GUARD 0.01/0.05, MIST_QUEEN_GUARD 0.03/0.10; ~3 h",
-      "until": "2026-10-30T01:46:52Z",
-      "note": "paired against a fresh baseline under the same load"
-    },
-    {
-      "owner": "fable",
-      "cores": [
+        4,
         5
       ],
-      "task": "mist-c perf-board branch: belief-update timing runs (test_belief, single core)",
-      "until": "2026-10-30T01:46:52Z",
-      "note": "builds on core 6"
+      "task": "v35-base lanes: smoke-v23.json (2 games) then queue-v35base.json (natural-v35base, share20-v35base, natural-v23; 60 games vs frozen v35, piece guard off)",
+      "until": "2026-10-30T07:12:09Z",
+      "note": "never rewrite games.jsonl while it runs; never pkill -x mist/stockfish"
     }
   ]
 }
