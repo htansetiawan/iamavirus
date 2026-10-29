@@ -131,3 +131,24 @@ figure.
 `data/arena_local/games.jsonl` (matchups `natural-vs-v35`, `share05-vs-v35`,
 `share20-vs-v35`, `share50-vs-v35`), replays under `data/arena_local/builds/`. mist-c
 e748d5c (`MIST_ORACLE_SHARE`, `belief_force_board_share`, `tests/test_oracle.c`).
+
+## Addendum (29 October, 22:00Z): the base engine had the piece guard on
+
+Checked after the read-out: the zip `mist-c-v22-share.zip` is built from the current mist-c
+source, whose default for `MIST_PIECE_GUARD` is the v20 value 0.758, and no lane turned it
+off. The piece guard printed on 414 of the natural lane's 570 logged decisions and 460 of
+547 in the 0.2 lane. So every lane's engine is v35 plus the piece guard plus the dose, that
+is the withdrawn v36 (v20 B2) configuration, not v35's bytes.
+
+Consequences:
+
+- The natural lane is a direct 20-game screen of the v20 piece guard against v35, with the
+  same bytes otherwise: 6-1-13, score 0.325 (White 5/10, Black 1.5/10). It matches v36's
+  arena score of 0.330 over 50 games and adds to the case that the piece guard loses games.
+- The dose curve is measured from that base. If the piece guard costs points on its own,
+  the same doses on v35's bytes would score higher at every share, and the target share of
+  0.2 is conservative rather than optimistic. The oracle result (179) is not affected: 1.00
+  at share 1.0 under either base.
+- Fix: rerun the 0.2 lane (and the natural lane) with `MIST_PIECE_GUARD=-1`, 20 games each,
+  before the target share is used as a gate. Queued behind the guard-margin grid on the
+  suite; about two hours on two slots.

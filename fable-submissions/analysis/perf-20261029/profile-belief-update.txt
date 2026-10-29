@@ -1,0 +1,50 @@
+# gprof of the belief update: test_belief_pg (mist-c 2803b68, -O2 -pg -fno-inline-small-functions), MIST_THREADS=1, cap 200000, first 12 games of tests/traces-v35.txt (941 plies), core 5, 2026-10-29
+  game 12: P became empty at ply 941 after the cap
+games 12, plies 941: true position missing 0 times while exact (8 after the cap); |P| mean 13177 max 200000; update mean 0.2241 s max 11.416 s; games that hit the cap 7 (cap 200000)
+truth's weight share while exact (|P| > 1, 556 plies): geometric mean 0.0107 vs uniform 0.0029 (x3.7); in a 64-world sample 57.9%
+
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls  ms/call  ms/call  name    
+ 22.41     11.96    11.96 1273774397     0.00     0.00  add_pawn
+ 11.41     18.05     6.09 4756492868     0.00     0.00  on_board
+ 11.26     24.06     6.01 88672645     0.00     0.00  observation
+  8.88     28.80     4.74 93455576     0.00     0.00  generate_moves
+  7.34     32.72     3.92 1725044072     0.00     0.00  attacks_from
+  6.99     36.45     3.73  4782460     0.00     0.00  move_logits
+  6.24     39.78     3.33 88672645     0.00     0.00  visible_squares
+  4.35     42.10     2.32 157334407     0.00     0.00  move_features
+  3.92     44.19     2.09 2999703178     0.00     0.00  add
+  2.08     45.30     1.11 183267350     0.00     0.00  make_move
+  1.93     46.33     1.03                             by_key
+  1.78     47.28     0.95 59478130     0.00     0.00  position_key
+  1.59     48.13     0.85      470     1.81    93.49  opp_pass1
+  1.48     48.92     0.79      470     1.68     7.71  opp_pass2
+  1.46     49.70     0.78 110344894     0.00     0.00  is_attacked
+  1.33     50.41     0.71 12399559     0.00     0.00  view_hash
+  1.12     51.01     0.60 356427866     0.00     0.00  pos_remove
+  1.01     51.55     0.54 157334407     0.00     0.00  unmake_move
+  0.97     52.07     0.52 164770723     0.00     0.00  may_match
+  0.94     52.57     0.50 349577670     0.00     0.00  pos_put
+  0.34     52.75     0.18      470     0.38   101.60  belief_after_opponent
+  0.32     52.92     0.17  4963237     0.00     0.00  vec_push
+  0.22     53.04     0.12      471     0.25     9.19  own_pass
+  0.17     53.13     0.09 65490555     0.00     0.00  mover_left_king_capturable
+  0.13     53.20     0.07 87611189     0.00     0.00  king_square
+  0.11     53.26     0.06 19835869     0.00     0.00  history_mix
+  0.09     53.31     0.05                             by_index_u32
+  0.07     53.35     0.04                             _init
+  0.02     53.36     0.01  7616873     0.00     0.00  unit_open
+  0.02     53.37     0.01      556     0.02     0.13  belief_share
+  0.00     53.37     0.00  7618778     0.00     0.00  splitmix
+  0.00     53.37     0.00     7272     0.00     0.00  move_to_uci
+  0.00     53.37     0.00     1882     0.00     0.00  now
+  0.00     53.37     0.00      953     0.00     0.00  pos_clear
+  0.00     53.37     0.00      953     0.00     0.00  pos_from_board_string
+  0.00     53.37     0.00      941     0.00     0.00  commit
+  0.00     53.37     0.00      941     0.00     0.00  read_settings
+  0.00     53.37     0.00      941     0.00     0.00  view_masks
+  0.00     53.37     0.00      929     0.00     0.10  belief_contains
+  0.00     53.37     0.00      556     0.00     0.00  belief_sample
