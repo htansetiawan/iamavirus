@@ -1,18 +1,5 @@
 {
-  "updated": "2026-10-29T15:30:49.411071+00:00",
+  "updated": "2026-10-29T21:12:35.538054+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
-  "allocation": [
-    {
-      "owner": "fable",
-      "cores": [
-        2,
-        3,
-        4,
-        5
-      ],
-      "task": "sharpness curve (note 180): 2-game smoke on 2,3, then queue-oracle-share.json on slots 2,3 and 4,5 (80 games vs v35: truth forced at share 0.05/0.2/0.5 plus natural share observed; ~4 h)",
-      "until": "2026-10-29T08:00:00Z",
-      "note": "never rewrite games.jsonl while it runs; never pkill -x mist/stockfish"
-    }
-  ]
+  "allocation": []
 }
