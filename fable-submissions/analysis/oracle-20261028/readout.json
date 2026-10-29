@@ -1,68 +1,86 @@
 {
- "rows": 47,
+ "rows": 81,
  "attempts": {
-  "ok": 47
+  "ok": 81
  },
  "oracle-vs-control": {
-  "games": 23,
-  "points": 23.0,
+  "games": 41,
+  "points": 41.0,
   "wdl": [
-   23,
+   41,
    0,
    0
   ],
   "white": {
-   "games": 12,
-   "points": 12.0,
+   "games": 21,
+   "points": 21.0,
    "wdl": [
-    12,
+    21,
     0,
     0
    ]
   },
   "black": {
-   "games": 11,
-   "points": 11.0,
+   "games": 20,
+   "points": 20.0,
    "wdl": [
-    11,
+    20,
     0,
     0
    ]
   },
   "reasons": {
-   "King capturable": 23
+   "King capturable": 41
   },
   "forfeits": [],
   "end_clock": {
    "oracle_min": 28.9,
-   "oracle_median": 61.3,
-   "other_min": 20.3,
-   "other_median": 49.4
+   "oracle_median": 61.2,
+   "other_min": 19.7,
+   "other_median": 50.4
   },
   "plies": {
    "wins": [
     26,
+    28,
     38,
+    44,
     46,
     47,
+    49,
+    50,
     50,
     51,
+    53,
     53,
     54,
     56,
     56,
     57,
+    57,
     58,
     58,
     59,
+    59,
+    59,
+    61,
+    64,
     67,
     68,
     69,
+    72,
     73,
+    75,
+    75,
+    78,
+    80,
     81,
     84,
     85,
+    94,
     96,
+    97,
+    104,
     113
    ],
    "losses": []
@@ -71,78 +89,94 @@
    1.0,
    1.0
   ],
-  "complete_pairs": 11,
+  "complete_pairs": 19,
   "oracle_applied": {
-   "games": 23,
-   "every_decision_single": 23,
+   "games": 41,
+   "every_decision_single": 41,
    "truth_placed_total": 0,
    "failures_total": 0,
    "control_with_oracle_lines": 0,
-   "excerpts_truncated": 11
+   "excerpts_truncated": 21
   }
  },
  "oracle-vs-v35": {
-  "games": 24,
-  "points": 24.0,
+  "games": 40,
+  "points": 40.0,
   "wdl": [
-   24,
+   40,
    0,
    0
   ],
   "white": {
-   "games": 12,
-   "points": 12.0,
+   "games": 20,
+   "points": 20.0,
    "wdl": [
-    12,
+    20,
     0,
     0
    ]
   },
   "black": {
-   "games": 12,
-   "points": 12.0,
+   "games": 20,
+   "points": 20.0,
    "wdl": [
-    12,
+    20,
     0,
     0
    ]
   },
   "reasons": {
-   "King capturable": 24
+   "King capturable": 40
   },
   "forfeits": [],
   "end_clock": {
-   "oracle_min": 43.4,
+   "oracle_min": 39.7,
    "oracle_median": 64.4,
-   "other_min": 41.4,
+   "other_min": 35.4,
    "other_median": 60.8
   },
   "plies": {
    "wins": [
     19,
+    23,
+    26,
     28,
     28,
     30,
     34,
+    36,
     40,
+    41,
     42,
+    43,
+    49,
     50,
     51,
     52,
+    52,
+    52,
     53,
     55,
+    57,
     57,
     60,
     61,
     61,
     62,
+    62,
     63,
     63,
+    64,
     65,
     66,
+    68,
+    69,
+    73,
     73,
     80,
-    81
+    81,
+    86,
+    87
    ],
    "losses": []
   },
@@ -150,14 +184,14 @@
    1.0,
    1.0
   ],
-  "complete_pairs": 12,
+  "complete_pairs": 20,
   "oracle_applied": {
-   "games": 24,
-   "every_decision_single": 24,
+   "games": 40,
+   "every_decision_single": 40,
    "truth_placed_total": 0,
    "failures_total": 0,
    "control_with_oracle_lines": 0,
-   "excerpts_truncated": 10
+   "excerpts_truncated": 16
   }
  }
 }

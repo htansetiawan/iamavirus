@@ -82,3 +82,28 @@ gigabytes was transient. Nothing was deleted.
 in `data/arena_local/games.jsonl`, replays `data/arena_local/builds/oracle-vs-*-white.json`
 with `.truth` sidecars, receipt `data/arena_local/receipts/queue-oracle.json` (rewritten by the
 relaunch), logs `data/logs/bench-oracle.log` and `bench-oracle-2.log`.
+
+## Final tally (relaunch complete 2026-10-29T01:01Z)
+
+The relaunch played the remaining games from the ledger (34 attempted, 0 failed; one extra
+control game because both lanes started the last one). All 81 rows are valid.
+
+| Matchup | Games | W-D-L | Score | White | Black | Pairs (complete) | Reasons |
+|---|---|---|---|---|---|---|---|
+| oracle vs control | 41 | 41-0-0 | 1.000 | 21/21 | 20/20 | 19, all 2-0 | king capture 41 |
+| oracle vs v35 | 40 | 40-0-0 | 1.000 | 20/20 | 20/20 | 20, all 2-0 | king capture 40 |
+
+Exact one-sided 95% lower bounds: game level 0.930 (41/41) and 0.928
+(40/40); pair-sweep probability 0.85 (19 pairs) and 0.86 (20 pairs).
+Pair bootstrap degenerate at [1.00, 1.00]. No forfeit. End clocks (s): oracle 28.9 min /
+61.2 median against control (control 19.7 / 50.4); oracle 39.7 / 64.4
+against v35 (v35 35.4 / 60.8). Win lengths: 26 to 113 plies against control
+(median 59), 19 to 87 against v35 (median 57).
+
+Oracle-applied check on all 81 games: every oracle-side decision at |P| = 1 with the truth
+in P, zero "belief kept" failures, zero "truth placed" fallbacks, zero oracle lines on the
+control or v35 side (21 and 16 stderr excerpts hit the 16384-character cap, so
+those games are checked over their first part only).
+
+The reading is unchanged: belief route, and the perfect-belief ceiling against v35 with
+this search is 1.00.
