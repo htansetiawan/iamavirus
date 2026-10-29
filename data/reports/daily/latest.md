@@ -1,109 +1,111 @@
-# Arena daily report, 2026-10-28 12:16 UTC
+# Arena daily report, 2026-10-29 12:24 UTC
 
 ## Corpus
 
-- games held: **172023** (171859 dated); created in the last 24 hours: **4236** (ours 373)
-- newest game: 2026-10-28T10:14; leaderboard fetched 2026-10-28T10:14
+- games held: **176785** (176621 dated); created in the last 24 hours: **4327** (ours 382)
+- newest game: 2026-10-29T10:17; leaderboard fetched 2026-10-29T10:18
 
 | rank | team | rating | active version | games |
 |---|---|---|---|---|
-| 1 | Greek Gift | 2377 | 25 | 13266 |
-| 2 | Knight Vision | 2149 | 36 | 22841 |
-| 3 | Strongly Invisible | 2119 | 41 | 41738 |
-| 4 | Decent Chess Bot | 2097 | 7 | 15256 |
-| 5 | Crimson Fog | 2074 | 4 | 2054 |
-| 6 | duck | 2001 | 6 | 13041 |
-| 7 | Instructors | 1994 | 4 | 42890 |
-| 8 | Mist Opportunities | 1931 | 2 | 9588 |
-| 9 | **IAmAVirus** | 1913 | 35 | 11371 |
-| 10 | HYPOTHERMIA | 1909 | 4 | 7423 |
-| 11 | Lost Signal | 1907 | 19 | 7085 |
-| 12 | Gravel Road | 1785 | 4 | 7364 |
+| 1 | Greek Gift | 2362 | 25 | 13592 |
+| 2 | Strongly Invisible | 2138 | 41 | 42077 |
+| 3 | Knight Vision | 2128 | 36 | 23199 |
+| 4 | Decent Chess Bot | 2107 | 7 | 15564 |
+| 5 | Crimson Fog | 2054 | 4 | 2468 |
+| 6 | Instructors | 1983 | 4 | 43285 |
+| 7 | duck | 1980 | 6 | 13414 |
+| 8 | Mist Opportunities | 1975 | 2 | 9948 |
+| 9 | **IAmAVirus** | 1890 | 35 | 11782 |
+| 10 | Lost Signal | 1878 | 19 | 7525 |
+| 11 | Gravel Road | 1820 | 4 | 7760 |
+| 12 | Farsight | 1798 | 5 | 533 |
 
 ## Our results
 
-Last 24 hours: **195-9-169 (0.53)** over 373 games; last 7 days: 1586-86-1502 (0.51) over 3174.
+Last 24 hours: **202-12-168 (0.54)** over 382 games; last 7 days: 1565-83-1440 (0.52) over 3088.
 
 | our version (24 h) | games | W-D-L (score) |
 |---|---|---|
-| v35 | 323 | 179-8-136 (0.57) |
-| v36 | 50 | 16-1-33 (0.33) |
+| v35 | 382 | 202-12-168 (0.54) |
 
 | opponent (24 h) | games | W-D-L (score) |
 |---|---|---|
-| Decent Chess Bot | 38 | 9-1-28 (0.25) |
-| Crimson Fog | 34 | 7-0-27 (0.21) |
-| Instructors | 30 | 10-1-19 (0.35) |
-| Knight Vision | 26 | 6-0-20 (0.23) |
-| Lost Signal | 25 | 11-3-11 (0.50) |
-| HYPOTHERMIA | 24 | 9-0-15 (0.38) |
-| TA Baseline S | 22 | 18-1-3 (0.84) |
-| Mist Opportunities | 22 | 13-2-7 (0.64) |
-| Gravel Road | 20 | 13-0-7 (0.65) |
-| Foggy Fischer | 20 | 19-0-1 (0.95) |
-| duck | 16 | 6-1-9 (0.41) |
-| Strongly Invisible | 12 | 3-0-9 (0.25) |
-| TA Baseline A | 12 | 11-0-1 (0.92) |
-| Mu1tip13 @g3nt$ | 12 | 10-0-2 (0.83) |
-| In Pawn Sight | 12 | 9-0-3 (0.75) |
-| Sausage | 12 | 12-0-0 (1.00) |
-| TA Baseline P | 10 | 10-0-0 (1.00) |
-| Greek Gift | 8 | 2-0-6 (0.25) |
-| Apricot Squad | 4 | 4-0-0 (1.00) |
-| Farsight | 4 | 3-0-1 (0.75) |
-| Czechmate | 4 | 4-0-0 (1.00) |
+| Lost Signal | 32 | 15-2-15 (0.50) |
+| Decent Chess Bot | 32 | 11-1-20 (0.36) |
+| Mist Opportunities | 28 | 7-1-20 (0.27) |
+| Strongly Invisible | 26 | 6-0-20 (0.23) |
+| duck | 24 | 11-1-12 (0.48) |
+| Gravel Road | 23 | 14-0-9 (0.61) |
+| Instructors | 22 | 8-2-12 (0.41) |
+| HYPOTHERMIA | 22 | 14-2-6 (0.68) |
+| Farsight | 22 | 17-1-4 (0.80) |
+| Greek Gift | 22 | 1-0-21 (0.05) |
+| Mu1tip13 @g3nt$ | 20 | 17-0-3 (0.85) |
+| Crimson Fog | 20 | 10-0-10 (0.50) |
+| Sausage | 18 | 18-0-0 (1.00) |
+| Knight Vision | 14 | 3-0-11 (0.21) |
+| In Pawn Sight | 14 | 12-0-2 (0.86) |
+| Foggy Fischer | 14 | 13-1-0 (0.96) |
+| TA Baseline S | 6 | 5-0-1 (0.83) |
+| TA Baseline P | 4 | 3-0-1 (0.75) |
 | Resting Bishop Faces | 4 | 4-0-0 (1.00) |
+| RATIRL | 4 | 2-1-1 (0.62) |
+| Trojan Horse | 2 | 2-0-0 (1.00) |
+| Bit Gambit | 2 | 2-0-0 (1.00) |
+| Apricot Squad | 2 | 2-0-0 (1.00) |
+| Czechmate | 2 | 2-0-0 (1.00) |
 | baseline.py | 2 | 2-0-0 (1.00) |
+| TA Baseline A | 1 | 1-0-0 (1.00) |
 
 | teams above us, by their version (7 days) | games | W-D-L (score) |
 |---|---|---|
-| Instructors v4 | 252 | 105-5-142 (0.43) |
-| Knight Vision v36 | 226 | 49-6-171 (0.23) |
-| Mist Opportunities v2 | 222 | 90-13-119 (0.43) |
-| duck v6 | 216 | 60-11-145 (0.30) |
-| Decent Chess Bot v7 | 206 | 46-4-156 (0.23) |
-| Strongly Invisible v37 | 198 | 37-10-151 (0.21) |
-| Greek Gift v25 | 112 | 7-2-103 (0.07) |
+| Decent Chess Bot v7 | 240 | 57-5-178 (0.25) |
+| Instructors v4 | 230 | 93-7-130 (0.42) |
+| Mist Opportunities v2 | 212 | 83-10-119 (0.42) |
+| Knight Vision v36 | 200 | 44-5-151 (0.23) |
+| duck v6 | 194 | 61-9-124 (0.34) |
+| Strongly Invisible v37 | 158 | 28-7-123 (0.20) |
+| Greek Gift v25 | 102 | 6-2-94 (0.07) |
+| Crimson Fog v4 | 76 | 24-0-52 (0.32) |
 | Crimson Fog v3 | 66 | 19-0-47 (0.29) |
-| Crimson Fog v4 | 54 | 13-0-41 (0.24) |
-| Decent Chess Bot v6 | 44 | 12-2-30 (0.30) |
-| Strongly Invisible v41 | 24 | 8-1-15 (0.35) |
+| Strongly Invisible v41 | 52 | 14-1-37 (0.28) |
 | Crimson Fog v2 | 22 | 6-0-16 (0.27) |
+| Decent Chess Bot v6 | 8 | 5-1-2 (0.69) |
 | Crimson Fog v1 | 8 | 4-0-4 (0.50) |
 
-## Move taxonomy, last 3 days (13083 games, all teams)
+## Move taxonomy, last 3 days (13468 games, all teams)
 
-Rates per 100 moves; in brackets the change since the previous report (2026-10-27T12:14).
+Rates per 100 moves; in brackets the change since the previous report (none).
 
 | team | games | capture_unseen | victim_walked_in | fog_route | king_threat | king_threat_unseen | walk_into_unseen | queen_exposed_unseen | sacrifice | king_leaves_home | king_move | vision_gain |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Greek Gift | 884 | 8.8 (-0.1) | 13.2 (-0.2) | 15.5 (-0.2) | 4.5 (+0.1) | 2.3 | 2.3 | 0.1 | 0.9 | 4.1 (-0.2) | 13.2 (-0.1) | 19.1 (-0.2) |
-| Knight Vision | 1159 | 9.5 | 15.8 (-0.3) | 17.3 | 4.6 (+0.1) | 2.5 | 2.0 | 0.2 | 1.2 | 3.4 | 10.2 | 19.7 |
-| Strongly Invisible | 1141 | 8.0 (+0.1) | 13.3 (+0.1) | 14.7 (+0.1) | 3.5 (+0.1) | 1.8 (+0.1) | 2.5 | 0.1 | 1.1 (+0.1) | 4.8 (-0.1) | 15.6 | 18.8 (+0.2) |
-| Decent Chess Bot | 1112 | 8.5 (+0.1) | 14.8 | 15.6 (+0.1) | 3.9 (-0.1) | 1.9 (-0.1) | 3.0 | 0.1 | 1.5 | 3.2 (-0.1) | 12.4 (-0.3) | 20.2 (+0.1) |
-| Crimson Fog | 1381 | 10.1 (-0.2) | 13.9 | 16.7 (-0.1) | 4.5 | 2.3 | 2.6 | 0.2 | 2.0 | 4.6 (-0.2) | 13.7 | 20.5 |
-| duck | 1317 | 9.5 | 13.7 (-0.1) | 15.5 | 3.6 | 1.8 (+0.1) | 2.6 | 0.1 | 1.8 | 3.6 (+0.1) | 14.0 (+0.1) | 19.8 (-0.2) |
-| Instructors | 1309 | 9.1 (-0.1) | 13.3 (-0.1) | 15.0 (-0.1) | 3.6 | 1.7 | 2.9 | 0.2 | 2.0 | 4.4 (-0.2) | 14.4 | 19.7 (-0.1) |
-| Mist Opportunities | 1366 | 8.5 (+0.1) | 13.1 | 14.7 | 4.1 | 2.0 | 3.2 (-0.1) | 0.1 | 2.0 | 4.0 | 14.1 (-0.2) | 18.7 (+0.2) |
-| **IAmAVirus** | 1277 | 9.6 (-0.1) | 12.5 (+0.1) | 15.2 (-0.1) | 3.6 (-0.1) | 2.0 | 2.7 (-0.1) | 0.1 | 2.4 (-0.2) | 4.1 (-0.1) | 15.4 (-0.2) | 20.4 |
-| TA Baseline S | 1299 | 10.6 (+0.2) | 13.2 (+0.1) | 16.0 (+0.1) | 4.5 (+0.1) | 1.8 (+0.1) | 3.0 | 0.3 | 3.3 | 3.9 (+0.2) | 14.9 (+0.4) | 20.2 (+0.1) |
-| TA Baseline A | 1283 | 9.2 | 17.6 (+0.1) | 16.3 (+0.1) | 3.2 (+0.1) | 1.0 (+0.1) | 3.4 (-0.1) | 0.4 | 3.0 | 1.5 (+0.1) | 11.2 (+0.5) | 18.9 (+0.1) |
-| TA Baseline P | 1232 | 9.6 (+0.4) | 17.8 | 16.3 (+0.1) | 3.0 (+0.1) | 1.1 | 3.5 | 0.5 | 3.5 | 1.0 (-0.2) | 10.7 (-0.4) | 19.0 |
+| Greek Gift | 887 | 9.1 | 13.3 | 15.7 | 4.7 | 2.5 | 2.3 | 0.1 | 0.9 | 3.8 | 12.6 | 19.4 |
+| Strongly Invisible | 1057 | 8.3 | 13.5 | 14.8 | 3.5 | 1.7 | 2.5 | 0.1 | 1.1 | 4.7 | 15.1 | 18.7 |
+| Knight Vision | 1135 | 9.5 | 16.1 | 17.5 | 4.4 | 2.4 | 2.0 | 0.2 | 1.1 | 3.3 | 10.3 | 19.9 |
+| Decent Chess Bot | 1021 | 9.0 | 14.9 | 15.8 | 3.8 | 1.9 | 2.9 | 0.1 | 1.6 | 2.8 | 12.1 | 20.3 |
+| Crimson Fog | 1280 | 10.3 | 13.9 | 16.7 | 4.5 | 2.3 | 2.7 | 0.2 | 2.0 | 4.4 | 13.3 | 20.5 |
+| Instructors | 1184 | 9.1 | 13.2 | 15.0 | 3.8 | 1.9 | 2.9 | 0.2 | 2.0 | 4.1 | 14.4 | 19.6 |
+| duck | 1216 | 9.5 | 13.6 | 15.5 | 3.7 | 1.9 | 2.7 | 0.1 | 1.9 | 3.9 | 14.3 | 19.8 |
+| Mist Opportunities | 1219 | 8.7 | 13.3 | 14.9 | 4.2 | 2.1 | 3.0 | 0.1 | 2.0 | 4.3 | 14.5 | 18.6 |
+| **IAmAVirus** | 1226 | 9.7 | 12.6 | 15.2 | 3.8 | 2.1 | 2.6 | 0.1 | 2.3 | 3.6 | 14.8 | 20.3 |
+| TA Baseline S | 1193 | 11.1 | 13.5 | 16.6 | 4.8 | 2.0 | 2.9 | 0.3 | 3.2 | 3.7 | 14.2 | 20.5 |
+| TA Baseline A | 1211 | 9.4 | 17.8 | 16.5 | 3.3 | 1.1 | 3.2 | 0.4 | 3.0 | 1.2 | 10.9 | 19.0 |
+| TA Baseline P | 1188 | 10.0 | 18.1 | 16.4 | 3.1 | 1.1 | 3.5 | 0.5 | 3.6 | 1.0 | 10.7 | 19.0 |
 
-## Us against the teams above us, last 3 days (640 games)
+## Us against the teams above us, last 3 days (586 games)
 
 | tag | us | them |
 |---|---|---|
-| capture_unseen | 8.8 | 9.6 |
-| victim_walked_in | 11.6 | 15.2 |
+| capture_unseen | 8.9 | 9.5 |
+| victim_walked_in | 11.7 | 15.4 |
 | fog_route | 14.6 | 16.5 |
-| king_threat | 2.9 | 4.5 |
-| king_threat_unseen | 1.3 | 2.3 |
-| walk_into_unseen | 3.0 | 2.3 |
-| queen_exposed_unseen | 0.2 | 0.1 |
-| sacrifice | 3.1 | 1.7 |
-| king_leaves_home | 4.8 | 3.4 |
-| king_move | 17.8 | 12.3 |
-| vision_gain | 19.7 | 20.0 |
+| king_threat | 3.2 | 4.6 |
+| king_threat_unseen | 1.4 | 2.3 |
+| walk_into_unseen | 2.9 | 2.5 |
+| queen_exposed_unseen | 0.2 | 0.2 |
+| sacrifice | 2.8 | 1.7 |
+| king_leaves_home | 4.5 | 3.4 |
+| king_move | 17.0 | 12.4 |
+| vision_gain | 19.7 | 19.7 |
 
-Our 431 losses to them ended: King capturable 431.
+Our 389 losses to them ended: King capturable 389.
