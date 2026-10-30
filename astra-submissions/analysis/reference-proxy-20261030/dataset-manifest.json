@@ -1,0 +1,36 @@
+{
+  "version": "references-20261030",
+  "feature_version": "features-v2",
+  "action_version": "actions-v1",
+  "rules_fingerprint": "fow-v1/iamavirus-rules-capi",
+  "content_sha256": "41637310ff1472914ad833d4486099ac191d037cc6bd77ee29da0fbeca9ded78",
+  "counts": {
+    "train": {
+      "episodes": 1398,
+      "decisions": 60607,
+      "duck": 710,
+      "Instructors": 688
+    },
+    "validation": {
+      "episodes": 296,
+      "decisions": 12654,
+      "duck": 158,
+      "Instructors": 138
+    },
+    "test": {
+      "episodes": 308,
+      "decisions": 13818,
+      "Instructors": 176,
+      "duck": 132
+    }
+  },
+  "shards": {
+    "train": "/media/henrytan/seagate1/iamavirus-data/astra/reference-proxy-20261030/dataset/train.jsonl.gz",
+    "validation": "/media/henrytan/seagate1/iamavirus-data/astra/reference-proxy-20261030/dataset/validation.jsonl.gz",
+    "test": "/media/henrytan/seagate1/iamavirus-data/astra/reference-proxy-20261030/dataset/test.jsonl.gz"
+  },
+  "source_manifest": "/media/henrytan/seagate1/iamavirus-data/astra/reference-proxy-20261030/manifest.json",
+  "source_games": 1950,
+  "split_method": "chronological_duplicate_groups",
+  "candidate_mismatches": []
+}

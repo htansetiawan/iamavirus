@@ -1,0 +1,113 @@
+{
+  "classification": "current-data imitation pilot; uncalibrated as playing opponents",
+  "teams": {
+    "instructors": {
+      "test_episodes": 176,
+      "metrics": {
+        "old": {
+          "policy_accuracy": 0.315995456921514,
+          "policy_entropy": 2.1764290920789007,
+          "belief_hidden_accuracy": 0.853929535049243,
+          "belief_enemy_recall": 0.5767434029283208,
+          "danger_brier": 0.027843791291523583,
+          "danger_positive_rate": 0.05849069363169253,
+          "danger_false_negative_rate": 0.5077016437591992,
+          "value_mse": 0.8034649985106261,
+          "loss": 2.355624932601527,
+          "policy_loss": 2.355624932601527,
+          "belief_loss": 0.44720989017324186,
+          "danger_loss": 0.11628684421526586,
+          "value_loss": 0.8034649985106261,
+          "decisions": 7921
+        },
+        "refreshed": {
+          "policy_accuracy": 0.32394899793694437,
+          "policy_entropy": 2.285270620876303,
+          "belief_hidden_accuracy": 0.8516751759552832,
+          "belief_enemy_recall": 0.5549382060891321,
+          "danger_brier": 0.027851993980524684,
+          "danger_positive_rate": 0.05849069363169253,
+          "danger_false_negative_rate": 0.53543033258581,
+          "value_mse": 0.8240313302375646,
+          "loss": 2.314498190460836,
+          "policy_loss": 2.314498190460836,
+          "belief_loss": 0.45428828452816666,
+          "danger_loss": 0.11620614385119926,
+          "value_loss": 0.8240313302375646,
+          "decisions": 7921
+        }
+      },
+      "onnx_parity": {
+        "decisions": 131,
+        "worst_abs_difference": {
+          "hidden": 4.4405460357666016e-06,
+          "policy": 3.814697265625e-06,
+          "danger": 3.814697265625e-06,
+          "belief": 8.344650268554688e-06,
+          "value": 4.172325134277344e-07
+        },
+        "failures": [],
+        "failure_count": 0,
+        "rtol": 0.0001,
+        "atol": 1e-05
+      },
+      "seconds": 184.1692326000193,
+      "selected_by": "validation policy NLL; test never used for checkpoint choice",
+      "release": "/media/henrytan/seagate1/iamavirus-data/astra/reference-proxy-20261030/models/instructors/release"
+    },
+    "duck": {
+      "test_episodes": 132,
+      "metrics": {
+        "old": {
+          "policy_accuracy": 0.36137019074178456,
+          "policy_entropy": 1.9137882860773838,
+          "belief_hidden_accuracy": 0.8480425040176486,
+          "belief_enemy_recall": 0.6191960720843495,
+          "danger_brier": 0.027982927501511053,
+          "danger_positive_rate": 0.055650807457974044,
+          "danger_false_negative_rate": 0.48413260233580147,
+          "value_mse": 0.6607575055108496,
+          "loss": 2.2304126053962623,
+          "policy_loss": 2.2304126053962623,
+          "belief_loss": 0.4647894496859707,
+          "danger_loss": 0.11441390872283871,
+          "value_loss": 0.6607575055108496,
+          "decisions": 5897
+        },
+        "refreshed": {
+          "policy_accuracy": 0.3756147216811551,
+          "policy_entropy": 2.1531062333770215,
+          "belief_hidden_accuracy": 0.8493169220560827,
+          "belief_enemy_recall": 0.5891702350078042,
+          "danger_brier": 0.027918258794167747,
+          "danger_positive_rate": 0.055650807457974044,
+          "danger_false_negative_rate": 0.5320834147066197,
+          "value_mse": 0.6388578136370682,
+          "loss": 2.147431142859405,
+          "policy_loss": 2.147431142859405,
+          "belief_loss": 0.46478247650350496,
+          "danger_loss": 0.11531294390419584,
+          "value_loss": 0.6388578136370682,
+          "decisions": 5897
+        }
+      },
+      "onnx_parity": {
+        "decisions": 164,
+        "worst_abs_difference": {
+          "hidden": 6.735324859619141e-06,
+          "policy": 4.291534423828125e-06,
+          "danger": 3.337860107421875e-06,
+          "belief": 9.5367431640625e-06,
+          "value": 6.258487701416016e-07
+        },
+        "failures": [],
+        "failure_count": 0,
+        "rtol": 0.0001,
+        "atol": 1e-05
+      },
+      "seconds": 157.215069812024,
+      "selected_by": "validation policy NLL; test never used for checkpoint choice",
+      "release": "/media/henrytan/seagate1/iamavirus-data/astra/reference-proxy-20261030/models/duck/release"
+    }
+  }
+}
