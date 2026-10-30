@@ -1,5 +1,18 @@
 {
-  "updated": "2026-10-30T04:39:17.047069+00:00",
+  "updated": "2026-10-30T04:39:48.259548+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
-  "allocation": []
+  "allocation": [
+    {
+      "owner": "fable",
+      "cores": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "task": "v23 confirmation: queue-v23-confirm.json, 100 unforced games (50 pairs) v23 (sha a63ac2f00d58, MIST_PIECE_GUARD=-1) vs frozen v35, held-out seed 410000, no oracle referee",
+      "until": "2026-10-30T12:39:48Z",
+      "note": "never rewrite games.jsonl while it runs; never pkill -x mist/stockfish; the discriminator fork stays on core 7"
+    }
+  ]
 }
