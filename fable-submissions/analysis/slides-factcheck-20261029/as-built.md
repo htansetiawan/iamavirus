@@ -1,6 +1,6 @@
 # IAmAVirus as built, mapped to 6.7980
 
-Fact-check of the deck "How IAmAVirus Plays Chess in the Dark" (17 pages, exported 29 Oct 2026) against the code and the arena data. Written 29 October 2026; a Claude Doc copy exists under the same title. Numbers are as of 29 Oct 16:33 UTC unless stated.
+Fact-check of the deck "How IAmAVirus Plays Chess in the Dark" (17 pages, exported 29 Oct 2026) against the code and the arena data. Written 29 October 2026, recovered from the session record on 30 October. Numbers are as of 29 Oct 16:33 UTC unless stated.
 
 ## Summary
 
