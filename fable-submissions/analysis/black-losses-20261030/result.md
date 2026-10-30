@@ -174,3 +174,14 @@ White especially), and for Black a consolidation problem when ahead that no guar
 the search has no notion of simplifying or keeping the king out of fog lines when it is
 winning. Next measurement: in the 179 Black losses from ahead, the ply at which the lead was
 lost and what took it (a replay pass), before any design.
+
+## Addendum 3 (30 October, 22:30Z): Addendum 2 corrected
+
+The Black-conversion gap in Addendum 2 was an artifact of measuring the lead at frame 30, where
+Black has just moved and a capture is often about to be recaptured; White's frame-30 lead is
+measured after the opponent's reply. On a stable lead (net >= +3 at frames 30, 31 and 32)
+Black converts 0.780 (41 games) and White 0.829 (76 games), and Black loses from a stable lead
+in 0.6% of games against White's 1.0%. Black's deficit is reaching the lead half as often,
+which is the early-material bleed, not a collapse from ahead. The kingside king squares at the
+end are how lost games finish, as Section "The final blow" says. Full lane in
+`fable-submissions/analysis/black-conversion-20261030/result.md`.
