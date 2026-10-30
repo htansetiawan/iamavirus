@@ -61,3 +61,10 @@ Running on cores 2-5 since 00:04Z (`queue-v35base.json`, read-out about 04:40Z):
 and 0.2-share lanes on the v35 base (piece guard off) and the v23 natural lane (bitboards +
 fitted model; smoke 2-0-0 clean). Next after the read-out: discriminator v2 into the engine,
 then its natural lane and a direct lane against v35.
+
+**Correction (30 October, 03:20Z) to item 5.** The 13x figure was measured with the truth
+appended to the sample whenever the draw had missed it, and the net learned to recognise the
+appended rows: on the effective metric (a missed truth counts as zero, no appended positives)
+the v1 net changes nothing (held-out B at K=64: at or above 0.2 on 21.7% to 22.2% of
+decisions, top-1 17.9% to 18.7%). So no discriminator result yet. v2b trains on drawn
+positives only, with all v33-v35 games and K=256; that run decides whether the route is alive.
