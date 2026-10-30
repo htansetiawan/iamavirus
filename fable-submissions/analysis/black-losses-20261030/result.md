@@ -147,3 +147,30 @@ uncompensated three to five times as often (0.15 a game against 0.03 to 0.05). T
 class accounts for most of our 14% early-deficit rate against the same opponents. The
 metrics apply to games a candidate actually plays (arena or proxy games), not to replays of
 old games, as Astra noted; for diagnosis of v35 the historical record is the right data.
+
+## Addendum 2 (30 October, 17:30Z): Astra is right about Black, and it is bigger than the sample
+
+Astra found on 124 recent v35 games that our Black has better material at ply 30 than our
+White yet scores lower. On 1,200-game samples per colour of v35 against the top nine
+(Strongly Invisible, Greek Gift, Decent, Knight Vision, duck, Instructors, Crimson Fog, Mist,
+HYPOTHERMIA):
+
+| our colour | score | material at ply 30, mean | down 3+ at 30 | up 3+ at 30 | score when up 3+ | score when level | score when down 3+ | lost from ahead (>= +1 at 30) |
+|---|---|---|---|---|---|---|---|---|
+| White | 0.415 | -0.68 | 19% | 7% | 0.807 (83) | 0.410 (887) | 0.291 (230) | 6% of games |
+| Black | 0.275 | -0.36 | 14% | 11% | **0.449** (127) | 0.283 (904) | 0.107 (169) | **15% of games** |
+
+As White we convert a three-point lead at ply 30 into a win four times in five. As Black we
+lose more than half of those games, and we lose from ahead in 15% of all games against these
+opponents (median length 84 plies, down 11 points by the end, the king finishing on h8, h7,
+g8, g7 or h6). Early material explains the White side's deficit (19% down by ply 30) and only
+part of Black's; Black's problem is a collapse from ahead over the middlegame, which the
+final-blow squares say is a king hunt on the kingside. In our own self-play the colour gap is
+small (White 0.53 to 0.57 over the last 222 local games), so this is specific to how the
+strong bots play White against our Black, not a colour bug in the engine.
+
+Two mechanisms, two fixes: the hazard-calibrated guards for the early bleed (both colours,
+White especially), and for Black a consolidation problem when ahead that no guard addresses:
+the search has no notion of simplifying or keeping the king out of fog lines when it is
+winning. Next measurement: in the 179 Black losses from ahead, the ply at which the lead was
+lost and what took it (a replay pass), before any design.
