@@ -68,3 +68,15 @@ appended rows: on the effective metric (a missed truth counts as zero, no append
 the v1 net changes nothing (held-out B at K=64: at or above 0.2 on 21.7% to 22.2% of
 decisions, top-1 17.9% to 18.7%). So no discriminator result yet. v2b trains on drawn
 positives only, with all v33-v35 games and K=256; that run decides whether the route is alive.
+
+**Discriminator v2, final (30 October, 06:30Z): a null on the metric that matters.** Trained
+on drawn positives only (v2b, 2,088 games, 81,744 decisions, K=256 draws, early stopping on
+held-out games), the net does not move the truth's share among the worlds the search actually
+draws: at or above 0.2 on 21.3% to 19.9% of decisions at K=256, top-1 17.9% to 18.3%. Every
+gain v1 and v2a showed came from appended positives the engine never sees. With the last eight
+observations and the candidate board as inputs, at 118k parameters and 82k decisions, there is
+no learnable signal separating the truth from the other consistent worlds. What K=256 buys
+without any net is coverage: the truth is among the drawn worlds on 69% of decisions against
+53% at K=64. The C forward pass (`src/disc.c`, agreement with torch to 4e-5) and the engine
+wiring behind `MIST_DISC` are on branch belief-disc, unmerged, in case a better input turns up.
+Docs: `docs/belief-disc-20261029.md` in the worktree `fowsearch-c-disc`.
