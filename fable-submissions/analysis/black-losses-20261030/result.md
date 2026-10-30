@@ -124,3 +124,26 @@ guards has to come from elsewhere:
 
 Files: `classify_losses.py`, `v35-losses.json` (3,362 rows with the final blow, material at the end,
 first 3+-behind ply), this file. Replay helper: mist-c `tools/replay_arena.py` (56d9614).
+
+## Addendum (30 October, 16:30Z): matched opponents, compensation-conditioned
+
+Astra's two cautions applied: (1) the bots are compared on games against the same six
+opponents (Instructors, duck, Mist, HYPOTHERMIA, Gravel Road, Lost Signal), 400-game samples
+each; (2) a fog-risky move counts as **uncompensated** only if our net material is down 2 or
+more two plies later, so exchanges and sound sacrifices are separated out.
+
+| bot | score vs these six | down 3+ by ply 30 | fog-risky piece moves a game (plies <= 30) | of which uncompensated | compensated or sound |
+|---|---|---|---|---|---|
+| IAmAVirus v35 | 0.489 | **14%** | 1.90 | **0.15** | 1.74 |
+| Crimson Fog v4 | 0.711 | 8% | 1.49 | 0.05 | 1.44 |
+| Decent Chess Bot v7 | 0.726 | 5% | 1.46 | 0.04 | 1.42 |
+| Strongly Invisible v41 | 0.775 | 9% | 1.58 | 0.04 | 1.55 |
+| Knight Vision v36 | 0.748 | 4% | 1.25 | 0.03 | 1.22 |
+| Greek Gift v25 | 0.932 | 4% | 1.36 | 0.03 | 1.33 |
+
+The conditioning sharpens the finding rather than dissolving it: the top bots move into the
+fog nearly as often as we do, but theirs are exchanges or covered; ours lose material
+uncompensated three to five times as often (0.15 a game against 0.03 to 0.05). That one event
+class accounts for most of our 14% early-deficit rate against the same opponents. The
+metrics apply to games a candidate actually plays (arena or proxy games), not to replays of
+old games, as Astra noted; for diagnosis of v35 the historical record is the right data.
