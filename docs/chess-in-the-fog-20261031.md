@@ -304,6 +304,10 @@ Repository paths are in `github.com/htansetiawan/iamavirus` (private) unless mar
 
 The clock is the part of the arena that raises the most questions, so here is the life of one game from the bot's side, as the course referee runs it.
 
+*[Drawing in the Claude Doc: one arena game, start-up, the move loop, game over, shaded where our clock runs.]*
+
+The shaded boxes are the only moments our clock runs. As Black the loop begins at Frozen, waiting for White's first move; everything else is the same.
+
 1. **Build, once per upload.** The arena runs the build script in a sandbox with no network, five minutes at most. Every game afterwards starts a fresh process from that build. Nothing carries over between games: no memory, no files.
 2. **Sandbox start, up to 10 seconds.** The referee launches the process. This is on no clock.
 3. **Handshake.** The referee writes two lines, `fow` and then `w 180 2`, or `b 180 2` when we are Black: you are White, the base time is 180 seconds, the increment is 2 seconds. From this moment the bot has 15 seconds to print `ready`. mist-c uses the window to load the history table and start its two Stockfish processes. The game clock reads 180.000 and is not running.
@@ -315,7 +319,56 @@ The clock is the part of the arena that raises the most questions, so here is th
 
 Three things the clock is not. The 180 seconds are not the length of the game: they are our private thinking budget, spent only during our turns, and the opponent has its own. The 2 seconds are not a cost per move but a bonus added after each move we play, so a move that takes under 2 seconds leaves us with more time than before. And there is no limit per move: the bot divides its own budget, and a clock that reaches zero while we think loses the game on time. Over a typical game of 40 moves a side the budget works out to about 6.5 seconds a move. v35's own rule spends a twentieth of what is left plus 1.6 seconds, at most 10 seconds on any move, and has never lost on time in 7,907 arena games.
 
-## Appendix B. Why two Stockfish workers
+## Appendix B. Reading a view
+
+Before every ply the referee sends each side one line of 64 characters, one per square, in the order a1, b1 and so on to h1, then a2 to h2, up to h8: rank 1 comes first, and inside each rank the files run from a to h. Four kinds of character appear. An uppercase letter is a White piece and a lowercase letter a Black piece, with the usual initials K, Q, R, B, N and P. A dash is a square we can see and is empty. A question mark is a square we cannot see. A square is seen when one of our pieces stands on it or could legally move to it this turn, plus, for the side to move, a pawn it could capture en passant. That is why an enemy piece appears only when we could capture it.
+
+*[Drawing in the Claude Doc: the first view White receives, board and the 64-character string side by side.]*
+
+The drawing shows the board as a player sees it, rank 8 at the top. The bot receives the string in the opposite order, rank 1 first, and the three views below are cut into ranks that way.
+
+White's first view: our two ranks, then ranks 3 and 4 seen because pawns and knights could move there, then fog.
+
+```
+RNBQKBNR   rank 1
+PPPPPPPP   rank 2
+--------   rank 3
+--------   rank 4
+????????   rank 5
+????????   rank 6
+????????   rank 7
+????????   rank 8
+```
+
+Black's first view is the mirror image and arrives in the same a1-first order, so Black's own pieces are the last sixteen characters.
+
+```
+????????   rank 1
+????????   rank 2
+????????   rank 3
+????????   rank 4
+--------   rank 5
+--------   rank 6
+pppppppp   rank 7
+rnbqkbnr   rank 8
+```
+
+White's view after 1. e4 d5, as White is about to move. The black pawn on d5 is visible because our e4 pawn could capture it. The squares b5, e5, h5 and a6 are seen empty because the bishop, the pawn and the queen could reach them. And e3 has gone dark: the pawn that watched it has moved on and nothing else reaches it.
+
+```
+RNBQKBNR   rank 1
+PPPP-PPP   rank 2
+----?---   rank 3
+----P---   rank 4
+?-?p-??-   rank 5
+-???????   rank 6
+????????   rank 7
+????????   rank 8
+```
+
+The string carries nothing about whose turn it is or about the clock; the clock arrives as a separate numeric line, and only on our turn. These views are the only thing the bot ever learns about the opponent. Its belief, described in chapter 4, is exactly the set of boards consistent with every view received so far, and its legal moves are read from the view alone. The engine reproduces the referee's views from the true board with zero mismatches over 13,467 recorded positions, which is how we know the two agree on what is visible.
+
+## Appendix C. Why two Stockfish workers
 
 The arena gives each bot two physical cores carrying four hardware threads, shared with the opponent, who is paused on our turn. mist-c scores the leaves of its search tree with Stockfish at depth 1, one call per expanded node, each call taking 0.3 to 1.8 milliseconds. On the first day of mist-c a single Stockfish process took 4.4 seconds of a 6.8-second decision because the search waited on every call, and the fix was to run two worker processes and score each round's leaves in waves. The number has stayed at two, and the reason is measured rather than assumed. Replaying one recorded decision (our fifth move as White against Instructors on 13 October, a 3-second budget, two pinned cores of a desktop with no hyper-threading, two seeds per setting) gives:
 
