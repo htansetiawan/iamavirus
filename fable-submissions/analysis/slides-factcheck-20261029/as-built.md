@@ -78,7 +78,7 @@ Two evaluation lessons cost us a week each. A local screen against v35 and Misty
 
 ## The slides, checked against the code and data
 
-Of 34 factual claims in "How IAmAVirus Plays Chess in the Dark", 22 are right, 7 are wrong or misattributed, and 5 cannot be traced to anything in the repository. The wrong ones cluster on three slides: the big idea (slide 4), the referee-test and time-loss counts (slides 6 and 12), and the version history (slide 13).
+Of 34 factual claims in "How IAmAVirus Plays Chess in the Dark", 23 are right, 7 are wrong or misattributed, and 4 cannot be traced to anything in the repository. The wrong ones cluster on three slides: the big idea (slide 4), the referee-test and time-loss counts (slides 6 and 12), and the version history (slide 13).
 
 | Slide | Claim | Verdict | What the code or data says |
 | --- | --- | --- | --- |
@@ -117,7 +117,7 @@ Of 34 factual claims in "How IAmAVirus Plays Chess in the Dark", 22 are right, 7
 | 15 | Greek Gift last 24 h 202 W 12 D 168 L | Unverified | Not checked against the games feed |
 | 15 | 176,785 games recorded | Right | Our accepted mirror on 29 Oct |
 | 16 | Two agents and a human lead; numbered notes; prediction before upload, checked every 20 games | Right since v26 | `chatroom/`, `fable-submissions/README.md`, `docs/evaluation.md` |
-| 16 | "We mutate, we learn from what kills us..." | Untraceable | No such text in the repository |
+| 16 | "We mutate, we learn from what kills us..." | Right | The epigraph of the mutation registry, MUTATIONS.md, since 10 October |
 
 ## Where it stands and what comes next
 
