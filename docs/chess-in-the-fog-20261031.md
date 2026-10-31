@@ -400,6 +400,18 @@ Stockfish is our judge of chess positions and nothing more. It never sees the fo
 
 **Input: one full board.** The search runs on sampled worlds, and each world is a complete chess position with both sides' pieces placed. When the search expands a node of its tree, it sends that node's position as a FEN string, the standard one-line notation for a position (piece placement, side to move, castling rights, en passant square), followed by `go depth 1`. Three kinds of position are never sent, because Stockfish refuses them and stops answering: more than one king per side, a pawn on a back rank, and a position where the side to move could capture the enemy king. The last is the Fog of War case. A move that leaves a king capturable is scored by our own search as a terminal result and never reaches Stockfish.
 
+A FEN is not our view. It is a full position on one line, the format every chess program reads, and it differs from the 64-character view in four ways: it runs from rank 8 down to rank 1 with a slash between ranks, it compresses empty squares into digits, it has no unknown squares, and it carries extra fields after the board: whose turn, castling rights, the en passant square, two move counters. The start position and the position after 1. e4 d5, each as White's view and as the FEN mist-c would send for the true board:
+
+```
+view  RNBQKBNRPPPPPPPP----------------????????????????????????????????
+FEN   rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1
+
+view  RNBQKBNRPPPP-PPP----?-------P---?-?p-??--???????????????????????
+FEN   rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2
+```
+
+In the second FEN, 3p4 on the fifth rank is three empty squares, Black's pawn on d5, four empty squares, and d6 says an en passant capture onto d6 would be allowed. The view has a question mark on d6; the FEN of a sampled world has to commit to something there, and the 32 worlds commit differently.
+
 **Output: a score for every legal move.** Stockfish replies with one line per move, each carrying the move and a score in centipawns, hundredths of a pawn, from the side to move's point of view; a mate score is mapped to about plus or minus 20,000. A final `bestmove` line follows, which we ignore. mist-c matches each score to the child in the tree and squashes it to a value between -1 and +1 with tanh(cp / 400), so a pawn's advantage is worth about 0.24 and a queen's about 0.98. A child Stockfish did not score, which happens when its one-ply search prunes a move, takes the worst score among its siblings.
 
 **Where it goes.** These leaf values are what the search of chapter 4 averages over the 32 sampled worlds. Stockfish judges each imagined board with no idea which one is real. That is why the oracle experiment settled the question: given the true board, this same judge wins 81 games to 0, so the judge is good enough and the gap is in which boards it is asked to judge.
