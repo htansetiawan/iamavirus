@@ -389,3 +389,19 @@ The arena gives each bot two physical cores carrying four hardware threads, shar
 | 8 | 138,000 and 134,000 | 3,831 and 3,742 | 12.9 s |
 
 The second worker buys a third more tree. The third and fourth buy nothing measurable, and eight buy about 8% while tripling the time spent waiting on Stockfish, because on two cores extra processes queue rather than compute. The engine chose the same move under every setting. The arena's hyper-threads might let four workers gain a little; that is unmeasured. The larger point, which the earlier chapters record, is that more search has not converted into points: 2.65 times the expansions through MultiPV and a budget raised from 1 to 6 seconds both moved the regression suite only marginally, and the oracle experiment showed a perfect belief winning 81 games to 0 with the search as it is. The lever is what the search looks at, not how fast it looks.
+
+## Appendix D. What Stockfish does for us
+
+Stockfish is our judge of chess positions and nothing more. It never sees the fog.
+
+*[Drawing in the Claude Doc: one leaf evaluation, what mist-c sends Stockfish, what comes back, where it goes.]*
+
+**What it is.** Stockfish 19 is the strongest open-source chess engine. mist-c starts two copies as separate processes while answering `ready` and talks to them over pipes in the standard UCI text protocol: one thread each, a 16 MB hash table, and MultiPV set to 256 so one question returns a score for every move.
+
+**Input: one full board.** The search runs on sampled worlds, and each world is a complete chess position with both sides' pieces placed. When the search expands a node of its tree, it sends that node's position as a FEN string, the standard one-line notation for a position (piece placement, side to move, castling rights, en passant square), followed by `go depth 1`. Three kinds of position are never sent, because Stockfish refuses them and stops answering: more than one king per side, a pawn on a back rank, and a position where the side to move could capture the enemy king. The last is the Fog of War case. A move that leaves a king capturable is scored by our own search as a terminal result and never reaches Stockfish.
+
+**Output: a score for every legal move.** Stockfish replies with one line per move, each carrying the move and a score in centipawns, hundredths of a pawn, from the side to move's point of view; a mate score is mapped to about plus or minus 20,000. A final `bestmove` line follows, which we ignore. mist-c matches each score to the child in the tree and squashes it to a value between -1 and +1 with tanh(cp / 400), so a pawn's advantage is worth about 0.24 and a queen's about 0.98. A child Stockfish did not score, which happens when its one-ply search prunes a move, takes the worst score among its siblings.
+
+**Where it goes.** These leaf values are what the search of chapter 4 averages over the 32 sampled worlds. Stockfish judges each imagined board with no idea which one is real. That is why the oracle experiment settled the question: given the true board, this same judge wins 81 games to 0, so the judge is good enough and the gap is in which boards it is asked to judge.
+
+**Cost and failure.** A call takes 0.3 to 1.8 milliseconds, depending on the number of legal moves. At a 3-second budget the search makes about 3,500 calls and spends most of its time waiting on them, which is the Appendix C story. If a copy stops answering it is relaunched, at most three times a game; after that the search falls back to the engine's own simple evaluator of material and piece placement.
