@@ -302,22 +302,22 @@ Repository paths are in `github.com/htansetiawan/iamavirus` (private) unless mar
 
 ## Appendix A. One arena game, step by step
 
-The clock is the part of the arena that raises the most questions, so here is the life of one game from the bot's side, as the course referee runs it.
+One arena game from the bot's side, as the course referee runs it.
 
 *[Drawing in the Claude Doc: one arena game, start-up, the move loop, game over, shaded where our clock runs.]*
 
-The shaded boxes are the only moments our clock runs. As Black the loop begins at Frozen, waiting for White's first move; everything else is the same.
+Shaded boxes are the only times our clock runs. As Black we start at Frozen and wait for White's first move.
 
-1. **Build, once per upload.** The arena runs the build script in a sandbox with no network, five minutes at most. Every game afterwards starts a fresh process from that build. Nothing carries over between games: no memory, no files.
-2. **Sandbox start, up to 10 seconds.** The referee launches the process. This is on no clock.
-3. **Handshake.** The referee writes two lines, `fow` and then `w 180 2`, or `b 180 2` when we are Black: you are White, the base time is 180 seconds, the increment is 2 seconds. From this moment the bot has 15 seconds to print `ready`. mist-c uses the window to load the history table and start its two Stockfish processes. The game clock reads 180.000 and is not running.
-4. **Frozen.** The instant `ready` is out, the whole process tree is paused. The referee waits for both bots, then starts the game. Nothing of ours runs while frozen.
-5. **Every ply, both players get a view.** Before each half-move the referee sends each side its 64-character observation. When it is the opponent's ply, our view is queued on our input while we stay frozen, and the opponent's thinking time is not charged to us.
-6. **Our turn.** The referee resumes our process. Two queued views arrive, the one before the opponent's move and the one before ours, then a numeric line such as `180.000000000` with our remaining seconds. Our clock runs from the moment we were resumed, so reading the views counts. We think and print `move e2e4`. The referee subtracts the time we took, forfeits us if the clock went below zero, checks the move against the true board, applies it, and only then adds 2 seconds to our clock. Spend 10 seconds on the first move and the next prompt reads 172.000.
-7. **Frozen again** until the opponent has moved. Then step 5.
-8. **Game over.** A king is captured; or the side to move has no legal move and loses; or it is a draw by threefold repetition, by 100 consecutive plies without a capture or pawn move, or at 1,000 plies. Any failure ends the game too: an illegal move, a malformed line, a stray line on standard output, a crash, or a move sent before a clock prompt. The bot gets no final message. Its process is killed, and the replay the arena keeps holds the full board, both views and both clocks for every ply.
+1. **Build.** Once per upload, in a sandbox with no network. Every game starts a fresh process; nothing carries over.
+2. **Start.** The referee launches the process. Up to 10 seconds, off the clock.
+3. **Handshake.** The referee sends `fow` and `w 180 2`: White, 180 seconds, 2 seconds back per move. We have 15 seconds to answer `ready`. mist-c loads its tables and starts Stockfish in that time. The clock is not running yet.
+4. **Frozen.** After `ready` the process is paused until both bots are ready.
+5. **Views.** Before every ply, each side gets its 64-character view. On the opponent's ply ours is queued while we stay frozen.
+6. **Our turn.** The referee wakes us. We read two views and a line with our seconds left. The clock runs from the wake-up. We print `move e2e4`. The referee subtracts the time we took, checks the move, then adds 2 seconds. Think 10 seconds on move one and the next prompt reads 172.000.
+7. **Frozen again** while the opponent thinks. Their time is not ours.
+8. **Game over.** A king is captured, or the side to move has no move and loses, or a draw: threefold repetition, 100 plies without a capture or pawn move, 1,000 plies. Any failure also ends it: an illegal move, a bad line, stray output, a crash, moving before the prompt. No final message; the process is killed. The replay keeps the full board, both views and both clocks.
 
-Three things the clock is not. The 180 seconds are not the length of the game: they are our private thinking budget, spent only during our turns, and the opponent has its own. The 2 seconds are not a cost per move but a bonus added after each move we play, so a move that takes under 2 seconds leaves us with more time than before. And there is no limit per move: the bot divides its own budget, and a clock that reaches zero while we think loses the game on time. Over a typical game of 40 moves a side the budget works out to about 6.5 seconds a move. v35's own rule spends a twentieth of what is left plus 1.6 seconds, at most 10 seconds on any move, and has never lost on time in 7,907 arena games.
+The clock in short. 180 seconds is our thinking budget for the whole game, spent only on our turns; the opponent has its own. The 2 seconds are a bonus after each move, not a cost. There is no limit per move, but a clock at zero loses the game. Over 40 moves that is about 6.5 seconds a move. v35 spends a twentieth of what is left plus 1.6 seconds, never more than 10, and has never lost on time in 7,907 arena games.
 
 ## Appendix B. Reading a view
 
