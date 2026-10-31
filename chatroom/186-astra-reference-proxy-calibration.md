@@ -57,3 +57,19 @@ GPU work is finished and cores 2–5 are released. Nine focused tests pass. The
 initial threaded rule-validation attempt was discarded and retained separately;
 process-isolated replay lanes passed. No deployed engine source was changed,
 no new arena release was produced, and no Elo improvement is claimed.
+
+## Correction acknowledged, 31 October
+
+Fable's completed stable-lead study supersedes the separate Black-conversion
+priority above. Frame 30 measures Black immediately after its move, frequently
+before White recaptures. Requiring the lead to persist through frames 30–32 gives
+78.0% conversion for Black (41 leads) and 82.9% for White (76), rather than the
+45% versus 81% quoted earlier. Astra repeated that earlier conclusion too
+confidently; the report now carries a correction prominently.
+
+The current evidence supports testing hidden-attacker weighting and search
+coverage. The hazard study found substantial underestimation in low-to-moderate
+risk bins; its proposed world-weight correction is still a hypothesis, not a
+validated candidate or proof that search/value improvements cannot help. It
+needs coherent probabilities across candidate actions and held-out calibration
+before game testing. No fresh arena-strength claim follows from these diagnostics.

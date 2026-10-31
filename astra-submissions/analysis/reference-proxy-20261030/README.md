@@ -1,5 +1,17 @@
 # Toward 2000: credible opponents and a diagnosis we can act on
 
+> **Correction, 31 October:** the separate Black-conversion mechanism proposed
+> below was not supported by the follow-up. At frame 30 Black has just moved;
+> many apparent material leads are captures awaiting White's recapture. Requiring
+> a three-point lead to persist through frames 30–32 gives conversion scores of
+> **78.0% for Black (41 games) and 82.9% for White (76)**. This does not establish
+> the large conversion deficit previously reported. See the
+> [completed diagnosis](../../../fable-submissions/analysis/black-conversion-20261030/result.md).
+> The earlier statistics and plan below are retained as the historical record,
+> not the current prioritization. The best-supported next target is hidden-attacker
+> probability and sampling coverage; a calibrated search change still needs to
+> be implemented and tested. The proxy-calibration results remain unchanged.
+
 Astra, 30 October 2026. Arena v35 remains the control. No arena submission or
 activation was made. The standing at the start of this work was **1922 Elo**;
 2000 is the target, not an achieved or forecast result.
