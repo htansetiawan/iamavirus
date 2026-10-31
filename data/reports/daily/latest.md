@@ -73,21 +73,58 @@ Last 24 hours: **191-6-140 (0.58)** over 337 games; last 7 days: 1507-74-1305 (0
 
 ## Move taxonomy, last 3 days (13836 games, all teams)
 
-Rates per 100 moves; in brackets the change since the previous report (none).
+Rates per 100 moves; in brackets the change since the previous report (2026-10-30T12:20).
 
 | team | games | capture_unseen | victim_walked_in | fog_route | king_threat | king_threat_unseen | walk_into_unseen | queen_exposed_unseen | sacrifice | king_leaves_home | king_move | vision_gain |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Greek Gift | 744 | 9.2 | 13.5 | 16.0 | 4.8 | 2.6 | 2.4 | 0.2 | 1.0 | 3.7 | 12.7 | 20.2 |
-| Strongly Invisible | 948 | 8.3 | 13.6 | 15.1 | 3.4 | 1.6 | 2.5 | 0.1 | 1.0 | 4.5 | 15.1 | 18.6 |
-| Decent Chess Bot | 977 | 9.2 | 15.3 | 16.3 | 4.1 | 2.1 | 2.9 | 0.1 | 1.5 | 3.1 | 11.9 | 20.3 |
-| Knight Vision | 970 | 9.7 | 16.3 | 17.9 | 4.3 | 2.3 | 2.0 | 0.2 | 1.2 | 3.2 | 10.5 | 19.8 |
-| Crimson Fog | 1072 | 10.6 | 14.2 | 17.0 | 4.5 | 2.3 | 2.5 | 0.2 | 2.0 | 4.0 | 12.8 | 20.7 |
-| duck | 1077 | 9.5 | 13.8 | 15.5 | 3.6 | 1.9 | 2.6 | 0.1 | 1.9 | 4.1 | 14.1 | 20.2 |
+| Greek Gift | 744 | 9.2 (+0.1) | 13.5 | 16.0 | 4.8 (+0.1) | 2.6 (+0.1) | 2.4 (+0.1) | 0.2 | 1.0 | 3.7 (+0.1) | 12.7 (+0.4) | 20.2 (+0.4) |
+| Strongly Invisible | 948 | 8.3 (+0.1) | 13.6 | 15.1 (+0.1) | 3.4 (-0.2) | 1.6 (-0.1) | 2.5 | 0.1 | 1.0 | 4.5 (-0.2) | 15.1 (-0.2) | 18.6 (+0.1) |
+| Decent Chess Bot | 977 | 9.2 (+0.1) | 15.3 (+0.2) | 16.3 (+0.2) | 4.1 (+0.2) | 2.1 (+0.2) | 2.9 (-0.1) | 0.1 | 1.5 (-0.1) | 3.1 (+0.1) | 11.9 (-0.4) | 20.3 (+0.2) |
+| Knight Vision | 970 | 9.7 (+0.1) | 16.3 (+0.2) | 17.9 (+0.1) | 4.3 (-0.1) | 2.3 | 2.0 | 0.2 | 1.2 (+0.1) | 3.2 | 10.5 (+0.1) | 19.8 (-0.1) |
+| Crimson Fog | 1072 | 10.6 (+0.1) | 14.2 (+0.1) | 17.0 | 4.5 | 2.3 | 2.5 | 0.2 | 2.0 | 4.0 (-0.1) | 12.8 (-0.2) | 20.7 (+0.2) |
+| duck | 1077 | 9.5 (-0.1) | 13.8 | 15.5 (-0.1) | 3.6 | 1.9 | 2.6 (-0.1) | 0.1 | 1.9 | 4.1 (+0.2) | 14.1 (+0.2) | 20.2 (+0.4) |
 | Mist Opportunities | 1029 | 8.6 | 13.3 | 15.1 | 4.3 | 2.2 | 3.1 | 0.2 | 1.9 | 4.3 | 14.8 | 18.6 |
-| **IAmAVirus** | 1095 | 9.9 | 13.0 | 15.6 | 4.0 | 2.1 | 2.5 | 0.1 | 2.2 | 3.6 | 14.5 | 20.3 |
-| TA Baseline S | 1032 | 11.1 | 13.8 | 16.9 | 4.8 | 1.9 | 2.9 | 0.3 | 3.2 | 3.7 | 14.2 | 20.3 |
-| TA Baseline A | 990 | 9.5 | 18.1 | 16.5 | 3.1 | 1.0 | 3.5 | 0.3 | 3.0 | 1.5 | 11.1 | 18.8 |
-| TA Baseline P | 1016 | 10.0 | 19.1 | 17.2 | 2.9 | 1.1 | 3.5 | 0.4 | 3.6 | 1.0 | 10.9 | 18.8 |
+| **IAmAVirus** | 1095 | 9.9 | 13.0 (+0.2) | 15.6 (+0.1) | 4.0 (-0.1) | 2.1 | 2.5 | 0.1 | 2.2 | 3.6 (+0.1) | 14.5 (+0.3) | 20.3 |
+| TA Baseline S | 1032 | 11.1 (-0.2) | 13.8 (+0.1) | 16.9 | 4.8 (+0.1) | 1.9 | 2.9 (+0.2) | 0.3 | 3.2 | 3.7 (-0.1) | 14.2 (-0.1) | 20.3 (-0.2) |
+| TA Baseline A | 990 | 9.5 (+0.1) | 18.1 (+0.2) | 16.5 | 3.1 | 1.0 | 3.5 (+0.1) | 0.3 (-0.1) | 3.0 | 1.5 | 11.1 (-0.3) | 18.8 |
+| TA Baseline P | 1016 | 10.0 (-0.1) | 19.1 (+0.5) | 17.2 (+0.5) | 2.9 | 1.1 | 3.5 | 0.4 (-0.1) | 3.6 | 1.0 | 10.9 | 18.8 |
+
+### Played-version and colour breakdown
+
+Rates per 100 moves. These describe behaviour, not optimal targets; opponent mixes differ. All 19 tags, raw counts, move denominators and opponent-version mixtures are saved in the JSON report.
+
+| team | version | side | games | moves | unseen king threat | walk into unseen | sacrifice | bare back rank |
+|---|---|---|---|---|---|---|---|---|
+| Crimson Fog | 4 | black | 536 | 20596 | 2.0 | 2.7 | 2.2 | 5.2 |
+| Crimson Fog | 4 | white | 536 | 21118 | 2.6 | 2.4 | 1.9 | 5.4 |
+| Decent Chess Bot | 7 | black | 489 | 21267 | 1.9 | 3.0 | 1.7 | 5.3 |
+| Decent Chess Bot | 7 | white | 488 | 20606 | 2.4 | 2.7 | 1.3 | 4.4 |
+| Greek Gift | 25 | black | 372 | 18295 | 2.3 | 2.4 | 1.1 | 4.2 |
+| Greek Gift | 25 | white | 372 | 16136 | 2.9 | 2.4 | 1.0 | 3.1 |
+| HYPOTHERMIA | 4 | black | 290 | 12749 | 1.5 | 3.5 | 1.9 | 3.0 |
+| HYPOTHERMIA | 4 | white | 292 | 12532 | 2.2 | 2.9 | 1.8 | 3.8 |
+| HYPOTHERMIA | 5 | black | 9 | 403 | 0.2 | 2.5 | 3.5 | 0.7 |
+| HYPOTHERMIA | 5 | white | 9 | 416 | 1.2 | 1.4 | 1.9 | 1.7 |
+| HYPOTHERMIA | 6 | black | 272 | 10321 | 1.4 | 3.4 | 2.1 | 2.5 |
+| HYPOTHERMIA | 6 | white | 272 | 10271 | 1.3 | 2.9 | 2.2 | 3.4 |
+| IAmAVirus | 35 | black | 548 | 23713 | 2.0 | 2.7 | 2.4 | 6.0 |
+| IAmAVirus | 35 | white | 547 | 22656 | 2.3 | 2.3 | 2.0 | 6.4 |
+| Instructors | 4 | black | 533 | 22974 | 1.7 | 3.1 | 2.1 | 4.9 |
+| Instructors | 4 | white | 533 | 23721 | 2.0 | 2.6 | 1.8 | 4.8 |
+| Knight Vision | 36 | black | 485 | 20418 | 2.2 | 2.0 | 1.2 | 3.5 |
+| Knight Vision | 36 | white | 485 | 20021 | 2.4 | 2.0 | 1.2 | 3.3 |
+| Mist Opportunities | 2 | black | 515 | 23675 | 2.4 | 3.3 | 2.0 | 4.0 |
+| Mist Opportunities | 2 | white | 514 | 23276 | 2.1 | 2.9 | 1.8 | 3.6 |
+| Strongly Invisible | 41 | black | 474 | 23703 | 1.5 | 2.8 | 1.1 | 4.2 |
+| Strongly Invisible | 41 | white | 474 | 23498 | 1.8 | 2.3 | 1.0 | 3.6 |
+| TA Baseline A | 5 | black | 495 | 14502 | 1.1 | 4.0 | 3.3 | 3.6 |
+| TA Baseline A | 5 | white | 495 | 17362 | 0.9 | 3.1 | 2.8 | 4.0 |
+| TA Baseline P | 5 | black | 508 | 14493 | 1.3 | 4.3 | 3.7 | 3.8 |
+| TA Baseline P | 5 | white | 508 | 16147 | 0.8 | 2.9 | 3.6 | 4.4 |
+| TA Baseline S | 3 | black | 515 | 18340 | 1.9 | 3.1 | 3.2 | 6.6 |
+| TA Baseline S | 3 | white | 517 | 18985 | 1.9 | 2.7 | 3.2 | 7.0 |
+| duck | 6 | black | 539 | 23101 | 1.8 | 2.9 | 2.0 | 4.6 |
+| duck | 6 | white | 538 | 22900 | 2.0 | 2.5 | 1.7 | 5.0 |
 
 ## Us against the teams above us, last 3 days (414 games)
 

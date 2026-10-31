@@ -24,7 +24,8 @@
 #        data/derived/moves/arena-latest-{train,test}.txt  mist-c opponent-model
 #        moves (last 21 days; fit with fowsearch-c tools/fit_move_model.py)
 #   3. data/reports/daily/<date>.{md,json} and latest.md (learning.daily_report)
-#   4. commit the report (path-limited) and push with tools/push_safe.sh
+#   4. insights, scorecard and learning-artifact freshness / rolling loss index
+#   5. mirror current reports, commit them (path-limited), and push with tools/push_safe.sh
 set -u
 cd "$(dirname "$0")/.."
 PY=.venv/bin/python
@@ -57,9 +58,8 @@ if [ "$SEAGATE" = 1 ] && [ "$DATASET" = 1 ]; then
 fi
 
 if [ "$SEAGATE" = 1 ]; then
-    step "mirror replays and reports to $STORE"
+    step "mirror replays to $STORE"
     run $PY tools/mirror_raw.py --raw data/raw --store "$STORE/raw-archive"
-    run rsync -rt --no-perms --modify-window=1 data/reports/ "$STORE/reports/"
 fi
 step "daily report";     run $PY -m learning.daily_report --raw data/raw --out data/reports/daily
 # the deeper analysis: opponent version changes, rating point flow, queen events,
@@ -68,16 +68,30 @@ step "daily insights";   run $PY -m learning.daily_insights --raw data/raw --out
 # the skill scorecard: every team on the same taxonomy metrics over the last three days, our rank
 # per category with the reference teams beside us (learning.scorecard; docs/skill-rubric-20261028.md)
 step "scorecard";        run nice -n 10 $PY -m learning.scorecard --raw data/raw --out data/reports/daily --days 3
+step "learning intel";   run nice -n 10 $PY astra-submissions/tools/daily_intel_status.py --raw data/raw --out data/reports/daily --engine "$MIST_C"
+if [ "$SEAGATE" = 1 ]; then
+    step "mirror current reports to $STORE"
+    run rsync -rt --no-perms --modify-window=1 data/reports/ "$STORE/reports/"
+fi
 REPORT="data/reports/daily/$(date -u +%F)"
 INSIGHTS="data/reports/daily/insights-$(date -u +%F).md"
-if [ -f "$REPORT.md" ]; then
-    git add -f "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md >>"$LOG" 2>&1
-    [ -f "$INSIGHTS" ] && git add -f "$INSIGHTS" data/reports/daily/insights-latest.md >>"$LOG" 2>&1
-    SCORE="data/reports/daily/scorecard-$(date -u +%F).md"
-    [ -f "$SCORE" ] && git add -f "$SCORE" data/reports/daily/scorecard-latest.md >>"$LOG" 2>&1
-    if ! git diff --cached --quiet -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md "$SCORE" data/reports/daily/scorecard-latest.md; then
-        git -c user.name=henrytan commit -q -m "Daily arena report $(date -u +%F)" -- "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md "$SCORE" data/reports/daily/scorecard-latest.md >>"$LOG" 2>&1
-        [ "$PUSH" = 1 ] && run bash tools/push_safe.sh
+INTEL="data/reports/daily/intel-$(date -u +%F)"
+SCORE="data/reports/daily/scorecard-$(date -u +%F).md"
+PUBLISH=()
+for file in "$REPORT.md" "$REPORT.json" data/reports/daily/latest.md "$INSIGHTS" data/reports/daily/insights-latest.md "$SCORE" data/reports/daily/scorecard-latest.md "$INTEL.md" "$INTEL.json" data/reports/daily/intel-latest.md data/reports/daily/intel-latest.json; do
+    [ -f "$file" ] && PUBLISH+=("$file")
+done
+if [ "${#PUBLISH[@]}" -gt 0 ]; then
+    if git add -f -- "${PUBLISH[@]}" >>"$LOG" 2>&1; then
+        if ! git diff --cached --quiet -- "${PUBLISH[@]}"; then
+            if git -c user.name=henrytan commit -q -m "Daily arena report $(date -u +%F)" -- "${PUBLISH[@]}" >>"$LOG" 2>&1; then
+                [ "$PUSH" = 1 ] && run bash tools/push_safe.sh
+            else
+                step "report commit failed; not pushing"
+            fi
+        fi
+    else
+        step "report staging failed; not pushing"
     fi
 fi
 step "done"
