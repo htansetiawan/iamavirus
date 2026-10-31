@@ -299,3 +299,31 @@ Repository paths are in `github.com/htansetiawan/iamavirus` (private) unless mar
 - Chapter 6: the lanes above, including the follow-up section of the attack re-weighting result (the destination-coverage sweep: +20% truth share on the loss decisions, 112 of 120 losses lifted); `chatroom/182` (the share targets), `185` (v23), `187` (re-weighting); Astra's branch `astra/m4` in mist-c; the opening-choice spreads in `fable-submissions/analysis/black-losses-20261030/result.md`.
 - Papers: B. H. Zhang and T. Sandholm, General search techniques without common knowledge for imperfect-information games, and application to superhuman Fog of War chess, [arXiv 2506.01242](https://arxiv.org/abs/2506.01242), ICLR 2026. Brian Liou, Misty (misty-chess 0.1.3, GPL-3.0), used only as a sparring partner.
 - Earlier drafts this document supersedes: `fable-submissions/analysis/slides-factcheck-20261029/as-built.md` (the slide fact-check of 29 October) and `docs/paper.md` (mid-October).
+
+## Appendix A. One arena game, step by step
+
+The clock is the part of the arena that raises the most questions, so here is the life of one game from the bot's side, as the course referee runs it.
+
+1. **Build, once per upload.** The arena runs the build script in a sandbox with no network, five minutes at most. Every game afterwards starts a fresh process from that build. Nothing carries over between games: no memory, no files.
+2. **Sandbox start, up to 10 seconds.** The referee launches the process. This is on no clock.
+3. **Handshake.** The referee writes two lines, `fow` and then `w 180 2`, or `b 180 2` when we are Black: you are White, the base time is 180 seconds, the increment is 2 seconds. From this moment the bot has 15 seconds to print `ready`. mist-c uses the window to load the history table and start its two Stockfish processes. The game clock reads 180.000 and is not running.
+4. **Frozen.** The instant `ready` is out, the whole process tree is paused. The referee waits for both bots, then starts the game. Nothing of ours runs while frozen.
+5. **Every ply, both players get a view.** Before each half-move the referee sends each side its 64-character observation. When it is the opponent's ply, our view is queued on our input while we stay frozen, and the opponent's thinking time is not charged to us.
+6. **Our turn.** The referee resumes our process. Two queued views arrive, the one before the opponent's move and the one before ours, then a numeric line such as `180.000000000` with our remaining seconds. Our clock runs from the moment we were resumed, so reading the views counts. We think and print `move e2e4`. The referee subtracts the time we took, forfeits us if the clock went below zero, checks the move against the true board, applies it, and only then adds 2 seconds to our clock. Spend 10 seconds on the first move and the next prompt reads 172.000.
+7. **Frozen again** until the opponent has moved. Then step 5.
+8. **Game over.** A king is captured; or the side to move has no legal move and loses; or it is a draw by threefold repetition, by 100 consecutive plies without a capture or pawn move, or at 1,000 plies. Any failure ends the game too: an illegal move, a malformed line, a stray line on standard output, a crash, or a move sent before a clock prompt. The bot gets no final message. Its process is killed, and the replay the arena keeps holds the full board, both views and both clocks for every ply.
+
+Three things the clock is not. The 180 seconds are not the length of the game: they are our private thinking budget, spent only during our turns, and the opponent has its own. The 2 seconds are not a cost per move but a bonus added after each move we play, so a move that takes under 2 seconds leaves us with more time than before. And there is no limit per move: the bot divides its own budget, and a clock that reaches zero while we think loses the game on time. Over a typical game of 40 moves a side the budget works out to about 6.5 seconds a move. v35's own rule spends a twentieth of what is left plus 1.6 seconds, at most 10 seconds on any move, and has never lost on time in 7,907 arena games.
+
+## Appendix B. Why two Stockfish workers
+
+The arena gives each bot two physical cores carrying four hardware threads, shared with the opponent, who is paused on our turn. mist-c scores the leaves of its search tree with Stockfish at depth 1, one call per expanded node, each call taking 0.3 to 1.8 milliseconds. On the first day of mist-c a single Stockfish process took 4.4 seconds of a 6.8-second decision because the search waited on every call, and the fix was to run two worker processes and score each round's leaves in waves. The number has stayed at two, and the reason is measured rather than assumed. Replaying one recorded decision (our fifth move as White against Instructors on 13 October, a 3-second budget, two pinned cores of a desktop with no hyper-threading, two seeds per setting) gives:
+
+| Stockfish workers | Tree nodes (two seeds) | Stockfish calls | Stockfish time, summed over calls |
+| --- | --- | --- | --- |
+| 1 | 91,000 and 96,000 | 2,542 and 2,681 | 2.3 s |
+| 2 | 124,000 and 126,000 | 3,456 and 3,540 | 4.0 s |
+| 4 | 123,000 and 130,000 | 3,420 and 3,594 | 6.7 s |
+| 8 | 138,000 and 134,000 | 3,831 and 3,742 | 12.9 s |
+
+The second worker buys a third more tree. The third and fourth buy nothing measurable, and eight buy about 8% while tripling the time spent waiting on Stockfish, because on two cores extra processes queue rather than compute. The engine chose the same move under every setting. The arena's hyper-threads might let four workers gain a little; that is unmeasured. The larger point, which the earlier chapters record, is that more search has not converted into points: 2.65 times the expansions through MultiPV and a budget raised from 1 to 6 seconds both moved the regression suite only marginally, and the oracle experiment showed a perfect belief winning 81 games to 0 with the search as it is. The lever is what the search looks at, not how fast it looks.
