@@ -8,7 +8,7 @@ A technical account of the IAmAVirus Fog of War chess bot as built, written for 
 
 ## Chapter 1. The game and the problem
 
-Fog of War chess is chess played without seeing the opponent's side of the board. You see your own pieces and every square one of them could move to; everything else is hidden. The bot's whole job is to decide, in about six seconds, which move wins most often across all the boards that could be behind the fog.
+Fog of War chess is chess played without seeing the opponent's side of the board. You see your own pieces and every square one of them could move to; everything else is hidden. The bot's whole job is to decide, in the few seconds the clock allows for each move, which move wins most often across all the boards that could be behind the fog.
 
 ### The rules in plain words
 
@@ -42,7 +42,7 @@ On your turn, after the view, a line with your remaining seconds arrives, and th
 move e2e4
 ```
 
-Anything else loses the game: a stray line on the output, a move sent at the wrong time, a move that is illegal on the true board, a crash, or a move that arrives after the clock runs out. The clock gives 180 seconds for the game plus 2 seconds per move, which comes to roughly six seconds a move over a typical 80-ply game. The bot is frozen while the opponent thinks, so nothing can be computed off the clock.
+Anything else loses the game: a stray line on the output, a move sent at the wrong time, a move that is illegal on the true board, a crash, or a move that arrives after the clock runs out. The clock gives 180 seconds for the game plus 2 seconds back after every move. There is no limit per move: the bot divides its own clock as it sees fit, and over a typical game of 40 moves a side that averages about six seconds a move. The 15 seconds for the ready reply are separate and cover only start-up, loading the tables and launching the helper processes before the first view; once ready is sent the bot is frozen until a view arrives, and it is frozen again while the opponent thinks, so nothing can be computed off the clock during the game. In practice v35 spends 8 to 10 seconds on its opening moves, under 3 seconds late in the game, and finishes with 36 to 39 seconds unused.
 
 Each game runs in a fresh process in a locked box: two processor cores shared with the opponent, 4 GB of memory, no network, and nothing kept from one game to the next. Every team plays rated games against other teams of similar rating, in both colours, and a single rating on the Elo scale used in chess, starting at 1500 and moving at most 8 points a game, follows the team across all its versions.
 
@@ -59,7 +59,7 @@ In words: the bot reads the views and works out every board that is consistent w
 Three things make the problem difficult, and they come back in every later chapter.
 
 - Hidden information. At a typical decision 82 boards fit what the bot has seen, but there are positions where 200,000 do, and the true one can carry a weight of one in a thousand. The bot cannot play well on boards it does not take seriously.
-- Time. Six seconds a move on two shared cores, with the whole set of boards to update, the opponent to model and a tree to search inside that window.
+- Time. About six seconds a move on average, on two shared cores, with the whole set of boards to update, the opponent to model and a tree to search inside that window.
 - The fog cuts both ways. We win by taking pieces the opponent could not see, and we lose to pieces we never saw. Both sides play the same rules; what differs is how well each one imagines the other side of the board.
 
 ## Chapter 2. Where we are going
@@ -76,7 +76,7 @@ Three questions were on the table from the first week.
 
 ### Why a C engine
 
-Efficiency is itself a strategy. The arena gives two shared cores and about six seconds a move; whatever the method, the implementation that does more per second imagines more boards and searches further. The Python prototype managed 44,000 nodes a second and was never submitted. The C++ engine reached 11 million. For training, a batched C++ simulator stepped 204,440 decisions a second against 800 in Python. mist-c, the current engine, is 4,227 lines of C that update an exact set of up to 200,000 boards inside the clock, with a bitboard update made 2.4 times faster this week at bit-identical output. C also gave us determinism: every random choice is seeded, so any recorded decision can be replayed exactly.
+Efficiency is itself a strategy. The arena gives two shared cores and a clock that averages about six seconds a move; whatever the method, the implementation that does more per second imagines more boards and searches further. The Python prototype managed 44,000 nodes a second and was never submitted. The C++ engine reached 11 million. For training, a batched C++ simulator stepped 204,440 decisions a second against 800 in Python. mist-c, the current engine, is 4,227 lines of C that update an exact set of up to 200,000 boards inside the clock, with a bitboard update made 2.4 times faster this week at bit-identical output. C also gave us determinism: every random choice is seeded, so any recorded decision can be replayed exactly.
 
 ### Obscuro as the baseline
 
