@@ -417,3 +417,35 @@ In the second FEN, 3p4 on the fifth rank is three empty squares, Black's pawn on
 **Where it goes.** These leaf values are what the search of chapter 4 averages over the 32 sampled worlds. Stockfish judges each imagined board with no idea which one is real. That is why the oracle experiment settled the question: given the true board, this same judge wins 81 games to 0, so the judge is good enough and the gap is in which boards it is asked to judge.
 
 **Cost and failure.** A call takes 0.3 to 1.8 milliseconds, depending on the number of legal moves. At a 3-second budget the search makes about 3,500 calls and spends most of its time waiting on them, which is the Appendix C story. If a copy stops answering it is relaunched, at most three times a game; after that the search falls back to the engine's own simple evaluator of material and piece placement.
+
+## Appendix E. The learning loop, step by step
+
+What runs every day, what runs when a candidate is built, and where each file lands.
+
+*[Drawing in the Claude Doc: the learning loop, arena to store to reports and engine data to the next candidate.]*
+
+The daily part is one shell script, `tools/daily_refresh.sh`, started by a systemd timer at 10:00 UTC and runnable on demand through the `arena-daily` skill, which also writes the day's notes. A lock stops two runs from overlapping. Every step is stamped in `data/logs/daily/<date>.log`, with a "step failed" line for anything that broke, so a silent stop like the one of 9 October cannot recur unnoticed.
+
+Every morning, with the times of the 31 October run:
+
+1. **Fetch our games** (10:02, 8 minutes). The arena's game list is read newest first, 100 at a time, up to 1,000 games, and each new replay is downloaded. One folder per game holds the listing row, the replay, and the fetch metadata with URLs, timestamps and hashes. The leaderboard is snapshotted alongside.
+2. **Fetch everyone's games** (10:10, 89 minutes). The same for all 62 teams, up to 6,000 games a day, about 2.3 seconds each.
+3. **Validate.** Every fetched game is replayed move by move with our own rules, and each frame's board and both views must match the arena's. A mismatch goes to quarantine with the exact failure and is never patched. An accepted game gets one line in the accepted list. The store held 186,276 accepted games that morning.
+4. **Export moves for the model** (11:39, 2 minutes). The last 21 days of games become move lists for the opponent model, named sides only, random and baseline players skipped, split into training and test by game id.
+5. **Training manifest** (11:41, 36 minutes). The store is indexed for the neural pipeline.
+6. **Mirror** (12:17). New games go to the archive drive as append-only tarballs; the reports are copied beside them.
+7. **Daily report.** Corpus growth, our results over 24 hours and 7 days by opponent, by our version, and against the teams rated above us by their version, so a new opponent version shows up here first; the move taxonomy per team over three days.
+8. **Insights.** Opponents' version changes in the last 7 days and our score against each version; rating point flow per opponent for the active version, each game scored against the latest leaderboard snapshot before it; the first queen event per game against the fixed 13 October top six.
+9. **Scorecard.** Every team on the same taxonomy metrics over the same three days, our rank in the cohort, with Instructors, HYPOTHERMIA v4 and the tier-two median beside us, following the rubric of 28 October.
+10. **Commit and push** (12:20). The three reports are force-added, since the data folder is otherwise ignored, committed as the day's arena report and pushed.
+
+The taxonomy behind steps 7 and 9 labels every move of both sides from the true boards and both views in the replay: capture and capture by an unseen piece, a victim that walked in, a long strike, a route through the fog, a king threat and an unseen king threat, king capture, sacrifice and king-hunt sacrifice, forcing chain, vision gained or lost, king move, castling, king leaving home, queen raid, queen exposed to an unseen piece, walking into an unseen attacker, and the bare back rank. The point is that the kinds of move we never make, and the kinds that beat us, become named capabilities with a number attached and a rank against the field.
+
+When a candidate is built, by hand, from the same store:
+
+- **The opponent move model.** The export is turned into feature rows, a conditional logit is fitted by Newton's method, and the weights are printed as a C header compiled into the engine. v35's model has 28 features and was fitted on 13 October on 2,029 games. The 29 October refit on 6,776 games since 5 October, with piece-square and observation features, scores 0.789 nats over uniform on held-out games with 28.2% top-1 accuracy; it is on the main branch, not in v35.
+- **The history table.** From the same export: for each information history, the hash of the mover's own views and moves so far, how often each move followed. Histories seen in fewer than two games are dropped. 151,316 records, 2.4 MB, shipped inside the ZIP as `data/history.bin`; v35's was built on 13 October.
+- **The regression suite.** From our own losses since version 26, the decisions that decided them, with the exact referee input that reproduces each: 1,379 decisions, 892 material, 343 check, 144 fatal, built 11 October. A candidate is replayed over it and scored on the true board: did the move leave the king capturable, what did it cost in centipawns by Stockfish at depth 8, did it repeat the game move. The noise floor is about five flips, so a change must net ten.
+- **Loss replay.** Any recorded move can be re-decided with exactly the input our side saw, which is how the loss anatomy of chapter 5 was done.
+
+What is not automatic, plainly: the model, the history table and the suite are rebuilt only when someone builds a candidate. v35 plays with data as of 13 October and is tested on a suite from 11 October, while the store has grown by about 4,500 games a day since. The reports accumulate every morning whether or not anyone reads them; the skill's notes are the reading. Rebuilding the three engine artefacts on a schedule would be a few lines in the script. It has not been done because each rebuild changes how the engine plays, and a change in play goes through the candidate gate, not a timer.
