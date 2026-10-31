@@ -325,46 +325,55 @@ Before every ply the referee sends each side one line of 64 characters, one per 
 
 *[Drawing in the Claude Doc: the first view White receives, board and the 64-character string side by side.]*
 
-The drawing shows the board as a player sees it, rank 8 at the top. The bot receives the string in the opposite order, rank 1 first, and the three views below are cut into ranks that way.
+The three views below are printed the way a board is drawn: rank 8 at the top, rank 1 at the bottom, files a to h from left to right, one space between squares. The bot receives the same characters without spaces, as one line that starts at a1 and ends at h8; that line is shown under each board.
 
-White's first view: our two ranks, then ranks 3 and 4 seen because pawns and knights could move there, then fog.
-
-```
-RNBQKBNR   rank 1
-PPPPPPPP   rank 2
---------   rank 3
---------   rank 4
-????????   rank 5
-????????   rank 6
-????????   rank 7
-????????   rank 8
-```
-
-Black's first view is the mirror image and arrives in the same a1-first order, so Black's own pieces are the last sixteen characters.
+White's first view. Our two ranks, then ranks 3 and 4 seen because pawns and knights could move there, then fog.
 
 ```
-????????   rank 1
-????????   rank 2
-????????   rank 3
-????????   rank 4
---------   rank 5
---------   rank 6
-pppppppp   rank 7
-rnbqkbnr   rank 8
+        a b c d e f g h
+rank 8  ? ? ? ? ? ? ? ?
+rank 7  ? ? ? ? ? ? ? ?
+rank 6  ? ? ? ? ? ? ? ?
+rank 5  ? ? ? ? ? ? ? ?
+rank 4  - - - - - - - -
+rank 3  - - - - - - - -
+rank 2  P P P P P P P P
+rank 1  R N B Q K B N R
 ```
 
-White's view after 1. e4 d5, as White is about to move. The black pawn on d5 is visible because our e4 pawn could capture it. The squares b5, e5, h5 and a6 are seen empty because the bishop, the pawn and the queen could reach them. And e3 has gone dark: the pawn that watched it has moved on and nothing else reaches it.
+As one line: `RNBQKBNRPPPPPPPP----------------????????????????????????????????`
+
+Black's first view is the mirror image. It arrives in the same a1-first order, so Black's own pieces are the last sixteen characters.
 
 ```
-RNBQKBNR   rank 1
-PPPP-PPP   rank 2
-----?---   rank 3
-----P---   rank 4
-?-?p-??-   rank 5
--???????   rank 6
-????????   rank 7
-????????   rank 8
+        a b c d e f g h
+rank 8  r n b q k b n r
+rank 7  p p p p p p p p
+rank 6  - - - - - - - -
+rank 5  - - - - - - - -
+rank 4  ? ? ? ? ? ? ? ?
+rank 3  ? ? ? ? ? ? ? ?
+rank 2  ? ? ? ? ? ? ? ?
+rank 1  ? ? ? ? ? ? ? ?
 ```
+
+As one line: `????????????????????????????????----------------pppppppprnbqkbnr`
+
+White's view after 1. e4 d5, White to move. Our pawn is the P on e4: rank 4, fifth square from the left. A White pawn moves up the board, toward rank 8, and captures one square diagonally up, so from e4 it could take on d5 or f5. Black's pawn stands on d5, so that capture is legal and the square shows p. Nothing stands on f5, a pawn cannot capture an empty square, so f5 stays dark. The squares b5, e5, h5 and a6 show as seen empty because the f1 bishop, the e4 pawn and the d1 queen could move there. And e3 has gone dark: the pawn that watched it has moved on and nothing else reaches it.
+
+```
+        a b c d e f g h
+rank 8  ? ? ? ? ? ? ? ?
+rank 7  ? ? ? ? ? ? ? ?
+rank 6  - ? ? ? ? ? ? ?
+rank 5  ? - ? p - ? ? -
+rank 4  - - - - P - - -
+rank 3  - - - - ? - - -
+rank 2  P P P P - P P P
+rank 1  R N B Q K B N R
+```
+
+As one line: `RNBQKBNRPPPP-PPP----?-------P---?-?p-??--???????????????????????`
 
 The string carries nothing about whose turn it is or about the clock; the clock arrives as a separate numeric line, and only on our turn. These views are the only thing the bot ever learns about the opponent. Its belief, described in chapter 4, is exactly the set of boards consistent with every view received so far, and its legal moves are read from the view alone. The engine reproduces the referee's views from the true board with zero mismatches over 13,467 recorded positions, which is how we know the two agree on what is visible.
 
