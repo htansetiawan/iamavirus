@@ -1,0 +1,327 @@
+{
+  "cases": 51,
+  "runs": 255,
+  "passes_vs_v35": false,
+  "passes_vs_raw1": true,
+  "earns_independent_confirmation": false,
+  "factorial_effects": {
+    "fatal": {
+      "calibration_at_L_minus2": 1,
+      "calibration_at_L_minus1": -1,
+      "interaction_difference": -2
+    },
+    "exchange_loss": {
+      "calibration_at_L_minus2": 0,
+      "calibration_at_L_minus1": 0,
+      "interaction_difference": 0
+    },
+    "queen_exchange_loss": {
+      "calibration_at_L_minus2": 0,
+      "calibration_at_L_minus1": 0,
+      "interaction_difference": 0
+    },
+    "forced_king_loss_after_capture": {
+      "calibration_at_L_minus2": 0,
+      "calibration_at_L_minus1": 0,
+      "interaction_difference": 0
+    },
+    "fatal_or_exchange": {
+      "calibration_at_L_minus2": 1,
+      "calibration_at_L_minus1": -1,
+      "interaction_difference": -2
+    }
+  },
+  "runtime": {
+    "raw1": {
+      "control": "raw2",
+      "median_paired_elapsed_ratio": 0.999228774355527,
+      "median_paired_node_ratio": 0.9948745015247479
+    },
+    "cal1": {
+      "control": "raw1",
+      "median_paired_elapsed_ratio": 1.0001026145026137,
+      "median_paired_node_ratio": 1.0
+    },
+    "cal2": {
+      "control": "raw2",
+      "median_paired_elapsed_ratio": 0.9991433252902966,
+      "median_paired_node_ratio": 1.0
+    }
+  },
+  "summary": {
+    "cases": 51,
+    "games": 25,
+    "arms": {
+      "v35": {
+        "fatal": 10,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 16,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.81540646600115,
+        "median_nodes": 80556,
+        "median_iterations": 1000,
+        "median_queen_guard_seconds": 0.004
+      },
+      "raw2": {
+        "fatal": 10,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 16,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.831707612000173,
+        "median_nodes": 81696,
+        "median_iterations": 1040,
+        "median_queen_guard_seconds": 0.004
+      },
+      "cal2": {
+        "fatal": 11,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 17,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.811772541999744,
+        "median_nodes": 81943,
+        "median_iterations": 1050,
+        "median_queen_guard_seconds": 0.004
+      },
+      "raw1": {
+        "fatal": 12,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 18,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.7916900100008206,
+        "median_nodes": 81375,
+        "median_iterations": 1010,
+        "median_queen_guard_seconds": 0.004
+      },
+      "cal1": {
+        "fatal": 11,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 17,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.9328008930006035,
+        "median_nodes": 82709,
+        "median_iterations": 1020,
+        "median_queen_guard_seconds": 0.004
+      }
+    },
+    "paired": {
+      "v35->raw2": {
+        "fatal": {
+          "fixed": [],
+          "broken": []
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [],
+          "broken": []
+        },
+        "moves_changed": 3
+      },
+      "v35->raw1": {
+        "fatal": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ]
+        },
+        "moves_changed": 9
+      },
+      "v35->cal1": {
+        "fatal": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ]
+        },
+        "moves_changed": 8
+      },
+      "raw2->cal2": {
+        "fatal": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "moves_changed": 5
+      },
+      "raw1->cal1": {
+        "fatal": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": []
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": []
+        },
+        "moves_changed": 7
+      },
+      "raw2->raw1": {
+        "fatal": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ]
+        },
+        "moves_changed": 6
+      },
+      "cal2->cal1": {
+        "fatal": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": [
+            "r82lsby1:80"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": [
+            "r82lsby1:80"
+          ]
+        },
+        "moves_changed": 7
+      }
+    },
+    "scope": "Development diagnostic sample, correlated cases, limited omniscient exchange probe; not Elo or overall calibration."
+  },
+  "pins_sha256": "d9b5440433dbaf9257c6388988cc3fdd28786cfd408907b1b831a05049b6a740",
+  "results_sha256": "47affd6bb941cdc70a3984a8a52368d7003569e105069cd801f7c91f73036c2e",
+  "scope": "Inspected development set. Effect counts are descriptive, not an Elo estimate or a population effect."
+}

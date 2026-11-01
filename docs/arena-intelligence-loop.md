@@ -131,3 +131,40 @@ see `astra-submissions/analysis/v37-recovery-20261101/`.
 These are concrete model-learning and testing steps, not an automatic update
 of the deployed bot. The record preserves both the positive calibration
 result and the decision experiments that did not justify promotion.
+
+The bounded follow-up is also complete: five arms crossed the calibrated
+larger-belief mixture with ordinary (-1) and legacy doubled (-2) loss payoffs,
+plus the original v35 ZIP. Across the same 51 development decisions, v35 and
+the patched-off -2 control each made 10 fatal choices; raw -1 made 12, and
+both calibrated arms made 11. Material-loss counts were five in every arm.
+All 255 runs completed without protocol errors or illegal moves. No arm
+passed the pre-recorded promotion screen. This closes the global-calibration
+integration family; there is no new ZIP or full-game trial from it. See
+`astra-submissions/analysis/risk-payoff-factorial-20261101/README.md`.
+
+## Direct answer: taxonomy, belief weights, and guards
+
+| Connection | Implemented use | Limit |
+|---|---|---|
+| Taxonomy to reports | `learning/daily_report.py` and `learning/scorecard.py` aggregate move types, including by played version and colour. | Rates describe behaviour; reducing every rate is not a playing objective. |
+| Taxonomy to belief weights | It identifies failure families to investigate. Actual runtime weights come from the fitted move likelihood and empirical history counts in mist-c `belief.c`. | No taxonomy-rate multiplier or automatic tag-conditioned retraining updates the current engine. |
+| Taxonomy to king/queen tests | `astra-submissions/tools/fresh_taxonomy_gate.py` selects labelled cases and controls, reconstructs permitted inputs, and tests candidate decisions against true-board labels afterward. | This is a development diagnostic. The fresh comparison's zero queen-loss labels do not establish queen-guard quality. |
+| Taxonomy to learned strategy codes | The older `learning/suntzu_windows.py` constructs eight-own-move feature windows for RVQ experiments. | The strategy-code line was audited and withdrawn; it is not an input to the current mist-c belief or guards. |
+
+For each failure, distinguish four questions: was the attacker represented in
+the belief; did it have adequate probability; did the guard retain useful safe
+alternatives; and did search choose well among the survivors? Guard evaluation
+needs both missed losses and unnecessary rejection of useful moves. Queen
+exposure also needs exchange-aware labels: being attacked is not necessarily
+losing the queen.
+
+Many tags use the full board, the opponent's view, or future moves. They are
+valid offline labels, not information available to the playing bot. Any
+learned strategy or risk predictor must infer its inputs from permitted
+history or each hypothesized world, and be evaluated on separate games.
+
+The next proposed learning mechanism is a temporal opponent prior, described
+in `chatroom/astra-next-learning-mechanism-20261101.md`. Taxonomy cohorts would
+test whether it improves the likelihood of ambiguous hidden moves and the
+resulting threat probabilities, before decision and full-game comparisons.
+That model is proposed, not implemented or trained.
