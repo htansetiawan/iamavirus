@@ -1,0 +1,14 @@
+{
+  "native": {
+    "command": "gcc -O2 -std=c11 test_collector.c build/src/board.c -lm -o build/test_collector && build/test_collector",
+    "exit": 0,
+    "test_sha256": "2f4a8cd52669d9f9fb27eaba3ee571b4993b242578b6a0de51c0cd59aadb8081"
+  },
+  "python": {
+    "command": "taskset -c 0,1 /home/henrytan/git/iamavirus/.venv/bin/python -m unittest test_pipeline.py -v (cwd: experiment directory)",
+    "tests": 3,
+    "exit": 0,
+    "test_sha256": "f67205bf7154ee13596d0cc60e6b1033ac79bc3b9d2e9c64c2215b3b6688f416"
+  },
+  "evidence": "Records of checks executed before full collection; independent referee evidence in pilot-referee-audit.json."
+}
