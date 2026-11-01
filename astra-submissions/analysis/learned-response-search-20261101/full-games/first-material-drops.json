@@ -1,0 +1,102 @@
+{
+  "selection": "First historical three-ply material drop of at least three points per game, when present; six of eight games. Post-match diagnosis, not move-optimality or causality proof.",
+  "rows": [
+    {
+      "job": "h2h-p0-white",
+      "first_three_ply_drop": {
+        "ply": 20,
+        "moves": [
+          "f1c4",
+          "e6c4",
+          "b2b3"
+        ],
+        "net_change": -3
+      },
+      "actual_reply_probability": 0.7576905127354661,
+      "proven_loss_mass": 0.0,
+      "root_search_log": "mist: n=11 |P|=21 samples=21 moves=24 infosets=1612 nodes=219578 iters=2050 p=0.46 v=-0.144 lead=+0 clock=121.5 sf=65900/98.8s mr=-1.00/-1.00 hist=138/361 move=f1c4",
+      "replay_sha256": "91c6631942f10769d6f720dd5d346f47b1b309c22b4142ead612c4ad02f9b7fa"
+    },
+    {
+      "job": "h2h-p0-black",
+      "first_three_ply_drop": {
+        "ply": 31,
+        "moves": [
+          "e7g5",
+          "e3g5",
+          "f7f6"
+        ],
+        "net_change": -3
+      },
+      "actual_reply_probability": 0.5613712876404524,
+      "proven_loss_mass": 0.010327618631203126,
+      "root_search_log": "mist: n=16 |P|=114 samples=12 moves=34 infosets=2714 nodes=147998 iters=2600 p=1.00 v=-0.214 lead=-2 clock=100.3 sf=98604/117.1s mr=-1.00/-1.00 hist=12/214 move=e7g5",
+      "replay_sha256": "b9bc23a6e822f6dc36fe85e33a0f9051d514116c78d838e1b3875f6e0ffacff5"
+    },
+    {
+      "job": "h2h-p1-white",
+      "first_three_ply_drop": {
+        "ply": 44,
+        "moves": [
+          "f3e1",
+          "d1e1",
+          "g1f1"
+        ],
+        "net_change": -3
+      },
+      "actual_reply_probability": 0.28993276089899567,
+      "proven_loss_mass": 0.0,
+      "root_search_log": "mist: n=23 |P|=2 samples=2 moves=1 infosets=2396 nodes=142641 iters=2720 p=1.00 v=-0.932 lead=-4 clock=77.0 sf=121045/176.6s mr=-1.00/-1.00 hist=97/9884 move=f3e1",
+      "replay_sha256": "d6939ef2d5fff728fa266bd95f990e36bbba24292342b153dcb5c8220daf44b6"
+    },
+    {
+      "job": "h2h-p1-black",
+      "first_three_ply_drop": {
+        "ply": 17,
+        "moves": [
+          "b8d7",
+          "g2f3",
+          "e7e5"
+        ],
+        "net_change": -3
+      },
+      "actual_reply_probability": 0.5536757705715023,
+      "proven_loss_mass": 0.005974238914074801,
+      "root_search_log": "mist: n=9 |P|=8 samples=8 moves=28 infosets=2987 nodes=161558 iters=1490 p=1.00 v=+0.122 lead=+2 clock=131.4 sf=57223/77.1s mr=-1.00/-1.00 hist=28/145 move=b8d7",
+      "replay_sha256": "2e208aeaf763a24e10f0d4a00b48a60136b1cba7c811726004769987b1cb5c7b"
+    },
+    {
+      "job": "h2h-p2-white",
+      "first_three_ply_drop": {
+        "ply": 42,
+        "moves": [
+          "c1d1",
+          "e4d3",
+          "e1e7"
+        ],
+        "net_change": -5
+      },
+      "actual_reply_probability": 0.8194032780409365,
+      "proven_loss_mass": 0.0,
+      "root_search_log": "mist: n=22 |P|=197 samples=28 moves=31 infosets=2749 nodes=161189 iters=2250 p=1.00 v=-0.590 lead=-4 clock=80.4 sf=123120/161.7s mr=-1.00/-1.00 hist=14/606 move=c1d1",
+      "replay_sha256": "3adcb7e4175c3a687d0bdf0a58d98a2c9b7882247defe7bf6bdb0488f8632411"
+    },
+    {
+      "job": "h2h-p2-black",
+      "first_three_ply_drop": {
+        "ply": 89,
+        "moves": [
+          "c2g2",
+          "h1g2",
+          "b4b3"
+        ],
+        "net_change": -5
+      },
+      "actual_reply_probability": 0.7957168648315498,
+      "proven_loss_mass": 0.0,
+      "root_search_log": "mist: n=45 |P|=55018(capped) samples=31 moves=17 infosets=2224 nodes=90843 iters=1660 p=1.00 v=-0.725 lead=-5 clock=30.4 sf=245617/228.0s mr=-1.00/-1.00 hist=12/1113091 move=c2g2",
+      "replay_sha256": "bf5bb59981c00d6e651c8cf0a23c02c6daf5b6554a55e32fdfef723842e6a608"
+    }
+  ],
+  "conclusion": "Actual punishing replies receive 28.99%-81.94% model probability. Observable-loss mass at these nodes is 0%-1.03%. The simple claim that the model failed to predict these immediate captures is not supported. Check sampled-world support and continuation values before attributing these losses to missing immediate tactical responses."
+}

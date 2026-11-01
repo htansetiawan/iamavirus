@@ -51,3 +51,14 @@ Parent benchmark dependencies remain unchanged.
 
 Plan/source publication: `f9eb4a359dc458aae74aaa956aeadad2a53b9d71`.
 Both original session handles (14421,6182) are terminal. No GPU.
+
+## Immediate reply predictions do not explain the material drops
+
+In the six games with a three-ply net drop of at least three points, the model
+assigns the actual reply 28.99% to 81.94% probability at the first such event.
+The visible-loss mass there is only 0% to 1.03%. In the early Bc4/Bxc4 example,
+the reply has 75.77% probability and no observable-loss mass. We should not
+claim the model simply failed to predict those immediate captures. Whether
+search included the true world and how it valued subsequent continuations
+remain separate questions. These historical drops are not proofs of bad moves
+or of a forced material loss. See first-material-drops.json.

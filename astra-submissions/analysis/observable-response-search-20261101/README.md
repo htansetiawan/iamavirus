@@ -48,3 +48,30 @@ The parent full-game pilot is now complete: 0-8 against v37, no faults. Its
 actual-opponent-response audit shows only 0.00758 nats gain from projection on
 243 replies. This does not support a claim that projection explains or repairs
 the match losses. It still needs its own completed decision gate.
+
+## Completed gate
+
+All 156 unique first-attempt cells are now complete: 133 preserved original
+calls plus exactly 23 missing calls. No cell was repeated. The original failed
+execution remains intact; completion.json and recovery/merged identify the
+combined result. All outputs are legal and 595 frames validate.
+
+| Arm | King loss | Exchange loss >=2 | Queen loss >=4 |
+|---|---:|---:|---:|
+| Original v37 | 6 | 1 | 0 |
+| Raw learned response | 6 | 1 | 0 |
+| New binary, projection off | 6 | 1 | 0 |
+| Projected response | 6 | 1 | 0 |
+
+Five projected choices differ from off; off and the raw parent agree on every
+choice. Four projection changes return to original v37's move. The fifth
+changes the rook move while retaining a four-point exchange vulnerability.
+One separate two-point repair versus original balances that regression in the
+aggregate count; neither is a forced-game-outcome claim. Independent referee
+review checks 88 transitions/responses across 13 distinct tactical lines.
+
+All frozen diagnostic checks pass, with 38 applicable model reports (one
+root-only case), full first-reply coverage threshold compliance and 29.76 ms
+median model/projection time. The mechanism works at low inference cost, but
+there is no measured king/material label improvement. This earns only a
+separately frozen small full-clock pilot. It does not justify a ZIP.

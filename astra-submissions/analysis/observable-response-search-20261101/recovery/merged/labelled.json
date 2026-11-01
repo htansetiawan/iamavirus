@@ -1,0 +1,6463 @@
+[
+  {
+    "name": "9rvmxa9m-16",
+    "game": "9rvmxa9m",
+    "ply": 16,
+    "opponent": "duck",
+    "safe_moves": [
+      "b1d2",
+      "b1a3",
+      "b1c3",
+      "e1d1",
+      "e1f1",
+      "e1d2",
+      "e1e2",
+      "g1e2",
+      "g1f3",
+      "g1h3",
+      "a4d1",
+      "a4c2",
+      "a4a3",
+      "a4b3",
+      "a4b4",
+      "a4c4",
+      "a4a5",
+      "a4b5",
+      "a4a6",
+      "a4c6",
+      "a4a7",
+      "f4g3",
+      "f4e5",
+      "f4g5",
+      "f4d6",
+      "f4h6",
+      "a2a3",
+      "b2b3",
+      "b2b4",
+      "f2f3",
+      "g2g3",
+      "g2g4",
+      "h2h3",
+      "h2h4",
+      "e3e4"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "capture_unseen",
+      "victim_walked_in",
+      "fog_route",
+      "king_threat",
+      "king_threat_unseen",
+      "vision_gain",
+      "queen_raid"
+    ],
+    "arms": {
+      "original": {
+        "move": "b1d2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.7084955249993072,
+        "search": {
+          "nodes": 72942.0,
+          "iters": 740.0,
+          "p": 0.42,
+          "v": 0.064,
+          "clock": 131.6
+        }
+      },
+      "learned": {
+        "move": "a4c6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 515.0,
+          "constrained": 515.0,
+          "first_reply_coverage": 0.999999999,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.72527423,
+          "calls": 515.0,
+          "reuses": 556.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.023772983,
+          "load_failed": 0.0
+        },
+        "elapsed": 2.680578688999958,
+        "search": {
+          "nodes": 64841.0,
+          "iters": 1210.0,
+          "p": 1.0,
+          "v": 0.737,
+          "clock": 131.6
+        }
+      },
+      "off": {
+        "move": "a4c6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 492.0,
+          "constrained": 492.0,
+          "first_reply_coverage": 0.999999999,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.66050852,
+          "calls": 492.0,
+          "reuses": 532.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.022623457,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.312945031997515,
+        "search": {
+          "nodes": 61640.0,
+          "iters": 1150.0,
+          "p": 1.0,
+          "v": 0.716,
+          "clock": 131.6
+        }
+      },
+      "projected": {
+        "move": "a4c6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 519.0,
+          "constrained": 519.0,
+          "first_reply_coverage": 0.999999999,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.41787792,
+          "calls": 519.0,
+          "reuses": 514.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.025375569,
+          "load_failed": 0.0,
+          "projected_sets": 129.0,
+          "projected_actions": 584.0,
+          "dominated_mass": 7.02832933,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.6845784349970927,
+        "search": {
+          "nodes": 65314.0,
+          "iters": 1190.0,
+          "p": 1.0,
+          "v": 0.717,
+          "clock": 131.6
+        }
+      }
+    }
+  },
+  {
+    "name": "9rvmxa9m-32",
+    "game": "9rvmxa9m",
+    "ply": 32,
+    "opponent": "duck",
+    "safe_moves": [
+      "c1a1",
+      "c1b1",
+      "c1d1",
+      "c1c2",
+      "c1c3",
+      "c1c4",
+      "c1c5",
+      "c1c6",
+      "c1c7",
+      "c1c8",
+      "e1d1",
+      "e1f1",
+      "e1d2",
+      "e1e2",
+      "h1f1",
+      "h1g1",
+      "f3g1",
+      "f3d2",
+      "f3h4",
+      "f3e5",
+      "f3g5",
+      "e1g1",
+      "a2a3",
+      "g2g3",
+      "g2g4",
+      "h2h3",
+      "h2h4",
+      "b3b4",
+      "b3a4",
+      "e3e4"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "victim_walked_in",
+      "fog_route"
+    ],
+    "arms": {
+      "original": {
+        "move": "b3a4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.8413695989984262,
+        "search": {
+          "nodes": 89798.0,
+          "iters": 1060.0,
+          "p": 1.0,
+          "v": -0.083,
+          "clock": 96.7
+        }
+      },
+      "learned": {
+        "move": "b3a4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 801.0,
+          "constrained": 801.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.96427771,
+          "calls": 801.0,
+          "reuses": 561.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.0321007,
+          "load_failed": 0.0
+        },
+        "elapsed": 2.819397317998664,
+        "search": {
+          "nodes": 82386.0,
+          "iters": 1000.0,
+          "p": 1.0,
+          "v": 0.054,
+          "clock": 96.7
+        }
+      },
+      "off": {
+        "move": "b3a4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 781.0,
+          "constrained": 781.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.96000369,
+          "calls": 781.0,
+          "reuses": 525.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.034317912,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.813989564001531,
+        "search": {
+          "nodes": 78166.0,
+          "iters": 950.0,
+          "p": 1.0,
+          "v": 0.054,
+          "clock": 96.7
+        }
+      },
+      "projected": {
+        "move": "b3a4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 774.0,
+          "constrained": 774.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.96283461,
+          "calls": 774.0,
+          "reuses": 575.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.034460986,
+          "load_failed": 0.0,
+          "projected_sets": 260.0,
+          "projected_actions": 1573.0,
+          "dominated_mass": 25.1994476,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.862288224998338,
+        "search": {
+          "nodes": 79925.0,
+          "iters": 970.0,
+          "p": 1.0,
+          "v": 0.056,
+          "clock": 96.7
+        }
+      }
+    }
+  },
+  {
+    "name": "9rvmxa9m-48",
+    "game": "9rvmxa9m",
+    "ply": 48,
+    "opponent": "duck",
+    "safe_moves": [
+      "a1b1",
+      "a1c1",
+      "a1d1",
+      "a1e1",
+      "a1f1",
+      "a1a2",
+      "g1f1",
+      "g1h1",
+      "g1h2",
+      "e5d3",
+      "e5f3",
+      "e5c4",
+      "e5g4",
+      "e5c6",
+      "e5g6",
+      "e5d7",
+      "f7f3",
+      "f7f4",
+      "f7f5",
+      "f7f6",
+      "f7a7",
+      "f7b7",
+      "f7c7",
+      "f7d7",
+      "f7e7",
+      "f7g7",
+      "f7f8",
+      "f2f3",
+      "f2f4",
+      "g2g3",
+      "g2g4"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "fog_route",
+      "back_rank_bare"
+    ],
+    "arms": {
+      "original": {
+        "move": "a1a2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.843983892998949,
+        "search": {
+          "nodes": 90507.0,
+          "iters": 1120.0,
+          "p": 1.0,
+          "v": 0.804,
+          "clock": 72.2
+        }
+      },
+      "learned": {
+        "move": "a1a2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 804.0,
+          "constrained": 804.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.22355838,
+          "calls": 804.0,
+          "reuses": 448.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.032715557,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.847776443999464,
+        "search": {
+          "nodes": 81215.0,
+          "iters": 1040.0,
+          "p": 1.0,
+          "v": 0.856,
+          "clock": 72.2
+        }
+      },
+      "off": {
+        "move": "a1a2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 834.0,
+          "constrained": 834.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.20089509,
+          "calls": 834.0,
+          "reuses": 472.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.032153987,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.845465829999739,
+        "search": {
+          "nodes": 84833.0,
+          "iters": 1090.0,
+          "p": 1.0,
+          "v": 0.855,
+          "clock": 72.2
+        }
+      },
+      "projected": {
+        "move": "a1a2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 855.0,
+          "constrained": 855.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.20864269,
+          "calls": 855.0,
+          "reuses": 432.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.034665711,
+          "load_failed": 0.0,
+          "projected_sets": 630.0,
+          "projected_actions": 3619.0,
+          "dominated_mass": 126.119674,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.8532933080023213,
+        "search": {
+          "nodes": 86271.0,
+          "iters": 1050.0,
+          "p": 1.0,
+          "v": 0.869,
+          "clock": 72.2
+        }
+      }
+    }
+  },
+  {
+    "name": "9rvmxa9m-76",
+    "game": "9rvmxa9m",
+    "ply": 76,
+    "opponent": "duck",
+    "safe_moves": [
+      "h1g1",
+      "h1h2",
+      "g2g3",
+      "g2g4"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "king_move"
+    ],
+    "arms": {
+      "original": {
+        "move": "h1h2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3d4",
+          "best_response": "h2g1"
+        },
+        "coverage": null,
+        "elapsed": 2.8821294709996437,
+        "search": {
+          "nodes": 62136.0,
+          "iters": 2580.0,
+          "p": 1.0,
+          "v": -1.104,
+          "clock": 45.7
+        }
+      },
+      "learned": {
+        "move": "h1h2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3d4",
+          "best_response": "h2g1"
+        },
+        "coverage": {
+          "opponent_sets": 1285.0,
+          "constrained": 1285.0,
+          "first_reply_coverage": 0.875,
+          "first_reply_confidence": 0.21875,
+          "expected_model_visits": 1.52993966,
+          "calls": 1285.0,
+          "reuses": 594.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.042920398,
+          "load_failed": 0.0
+        },
+        "elapsed": 2.8967034540000896,
+        "search": {
+          "nodes": 56823.0,
+          "iters": 2010.0,
+          "p": 1.0,
+          "v": -1.087,
+          "clock": 45.7
+        }
+      },
+      "off": {
+        "move": "h1h2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3d4",
+          "best_response": "h2g1"
+        },
+        "coverage": {
+          "opponent_sets": 1279.0,
+          "constrained": 1279.0,
+          "first_reply_coverage": 0.875,
+          "first_reply_confidence": 0.21875,
+          "expected_model_visits": 1.52730567,
+          "calls": 1279.0,
+          "reuses": 587.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.043093347,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.96086020799703,
+        "search": {
+          "nodes": 56356.0,
+          "iters": 1990.0,
+          "p": 1.0,
+          "v": -1.087,
+          "clock": 45.7
+        }
+      },
+      "projected": {
+        "move": "h1h2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3d4",
+          "best_response": "h2g1"
+        },
+        "coverage": {
+          "opponent_sets": 1308.0,
+          "constrained": 1308.0,
+          "first_reply_coverage": 0.875,
+          "first_reply_confidence": 0.21875,
+          "expected_model_visits": 1.54259181,
+          "calls": 1308.0,
+          "reuses": 615.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.045321699,
+          "load_failed": 0.0,
+          "projected_sets": 14.0,
+          "projected_actions": 15.0,
+          "dominated_mass": 0.326147022,
+          "all_proven": 0.0
+        },
+        "elapsed": 6.011197490999621,
+        "search": {
+          "nodes": 57395.0,
+          "iters": 1980.0,
+          "p": 1.0,
+          "v": -1.086,
+          "clock": 45.7
+        }
+      }
+    }
+  },
+  {
+    "name": "9rvmxa9m-78",
+    "game": "9rvmxa9m",
+    "ply": 78,
+    "opponent": "duck",
+    "safe_moves": [
+      "h2g3",
+      "h2h3",
+      "g2g3",
+      "g2g4"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "king_move",
+      "back_rank_bare"
+    ],
+    "arms": {
+      "original": {
+        "move": "h2h1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 5.005066727000667,
+        "search": {
+          "nodes": 68006.0,
+          "iters": 2510.0,
+          "p": 0.63,
+          "v": -1.064,
+          "clock": 44.3
+        }
+      },
+      "learned": {
+        "move": "h2g1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1084.0,
+          "constrained": 1084.0,
+          "first_reply_coverage": 0.90625,
+          "first_reply_confidence": 0.2265625,
+          "expected_model_visits": 1.73961562,
+          "calls": 1084.0,
+          "reuses": 1076.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.037390402,
+          "load_failed": 0.0
+        },
+        "elapsed": 2.964495396001439,
+        "search": {
+          "nodes": 65098.0,
+          "iters": 1890.0,
+          "p": 0.64,
+          "v": -1.042,
+          "clock": 44.3
+        }
+      },
+      "off": {
+        "move": "h2g1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1061.0,
+          "constrained": 1061.0,
+          "first_reply_coverage": 0.90625,
+          "first_reply_confidence": 0.2265625,
+          "expected_model_visits": 1.72190733,
+          "calls": 1061.0,
+          "reuses": 1037.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.038265061,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.9519821709982352,
+        "search": {
+          "nodes": 63131.0,
+          "iters": 1830.0,
+          "p": 0.62,
+          "v": -1.042,
+          "clock": 44.3
+        }
+      },
+      "projected": {
+        "move": "h2g1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1093.0,
+          "constrained": 1093.0,
+          "first_reply_coverage": 0.90625,
+          "first_reply_confidence": 0.2265625,
+          "expected_model_visits": 1.78623422,
+          "calls": 1093.0,
+          "reuses": 988.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.040931004,
+          "load_failed": 0.0,
+          "projected_sets": 22.0,
+          "projected_actions": 52.0,
+          "dominated_mass": 1.70879209,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.975189417000365,
+        "search": {
+          "nodes": 63350.0,
+          "iters": 1860.0,
+          "p": 0.63,
+          "v": -1.04,
+          "clock": 44.3
+        }
+      }
+    }
+  },
+  {
+    "name": "je0urv3g-16",
+    "game": "je0urv3g",
+    "ply": 16,
+    "opponent": "Knight Vision",
+    "safe_moves": [
+      "a1b1",
+      "a1c1",
+      "d1b1",
+      "d1c1",
+      "d1d2",
+      "d1e2",
+      "d1d3",
+      "e1f1",
+      "e1d2",
+      "e1e2",
+      "h1f1",
+      "h1g1",
+      "g2f1",
+      "g2h3",
+      "c3b1",
+      "c3e2",
+      "c3a4",
+      "c3e4",
+      "c3b5",
+      "c3d5",
+      "f3g1",
+      "f3d2",
+      "f3h4",
+      "f3e5",
+      "f3g5",
+      "e1g1",
+      "a2a3",
+      "a2a4",
+      "b2b3",
+      "b2b4",
+      "h2h3",
+      "h2h4",
+      "e3e4"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "h1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.6924488309996377,
+        "search": {
+          "nodes": 88281.0,
+          "iters": 840.0,
+          "p": 0.64,
+          "v": -0.253,
+          "clock": 131.7
+        }
+      },
+      "learned": {
+        "move": "h1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 645.0,
+          "constrained": 645.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.54274254,
+          "calls": 645.0,
+          "reuses": 573.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.033293932,
+          "load_failed": 0.0
+        },
+        "elapsed": 6.81423020299917,
+        "search": {
+          "nodes": 79185.0,
+          "iters": 750.0,
+          "p": 1.0,
+          "v": -0.189,
+          "clock": 131.7
+        }
+      },
+      "off": {
+        "move": "h1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 724.0,
+          "constrained": 724.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.56738134,
+          "calls": 724.0,
+          "reuses": 628.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.033195737,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.7277107359986985,
+        "search": {
+          "nodes": 86889.0,
+          "iters": 820.0,
+          "p": 1.0,
+          "v": -0.19,
+          "clock": 131.7
+        }
+      },
+      "projected": {
+        "move": "h1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 701.0,
+          "constrained": 701.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.56802759,
+          "calls": 701.0,
+          "reuses": 614.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.033586441,
+          "load_failed": 0.0,
+          "projected_sets": 33.0,
+          "projected_actions": 62.0,
+          "dominated_mass": 0.451486971,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.7204070150000916,
+        "search": {
+          "nodes": 84691.0,
+          "iters": 800.0,
+          "p": 1.0,
+          "v": -0.191,
+          "clock": 131.7
+        }
+      }
+    }
+  },
+  {
+    "name": "je0urv3g-32",
+    "game": "je0urv3g",
+    "ply": 32,
+    "opponent": "Knight Vision",
+    "safe_moves": [
+      "a1b1",
+      "a1c1",
+      "d1b1",
+      "d1c1",
+      "d1d2",
+      "d1e2",
+      "d1d3",
+      "d1f3",
+      "d1g4",
+      "d1h5",
+      "e1e2",
+      "f1e2",
+      "f1g2",
+      "f1d3",
+      "f1h3",
+      "f1c4",
+      "f1b5",
+      "f1a6",
+      "g6f4",
+      "g6h4",
+      "g6e5",
+      "g6e7",
+      "g6f8",
+      "g6h8",
+      "f7e5",
+      "f7g5",
+      "f7d6",
+      "f7h6",
+      "f7d8",
+      "f7h8",
+      "a2a3",
+      "a2a4",
+      "b2b3",
+      "b2b4",
+      "c2c3",
+      "c2c4",
+      "f2f3",
+      "f2f4"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "capture_unseen",
+      "fog_route",
+      "king_threat"
+    ],
+    "arms": {
+      "original": {
+        "move": "f7d6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.992132674000459,
+        "search": {
+          "nodes": 70012.0,
+          "iters": 950.0,
+          "p": 1.0,
+          "v": -0.566,
+          "clock": 95.1
+        }
+      },
+      "learned": {
+        "move": "f7d6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 554.0,
+          "constrained": 554.0,
+          "first_reply_coverage": 0.999727742,
+          "first_reply_confidence": 0.249931935,
+          "expected_model_visits": 3.48826681,
+          "calls": 554.0,
+          "reuses": 251.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.025813073,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.0040233349973278,
+        "search": {
+          "nodes": 64835.0,
+          "iters": 1260.0,
+          "p": 1.0,
+          "v": -0.059,
+          "clock": 95.1
+        }
+      },
+      "off": {
+        "move": "f7d6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 549.0,
+          "constrained": 549.0,
+          "first_reply_coverage": 0.999727742,
+          "first_reply_confidence": 0.249931935,
+          "expected_model_visits": 3.46711536,
+          "calls": 549.0,
+          "reuses": 246.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.025612326,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.316202795002027,
+        "search": {
+          "nodes": 64265.0,
+          "iters": 1250.0,
+          "p": 1.0,
+          "v": -0.058,
+          "clock": 95.1
+        }
+      },
+      "projected": {
+        "move": "f7d6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 539.0,
+          "constrained": 539.0,
+          "first_reply_coverage": 0.999727742,
+          "first_reply_confidence": 0.249931935,
+          "expected_model_visits": 3.46537058,
+          "calls": 539.0,
+          "reuses": 237.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024808067,
+          "load_failed": 0.0,
+          "projected_sets": 71.0,
+          "projected_actions": 1850.0,
+          "dominated_mass": 21.8457587,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.1388014189979,
+        "search": {
+          "nodes": 70264.0,
+          "iters": 930.0,
+          "p": 1.0,
+          "v": -0.127,
+          "clock": 95.1
+        }
+      }
+    }
+  },
+  {
+    "name": "je0urv3g-48",
+    "game": "je0urv3g",
+    "ply": 48,
+    "opponent": "Knight Vision",
+    "safe_moves": [
+      "c1a1",
+      "c1b1",
+      "c1d1",
+      "c1c2",
+      "c1c3",
+      "e1d1",
+      "e1d2",
+      "e1e2",
+      "h3f1",
+      "h3h1",
+      "h3g2",
+      "h3h2",
+      "h3f3",
+      "h3g3",
+      "h3g4",
+      "h3h4",
+      "h3f5",
+      "h3h5",
+      "h3h6",
+      "h3h7",
+      "h3h8",
+      "a2a3",
+      "a2a4",
+      "b2b3",
+      "b2b4",
+      "c4c5",
+      "c4d5"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "forcing_chain"
+    ],
+    "arms": {
+      "original": {
+        "move": "c4d5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.995980720999796,
+        "search": {
+          "nodes": 77121.0,
+          "iters": 880.0,
+          "p": 1.0,
+          "v": -0.654,
+          "clock": 71.2
+        }
+      },
+      "learned": {
+        "move": "c4d5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 658.0,
+          "constrained": 658.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.86490043,
+          "calls": 658.0,
+          "reuses": 505.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.027757635,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.0094904500001576,
+        "search": {
+          "nodes": 77135.0,
+          "iters": 900.0,
+          "p": 1.0,
+          "v": -0.318,
+          "clock": 71.2
+        }
+      },
+      "off": {
+        "move": "c4d5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 612.0,
+          "constrained": 612.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.83756834,
+          "calls": 612.0,
+          "reuses": 475.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.026527945,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.004712810001365,
+        "search": {
+          "nodes": 72010.0,
+          "iters": 840.0,
+          "p": 1.0,
+          "v": -0.318,
+          "clock": 71.2
+        }
+      },
+      "projected": {
+        "move": "c4d5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 614.0,
+          "constrained": 614.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.02337968,
+          "calls": 614.0,
+          "reuses": 458.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028601117,
+          "load_failed": 0.0,
+          "projected_sets": 215.0,
+          "projected_actions": 1846.0,
+          "dominated_mass": 28.7075539,
+          "all_proven": 0.0
+        },
+        "elapsed": 7.099842407002143,
+        "search": {
+          "nodes": 72189.0,
+          "iters": 830.0,
+          "p": 1.0,
+          "v": -0.312,
+          "clock": 71.2
+        }
+      }
+    }
+  },
+  {
+    "name": "je0urv3g-82",
+    "game": "je0urv3g",
+    "ply": 82,
+    "opponent": "Knight Vision",
+    "safe_moves": [
+      "g5g6",
+      "a4a5",
+      "b4b5"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "a4a5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 5.1830051980032295,
+        "search": {
+          "nodes": 61158.0,
+          "iters": 2770.0,
+          "p": 1.0,
+          "v": -1.0,
+          "clock": 41.1
+        }
+      },
+      "learned": {
+        "move": "b4b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1203.0,
+          "constrained": 1203.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.19189684,
+          "calls": 1203.0,
+          "reuses": 69.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.046983336,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.801876898000046,
+        "search": {
+          "nodes": 68063.0,
+          "iters": 1680.0,
+          "p": 1.0,
+          "v": -0.994,
+          "clock": 41.1
+        }
+      },
+      "off": {
+        "move": "b4b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1167.0,
+          "constrained": 1167.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.18888196,
+          "calls": 1167.0,
+          "reuses": 69.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.046932148,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.098340845997882,
+        "search": {
+          "nodes": 66598.0,
+          "iters": 1650.0,
+          "p": 1.0,
+          "v": -0.994,
+          "clock": 41.1
+        }
+      },
+      "projected": {
+        "move": "a4a5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1145.0,
+          "constrained": 1145.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.18155339,
+          "calls": 1145.0,
+          "reuses": 123.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.046850211,
+          "load_failed": 0.0,
+          "projected_sets": 83.0,
+          "projected_actions": 778.0,
+          "dominated_mass": 21.4072719,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.132655844998226,
+        "search": {
+          "nodes": 67107.0,
+          "iters": 1690.0,
+          "p": 1.0,
+          "v": -0.998,
+          "clock": 41.1
+        }
+      }
+    }
+  },
+  {
+    "name": "je0urv3g-84",
+    "game": "je0urv3g",
+    "ply": 84,
+    "opponent": "Knight Vision",
+    "safe_moves": [
+      "g5h4",
+      "g5h5",
+      "g5h6"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "b4b5",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 5.249234189999697,
+        "search": {
+          "nodes": 51400.0,
+          "iters": 3810.0,
+          "p": 1.0,
+          "v": -1.375,
+          "clock": 40.0
+        }
+      },
+      "learned": {
+        "move": "b4b5",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 943.0,
+          "constrained": 943.0,
+          "first_reply_coverage": 0.625,
+          "first_reply_confidence": 0.15625,
+          "expected_model_visits": 0.759016922,
+          "calls": 943.0,
+          "reuses": 98.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.038498711,
+          "load_failed": 0.0
+        },
+        "elapsed": 6.287334839998948,
+        "search": {
+          "nodes": 51793.0,
+          "iters": 2390.0,
+          "p": 1.0,
+          "v": -1.369,
+          "clock": 40.0
+        }
+      },
+      "off": {
+        "move": "b4b5",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 947.0,
+          "constrained": 947.0,
+          "first_reply_coverage": 0.625,
+          "first_reply_confidence": 0.15625,
+          "expected_model_visits": 0.759776096,
+          "calls": 947.0,
+          "reuses": 100.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.037176766,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.1701685529988026,
+        "search": {
+          "nodes": 52158.0,
+          "iters": 2410.0,
+          "p": 1.0,
+          "v": -1.369,
+          "clock": 40.0
+        }
+      },
+      "projected": {
+        "move": "b4b5",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 953.0,
+          "constrained": 953.0,
+          "first_reply_coverage": 0.625,
+          "first_reply_confidence": 0.15625,
+          "expected_model_visits": 0.780078971,
+          "calls": 953.0,
+          "reuses": 121.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.040867619,
+          "load_failed": 0.0,
+          "projected_sets": 140.0,
+          "projected_actions": 1280.0,
+          "dominated_mass": 32.0988857,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.161022783999215,
+        "search": {
+          "nodes": 52241.0,
+          "iters": 2310.0,
+          "p": 1.0,
+          "v": -1.371,
+          "clock": 40.0
+        }
+      }
+    }
+  },
+  {
+    "name": "o9ok1v32-16",
+    "game": "o9ok1v32",
+    "ply": 16,
+    "opponent": "Decent Chess Bot",
+    "safe_moves": [
+      "a1b1",
+      "a1c1",
+      "d1b1",
+      "d1c1",
+      "h1g1",
+      "d2c1",
+      "d2c3",
+      "d2e3",
+      "d2b4",
+      "d2f4",
+      "d2a5",
+      "d2g5",
+      "d2h6",
+      "f3g1",
+      "f3d4",
+      "f3h4",
+      "f3e5",
+      "f3g5",
+      "a2a3",
+      "a2a4",
+      "b2b3",
+      "b2b4",
+      "c2c3",
+      "c2c4",
+      "e2e3",
+      "e2e4",
+      "g2g3",
+      "g2g4",
+      "h2h3",
+      "h2h4"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "e2e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.7374864969970076,
+        "search": {
+          "nodes": 81261.0,
+          "iters": 740.0,
+          "p": 0.57,
+          "v": 0.312,
+          "clock": 131.5
+        }
+      },
+      "learned": {
+        "move": "e2e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 364.0,
+          "constrained": 364.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.67976592,
+          "calls": 364.0,
+          "reuses": 496.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.021689068,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.89634868000212,
+        "search": {
+          "nodes": 69703.0,
+          "iters": 630.0,
+          "p": 0.77,
+          "v": 0.389,
+          "clock": 131.5
+        }
+      },
+      "off": {
+        "move": "e2e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 455.0,
+          "constrained": 455.0,
+          "first_reply_coverage": 0.99907608,
+          "first_reply_confidence": 0.24976902,
+          "expected_model_visits": 1.67705308,
+          "calls": 455.0,
+          "reuses": 622.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024226483,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.8632612859983055,
+        "search": {
+          "nodes": 87375.0,
+          "iters": 780.0,
+          "p": 0.77,
+          "v": 0.398,
+          "clock": 131.5
+        }
+      },
+      "projected": {
+        "move": "e2e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 414.0,
+          "constrained": 414.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.68093006,
+          "calls": 414.0,
+          "reuses": 563.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024927544,
+          "load_failed": 0.0,
+          "projected_sets": 7.0,
+          "projected_actions": 9.0,
+          "dominated_mass": 0.0379638337,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.768372967002506,
+        "search": {
+          "nodes": 79047.0,
+          "iters": 710.0,
+          "p": 0.81,
+          "v": 0.395,
+          "clock": 131.5
+        }
+      }
+    }
+  },
+  {
+    "name": "o9ok1v32-32",
+    "game": "o9ok1v32",
+    "ply": 32,
+    "opponent": "Decent Chess Bot",
+    "safe_moves": [
+      "a1b1",
+      "a1c1",
+      "a1d1",
+      "a1e1",
+      "a1a2",
+      "a1a3",
+      "f1b1",
+      "f1c1",
+      "f1d1",
+      "f1e1",
+      "g1h1",
+      "b2c1",
+      "b2a3",
+      "b2c3",
+      "b2d4",
+      "b2e5",
+      "b2f6",
+      "b2g7",
+      "d2c1",
+      "d2d1",
+      "d2e1",
+      "d2e2",
+      "d2c3",
+      "d2b4",
+      "d2a5",
+      "d3e2",
+      "d3c4",
+      "d3e4",
+      "d3b5",
+      "d3f5",
+      "d3a6",
+      "f3e1",
+      "f3d4",
+      "f3h4",
+      "f3e5",
+      "f3g5",
+      "c2c3",
+      "c2c4",
+      "g2g3",
+      "g2g4",
+      "h2h3",
+      "h2h4",
+      "b3b4",
+      "e3e4",
+      "a4a5"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "d3b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.630782084997918,
+        "search": {
+          "nodes": 75170.0,
+          "iters": 630.0,
+          "p": 0.22,
+          "v": 0.817,
+          "clock": 93.0
+        }
+      },
+      "learned": {
+        "move": "d3b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 448.0,
+          "constrained": 448.0,
+          "first_reply_coverage": 0.969820417,
+          "first_reply_confidence": 0.242455104,
+          "expected_model_visits": 1.23577361,
+          "calls": 448.0,
+          "reuses": 442.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.022007399,
+          "load_failed": 0.0
+        },
+        "elapsed": 7.14232321199961,
+        "search": {
+          "nodes": 74583.0,
+          "iters": 610.0,
+          "p": 0.66,
+          "v": 0.831,
+          "clock": 93.0
+        }
+      },
+      "off": {
+        "move": "d3b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 466.0,
+          "constrained": 466.0,
+          "first_reply_coverage": 0.989888223,
+          "first_reply_confidence": 0.247472056,
+          "expected_model_visits": 1.26989161,
+          "calls": 466.0,
+          "reuses": 454.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.022375634,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.652499394000188,
+        "search": {
+          "nodes": 77004.0,
+          "iters": 630.0,
+          "p": 0.68,
+          "v": 0.83,
+          "clock": 93.0
+        }
+      },
+      "projected": {
+        "move": "d3b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 392.0,
+          "constrained": 392.0,
+          "first_reply_coverage": 0.965246761,
+          "first_reply_confidence": 0.24131169,
+          "expected_model_visits": 1.24409251,
+          "calls": 392.0,
+          "reuses": 387.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.027645133,
+          "load_failed": 0.0,
+          "projected_sets": 42.0,
+          "projected_actions": 238.0,
+          "dominated_mass": 2.98257612,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.183809558002395,
+        "search": {
+          "nodes": 63098.0,
+          "iters": 520.0,
+          "p": 0.85,
+          "v": 0.835,
+          "clock": 93.0
+        }
+      }
+    }
+  },
+  {
+    "name": "o9ok1v32-48",
+    "game": "o9ok1v32",
+    "ply": 48,
+    "opponent": "Decent Chess Bot",
+    "safe_moves": [
+      "d1a1",
+      "d1b1",
+      "d1c1",
+      "d1e1",
+      "d1f1",
+      "d1d2",
+      "d1d3",
+      "d1d4",
+      "d1d5",
+      "d1d6",
+      "d1d7",
+      "d1d8",
+      "g1f1",
+      "g1h1",
+      "b2a1",
+      "b2c1",
+      "b2a3",
+      "b2c3",
+      "b2d4",
+      "f3e1",
+      "f3d2",
+      "f3d4",
+      "f3h4",
+      "f3g5",
+      "c4f1",
+      "c4e2",
+      "c4d3",
+      "c4b5",
+      "c4d5",
+      "c4a6",
+      "c4e6",
+      "e5c3",
+      "e5g3",
+      "e5d4",
+      "e5e4",
+      "e5f4",
+      "e5a5",
+      "e5b5",
+      "e5c5",
+      "e5d5",
+      "e5f5",
+      "e5d6",
+      "e5e6",
+      "e5f6",
+      "e5c7",
+      "e5g7",
+      "e5b8",
+      "g2g3",
+      "g2g4",
+      "h2h3",
+      "h2h4",
+      "b3b4",
+      "e3e4",
+      "a4a5"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "long_strike",
+      "fog_route",
+      "forcing_chain",
+      "king_threat",
+      "vision_gain",
+      "back_rank_bare"
+    ],
+    "arms": {
+      "original": {
+        "move": "d1d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 9.318501565001498,
+        "search": {
+          "nodes": 52985.0,
+          "iters": 760.0,
+          "p": 1.0,
+          "v": 0.99,
+          "clock": 57.8
+        }
+      },
+      "learned": {
+        "move": "d1d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 617.0,
+          "constrained": 617.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.82002615,
+          "calls": 617.0,
+          "reuses": 288.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.023570246,
+          "load_failed": 0.0
+        },
+        "elapsed": 7.221979013000237,
+        "search": {
+          "nodes": 55652.0,
+          "iters": 920.0,
+          "p": 1.0,
+          "v": 0.993,
+          "clock": 57.8
+        }
+      },
+      "off": {
+        "move": "d1d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 657.0,
+          "constrained": 657.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.74515518,
+          "calls": 657.0,
+          "reuses": 318.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024963674,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 7.802925493000657,
+        "search": {
+          "nodes": 55913.0,
+          "iters": 950.0,
+          "p": 1.0,
+          "v": 0.989,
+          "clock": 57.8
+        }
+      },
+      "projected": {
+        "move": "d1d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 640.0,
+          "constrained": 640.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.87642659,
+          "calls": 640.0,
+          "reuses": 248.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.02542592,
+          "load_failed": 0.0,
+          "projected_sets": 365.0,
+          "projected_actions": 5414.0,
+          "dominated_mass": 109.000175,
+          "all_proven": 1.0
+        },
+        "elapsed": 9.248243788999389,
+        "search": {
+          "nodes": 58465.0,
+          "iters": 730.0,
+          "p": 1.0,
+          "v": 0.966,
+          "clock": 57.8
+        }
+      }
+    }
+  },
+  {
+    "name": "o9ok1v32-50",
+    "game": "o9ok1v32",
+    "ply": 50,
+    "opponent": "Decent Chess Bot",
+    "safe_moves": [
+      "g1f1",
+      "g1h1",
+      "b2a1",
+      "b2c1",
+      "b2a3",
+      "b2c3",
+      "b2d4",
+      "f3e1",
+      "f3d2",
+      "f3d4",
+      "f3h4",
+      "f3g5",
+      "c4f1",
+      "c4e2",
+      "c4d3",
+      "c4b5",
+      "c4d5",
+      "c4a6",
+      "c4e6",
+      "e5c3",
+      "e5g3",
+      "e5d4",
+      "e5e4",
+      "e5f4",
+      "e5a5",
+      "e5b5",
+      "e5c5",
+      "e5d5",
+      "e5f5",
+      "e5d6",
+      "e5e6",
+      "e5f6",
+      "e5c7",
+      "e5g7",
+      "e5b8",
+      "g2g3",
+      "g2g4",
+      "h2h3",
+      "h2h4",
+      "b3b4",
+      "e3e4",
+      "a4a5"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "capture_unseen",
+      "fog_route",
+      "back_rank_bare"
+    ],
+    "arms": {
+      "original": {
+        "move": "c4e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 7.159473446001357,
+        "search": {
+          "nodes": 81493.0,
+          "iters": 1370.0,
+          "p": 1.0,
+          "v": 0.959,
+          "clock": 55.9
+        }
+      },
+      "learned": {
+        "move": "c4e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 716.0,
+          "constrained": 716.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 3.17166787,
+          "calls": 716.0,
+          "reuses": 411.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.0278426,
+          "load_failed": 0.0
+        },
+        "elapsed": 7.221350327003165,
+        "search": {
+          "nodes": 71427.0,
+          "iters": 1640.0,
+          "p": 1.0,
+          "v": 0.978,
+          "clock": 55.9
+        }
+      },
+      "off": {
+        "move": "c4e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 679.0,
+          "constrained": 679.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.93251094,
+          "calls": 679.0,
+          "reuses": 447.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.025084459,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 7.470999051001854,
+        "search": {
+          "nodes": 70070.0,
+          "iters": 1500.0,
+          "p": 1.0,
+          "v": 0.976,
+          "clock": 55.9
+        }
+      },
+      "projected": {
+        "move": "c4e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 670.0,
+          "constrained": 670.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 3.08993397,
+          "calls": 670.0,
+          "reuses": 503.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.026399406,
+          "load_failed": 0.0,
+          "projected_sets": 195.0,
+          "projected_actions": 2689.0,
+          "dominated_mass": 38.9439078,
+          "all_proven": 0.0
+        },
+        "elapsed": 8.208822578999388,
+        "search": {
+          "nodes": 71505.0,
+          "iters": 1600.0,
+          "p": 1.0,
+          "v": 0.968,
+          "clock": 55.9
+        }
+      }
+    }
+  },
+  {
+    "name": "o9ok1v32-52",
+    "game": "o9ok1v32",
+    "ply": 52,
+    "opponent": "Decent Chess Bot",
+    "safe_moves": [
+      "f3e1"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "king_threat",
+      "vision_gain",
+      "back_rank_bare"
+    ],
+    "arms": {
+      "original": {
+        "move": "e6f7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 8.18369592900126,
+        "search": {
+          "nodes": 77950.0,
+          "iters": 1370.0,
+          "p": 1.0,
+          "v": 0.482,
+          "clock": 54.1
+        }
+      },
+      "learned": {
+        "move": "e6f7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 657.0,
+          "constrained": 657.0,
+          "first_reply_coverage": 0.922893296,
+          "first_reply_confidence": 0.230723324,
+          "expected_model_visits": 2.43680683,
+          "calls": 657.0,
+          "reuses": 287.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.033123268,
+          "load_failed": 0.0
+        },
+        "elapsed": 7.539517913002783,
+        "search": {
+          "nodes": 53119.0,
+          "iters": 1250.0,
+          "p": 1.0,
+          "v": 0.591,
+          "clock": 54.1
+        }
+      },
+      "off": {
+        "move": "e6f7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 861.0,
+          "constrained": 861.0,
+          "first_reply_coverage": 0.9228874,
+          "first_reply_confidence": 0.23072185,
+          "expected_model_visits": 2.47388904,
+          "calls": 861.0,
+          "reuses": 402.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028455073,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 7.299368182000762,
+        "search": {
+          "nodes": 72706.0,
+          "iters": 1820.0,
+          "p": 1.0,
+          "v": 0.587,
+          "clock": 54.1
+        }
+      },
+      "projected": {
+        "move": "e6f7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "0-1",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 782.0,
+          "constrained": 782.0,
+          "first_reply_coverage": 0.922882758,
+          "first_reply_confidence": 0.23072069,
+          "expected_model_visits": 2.35093371,
+          "calls": 782.0,
+          "reuses": 344.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.029282136,
+          "load_failed": 0.0,
+          "projected_sets": 423.0,
+          "projected_actions": 7439.0,
+          "dominated_mass": 108.905153,
+          "all_proven": 0.0
+        },
+        "elapsed": 9.268532615998993,
+        "search": {
+          "nodes": 77054.0,
+          "iters": 1280.0,
+          "p": 1.0,
+          "v": 0.58,
+          "clock": 54.1
+        }
+      }
+    }
+  },
+  {
+    "name": "9dofk83o-16",
+    "game": "9dofk83o",
+    "ply": 16,
+    "opponent": "Instructors",
+    "safe_moves": [
+      "a1b1",
+      "a1a2",
+      "c1d2",
+      "c1e3",
+      "c1f4",
+      "c1g5",
+      "c1h6",
+      "d1c2",
+      "d1d2",
+      "d1e2",
+      "d1b3",
+      "d1f3",
+      "d1a4",
+      "d1g4",
+      "d1h5",
+      "e1f1",
+      "e1d2",
+      "e1e2",
+      "g1e2",
+      "g1f3",
+      "g1h3",
+      "d3b1",
+      "d3f1",
+      "d3c2",
+      "d3e2",
+      "d3e4",
+      "d3f5",
+      "d3g6",
+      "d3h7",
+      "c4d2",
+      "c4e3",
+      "c4a5",
+      "c4e5",
+      "c4b6",
+      "c4d6",
+      "b2b3",
+      "b2b4",
+      "f2f3",
+      "f2f4",
+      "g2g3",
+      "g2g4",
+      "h2h3",
+      "h2h4",
+      "a3a4",
+      "d4d5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_loss"
+    ],
+    "arms": {
+      "original": {
+        "move": "c4e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.8503164629983075,
+        "search": {
+          "nodes": 90042.0,
+          "iters": 790.0,
+          "p": 0.5,
+          "v": 0.019,
+          "clock": 131.0
+        }
+      },
+      "learned": {
+        "move": "c4e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 703.0,
+          "constrained": 703.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.51257679,
+          "calls": 703.0,
+          "reuses": 625.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.029168304,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.917010880999442,
+        "search": {
+          "nodes": 82146.0,
+          "iters": 720.0,
+          "p": 1.0,
+          "v": 0.047,
+          "clock": 131.0
+        }
+      },
+      "off": {
+        "move": "c4e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 687.0,
+          "constrained": 687.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.47375613,
+          "calls": 687.0,
+          "reuses": 604.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028456117,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.909540358999948,
+        "search": {
+          "nodes": 79733.0,
+          "iters": 700.0,
+          "p": 1.0,
+          "v": 0.051,
+          "clock": 131.0
+        }
+      },
+      "projected": {
+        "move": "c4e3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 670.0,
+          "constrained": 670.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.47196577,
+          "calls": 670.0,
+          "reuses": 560.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.037062133,
+          "load_failed": 0.0,
+          "projected_sets": 11.0,
+          "projected_actions": 273.0,
+          "dominated_mass": 2.77605889,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.9075789349990373,
+        "search": {
+          "nodes": 74896.0,
+          "iters": 660.0,
+          "p": 1.0,
+          "v": 0.04,
+          "clock": 131.0
+        }
+      }
+    }
+  },
+  {
+    "name": "9dofk83o-32",
+    "game": "9dofk83o",
+    "ply": 32,
+    "opponent": "Instructors",
+    "safe_moves": [
+      "a1b1",
+      "a1c1",
+      "a1d1",
+      "a1a2",
+      "e1d1",
+      "e1f1",
+      "e1d2",
+      "e1e2",
+      "h1f1",
+      "h1g1",
+      "h1h2",
+      "h1h3",
+      "d3b1",
+      "d3f1",
+      "d3c2",
+      "d3e2",
+      "d3c4",
+      "d3e4",
+      "d3b5",
+      "d3f5",
+      "d3g6",
+      "d3h7",
+      "f3d1",
+      "f3e2",
+      "f3e3",
+      "f3g3",
+      "f3h3",
+      "f3e4",
+      "f3g4",
+      "f3d5",
+      "f3h5",
+      "f3c6",
+      "f4c1",
+      "f4d2",
+      "f4h2",
+      "f4e3",
+      "f4g3",
+      "f4e5",
+      "f4g5",
+      "f4d6",
+      "f4h6",
+      "f4c7",
+      "f4b8",
+      "e1g1",
+      "e1c1",
+      "b2b3",
+      "b2b4",
+      "g2g3",
+      "g2g4",
+      "a3a4",
+      "c3c4",
+      "d4d5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "king_move",
+      "castle"
+    ],
+    "arms": {
+      "original": {
+        "move": "e1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.8991957459984405,
+        "search": {
+          "nodes": 71389.0,
+          "iters": 600.0,
+          "p": 0.41,
+          "v": 0.512,
+          "clock": 91.6
+        }
+      },
+      "learned": {
+        "move": "e1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 457.0,
+          "constrained": 457.0,
+          "first_reply_coverage": 0.977702707,
+          "first_reply_confidence": 0.244425677,
+          "expected_model_visits": 1.36814545,
+          "calls": 457.0,
+          "reuses": 434.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.018074703,
+          "load_failed": 0.0
+        },
+        "elapsed": 5.873826496001129,
+        "search": {
+          "nodes": 77646.0,
+          "iters": 640.0,
+          "p": 0.5,
+          "v": 0.589,
+          "clock": 91.6
+        }
+      },
+      "off": {
+        "move": "e1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 430.0,
+          "constrained": 430.0,
+          "first_reply_coverage": 0.966480904,
+          "first_reply_confidence": 0.241620226,
+          "expected_model_visits": 1.32429144,
+          "calls": 430.0,
+          "reuses": 406.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.017101246,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.8319412450000527,
+        "search": {
+          "nodes": 72517.0,
+          "iters": 600.0,
+          "p": 0.46,
+          "v": 0.591,
+          "clock": 91.6
+        }
+      },
+      "projected": {
+        "move": "e1g1",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 453.0,
+          "constrained": 453.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.45097239,
+          "calls": 453.0,
+          "reuses": 440.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.019399486,
+          "load_failed": 0.0,
+          "projected_sets": 19.0,
+          "projected_actions": 144.0,
+          "dominated_mass": 2.8204143,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.604204987997946,
+        "search": {
+          "nodes": 76548.0,
+          "iters": 630.0,
+          "p": 0.54,
+          "v": 0.581,
+          "clock": 91.6
+        }
+      }
+    }
+  },
+  {
+    "name": "9dofk83o-48",
+    "game": "9dofk83o",
+    "ply": 48,
+    "opponent": "Instructors",
+    "safe_moves": [
+      "a1a2",
+      "a1a3",
+      "a1a4",
+      "b1c1",
+      "b1d1",
+      "b1e1",
+      "b1f1",
+      "b1b2",
+      "b1b3",
+      "b1b4",
+      "b1b5",
+      "b1b6",
+      "b1b7",
+      "b1b8",
+      "g1f1",
+      "g1h1",
+      "g1h2",
+      "e2d1",
+      "e2e1",
+      "e2f1",
+      "e2a2",
+      "e2b2",
+      "e2c2",
+      "e2d2",
+      "e2d3",
+      "e2e3",
+      "e2f3",
+      "e2c4",
+      "e2e4",
+      "e2g4",
+      "e2b5",
+      "e2e5",
+      "e2h5",
+      "f4c1",
+      "f4d2",
+      "f4h2",
+      "f4e3",
+      "f4g3",
+      "f4e5",
+      "f4g5",
+      "f4h6",
+      "a6d3",
+      "a6c4",
+      "a6b5",
+      "a6b7",
+      "a6c8",
+      "f2f3",
+      "g2g3",
+      "g2g4",
+      "c3c4"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 5.076109171001008,
+        "search": {
+          "nodes": 72726.0,
+          "iters": 660.0,
+          "p": 0.51,
+          "v": 0.865,
+          "clock": 68.1
+        }
+      },
+      "learned": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 497.0,
+          "constrained": 497.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.52230314,
+          "calls": 497.0,
+          "reuses": 379.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.01851227,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.048454446998221,
+        "search": {
+          "nodes": 74750.0,
+          "iters": 670.0,
+          "p": 0.56,
+          "v": 0.905,
+          "clock": 68.1
+        }
+      },
+      "off": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 479.0,
+          "constrained": 479.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.52622452,
+          "calls": 479.0,
+          "reuses": 371.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.018093654,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.618824958000914,
+        "search": {
+          "nodes": 72611.0,
+          "iters": 650.0,
+          "p": 0.58,
+          "v": 0.905,
+          "clock": 68.1
+        }
+      },
+      "projected": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 442.0,
+          "constrained": 442.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.54506686,
+          "calls": 442.0,
+          "reuses": 340.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.018596244,
+          "load_failed": 0.0,
+          "projected_sets": 75.0,
+          "projected_actions": 487.0,
+          "dominated_mass": 7.17513322,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.08927664100338,
+        "search": {
+          "nodes": 71135.0,
+          "iters": 620.0,
+          "p": 0.69,
+          "v": 0.9,
+          "clock": 68.1
+        }
+      }
+    }
+  },
+  {
+    "name": "9dofk83o-62",
+    "game": "9dofk83o",
+    "ply": 62,
+    "opponent": "Instructors",
+    "safe_moves": [
+      "b1a1",
+      "b1c1",
+      "b1d1",
+      "b1e1",
+      "b1f1",
+      "b1b2",
+      "b1b3",
+      "b1b4",
+      "g1f1",
+      "g1h1",
+      "c2d1",
+      "c2b3",
+      "c2d3",
+      "c2a4",
+      "c2e4",
+      "c2f5",
+      "c2g6",
+      "c2h7",
+      "e3c1",
+      "e3d2",
+      "e3d4",
+      "e3f4",
+      "e3c5",
+      "e3g5",
+      "e3b6",
+      "e3h6",
+      "e3a7",
+      "b5f1",
+      "b5b2",
+      "b5e2",
+      "b5b3",
+      "b5d3",
+      "b5a4",
+      "b5b4",
+      "b5c4",
+      "b5a5",
+      "b5c5",
+      "b5d5",
+      "b5a6",
+      "b5b6",
+      "b5c6",
+      "b5b7",
+      "b5d7",
+      "b5b8",
+      "b5e8",
+      "f2f3",
+      "f2f4",
+      "g2g3",
+      "c3c4"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "queen_raid"
+    ],
+    "arms": {
+      "original": {
+        "move": "b5b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.029796785001963,
+        "search": {
+          "nodes": 74003.0,
+          "iters": 820.0,
+          "p": 1.0,
+          "v": 0.1,
+          "clock": 53.6
+        }
+      },
+      "learned": {
+        "move": "b5b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 717.0,
+          "constrained": 717.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.97337906,
+          "calls": 717.0,
+          "reuses": 438.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.025686284,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.635131791997992,
+        "search": {
+          "nodes": 72370.0,
+          "iters": 930.0,
+          "p": 1.0,
+          "v": 0.34,
+          "clock": 53.6
+        }
+      },
+      "off": {
+        "move": "b5b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 688.0,
+          "constrained": 688.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.92595555,
+          "calls": 688.0,
+          "reuses": 416.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024203558,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.023644495999179,
+        "search": {
+          "nodes": 69353.0,
+          "iters": 890.0,
+          "p": 1.0,
+          "v": 0.344,
+          "clock": 53.6
+        }
+      },
+      "projected": {
+        "move": "b5b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 669.0,
+          "constrained": 669.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.01292217,
+          "calls": 669.0,
+          "reuses": 414.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.026046519,
+          "load_failed": 0.0,
+          "projected_sets": 237.0,
+          "projected_actions": 2115.0,
+          "dominated_mass": 26.1498601,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.894955566996941,
+        "search": {
+          "nodes": 68042.0,
+          "iters": 830.0,
+          "p": 1.0,
+          "v": 0.373,
+          "clock": 53.6
+        }
+      }
+    }
+  },
+  {
+    "name": "9dofk83o-64",
+    "game": "9dofk83o",
+    "ply": 64,
+    "opponent": "Instructors",
+    "safe_moves": [
+      "b1a1",
+      "b1c1",
+      "b1d1",
+      "b1e1",
+      "b1f1",
+      "b1b2",
+      "b1b3",
+      "b1b4",
+      "b1b5",
+      "b1b6",
+      "b1b7",
+      "b1b8",
+      "g1f1",
+      "g1h1",
+      "c2d1",
+      "c2b3",
+      "c2d3",
+      "c2a4",
+      "c2e4",
+      "c2f5",
+      "c2g6",
+      "c2h7",
+      "e3c1",
+      "e3d2",
+      "e3d4",
+      "e3f4",
+      "e3c5",
+      "e3g5",
+      "e3b6",
+      "e3h6",
+      "e3a7",
+      "f2f3",
+      "f2f4",
+      "g2g3",
+      "c3c4"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "victim_walked_in",
+      "long_strike",
+      "fog_route",
+      "king_threat",
+      "king_threat_unseen",
+      "vision_gain",
+      "back_rank_bare"
+    ],
+    "arms": {
+      "original": {
+        "move": "b1b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.030636520998087,
+        "search": {
+          "nodes": 69147.0,
+          "iters": 2730.0,
+          "p": 1.0,
+          "v": 0.636,
+          "clock": 51.9
+        }
+      },
+      "learned": {
+        "move": "b1b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 630.0,
+          "constrained": 630.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.75434251,
+          "calls": 630.0,
+          "reuses": 298.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.02118445,
+          "load_failed": 0.0
+        },
+        "elapsed": 6.080327423998824,
+        "search": {
+          "nodes": 64847.0,
+          "iters": 2930.0,
+          "p": 1.0,
+          "v": 0.867,
+          "clock": 51.9
+        }
+      },
+      "off": {
+        "move": "b1b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 615.0,
+          "constrained": 615.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.75432381,
+          "calls": 615.0,
+          "reuses": 294.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.021576872,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.027669754999806,
+        "search": {
+          "nodes": 63390.0,
+          "iters": 2840.0,
+          "p": 1.0,
+          "v": 0.867,
+          "clock": 51.9
+        }
+      },
+      "projected": {
+        "move": "b1b8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 630.0,
+          "constrained": 630.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.65860771,
+          "calls": 630.0,
+          "reuses": 282.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.023930888,
+          "load_failed": 0.0,
+          "projected_sets": 134.0,
+          "projected_actions": 903.0,
+          "dominated_mass": 16.0108057,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.049757998996938,
+        "search": {
+          "nodes": 63919.0,
+          "iters": 2800.0,
+          "p": 1.0,
+          "v": 0.849,
+          "clock": 51.9
+        }
+      }
+    }
+  },
+  {
+    "name": "owlpnpkm-17",
+    "game": "owlpnpkm",
+    "ply": 17,
+    "opponent": "duck",
+    "safe_moves": [
+      "g4e2",
+      "g4f3",
+      "g4h3",
+      "g4f5",
+      "g4h5",
+      "g4e6",
+      "g4d7",
+      "c6b4",
+      "c6d4",
+      "c6a5",
+      "c6e5",
+      "c6a7",
+      "c6b8",
+      "f6e4",
+      "f6h5",
+      "f6d7",
+      "f6g8",
+      "c8c7",
+      "c8a8",
+      "c8b8",
+      "d8a5",
+      "d8b6",
+      "d8d6",
+      "d8c7",
+      "d8d7",
+      "e8d7",
+      "h8g8",
+      "a6a5",
+      "b7b6",
+      "b7b5",
+      "e7e6",
+      "e7e5",
+      "g7g6",
+      "g7g5",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_gain"
+    ],
+    "arms": {
+      "original": {
+        "move": "e7e5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.285462157000438,
+        "search": {
+          "nodes": 84500.0,
+          "iters": 770.0,
+          "p": 0.84,
+          "v": 0.034,
+          "clock": 130.5
+        }
+      },
+      "learned": {
+        "move": "e7e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 726.0,
+          "constrained": 726.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.65537947,
+          "calls": 726.0,
+          "reuses": 472.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.026086518,
+          "load_failed": 0.0
+        },
+        "elapsed": 2.9861558259981393,
+        "search": {
+          "nodes": 78925.0,
+          "iters": 730.0,
+          "p": 1.0,
+          "v": 0.144,
+          "clock": 130.5
+        }
+      },
+      "off": {
+        "move": "e7e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 684.0,
+          "constrained": 684.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.62319111,
+          "calls": 684.0,
+          "reuses": 445.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028232376,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.084429670001555,
+        "search": {
+          "nodes": 74498.0,
+          "iters": 690.0,
+          "p": 1.0,
+          "v": 0.14,
+          "clock": 130.5
+        }
+      },
+      "projected": {
+        "move": "e7e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 677.0,
+          "constrained": 677.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.58336,
+          "calls": 677.0,
+          "reuses": 433.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.02876936,
+          "load_failed": 0.0,
+          "projected_sets": 48.0,
+          "projected_actions": 138.0,
+          "dominated_mass": 2.24482498,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.028140998998424,
+        "search": {
+          "nodes": 73493.0,
+          "iters": 680.0,
+          "p": 1.0,
+          "v": 0.145,
+          "clock": 130.5
+        }
+      }
+    }
+  },
+  {
+    "name": "owlpnpkm-33",
+    "game": "owlpnpkm",
+    "ply": 33,
+    "opponent": "duck",
+    "safe_moves": [
+      "b6a4",
+      "b6c4",
+      "b6d7",
+      "b6a8",
+      "c6b4",
+      "c6d4",
+      "c6a5",
+      "c6e5",
+      "c6a7",
+      "c6b8",
+      "e6h3",
+      "e6g4",
+      "e6f5",
+      "e6d7",
+      "e7b4",
+      "e7c5",
+      "e7d6",
+      "e7f6",
+      "c8c7",
+      "c8a8",
+      "c8b8",
+      "d8d6",
+      "d8c7",
+      "d8d7",
+      "d8e8",
+      "f8e8",
+      "g8g7",
+      "g8h8",
+      "g5g4",
+      "a6a5",
+      "f7f6",
+      "f7f5",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "b6c4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3h7",
+          "best_response": "g8g7"
+        },
+        "coverage": null,
+        "elapsed": 3.2942937260013423,
+        "search": {
+          "nodes": 68277.0,
+          "iters": 620.0,
+          "p": 0.7,
+          "v": 0.19,
+          "clock": 95.0
+        }
+      },
+      "learned": {
+        "move": "b6c4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3h7",
+          "best_response": "g8g7"
+        },
+        "coverage": {
+          "opponent_sets": 699.0,
+          "constrained": 699.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.7783852,
+          "calls": 699.0,
+          "reuses": 210.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.031856158,
+          "load_failed": 0.0
+        },
+        "elapsed": 5.308186917001876,
+        "search": {
+          "nodes": 70222.0,
+          "iters": 650.0,
+          "p": 1.0,
+          "v": 0.347,
+          "clock": 95.0
+        }
+      },
+      "off": {
+        "move": "b6c4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3h7",
+          "best_response": "g8g7"
+        },
+        "coverage": {
+          "opponent_sets": 486.0,
+          "constrained": 486.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.7248467,
+          "calls": 486.0,
+          "reuses": 150.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028034607,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.492051545999857,
+        "search": {
+          "nodes": 52112.0,
+          "iters": 480.0,
+          "p": 1.0,
+          "v": 0.367,
+          "clock": 95.0
+        }
+      },
+      "projected": {
+        "move": "b6c4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "d3h7",
+          "best_response": "g8g7"
+        },
+        "coverage": {
+          "opponent_sets": 703.0,
+          "constrained": 703.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.83511441,
+          "calls": 703.0,
+          "reuses": 191.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.031478649,
+          "load_failed": 0.0,
+          "projected_sets": 195.0,
+          "projected_actions": 539.0,
+          "dominated_mass": 7.1390482,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.027985495002213,
+        "search": {
+          "nodes": 70249.0,
+          "iters": 640.0,
+          "p": 1.0,
+          "v": 0.365,
+          "clock": 95.0
+        }
+      }
+    }
+  },
+  {
+    "name": "owlpnpkm-49",
+    "game": "owlpnpkm",
+    "ply": 49,
+    "opponent": "duck",
+    "safe_moves": [
+      "e7a3",
+      "e7b4",
+      "e7c5",
+      "e7d6",
+      "e7f6",
+      "c8b6",
+      "c8d6",
+      "c8a7",
+      "d8d4",
+      "d8d5",
+      "d8b6",
+      "d8d6",
+      "d8c7",
+      "d8d7",
+      "d8e8",
+      "f8e8",
+      "g8g7",
+      "g8h8",
+      "a5a4",
+      "g5g4",
+      "b7b6",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "f8e8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 5.031260831001418,
+        "search": {
+          "nodes": 85261.0,
+          "iters": 870.0,
+          "p": 0.36,
+          "v": -0.595,
+          "clock": 67.6
+        }
+      },
+      "learned": {
+        "move": "e7b4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 660.0,
+          "constrained": 660.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.06749895,
+          "calls": 660.0,
+          "reuses": 229.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.030137873,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.6124910390026344,
+        "search": {
+          "nodes": 76277.0,
+          "iters": 800.0,
+          "p": 1.0,
+          "v": -0.242,
+          "clock": 67.6
+        }
+      },
+      "off": {
+        "move": "e7b4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 678.0,
+          "constrained": 678.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.01505902,
+          "calls": 678.0,
+          "reuses": 236.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.026912229,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.883469446998788,
+        "search": {
+          "nodes": 79295.0,
+          "iters": 830.0,
+          "p": 1.0,
+          "v": -0.241,
+          "clock": 67.6
+        }
+      },
+      "projected": {
+        "move": "e7b4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 696.0,
+          "constrained": 696.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.98355159,
+          "calls": 696.0,
+          "reuses": 265.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.030497572,
+          "load_failed": 0.0,
+          "projected_sets": 34.0,
+          "projected_actions": 269.0,
+          "dominated_mass": 4.7976341,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.4611330240004463,
+        "search": {
+          "nodes": 77902.0,
+          "iters": 790.0,
+          "p": 1.0,
+          "v": -0.24,
+          "clock": 67.6
+        }
+      }
+    }
+  },
+  {
+    "name": "owlpnpkm-97",
+    "game": "owlpnpkm",
+    "ply": 97,
+    "opponent": "duck",
+    "safe_moves": [
+      "g7f6",
+      "g7g6",
+      "g7h6",
+      "g7h7",
+      "g7f8",
+      "g7g8",
+      "g7h8",
+      "g4g3",
+      "g4f3",
+      "b7b6",
+      "f7f6",
+      "f7f5"
+    ],
+    "recorded_move_tags": [
+      "capture"
+    ],
+    "arms": {
+      "original": {
+        "move": "g4f3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 6.835490831999778,
+        "search": {
+          "nodes": 86320.0,
+          "iters": 1980.0,
+          "p": 1.0,
+          "v": -0.916,
+          "clock": 27.9
+        }
+      },
+      "learned": {
+        "move": "g4f3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1297.0,
+          "constrained": 1297.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.41118522,
+          "calls": 1297.0,
+          "reuses": 628.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.037621173,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.78430939700047,
+        "search": {
+          "nodes": 74553.0,
+          "iters": 1710.0,
+          "p": 1.0,
+          "v": -0.834,
+          "clock": 27.9
+        }
+      },
+      "off": {
+        "move": "g4f3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1220.0,
+          "constrained": 1220.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.42549107,
+          "calls": 1220.0,
+          "reuses": 586.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.035042377,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.143078371998854,
+        "search": {
+          "nodes": 70033.0,
+          "iters": 1610.0,
+          "p": 1.0,
+          "v": -0.835,
+          "clock": 27.9
+        }
+      },
+      "projected": {
+        "move": "g4f3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1036.0,
+          "constrained": 1036.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.20818598,
+          "calls": 1036.0,
+          "reuses": 705.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.043624077,
+          "load_failed": 0.0,
+          "projected_sets": 175.0,
+          "projected_actions": 625.0,
+          "dominated_mass": 22.4786444,
+          "all_proven": 0.0
+        },
+        "elapsed": 6.753478412996628,
+        "search": {
+          "nodes": 67648.0,
+          "iters": 1540.0,
+          "p": 1.0,
+          "v": -0.861,
+          "clock": 27.9
+        }
+      }
+    }
+  },
+  {
+    "name": "owlpnpkm-99",
+    "game": "owlpnpkm",
+    "ply": 99,
+    "opponent": "duck",
+    "safe_moves": [
+      "g7h7",
+      "g7f8",
+      "g7g8",
+      "g7h8",
+      "f3f2",
+      "f3g2",
+      "b7b6",
+      "f7f6",
+      "f7f5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "king_move",
+      "king_leaves_home"
+    ],
+    "arms": {
+      "original": {
+        "move": "f3g2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 7.312336729002709,
+        "search": {
+          "nodes": 84600.0,
+          "iters": 2080.0,
+          "p": 1.0,
+          "v": -0.899,
+          "clock": 27.4
+        }
+      },
+      "learned": {
+        "move": "f3g2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1220.0,
+          "constrained": 1220.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.67234001,
+          "calls": 1220.0,
+          "reuses": 538.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.03522485,
+          "load_failed": 0.0
+        },
+        "elapsed": 8.963949169999978,
+        "search": {
+          "nodes": 81571.0,
+          "iters": 1670.0,
+          "p": 1.0,
+          "v": -0.617,
+          "clock": 27.4
+        }
+      },
+      "off": {
+        "move": "f3g2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1220.0,
+          "constrained": 1220.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.67234001,
+          "calls": 1220.0,
+          "reuses": 538.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.034494563,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.875794584997493,
+        "search": {
+          "nodes": 81571.0,
+          "iters": 1670.0,
+          "p": 1.0,
+          "v": -0.617,
+          "clock": 27.4
+        }
+      },
+      "projected": {
+        "move": "f3g2",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1183.0,
+          "constrained": 1183.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.63536063,
+          "calls": 1183.0,
+          "reuses": 540.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.031486348,
+          "load_failed": 0.0,
+          "projected_sets": 156.0,
+          "projected_actions": 1162.0,
+          "dominated_mass": 42.5764055,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.747809559998132,
+        "search": {
+          "nodes": 83117.0,
+          "iters": 1710.0,
+          "p": 1.0,
+          "v": -0.625,
+          "clock": 27.4
+        }
+      }
+    }
+  },
+  {
+    "name": "i5f0sgd8-17",
+    "game": "i5f0sgd8",
+    "ply": 17,
+    "opponent": "duck",
+    "safe_moves": [
+      "h5g3",
+      "h5f4",
+      "h5f6",
+      "h5g7",
+      "b8a6",
+      "b8d7",
+      "d8h4",
+      "d8a5",
+      "d8g5",
+      "d8b6",
+      "d8d6",
+      "d8f6",
+      "d8c7",
+      "d8d7",
+      "d8e7",
+      "d8c8",
+      "e8d7",
+      "e8e7",
+      "f8a3",
+      "f8b4",
+      "f8c5",
+      "f8d6",
+      "f8h6",
+      "f8e7",
+      "f8g7",
+      "h8g8",
+      "d5c4",
+      "c6c5",
+      "g6g5",
+      "a7a6",
+      "a7a5",
+      "b7b6",
+      "b7b5",
+      "f7f6",
+      "h7h6"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "h5f4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.801801539000735,
+        "search": {
+          "nodes": 70202.0,
+          "iters": 710.0,
+          "p": 1.0,
+          "v": -0.16,
+          "clock": 131.1
+        }
+      },
+      "learned": {
+        "move": "f8g7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 507.0,
+          "constrained": 507.0,
+          "first_reply_coverage": 0.99837564,
+          "first_reply_confidence": 0.24959391,
+          "expected_model_visits": 1.67779748,
+          "calls": 507.0,
+          "reuses": 361.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.020490135,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.8436190350003017,
+        "search": {
+          "nodes": 67358.0,
+          "iters": 640.0,
+          "p": 0.78,
+          "v": -0.087,
+          "clock": 131.1
+        }
+      },
+      "off": {
+        "move": "f8g7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 465.0,
+          "constrained": 465.0,
+          "first_reply_coverage": 0.997249403,
+          "first_reply_confidence": 0.249312351,
+          "expected_model_visits": 1.65612215,
+          "calls": 465.0,
+          "reuses": 333.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.018827768,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.8231670549976116,
+        "search": {
+          "nodes": 61836.0,
+          "iters": 590.0,
+          "p": 0.68,
+          "v": -0.092,
+          "clock": 131.1
+        }
+      },
+      "projected": {
+        "move": "h5f4",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 523.0,
+          "constrained": 523.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.34129742,
+          "calls": 523.0,
+          "reuses": 315.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.021620647,
+          "load_failed": 0.0,
+          "projected_sets": 81.0,
+          "projected_actions": 1439.0,
+          "dominated_mass": 12.6658793,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.5917280510002456,
+        "search": {
+          "nodes": 72523.0,
+          "iters": 700.0,
+          "p": 1.0,
+          "v": -0.034,
+          "clock": 131.1
+        }
+      }
+    }
+  },
+  {
+    "name": "i5f0sgd8-33",
+    "game": "i5f0sgd8",
+    "ply": 33,
+    "opponent": "duck",
+    "safe_moves": [
+      "e5h2",
+      "e5c3",
+      "e5g3",
+      "e5d4",
+      "e5f4",
+      "e5d6",
+      "e5f6",
+      "e5c7",
+      "e5g7",
+      "e5h8",
+      "h5g3",
+      "h5f4",
+      "h5f6",
+      "h5g7",
+      "e7a3",
+      "e7b4",
+      "e7h4",
+      "e7c5",
+      "e7g5",
+      "e7d6",
+      "e7e6",
+      "e7f6",
+      "e7b7",
+      "e7c7",
+      "e7d7",
+      "e7e8",
+      "e7f8",
+      "b8b7",
+      "b8a8",
+      "b8c8",
+      "d8d1",
+      "d8d2",
+      "d8d3",
+      "d8d4",
+      "d8d5",
+      "d8d6",
+      "d8d7",
+      "d8c8",
+      "d8e8",
+      "d8f8",
+      "g8g7",
+      "g8f8",
+      "g8h8",
+      "f5f4",
+      "g6g5",
+      "a7a6",
+      "a7a5",
+      "f7f6",
+      "h7h6"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_loss"
+    ],
+    "arms": {
+      "original": {
+        "move": "e5c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.270882870998321,
+        "search": {
+          "nodes": 51342.0,
+          "iters": 410.0,
+          "p": 1.0,
+          "v": -0.123,
+          "clock": 94.8
+        }
+      },
+      "learned": {
+        "move": "e5c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 413.0,
+          "constrained": 413.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.92991945,
+          "calls": 413.0,
+          "reuses": 154.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.019941705,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.2428015549994598,
+        "search": {
+          "nodes": 49291.0,
+          "iters": 390.0,
+          "p": 1.0,
+          "v": -0.074,
+          "clock": 94.8
+        }
+      },
+      "off": {
+        "move": "e5c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 529.0,
+          "constrained": 529.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.95180993,
+          "calls": 529.0,
+          "reuses": 203.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.020763995,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.5774885039973014,
+        "search": {
+          "nodes": 60487.0,
+          "iters": 480.0,
+          "p": 1.0,
+          "v": -0.074,
+          "clock": 94.8
+        }
+      },
+      "projected": {
+        "move": "e5c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 516.0,
+          "constrained": 516.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.94004796,
+          "calls": 516.0,
+          "reuses": 198.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.022477568,
+          "load_failed": 0.0,
+          "projected_sets": 23.0,
+          "projected_actions": 268.0,
+          "dominated_mass": 3.17337059,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.256445705999795,
+        "search": {
+          "nodes": 59256.0,
+          "iters": 470.0,
+          "p": 1.0,
+          "v": -0.075,
+          "clock": 94.8
+        }
+      }
+    }
+  },
+  {
+    "name": "i5f0sgd8-49",
+    "game": "i5f0sgd8",
+    "ply": 49,
+    "opponent": "duck",
+    "safe_moves": [
+      "b7b3",
+      "b7b4",
+      "b7b5",
+      "b7b6",
+      "b7c7",
+      "b7d7",
+      "b7e7",
+      "b8a8",
+      "b8c8",
+      "b8d8",
+      "b8e8",
+      "b8f8",
+      "g8g7",
+      "g8f8",
+      "g8h8",
+      "f5f4",
+      "g6g5",
+      "a7a6",
+      "a7a5",
+      "f7f6",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "sacrifice"
+    ],
+    "arms": {
+      "original": {
+        "move": "b7b6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.313963418997446,
+        "search": {
+          "nodes": 101010.0,
+          "iters": 1160.0,
+          "p": 0.18,
+          "v": -0.94,
+          "clock": 70.4
+        }
+      },
+      "learned": {
+        "move": "b7c7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 4,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "c6c7",
+          "best_response": "b8b3"
+        },
+        "coverage": {
+          "opponent_sets": 1298.0,
+          "constrained": 1298.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.59698498,
+          "calls": 1298.0,
+          "reuses": 417.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.036129428,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.159276714999578,
+        "search": {
+          "nodes": 98619.0,
+          "iters": 1140.0,
+          "p": 1.0,
+          "v": -0.737,
+          "clock": 70.4
+        }
+      },
+      "off": {
+        "move": "b7c7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 4,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "c6c7",
+          "best_response": "b8b3"
+        },
+        "coverage": {
+          "opponent_sets": 1263.0,
+          "constrained": 1263.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.58529248,
+          "calls": 1263.0,
+          "reuses": 400.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.03497492,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.446342047998769,
+        "search": {
+          "nodes": 95423.0,
+          "iters": 1100.0,
+          "p": 1.0,
+          "v": -0.738,
+          "clock": 70.4
+        }
+      },
+      "projected": {
+        "move": "b7d7",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 4,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "c6d7",
+          "best_response": "b8b3"
+        },
+        "coverage": {
+          "opponent_sets": 1038.0,
+          "constrained": 1038.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.24951661,
+          "calls": 1038.0,
+          "reuses": 368.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.048419028,
+          "load_failed": 0.0,
+          "projected_sets": 55.0,
+          "projected_actions": 465.0,
+          "dominated_mass": 5.9202808,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.485370762999082,
+        "search": {
+          "nodes": 82702.0,
+          "iters": 950.0,
+          "p": 0.51,
+          "v": -0.75,
+          "clock": 70.4
+        }
+      }
+    }
+  },
+  {
+    "name": "i5f0sgd8-67",
+    "game": "i5f0sgd8",
+    "ply": 67,
+    "opponent": "duck",
+    "safe_moves": [
+      "h6h5",
+      "g6g5"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "g6g5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.488132859998586,
+        "search": {
+          "nodes": 71497.0,
+          "iters": 3010.0,
+          "p": 1.0,
+          "v": -1.0,
+          "clock": 50.0
+        }
+      },
+      "learned": {
+        "move": "g6g5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1429.0,
+          "constrained": 1429.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.66489497,
+          "calls": 1429.0,
+          "reuses": 259.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.039160338,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.52565754799798,
+        "search": {
+          "nodes": 69508.0,
+          "iters": 1660.0,
+          "p": 1.0,
+          "v": -0.997,
+          "clock": 50.0
+        }
+      },
+      "off": {
+        "move": "g6g5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1437.0,
+          "constrained": 1437.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.66361917,
+          "calls": 1437.0,
+          "reuses": 264.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.039231866,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.468142593999801,
+        "search": {
+          "nodes": 70145.0,
+          "iters": 1680.0,
+          "p": 1.0,
+          "v": -0.997,
+          "clock": 50.0
+        }
+      },
+      "projected": {
+        "move": "g6g5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1540.0,
+          "constrained": 1540.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.70001705,
+          "calls": 1540.0,
+          "reuses": 192.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.042605295,
+          "load_failed": 0.0,
+          "projected_sets": 4.0,
+          "projected_actions": 32.0,
+          "dominated_mass": 0.976615973,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.467861740999069,
+        "search": {
+          "nodes": 70636.0,
+          "iters": 1660.0,
+          "p": 1.0,
+          "v": -0.997,
+          "clock": 50.0
+        }
+      }
+    }
+  },
+  {
+    "name": "i5f0sgd8-69",
+    "game": "i5f0sgd8",
+    "ply": 69,
+    "opponent": "duck",
+    "safe_moves": [
+      "h6h5"
+    ],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "g5g4",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 5.188658221999503,
+        "search": {
+          "nodes": 81767.0,
+          "iters": 2170.0,
+          "p": 0.69,
+          "v": -0.998,
+          "clock": 47.4
+        }
+      },
+      "learned": {
+        "move": "g5f4",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1296.0,
+          "constrained": 1296.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.28380202,
+          "calls": 1296.0,
+          "reuses": 338.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.03401753,
+          "load_failed": 0.0
+        },
+        "elapsed": 5.176747337001871,
+        "search": {
+          "nodes": 74099.0,
+          "iters": 1600.0,
+          "p": 0.69,
+          "v": -0.995,
+          "clock": 47.4
+        }
+      },
+      "off": {
+        "move": "g5f4",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1308.0,
+          "constrained": 1308.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.28941511,
+          "calls": 1308.0,
+          "reuses": 309.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.034486501,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.185195209000085,
+        "search": {
+          "nodes": 74085.0,
+          "iters": 1630.0,
+          "p": 0.59,
+          "v": -0.995,
+          "clock": 47.4
+        }
+      },
+      "projected": {
+        "move": "g5g4",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1291.0,
+          "constrained": 1291.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.28118077,
+          "calls": 1291.0,
+          "reuses": 269.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.038407179,
+          "load_failed": 0.0,
+          "projected_sets": 29.0,
+          "projected_actions": 30.0,
+          "dominated_mass": 0.677613636,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.225991145998705,
+        "search": {
+          "nodes": 72375.0,
+          "iters": 1590.0,
+          "p": 0.38,
+          "v": -0.995,
+          "clock": 47.4
+        }
+      }
+    }
+  },
+  {
+    "name": "937dbqbv-17",
+    "game": "937dbqbv",
+    "ply": 17,
+    "opponent": "HYPOTHERMIA",
+    "safe_moves": [
+      "d4c2",
+      "d4e2",
+      "d4b3",
+      "d4f3",
+      "d4b5",
+      "d4f5",
+      "d4c6",
+      "d4e6",
+      "f6e4",
+      "f6g4",
+      "f6d5",
+      "f6h5",
+      "f6d7",
+      "f6g8",
+      "g7h6",
+      "g7f8",
+      "a8b8",
+      "a8c8",
+      "d8d7",
+      "d8b8",
+      "d8c8",
+      "e8d7",
+      "e8f8",
+      "h8f8",
+      "h8g8",
+      "e8g8",
+      "d6d5",
+      "g6g5",
+      "a7a6",
+      "a7a5",
+      "b7b6",
+      "b7b5",
+      "c7c6",
+      "c7c5",
+      "e7e6",
+      "e7e5",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_loss"
+    ],
+    "arms": {
+      "original": {
+        "move": "d4e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.1868670000003476,
+        "search": {
+          "nodes": 103463.0,
+          "iters": 940.0,
+          "p": 0.25,
+          "v": 0.229,
+          "clock": 129.5
+        }
+      },
+      "learned": {
+        "move": "c7c5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 784.0,
+          "constrained": 784.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.3982809,
+          "calls": 784.0,
+          "reuses": 480.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.026135917,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.1961569669983874,
+        "search": {
+          "nodes": 91861.0,
+          "iters": 810.0,
+          "p": 0.42,
+          "v": 0.362,
+          "clock": 129.5
+        }
+      },
+      "off": {
+        "move": "c7c5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 797.0,
+          "constrained": 797.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.41018717,
+          "calls": 797.0,
+          "reuses": 483.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.026475922,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.1734501749997435,
+        "search": {
+          "nodes": 93065.0,
+          "iters": 820.0,
+          "p": 0.42,
+          "v": 0.362,
+          "clock": 129.5
+        }
+      },
+      "projected": {
+        "move": "d4e6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 792.0,
+          "constrained": 792.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.43421231,
+          "calls": 792.0,
+          "reuses": 516.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.027399251,
+          "load_failed": 0.0,
+          "projected_sets": 85.0,
+          "projected_actions": 1636.0,
+          "dominated_mass": 6.43280053,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.1840531559973897,
+        "search": {
+          "nodes": 97138.0,
+          "iters": 860.0,
+          "p": 0.39,
+          "v": 0.36,
+          "clock": 129.5
+        }
+      }
+    }
+  },
+  {
+    "name": "937dbqbv-33",
+    "game": "937dbqbv",
+    "ply": 33,
+    "opponent": "HYPOTHERMIA",
+    "safe_moves": [
+      "b6a4",
+      "b6c4",
+      "b6d5",
+      "b6d7",
+      "b6c8",
+      "g7c3",
+      "g7d4",
+      "g7e5",
+      "g7f6",
+      "g7h6",
+      "g7h8",
+      "a8a2",
+      "a8a3",
+      "a8a4",
+      "a8a5",
+      "a8a6",
+      "a8a7",
+      "b8a7",
+      "b8b7",
+      "b8c8",
+      "b8d8",
+      "b8e8",
+      "f8c8",
+      "f8d8",
+      "f8e8",
+      "g8h8",
+      "c6c5",
+      "d6d5",
+      "g6g5",
+      "e7e6",
+      "e7e5",
+      "f7f6",
+      "f7f5",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "capture_unseen",
+      "victim_walked_in",
+      "long_strike",
+      "fog_route",
+      "forcing_chain",
+      "vision_gain"
+    ],
+    "arms": {
+      "original": {
+        "move": "g7c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.448851624001691,
+        "search": {
+          "nodes": 91882.0,
+          "iters": 830.0,
+          "p": 1.0,
+          "v": 0.106,
+          "clock": 90.8
+        }
+      },
+      "learned": {
+        "move": "g7c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 819.0,
+          "constrained": 819.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.94089854,
+          "calls": 819.0,
+          "reuses": 335.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024258198,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.214129067000613,
+        "search": {
+          "nodes": 85061.0,
+          "iters": 750.0,
+          "p": 1.0,
+          "v": 0.263,
+          "clock": 90.8
+        }
+      },
+      "off": {
+        "move": "g7c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 819.0,
+          "constrained": 819.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.94089854,
+          "calls": 819.0,
+          "reuses": 335.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024440846,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.221846020001976,
+        "search": {
+          "nodes": 85061.0,
+          "iters": 750.0,
+          "p": 1.0,
+          "v": 0.263,
+          "clock": 90.8
+        }
+      },
+      "projected": {
+        "move": "g7c3",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 771.0,
+          "constrained": 771.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.91760053,
+          "calls": 771.0,
+          "reuses": 322.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.024824968,
+          "load_failed": 0.0,
+          "projected_sets": 15.0,
+          "projected_actions": 105.0,
+          "dominated_mass": 1.65970771,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.2227199739973,
+        "search": {
+          "nodes": 81725.0,
+          "iters": 720.0,
+          "p": 1.0,
+          "v": 0.26,
+          "clock": 90.8
+        }
+      }
+    }
+  },
+  {
+    "name": "937dbqbv-39",
+    "game": "937dbqbv",
+    "ply": 39,
+    "opponent": "HYPOTHERMIA",
+    "safe_moves": [
+      "a2a1",
+      "a2b2",
+      "a2c2",
+      "a2a3",
+      "a2a4",
+      "a2a5",
+      "a2a6",
+      "a2a7",
+      "a2a8",
+      "d7c5",
+      "d7e5",
+      "d7b6",
+      "d7f6",
+      "b8b3",
+      "b8b4",
+      "b8b5",
+      "b8b6",
+      "b8a7",
+      "b8b7",
+      "b8a8",
+      "b8c8",
+      "b8d8",
+      "b8e8",
+      "f8c8",
+      "f8d8",
+      "f8e8",
+      "c6c5",
+      "d6d5",
+      "g6g5",
+      "g6f5",
+      "e7e6",
+      "e7e5",
+      "f7f6"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_loss"
+    ],
+    "arms": {
+      "original": {
+        "move": "b8e8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 2,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "h6f8",
+          "best_response": "d7f8"
+        },
+        "coverage": null,
+        "elapsed": 4.242148555997119,
+        "search": {
+          "nodes": 79710.0,
+          "iters": 970.0,
+          "p": 0.55,
+          "v": -0.178,
+          "clock": 80.1
+        }
+      },
+      "learned": {
+        "move": "b8b6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 578.0,
+          "constrained": 578.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.21280316,
+          "calls": 578.0,
+          "reuses": 357.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.019223617,
+          "load_failed": 0.0
+        },
+        "elapsed": 4.2053185860022495,
+        "search": {
+          "nodes": 70067.0,
+          "iters": 1210.0,
+          "p": 0.89,
+          "v": 0.053,
+          "clock": 80.1
+        }
+      },
+      "off": {
+        "move": "b8b6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 589.0,
+          "constrained": 589.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.16313007,
+          "calls": 589.0,
+          "reuses": 365.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.019497099,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.2062847150009475,
+        "search": {
+          "nodes": 72233.0,
+          "iters": 1250.0,
+          "p": 0.84,
+          "v": 0.054,
+          "clock": 80.1
+        }
+      },
+      "projected": {
+        "move": "b8b6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 579.0,
+          "constrained": 579.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.40810549,
+          "calls": 579.0,
+          "reuses": 395.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.020624693,
+          "load_failed": 0.0,
+          "projected_sets": 86.0,
+          "projected_actions": 754.0,
+          "dominated_mass": 3.81524002,
+          "all_proven": 0.0
+        },
+        "elapsed": 4.215764802000194,
+        "search": {
+          "nodes": 71677.0,
+          "iters": 1320.0,
+          "p": 1.0,
+          "v": 0.079,
+          "clock": 80.1
+        }
+      }
+    }
+  },
+  {
+    "name": "937dbqbv-41",
+    "game": "937dbqbv",
+    "ply": 41,
+    "opponent": "HYPOTHERMIA",
+    "safe_moves": [],
+    "recorded_move_tags": [
+      "quiet"
+    ],
+    "arms": {
+      "original": {
+        "move": "a2a1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.245565385997907,
+        "search": {
+          "nodes": 113.0,
+          "iters": 1735780.0,
+          "p": 0.04,
+          "v": -2.0,
+          "clock": 77.2
+        }
+      },
+      "learned": {
+        "move": "a2a1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.2298868439975195,
+        "search": {
+          "nodes": 113.0,
+          "iters": 1920230.0,
+          "p": 0.04,
+          "v": -2.0,
+          "clock": 77.2
+        }
+      },
+      "off": {
+        "move": "a2a1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.6149205260007875,
+        "search": {
+          "nodes": 113.0,
+          "iters": 1820900.0,
+          "p": 0.04,
+          "v": -2.0,
+          "clock": 77.2
+        }
+      },
+      "projected": {
+        "move": "a2a1",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 4.293082527998195,
+        "search": {
+          "nodes": 113.0,
+          "iters": 1886350.0,
+          "p": 0.04,
+          "v": -2.0,
+          "clock": 77.2
+        }
+      }
+    }
+  },
+  {
+    "name": "3u2mwxea-17",
+    "game": "3u2mwxea",
+    "ply": 17,
+    "opponent": "Crimson Fog",
+    "safe_moves": [
+      "g4f2",
+      "g4h2",
+      "g4e3",
+      "g4e5",
+      "g4f6",
+      "g4h6",
+      "g7e5",
+      "g7f6",
+      "g7h6",
+      "g7f8",
+      "b8a6",
+      "b8d7",
+      "c8f5",
+      "c8e6",
+      "c8d7",
+      "e8f8",
+      "h8f8",
+      "h8g8",
+      "e8g8",
+      "c6c5",
+      "g6g5",
+      "a7a6",
+      "a7a5",
+      "b7b6",
+      "b7b5",
+      "e7e6",
+      "f7f6",
+      "f7f5",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_loss"
+    ],
+    "arms": {
+      "original": {
+        "move": "g4h6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 2.8023426510007994,
+        "search": {
+          "nodes": 90596.0,
+          "iters": 940.0,
+          "p": 1.0,
+          "v": -0.259,
+          "clock": 131.3
+        }
+      },
+      "learned": {
+        "move": "g4h6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 872.0,
+          "constrained": 872.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.89342563,
+          "calls": 872.0,
+          "reuses": 347.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.031869376,
+          "load_failed": 0.0
+        },
+        "elapsed": 2.8066094899986638,
+        "search": {
+          "nodes": 81750.0,
+          "iters": 830.0,
+          "p": 1.0,
+          "v": -0.119,
+          "clock": 131.3
+        }
+      },
+      "off": {
+        "move": "g4h6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 872.0,
+          "constrained": 872.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.89342563,
+          "calls": 872.0,
+          "reuses": 347.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.031795757,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.807504505999532,
+        "search": {
+          "nodes": 81750.0,
+          "iters": 830.0,
+          "p": 1.0,
+          "v": -0.119,
+          "clock": 131.3
+        }
+      },
+      "projected": {
+        "move": "g4h6",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 858.0,
+          "constrained": 858.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.95949223,
+          "calls": 858.0,
+          "reuses": 349.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.031877401,
+          "load_failed": 0.0,
+          "projected_sets": 55.0,
+          "projected_actions": 147.0,
+          "dominated_mass": 1.09143706,
+          "all_proven": 0.0
+        },
+        "elapsed": 2.8227432260027854,
+        "search": {
+          "nodes": 80625.0,
+          "iters": 820.0,
+          "p": 1.0,
+          "v": -0.135,
+          "clock": 131.3
+        }
+      }
+    }
+  },
+  {
+    "name": "3u2mwxea-33",
+    "game": "3u2mwxea",
+    "ply": 33,
+    "opponent": "Crimson Fog",
+    "safe_moves": [
+      "c8d8",
+      "h8d8"
+    ],
+    "recorded_move_tags": [
+      "capture",
+      "victim_walked_in",
+      "long_strike",
+      "forcing_chain",
+      "vision_gain"
+    ],
+    "arms": {
+      "original": {
+        "move": "h8d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.6770021060001454,
+        "search": {
+          "nodes": 99628.0,
+          "iters": 1010.0,
+          "p": 0.94,
+          "v": 0.278,
+          "clock": 93.4
+        }
+      },
+      "learned": {
+        "move": "h8d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 887.0,
+          "constrained": 887.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.03212582,
+          "calls": 887.0,
+          "reuses": 294.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.02579805,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.65499824699873,
+        "search": {
+          "nodes": 90067.0,
+          "iters": 890.0,
+          "p": 1.0,
+          "v": 0.425,
+          "clock": 93.4
+        }
+      },
+      "off": {
+        "move": "h8d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 887.0,
+          "constrained": 887.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.03212582,
+          "calls": 887.0,
+          "reuses": 294.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.025752008,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.6579495599980874,
+        "search": {
+          "nodes": 90067.0,
+          "iters": 890.0,
+          "p": 1.0,
+          "v": 0.425,
+          "clock": 93.4
+        }
+      },
+      "projected": {
+        "move": "h8d8",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 930.0,
+          "constrained": 930.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.01188635,
+          "calls": 930.0,
+          "reuses": 281.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028857248,
+          "load_failed": 0.0,
+          "projected_sets": 81.0,
+          "projected_actions": 368.0,
+          "dominated_mass": 2.25419276,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.6592200380000577,
+        "search": {
+          "nodes": 90254.0,
+          "iters": 900.0,
+          "p": 1.0,
+          "v": 0.43,
+          "clock": 93.4
+        }
+      }
+    }
+  },
+  {
+    "name": "3u2mwxea-49",
+    "game": "3u2mwxea",
+    "ply": 49,
+    "opponent": "Crimson Fog",
+    "safe_moves": [
+      "h1g1",
+      "h1h2",
+      "h1h3",
+      "h1h4",
+      "h1h5",
+      "h1h6",
+      "c7b5",
+      "c7d5",
+      "c7a6",
+      "c7e6",
+      "c7a8",
+      "c7e8",
+      "c8d7",
+      "c8b8",
+      "c8d8",
+      "c6c5",
+      "a7a6",
+      "a7a5",
+      "b7b6",
+      "b7b5",
+      "h7h6",
+      "h7h5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "back_rank_bare"
+    ],
+    "arms": {
+      "original": {
+        "move": "h7h5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 3.6732806460022402,
+        "search": {
+          "nodes": 106928.0,
+          "iters": 1540.0,
+          "p": 0.6,
+          "v": -0.875,
+          "clock": 69.9
+        }
+      },
+      "learned": {
+        "move": "c7d5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1140.0,
+          "constrained": 1140.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.004283,
+          "calls": 1140.0,
+          "reuses": 380.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028985729,
+          "load_failed": 0.0
+        },
+        "elapsed": 3.690421882998635,
+        "search": {
+          "nodes": 89392.0,
+          "iters": 1560.0,
+          "p": 1.0,
+          "v": -0.585,
+          "clock": 69.9
+        }
+      },
+      "off": {
+        "move": "c7d5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1088.0,
+          "constrained": 1088.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.02928298,
+          "calls": 1088.0,
+          "reuses": 368.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.028546162,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.665994880000653,
+        "search": {
+          "nodes": 85689.0,
+          "iters": 1490.0,
+          "p": 1.0,
+          "v": -0.586,
+          "clock": 69.9
+        }
+      },
+      "projected": {
+        "move": "c7d5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 0,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1093.0,
+          "constrained": 1093.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.96569857,
+          "calls": 1093.0,
+          "reuses": 373.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.030243771,
+          "load_failed": 0.0,
+          "projected_sets": 310.0,
+          "projected_actions": 2437.0,
+          "dominated_mass": 26.5251953,
+          "all_proven": 0.0
+        },
+        "elapsed": 3.662735160000011,
+        "search": {
+          "nodes": 87495.0,
+          "iters": 1490.0,
+          "p": 1.0,
+          "v": -0.596,
+          "clock": 69.9
+        }
+      }
+    }
+  },
+  {
+    "name": "3u2mwxea-89",
+    "game": "3u2mwxea",
+    "ply": 89,
+    "opponent": "Crimson Fog",
+    "safe_moves": [
+      "b6b5"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_gain"
+    ],
+    "arms": {
+      "original": {
+        "move": "b6b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "a4b5",
+          "best_response": "a6b6"
+        },
+        "coverage": null,
+        "elapsed": 5.753367353001522,
+        "search": {
+          "nodes": 82869.0,
+          "iters": 2340.0,
+          "p": 1.0,
+          "v": -0.99,
+          "clock": 33.7
+        }
+      },
+      "learned": {
+        "move": "b6b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "a4b5",
+          "best_response": "a6b6"
+        },
+        "coverage": {
+          "opponent_sets": 1681.0,
+          "constrained": 1681.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.08015339,
+          "calls": 1681.0,
+          "reuses": 203.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.041932436,
+          "load_failed": 0.0
+        },
+        "elapsed": 5.58660808499917,
+        "search": {
+          "nodes": 71287.0,
+          "iters": 1570.0,
+          "p": 1.0,
+          "v": -0.973,
+          "clock": 33.7
+        }
+      },
+      "off": {
+        "move": "b6b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "a4b5",
+          "best_response": "a6b6"
+        },
+        "coverage": {
+          "opponent_sets": 1643.0,
+          "constrained": 1643.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 2.08263662,
+          "calls": 1643.0,
+          "reuses": 196.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.042897836,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.662235907999275,
+        "search": {
+          "nodes": 69373.0,
+          "iters": 1520.0,
+          "p": 1.0,
+          "v": -0.973,
+          "clock": 33.7
+        }
+      },
+      "projected": {
+        "move": "b6b5",
+        "label": {
+          "legal": true,
+          "fatal": false,
+          "terminal": null,
+          "exchange_loss": 1,
+          "queen_exchange_loss": 0,
+          "forced_king_loss_after_capture": false,
+          "worst_capture": "a4b5",
+          "best_response": "a6b6"
+        },
+        "coverage": {
+          "opponent_sets": 1409.0,
+          "constrained": 1409.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.98161213,
+          "calls": 1409.0,
+          "reuses": 151.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.046857633,
+          "load_failed": 0.0,
+          "projected_sets": 114.0,
+          "projected_actions": 690.0,
+          "dominated_mass": 20.7864969,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.678020589999505,
+        "search": {
+          "nodes": 58650.0,
+          "iters": 1290.0,
+          "p": 1.0,
+          "v": -0.98,
+          "clock": 33.7
+        }
+      }
+    }
+  },
+  {
+    "name": "3u2mwxea-91",
+    "game": "3u2mwxea",
+    "ply": 91,
+    "opponent": "Crimson Fog",
+    "safe_moves": [
+      "a6b6"
+    ],
+    "recorded_move_tags": [
+      "quiet",
+      "vision_gain",
+      "king_move"
+    ],
+    "arms": {
+      "original": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": null,
+        "elapsed": 5.6558118679968175,
+        "search": {
+          "nodes": 76145.0,
+          "iters": 3070.0,
+          "p": 1.0,
+          "v": -0.997,
+          "clock": 32.6
+        }
+      },
+      "learned": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1340.0,
+          "constrained": 1340.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.66389755,
+          "calls": 1340.0,
+          "reuses": 875.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.032030282,
+          "load_failed": 0.0
+        },
+        "elapsed": 5.623699005001981,
+        "search": {
+          "nodes": 75084.0,
+          "iters": 1900.0,
+          "p": 1.0,
+          "v": -0.984,
+          "clock": 32.6
+        }
+      },
+      "off": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1329.0,
+          "constrained": 1329.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.64578511,
+          "calls": 1329.0,
+          "reuses": 861.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.033273177,
+          "load_failed": 0.0,
+          "projected_sets": 0.0,
+          "projected_actions": 0.0,
+          "dominated_mass": 0.0,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.631755186001101,
+        "search": {
+          "nodes": 74191.0,
+          "iters": 1870.0,
+          "p": 1.0,
+          "v": -0.984,
+          "clock": 32.6
+        }
+      },
+      "projected": {
+        "move": "a6b7",
+        "label": {
+          "legal": true,
+          "fatal": true,
+          "terminal": [
+            "1-0",
+            "King capturable"
+          ],
+          "exchange_loss": null,
+          "queen_exchange_loss": null,
+          "forced_king_loss_after_capture": false
+        },
+        "coverage": {
+          "opponent_sets": 1336.0,
+          "constrained": 1336.0,
+          "first_reply_coverage": 1.0,
+          "first_reply_confidence": 0.25,
+          "expected_model_visits": 1.59834713,
+          "calls": 1336.0,
+          "reuses": 827.0,
+          "failures": 0.0,
+          "mismatches": 0.0,
+          "seconds": 0.034173101,
+          "load_failed": 0.0,
+          "projected_sets": 7.0,
+          "projected_actions": 24.0,
+          "dominated_mass": 0.931975206,
+          "all_proven": 0.0
+        },
+        "elapsed": 5.761471885998617,
+        "search": {
+          "nodes": 73538.0,
+          "iters": 1890.0,
+          "p": 1.0,
+          "v": -0.985,
+          "clock": 32.6
+        }
+      }
+    }
+  }
+]

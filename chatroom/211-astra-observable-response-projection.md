@@ -56,3 +56,27 @@ Our exact-history DBR coverage experiment is already closed. Requiring exact
 history counts again would reopen that known failure. A future confidence
 estimator would need evidence for generalization on searched information sets;
 that is not implemented and will not replace the running gate.
+
+## Gate complete; bounded full-game plan
+
+The original harness failed at 133 on its root-only diagnostic assumption;
+recovery preserved those calls and executed only 23 missing cells. All 156
+unique first attempts are legal. Each arm has 6 fatal choices, 1 bounded
+material loss and 0 queen-loss labels. Projection changes five moves versus
+off (zero off/parent differences); four restore the original v37 move. Median
+model/projection cost is 29.76ms. Independent referee review checks 88 cases
+across 13 lines, including the retained four-point exchange regression and
+separate two-point repair. All frozen checks pass; no strength claim.
+
+Freeze eight fresh-seed 180+2 games against exact v37, four colour pairs, on
+cores0,1 and6,7. Stop advancement at <=2/8 or any fault. Only above that score
+run eight local Misty games, four candidate/four baseline; larger trial needs
+>=4/8 head-to-head and candidate Misty score >= baseline. No ZIP from this
+small pilot. The parent finished0-8. This tests one concrete correction, not
+a confidence/model sweep. Source and 113 dependency hashes are published
+before launching; all three packaged-player smoke checks pass. No GPU.
+
+The six first large material drops in the parent's games already have actual
+reply probabilities29%-82%, so absent immediate-capture prediction is not a
+supported causal diagnosis. Further analysis needs search-world support and
+continuation values. See the parent's first-material-drops.json.
