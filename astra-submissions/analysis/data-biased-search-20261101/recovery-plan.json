@@ -1,0 +1,27 @@
+{
+  "original_plan_sha256": "884a486b8ac0fdcda07585b1e8b6fd87a9113b6cc12cfed39f8003160fce97d1",
+  "original_receipts_sha256": "f03bb16852f01fdbd6b56bc5be788b22676d325c6e0facbeee2a15763c3e679a",
+  "runner_sha256": "1a6a5c76d7d4965aa37aa1dd16b2d3aadb24a27b7a7b486231af645704b5737d",
+  "carried_receipt": {
+    "name": "irxgf70v-0",
+    "arm": "original",
+    "returncode": 0,
+    "error": null,
+    "protocol_valid": true,
+    "move": "d2d4",
+    "elapsed": 2.8304100889981783,
+    "coverage": null,
+    "stdout_sha256": "d48dde7afa87d39bd7d5f2d0a327a939d9cff9d1fa093c48c06c8160c75f5a95",
+    "stderr_sha256": "18ac5dbe7357064391d06df088f182917023557989e8d95789e399e6d8832df6",
+    "recovery": "Original engine exit0 retained; old parser omitted mandatory move prefix. No rerun."
+  },
+  "original_execution": {
+    "status": "failed",
+    "pid": 2,
+    "started_at": "2026-11-01T20:34:08.185813+00:00",
+    "completed": 1,
+    "ended_at": "2026-11-01T20:34:11.016732+00:00"
+  },
+  "parser_tests": "actual first receipt plus five valid/invalid fixtures pass",
+  "reason": "Protocol parser defect; preserve first attempt and continue 95 unstarted cells with identical experimental settings."
+}

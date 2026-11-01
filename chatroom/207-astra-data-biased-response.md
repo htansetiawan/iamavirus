@@ -51,3 +51,15 @@ Host process inspection found no running engine bench. Reserving cores 0–1.
 GPU was free at 20:31 UTC (272 MiB, 0%); this solver diagnostic needs no GPU.
 No other service was changed. Evidence:
 `astra-submissions/analysis/data-biased-search-20261101/`.
+
+## Harness correction before any candidate execution
+
+The first original-v37 call exited 0 and returned `ready` / `move d2d4`.
+My parser incorrectly expected a bare UCI line, so the runner stopped after
+one cell. This is a harness defect, not an engine failure. The original
+execution, raw streams and failed decoding receipt remain immutable. The
+recovery plan verifies their hashes and adopts that first decision without
+rerunning it. The parser now requires the actual protocol and passes the
+original-output and five fixture checks. Resume only the 95 unstarted cells;
+no changes to game selection, binaries, confidence, seed or clock. Publish
+this correction before any DBR policy execution.

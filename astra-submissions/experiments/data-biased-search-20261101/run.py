@@ -30,6 +30,17 @@ def sha(data): return hashlib.sha256(data).hexdigest()
 def dump(path, value): path.write_text(json.dumps(value, indent=2, allow_nan=False)+'\n')
 
 
+def parse_moves(stdout):
+    lines = stdout.splitlines()
+    if not lines or lines[0] != 'ready': return None
+    moves = []
+    for line in lines[1:]:
+        match = re.fullmatch(r'move ([a-h][1-8][a-h][1-8][qrbn]?)', line)
+        if not match: return None
+        moves.append(match[1])
+    return moves
+
+
 def freeze():
     OUT.mkdir(exist_ok=True)
     assert not (OUT/'plan.json').exists()
@@ -86,22 +97,57 @@ def freeze():
     print(json.dumps(dict(games=games, decisions=len(cases)), indent=2))
 
 
+def recover():
+    """Retain the one completed engine call; fix only its protocol decoding."""
+    plan = json.loads((OUT/'plan.json').read_text())
+    old = subprocess.check_output(['git', 'show', '588246b:astra-submissions/experiments/data-biased-search-20261101/run.py'])
+    assert sha(old) == plan['runner_sha256']
+    initial = list(map(json.loads, (OUT/'receipts.jsonl').read_text().splitlines()))
+    assert len(initial) == 1
+    row = dict(initial[0]); case = plan['cases'][0]
+    assert row['name'] == case['name'] and row['arm'] == 'original' and row['returncode'] == 0 and row['error'] is None
+    streams = {}
+    for stream in ['stdout', 'stderr']:
+        raw = (OUT/(row['name']+'-original.'+stream)).read_bytes()
+        assert sha(raw) == row[stream+'_sha256']; streams[stream] = raw.decode()
+    moves = parse_moves(streams['stdout'])
+    assert moves is not None and len(moves) == len(case['forced'])+1 and moves[:-1] == case['forced']
+    row.update(protocol_valid=True, move=moves[-1], recovery='Original engine exit0 retained; old parser omitted mandatory move prefix. No rerun.')
+    assert parse_moves('ready\nmove e2e4\nmove e7e8q\n') == ['e2e4', 'e7e8q']
+    for invalid in ['e2e4\n', 'ready\ne2e4\n', 'ready\nmove e7e8k\n', 'ready\nmove i2i4\n']:
+        assert parse_moves(invalid) is None
+    recovery = dict(original_plan_sha256=sha((OUT/'plan.json').read_bytes()),
+                    original_receipts_sha256=sha((OUT/'receipts.jsonl').read_bytes()),
+                    runner_sha256=sha(Path(__file__).read_bytes()), carried_receipt=row,
+                    original_execution=json.loads((OUT/'execution.json').read_text()),
+                    parser_tests='actual first receipt plus five valid/invalid fixtures pass',
+                    reason='Protocol parser defect; preserve first attempt and continue 95 unstarted cells with identical experimental settings.')
+    with (OUT/'recovery-plan.json').open('x') as f: json.dump(recovery, f, indent=2)
+    print(json.dumps(recovery, indent=2))
+
+
 def run():
     plan = json.loads((OUT/'plan.json').read_text())
-    assert sha(Path(__file__).read_bytes()) == plan['runner_sha256']
+    recovery = json.loads((OUT/'recovery-plan.json').read_text())
+    assert sha(Path(__file__).read_bytes()) == recovery['runner_sha256']
+    assert sha((OUT/'plan.json').read_bytes()) == recovery['original_plan_sha256']
+    assert sha((OUT/'receipts.jsonl').read_bytes()) == recovery['original_receipts_sha256']
     for arm, binary in plan['binaries'].items():
         assert sha(Path(binary).read_bytes()) == plan['binary_sha256'][arm]
     assert sha((BASE/'data/history.bin').read_bytes()) == plan['pins']['history_sha256']
     assert sha((BASE/'bin/stockfish').read_bytes()) == plan['pins']['stockfish_sha256']
-    state = dict(status='running', pid=os.getpid(), started_at=datetime.now(timezone.utc).isoformat(), completed=0)
-    with (OUT/'execution.json').open('x') as f: json.dump(state, f, indent=2)
+    state = dict(status='running', pid=os.getpid(), started_at=datetime.now(timezone.utc).isoformat(), completed=1, carried_first_cell=True)
+    execution = OUT/'execution-recovered.json'
+    with execution.open('x') as f: json.dump(state, f, indent=2)
     try:
-        with (OUT/'receipts.jsonl').open('x') as sink:
+        with (OUT/'receipts-recovered.jsonl').open('x') as sink:
+            sink.write(json.dumps(recovery['carried_receipt'])+'\n'); sink.flush()
             for number, case in enumerate(plan['cases']):
                 feed = (OUT/(case['name']+'.input.txt')).read_text()
                 assert sha(feed.encode()) == case['input_sha256']
                 order = ARMS[number % 3:]+ARMS[:number % 3]
                 for arm in order:
+                    if (case['name'], arm) == (recovery['carried_receipt']['name'], recovery['carried_receipt']['arm']): continue
                     env = {k:v for k,v in os.environ.items() if not k.startswith(('MIST_', 'FOW_', 'ASTRA_'))}
                     env.update(MIST_FORCE_MOVES=','.join(case['forced']), MIST_MAX_SECONDS=str(plan['seconds']),
                                FOW_SEED=str(plan['seed']), MIST_STOCKFISH=str(BASE/'bin/stockfish'),
@@ -115,9 +161,10 @@ def run():
                     except subprocess.TimeoutExpired:
                         kill_tree(proc.pid); stdout, stderr = proc.communicate(); error = '75s diagnostic timeout'
                     name = case['name']+'-'+arm
+                    assert not (OUT/(name+'.stdout')).exists() and not (OUT/(name+'.stderr')).exists()
                     (OUT/(name+'.stdout')).write_text(stdout); (OUT/(name+'.stderr')).write_text(stderr)
-                    moves = re.findall(r'^([a-h][1-8][a-h][1-8][qrbn]?)$', stdout, re.M)
-                    valid = proc.returncode == 0 and len(moves) == len(case['forced'])+1 and moves[:-1] == case['forced']
+                    moves = parse_moves(stdout)
+                    valid = proc.returncode == 0 and moves is not None and len(moves) == len(case['forced'])+1 and moves[:-1] == case['forced']
                     matches = re.findall(r'astra_dbr: opponent_sets (\d+) constrained (\d+) first_reply_coverage ([\deE+.-]+) first_reply_confidence ([\deE+.-]+) expected_model_visits ([\deE+.-]+)', stderr)
                     coverage = dict(zip(['opponent_sets', 'constrained', 'first_reply_coverage', 'first_reply_confidence', 'expected_model_visits'],
                                         map(float, matches[-1]))) if matches else None
@@ -125,19 +172,20 @@ def run():
                                move=moves[-1] if valid else None, elapsed=time.monotonic()-start, coverage=coverage,
                                stdout_sha256=sha(stdout.encode()), stderr_sha256=sha(stderr.encode()))
                     sink.write(json.dumps(row)+'\n'); sink.flush()
-                    state['completed'] += 1; dump(OUT/'execution.json', state)
+                    state['completed'] += 1; dump(execution, state)
                     print(state['completed'], len(plan['cases'])*3, name, row['move'], round(row['elapsed'], 2), coverage, flush=True)
                     if not valid: raise RuntimeError(row)
         state['status'] = 'complete'
     except BaseException:
         state['status'] = 'failed'; raise
     finally:
-        state['ended_at'] = datetime.now(timezone.utc).isoformat(); dump(OUT/'execution.json', state)
+        state['ended_at'] = datetime.now(timezone.utc).isoformat(); dump(execution, state)
 
 
 def summarize():
     plan = json.loads((OUT/'plan.json').read_text())
-    receipts = list(map(json.loads, (OUT/'receipts.jsonl').read_text().splitlines()))
+    assert json.loads((OUT/'execution-recovered.json').read_text())['status'] == 'complete'
+    receipts = list(map(json.loads, (OUT/'receipts-recovered.jsonl').read_text().splitlines()))
     assert len(receipts) == 3*len(plan['cases'])
     keyed = {(r['name'], r['arm']): r for r in receipts}; assert len(keyed) == len(receipts)
     labelled = []; cache = {}
@@ -180,5 +228,5 @@ def summarize():
 
 
 if __name__ == '__main__':
-    p = argparse.ArgumentParser(description=__doc__); p.add_argument('command', choices=['freeze', 'run', 'summarize'])
+    p = argparse.ArgumentParser(description=__doc__); p.add_argument('command', choices=['freeze', 'recover', 'run', 'summarize'])
     globals()[p.parse_args().command]()
