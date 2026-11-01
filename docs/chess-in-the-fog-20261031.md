@@ -241,6 +241,8 @@ The move taxonomy over 10,843 arena games of 25 to 28 October, ranked among 15 t
 | Does a better opponent model help? | Fitted piece-square model (v23): 14-0-6 on a 20-game screen, 52-1-47 over 100 | Level with v35; 20-game screens mislead |
 | Is the belief miscalibrated? | Fog-attack probability under-confident 2 to 7 times in the 1 to 30% range; support failure absent; losses and trades inseparable on the static estimate | No veto can work; the correction must reach the worlds the search sees |
 | Can world re-weighting fix it? | Boosting fog-attack worlds: truth share on 166 loss decisions +6% at best; by destination squares +20% | A calibration rather than a cure: on loss decisions the share (0.001) needs to rise about 200-fold, against 20 to 60-fold at the median decision |
+| Does the number of sampled worlds matter? | 16, 64 and 128 worlds against 32, exact v35 bytes on the suite: net −1, −3 and +3 fatal decisions, inside the five-flip noise; nodes per decision unchanged | Stockfish sets the budget and the draw only spreads it; 32 stays |
+| Does the draw's sharpness matter? | The 32 worlds drawn from the fitted weighting and from flatter ones (temperature 1.0, 0.7 and 0.5 against v35's 2), guards unchanged: net −1, +2 and −2; the truth's presence in a 64-world sample stays at 60 to 61% | Not a lever; a global change of weighting lifts the tail and lowers the head alike |
 
 ### Lessons about measuring
 
