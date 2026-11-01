@@ -1,82 +1,28 @@
 {
-  "generated": "2026-10-31T22:00:17.561785+00:00",
+  "generated": "2026-11-01T11:49:42.163069+00:00",
   "active_version_from_snapshot": 35,
-  "source_report": "data/reports/daily/2026-10-31.json",
-  "source_report_generated": "2026-10-31T12:17:11",
-  "leaderboard_fetched_at": "2026-10-31T10:10:24.980681+00:00",
-  "corpus_games": 186276,
-  "latest_game_at": "2026-10-31T10:10:19.796802917+00:00",
-  "taxonomy_previous_report": "2026-10-30T12:20:16",
+  "source_report": "data/reports/daily/2026-11-01.json",
+  "source_report_generated": "2026-11-01T11:46:13",
+  "leaderboard_fetched_at": "2026-11-01T10:15:32.740411+00:00",
+  "corpus_games": 190970,
+  "latest_game_at": "2026-11-01T10:15:08.012205522+00:00",
+  "taxonomy_previous_report": "2026-10-31T12:17:11",
   "taxonomy_version_colour_groups": 86,
   "dataset": {
     "path": "/home/henrytan/git/iamavirus/data/manifests/arena-latest.json",
-    "exists": true,
-    "bytes": 26395,
-    "modified_at": "2026-10-31T12:17:05.890000+00:00",
-    "created_at": "2026-10-31T12:17:05.888369+00:00",
-    "counts": {
-      "test": {
-        "color_black": 18595,
-        "color_white": 18595,
-        "decisions": 1293315,
-        "episodes": 37190,
-        "events": 2586726,
-        "games": 18595.0,
-        "outcome_0-1": 8588.0,
-        "outcome_1-0": 9476.0,
-        "outcome_1/2-1/2": 531.0,
-        "termination_crash": 7.0,
-        "termination_illegal": 2.0,
-        "termination_normal": 18547.0,
-        "termination_time": 38.0,
-        "termination_unknown": 1.0
-      },
-      "train": {
-        "color_black": 148862,
-        "color_white": 148862,
-        "decisions": 10321899,
-        "episodes": 297724,
-        "events": 20644624,
-        "games": 148862.0,
-        "outcome_0-1": 68002.0,
-        "outcome_1-0": 76497.0,
-        "outcome_1/2-1/2": 4363.0,
-        "termination_crash": 86.0,
-        "termination_illegal": 10.0,
-        "termination_normal": 148449.0,
-        "termination_time": 314.0,
-        "termination_unknown": 3.0
-      },
-      "validation": {
-        "color_black": 18819,
-        "color_white": 18819,
-        "decisions": 1290207,
-        "episodes": 37638,
-        "events": 2580938,
-        "games": 18819.0,
-        "outcome_0-1": 8626.0,
-        "outcome_1-0": 9635.0,
-        "outcome_1/2-1/2": 558.0,
-        "termination_crash": 213.0,
-        "termination_normal": 18557.0,
-        "termination_time": 48.0,
-        "termination_unknown": 1.0
-      }
-    },
-    "content_sha256": "386d3b65153b8cac8c95597fbf9260ddc269c15ff1441dbe001e27ba5895746d"
+    "exists": false,
+    "error": "[Errno 2] No such file or directory: '/home/henrytan/git/iamavirus/data/manifests/arena-latest.json'"
   },
   "move_exports": [
     {
       "path": "/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-train.txt",
-      "exists": true,
-      "bytes": 31691857,
-      "modified_at": "2026-10-31T11:41:38.410000+00:00"
+      "exists": false,
+      "error": "[Errno 2] No such file or directory: '/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-train.txt'"
     },
     {
       "path": "/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-test.txt",
-      "exists": true,
-      "bytes": 5588224,
-      "modified_at": "2026-10-31T11:41:38.410000+00:00"
+      "exists": false,
+      "error": "[Errno 2] No such file or directory: '/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-test.txt'"
     }
   ],
   "working_model": {
@@ -115,48 +61,1005 @@
   },
   "rolling_loss_index": [
     {
-      "id": "bv0la6ym",
-      "created_at": "2026-10-31T10:09:51.050944229+00:00",
+      "id": "qqzttbee",
+      "created_at": "2026-11-01T10:13:24.481896299+00:00",
+      "opponent": "Knight Vision",
+      "opponent_version": 36,
+      "our_version": 35,
+      "side": "black",
+      "plies": 100,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=qqzttbee"
+    },
+    {
+      "id": "o1mwc9qk",
+      "created_at": "2026-11-01T10:06:36.624507722+00:00",
       "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 77,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=o1mwc9qk"
+    },
+    {
+      "id": "tw4bgl4x",
+      "created_at": "2026-11-01T10:05:21.368621594+00:00",
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 78,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=tw4bgl4x"
+    },
+    {
+      "id": "6s8o5nwd",
+      "created_at": "2026-11-01T09:59:02.382192049+00:00",
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "our_version": 35,
+      "side": "black",
+      "plies": 62,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=6s8o5nwd"
+    },
+    {
+      "id": "wejeypy0",
+      "created_at": "2026-11-01T09:51:03.821198145+00:00",
+      "opponent": "Mist Opportunities",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "black",
+      "plies": 82,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=wejeypy0"
+    },
+    {
+      "id": "5tg2v31k",
+      "created_at": "2026-11-01T09:49:46.297727810+00:00",
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "our_version": 35,
+      "side": "white",
+      "plies": 111,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=5tg2v31k"
+    },
+    {
+      "id": "kj58ovnv",
+      "created_at": "2026-11-01T09:41:00.317109580+00:00",
+      "opponent": "Gravel Road",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 108,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=kj58ovnv"
+    },
+    {
+      "id": "fh5vhk62",
+      "created_at": "2026-11-01T09:39:21.070880740+00:00",
+      "opponent": "Gravel Road",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 55,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=fh5vhk62"
+    },
+    {
+      "id": "dyz2p2hb",
+      "created_at": "2026-11-01T09:26:41.871972467+00:00",
+      "opponent": "Foggy Fischer",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 58,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=dyz2p2hb"
+    },
+    {
+      "id": "wtcylq1d",
+      "created_at": "2026-11-01T09:24:31.862935268+00:00",
+      "opponent": "Crimson Fog",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 63,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=wtcylq1d"
+    },
+    {
+      "id": "uuzgl59z",
+      "created_at": "2026-11-01T09:23:42.093915028+00:00",
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 80,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=uuzgl59z"
+    },
+    {
+      "id": "aya0q0ax",
+      "created_at": "2026-11-01T09:21:20.612296443+00:00",
+      "opponent": "Crimson Fog",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 24,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=aya0q0ax"
+    },
+    {
+      "id": "08ula1jh",
+      "created_at": "2026-11-01T09:11:04.046957565+00:00",
+      "opponent": "TA Baseline S",
+      "opponent_version": 3,
+      "our_version": 35,
+      "side": "black",
+      "plies": 104,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=08ula1jh"
+    },
+    {
+      "id": "f3n19ty1",
+      "created_at": "2026-11-01T09:03:26.744782343+00:00",
+      "opponent": "Farsight",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 59,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=f3n19ty1"
+    },
+    {
+      "id": "xusofggg",
+      "created_at": "2026-11-01T09:03:19.776854921+00:00",
+      "opponent": "Farsight",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 58,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=xusofggg"
+    },
+    {
+      "id": "047wdp5z",
+      "created_at": "2026-11-01T08:48:06.060842282+00:00",
+      "opponent": "Lost Signal",
+      "opponent_version": 19,
+      "our_version": 35,
+      "side": "white",
+      "plies": 201,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=047wdp5z"
+    },
+    {
+      "id": "r82lsby1",
+      "created_at": "2026-11-01T08:20:51.947707439+00:00",
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 81,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=r82lsby1"
+    },
+    {
+      "id": "z5jir9rk",
+      "created_at": "2026-11-01T08:19:54.045224624+00:00",
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 74,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=z5jir9rk"
+    },
+    {
+      "id": "nqq6kiuw",
+      "created_at": "2026-11-01T08:18:45.239468942+00:00",
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "our_version": 35,
+      "side": "black",
+      "plies": 82,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=nqq6kiuw"
+    },
+    {
+      "id": "4zy248z7",
+      "created_at": "2026-11-01T08:18:10.338669766+00:00",
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "our_version": 35,
+      "side": "white",
+      "plies": 67,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=4zy248z7"
+    },
+    {
+      "id": "e23sdz8i",
+      "created_at": "2026-11-01T08:13:33.346273840+00:00",
+      "opponent": "Instructors",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 87,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=e23sdz8i"
+    },
+    {
+      "id": "d28cm7j9",
+      "created_at": "2026-11-01T08:12:11.088712253+00:00",
+      "opponent": "Instructors",
       "opponent_version": 4,
       "our_version": 35,
       "side": "black",
       "plies": 76,
       "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=bv0la6ym"
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=d28cm7j9"
     },
     {
-      "id": "lufzrpzk",
-      "created_at": "2026-10-31T10:07:32.125662423+00:00",
+      "id": "ycydus3y",
+      "created_at": "2026-11-01T08:04:50.638961232+00:00",
       "opponent": "Knight Vision",
       "opponent_version": 36,
       "our_version": 35,
       "side": "black",
-      "plies": 96,
+      "plies": 92,
       "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=lufzrpzk"
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ycydus3y"
     },
     {
-      "id": "mmy3eea0",
-      "created_at": "2026-10-31T10:05:52.777955202+00:00",
+      "id": "spjp96il",
+      "created_at": "2026-11-01T08:04:16.528016003+00:00",
+      "opponent": "Knight Vision",
+      "opponent_version": 36,
+      "our_version": 35,
+      "side": "white",
+      "plies": 79,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=spjp96il"
+    },
+    {
+      "id": "k4n72cyp",
+      "created_at": "2026-11-01T08:01:41.532649265+00:00",
+      "opponent": "Crimson Fog",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 61,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=k4n72cyp"
+    },
+    {
+      "id": "8eilrxox",
+      "created_at": "2026-11-01T08:01:19.175973061+00:00",
+      "opponent": "In Pawn Sight",
+      "opponent_version": 5,
+      "our_version": 35,
+      "side": "white",
+      "plies": 53,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8eilrxox"
+    },
+    {
+      "id": "z50fbxnd",
+      "created_at": "2026-11-01T07:53:11.149618115+00:00",
+      "opponent": "In Pawn Sight",
+      "opponent_version": 5,
+      "our_version": 35,
+      "side": "black",
+      "plies": 60,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=z50fbxnd"
+    },
+    {
+      "id": "jbcq7kqw",
+      "created_at": "2026-11-01T07:02:23.142562206+00:00",
+      "opponent": "Farsight",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 83,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=jbcq7kqw"
+    },
+    {
+      "id": "ejs3iej3",
+      "created_at": "2026-11-01T06:50:37.884379121+00:00",
+      "opponent": "Cranberry Lemon",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 67,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ejs3iej3"
+    },
+    {
+      "id": "6scfs7mm",
+      "created_at": "2026-11-01T06:43:27.965819479+00:00",
+      "opponent": "In Pawn Sight",
+      "opponent_version": 5,
+      "our_version": 35,
+      "side": "white",
+      "plies": 95,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=6scfs7mm"
+    },
+    {
+      "id": "rpicga0c",
+      "created_at": "2026-11-01T06:03:29.452697022+00:00",
+      "opponent": "duck",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 91,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=rpicga0c"
+    },
+    {
+      "id": "mla96vym",
+      "created_at": "2026-11-01T06:02:23.305259582+00:00",
+      "opponent": "duck",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 70,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=mla96vym"
+    },
+    {
+      "id": "di4vhkqr",
+      "created_at": "2026-11-01T05:52:50.386689442+00:00",
+      "opponent": "Crimson Fog",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 90,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=di4vhkqr"
+    },
+    {
+      "id": "l4qt67pp",
+      "created_at": "2026-11-01T05:50:47.539444784+00:00",
+      "opponent": "Crimson Fog",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 65,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=l4qt67pp"
+    },
+    {
+      "id": "8nsjlrkm",
+      "created_at": "2026-11-01T05:31:02.533221442+00:00",
+      "opponent": "Instructors",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 114,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8nsjlrkm"
+    },
+    {
+      "id": "7hzl7iid",
+      "created_at": "2026-11-01T05:29:28.552580656+00:00",
+      "opponent": "Mist Opportunities",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "white",
+      "plies": 89,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=7hzl7iid"
+    },
+    {
+      "id": "6h0pvdzt",
+      "created_at": "2026-11-01T05:20:59.481441688+00:00",
+      "opponent": "Mist Opportunities",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "black",
+      "plies": 160,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=6h0pvdzt"
+    },
+    {
+      "id": "gb6mnbk0",
+      "created_at": "2026-11-01T05:18:55.531962748+00:00",
+      "opponent": "Cranberry Lemon",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 91,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=gb6mnbk0"
+    },
+    {
+      "id": "yv1n3fja",
+      "created_at": "2026-11-01T04:46:02.598034789+00:00",
+      "opponent": "Crimson Fog",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 60,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=yv1n3fja"
+    },
+    {
+      "id": "le9mohoi",
+      "created_at": "2026-11-01T04:43:21.524268931+00:00",
+      "opponent": "Lost Signal",
+      "opponent_version": 19,
+      "our_version": 35,
+      "side": "white",
+      "plies": 103,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=le9mohoi"
+    },
+    {
+      "id": "zildl97b",
+      "created_at": "2026-11-01T04:43:14.672500303+00:00",
+      "opponent": "Foggy Fischer",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 104,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=zildl97b"
+    },
+    {
+      "id": "9rglf9hm",
+      "created_at": "2026-11-01T04:42:12.383396558+00:00",
+      "opponent": "Cranberry Lemon",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 175,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=9rglf9hm"
+    },
+    {
+      "id": "082x3p8h",
+      "created_at": "2026-11-01T04:39:50.239725397+00:00",
+      "opponent": "Cranberry Lemon",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 108,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=082x3p8h"
+    },
+    {
+      "id": "0wj7q9cw",
+      "created_at": "2026-11-01T04:29:24.373346966+00:00",
+      "opponent": "Knight Vision",
+      "opponent_version": 36,
+      "our_version": 35,
+      "side": "black",
+      "plies": 88,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=0wj7q9cw"
+    },
+    {
+      "id": "ridj8qep",
+      "created_at": "2026-11-01T04:26:33.947983634+00:00",
+      "opponent": "RATIRL",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "black",
+      "plies": 178,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ridj8qep"
+    },
+    {
+      "id": "85fisod0",
+      "created_at": "2026-11-01T03:51:39.226412685+00:00",
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "our_version": 35,
+      "side": "black",
+      "plies": 140,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=85fisod0"
+    },
+    {
+      "id": "dqki4236",
+      "created_at": "2026-11-01T03:36:50.431355683+00:00",
+      "opponent": "Mist Opportunities",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "white",
+      "plies": 161,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=dqki4236"
+    },
+    {
+      "id": "fqxhy2rz",
+      "created_at": "2026-11-01T03:36:33.897537255+00:00",
+      "opponent": "duck",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 89,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=fqxhy2rz"
+    },
+    {
+      "id": "zhjr2fp8",
+      "created_at": "2026-11-01T03:34:56.067920503+00:00",
+      "opponent": "duck",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 68,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=zhjr2fp8"
+    },
+    {
+      "id": "tsx53vhm",
+      "created_at": "2026-11-01T03:33:49.139965081+00:00",
+      "opponent": "Mist Opportunities",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "black",
+      "plies": 100,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=tsx53vhm"
+    },
+    {
+      "id": "qk91vmu8",
+      "created_at": "2026-11-01T03:28:51.498361722+00:00",
+      "opponent": "RATIRL",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "black",
+      "plies": 114,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=qk91vmu8"
+    },
+    {
+      "id": "9yij92kf",
+      "created_at": "2026-11-01T03:24:34.996451138+00:00",
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "our_version": 35,
+      "side": "white",
+      "plies": 171,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=9yij92kf"
+    },
+    {
+      "id": "ze9rzvsl",
+      "created_at": "2026-11-01T03:21:48.921843156+00:00",
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "our_version": 35,
+      "side": "black",
+      "plies": 112,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ze9rzvsl"
+    },
+    {
+      "id": "6032nftq",
+      "created_at": "2026-11-01T03:10:02.325473182+00:00",
+      "opponent": "Mist Opportunities",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "white",
+      "plies": 75,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=6032nftq"
+    },
+    {
+      "id": "7i7e1cob",
+      "created_at": "2026-11-01T02:47:38.450352549+00:00",
+      "opponent": "TA Baseline S",
+      "opponent_version": 3,
+      "our_version": 35,
+      "side": "black",
+      "plies": 94,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=7i7e1cob"
+    },
+    {
+      "id": "lnxs2jlb",
+      "created_at": "2026-11-01T02:47:05.267394168+00:00",
+      "opponent": "TA Baseline S",
+      "opponent_version": 3,
+      "our_version": 35,
+      "side": "white",
+      "plies": 83,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=lnxs2jlb"
+    },
+    {
+      "id": "7jfmu7kp",
+      "created_at": "2026-11-01T02:37:14.160716703+00:00",
+      "opponent": "RATIRL",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "black",
+      "plies": 148,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=7jfmu7kp"
+    },
+    {
+      "id": "nkqh9dt7",
+      "created_at": "2026-11-01T02:29:05.678366494+00:00",
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "our_version": 35,
+      "side": "black",
+      "plies": 102,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=nkqh9dt7"
+    },
+    {
+      "id": "uczoi2xj",
+      "created_at": "2026-11-01T01:58:06.534306492+00:00",
+      "opponent": "duck",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 67,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=uczoi2xj"
+    },
+    {
+      "id": "n9ljijjh",
+      "created_at": "2026-11-01T01:56:36.432142410+00:00",
+      "opponent": "duck",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 52,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=n9ljijjh"
+    },
+    {
+      "id": "71a47kt0",
+      "created_at": "2026-11-01T01:30:16.665867733+00:00",
+      "opponent": "Instructors",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 109,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=71a47kt0"
+    },
+    {
+      "id": "znn0mzxk",
+      "created_at": "2026-11-01T01:30:05.576942821+00:00",
+      "opponent": "Farsight",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "white",
+      "plies": 77,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=znn0mzxk"
+    },
+    {
+      "id": "epgdj1rn",
+      "created_at": "2026-11-01T01:27:38.792082617+00:00",
+      "opponent": "Instructors",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 62,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=epgdj1rn"
+    },
+    {
+      "id": "foue5l22",
+      "created_at": "2026-11-01T01:23:04.216478870+00:00",
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "our_version": 35,
+      "side": "white",
+      "plies": 93,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=foue5l22"
+    },
+    {
+      "id": "dtv2a9js",
+      "created_at": "2026-11-01T01:22:47.237535585+00:00",
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "our_version": 35,
+      "side": "black",
+      "plies": 70,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=dtv2a9js"
+    },
+    {
+      "id": "vi6h6ba8",
+      "created_at": "2026-11-01T01:06:58.835267950+00:00",
+      "opponent": "Instructors",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 103,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=vi6h6ba8"
+    },
+    {
+      "id": "692i4klh",
+      "created_at": "2026-11-01T01:01:42.417538038+00:00",
+      "opponent": "Greek Gift",
+      "opponent_version": 25,
+      "our_version": 35,
+      "side": "white",
+      "plies": 69,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=692i4klh"
+    },
+    {
+      "id": "4ox4mfia",
+      "created_at": "2026-11-01T01:00:09.929674527+00:00",
+      "opponent": "Greek Gift",
+      "opponent_version": 25,
+      "our_version": 35,
+      "side": "black",
+      "plies": 50,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=4ox4mfia"
+    },
+    {
+      "id": "807otaeb",
+      "created_at": "2026-11-01T00:26:23.282877813+00:00",
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "our_version": 35,
+      "side": "white",
+      "plies": 143,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=807otaeb"
+    },
+    {
+      "id": "npwc6vwf",
+      "created_at": "2026-11-01T00:19:23.584236381+00:00",
+      "opponent": "Greek Gift",
+      "opponent_version": 25,
+      "our_version": 35,
+      "side": "black",
+      "plies": 82,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=npwc6vwf"
+    },
+    {
+      "id": "8jlhp8xo",
+      "created_at": "2026-11-01T00:16:05.446060130+00:00",
+      "opponent": "Farsight",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 36,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8jlhp8xo"
+    },
+    {
+      "id": "mhkcjhwc",
+      "created_at": "2026-11-01T00:15:48.993011152+00:00",
+      "opponent": "Farsight",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 62,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=mhkcjhwc"
+    },
+    {
+      "id": "p0fi36fr",
+      "created_at": "2026-11-01T00:02:50.858273147+00:00",
+      "opponent": "Greek Gift",
+      "opponent_version": 25,
+      "our_version": 35,
+      "side": "black",
+      "plies": 74,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=p0fi36fr"
+    },
+    {
+      "id": "rupo8wi7",
+      "created_at": "2026-10-31T23:56:57.966863715+00:00",
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 55,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=rupo8wi7"
+    },
+    {
+      "id": "yvzwxx3a",
+      "created_at": "2026-10-31T23:32:05.718687795+00:00",
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "our_version": 35,
+      "side": "white",
+      "plies": 79,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=yvzwxx3a"
+    },
+    {
+      "id": "av6dxosz",
+      "created_at": "2026-10-31T22:46:30.564892477+00:00",
+      "opponent": "Gravel Road",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 65,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=av6dxosz"
+    },
+    {
+      "id": "eae2izys",
+      "created_at": "2026-10-31T20:41:51.964893498+00:00",
       "opponent": "Knight Vision",
       "opponent_version": 36,
       "our_version": 35,
       "side": "white",
       "plies": 71,
       "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=mmy3eea0"
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=eae2izys"
     },
     {
-      "id": "utaykrq4",
-      "created_at": "2026-10-31T09:51:33.143890154+00:00",
-      "opponent": "HYPOTHERMIA",
+      "id": "ie2a8ujh",
+      "created_at": "2026-10-31T20:05:45.848662283+00:00",
+      "opponent": "Foggy Fischer",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 167,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ie2a8ujh"
+    },
+    {
+      "id": "ntpp1kyj",
+      "created_at": "2026-10-31T20:04:44.722603352+00:00",
+      "opponent": "Gravel Road",
       "opponent_version": 4,
       "our_version": 35,
       "side": "black",
-      "plies": 184,
+      "plies": 96,
       "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=utaykrq4"
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ntpp1kyj"
+    },
+    {
+      "id": "8weudvnu",
+      "created_at": "2026-10-31T19:56:13.853106223+00:00",
+      "opponent": "Gravel Road",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 82,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8weudvnu"
+    },
+    {
+      "id": "o1qa25er",
+      "created_at": "2026-10-31T19:23:37.455448798+00:00",
+      "opponent": "Knight Vision",
+      "opponent_version": 36,
+      "our_version": 35,
+      "side": "white",
+      "plies": 91,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=o1qa25er"
+    },
+    {
+      "id": "rongjz7a",
+      "created_at": "2026-10-31T16:31:34.123523543+00:00",
+      "opponent": "Cranberry Lemon",
+      "opponent_version": 5,
+      "our_version": 35,
+      "side": "white",
+      "plies": 79,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=rongjz7a"
+    },
+    {
+      "id": "y7djs4qr",
+      "created_at": "2026-10-31T16:30:51.489096152+00:00",
+      "opponent": "Cranberry Lemon",
+      "opponent_version": 5,
+      "our_version": 35,
+      "side": "black",
+      "plies": 74,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=y7djs4qr"
+    },
+    {
+      "id": "nz9jhkt3",
+      "created_at": "2026-10-31T15:32:49.596066865+00:00",
+      "opponent": "Lost Signal",
+      "opponent_version": 19,
+      "our_version": 35,
+      "side": "white",
+      "plies": 99,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=nz9jhkt3"
+    },
+    {
+      "id": "4j8sls0h",
+      "created_at": "2026-10-31T14:40:32.506442463+00:00",
+      "opponent": "RATIRL",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "white",
+      "plies": 139,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=4j8sls0h"
+    },
+    {
+      "id": "iap34q7p",
+      "created_at": "2026-10-31T14:14:20.934457626+00:00",
+      "opponent": "RATIRL",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "white",
+      "plies": 51,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=iap34q7p"
+    },
+    {
+      "id": "1ug17nhf",
+      "created_at": "2026-10-31T13:54:47.702699716+00:00",
+      "opponent": "Gravel Road",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 103,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=1ug17nhf"
+    },
+    {
+      "id": "36htprks",
+      "created_at": "2026-10-31T13:02:36.470717224+00:00",
+      "opponent": "RATIRL",
+      "opponent_version": 2,
+      "our_version": 35,
+      "side": "white",
+      "plies": 57,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=36htprks"
+    },
+    {
+      "id": "111i3jsv",
+      "created_at": "2026-10-31T12:00:07.454022848+00:00",
+      "opponent": "Foggy Fischer",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "white",
+      "plies": 75,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=111i3jsv"
+    },
+    {
+      "id": "vvkxccyj",
+      "created_at": "2026-10-31T11:59:56.966706776+00:00",
+      "opponent": "Foggy Fischer",
+      "opponent_version": 4,
+      "our_version": 35,
+      "side": "black",
+      "plies": 60,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=vvkxccyj"
+    },
+    {
+      "id": "qc0ysfxw",
+      "created_at": "2026-10-31T10:14:05.222719820+00:00",
+      "opponent": "Mu1tip13 @g3nt$",
+      "opponent_version": 6,
+      "our_version": 35,
+      "side": "black",
+      "plies": 90,
+      "reason": "King capturable",
+      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=qc0ysfxw"
     },
     {
       "id": "5sbun1z9",
@@ -181,61 +1084,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=brl2o62h"
     },
     {
-      "id": "kkrtzcr2",
-      "created_at": "2026-10-31T09:29:48.494202168+00:00",
-      "opponent": "HYPOTHERMIA",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 107,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=kkrtzcr2"
-    },
-    {
-      "id": "p84x4rp8",
-      "created_at": "2026-10-31T09:20:02.298573226+00:00",
-      "opponent": "Strongly Invisible",
-      "opponent_version": 41,
-      "our_version": 35,
-      "side": "black",
-      "plies": 102,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=p84x4rp8"
-    },
-    {
-      "id": "hjti6ona",
-      "created_at": "2026-10-31T09:18:39.541787169+00:00",
-      "opponent": "Strongly Invisible",
-      "opponent_version": 41,
-      "our_version": 35,
-      "side": "white",
-      "plies": 79,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=hjti6ona"
-    },
-    {
-      "id": "88slzkdn",
-      "created_at": "2026-10-31T09:10:48.902435312+00:00",
-      "opponent": "RATIRL",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 45,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=88slzkdn"
-    },
-    {
-      "id": "ra414wp6",
-      "created_at": "2026-10-31T09:07:43.395634703+00:00",
-      "opponent": "duck",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "white",
-      "plies": 73,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ra414wp6"
-    },
-    {
       "id": "lpuva1cf",
       "created_at": "2026-10-31T08:40:52.604817851+00:00",
       "opponent": "Greek Gift",
@@ -245,138 +1093,6 @@
       "plies": 89,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=lpuva1cf"
-    },
-    {
-      "id": "2jh378mw",
-      "created_at": "2026-10-31T08:39:42.008972680+00:00",
-      "opponent": "Greek Gift",
-      "opponent_version": 25,
-      "our_version": 35,
-      "side": "black",
-      "plies": 70,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=2jh378mw"
-    },
-    {
-      "id": "1dkaks9g",
-      "created_at": "2026-10-31T08:28:38.127216157+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 128,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=1dkaks9g"
-    },
-    {
-      "id": "gizvq62p",
-      "created_at": "2026-10-31T08:25:43.383887959+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 67,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=gizvq62p"
-    },
-    {
-      "id": "scaigw21",
-      "created_at": "2026-10-31T08:15:32.189035729+00:00",
-      "opponent": "Decent Chess Bot",
-      "opponent_version": 7,
-      "our_version": 35,
-      "side": "black",
-      "plies": 78,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=scaigw21"
-    },
-    {
-      "id": "fr1gwngl",
-      "created_at": "2026-10-31T08:11:21.515152354+00:00",
-      "opponent": "Lost Signal",
-      "opponent_version": 19,
-      "our_version": 35,
-      "side": "white",
-      "plies": 131,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=fr1gwngl"
-    },
-    {
-      "id": "upeoh1jx",
-      "created_at": "2026-10-31T08:03:09.151368038+00:00",
-      "opponent": "Knight Vision",
-      "opponent_version": 36,
-      "our_version": 35,
-      "side": "black",
-      "plies": 80,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=upeoh1jx"
-    },
-    {
-      "id": "0hyy5zhb",
-      "created_at": "2026-10-31T08:02:43.381079840+00:00",
-      "opponent": "Knight Vision",
-      "opponent_version": 36,
-      "our_version": 35,
-      "side": "white",
-      "plies": 73,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=0hyy5zhb"
-    },
-    {
-      "id": "ehhb2iwy",
-      "created_at": "2026-10-31T07:47:34.688577476+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 54,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ehhb2iwy"
-    },
-    {
-      "id": "8xfn3jxd",
-      "created_at": "2026-10-31T07:46:51.938869993+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 47,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8xfn3jxd"
-    },
-    {
-      "id": "shixq9ei",
-      "created_at": "2026-10-31T07:36:18.327701902+00:00",
-      "opponent": "Knight Vision",
-      "opponent_version": 36,
-      "our_version": 35,
-      "side": "black",
-      "plies": 104,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=shixq9ei"
-    },
-    {
-      "id": "tcrdy8rx",
-      "created_at": "2026-10-31T07:36:16.190375978+00:00",
-      "opponent": "duck",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "white",
-      "plies": 55,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=tcrdy8rx"
-    },
-    {
-      "id": "cc62vtbo",
-      "created_at": "2026-10-31T07:35:35.153557731+00:00",
-      "opponent": "Farsight",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "black",
-      "plies": 124,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=cc62vtbo"
     },
     {
       "id": "0r5lzcc4",
@@ -412,138 +1128,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=o7pecbij"
     },
     {
-      "id": "ofxly6u8",
-      "created_at": "2026-10-31T06:17:12.954964113+00:00",
-      "opponent": "Gravel Road",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 106,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ofxly6u8"
-    },
-    {
-      "id": "2yzwrtaq",
-      "created_at": "2026-10-31T06:11:30.691562301+00:00",
-      "opponent": "Instructors",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 171,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=2yzwrtaq"
-    },
-    {
-      "id": "jcqthyjm",
-      "created_at": "2026-10-31T06:09:15.556320779+00:00",
-      "opponent": "Instructors",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 114,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=jcqthyjm"
-    },
-    {
-      "id": "t9imvp4k",
-      "created_at": "2026-10-31T05:58:40.679074833+00:00",
-      "opponent": "duck",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "black",
-      "plies": 88,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=t9imvp4k"
-    },
-    {
-      "id": "lqkxvqjr",
-      "created_at": "2026-10-31T05:38:52.312655427+00:00",
-      "opponent": "Knight Vision",
-      "opponent_version": 36,
-      "our_version": 35,
-      "side": "white",
-      "plies": 71,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=lqkxvqjr"
-    },
-    {
-      "id": "lmifpuro",
-      "created_at": "2026-10-31T05:35:59.835339226+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 90,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=lmifpuro"
-    },
-    {
-      "id": "gdb7sw47",
-      "created_at": "2026-10-31T05:35:50.678803274+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 93,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=gdb7sw47"
-    },
-    {
-      "id": "d99gb7f5",
-      "created_at": "2026-10-31T05:35:17.734459134+00:00",
-      "opponent": "Lost Signal",
-      "opponent_version": 19,
-      "our_version": 35,
-      "side": "white",
-      "plies": 151,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=d99gb7f5"
-    },
-    {
-      "id": "0dykmiha",
-      "created_at": "2026-10-31T05:25:21.509774907+00:00",
-      "opponent": "Mist Opportunities",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 82,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=0dykmiha"
-    },
-    {
-      "id": "atwek8ua",
-      "created_at": "2026-10-31T05:24:19.492143491+00:00",
-      "opponent": "Mist Opportunities",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 71,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=atwek8ua"
-    },
-    {
-      "id": "5sih0r3d",
-      "created_at": "2026-10-31T05:17:30.616695395+00:00",
-      "opponent": "Decent Chess Bot",
-      "opponent_version": 7,
-      "our_version": 35,
-      "side": "black",
-      "plies": 98,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=5sih0r3d"
-    },
-    {
-      "id": "an7onbqy",
-      "created_at": "2026-10-31T05:15:53.166703676+00:00",
-      "opponent": "Decent Chess Bot",
-      "opponent_version": 7,
-      "our_version": 35,
-      "side": "white",
-      "plies": 67,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=an7onbqy"
-    },
-    {
       "id": "8czyfw5k",
       "created_at": "2026-10-31T05:05:44.181593535+00:00",
       "opponent": "Cranberry Lemon",
@@ -555,39 +1139,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8czyfw5k"
     },
     {
-      "id": "qwarufad",
-      "created_at": "2026-10-31T04:58:18.605761467+00:00",
-      "opponent": "Mist Opportunities",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 50,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=qwarufad"
-    },
-    {
-      "id": "s8apb6a6",
-      "created_at": "2026-10-31T04:53:19.010501922+00:00",
-      "opponent": "HYPOTHERMIA",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 116,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=s8apb6a6"
-    },
-    {
-      "id": "8hdowng6",
-      "created_at": "2026-10-31T04:53:14.382345722+00:00",
-      "opponent": "HYPOTHERMIA",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 119,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8hdowng6"
-    },
-    {
       "id": "h1r2z6do",
       "created_at": "2026-10-31T04:52:19.906053805+00:00",
       "opponent": "Mu1tip13 @g3nt$",
@@ -597,94 +1148,6 @@
       "plies": 50,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=h1r2z6do"
-    },
-    {
-      "id": "0op03zb9",
-      "created_at": "2026-10-31T04:08:31.803399082+00:00",
-      "opponent": "duck",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "black",
-      "plies": 92,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=0op03zb9"
-    },
-    {
-      "id": "pmpq4ztr",
-      "created_at": "2026-10-31T03:40:13.281729850+00:00",
-      "opponent": "Instructors",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 126,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=pmpq4ztr"
-    },
-    {
-      "id": "3ocwjvx1",
-      "created_at": "2026-10-31T03:21:58.924117306+00:00",
-      "opponent": "RATIRL",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 151,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=3ocwjvx1"
-    },
-    {
-      "id": "wrbuhbyj",
-      "created_at": "2026-10-31T03:10:24.108705532+00:00",
-      "opponent": "Mist Opportunities",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 133,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=wrbuhbyj"
-    },
-    {
-      "id": "ezkvlsc6",
-      "created_at": "2026-10-31T03:02:46.424940935+00:00",
-      "opponent": "RATIRL",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 56,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=ezkvlsc6"
-    },
-    {
-      "id": "dps5imje",
-      "created_at": "2026-10-31T02:51:49.072535357+00:00",
-      "opponent": "duck",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "white",
-      "plies": 99,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=dps5imje"
-    },
-    {
-      "id": "9gru5h78",
-      "created_at": "2026-10-31T02:51:08.564666685+00:00",
-      "opponent": "duck",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "black",
-      "plies": 94,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=9gru5h78"
-    },
-    {
-      "id": "jzcx4zqb",
-      "created_at": "2026-10-31T02:40:32.463551722+00:00",
-      "opponent": "Gravel Road",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 76,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=jzcx4zqb"
     },
     {
       "id": "sbplzoqc",
@@ -720,28 +1183,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=hgnmjzfb"
     },
     {
-      "id": "2fmsj21f",
-      "created_at": "2026-10-31T01:51:33.612975391+00:00",
-      "opponent": "Gravel Road",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 94,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=2fmsj21f"
-    },
-    {
-      "id": "zbzsbktg",
-      "created_at": "2026-10-31T01:43:52.260003896+00:00",
-      "opponent": "RATIRL",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 106,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=zbzsbktg"
-    },
-    {
       "id": "o7pv5jqm",
       "created_at": "2026-10-31T01:29:20.700504952+00:00",
       "opponent": "Farsight",
@@ -751,61 +1192,6 @@
       "plies": 70,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=o7pv5jqm"
-    },
-    {
-      "id": "yl3l4y6p",
-      "created_at": "2026-10-31T01:23:07.435405557+00:00",
-      "opponent": "Instructors",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 95,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=yl3l4y6p"
-    },
-    {
-      "id": "44l6pxjb",
-      "created_at": "2026-10-31T01:22:11.941543745+00:00",
-      "opponent": "Decent Chess Bot",
-      "opponent_version": 7,
-      "our_version": 35,
-      "side": "white",
-      "plies": 71,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=44l6pxjb"
-    },
-    {
-      "id": "zd075fl1",
-      "created_at": "2026-10-31T00:51:45.948085099+00:00",
-      "opponent": "Greek Gift",
-      "opponent_version": 25,
-      "our_version": 35,
-      "side": "black",
-      "plies": 54,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=zd075fl1"
-    },
-    {
-      "id": "p54vw96p",
-      "created_at": "2026-10-31T00:41:00.446496937+00:00",
-      "opponent": "Lost Signal",
-      "opponent_version": 19,
-      "our_version": 35,
-      "side": "white",
-      "plies": 73,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=p54vw96p"
-    },
-    {
-      "id": "wrubdtha",
-      "created_at": "2026-10-31T00:23:36.893873130+00:00",
-      "opponent": "Gravel Road",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 81,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=wrubdtha"
     },
     {
       "id": "jw9b43co",
@@ -819,39 +1205,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=jw9b43co"
     },
     {
-      "id": "1ek96mx0",
-      "created_at": "2026-10-30T23:34:42.631142275+00:00",
-      "opponent": "Gravel Road",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 75,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=1ek96mx0"
-    },
-    {
-      "id": "6skuusjp",
-      "created_at": "2026-10-30T23:14:28.356963897+00:00",
-      "opponent": "Mist Opportunities",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 114,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=6skuusjp"
-    },
-    {
-      "id": "2nvlx97i",
-      "created_at": "2026-10-30T23:14:05.648377387+00:00",
-      "opponent": "Mist Opportunities",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 101,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=2nvlx97i"
-    },
-    {
       "id": "83s5g64j",
       "created_at": "2026-10-30T22:53:44.591633847+00:00",
       "opponent": "Greek Gift",
@@ -861,17 +1214,6 @@
       "plies": 71,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=83s5g64j"
-    },
-    {
-      "id": "4xnlrm91",
-      "created_at": "2026-10-30T22:53:41.581167088+00:00",
-      "opponent": "Greek Gift",
-      "opponent_version": 25,
-      "our_version": 35,
-      "side": "black",
-      "plies": 74,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=4xnlrm91"
     },
     {
       "id": "15djucyf",
@@ -885,94 +1227,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=15djucyf"
     },
     {
-      "id": "5vqkeefd",
-      "created_at": "2026-10-30T22:07:33.904724652+00:00",
-      "opponent": "Decent Chess Bot",
-      "opponent_version": 7,
-      "our_version": 35,
-      "side": "white",
-      "plies": 149,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=5vqkeefd"
-    },
-    {
-      "id": "8wmnjugn",
-      "created_at": "2026-10-30T22:04:32.939272055+00:00",
-      "opponent": "Decent Chess Bot",
-      "opponent_version": 7,
-      "our_version": 35,
-      "side": "black",
-      "plies": 90,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8wmnjugn"
-    },
-    {
-      "id": "kqwa37mq",
-      "created_at": "2026-10-30T21:59:16.733400412+00:00",
-      "opponent": "Gravel Road",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 91,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=kqwa37mq"
-    },
-    {
-      "id": "jw9dub02",
-      "created_at": "2026-10-30T21:56:56.251002727+00:00",
-      "opponent": "Strongly Invisible",
-      "opponent_version": 41,
-      "our_version": 35,
-      "side": "black",
-      "plies": 110,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=jw9dub02"
-    },
-    {
-      "id": "r1m0bylk",
-      "created_at": "2026-10-30T21:01:46.400335134+00:00",
-      "opponent": "Greek Gift",
-      "opponent_version": 25,
-      "our_version": 35,
-      "side": "white",
-      "plies": 83,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=r1m0bylk"
-    },
-    {
-      "id": "7jv7328c",
-      "created_at": "2026-10-30T19:50:48.842753774+00:00",
-      "opponent": "Instructors",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 65,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=7jv7328c"
-    },
-    {
-      "id": "wa7y64sh",
-      "created_at": "2026-10-30T19:47:40.451014019+00:00",
-      "opponent": "Instructors",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 32,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=wa7y64sh"
-    },
-    {
-      "id": "08vgnd5i",
-      "created_at": "2026-10-30T19:35:59.260391040+00:00",
-      "opponent": "RATIRL",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 74,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=08vgnd5i"
-    },
-    {
       "id": "s2ru23gd",
       "created_at": "2026-10-30T18:40:10.365567399+00:00",
       "opponent": "In Pawn Sight",
@@ -984,17 +1238,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=s2ru23gd"
     },
     {
-      "id": "2ttnrtqj",
-      "created_at": "2026-10-30T17:37:58.169579065+00:00",
-      "opponent": "Mu1tip13 @g3nt$",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "black",
-      "plies": 76,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=2ttnrtqj"
-    },
-    {
       "id": "lq2ye8nn",
       "created_at": "2026-10-30T17:09:16.196432224+00:00",
       "opponent": "Cranberry Lemon",
@@ -1004,17 +1247,6 @@
       "plies": 104,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=lq2ye8nn"
-    },
-    {
-      "id": "yjf7h7zv",
-      "created_at": "2026-10-30T16:09:19.254879469+00:00",
-      "opponent": "Farsight",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "white",
-      "plies": 61,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=yjf7h7zv"
     },
     {
       "id": "fh1alr5a",
@@ -1037,83 +1269,6 @@
       "plies": 104,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=mr98hh4z"
-    },
-    {
-      "id": "e0k7cc2p",
-      "created_at": "2026-10-30T14:57:42.959025207+00:00",
-      "opponent": "Farsight",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "black",
-      "plies": 54,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=e0k7cc2p"
-    },
-    {
-      "id": "zz0v5urr",
-      "created_at": "2026-10-30T13:45:29.569921060+00:00",
-      "opponent": "Foggy Fischer",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "black",
-      "plies": 54,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=zz0v5urr"
-    },
-    {
-      "id": "jmamtnk7",
-      "created_at": "2026-10-30T13:42:57.896333246+00:00",
-      "opponent": "Strongly Invisible",
-      "opponent_version": 41,
-      "our_version": 35,
-      "side": "black",
-      "plies": 78,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=jmamtnk7"
-    },
-    {
-      "id": "u46i9pvz",
-      "created_at": "2026-10-30T13:42:37.829901037+00:00",
-      "opponent": "Strongly Invisible",
-      "opponent_version": 41,
-      "our_version": 35,
-      "side": "white",
-      "plies": 71,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=u46i9pvz"
-    },
-    {
-      "id": "rrs0u0tz",
-      "created_at": "2026-10-30T13:41:38.281061319+00:00",
-      "opponent": "Strongly Invisible",
-      "opponent_version": 41,
-      "our_version": 35,
-      "side": "white",
-      "plies": 61,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=rrs0u0tz"
-    },
-    {
-      "id": "bipn1twh",
-      "created_at": "2026-10-30T13:37:44.666598217+00:00",
-      "opponent": "Farsight",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "black",
-      "plies": 54,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=bipn1twh"
-    },
-    {
-      "id": "a9k2l71d",
-      "created_at": "2026-10-30T13:32:19.144762228+00:00",
-      "opponent": "Farsight",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "white",
-      "plies": 49,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=a9k2l71d"
     },
     {
       "id": "2x0s4qhd",
@@ -1182,17 +1337,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=me78qaya"
     },
     {
-      "id": "npyxcrln",
-      "created_at": "2026-10-30T06:04:31.003757395+00:00",
-      "opponent": "In Pawn Sight",
-      "opponent_version": 5,
-      "our_version": 35,
-      "side": "white",
-      "plies": 51,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=npyxcrln"
-    },
-    {
       "id": "sdtyl240",
       "created_at": "2026-10-30T05:40:25.066807697+00:00",
       "opponent": "Cranberry Lemon",
@@ -1224,28 +1368,6 @@
       "plies": 36,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=pdn57lnf"
-    },
-    {
-      "id": "vs5s04vw",
-      "created_at": "2026-10-30T02:26:12.230520711+00:00",
-      "opponent": "Farsight",
-      "opponent_version": 6,
-      "our_version": 35,
-      "side": "white",
-      "plies": 49,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=vs5s04vw"
-    },
-    {
-      "id": "5xytx5n3",
-      "created_at": "2026-10-29T23:16:59.700464537+00:00",
-      "opponent": "TA Baseline S",
-      "opponent_version": 3,
-      "our_version": 35,
-      "side": "white",
-      "plies": 103,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=5xytx5n3"
     },
     {
       "id": "11l1w45r",
@@ -1301,17 +1423,6 @@
       "plies": 187,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=wu2ufwzn"
-    },
-    {
-      "id": "6y3xv0xv",
-      "created_at": "2026-10-29T14:16:22.404494332+00:00",
-      "opponent": "TA Baseline S",
-      "opponent_version": 3,
-      "our_version": 35,
-      "side": "black",
-      "plies": 110,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=6y3xv0xv"
     },
     {
       "id": "izwlfpsu",
@@ -1446,17 +1557,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=jmrgsx2d"
     },
     {
-      "id": "k17475wo",
-      "created_at": "2026-10-28T18:21:44.782489901+00:00",
-      "opponent": "In Pawn Sight",
-      "opponent_version": 5,
-      "our_version": 35,
-      "side": "white",
-      "plies": 71,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=k17475wo"
-    },
-    {
       "id": "42ysvwst",
       "created_at": "2026-10-28T17:48:10.236707788+00:00",
       "opponent": "HYPOTHERMIA",
@@ -1512,17 +1612,6 @@
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=79ptaz7t"
     },
     {
-      "id": "4coeae5o",
-      "created_at": "2026-10-28T11:01:58.038795817+00:00",
-      "opponent": "HYPOTHERMIA",
-      "opponent_version": 4,
-      "our_version": 35,
-      "side": "white",
-      "plies": 83,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=4coeae5o"
-    },
-    {
       "id": "krak7r57",
       "created_at": "2026-10-28T09:50:36.127942237+00:00",
       "opponent": "Foggy Fischer",
@@ -1543,17 +1632,6 @@
       "plies": 70,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=5bjzvanb"
-    },
-    {
-      "id": "h3vtsccn",
-      "created_at": "2026-10-28T07:08:19.678691380+00:00",
-      "opponent": "TA Baseline S",
-      "opponent_version": 3,
-      "our_version": 35,
-      "side": "black",
-      "plies": 46,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=h3vtsccn"
     },
     {
       "id": "2istezj7",
@@ -2269,83 +2347,6 @@
       "plies": 88,
       "reason": "King capturable",
       "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=357srw44"
-    },
-    {
-      "id": "stwgl6s5",
-      "created_at": "2026-10-25T03:32:50.805350039+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 83,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=stwgl6s5"
-    },
-    {
-      "id": "yx1h1i4u",
-      "created_at": "2026-10-25T03:32:17.942536176+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 66,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=yx1h1i4u"
-    },
-    {
-      "id": "8h1mhg5k",
-      "created_at": "2026-10-25T03:19:58.409648833+00:00",
-      "opponent": "TA Baseline A",
-      "opponent_version": 5,
-      "our_version": 35,
-      "side": "white",
-      "plies": 99,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=8h1mhg5k"
-    },
-    {
-      "id": "qf3y54us",
-      "created_at": "2026-10-25T03:01:17.428269342+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 103,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=qf3y54us"
-    },
-    {
-      "id": "9iv1yh6u",
-      "created_at": "2026-10-25T02:59:54.580441618+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 70,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=9iv1yh6u"
-    },
-    {
-      "id": "5eknbyfj",
-      "created_at": "2026-10-25T02:53:27.460864674+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "black",
-      "plies": 82,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=5eknbyfj"
-    },
-    {
-      "id": "v9db3sxc",
-      "created_at": "2026-10-25T02:12:29.166701815+00:00",
-      "opponent": "Crimson Fog",
-      "opponent_version": 2,
-      "our_version": 35,
-      "side": "white",
-      "plies": 103,
-      "reason": "King capturable",
-      "arena_url": "https://www.mit.edu/~6.7980/fow/?tab=arena&game=v9db3sxc"
     }
   ],
   "policy": {
