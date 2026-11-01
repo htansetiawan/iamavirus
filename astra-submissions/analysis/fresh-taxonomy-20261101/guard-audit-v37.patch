@@ -1,0 +1,14 @@
+--- a/src/main.c
++++ b/src/main.c
+@@ -408,6 +408,11 @@
+                 /* what the queen added: out under the combined risk, not under the king's alone */
+                 qout[i] = out[i] && !(kriskt[i] > kleastt + guard || krisk[i] > kleast + guard);
+                 qdropped += qout[i];
++                if (getenv("MIST_GUARD_AUDIT")) {
++                    char audit_uci[6]; move_to_uci(allowed.moves[i], audit_uci);
++                    fprintf(stderr, "astra_guard %s king=%.9f/%.9f queen=%.9f/%.9f veto=%d\n",
++                            audit_uci, krisk[i], kriskt[i], qrisk[i], qriskt[i], out[i]);
++                }
+                 if (out[i]) guarded[n++] = allowed.moves[i];
+                 else if (mguard >= 0 && have_mrisk && mrisk[i] > mleast + mguard) { guarded[n++] = allowed.moves[i]; ++mdropped; }
+             }

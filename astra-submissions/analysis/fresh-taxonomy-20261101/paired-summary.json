@@ -1,0 +1,236 @@
+{
+  "cases": 51,
+  "games": 25,
+  "with_safe_alternative": 48,
+  "paired_vs_v35": {
+    "v37": {
+      "fatal_where_safe_exists": {
+        "n": 48,
+        "fixed": [],
+        "broken": [
+          "i3xv2i71:79",
+          "r82lsby1:80"
+        ],
+        "net_fixed": -2
+      },
+      "exchange_loss_ge2": {
+        "n": 51,
+        "fixed": [],
+        "broken": [
+          "u4mpjzah:41"
+        ],
+        "net_fixed": -1
+      },
+      "queen_exchange_loss_ge4": {
+        "n": 51,
+        "fixed": [],
+        "broken": [],
+        "net_fixed": 0
+      },
+      "fatal_or_exchange_loss_ge2": {
+        "n": 51,
+        "fixed": [],
+        "broken": [
+          "i3xv2i71:79",
+          "r82lsby1:80",
+          "u4mpjzah:41"
+        ],
+        "net_fixed": -3
+      },
+      "forced_king_loss_after_capture": {
+        "n": 51,
+        "fixed": [],
+        "broken": [],
+        "net_fixed": 0
+      }
+    },
+    "v35_repeat": {
+      "fatal_where_safe_exists": {
+        "n": 48,
+        "fixed": [],
+        "broken": [],
+        "net_fixed": 0
+      },
+      "exchange_loss_ge2": {
+        "n": 51,
+        "fixed": [],
+        "broken": [],
+        "net_fixed": 0
+      },
+      "queen_exchange_loss_ge4": {
+        "n": 51,
+        "fixed": [],
+        "broken": [],
+        "net_fixed": 0
+      },
+      "fatal_or_exchange_loss_ge2": {
+        "n": 51,
+        "fixed": [],
+        "broken": [],
+        "net_fixed": 0
+      },
+      "forced_king_loss_after_capture": {
+        "n": 51,
+        "fixed": [],
+        "broken": [],
+        "net_fixed": 0
+      }
+    }
+  },
+  "by_opponent": {
+    "HYPOTHERMIA": {
+      "cases": 17,
+      "v37": {
+        "fatal": {
+          "n": 17,
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ],
+          "net_fixed": -2
+        },
+        "exchange_loss_ge2": {
+          "n": 17,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        }
+      }
+    },
+    "Instructors": {
+      "cases": 17,
+      "v37": {
+        "fatal": {
+          "n": 17,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        },
+        "exchange_loss_ge2": {
+          "n": 17,
+          "fixed": [],
+          "broken": [
+            "u4mpjzah:41"
+          ],
+          "net_fixed": -1
+        }
+      }
+    },
+    "duck": {
+      "cases": 17,
+      "v37": {
+        "fatal": {
+          "n": 17,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        },
+        "exchange_loss_ge2": {
+          "n": 17,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        }
+      }
+    }
+  },
+  "by_cohort": {
+    "recovered_exchange": {
+      "cases": 12,
+      "v37": {
+        "fatal": {
+          "n": 12,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        },
+        "exchange_loss_ge2": {
+          "n": 12,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        }
+      }
+    },
+    "clean_material_loss": {
+      "cases": 12,
+      "v37": {
+        "fatal": {
+          "n": 12,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        },
+        "exchange_loss_ge2": {
+          "n": 12,
+          "fixed": [],
+          "broken": [
+            "u4mpjzah:41"
+          ],
+          "net_fixed": -1
+        }
+      }
+    },
+    "control": {
+      "cases": 12,
+      "v37": {
+        "fatal": {
+          "n": 12,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        },
+        "exchange_loss_ge2": {
+          "n": 12,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        }
+      }
+    },
+    "king_fatal": {
+      "cases": 12,
+      "v37": {
+        "fatal": {
+          "n": 12,
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79",
+            "r82lsby1:80"
+          ],
+          "net_fixed": -2
+        },
+        "exchange_loss_ge2": {
+          "n": 12,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        }
+      }
+    },
+    "queen_exposed": {
+      "cases": 3,
+      "v37": {
+        "fatal": {
+          "n": 3,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        },
+        "exchange_loss_ge2": {
+          "n": 3,
+          "fixed": [],
+          "broken": [],
+          "net_fixed": 0
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Small deliberately stratified diagnostic sample; not a win-rate or Elo estimate.",
+    "King fatal is immediate. Exchange labels use an omniscient single capture then our best safe response, not the opponent policy or a full tactical search.",
+    "No recorded replies after divergence. Truth never supplied to either bot.",
+    "No significance claim from treating correlated decisions as independent games."
+  ]
+}

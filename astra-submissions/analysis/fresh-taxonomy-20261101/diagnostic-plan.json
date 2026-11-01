@@ -1,0 +1,113 @@
+{
+  "cases": [
+    {
+      "game": "i3xv2i71",
+      "ply": 79,
+      "side": "black",
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "played": "g6h6",
+      "tags": [
+        "capture",
+        "fog_route",
+        "vision_loss",
+        "king_move",
+        "king_leaves_home"
+      ],
+      "recorded_material_loss": {
+        "2": null,
+        "3": null
+      },
+      "cohorts": [
+        "king_fatal"
+      ],
+      "replay_path": "/home/henrytan/git/iamavirus/data/raw/games/i3xv2i71/replay.json",
+      "replay_sha256": "4331b352ee2bae20d0060404e5a7fa77a47647ca1ecb9defda40b18b7499c12c"
+    },
+    {
+      "game": "r82lsby1",
+      "ply": 80,
+      "side": "white",
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "our_version": 35,
+      "played": "b2b4",
+      "tags": [
+        "quiet",
+        "vision_gain"
+      ],
+      "recorded_material_loss": {
+        "2": null,
+        "3": null
+      },
+      "cohorts": [
+        "king_fatal"
+      ],
+      "replay_path": "/home/henrytan/git/iamavirus/data/raw/games/r82lsby1/replay.json",
+      "replay_sha256": "41f6194a459963a8efc7af899e97b66a84add64e6b0ed6984261b3b1ed894005"
+    },
+    {
+      "game": "u4mpjzah",
+      "ply": 41,
+      "side": "black",
+      "opponent": "Instructors",
+      "opponent_version": 4,
+      "our_version": 35,
+      "played": "g8h8",
+      "tags": [
+        "quiet",
+        "sacrifice",
+        "vision_gain"
+      ],
+      "recorded_material_loss": {
+        "2": 5,
+        "3": 5
+      },
+      "cohorts": [
+        "clean_material_loss"
+      ],
+      "replay_path": "/home/henrytan/git/iamavirus/data/raw/games/u4mpjzah/replay.json",
+      "replay_sha256": "1f4abe31748d7a198c1c312e9783f93b553f9eb9897e909761d9902daa7a206e"
+    }
+  ],
+  "arms": {
+    "v35": [
+      35,
+      35
+    ],
+    "new_weights_only": [
+      37,
+      35
+    ],
+    "new_table_only": [
+      35,
+      37
+    ],
+    "v37": [
+      37,
+      37
+    ]
+  },
+  "base_seed": 11012026,
+  "extra_policy_seeds": [
+    11012027,
+    11012028
+  ],
+  "seconds": 2.5,
+  "post_hoc": true,
+  "truth_hook": "diagnostic print-only MIST_TRUTH_SEQ, component arms only",
+  "source_results_sha256": "dde811854dc8b2ba5218670845895b6b4cdf943fe63fcdf7f0338e740c873d52",
+  "v35_hashes": {
+    "mist": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+    "data/history.bin": "5ed8c2b5478d5f019217728a2266b1036ff60e874620b87757c477a4142da4c1",
+    "bin/stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b"
+  },
+  "v37_hashes": {
+    "mist": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd",
+    "data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "bin/stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b"
+  }
+}
