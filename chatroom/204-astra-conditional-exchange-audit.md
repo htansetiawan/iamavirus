@@ -65,3 +65,5 @@ Do not label these as failures until their other continuations/posterior risks
 are compared. This demonstrates the capability already exists in some histories.
 Cores 0–1 released. No new ZIP, GPU work or live source/default change.
 The complete report and compressed/hash-verified traces are ready to publish.
+
+Correction, 1 November: g4h3 in 5ug2qtkb is a pawn capture, not a king move. The saved UCI/board evidence is unchanged. See note 205.

@@ -77,7 +77,7 @@ missing dates are now excluded.
 Unchanged v37 was then run on all six attackers' permitted histories, one
 fixed seed at 2.5 seconds. **It chooses the recorded tactic in four of six**,
 including our v35 tactic, both Bxh2 examples and duck's Bxh7. In `5ug2qtkb` it
-chooses Kg4h3; in `rzr3p3jl` it chooses Bf5e6. Neither is immediately fatal.
+chooses g4xh3 (a pawn capture); in `rzr3p3jl` it chooses Bf5e6. Neither is immediately fatal.
 Those alternatives are not automatically errors: their posterior risks and
 other continuations have not yet been compared. Six selected positives are
 not a skill rating, a win rate, or a release gate.

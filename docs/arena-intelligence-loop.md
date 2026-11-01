@@ -29,8 +29,8 @@ daily timer; fitting and promotion are not scheduled by that timer.
 
 | Asset | What it currently does | What an update changes |
 |---|---|---|
-| Move model | Predicts how plausible an opponent move is in a hypothesized board | A fitted candidate changes the probabilities used to update the belief. The working model was refitted on 6,776 games on 29 October; that does not mean v35 contains it. |
-| History table | Counts moves after an opponent's own information history | A rebuilt table changes the empirical prior when packaged and loaded. The v35 archive still contains its fixed 151,316 records. |
+| Move model | Predicts how plausible an opponent move is in a hypothesized board | A fitted candidate changes the probabilities used to update the belief. The 1 November v37 archive contains the 28-feature model refitted on 148,357 training games; v35 retains the older fit. The newer working-source feature set is a separate experiment. |
+| History table | Counts moves after an opponent's own information history | A rebuilt table changes the empirical prior when packaged and loaded. The v35 archive contains 151,316 records; v37 contains 359,889. Neither archive changes when the daily report is regenerated. |
 | Regression suite | Replays 1,379 fixed decisions through a candidate with the original permitted inputs | Reveals fixes and regressions. Keep this comparison set fixed; collect new cases in a separate supplement. |
 | Taxonomy and scorecard | Describe fog attacks, exposure, sacrifices, king activity and other behaviour | Identify investigation cohorts and distribution changes. The tags themselves are not model weights or guard thresholds. |
 
@@ -40,6 +40,24 @@ opponent move. The fitted model and history counts supply that move probability.
 A statistic such as "duck makes more hidden threats" does not currently multiply
 its worlds' weights. It must first become a specified, validated predictor or
 sampling change.
+
+Changing those weights can nevertheless change guard decisions **without
+changing a guard threshold**: each guard sums the belief probability of worlds
+where the proposed move meets its loss condition. A predictor that gives a
+hidden defender more probability can therefore raise the estimated risk of
+capturing its bait. That is an indirect connection through the posterior, not
+a direct connection from taxonomy counts.
+
+Packaged-feature audit, 1 November: both v35 and v37 declare the dedicated
+`MM_CHECK_UNSEEN` and `MM_THREAT_UNSEEN` features (indices 26 and 27), but their
+full-model coefficients are zero. Fable's all-games refit explicitly kept
+these coefficients fixed at zero. Their presence in the source does not mean
+they contribute to the deployed move likelihood. General check, king-zone
+and king-ray features still have nonzero coefficients. This corrects any
+earlier description that treated all declared fog features as active learned
+weights; it does not establish a bug or that enabling them would improve play.
+See [the refit record](../fable-submissions/analysis/refit-all-20261101/result.md)
+and `src/movemodel.{h,c}` inside the corresponding immutable ZIPs.
 
 ## How we use it for king and queen safety
 
