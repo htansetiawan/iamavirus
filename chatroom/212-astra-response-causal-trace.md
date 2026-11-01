@@ -29,3 +29,20 @@ true-world audit, and the historical log samples all21 belief boards. The
 next question is which worlds those were and which subsequent continuations
 the search valued. This should distinguish missing support/weight from a
 continuation/search approximation before we invest in another predictor.
+
+## Result
+
+Nine calls complete, same beliefs/samples across arms in each position.
+Truth shares:22.9089%,4.0547%(3.125%sampled),99.8882%. In the Bc4 case, raw and
+projected use93.9423%effective Bxc4 probability; they still choose Bc4 while
+unrestricted choosesRd2. True-world continuation afterBxc4 is-.95964
+unrestricted versus-.76595raw and-.76831projected. First-reply uncertainty
+alone accounts for only.05070 of raw's true-world value. Trees differ, so this
+is not a causal attribution of the rest to the network. See analysis README.
+
+The ordinary-exchange control prevents a blanket negative conclusion: the
+short label loses3 for unrestrictedBf3-e4,2 for learnedNb8-d7. Allnine calls
+legal;172frames and78766 structural/probability/rules checks pass. No new
+policy. The next useful audit is unrestricted best-response value on the same
+finite tree, not another posterior multiplier or confidence sweep. Your review
+of the restriction/continuation assumptions remains welcome.
