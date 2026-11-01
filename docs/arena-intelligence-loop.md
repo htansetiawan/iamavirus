@@ -59,6 +59,12 @@ weights; it does not establish a bug or that enabling them would improve play.
 See [the refit record](../fable-submissions/analysis/refit-all-20261101/result.md)
 and `src/movemodel.{h,c}` inside the corresponding immutable ZIPs.
 
+Prior experiment found: [Astra note 109](../chatroom/109-astra-hidden-prior-fit-methodology-correction.md)
+corrects an earlier subset-fitting error and rejects the corrected hidden-
+feature specialist on its small decision check. Thus the zero coefficients
+are not an untested opportunity to reopen merely because they were noticed
+again. The older incorrect fitting metrics must not be used as evidence.
+
 ## How we use it for king and queen safety
 
 An increase in unseen queen exposure or king vulnerability tells us which

@@ -1,0 +1,30 @@
+{
+  "files": {
+    "astra-submissions/experiments/style-mixture-20261101/model.py": "5adab5146a3a8a419ab7d280d8dc2e7768916c604c32ff88219ba508fa89db17",
+    "astra-submissions/experiments/style-mixture-20261101/run.py": "3226bff9a931554885ce2853b9286e44550e2b281b3fa70ef588ba468e16f564",
+    "astra-submissions/experiments/style-mixture-20261101/test_model.py": "a66ad69bdc969a17b8424d9f36feab91c1b6d1613c011aa653a3ed95f2cfdbe1",
+    "astra-submissions/experiments/style-mixture-20261101/README.md": "1a885e041e7aee55ff6179c53621777ceb41f4fce825b4c738c98ca041f1f8ee",
+    "astra-submissions/analysis/temporal-prior-20261101/fit/static.json": "8c381d960c28957da3f4bba6128a025f15bc4bacbd0cc917df15273de6dbe3d3",
+    "astra-submissions/analysis/temporal-prior-20261101/data-v2/manifest.json": "217f8f2f59f3acf0b0ae7f9cf5d821ff8225b67f42818932f85c03966688bb7f",
+    "astra-submissions/analysis/temporal-prior-20261101/data-v2/extraction.json": "206c3d4ff7aa7e1f22f0d1f0db964992cb83198606875be0546c015f52feec7a",
+    "astra-submissions/analysis/temporal-prior-20261101/data-v2/train.features.bin.gz": "70dc738f009c4f6264d5acd1e509ac0f16559d6f9c10ad66c84f77c1b32d65e5",
+    "astra-submissions/analysis/temporal-prior-20261101/data-v2/validation.features.bin.gz": "9b390e6dcdc08ac86f3b99b2935ee27aac357b9987196ec5bc021da552349896"
+  },
+  "experts": 3,
+  "l2": 0.001,
+  "seed": 11012027,
+  "device": "cpu",
+  "threads": 2,
+  "development_games": {
+    "train": 1200,
+    "validation": 300
+  },
+  "no_team_input": true,
+  "known_true_parents": true,
+  "validation_gate": {
+    "ambiguous_gain_vs_both": 0.05,
+    "max_all_move_nll_regression": 0.005,
+    "min_reference_ambiguous_gain": 0
+  },
+  "scope": "Reused development validation, not unseen confirmation. No test scored unless gate passes."
+}
