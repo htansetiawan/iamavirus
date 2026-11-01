@@ -79,11 +79,22 @@ move sequence has been seen three or more times.
 
 ## Regression suite
 
-Running from 09:00Z on 1 November, three arms on cores 2 to 5, each paired with the v35 baseline arm (`worlds-32-cf.json`, exact v35 bytes, 487 check-and-fatal decisions, 2.5 s, seed 1): the v37 configuration (new weights + all-games table), the new weights with v35's table, and v35's bytes with the all-games table. Numbers follow in this file when the arms finish (about an hour).
+Three arms, 09:00 to 10:05Z on 1 November, cores 2 to 5, each paired with the v35 baseline arm (`worlds-32-cf.json`: exact v35 bytes, v35's table, 32 worlds, 2.5 s a decision, seed 1, the suite's 487 check-and-fatal decisions, 399 with a safe move). A fatal decision leaves our king capturable on the true board while a safe move existed. The noise floor between identical runs is about five flips each way; the gate for a candidate bench is net +10.
+
+| Arm | Fatal of 399 | Fixed vs v35 | Broke | Net | Centipawn loss, mean |
+|---|---:|---:|---:|---:|---:|
+| v35 baseline | 107 | — | — | — | 88.6 |
+| v37: new weights + all-games table | 106 | 12 | 11 | +1 | 89.4 |
+| New weights, v35's table | 106 | 9 | 8 | +1 | 82.7 |
+| v35's bytes, all-games table | 108 | 5 | 6 | −1 | 93.6 |
+
+By kind (fatal where a safe move existed): check kind, 300 decisions: 61 / 59 / 57 / 62; fatal kind, 99 decisions: 46 / 47 / 49 / 46. Centipawn differences per decision: +0.8, −5.9 and +5.1 against v35, each inside what two reruns of the same setting show.
+
+Reading: every arm is within the noise floor. Neither the refitted weights nor the larger table changes which of these 487 decisions the engine gets right. The gate is not met; v37 is v35 on the suite. Files `refit-{both,theta,table35}-cf.json` beside this file.
 
 ## 100 games against v35
 
-Queue `data/arena_local/queue-v37.json`: 100 unforced games, 50 colour-swapped pairs, 180+2, seed 420000 (held out), both core pairs, starts after the suite arms and runs into the morning. Smoke `smoke-v37.json` (seed 419600, 08:43 to 08:58Z): two games, both played cleanly under the referee (no forfeit, 30 to 51 s left on the clocks), both lost by v37 on a king capture. Two games say nothing about strength; they say the ZIP boots, reads its table and plays to the clock.
+Queue `data/arena_local/queue-v37.json`: 100 unforced games, 50 colour-swapped pairs, 180+2, seed 420000 (held out), both core pairs, started 10:07Z on 1 November, running into the morning (about nine hours). Smoke `smoke-v37.json` (seed 419600, 08:43 to 08:58Z): two games, both played cleanly under the referee (no forfeit, 30 to 51 s left on the clocks), both lost by v37 on a king capture. Two games say nothing about strength; they say the ZIP boots, reads its table and plays to the clock.
 
 ## What this says
 

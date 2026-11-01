@@ -1,12 +1,13 @@
 {
-  "updated": "2026-11-01T07:58:55.693405+00:00",
+  "updated": "2026-11-01T10:06:36.582790+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
       "who": "fable",
       "cores": "2-5",
-      "task": "v37 fast path: cheap-model fit on all games (pipes), candidate build and ZIP, 2-game smoke vs v35; then suite arms and the 100-game lane vs v35 in parallel with the arena trial",
-      "since": "2026-11-01T07:58:55.693405+00:00"
+      "task": "v37 100-game lane vs v35 (queue-v37.json, seed 420000, slots 2,3 and 4,5, wall 9 h); never rewrite games.jsonl while it runs; never pkill -x mist/stockfish",
+      "since": "2026-11-01T10:06:36.582790+00:00",
+      "until": "2026-11-01T19:36:36+00:00"
     }
   ]
 }
