@@ -1,0 +1,1040 @@
+{
+  "measurement": "Development posterior diagnostic; no policy or Elo estimate",
+  "receipt_sha256": "c790e96d7944de1adefa88d45302b3eda0dd62d853ccdcd59ba1725f199a158e",
+  "plan_sha256": "324aeba8028c968f2f66bc481c3bea2bf0dd65656359d4762893d0932c99a798",
+  "verified_cells": 54,
+  "all_cases": {
+    "games": 18,
+    "arms": {
+      "static_merged": {
+        "decisions": 650,
+        "truth_present": 642,
+        "truth_support": 0.9876923076923076,
+        "empty_decisions": 0,
+        "truth_nll_by_clip": {
+          "1e-09": 5.562498007839932,
+          "1e-12": 5.647516534350481,
+          "1e-15": 5.73253506086103
+        },
+        "common_risk_decisions": 650,
+        "common_actual_king_losses": 8,
+        "common_king_brier": 0.0094749210666296,
+        "update_seconds": 18.444120313000894,
+        "max_rss_kib": 67168,
+        "mean_boards": 5079.476923076923,
+        "mean_contexts": 5079.476923076923,
+        "max_contexts_per_board": 1,
+        "max_retained_bytes": 0
+      },
+      "static_mixture": {
+        "decisions": 650,
+        "truth_present": 642,
+        "truth_support": 0.9876923076923076,
+        "empty_decisions": 0,
+        "truth_nll_by_clip": {
+          "1e-09": 5.562498008872849,
+          "1e-12": 5.6475165353833985,
+          "1e-15": 5.732535061893947
+        },
+        "common_risk_decisions": 650,
+        "common_actual_king_losses": 8,
+        "common_king_brier": 0.00947492111234811,
+        "update_seconds": 31.2237135600044,
+        "max_rss_kib": 74252,
+        "mean_boards": 5079.476923076923,
+        "mean_contexts": 25365.60923076923,
+        "max_contexts_per_board": 74.0,
+        "max_retained_bytes": 7751184.0
+      },
+      "temporal_mixture": {
+        "decisions": 650,
+        "truth_present": 644,
+        "truth_support": 0.9907692307692307,
+        "empty_decisions": 0,
+        "truth_nll_by_clip": {
+          "1e-09": 5.51994229136194,
+          "1e-12": 5.583970048875651,
+          "1e-15": 5.6477339437585625
+        },
+        "common_risk_decisions": 650,
+        "common_actual_king_losses": 8,
+        "common_king_brier": 0.010252222610939235,
+        "update_seconds": 32.92323827000109,
+        "max_rss_kib": 75836,
+        "mean_boards": 5091.246153846154,
+        "mean_contexts": 25719.798461538463,
+        "max_contexts_per_board": 74.0,
+        "max_retained_bytes": 7864512.0
+      }
+    },
+    "comparisons": {
+      "static_merged": {
+        "truth_nll_gain": 0.06354648547482977,
+        "support_change": 0.003076923076923088,
+        "common_king_brier_change": 0.0007773015443096349,
+        "update_time_ratio": 1.785026214928459,
+        "checks": {
+          "nll": false,
+          "support": true,
+          "king_brier": true,
+          "time": true
+        },
+        "passes": false
+      },
+      "static_mixture": {
+        "truth_nll_gain": 0.06354648650774752,
+        "support_change": 0.003076923076923088,
+        "common_king_brier_change": 0.0007773014985911243,
+        "update_time_ratio": 1.0544305758740267,
+        "checks": {
+          "nll": false,
+          "support": true,
+          "king_brier": true,
+          "time": true
+        },
+        "passes": false
+      }
+    }
+  },
+  "our_observer_seats": {
+    "games": 16,
+    "arms": {
+      "static_merged": {
+        "decisions": 588,
+        "truth_present": 580,
+        "truth_support": 0.9863945578231292,
+        "empty_decisions": 0,
+        "truth_nll_by_clip": {
+          "1e-09": 5.6514342229425125,
+          "1e-12": 5.745417287962677,
+          "1e-15": 5.839400352982842
+        },
+        "common_risk_decisions": 588,
+        "common_actual_king_losses": 7,
+        "common_king_brier": 0.010161754436308653,
+        "update_seconds": 17.43931987401993,
+        "max_rss_kib": 67168,
+        "mean_boards": 5338.622448979592,
+        "mean_contexts": 5338.622448979592,
+        "max_contexts_per_board": 1,
+        "max_retained_bytes": 0
+      },
+      "static_mixture": {
+        "decisions": 588,
+        "truth_present": 580,
+        "truth_support": 0.9863945578231292,
+        "empty_decisions": 0,
+        "truth_nll_by_clip": {
+          "1e-09": 5.651434209273382,
+          "1e-12": 5.745417274293546,
+          "1e-15": 5.839400339313712
+        },
+        "common_risk_decisions": 588,
+        "common_actual_king_losses": 7,
+        "common_king_brier": 0.010161754422731097,
+        "update_seconds": 29.584242003997133,
+        "max_rss_kib": 74252,
+        "mean_boards": 5338.622448979592,
+        "mean_contexts": 27090.833333333332,
+        "max_contexts_per_board": 74.0,
+        "max_retained_bytes": 7751184.0
+      },
+      "temporal_mixture": {
+        "decisions": 588,
+        "truth_present": 582,
+        "truth_support": 0.9897959183673469,
+        "empty_decisions": 0,
+        "truth_nll_by_clip": {
+          "1e-09": 5.599277419022383,
+          "1e-12": 5.670056402668492,
+          "1e-15": 5.740543701433616
+        },
+        "common_risk_decisions": 588,
+        "common_actual_king_losses": 7,
+        "common_king_brier": 0.010768379005769131,
+        "update_seconds": 31.246152925004935,
+        "max_rss_kib": 75836,
+        "mean_boards": 5352.166666666667,
+        "mean_contexts": 27476.255102040817,
+        "max_contexts_per_board": 74.0,
+        "max_retained_bytes": 7864512.0
+      }
+    },
+    "comparisons": {
+      "static_merged": {
+        "truth_nll_gain": 0.0753608852941845,
+        "support_change": 0.003401360544217691,
+        "common_king_brier_change": 0.0006066245694604788,
+        "update_time_ratio": 1.7917070820837235,
+        "checks": {
+          "nll": false,
+          "support": true,
+          "king_brier": true,
+          "time": true
+        },
+        "passes": false
+      },
+      "static_mixture": {
+        "truth_nll_gain": 0.07536087162505378,
+        "support_change": 0.003401360544217691,
+        "common_king_brier_change": 0.0006066245830380346,
+        "update_time_ratio": 1.0561755451021277,
+        "checks": {
+          "nll": false,
+          "support": true,
+          "king_brier": true,
+          "time": true
+        },
+        "passes": false
+      }
+    }
+  },
+  "by_opponent": {
+    "Crimson Fog": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 61,
+          "truth_present": 61,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.380643564588876,
+            "1e-12": 5.380643564588876,
+            "1e-15": 5.380643564588876
+          },
+          "common_risk_decisions": 61,
+          "common_actual_king_losses": 2,
+          "common_king_brier": 0.027430582536218717,
+          "update_seconds": 2.296245010005805,
+          "max_rss_kib": 48496,
+          "mean_boards": 6631.754098360656,
+          "mean_contexts": 6631.754098360656,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 61,
+          "truth_present": 61,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.380643684109451,
+            "1e-12": 5.380643684109451,
+            "1e-15": 5.380643684109451
+          },
+          "common_risk_decisions": 61,
+          "common_actual_king_losses": 2,
+          "common_king_brier": 0.02743058226379905,
+          "update_seconds": 3.3936724070044875,
+          "max_rss_kib": 46932,
+          "mean_boards": 6631.754098360656,
+          "mean_contexts": 20258.950819672133,
+          "max_contexts_per_board": 46.0,
+          "max_retained_bytes": 5651944.0
+        },
+        "temporal_mixture": {
+          "decisions": 61,
+          "truth_present": 61,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.337688788233632,
+            "1e-12": 5.337688788233632,
+            "1e-15": 5.337688788233632
+          },
+          "common_risk_decisions": 61,
+          "common_actual_king_losses": 2,
+          "common_king_brier": 0.029013470004704625,
+          "update_seconds": 3.466290926000511,
+          "max_rss_kib": 48984,
+          "mean_boards": 6656.737704918033,
+          "mean_contexts": 20480.245901639344,
+          "max_contexts_per_board": 46.0,
+          "max_retained_bytes": 5704096.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": 0.04295477635524403,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0015828874684859079,
+          "update_time_ratio": 1.5095475051208704,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": false
+        },
+        "static_mixture": {
+          "truth_nll_gain": 0.0429548958758188,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0015828877409055746,
+          "update_time_ratio": 1.021398211225733,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": false
+        }
+      }
+    },
+    "Decent Chess Bot": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 53,
+          "truth_present": 47,
+          "truth_support": 0.8867924528301887,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 7.979414358706532,
+            "1e-12": 8.761424390289415,
+            "1e-15": 9.543434421872298
+          },
+          "common_risk_decisions": 53,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.018786462373230676,
+          "update_seconds": 2.421092870994471,
+          "max_rss_kib": 57564,
+          "mean_boards": 7517.566037735849,
+          "mean_contexts": 7517.566037735849,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 53,
+          "truth_present": 47,
+          "truth_support": 0.8867924528301887,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 7.9794140856931435,
+            "1e-12": 8.761424117276027,
+            "1e-15": 9.54343414885891
+          },
+          "common_risk_decisions": 53,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.018786462387391324,
+          "update_seconds": 4.78089792800165,
+          "max_rss_kib": 64036,
+          "mean_boards": 7517.566037735849,
+          "mean_contexts": 54857.64150943396,
+          "max_contexts_per_board": 58.0,
+          "max_retained_bytes": 7580864.0
+        },
+        "temporal_mixture": {
+          "decisions": 53,
+          "truth_present": 47,
+          "truth_support": 0.8867924528301887,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 8.252895596187326,
+            "1e-12": 9.03490562777021,
+            "1e-15": 9.816915659353091
+          },
+          "common_risk_decisions": 53,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.018717764264743662,
+          "update_seconds": 5.0510285390028,
+          "max_rss_kib": 64104,
+          "mean_boards": 7524.188679245283,
+          "mean_contexts": 55681.11320754717,
+          "max_contexts_per_board": 58.0,
+          "max_retained_bytes": 7578936.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.27348123748079445,
+          "support_change": 0.0,
+          "common_king_brier_change": -6.869810848701349e-05,
+          "update_time_ratio": 2.0862597215975756,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": false
+          },
+          "passes": false
+        },
+        "static_mixture": {
+          "truth_nll_gain": -0.27348151049418234,
+          "support_change": 0.0,
+          "common_king_brier_change": -6.869812264766184e-05,
+          "update_time_ratio": 1.0565020661535145,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": false
+        }
+      }
+    },
+    "Greek Gift": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 75,
+          "truth_present": 75,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.664850251839293,
+            "1e-12": 5.664850251839293,
+            "1e-15": 5.664850251839293
+          },
+          "common_risk_decisions": 75,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.01619018924654511,
+          "update_seconds": 2.100918164007453,
+          "max_rss_kib": 67168,
+          "mean_boards": 5606.253333333333,
+          "mean_contexts": 5606.253333333333,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 75,
+          "truth_present": 75,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.664849840698845,
+            "1e-12": 5.664849840698845,
+            "1e-15": 5.664849840698845
+          },
+          "common_risk_decisions": 75,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.01619018938489403,
+          "update_seconds": 2.7731130360098177,
+          "max_rss_kib": 66324,
+          "mean_boards": 5606.253333333333,
+          "mean_contexts": 15059.32,
+          "max_contexts_per_board": 49.0,
+          "max_retained_bytes": 6074712.0
+        },
+        "temporal_mixture": {
+          "decisions": 75,
+          "truth_present": 75,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.564331176100275,
+            "1e-12": 5.564331176100275,
+            "1e-15": 5.564331176100275
+          },
+          "common_risk_decisions": 75,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.01971292360930683,
+          "update_seconds": 2.8276650949937903,
+          "max_rss_kib": 54272,
+          "mean_boards": 5608.92,
+          "mean_contexts": 15170.6,
+          "max_contexts_per_board": 49.0,
+          "max_retained_bytes": 6077600.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": 0.10051907573901797,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0035227343627617196,
+          "update_time_ratio": 1.345918724221073,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": false,
+            "time": true
+          },
+          "passes": false
+        },
+        "static_mixture": {
+          "truth_nll_gain": 0.10051866459857006,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0035227342244128004,
+          "update_time_ratio": 1.0196717761863998,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": false,
+            "time": true
+          },
+          "passes": false
+        }
+      }
+    },
+    "HYPOTHERMIA": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.488697176763398,
+            "1e-12": 5.488697176763398,
+            "1e-15": 5.488697176763398
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 5.474384235908622e-05,
+          "update_seconds": 2.980450352006301,
+          "max_rss_kib": 56836,
+          "mean_boards": 6303.308641975309,
+          "mean_contexts": 6303.308641975309,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.488697684434895,
+            "1e-12": 5.488697684434895,
+            "1e-15": 5.488697684434895
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 5.474384878985029e-05,
+          "update_seconds": 4.846080310000616,
+          "max_rss_kib": 60604,
+          "mean_boards": 6303.308641975309,
+          "mean_contexts": 27820.74074074074,
+          "max_contexts_per_board": 74.0,
+          "max_retained_bytes": 6607856.0
+        },
+        "temporal_mixture": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.970806490245208,
+            "1e-12": 4.970806490245208,
+            "1e-15": 4.970806490245208
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.00010643183985871239,
+          "update_seconds": 5.154959466988657,
+          "max_rss_kib": 55920,
+          "mean_boards": 6340.444444444444,
+          "mean_contexts": 28786.83950617284,
+          "max_contexts_per_board": 74.0,
+          "max_retained_bytes": 6591856.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": 0.5178906865181903,
+          "support_change": 0.0,
+          "common_king_brier_change": 5.168799749962617e-05,
+          "update_time_ratio": 1.729590786009429,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": true
+        },
+        "static_mixture": {
+          "truth_nll_gain": 0.5178911941896871,
+          "support_change": 0.0,
+          "common_king_brier_change": 5.16879910688621e-05,
+          "update_time_ratio": 1.0637379360698218,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": true
+        }
+      }
+    },
+    "Instructors": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 62,
+          "truth_present": 62,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.719038419447718,
+            "1e-12": 4.719038419447718,
+            "1e-15": 4.719038419447718
+          },
+          "common_risk_decisions": 62,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.002961082012254073,
+          "update_seconds": 1.0048004389809648,
+          "max_rss_kib": 47008,
+          "mean_boards": 2621.7741935483873,
+          "mean_contexts": 2621.7741935483873,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 62,
+          "truth_present": 62,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.719038559912962,
+            "1e-12": 4.719038559912962,
+            "1e-15": 4.719038559912962
+          },
+          "common_risk_decisions": 62,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.002961082620328816,
+          "update_seconds": 1.6394715560072655,
+          "max_rss_kib": 49948,
+          "mean_boards": 2621.7741935483873,
+          "mean_contexts": 9003.806451612903,
+          "max_contexts_per_board": 48.0,
+          "max_retained_bytes": 5707512.0
+        },
+        "temporal_mixture": {
+          "decisions": 62,
+          "truth_present": 62,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.767538177420964,
+            "1e-12": 4.767538177420964,
+            "1e-15": 4.767538177420964
+          },
+          "common_risk_decisions": 62,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.005357061963197622,
+          "update_seconds": 1.6770853449961578,
+          "max_rss_kib": 49984,
+          "mean_boards": 2616.7096774193546,
+          "mean_contexts": 9061.790322580646,
+          "max_contexts_per_board": 48.0,
+          "max_retained_bytes": 5736872.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.04849975797324646,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.002395979950943549,
+          "update_time_ratio": 1.669073061609131,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": false,
+            "time": true
+          },
+          "passes": false
+        },
+        "static_mixture": {
+          "truth_nll_gain": -0.04849961750800258,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.002395979342868806,
+          "update_time_ratio": 1.02294262980719,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": false,
+            "time": true
+          },
+          "passes": false
+        }
+      }
+    },
+    "Knight Vision": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.284040138441791,
+            "1e-12": 5.284040138441791,
+            "1e-15": 5.284040138441791
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.004289850168185999,
+          "update_seconds": 1.1084938050044002,
+          "max_rss_kib": 47836,
+          "mean_boards": 2590.7654320987654,
+          "mean_contexts": 2590.7654320987654,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.28403998290476,
+            "1e-12": 5.28403998290476,
+            "1e-15": 5.28403998290476
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.004289850102672234,
+          "update_seconds": 1.602471043002879,
+          "max_rss_kib": 47368,
+          "mean_boards": 2590.7654320987654,
+          "mean_contexts": 8221.753086419752,
+          "max_contexts_per_board": 50.0,
+          "max_retained_bytes": 5668072.0
+        },
+        "temporal_mixture": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.303873104358406,
+            "1e-12": 5.303873104358406,
+            "1e-15": 5.303873104358406
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0036060774453983606,
+          "update_seconds": 1.7932940239988966,
+          "max_rss_kib": 47372,
+          "mean_boards": 2588.5555555555557,
+          "mean_contexts": 8342.753086419752,
+          "max_contexts_per_board": 50.0,
+          "max_retained_bytes": 5724608.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.01983296591661432,
+          "support_change": 0.0,
+          "common_king_brier_change": -0.0006837727227876388,
+          "update_time_ratio": 1.6177754137216653,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": false
+        },
+        "static_mixture": {
+          "truth_nll_gain": -0.019833121453645575,
+          "support_change": 0.0,
+          "common_king_brier_change": -0.0006837726572738734,
+          "update_time_ratio": 1.1190804550442506,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": false
+        }
+      }
+    },
+    "Mist Opportunities": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.937224032086521,
+            "1e-12": 4.937224032086521,
+            "1e-15": 4.937224032086521
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.001267051205776363,
+          "update_seconds": 2.492098710998107,
+          "max_rss_kib": 54020,
+          "mean_boards": 4830.740740740741,
+          "mean_contexts": 4830.740740740741,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.937224378470177,
+            "1e-12": 4.937224378470177,
+            "1e-15": 4.937224378470177
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0012670516684706987,
+          "update_seconds": 3.760975976987538,
+          "max_rss_kib": 59200,
+          "mean_boards": 4830.740740740741,
+          "mean_contexts": 16091.62962962963,
+          "max_contexts_per_board": 57.0,
+          "max_retained_bytes": 5847520.0
+        },
+        "temporal_mixture": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.788030735715725,
+            "1e-12": 4.788030735715725,
+            "1e-15": 4.788030735715725
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.001089156379053538,
+          "update_seconds": 3.904459791005138,
+          "max_rss_kib": 59304,
+          "mean_boards": 4869.925925925926,
+          "mean_contexts": 16434.493827160495,
+          "max_contexts_per_board": 57.0,
+          "max_retained_bytes": 5842912.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": 0.1491932963707958,
+          "support_change": 0.0,
+          "common_king_brier_change": -0.0001778948267228248,
+          "update_time_ratio": 1.5667356087357263,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": true
+        },
+        "static_mixture": {
+          "truth_nll_gain": 0.1491936427544518,
+          "support_change": 0.0,
+          "common_king_brier_change": -0.00017789528941716056,
+          "update_time_ratio": 1.0381506861239054,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": true
+        }
+      }
+    },
+    "Strongly Invisible": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 81,
+          "truth_present": 79,
+          "truth_support": 0.9753086419753086,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.8470277137431035,
+            "1e-12": 6.017589572483403,
+            "1e-15": 6.1881514312237025
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 8.312441080067092e-07,
+          "update_seconds": 2.098096849005742,
+          "max_rss_kib": 47848,
+          "mean_boards": 5459.864197530864,
+          "mean_contexts": 5459.864197530864,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 81,
+          "truth_present": 79,
+          "truth_support": 0.9753086419753086,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.847027522525483,
+            "1e-12": 6.017589381265783,
+            "1e-15": 6.188151240006082
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 8.312445845715368e-07,
+          "update_seconds": 4.617177128993717,
+          "max_rss_kib": 60452,
+          "mean_boards": 5459.864197530864,
+          "mean_contexts": 49226.8024691358,
+          "max_contexts_per_board": 43.0,
+          "max_retained_bytes": 7121408.0
+        },
+        "temporal_mixture": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 6.092152223861675,
+            "1e-12": 6.094269640034751,
+            "1e-15": 6.094269640034751
+          },
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 5.122407459648995e-07,
+          "update_seconds": 4.891069832006906,
+          "max_rss_kib": 60580,
+          "mean_boards": 5458.037037037037,
+          "mean_contexts": 49191.32098765432,
+          "max_contexts_per_board": 43.0,
+          "max_retained_bytes": 7110568.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.07668006755134815,
+          "support_change": 0.024691358024691357,
+          "common_king_brier_change": -3.190033620418097e-07,
+          "update_time_ratio": 2.3311935453907733,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": false
+          },
+          "passes": false
+        },
+        "static_mixture": {
+          "truth_nll_gain": -0.07668025876896856,
+          "support_change": 0.024691358024691357,
+          "common_king_brier_change": -3.1900383860663725e-07,
+          "update_time_ratio": 1.0593203802585938,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": false
+        }
+      }
+    },
+    "duck": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 75,
+          "truth_present": 75,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.345802957427503,
+            "1e-12": 5.345802957427503,
+            "1e-15": 5.345802957427503
+          },
+          "common_risk_decisions": 75,
+          "common_actual_king_losses": 2,
+          "common_king_brier": 0.021830517083643353,
+          "update_seconds": 1.9419241119976505,
+          "max_rss_kib": 51556,
+          "mean_boards": 4822.8533333333335,
+          "mean_contexts": 4822.8533333333335,
+          "max_contexts_per_board": 1,
+          "max_retained_bytes": 0
+        },
+        "static_mixture": {
+          "decisions": 75,
+          "truth_present": 75,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.345802809236816,
+            "1e-12": 5.345802809236816,
+            "1e-15": 5.345802809236816
+          },
+          "common_risk_decisions": 75,
+          "common_actual_king_losses": 2,
+          "common_king_brier": 0.021830516613992598,
+          "update_seconds": 3.8098541739964276,
+          "max_rss_kib": 74252,
+          "mean_boards": 4822.8533333333335,
+          "mean_contexts": 32619.666666666668,
+          "max_contexts_per_board": 56.0,
+          "max_retained_bytes": 7751184.0
+        },
+        "temporal_mixture": {
+          "decisions": 75,
+          "truth_present": 75,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.313385794783985,
+            "1e-12": 5.313385794783985,
+            "1e-15": 5.313385794783985
+          },
+          "common_risk_decisions": 75,
+          "common_actual_king_losses": 2,
+          "common_king_brier": 0.02269997330755012,
+          "update_seconds": 4.157385251008236,
+          "max_rss_kib": 75836,
+          "mean_boards": 4823.306666666666,
+          "mean_contexts": 33262.14666666667,
+          "max_contexts_per_board": 58.0,
+          "max_retained_bytes": 7864512.0
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": 0.03241716264351879,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0008694562239067657,
+          "update_time_ratio": 2.1408587623599504,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": false
+          },
+          "passes": false
+        },
+        "static_mixture": {
+          "truth_nll_gain": 0.032417014452831516,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0008694566935575215,
+          "update_time_ratio": 1.0912189971426802,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "passes": false
+        }
+      }
+    }
+  },
+  "passes_to_larger_cap_test": false,
+  "release_eligible": false,
+  "limitations": [
+    "One fixed seed, 18 games, 20k physical-board cap; no empirical history blend or arena-clock thinning.",
+    "Two Instructors observer seats belong to other teams; report our-only subset separately.",
+    "No rebuilding after empty belief; risk subset and total runtime depend on coverage.",
+    "Probability tests use recorded own moves, not a new policy.",
+    "Context mixtures do not preserve full opponent information histories for CFR."
+  ]
+}

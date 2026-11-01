@@ -1,0 +1,84 @@
+{
+  "measurement": "Exact/native audit of capped weighted retention; not an arena experiment",
+  "ordered_selection_probabilities": [
+    {
+      "order": [
+        0,
+        1
+      ],
+      "probability": "9/20"
+    },
+    {
+      "order": [
+        0,
+        2
+      ],
+      "probability": "3/20"
+    },
+    {
+      "order": [
+        1,
+        0
+      ],
+      "probability": "9/35"
+    },
+    {
+      "order": [
+        1,
+        2
+      ],
+      "probability": "3/70"
+    },
+    {
+      "order": [
+        2,
+        0
+      ],
+      "probability": "1/15"
+    },
+    {
+      "order": [
+        2,
+        1
+      ],
+      "probability": "1/30"
+    }
+  ],
+  "exact_expected_share_fractions": [
+    "23/35",
+    "41/140",
+    "1/20"
+  ],
+  "exact_expected_share": [
+    0.6571428571428571,
+    0.29285714285714287,
+    0.05
+  ],
+  "native": {
+    "trials": 300000,
+    "input": [
+      0.6,
+      0.3,
+      0.1
+    ],
+    "estimated_mean": [
+      0.657116191355,
+      0.29285166665,
+      0.0500321419966
+    ],
+    "standard_errors": [
+      0.000372678561997,
+      0.000344897925908,
+      0.000149297376753
+    ]
+  },
+  "native_vs_exact_z": [
+    -0.07155170856692405,
+    -0.01587776188692834,
+    0.21528842166579143
+  ],
+  "rare_world_input_share": 0.1,
+  "rare_world_expected_retained_normalized_share": 0.05,
+  "source_sha256": "963de8415d7290ffb0e57612c1ebada2c179562542e5e1f77d783bc2148c52f3",
+  "limit": "A counterexample disproves general mass preservation. It does not establish which sampler plays stronger or quantify arena bias."
+}

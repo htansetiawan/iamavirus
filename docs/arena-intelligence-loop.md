@@ -186,3 +186,14 @@ board coverage; the learned weights did not recover that loss. Compressing
 contexts within each board is a possible next design, not a validated fix.
 None of this changes the deployed bot. Taxonomy-selected tests diagnose which
 behaviours benefit; the tags do not automatically become runtime belief weights.
+
+The subsequent compressed-history implementation stores each board once and
+marginalizes eight-byte context entries. On a **different**, fresh 18-game
+panel, its static control matches the original board counts at all 650
+decisions and probabilities within floating-point tolerance. The temporal
+model retains truth at 644/650 decisions versus 642/650 and lowers truth NLL
+by 0.06355 nats, short of the recorded 0.1 requirement. King-risk Brier slightly
+worsens and update time is 1.785x the original reference. All 54 runs and native
+correctness/sanitizer checks complete successfully. The representation is
+preserved; this predictor does not advance. See
+`astra-submissions/analysis/context-mixture-20261101/README.md`.
