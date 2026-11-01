@@ -1,0 +1,5 @@
+{
+  "stage": "freeze before manifest or fit",
+  "error": "TypeError comparing a missing createdAt timestamp to the date window",
+  "correction": "Skip rows whose timestamp is None or empty; no split manifest was written and no training ran."
+}
