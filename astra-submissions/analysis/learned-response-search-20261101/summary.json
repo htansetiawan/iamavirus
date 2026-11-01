@@ -1,0 +1,44 @@
+{
+  "decisions": 39,
+  "frames_verified": 719,
+  "arms": {
+    "original": {
+      "king_loss": 6,
+      "exchange_loss_ge2": 1,
+      "queen_loss_ge4": 0,
+      "median_elapsed": 3.6968293550016824,
+      "median_nodes": 79152.0
+    },
+    "off": {
+      "king_loss": 6,
+      "exchange_loss_ge2": 1,
+      "queen_loss_ge4": 0,
+      "median_elapsed": 3.783370418001141,
+      "median_nodes": 78818.0
+    },
+    "learned": {
+      "king_loss": 5,
+      "exchange_loss_ge2": 2,
+      "queen_loss_ge4": 0,
+      "median_elapsed": 3.750977794999926,
+      "median_nodes": 73227.0
+    }
+  },
+  "changes_vs_off": 14,
+  "off_changes_vs_original": 3,
+  "coverage_case_share": 1.0,
+  "coverage_reports": 39,
+  "median_model_seconds": 0.027271318,
+  "checks": {
+    "technical": true,
+    "king": true,
+    "queen": true,
+    "material": true,
+    "meaningful_choices": true,
+    "coverage": true,
+    "cost": true
+  },
+  "decision": "manual_review_before_full_games",
+  "scope": "Mechanism and bounded safety diagnostic; not a strength estimate.",
+  "limitations": "Wall-clock controls can differ. Short exchange label excludes quiet forcing continuations. Endpoint decisions are selected; not a population or strength estimate."
+}

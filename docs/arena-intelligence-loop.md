@@ -294,3 +294,14 @@ strengths and weaknesses; they do not change the frozen model choice or prove
 playing strength. The native student is checked, but has not been integrated
 into the belief filter, search or guards. See
 [the result and reproducible evidence](../astra-submissions/analysis/visible-response-20261101/README.md).
+
+The student has subsequently entered an **isolated search experiment**, still
+without changing the deployed bot or its belief weights/guards. At each
+opponent information set, search combines 25% learned response with 75%
+adversarial free strategy using the checked data-biased-response solver.
+On 39 fresh decisions, immediate king-loss choices fall from six to five,
+while bounded material losses rise from one to two. All 117 original/off/on
+calls pass, and an independent referee verifies both changed tactical cases.
+This meets the recorded diagnostic gate and earns a bounded full-clock pilot;
+it is not a playing-strength result. See
+[the integration and gate](../astra-submissions/analysis/learned-response-search-20261101/README.md).

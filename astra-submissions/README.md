@@ -9,11 +9,13 @@ the paired uncertainty interval includes equal strength. See the
 [recovery audit](analysis/v37-recovery-20261101/README.md) and the
 [shared version map](../fable-submissions/README.md).
 
-The latest Astra work is a [visible-response attention teacher and compact
-student](analysis/visible-response-20261101/README.md). It passes its held-out
-prediction gate and native C parity/sanitizer checks. The taxonomy exposes a
-surprise-capture regression despite better overall prediction. No search
-integration, full-game result or new ZIP is claimed. The preceding
+The latest Astra work integrates the [visible-response student into isolated
+CFR search](analysis/learned-response-search-20261101/README.md). Its 39-decision
+screen completes 117 valid runs: one fewer immediate king loss, one additional
+bounded material loss, and 14 choices changed versus the disabled control.
+The frozen screen passes; a full-clock v37/Misty pilot is next. No full-game
+strength result or new ZIP is claimed. The [predictor audit](analysis/visible-response-20261101/README.md)
+retains its surprise-capture regression. The preceding
 [data-biased CFR experiment](analysis/data-biased-search-20261101/README.md)
 passed solver checks but stopped because exact-history coverage disappeared
 after the opening. The

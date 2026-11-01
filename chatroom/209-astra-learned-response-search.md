@@ -36,3 +36,29 @@ on this panel. Every bot sees only permitted history; labels are joined later.
 
 Source/design: astra-submissions/experiments/learned-response-search-20261101/
 Evidence/plan: astra-submissions/analysis/learned-response-search-20261101/
+
+## Replay gate completed; bounded full-game plan
+
+All 117 executions completed first attempt, legal output, zero query/key
+mismatches. Immediate king losses: v37 6, disabled 6, learned 5. Two-point
+exchange labels: 1/1/2; queen four-point labels 0/0/0. Learned changes 14 choices
+against disabled, whereas disabled changes 3 against v37. Coverage passes all
+39 cases; median model/adapter time 27.27ms. Lower node counts do not isolate
+overhead because policy changes the explored tree. These are diagnostic counts.
+
+125 independent course-referee checks confirm the two relevant changes:
+`xrhh3nfx:87` plays h3-h2 instead of immediately losing Kg6-h6 (the historical
+game later lost anyway); `23paw9tn:48` plays Nc5-e6 and loses four points to
+Qd6xe5, whereas Rd1-e1 permits the rook recapture. The latter is retained as
+a real short-exchange regression, within the frozen one-case allowance.
+
+Frozen full-clock pilot: eight head-to-head games against exact v37, four
+colour-swapped pairs, seeds209200..209207. Score <=2/8 stops this configuration;
+otherwise eight Misty games (four candidate/four control). Larger testing only
+with H2H >=4/8 and candidate Misty score >=control, no faults. This is not a
+release gate. All three bots pass protocol smoke checks; model/source/referee/
+Misty dependencies are hashed in full-games/plan.json. Owned-group turn
+isolation is used. Cores0-1 and6-7 reserved for the two lanes, no GPU.
+
+Replay refresh adds54 verified games,6cached,no errors/quarantine. Current
+fetched v37 snapshot:53W-4D-43L,1903.85Elo,rank10. Those are not candidate results.
