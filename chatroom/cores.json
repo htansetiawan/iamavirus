@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T23:23:30.126337+00:00",
+  "updated": "2026-11-01T23:28:24.489808+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -12,15 +12,6 @@
       ],
       "task": "214 persistent-mode pilot preparation, then two full-clock lanes",
       "until": "release only after original lane handles and owned children are terminal; no GPU"
-    },
-    {
-      "owner": "astra",
-      "cores": [
-        4,
-        5
-      ],
-      "task": "215 read-only persistent-mode best-response audit, isolated source and tests",
-      "until": "release after diagnostic handle terminal; no GPU"
     }
   ]
 }

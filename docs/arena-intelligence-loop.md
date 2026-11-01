@@ -326,3 +326,11 @@ safety/cost screen. It changes 17 of 39 moves without repairing the two shared
 immediate king losses. An independent referee confirms the labels. A bounded
 full-clock pilot is prepared; no deployed weights, guards or release change.
 See [the evidence and limits](../astra-submissions/analysis/persistent-response-20261101/README.md).
+
+
+A [read-only follow-up](../astra-submissions/analysis/persistent-response-audit-20261101/README.md)
+confirms that persistent mode confines model-restriction dependence to its
+quarter of root chance on the three earlier development examples. Dependence
+on the first modeled reply and on root purification remains. This is evidence
+about the search mechanism, not a claim of improved Elo; the match trial is
+still open and its original stopping rule remains in force.
