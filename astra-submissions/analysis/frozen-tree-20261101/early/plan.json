@@ -1,0 +1,590 @@
+{
+  "scope": "Post-hoc earlier-position mechanism supplement on the SAME games; not independent validation or a strength estimate.",
+  "source_accepted_sha256": "eeb7d4c7f57800c5b51502221b128b04659eba9f2e29f4cdd93ae42a0f792667",
+  "excluded_games": [
+    "3qrm1ai9",
+    "465co8me",
+    "4n18qrlc",
+    "4zy248z7",
+    "64yzmgzq",
+    "692i4klh",
+    "6ck9mu9r",
+    "79juzd6z",
+    "7hzl7iid",
+    "8sad26ji",
+    "9dofk83o",
+    "aajjv3j3",
+    "e9ap0123",
+    "f8td0c4f",
+    "foue5l22",
+    "i5f0sgd8",
+    "je0urv3g",
+    "k4n72cyp",
+    "kmitkui8",
+    "kx9xv7i0",
+    "m8aae5ht",
+    "npwc6vwf",
+    "p0fi36fr",
+    "piacx36k",
+    "pnei3nuw",
+    "rt8fc2xo",
+    "tsx53vhm",
+    "txluzcit",
+    "ufh4q8q7",
+    "vghgvhri",
+    "vptnbnxb",
+    "ycydus3y",
+    "ykjwf878",
+    "yv1n3fja",
+    "ze9rzvsl",
+    "zhzrjuha"
+  ],
+  "provenance": {
+    "archive": "fable-submissions/iamavirus-v37-mist-c-v14-allfit.zip",
+    "archive_sha256": "41e02e280b61e0e0c031a831d2ab4b2cc8f52c6c59bd8c11fc026f3cc817c76c",
+    "binary_sha256": "51084fc0c374618a09bbf0af9169fe711f1dcf7834fb28a43afe0adc1cbe7252",
+    "modified_gtcfr_sha256": "13a5634631a5a4587d2645031f64231b1bfc1986961b7c8b2ab1839b6818c898",
+    "audit_sha256": "c4ea5e381beb15d61b91b86a5d721bfb1fd619e05fc0c86b5c4bf6ddc2f1b410",
+    "builder_sha256": "b55e7909a378bbf4f983f9f89ea32af9b66c0909bb799fd01adb0599cc84545a",
+    "status": "offline diagnostics after original move choice; not a candidate",
+    "build_stdout": "build: done (gcc)\n",
+    "build_stderr": ""
+  },
+  "runner_sha256": "2b915cbcf7babd98fd901ef8b280020653b9b174ab4b44e4e00e1709bcbc8dce",
+  "search_seconds": 2.5,
+  "extra_solver_wall_cap": 3.0,
+  "extra_targets": [
+    20,
+    200,
+    1000
+  ],
+  "seed": 11012026,
+  "cores": "0,1",
+  "truth_to_engine": false,
+  "decision": "Only if more iterations meaningfully change root strategy AND improve sampled tactical diagnostics without new failures is a separate same-clock experiment justified. Stability is not correctness; no tuning on this panel.",
+  "cases": [
+    {
+      "name": "ks5vukpe-18",
+      "game": "ks5vukpe",
+      "ply": 18,
+      "side": 0,
+      "opponent": "Crimson Fog",
+      "opponent_version": 4,
+      "outcome": "loss",
+      "created_at": "2026-11-01T18:35:35.597093504+00:00",
+      "replay_sha256": "89acd644a8902b2122a49a02e3828a350b1642a8d9470a1ab786cd33363f929f",
+      "input_sha256": "f223d66bffd6aa611c64f3b82642e9180427b96c274a083548b06f2cfebb0c69",
+      "forced": [
+        "d2d4",
+        "c2c3",
+        "e2e3",
+        "g1f3",
+        "f1e2",
+        "e3d4",
+        "e1g1",
+        "c3c4",
+        "a2a4"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": -1
+    },
+    {
+      "name": "pzdi9a60-19",
+      "game": "pzdi9a60",
+      "ply": 19,
+      "side": 1,
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "outcome": "draw",
+      "created_at": "2026-11-01T18:13:42.306821076+00:00",
+      "replay_sha256": "1ea29d0932263991bd78b395e4be024a4d29598f5be738ee9c6fe67601143be8",
+      "input_sha256": "97eeb61d815b7b6bfd9742444c6ac71a01462da728c4886ebdc72d36fcf42159",
+      "forced": [
+        "g8f6",
+        "e7e6",
+        "d7d6",
+        "f8e7",
+        "b8c6",
+        "c6b4",
+        "d6e5",
+        "b4d3",
+        "f6d5"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "j2m5dxhp-19",
+      "game": "j2m5dxhp",
+      "ply": 19,
+      "side": 1,
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "outcome": "loss",
+      "created_at": "2026-11-01T15:31:31.710773142+00:00",
+      "replay_sha256": "9412de51801e391809b45f68de6e5e9a5f04ea2a50adf2e26b92c7aa1be19971",
+      "input_sha256": "bc8a6217aaec482920f87717b94e806aff268e96e7b297a0024c2f82f172ccd8",
+      "forced": [
+        "g8f6",
+        "f6e4",
+        "e4f6",
+        "c7c6",
+        "g7g6",
+        "f8g7",
+        "e8g8",
+        "d7d5",
+        "f6h5"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 1
+    },
+    {
+      "name": "xpjkx2ka-18",
+      "game": "xpjkx2ka",
+      "ply": 18,
+      "side": 0,
+      "opponent": "Decent Chess Bot",
+      "opponent_version": 7,
+      "outcome": "win",
+      "created_at": "2026-11-01T18:12:22.591088333+00:00",
+      "replay_sha256": "24f2dbae8ec5bab5674e4f42b4c9030ee7867c470a48f2d0f3a703db33a86200",
+      "input_sha256": "fac7acdf15507c92127430a775b2d15459a55da697bc8f3a9c2b6bf0c90f70f8",
+      "forced": [
+        "d2d4",
+        "d4e5",
+        "c1f4",
+        "g1f3",
+        "e2e3",
+        "f4e5",
+        "e5c3",
+        "f1d3",
+        "d1e2"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 1
+    },
+    {
+      "name": "92px495s-18",
+      "game": "92px495s",
+      "ply": 18,
+      "side": 0,
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "outcome": "loss",
+      "created_at": "2026-11-01T18:34:40.399166128+00:00",
+      "replay_sha256": "103999ac9468871861db27314839d9546fd682cf2c2f71769527f709a5b25110",
+      "input_sha256": "d1372c6aa174049b039cb942f69ba504fb4fbfabee3bb049ae7d38f0c6d7e15a",
+      "forced": [
+        "d2d4",
+        "d1d2",
+        "e2e3",
+        "f1d3",
+        "e3d4",
+        "g1f3",
+        "e1g1",
+        "b1c3",
+        "d2d1"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "92px495s-26",
+      "game": "92px495s",
+      "ply": 26,
+      "side": 0,
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "outcome": "loss",
+      "created_at": "2026-11-01T18:34:40.399166128+00:00",
+      "replay_sha256": "103999ac9468871861db27314839d9546fd682cf2c2f71769527f709a5b25110",
+      "input_sha256": "fecaa8f714a225bbc4b7affd3c38a4083ab22c0cfe0de5dcec4831bcc9fa1ffd",
+      "forced": [
+        "d2d4",
+        "d1d2",
+        "e2e3",
+        "f1d3",
+        "e3d4",
+        "g1f3",
+        "e1g1",
+        "b1c3",
+        "d2d1",
+        "d4e5",
+        "d3e2",
+        "e2f3",
+        "c3d5"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "first_material_loss"
+      ],
+      "material_lead_before": -2
+    },
+    {
+      "name": "axvqi3b1-19",
+      "game": "axvqi3b1",
+      "ply": 19,
+      "side": 1,
+      "opponent": "HYPOTHERMIA",
+      "opponent_version": 4,
+      "outcome": "win",
+      "created_at": "2026-11-01T16:28:23.204020765+00:00",
+      "replay_sha256": "f0a8dca1d5f9161d73685361af1122101ef29e1935674aa4403f6ab030bea1a5",
+      "input_sha256": "2f5dfec0082e41d4af96a07c077223b673ce4da7b32507fb3d1522e2ec85ec52",
+      "forced": [
+        "c7c6",
+        "e7e6",
+        "d7d5",
+        "a7a6",
+        "c6c5",
+        "b8c6",
+        "c5d4",
+        "b7b5",
+        "c6d4"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "pi6j9sui-19",
+      "game": "pi6j9sui",
+      "ply": 19,
+      "side": 1,
+      "opponent": "Knight Vision",
+      "opponent_version": 36,
+      "outcome": "loss",
+      "created_at": "2026-11-01T17:42:01.235369041+00:00",
+      "replay_sha256": "e4969cdc02ee9df0bbacacaec587161101aa259e781be6e138582732ca260537",
+      "input_sha256": "4333afb807645da7c3cebd7198668fe1b56364b41525c71b2b71006066c3d7d1",
+      "forced": [
+        "c7c6",
+        "d7d5",
+        "c6d5",
+        "c8d7",
+        "e7e6",
+        "b8c6",
+        "f8b4",
+        "b4c3",
+        "d8a5"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "pi6j9sui-43",
+      "game": "pi6j9sui",
+      "ply": 43,
+      "side": 1,
+      "opponent": "Knight Vision",
+      "opponent_version": 36,
+      "outcome": "loss",
+      "created_at": "2026-11-01T17:42:01.235369041+00:00",
+      "replay_sha256": "e4969cdc02ee9df0bbacacaec587161101aa259e781be6e138582732ca260537",
+      "input_sha256": "b89af3dd727d648e1b43e2d8e61c1290a1f97eebc6fa98fbfeb426cd3a7301d8",
+      "forced": [
+        "c7c6",
+        "d7d5",
+        "c6d5",
+        "c8d7",
+        "e7e6",
+        "b8c6",
+        "f8b4",
+        "b4c3",
+        "d8a5",
+        "g8f6",
+        "e8g8",
+        "f6e4",
+        "d5e4",
+        "c6e7",
+        "e7f5",
+        "f5g3",
+        "f7f5",
+        "a8d8",
+        "f5f4",
+        "f8f6",
+        "a5a6"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "first_material_loss"
+      ],
+      "material_lead_before": 1
+    },
+    {
+      "name": "l2sbyq4a-19",
+      "game": "l2sbyq4a",
+      "ply": 19,
+      "side": 1,
+      "opponent": "Mist Opportunities",
+      "opponent_version": 2,
+      "outcome": "win",
+      "created_at": "2026-11-01T17:55:09.067060054+00:00",
+      "replay_sha256": "72951205cc58bb600db5535d91914a739c1057071edd4deff586462084d488c7",
+      "input_sha256": "7c5a6a189cd1825b2d16c073141400d88a8aa7eaaae93db9a0a663062d9beb4a",
+      "forced": [
+        "g8f6",
+        "g7g6",
+        "c7c6",
+        "d7d6",
+        "f8g7",
+        "b8d7",
+        "d6e5",
+        "f6d5",
+        "c6d5"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "ypq192zu-19",
+      "game": "ypq192zu",
+      "ply": 19,
+      "side": 1,
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "outcome": "loss",
+      "created_at": "2026-11-01T15:39:11.823779117+00:00",
+      "replay_sha256": "7f7cd9dbffbca6ea954951bbc36daa5aa6a0f891c6b583dfd19d905cf569809f",
+      "input_sha256": "36bb1773270425513402ae8a5a51bfc4bf477fbaab5526cbf5675e5aed7b5423",
+      "forced": [
+        "g8f6",
+        "f6e4",
+        "e4f6",
+        "g7g6",
+        "f8g7",
+        "e8g8",
+        "b7b6",
+        "c8b7",
+        "a7a5"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 1
+    },
+    {
+      "name": "ypq192zu-37",
+      "game": "ypq192zu",
+      "ply": 37,
+      "side": 1,
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "outcome": "loss",
+      "created_at": "2026-11-01T15:39:11.823779117+00:00",
+      "replay_sha256": "7f7cd9dbffbca6ea954951bbc36daa5aa6a0f891c6b583dfd19d905cf569809f",
+      "input_sha256": "b111f5c3019b2f9d2763cac64e18a934f77a60ace330ed0e0c5a0e2ebe24d1b9",
+      "forced": [
+        "g8f6",
+        "f6e4",
+        "e4f6",
+        "g7g6",
+        "f8g7",
+        "e8g8",
+        "b7b6",
+        "c8b7",
+        "a7a5",
+        "h7h6",
+        "e7e6",
+        "e6d5",
+        "f8e8",
+        "b8a6",
+        "f6d5",
+        "b7d5",
+        "g7b2",
+        "b2c3"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "first_material_loss"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "g0pmetq2-19",
+      "game": "g0pmetq2",
+      "ply": 19,
+      "side": 1,
+      "opponent": "Strongly Invisible",
+      "opponent_version": 41,
+      "outcome": "win",
+      "created_at": "2026-11-01T15:46:12.180907450+00:00",
+      "replay_sha256": "22c52324fc384477f425d7e4f92a868866db7aadccaba140f39e16b22bde343d",
+      "input_sha256": "40dc00eceb8863c6631919801ad047162ac9434cf2673a06b6bd1dd5a1db91af",
+      "forced": [
+        "g8f6",
+        "g7g6",
+        "c7c6",
+        "d7d5",
+        "c6d5",
+        "b8c6",
+        "f8g7",
+        "e8g8",
+        "c8g4"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "tjds234d-18",
+      "game": "tjds234d",
+      "ply": 18,
+      "side": 0,
+      "opponent": "duck",
+      "opponent_version": 6,
+      "outcome": "loss",
+      "created_at": "2026-11-01T14:56:34.682907748+00:00",
+      "replay_sha256": "8d067bf21149195e77690f58875ce56ede42ccba88cc2a465442ec6af7f4f397",
+      "input_sha256": "d9b951e54cfe2bbb5e3e50359906c84f53140e1482a6d963e7338a8b2b21393c",
+      "forced": [
+        "d2d4",
+        "c1f4",
+        "e2e3",
+        "f1d3",
+        "d3f5",
+        "d1f3",
+        "g1e2",
+        "f3g3",
+        "f4d6"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "opening_control"
+      ],
+      "material_lead_before": 0
+    },
+    {
+      "name": "tjds234d-54",
+      "game": "tjds234d",
+      "ply": 54,
+      "side": 0,
+      "opponent": "duck",
+      "opponent_version": 6,
+      "outcome": "loss",
+      "created_at": "2026-11-01T14:56:34.682907748+00:00",
+      "replay_sha256": "8d067bf21149195e77690f58875ce56ede42ccba88cc2a465442ec6af7f4f397",
+      "input_sha256": "fd5f0ac3aa2251145dea0b7819e5946ba545d3d93936c6aa8c336883583d3fad",
+      "forced": [
+        "d2d4",
+        "c1f4",
+        "e2e3",
+        "f1d3",
+        "d3f5",
+        "d1f3",
+        "g1e2",
+        "f3g3",
+        "f4d6",
+        "g3d6",
+        "b1c3",
+        "e2f4",
+        "f4d5",
+        "c3d5",
+        "e1d2",
+        "a2a4",
+        "a1a3",
+        "h1g1",
+        "g2g3",
+        "g1b1",
+        "b1h1",
+        "d2d3",
+        "h2h4",
+        "a3b3",
+        "b3c3",
+        "b2c3",
+        "h1b1"
+      ],
+      "private_input_redaction_check": true,
+      "cohorts": [
+        "first_material_loss"
+      ],
+      "material_lead_before": -2
+    }
+  ],
+  "selection": "One opening control at ply18/19 and first >=3-point net loss over three plies, while lead>=-3, at ply8..60; same 11 games as late audit.",
+  "parent_plan_sha256": "f57a8a4268cc5937251934fa35802712c4c0d8ac049719352f474b2c7032d7e5",
+  "coverage": [
+    {
+      "game": "ks5vukpe",
+      "control": 18,
+      "first_material_loss": null
+    },
+    {
+      "game": "pzdi9a60",
+      "control": 19,
+      "first_material_loss": null
+    },
+    {
+      "game": "j2m5dxhp",
+      "control": 19,
+      "first_material_loss": null
+    },
+    {
+      "game": "xpjkx2ka",
+      "control": 18,
+      "first_material_loss": null
+    },
+    {
+      "game": "92px495s",
+      "control": 18,
+      "first_material_loss": 26
+    },
+    {
+      "game": "axvqi3b1",
+      "control": 19,
+      "first_material_loss": null
+    },
+    {
+      "game": "pi6j9sui",
+      "control": 19,
+      "first_material_loss": 43
+    },
+    {
+      "game": "l2sbyq4a",
+      "control": 19,
+      "first_material_loss": null
+    },
+    {
+      "game": "ypq192zu",
+      "control": 19,
+      "first_material_loss": 37
+    },
+    {
+      "game": "g0pmetq2",
+      "control": 19,
+      "first_material_loss": null
+    },
+    {
+      "game": "tjds234d",
+      "control": 18,
+      "first_material_loss": 54
+    }
+  ],
+  "selector_sha256": "bf6ef176ac9dc6b038526150fb0b0e1e942bd3db19f00f8c27534e9faf133a9b"
+}
