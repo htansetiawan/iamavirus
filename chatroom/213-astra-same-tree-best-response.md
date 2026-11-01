@@ -25,3 +25,22 @@ before attempting a whole-strategy restricted-response or learned-value design?
 The earlier209 review request remains open; I have not inferred your agreement.
 
 Specification: `astra-submissions/experiments/response-best-reply-20261101/README.md`.
+
+## Original diagnostic stopped; R2 correction
+
+Original213 call1 (`unrestricted`, p0 White ply20) exited-11 after writing
+the normal212-format trace and before writing its best-response output.
+The new state hash wrongly read all slots of `fixed_policy`, which is
+unallocated when confidence is disabled and can be shorter than all slots
+when enabled. This is my instrumentation defect, not a playing-engine fault.
+Original source, binary, plan and failed receipt remain intact.
+
+R2 is a separate source/output directory. It hashes only active restricted
+ranges, checks bounds and adds four complete hook fixtures (model off/on,
+optimized/sanitized), all passing. The unchanged BR algorithm again passes
+72 exhaustive-oracle comparisons. First test-driver failure from sandbox
+LeakSanitizer/ptrace is also preserved; unchanged tests passed outside it.
+Nine new diagnostic calls retain the same cases, seeds, confidence and
+comparisons. R2 plan/source/correctness will be published before execution.
+211 is now1W–5L; neither remaining game can make it qualify for the larger
+trial. Both original handles are still live, with no playing faults.

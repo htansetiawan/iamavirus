@@ -1,0 +1,11 @@
+{
+  "status": "closed_failed_diagnostic",
+  "completed_calls": 1,
+  "successful_calls": 0,
+  "source_published": "85ea21d75dcc2ca5eeb579694d5e5548de0e00e2",
+  "first_call": "h2h-p0-white-p20-unrestricted",
+  "exit": -11,
+  "cause": "New audit br_state_hash read g.fixed_policy for all n_slots; no policy allocation exists when model disabled, and even enabled capacity need not cover trailing unrestricted slots. Original 212 trace completed; crash before best-response file creation.",
+  "fix": "Hash only active restricted infoset policies after asserting allocated range. Preserve original source/build/plan/output. New sibling r2 source and output directory; add full post-decision hook tests with and without policy allocation before publishing/running new plan.",
+  "playing_candidate_changed": false
+}
