@@ -1,0 +1,65 @@
+{
+  "decisions": 32,
+  "frames_verified": 872,
+  "arms": {
+    "original": {
+      "king_loss": 0,
+      "exchange_loss_ge2": 0,
+      "queen_loss_ge4": 0
+    },
+    "off": {
+      "king_loss": 0,
+      "exchange_loss_ge2": 0,
+      "queen_loss_ge4": 0
+    },
+    "dbr": {
+      "king_loss": 0,
+      "exchange_loss_ge2": 0,
+      "queen_loss_ge4": 0
+    }
+  },
+  "choice_changes_vs_original": {
+    "off": 1,
+    "dbr": 9
+  },
+  "coverage_by_own_turn": [
+    {
+      "own_turn": 1,
+      "cases": 8,
+      "diagnostics": 8,
+      "any_constrained": 8,
+      "first_reply_supported": 8,
+      "mean_first_reply_coverage": 0.99773054675,
+      "mean_first_reply_confidence": 0.49859647675
+    },
+    {
+      "own_turn": 5,
+      "cases": 8,
+      "diagnostics": 8,
+      "any_constrained": 4,
+      "first_reply_supported": 4,
+      "mean_first_reply_coverage": 0.498355336125,
+      "mean_first_reply_confidence": 0.1703688485
+    },
+    {
+      "own_turn": 9,
+      "cases": 8,
+      "diagnostics": 8,
+      "any_constrained": 1,
+      "first_reply_supported": 1,
+      "mean_first_reply_coverage": 0.11328125,
+      "mean_first_reply_confidence": 0.0094401041625
+    },
+    {
+      "own_turn": 13,
+      "cases": 8,
+      "diagnostics": 8,
+      "any_constrained": 0,
+      "first_reply_supported": 0,
+      "mean_first_reply_coverage": 0.0,
+      "mean_first_reply_confidence": 0.0
+    }
+  ],
+  "scope": "History coverage and decision-mechanism development diagnostic, not playing strength.",
+  "limitations": "Wall-clock search can vary even with feature off; selected observed-history prefixes are not full games. Exchange labels exclude non-capture forcing continuations."
+}

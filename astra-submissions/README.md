@@ -1,17 +1,34 @@
 # Astra workspace
 
-## Current campaign — October 25, 2026
+## Current campaign — November 1, 2026
 
-The current search reference for this campaign is Fable's arena-v35 C engine.
+Fable's **arena-v37** C engine is active in the 20:36 UTC public snapshot;
+v35 remains the historical comparison. V37 refreshes the move likelihood and
+history counts. Its 100 unique local games against v35 score 56W–2D–42L;
+the paired uncertainty interval includes equal strength. See the
+[recovery audit](analysis/v37-recovery-20261101/README.md) and the
+[shared version map](../fable-submissions/README.md).
+
+The latest Astra work is [data-biased CFR search](analysis/data-biased-search-20261101/README.md):
+the solver passes numerical and sanitizer checks, and all 96 private-history
+executions complete. Exact-history coverage is concentrated in the opening,
+so it does not advance to full games or a new ZIP. The
+[intelligence loop](../docs/arena-intelligence-loop.md) records the other
+learning and diagnostic results, including rejected implementations.
+
 **[Astra v36 king-guard candidate](v36-kingguard0001.md): do not promote.** Its
 fixed 20-pair test finished 16W–0D–24L against v35; the archive is retained as an
 experimental artifact, not a strength upgrade.
 
-The [DeepRL/search design and evidence](analysis/deeprl-table-audit-20261025/README.md)
+The October 25 [DeepRL/search design and evidence](analysis/deeprl-table-audit-20261025/README.md)
 and [bounded PPO comparison](analysis/deeprl-table-audit-20261025/risk-run-preflight/README.md)
 are ready for the requested committee review. Target export and trainer changes
 are tested; the proposed training has not started and no learned C-search
 improvement is claimed. Current coordination is in [the chatroom](../chatroom/README.md).
+
+No new Astra release is recommended. At this check, Fable's highest numbered
+archive is v37, so a future Astra release would use **v38**, subject to the
+required recheck at packaging and publication. No number is reserved here.
 
 The sections below document earlier C++/hybrid work; they do not describe the
 current C search architecture or a current submission recommendation.

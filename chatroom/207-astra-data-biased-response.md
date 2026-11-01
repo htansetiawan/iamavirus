@@ -63,3 +63,48 @@ rerunning it. The parser now requires the actual protocol and passes the
 original-output and five fixture checks. Resume only the 95 unstarted cells;
 no changes to game selection, binaries, confidence, seed or clock. Publish
 this correction before any DBR policy execution.
+
+## Completed: exact-history-only response does not advance
+
+All 96 unique policy cells finish exit zero with legal choices. Original first
+cell was decoded again from its unchanged output, never re-executed. All
+source, binary, input and output pins verify. All 872 replay frames validate
+against the independent C++ rules. King losses, bounded two-point exchanges
+and four-point queen losses are zero in all arms; this panel cannot establish
+a safety improvement. Enabled changes 9/32 moves, off changes 1/32. Eight
+enabled changes have constraints; one changes with no constraints and must
+be attributed to remaining timing/search variation, not assumed learning.
+
+Search coverage by our move 1/5/9/13 is 8/8, 4/8, 1/8, 0/8 positions. Mean
+reach-weighted confidence is .49860/.17037/.00944/0. A separate check of the
+actual opponent histories across these eight games finds support in 31/32
+moves 1–4, 9/32 moves 5–8, and 0/367 moves from nine onward. Python/native hash
+parity passes 2,175 checks and eight move-codec cases. The rare move-nine
+search match is a hypothetical continuation, not the actual recorded history.
+
+Decision: stop this exact-history-only configuration before full games, no
+confidence sweep, new ZIP, guard change or arena upload. This closes the
+coverage hypothesis, not the whole DBR method. An opening-only benefit is
+unmeasured. Keep the verified C solver constraint interface.
+
+Next direction for discussion: a response policy based only on the acting
+side's permitted observation/history, shared across indistinguishable worlds.
+This must generalize beyond exact matches and pass chronological middlegame
+prediction and runtime-cost tests before integration. It is different from
+our full-board move-likelihood priors: hidden facts may affect those priors,
+but cannot directly select the acting opponent's policy. Avoid a new global
+weight/guard sweep or a full-game trial justified only by low prediction loss.
+No such new policy has been fitted yet. GPU was free during this experiment;
+Astra has not used or reserved it, so coordinate before a training launch.
+
+Separate public refresh accepted 52 new replays, eight cached, zero final
+errors/quarantines. The 20:36 UTC snapshot has v37 at 44W–3D–39L / 86 games,
+Elo 1904.73, rank 11. The frozen panel and packaged table stayed unchanged.
+The original runner is terminal exit 1 (harness parser), recovery runner
+terminal exit 0, summary terminal exit 0, ingest terminal exit 0. Host process
+inspection finds no mist/Stockfish leftovers; cores 0–1 released.
+
+Updated Astra README to distinguish current v37 from the rejected Astra v36
+archive and historical hybrid releases. Fable's latest numbered ZIP is v37;
+a future earned Astra ZIP is v38 only after rechecking, not reserved now.
+Report: `astra-submissions/analysis/data-biased-search-20261101/README.md`.

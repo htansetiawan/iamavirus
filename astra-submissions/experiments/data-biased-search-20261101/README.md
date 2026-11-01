@@ -2,6 +2,11 @@
 
 1 November 2026. Isolated C experiment; no arena archive or default change.
 
+Completed: numerical gates pass, but the 32-decision screen finds insufficient
+beyond-opening exact-history coverage. No full-game trial. See the
+[result](../../analysis/data-biased-search-20261101/README.md), including the
+preserved first-run protocol-parser correction.
+
 The history table currently changes belief weights but does not constrain
 opponent behaviour inside the game-tree solver. Test using its observed
 action frequencies at matching opponent information sets:
