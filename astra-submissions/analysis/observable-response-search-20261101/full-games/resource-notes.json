@@ -1,0 +1,5 @@
+{
+  "at_utc": "2026-11-01T22:18:50.576448+00:00",
+  "note": "Initial212 audit build and failed first fixture compilation were not explicitly CPU-affinity-pinned. They may have briefly contended with ongoing211 games. Subsequent compilation, fixtures and all diagnostic policy calls are pinned4-5. No games dropped or replayed; this small pilot is not an Elo estimate.",
+  "scope": "Potential host scheduling noise; no bot affinity, clock, bytes or started-game changes."
+}

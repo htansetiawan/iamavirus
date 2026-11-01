@@ -1,0 +1,501 @@
+{
+  "tests": [
+    {
+      "mode": "optimized",
+      "command": [
+        "gcc",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-std=c11",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/test_trace.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/adapter.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/proof.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/response.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/sfeval.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/test-optimized"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "chosen": "d1d3",
+        "value": 0.446875,
+        "us": 0,
+        "nodes": 22,
+        "belief_capped": false,
+        "belief": [
+          {
+            "board": "K--R-------------------------------------------------------r---k",
+            "weight": 0.250000001869044,
+            "castle": 0,
+            "ep": -1
+          },
+          {
+            "board": "K--R--------------------------------------------------p----r---k",
+            "weight": 0.749999998130956,
+            "castle": 0,
+            "ep": -1
+          }
+        ],
+        "root_actions": [
+          {
+            "move": "d1d2",
+            "probability": 0.25,
+            "initial_q": -0.07500000000000002,
+            "q": -0.3125000000000001
+          },
+          {
+            "move": "d1d3",
+            "probability": 0.75,
+            "initial_q": 0.7000000000000001,
+            "q": 0.7000000000000001
+          }
+        ],
+        "worlds": [
+          {
+            "belief_index": 0,
+            "board": "K--R-------------------------------------------------------r---k",
+            "weight": 0.25,
+            "actions": [
+              {
+                "move": "d1d2",
+                "initial_q": 0.3,
+                "q": -0.6500000000000005,
+                "expanded": true,
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "probability": 0.7666666666666667,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 1,
+                    "q": -1,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d3",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d4",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d5",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d6",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d7",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8a8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8b8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8c8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8e8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8f8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8g8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "h8g7",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "h8h7",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "h8g8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  }
+                ]
+              },
+              {
+                "move": "d1d3",
+                "initial_q": 0.4,
+                "q": 0.4,
+                "expanded": false,
+                "replies": []
+              }
+            ]
+          },
+          {
+            "belief_index": 1,
+            "board": "K--R--------------------------------------------------p----r---k",
+            "weight": 0.75,
+            "actions": [
+              {
+                "move": "d1d2",
+                "initial_q": -0.2,
+                "q": -0.2,
+                "expanded": false,
+                "replies": []
+              },
+              {
+                "move": "d1d3",
+                "initial_q": 0.8,
+                "q": 0.8,
+                "expanded": false,
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "diagnostic_only": true,
+        "true_board_input": false
+      }
+    },
+    {
+      "mode": "sanitized",
+      "command": [
+        "gcc",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-std=c11",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/test_trace.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/adapter.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/proof.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/response.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/src/sfeval.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-causal-audit-20261101/build/test-sanitized"
+      ],
+      "returncode": 0,
+      "stderr": "",
+      "output": {
+        "chosen": "d1d3",
+        "value": 0.446875,
+        "us": 0,
+        "nodes": 22,
+        "belief_capped": false,
+        "belief": [
+          {
+            "board": "K--R-------------------------------------------------------r---k",
+            "weight": 0.250000001869044,
+            "castle": 0,
+            "ep": -1
+          },
+          {
+            "board": "K--R--------------------------------------------------p----r---k",
+            "weight": 0.749999998130956,
+            "castle": 0,
+            "ep": -1
+          }
+        ],
+        "root_actions": [
+          {
+            "move": "d1d2",
+            "probability": 0.25,
+            "initial_q": -0.07500000000000002,
+            "q": -0.3125000000000001
+          },
+          {
+            "move": "d1d3",
+            "probability": 0.75,
+            "initial_q": 0.7000000000000001,
+            "q": 0.7000000000000001
+          }
+        ],
+        "worlds": [
+          {
+            "belief_index": 0,
+            "board": "K--R-------------------------------------------------------r---k",
+            "weight": 0.25,
+            "actions": [
+              {
+                "move": "d1d2",
+                "initial_q": 0.3,
+                "q": -0.6500000000000005,
+                "expanded": true,
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "probability": 0.7666666666666667,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 1,
+                    "q": -1,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d3",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d4",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d5",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d6",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8d7",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8a8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8b8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8c8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8e8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8f8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "d8g8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "h8g7",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "h8h7",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  },
+                  {
+                    "move": "h8g8",
+                    "probability": 0.016666666666666666,
+                    "fixed": 0.06666666666666667,
+                    "confidence": 0.25,
+                    "free": 0,
+                    "q": 0.5,
+                    "expanded": false
+                  }
+                ]
+              },
+              {
+                "move": "d1d3",
+                "initial_q": 0.4,
+                "q": 0.4,
+                "expanded": false,
+                "replies": []
+              }
+            ]
+          },
+          {
+            "belief_index": 1,
+            "board": "K--R--------------------------------------------------p----r---k",
+            "weight": 0.75,
+            "actions": [
+              {
+                "move": "d1d2",
+                "initial_q": -0.2,
+                "q": -0.2,
+                "expanded": false,
+                "replies": []
+              },
+              {
+                "move": "d1d3",
+                "initial_q": 0.8,
+                "q": 0.8,
+                "expanded": false,
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "diagnostic_only": true,
+        "true_board_input": false
+      }
+    }
+  ],
+  "test_source_sha256": "ef536b4450c0e996aa06a7cefe616f68fccee7faff905035f86a1f29c3d31fb8",
+  "driver_sha256": "90215a31123a8220b90fa06d7b64ec999a6c57f18078c7ce5c860089070f75dd",
+  "oracle": "Independent unequal-world numeric calculation, fixed/free opponent mixture and legal reply action labels.",
+  "prior_fixture_build_error": "First ad-hoc fixture command also linked engine main.c, causing duplicate main; corrected source list. No diagnostic or match candidate was changed."
+}
