@@ -1,0 +1,2546 @@
+{
+  "tests": [
+    {
+      "build": "optimized",
+      "kind": 0,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "7b0d5b8521074e6f",
+        "nodes": 22,
+        "infosets": 2,
+        "layers": 4,
+        "restricted_first_sets": 0,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.42500000000000004,
+              0.42500000000000004,
+              0.42500000000000004,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.4,
+              -0.4,
+              -0.4,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 6.5406e-05,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    },
+    {
+      "build": "optimized",
+      "kind": 1,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "7b0d5b8521074e6f",
+        "nodes": 22,
+        "infosets": 2,
+        "layers": 4,
+        "restricted_first_sets": 1,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.446875,
+              0.446875,
+              0.446875,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.021874999999999978,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.3125000000000001,
+              -0.3125000000000001,
+              -0.3125000000000001,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.08749999999999991,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.6500000000000005,
+                  -0.6500000000000005,
+                  -0.6500000000000005,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 7.7922e-05,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    },
+    {
+      "build": "optimized",
+      "kind": 2,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "f4260df524d433f5",
+        "nodes": 43,
+        "infosets": 3,
+        "layers": 4,
+        "restricted_first_sets": 1,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.446875,
+              0.446875,
+              0.446875,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.021874999999999978,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.1875,
+                "branch": 0,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.0625,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.5625,
+                "branch": 2,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.1875,
+                "branch": 3,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.3125,
+              -0.3125,
+              -0.3125,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.08750000000000002,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.1875,
+                "branch": 0,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.0625,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.5625,
+                "branch": 2,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.1875,
+                "branch": 3,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 7.6754e-05,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    },
+    {
+      "build": "optimized",
+      "kind": 3,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "7b0d5b8521074e6f",
+        "nodes": 22,
+        "infosets": 2,
+        "layers": 4,
+        "restricted_first_sets": 1,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.5125000000000001,
+              0.5125000000000001,
+              0.5125000000000001,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.08750000000000002,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.05000000000000003,
+              -0.05000000000000003,
+              -0.05000000000000003,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.35,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 5.5225e-05,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    },
+    {
+      "build": "sanitized",
+      "kind": 0,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "7b0d5b8521074e6f",
+        "nodes": 22,
+        "infosets": 2,
+        "layers": 4,
+        "restricted_first_sets": 0,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.42500000000000004,
+              0.42500000000000004,
+              0.42500000000000004,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.4,
+              -0.4,
+              -0.4,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 0.000265556,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    },
+    {
+      "build": "sanitized",
+      "kind": 1,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "7b0d5b8521074e6f",
+        "nodes": 22,
+        "infosets": 2,
+        "layers": 4,
+        "restricted_first_sets": 1,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.446875,
+              0.446875,
+              0.446875,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.021874999999999978,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.3125000000000001,
+              -0.3125000000000001,
+              -0.3125000000000001,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.08749999999999991,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.6500000000000005,
+                  -0.6500000000000005,
+                  -0.6500000000000005,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": -1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 0.000259524,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    },
+    {
+      "build": "sanitized",
+      "kind": 2,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "f4260df524d433f5",
+        "nodes": 43,
+        "infosets": 3,
+        "layers": 4,
+        "restricted_first_sets": 1,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.446875,
+              0.446875,
+              0.446875,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.021874999999999978,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.1875,
+                "branch": 0,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.0625,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.5625,
+                "branch": 2,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.1875,
+                "branch": 3,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.3125,
+              -0.3125,
+              -0.3125,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.08750000000000002,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.1875,
+                "branch": 0,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -1,
+                  -1,
+                  -1,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.0625,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.5625,
+                "branch": 2,
+                "mode": 0,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.1875,
+                "branch": 3,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 0.000455057,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    },
+    {
+      "build": "sanitized",
+      "kind": 3,
+      "returncode": 0,
+      "output": {
+        "chosen": "d1d3",
+        "tree_hash": "7b0d5b8521074e6f",
+        "nodes": 22,
+        "infosets": 2,
+        "layers": 4,
+        "restricted_first_sets": 1,
+        "restricted_later_sets": 0,
+        "values_order": [
+          "current",
+          "restricted_best",
+          "first_only_best",
+          "unrestricted_best"
+        ],
+        "profiles": [
+          {
+            "profile": "mixed",
+            "values": [
+              0.5125000000000001,
+              0.5125000000000001,
+              0.5125000000000001,
+              0.42500000000000004
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.08750000000000002,
+            "worlds": []
+          },
+          {
+            "profile": "d1d3",
+            "values": [
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001,
+              0.7000000000000001
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.4,
+                  0.4,
+                  0.4,
+                  0.4
+                ],
+                "replies": []
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.8,
+                  0.8,
+                  0.8,
+                  0.8
+                ],
+                "replies": []
+              }
+            ]
+          },
+          {
+            "profile": "d1d2",
+            "values": [
+              -0.05000000000000003,
+              -0.05000000000000003,
+              -0.05000000000000003,
+              -0.4
+            ],
+            "solver_slack": 0,
+            "future_restriction_gap": 0,
+            "first_restriction_gap": 0.35,
+            "worlds": [
+              {
+                "index": 0,
+                "board": "K--R-------------------------------------------------------r---k",
+                "weight": 0.25,
+                "branch": 0,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  0.39999999999999997,
+                  -1
+                ],
+                "replies": [
+                  {
+                    "move": "d8d2",
+                    "values": [
+                      -1,
+                      -1,
+                      -1,
+                      -1
+                    ]
+                  },
+                  {
+                    "move": "d8d3",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d4",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d5",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d6",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8d7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8a8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8b8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8c8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8e8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8f8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "d8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8h7",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  },
+                  {
+                    "move": "h8g8",
+                    "values": [
+                      0.5,
+                      0.5,
+                      0.5,
+                      0.5
+                    ]
+                  }
+                ]
+              },
+              {
+                "index": 1,
+                "board": "K--R--------------------------------------------------p----r---k",
+                "weight": 0.75,
+                "branch": 1,
+                "mode": 1,
+                "castle": 0,
+                "ep": -1,
+                "values": [
+                  -0.2,
+                  -0.2,
+                  -0.2,
+                  -0.2
+                ],
+                "replies": []
+              }
+            ]
+          }
+        ],
+        "state_unchanged": true,
+        "seconds": 0.000252452,
+        "scope": "Fixed finite tree and fixed own continuation, conditional on root profile. Values are not full-game exploitability or Elo."
+      },
+      "stderr": ""
+    }
+  ],
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-response-audit-20261101/test_hook.py": "93b6e423466e3ff9d836dcd1eef9bd01bd9184011589234b5f199c239b87c4ca",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-response-audit-20261101/test_hook.c": "303af1310aede8d06971b76ec0c011445257a3670b1654beb12d29dd77d8291d",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-response-audit-20261101/provenance.json": "2d38f53f082ad1a4762a7cfa4558fec04c8f1993521a4e4c1172e3c98fde7467"
+  },
+  "scope": "Four mode/export cases, optimized and ASan/UBSan; analytic restricted gap and branch-weight identities. BR solver is unchanged from the exhaustive 213 checks."
+}
