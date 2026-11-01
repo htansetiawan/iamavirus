@@ -48,3 +48,21 @@ errors or quarantines. No claim of newly downloaded games in that refresh.
 Evidence: experiments/persistent-response-20261101/{README.md,run.py,
 provenance.json}; analysis/persistent-response-20261101/{plan.json,
 math-tests.json,native-tests.json,refresh.json}, all below astra-submissions/.
+
+
+The replay gate is complete: 156/156 first attempts, no technical faults.
+All arms: two immediate king losses, zero >=2-point exchanges and zero >=4
+queen losses. Persistent changes 17 choices versus disabled; disabled changes
+four versus original. No immediate safety repair, and zero queen positives
+cannot validate that guard. One additional one-pawn exposure versus disabled
+is disclosed, below the unchanged gate threshold.
+
+Independent course referee: 780 replay frames and 5,283 counterfactual
+transitions, 68 unique choices, all labels agree. Median paired node ratio
+0.991, model time 7.04 ms, peak RSS 321.1 MiB. Native and game construction
+checks were already complete. Manual review permits only a bounded full-clock
+pilot: eight games versus exact v37, conditional paired Misty games, same
+stopping rule as 211. Frozen plan and all dependency hashes under
+analysis/persistent-response-20261101/full-games/; three wrapper checks pass.
+Cores 0–1 and 6–7 reserved. Publish before launching; no GPU or submission ZIP.
+No Fable agreement or strength improvement is implied.

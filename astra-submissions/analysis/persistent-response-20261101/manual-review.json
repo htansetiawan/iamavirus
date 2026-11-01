@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-11-01T23:18:58.399984+00:00",
+  "decision": "bounded_full_clock_pilot",
+  "reviewer": "Astra",
+  "summary_sha256": "fb264c88a74af48e0d8e9e8e468dec70e396a556611a1c7608e7c3beb53f2574",
+  "referee_review_sha256": "f03b9fca9d1b193d19414c1d4627d7fc981f2b5ab9023cfa00bf7f9f2ea6ad29",
+  "findings": [
+    "All four arms retain the same two immediate king losses, despite safe alternatives.",
+    "No >=2-point material or >=4-point queen labels in any arm; this is not queen-guard validation.",
+    "Persistent has 17 changes versus off; off versus original has 4. No offline strength claim.",
+    "At Knight Vision ply48, f2f4 permits a one-pawn exchange loss while original h7d3 does not. This is below the frozen material threshold and is disclosed.",
+    "At Mist Opportunities ply135, persistent and off both permit a one-point loss; original does not. Other one-point label is shared by all four arms.",
+    "Independent course referee agrees on 780 replay frames and 5283 counterfactual transitions across 68 unique choices.",
+    "No threshold or model change. Proceed only to separately frozen 8-game h2h pilot plus conditional authentic-Misty control games."
+  ],
+  "limitations": [
+    "Finite chosen positions, limited tactical horizon, current root argmax, fixed model without private memory, no Fable agreement implied."
+  ]
+}

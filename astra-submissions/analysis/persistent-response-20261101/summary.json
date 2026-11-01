@@ -1,0 +1,58 @@
+{
+  "decisions": 39,
+  "frames_verified": 780,
+  "arms": {
+    "original": {
+      "king_loss": 2,
+      "exchange_loss_ge2": 0,
+      "queen_loss_ge4": 0,
+      "median_elapsed": 3.4707889299970702,
+      "median_nodes": 89001.0,
+      "maximum_peak_rss_kb": 328588
+    },
+    "local": {
+      "king_loss": 2,
+      "exchange_loss_ge2": 0,
+      "queen_loss_ge4": 0,
+      "median_elapsed": 3.462798128999566,
+      "median_nodes": 83487.0,
+      "maximum_peak_rss_kb": 328620
+    },
+    "off": {
+      "king_loss": 2,
+      "exchange_loss_ge2": 0,
+      "queen_loss_ge4": 0,
+      "median_elapsed": 3.463170134000393,
+      "median_nodes": 91655.0,
+      "maximum_peak_rss_kb": 328596
+    },
+    "persistent": {
+      "king_loss": 2,
+      "exchange_loss_ge2": 0,
+      "queen_loss_ge4": 0,
+      "median_elapsed": 3.478099604999443,
+      "median_nodes": 85545.0,
+      "maximum_peak_rss_kb": 328792
+    }
+  },
+  "changes_vs_off": 17,
+  "off_changes_vs_original": 4,
+  "coverage_case_share": 1.0,
+  "coverage_reports": 39,
+  "median_model_seconds": 0.007037946,
+  "checks": {
+    "technical": true,
+    "projection_active": true,
+    "king": true,
+    "queen": true,
+    "material": true,
+    "meaningful_choices": true,
+    "coverage": true,
+    "cost": true,
+    "node_budget": true,
+    "memory": true
+  },
+  "decision": "manual_review_before_full_games",
+  "scope": "Mechanism and bounded safety diagnostic; not a strength estimate.",
+  "limitations": "Wall-clock controls can differ. Short exchange label excludes quiet forcing continuations. Endpoint decisions are selected; not a population or strength estimate."
+}

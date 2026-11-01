@@ -1,0 +1,20 @@
+[
+  {
+    "arm": "base",
+    "returncode": 0,
+    "stdout": "ready\nmove h2h3\n",
+    "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-response-20261101/build/base/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=221 nodes=30728 iters=470 p=0.17 v=+0.090 lead=+0 clock=180.0 sf=1294/0.7s mr=-1.00/-1.00 hist=0/0 move=h2h3\n"
+  },
+  {
+    "arm": "candidate",
+    "returncode": 0,
+    "stdout": "ready\nmove e2e4\n",
+    "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-response-20261101/build/candidate/data/history.bin: 359889 records\nmist: stockfish ready\nastra_visible: opponent_sets 150 constrained 55 first_reply_coverage 0.25 first_reply_confidence 0.25 expected_model_visits 0.380173632 calls 55 reuses 117 failures 0 mismatches 0 seconds 0.001964703 load_failed 0 projected_sets 1 projected_actions 1 dominated_mass 1.33182871e-05 all_proven 0\nastra_persistent: prior 0.25 physical_worlds 1 branches 2 free_expansions 982 fixed_expansions 341\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=276 nodes=32276 iters=470 p=0.42 v=+0.109 lead=+0 clock=180.0 sf=1324/0.7s mr=-1.00/-1.00 hist=0/0 move=e2e4\n"
+  },
+  {
+    "arm": "misty",
+    "returncode": 0,
+    "stdout": "ready\nmove c2c4\n",
+    "stderr": ""
+  }
+]

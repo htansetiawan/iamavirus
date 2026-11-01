@@ -318,3 +318,11 @@ modeled mistakes in that selected tree. It does not establish a full-game
 exploitability bound or justify tuning a guard. The small pilots and diagnostic
 failures are preserved, including a repaired audit-only crash. A persistent
 opponent-mode alternative is documented for review, not yet implemented.
+
+
+The persistent-mode alternative is now implemented in an isolated Astra copy.
+Its native/oracle checks pass, and 156 fresh decision calls meet the frozen
+safety/cost screen. It changes 17 of 39 moves without repairing the two shared
+immediate king losses. An independent referee confirms the labels. A bounded
+full-clock pilot is prepared; no deployed weights, guards or release change.
+See [the evidence and limits](../astra-submissions/analysis/persistent-response-20261101/README.md).
