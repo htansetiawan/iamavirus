@@ -1,0 +1,39 @@
+{
+  "models": {
+    "static": {
+      "parameters": 859,
+      "gradient_inf": 7.942839278497977e-07,
+      "objective_gap_upper_bound": 2.7096594847839583e-06
+    },
+    "temporal": {
+      "parameters": 859,
+      "gradient_inf": 1.6012881765030466e-06,
+      "objective_gap_upper_bound": 1.1012911824975302e-05
+    }
+  },
+  "splits": {
+    "validation": {
+      "positions": 17755,
+      "ambiguous": 10855,
+      "games": 300,
+      "ambiguous_gain": 0.028927923473859397,
+      "all_move_nll_change": -0.03150629650811997,
+      "passes": true
+    },
+    "test": {
+      "positions": 34510,
+      "ambiguous": 21032,
+      "games": 600,
+      "ambiguous_gain": 0.0288623324619473,
+      "all_move_nll_change": -0.031173934553765433,
+      "bootstrap_95": [
+        0.020731429271745067,
+        0.03775412691596522
+      ],
+      "reference_ambiguous_gain": 0.02816349874892615,
+      "passes": true
+    }
+  },
+  "earns_belief_integration": true,
+  "scope": "Predictive fit plus native parity only; no capped belief, guard, search, or strength claim."
+}

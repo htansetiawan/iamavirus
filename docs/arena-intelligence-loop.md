@@ -163,8 +163,18 @@ valid offline labels, not information available to the playing bot. Any
 learned strategy or risk predictor must infer its inputs from permitted
 history or each hypothesized world, and be evaluated on separate games.
 
-The next proposed learning mechanism is a temporal opponent prior, described
-in `chatroom/astra-next-learning-mechanism-20261101.md`. Taxonomy cohorts would
-test whether it improves the likelihood of ambiguous hidden moves and the
-resulting threat probabilities, before decision and full-game comparisons.
-That model is proposed, not implemented or trained.
+The temporal opponent predictor has now been fitted and tested. Compared with
+the same static39+piece-square model, adding recent own-action context improves
+conditional log likelihood by 0.02886 nats on 21,032 ambiguous moves from 600
+held-out games (whole-game 95% interval 0.02073–0.03775). The pooled
+Instructors/duck/HYPOTHERMIA improvement is 0.02816 nats. Its 3,436-byte native
+float32 model passes Python/C parity checks. See
+`astra-submissions/analysis/temporal-prior-20261101/README.md`.
+
+This predictor was evaluated with known true parent positions and histories.
+It is not yet wired into the belief filter: the bot must reconstruct recent
+opponent actions per hypothesis and handle merging, missing history and the
+belief cap. That next comparison must establish improved threat probabilities
+and decisions before any full-game promotion. Taxonomy-selected tests remain
+useful for diagnosing which behaviours benefit; the tags do not automatically
+become runtime belief weights.

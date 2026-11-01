@@ -1,0 +1,28 @@
+{
+  "manifest_sha256": "217f8f2f59f3acf0b0ae7f9cf5d821ff8225b67f42818932f85c03966688bb7f",
+  "script_sha256": "322b13db993be320eb221b40501c7c7f5f6b22821b83e5453558d5e853dc60ff",
+  "torch": "2.11.0+cu128",
+  "device": "cuda",
+  "l2": 0.0001,
+  "models": {
+    "static": {
+      "sha256": "8c381d960c28957da3f4bba6128a025f15bc4bacbd0cc917df15273de6dbe3d3",
+      "fit": {
+        "objective": 2.486884154078016,
+        "max_gradient": 7.942839278497977e-07,
+        "calls": 159,
+        "seconds": 3.4205064399993717
+      }
+    },
+    "temporal": {
+      "sha256": "483239bfaf5b33f2406ae10cca6ad9216ab081be213d72f8b69071fba09dad9a",
+      "fit": {
+        "objective": 2.4538093118562845,
+        "max_gradient": 1.6012881765030466e-06,
+        "calls": 156,
+        "seconds": 3.4666948089998186
+      }
+    }
+  },
+  "scope": "True-parent predictive experiment; no posterior or strength claim."
+}
