@@ -94,7 +94,14 @@ Reading: every arm is within the noise floor. Neither the refitted weights nor t
 
 ## 100 games against v35
 
-Queue `data/arena_local/queue-v37.json`: 100 unforced games, 50 colour-swapped pairs, 180+2, seed 420000 (held out), both core pairs, started 10:07Z on 1 November, running into the morning (about nine hours). Smoke `smoke-v37.json` (seed 419600, 08:43 to 08:58Z): two games, both played cleanly under the referee (no forfeit, 30 to 51 s left on the clocks), both lost by v37 on a king capture. Two games say nothing about strength; they say the ZIP boots, reads its table and plays to the clock.
+Queue `data/arena_local/queue-v37.json`: 100 unforced games, 50 colour-swapped pairs, 180+2, seed 420000 (held out), both core pairs, started 10:07Z on 1 November. The machine was rebooted at about 14:40Z with 73 games recorded and two in play; the runner resumes from its ledger and was restarted at 14:58Z for the remaining games. The interim read at 73 games:
+
+| | Games | W-D-L | Score | White | Black | Complete pairs (sweeps v37 / v35 / split) | Pair bootstrap 95% |
+|---|---:|---|---:|---|---|---|---|
+| v37 vs v35 | 73 | 38-2-33 | 0.534 | 23.5/37 | 15.5/36 | 36 (12 / 9 / 15) | 0.40 to 0.65 |
+
+Every game ended by king capture except two threefold repetitions; no forfeit; no loss under 40 plies; lowest end clock 19.9 s for v37 and 20.0 s for v35. A level engine scores 0.534 or better over 73 games about three times in ten. The final 100-game row replaces this one when the lane completes.
+ Smoke `smoke-v37.json` (seed 419600, 08:43 to 08:58Z): two games, both played cleanly under the referee (no forfeit, 30 to 51 s left on the clocks), both lost by v37 on a king capture. Two games say nothing about strength; they say the ZIP boots, reads its table and plays to the clock.
 
 ## What this says
 
