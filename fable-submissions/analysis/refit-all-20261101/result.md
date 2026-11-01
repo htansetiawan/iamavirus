@@ -94,18 +94,21 @@ Reading: every arm is within the noise floor. Neither the refitted weights nor t
 
 ## 100 games against v35
 
-Queue `data/arena_local/queue-v37.json`: 100 unforced games, 50 colour-swapped pairs, 180+2, seed 420000 (held out), both core pairs, started 10:07Z on 1 November. The machine was rebooted at about 14:40Z with 73 games recorded and two in play; the runner resumes from its ledger and was restarted at 14:58Z for the remaining games. The interim read at 73 games:
+Queue `data/arena_local/queue-v37.json`: 100 unforced games, 50 colour-swapped pairs, 180+2, seed 420000 (held out), both core pairs. Started 10:07Z on 1 November; the machine was rebooted at about 14:40Z with 73 games recorded; the runner resumed from its ledger at 14:57Z and finished the remaining pairs by 17:05Z (three games of pairs 36 and 39 were replayed after the interruption; the table counts the first recorded game per pair and colour, 100 games). The runner exited without marking its receipt complete; the ledger holds every game, all attempts `ok`.
 
-| | Games | W-D-L | Score | White | Black | Complete pairs (sweeps v37 / v35 / split) | Pair bootstrap 95% |
+| | Games | W-D-L | Score | White | Black | Pairs (sweeps v37 / v35 / split) | Pair bootstrap 95% |
 |---|---:|---|---:|---|---|---|---|
-| v37 vs v35 | 73 | 38-2-33 | 0.534 | 23.5/37 | 15.5/36 | 36 (12 / 9 / 15) | 0.40 to 0.65 |
+| v37 vs v35 | 100 | 56-2-42 | 0.570 | 32.5/50 | 24.5/50 | 50 (18 / 10 / 20, two with a draw) | 0.47 to 0.68 |
 
-Every game ended by king capture except two threefold repetitions; no forfeit; no loss under 40 plies; lowest end clock 19.9 s for v37 and 20.0 s for v35. A level engine scores 0.534 or better over 73 games about three times in ten. The final 100-game row replaces this one when the lane completes.
- Smoke `smoke-v37.json` (seed 419600, 08:43 to 08:58Z): two games, both played cleanly under the referee (no forfeit, 30 to 51 s left on the clocks), both lost by v37 on a king capture. Two games say nothing about strength; they say the ZIP boots, reads its table and plays to the clock.
+Every game ended by king capture except two threefold repetitions; no forfeit; no loss under 40 plies; lowest end clock 19.9 s for v37 and 20.0 s for v35. Before the reboot v37 scored 0.534 over 73 games, after it 18-0-9 over 27; nothing in the setup changed between the two stretches that I can point to, so the split is reported, not explained. A level engine scores 57 or more out of 100 about one time in twelve; the bar for a candidate is about 80. So: probably a little better than v35, far from the bar, and the same engine on the suite.
+
+## In the arena
+
+Uploaded by the lead at about 14:40Z on 1 November as arena version 37. First read at 17:06Z, 32 games: 16-1-15 (0.516), White 8.5/16, Black 8.0/16; rating 1890.8 before the first game, 1889.7 after 32 (K = 8), rank 10. v35's lifetime arena score was 0.517, so v37 is holding v35's pace. Losses: Decent Chess Bot 0-4, Strongly Invisible 1-3, duck 0-2, Crimson Fog 0-2; wins over HYPOTHERMIA 2-0, TA Baseline S 3-1, TA Baseline P, RATIRL, Sausage, Mu1tip13 2-0 each. One queen lost to an unseen capturer in 32 games, no clock under 15 s, no loss under 12 plies (`data/reports/v37-watch.md`). The fail-fast point of the v36 trial (48 games, 0.323 then) is next; v37 is nowhere near it.
 
 ## What this says
 
-To be written when the lane and the arena have spoken. What is already known: 73 times the data moved the held-out score by 0.008 nats, less than the 29 October change of form did, and that change was level over 100 games. The lead asked for v37 and takes it to the arena without waiting for the local gate; the fail-fast rule of the v36 trial applies (the lead withdraws it if the arena says so).
+More data did not make a stronger bot. Refitting the formula on 73 times the games moved its held-out score by one percent, left the suite's 487 decisions unchanged within noise, and gave a 100-game lane score of 0.570 against v35 (0.47 to 0.68), with the arena's first 32 games at v35's own pace. The 29 October refit that changed the form of the formula (more facts, piece-square tables) moved the held-out score twenty times further and was level in play; this one moved it a little and is level to slightly better. Either way the belief's weighting is not where the next 200 Elo are: the oracle experiment put the gap at sixty-fold in the truth's weight, and both refits together close a few percent of it. v37 stays live as long as the arena agrees (it carries fresher data at no cost); the work moves to the items chapter 6 ranks first, an opponent model conditioned on what the opponent sees and a per-move correction inside the search.
 
 ## Files
 
