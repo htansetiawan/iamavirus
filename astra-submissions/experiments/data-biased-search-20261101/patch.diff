@@ -1,0 +1,204 @@
+--- a/src/cfr.h
++++ b/src/cfr.h
+@@ -28,6 +28,7 @@
+     int n_slots;                                         /* total (infoset, action) pairs */
+     int finalized_slots;                                 /* slots the solver arrays cover */
+     double *regret, *last, *strategy, *strategy_sum;     /* per slot */
++    double *confidence, *fixed_policy; int cap_fixed; /* optional per-infoset restriction */
+     int root;
+     int *pending; int n_pending, cap_pending;           /* slots to start pure on (game_start_on) */
+ } Game;
+@@ -38,6 +39,7 @@
+ int  game_node(Game *g, int type, int player, int infoset, double value);
+ /* Children are added in action order; for chance nodes `p` is the probability. */
+ void game_children(Game *g, int node, const int *children, const double *p, int count);
++void game_restrict(Game *g, int I, double confidence, const double *policy);
+ void game_finalize(Game *g);                             /* allocates solver arrays */
+ /* GT-CFR grows the tree between solver iterations: after adding infosets and
+  * nodes, game_grow extends the solver arrays (new slots start at zero regret)
+--- a/src/belief.c
++++ b/src/belief.c
+@@ -798,3 +798,9 @@
+     }
+     return out->count;
+ }
++
++/* Read-only access for the isolated data-biased search experiment. */
++unsigned belief_history_counts(uint64_t h, const MoveList *l, unsigned *counts) {
++    read_settings();
++    return history_counts(h, l, counts);
++}
+--- a/src/gtcfr.c
++++ b/src/gtcfr.c
+@@ -155,6 +155,8 @@
+     return build_children_scored(t, p, hist, kids, only, sf, sf_cp, sf_found);
+ }
+ 
++#include "dbr.h"
++
+ /* Turns leaf `index` into a decision node of its side to move. */
+ static int expand_scored(Tree *t, int index, int sf, const int *sf_cp, const int *sf_found) {
+     Leaf leaf = t->leaves[index];
+@@ -164,6 +166,7 @@
+     const int player = leaf.pos.side == t->us ? 0 : 1;
+     const int before = t->g.n_infosets;
+     const int I = infoset_for(t, player, leaf.hist[player], count);
++    if (t->g.n_infosets > before) dbr_install(t, I, &leaf);
+     if (t->g.n_infosets > before && t->best_init) {
+         /* a new information set starts on its best child by the leaf values
+          * (the highest for us, the lowest for the opponent) instead of
+@@ -422,6 +425,7 @@
+     out->value = game_value(&t.g, x);
+     out->samples = K; out->our_moves = ours.count; out->opponent_infosets = t.g.n_infosets; out->nodes = t.g.n_nodes;
+     out->iterations = iteration;
++    dbr_report(&t, x);
+     free(x); free(idx); free(share); free(chance_kids); free(chance_p);
+     free(t.leaves); free(t.leaf_of); free(t.keys); free(t.vals); free(t.visits);
+     game_free(&t.g);
+--- a/src/cfr.c
++++ b/src/cfr.c
+@@ -1,6 +1,7 @@
+ /* mist-c: Predictive CFR+ on a generic game tree (milestone M3). See cfr.h. */
+ #include "cfr.h"
+ 
++#include <assert.h>
+ #include <math.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -11,7 +12,7 @@
+     free(g->nodes); free(g->child); free(g->prob);
+     free(g->is_player); free(g->is_actions); free(g->is_offset);
+     free(g->regret); free(g->last); free(g->strategy); free(g->strategy_sum);
+-    free(g->pending);
++    free(g->pending); free(g->confidence); free(g->fixed_policy);
+     memset(g, 0, sizeof(*g));
+ }
+ 
+@@ -21,7 +22,9 @@
+         g->is_player = realloc(g->is_player, g->cap_infosets * sizeof(int));
+         g->is_actions = realloc(g->is_actions, g->cap_infosets * sizeof(int));
+         g->is_offset = realloc(g->is_offset, g->cap_infosets * sizeof(int));
+-    }
++        g->confidence = realloc(g->confidence, g->cap_infosets * sizeof(double));
++    }
++    g->confidence[g->n_infosets] = 0;
+     g->is_player[g->n_infosets] = player;
+     g->is_actions[g->n_infosets] = actions;
+     g->is_offset[g->n_infosets] = g->n_slots;
+@@ -52,6 +55,23 @@
+         g->prob[g->n_edges + i] = p ? p[i] : 0.0;
+     }
+     g->n_edges += count;
++}
++
++void game_restrict(Game *g, int I, double confidence, const double *policy) {
++    assert(I >= 0 && I < g->n_infosets && isfinite(confidence) && confidence >= 0 && confidence <= 1);
++    const int n = g->is_actions[I], o = g->is_offset[I];
++    double total = 0;
++    for (int a = 0; a < n; ++a) { assert(isfinite(policy[a]) && policy[a] >= 0); total += policy[a]; }
++    assert(fabs(total - 1) < 1e-9);
++    if (o + n > g->cap_fixed) {
++        int cap = g->cap_fixed ? g->cap_fixed : 64;
++        while (cap < o + n) cap *= 2;
++        g->fixed_policy = realloc(g->fixed_policy, cap * sizeof(double));
++        memset(g->fixed_policy + g->cap_fixed, 0, (cap - g->cap_fixed) * sizeof(double));
++        g->cap_fixed = cap;
++    }
++    memcpy(g->fixed_policy + o, policy, n * sizeof(double));
++    g->confidence[I] = confidence;
+ }
+ 
+ static void apply_pending(Game *g);
+@@ -103,6 +123,8 @@
+     double total = 0.0;
+     for (int a = 0; a < n; ++a) { const double v = g->regret[o + a] + g->last[o + a]; x[a] = v > 0 ? v : 0; total += x[a]; }
+     for (int a = 0; a < n; ++a) x[a] = total > 0 ? x[a] / total : 1.0 / n;
++    const double c = g->confidence[I];
++    if (c > 0) for (int a = 0; a < n; ++a) x[a] = (1-c)*x[a] + c*g->fixed_policy[o+a];
+ }
+ 
+ void pcfr_infoset_strategy(const Game *g, int I, double *out) { strategy_of(g, I, out); }
+@@ -117,20 +139,22 @@
+         double total = 0.0;
+         for (int a = 0; a < n; ++a) total += g->strategy_sum[o + a];
+         for (int a = 0; a < n; ++a) out[o + a] = total > 0 ? g->strategy_sum[o + a] / total : 1.0 / n;
++        if (total == 0 && g->confidence[I] > 0)
++            for (int a = 0; a < n; ++a) out[o+a] = (1-g->confidence[I])/n + g->confidence[I]*g->fixed_policy[o+a];
+     }
+ }
+ 
+ /* Counterfactual traversal for `player`: returns the node's value for
+  * `player`; accumulates instantaneous regrets into `inst` weighted by the
+  * opponents' (and chance's) reach `reach_others`. */
+-static double traverse(const Game *g, int node, int player, double reach_others, const double *x, double *inst) {
++static double traverse(const Game *g, int node, int player, double reach_others, const double *x, double *inst, int constrained) {
+     const GameNode *n = &g->nodes[node];
+     if (n->type == NODE_TERMINAL) return player == 0 ? n->value : -n->value;
+     if (n->type == NODE_CHANCE) {
+         double v = 0.0;
+         for (int i = 0; i < n->count; ++i) {
+             const double p = g->prob[n->first + i];
+-            if (p > 0) v += p * traverse(g, g->child[n->first + i], player, reach_others * p, x, inst);
++            if (p > 0) v += p * traverse(g, g->child[n->first + i], player, reach_others * p, x, inst, constrained);
+         }
+         return v;
+     }
+@@ -139,7 +163,7 @@
+         double v = 0.0;
+         for (int a = 0; a < n->count; ++a) {
+             const double pa = x[o + a];
+-            if (pa > 0) v += pa * traverse(g, g->child[n->first + a], player, reach_others * pa, x, inst);
++            if (pa > 0) v += pa * traverse(g, g->child[n->first + a], player, reach_others * pa, x, inst, constrained);
+         }
+         return v;
+     }
+@@ -148,10 +172,19 @@
+     double stack_vals[64], v = 0.0;
+     double *vals = n->count <= 64 ? stack_vals : malloc(n->count * sizeof(double));
+     for (int a = 0; a < n->count; ++a) {
+-        vals[a] = traverse(g, g->child[n->first + a], player, reach_others, x, inst);
++        vals[a] = traverse(g, g->child[n->first + a], player, reach_others, x, inst, constrained);
+         v += x[o + a] * vals[a];
+     }
+-    for (int a = 0; a < n->count; ++a) inst[o + a] += reach_others * (vals[a] - v);
++    const double c = constrained ? g->confidence[I] : 0;
++    if (c == 0) {
++        for (int a = 0; a < n->count; ++a) inst[o + a] += reach_others * (vals[a] - v);
++    } else if (c < 1) {
++        double fixed_v = 0;
++        for (int a = 0; a < n->count; ++a) fixed_v += g->fixed_policy[o+a] * vals[a];
++        const double free_v = (v - c*fixed_v)/(1-c);
++        for (int a = 0; a < n->count; ++a)
++            inst[o+a] += reach_others * (1-c) * (vals[a] - free_v);
++    }
+     if (vals != stack_vals) free(vals);
+     return v;
+ }
+@@ -161,7 +194,7 @@
+     for (int player = 0; player < 2; ++player) {
+         pcfr_current(g, x);
+         memset(inst, 0, g->n_slots * sizeof(double));
+-        traverse(g, g->root, player, 1.0, x, inst);
++        traverse(g, g->root, player, 1.0, x, inst, 1);
+         for (int I = 0; I < g->n_infosets; ++I) {
+             if (g->is_player[I] != player) continue;
+             const int n = g->is_actions[I], o = g->is_offset[I];
+@@ -198,7 +231,7 @@
+     memcpy(x, strategy, g->n_slots * sizeof(double));
+     for (int pass = 0; pass < 64; ++pass) {
+         memset(inst, 0, g->n_slots * sizeof(double));
+-        traverse(g, g->root, player, 1.0, x, inst);
++        traverse(g, g->root, player, 1.0, x, inst, 0);
+         int changed = 0;
+         for (int I = 0; I < g->n_infosets; ++I) {
+             if (g->is_player[I] != player) continue;
+--- a/src/belief.h
++++ b/src/belief.h
+@@ -43,6 +43,7 @@
+ uint64_t view_hash(const char view[65]);
+ uint64_t history_mix(uint64_t h, uint64_t value);
+ /* Empirical opponent prior (MIST_HISTORY_TABLE): histories looked up and found so far. */
++unsigned belief_history_counts(uint64_t h, const MoveList *l, unsigned *counts);
+ void belief_history_stats(unsigned long *lookups, unsigned long *hits);
+ /* the belief's sampling temperature (MIST_MODEL_TEMP), for the king guard's sharper weighting */
+ double belief_temperature(void);

@@ -1,0 +1,46 @@
+[
+  {
+    "test": "matrix",
+    "command": [
+      "gcc",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-std=c11",
+      "-DRESTRICTED",
+      "-DSTANDALONE",
+      "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/build/src",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/test_matrix.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/build/src/cfr.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/build/asan-matrix"
+    ],
+    "returncode": 0,
+    "stdout": "",
+    "stderr": "",
+    "binary_sha256": "d743898d21e6789883e0198e16eec06abc5d350e470d9a037cc9ef53bc05f843"
+  },
+  {
+    "test": "kuhn",
+    "command": [
+      "gcc",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-std=c11",
+      "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/build/src",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/build/tests/test_cfr.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/build/src/cfr.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/data-biased-search-20261101/build/asan-kuhn"
+    ],
+    "returncode": 0,
+    "stdout": "uniform random play: value +0.12500 exploitability 0.91667\nt= 100  last iterate: value -0.05556 exploitability 0.00000 | average: value -0.05564 exploitability 0.00056  (target -0.05556)\nt=1000  last iterate: value -0.05556 exploitability 0.00000 | average: value -0.05556 exploitability 0.00001  (target -0.05556)\nt=4000  last iterate: value -0.05556 exploitability 0.00000 | average: value -0.05556 exploitability 0.00000  (target -0.05556)\ntest_cfr: passed\n",
+    "stderr": "",
+    "binary_sha256": "30e6580ec1d95e220c842bfb198eb5133926dd2f91260d737037561c24b379f3"
+  }
+]

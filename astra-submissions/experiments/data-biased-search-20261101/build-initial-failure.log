@@ -1,0 +1,47 @@
+In file included from src/gtcfr.c:158:
+src/dbr.h: In function ‘dbr_report’:
+src/dbr.h:56:5: warning: implicit declaration of function ‘fprintf’ [-Wimplicit-function-declaration]
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |     ^~~~~~~
+src/dbr.h:1:1: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+  +++ |+#include <stdio.h>
+    1 | /* Included after Tree/infoset helpers, in the isolated v37 gtcfr.c only. */
+src/dbr.h:56:5: warning: incompatible implicit declaration of built-in function ‘fprintf’ [-Wbuiltin-declaration-mismatch]
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |     ^~~~~~~
+src/dbr.h:56:5: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+src/dbr.h:56:13: error: ‘stderr’ undeclared (first use in this function)
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |             ^~~~~~
+src/dbr.h:56:13: note: ‘stderr’ is defined in header ‘<stdio.h>’; did you forget to ‘#include <stdio.h>’?
+src/dbr.h:56:13: note: each undeclared identifier is reported only once for each function it appears in
+In file included from src/gtcfr.c:158:
+src/dbr.h: In function ‘dbr_report’:
+src/dbr.h:56:5: warning: implicit declaration of function ‘fprintf’ [-Wimplicit-function-declaration]
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |     ^~~~~~~
+src/dbr.h:1:1: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+  +++ |+#include <stdio.h>
+    1 | /* Included after Tree/infoset helpers, in the isolated v37 gtcfr.c only. */
+src/dbr.h:56:5: warning: incompatible implicit declaration of built-in function ‘fprintf’ [-Wbuiltin-declaration-mismatch]
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |     ^~~~~~~
+src/dbr.h:56:5: note: include ‘<stdio.h>’ or provide a declaration of ‘fprintf’
+src/dbr.h:56:13: error: ‘stderr’ undeclared (first use in this function)
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |             ^~~~~~
+src/dbr.h:56:13: note: ‘stderr’ is defined in header ‘<stdio.h>’; did you forget to ‘#include <stdio.h>’?
+src/dbr.h:56:13: note: each undeclared identifier is reported only once for each function it appears in
+In file included from src/gtcfr.c:158:
+src/dbr.h: In function ‘void dbr_report(const Tree*, const double*)’:
+src/dbr.h:56:13: error: ‘stderr’ was not declared in this scope
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |             ^~~~~~
+src/dbr.h:1:1: note: ‘stderr’ is defined in header ‘<cstdio>’; did you forget to ‘#include <cstdio>’?
+  +++ |+#include <cstdio>
+    1 | /* Included after Tree/infoset helpers, in the isolated v37 gtcfr.c only. */
+src/dbr.h:56:5: error: ‘fprintf’ was not declared in this scope; did you mean ‘rintf’?
+   56 |     fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+      |     ^~~~~~~
+      |     rintf
+build: failed
