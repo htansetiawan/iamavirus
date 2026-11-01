@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-01T22:24:38.037970+00:00",
+  "updated": "2026-11-01T22:30:33.735929+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -12,6 +12,15 @@
       ],
       "task": "211 projected-response full-clock pilot: two lanes; frozen source/gate before launch",
       "until": "release on terminal lanes; 8H2H then conditional Misty under unchanged thresholds; no GPU"
+    },
+    {
+      "owner": "astra",
+      "cores": [
+        4,
+        5
+      ],
+      "task": "213 same-tree constrained/unrestricted best-response diagnostic; source/tests then nine frozen calls",
+      "until": "release on completion; no GPU, no changes to live 211 lanes"
     }
   ]
 }

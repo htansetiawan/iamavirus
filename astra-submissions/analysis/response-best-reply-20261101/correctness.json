@@ -1,0 +1,62 @@
+{
+  "tests": [
+    {
+      "mode": "optimized",
+      "command": [
+        "gcc",
+        "-O2",
+        "-std=c11",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/build/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/test_br.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/build/src/cfr.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/build/test-optimized"
+      ],
+      "returncode": 0,
+      "br_comparisons": 36,
+      "fixture_sha256": "44f4f52c08507b9c0d3e08a5351f01f2fca8711711b6cd13bcf9c1468b61b073",
+      "invalid_recall_exit": -6,
+      "invalid_recall_stderr": "test-optimized: /home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/br.h:42: br_index: Assertion `b.iprev[I]==prev[id]&&b.iaction[I]==action[id]' failed.\n"
+    },
+    {
+      "mode": "sanitized",
+      "command": [
+        "gcc",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-std=c11",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/build/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/test_br.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/build/src/cfr.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/build/test-sanitized"
+      ],
+      "returncode": 0,
+      "br_comparisons": 36,
+      "fixture_sha256": "44f4f52c08507b9c0d3e08a5351f01f2fca8711711b6cd13bcf9c1468b61b073",
+      "invalid_recall_exit": -6,
+      "invalid_recall_stderr": "test-sanitized: /home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/br.h:42: br_index: Assertion `b.iprev[I]==prev[id]&&b.iaction[I]==action[id]' failed.\n"
+    }
+  ],
+  "enumerated_strategies": 19584,
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/test.py": "263c27738798f2fcc5558e9f65ec3c8add64e0c0d0716e9ed016e2ca48784e0d",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/test_br.c": "b8df3e9d18ea9eca3ca618836ff4ea24f143a587514f9dd6779a7619c982d718",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/response-best-reply-20261101/br.h": "218b65be74b1116a97dbe06ede9133f6f7eee5cfc9f8c6dbd958c1b9f9b4234b"
+  },
+  "covers": [
+    "Shared information sets across unequal worlds",
+    "Two responding decisions with remembered own action",
+    "Fixed opponent mixed and pure policies",
+    "Zero chance reach",
+    "Confidence 0, .25, .75, 1",
+    "Constrained, first-only and unrestricted feasible sets",
+    "Both responding-player signs",
+    "Imperfect recall rejection"
+  ],
+  "oracle": "Independent Python exhaustive enumeration of every pure free policy, including all shared infosets jointly; evaluated with an independent recursive value function."
+}
