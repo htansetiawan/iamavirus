@@ -452,3 +452,101 @@ When a candidate is built, by hand, from the same store:
 - **Loss replay.** Any recorded move can be re-decided with exactly the input our side saw, which is how the loss anatomy of chapter 5 was done.
 
 What is not automatic, plainly: the model, the history table and the suite are rebuilt only when someone builds a candidate. v35 plays with data as of 13 October and is tested on a suite from 11 October, while the store has grown by about 4,500 games a day since. The status report exists so that fresh data is never mistaken for a refreshed bot: a new fit, a rebuilt table and a promoted ZIP are three separate, recorded events. The rolling loss index is a list of games to look at, never pooled with the frozen suite, which stays fixed so that every candidate is compared on the same decisions. The taxonomy diagnoses and selects cases; it does not move a belief weight or a guard threshold until a change is specified, fitted and validated. Rebuilding the three engine artefacts on a schedule would be a few lines in the script. It has not been done because each rebuild changes how the engine plays, and a change in play goes through the candidate gate, not a timer. Astra's write-up of the loop and its boundary is `docs/arena-intelligence-loop.md`.
+
+## Appendix F. How the belief is built and weighted, step by step
+
+Everything here is read from the v35 source (mist-c 97b60f1: `src/belief.c`, `src/movemodel.c`, `src/movemodel.h`, `src/main.c`) and from the data shipped in the v35 ZIP. Settings are named where they exist, so a reader can re-run any step.
+
+**What a board is.** One board is a complete chess position: our pieces where they really are, and one hypothesis for where every opponent piece is. Each board carries two more things: the opponent's history on that board (everything the opponent would have seen and played if that board were true) and a weight.
+
+*Drawing: from one known board to 32 weighted guesses each turn. Six boxes: the start, the opponent's hidden move, the check against our view, weigh and merge, the lottery of 32, grade and choose. Under them: our own move is played on every board, and the next turn starts again at the second box.*
+
+**Step 1. The start.** The list holds one board, the starting position, with weight 1.
+
+**Step 2. The opponent moves and we receive a view.** For every board on the list, the bot plays every legal opponent move. Each result is a candidate. A candidate is kept if two things hold: our view of it is exactly the view the referee sent, square for square; and the move did not leave the opponent's own king capturable, since the referee would have ended the game and did not. Candidates that are the same position merge into one board; their weights add, and the heavier history represents the merged board.
+
+**Step 3. Our move.** Our move is played on every board. A board is kept if our view afterwards matches the view the referee sent, and if our move did not leave our own king capturable on that board, since again the game went on.
+
+**Step 4. The weight.** A kept candidate's weight is its parent's weight times the probability the bot assigns to the opponent move that produced it, and that product is raised to the power 2 (the setting `MIST_MODEL_TEMP`, default 2; weights are stored as logarithms, so the power is a multiplication by 2). The probability comes from the formula below, blended with the history table wherever the table has an entry.
+
+**Step 5. The ceiling.** The list may hold at most 200,000 boards (`MIST_CAP`). When a step would produce more, the bot keeps 200,000 by a weighted lottery without replacement: heavy boards almost always survive, light ones usually do not, and the list is marked as capped. If a capped list ever loses every board, because the true board was dropped and the next view fits none of the survivors, it is rebuilt from the view alone: the opponent's unseen pieces, counted from our captures, are placed on squares we cannot see, pawns most likely near their starting rank and the king most likely on its back rank; placements that match the view are kept, up to 2,000 boards from at most 60,000 tries, and their histories restart from the opponent's current view.
+
+**Step 6. The lottery of 32.** When it is our turn, 32 boards are drawn with replacement (`MIST_SAMPLES`): each board holds tickets in proportion to its weight, and the same board can be drawn more than once. A board drawn k times has a share of k/32 in the search. In v35's games a draw holds about 26 different boards. The search of chapter 4 runs over these boards, and Stockfish grades the positions it reaches (Appendix D).
+
+### The formula
+
+For a board and a legal move on it, the bot computes 28 facts about the move, multiplies each by a fitted weight and adds them up. Call the sum the move's score. Then
+
+probability of the move = e^score divided by the sum of e^score over every legal move on that board.
+
+The probabilities on one board add up to 1, and each extra point of score multiplies a move's odds by e, about 2.72. The 28 facts and their weights in v35:
+
+| # | Fact about the move | Weight |
+|---:|---|---:|
+| 1 | It captures | +1.088 |
+| 2 | Value of the captured piece, pawn 1 to queen 9, divided by 9 | +4.217 |
+| 3 | It captures the king | 0, fixed |
+| 4 | The piece moved is a knight | −0.598 |
+| 5 | A bishop | −0.717 |
+| 6 | A rook | −0.233 |
+| 7 | A queen | −0.454 |
+| 8 | A king, other than castling | −0.385 |
+| 9 | A pawn moves two squares | +0.110 |
+| 10 | It castles | +2.366 |
+| 11 | A pawn promotes to a queen | +1.665 |
+| 12 | A pawn promotes to anything else | −0.534 |
+| 13 | Ranks moved forward, divided by 7 (negative when backward) | −0.867 |
+| 14 | It moves backward | −0.101 |
+| 15 | Closeness of the destination to the centre: 1 on the four centre squares, 0 on the edge | +0.889 |
+| 16 | A knight or bishop leaves its back rank | +1.561 |
+| 17 | It recaptures on the square of the last capture | +1.457 |
+| 18 | A pawn reaches its sixth rank or beyond | +1.143 |
+| 19 | It gives check | +0.701 |
+| 20 | The piece moved (not a pawn or king) was under attack | +1.051 |
+| 21 | The destination is attacked by the other side | −0.118 |
+| 22 | ...and the value of the piece put there, divided by 9 | −1.211 |
+| 23 | It leaves the mover's own king capturable | −2.556 |
+| 24 | ...and the attacked destination is not defended: the value divided by 9 | −2.409 |
+| 25 | Squares next to the enemy king that the moved piece attacks, divided by 8 | +0.330 |
+| 26 | The moved bishop, rook or queen lines up on the enemy king through one enemy piece | +0.262 |
+| 27 | It gives check from a square the victim cannot see | 0 |
+| 28 | The moved piece attacks a piece worth 3 or more from a square the victim cannot see | 0 |
+
+Facts 27 and 28 exist in the code but carry weight 0 in v35's fit. When the list holds more than 10,000 boards (`MIST_MODEL_FULL_BELOW`) the bot uses a cheaper fit over facts 1 to 18 only, because facts 19 to 28 need attack tests on every candidate.
+
+**How the weights were fitted.** The weights are the ones that make the moves the arena's bots actually played come out most probable, found by gradient descent (`tools/fit_move_model.py`). The v35 fit used 2,029 arena games from 30 September to 10 October, which was every game the arena had produced by then: 138,140 moves by every player except the random bots and the course's baseline. On 371 held-out games (25,678 moves) the full formula names the played move first 27.4% of the time and gains 0.658 nats per move over giving every legal move the same probability; the cheap formula 25.6% and 0.493.
+
+**The refit.** On 29 October the formula was refitted on 6,776 games played since 5 October, with piece-square tables and eleven more facts about what the mover could see. On 1,224 held-out games the gain rose from 0.623 to 0.789 nats and first-choice accuracy from 26.1% to 28.2%. The engine carrying that fit, v23, scored 52-1-47 against v35 over 100 games: level. v35 therefore keeps the 10 October fit; the data was not the limit, the form of the formula is.
+
+### The history table
+
+The table answers a different question: in this exact situation, what did the arena's bots actually play? A situation is the opponent's own information history: its view at the start, then for every ply its move and its view after it, or its view after our move. The bot keeps this history for every board on its list, squeezed into one 64-bit number. The table, built by `tools/history_table.c` from the arena games, lists for each history number how many times each move followed it; histories that appeared in fewer than two games are dropped at build time. v35's table has 151,316 entries and was built on 13 October from the games to that date.
+
+**Lookup.** For a board, the bot takes the opponent's history on that board and looks it up. If the history has at least 3 recorded games (`MIST_HISTORY_MIN`), the probability of each legal move becomes
+
+(times the move was played + 4 × the formula's probability) divided by (games with that history + 4).
+
+The 4 (`MIST_HISTORY_N0`) is how many games of weight the formula keeps. With 100 recorded games the counts decide; with 3 the formula still has a say. If the history is not in the table, the formula alone applies. The table reaches only into the opening: a history of 10 or 12 plies is rarely seen three times.
+
+**Why it exists.** Bots repeat their openings. In the Scandinavian the formula alone gave the queen check 3...Qa5+ a 12% chance and put 88% on checks along the e-file, the reverse of what the bots play, and that cost four games in October before the table was added in v34.
+
+### The example, worked
+
+We are White and play 1.e4. Black replies, and we receive a view. Black has 20 legal replies. Seven of them would show in our view at once, because they put a piece on a square one of our pieces can reach: e5, d5, f5, b5, h5, a6 and Na6. The other 13 leave our view unchanged: Nf6, Nc6, Nh6, e6, d6, c6, f6, c5, b6, g6, g5, h6, a5. If the view shows nothing new, the list holds exactly those 13 boards.
+
+With no model each would have 7.7%. The formula alone gives the shares below (for these quiet moves every fact is zero except the piece type, the forward distance, the centre, development and the two-square push):
+
+| Reply | Score | Share of the 13 | After the power of 2 |
+|---|---:|---:|---:|
+| Nf6, Nc6 | +1.31 | 16.3% each | 27.4% each |
+| Nh6 | +0.72 | 9.0% | 8.4% |
+| e6, d6, c6, f6 | +0.47 | 7.0% each | 5.1% each |
+| c5 | +0.46 | 6.9% | 5.0% |
+| b6, g6 | +0.17 | 5.2% each | 2.8% each |
+| g5 | +0.16 | 5.2% | 2.7% |
+| h6 | −0.12 | 3.9% | 1.6% |
+| a5 | −0.14 | 3.8% | 1.5% |
+
+But this situation is in the history table, so the table decides. Black's history here is its view at the start and its view after our move, and no first move of White is visible to Black, so every arena game contributes to the same entry whatever White opened with. In the 21-day export of 31 October, 79,355 games with a named Black player other than us, Black's first hidden reply was c5 22.3%, Nf6 21.9%, c6 18.4%, e6 17.8%, Nc6 16.0%, d6 1.8%, and each of the other seven under 1%. Those shares, raised to the power 2 and renormalised, are the weights of the 13 boards: five replies hold 99.8% of the tickets.
+
+The next time Black moves, the bot repeats step 2 on each of these boards with Black's 20-odd replies, and so on. Within a few moves the table has no entry and the formula carries the weights alone. That is where the weights go wrong on the turns we lose (chapter 5): the true board is on the list, with a weight the formula set too low.
