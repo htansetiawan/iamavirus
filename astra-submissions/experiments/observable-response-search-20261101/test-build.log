@@ -1,0 +1,14 @@
+In file included from /home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-search-20261101/test_projection.c:2:
+/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-search-20261101/build/src/gtcfr.c:1: warning: "_POSIX_C_SOURCE" redefined
+    1 | #define _POSIX_C_SOURCE 199309L  /* clock_gettime under -std=c11 */
+      | 
+In file included from /usr/include/assert.h:35,
+                 from /home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-search-20261101/test_projection.c:1:
+/usr/include/features.h:321: note: this is the location of the previous definition
+  321 | # define _POSIX_C_SOURCE 199506L
+      | 
+/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-search-20261101/test_projection.c: In function ‘main’:
+/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-search-20261101/test_projection.c:5:21: warning: implicit declaration of function ‘setenv’; did you mean ‘getenv’? [-Wimplicit-function-declaration]
+    5 |     assert(argc==3);setenv("ASTRA_VISIBLE_MODEL",argv[1],1);
+      |                     ^~~~~~
+      |                     getenv

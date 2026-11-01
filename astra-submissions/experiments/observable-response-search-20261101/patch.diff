@@ -1,0 +1,64 @@
+--- a/src/dbr.h
++++ b/src/dbr.h
+@@ -3,7 +3,10 @@
+ #include <stdio.h>
+ #include "adapter.h"
+ #include "response.h"
++#include "proof.h"
++#include "projection.h"
+ 
++static int visible_project;
+ static double visible_confidence;
+ static float *visible_weights;
+ static int visible_initialized, visible_load_failed;
+@@ -11,6 +14,7 @@
+ static void visible_config(void) {
+     if (visible_initialized) return;
+     visible_initialized = 1;
++    visible_project = getenv("ASTRA_VISIBLE_PROJECT") && atoi(getenv("ASTRA_VISIBLE_PROJECT")) == 1;
+     const char *value = getenv("ASTRA_VISIBLE_CONFIDENCE");
+     char *end = NULL;
+     if (value) visible_confidence = strtod(value, &end);
+@@ -63,6 +67,19 @@
+     if (!astra_response_probs(visible_weights, tokens, encoded, moves.count, q)) {
+         ++t->response_failures; goto done;
+     }
++    if (visible_project) {
++        uint8_t fatal[256], witness[256];
++        if (!observable_fatal(tokens, encoded, moves.count, fatal, witness)) {
++            ++t->response_failures; goto done;
++        }
++        double mass;int removed=project_response(q,fatal,moves.count,&mass);
++        if (removed<0) ++t->response_all_proven;
++        else if (removed>0) {
++            ++t->response_projected_sets;
++            t->response_projected_actions += (unsigned long)removed;
++            t->response_dominated_mass += mass;
++        }
++    }
+     game_restrict(&t->g, I, visible_confidence, q);
+     t->response_keys[I] = key; ++t->response_calls;
+ done:
+@@ -91,8 +108,8 @@
+     }
+     double coverage = 0, confidence = 0, visits = 0;
+     dbr_reach(&t->g, t->g.root, x, 1, 0, &coverage, &confidence, &visits);
+-    fprintf(stderr, "astra_visible: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g calls %lu reuses %lu failures %lu mismatches %lu seconds %.9g load_failed %d\n",
++    fprintf(stderr, "astra_visible: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g calls %lu reuses %lu failures %lu mismatches %lu seconds %.9g load_failed %d projected_sets %lu projected_actions %lu dominated_mass %.9g all_proven %lu\n",
+             opponent, constrained, coverage, confidence, visits,
+             t->response_calls, t->response_reuses, t->response_failures, t->response_mismatches,
+-            t->response_seconds, visible_load_failed);
++            t->response_seconds, visible_load_failed, t->response_projected_sets, t->response_projected_actions, t->response_dominated_mass, t->response_all_proven);
+ }
+--- a/src/gtcfr.c
++++ b/src/gtcfr.c
+@@ -21,7 +21,8 @@
+     Game g;
+     uint64_t *response_keys; int response_key_cap;
+     unsigned long response_calls, response_reuses, response_failures, response_mismatches;
+-    double response_seconds;
++    double response_seconds, response_dominated_mass;
++    unsigned long response_projected_sets, response_projected_actions, response_all_proven;
+     Leaf *leaves; int n_leaves, cap_leaves;
+     int *leaf_of;                /* node -> index in leaves, or -1 */
+     int cap_leaf_of;

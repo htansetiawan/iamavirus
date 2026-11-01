@@ -1,0 +1,33 @@
+{
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-audit-20261101/proof.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-audit-20261101/test_proof.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/board.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-audit-20261101/build/test-proof-asan"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "cases": [
+    "known slider",
+    "fog blocks slider proof",
+    "screen remains",
+    "screen vacated by capture",
+    "knight over fog",
+    "pawn",
+    "king adjacency",
+    "terminal king capture",
+    "castling",
+    "en passant discovered attack",
+    "all promotions"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "compiler": [
+    "gcc",
+    "-O2",
+    "-shared",
+    "-fPIC",
+    "-std=c11",
+    "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-audit-20261101/proof.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/response.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observable-response-audit-20261101/build/proof.so"
+  ],
+  "library_sha256": "3f5c3531aa765f002c36940173c164d4947940ab5512338636501d02afbb4459"
+}
