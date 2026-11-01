@@ -216,3 +216,21 @@ the exact v37 archive at 180+2, without technical faults. It met its declared
 stopping rule, so the conditional Misty games were not started and no candidate
 was packaged. Four games are not an Elo estimate or a rejection of mixed play
 in general. See `astra-submissions/analysis/stable-mix-20261101/README.md`.
+
+## A longer tactical label changes the diagnosis
+
+The conditional exchange audit subsequently found that the apparently safer
+bishop line in `92px495s` has a forcing continuation beyond the three-ply
+probe: `Bxd5 Bxd5 Qxd5 Bxh2`, a forced king move, then `Qxd5`. Both king escapes
+lose at least four points after the next best safe response. This is a proof
+after the specified recapture, not a forced-loss proof from the original
+position; the player can decline the recapture, and search often does.
+
+This correction prevents us from treating the short material label as proof
+that the queen guard or continuation search is wrong. A new offline miner
+found six verified forcing-clearance tactics in 5,000 recent cached games,
+across several teams. All six pass the course referee, and unchanged v37
+finds four of them from the permitted observation history at a 2.5-second
+budget. These are executable tactical examples, not an Elo result or runtime
+truth features. The two different choices need diagnosis before a model or
+guard change. Evidence: `astra-submissions/analysis/conditional-exchange-20261101/README.md`.

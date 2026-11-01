@@ -1,0 +1,79 @@
+{
+  "game": "92px495s",
+  "ply": 26,
+  "rows": [
+    {
+      "prefix": [
+        "d1d5",
+        "e6d5",
+        "f3d5"
+      ],
+      "net_loss_after_recapture": 3,
+      "deflection": "d6h2",
+      "branches": [
+        {
+          "king_reply": "g1h1",
+          "queen_capture": "d8d5",
+          "best_next_response": {
+            "move": "h1h2",
+            "net_loss": 4,
+            "outcome": null
+          },
+          "safe_response_count": 18
+        },
+        {
+          "king_reply": "g1h2",
+          "queen_capture": "d8d5",
+          "best_next_response": {
+            "move": "a1b1",
+            "net_loss": 4,
+            "outcome": null
+          },
+          "safe_response_count": 24
+        }
+      ],
+      "all_king_surviving_replies": [
+        "g1h1",
+        "g1h2"
+      ]
+    },
+    {
+      "prefix": [
+        "f3d5",
+        "e6d5",
+        "d1d5"
+      ],
+      "net_loss_after_recapture": -3,
+      "deflection": "d6h2",
+      "branches": [
+        {
+          "king_reply": "g1h1",
+          "queen_capture": "d8d5",
+          "best_next_response": {
+            "move": "h1h2",
+            "net_loss": 4,
+            "outcome": null
+          },
+          "safe_response_count": 18
+        },
+        {
+          "king_reply": "g1h2",
+          "queen_capture": "d8d5",
+          "best_next_response": {
+            "move": "a1b1",
+            "net_loss": 4,
+            "outcome": null
+          },
+          "safe_response_count": 24
+        }
+      ],
+      "all_king_surviving_replies": [
+        "g1h1",
+        "g1h2"
+      ]
+    }
+  ],
+  "independent_legal_survival_checks": 6560,
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "scope": "Specified recaptures allow a forcing clearance/deflection combination. Not a forced-loss proof for either root move: the player can decline the earlier recapture. Three-ply material labels alone are insufficient."
+}

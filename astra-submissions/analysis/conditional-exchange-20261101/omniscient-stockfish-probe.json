@@ -1,0 +1,220 @@
+{
+  "scope": "Post-hoc orthodox-chess evaluator probe on true board; not a FoW policy or strength label.",
+  "setup_error": "Initial ad-hoc invocation appended side/counters to an already complete FEN; failed before engine launch. Corrected here.",
+  "unbounded_attempt": "First depth-only probe stalled with Python futex wait and Stockfish pipe read. Owned PIDs 151150/151152 terminated; no evidence was emitted. This run bounds each search to 0.5 seconds and API timeout to 5 seconds.",
+  "adapter_attempt": "A second python-chess UCI adapter attempt also blocked despite its API timeout; owned PIDs151662/151664 stopped. This run uses a direct pipe/select protocol with hard response deadlines.",
+  "binary_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "rows": [
+    {
+      "moves": [],
+      "fen": "r2q1rk1/pp3ppp/3bb3/3n4/8/5B2/PPP2PPP/R1BQ1RK1 w - - 0 1",
+      "scores": [
+        {
+          "depth": 1,
+          "cp_white": 11,
+          "pv": [
+            "f3d5"
+          ],
+          "uci_info": "info depth 1 seldepth 4 multipv 1 score cp 11 nodes 32 nps 32000 hashfull 0 tbhits 0 time 1 pv f3d5"
+        },
+        {
+          "depth": 8,
+          "cp_white": -560,
+          "pv": [
+            "c2c4",
+            "d5b4",
+            "c4c5",
+            "d6c5",
+            "d1d8",
+            "f8d8"
+          ],
+          "uci_info": "info depth 8 seldepth 18 multipv 1 score cp -560 nodes 4618 nps 923600 hashfull 1 tbhits 0 time 5 pv c2c4 d5b4 c4c5 d6c5 d1d8 f8d8"
+        }
+      ]
+    },
+    {
+      "moves": [
+        "d1d5"
+      ],
+      "fen": "r2q1rk1/pp3ppp/3bb3/3Q4/8/5B2/PPP2PPP/R1B2RK1 b - - 0 1",
+      "scores": [
+        {
+          "depth": 1,
+          "cp_white": -711,
+          "pv": [
+            "d6h2",
+            "g1h2",
+            "e6d5",
+            "f3d5"
+          ],
+          "uci_info": "info depth 1 seldepth 6 multipv 1 score cp 711 nodes 50 nps 50000 hashfull 0 tbhits 0 time 1 pv d6h2 g1h2 e6d5 f3d5"
+        },
+        {
+          "depth": 8,
+          "cp_white": -650,
+          "pv": [
+            "d6h2",
+            "g1h1",
+            "e6d5",
+            "c1g5",
+            "d8g5"
+          ],
+          "uci_info": "info depth 8 seldepth 9 multipv 1 score cp 650 nodes 618 nps 618000 hashfull 0 tbhits 0 time 1 pv d6h2 g1h1 e6d5 c1g5 d8g5"
+        }
+      ]
+    },
+    {
+      "moves": [
+        "d1d5",
+        "e6d5"
+      ],
+      "fen": "r2q1rk1/pp3ppp/3b4/3b4/8/5B2/PPP2PPP/R1B2RK1 w - - 0 2",
+      "scores": [
+        {
+          "depth": 1,
+          "cp_white": -806,
+          "pv": [
+            "f1d1",
+            "d5f3"
+          ],
+          "uci_info": "info depth 1 seldepth 4 multipv 1 score cp -806 nodes 37 nps 37000 hashfull 0 tbhits 0 time 1 pv f1d1 d5f3"
+        },
+        {
+          "depth": 8,
+          "cp_white": -779,
+          "pv": [
+            "f1d1",
+            "d6h2",
+            "g1h2",
+            "d8c7",
+            "h2g1"
+          ],
+          "uci_info": "info depth 8 seldepth 9 multipv 1 score cp -779 nodes 681 nps 681000 hashfull 0 tbhits 0 time 1 pv f1d1 d6h2 g1h2 d8c7 h2g1"
+        }
+      ]
+    },
+    {
+      "moves": [
+        "d1d5",
+        "e6d5",
+        "f3d5"
+      ],
+      "fen": "r2q1rk1/pp3ppp/3b4/3B4/8/8/PPP2PPP/R1B2RK1 b - - 0 2",
+      "scores": [
+        {
+          "depth": 1,
+          "cp_white": -701,
+          "pv": [
+            "d6h2",
+            "g1h2"
+          ],
+          "uci_info": "info depth 1 seldepth 4 multipv 1 score cp 701 nodes 41 nps 41000 hashfull 0 tbhits 0 time 1 pv d6h2 g1h2"
+        },
+        {
+          "depth": 8,
+          "cp_white": -805,
+          "pv": [
+            "d8d7",
+            "b2b4",
+            "d7d8",
+            "d5b7",
+            "a8b8"
+          ],
+          "uci_info": "info depth 8 seldepth 9 multipv 1 score cp 805 nodes 1010 nps 505000 hashfull 1 tbhits 0 time 2 pv d8d7 b2b4 d7d8 d5b7 a8b8"
+        }
+      ]
+    },
+    {
+      "moves": [
+        "f3d5"
+      ],
+      "fen": "r2q1rk1/pp3ppp/3bb3/3B4/8/8/PPP2PPP/R1BQ1RK1 b - - 0 1",
+      "scores": [
+        {
+          "depth": 1,
+          "cp_white": -30,
+          "pv": [
+            "d6h2",
+            "g1h2"
+          ],
+          "uci_info": "info depth 1 seldepth 5 multipv 1 score cp 30 nodes 65 nps 65000 hashfull 0 tbhits 0 time 1 pv d6h2 g1h2"
+        },
+        {
+          "depth": 8,
+          "cp_white": -591,
+          "pv": [
+            "e6d5",
+            "d1d4",
+            "d5c6",
+            "d4d3",
+            "d6c7",
+            "d3d8",
+            "c7d8"
+          ],
+          "uci_info": "info depth 8 seldepth 10 multipv 1 score cp 591 nodes 1366 nps 1366000 hashfull 0 tbhits 0 time 1 pv e6d5 d1d4 d5c6 d4d3 d6c7 d3d8 c7d8"
+        }
+      ]
+    },
+    {
+      "moves": [
+        "f3d5",
+        "e6d5"
+      ],
+      "fen": "r2q1rk1/pp3ppp/3b4/3b4/8/8/PPP2PPP/R1BQ1RK1 w - - 0 2",
+      "scores": [
+        {
+          "depth": 1,
+          "cp_white": 50,
+          "pv": [
+            "d1d5"
+          ],
+          "uci_info": "info depth 1 seldepth 2 multipv 1 score cp 50 nodes 29 nps 29000 hashfull 0 tbhits 0 time 1 pv d1d5"
+        },
+        {
+          "depth": 8,
+          "cp_white": -583,
+          "pv": [
+            "d1d2",
+            "d5c6"
+          ],
+          "uci_info": "info depth 8 seldepth 13 multipv 1 score cp -583 nodes 6368 nps 796000 hashfull 3 tbhits 0 time 8 pv d1d2 d5c6"
+        }
+      ]
+    },
+    {
+      "moves": [
+        "f3d5",
+        "e6d5",
+        "d1d5"
+      ],
+      "fen": "r2q1rk1/pp3ppp/3b4/3Q4/8/8/PPP2PPP/R1B2RK1 b - - 0 2",
+      "scores": [
+        {
+          "depth": 1,
+          "cp_white": -658,
+          "pv": [
+            "d6h2",
+            "g1h2",
+            "d8d5"
+          ],
+          "uci_info": "info depth 1 seldepth 5 multipv 1 score cp 658 nodes 48 nps 48000 hashfull 0 tbhits 0 time 1 pv d6h2 g1h2 d8d5"
+        },
+        {
+          "depth": 8,
+          "cp_white": -858,
+          "pv": [
+            "d6h2",
+            "g1h1",
+            "d8d5",
+            "h1h2",
+            "d5h5",
+            "h2g3",
+            "h5g6",
+            "g3h4"
+          ],
+          "uci_info": "info depth 8 seldepth 10 multipv 1 score cp 858 nodes 950 nps 950000 hashfull 0 tbhits 0 time 1 pv d6h2 g1h1 d8d5 h1h2 d5h5 h2g3 h5g6 g3h4"
+        }
+      ]
+    }
+  ]
+}
