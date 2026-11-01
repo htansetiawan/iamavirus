@@ -1,0 +1,67 @@
+{
+  "scope": "Additional correctness at L=-1 and L=-2, no strength claim",
+  "previous_checks_sha256": "2690f51dcf80df30c01150b0a0f213f75aab0b2cba1403bd09206173c8ee76c8",
+  "test_sha256": "4fc0e5a8f28d6f7a62a61e8c4fe602a2b5cc9aa39f8fc4c43acb021f39c45b29",
+  "source_provenance_sha256": "296d6fbdb1e77d60068184502378b03cf46a01c39d874bf5ba20b88eed8ded5b",
+  "checks": [
+    {
+      "sanitized": false,
+      "compile_exit": 0,
+      "compile_command": [
+        "gcc",
+        "-std=c11",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src",
+        "-O2",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/test_payoff.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/sfeval.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/build/test_payoff"
+      ],
+      "compile_output": "In file included from /home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/test_payoff.c:6:\n/home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/../../calibrated-root-20261101/src/main.c:1: warning: \"_POSIX_C_SOURCE\" redefined\n    1 | #define _POSIX_C_SOURCE 199309L  /* clock_gettime under -std=c11 */\n      | \nIn file included from /usr/include/assert.h:35,\n                 from /home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/test_payoff.c:1:\n/usr/include/features.h:321: note: this is the location of the previous definition\n  321 | # define _POSIX_C_SOURCE 199506L\n      | \n",
+      "exit": 0,
+      "output": "calibrated root: L=-1 and L=-2, both colours, modes off/mixture/residual, zero/all/partial loss samples, tiny survival, endpoint calibration, two growth levels, both best responses and 300 CFR iterations match explicit terminal-payoff oracle\n",
+      "binary_sha256": "12936fd9920da0ccfa039e1379b580983b0e5d6ab0dc57de4bc1850135a300c3"
+    },
+    {
+      "sanitized": true,
+      "compile_exit": 0,
+      "compile_command": [
+        "gcc",
+        "-std=c11",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src",
+        "-O1",
+        "-g",
+        "-fno-omit-frame-pointer",
+        "-fsanitize=address,undefined",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/test_payoff.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/calibrated-root-20261101/build/src/sfeval.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/build/test_payoff_san"
+      ],
+      "compile_output": "In file included from /home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/test_payoff.c:6:\n/home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/../../calibrated-root-20261101/src/main.c:1: warning: \"_POSIX_C_SOURCE\" redefined\n    1 | #define _POSIX_C_SOURCE 199309L  /* clock_gettime under -std=c11 */\n      | \nIn file included from /usr/include/assert.h:35,\n                 from /home/henrytan/git/iamavirus/astra-submissions/experiments/risk-payoff-factorial-20261101/tests/test_payoff.c:1:\n/usr/include/features.h:321: note: this is the location of the previous definition\n  321 | # define _POSIX_C_SOURCE 199506L\n      | \n",
+      "exit": 0,
+      "output": "calibrated root: L=-1 and L=-2, both colours, modes off/mixture/residual, zero/all/partial loss samples, tiny survival, endpoint calibration, two growth levels, both best responses and 300 CFR iterations match explicit terminal-payoff oracle\n",
+      "binary_sha256": "e306f7cd5135a4444433c34cb75e2c090df2c52f7beb0663a9265fb291d9c47b"
+    }
+  ]
+}
