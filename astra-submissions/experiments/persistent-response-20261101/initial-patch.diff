@@ -1,0 +1,178 @@
+--- a/src/dbr.h
++++ b/src/dbr.h
+@@ -32,7 +32,7 @@
+ 
+ static void dbr_install(Tree *t, int I, const Leaf *leaf) {
+     visible_config();
+-    if (t->g.is_player[I] != 1 || !visible_weights) return;
++    if (t->g.is_player[I] != 1 || !visible_weights || (t->persistent&&leaf->opponent_mode==0)) return;
+     struct timespec start; clock_gettime(CLOCK_MONOTONIC, &start);
+     char view[65]; uint8_t tokens[64]; uint16_t encoded[256];
+     MoveList moves; generate_moves(&leaf->pos, &moves);
+@@ -80,7 +80,7 @@
+             t->response_dominated_mass += mass;
+         }
+     }
+-    game_restrict(&t->g, I, visible_confidence, q);
++    game_restrict(&t->g, I, t->persistent?1:visible_confidence, q);
+     t->response_keys[I] = key; ++t->response_calls;
+ done:
+     t->response_seconds += seconds_since(&start);
+--- a/src/gtcfr.c
++++ b/src/gtcfr.c
+@@ -10,15 +10,20 @@
+ #include "cfr.h"
+ #include "eval.h"
+ #include "sfeval.h"
++#include "mode.h"
+ 
+ typedef struct {
+     int node;                    /* the Game node, currently an evaluated leaf */
++    int opponent_mode;          /* persistent0=free,1=fixed; never in our history */
+     Position pos;                /* side to move = the next player */
+     uint64_t hist[2];            /* information-state hashes: [our side, their side] */
+ } Leaf;
+ 
+ typedef struct {
+     Game g;
++    int persistent;
++    double model_prior;
++    unsigned long mode_expansions[2];
+     uint64_t *response_keys; int response_key_cap;
+     unsigned long response_calls, response_reuses, response_failures, response_mismatches;
+     double response_seconds, response_dominated_mass;
+@@ -78,7 +83,13 @@
+     return I;
+ }
+ 
+-static void remember_leaf(Tree *t, int node, const Position *p, const uint64_t hist[2]) {
++static int mode_infoset(Tree *t,int player,uint64_t hist,int actions,int mode) {
++    assert(mode==0||mode==1);
++    if(t->persistent&&player==1)hist=history_mix(hist,0x5045525349535400ULL+(uint64_t)mode);
++    return infoset_for(t,player,hist,actions);
++}
++
++static void remember_leaf(Tree *t, int node, const Position *p, const uint64_t hist[2], int mode) {
+     if (t->n_leaves == t->cap_leaves) {
+         t->cap_leaves = t->cap_leaves ? 2 * t->cap_leaves : 4096;
+         t->leaves = realloc(t->leaves, t->cap_leaves * sizeof(Leaf));
+@@ -90,7 +101,7 @@
+         for (int i = old; i < t->cap_leaf_of; ++i) t->leaf_of[i] = -1;
+     }
+     Leaf *l = &t->leaves[t->n_leaves];
+-    l->node = node; l->pos = *p; l->hist[0] = hist[0]; l->hist[1] = hist[1];
++    l->node = node; l->opponent_mode = mode; l->pos = *p; l->hist[0] = hist[0]; l->hist[1] = hist[1];
+     t->leaf_of[node] = t->n_leaves++;
+ }
+ 
+@@ -106,7 +117,7 @@
+ /* `sf`, `sf_cp`, `sf_found`: Stockfish's scores of the mover's moves, fetched
+  * by the caller (sf_submit/sf_collect over the workers); sf = how many. */
+ static int build_children_scored(Tree *t, const Position *p, const uint64_t hist[2], int *kids, const MoveList *only,
+-                                 int sf, const int *sf_cp, const int *sf_found) {
++                                 int sf, const int *sf_cp, const int *sf_found, int mode) {
+     const int mover = p->side, other = mover ^ 1, us = t->us;
+     const int me = mover == us ? 0 : 1;   /* index into hist for the mover */
+     MoveList l; generate_moves(p, &l);
+@@ -144,19 +155,19 @@
+             value = evaluate(&q, us);
+         }
+         kids[a] = game_node(&t->g, NODE_TERMINAL, 0, -1, value);
+-        remember_leaf(t, kids[a], &q, h);
++        remember_leaf(t, kids[a], &q, h, mode);
+     }
+     return l.count;
+ }
+ 
+ /* Stockfish scores every child in one call (paper, C.5); our evaluator
+  * covers a child it does not score and the case where it is off */
+-static int build_children(Tree *t, const Position *p, const uint64_t hist[2], int *kids, const MoveList *only) {
++static int build_children(Tree *t, const Position *p, const uint64_t hist[2], int *kids, const MoveList *only, int mode) {
+     int sf_cp[256], sf_found[256];
+     MoveList l; generate_moves(p, &l);
+     if (only) l = *only;
+     const int sf = sf_ready() ? sf_children(p, &l, sf_cp, sf_found) : 0;
+-    return build_children_scored(t, p, hist, kids, only, sf, sf_cp, sf_found);
++    return build_children_scored(t, p, hist, kids, only, sf, sf_cp, sf_found, mode);
+ }
+ 
+ #include "dbr.h"
+@@ -165,11 +176,11 @@
+ static int expand_scored(Tree *t, int index, int sf, const int *sf_cp, const int *sf_found) {
+     Leaf leaf = t->leaves[index];
+     int kids[256];
+-    const int count = build_children_scored(t, &leaf.pos, leaf.hist, kids, NULL, sf, sf_cp, sf_found);
++    const int count = build_children_scored(t, &leaf.pos, leaf.hist, kids, NULL, sf, sf_cp, sf_found, leaf.opponent_mode);
+     if (count == 0) return 0;
+     const int player = leaf.pos.side == t->us ? 0 : 1;
+     const int before = t->g.n_infosets;
+-    const int I = infoset_for(t, player, leaf.hist[player], count);
++    const int I = mode_infoset(t, player, leaf.hist[player], count, leaf.opponent_mode);
+     dbr_install(t, I, &leaf);
+     if (t->g.n_infosets > before && t->best_init) {
+         /* a new information set starts on its best child by the leaf values
+@@ -185,6 +196,7 @@
+     }
+     game_expand_leaf(&t->g, leaf.node, player, I, kids, count);
+     t->leaf_of[leaf.node] = -1;
++    ++t->mode_expansions[leaf.opponent_mode];
+     return 1;
+ }
+ 
+@@ -291,6 +303,10 @@
+     game_init(&t.g); t.us = b->us; t.rng = params->seed ^ 0x67746366ULL;
+     t.root_loss = params->king_risk > 1.0 ? -params->king_risk : -1.0;
+     t.best_init = !(getenv("MIST_BEST_INIT") && atoi(getenv("MIST_BEST_INIT")) == 0);
++    if(getenv("ASTRA_PERSISTENT")&&atoi(getenv("ASTRA_PERSISTENT"))==1) {
++        visible_config();
++        if(visible_weights&&visible_confidence>0){t.persistent=1;t.model_prior=visible_confidence;}
++    }
+     /* I: positions of P drawn by weight (belief_sample), each with its share */
+     const int draws = params->samples > 0 ? params->samples : 1;
+     int *idx = malloc(draws * sizeof(int));
+@@ -312,17 +328,26 @@
+     const int root = game_node(&t.g, NODE_CHANCE, 0, -1, 0.0);
+     const uint64_t our_root_hist = 0x726f6f74ULL;
+     const int root_I = infoset_for(&t, 0, our_root_hist, ours.count);
+-    int *chance_kids = malloc(K * sizeof(int)); double *chance_p = malloc(K * sizeof(double));
+-    int kids[256];
+-    for (int k = 0; k < K; ++k) {
+-        const Position *p = &b->items[idx[k]];
+-        const uint64_t hist[2] = {our_root_hist, b->hist ? b->hist[idx[k]] : 0};
+-        const int node = game_node(&t.g, NODE_TERMINAL, 0, -1, 0.0);
+-        const int count = build_children(&t, p, hist, kids, &ours);
+-        game_expand_leaf(&t.g, node, 0, root_I, kids, count);
+-        chance_kids[k] = node; chance_p[k] = share[k];
+-    }
+-    game_children(&t.g, root, chance_kids, chance_p, K);
++    const int modes=t.persistent?persistent_count(t.model_prior):1;
++    int *chance_kids = malloc(K*modes*sizeof(int)); double *chance_p = malloc(K*modes*sizeof(double));
++    int kids[256],branches=0;
++    for(int k=0;k<K;++k) {
++        const Position *p=&b->items[idx[k]];
++        const uint64_t hist[2]={our_root_hist,b->hist?b->hist[idx[k]]:0};
++        int sf_cp[256],sf_found[256],sf=0;
++        /* Root leaf evaluation is identical in both modes; ask Stockfish once. */
++        if(t.persistent&&sf_ready())sf=sf_children(p,&ours,sf_cp,sf_found);
++        for(int branch=0;branch<modes;++branch) {
++            int mode=t.persistent?persistent_mode(t.model_prior,branch):0;
++            int node=game_node(&t.g,NODE_TERMINAL,0,-1,0);
++            int count=t.persistent?build_children_scored(&t,p,hist,kids,&ours,sf,sf_cp,sf_found,mode):build_children(&t,p,hist,kids,&ours,0);
++            game_expand_leaf(&t.g,node,0,root_I,kids,count);
++            chance_kids[branches]=node;
++            chance_p[branches++]=share[k]*(t.persistent?persistent_weight(t.model_prior,mode):1);
++        }
++    }
++    assert(branches==K*modes);
++    game_children(&t.g,root,chance_kids,chance_p,branches);
+     game_finalize(&t.g);
+     /* expand every reply of the opponent once: the two-ply start. Not with
+      * Stockfish: at a few milliseconds a call it would take K x |moves| calls;
+@@ -430,6 +455,7 @@
+     out->samples = K; out->our_moves = ours.count; out->opponent_infosets = t.g.n_infosets; out->nodes = t.g.n_nodes;
+     out->iterations = iteration;
+     dbr_report(&t, x);
++    if(t.persistent)fprintf(stderr,"astra_persistent: prior %.9g physical_worlds %d branches %d free_expansions %lu fixed_expansions %lu\n",t.model_prior,K,branches,t.mode_expansions[0],t.mode_expansions[1]);
+     free(x); free(idx); free(share); free(chance_kids); free(chance_p);
+     free(t.response_keys);
+     free(t.leaves); free(t.leaf_of); free(t.keys); free(t.vals); free(t.visits);
