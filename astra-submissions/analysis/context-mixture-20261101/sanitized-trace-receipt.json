@@ -1,0 +1,22 @@
+{
+  "exit_code": 0,
+  "wall_seconds": 0.5324523090002913,
+  "command": [
+    "taskset",
+    "-c",
+    "0,1",
+    ".venv/bin/python",
+    "astra-submissions/experiments/context-mixture-20261101/trace.py",
+    "--input",
+    "astra-submissions/analysis/context-mixture-20261101/3qrm1ai9.input.json",
+    "--truth",
+    "astra-submissions/analysis/context-mixture-20261101/3qrm1ai9.truth.json",
+    "--out",
+    "astra-submissions/analysis/context-mixture-20261101/sanitized-trace.json",
+    "--library",
+    "astra-submissions/experiments/context-mixture-20261101/build/libmixture_san.so",
+    "--memory-mib",
+    "0"
+  ],
+  "sanitizer_findings": ""
+}
