@@ -1,25 +1,16 @@
 # Persistent-mode full-clock pilot: running
 
-1 November 2026. First two completed games: **2 wins, 0 draws, 0 losses**,
-both as White versus exact v37. The two original lane handles 11227 and10536
-continue the remaining six head-to-head games on cores0–1 and6–7. Do not
-restart any started game. No faults in the completed games; all186 frames
-validated against the independent rules implementation.
+Completed head-to-head games: **5 wins, 0 draws, 1 losses** against exact v37. All 605 recorded frames passed rules validation, with no technical faults. This is an incomplete pilot, not an Elo estimate or release recommendation.
 
 | Pair | Candidate White | Candidate Black |
 |---|---|---|
-| 0 | win,86 plies | running |
-| 1 | win,98 plies | running |
-| 2 | pending | pending |
-| 3 | pending | pending |
+| 0 | win, 86 plies | loss, 74 plies |
+| 1 | win, 98 plies | win, 179 plies |
+| 2 | win, 92 plies | running |
+| 3 | win, 70 plies | running |
 
-This is an incomplete pilot, not an Elo estimate or release recommendation.
-The unchanged plan requires all eight head-to-head games before deciding on
-the conditional eight Misty/control games. H2H <=2/8 closes the configuration;
-otherwise Misty follows. A larger-trial review requires H2H >=4/8 and no worse
-candidate than control against Misty, with no faults. No ZIP is earned here.
+Original lane handles 11227 and 10536 continue on cores 0–1 and 6–7. Do not restart any started game. Source, model, clock and acceptance rules are unchanged.
 
-The immutable plan and dependencies were published at13e7201 before launch.
-`launch.json` records the original handles and host process identities. Only
-completed game folders are published during the run; the source, model and
-rules are unchanged. No GPU use.
+All eight head-to-head games finish before the conditional eight Misty/control games. H2H score <=2/8 closes the configuration; otherwise Misty follows. A larger-trial review requires H2H >=4/8 and candidate Misty score at least the v37 control, with no technical faults. No ZIP is earned by this small pilot.
+
+Plan and dependencies were published at 13e7201 before launch. `launch.json` records the original handles and process identities. `taxonomy-h2h.md` describes every completed valid planned game by policy and colour. Behaviour rates do not change the gate or establish causation. Only completed game folders are published.

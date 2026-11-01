@@ -334,3 +334,25 @@ quarter of root chance on the three earlier development examples. Dependence
 on the first modeled reply and on root purification remains. This is evidence
 about the search mechanism, not a claim of improved Elo; the match trial is
 still open and its original stopping rule remains in force.
+
+## Queen tests need visibility at the time of the decision
+
+The evening refresh added 455 validated opponent replays and 33,334 move
+annotations; our recent games were already cached. A separate collection uses
+all 63 cached IAmAVirus v37 games from 20:00–23:33 UTC, preserving 40 actual
+queen captures and 63 ordinary controls. Independent referee checks agree on
+5,553 frames and 10,638 tactical transitions.
+
+This exposed a limitation in selecting cases by `queen_exposed_unseen`: that
+tag uses the view **after our move**. Of the 40 actual capturers, 37 were
+hidden before the decision and 33 became visible through our move. All four
+recorded large queen losses were missed by the existing tag. Three remain
+large losses after the best safe one-response recovery; the fourth has an
+equal-material recapture. Thus pre-decision visibility and actual exchange
+loss must be kept separately from post-move exposure.
+
+The [new collection](../astra-submissions/analysis/queen-cases-20261101-evening/README.md)
+supplies permitted replay inputs and separate truth-only labels. It does not
+change the taxonomy definition, deployed weights, guard thresholds or the
+running match gate. The 36 other queen captures were recorded net losses below
+four points, so a hidden capturer alone is not a reason to reject a move.
