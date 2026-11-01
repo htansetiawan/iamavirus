@@ -197,3 +197,16 @@ worsens and update time is 1.785x the original reference. All 54 runs and native
 correctness/sanitizer checks complete successfully. The representation is
 preserved; this predictor does not advance. See
 `astra-submissions/analysis/context-mixture-20261101/README.md`.
+
+The next decision-level diagnostic held v37's sampled boards, tree and leaf
+values fixed and added 1,000 PCFR iterations after its original choice. On 22
+late decisions and a separate 15 earlier decisions from the same 11 games,
+none of the measured king/material failures were repaired. Four of the late
+losses already had no immediate escape. Earlier cases instead identify a rook
+capture punished by a hidden knight against duck, and a three-point queen
+exchange against HYPOTHERMIA, below the guard's four-point loss definition.
+The latter also exposes a root mixture that is discarded by choosing only its
+highest-probability move. That is a hypothesis for a separate same-clock test,
+not a demonstrated gain. See
+`astra-submissions/analysis/frozen-tree-20261101/README.md` for the two panels,
+independent referee checks and the limits of these selected diagnostics.
