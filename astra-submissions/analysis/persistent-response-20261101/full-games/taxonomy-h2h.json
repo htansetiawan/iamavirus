@@ -1,12 +1,9 @@
 {
-  "created_at": "2026-11-01T23:50:35.355930+00:00",
+  "created_at": "2026-11-01T23:55:38.348696+00:00",
   "phase": "h2h",
   "planned": 8,
-  "completed": 6,
-  "pending": [
-    "h2h-p2-black",
-    "h2h-p3-black"
-  ],
+  "completed": 8,
+  "pending": [],
   "faults": [],
   "plan_sha256": "a43ecf15035a04b231cbf1f9c2c96473a8cdf3c05381675d56b274f5d9389729",
   "script_sha256": "7d251028e9c5da34ba5b1c2353cada5730a6235ec929f5646f481f7c3598db9a",
@@ -17,7 +14,9 @@
     "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p1-white/result.json": "1fe17de9d4784e52192240860fd39395efd772a603671c6670081e2f050f9c25",
     "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p1-black/result.json": "b4dde45586ed505e251f34d081af61757902be6257a4578af5c309e9a17ee5eb",
     "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p2-white/result.json": "80904a72be2e1defbaf376daaa8629bb12fad00016865c9353476ca65869b8ee",
-    "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p3-white/result.json": "d05bd09d8f8d4a7fe82b0e48d938e367d46a5acdd760ea6ccf64a986d1a4cc78"
+    "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p2-black/result.json": "eeb67ca4651a860e410bce17b70247f419bc25c09b664792dc06287209efe55f",
+    "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p3-white/result.json": "d05bd09d8f8d4a7fe82b0e48d938e367d46a5acdd760ea6ccf64a986d1a4cc78",
+    "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p3-black/result.json": "a1ebcf4dea10f71185629b6b635393c25889bc12875a41bbb1265e4696b49496"
   },
   "panels": [
     {
@@ -76,104 +75,104 @@
       "actor": "base",
       "colour": "white",
       "opponent": "candidate",
-      "games": 2,
-      "moves": 127,
+      "games": 4,
+      "moves": 205,
       "wins": 1,
       "draws": 0,
-      "losses": 1,
+      "losses": 3,
       "counts": {
-        "capture": 24,
-        "capture_unseen": 9,
-        "victim_walked_in": 13,
-        "long_strike": 4,
-        "fog_route": 10,
-        "forcing_chain": 3,
-        "king_threat": 3,
+        "capture": 42,
+        "capture_unseen": 19,
+        "victim_walked_in": 25,
+        "long_strike": 6,
+        "fog_route": 24,
+        "forcing_chain": 4,
+        "king_threat": 4,
         "king_threat_unseen": 2,
-        "sacrifice": 2,
+        "sacrifice": 7,
         "king_hunt_sacrifice": 0,
-        "vision_gain": 35,
-        "vision_loss": 27,
-        "king_move": 53,
-        "castle": 0,
+        "vision_gain": 51,
+        "vision_loss": 32,
+        "king_move": 69,
+        "castle": 2,
         "king_leaves_home": 21,
-        "queen_raid": 0,
+        "queen_raid": 2,
         "queen_exposed_unseen": 0,
-        "walk_into_unseen": 3,
-        "back_rank_bare": 19
+        "walk_into_unseen": 9,
+        "back_rank_bare": 34
       },
       "per_100_moves": {
-        "capture": 18.89763779527559,
-        "capture_unseen": 7.086614173228346,
-        "victim_walked_in": 10.236220472440944,
-        "long_strike": 3.1496062992125986,
-        "fog_route": 7.874015748031496,
-        "forcing_chain": 2.3622047244094486,
-        "king_threat": 2.3622047244094486,
-        "king_threat_unseen": 1.5748031496062993,
-        "sacrifice": 1.5748031496062993,
+        "capture": 20.48780487804878,
+        "capture_unseen": 9.268292682926829,
+        "victim_walked_in": 12.195121951219512,
+        "long_strike": 2.926829268292683,
+        "fog_route": 11.707317073170731,
+        "forcing_chain": 1.951219512195122,
+        "king_threat": 1.951219512195122,
+        "king_threat_unseen": 0.975609756097561,
+        "sacrifice": 3.4146341463414633,
         "king_hunt_sacrifice": 0.0,
-        "vision_gain": 27.559055118110237,
-        "vision_loss": 21.25984251968504,
-        "king_move": 41.732283464566926,
-        "castle": 0.0,
-        "king_leaves_home": 16.53543307086614,
-        "queen_raid": 0.0,
+        "vision_gain": 24.878048780487806,
+        "vision_loss": 15.609756097560975,
+        "king_move": 33.65853658536585,
+        "castle": 0.975609756097561,
+        "king_leaves_home": 10.24390243902439,
+        "queen_raid": 0.975609756097561,
         "queen_exposed_unseen": 0.0,
-        "walk_into_unseen": 2.3622047244094486,
-        "back_rank_bare": 14.960629921259843
+        "walk_into_unseen": 4.390243902439025,
+        "back_rank_bare": 16.585365853658537
       }
     },
     {
       "actor": "candidate",
       "colour": "black",
       "opponent": "base",
-      "games": 2,
-      "moves": 126,
-      "wins": 1,
+      "games": 4,
+      "moves": 202,
+      "wins": 3,
       "draws": 0,
       "losses": 1,
       "counts": {
-        "capture": 23,
-        "capture_unseen": 13,
-        "victim_walked_in": 11,
-        "long_strike": 5,
-        "fog_route": 17,
-        "forcing_chain": 4,
-        "king_threat": 8,
-        "king_threat_unseen": 3,
-        "sacrifice": 4,
+        "capture": 44,
+        "capture_unseen": 25,
+        "victim_walked_in": 23,
+        "long_strike": 9,
+        "fog_route": 33,
+        "forcing_chain": 6,
+        "king_threat": 13,
+        "king_threat_unseen": 6,
+        "sacrifice": 6,
         "king_hunt_sacrifice": 0,
-        "vision_gain": 25,
-        "vision_loss": 14,
-        "king_move": 32,
-        "castle": 1,
+        "vision_gain": 45,
+        "vision_loss": 19,
+        "king_move": 34,
+        "castle": 2,
         "king_leaves_home": 15,
-        "queen_raid": 6,
+        "queen_raid": 11,
         "queen_exposed_unseen": 0,
-        "walk_into_unseen": 1,
-        "back_rank_bare": 0
+        "walk_into_unseen": 6,
+        "back_rank_bare": 5
       },
       "per_100_moves": {
-        "capture": 18.253968253968253,
-        "capture_unseen": 10.317460317460318,
-        "victim_walked_in": 8.73015873015873,
-        "long_strike": 3.9682539682539684,
-        "fog_route": 13.492063492063492,
-        "forcing_chain": 3.1746031746031744,
-        "king_threat": 6.349206349206349,
-        "king_threat_unseen": 2.380952380952381,
-        "sacrifice": 3.1746031746031744,
+        "capture": 21.782178217821784,
+        "capture_unseen": 12.376237623762377,
+        "victim_walked_in": 11.386138613861386,
+        "long_strike": 4.455445544554456,
+        "fog_route": 16.336633663366335,
+        "forcing_chain": 2.9702970297029703,
+        "king_threat": 6.435643564356436,
+        "king_threat_unseen": 2.9702970297029703,
+        "sacrifice": 2.9702970297029703,
         "king_hunt_sacrifice": 0.0,
-        "vision_gain": 19.841269841269842,
-        "vision_loss": 11.11111111111111,
-        "king_move": 25.396825396825395,
-        "castle": 0.7936507936507936,
-        "king_leaves_home": 11.904761904761905,
-        "queen_raid": 4.761904761904762,
+        "vision_gain": 22.277227722772277,
+        "vision_loss": 9.405940594059405,
+        "king_move": 16.831683168316832,
+        "castle": 0.9900990099009901,
+        "king_leaves_home": 7.425742574257426,
+        "queen_raid": 5.445544554455446,
         "queen_exposed_unseen": 0.0,
-        "walk_into_unseen": 0.7936507936507936,
-        "back_rank_bare": 0.0
+        "walk_into_unseen": 2.9702970297029703,
+        "back_rank_bare": 2.4752475247524752
       }
     },
     {
@@ -5971,6 +5970,919 @@
       ]
     },
     {
+      "job": "h2h-p2-black",
+      "pair": 2,
+      "candidate_side": "black",
+      "result": "0-1",
+      "plies": 83,
+      "replay_path": "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p2-black/replay.json",
+      "replay_sha256": "3f5dc8ec27b57d8264e8baea2f735fb084880d18be4a1acf7b0647aadb19b379",
+      "counts": {
+        "white": {
+          "moves": 42,
+          "vision_total": 1434,
+          "quiet": 33,
+          "vision_gain": 8,
+          "vision_loss": 3,
+          "capture": 9,
+          "capture_unseen": 5,
+          "victim_walked_in": 7,
+          "forcing_chain": 1,
+          "fog_route_depth_total": 12,
+          "long_strike": 2,
+          "fog_route": 8,
+          "queen_raid": 2,
+          "king_threat": 1,
+          "walk_into_unseen": 2,
+          "king_move": 11,
+          "castle": 1,
+          "back_rank_bare": 13,
+          "sacrifice": 1
+        },
+        "black": {
+          "moves": 41,
+          "vision_total": 1316,
+          "quiet": 32,
+          "vision_gain": 10,
+          "walk_into_unseen": 3,
+          "fog_route_depth_total": 12,
+          "capture": 9,
+          "victim_walked_in": 5,
+          "fog_route": 7,
+          "capture_unseen": 6,
+          "vision_loss": 3,
+          "long_strike": 2,
+          "forcing_chain": 1,
+          "back_rank_bare": 5,
+          "queen_raid": 2,
+          "king_move": 1,
+          "king_threat": 1,
+          "king_threat_unseen": 1
+        }
+      },
+      "moves": [
+        {
+          "ply": 1,
+          "side": 0,
+          "move": "d2d4",
+          "piece": "p",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 2,
+          "side": 1,
+          "move": "d7d5",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 3,
+          "side": 0,
+          "move": "c1f4",
+          "piece": "b",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 4,
+          "side": 1,
+          "move": "c7c6",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 5,
+          "side": 0,
+          "move": "d1d3",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 6,
+          "side": 1,
+          "move": "g8f6",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 7,
+          "side": 0,
+          "move": "d3f3",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_loss"
+          ]
+        },
+        {
+          "ply": 8,
+          "side": 1,
+          "move": "c8g4",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 9,
+          "side": 0,
+          "move": "f3b3",
+          "piece": "q",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 10,
+          "side": 1,
+          "move": "e7e6",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 11,
+          "side": 0,
+          "move": "b1d2",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 12,
+          "side": 1,
+          "move": "g4f5",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 13,
+          "side": 0,
+          "move": "e2e3",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 14,
+          "side": 1,
+          "move": "b8d7",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 15,
+          "side": 0,
+          "move": "f1d3",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 16,
+          "side": 1,
+          "move": "f6e4",
+          "piece": "n",
+          "tags": [
+            "quiet",
+            "vision_gain",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 17,
+          "side": 0,
+          "move": "d3e4",
+          "piece": "b",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "forcing_chain"
+          ]
+        },
+        {
+          "ply": 18,
+          "side": 1,
+          "move": "d5e4",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 19,
+          "side": 0,
+          "move": "b3b7",
+          "piece": "q",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "long_strike",
+            "fog_route",
+            "vision_gain",
+            "queen_raid"
+          ]
+        },
+        {
+          "ply": 20,
+          "side": 1,
+          "move": "a8c8",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 21,
+          "side": 0,
+          "move": "d2c4",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 22,
+          "side": 1,
+          "move": "f8e7",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 23,
+          "side": 0,
+          "move": "c4d6",
+          "piece": "n",
+          "tags": [
+            "quiet",
+            "king_threat",
+            "vision_gain",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 24,
+          "side": 1,
+          "move": "e7d6",
+          "piece": "b",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 25,
+          "side": 0,
+          "move": "f4d6",
+          "piece": "b",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 26,
+          "side": 1,
+          "move": "h7h5",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 27,
+          "side": 0,
+          "move": "e1c1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "castle"
+          ]
+        },
+        {
+          "ply": 28,
+          "side": 1,
+          "move": "h5h4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 29,
+          "side": 0,
+          "move": "g1e2",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 30,
+          "side": 1,
+          "move": "d7b6",
+          "piece": "n",
+          "tags": [
+            "quiet",
+            "vision_gain",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 31,
+          "side": 0,
+          "move": "d6c5",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 32,
+          "side": 1,
+          "move": "f5g4",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 33,
+          "side": 0,
+          "move": "d1e1",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 34,
+          "side": 1,
+          "move": "g4e2",
+          "piece": "b",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "fog_route",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 35,
+          "side": 0,
+          "move": "e1e2",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 36,
+          "side": 1,
+          "move": "c8c7",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 37,
+          "side": 0,
+          "move": "b7a6",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "queen_raid"
+          ]
+        },
+        {
+          "ply": 38,
+          "side": 1,
+          "move": "h4h3",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 39,
+          "side": 0,
+          "move": "h1g1",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 40,
+          "side": 1,
+          "move": "h3g2",
+          "piece": "p",
+          "tags": [
+            "capture"
+          ]
+        },
+        {
+          "ply": 41,
+          "side": 0,
+          "move": "g1g2",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 42,
+          "side": 1,
+          "move": "b6d7",
+          "piece": "n",
+          "tags": [
+            "quiet",
+            "vision_loss"
+          ]
+        },
+        {
+          "ply": 43,
+          "side": 0,
+          "move": "e2d2",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 44,
+          "side": 1,
+          "move": "d7c5",
+          "piece": "n",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "fog_route",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 45,
+          "side": 0,
+          "move": "d4c5",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 46,
+          "side": 1,
+          "move": "d8f6",
+          "piece": "q",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 47,
+          "side": 0,
+          "move": "a6c4",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_loss",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 48,
+          "side": 1,
+          "move": "f6e5",
+          "piece": "q",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 49,
+          "side": 0,
+          "move": "d2d4",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "walk_into_unseen",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 50,
+          "side": 1,
+          "move": "h8h2",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "long_strike",
+            "forcing_chain",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 51,
+          "side": 0,
+          "move": "g2h2",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 52,
+          "side": 1,
+          "move": "e5h2",
+          "piece": "q",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "long_strike",
+            "fog_route",
+            "vision_gain",
+            "queen_raid",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 53,
+          "side": 0,
+          "move": "d4d1",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 54,
+          "side": 1,
+          "move": "h2e5",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_loss",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 55,
+          "side": 0,
+          "move": "c4d4",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_loss"
+          ]
+        },
+        {
+          "ply": 56,
+          "side": 1,
+          "move": "e5d4",
+          "piece": "q",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain",
+            "queen_raid",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 57,
+          "side": 0,
+          "move": "d1d4",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "long_strike",
+            "fog_route",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 58,
+          "side": 1,
+          "move": "f7f5",
+          "piece": "p",
+          "tags": [
+            "quiet",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 59,
+          "side": 0,
+          "move": "d4e4",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "fog_route",
+            "sacrifice",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 60,
+          "side": 1,
+          "move": "f5e4",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 61,
+          "side": 0,
+          "move": "c1d2",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 62,
+          "side": 1,
+          "move": "c7f7",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 63,
+          "side": 0,
+          "move": "d2e2",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 64,
+          "side": 1,
+          "move": "f7f8",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 65,
+          "side": 0,
+          "move": "b2b3",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 66,
+          "side": 1,
+          "move": "e8f7",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 67,
+          "side": 0,
+          "move": "c2c4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 68,
+          "side": 1,
+          "move": "f8b8",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 69,
+          "side": 0,
+          "move": "e2f1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 70,
+          "side": 1,
+          "move": "b8d8",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 71,
+          "side": 0,
+          "move": "f1e2",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 72,
+          "side": 1,
+          "move": "a7a5",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 73,
+          "side": 0,
+          "move": "e2f1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 74,
+          "side": 1,
+          "move": "e6e5",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 75,
+          "side": 0,
+          "move": "f1e2",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 76,
+          "side": 1,
+          "move": "d8f8",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_loss"
+          ]
+        },
+        {
+          "ply": 77,
+          "side": 0,
+          "move": "e2f1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 78,
+          "side": 1,
+          "move": "f8d8",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 79,
+          "side": 0,
+          "move": "f1e2",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 80,
+          "side": 1,
+          "move": "d8h8",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 81,
+          "side": 0,
+          "move": "e2f1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 82,
+          "side": 1,
+          "move": "h8h1",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "king_threat",
+            "king_threat_unseen"
+          ]
+        },
+        {
+          "ply": 83,
+          "side": 0,
+          "move": "f1e1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "back_rank_bare"
+          ]
+        }
+      ]
+    },
+    {
       "job": "h2h-p3-white",
       "pair": 3,
       "candidate_side": "white",
@@ -6725,6 +7637,790 @@
           "ply": 70,
           "side": 1,
           "move": "g7f8",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "back_rank_bare"
+          ]
+        }
+      ]
+    },
+    {
+      "job": "h2h-p3-black",
+      "pair": 3,
+      "candidate_side": "black",
+      "result": "0-1",
+      "plies": 71,
+      "replay_path": "astra-submissions/analysis/persistent-response-20261101/full-games/jobs/h2h-p3-black/replay.json",
+      "replay_sha256": "5c94f3c14ca3b3ce202f91c4aae18faa27da8f93cef6455bb1212e17257e9058",
+      "counts": {
+        "white": {
+          "moves": 36,
+          "vision_total": 1261,
+          "quiet": 27,
+          "fog_route_depth_total": 15,
+          "capture": 9,
+          "fog_route": 6,
+          "walk_into_unseen": 4,
+          "king_move": 5,
+          "castle": 1,
+          "capture_unseen": 5,
+          "victim_walked_in": 5,
+          "vision_gain": 8,
+          "sacrifice": 4,
+          "vision_loss": 2,
+          "back_rank_bare": 2
+        },
+        "black": {
+          "moves": 35,
+          "vision_total": 1413,
+          "quiet": 23,
+          "vision_gain": 10,
+          "fog_route_depth_total": 15,
+          "capture": 12,
+          "victim_walked_in": 7,
+          "fog_route": 9,
+          "capture_unseen": 6,
+          "forcing_chain": 1,
+          "queen_raid": 3,
+          "king_move": 1,
+          "castle": 1,
+          "sacrifice": 2,
+          "walk_into_unseen": 2,
+          "long_strike": 2,
+          "king_threat": 4,
+          "vision_loss": 2,
+          "king_threat_unseen": 2
+        }
+      },
+      "moves": [
+        {
+          "ply": 1,
+          "side": 0,
+          "move": "c2c4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 2,
+          "side": 1,
+          "move": "d7d5",
+          "piece": "p",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 3,
+          "side": 0,
+          "move": "b1c3",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 4,
+          "side": 1,
+          "move": "c7c6",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 5,
+          "side": 0,
+          "move": "c4d5",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 6,
+          "side": 1,
+          "move": "g8f6",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 7,
+          "side": 0,
+          "move": "d2d4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 8,
+          "side": 1,
+          "move": "c8d7",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 9,
+          "side": 0,
+          "move": "d5c6",
+          "piece": "p",
+          "tags": [
+            "capture"
+          ]
+        },
+        {
+          "ply": 10,
+          "side": 1,
+          "move": "d7c6",
+          "piece": "b",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 11,
+          "side": 0,
+          "move": "g1f3",
+          "piece": "n",
+          "tags": [
+            "quiet",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 12,
+          "side": 1,
+          "move": "e7e6",
+          "piece": "p",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 13,
+          "side": 0,
+          "move": "e2e4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 14,
+          "side": 1,
+          "move": "f6e4",
+          "piece": "n",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 15,
+          "side": 0,
+          "move": "f1e2",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 16,
+          "side": 1,
+          "move": "f8b4",
+          "piece": "b",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 17,
+          "side": 0,
+          "move": "e1g1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "castle"
+          ]
+        },
+        {
+          "ply": 18,
+          "side": 1,
+          "move": "e4c3",
+          "piece": "n",
+          "tags": [
+            "capture",
+            "forcing_chain"
+          ]
+        },
+        {
+          "ply": 19,
+          "side": 0,
+          "move": "b2c3",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in"
+          ]
+        },
+        {
+          "ply": 20,
+          "side": 1,
+          "move": "b4c3",
+          "piece": "b",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 21,
+          "side": 0,
+          "move": "a1b1",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 22,
+          "side": 1,
+          "move": "d8a5",
+          "piece": "q",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 23,
+          "side": 0,
+          "move": "c1a3",
+          "piece": "b",
+          "tags": [
+            "quiet",
+            "sacrifice",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 24,
+          "side": 1,
+          "move": "a5a3",
+          "piece": "q",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain",
+            "queen_raid"
+          ]
+        },
+        {
+          "ply": 25,
+          "side": 0,
+          "move": "d1c2",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 26,
+          "side": 1,
+          "move": "a3a5",
+          "piece": "q",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 27,
+          "side": 0,
+          "move": "d4d5",
+          "piece": "p",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 28,
+          "side": 1,
+          "move": "e6d5",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 29,
+          "side": 0,
+          "move": "e2b5",
+          "piece": "b",
+          "tags": [
+            "quiet",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 30,
+          "side": 1,
+          "move": "e8g8",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "castle"
+          ]
+        },
+        {
+          "ply": 31,
+          "side": 0,
+          "move": "b5c6",
+          "piece": "b",
+          "tags": [
+            "capture",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 32,
+          "side": 1,
+          "move": "b8c6",
+          "piece": "n",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in"
+          ]
+        },
+        {
+          "ply": 33,
+          "side": 0,
+          "move": "f1d1",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 34,
+          "side": 1,
+          "move": "d5d4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 35,
+          "side": 0,
+          "move": "b1b5",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 36,
+          "side": 1,
+          "move": "a5d8",
+          "piece": "q",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 37,
+          "side": 0,
+          "move": "b5h5",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 38,
+          "side": 1,
+          "move": "f8e8",
+          "piece": "r",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 39,
+          "side": 0,
+          "move": "c2b1",
+          "piece": "q",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 40,
+          "side": 1,
+          "move": "h7h6",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 41,
+          "side": 0,
+          "move": "h5h6",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 42,
+          "side": 1,
+          "move": "c6e5",
+          "piece": "n",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 43,
+          "side": 0,
+          "move": "f3g5",
+          "piece": "n",
+          "tags": [
+            "quiet",
+            "sacrifice",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 44,
+          "side": 1,
+          "move": "g7h6",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "capture_unseen"
+          ]
+        },
+        {
+          "ply": 45,
+          "side": 0,
+          "move": "b1c1",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "sacrifice",
+            "vision_loss"
+          ]
+        },
+        {
+          "ply": 46,
+          "side": 1,
+          "move": "h6g5",
+          "piece": "p",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 47,
+          "side": 0,
+          "move": "f2f4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 48,
+          "side": 1,
+          "move": "e5d3",
+          "piece": "n",
+          "tags": [
+            "quiet",
+            "sacrifice",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 49,
+          "side": 0,
+          "move": "d1d3",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route"
+          ]
+        },
+        {
+          "ply": 50,
+          "side": 1,
+          "move": "c3e1",
+          "piece": "b",
+          "tags": [
+            "quiet",
+            "walk_into_unseen"
+          ]
+        },
+        {
+          "ply": 51,
+          "side": 0,
+          "move": "d3d1",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 52,
+          "side": 1,
+          "move": "d8d5",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "sacrifice",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 53,
+          "side": 0,
+          "move": "d1e1",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "fog_route",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 54,
+          "side": 1,
+          "move": "d4d3",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 55,
+          "side": 0,
+          "move": "g1h1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 56,
+          "side": 1,
+          "move": "e8e1",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "long_strike",
+            "fog_route",
+            "king_threat",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 57,
+          "side": 0,
+          "move": "c1e1",
+          "piece": "q",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "fog_route",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 58,
+          "side": 1,
+          "move": "d3d2",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 59,
+          "side": 0,
+          "move": "e1d1",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_loss"
+          ]
+        },
+        {
+          "ply": 60,
+          "side": 1,
+          "move": "a8d8",
+          "piece": "r",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 61,
+          "side": 0,
+          "move": "h2h4",
+          "piece": "p",
+          "tags": [
+            "quiet"
+          ]
+        },
+        {
+          "ply": 62,
+          "side": 1,
+          "move": "d5c5",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 63,
+          "side": 0,
+          "move": "h1h2",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move"
+          ]
+        },
+        {
+          "ply": 64,
+          "side": 1,
+          "move": "c5f2",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_loss",
+            "queen_raid"
+          ]
+        },
+        {
+          "ply": 65,
+          "side": 0,
+          "move": "d1b3",
+          "piece": "q",
+          "tags": [
+            "quiet",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 66,
+          "side": 1,
+          "move": "f2h4",
+          "piece": "q",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "fog_route",
+            "king_threat",
+            "king_threat_unseen",
+            "vision_loss",
+            "queen_raid"
+          ]
+        },
+        {
+          "ply": 67,
+          "side": 0,
+          "move": "h2g1",
+          "piece": "k",
+          "tags": [
+            "quiet",
+            "king_move",
+            "back_rank_bare"
+          ]
+        },
+        {
+          "ply": 68,
+          "side": 1,
+          "move": "d2d1r",
+          "piece": "p",
+          "tags": [
+            "quiet",
+            "king_threat",
+            "vision_gain"
+          ]
+        },
+        {
+          "ply": 69,
+          "side": 0,
+          "move": "b3d1",
+          "piece": "q",
+          "tags": [
+            "capture",
+            "capture_unseen",
+            "victim_walked_in",
+            "fog_route",
+            "sacrifice"
+          ]
+        },
+        {
+          "ply": 70,
+          "side": 1,
+          "move": "d8d1",
+          "piece": "r",
+          "tags": [
+            "capture",
+            "victim_walked_in",
+            "long_strike",
+            "fog_route",
+            "king_threat",
+            "king_threat_unseen"
+          ]
+        },
+        {
+          "ply": 71,
+          "side": 0,
+          "move": "g1f1",
           "piece": "k",
           "tags": [
             "quiet",
