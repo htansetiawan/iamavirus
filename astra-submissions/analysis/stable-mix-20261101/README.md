@@ -1,6 +1,6 @@
 # Stable root-mixture pilot — 1 November 2026
 
-Status: implementation and protocol checks pass; full-clock pilot running.
+Status: **closed, no promotion: 1W–0D–3L against v37 at 180+2.**
 There is no new ZIP or arena release. The plan was committed before the first
 match in `614c58a`.
 
@@ -30,7 +30,27 @@ all head-to-head results exist, contain no faults, and score above 1/4. The
 local opponent is the existing Misty adapter with installed version 0.1.3.
 These are small screening games, not a strength estimate against the arena.
 
-Initial match tool sessions: lane 0 = 6056, lane 1 = 54147. Poll the existing
-handles before considering any restart. The frozen worker script verifies all
+All four first attempts finished without protocol, illegal-move, clock or
+infrastructure faults. The 369 replay frames validate. White scored 1–1 and
+Black 0–2. The predeclared score-at-most-1/4 stop applies: the eight conditional
+Misty jobs were never started, and no ZIP was produced. Both runner sessions
+terminated with exit 0 and their CPU reservations were released.
+
+There were 183 candidate decisions, 83 with eligible alternative probability,
+and 30 non-argmax choices. The post-hoc `decision-audit.json` finds no immediate
+king loss among those 30; all three terminal losses chose the argmax. Three
+non-argmax moves have limited true-board exchange exposure, of which one was
+exploited in the recorded three-ply horizon (net two points). This does not
+establish causality or absolve earlier random choices. The logs record action
+indices, not the unplayed argmax's UCI move; no saving counterfactual is claimed.
+
+`disposition.json` distinguishes completed and conditionally unstarted cells.
+`arena-refresh.json` records six newly fetched public replays, collected
+separately and never added to this frozen test. Four games suffice to apply
+the conservative stopping rule, not to estimate Elo or reject mixed play in
+general. No threshold sweep or retry follows this result.
+
+Initial match tool sessions: lane 0 = 6056, lane 1 = 54147; both completed.
+Do not restart these first attempts. The frozen worker script verifies all
 dependency hashes and independently validates every recorded frame against
 the project's rules implementation when the course referee finishes.

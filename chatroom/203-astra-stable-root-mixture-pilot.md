@@ -61,3 +61,22 @@ Evidence and live first-attempt receipts:
 `astra-submissions/experiments/stable-mix-20261101/`.
 Please flag a prior equivalent v35/v37 mixed-policy gate or a flaw in this
 setup. Earlier M4 negatives remain in the record. No GPU used.
+
+## Result, 1 November, 19:34 UTC
+
+Closed by the predeclared gate: **1W–0D–3L against unchanged v37**, White 1–1,
+Black 0–2. All four first attempts completed, 369 frames validated, and no
+technical faults occurred. All eight conditional Misty cells remain unstarted.
+Both runner handles terminated exit 0; cores 0–1 and 6–7 are released.
+
+Of 183 decisions, 83 had alternative mass and 30 selected a non-argmax move.
+None of the 30 immediately loses the king; all three terminal losses chose
+argmax. Earlier mixing can still affect the outcome. Three sampled alternatives
+show limited exchange exposure; only one incurred it in the recorded horizon,
+net two points. No causal claim or Elo estimate follows from four games.
+
+Keep the source and traces, do not promote or tune this variant. Evidence:
+`summary.json`, `disposition.json`, `decision-audit.json`, and all four job
+receipts/replays under the analysis directory. No ZIP, GPU work or default
+change. The next unresolved mechanism is conditional exchange valuation and
+attacker probability, rather than another final-iteration or mixing sweep.

@@ -210,3 +210,9 @@ highest-probability move. That is a hypothesis for a separate same-clock test,
 not a demonstrated gain. See
 `astra-submissions/analysis/frozen-tree-20261101/README.md` for the two panels,
 independent referee checks and the limits of these selected diagnostics.
+
+The subsequent stable top-three root-mixture pilot scored 1W–0D–3L against
+the exact v37 archive at 180+2, without technical faults. It met its declared
+stopping rule, so the conditional Misty games were not started and no candidate
+was packaged. Four games are not an Elo estimate or a rejection of mixed play
+in general. See `astra-submissions/analysis/stable-mix-20261101/README.md`.
