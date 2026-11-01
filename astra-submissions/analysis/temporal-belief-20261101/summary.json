@@ -1,0 +1,1023 @@
+{
+  "measurement": "Development posterior diagnostic; no decision or playing-strength claim",
+  "original_runtime_failure": "RuntimeError(('ze9rzvsl', 'static_context', -11, ''))",
+  "original_successful_cells": 39,
+  "completion_cells": 15,
+  "retained_failed_exit_cells": [
+    {
+      "game": "ze9rzvsl",
+      "arm": "static_context",
+      "sha256": "f06667dc2708e2d717b5472461b6cb4a44b990660c16da34113cba66b42cb600",
+      "update_seconds": 0.5516562479879212,
+      "wall_seconds": null,
+      "exit_code": -11,
+      "retained_failed_exit_output": true,
+      "note": "Complete original output agrees with the diagnostic repeat; original runtime failure remains."
+    }
+  ],
+  "receipts_verified": 54,
+  "plan_sha256": "fa018173b158f45a4585e11880104040900e110ea687d164ddfc3220aee6c82b",
+  "pins_sha256": "f4eca1787daf98c6e2be6c8e5522eeb1a5eaa4b1b13eef6e9cf10488c5388267",
+  "completion_sha256": "1867442b3dd84cc38c530dc861394aa3ee1d72b7b660482eb95fad2dbb893c29",
+  "all_cases": {
+    "games": 18,
+    "arms": {
+      "static_merged": {
+        "decisions": 651,
+        "truth_present": 578,
+        "truth_support": 0.8878648233486943,
+        "empty_decisions": 26,
+        "games_with_empty_belief": 2,
+        "truth_nll_by_clip": {
+          "1e-09": 6.586583419539979,
+          "1e-12": 7.3616969235861625,
+          "1e-15": 8.136299282058815
+        },
+        "covered_risk_decisions": 625,
+        "common_risk_decisions": 619,
+        "common_actual_king_losses": 3,
+        "common_king_brier": 0.004448257653381618,
+        "update_seconds": 14.379025994025142,
+        "mean_worlds": 3730.4331797235022,
+        "mean_unique_boards": 3730.4331797235022
+      },
+      "static_context": {
+        "decisions": 651,
+        "truth_present": 558,
+        "truth_support": 0.8571428571428571,
+        "empty_decisions": 14,
+        "games_with_empty_belief": 2,
+        "truth_nll_by_clip": {
+          "1e-09": 6.812033679836239,
+          "1e-12": 7.798855862547974,
+          "1e-15": 8.785678045259708
+        },
+        "covered_risk_decisions": 637,
+        "common_risk_decisions": 619,
+        "common_actual_king_losses": 3,
+        "common_king_brier": 0.004444745682519493,
+        "update_seconds": 15.844491429963455,
+        "mean_worlds": 4245.173579109063,
+        "mean_unique_boards": 2039.010752688172
+      },
+      "temporal_context": {
+        "decisions": 651,
+        "truth_present": 550,
+        "truth_support": 0.8448540706605223,
+        "empty_decisions": 32,
+        "games_with_empty_belief": 2,
+        "truth_nll_by_clip": {
+          "1e-09": 7.107912211024434,
+          "1e-12": 8.1796223234318,
+          "1e-15": 9.251332435839167
+        },
+        "covered_risk_decisions": 619,
+        "common_risk_decisions": 619,
+        "common_actual_king_losses": 3,
+        "common_king_brier": 0.004684775829766271,
+        "update_seconds": 15.189869338992139,
+        "mean_worlds": 4208.009216589861,
+        "mean_unique_boards": 2014.7987711213518
+      }
+    },
+    "comparisons": {
+      "static_merged": {
+        "truth_nll_gain": -0.8179253998456382,
+        "support_change": -0.043010752688172005,
+        "common_king_brier_change": 0.0002365181763846532,
+        "update_time_ratio": 1.0563907002674537,
+        "checks": {
+          "nll": false,
+          "support": false,
+          "king_brier": true,
+          "time": true
+        },
+        "numerical_gate_pass": false
+      },
+      "static_context": {
+        "truth_nll_gain": -0.3807664608838266,
+        "support_change": -0.01228878648233478,
+        "common_king_brier_change": 0.00024003014724677772,
+        "update_time_ratio": 0.958684562779127,
+        "checks": {
+          "nll": false,
+          "support": true,
+          "king_brier": true,
+          "time": true
+        },
+        "numerical_gate_pass": false
+      }
+    }
+  },
+  "excluding_failed_process_game": {
+    "games": 17,
+    "arms": {
+      "static_merged": {
+        "decisions": 611,
+        "truth_present": 538,
+        "truth_support": 0.8805237315875614,
+        "empty_decisions": 26,
+        "games_with_empty_belief": 2,
+        "truth_nll_by_clip": {
+          "1e-09": 6.860714091316418,
+          "1e-12": 7.6865715236144,
+          "1e-15": 8.511884347453508
+        },
+        "covered_risk_decisions": 585,
+        "common_risk_decisions": 579,
+        "common_actual_king_losses": 3,
+        "common_king_brier": 0.004755563789415701,
+        "update_seconds": 13.873041552024006,
+        "mean_worlds": 3798.351882160393,
+        "mean_unique_boards": 3798.351882160393
+      },
+      "static_context": {
+        "decisions": 611,
+        "truth_present": 518,
+        "truth_support": 0.8477905073649754,
+        "empty_decisions": 14,
+        "games_with_empty_belief": 2,
+        "truth_nll_by_clip": {
+          "1e-09": 7.100959221117079,
+          "1e-12": 8.152385147377862,
+          "1e-15": 9.203811073638645
+        },
+        "covered_risk_decisions": 597,
+        "common_risk_decisions": 579,
+        "common_actual_king_losses": 3,
+        "common_king_brier": 0.004751809195350579,
+        "update_seconds": 15.292835181975533,
+        "mean_worlds": 4316.237315875614,
+        "mean_unique_boards": 2060.7545008183306
+      },
+      "temporal_context": {
+        "decisions": 611,
+        "truth_present": 510,
+        "truth_support": 0.8346972176759411,
+        "empty_decisions": 32,
+        "games_with_empty_belief": 2,
+        "truth_nll_by_clip": {
+          "1e-09": 7.418187863549977,
+          "1e-12": 8.560059030779431,
+          "1e-15": 9.701930198008883
+        },
+        "covered_risk_decisions": 579,
+        "common_risk_decisions": 579,
+        "common_actual_king_losses": 3,
+        "common_king_brier": 0.00500842176859415,
+        "update_seconds": 14.445937406997473,
+        "mean_worlds": 4277.387888707038,
+        "mean_unique_boards": 2035.9345335515548
+      }
+    },
+    "comparisons": {
+      "static_merged": {
+        "truth_nll_gain": -0.8734875071650317,
+        "support_change": -0.04582651391162029,
+        "common_king_brier_change": 0.0002528579791784488,
+        "update_time_ratio": 1.0412956202016048,
+        "checks": {
+          "nll": false,
+          "support": false,
+          "king_brier": true,
+          "time": true
+        },
+        "numerical_gate_pass": false
+      },
+      "static_context": {
+        "truth_nll_gain": -0.4076738834015696,
+        "support_change": -0.013093289689034338,
+        "common_king_brier_change": 0.00025661257324357135,
+        "update_time_ratio": 0.9446212710134853,
+        "checks": {
+          "nll": false,
+          "support": true,
+          "king_brier": true,
+          "time": true
+        },
+        "numerical_gate_pass": false
+      }
+    }
+  },
+  "by_opponent": {
+    "Crimson Fog": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 81,
+          "truth_present": 53,
+          "truth_support": 0.654320987654321,
+          "empty_decisions": 15,
+          "games_with_empty_belief": 1,
+          "truth_nll_by_clip": {
+            "1e-09": 12.117051064101187,
+            "1e-12": 14.509025182371188,
+            "1e-15": 16.896891204735383
+          },
+          "covered_risk_decisions": 66,
+          "common_risk_decisions": 66,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.00013798439121624658,
+          "update_seconds": 3.07038614702833,
+          "mean_worlds": 5990.888888888889,
+          "mean_unique_boards": 5990.888888888889
+        },
+        "static_context": {
+          "decisions": 81,
+          "truth_present": 43,
+          "truth_support": 0.5308641975308642,
+          "empty_decisions": 3,
+          "games_with_empty_belief": 1,
+          "truth_nll_by_clip": {
+            "1e-09": 12.923542905728345,
+            "1e-12": 16.164218221794037,
+            "1e-15": 19.40489353785973
+          },
+          "covered_risk_decisions": 78,
+          "common_risk_decisions": 66,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 9.540809791583461e-05,
+          "update_seconds": 2.9059309900130756,
+          "mean_worlds": 5882.481481481482,
+          "mean_unique_boards": 3593.5308641975307
+        },
+        "temporal_context": {
+          "decisions": 81,
+          "truth_present": 41,
+          "truth_support": 0.5061728395061729,
+          "empty_decisions": 15,
+          "games_with_empty_belief": 1,
+          "truth_nll_by_clip": {
+            "1e-09": 13.265900033758701,
+            "1e-12": 16.677137208564695,
+            "1e-15": 20.088374383370688
+          },
+          "covered_risk_decisions": 66,
+          "common_risk_decisions": 66,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.00026011413249927797,
+          "update_seconds": 2.8348650870011625,
+          "mean_worlds": 5735.444444444444,
+          "mean_unique_boards": 3610.296296296296
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -2.1681120261935067,
+          "support_change": -0.14814814814814814,
+          "common_king_brier_change": 0.0001221297412830314,
+          "update_time_ratio": 0.923292690642473,
+          "checks": {
+            "nll": false,
+            "support": false,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": -0.5129189867706572,
+          "support_change": -0.024691358024691357,
+          "common_king_brier_change": 0.00016470603458344335,
+          "update_time_ratio": 0.975544531767565,
+          "checks": {
+            "nll": false,
+            "support": false,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    },
+    "Decent Chess Bot": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 3.9963015877075216,
+            "1e-12": 3.9963015877075216,
+            "1e-15": 3.9963015877075216
+          },
+          "covered_risk_decisions": 81,
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 4.1877289222164845e-07,
+          "update_seconds": 0.8796875029984221,
+          "mean_worlds": 2416.382716049383,
+          "mean_unique_boards": 2416.382716049383
+        },
+        "static_context": {
+          "decisions": 81,
+          "truth_present": 81,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.256041216461682,
+            "1e-12": 4.256041216461682,
+            "1e-15": 4.256041216461682
+          },
+          "covered_risk_decisions": 81,
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 4.1877323570680243e-07,
+          "update_seconds": 1.0645605639856512,
+          "mean_worlds": 3363.2345679012346,
+          "mean_unique_boards": 1469.037037037037
+        },
+        "temporal_context": {
+          "decisions": 81,
+          "truth_present": 77,
+          "truth_support": 0.9506172839506173,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.781998377172638,
+            "1e-12": 5.123122094653238,
+            "1e-15": 5.464245812133837
+          },
+          "covered_risk_decisions": 81,
+          "common_risk_decisions": 81,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 1.085978605210641e-06,
+          "update_seconds": 1.2657592359864793,
+          "mean_worlds": 3360.58024691358,
+          "mean_unique_boards": 1462.79012345679
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -1.126820506945716,
+          "support_change": -0.04938271604938271,
+          "common_king_brier_change": 6.672057129889926e-07,
+          "update_time_ratio": 1.438873726945226,
+          "checks": {
+            "nll": false,
+            "support": false,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": -0.8670808781915555,
+          "support_change": -0.04938271604938271,
+          "common_king_brier_change": 6.672053695038386e-07,
+          "update_time_ratio": 1.1889969239960874,
+          "checks": {
+            "nll": false,
+            "support": false,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    },
+    "Greek Gift": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 78,
+          "truth_present": 52,
+          "truth_support": 0.6666666666666666,
+          "empty_decisions": 11,
+          "games_with_empty_belief": 1,
+          "truth_nll_by_clip": {
+            "1e-09": 11.327231945067506,
+            "1e-12": 13.629817038061551,
+            "1e-15": 15.932402131055596
+          },
+          "covered_risk_decisions": 67,
+          "common_risk_decisions": 61,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0,
+          "update_seconds": 0.9376970179928321,
+          "mean_worlds": 2150.5128205128203,
+          "mean_unique_boards": 2150.5128205128203
+        },
+        "static_context": {
+          "decisions": 78,
+          "truth_present": 52,
+          "truth_support": 0.6666666666666666,
+          "empty_decisions": 11,
+          "games_with_empty_belief": 1,
+          "truth_nll_by_clip": {
+            "1e-09": 11.334802184205634,
+            "1e-12": 13.637387277199679,
+            "1e-15": 15.939972370193727
+          },
+          "covered_risk_decisions": 67,
+          "common_risk_decisions": 61,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0,
+          "update_seconds": 1.006027234992871,
+          "mean_worlds": 2147.7820512820513,
+          "mean_unique_boards": 1241.5128205128206
+        },
+        "temporal_context": {
+          "decisions": 78,
+          "truth_present": 52,
+          "truth_support": 0.6666666666666666,
+          "empty_decisions": 17,
+          "games_with_empty_belief": 1,
+          "truth_nll_by_clip": {
+            "1e-09": 11.618861425749312,
+            "1e-12": 13.921446518743359,
+            "1e-15": 16.224031611737402
+          },
+          "covered_risk_decisions": 61,
+          "common_risk_decisions": 61,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0,
+          "update_seconds": 1.033329406996927,
+          "mean_worlds": 2146.3205128205127,
+          "mean_unique_boards": 1221.8076923076924
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.2916294806818076,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0,
+          "update_time_ratio": 1.1019864488945468,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": -0.28405924154368023,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0,
+          "update_time_ratio": 1.0271386012767831,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    },
+    "HYPOTHERMIA": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 79,
+          "truth_present": 79,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.011017548569284,
+            "1e-12": 4.011017548569284,
+            "1e-15": 4.011017548569284
+          },
+          "covered_risk_decisions": 79,
+          "common_risk_decisions": 79,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.011929615393549956,
+          "update_seconds": 0.9450525600204855,
+          "mean_worlds": 2035.7974683544303,
+          "mean_unique_boards": 2035.7974683544303
+        },
+        "static_context": {
+          "decisions": 79,
+          "truth_present": 79,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.010745777918641,
+            "1e-12": 4.010745777918641,
+            "1e-15": 4.010745777918641
+          },
+          "covered_risk_decisions": 79,
+          "common_risk_decisions": 79,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.01192751011997101,
+          "update_seconds": 1.1145245949992386,
+          "mean_worlds": 2972.0632911392404,
+          "mean_unique_boards": 1537.1772151898733
+        },
+        "temporal_context": {
+          "decisions": 79,
+          "truth_present": 79,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 3.859164323547419,
+            "1e-12": 3.859164323547419,
+            "1e-15": 3.859164323547419
+          },
+          "covered_risk_decisions": 79,
+          "common_risk_decisions": 79,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.01180548763591291,
+          "update_seconds": 1.1944156459994701,
+          "mean_worlds": 2969.6835443037976,
+          "mean_unique_boards": 1532.9493670886077
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": 0.15185322502186516,
+          "support_change": 0.0,
+          "common_king_brier_change": -0.00012412775763704503,
+          "update_time_ratio": 1.2638616057223095,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": true
+        },
+        "static_context": {
+          "truth_nll_gain": 0.15158145437122172,
+          "support_change": 0.0,
+          "common_king_brier_change": -0.00012202248405809857,
+          "update_time_ratio": 1.07168172991309,
+          "checks": {
+            "nll": true,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": true
+        }
+      }
+    },
+    "Instructors": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 69,
+          "truth_present": 64,
+          "truth_support": 0.927536231884058,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.605146983686807,
+            "1e-12": 6.105708960424642,
+            "1e-15": 6.606270937162479
+          },
+          "covered_risk_decisions": 69,
+          "common_risk_decisions": 69,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 9.761139865922445e-11,
+          "update_seconds": 0.6284203009981866,
+          "mean_worlds": 1724.7101449275362,
+          "mean_unique_boards": 1724.7101449275362
+        },
+        "static_context": {
+          "decisions": 69,
+          "truth_present": 63,
+          "truth_support": 0.9130434782608695,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.5266446761045795,
+            "1e-12": 6.127319048189983,
+            "1e-15": 6.727993420275386
+          },
+          "covered_risk_decisions": 69,
+          "common_risk_decisions": 69,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 9.761117477679869e-11,
+          "update_seconds": 0.8059919949882897,
+          "mean_worlds": 2441.304347826087,
+          "mean_unique_boards": 1075.072463768116
+        },
+        "temporal_context": {
+          "decisions": 69,
+          "truth_present": 63,
+          "truth_support": 0.9130434782608695,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 5.75475089500663,
+            "1e-12": 6.355425267092033,
+            "1e-15": 6.956099639177437
+          },
+          "covered_risk_decisions": 69,
+          "common_risk_decisions": 69,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 5.52356477666626e-11,
+          "update_seconds": 0.7860487420093705,
+          "mean_worlds": 2442.550724637681,
+          "mean_unique_boards": 1072.9420289855072
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.2497163066673913,
+          "support_change": -0.01449275362318847,
+          "common_king_brier_change": -4.237575089256185e-11,
+          "update_time_ratio": 1.2508328275849872,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": -0.22810621890205063,
+          "support_change": 0.0,
+          "common_king_brier_change": -4.2375527010136087e-11,
+          "update_time_ratio": 0.975256264202464,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    },
+    "Knight Vision": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 46,
+          "truth_present": 46,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.439969964078378,
+            "1e-12": 4.439969964078378,
+            "1e-15": 4.439969964078378
+          },
+          "covered_risk_decisions": 46,
+          "common_risk_decisions": 46,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.01899521525880454,
+          "update_seconds": 0.6180753720127541,
+          "mean_worlds": 3273.413043478261,
+          "mean_unique_boards": 3273.413043478261
+        },
+        "static_context": {
+          "decisions": 46,
+          "truth_present": 46,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.478541336691025,
+            "1e-12": 4.478541336691025,
+            "1e-15": 4.478541336691025
+          },
+          "covered_risk_decisions": 46,
+          "common_risk_decisions": 46,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.018996017708677364,
+          "update_seconds": 0.7370318109933578,
+          "mean_worlds": 3604.521739130435,
+          "mean_unique_boards": 2053.913043478261
+        },
+        "temporal_context": {
+          "decisions": 46,
+          "truth_present": 46,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.657081316045373,
+            "1e-12": 4.657081316045373,
+            "1e-15": 4.657081316045373
+          },
+          "covered_risk_decisions": 46,
+          "common_risk_decisions": 46,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.020495183226029674,
+          "update_seconds": 0.7446834580005088,
+          "mean_worlds": 3622.478260869565,
+          "mean_unique_boards": 2056.478260869565
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.21711135196699516,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0014999679672251347,
+          "update_time_ratio": 1.2048424702240719,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": -0.17853997935434762,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0014991655173523105,
+          "update_time_ratio": 1.0103817052303865,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    },
+    "Mist Opportunities": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 76,
+          "truth_present": 76,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.684020444913938,
+            "1e-12": 4.684020444913938,
+            "1e-15": 4.684020444913938
+          },
+          "covered_risk_decisions": 76,
+          "common_risk_decisions": 76,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0,
+          "update_seconds": 4.053327765996073,
+          "mean_worlds": 6680.644736842105,
+          "mean_unique_boards": 6680.644736842105
+        },
+        "static_context": {
+          "decisions": 76,
+          "truth_present": 76,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.633749483681901,
+            "1e-12": 4.633749483681901,
+            "1e-15": 4.633749483681901
+          },
+          "covered_risk_decisions": 76,
+          "common_risk_decisions": 76,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0,
+          "update_seconds": 4.283975413994995,
+          "mean_worlds": 6677.118421052632,
+          "mean_unique_boards": 2633.1315789473683
+        },
+        "temporal_context": {
+          "decisions": 76,
+          "truth_present": 76,
+          "truth_support": 1.0,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 4.97795365715219,
+            "1e-12": 4.97795365715219,
+            "1e-15": 4.97795365715219
+          },
+          "covered_risk_decisions": 76,
+          "common_risk_decisions": 76,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0,
+          "update_seconds": 3.483701631990698,
+          "mean_worlds": 6662.065789473684,
+          "mean_unique_boards": 2578.7236842105262
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.29393321223825186,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0,
+          "update_time_ratio": 0.85946704365138,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": -0.3442041734702892,
+          "support_change": 0.0,
+          "common_king_brier_change": 0.0,
+          "update_time_ratio": 0.8131936566699373,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    },
+    "Strongly Invisible": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 71,
+          "truth_present": 58,
+          "truth_support": 0.8169014084507042,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 8.080153835743928,
+            "1e-12": 9.344954098092773,
+            "1e-15": 10.609754360441613
+          },
+          "covered_risk_decisions": 71,
+          "common_risk_decisions": 71,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.011594279196099094,
+          "update_seconds": 2.793865758989341,
+          "mean_worlds": 7100.915492957746,
+          "mean_unique_boards": 7100.915492957746
+        },
+        "static_context": {
+          "decisions": 71,
+          "truth_present": 50,
+          "truth_support": 0.704225352112676,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 8.950936174757915,
+            "1e-12": 10.99407506009066,
+            "1e-15": 13.037213945423405
+          },
+          "covered_risk_decisions": 71,
+          "common_risk_decisions": 71,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.011602649048805466,
+          "update_seconds": 3.327467303010053,
+          "mean_worlds": 8348.774647887323,
+          "mean_unique_boards": 3632.7042253521126
+        },
+        "temporal_context": {
+          "decisions": 71,
+          "truth_present": 47,
+          "truth_support": 0.6619718309859155,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 9.806027914221911,
+            "1e-12": 12.141043783173618,
+            "1e-15": 14.476059652125326
+          },
+          "covered_risk_decisions": 71,
+          "common_risk_decisions": 71,
+          "common_actual_king_losses": 1,
+          "common_king_brier": 0.01324334727276902,
+          "update_seconds": 3.2315700570015906,
+          "mean_worlds": 8162.169014084507,
+          "mean_unique_boards": 3472.7042253521126
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -2.7960896850808457,
+          "support_change": -0.15492957746478875,
+          "common_king_brier_change": 0.0016490680766699257,
+          "update_time_ratio": 1.1566661879168403,
+          "checks": {
+            "nll": false,
+            "support": false,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": -1.1469687230829582,
+          "support_change": -0.04225352112676051,
+          "common_king_brier_change": 0.0016406982239635538,
+          "update_time_ratio": 0.9711801086905608,
+          "checks": {
+            "nll": false,
+            "support": false,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    },
+    "duck": {
+      "games": 2,
+      "arms": {
+        "static_merged": {
+          "decisions": 70,
+          "truth_present": 69,
+          "truth_support": 0.9857142857142858,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 3.737421812835828,
+            "1e-12": 3.8361040311070016,
+            "1e-15": 3.934786249378175
+          },
+          "covered_risk_decisions": 70,
+          "common_risk_decisions": 70,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0014988178480714472,
+          "update_seconds": 0.4525135679887171,
+          "mean_worlds": 1963.9857142857143,
+          "mean_unique_boards": 1963.9857142857143
+        },
+        "static_context": {
+          "decisions": 70,
+          "truth_present": 68,
+          "truth_support": 0.9714285714285714,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 3.815590164939264,
+            "1e-12": 4.01295460148161,
+            "1e-15": 4.2103190380239575
+          },
+          "covered_risk_decisions": 70,
+          "common_risk_decisions": 70,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.00150126455868288,
+          "update_seconds": 0.5989815229859232,
+          "mean_worlds": 2541.4714285714285,
+          "mean_unique_boards": 1033.6142857142856
+        },
+        "temporal_context": {
+          "decisions": 70,
+          "truth_present": 69,
+          "truth_support": 0.9857142857142858,
+          "empty_decisions": 0,
+          "games_with_empty_belief": 0,
+          "truth_nll_by_clip": {
+            "1e-09": 3.8338556167987026,
+            "1e-12": 3.9325378350698754,
+            "1e-15": 4.031220053341049
+          },
+          "covered_risk_decisions": 70,
+          "common_risk_decisions": 70,
+          "common_actual_king_losses": 0,
+          "common_king_brier": 0.0009561589971571739,
+          "update_seconds": 0.6154960740059323,
+          "mean_worlds": 2565.957142857143,
+          "mean_unique_boards": 1044.7714285714285
+        }
+      },
+      "comparisons": {
+        "static_merged": {
+          "truth_nll_gain": -0.09643380396287382,
+          "support_change": 0.0,
+          "common_king_brier_change": -0.0005426588509142733,
+          "update_time_ratio": 1.3601715341743719,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        },
+        "static_context": {
+          "truth_nll_gain": 0.08041676641173456,
+          "support_change": 0.014285714285714346,
+          "common_king_brier_change": -0.0005451055615257062,
+          "update_time_ratio": 1.0275710525053996,
+          "checks": {
+            "nll": false,
+            "support": true,
+            "king_brier": true,
+            "time": true
+          },
+          "numerical_gate_pass": false
+        }
+      }
+    }
+  },
+  "promotion_eligible": false,
+  "limitations": [
+    "One unresolved process SIGSEGV after a complete output; diagnostic repeats do not erase it.",
+    "Only 18 games, one fixed seed and a 20,000-entry cap; no arena clock thinning.",
+    "No rebuild after empty belief; continued decisions remain in support and clipped NLL denominators.",
+    "Risk compares the recorded own action, not a new policy; common nonempty coverage is selected.",
+    "Total update time can shrink when the belief empties; this is not a throughput benchmark.",
+    "Context splitting consumes the entry cap; this implementation is not a test of all temporal belief designs."
+  ]
+}

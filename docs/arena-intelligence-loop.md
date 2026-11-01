@@ -171,10 +171,18 @@ Instructors/duck/HYPOTHERMIA improvement is 0.02816 nats. Its 3,436-byte native
 float32 model passes Python/C parity checks. See
 `astra-submissions/analysis/temporal-prior-20261101/README.md`.
 
-This predictor was evaluated with known true parent positions and histories.
-It is not yet wired into the belief filter: the bot must reconstruct recent
-opponent actions per hypothesis and handle merging, missing history and the
-belief cap. That next comparison must establish improved threat probabilities
-and decisions before any full-game promotion. Taxonomy-selected tests remain
-useful for diagnosing which behaviours benefit; the tags do not automatically
-become runtime belief weights.
+That positive predictor test used known true parent positions and histories.
+The next isolated experiment has now carried hypothetical recent actions
+through the actual belief filter. On 18 new games and 651 decisions, a static
+board-merged control retains the true board in 88.79% of decisions, a static
+context-retaining control in 85.71%, and the temporal version in 84.49%.
+Truth-board NLL also worsens. The implementation fails its advancement test;
+an unresolved process SIGSEGV is separately retained in the evidence. See
+`astra-submissions/analysis/temporal-belief-20261101/README.md`.
+
+This illustrates why the loop has separate predictor, posterior and decision
+checks. Context histories consumed the fixed entry cap, reducing distinct
+board coverage; the learned weights did not recover that loss. Compressing
+contexts within each board is a possible next design, not a validated fix.
+None of this changes the deployed bot. Taxonomy-selected tests diagnose which
+behaviours benefit; the tags do not automatically become runtime belief weights.
