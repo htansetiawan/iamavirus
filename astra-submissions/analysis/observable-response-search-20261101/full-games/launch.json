@@ -1,0 +1,71 @@
+{
+  "at_utc": "2026-11-01T22:12:04.188109+00:00",
+  "published_commit": "a9c730b59e2b6b94d64c7c96504d864d59dc151a",
+  "plan_sha256": "1522ed21b377ea5ba4c77c4ed53aa991577183eccded483d129644a4edd298f4",
+  "tool_sessions": [
+    55410,
+    2005
+  ],
+  "session_note": "Both handles live; lane mapping not inferred from asynchronous return order. Poll both original handles. First emitted job id identifies the lane.",
+  "lanes": [
+    {
+      "lane": 0,
+      "cores": [
+        0,
+        1
+      ],
+      "worker_pid": 235273,
+      "parent_pid": 235263,
+      "leaders": [
+        {
+          "pid": 235281,
+          "state": "R",
+          "starttime": 2717457,
+          "cores": [
+            0,
+            1
+          ]
+        },
+        {
+          "pid": 235293,
+          "state": "T",
+          "starttime": 2717516,
+          "cores": [
+            0,
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "lane": 1,
+      "cores": [
+        6,
+        7
+      ],
+      "worker_pid": 235341,
+      "parent_pid": 235319,
+      "leaders": [
+        {
+          "pid": 235346,
+          "state": "R",
+          "starttime": 2717703,
+          "cores": [
+            6,
+            7
+          ]
+        },
+        {
+          "pid": 235378,
+          "state": "T",
+          "starttime": 2717976,
+          "cores": [
+            6,
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "gpu_used": false
+}
