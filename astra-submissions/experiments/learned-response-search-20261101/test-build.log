@@ -1,0 +1,14 @@
+In file included from /home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/test_install.c:2:
+/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/gtcfr.c:1: warning: "_POSIX_C_SOURCE" redefined
+    1 | #define _POSIX_C_SOURCE 199309L  /* clock_gettime under -std=c11 */
+      | 
+In file included from /usr/include/assert.h:35,
+                 from /home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/test_install.c:1:
+/usr/include/features.h:321: note: this is the location of the previous definition
+  321 | # define _POSIX_C_SOURCE 199506L
+      | 
+/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/test_install.c: In function ‘main’:
+/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/test_install.c:6:5: warning: implicit declaration of function ‘setenv’; did you mean ‘getenv’? [-Wimplicit-function-declaration]
+    6 |     setenv("ASTRA_VISIBLE_CONFIDENCE", argv[2], 1);
+      |     ^~~~~~
+      |     getenv

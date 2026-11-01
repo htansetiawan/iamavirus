@@ -1,0 +1,167 @@
+--- a/src/dbr.h
++++ b/src/dbr.h
+@@ -1,59 +1,98 @@
+-/* Included after Tree/infoset helpers, in the isolated v37 gtcfr.c only. */
++/* Isolated learned-response restriction. CFR mathematics is unchanged from
++ * the verified experiment 207. Model inputs are only view + legal actions. */
+ #include <stdio.h>
+-static double dbr_max(void) {
+-    static int init = 0;
+-    static double value = 0;
+-    if (!init) {
+-        const char *s = getenv("ASTRA_DBR_MAX");
+-        if (s) value = atof(s);
+-        if (!isfinite(value) || value < 0 || value > 1) value = 0;
+-        init = 1;
++#include "adapter.h"
++#include "response.h"
++
++static double visible_confidence;
++static float *visible_weights;
++static int visible_initialized, visible_load_failed;
++
++static void visible_config(void) {
++    if (visible_initialized) return;
++    visible_initialized = 1;
++    const char *value = getenv("ASTRA_VISIBLE_CONFIDENCE");
++    char *end = NULL;
++    if (value) visible_confidence = strtod(value, &end);
++    if (!value || end == value || *end || !isfinite(visible_confidence) ||
++        visible_confidence <= 0 || visible_confidence > 1) {
++        visible_confidence = 0; return;
+     }
+-    return value;
++    const char *path = getenv("ASTRA_VISIBLE_MODEL");
++    if (path && *path) visible_weights = astra_response_load(path);
++    if (!visible_weights) {
++        visible_load_failed = 1;
++        fprintf(stderr, "astra_visible: model_load_failed; restrictions disabled\n");
++    }
+ }
+ 
+ static void dbr_install(Tree *t, int I, const Leaf *leaf) {
+-    if (t->g.is_player[I] != 1 || dbr_max() <= 0) return;
+-    MoveList moves;
+-    generate_moves(&leaf->pos, &moves);
+-    unsigned counts[256];
+-    const unsigned N = belief_history_counts(leaf->hist[1], &moves, counts);
+-    unsigned legal = 0;
+-    for (int a = 0; a < moves.count; ++a) legal += counts[a];
+-    if (N < 3 || legal != N || moves.count != t->g.is_actions[I]) return;
++    visible_config();
++    if (t->g.is_player[I] != 1 || !visible_weights) return;
++    struct timespec start; clock_gettime(CLOCK_MONOTONIC, &start);
++    char view[65]; uint8_t tokens[64]; uint16_t encoded[256];
++    MoveList moves; generate_moves(&leaf->pos, &moves);
++    observation(&leaf->pos, leaf->pos.side, view);
++    if (moves.count != t->g.is_actions[I] || !visible_pack(view, leaf->pos.side, moves.moves, moves.count, tokens, encoded)) {
++        ++t->response_failures; t->g.confidence[I] = 0; goto done;
++    }
++    /* One response distribution per information set. Verify repeated nodes
++     * have identical ordered observable inputs before reusing it. */
++    uint64_t key = 1469598103934665603ULL;
++    for (int s = 0; s < 64; ++s) key = (key ^ tokens[s]) * 1099511628211ULL;
++    for (int a = 0; a < moves.count; ++a) key = (key ^ encoded[a]) * 1099511628211ULL;
++    key |= 1;
++    if (I >= t->response_key_cap) {
++        int old = t->response_key_cap, cap = old ? 2*old : 128;
++        while (cap <= I) cap *= 2;
++        uint64_t *next = realloc(t->response_keys, (size_t)cap*sizeof(uint64_t));
++        if (!next) { ++t->response_failures; goto done; }
++        t->response_keys = next;
++        memset(next+old, 0, (size_t)(cap-old)*sizeof(uint64_t));
++        t->response_key_cap = cap;
++    }
++    if (t->response_keys[I]) {
++        ++t->response_reuses;
++        if (t->response_keys[I] != key) {
++            ++t->response_mismatches;
++            t->g.confidence[I] = 0; /* fail closed; diagnostic gate rejects */
++        }
++        goto done;
++    }
+     double q[256];
+-    for (int a = 0; a < moves.count; ++a) q[a] = (double)counts[a] / N;
+-    game_restrict(&t->g, I, dbr_max() * N / (20.0 + N), q);
++    if (!astra_response_probs(visible_weights, tokens, encoded, moves.count, q)) {
++        ++t->response_failures; goto done;
++    }
++    game_restrict(&t->g, I, visible_confidence, q);
++    t->response_keys[I] = key; ++t->response_calls;
++done:
++    t->response_seconds += seconds_since(&start);
+ }
+ 
+ static void dbr_reach(const Game *g, int node, const double *x, double reach,
+-                      int depth, double *first_coverage, double *first_confidence,
+-                      double *model_visits) {
++                      int depth, double *coverage, double *confidence, double *visits) {
+     const GameNode *n = &g->nodes[node];
+     if (n->type == NODE_TERMINAL || reach <= 0) return;
+     if (n->type == NODE_PLAYER && n->player == 1 && g->confidence[n->infoset] > 0) {
+-        *model_visits += reach;
+-        if (depth == 2) {
+-            *first_coverage += reach;
+-            *first_confidence += reach * g->confidence[n->infoset];
+-        }
++        *visits += reach;
++        if (depth == 2) { *coverage += reach; *confidence += reach*g->confidence[n->infoset]; }
+     }
+     for (int a = 0; a < n->count; ++a) {
+-        const double p = n->type == NODE_CHANCE ? g->prob[n->first+a] : x[g->is_offset[n->infoset]+a];
+-        if (p > 0) dbr_reach(g, g->child[n->first+a], x, reach*p, depth+1,
+-                             first_coverage, first_confidence, model_visits);
++        double p = n->type == NODE_CHANCE ? g->prob[n->first+a] : x[g->is_offset[n->infoset]+a];
++        if (p > 0) dbr_reach(g, g->child[n->first+a], x, reach*p, depth+1, coverage, confidence, visits);
+     }
+ }
+ 
+ static void dbr_report(const Tree *t, const double *x) {
+-    if (dbr_max() <= 0) return;
++    if (visible_confidence <= 0) return;
+     int opponent = 0, constrained = 0;
+     for (int I = 0; I < t->g.n_infosets; ++I) if (t->g.is_player[I] == 1) {
+-        ++opponent;
+-        if (t->g.confidence[I] > 0) ++constrained;
++        ++opponent; constrained += t->g.confidence[I] > 0;
+     }
+-    double first = 0, conf = 0, visits = 0;
+-    dbr_reach(&t->g, t->g.root, x, 1, 0, &first, &conf, &visits);
+-    fprintf(stderr, "astra_dbr: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g\n",
+-            opponent, constrained, first, conf, visits);
++    double coverage = 0, confidence = 0, visits = 0;
++    dbr_reach(&t->g, t->g.root, x, 1, 0, &coverage, &confidence, &visits);
++    fprintf(stderr, "astra_visible: opponent_sets %d constrained %d first_reply_coverage %.9g first_reply_confidence %.9g expected_model_visits %.9g calls %lu reuses %lu failures %lu mismatches %lu seconds %.9g load_failed %d\n",
++            opponent, constrained, coverage, confidence, visits,
++            t->response_calls, t->response_reuses, t->response_failures, t->response_mismatches,
++            t->response_seconds, visible_load_failed);
+ }
+--- a/src/gtcfr.c
++++ b/src/gtcfr.c
+@@ -19,6 +19,9 @@
+ 
+ typedef struct {
+     Game g;
++    uint64_t *response_keys; int response_key_cap;
++    unsigned long response_calls, response_reuses, response_failures, response_mismatches;
++    double response_seconds;
+     Leaf *leaves; int n_leaves, cap_leaves;
+     int *leaf_of;                /* node -> index in leaves, or -1 */
+     int cap_leaf_of;
+@@ -166,7 +169,7 @@
+     const int player = leaf.pos.side == t->us ? 0 : 1;
+     const int before = t->g.n_infosets;
+     const int I = infoset_for(t, player, leaf.hist[player], count);
+-    if (t->g.n_infosets > before) dbr_install(t, I, &leaf);
++    dbr_install(t, I, &leaf);
+     if (t->g.n_infosets > before && t->best_init) {
+         /* a new information set starts on its best child by the leaf values
+          * (the highest for us, the lowest for the opponent) instead of
+@@ -427,6 +430,7 @@
+     out->iterations = iteration;
+     dbr_report(&t, x);
+     free(x); free(idx); free(share); free(chance_kids); free(chance_p);
++    free(t.response_keys);
+     free(t.leaves); free(t.leaf_of); free(t.keys); free(t.vals); free(t.visits);
+     game_free(&t.g);
+     (void)grown;

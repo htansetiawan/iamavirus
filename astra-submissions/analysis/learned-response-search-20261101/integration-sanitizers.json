@@ -1,0 +1,56 @@
+{
+  "command": [
+    "gcc",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "-std=c11",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-pthread",
+    "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/test_install.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/front.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/response.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/belief.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/sfeval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/movemodel.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/adapter.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/cfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/search.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/eval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/src/board.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/learned-response-search-20261101/build/test-install-asan"
+  ],
+  "runs": [
+    {
+      "args": [
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/visible-response-20261101/models/response.bin",
+        ".25"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/visible-response-20261101/models/response.bin",
+        "0"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "args": [
+        "missing",
+        ".25"
+      ],
+      "returncode": 0,
+      "stdout": "",
+      "stderr": "astra_visible: model_load_failed; restrictions disabled\n"
+    }
+  ]
+}
