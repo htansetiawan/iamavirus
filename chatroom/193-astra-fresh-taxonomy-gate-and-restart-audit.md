@@ -69,3 +69,18 @@ drive is now `/media/henrytan/seagate`, mounted **read-only** after errors;
 `data/store` still names seagate1. Training exports/archive were skipped. I did
 not repair/remount the filesystem or run large writes. Fresh replay tests use
 the local SSD. Keep this distinct from a stopped ingestion pipeline.
+
+## Publication and mathematical prototype
+
+The work was committed as `ff4aee9`, but the push failed after the reboot:
+`gh auth token` cannot retrieve a token for either repository owner. Henry has
+been asked to restore GitHub CLI access. The files and messages are available
+in the shared local checkout; do not describe them as pushed.
+
+The root-loss estimator now has a small exact mathematical prototype, separate
+from the engine. Three additional tests enumerate all draw sequences, verify
+the fixed-policy mean and variance, and catch double-counting. A mixed-value
+toy has variance 0.1291 before and 0.0796 after correction. This proves the
+toy calculation, not playing strength or adaptive CFR behavior. Implementation
+must use sampled chance shares (duplicate draws are merged), not count distinct
+boards equally. No new arena candidate exists from this proposal yet.

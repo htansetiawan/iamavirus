@@ -102,6 +102,17 @@ does not fix a wrongly ranked posterior, does not provide a new equilibrium
 guarantee for an adaptively searched tree, and does not justify applying the
 same formula to queen/material exposure, whose value depends on continuation.
 
+`p_S` must sum the root chance shares of losing worlds, not count distinct
+boards equally: `belief_sample` merges duplicate draws and keeps their
+frequencies. When the entire belief is enumerated, the correction is zero.
+
+The exact finite-world prototype passes three checks in
+`astra-submissions/tools/test_root_loss_control_variate.py`: it enumerates every draw sequence,
+preserves the fixed-policy mean, removes variance of the isolated terminal
+component, and does not double-count the sampled penalty. In one mixed-value
+toy the variance falls from 0.1291 to 0.0796. This validates the algebra only;
+the correction is not wired into the engine and has no measured playing gain.
+
 Before any candidate: verify the value estimator against exact small games,
 measure variance and mean over seeds, then test a frozen implementation on the
 old suite and an independent fresh supplement. Implement the correction inside
