@@ -302,6 +302,19 @@ adversarial free strategy using the checked data-biased-response solver.
 On 39 fresh decisions, immediate king-loss choices fall from six to five,
 while bounded material losses rise from one to two. All 117 original/off/on
 calls pass, and an independent referee verifies both changed tactical cases.
-This meets the recorded diagnostic gate and earns a bounded full-clock pilot;
-it is not a playing-strength result. See
+This met the recorded diagnostic gate and earned a bounded full-clock pilot.
+That pilot subsequently finished **0 wins, 8 losses against exact v37**, with
+no technical faults, and was rejected. A separate observable-loss projection
+of the learned response finished **2 wins, 6 losses**, also below its frozen
+advancement threshold. Neither configuration produced a release. See
 [the integration and gate](../astra-submissions/analysis/learned-response-search-20261101/README.md).
+
+A subsequent [same-tree audit](../astra-submissions/analysis/response-best-reply-r2-20261101/README.md)
+held our continuation, worlds and leaf values fixed. In one almost fully known
+position, projected-response value fell from+0.139 under the best permitted
+restricted response to-0.808 when future replies were unrestricted while the
+first reply retained its restriction. This identifies dependence on future
+modeled mistakes in that selected tree. It does not establish a full-game
+exploitability bound or justify tuning a guard. The small pilots and diagnostic
+failures are preserved, including a repaired audit-only crash. A persistent
+opponent-mode alternative is documented for review, not yet implemented.

@@ -1,0 +1,822 @@
+{
+  "cases": [
+    {
+      "case": "h2h-p0-white-p20",
+      "historical_move": "f1c4",
+      "historical_reply": "e6c4",
+      "arms": {
+        "unrestricted": {
+          "chosen": "f1c4",
+          "nodes": 210192,
+          "infosets": 1473,
+          "layers": 11,
+          "first_restricted": 0,
+          "later_restricted": 0,
+          "audit_seconds": 0.07203765,
+          "truth_mass": 0.22908921624693504,
+          "sampled_truth_mass": 0.22908921624693504,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                -0.21103963955955665,
+                -0.21611599054259167,
+                -0.21611599054259167,
+                -0.21611599054259167
+              ],
+              "solver_slack": 0.005076350983035022,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": []
+            },
+            {
+              "profile": "f1c4",
+              "values": [
+                -0.21156554452153478,
+                -0.5257390141347978,
+                -0.5257390141347978,
+                -0.5257390141347978
+              ],
+              "solver_slack": 0.3141734696132631,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": [
+                {
+                  "weight": 0.22908921624693504,
+                  "values": [
+                    -0.9589530484390355,
+                    -0.9590907997381826,
+                    -0.9590907997381826,
+                    -0.9590907997381826
+                  ],
+                  "historical_reply": {
+                    "move": "e6c4",
+                    "values": [
+                      -0.9589530484390355,
+                      -0.9590907997381826,
+                      -0.9590907997381826,
+                      -0.9590907997381826
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "d1d2",
+              "values": [
+                -0.21065287533960736,
+                -0.45839242609325337,
+                -0.45839242609325337,
+                -0.45839242609325337
+              ],
+              "solver_slack": 0.247739550753646,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": [
+                {
+                  "weight": 0.22908921624693504,
+                  "values": [
+                    -0.25470166406331873,
+                    -0.45918971344722026,
+                    -0.45918971344722026,
+                    -0.45918971344722026
+                  ],
+                  "historical_reply": {
+                    "move": "e6c4",
+                    "values": [
+                      0.8853516482022625,
+                      0.8853516482022625,
+                      0.8853516482022625,
+                      0.8853516482022625
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "raw": {
+          "chosen": "f1c4",
+          "nodes": 184754,
+          "infosets": 1327,
+          "layers": 10,
+          "first_restricted": 102,
+          "later_restricted": 714,
+          "audit_seconds": 0.066185149,
+          "truth_mass": 0.22908921624693504,
+          "sampled_truth_mass": 0.22908921624693504,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                -0.16080330326339298,
+                -0.16568300090304974,
+                -0.2211666043428434,
+                -0.2776695967307685
+              ],
+              "solver_slack": 0.00487969763965676,
+              "future_restriction_gap": 0.055483603439793666,
+              "first_restriction_gap": 0.05650299238792511,
+              "true_worlds": []
+            },
+            {
+              "profile": "f1c4",
+              "values": [
+                -0.16016653600811687,
+                -0.2607798851185385,
+                -0.39126117711031344,
+                -0.4919364993334737
+              ],
+              "solver_slack": 0.10061334911042163,
+              "future_restriction_gap": 0.13048129199177494,
+              "first_restriction_gap": 0.10067532222316028,
+              "true_worlds": [
+                {
+                  "weight": 0.22908921624693504,
+                  "values": [
+                    -0.7146861133662563,
+                    -0.7146863978556858,
+                    -0.9094971448402103,
+                    -0.9686534238679029
+                  ],
+                  "historical_reply": {
+                    "move": "e6c4",
+                    "values": [
+                      -0.7656729763607925,
+                      -0.7656729763608054,
+                      -0.9686534238679029,
+                      -0.9686534238679029
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "d1d2",
+              "values": [
+                -0.16089527220056601,
+                -0.2874115575576445,
+                -0.3448059963724409,
+                -0.41801361628117933
+              ],
+              "solver_slack": 0.1265162853570785,
+              "future_restriction_gap": 0.05739443881479639,
+              "first_restriction_gap": 0.07320761990873842,
+              "true_worlds": [
+                {
+                  "weight": 0.22908921624693504,
+                  "values": [
+                    -0.3293046831219297,
+                    -0.3734135026034638,
+                    -0.4330922143006073,
+                    -0.49641870777926134
+                  ],
+                  "historical_reply": {
+                    "move": "e6c4",
+                    "values": [
+                      0.8882945254067758,
+                      0.8882945254067758,
+                      0.8680219810175624,
+                      0.8680219810175624
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "projected": {
+          "chosen": "f1c4",
+          "nodes": 177432,
+          "infosets": 1256,
+          "layers": 11,
+          "first_restricted": 101,
+          "later_restricted": 681,
+          "audit_seconds": 0.063024505,
+          "truth_mass": 0.22908921624693504,
+          "sampled_truth_mass": 0.22908921624693504,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                -0.1573193440020454,
+                -0.15963970995136822,
+                -0.2443204100377729,
+                -0.3084432067473435
+              ],
+              "solver_slack": 0.0023203659493228335,
+              "future_restriction_gap": 0.08468070008640469,
+              "first_restriction_gap": 0.06412279670957058,
+              "true_worlds": []
+            },
+            {
+              "profile": "f1c4",
+              "values": [
+                -0.15724881703771793,
+                -0.26842725747012636,
+                -0.41306600089306633,
+                -0.5251046814644779
+              ],
+              "solver_slack": 0.11117844043240843,
+              "future_restriction_gap": 0.14463874342293997,
+              "first_restriction_gap": 0.11203868057141153,
+              "true_worlds": [
+                {
+                  "weight": 0.22908921624693504,
+                  "values": [
+                    -0.7186056082688421,
+                    -0.7186074477006875,
+                    -0.910968829445715,
+                    -0.9697152505174753
+                  ],
+                  "historical_reply": {
+                    "move": "e6c4",
+                    "values": [
+                      -0.76831174895788,
+                      -0.7683117489578799,
+                      -0.9697152505174753,
+                      -0.9697152505174753
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "d1d2",
+              "values": [
+                -0.15780088143611137,
+                -0.3326505859560821,
+                -0.40638852101594086,
+                -0.49300826604861003
+              ],
+              "solver_slack": 0.17484970451997073,
+              "future_restriction_gap": 0.07373793505985876,
+              "first_restriction_gap": 0.08661974503266917,
+              "true_worlds": [
+                {
+                  "weight": 0.22908921624693504,
+                  "values": [
+                    -0.3030026637031453,
+                    -0.37855049918721534,
+                    -0.48106587547130775,
+                    -0.5503482909259418
+                  ],
+                  "historical_reply": {
+                    "move": "e6c4",
+                    "values": [
+                      0.8883675158974512,
+                      0.8883675158974512,
+                      0.8680219810175624,
+                      0.8680219810175624
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "identical_beliefs": true,
+      "identical_samples": true
+    },
+    {
+      "case": "h2h-p0-black-p31",
+      "historical_move": "e7g5",
+      "historical_reply": "e3g5",
+      "arms": {
+        "unrestricted": {
+          "chosen": "d5a2",
+          "nodes": 169969,
+          "infosets": 2649,
+          "layers": 12,
+          "first_restricted": 0,
+          "later_restricted": 0,
+          "audit_seconds": 0.061799752,
+          "truth_mass": 0.040546770681476454,
+          "sampled_truth_mass": 0.03125,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                -0.5222249433582191,
+                -0.5440578376255598,
+                -0.5440578376255598,
+                -0.5440578376255598
+              ],
+              "solver_slack": 0.021832894267340697,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": []
+            },
+            {
+              "profile": "d5a2",
+              "values": [
+                -0.5222249433582191,
+                -0.5440578376255598,
+                -0.5440578376255598,
+                -0.5440578376255598
+              ],
+              "solver_slack": 0.021832894267340697,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": [
+                {
+                  "weight": 0.03125,
+                  "values": [
+                    -0.6436767376469343,
+                    -0.6442756648031381,
+                    -0.6442756648031381,
+                    -0.6442756648031381
+                  ],
+                  "historical_reply": {
+                    "move": "e3g5",
+                    "values": [
+                      0.983915952786863,
+                      0.983915952786863,
+                      0.983915952786863,
+                      0.983915952786863
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "e7g5",
+              "values": [
+                -0.5462846259217179,
+                -0.7767077674118953,
+                -0.7767077674118953,
+                -0.7767077674118953
+              ],
+              "solver_slack": 0.2304231414901774,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": [
+                {
+                  "weight": 0.03125,
+                  "values": [
+                    -0.9558073556932596,
+                    -0.9558073556932596,
+                    -0.9558073556932596,
+                    -0.9558073556932596
+                  ],
+                  "historical_reply": {
+                    "move": "e3g5",
+                    "values": [
+                      -0.9558073556932596,
+                      -0.9558073556932596,
+                      -0.9558073556932596,
+                      -0.9558073556932596
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "raw": {
+          "chosen": "e7g5",
+          "nodes": 128070,
+          "infosets": 2364,
+          "layers": 13,
+          "first_restricted": 151,
+          "later_restricted": 1071,
+          "audit_seconds": 0.039146953,
+          "truth_mass": 0.040546770681476454,
+          "sampled_truth_mass": 0.03125,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                -0.21684801952349117,
+                -0.22228891867815173,
+                -0.4367139026070709,
+                -0.7467642165158216
+              ],
+              "solver_slack": 0.005440899154660561,
+              "future_restriction_gap": 0.21442498392891915,
+              "first_restriction_gap": 0.3100503139087507,
+              "true_worlds": []
+            },
+            {
+              "profile": "e7g5",
+              "values": [
+                -0.21684801952349117,
+                -0.22228891867815173,
+                -0.4367139026070709,
+                -0.7467642165158216
+              ],
+              "solver_slack": 0.005440899154660561,
+              "future_restriction_gap": 0.21442498392891915,
+              "first_restriction_gap": 0.3100503139087507,
+              "true_worlds": [
+                {
+                  "weight": 0.03125,
+                  "values": [
+                    -0.8147054051296806,
+                    -0.8147054051296806,
+                    -0.8733886402312342,
+                    -0.9620322886578875
+                  ],
+                  "historical_reply": {
+                    "move": "e3g5",
+                    "values": [
+                      -0.9176304115498005,
+                      -0.9176304115498005,
+                      -0.9620322886578875,
+                      -0.9620322886578875
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "d5a2",
+              "values": [
+                -0.2526544233724229,
+                -0.5199275976562612,
+                -0.5348469387550976,
+                -0.6637562616468363
+              ],
+              "solver_slack": 0.2672731742838383,
+              "future_restriction_gap": 0.014919341098836414,
+              "first_restriction_gap": 0.12890932289173873,
+              "true_worlds": [
+                {
+                  "weight": 0.03125,
+                  "values": [
+                    -0.6646239450984212,
+                    -0.6646239450984212,
+                    -0.6646239450984212,
+                    -0.7647260157498459
+                  ],
+                  "historical_reply": {
+                    "move": "e3g5",
+                    "values": [
+                      0.983915952786863,
+                      0.983915952786863,
+                      0.983915952786863,
+                      0.983915952786863
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "projected": {
+          "chosen": "e7g5",
+          "nodes": 127253,
+          "infosets": 2386,
+          "layers": 13,
+          "first_restricted": 154,
+          "later_restricted": 1082,
+          "audit_seconds": 0.043015774,
+          "truth_mass": 0.040546770681476454,
+          "sampled_truth_mass": 0.03125,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                -0.2301669773057326,
+                -0.24149535624602492,
+                -0.45216336371912796,
+                -0.7681322899421612
+              ],
+              "solver_slack": 0.011328378940292316,
+              "future_restriction_gap": 0.21066800747310305,
+              "first_restriction_gap": 0.31596892622303324,
+              "true_worlds": []
+            },
+            {
+              "profile": "e7g5",
+              "values": [
+                -0.2301669773057326,
+                -0.24149535624602492,
+                -0.45216336371912796,
+                -0.7681322899421612
+              ],
+              "solver_slack": 0.011328378940292316,
+              "future_restriction_gap": 0.21066800747310305,
+              "first_restriction_gap": 0.31596892622303324,
+              "true_worlds": [
+                {
+                  "weight": 0.03125,
+                  "values": [
+                    -0.8335578454961569,
+                    -0.8335578454961569,
+                    -0.8793125837578938,
+                    -0.9691129062420462
+                  ],
+                  "historical_reply": {
+                    "move": "e3g5",
+                    "values": [
+                      -0.9251757729268519,
+                      -0.9251757729268519,
+                      -0.9691129062420462,
+                      -0.9691129062420462
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "d5a2",
+              "values": [
+                -0.390341537507334,
+                -0.520906023755269,
+                -0.5591026394524031,
+                -0.6914372496470217
+              ],
+              "solver_slack": 0.13056448624793493,
+              "future_restriction_gap": 0.03819661569713417,
+              "first_restriction_gap": 0.13233461019461856,
+              "true_worlds": [
+                {
+                  "weight": 0.03125,
+                  "values": [
+                    -0.6764282811209119,
+                    -0.6764282811209119,
+                    -0.6764282811209119,
+                    -0.6764282811209119
+                  ],
+                  "historical_reply": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "identical_beliefs": true,
+      "identical_samples": true
+    },
+    {
+      "case": "h2h-p1-black-p17",
+      "historical_move": "b8d7",
+      "historical_reply": "g2f3",
+      "arms": {
+        "unrestricted": {
+          "chosen": "f3e4",
+          "nodes": 188618,
+          "infosets": 2994,
+          "layers": 15,
+          "first_restricted": 0,
+          "later_restricted": 0,
+          "audit_seconds": 0.06015552,
+          "truth_mass": 0.998881677535433,
+          "sampled_truth_mass": 0.998881677535433,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                -0.3557459849275108,
+                -0.3865337132214208,
+                -0.3865337132214208,
+                -0.3865337132214208
+              ],
+              "solver_slack": 0.03078772829391002,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": []
+            },
+            {
+              "profile": "f3e4",
+              "values": [
+                -0.3557459849275108,
+                -0.3865337132214208,
+                -0.3865337132214208,
+                -0.3865337132214208
+              ],
+              "solver_slack": 0.03078772829391002,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": [
+                {
+                  "weight": 0.998881677535433,
+                  "values": [
+                    -0.3561669919713968,
+                    -0.38698918942112215,
+                    -0.38698918942112215,
+                    -0.38698918942112215
+                  ],
+                  "historical_reply": null
+                }
+              ]
+            },
+            {
+              "profile": "b8d7",
+              "values": [
+                -0.736008566996606,
+                -0.736008566996606,
+                -0.736008566996606,
+                -0.736008566996606
+              ],
+              "solver_slack": 0,
+              "future_restriction_gap": 0,
+              "first_restriction_gap": 0,
+              "true_worlds": [
+                {
+                  "weight": 0.998881677535433,
+                  "values": [
+                    -0.7363687637736097,
+                    -0.7363687637736097,
+                    -0.7363687637736097,
+                    -0.7363687637736097
+                  ],
+                  "historical_reply": {
+                    "move": "g2f3",
+                    "values": [
+                      -0.7363687637736097,
+                      -0.7363687637736097,
+                      -0.7363687637736097,
+                      -0.7363687637736097
+                    ]
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "raw": {
+          "chosen": "b8d7",
+          "nodes": 162086,
+          "infosets": 3001,
+          "layers": 14,
+          "first_restricted": 25,
+          "later_restricted": 1489,
+          "audit_seconds": 0.071005247,
+          "truth_mass": 0.998881677535433,
+          "sampled_truth_mass": 0.998881677535433,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                0.12091183255196616,
+                0.1206465820192212,
+                -0.8019929504394148,
+                -0.9933026618474989
+              ],
+              "solver_slack": 0.0002652505327449678,
+              "future_restriction_gap": 0.922639532458636,
+              "first_restriction_gap": 0.19130971140808417,
+              "true_worlds": []
+            },
+            {
+              "profile": "b8d7",
+              "values": [
+                0.12091183255196616,
+                0.1206465820192212,
+                -0.8019929504394148,
+                -0.9933026618474989
+              ],
+              "solver_slack": 0.0002652505327449678,
+              "future_restriction_gap": 0.922639532458636,
+              "first_restriction_gap": 0.19130971140808417,
+              "true_worlds": [
+                {
+                  "weight": 0.998881677535433,
+                  "values": [
+                    0.12123942948127385,
+                    0.12097388198079369,
+                    -0.802340238818841,
+                    -0.9936861820496841
+                  ],
+                  "historical_reply": {
+                    "move": "g2f3",
+                    "values": [
+                      0.039108664485443756,
+                      0.03885162328792649,
+                      -0.9936861820496841,
+                      -0.9936861820496841
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "f3e4",
+              "values": [
+                -0.16569289381650903,
+                -0.4924590250687157,
+                -0.6757747373020855,
+                -0.9810043044206338
+              ],
+              "solver_slack": 0.32676613125220666,
+              "future_restriction_gap": 0.1833157122333698,
+              "first_restriction_gap": 0.3052295671185483,
+              "true_worlds": [
+                {
+                  "weight": 0.998881677535433,
+                  "values": [
+                    -0.1657381042581547,
+                    -0.4928700745416073,
+                    -0.6763910223736564,
+                    -0.981703457893131
+                  ],
+                  "historical_reply": null
+                }
+              ]
+            }
+          ]
+        },
+        "projected": {
+          "chosen": "b8d7",
+          "nodes": 160214,
+          "infosets": 3015,
+          "layers": 16,
+          "first_restricted": 26,
+          "later_restricted": 1542,
+          "audit_seconds": 0.061420359,
+          "truth_mass": 0.998881677535433,
+          "sampled_truth_mass": 0.998881677535433,
+          "missing_focus_moves": [],
+          "profiles": [
+            {
+              "profile": "mixed",
+              "values": [
+                0.14553658488559043,
+                0.13852662002203348,
+                -0.8076929950657615,
+                -0.9932861317546272
+              ],
+              "solver_slack": 0.007009964863556956,
+              "future_restriction_gap": 0.9462196150877951,
+              "first_restriction_gap": 0.18559313668886568,
+              "true_worlds": []
+            },
+            {
+              "profile": "b8d7",
+              "values": [
+                0.14553658488559043,
+                0.13852662002203348,
+                -0.8076929950657615,
+                -0.9932861317546272
+              ],
+              "solver_slack": 0.007009964863556956,
+              "future_restriction_gap": 0.9462196150877951,
+              "first_restriction_gap": 0.18559313668886568,
+              "true_worlds": [
+                {
+                  "weight": 0.998881677535433,
+                  "values": [
+                    0.1456211358320503,
+                    0.13860332279051688,
+                    -0.8086756556590904,
+                    -0.9943701456975541
+                  ],
+                  "historical_reply": {
+                    "move": "g2f3",
+                    "values": [
+                      0.07100180232830193,
+                      0.06311666138688965,
+                      -0.9943701456975541,
+                      -0.9943701456975541
+                    ]
+                  }
+                }
+              ]
+            },
+            {
+              "profile": "f3e4",
+              "values": [
+                -0.26879421684226945,
+                -0.4955113213149658,
+                -0.6815401231166837,
+                -0.9613551338958504
+              ],
+              "solver_slack": 0.22671710447269633,
+              "future_restriction_gap": 0.18602880180171788,
+              "first_restriction_gap": 0.2798150107791667,
+              "true_worlds": [
+                {
+                  "weight": 0.998881677535433,
+                  "values": [
+                    -0.26895485689711085,
+                    -0.49592578806093135,
+                    -0.6821628629672524,
+                    -0.9620322886578875
+                  ],
+                  "historical_reply": null
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "identical_beliefs": true,
+      "identical_samples": true
+    }
+  ],
+  "validated_frames": 172,
+  "checks": 13974,
+  "scope": "Selected-case, same-tree nested feasible-set decomposition with fixed own continuation. Not a full-game exploitability bound, release gate or causal explanation of match outcomes.",
+  "original_failed_attempt": "Sibling response-best-reply-20261101 retains the original audit-only crash; these are nine newly frozen R2 calls."
+}

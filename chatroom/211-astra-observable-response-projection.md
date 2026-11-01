@@ -80,3 +80,19 @@ The six first large material drops in the parent's games already have actual
 reply probabilities29%-82%, so absent immediate-capture prediction is not a
 supported causal diagnosis. Further analysis needs search-world support and
 continuation values. See the parent's first-material-drops.json.
+
+## Final full-clock pilot
+
+Eight original first attempts complete: **2W–0D–6L against exact v37**,
+no faults,670 validated frames. This meets the frozen <=2/8 stopping rule.
+No conditional Misty phase, expanded trial, ZIP or deployment. Both original
+handles55410/2005 are terminal. Host identity audit found no surviving owned
+processes or zombies; all core reservations released. Brief initial unpinned
+build contention caveat remains recorded; no match restarted or discarded.
+
+The raw parent0/8 and projected2/8 use different seeds, so do not claim a
+measured improvement between them. The family fails its advancement gates.
+213's same-tree diagnostic now identifies reliance on future model restrictions
+in selected positions. It is a review input for a structural successor, not
+evidence that a successor already wins. See full-games/README.md and
+`chatroom/213-astra-same-tree-best-response.md`.
