@@ -1,0 +1,471 @@
+{
+  "cases": 51,
+  "runs": 204,
+  "decisions": {
+    "mixture": {
+      "passes_preregistered_screen": false,
+      "net_combined_fixes_vs_v35": -3,
+      "net_combined_fixes_vs_off": -2,
+      "median_paired_elapsed_ratio_vs_off": 1.0004613915365868,
+      "median_paired_nodes_ratio_vs_off": 1.0
+    },
+    "residual": {
+      "passes_preregistered_screen": false,
+      "net_combined_fixes_vs_v35": 0,
+      "net_combined_fixes_vs_off": 1,
+      "median_paired_elapsed_ratio_vs_off": 1.0035477018049253,
+      "median_paired_nodes_ratio_vs_off": 0.9955223880597015
+    }
+  },
+  "changes": [
+    {
+      "game": "71a47kt0",
+      "ply": 38,
+      "arm": "mixture",
+      "changed_labels": [
+        "exchange_loss",
+        "fatal_or_exchange"
+      ],
+      "v35": {
+        "move": "a1f1",
+        "elapsed": 3.241721709000558,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 0,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "nodes": 75288,
+        "iterations": 740,
+        "queen_guard_seconds": 0.0
+      },
+      "candidate": {
+        "move": "a1b1",
+        "elapsed": 3.189339737999944,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "worst_capture": "e4b1",
+        "best_response": "g1g2",
+        "nodes": 74850,
+        "iterations": 740,
+        "queen_guard_seconds": 0.0
+      }
+    },
+    {
+      "game": "d28cm7j9",
+      "ply": 75,
+      "arm": "residual",
+      "changed_labels": [
+        "fatal",
+        "fatal_or_exchange"
+      ],
+      "v35": {
+        "move": "h7g7",
+        "elapsed": 5.174214245999792,
+        "legal": true,
+        "fatal": true,
+        "terminal": [
+          "1-0",
+          "King capturable"
+        ],
+        "exchange_loss": null,
+        "queen_exchange_loss": null,
+        "forced_king_loss_after_capture": false,
+        "nodes": 72049,
+        "iterations": 1340,
+        "queen_guard_seconds": 0.045
+      },
+      "candidate": {
+        "move": "h5h4",
+        "elapsed": 5.185309288000099,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 1,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "worst_capture": "d4h4",
+        "best_response": "h7g6",
+        "nodes": 77469,
+        "iterations": 1630,
+        "queen_guard_seconds": 0.042
+      }
+    },
+    {
+      "game": "i3xv2i71",
+      "ply": 79,
+      "arm": "mixture",
+      "changed_labels": [
+        "fatal",
+        "fatal_or_exchange"
+      ],
+      "v35": {
+        "move": "g6h5",
+        "elapsed": 4.772727374000169,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 1,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "worst_capture": "c6b4",
+        "best_response": "h5g4",
+        "nodes": 63953,
+        "iterations": 2270,
+        "queen_guard_seconds": 0.019
+      },
+      "candidate": {
+        "move": "g6h6",
+        "elapsed": 4.697269103999133,
+        "legal": true,
+        "fatal": true,
+        "terminal": [
+          "1-0",
+          "King capturable"
+        ],
+        "exchange_loss": null,
+        "queen_exchange_loss": null,
+        "forced_king_loss_after_capture": false,
+        "nodes": 73988,
+        "iterations": 2710,
+        "queen_guard_seconds": 0.014
+      }
+    },
+    {
+      "game": "i3xv2i71",
+      "ply": 79,
+      "arm": "residual",
+      "changed_labels": [
+        "fatal",
+        "fatal_or_exchange"
+      ],
+      "v35": {
+        "move": "g6h5",
+        "elapsed": 4.772727374000169,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 1,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "worst_capture": "c6b4",
+        "best_response": "h5g4",
+        "nodes": 63953,
+        "iterations": 2270,
+        "queen_guard_seconds": 0.019
+      },
+      "candidate": {
+        "move": "g6h6",
+        "elapsed": 4.773612070999661,
+        "legal": true,
+        "fatal": true,
+        "terminal": [
+          "1-0",
+          "King capturable"
+        ],
+        "exchange_loss": null,
+        "queen_exchange_loss": null,
+        "forced_king_loss_after_capture": false,
+        "nodes": 68384,
+        "iterations": 2490,
+        "queen_guard_seconds": 0.017
+      }
+    },
+    {
+      "game": "zhjr2fp8",
+      "ply": 49,
+      "arm": "off",
+      "changed_labels": [
+        "exchange_loss",
+        "fatal_or_exchange"
+      ],
+      "v35": {
+        "move": "f7g6",
+        "elapsed": 4.673771248999401,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 0,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "nodes": 76679,
+        "iterations": 720,
+        "queen_guard_seconds": 0.185
+      },
+      "candidate": {
+        "move": "f7g7",
+        "elapsed": 4.664756325000781,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "worst_capture": "a4e8",
+        "best_response": "g7f8",
+        "nodes": 85551,
+        "iterations": 800,
+        "queen_guard_seconds": 0.18
+      }
+    },
+    {
+      "game": "zhjr2fp8",
+      "ply": 49,
+      "arm": "mixture",
+      "changed_labels": [
+        "exchange_loss",
+        "fatal_or_exchange"
+      ],
+      "v35": {
+        "move": "f7g6",
+        "elapsed": 4.673771248999401,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 0,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "nodes": 76679,
+        "iterations": 720,
+        "queen_guard_seconds": 0.185
+      },
+      "candidate": {
+        "move": "f7g7",
+        "elapsed": 4.672028183000293,
+        "legal": true,
+        "fatal": false,
+        "terminal": null,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": false,
+        "worst_capture": "a4e8",
+        "best_response": "g7f8",
+        "nodes": 82292,
+        "iterations": 770,
+        "queen_guard_seconds": 0.182
+      }
+    }
+  ],
+  "summary": {
+    "cases": 51,
+    "games": 25,
+    "arms": {
+      "v35": {
+        "fatal": 10,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 16,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.9997513680009433,
+        "median_nodes": 77457,
+        "median_iterations": 960,
+        "median_queen_guard_seconds": 0.004
+      },
+      "off": {
+        "fatal": 10,
+        "exchange_loss": 6,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 17,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.9541800530005276,
+        "median_nodes": 80677,
+        "median_iterations": 990,
+        "median_queen_guard_seconds": 0.004
+      },
+      "mixture": {
+        "fatal": 11,
+        "exchange_loss": 7,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 19,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.9891957500003628,
+        "median_nodes": 77971,
+        "median_iterations": 950,
+        "median_queen_guard_seconds": 0.004
+      },
+      "residual": {
+        "fatal": 10,
+        "exchange_loss": 5,
+        "queen_exchange_loss": 0,
+        "forced_king_loss_after_capture": 1,
+        "fatal_or_exchange": 16,
+        "errors": 0,
+        "illegal": 0,
+        "median_elapsed": 3.964845315000275,
+        "median_nodes": 77469,
+        "median_iterations": 950,
+        "median_queen_guard_seconds": 0.004
+      }
+    },
+    "paired": {
+      "v35->off": {
+        "fatal": {
+          "fixed": [],
+          "broken": []
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": [
+            "zhjr2fp8:49"
+          ]
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [],
+          "broken": [
+            "zhjr2fp8:49"
+          ]
+        },
+        "moves_changed": 9
+      },
+      "off->mixture": {
+        "fatal": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": [
+            "71a47kt0:38"
+          ]
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [],
+          "broken": [
+            "71a47kt0:38",
+            "i3xv2i71:79"
+          ]
+        },
+        "moves_changed": 5
+      },
+      "off->residual": {
+        "fatal": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [
+            "zhjr2fp8:49"
+          ],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [
+            "d28cm7j9:75",
+            "zhjr2fp8:49"
+          ],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "moves_changed": 7
+      },
+      "v35->mixture": {
+        "fatal": {
+          "fixed": [],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": [
+            "71a47kt0:38",
+            "zhjr2fp8:49"
+          ]
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [],
+          "broken": [
+            "71a47kt0:38",
+            "i3xv2i71:79",
+            "zhjr2fp8:49"
+          ]
+        },
+        "moves_changed": 12
+      },
+      "v35->residual": {
+        "fatal": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "queen_exchange_loss": {
+          "fixed": [],
+          "broken": []
+        },
+        "forced_king_loss_after_capture": {
+          "fixed": [],
+          "broken": []
+        },
+        "fatal_or_exchange": {
+          "fixed": [
+            "d28cm7j9:75"
+          ],
+          "broken": [
+            "i3xv2i71:79"
+          ]
+        },
+        "moves_changed": 9
+      }
+    },
+    "scope": "Development diagnostic sample, correlated cases, limited omniscient exchange probe; not Elo or overall calibration."
+  },
+  "pins_sha256": "d174c925eddbece778dcf73f8095681ac0c757efb3db57760ca8188cd7f0c280",
+  "results_sha256": "cad1fb7489f0d3d63ed39cd7a245a48298a65b86329421eaa3d03ee5db7e2e33",
+  "scope": "Development screen, not held-out strength. No release follows a failed screen."
+}

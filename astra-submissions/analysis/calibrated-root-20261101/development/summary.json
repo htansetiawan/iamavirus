@@ -1,0 +1,216 @@
+{
+  "cases": 51,
+  "games": 25,
+  "arms": {
+    "v35": {
+      "fatal": 10,
+      "exchange_loss": 5,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": 1,
+      "fatal_or_exchange": 16,
+      "errors": 0,
+      "illegal": 0,
+      "median_elapsed": 3.9997513680009433,
+      "median_nodes": 77457,
+      "median_iterations": 960,
+      "median_queen_guard_seconds": 0.004
+    },
+    "off": {
+      "fatal": 10,
+      "exchange_loss": 6,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": 1,
+      "fatal_or_exchange": 17,
+      "errors": 0,
+      "illegal": 0,
+      "median_elapsed": 3.9541800530005276,
+      "median_nodes": 80677,
+      "median_iterations": 990,
+      "median_queen_guard_seconds": 0.004
+    },
+    "mixture": {
+      "fatal": 11,
+      "exchange_loss": 7,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": 1,
+      "fatal_or_exchange": 19,
+      "errors": 0,
+      "illegal": 0,
+      "median_elapsed": 3.9891957500003628,
+      "median_nodes": 77971,
+      "median_iterations": 950,
+      "median_queen_guard_seconds": 0.004
+    },
+    "residual": {
+      "fatal": 10,
+      "exchange_loss": 5,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": 1,
+      "fatal_or_exchange": 16,
+      "errors": 0,
+      "illegal": 0,
+      "median_elapsed": 3.964845315000275,
+      "median_nodes": 77469,
+      "median_iterations": 950,
+      "median_queen_guard_seconds": 0.004
+    }
+  },
+  "paired": {
+    "v35->off": {
+      "fatal": {
+        "fixed": [],
+        "broken": []
+      },
+      "exchange_loss": {
+        "fixed": [],
+        "broken": [
+          "zhjr2fp8:49"
+        ]
+      },
+      "queen_exchange_loss": {
+        "fixed": [],
+        "broken": []
+      },
+      "forced_king_loss_after_capture": {
+        "fixed": [],
+        "broken": []
+      },
+      "fatal_or_exchange": {
+        "fixed": [],
+        "broken": [
+          "zhjr2fp8:49"
+        ]
+      },
+      "moves_changed": 9
+    },
+    "off->mixture": {
+      "fatal": {
+        "fixed": [],
+        "broken": [
+          "i3xv2i71:79"
+        ]
+      },
+      "exchange_loss": {
+        "fixed": [],
+        "broken": [
+          "71a47kt0:38"
+        ]
+      },
+      "queen_exchange_loss": {
+        "fixed": [],
+        "broken": []
+      },
+      "forced_king_loss_after_capture": {
+        "fixed": [],
+        "broken": []
+      },
+      "fatal_or_exchange": {
+        "fixed": [],
+        "broken": [
+          "71a47kt0:38",
+          "i3xv2i71:79"
+        ]
+      },
+      "moves_changed": 5
+    },
+    "off->residual": {
+      "fatal": {
+        "fixed": [
+          "d28cm7j9:75"
+        ],
+        "broken": [
+          "i3xv2i71:79"
+        ]
+      },
+      "exchange_loss": {
+        "fixed": [
+          "zhjr2fp8:49"
+        ],
+        "broken": []
+      },
+      "queen_exchange_loss": {
+        "fixed": [],
+        "broken": []
+      },
+      "forced_king_loss_after_capture": {
+        "fixed": [],
+        "broken": []
+      },
+      "fatal_or_exchange": {
+        "fixed": [
+          "d28cm7j9:75",
+          "zhjr2fp8:49"
+        ],
+        "broken": [
+          "i3xv2i71:79"
+        ]
+      },
+      "moves_changed": 7
+    },
+    "v35->mixture": {
+      "fatal": {
+        "fixed": [],
+        "broken": [
+          "i3xv2i71:79"
+        ]
+      },
+      "exchange_loss": {
+        "fixed": [],
+        "broken": [
+          "71a47kt0:38",
+          "zhjr2fp8:49"
+        ]
+      },
+      "queen_exchange_loss": {
+        "fixed": [],
+        "broken": []
+      },
+      "forced_king_loss_after_capture": {
+        "fixed": [],
+        "broken": []
+      },
+      "fatal_or_exchange": {
+        "fixed": [],
+        "broken": [
+          "71a47kt0:38",
+          "i3xv2i71:79",
+          "zhjr2fp8:49"
+        ]
+      },
+      "moves_changed": 12
+    },
+    "v35->residual": {
+      "fatal": {
+        "fixed": [
+          "d28cm7j9:75"
+        ],
+        "broken": [
+          "i3xv2i71:79"
+        ]
+      },
+      "exchange_loss": {
+        "fixed": [],
+        "broken": []
+      },
+      "queen_exchange_loss": {
+        "fixed": [],
+        "broken": []
+      },
+      "forced_king_loss_after_capture": {
+        "fixed": [],
+        "broken": []
+      },
+      "fatal_or_exchange": {
+        "fixed": [
+          "d28cm7j9:75"
+        ],
+        "broken": [
+          "i3xv2i71:79"
+        ]
+      },
+      "moves_changed": 9
+    }
+  },
+  "scope": "Development diagnostic sample, correlated cases, limited omniscient exchange probe; not Elo or overall calibration.",
+  "complete": true
+}

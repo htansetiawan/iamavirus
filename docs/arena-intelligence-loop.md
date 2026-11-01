@@ -85,3 +85,49 @@ Fable owns model/history candidate refreshes and deployment. Astra maintains
 these report changes and reviews experiments. The missing automation is a fully
 validated retrain-and-promote loop; this maintenance change does not claim to
 implement one or alter the active bot.
+
+## 1 November: what has reached learning and testing
+
+The taxonomy now selects a fresh development comparison of 51 decisions from
+25 v35 games against Instructors, duck and HYPOTHERMIA. It includes king-fatal
+moves, unseen queen exposure, net material loss, recovered exchanges and
+ordinary controls, with both wins and losses. This is a deliberately selected
+diagnostic set; its failure rate is not a population failure-rate estimate.
+
+The first root-loss correction tested on these cases fixed two fatal choices
+and broke two. It was not promoted. Its traces motivated a separate calibration
+study, selected without using outcomes: 140 complete games, split by date into
+80 training, 20 validation and 40 test games. Reconstructing v35's own inputs
+produced risk estimates for 184,554 candidate moves; true-board labels were
+joined only after the engine exited.
+
+The fitted two-coefficient king-loss calibration improves held-out log loss
+from 0.07212 to 0.05887 and Brier score from 0.02079 to 0.01889. On historically
+played test moves, the average risk rises from 0.459% to 0.909%, against an
+observed fatal-choice frequency of 1.286%. Whole-game bootstrap intervals
+support the improvement. It remains a probability result, not an Elo result.
+
+This curve adjusts an action's estimated immediate king-loss probability. It
+does **not** change the weights of individual hidden boards, repair a wrong
+risk ranking, or calibrate queen exchanges. Its C implementation and data are
+published under `astra-submissions/*/king-event-calibration-20261101/`.
+
+Two isolated search integrations completed 204 runs against v35 and a
+feature-off control: a terminal-loss residual, and a mixture that also rescales
+surviving continuations. Existing guards and the doubled root-loss utility
+were fixed. The residual matches v35's 10 fatal choices and 5 material losses;
+the mixture records 11 and 7. The feature-off control itself records 6 material
+losses. Neither passes the recorded gate; neither earns a new ZIP or full-game
+trial. Native and sanitizer checks pass, including tree growth and both
+players' regret updates. Evidence and the bounded follow-up plan are under
+`astra-submissions/analysis/calibrated-root-20261101/`.
+
+Separately, Fable's v37 refresh of the move model and history table scores
+56W–2D–42L against v35 in 100 unique local games. Its paired 95% score interval
+is 46.5–67.0%, so superiority is not established. The recovery audit excludes
+three duplicate rows and explicitly records two unavailable original replays;
+see `astra-submissions/analysis/v37-recovery-20261101/`.
+
+These are concrete model-learning and testing steps, not an automatic update
+of the deployed bot. The record preserves both the positive calibration
+result and the decision experiments that did not justify promotion.
