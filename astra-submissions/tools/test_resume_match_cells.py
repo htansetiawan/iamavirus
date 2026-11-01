@@ -1,6 +1,6 @@
 import unittest
 
-from resume_match_cells import missing_cells
+from resume_match_cells import first_cells, missing_cells
 
 
 class RecoveryTests(unittest.TestCase):
@@ -30,6 +30,15 @@ class RecoveryTests(unittest.TestCase):
     def test_complete_is_idempotent(self):
         rows = [self.row(p,c) for p in range(2) for c in ('white','black')]
         self.assertEqual(missing_cells(self.match, rows, self.hashes), [])
+
+    def test_reconciliation_keeps_first_not_best_result(self):
+        first = dict(self.row(0, 'white'), a_score=0.)
+        second = dict(self.row(0, 'white'), a_score=1.)
+        kept, excluded = first_cells(self.match, [first, second], self.hashes)
+        self.assertEqual(kept, [first]); self.assertEqual(excluded, [second])
+        self.assertNotIn((0, 'white'), missing_cells(self.match, kept, self.hashes))
+        with self.assertRaises(ValueError):
+            first_cells(self.match, [first, dict(second, seed=900)], self.hashes)
 
 
 if __name__ == '__main__':
