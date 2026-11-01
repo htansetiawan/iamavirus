@@ -1,0 +1,33 @@
+{
+  "model": "direct",
+  "parameters": 68417,
+  "best_epoch": 8,
+  "epochs": 11,
+  "sha256": "c6bc6ae7532a21e34b74299fdc102f15284eb97cfd18f99fd64e72ccb49cbafb",
+  "validation": {
+    "all": {
+      "n": 35176,
+      "nll": 2.6011946201324463,
+      "top1": 0.29994882874687284
+    },
+    "post8": {
+      "n": 28690,
+      "nll": 2.747312545776367,
+      "top1": 0.26012547926106655
+    },
+    "references": {
+      "n": 13003,
+      "nll": 2.5422468185424805,
+      "top1": 0.3130046912251019
+    },
+    "references_post8": {
+      "n": 10581,
+      "nll": 2.6753766536712646,
+      "top1": 0.2774784991966733
+    }
+  },
+  "predictions": {
+    "path": "astra-submissions/experiments/visible-response-20261101/build/direct-validation-scores.npz",
+    "sha256": "fb8f825cfd85dd3548b460fca2ba7edbbb130d4661d4362d30e1db40f517616b"
+  }
+}

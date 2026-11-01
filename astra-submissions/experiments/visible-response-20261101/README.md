@@ -2,6 +2,11 @@
 
 1 November 2026. Isolated predictive experiment; no engine or submission change.
 
+Completed: the distilled student passes the frozen prediction gate and native
+C parity/sanitizer checks. Taxonomy also identifies a surprise-capture
+prediction regression. See [results and limits](../../analysis/visible-response-20261101/README.md).
+The design and gate below are retained as recorded before training.
+
 The DBR solver is tested, but exact history counts disappear after the opening
 in the measured games. Learn a response distribution that generalizes across
 positions. Every input is the actor's current 64-square observation and its

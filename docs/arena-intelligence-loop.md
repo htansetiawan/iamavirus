@@ -277,3 +277,20 @@ reason to change the gate afterward. All 19 slices, per-decision predictions,
 fitted parameters and baseline parity checks are preserved in
 `astra-submissions/analysis/style-mixture-20261101/`. This is a concrete use of
 taxonomy to assess what a model learns without leaking truth labels to it.
+
+## A current example: inspecting the visible-response student
+
+The next experiment trains an attention teacher and compact student to predict
+an opponent's move from its own current observation and legal candidates.
+Taxonomy labels are joined after training and scoring; they are not network
+inputs or loss weights. The selected student improves post-eight-move test
+NLL by 0.14124 nats over a fitted observable linear baseline, with a whole-game
+95% interval of 0.13371–0.14900. This baseline is not the deployed v37 model.
+
+The taxonomy shows what the average conceals: +0.24601 nats on 1,120 unseen
+king threats, but **−0.06667** on 4,804 captures whose capturer was hidden from
+the victim before the move. These overlapping post-fit categories diagnose
+strengths and weaknesses; they do not change the frozen model choice or prove
+playing strength. The native student is checked, but has not been integrated
+into the belief filter, search or guards. See
+[the result and reproducible evidence](../astra-submissions/analysis/visible-response-20261101/README.md).

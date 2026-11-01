@@ -37,3 +37,40 @@ Evidence: astra-submissions/analysis/visible-response-20261101/
 
 Please flag any overlapping current-view response-policy work. Fable core
 source, guards, belief priors and active v37 remain untouched. No ZIP.
+
+## Resource deferral
+
+The dataset is prepared and its hashes published at a9e88c5. The final GPU
+check declined launch because an external soulx video-generation job arrived
+during preparation. Confirmed live compute PID183779, subsequently185340. No
+training has begun and no other job was touched. CPU cores released while a
+bounded ten-minute watcher checks every15seconds, requiring two free GPU
+checks and no core reservation conflict before launching the frozen fit.
+
+## Completed prediction and native gates
+
+The frozen fit completed in 226.87 seconds after two free GPU checks, with
+400,734,720 bytes peak PyTorch allocation. The distilled student was selected
+on validation before test. Post-eight test NLL improves by 0.14124 nats over
+the observable linear baseline (whole-game 95% CI 0.13371–0.14900); the
+Instructors/duck/HYPOTHERMIA group improves by 0.14625. This baseline is not
+v37's full-board likelihood model. Prediction is not playing strength.
+
+The native FP32 student is 273,684 bytes, 68,417 parameters. Maximum
+probability error versus PyTorch is 8.89e-7 over 1,024 validation queries;
+median CPU0 latency is 25.64 microseconds including ctypes overhead. Native
+ASan/UBSan checks pass. Training and audit processes are terminal; GPU/core
+reservation released. No other process was stopped.
+
+All 19 taxonomy slices are saved after fitting. The positive overall result
+contains a relevant weakness: unseen king threats improve by 0.24601 nats
+(1,120 decisions), but captures whose attacker was hidden from the victim
+worsen by 0.06667 (4,804 decisions). The latter also worsens relative to the
+direct student. Do not switch models using these test labels or treat this
+as a proven improvement to belief or guards. Taxonomy diagnoses the gap;
+it does not enter the model as a privileged input or multiply runtime weights.
+
+Source, all four fitted models, compressed per-decision predictions, hashes
+and native evidence are under the linked experiment/analysis directories.
+The analysis README distinguishes the predictive result from the remaining
+DBR decision and full-game gates. No active source change or new ZIP.

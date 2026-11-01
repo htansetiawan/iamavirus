@@ -1,0 +1,157 @@
+{
+  "chosen": "distilled",
+  "decision_unchanged": {
+    "decision": "native_prototype_allowed",
+    "chosen": "distilled",
+    "test_post8_gain": {
+      "game_clusters": 986,
+      "gain": 0.14123982305958838,
+      "lower95": 0.13371079634534697,
+      "upper95": 0.14899981302326976
+    },
+    "reference_post8_gain": 0.1462547779083252,
+    "scope": "Predictive gate only; no policy or Elo measurement"
+  },
+  "scope": "Descriptive correlated post-fit groups. True-board/future tags are labels only and cannot override the frozen gate.",
+  "slices": {
+    "novel_post8": {
+      "n": 45260,
+      "gain_vs_linear": 0.1341368407011032,
+      "gain_vs_direct": 0.028702080249786377,
+      "selected_nll": 2.747097969055176
+    },
+    "seen_post8": {
+      "n": 1750,
+      "gain_vs_linear": 0.32494351267814636,
+      "gain_vs_direct": -0.0045985085889697075,
+      "selected_nll": 2.1374964714050293
+    },
+    "capture": {
+      "n": 11013,
+      "gain_vs_linear": 0.152947798371315,
+      "gain_vs_direct": -0.016107266768813133,
+      "selected_nll": 1.2810989618301392
+    },
+    "capture_unseen": {
+      "n": 4804,
+      "gain_vs_linear": -0.06667083501815796,
+      "gain_vs_direct": -0.04219227656722069,
+      "selected_nll": 1.8111435174942017
+    },
+    "victim_walked_in": {
+      "n": 7097,
+      "gain_vs_linear": 0.25023674964904785,
+      "gain_vs_direct": -0.032977040857076645,
+      "selected_nll": 0.9773819446563721
+    },
+    "long_strike": {
+      "n": 2385,
+      "gain_vs_linear": 0.022114165127277374,
+      "gain_vs_direct": 0.0022652558982372284,
+      "selected_nll": 1.6050584316253662
+    },
+    "fog_route": {
+      "n": 8190,
+      "gain_vs_linear": 0.0850478783249855,
+      "gain_vs_direct": -0.0199456624686718,
+      "selected_nll": 1.39451003074646
+    },
+    "forcing_chain": {
+      "n": 1825,
+      "gain_vs_linear": 0.15195366740226746,
+      "gain_vs_direct": -0.008578491397202015,
+      "selected_nll": 1.5096310377120972
+    },
+    "king_threat": {
+      "n": 2270,
+      "gain_vs_linear": 0.2024076133966446,
+      "gain_vs_direct": 0.02823488414287567,
+      "selected_nll": 2.586045742034912
+    },
+    "king_threat_unseen": {
+      "n": 1120,
+      "gain_vs_linear": 0.24600927531719208,
+      "gain_vs_direct": 0.04816519096493721,
+      "selected_nll": 3.0180554389953613
+    },
+    "sacrifice": {
+      "n": 915,
+      "gain_vs_linear": 0.08679185807704926,
+      "gain_vs_direct": 0.019658908247947693,
+      "selected_nll": 3.035219669342041
+    },
+    "king_hunt_sacrifice": {
+      "n": 165,
+      "gain_vs_linear": 0.2781112790107727,
+      "gain_vs_direct": -0.011093382723629475,
+      "selected_nll": 3.6283442974090576
+    },
+    "vision_gain": {
+      "n": 8856,
+      "gain_vs_linear": 0.10794132947921753,
+      "gain_vs_direct": 0.0010455037700012326,
+      "selected_nll": 2.2892816066741943
+    },
+    "vision_loss": {
+      "n": 3856,
+      "gain_vs_linear": 0.17589597404003143,
+      "gain_vs_direct": 0.026510851457715034,
+      "selected_nll": 3.1978206634521484
+    },
+    "king_move": {
+      "n": 7167,
+      "gain_vs_linear": 0.15580040216445923,
+      "gain_vs_direct": 0.02714953012764454,
+      "selected_nll": 2.587690591812134
+    },
+    "castle": {
+      "n": 680,
+      "gain_vs_linear": 0.3778212070465088,
+      "gain_vs_direct": 0.09693587571382523,
+      "selected_nll": 1.4049813747406006
+    },
+    "king_leaves_home": {
+      "n": 2075,
+      "gain_vs_linear": 0.0847550481557846,
+      "gain_vs_direct": -0.005011164117604494,
+      "selected_nll": 2.567990779876709
+    },
+    "queen_raid": {
+      "n": 2073,
+      "gain_vs_linear": 0.29745638370513916,
+      "gain_vs_direct": 0.07787620276212692,
+      "selected_nll": 3.2708516120910645
+    },
+    "queen_exposed_unseen": {
+      "n": 72,
+      "gain_vs_linear": 0.019407544285058975,
+      "gain_vs_direct": 0.03244441747665405,
+      "selected_nll": 1.6066832542419434
+    },
+    "walk_into_unseen": {
+      "n": 1415,
+      "gain_vs_linear": 0.10589160770177841,
+      "gain_vs_direct": -0.06662091612815857,
+      "selected_nll": 3.413320302963257
+    },
+    "back_rank_bare": {
+      "n": 2687,
+      "gain_vs_linear": 0.12324408441781998,
+      "gain_vs_direct": 0.03155522048473358,
+      "selected_nll": 2.7456870079040527
+    }
+  },
+  "all_raw_prediction_hashes_verified": true,
+  "frozen_model_file_mtime_before_test_files": true,
+  "published_scores": {
+    "direct-test-scores.npz": "4e70772f3026ae1e434540c0ba53cfa8a68dfe8cce31048485ee305bbb04bddd",
+    "direct-validation-scores.npz": "ea1efb68a7fd3e5aa0e3a4dbd73d387abe22c8c087aed663db8090ecf406f839",
+    "distilled-test-scores.npz": "4cc695a51d23fcf06b1275586c318dfda2371b0ce3214e3fcb5a9e3742a24157",
+    "distilled-validation-scores.npz": "ee6b166e7001cd2b546a7a9198769550b503b4e3ee7ea1dc7fbc18ad948e5076",
+    "linear-test-scores.npz": "cbf4b3b8111042167fa468277f1842ec2a79ce65bec49e24ef6e6785d6e03563",
+    "linear-validation-scores.npz": "7fb8c7ad791922096691c189449563fac93fba74570a44961ce7b45a95cfe912",
+    "teacher-test-scores.npz": "789682b0b49f24496def1bc830164036a64c83b5e0e61352f1a2e45c4701ef24",
+    "teacher-validation-scores.npz": "9ecea452e9906cf858e862f2946a30f16c88d336bb5320f94b52ed62a28020f7",
+    "test-taxonomy.npz": "824617eee3e90823a9acd86946ef46abeb92a25e7ff8659a9c1dc4164098f461"
+  }
+}

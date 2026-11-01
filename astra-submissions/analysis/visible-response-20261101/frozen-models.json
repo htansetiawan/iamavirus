@@ -1,0 +1,140 @@
+{
+  "chosen": "distilled",
+  "validation_post8_gain": 0.148634672164917,
+  "models": {
+    "linear": {
+      "model": "linear",
+      "parameters": 795,
+      "best_epoch": 7,
+      "epochs": 10,
+      "sha256": "c30dc8939665d668769117731dbe530f92cbf7cccc9a6209a81cb2727f566b75",
+      "validation": {
+        "all": {
+          "n": 35176,
+          "nll": 2.7619428634643555,
+          "top1": 0.2592392540368433
+        },
+        "post8": {
+          "n": 28690,
+          "nll": 2.8674325942993164,
+          "top1": 0.2317532241199024
+        },
+        "references": {
+          "n": 13003,
+          "nll": 2.6982548236846924,
+          "top1": 0.26232407905867877
+        },
+        "references_post8": {
+          "n": 10581,
+          "nll": 2.7962334156036377,
+          "top1": 0.23787921746526794
+        }
+      },
+      "predictions": {
+        "path": "astra-submissions/experiments/visible-response-20261101/build/linear-validation-scores.npz",
+        "sha256": "053b9747af789c1e54cc38244b33035abe65d9528c7e1768575e473cf72d0600"
+      }
+    },
+    "direct": {
+      "model": "direct",
+      "parameters": 68417,
+      "best_epoch": 8,
+      "epochs": 11,
+      "sha256": "c6bc6ae7532a21e34b74299fdc102f15284eb97cfd18f99fd64e72ccb49cbafb",
+      "validation": {
+        "all": {
+          "n": 35176,
+          "nll": 2.6011946201324463,
+          "top1": 0.29994882874687284
+        },
+        "post8": {
+          "n": 28690,
+          "nll": 2.747312545776367,
+          "top1": 0.26012547926106655
+        },
+        "references": {
+          "n": 13003,
+          "nll": 2.5422468185424805,
+          "top1": 0.3130046912251019
+        },
+        "references_post8": {
+          "n": 10581,
+          "nll": 2.6753766536712646,
+          "top1": 0.2774784991966733
+        }
+      },
+      "predictions": {
+        "path": "astra-submissions/experiments/visible-response-20261101/build/direct-validation-scores.npz",
+        "sha256": "fb8f825cfd85dd3548b460fca2ba7edbbb130d4661d4362d30e1db40f517616b"
+      }
+    },
+    "teacher": {
+      "model": "teacher",
+      "parameters": 300737,
+      "best_epoch": 12,
+      "epochs": 12,
+      "sha256": "3f556de0c71f0f4b22a63d62b9521799b56aadd6cb49aa77e2c61d91ed1cbc55",
+      "validation": {
+        "all": {
+          "n": 35176,
+          "nll": 2.5308942794799805,
+          "top1": 0.30168296565840347
+        },
+        "post8": {
+          "n": 28690,
+          "nll": 2.6925230026245117,
+          "top1": 0.2643429766469153
+        },
+        "references": {
+          "n": 13003,
+          "nll": 2.4811630249023438,
+          "top1": 0.3061601168961009
+        },
+        "references_post8": {
+          "n": 10581,
+          "nll": 2.626713275909424,
+          "top1": 0.27388715622341936
+        }
+      },
+      "predictions": {
+        "path": "astra-submissions/experiments/visible-response-20261101/build/teacher-validation-scores.npz",
+        "sha256": "02a4c8d7f9f0b34b3e312b8a57e9d0ec7453407c0495b8bf8f034a2eea113fea"
+      }
+    },
+    "distilled": {
+      "model": "distilled",
+      "parameters": 68417,
+      "best_epoch": 10,
+      "epochs": 12,
+      "sha256": "26092e7dcfd66e1595159d8918b6801896e06c6ded6b727356da21227350cf10",
+      "validation": {
+        "all": {
+          "n": 35176,
+          "nll": 2.561676025390625,
+          "top1": 0.29829997725722085
+        },
+        "post8": {
+          "n": 28690,
+          "nll": 2.7187979221343994,
+          "top1": 0.2577553154409202
+        },
+        "references": {
+          "n": 13003,
+          "nll": 2.5088284015655518,
+          "top1": 0.30685226486195494
+        },
+        "references_post8": {
+          "n": 10581,
+          "nll": 2.650315046310425,
+          "top1": 0.2680275966354787
+        }
+      },
+      "predictions": {
+        "path": "astra-submissions/experiments/visible-response-20261101/build/distilled-validation-scores.npz",
+        "sha256": "d4336ebf1459a76934b9ecc5065c3d8aca66d480993d11d8ce2b49a40df45aa9"
+      }
+    }
+  },
+  "at_utc": "2026-11-01T21:02:03.901091+00:00",
+  "rule": "Lowest validation post-eight NLL of two students; require gain >= .1 versus linear before test."
+}

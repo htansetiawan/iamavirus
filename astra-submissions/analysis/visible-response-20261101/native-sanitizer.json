@@ -1,0 +1,29 @@
+{
+  "command": [
+    "gcc",
+    "-O1",
+    "-g",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "-std=c11",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/visible-response-20261101/response.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/visible-response-20261101/test_native.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/visible-response-20261101/build/asan-response"
+  ],
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "cases": [
+    "model load",
+    "truncated model rejected",
+    "256 action bound",
+    "normalization",
+    "single action",
+    "invalid count",
+    "invalid token",
+    "invalid promotion",
+    "invalid source"
+  ]
+}

@@ -9,10 +9,14 @@ the paired uncertainty interval includes equal strength. See the
 [recovery audit](analysis/v37-recovery-20261101/README.md) and the
 [shared version map](../fable-submissions/README.md).
 
-The latest Astra work is [data-biased CFR search](analysis/data-biased-search-20261101/README.md):
-the solver passes numerical and sanitizer checks, and all 96 private-history
-executions complete. Exact-history coverage is concentrated in the opening,
-so it does not advance to full games or a new ZIP. The
+The latest Astra work is a [visible-response attention teacher and compact
+student](analysis/visible-response-20261101/README.md). It passes its held-out
+prediction gate and native C parity/sanitizer checks. The taxonomy exposes a
+surprise-capture regression despite better overall prediction. No search
+integration, full-game result or new ZIP is claimed. The preceding
+[data-biased CFR experiment](analysis/data-biased-search-20261101/README.md)
+passed solver checks but stopped because exact-history coverage disappeared
+after the opening. The
 [intelligence loop](../docs/arena-intelligence-loop.md) records the other
 learning and diagnostic results, including rejected implementations.
 

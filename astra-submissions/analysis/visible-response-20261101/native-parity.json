@@ -1,0 +1,50 @@
+{
+  "chosen": "distilled",
+  "parameters": 68417,
+  "model_bytes": 273684,
+  "model_sha256": "45a41cf4ecaae9324472ae93a81b349d597cec20364a7c73ef66e513df077c97",
+  "archives": {
+    "linear": {
+      "sha256": "446d4a34c3ff3ecbae20ac3a9cc482d009375e09ca3a97f24596922b5d03b0f3",
+      "bytes": 3991
+    },
+    "direct": {
+      "sha256": "5d156a18e985ccde5e900cff6da0583b5290e8f029ac23bab51921459a72e1ee",
+      "bytes": 258082
+    },
+    "teacher": {
+      "sha256": "cefddaf253ffb78eda05c5578d879600fd542ec46071a7806259fa4a19aa10dd",
+      "bytes": 1118728
+    },
+    "distilled": {
+      "sha256": "47f5705c70634eae0517d594579d8733e2dd7a543984acd0115891eabc93f36e",
+      "bytes": 258316
+    }
+  },
+  "compiler": [
+    "gcc",
+    "-O3",
+    "-std=c11",
+    "-shared",
+    "-fPIC",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/visible-response-20261101/response.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/visible-response-20261101/build/response.so"
+  ],
+  "library_sha256": "94d1ce85e4cf7a56ac8f12a4e0f8eefd0a6ff4434c8cb0941130b979c94376e9",
+  "queries": 1024,
+  "max_logit_error": 7.62939453125e-06,
+  "max_probability_error": 8.88280446531553e-07,
+  "median_query_microseconds": 25.636675,
+  "p95_query_microseconds": 30.521979999999996,
+  "median_candidates": 33.0,
+  "max_candidates": 58,
+  "timing_scope": "CPU0, one thread, batch1; includes Python ctypes call overhead; not an arena throughput measurement.",
+  "arithmetic": "Sparse one-hot gather and shared board contribution; no quantization or model-weight change.",
+  "source_sha256": {
+    "astra-submissions/experiments/visible-response-20261101/response.c": "551ec6b417d0ab77b51ad24c32e57f26bce1adb754e36aa791b1663d1fed91e3",
+    "astra-submissions/experiments/visible-response-20261101/response.h": "0acd914d725a4ad54ec9a42210ad3efd7e2c5a30d336433427c03395e84767fa",
+    "astra-submissions/experiments/visible-response-20261101/export_native.py": "ecfe208fda4a2d401866801339ac00100ea68c688472cc3ea3b8bcc221ced9e3"
+  }
+}

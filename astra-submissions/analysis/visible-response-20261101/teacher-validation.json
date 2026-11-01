@@ -1,0 +1,33 @@
+{
+  "model": "teacher",
+  "parameters": 300737,
+  "best_epoch": 12,
+  "epochs": 12,
+  "sha256": "3f556de0c71f0f4b22a63d62b9521799b56aadd6cb49aa77e2c61d91ed1cbc55",
+  "validation": {
+    "all": {
+      "n": 35176,
+      "nll": 2.5308942794799805,
+      "top1": 0.30168296565840347
+    },
+    "post8": {
+      "n": 28690,
+      "nll": 2.6925230026245117,
+      "top1": 0.2643429766469153
+    },
+    "references": {
+      "n": 13003,
+      "nll": 2.4811630249023438,
+      "top1": 0.3061601168961009
+    },
+    "references_post8": {
+      "n": 10581,
+      "nll": 2.626713275909424,
+      "top1": 0.27388715622341936
+    }
+  },
+  "predictions": {
+    "path": "astra-submissions/experiments/visible-response-20261101/build/teacher-validation-scores.npz",
+    "sha256": "02a4c8d7f9f0b34b3e312b8a57e9d0ec7453407c0495b8bf8f034a2eea113fea"
+  }
+}
