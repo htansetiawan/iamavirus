@@ -1,0 +1,60 @@
+{
+  "started_at": "2026-11-01T16:49:45.656025+00:00",
+  "cases": "/home/henrytan/git/iamavirus/astra-submissions/analysis/fresh-taxonomy-20261101/cases.json",
+  "cases_sha256": "d8c69bbefeba398edff6cfddd6684b57742f5c29eef726a48873d685b55851e5",
+  "provenance": {
+    "origin": {
+      "base_archive": "fable-submissions/iamavirus-v35-mist-c-v14.zip",
+      "base_archive_sha256": "24791ca64a429f5ae931466ce3c1af36c6974e1295203e99a00a991976955b4c",
+      "arena_version": 35,
+      "source_commit": "97b60f1",
+      "original_files": {
+        "cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+        "cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+        "gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+        "gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+        "main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b"
+      },
+      "release": false,
+      "status": "isolated experiment; no arena ZIP",
+      "reused_implementation": "astra-submissions/experiments/root-loss-cv-20261101",
+      "calibration_header_sha256": "55a285d05ce3da824b97483452badde32300374e666ce4fa0b49960d678f1260",
+      "calibration_report": "astra-submissions/analysis/king-event-calibration-20261101/calibration.json",
+      "calibration_report_sha256": "98df4e3c936c469e72c65da734eaaac377e1c6c41ce226a939266e5a61529aa2"
+    },
+    "modified_sources": {
+      "calibration.h": "55a285d05ce3da824b97483452badde32300374e666ce4fa0b49960d678f1260",
+      "cfr.c": "6265d8b55afd4e9ba1a26ef3253b9f6f28f17d06478ea31fd5256c03cc3355fc",
+      "cfr.h": "4d64df8a393de758b4d41fc481d837d97e3876a7e89ba301611ae809aec8a9b8",
+      "gtcfr.c": "893cd7a5266fefe3cbea1cd3ea019c7fd2d29c3de8bae30532592d134fa33386",
+      "gtcfr.h": "3722b568cbb424c47c6d3d03a714c943789eb4c824796ca4d7e3acc28e3b63a7",
+      "main.c": "96a29ac460243d23ec91894402eecd2c9d1ff107882c743ab4442c708c786494"
+    },
+    "binary_sha256": "13907e6e57a37a4b87a767c9b958326ba3fd2680f88d425df1b51d2817db193a",
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "default_enabled": false,
+    "enable_environment": {
+      "mixture": "MIST_ROOT_CALIB=1",
+      "residual": "MIST_ROOT_CALIB=2"
+    }
+  },
+  "binaries": {
+    "v35": "f8ef3027756da506d7b367e22ff93ec4cb17bd912eca68c4bfaa8fda5bc028ff",
+    "off": "13907e6e57a37a4b87a767c9b958326ba3fd2680f88d425df1b51d2817db193a",
+    "mixture": "13907e6e57a37a4b87a767c9b958326ba3fd2680f88d425df1b51d2817db193a",
+    "residual": "13907e6e57a37a4b87a767c9b958326ba3fd2680f88d425df1b51d2817db193a"
+  },
+  "arms": [
+    "v35",
+    "off",
+    "mixture",
+    "residual"
+  ],
+  "seed": 11012026,
+  "seconds": 2.5,
+  "cores": "0,1",
+  "timing_diagnostics": true,
+  "truth_to_bot": false,
+  "recorded_replies_after_divergence": false,
+  "stop_rule": "Stop on any protocol error or illegal move. A variant earns independent confirmation only if fatal_or_exchange fixes exceed breaks by at least 3, fatal choices decrease, and neither material nor queen-loss counts increase. No promotion from this development sample."
+}
