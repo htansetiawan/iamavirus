@@ -356,3 +356,13 @@ supplies permitted replay inputs and separate truth-only labels. It does not
 change the taxonomy definition, deployed weights, guard thresholds or the
 running match gate. The 36 other queen captures were recorded net losses below
 four points, so a hidden capturer alone is not a reason to reject a move.
+
+A frozen follow-up compares exact v37, the persistent-mode binary with the
+feature off, and the unchanged candidate on those four recorded large-loss
+decisions plus four ordinary controls. All 24 calls complete: each arm makes
+three large queen-loss choices and no immediate king-loss choice. One loss is
+the combined guard's only retained move despite high queen risk; two others
+have low estimated risk. Thus the candidate's separate 7W–1L pilot against
+v37 does not establish improved queen safety. Its planned Misty/control phase
+is running; [the queen-screen evidence](../astra-submissions/analysis/queen-screen-20261101/README.md)
+and the original match acceptance rules are preserved.
