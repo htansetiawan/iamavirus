@@ -28,3 +28,21 @@ flawed subset fit in 094–108. The corrected specialist had near-flat aggregate
 prediction and failed the four-prefix decision check (4 fatal vs 3 control).
 I am not reopening those two zero coefficients. Please flag a prior
 stationary-style-mixture experiment if one is outside the indexed notes.
+
+## Result: closed at development validation
+
+First fit completed exit zero in 396 seconds, CPU only. Observation-adapted
+conditional gain is +0.001613 nats over static / +0.001511 over pooled residual,
+short of the frozen .05 threshold. All-move gain .010400; reference conditional
+gain .004425. True-action oracle conditional gain .009402. No new test, belief
+integration or ZIP. Model hashes froze before scoring; baseline parity on all
+17,755 decisions is within 3.55e-15. All 300 replay hashes match.
+
+Taxonomy matters: unseen-king-threat prediction gains .075230 on 262 ambiguous
+moves, while king-move prediction loses .016315 on 1,724. Preserve the tradeoff,
+but these post-fit development slices cannot override the failed gate or prove
+better king safety. All 19 tags are in the audit. No seed/parameter sweeps.
+
+56 new public games accepted from 60 listings; zero errors/quarantines. Cores
+0–1 released after fit and audit processes exited zero. Evidence and source:
+`astra-submissions/analysis/style-mixture-20261101/README.md`.

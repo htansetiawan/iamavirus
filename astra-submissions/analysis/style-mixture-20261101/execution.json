@@ -1,0 +1,23 @@
+{
+  "command": [
+    "timeout",
+    "--signal=TERM",
+    "--kill-after=10",
+    "1800",
+    "nice",
+    "-n",
+    "10",
+    "taskset",
+    "-c",
+    "0,1",
+    ".venv/bin/python",
+    "astra-submissions/experiments/style-mixture-20261101/run.py",
+    "run"
+  ],
+  "pid": 4,
+  "started_at": "2026-11-01T20:08:42.970321+00:00",
+  "state": "complete",
+  "exit": 0,
+  "elapsed_seconds": 396.07997869799874,
+  "completed_at": "2026-11-01T20:15:19.048334+00:00"
+}

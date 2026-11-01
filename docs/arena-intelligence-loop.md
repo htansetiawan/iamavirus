@@ -258,3 +258,22 @@ finds four of them from the permitted observation history at a 2.5-second
 budget. These are executable tactical examples, not an Elo result or runtime
 truth features. The two different choices need diagnosis before a model or
 guard change. Evidence: `astra-submissions/analysis/conditional-exchange-20261101/README.md`.
+
+## Taxonomy applied to a learned style mixture
+
+A three-expert stationary opponent model has now been fitted on 1,200 games.
+It learns game-side types without player names and adapts their probabilities
+from earlier observation classes. The predictive screen still assumes known
+true parent boards; it is not a deployed belief update. On 300 reused
+development games, conditional gain among ambiguous moves is only 0.001613
+nats, below its frozen 0.05 requirement, despite a 0.010400 all-move gain.
+No fresh test, filter integration or ZIP follows this failed gate.
+
+The taxonomy audit explains why an aggregate score is insufficient: prediction
+improves by 0.075230 nats on 262 ambiguous unseen-king-threat moves, but worsens
+by 0.016315 on 1,724 ambiguous king moves. These overlapping post-fit slices
+are clues for a separate future hypothesis, not proof of stronger play or a
+reason to change the gate afterward. All 19 slices, per-decision predictions,
+fitted parameters and baseline parity checks are preserved in
+`astra-submissions/analysis/style-mixture-20261101/`. This is a concrete use of
+taxonomy to assess what a model learns without leaking truth labels to it.
