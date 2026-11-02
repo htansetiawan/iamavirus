@@ -1,0 +1,93 @@
+[
+  {
+    "mode": "gcc",
+    "build_seconds": 2.1922388480015798,
+    "returncode": 0,
+    "stdout": "build: done (gcc)\n",
+    "binary_sha256": "00dc640d9773296b7af7f35b9faceb7f1b2ea6e49199742091415825e5744056",
+    "under_15_seconds": true,
+    "smokes": [
+      {
+        "mode": "gcc",
+        "side": 0,
+        "moves": [
+          "d2d3",
+          "e2e4"
+        ],
+        "ready_seconds": 0.6380377719979151,
+        "total_seconds": 1.3097103609979968,
+        "exit_code": 0,
+        "stockfish": true,
+        "history": true,
+        "model_mode_decisions": 2,
+        "stdout_sha256": "c9ae03a982d4c9412e0b38061092fe369eb66b987522a4fcdc63ffbd9d88c318",
+        "stderr_sha256": "a7c92eee0df88def249d65c3e6abc2a51713dd46b912db62bf1bc0d495f3b961"
+      },
+      {
+        "mode": "gcc",
+        "side": 1,
+        "moves": [
+          "e7e6",
+          "c7c6"
+        ],
+        "ready_seconds": 0.6355406110014883,
+        "total_seconds": 1.09480477499892,
+        "exit_code": 0,
+        "stockfish": true,
+        "history": true,
+        "model_mode_decisions": 2,
+        "stdout_sha256": "b99dab3d3451f15ec10b45ce5643f8e524a36cb66f262c7b28be3d9d3b276fe2",
+        "stderr_sha256": "fd1b48cce9509c5260004f40f6fd594147f9d526e7eff1c08ddc2d891a4c190c"
+      }
+    ]
+  },
+  {
+    "mode": "gxx-c",
+    "build_seconds": 2.1204181459979736,
+    "returncode": 0,
+    "stdout": "build: done (g++ -x c)\n",
+    "binary_sha256": "acb258290b82b2dd53dda892c2b11bdc0b8f298ed9a7dd76be933ea42a43a36a",
+    "under_15_seconds": true,
+    "smokes": [
+      {
+        "mode": "gxx-c",
+        "side": 0,
+        "moves": [
+          "d2d3",
+          "b1d2"
+        ],
+        "ready_seconds": 0.6279388859984465,
+        "total_seconds": 1.0724680719940807,
+        "exit_code": 0,
+        "stockfish": true,
+        "history": true,
+        "model_mode_decisions": 2,
+        "stdout_sha256": "879bc2bda9b08aaa627017a83fe6b7b0e7d89d5406cb5e9b610a0d70bf6f1edd",
+        "stderr_sha256": "c183e835d8be32e039a95fa690c460012354668292414b01faf7c46083f0e5ab"
+      },
+      {
+        "mode": "gxx-c",
+        "side": 1,
+        "moves": [
+          "e7e6",
+          "f8b4"
+        ],
+        "ready_seconds": 0.5842710569995688,
+        "total_seconds": 1.0311391449940857,
+        "exit_code": 0,
+        "stockfish": true,
+        "history": true,
+        "model_mode_decisions": 2,
+        "stdout_sha256": "0dbf1184fd70c863eeb9e809588eb63b9767c3f49168c61169a7ec3a2b92bebc",
+        "stderr_sha256": "32a72a2b54df46c56a5c3add9ed9552a1ea3e22ec4fe5ce55df9293e09e1835f"
+      }
+    ]
+  },
+  {
+    "mode": "gxx-cpp",
+    "build_seconds": 2.657145031997061,
+    "returncode": 1,
+    "stdout": "",
+    "binary_sha256": null
+  }
+]

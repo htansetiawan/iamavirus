@@ -1,0 +1,12 @@
+In file included from src/gtcfr.c:174:
+src/dbr.h: In function ‘void dbr_install(Tree*, int, const Leaf*)’:
+src/dbr.h:85:1: error: jump to label ‘done’
+   85 | done:
+      | ^~~~
+src/dbr.h:41:62: note:   from here
+   41 |         ++t->response_failures; t->g.confidence[I] = 0; goto done;
+      |                                                              ^~~~
+src/dbr.h:45:14: note:   crosses initialization of ‘uint64_t key’
+   45 |     uint64_t key = 1469598103934665603ULL;
+      |              ^~~
+build: failed

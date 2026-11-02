@@ -1,0 +1,19 @@
+--- a/src/dbr.h
++++ b/src/dbr.h
+@@ -35,6 +35,7 @@
+     if (t->g.is_player[I] != 1 || !visible_weights || (t->persistent&&leaf->opponent_mode==0)) return;
+     struct timespec start; clock_gettime(CLOCK_MONOTONIC, &start);
+     char view[65]; uint8_t tokens[64]; uint16_t encoded[256];
++    uint64_t key;
+     MoveList moves; generate_moves(&leaf->pos, &moves);
+     observation(&leaf->pos, leaf->pos.side, view);
+     if (moves.count != t->g.is_actions[I] || !visible_pack(view, leaf->pos.side, moves.moves, moves.count, tokens, encoded)) {
+@@ -42,7 +43,7 @@
+     }
+     /* One response distribution per information set. Verify repeated nodes
+      * have identical ordered observable inputs before reusing it. */
+-    uint64_t key = 1469598103934665603ULL;
++    key = 1469598103934665603ULL;
+     for (int s = 0; s < 64; ++s) key = (key ^ tokens[s]) * 1099511628211ULL;
+     for (int a = 0; a < moves.count; ++a) key = (key ^ encoded[a]) * 1099511628211ULL;
+     key |= 1;
