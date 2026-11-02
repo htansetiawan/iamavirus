@@ -23,3 +23,7 @@ Original handles: lane 0 **56175** on 0–1, lane 1 **66854** on 4–5, lane 2 *
 ## First confirmation checkpoint
 
 2026-11-02T00:40:39.317507+00:00: 5 of 80 games complete. Against v35: 3 wins, 1 loss (two complete colour pairs). Against v37: one draw (its Black counterpart still running). No Misty confirmation games completed and no technical faults so far. This is incomplete; the frozen 80-game gate remains unchanged. All three original lane handles remain live. The separate queen audit identifies an inherited known guard defect but does not change these bytes.
+
+## Second confirmation checkpoint
+
+2026-11-02T01:07:10.274619+00:00: 16 of 80 first attempts complete, with no technical faults. v35/candidate: 4W–0D–3L. base/candidate: 4W–1D–2L. misty/candidate: 1W–0D–0L. misty/base: 1W–0D–0L. The fixed gate remains incomplete; these are not independent final strength estimates. All three original handles remain live. Completed replay hashes and 1250 recorded validated frames agree with their receipts. Only completed job directories are included in this publication. Cores 2–3 are now reserved by separate screen 221; trace 222 waits for its release.
