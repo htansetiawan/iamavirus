@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "records": [
+    {
+      "side": 0,
+      "arm": "base",
+      "exit_code": 0,
+      "stdout": "ready\nmove b1c3\n",
+      "stderr": "mist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=2 nodes=422 iters=20 p=0.50 v=+0.000 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=b1c3\n",
+      "binary_sha256": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd"
+    },
+    {
+      "side": 0,
+      "arm": "fast",
+      "exit_code": 0,
+      "stdout": "ready\nmove b1c3\n",
+      "stderr": "mist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=2 nodes=422 iters=20 p=0.50 v=+0.000 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=b1c3\n",
+      "binary_sha256": "869824082457c5c17778009408232436f71d39767e4093d36efcbc6cc8fe345d"
+    },
+    {
+      "side": 0,
+      "arm": "base-profile",
+      "exit_code": 0,
+      "stdout": "ready\nmove b1c3\n",
+      "stderr": "astra-search-cost {\"wall\":0.001190508,\"cpu\":0.001189600,\"nodes\":422,\"iterations\":20,\"budget\":0.000000000,\"async\":0,\"buckets\":{\"other\":{\"wall\":0.000055816,\"cpu\":0.000054313,\"calls\":1},\"solver\":{\"wall\":0.000060412,\"cpu\":0.000043241,\"calls\":20},\"strategy\":{\"wall\":0.000014338,\"cpu\":0.000031653,\"calls\":41},\"growth\":{\"wall\":0.000000785,\"cpu\":0.000000744,\"calls\":1},\"selection\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0},\"expansion\":{\"wall\":0.001059157,\"cpu\":0.001059649,\"calls\":21},\"stockfish\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0}}}\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=2 nodes=422 iters=20 p=0.50 v=+0.000 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=b1c3\n",
+      "binary_sha256": "9ecfdff7c9d0ee69cc956138624f7eebf3676a32184e6407abc9131e0db1ff92"
+    },
+    {
+      "side": 0,
+      "arm": "fast-profile",
+      "exit_code": 0,
+      "stdout": "ready\nmove b1c3\n",
+      "stderr": "astra-search-cost {\"wall\":0.001130162,\"cpu\":0.001129891,\"nodes\":422,\"iterations\":20,\"budget\":0.000000000,\"async\":0,\"buckets\":{\"other\":{\"wall\":0.000054643,\"cpu\":0.000054216,\"calls\":1},\"solver\":{\"wall\":0.000020537,\"cpu\":0.000020298,\"calls\":20},\"strategy\":{\"wall\":0.000000674,\"cpu\":0.000000677,\"calls\":2},\"growth\":{\"wall\":0.000000350,\"cpu\":0.000000349,\"calls\":1},\"selection\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0},\"expansion\":{\"wall\":0.001053958,\"cpu\":0.001054351,\"calls\":21},\"stockfish\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0}}}\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=2 nodes=422 iters=20 p=0.50 v=+0.000 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=b1c3\n",
+      "binary_sha256": "880595c2496792c399757e4297d68acd358278be2a1bf57129ce66b9e9422d3b"
+    },
+    {
+      "side": 1,
+      "arm": "base",
+      "exit_code": 0,
+      "stdout": "ready\nmove g8f6\n",
+      "stderr": "mist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=63 nodes=9323 iters=20 p=0.50 v=-0.026 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=g8f6\n",
+      "binary_sha256": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd"
+    },
+    {
+      "side": 1,
+      "arm": "fast",
+      "exit_code": 0,
+      "stdout": "ready\nmove g8f6\n",
+      "stderr": "mist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=63 nodes=9323 iters=20 p=0.50 v=-0.026 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=g8f6\n",
+      "binary_sha256": "869824082457c5c17778009408232436f71d39767e4093d36efcbc6cc8fe345d"
+    },
+    {
+      "side": 1,
+      "arm": "base-profile",
+      "exit_code": 0,
+      "stdout": "ready\nmove g8f6\n",
+      "stderr": "astra-search-cost {\"wall\":0.023059363,\"cpu\":0.023052966,\"nodes\":9323,\"iterations\":20,\"budget\":0.000000000,\"async\":0,\"buckets\":{\"other\":{\"wall\":0.000429011,\"cpu\":0.000416828,\"calls\":1},\"solver\":{\"wall\":0.000367687,\"cpu\":0.000368897,\"calls\":20},\"strategy\":{\"wall\":0.000103768,\"cpu\":0.000103073,\"calls\":41},\"growth\":{\"wall\":0.000001750,\"cpu\":0.000001763,\"calls\":1},\"selection\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0},\"expansion\":{\"wall\":0.022157147,\"cpu\":0.022162405,\"calls\":420},\"stockfish\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0}}}\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=63 nodes=9323 iters=20 p=0.50 v=-0.026 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=g8f6\n",
+      "binary_sha256": "9ecfdff7c9d0ee69cc956138624f7eebf3676a32184e6407abc9131e0db1ff92"
+    },
+    {
+      "side": 1,
+      "arm": "fast-profile",
+      "exit_code": 0,
+      "stdout": "ready\nmove g8f6\n",
+      "stderr": "astra-search-cost {\"wall\":0.022772788,\"cpu\":0.022766582,\"nodes\":9323,\"iterations\":20,\"budget\":0.000000000,\"async\":0,\"buckets\":{\"other\":{\"wall\":0.000444239,\"cpu\":0.000434008,\"calls\":1},\"solver\":{\"wall\":0.000364200,\"cpu\":0.000364635,\"calls\":20},\"strategy\":{\"wall\":0.000003693,\"cpu\":0.000003712,\"calls\":2},\"growth\":{\"wall\":0.000002016,\"cpu\":0.000002031,\"calls\":1},\"selection\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0},\"expansion\":{\"wall\":0.021958640,\"cpu\":0.021962196,\"calls\":420},\"stockfish\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0}}}\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=63 nodes=9323 iters=20 p=0.50 v=-0.026 lead=+0 clock=180.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=g8f6\n",
+      "binary_sha256": "880595c2496792c399757e4297d68acd358278be2a1bf57129ce66b9e9422d3b"
+    }
+  ]
+}
