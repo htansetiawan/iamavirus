@@ -475,3 +475,25 @@ of the earlier linear controls support this conclusion. The next proposed
 diagnosis is feature equivalence—whether distinct hidden transitions are
 indistinguishable to every scorer on these inputs—before another fit. See
 [the capacity result](../astra-submissions/analysis/posterior-capacity-20261102/README.md).
+
+## Compact attention: a category benefit that fails the overall gate
+
+Experiment 238 uses four attention queries to score a hypothetical board. Its
+folded-table C export fits in 561KB and takes 44.28us per world on one core.
+Training compares a flat distilled control, direct attention and distilled
+attention under the same 32-epoch schedule; validation selects the latter.
+
+On a fresh disjoint 9,554-position holdout, its hidden-king-threat log loss is
+0.23179 versus calibrated Stockfish's 0.26996 (238 positions in 215 games).
+However, overall log loss is worse: 0.47429 versus 0.46982, with worse Brier too.
+The larger teacher's earlier overall gain also does not reproduce across this
+broader holdout. The fixed quality gate fails; there is no search integration
+or new ZIP. The separate new-date cohort improves in point log loss but does
+not override that failure.
+
+This is taxonomy's role in model work: identify which situations a learned
+representation handles better, preserve ordinary-position controls, and stop
+an aggregate regression from being marketed as a stronger bot. The category
+result may motivate a future SF-residual experiment, but no taxonomy tag or
+rate was added to live belief weights or guards. See
+[the verified study](../astra-submissions/analysis/query-fow-value-20261102/README.md).

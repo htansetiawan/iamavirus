@@ -1,0 +1,77 @@
+{
+  "at": "2026-11-02T07:31:29.108918+00:00",
+  "passed": true,
+  "seconds": 19.06434837300185,
+  "chosen_student": "query_distilled",
+  "quality_gate_pass": false,
+  "native": {
+    "flat_distilled": {
+      "cpu_cuda_max_probability_error": 2.980232238769531e-07,
+      "native_cuda_max_probability_error": 3.2009664452381514e-07,
+      "export_bytes": 640260,
+      "export_sha256": "84596badd91bc100e13925cbe584baa869861cd69b09dbcc16e0a4630bced945",
+      "library_sha256": "aabe76a5719e5e99ca015cda6794e4a19880ca17c4d3b6bd74b2c6da623db635",
+      "microseconds": [
+        8.807476874608255,
+        8.838380310862703,
+        8.862048437094927,
+        8.86644156253169,
+        8.866544687862188,
+        8.828099687434587,
+        8.840412501740502
+      ],
+      "median_microseconds": 8.840412501740502,
+      "passes": true
+    },
+    "query_direct": {
+      "cpu_cuda_max_probability_error": 4.470348358154297e-07,
+      "native_cuda_max_probability_error": 6.136606924278531e-07,
+      "export_bytes": 561028,
+      "export_sha256": "5434d47609074929369ec2420849a83159e3d326c829357ef249fe8df3f52bf6",
+      "library_sha256": "fabd36ff2eebcfbba0573186aa0b647c1508f4f86f08626e6d17492d9faeba50",
+      "microseconds": [
+        43.81517687534142,
+        43.821079686949815,
+        44.493403124761244,
+        44.42719031430897,
+        43.797296875709435,
+        43.77801812324833,
+        44.15984812339957
+      ],
+      "median_microseconds": 43.821079686949815,
+      "passes": true
+    },
+    "query_distilled": {
+      "cpu_cuda_max_probability_error": 5.364418029785156e-07,
+      "native_cuda_max_probability_error": 8.619036929169432e-07,
+      "export_bytes": 561028,
+      "export_sha256": "82d6c5d8ac756d50bc1d37194ffe125221a648e69d70d07d5b1a054c4acc94b2",
+      "library_sha256": "fabd36ff2eebcfbba0573186aa0b647c1508f4f86f08626e6d17492d9faeba50",
+      "microseconds": [
+        44.480799374468916,
+        44.37475500026267,
+        44.15740000013102,
+        44.35188218849362,
+        44.205092499396414,
+        44.188000624671986,
+        44.27901656299582
+      ],
+      "median_microseconds": 44.27901656299582,
+      "passes": true
+    }
+  },
+  "native_gate_pass": true,
+  "teacher_cpu_reference": {
+    "max_probability_difference": 9.441375732421875e-05,
+    "metrics": {
+      "logloss": 0.47211017814593753,
+      "brier": 0.1442124830333487,
+      "positions": 9554,
+      "games": 1260
+    },
+    "scope": "CPU/CUDA probability tolerance2e-4, aggregate metric tolerance1e-5; not native compact export parity."
+  },
+  "next_gate_eligible": false,
+  "source_sha256": "fcec2db4ad3be7fc75b45fdd05c5d81de84083336c3d61d92cca11efa518de22",
+  "scope": "Independent metrics/bootstrap/selection, every held-out CPU and native prediction for three compact arms, trained native one-core timing. Teacher remains frozen reference; no Elo or search strength conclusion."
+}

@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-02T07:28:54.101313+00:00",
+  "arms": {
+    "flat_distilled": {
+      "epoch": 9,
+      "validation_logloss": 0.47547929239199227,
+      "sha256": "bec744f3d71f3c19c55c34cca4625975bda520e9152fd74e3c322fc3c4b0980a",
+      "parameters": 160065
+    },
+    "query_direct": {
+      "epoch": 18,
+      "validation_logloss": 0.472928775452629,
+      "sha256": "de6663706bbf4262da6eb68e1098bdb3977cde7994a7fcda4d07df3455e0ed90",
+      "parameters": 64481
+    },
+    "query_distilled": {
+      "epoch": 28,
+      "validation_logloss": 0.4638761970747335,
+      "sha256": "30600b5783cbfa7cd5e4c817b796fd521e203827739d82123267a15b185c7455",
+      "parameters": 64481
+    }
+  },
+  "chosen_student": "query_distilled",
+  "plan_sha256": "d83bb9bf7539c844158c97edb024760e2da86817dd71940476b84983cefb38b8"
+}

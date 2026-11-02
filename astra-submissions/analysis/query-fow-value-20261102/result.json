@@ -1,0 +1,290 @@
+{
+  "at": "2026-11-02T07:28:54.394401+00:00",
+  "selection": {
+    "at": "2026-11-02T07:28:54.101313+00:00",
+    "arms": {
+      "flat_distilled": {
+        "epoch": 9,
+        "validation_logloss": 0.47547929239199227,
+        "sha256": "bec744f3d71f3c19c55c34cca4625975bda520e9152fd74e3c322fc3c4b0980a",
+        "parameters": 160065
+      },
+      "query_direct": {
+        "epoch": 18,
+        "validation_logloss": 0.472928775452629,
+        "sha256": "de6663706bbf4262da6eb68e1098bdb3977cde7994a7fcda4d07df3455e0ed90",
+        "parameters": 64481
+      },
+      "query_distilled": {
+        "epoch": 28,
+        "validation_logloss": 0.4638761970747335,
+        "sha256": "30600b5783cbfa7cd5e4c817b796fd521e203827739d82123267a15b185c7455",
+        "parameters": 64481
+      }
+    },
+    "chosen_student": "query_distilled",
+    "plan_sha256": "d83bb9bf7539c844158c97edb024760e2da86817dd71940476b84983cefb38b8"
+  },
+  "test": {
+    "raw_sf": {
+      "logloss": 0.4836242350308799,
+      "brier": 0.14124686571075418,
+      "positions": 9554,
+      "games": 1260
+    },
+    "calibrated_sf": {
+      "logloss": 0.4698244147835432,
+      "brier": 0.13938211296068373,
+      "positions": 9554,
+      "games": 1260
+    },
+    "teacher": {
+      "logloss": 0.472110969275943,
+      "brier": 0.14421282529193677,
+      "positions": 9554,
+      "games": 1260
+    },
+    "flat_distilled": {
+      "logloss": 0.4815458994852012,
+      "brier": 0.14684528598102886,
+      "positions": 9554,
+      "games": 1260
+    },
+    "query_direct": {
+      "logloss": 0.4826468403051156,
+      "brier": 0.14724616630756948,
+      "positions": 9554,
+      "games": 1260
+    },
+    "query_distilled": {
+      "logloss": 0.4742852262445653,
+      "brier": 0.14456879526945351,
+      "positions": 9554,
+      "games": 1260
+    },
+    "old_direct_student": {
+      "logloss": 0.5017835506413314,
+      "brier": 0.1547742213712936,
+      "positions": 9554,
+      "games": 1260
+    },
+    "old_distilled_student": {
+      "logloss": 0.4808859925241209,
+      "brier": 0.14695269875034103,
+      "positions": 9554,
+      "games": 1260
+    }
+  },
+  "paired_differences": {
+    "teacher": {
+      "mean": 0.0022865544923997357,
+      "bootstrap_95": [
+        -0.007741953527396337,
+        0.012286721159182477
+      ],
+      "games": 1260
+    },
+    "flat_distilled": {
+      "mean": 0.011721484701657979,
+      "bootstrap_95": [
+        0.000624423426987605,
+        0.022040909311317445
+      ],
+      "games": 1260
+    },
+    "query_direct": {
+      "mean": 0.012822425521572438,
+      "bootstrap_95": [
+        0.0022353478362624347,
+        0.023522630202429843
+      ],
+      "games": 1260
+    },
+    "query_distilled": {
+      "mean": 0.0044608114610220975,
+      "bootstrap_95": [
+        -0.0055767314743308365,
+        0.014423754530124715
+      ],
+      "games": 1260
+    },
+    "old_direct_student": {
+      "mean": 0.03195913585778826,
+      "bootstrap_95": [
+        0.02029183655645341,
+        0.04355149253721306
+      ],
+      "games": 1260
+    },
+    "old_distilled_student": {
+      "mean": 0.011061577740577743,
+      "bootstrap_95": [
+        0.0009944141831235564,
+        0.02105276470982373
+      ],
+      "games": 1260
+    }
+  },
+  "slices": {
+    "older_unused": {
+      "raw_sf": {
+        "logloss": 0.49725673575317586,
+        "brier": 0.14532836876320848,
+        "positions": 7566,
+        "games": 997
+      },
+      "calibrated_sf": {
+        "logloss": 0.480138974047213,
+        "brier": 0.14312309008205304,
+        "positions": 7566,
+        "games": 997
+      },
+      "teacher": {
+        "logloss": 0.4845280891610617,
+        "brier": 0.148624937069082,
+        "positions": 7566,
+        "games": 997
+      },
+      "flat_distilled": {
+        "logloss": 0.4951913391458993,
+        "brier": 0.15171198919296447,
+        "positions": 7566,
+        "games": 997
+      },
+      "query_direct": {
+        "logloss": 0.4965992007020499,
+        "brier": 0.15199448239846333,
+        "positions": 7566,
+        "games": 997
+      },
+      "query_distilled": {
+        "logloss": 0.48758842431456795,
+        "brier": 0.14922073901874722,
+        "positions": 7566,
+        "games": 997
+      },
+      "old_direct_student": {
+        "logloss": 0.5146594174166664,
+        "brier": 0.15931921408611854,
+        "positions": 7566,
+        "games": 997
+      },
+      "old_distilled_student": {
+        "logloss": 0.4937134180281058,
+        "brier": 0.1515949831353134,
+        "positions": 7566,
+        "games": 997
+      }
+    },
+    "new_date": {
+      "raw_sf": {
+        "logloss": 0.4319451353345719,
+        "brier": 0.12577439976665947,
+        "positions": 1988,
+        "games": 263
+      },
+      "calibrated_sf": {
+        "logloss": 0.4307232148372365,
+        "brier": 0.12520053809374396,
+        "positions": 1988,
+        "games": 263
+      },
+      "teacher": {
+        "logloss": 0.4250392258331168,
+        "brier": 0.12748706315576283,
+        "positions": 1988,
+        "games": 263
+      },
+      "flat_distilled": {
+        "logloss": 0.42981774989692795,
+        "brier": 0.12839622475555457,
+        "positions": 1988,
+        "games": 263
+      },
+      "query_direct": {
+        "logloss": 0.4297551927167383,
+        "brier": 0.1292458958033064,
+        "positions": 1988,
+        "games": 263
+      },
+      "query_distilled": {
+        "logloss": 0.4238544715837575,
+        "brier": 0.12693386021984984,
+        "positions": 1988,
+        "games": 263
+      },
+      "old_direct_student": {
+        "logloss": 0.4529727552990925,
+        "brier": 0.13754472427364947,
+        "positions": 1988,
+        "games": 263
+      },
+      "old_distilled_student": {
+        "logloss": 0.4322588319633881,
+        "brier": 0.12935438113886813,
+        "positions": 1988,
+        "games": 263
+      }
+    },
+    "hidden_threat": {
+      "raw_sf": {
+        "logloss": 0.27887663472256036,
+        "brier": 0.0747812820075849,
+        "positions": 238,
+        "games": 215
+      },
+      "calibrated_sf": {
+        "logloss": 0.26996453814635474,
+        "brier": 0.07450180401438676,
+        "positions": 238,
+        "games": 215
+      },
+      "teacher": {
+        "logloss": 0.2356732242149263,
+        "brier": 0.06468346769481514,
+        "positions": 238,
+        "games": 215
+      },
+      "flat_distilled": {
+        "logloss": 0.27925597811548136,
+        "brier": 0.07831132062948323,
+        "positions": 238,
+        "games": 215
+      },
+      "query_direct": {
+        "logloss": 0.23711622354008155,
+        "brier": 0.06630620786750362,
+        "positions": 238,
+        "games": 215
+      },
+      "query_distilled": {
+        "logloss": 0.23179086058668014,
+        "brier": 0.06464614306034008,
+        "positions": 238,
+        "games": 215
+      },
+      "old_direct_student": {
+        "logloss": 0.3191887025478769,
+        "brier": 0.09452998614595914,
+        "positions": 238,
+        "games": 215
+      },
+      "old_distilled_student": {
+        "logloss": 0.29529227706991,
+        "brier": 0.08462038868541079,
+        "positions": 238,
+        "games": 215
+      }
+    }
+  },
+  "gates": {
+    "logloss_gain": false,
+    "game_interval": false,
+    "brier": false,
+    "new_date": true,
+    "hidden_threat": true
+  },
+  "pass_quality": false,
+  "seconds": 160.41357569799584,
+  "scope": "Fresh-disjoint off-policy outcome prediction. A native trained-weight check and actual policy evaluation remain necessary."
+}

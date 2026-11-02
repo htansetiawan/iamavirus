@@ -1,0 +1,7 @@
+{
+  "handle": 27726,
+  "exit": 1,
+  "error": "Folded payload byte equality failed during one-thread reproduction of two-thread export.",
+  "diagnosis": "Export-thread-check: 359/348 floats differ by <=2.39e-7 with one thread; two-thread export exactly matches both original payloads.",
+  "action": "Reproduce export with original two CPU threads, then run all CPU/native prediction and timing checks on one core. No model, prediction, or threshold change."
+}
