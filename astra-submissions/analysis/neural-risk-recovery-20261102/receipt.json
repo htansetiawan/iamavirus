@@ -1,0 +1,64 @@
+{
+  "at": "2026-11-02T10:36:17.877545+00:00",
+  "passed": true,
+  "assets": {
+    "model_manifest.json": {
+      "source": "/media/henrytan/seagate/git/iamavirus-data/astra-legacy/representations/capacity-v4-full3766-20261008/attention-small-export/model_manifest.json",
+      "sha256": "c36c6fb5d468dc0e6bc2ddc00283153918042fe07d311a513d3e66eb47180ed9",
+      "bytes": 3994
+    },
+    "observe.onnx": {
+      "source": "/media/henrytan/seagate/git/iamavirus-data/astra-legacy/representations/capacity-v4-full3766-20261008/attention-small-export/observe.onnx",
+      "sha256": "fcf413ec4593b655b45f2a9e344e280f9524440c43acea21b700a12b86f12c2d",
+      "bytes": 6461591
+    },
+    "score.onnx": {
+      "source": "/media/henrytan/seagate/git/iamavirus-data/astra-legacy/representations/capacity-v4-full3766-20261008/attention-small-export/score.onnx",
+      "sha256": "f66cca490da210d0465f731029936024255fa555c6816b4f8dd5d3630097e201",
+      "bytes": 244737
+    }
+  },
+  "games": [
+    {
+      "game": "hgy9dhs8",
+      "side": 0,
+      "split": "train",
+      "replay_sha256": "f633e671b237c5ab5a1a703ec35c53cc410a077604226eebcb9527d5c6b930f8",
+      "observations": 107,
+      "decisions": 53,
+      "candidates": 1718,
+      "feature_sequence_sha256": "a8bd0165b3dd60d5d1843635beba286edc320eaf7a60fda625f49a000b68bc3a",
+      "permutation_max_abs": 0.0,
+      "history_reset_hidden_difference": 1.2146250009536743,
+      "predictions_sha256": "e45281fdc2614490def613f493a015af99994846e1532d900eb5d1d5d6a12c49"
+    },
+    {
+      "game": "srz0sqzj",
+      "side": 1,
+      "split": "train",
+      "replay_sha256": "55a15ebc32cfe90d0372fc7e9b49722d26dcb2b32715f2b24ec9df8b50bbe198",
+      "observations": 111,
+      "decisions": 55,
+      "candidates": 1627,
+      "feature_sequence_sha256": "0a2596edd8843db178c73813e4b1820872a0b2050c83ebb49bff917a868681bb",
+      "permutation_max_abs": 0.0,
+      "history_reset_hidden_difference": 1.1436216831207275,
+      "predictions_sha256": "e76297cf18e6c2a990b5e71944e3efcdfe5ad1fde850bb06686638ee07113daa"
+    }
+  ],
+  "elapsed_seconds": 0.9613802289968589,
+  "providers": [
+    "CPUExecutionProvider"
+  ],
+  "threads": 1,
+  "source_sha256": "57ee7b5f4e37ebd96416153ee1f6d50147457c7f1da3d27eb3553fdb03758663",
+  "original_receipt_sha256": "020fa37ede3f627feb41a4f3a5ecf153f5426933f3bd4a920bc64c3127ae75ea",
+  "data_plan_sha256": "7dc3b4b8a304592de74efc201fff1e16f8d15f2aa71209881705ef8056b1c02d",
+  "data_archive_sha256": "adeadffb187ff47a282008db1110fd368a5dc926e1045373d2762bf604041c1a",
+  "feature_sources": {
+    "features.py": "4b4a0a9893c7751d13a4e6b9d00da74093b873e142ae39e9a35d1bcb9014d88c",
+    "action_codec.py": "b5a4607f4ab84e23597a66a513f2fc9bac1a1a566ad3af34d5d37786b3474b46",
+    "rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c"
+  },
+  "scope": "Asset hash recovery, actor-input boundary, finite CPU inference, candidate permutation and recurrent-state sensitivity only. Two TRAIN games; no tactical-label evaluation, fitting, current-engine integration, GPU or strength claim."
+}
