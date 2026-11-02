@@ -1,0 +1,93 @@
+{
+  "compile": [
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-pthread",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src",
+        "-O2",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/dump.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/build/dump"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-pthread",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/dump.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/build/dump-san"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-pthread",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src",
+        "-O2",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/test_equivalence.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/cfr.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/build/test"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-pthread",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/test_equivalence.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/cfr.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-partition-20261102/build/test-san"
+      ],
+      "exit_code": 0,
+      "stderr": ""
+    }
+  ],
+  "test": {
+    "passed": true,
+    "iterations_per_initialization": 2048,
+    "initializations": 2,
+    "max_root_strategy_error": 1.18568405094166e-09,
+    "max_value_error": 1.308754701834225e-09,
+    "hidden_state_value": 0,
+    "revealed_state_value": -1
+  }
+}
