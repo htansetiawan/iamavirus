@@ -13,3 +13,18 @@ Recorded own moves are forced; only own observations and clocks go to each engin
 The first preparation failed before any fixture or policy run because the candidate sources are under build/src, not src. That attempt is preserved at the parent directory. The corrected preparation also replaces an unintended O3 recipe with the original compiler command and proves byte parity. Original corrected preparation handle 78668 exited 0. All executable plans and evidence are under r2/. The source remains at astra-submissions/experiments/queen-terminal-backport-20261102/.
 
 Cores 2–3 are temporarily reserved; 219 remains on 0–1, 4–5, 6–7. No GPU, new ZIP, model fitting, or changes to the active trial. Publish before phase one; record original handles. Release cores only after handles and owned children are terminal.
+
+## Queen phase result
+
+All 32 first-attempt calls completed without technical faults. Independent referee checks agree on 341 frames, 15 distinct choices and 1,826 transitions. Original execution, summary and referee handles 40550, 25736 and 79685 exited 0; no owned runner/bot processes remain. Cores 2–3 stay reserved for the conditional broad phase.
+
+| Arm | King losses | Queen exchange loss >=4 | Material exchange loss >=2 |
+|---|---:|---:|---:|
+| Exact v37 | 0 | 3 | 4 |
+| v37 fixed | 0 | 1 | 1 |
+| Persistent | 0 | 2 | 2 |
+| Persistent fixed | 0 | 2 | 2 |
+
+Both fixed arms select Ne7 in HYPOTHERMIA, with zero bounded exchange loss; both parents select Qxf4, losing six points. The persistent arm also changes from a safe move to a four-point loss in Lost Signal. Both pass the frozen **aggregate** advancement condition, not a per-position no-regression claim. Other changes may reflect wall-clock belief/search variation. The independent fixed-world reprice in experiment 220 identifies the countercheck mechanism separately.
+
+The conditional 204-call development screen is authorized by the frozen plan. No playing-strength conclusion, release or changes to trial 219 follow from this result. See `r2/queen-summary.json`, `queen-labels.json`, `queen-referee-review.json`, and `queen-terminal.json`.

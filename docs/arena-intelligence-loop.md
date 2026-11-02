@@ -187,6 +187,15 @@ valid offline labels, not information available to the playing bot. Any
 learned strategy or risk predictor must infer its inputs from permitted
 history or each hypothesized world, and be evaluated on separate games.
 
+The 2 November queen follow-up now provides a concrete example of this loop.
+An isolated backport of Fable's existing terminal-aware queen-capture fix
+repairs the HYPOTHERMIA countercheck in both tested engines: Ne7 replaces
+Qxf4, changing the referee's bounded exchange label from six points lost to
+zero. All 32 calls on eight selected positions are valid. The persistent
+variant trades that repair for a loss elsewhere, so the result passes only
+the frozen aggregate screen and advances to broader regression tests. It is
+not an Elo result. See [the full paired result](../astra-submissions/analysis/queen-terminal-backport-20261102/README.md).
+
 The temporal opponent predictor has now been fitted and tested. Compared with
 the same static39+piece-square model, adding recent own-action context improves
 conditional log likelihood by 0.02886 nats on 21,032 ambiguous moves from 600
