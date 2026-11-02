@@ -1,0 +1,670 @@
+{
+  "id": "continuation-fixture",
+  "white": "v37-prefix",
+  "black": "v37-prefix",
+  "result": "1/2-1/2",
+  "reason": "Threefold repetition",
+  "timeControl": {
+    "baseSeconds": 180,
+    "incrementSeconds": 2
+  },
+  "frames": [
+    {
+      "ply": 0,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": null,
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    {
+      "ply": 1,
+      "board": "RNBQKB-RPPPPPPPP-----N--------------------------pppppppprnbqkbnr",
+      "white": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "g1f3",
+      "clocks": [
+        179.875,
+        180.0
+      ]
+    },
+    {
+      "ply": 2,
+      "board": "RNBQKB-RPPPPPPPP-----N-----------------------n--pppppppprnbqkb-r",
+      "white": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????",
+      "black": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r",
+      "move": "g8f6",
+      "clocks": [
+        179.875,
+        179.75
+      ]
+    },
+    {
+      "ply": 3,
+      "board": "RNBQKBNRPPPPPPPP-----------------------------n--pppppppprnbqkb-r",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r",
+      "move": "f3g1",
+      "clocks": [
+        179.5,
+        179.75
+      ]
+    },
+    {
+      "ply": 4,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "f6g8",
+      "clocks": [
+        179.5,
+        179.25
+      ]
+    },
+    {
+      "ply": 5,
+      "board": "RNBQKB-RPPPPPPPP-----N--------------------------pppppppprnbqkbnr",
+      "white": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "g1f3",
+      "clocks": [
+        178.875,
+        179.25
+      ]
+    },
+    {
+      "ply": 6,
+      "board": "RNBQKB-RPPPPPPPP-----N-----------------------n--pppppppprnbqkb-r",
+      "white": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????",
+      "black": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r",
+      "move": "g8f6",
+      "clocks": [
+        178.875,
+        178.5
+      ]
+    },
+    {
+      "ply": 7,
+      "board": "RNBQKBNRPPPPPPPP-----------------------------n--pppppppprnbqkb-r",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r",
+      "move": "f3g1",
+      "clocks": [
+        178.0,
+        178.5
+      ]
+    },
+    {
+      "ply": 8,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "f6g8",
+      "clocks": [
+        178.0,
+        178.0
+      ]
+    }
+  ],
+  "protocol": {
+    "events": [
+      {
+        "atMs": 5,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 5,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "w 180 2"
+      },
+      {
+        "atMs": 13,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 43,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 43,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "b 180 2"
+      },
+      {
+        "atMs": 51,
+        "ply": 0,
+        "side": "black",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 83,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 83,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 83,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "move g1f3"
+      },
+      {
+        "atMs": 116,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 116,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 116,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 116,
+        "ply": 1,
+        "side": "black",
+        "direction": "output",
+        "text": "move g8f6"
+      },
+      {
+        "atMs": 148,
+        "ply": 1,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????"
+      },
+      {
+        "atMs": 148,
+        "ply": 2,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????"
+      },
+      {
+        "atMs": 148,
+        "ply": 2,
+        "side": "white",
+        "direction": "input",
+        "text": "179.875000000"
+      },
+      {
+        "atMs": 149,
+        "ply": 2,
+        "side": "white",
+        "direction": "output",
+        "text": "move f3g1"
+      },
+      {
+        "atMs": 183,
+        "ply": 2,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r"
+      },
+      {
+        "atMs": 183,
+        "ply": 3,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r"
+      },
+      {
+        "atMs": 183,
+        "ply": 3,
+        "side": "black",
+        "direction": "input",
+        "text": "179.750000000"
+      },
+      {
+        "atMs": 184,
+        "ply": 3,
+        "side": "black",
+        "direction": "output",
+        "text": "move f6g8"
+      },
+      {
+        "atMs": 216,
+        "ply": 3,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 216,
+        "ply": 4,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 216,
+        "ply": 4,
+        "side": "white",
+        "direction": "input",
+        "text": "179.500000000"
+      },
+      {
+        "atMs": 216,
+        "ply": 4,
+        "side": "white",
+        "direction": "output",
+        "text": "move g1f3"
+      },
+      {
+        "atMs": 250,
+        "ply": 4,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 250,
+        "ply": 5,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 250,
+        "ply": 5,
+        "side": "black",
+        "direction": "input",
+        "text": "179.250000000"
+      },
+      {
+        "atMs": 250,
+        "ply": 5,
+        "side": "black",
+        "direction": "output",
+        "text": "move g8f6"
+      },
+      {
+        "atMs": 282,
+        "ply": 5,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????"
+      },
+      {
+        "atMs": 282,
+        "ply": 6,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKB-RPPPPPPPP-----N-------?--????-?-?????????????????????????"
+      },
+      {
+        "atMs": 282,
+        "ply": 6,
+        "side": "white",
+        "direction": "input",
+        "text": "178.875000000"
+      },
+      {
+        "atMs": 282,
+        "ply": 6,
+        "side": "white",
+        "direction": "output",
+        "text": "move f3g1"
+      },
+      {
+        "atMs": 314,
+        "ply": 6,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r"
+      },
+      {
+        "atMs": 314,
+        "ply": 7,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????-?-?-----?-------n--pppppppprnbqkb-r"
+      },
+      {
+        "atMs": 314,
+        "ply": 7,
+        "side": "black",
+        "direction": "input",
+        "text": "178.500000000"
+      },
+      {
+        "atMs": 314,
+        "ply": 7,
+        "side": "black",
+        "direction": "output",
+        "text": "move f6g8"
+      }
+    ],
+    "truncated": false
+  },
+  "warnings": [],
+  "privateDiagnostics": {},
+  "localTurnControl": {
+    "method": "owned process-group SIGSTOP/SIGCONT; buffered observations",
+    "security_sandbox": false,
+    "stderr_retained_bytes": 1048576,
+    "stderr_output_limit": 1048576,
+    "controls": [
+      {
+        "pid": 453234,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.024547274995711632
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.024460347995045595
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.026448300006450154
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.025044941998203285
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.02409345199703239
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      },
+      {
+        "pid": 453237,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.024226476001786068
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.023988951987121254
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.02414421499997843
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.024121644004480913
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.023874502003309317
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      }
+    ]
+  },
+  "continuation": {
+    "source_game": "fixture",
+    "branch_ply": 7,
+    "restored_state": {
+      "fen": "rnbqkb1r/pppppppp/5n2/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 7 4",
+      "halfmove": 7,
+      "castling": 9295429630892703873,
+      "ep": null,
+      "repetitions": [
+        [
+          "('rnbqkb1r/pppppppp/5n2/8/8/5N2/PPPPPPPP/RNBQKB1R', True, 9295429630892703873, None)",
+          2
+        ],
+        [
+          "('rnbqkb1r/pppppppp/5n2/8/8/8/PPPPPPPP/RNBQKBNR', False, 9295429630892703873, None)",
+          2
+        ],
+        [
+          "('rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R', False, 9295429630892703873, None)",
+          2
+        ],
+        [
+          "('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', True, 9295429630892703873, None)",
+          2
+        ]
+      ],
+      "clocks": [
+        178.0,
+        178.5
+      ]
+    },
+    "steps": [
+      {
+        "ply": 0,
+        "side": 0,
+        "move": "g1f3",
+        "actual_elapsed": 0.00011575499956961721,
+        "reported_clock": 180.0,
+        "prefix": true
+      },
+      {
+        "ply": 1,
+        "side": 1,
+        "move": "g8f6",
+        "actual_elapsed": 0.00011064800492022187,
+        "reported_clock": 180.0,
+        "prefix": true
+      },
+      {
+        "ply": 2,
+        "side": 0,
+        "move": "f3g1",
+        "actual_elapsed": 0.00010448800458107144,
+        "reported_clock": 179.875,
+        "prefix": true
+      },
+      {
+        "ply": 3,
+        "side": 1,
+        "move": "f6g8",
+        "actual_elapsed": 0.00010923000809270889,
+        "reported_clock": 179.75,
+        "prefix": true
+      },
+      {
+        "ply": 4,
+        "side": 0,
+        "move": "g1f3",
+        "actual_elapsed": 0.00011418599751777947,
+        "reported_clock": 179.5,
+        "prefix": true
+      },
+      {
+        "ply": 5,
+        "side": 1,
+        "move": "g8f6",
+        "actual_elapsed": 7.920899952296168e-05,
+        "reported_clock": 179.25,
+        "prefix": true
+      },
+      {
+        "ply": 6,
+        "side": 0,
+        "move": "f3g1",
+        "actual_elapsed": 7.391899998765439e-05,
+        "reported_clock": 178.875,
+        "prefix": true
+      },
+      {
+        "ply": 7,
+        "side": 1,
+        "move": "f6g8",
+        "actual_elapsed": 0.00010930899588856846,
+        "reported_clock": 178.5,
+        "prefix": false,
+        "charged_elapsed": 2.5
+      }
+    ],
+    "prefix_observations": [
+      [
+        0,
+        0,
+        "4108ce1b9ed8f2923d3c0fa1906b625aed289649e37101acfe9fe05fee053599"
+      ],
+      [
+        1,
+        0,
+        "f828623adac724531a9e634cfc3498f2d678de5e7ca40e7e55091610ff310f8a"
+      ],
+      [
+        0,
+        1,
+        "50e90be36ca5d96c0cd71fd818d4366da9e776f57d60569cddd8a03773061745"
+      ],
+      [
+        1,
+        1,
+        "f828623adac724531a9e634cfc3498f2d678de5e7ca40e7e55091610ff310f8a"
+      ],
+      [
+        0,
+        2,
+        "50e90be36ca5d96c0cd71fd818d4366da9e776f57d60569cddd8a03773061745"
+      ],
+      [
+        1,
+        2,
+        "ed813122bfb9d849fe829fcbb7a16902b84c86a56b82e27acc351114e4f0a623"
+      ],
+      [
+        0,
+        3,
+        "4108ce1b9ed8f2923d3c0fa1906b625aed289649e37101acfe9fe05fee053599"
+      ],
+      [
+        1,
+        3,
+        "ed813122bfb9d849fe829fcbb7a16902b84c86a56b82e27acc351114e4f0a623"
+      ],
+      [
+        0,
+        4,
+        "4108ce1b9ed8f2923d3c0fa1906b625aed289649e37101acfe9fe05fee053599"
+      ],
+      [
+        1,
+        4,
+        "f828623adac724531a9e634cfc3498f2d678de5e7ca40e7e55091610ff310f8a"
+      ],
+      [
+        0,
+        5,
+        "50e90be36ca5d96c0cd71fd818d4366da9e776f57d60569cddd8a03773061745"
+      ],
+      [
+        1,
+        5,
+        "f828623adac724531a9e634cfc3498f2d678de5e7ca40e7e55091610ff310f8a"
+      ],
+      [
+        0,
+        6,
+        "50e90be36ca5d96c0cd71fd818d4366da9e776f57d60569cddd8a03773061745"
+      ],
+      [
+        1,
+        6,
+        "ed813122bfb9d849fe829fcbb7a16902b84c86a56b82e27acc351114e4f0a623"
+      ],
+      [
+        0,
+        7,
+        "4108ce1b9ed8f2923d3c0fa1906b625aed289649e37101acfe9fe05fee053599"
+      ],
+      [
+        1,
+        7,
+        "ed813122bfb9d849fe829fcbb7a16902b84c86a56b82e27acc351114e4f0a623"
+      ]
+    ],
+    "wall_seconds": 0.3571084910072386,
+    "prefix_cpu_charged_seconds": 0.0007074350141920149,
+    "continuation_charged_seconds": 2.5,
+    "historical_clock_policy": "Recorded clocks replace elapsed time only before branch; actual referee timing thereafter. The intervention uses the proposal run cost for every compared action; actual execution cost is retained separately. Subsequent moves use actual time.",
+    "policy_scope": "v37 weights/search with continuation-only replay adapter. Forced replay skips historical searches; timed thinning and RNG state need not match the historical arena bot. The root action is externally specified from a permitted-input proposal. This is an action-conditional rollout, not a match or an exact live-process clone.",
+    "intervention": {
+      "ply": 7,
+      "side": 1,
+      "action": "f6g8",
+      "actual_elapsed": 0.00010930899588856846,
+      "charged_elapsed": 2.5
+    }
+  },
+  "censored": false
+}

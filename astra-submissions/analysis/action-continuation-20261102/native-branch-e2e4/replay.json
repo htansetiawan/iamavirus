@@ -1,0 +1,206 @@
+{
+  "id": "continuation-fixture",
+  "white": "v37-prefix",
+  "black": "v37-prefix",
+  "result": "*",
+  "reason": "Continuation horizon reached; censored, not a draw",
+  "timeControl": {
+    "baseSeconds": 180,
+    "incrementSeconds": 2
+  },
+  "frames": [
+    {
+      "ply": 0,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": null,
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    {
+      "ply": 1,
+      "board": "RNBQKBNRPPPP-PPP------------P-------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPP-PPP----?-------P---?-??-??--???????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "e2e4",
+      "clocks": [
+        179.5,
+        180.0
+      ]
+    }
+  ],
+  "protocol": {
+    "events": [
+      {
+        "atMs": 1,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 1,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "w 180 2"
+      },
+      {
+        "atMs": 549,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 574,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 575,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "b 180 2"
+      },
+      {
+        "atMs": 3201,
+        "ply": 0,
+        "side": "black",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 3234,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 3234,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 3234,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "move e2e4"
+      }
+    ],
+    "truncated": false
+  },
+  "warnings": [],
+  "privateDiagnostics": {
+    "white": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/queen-terminal-backport-20261102/build-r2/base/data/history.bin: 359889 records\nmist: stockfish ready\nastra-prefix: decision=0 clock=179.500000000\n",
+    "black": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/queen-terminal-backport-20261102/build-r2/base/data/history.bin: 359889 records\nmist: stockfish ready\n"
+  },
+  "localTurnControl": {
+    "method": "owned process-group SIGSTOP/SIGCONT; buffered observations",
+    "security_sandbox": false,
+    "stderr_retained_bytes": 1048576,
+    "stderr_output_limit": 1048576,
+    "controls": [
+      {
+        "pid": 453764,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 3,
+            "seconds": 0.02481553200050257
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 3,
+            "seconds": 0.024092994004604407
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      },
+      {
+        "pid": 453775,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 3,
+            "seconds": 0.024981348993605934
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      }
+    ]
+  },
+  "continuation": {
+    "source_game": "fixture",
+    "branch_ply": 0,
+    "restored_state": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "halfmove": 0,
+      "castling": 9295429630892703873,
+      "ep": null,
+      "repetitions": [
+        [
+          "('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', True, 9295429630892703873, None)",
+          1
+        ]
+      ],
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    "steps": [
+      {
+        "ply": 0,
+        "side": 0,
+        "move": "e2e4",
+        "actual_elapsed": 0.00012468799832277,
+        "reported_clock": 180.0,
+        "prefix": false,
+        "charged_elapsed": 2.5
+      }
+    ],
+    "prefix_observations": [
+      [
+        0,
+        0,
+        "4108ce1b9ed8f2923d3c0fa1906b625aed289649e37101acfe9fe05fee053599"
+      ],
+      [
+        1,
+        0,
+        "f828623adac724531a9e634cfc3498f2d678de5e7ca40e7e55091610ff310f8a"
+      ]
+    ],
+    "wall_seconds": 3.2826259520079475,
+    "prefix_cpu_charged_seconds": 0,
+    "continuation_charged_seconds": 2.5,
+    "historical_clock_policy": "Recorded clocks replace elapsed time only before branch; actual referee timing thereafter. The intervention uses the proposal run cost for every compared action; actual execution cost is retained separately. Subsequent moves use actual time.",
+    "policy_scope": "v37 weights/search with continuation-only replay adapter. Forced replay skips historical searches; timed thinning and RNG state need not match the historical arena bot. The root action is externally specified from a permitted-input proposal. This is an action-conditional rollout, not a match or an exact live-process clone.",
+    "intervention": {
+      "ply": 0,
+      "side": 0,
+      "action": "e2e4",
+      "actual_elapsed": 0.00012468799832277,
+      "charged_elapsed": 2.5
+    }
+  },
+  "censored": true
+}

@@ -1,0 +1,69 @@
+--- 241/gtcfr.c
++++ proposal/gtcfr.c
+@@ -2,6 +2,7 @@
+ /* mist-c: growing-tree search (GT-CFR). See gtcfr.h. */
+ #include "gtcfr.h"
+ 
++#include <stdio.h>
+ #include <math.h>
+ #include <stdlib.h>
+ #include <string.h>
+@@ -274,6 +275,20 @@
+         node = t->g.child[n->first + pick];
+     }
+     return -1;
++}
++
++
++/* Read-only diagnostics. Each subtree is visited once across root actions:
++ * O(tree edges), not one complete game_value traversal per candidate. */
++static double astra_subtree_value(const Game *g, int node, const double *x) {
++    const GameNode *n = &g->nodes[node];
++    if (n->type == NODE_TERMINAL) return n->value;
++    double value = 0;
++    for (int a = 0; a < n->count; ++a) {
++        const double p = n->type == NODE_CHANCE ? g->prob[n->first+a] : x[g->is_offset[n->infoset]+a];
++        if (p > 0) value += p * astra_subtree_value(g, g->child[n->first+a], x);
++    }
++    return value;
+ }
+ 
+ int gtcfr_decide(const Belief *b, const GtcfrParams *params, SearchResult *out) {
+@@ -422,6 +437,19 @@
+     out->value = game_value(&t.g, x);
+     out->samples = K; out->our_moves = ours.count; out->opponent_infosets = t.g.n_infosets; out->nodes = t.g.n_nodes;
+     out->iterations = iteration;
++    if (getenv("ASTRA_PROPOSAL")) {
++        for (int a = 0; a < ours.count; ++a) {
++            double q = 0;
++            for (int k = 0; k < K; ++k) {
++                const GameNode *n = &t.g.nodes[chance_kids[k]];
++                q += chance_p[k] * astra_subtree_value(&t.g, t.g.child[n->first+a], x);
++            }
++            char move[6]; move_to_uci(ours.moves[a], move);
++            fprintf(stderr, "astra-proposal: %s %.17g %.17g\n", move, x[o+a], q);
++        }
++        fprintf(stderr, "astra-proposal-value: %.17g\n", out->value);
++    }
++
+     free(x); free(idx); free(share); free(chance_kids); free(chance_p);
+     free(t.leaves); free(t.leaf_of); free(t.keys); free(t.vals); free(t.visits);
+     game_free(&t.g);
+--- 241/main.c
++++ proposal/main.c
+@@ -336,6 +336,15 @@
+         if (remaining < 20) { gp.samples = 32; gp.seconds = 0.3; }
+         MoveList allowed;
+         view_moves(view, us, front.castle, &allowed);
++        if (getenv("ASTRA_PROPOSAL") && !(forced && *forced)) {
++            fprintf(stderr, "astra-view-legal:");
++            for (int a = 0; a < allowed.count; ++a) {
++                char move[6]; move_to_uci(allowed.moves[a], move);
++                fprintf(stderr, " %s", move);
++            }
++            fprintf(stderr, "\n");
++        }
++
+         /* ahead: leave out the moves that would make our pieces stand as they
+          * already have twice (the referee's threefold needs that) */
+         Move repeats[256];

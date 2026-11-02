@@ -1,0 +1,258 @@
+{
+  "id": "continuation-fixture",
+  "white": "v37-prefix",
+  "black": "v37-prefix",
+  "result": "*",
+  "reason": "Continuation horizon reached; censored, not a draw",
+  "timeControl": {
+    "baseSeconds": 180,
+    "incrementSeconds": 2
+  },
+  "frames": [
+    {
+      "ply": 0,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": null,
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    {
+      "ply": 1,
+      "board": "RNBQKBNRPPP-PPPP-----------P--------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPP-PPPP-----------P----???-??-????????-????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "d2d4",
+      "clocks": [
+        179.5,
+        180.0
+      ]
+    },
+    {
+      "ply": 2,
+      "board": "RNBQKBNRPPP-PPPP-----------P------------p--------ppppppprnbqkbnr",
+      "white": "RNBQKBNRPPP-PPPP-----------P----???-??-????????-????????????????",
+      "black": "????????????????????????????????--------p--------ppppppprnbqkbnr",
+      "move": "a7a6",
+      "clocks": [
+        179.5,
+        181.999924
+      ]
+    }
+  ],
+  "protocol": {
+    "events": [
+      {
+        "atMs": 3,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 3,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "w 180 2"
+      },
+      {
+        "atMs": 13,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 39,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 39,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "b 180 2"
+      },
+      {
+        "atMs": 50,
+        "ply": 0,
+        "side": "black",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 83,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 83,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 83,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "move d2d4"
+      },
+      {
+        "atMs": 115,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 115,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 115,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 115,
+        "ply": 1,
+        "side": "black",
+        "direction": "output",
+        "text": "move a7a6"
+      }
+    ],
+    "truncated": false
+  },
+  "warnings": [],
+  "privateDiagnostics": {},
+  "localTurnControl": {
+    "method": "owned process-group SIGSTOP/SIGCONT; buffered observations",
+    "security_sandbox": false,
+    "stderr_retained_bytes": 1048576,
+    "stderr_output_limit": 1048576,
+    "controls": [
+      {
+        "pid": 453254,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.024302532998262905
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.023632267009816132
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      },
+      {
+        "pid": 453257,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.0245808159961598
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 1,
+            "seconds": 0.024278267999761738
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      }
+    ]
+  },
+  "continuation": {
+    "source_game": "fixture",
+    "branch_ply": 0,
+    "restored_state": {
+      "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      "halfmove": 0,
+      "castling": 9295429630892703873,
+      "ep": null,
+      "repetitions": [
+        [
+          "('rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR', True, 9295429630892703873, None)",
+          1
+        ]
+      ],
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    "steps": [
+      {
+        "ply": 0,
+        "side": 0,
+        "move": "d2d4",
+        "actual_elapsed": 0.00010560500959400088,
+        "reported_clock": 180.0,
+        "prefix": false,
+        "charged_elapsed": 2.5
+      },
+      {
+        "ply": 1,
+        "side": 1,
+        "move": "a7a6",
+        "actual_elapsed": 7.556099444627762e-05,
+        "reported_clock": 180.0,
+        "prefix": false
+      }
+    ],
+    "prefix_observations": [
+      [
+        0,
+        0,
+        "4108ce1b9ed8f2923d3c0fa1906b625aed289649e37101acfe9fe05fee053599"
+      ],
+      [
+        1,
+        0,
+        "f828623adac724531a9e634cfc3498f2d678de5e7ca40e7e55091610ff310f8a"
+      ]
+    ],
+    "wall_seconds": 0.15817882599367294,
+    "prefix_cpu_charged_seconds": 0,
+    "continuation_charged_seconds": 2.5000755609944463,
+    "historical_clock_policy": "Recorded clocks replace elapsed time only before branch; actual referee timing thereafter. The intervention uses the proposal run cost for every compared action; actual execution cost is retained separately. Subsequent moves use actual time.",
+    "policy_scope": "v37 weights/search with continuation-only replay adapter. Forced replay skips historical searches; timed thinning and RNG state need not match the historical arena bot. The root action is externally specified from a permitted-input proposal. This is an action-conditional rollout, not a match or an exact live-process clone.",
+    "intervention": {
+      "ply": 0,
+      "side": 0,
+      "action": "d2d4",
+      "actual_elapsed": 0.00010560500959400088,
+      "charged_elapsed": 2.5
+    }
+  },
+  "censored": true
+}
