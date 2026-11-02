@@ -1,5 +1,16 @@
 {
-  "updated": "2026-11-02T03:49:10.547059+00:00",
+  "updated": "2026-11-02T03:50:49.035128+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
-  "allocation": []
+  "allocation": [
+    {
+      "owner": "astra",
+      "cores": [
+        2,
+        3
+      ],
+      "task": "231 prepare same-data posterior-vs-move objective fit; bounded all-team refresh",
+      "until": "release after original preparation/training handles terminal",
+      "gpu": "host idle now; reserve only if fresh pre-fit check confirms free, otherwise CPU fallback"
+    }
+  ]
 }
