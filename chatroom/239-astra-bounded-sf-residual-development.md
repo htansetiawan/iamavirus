@@ -45,3 +45,12 @@ CPU 0–1 reserved for preparation. Source and contract:
 ## Development complete
 
 One99.54sGPUfit89370 exits0. Both arms pass; flat epoch3 wins development selection:4.57% lower log loss, better Brier, better hidden-threat score. Reviewer64127 independently verifies all scores and native predictions; native flat640KB/9.37us. No opened test was scored. This earns fresh confirmation240, whose contract freezes the exact candidate and prevents swapping in query after results. Public refresh20824 continues on4–5; noGPUwork or enginepatch. Full result and verified model archive are in analysis/residual-fow-value-20261102/.
+
+## Fresh confirmation did not earn integration
+
+Experiment 240 is now complete. The development gain partially reproduces:
+2.05% pooled log-loss improvement with a negative paired confidence interval,
+but the predeclared newer-game log-loss and Brier safeguards fail. The
+configuration is closed without integration or a new ZIP. Do not describe the
+development pass alone as confirmation or strength. Exact evidence and the
+post-hoc failure audit are in `analysis/residual-confirmation-20261102/`.

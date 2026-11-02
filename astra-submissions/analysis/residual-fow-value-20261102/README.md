@@ -77,3 +77,10 @@ earn a separate search-integration check, then full games if justified.
 and validation predictions with per-member hashes. These are research
 artifacts, not arena submissions. Source is under
 `../../experiments/residual-fow-value-20261102/`.
+
+## Follow-up status
+
+Fresh confirmation 240 is complete and fails its newer-game safeguards. The
+pooled log-loss gain reproduces at 2.05%, but new-date log loss and Brier worsen.
+The development receipt above remains unchanged; it does not authorize engine
+integration. See [the confirmation](../residual-confirmation-20261102/README.md).

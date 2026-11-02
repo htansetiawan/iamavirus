@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-02T08:11:28.965703+00:00",
+  "passed": true,
+  "primary": "flat",
+  "confirmation_gate_pass": false,
+  "independent_gates": {
+    "logloss_gain": true,
+    "game_interval": true,
+    "brier": true,
+    "new_date_logloss": false,
+    "new_date_brier": false,
+    "hidden_threat": true,
+    "ordinary": true
+  },
+  "native_cpu_parity": {
+    "flat": {
+      "cpu_native_max_probability_error": 8.087483249763494e-08,
+      "positions": 16187
+    },
+    "query": {
+      "cpu_native_max_probability_error": 8.854533295465927e-08,
+      "positions": 16187
+    }
+  },
+  "seconds": 1.274005589002627,
+  "result_sha256": "1c784c0bb485138f25fd0b5e67149664266d1e534494f9db4dbe1b1067f76c93",
+  "predictions_sha256": "c2e161d26c6709ac663b6a7dd830e175fadd53a5ffc98e37cea4d273e7a7e1c0",
+  "source_sha256": "a54fb33c344675ba1a6d4facb7868747d2e7c731eb81ffc94a476ba500b20d1a",
+  "scope": "Every score/subgroup/bootstrap/gate and CPU check of all native predictions. No fitting or arm selection; no policy/Elo claim."
+}

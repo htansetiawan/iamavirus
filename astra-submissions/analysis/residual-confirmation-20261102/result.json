@@ -1,0 +1,168 @@
+{
+  "at": "2026-11-02T08:08:25.352859+00:00",
+  "primary": "flat",
+  "test": {
+    "raw_sf": {
+      "logloss": 0.46912999131539285,
+      "brier": 0.13536502311815166,
+      "positions": 16187,
+      "games": 2122
+    },
+    "calibrated_sf": {
+      "logloss": 0.4585950049420498,
+      "brier": 0.1340618768137283,
+      "positions": 16187,
+      "games": 2122
+    },
+    "flat": {
+      "logloss": 0.44919488128906077,
+      "brier": 0.13208069155299174,
+      "positions": 16187,
+      "games": 2122
+    },
+    "query": {
+      "logloss": 0.4491893154493027,
+      "brier": 0.13204768950140278,
+      "positions": 16187,
+      "games": 2122
+    }
+  },
+  "paired_differences": {
+    "flat": {
+      "mean": -0.009400123652988913,
+      "bootstrap_95": [
+        -0.014411815655493574,
+        -0.004608091698306685
+      ],
+      "games": 2122
+    },
+    "query": {
+      "mean": -0.009405689492747027,
+      "bootstrap_95": [
+        -0.014321199076014089,
+        -0.004904508202597653
+      ],
+      "games": 2122
+    }
+  },
+  "slices": {
+    "older_unused": {
+      "raw_sf": {
+        "logloss": 0.4662893059866333,
+        "brier": 0.1337180659243162,
+        "positions": 15220,
+        "games": 1996
+      },
+      "calibrated_sf": {
+        "logloss": 0.45688180846376314,
+        "brier": 0.1327102797705887,
+        "positions": 15220,
+        "games": 1996
+      },
+      "flat": {
+        "logloss": 0.4460688731045842,
+        "brier": 0.13043864631775015,
+        "positions": 15220,
+        "games": 1996
+      },
+      "query": {
+        "logloss": 0.4461434469406788,
+        "brier": 0.13041289947771517,
+        "positions": 15220,
+        "games": 1996
+      }
+    },
+    "new_date": {
+      "raw_sf": {
+        "logloss": 0.5141300541424082,
+        "brier": 0.1614549164427201,
+        "positions": 967,
+        "games": 126
+      },
+      "calibrated_sf": {
+        "logloss": 0.48573421264570105,
+        "brier": 0.15547289029076533,
+        "positions": 967,
+        "games": 126
+      },
+      "flat": {
+        "logloss": 0.49871482046537335,
+        "brier": 0.158092773216025,
+        "positions": 967,
+        "games": 126
+      },
+      "query": {
+        "logloss": 0.4974397403954403,
+        "brier": 0.15794483940045462,
+        "positions": 967,
+        "games": 126
+      }
+    },
+    "hidden_threat": {
+      "raw_sf": {
+        "logloss": 0.25445055230685104,
+        "brier": 0.06979976347391234,
+        "positions": 332,
+        "games": 302
+      },
+      "calibrated_sf": {
+        "logloss": 0.24182328500599884,
+        "brier": 0.06740351537539596,
+        "positions": 332,
+        "games": 302
+      },
+      "flat": {
+        "logloss": 0.2290743142258498,
+        "brier": 0.06617087242968478,
+        "positions": 332,
+        "games": 302
+      },
+      "query": {
+        "logloss": 0.22730466353472104,
+        "brier": 0.06469543891112013,
+        "positions": 332,
+        "games": 302
+      }
+    },
+    "ordinary": {
+      "raw_sf": {
+        "logloss": 0.47285691654396,
+        "brier": 0.13672405034077748,
+        "positions": 15855,
+        "games": 2121
+      },
+      "calibrated_sf": {
+        "logloss": 0.46256177888329564,
+        "brier": 0.13547891363899503,
+        "positions": 15855,
+        "games": 2121
+      },
+      "flat": {
+        "logloss": 0.45330355708787146,
+        "brier": 0.13350399376459246,
+        "positions": 15855,
+        "games": 2121
+      },
+      "query": {
+        "logloss": 0.453283319477337,
+        "brier": 0.1334758799834627,
+        "positions": 15855,
+        "games": 2121
+      }
+    }
+  },
+  "gates": {
+    "logloss_gain": true,
+    "game_interval": true,
+    "brier": true,
+    "new_date_logloss": false,
+    "new_date_brier": false,
+    "hidden_threat": true,
+    "ordinary": true
+  },
+  "pass_confirmation": false,
+  "seconds": 1.148802578994946,
+  "contract_sha256": "8dee0737a30b166fbc3da2289fcc656b6ff4d2c66c234cf566d390bfb0109314",
+  "data_sha256": "54ee8c2bd5fc7677a35b6c34917b1be090473a9025c9a2f6fbdc7ef46f5e077d",
+  "scope": "Pinned native predictions on disjoint played positions. No model selection, test fitting, policy or playing-strength conclusion."
+}

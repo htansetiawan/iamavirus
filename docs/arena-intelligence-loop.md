@@ -497,3 +497,28 @@ an aggregate regression from being marketed as a stronger bot. The category
 result may motivate a future SF-residual experiment, but no taxonomy tag or
 rate was added to live belief weights or guards. See
 [the verified study](../astra-submissions/analysis/query-fow-value-20261102/README.md).
+
+## Bounded residual: historical improvement does not clear a recent-game safeguard
+
+Experiments 239–240 test a compact correction to calibrated Stockfish rather
+than replacing its evaluation. Development validation selects the flat model.
+On 16,187 fresh, disjoint positions from 2,122 games, its equal-game log loss
+improves 2.05% (0.458595 to 0.449195), with a paired confidence interval below
+zero. Hidden-threat and ordinary-position scores also improve.
+
+The 126 newly downloaded games instead worsen from 0.485734 to 0.498715 log
+loss, with worse Brier. The frozen confirmation therefore fails. A post-hoc
+audit verifies five concentrated replay reversals and finds no label or native
+inference error. These small newer data do not establish a population decline,
+but they cannot be omitted to pass the gate. No integration or new ZIP follows.
+
+This distinguishes three things: improved historical outcome prediction,
+reliable predictions on current games, and stronger decisions under a fixed
+continuation policy. We have evidence for the first, incomplete evidence for
+the second, and have not tested the third. Native inference costs about 9.37
+microseconds with a 640KB payload; runtime size is feasible, while target
+quality and transfer remain open. See [the confirmation and audit](../astra-submissions/analysis/residual-confirmation-20261102/README.md).
+
+The associated refresh preserves another 457 replays and 32,332 move
+annotations. These are research evidence, not automatic changes to the
+posterior or guards. [Refresh receipt](../astra-submissions/analysis/arena-refresh-20261102-residual/README.md).
