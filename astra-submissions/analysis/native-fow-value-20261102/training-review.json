@@ -1,0 +1,134 @@
+{
+  "at": "2026-11-02T06:58:15.760775+00:00",
+  "passed": true,
+  "seconds": 18.7451105289947,
+  "test_positions": 5953,
+  "games": 773,
+  "metrics": {
+    "raw_sf": {
+      "logloss": 0.49108348940287544,
+      "brier": 0.14608271776434686,
+      "positions": 5953,
+      "games": 773
+    },
+    "calibrated_sf": {
+      "logloss": 0.46513983517189983,
+      "brier": 0.14065031957951246,
+      "positions": 5953,
+      "games": 773
+    },
+    "teacher": {
+      "logloss": 0.4491531775492681,
+      "brier": 0.1384467540220263,
+      "positions": 5953,
+      "games": 773
+    },
+    "direct_student": {
+      "logloss": 0.48503287719867,
+      "brier": 0.15113704787073037,
+      "positions": 5953,
+      "games": 773
+    },
+    "distilled_student": {
+      "logloss": 0.4620890563377535,
+      "brier": 0.143016021674932,
+      "positions": 5953,
+      "games": 773
+    }
+  },
+  "paired": {
+    "teacher": {
+      "mean": -0.015986657622631673,
+      "interval": [
+        -0.030663113742885318,
+        -0.002410776997802817
+      ]
+    },
+    "direct_student": {
+      "mean": 0.019893042026770225,
+      "interval": [
+        0.004082431421958361,
+        0.03415939837978242
+      ]
+    },
+    "distilled_student": {
+      "mean": -0.0030507788341463046,
+      "interval": [
+        -0.017937150814295023,
+        0.011178889021629036
+      ]
+    }
+  },
+  "hidden_threat": {
+    "raw_sf": {
+      "logloss": 0.1950449845656697,
+      "brier": 0.05528984087461776,
+      "positions": 112,
+      "games": 108
+    },
+    "calibrated_sf": {
+      "logloss": 0.18729063537516952,
+      "brier": 0.053676923061110667,
+      "positions": 112,
+      "games": 108
+    },
+    "teacher": {
+      "logloss": 0.14647168467764274,
+      "brier": 0.04557104134925368,
+      "positions": 112,
+      "games": 108
+    },
+    "direct_student": {
+      "logloss": 0.1868370845963803,
+      "brier": 0.0566767920643886,
+      "positions": 112,
+      "games": 108
+    },
+    "distilled_student": {
+      "logloss": 0.17953120215546822,
+      "brier": 0.0547464908419911,
+      "positions": 112,
+      "games": 108
+    }
+  },
+  "teacher_numerical_review": {
+    "cpu32_max_difference_from_cuda": 9.289383888244629e-05,
+    "cuda_max_difference_from_cpu64": 9.295413296345201e-05,
+    "cpu32_max_difference_from_cpu64": 5.991940792982042e-07,
+    "cpu32_metrics": {
+      "logloss": 0.44915238449509076,
+      "brier": 0.13844654613982726,
+      "positions": 5953,
+      "games": 773
+    },
+    "cpu64_metrics": {
+      "logloss": 0.4491523815205884,
+      "brier": 0.13844654520306363,
+      "positions": 5953,
+      "games": 773
+    },
+    "original_cpu32_tolerance_2e_5_passed": false
+  },
+  "native_students": {
+    "direct_student": {
+      "bytes": 640260,
+      "export_sha256": "e90bb4e64df6ebe94d46b7068bdcde04bce77f1341e94398ad4a30b68e0e73e3",
+      "max_probability_error": 2.6239035805231126e-07
+    },
+    "distilled_student": {
+      "bytes": 640260,
+      "export_sha256": "1c363e2039f911f395d53a2a51caf55e193250e29a1f264bc9f155f06b79ef61",
+      "max_probability_error": 3.243279190767723e-07
+    }
+  },
+  "gates": {
+    "teacher_gain": true,
+    "student_gain": false,
+    "student_interval": false,
+    "student_brier": false,
+    "hidden_king_threat": true
+  },
+  "result_sha256": "f2394915eb1ded05e6d504ba3f7e0cdfd7b97efa5fa006a0f50a8ce7eca18532",
+  "source_sha256": "0c9c6a668c377a4deb5aaba08f934504f7193d562318aa30348024a20f060513",
+  "scope": "Recomputed game-weighted metrics/intervals and epoch selection, CPU teacher and native trained-student parity on all test inputs. Confirms prediction result; no additional training, test tuning, search integration or playing-strength evidence."
+}

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/review_training.py", line 97, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/review_training.py", line 71, in main
+    teacher_error=float(np.max(np.abs(np.array(values)-pred['teacher'])));assert teacher_error<2e-5,teacher_error
+                                                                                 ^^^^^^^^^^^^^^^^^^
+AssertionError: 9.289383888244629e-05

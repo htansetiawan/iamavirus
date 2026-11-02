@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-02T06:50:00.952912+00:00",
+  "teacher": {
+    "epoch": 8,
+    "validation_logloss": 0.46363388925464444,
+    "sha256": "1c4af0966fc1d675f889d90e87c79e0b3cf4765369e7a2d7b42483756dc1194b",
+    "parameters": 804737
+  },
+  "direct_student": {
+    "epoch": 5,
+    "validation_logloss": 0.49230078049662823,
+    "sha256": "28590198ae8b1b09c6c7c4cd951eeeed5ac05e2173a82ffc8f1bb3c03d5f9914",
+    "parameters": 160065
+  },
+  "distilled_student": {
+    "epoch": 7,
+    "validation_logloss": 0.4725446141563496,
+    "sha256": "180ccfe3ef7c5fbe12ba7d2555cf8fff29a99ee0ea45bb39ec4084523735dbd7",
+    "parameters": 160065
+  },
+  "chosen_student": "distilled_student",
+  "chosen_control": "calibrated_sf",
+  "calibration": [
+    0.06541149970072252,
+    0.6808964794753857
+  ],
+  "plan_sha256": "ea5bfa5582a45ccee3681fbe9f8382fe575aa4948dd2227fdba4ddac8bcf14af",
+  "data_sha256": "2f74da06960d67a8d94c686778013f2aafae274990bd760b16b8b9f285fbccf6"
+}

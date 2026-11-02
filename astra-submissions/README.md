@@ -50,8 +50,16 @@ has a frozen attention-teacher/compact-student comparison and 208,216 verified
 positions from 26,918 source games. Its baseline reproduces the archived
 parent MultiPV leaf calculation. The compact C evaluator uses 640 KB and
 passes random-weight arithmetic parity at about 9.3 microseconds per position;
-prediction quality and playing strength remain unproven. GPU training is
-bounded to one hour and follows the recorded data/runtime checks.
+playing strength remains unproven.
+
+The single training run finished in 75.86 seconds. On 773 later test
+games, the teacher reduces log loss **3.44% versus calibrated SF**, with a
+paired interval excluding zero; the distilled student misses its quality gate.
+The teacher's CPU ONNX cost is 26.1 ms for 32 positions, so its predictive gain
+does not justify an indiscriminate leaf replacement. All checkpoints and
+verified predictions are preserved; no new submission or Elo claim. The next
+proposed work is to retain the teacher's advantage in a cheaper relational or
+SF-residual evaluator, with a fresh test before any promotion.
 
 Earlier learned-response full-game pilots did not earn promotion: the first
 search integration finished 0W–8L against v37; its observable-loss variant
