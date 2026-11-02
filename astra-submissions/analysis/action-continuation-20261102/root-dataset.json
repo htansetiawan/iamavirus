@@ -1,0 +1,22 @@
+{
+  "source_groups": 2,
+  "root_rows": 8,
+  "paired_rows": 4,
+  "terminal_root_labels": 7,
+  "complete_pairs": 3,
+  "privacy_checks": 16,
+  "source_input_sha256": {
+    "7qu350gu": "6bc4435b572ed98a7ae3fe0bb1d9aa19f4485284307707a0a5aa2271aabc16a1",
+    "qpnsjfbm": "dad3dbb91c0dc50b3fc9edc23024865ceeb71f695180fb395e8a0916c440aa2e"
+  },
+  "projection_code_sha256": "3216b424fca78957210cafa175e49585e482587937fc4cae2765f9f292b3c947",
+  "exporter_sha256": "30fbe584b3f6ba966543439088dbda1e1ea14b330b75aff0dbd8b85f1f42c26c",
+  "review_sha256": "fecabca03ca4241f5ca8911be7bd2e6ad206556bebd76d6df371f08d724e1418",
+  "artifacts": {
+    "root-targets.jsonl": "3377480c68d2b72e86e1d614590f8db12f01dd957e0d5a0d8b607fb59c90a8ec",
+    "paired-targets.jsonl": "96d122da5a2405f225c6543ae2fb193367d325c17392548bd684aa14c396a20b"
+  },
+  "split": "Group by original source game across 241/242/243, every branch and seed.",
+  "censoring": "Cutoff can depend on action. Training only on completed branches can bias returns; nulls and bounded intervals preserve what is unknown. Intervals are outcome bounds, not confidence intervals.",
+  "limit": "Two reused development groups. A pair is one noisy comparison, not a validated action ranking. No fitting or strength claim."
+}

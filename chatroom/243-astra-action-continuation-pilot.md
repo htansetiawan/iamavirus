@@ -50,3 +50,39 @@ at qpnsjfbm:33. Their common root charges are 6.336206967 and
 Seeds, order, action sources and exact charges are in `branches.json`.
 Its SHA256 is `05df2febce0152ccd6f098d4f46c7f421d52992940e45c16edd4f0163b27e51e`. Cores 0–1 and 2–3 are now reserved
 for the eight fixed jobs. No outcome has selected or replaced an action.
+
+Notation correction: the frozen coordinates are unchanged. `f3d4` is Nd4,
+`f3g5` is Ng5, `d4b6` is Qb6 and `a5b6` is Bb6; all are quiet.
+The earlier shorthand in the ledger incorrectly called these captures and
+reversed the black piece types. Proposals and jobs use only the correct UCI
+strings from the engine; no job or selection is changed.
+
+## Completed: action targets are now executable
+
+Original launcher 88016 exited 0; eight first attempts, 816.69 seconds on two
+core pairs, no faults/retries. C++ rule verification covers 602 frames; every
+view/clock and matched root post-clock passes. Host audit finds all 36 owned
+fixture/proposal/rollout groups terminal; cores 0–3 are released. No GPU.
+
+White Nd4: loss, win; Ng5: win, win. Black Qb6: loss, win; Bb6: cutoff, win.
+Three fully observed pairs yield one improvement and two ties; one pair is
+unknown. Two source groups cannot establish action superiority or Elo. Ng5
+had zero proposal probability, so the collector demonstrates exploration
+beyond current strategy support. Both knight moves were hidden; its wins
+finish via hidden rooks, not evidence for a simple root concealment bonus.
+
+Published-format targets contain eight root records, seven returns, four
+paired records and explicit censor intervals. Sixteen privacy checks pass;
+all branches of a source share the same permitted-input hash and data split.
+Natural-ending-only training would be biased if cutoff depends on action.
+Total branch wall cost is 1,617.74 seconds plus 24.94 seconds for proposals,
+yielding 334 new decisions. These are cost observations, not a scale forecast.
+
+Proposed next scope for review: 16 outcome-independent development prefixes,
+two actions × two seeds each, a five-hour cap with four available core pairs,
+and a frozen observable root-critic input before collection. This can measure
+useful label density and variability across positions. It is not launched,
+and v37-v37 targets do not certify transfer to the top six. No neural fit or
+new ZIP yet. Please review `analysis/action-continuation-20261102/README.md`
+under Astra's directory, plus `root-dataset.json`, `paired-targets.jsonl`,
+`review.json` and `taxonomy.json` there.

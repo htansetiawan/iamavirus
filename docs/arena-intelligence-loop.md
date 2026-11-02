@@ -565,3 +565,26 @@ stronger policy. The next proposed learning interface must distinguish root
 action comparisons from equilibrium leaf evaluation and preserve policy,
 budget and private-history provenance. No model fit, guard change or new ZIP
 follows from this pilot. [Results and target contract](../astra-submissions/analysis/budget-continuation-20261102/README.md).
+
+## Alternative-action outcomes are now collected under matched clocks
+
+Experiment 243 adds an explicit root-action intervention to the verified
+history-restored simulator. A permitted-input proposal selects the bot's own
+choice and a different supported move; both branches pay the same measured
+proposal cost. Subsequent moves use actual clocks. An isolated diagnostic
+computes all root action values in one tree traversal; rollout policy bytes
+remain unchanged.
+
+Eight first attempts on two development prefixes pass rule, observation and
+clock checks over 602 frames. Nd4 produces a loss and a win; alternative Ng5
+produces two wins. A second comparison produces one tied pair and one cutoff.
+This supplies seven terminal labels and three fully observed paired targets,
+not evidence that a new policy is stronger. All branches stay in two source
+groups; cutoff returns remain null with explicit loss-to-win bounds.
+
+The taxonomy describes hidden-rook finishes in the Ng5 branches, but both
+initial knight moves were concealed. It therefore does not justify adding a
+generic concealment bonus. The intended learning interface is an observable
+root action critic, whose predictions must later earn independent decision
+and match tests. No fit or new ZIP follows from these two positions.
+[Implementation, targets and results](../astra-submissions/analysis/action-continuation-20261102/README.md).
