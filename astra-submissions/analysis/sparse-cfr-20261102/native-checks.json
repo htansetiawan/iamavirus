@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "negative_control_detected": true,
+  "records": [
+    {
+      "command": "/home/henrytan/git/iamavirus/astra-submissions/experiments/sparse-cfr-20261102/build/check-opt",
+      "binary_sha256": "0a04f00a5a4c033d50cf0b361b253e27e05bddd476d66020663691efcc9efcc7",
+      "exit_code": 0,
+      "stdout": "{\"passed\":true,\"bit_identical_checkpoints\":9569,\"compared_doubles\":6263272,\"iterations\":8193,\"large_actions\":257,\"growing_tree\":true,\"pending_without_growth\":true}\n",
+      "stderr": "stale predictions cleared: 496\n"
+    },
+    {
+      "command": "/home/henrytan/git/iamavirus/astra-submissions/experiments/sparse-cfr-20261102/build/check-san",
+      "binary_sha256": "32b0a0def28b5b9fd122e54891950e36d672b6a780483fcb037ae232bcc37ac1",
+      "exit_code": 0,
+      "stdout": "{\"passed\":true,\"bit_identical_checkpoints\":9569,\"compared_doubles\":6263272,\"iterations\":8193,\"large_actions\":257,\"growing_tree\":true,\"pending_without_growth\":true}\n",
+      "stderr": "stale predictions cleared: 496\n"
+    },
+    {
+      "command": "/home/henrytan/git/iamavirus/astra-submissions/experiments/sparse-cfr-20261102/build/check-negative",
+      "binary_sha256": "d00359cbfef9847c3f6cb20fc07d980cfc5eb651c7f81553ab6c5995274179c4",
+      "exit_code": -6,
+      "stdout": "",
+      "stderr": "mismatch slot=60 base=0.073371699106903776 fast=0.073234051343763124\nmismatch slot=76 base=0 fast=0.0024152011222205011\nmismatch slot=77 base=0 fast=0.0093278255896817926\nmismatch slot=78 base=0 fast=-0.011297565596592561\nmismatch slot=82 base=0 fast=0.00085057780353627423\nmismatch slot=83 base=0 fast=-0.0017491451399940809\nmismatch slot=84 base=0 fast=-0.032109279843016217\nmismatch slot=88 base=0 fast=-0.025853874886813462\nmismatch slot=89 base=0 fast=-0.032394878239541999\nmismatch slot=94 base=0 fast=-0.039432967350999264\nmismatch slot=95 base=0 fast=-0.0059218629817888793\nmismatch slot=96 base=0 fast=0.0038136667573455091\nmismatch slot=100 base=0 fast=-0.019430288285185809\nmismatch slot=101 base=0 fast=-0.078880179558962399\nmismatch slot=102 base=0 fast=0.0090751478078478047\nmismatch slot=106 base=0 fast=0.014963455474808729\nmismatch slot=107 base=0 fast=-0.039233841278573052\nmismatch slot=108 base=0 fast=-0.016282961517214301\nmismatch slot=112 base=0 fast=-0.035526978568451842\nmismatch slot=114 base=0 fast=-0.03026201414917451\nmismatch slot=118 base=0 fast=-0.074556944772985453\nmismatch slot=119 base=0 fast=-0.0275836689669842\nmismatch slot=122 base=-0.11082552906571756 fast=-0.11185001519850456\nmismatch slot=125 base=0.073371699106903776 fast=0.073234051343763124\nmismatch slot=206 base=0.21030827326693696 fast=0.21522969524760258\nmismatch slot=207 base=0.36454052376806023 fast=0.38397048427180053\nmismatch slot=208 base=0.42515120296500286 fast=0.40079982048059692\nmismatch slot=212 base=0.662948491482649 fast=0.66847915719144135\nmismatch slot=213 base=0.33705150851735094 fast=0.3315208428085587\nmismatch slot=224 base=0.025629712443269222 fast=0\nmismatch slot=225 base=0.39319447792437828 fast=0.39394165166517231\nmismatch slot=226 base=0.5811758096323526 fast=0.60605834833482775\nmismatch slot=230 base=0.34424556880031382 fast=0.32752656861537677\nmismatch slot=232 base=0.65575443119968613 fast=0.67247343138462323\nmismatch slot=236 base=0.58414630236281961 fast=0.63936092023316426\nmismatch slot=237 base=0.27533902743581523 fast=0.23524439312079809\nmismatch slot=238 base=0.14051467020136527 fast=0.12539468664603776\nmismatch slot=254 base=0.54635487231264712 fast=0.54661466077397947\nmismatch slot=255 base=0.2533366364346688 fast=0.25298160248844831\nmismatch slot=256 base=0.2003084912526841 fast=0.20040373673757211\n"
+    }
+  ]
+}
