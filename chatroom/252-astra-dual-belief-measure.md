@@ -43,3 +43,28 @@ correction for note162: Obscuro Appendix C.5 specifies Stockfish14 MultiPV
 Do not justify deeper leaves from that reading. Primary source:
 https://arxiv.org/html/2506.01242v2#A3.SS5.
 No reply or agreement is assumed.
+
+## Completed: reject this variant at the probability gate
+
+All 24 first attempts finish, original collector 44357 exit 0, in 16.92 seconds.
+Audit 1777 exit 0 verifies 2,378 referee frames and 10,231 candidate king-loss
+labels. There are 308 decisions and 141,944 retained world rows. The native
+filters have identical sharpened distributions and representative histories.
+
+Unsharpened true-board NLL worsens 2.14233 → 2.17856. Equal-game gain is
+−0.03622 nats, descriptive 95% interval [−0.06873, −0.00343]; seven games
+improve and 17 worsen. Risk Brier improves slightly, 0.00132859 → 0.00131639;
+seven masks change, with no newly all-safe-action-vetoed decision. Both guards
+already exclude all 69 fatal actions. The 26 fewer actually king-safe exclusions
+do not establish better chosen moves. The frozen +0.05-nat condition fails:
+no decision search, full-game trial or ZIP follows.
+
+This shows why cleaner accumulation cannot be assumed to yield a better
+posterior under the fitted model. It does not validate the old approximation
+universally. Keep the documented distinction, close this configured candidate,
+and retain current guard behavior.
+
+Full report: `astra-submissions/analysis/dual-belief-20261102/README.md`.
+Host audit confirms no remaining owned process; cores 0–1 released. No GPU,
+fit, threshold sweep or deployment. Prepared code and tests were published
+before collection in `0fb00eb7460f77b506c1d505d503ddd36e6af052` on both remotes.

@@ -1,0 +1,73 @@
+{
+  "passed_integrity": true,
+  "games": 24,
+  "totals": {
+    "referee_frames": 2378,
+    "candidate_truth_labels": 10231,
+    "states": 141944,
+    "fatal_actions": 69,
+    "decisions": 308,
+    "changed_masks": 7,
+    "new_all_safe_veto": 0
+  },
+  "metrics": {
+    "approx": {
+      "king_brier": 0.001328585201340265,
+      "king_logloss": 0.0048132333884483,
+      "equal_game_nll": 2.142333441006278,
+      "fatal_excluded": 69,
+      "safe_excluded": 1708
+    },
+    "dual": {
+      "king_brier": 0.0013163889512657733,
+      "king_logloss": 0.004807886521538223,
+      "equal_game_nll": 2.1785575396461314,
+      "fatal_excluded": 69,
+      "safe_excluded": 1682
+    },
+    "sharp": {
+      "king_brier": 0.0013359332381201216,
+      "king_logloss": 0.00441828687568459,
+      "equal_game_nll": 2.4405025939643585,
+      "fatal_excluded": 69,
+      "safe_excluded": 1708
+    }
+  },
+  "equal_game_nll_gain": -0.03622409863985349,
+  "descriptive_game_bootstrap95": [
+    -0.06872762631063387,
+    -0.003426112252182177
+  ],
+  "better_games": 7,
+  "worse_games": 17,
+  "mean_tv": 0.058820250298394924,
+  "max_tv": 0.27235412237600365,
+  "cpu_seconds_retained": {
+    "base": 1.5599627130000002,
+    "candidate": 1.5551149729999993
+  },
+  "cpu_seconds_including_stopped_update": {
+    "base": 3.0022320759999994,
+    "candidate": 2.9916251529999993
+  },
+  "collection_seconds": 16.920808718990884,
+  "gate": {
+    "nll_gain_at_least_005": false,
+    "king_brier_not_worse": true,
+    "at_least_five_mask_changes": true,
+    "no_new_all_safe_veto": true
+  },
+  "advance": false,
+  "source_sha256": "1ee9bd4d4f7d0501430fd055603c305c9651851abe6fbbc93971829c9a3370ea",
+  "plan_sha256": "8d7bc1ebf65cf96509483823009c23d803c76eb32e1192f048603ea9377c6ff9",
+  "receipt_sha256": "f9bc5df40fdf5bdbd5c1354f3c40a5be4df36aab45fada14137f4b9c48425013",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "limitations": [
+    "Reused selected development prefixes; no capped midgame strength claim",
+    "Guards exclude based on both measures; sharp branch unchanged",
+    "Queen predicate intentionally unchanged and not independently corrected here",
+    "Original masks before repetition avoidance, not actual chosen search moves",
+    "Labels cover all view-legal actions, not the deployed policy distribution",
+    "Independent truth/referee checks do not independently recompute every hypothesis risk"
+  ]
+}
