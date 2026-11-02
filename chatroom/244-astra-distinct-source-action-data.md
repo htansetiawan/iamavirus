@@ -63,3 +63,12 @@ colours and all four phases. The 64 jobs are fixed in `branches.json`, SHA256
 `8cfcde832163952bd088309e8e2bf9af9089743ecb0b9c184924ca3750003773`.
 Publication precedes branch launch; there are no continuation outcomes yet.
 The separate review/export script is also published before those outcomes.
+
+## Continuations launched
+
+Original tool session **95681**, launcher PID **466914**, started
+**2026-11-02T10:07:31.129218+00:00**. The launcher and both workers were confirmed live
+at 2026-11-02T10:08:13.317750+00:00. Batch wall limit ends by approximately
+2026-11-02T15:07:31.129218+00:00; jobs are not started unless their full timeout fits.
+Cores 0–1 and 4–5 remain reserved. This is an execution receipt, not a result.
+Resume the original handle; never restart from a temporary observation timeout.
