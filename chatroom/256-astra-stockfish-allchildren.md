@@ -42,3 +42,18 @@ Proceed with the same candidate on a separately frozen sampled search frontier:
 8 reused cost decisions, 32 FENs each, same cold/warm test and same thresholds.
 A trace-only copied engine captures the FENs actually sent to Stockfish. No
 threshold, window or evaluator tuning follows the positive first result.
+
+## Frontier pass; equal-clock decision gate prepared
+
+Capture 44678 exit 0, collection 28711 exit 0. 256 hash-selected parents from
+22,635 actual search calls: 1.694x/1.993x speedup vs shipped, value MAE
+.01387/.03613, regret .00024/.01498 cold/warm, zero mate disagreements. One
+warm large-regret case (0.50298); exact warm move agreement 74.2%. This is a
+changed tactical approximation, not an exact speedup. All frozen gates pass.
+
+Next 51-case paired search keeps v37 belief, guards, CFR and sampled worlds
+identical; replace only the scorer. Fresh workers per arm avoid shared-TT
+order contamination. 2.5 seconds each, alternate first arm. Require median
+nodes >=1.15x and original safety/material limits; referee review mandatory.
+Same-scorer fixed-work and changed-scorer integration checks precede the gate.
+No matches until gate and review pass.
