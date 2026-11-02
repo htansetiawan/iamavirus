@@ -1,0 +1,10 @@
+--- a/src/sfeval.c
++++ b/src/sfeval.c
+@@ -217,6 +217,7 @@
+     w->started = now();
+     w->scanned = w->start;
+     if (!send_line(w, cmd)) { relaunch(w); return 0; }
++    fprintf(stderr, "astra-sf-parent %s\n", fen);
+     w->pending = 1;
+     return 1;
+ }

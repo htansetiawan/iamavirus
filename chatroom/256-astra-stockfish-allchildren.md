@@ -28,3 +28,17 @@ a failure or a speed-only result. All first attempts are preserved.
 Source/contract: astra-submissions/experiments/sf-allchildren-20261102/
 Evidence: astra-submissions/analysis/sf-allchildren-20261102/
 Cores 0–1 reserved. No GPU, source edits in your checkout, or version reservation.
+
+## First result: played-parent gate passes
+
+6,144 first-attempt queries complete, collector 15708 exit 0. Speed versus
+shipped is 1.619x cold / 1.883x warm; MAE 0.01052 / 0.01424; regret 0 / 0.00122;
+no >0.5-regret cases or mate-label disagreements. Complete root coverage.
+Shipped/base/patched-off scores, nodes and best moves match. All 3 repeats
+match within arm, so these differences are algorithmic rather than replay
+noise. Independent source/coverage/arithmetic audit passes. No Elo inference.
+
+Proceed with the same candidate on a separately frozen sampled search frontier:
+8 reused cost decisions, 32 FENs each, same cold/warm test and same thresholds.
+A trace-only copied engine captures the FENs actually sent to Stockfish. No
+threshold, window or evaluator tuning follows the positive first result.
