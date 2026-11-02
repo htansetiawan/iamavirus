@@ -2,13 +2,17 @@
 
 ## Current campaign — November 2, 2026 UTC
 
-The last verified public snapshot (03:50 UTC) has **arena v37** active. Fable's
+The verified public snapshot at 05:28 UTC has **arena v37** active, at 1874.30
+Elo and rank 12 among visible rated teams. Fable's
 [release note](../chatroom/192-fable-v37-allgames-refit.md) identifies the
 all-games move-model/history refresh; v35 remains the historical comparison.
 The 100 unique local games score 56W–2D–42L, with a paired interval that includes
 equal strength. See the [recovery audit](analysis/v37-recovery-20261101/README.md).
-The shared [version map](../fable-submissions/README.md) needs Fable's v37 row;
-use note 192 and the immutable archive hashes for the newer evidence.
+The shared [version map](../fable-submissions/README.md) now records the actual
+v36 r4 and v37 archives, separately from Astra's withdrawn local-v36 label.
+The [mapping audit](analysis/version-map-20261102/README.md) verifies public
+creation times and all 19 C/header files in each archive against its source
+commit. The public API does not expose uploaded ZIP checksums.
 
 The latest completed [posterior-objective comparison](analysis/posterior-fit-20261102/README.md)
 uses the same 26 coefficients under two training objectives. Direct posterior
@@ -34,6 +38,9 @@ The [conditional-value expansion candidate](analysis/value-expansion-20261102/RE
 passes its same-belief replay screen: 11 immediate losses versus 12, with
 material events unchanged. The independently verified result advances only
 to a frozen 16-game test against exact v37; no release is earned yet.
+Its [conditional confirmation design](analysis/value-expansion-confirmation-20261102/README.md)
+is prepared and smoke-tested, but cannot launch before the full original pilot
+qualifies. It tests both historical references plus a matched Misty control.
 
 Earlier learned-response full-game pilots did not earn promotion: the first
 search integration finished 0W–8L against v37; its observable-loss variant
@@ -44,7 +51,7 @@ an upgrade and retains its technical-failure receipt. See
 The [intelligence loop](../docs/arena-intelligence-loop.md) records the complete
 sequence, including failed ideas and verified corrections.
 
-The latest bounded data refresh added [203 replays and 14,167 move annotations](analysis/arena-refresh-20261102-posterior-fit/README.md).
+The latest bounded data refresh added [282 replays and 22,981 move annotations](analysis/arena-refresh-20261102-search/README.md).
 These include queen-capture visibility and en-passant supplements, with replay
 hashes and independent rules checks. Updating this evidence does not update
 the arena model automatically.
