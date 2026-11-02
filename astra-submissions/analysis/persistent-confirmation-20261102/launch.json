@@ -1,0 +1,800 @@
+{
+  "at": "2026-11-02T00:27:16.568899+00:00",
+  "published_plan_commit": "57194993aa6e5c0c612e7d8265ddbfa1b10cead1",
+  "plan_sha256": "abf5eabff9ae191f05fe4209ac6a73697fd9061e9534738f9614f2d20361aa33",
+  "original_handles": {
+    "0": 56175,
+    "1": 66854,
+    "2": 7075
+  },
+  "host_checks": [
+    {
+      "lane": 0,
+      "job": "confirm-v35-p0-white",
+      "parent": {
+        "pid": 303142,
+        "state": "S",
+        "ppid": 303141,
+        "pgid": 303141,
+        "sid": 303141,
+        "starttime": 3524057,
+        "affinity": [
+          0,
+          1
+        ],
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "0"
+        ],
+        "namespace_pids": [
+          303142,
+          2
+        ],
+        "pid_namespace": "pid:[4026532680]",
+        "rss_kib": 42084,
+        "peak_rss_kib": 142556
+      },
+      "worker": {
+        "pid": 303155,
+        "state": "S",
+        "ppid": 303142,
+        "pgid": 303155,
+        "sid": 303155,
+        "starttime": 3524196,
+        "affinity": [
+          0,
+          1
+        ],
+        "argv": [
+          "/home/henrytan/git/iamavirus/.venv/bin/python",
+          "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "worker",
+          "--job",
+          "confirm-v35-p0-white"
+        ],
+        "namespace_pids": [
+          303155,
+          4
+        ],
+        "pid_namespace": "pid:[4026532680]",
+        "rss_kib": 43860,
+        "peak_rss_kib": 142464
+      },
+      "bot_groups": [
+        {
+          "namespace_leader": {
+            "pid": 5,
+            "state": "S",
+            "ppid": 4,
+            "pgid": 5,
+            "sid": 5,
+            "starttime": 3524339
+          },
+          "host_leader": {
+            "pid": 303167,
+            "state": "T",
+            "ppid": 303155,
+            "pgid": 303167,
+            "sid": 303167,
+            "starttime": 3524339,
+            "affinity": [
+              0,
+              1
+            ],
+            "argv": [
+              "./mist"
+            ],
+            "namespace_pids": [
+              303167,
+              5
+            ],
+            "pid_namespace": "pid:[4026532680]",
+            "rss_kib": 30764,
+            "peak_rss_kib": 84020
+          },
+          "members": [
+            {
+              "pid": 303167,
+              "state": "T",
+              "ppid": 303155,
+              "pgid": 303167,
+              "sid": 303167,
+              "starttime": 3524339,
+              "affinity": [
+                0,
+                1
+              ],
+              "argv": [
+                "./mist"
+              ],
+              "namespace_pids": [
+                303167,
+                5
+              ],
+              "pid_namespace": "pid:[4026532680]",
+              "rss_kib": 30764,
+              "peak_rss_kib": 84020
+            },
+            {
+              "pid": 303171,
+              "state": "T",
+              "ppid": 303167,
+              "pgid": 303167,
+              "sid": 303167,
+              "starttime": 3524340,
+              "affinity": [
+                0,
+                1
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303171,
+                9
+              ],
+              "pid_namespace": "pid:[4026532680]",
+              "rss_kib": 265416,
+              "peak_rss_kib": 326076
+            },
+            {
+              "pid": 303174,
+              "state": "T",
+              "ppid": 303167,
+              "pgid": 303167,
+              "sid": 303167,
+              "starttime": 3524375,
+              "affinity": [
+                0,
+                1
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303174,
+                12
+              ],
+              "pid_namespace": "pid:[4026532680]",
+              "rss_kib": 265236,
+              "peak_rss_kib": 325764
+            }
+          ],
+          "sampled_group_rss_kib": 561416
+        },
+        {
+          "namespace_leader": {
+            "pid": 15,
+            "state": "S",
+            "ppid": 4,
+            "pgid": 15,
+            "sid": 15,
+            "starttime": 3524410
+          },
+          "host_leader": {
+            "pid": 303177,
+            "state": "R",
+            "ppid": 303155,
+            "pgid": 303177,
+            "sid": 303177,
+            "starttime": 3524410,
+            "affinity": [
+              0,
+              1
+            ],
+            "argv": [
+              "./mist"
+            ],
+            "namespace_pids": [
+              303177,
+              15
+            ],
+            "pid_namespace": "pid:[4026532680]",
+            "rss_kib": 79912,
+            "peak_rss_kib": 82780
+          },
+          "members": [
+            {
+              "pid": 303177,
+              "state": "R",
+              "ppid": 303155,
+              "pgid": 303177,
+              "sid": 303177,
+              "starttime": 3524410,
+              "affinity": [
+                0,
+                1
+              ],
+              "argv": [
+                "./mist"
+              ],
+              "namespace_pids": [
+                303177,
+                15
+              ],
+              "pid_namespace": "pid:[4026532680]",
+              "rss_kib": 79912,
+              "peak_rss_kib": 82780
+            },
+            {
+              "pid": 303181,
+              "state": "S",
+              "ppid": 303177,
+              "pgid": 303177,
+              "sid": 303177,
+              "starttime": 3524411,
+              "affinity": [
+                0,
+                1
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/v35/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303181,
+                19
+              ],
+              "pid_namespace": "pid:[4026532680]",
+              "rss_kib": 236036,
+              "peak_rss_kib": 326028
+            },
+            {
+              "pid": 303186,
+              "state": "S",
+              "ppid": 303177,
+              "pgid": 303177,
+              "sid": 303177,
+              "starttime": 3524447,
+              "affinity": [
+                0,
+                1
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/v35/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303186,
+                22
+              ],
+              "pid_namespace": "pid:[4026532680]",
+              "rss_kib": 236124,
+              "peak_rss_kib": 325956
+            }
+          ],
+          "sampled_group_rss_kib": 552072
+        }
+      ]
+    },
+    {
+      "lane": 1,
+      "job": "confirm-base-p0-white",
+      "parent": {
+        "pid": 303153,
+        "state": "S",
+        "ppid": 303152,
+        "pgid": 303152,
+        "sid": 303152,
+        "starttime": 3524173,
+        "affinity": [
+          4,
+          5
+        ],
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "1"
+        ],
+        "namespace_pids": [
+          303153,
+          2
+        ],
+        "pid_namespace": "pid:[4026532742]",
+        "rss_kib": 42108,
+        "peak_rss_kib": 142576
+      },
+      "worker": {
+        "pid": 303166,
+        "state": "S",
+        "ppid": 303153,
+        "pgid": 303166,
+        "sid": 303166,
+        "starttime": 3524314,
+        "affinity": [
+          4,
+          5
+        ],
+        "argv": [
+          "/home/henrytan/git/iamavirus/.venv/bin/python",
+          "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "worker",
+          "--job",
+          "confirm-base-p0-white"
+        ],
+        "namespace_pids": [
+          303166,
+          4
+        ],
+        "pid_namespace": "pid:[4026532742]",
+        "rss_kib": 43708,
+        "peak_rss_kib": 142500
+      },
+      "bot_groups": [
+        {
+          "namespace_leader": {
+            "pid": 5,
+            "state": "S",
+            "ppid": 4,
+            "pgid": 5,
+            "sid": 5,
+            "starttime": 3524460
+          },
+          "host_leader": {
+            "pid": 303189,
+            "state": "T",
+            "ppid": 303166,
+            "pgid": 303189,
+            "sid": 303189,
+            "starttime": 3524460,
+            "affinity": [
+              4,
+              5
+            ],
+            "argv": [
+              "./mist"
+            ],
+            "namespace_pids": [
+              303189,
+              5
+            ],
+            "pid_namespace": "pid:[4026532742]",
+            "rss_kib": 14800,
+            "peak_rss_kib": 86188
+          },
+          "members": [
+            {
+              "pid": 303189,
+              "state": "T",
+              "ppid": 303166,
+              "pgid": 303189,
+              "sid": 303189,
+              "starttime": 3524460,
+              "affinity": [
+                4,
+                5
+              ],
+              "argv": [
+                "./mist"
+              ],
+              "namespace_pids": [
+                303189,
+                5
+              ],
+              "pid_namespace": "pid:[4026532742]",
+              "rss_kib": 14800,
+              "peak_rss_kib": 86188
+            },
+            {
+              "pid": 303193,
+              "state": "T",
+              "ppid": 303189,
+              "pgid": 303189,
+              "sid": 303189,
+              "starttime": 3524460,
+              "affinity": [
+                4,
+                5
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303193,
+                9
+              ],
+              "pid_namespace": "pid:[4026532742]",
+              "rss_kib": 265356,
+              "peak_rss_kib": 325844
+            },
+            {
+              "pid": 303198,
+              "state": "T",
+              "ppid": 303189,
+              "pgid": 303189,
+              "sid": 303189,
+              "starttime": 3524498,
+              "affinity": [
+                4,
+                5
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303198,
+                12
+              ],
+              "pid_namespace": "pid:[4026532742]",
+              "rss_kib": 265228,
+              "peak_rss_kib": 325668
+            }
+          ],
+          "sampled_group_rss_kib": 545384
+        },
+        {
+          "namespace_leader": {
+            "pid": 15,
+            "state": "R",
+            "ppid": 4,
+            "pgid": 15,
+            "sid": 15,
+            "starttime": 3524534
+          },
+          "host_leader": {
+            "pid": 303201,
+            "state": "R",
+            "ppid": 303166,
+            "pgid": 303201,
+            "sid": 303201,
+            "starttime": 3524534,
+            "affinity": [
+              4,
+              5
+            ],
+            "argv": [
+              "./mist"
+            ],
+            "namespace_pids": [
+              303201,
+              15
+            ],
+            "pid_namespace": "pid:[4026532742]",
+            "rss_kib": 67228,
+            "peak_rss_kib": 84272
+          },
+          "members": [
+            {
+              "pid": 303201,
+              "state": "R",
+              "ppid": 303166,
+              "pgid": 303201,
+              "sid": 303201,
+              "starttime": 3524534,
+              "affinity": [
+                4,
+                5
+              ],
+              "argv": [
+                "./mist"
+              ],
+              "namespace_pids": [
+                303201,
+                15
+              ],
+              "pid_namespace": "pid:[4026532742]",
+              "rss_kib": 67228,
+              "peak_rss_kib": 84272
+            },
+            {
+              "pid": 303205,
+              "state": "S",
+              "ppid": 303201,
+              "pgid": 303201,
+              "sid": 303201,
+              "starttime": 3524535,
+              "affinity": [
+                4,
+                5
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/base/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303205,
+                19
+              ],
+              "pid_namespace": "pid:[4026532742]",
+              "rss_kib": 265320,
+              "peak_rss_kib": 325856
+            },
+            {
+              "pid": 303208,
+              "state": "S",
+              "ppid": 303201,
+              "pgid": 303201,
+              "sid": 303201,
+              "starttime": 3524570,
+              "affinity": [
+                4,
+                5
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/base/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303208,
+                22
+              ],
+              "pid_namespace": "pid:[4026532742]",
+              "rss_kib": 265356,
+              "peak_rss_kib": 325948
+            }
+          ],
+          "sampled_group_rss_kib": 597904
+        }
+      ]
+    },
+    {
+      "lane": 2,
+      "job": "confirm-v35-p1-white",
+      "parent": {
+        "pid": 303162,
+        "state": "S",
+        "ppid": 303161,
+        "pgid": 303161,
+        "sid": 303161,
+        "starttime": 3524289,
+        "affinity": [
+          6,
+          7
+        ],
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "2"
+        ],
+        "namespace_pids": [
+          303162,
+          2
+        ],
+        "pid_namespace": "pid:[4026532802]",
+        "rss_kib": 41980,
+        "peak_rss_kib": 142448
+      },
+      "worker": {
+        "pid": 303182,
+        "state": "S",
+        "ppid": 303162,
+        "pgid": 303182,
+        "sid": 303182,
+        "starttime": 3524432,
+        "affinity": [
+          6,
+          7
+        ],
+        "argv": [
+          "/home/henrytan/git/iamavirus/.venv/bin/python",
+          "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "worker",
+          "--job",
+          "confirm-v35-p1-white"
+        ],
+        "namespace_pids": [
+          303182,
+          4
+        ],
+        "pid_namespace": "pid:[4026532802]",
+        "rss_kib": 43608,
+        "peak_rss_kib": 142464
+      },
+      "bot_groups": [
+        {
+          "namespace_leader": {
+            "pid": 5,
+            "state": "S",
+            "ppid": 4,
+            "pgid": 5,
+            "sid": 5,
+            "starttime": 3524583
+          },
+          "host_leader": {
+            "pid": 303209,
+            "state": "T",
+            "ppid": 303182,
+            "pgid": 303209,
+            "sid": 303209,
+            "starttime": 3524583,
+            "affinity": [
+              6,
+              7
+            ],
+            "argv": [
+              "./mist"
+            ],
+            "namespace_pids": [
+              303209,
+              5
+            ],
+            "pid_namespace": "pid:[4026532802]",
+            "rss_kib": 31776,
+            "peak_rss_kib": 87236
+          },
+          "members": [
+            {
+              "pid": 303209,
+              "state": "T",
+              "ppid": 303182,
+              "pgid": 303209,
+              "sid": 303209,
+              "starttime": 3524583,
+              "affinity": [
+                6,
+                7
+              ],
+              "argv": [
+                "./mist"
+              ],
+              "namespace_pids": [
+                303209,
+                5
+              ],
+              "pid_namespace": "pid:[4026532802]",
+              "rss_kib": 31776,
+              "peak_rss_kib": 87236
+            },
+            {
+              "pid": 303213,
+              "state": "T",
+              "ppid": 303209,
+              "pgid": 303209,
+              "sid": 303209,
+              "starttime": 3524583,
+              "affinity": [
+                6,
+                7
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303213,
+                9
+              ],
+              "pid_namespace": "pid:[4026532802]",
+              "rss_kib": 265336,
+              "peak_rss_kib": 325880
+            },
+            {
+              "pid": 303218,
+              "state": "T",
+              "ppid": 303209,
+              "pgid": 303209,
+              "sid": 303209,
+              "starttime": 3524623,
+              "affinity": [
+                6,
+                7
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303218,
+                12
+              ],
+              "pid_namespace": "pid:[4026532802]",
+              "rss_kib": 265296,
+              "peak_rss_kib": 325800
+            }
+          ],
+          "sampled_group_rss_kib": 562408
+        },
+        {
+          "namespace_leader": {
+            "pid": 15,
+            "state": "R",
+            "ppid": 4,
+            "pgid": 15,
+            "sid": 15,
+            "starttime": 3524668
+          },
+          "host_leader": {
+            "pid": 303221,
+            "state": "R",
+            "ppid": 303182,
+            "pgid": 303221,
+            "sid": 303221,
+            "starttime": 3524668,
+            "affinity": [
+              6,
+              7
+            ],
+            "argv": [
+              "./mist"
+            ],
+            "namespace_pids": [
+              303221,
+              15
+            ],
+            "pid_namespace": "pid:[4026532802]",
+            "rss_kib": 70472,
+            "peak_rss_kib": 81916
+          },
+          "members": [
+            {
+              "pid": 303221,
+              "state": "R",
+              "ppid": 303182,
+              "pgid": 303221,
+              "sid": 303221,
+              "starttime": 3524668,
+              "affinity": [
+                6,
+                7
+              ],
+              "argv": [
+                "./mist"
+              ],
+              "namespace_pids": [
+                303221,
+                15
+              ],
+              "pid_namespace": "pid:[4026532802]",
+              "rss_kib": 70472,
+              "peak_rss_kib": 81916
+            },
+            {
+              "pid": 303225,
+              "state": "S",
+              "ppid": 303221,
+              "pgid": 303221,
+              "sid": 303221,
+              "starttime": 3524668,
+              "affinity": [
+                6,
+                7
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/v35/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303225,
+                19
+              ],
+              "pid_namespace": "pid:[4026532802]",
+              "rss_kib": 258576,
+              "peak_rss_kib": 319584
+            },
+            {
+              "pid": 303228,
+              "state": "S",
+              "ppid": 303221,
+              "pgid": 303221,
+              "sid": 303221,
+              "starttime": 3524714,
+              "affinity": [
+                6,
+                7
+              ],
+              "argv": [
+                "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/v35/bin/stockfish"
+              ],
+              "namespace_pids": [
+                303228,
+                22
+              ],
+              "pid_namespace": "pid:[4026532802]",
+              "rss_kib": 264752,
+              "peak_rss_kib": 325388
+            }
+          ],
+          "sampled_group_rss_kib": 593800
+        }
+      ]
+    }
+  ],
+  "audit_correction": "Initial host audit mistakenly used sandbox-local PIDs as host PIDs; its assertion stopped before writing a receipt. This audit maps exact lane argv to a PID namespace, then matches NSpid and recorded starttime. No game repeated, stopped or modified.",
+  "scope": "All three initial jobs live with exact core affinity and owned workers/bot groups. Memory is one point sample, not a worst-case bound. No completed-game claim. Do not restart started jobs."
+}

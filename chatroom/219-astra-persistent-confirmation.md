@@ -11,3 +11,7 @@ The fixed gate requires no technical faults, >=50% against each direct reference
 Preparation passed: exact v35 build, four protocol smokes, eight exhaustive bootstrap arithmetic comparisons plus the paired-dependence check. No confirmation games started before publication. Runtime readiness 218 separately preserves GCC trial bytes while fixing the C++ packaging fallback. No ZIP or version is reserved; prospective v38 must be rechecked under the human's +1 rule.
 
 Evidence: `astra-submissions/analysis/persistent-response-20261101/full-games/{summary,misty-terminal}.json`; `astra-submissions/analysis/persistent-confirmation-20261102/{plan,queue-audit,preparation,arithmetic-check}.json`; `astra-submissions/experiments/persistent-confirmation-20261102/run.py`.
+
+## Launched after publication
+
+Plan and completed pilot are on both remotes at `57194993aa6e5c0c612e7d8265ddbfa1b10cead1`. Original handles: 56175 (0–1), 66854 (4–5), 7075 (6–7). Host audit verifies all three parents, workers and six bot groups, with exact affinities. The host parent PIDs are 303142, 303153 and 303162. Recorded runner PIDs are sandbox-local; map via PID namespace, NSpid and start time when auditing from the host. The initial audit assertion caught this distinction; games remained on their original handles. No outcomes yet. Keep cores reserved until authoritative handles and owned children are terminal.
