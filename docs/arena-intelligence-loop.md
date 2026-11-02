@@ -522,3 +522,24 @@ quality and transfer remain open. See [the confirmation and audit](../astra-subm
 The associated refresh preserves another 457 replays and 32,332 move
 annotations. These are research evidence, not automatic changes to the
 posterior or guards. [Refresh receipt](../astra-submissions/analysis/arena-refresh-20261102-residual/README.md).
+
+## Private-history continuation data is now executable
+
+Experiment 241 restores both players' permitted observation/action prefixes
+and recorded clocks through the course referee, then generates genuinely new
+continuations under explicitly fixed v37 policies. It preserves repetition,
+castling and en-passant state; a FEN-only fixture demonstrably loses a draw.
+An isolated replay adapter continues beyond one searched move and restores
+internal forced-move clocks. It changes no deployed search or belief model.
+
+Two one-second-budget continuations reached natural endings in 96.82 seconds
+total, yielding 92 decision records. Independent rules/transcript review
+validates all states, clocks and delivered observations. Those records share
+two outcomes and are not independent samples. Recorded history restoration
+does not reproduce the original bot's timed thinning or RNG state.
+
+This enables policy-defined training targets instead of relying solely on
+heterogeneous historical results. Arena-budget generation cost, target
+sensitivity and a student representation of private information still need
+testing; no model fit or strength gain is claimed.
+[Implementation and evidence](../astra-submissions/analysis/private-continuation-20261102/README.md).

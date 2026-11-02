@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-02T08:37:47.321366+00:00",
+  "passed": true,
+  "cases": [
+    {
+      "case": "continuation-0",
+      "cxx_rules_frames": 62,
+      "delivered_observations": 121,
+      "clock_prompts": 61,
+      "checked_clock_transitions": 61,
+      "natural_outcome": [
+        "0-1",
+        "King capturable"
+      ],
+      "censored": false,
+      "new_decisions": 29
+    },
+    {
+      "case": "continuation-1",
+      "cxx_rules_frames": 97,
+      "delivered_observations": 191,
+      "clock_prompts": 96,
+      "checked_clock_transitions": 96,
+      "natural_outcome": [
+        "1-0",
+        "King capturable"
+      ],
+      "censored": false,
+      "new_decisions": 63
+    }
+  ],
+  "labelled_decisions": 92,
+  "censored_decisions": 0,
+  "summary_sha256": "83bf2050607ea25422e2efc4cd58a9ed77d593af2b2e48b822f47712c32dddb3",
+  "labels_sha256": "3585bc559258006a458fa12ed995243da7fed5026c44c5c3e9142370988b453d",
+  "source_sha256": "4b09d900250eb7b8c40918f6240b37881ebe856314028227037670e2bc76e498",
+  "rules_source_sha256": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+  "scope": "Independent C++ rules validation, complete delivered observation sequences, all clocks and terminal/censor labels. Linear-size history references. Feasibility only; correlated decisions are not independent labels or strength samples."
+}

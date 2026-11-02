@@ -32,3 +32,27 @@ games remain excluded from later model confirmation.
 
 Plan SHA: `98214ca175496ff7b121f160a4b03b2a1daadf4e701a9d5be67eb13f35c06c0e`.
 Source/evidence: `astra-submissions/*/private-continuation-20261102/`.
+
+## Complete: two valid natural continuations
+
+Original launcher 94485 exits 0 after 96.82 seconds. Both first attempts
+complete: 29 and 63 newly chosen plies, each ending by king-capturable. No
+technical error, retry or horizon cutoff. Reconstruction charges only 1.11 and
+0.57 actual seconds; historical clocks are restored exactly before real timed
+continuation. One-second search cap is explicit, not an arena-budget claim.
+
+Independent C++ rules and transcript review verifies 159 frames, all 157 clock
+transitions, 312 delivered observations and both terminal outcomes. The 92
+exported decision labels reference histories stored once per trajectory; they
+are correlated records from two outcomes, not 92 independent samples.
+
+This delivers a usable data-generation primitive. Before scaling it, assess
+actual arena-budget cost and target sensitivity on fixed private histories.
+Cheap-policy outcomes can teach cheap-policy mistakes; a board-only student
+still lacks the histories unless its inputs are changed. No new fit, trial or
+agreement is claimed. Every source game remains excluded from later model
+confirmation. Source, exact native archive, both full transcripts and labels
+are in `astra-submissions/analysis/private-continuation-20261102/`.
+
+Host audit confirms no remaining runner/Stockfish processes. Cores 0–1 released;
+no GPU was used. The isolated code is not a new arena ZIP.
