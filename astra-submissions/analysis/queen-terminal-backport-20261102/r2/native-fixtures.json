@@ -1,0 +1,180 @@
+{
+  "runs": [
+    {
+      "arm": "base",
+      "rows": [
+        {
+          "name": "king_captures_defended_queen",
+          "flipped": 0,
+          "board": "---R--K------------------------------------Q----------------k---",
+          "side": 0,
+          "move": "d6d7",
+          "expected": 0,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "king_captures_undefended_queen",
+          "flipped": 0,
+          "board": "------K------------------------------------Q----------------k---",
+          "side": 0,
+          "move": "d6d7",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "pinned_knight_captures_queen",
+          "flipped": 0,
+          "board": "----R-K----------------------Q----------------------n-------k---",
+          "side": 0,
+          "move": "f4f5",
+          "expected": 0,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "free_knight_captures_queen",
+          "flipped": 0,
+          "board": "----R-K----------------------Q----------------------n------k----",
+          "side": 0,
+          "move": "f4f5",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "king_captures_defended_queen",
+          "flipped": 1,
+          "board": "---K----------------q------------------------------------k--r---",
+          "side": 1,
+          "move": "e3e2",
+          "expected": 0,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "king_captures_undefended_queen",
+          "flipped": 1,
+          "board": "---K----------------q------------------------------------k------",
+          "side": 1,
+          "move": "e3e2",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "pinned_knight_captures_queen",
+          "flipped": 1,
+          "board": "---K-------N----------------------q----------------------k-r----",
+          "side": 1,
+          "move": "c5c4",
+          "expected": 0,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "free_knight_captures_queen",
+          "flipped": 1,
+          "board": "----K------N----------------------q----------------------k-r----",
+          "side": 1,
+          "move": "c5c4",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        }
+      ],
+      "known_mismatches": 4,
+      "binary_sha256": "26a63dd3211b9a7ceb255d506621490026aa5f65c583168583c045053c2c5790"
+    },
+    {
+      "arm": "base_fixed",
+      "rows": [
+        {
+          "name": "king_captures_defended_queen",
+          "flipped": 0,
+          "board": "---R--K------------------------------------Q----------------k---",
+          "side": 0,
+          "move": "d6d7",
+          "expected": 0,
+          "risk": 0,
+          "sharp": 0
+        },
+        {
+          "name": "king_captures_undefended_queen",
+          "flipped": 0,
+          "board": "------K------------------------------------Q----------------k---",
+          "side": 0,
+          "move": "d6d7",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "pinned_knight_captures_queen",
+          "flipped": 0,
+          "board": "----R-K----------------------Q----------------------n-------k---",
+          "side": 0,
+          "move": "f4f5",
+          "expected": 0,
+          "risk": 0,
+          "sharp": 0
+        },
+        {
+          "name": "free_knight_captures_queen",
+          "flipped": 0,
+          "board": "----R-K----------------------Q----------------------n------k----",
+          "side": 0,
+          "move": "f4f5",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "king_captures_defended_queen",
+          "flipped": 1,
+          "board": "---K----------------q------------------------------------k--r---",
+          "side": 1,
+          "move": "e3e2",
+          "expected": 0,
+          "risk": 0,
+          "sharp": 0
+        },
+        {
+          "name": "king_captures_undefended_queen",
+          "flipped": 1,
+          "board": "---K----------------q------------------------------------k------",
+          "side": 1,
+          "move": "e3e2",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        },
+        {
+          "name": "pinned_knight_captures_queen",
+          "flipped": 1,
+          "board": "---K-------N----------------------q----------------------k-r----",
+          "side": 1,
+          "move": "c5c4",
+          "expected": 0,
+          "risk": 0,
+          "sharp": 0
+        },
+        {
+          "name": "free_knight_captures_queen",
+          "flipped": 1,
+          "board": "----K------N----------------------q----------------------k-r----",
+          "side": 1,
+          "move": "c5c4",
+          "expected": 1,
+          "risk": 1,
+          "sharp": 1
+        }
+      ],
+      "known_mismatches": 0,
+      "binary_sha256": "d8460976af3a2fd1e7b919adbeda28f20034a487de2349e08a4045d086b95de7"
+    }
+  ],
+  "independent_referee_fixtures": 8,
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+}

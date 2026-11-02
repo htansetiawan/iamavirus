@@ -1,0 +1,27 @@
+{
+  "compiler": [
+    "gcc",
+    "-O2",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-std=c11",
+    "src/adapter.c",
+    "src/belief.c",
+    "src/board.c",
+    "src/cfr.c",
+    "src/eval.c",
+    "src/front.c",
+    "src/gtcfr.c",
+    "src/main.c",
+    "src/movemodel.c",
+    "src/proof.c",
+    "src/response.c",
+    "src/search.c",
+    "src/sfeval.c",
+    "-lm",
+    "-o",
+    "mist"
+  ],
+  "unmodified_sha256": "00dc640d9773296b7af7f35b9faceb7f1b2ea6e49199742091415825e5744056",
+  "matches_playing_candidate": true
+}

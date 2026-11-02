@@ -1,0 +1,10 @@
+--- a/src/main.c
++++ b/src/main.c
+@@ -137,6 +137,7 @@
+                 if (MOVE_TO(l.moves[j]) != sq) continue;
+                 int gain = piece_pawns[QUEEN];
+                 Position q = p; Undo v; make_move(&q, l.moves[j], &v);
++                if (mover_left_king_capturable(&q)) continue; /* Fable dd89907: suicidal capture is not a queen loss. */
+                 if (is_attacked(&q, sq, us)) gain -= piece_pawns[p.piece[MOVE_FROM(l.moves[j])]];
+                 if (gain > best) best = gain;
+             }
