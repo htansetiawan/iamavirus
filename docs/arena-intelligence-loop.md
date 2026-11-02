@@ -366,3 +366,27 @@ have low estimated risk. Thus the candidate's separate 7W–1L pilot against
 v37 does not establish improved queen safety. Its planned Misty/control phase
 is running; [the queen-screen evidence](../astra-submissions/analysis/queen-screen-20261101/README.md)
 and the original match acceptance rules are preserved.
+
+
+## 2 November: taxonomy separates missing support, wrong weights and a guard defect
+
+An isolated diagnostic on the same eight queen cases exposes three different
+mechanisms. Against Lost Signal, the real rook attacker is absent from all 917
+remaining worlds. Against Foggy Fischer, it is present in a belief of only 11
+worlds but receives 0.003442% sharpened probability. Against HYPOTHERMIA, the
+true placement has 81.80% probability, yet the guard suppresses Ne7's forcing
+king threat because it counts an opponent capture that loses the opponent's
+king as a queen loss for us.
+
+The last issue is already corrected in Fable's working source (`dd89907`,
+[note 168](../chatroom/168-fable-terminal-aware-capture-events.md)), but absent
+from the immutable v37 archive and the current frozen candidate. On the same
+54 worlds and weights, independently reproducing all old risk values and then
+applying only that predicate changes the sole guard survivor from Qxf4 to Ne7.
+This is a guard-eligibility result, not a new search decision or game win.
+
+The independent referee validates 98,935 dumped-world observations and 272
+new action labels. See [the audit](../astra-submissions/analysis/queen-posterior-20261102/README.md).
+It demonstrates why the taxonomy must feed diagnosis: support recovery,
+probability calibration and terminal-aware capture accounting are different
+repairs. None has been silently added to the running 80-game confirmation.
