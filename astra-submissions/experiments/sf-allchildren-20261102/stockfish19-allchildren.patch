@@ -1,0 +1,87 @@
+--- a/src/search.h
++++ b/src/search.h
+@@ -388,6 +388,7 @@
+ 
+     LimitsType limits;
+ 
++    bool astraAllChildren = false;  // experimental, depth-1 full MultiPV only
+     usize              pvIdx, pvLast;
+     RelaxedAtomic<u64> nodes, tbHits, bestMoveChanges;
+     int                selDepth, nmpMinPly;
+--- a/src/search.cpp
++++ b/src/search.cpp
+@@ -320,6 +320,15 @@
+ 
+     multiPV = std::min(multiPV, rootMoves.size());
+ 
++    // Astra experiment 256: evaluate every legal root child with a full PV
++    // window in a single root pass. All deeper search machinery is unchanged.
++    // This is a different approximation, not bit-exact MultiPV acceleration.
++    const char* allChildren = std::getenv("ASTRA_SF_ALLCHILDREN");
++    astraAllChildren = allChildren && std::string(allChildren) == "1"
++                    && limits.depth == 1 && int(options["Threads"]) == 1
++                    && !skill.enabled() && !tbConfig.rootInTB
++                    && multiPV == rootMoves.size();
++
+     int  searchAgainCounter = 0;
+     bool uciPvSent          = false;
+ 
+@@ -377,6 +386,13 @@
+             Value avg = rootMoves[pvIdx].averageScore;
+             alpha     = std::max(avg - delta, -VALUE_INFINITE);
+             beta      = std::min(avg + delta, VALUE_INFINITE);
++
++            if (astraAllChildren)
++            {
++                alpha = -VALUE_INFINITE;
++                beta  = VALUE_INFINITE;
++                pvLast = rootMoves.size();
++            }
+ 
+             // Adjust optimism based on root move's averageScore
+             optimism[us]  = 114 * avg / (std::abs(avg) + 85);
+@@ -438,6 +454,16 @@
+                 delta += 47 * delta / 128;
+ 
+                 assert(alpha >= -VALUE_INFINITE && beta <= VALUE_INFINITE);
++            }
++
++            if (astraAllChildren)
++            {
++                if (mainThread && !threads.stop)
++                {
++                    main_manager()->output_pv(*this, threads, tt, rootDepth);
++                    uciPvSent = true;
++                }
++                break;
+             }
+ 
+             if (threads.stop && pvIdx)
+@@ -1392,7 +1418,7 @@
+         }
+ 
+         // Step 19. Full-depth search when LMR is skipped
+-        else if (!PvNode || moveCount > 1)
++        else if ((!PvNode || moveCount > 1) && !(rootNode && astraAllChildren))
+         {
+             // Increase reduction if ttMove is not present
+             if (!ttData.move)
+@@ -1406,7 +1432,7 @@
+         // Step 20. For PV nodes only, do a full PV search on the first move
+         // or after a fail high, otherwise let the parent node fail low with
+         // value <= alpha and try another move.
+-        if (PvNode && (moveCount == 1 || value > alpha))
++        if (PvNode && (moveCount == 1 || value > alpha || (rootNode && astraAllChildren)))
+         {
+             (ss + 1)->pv = &pv;
+             (ss + 1)->pv->clear();
+@@ -1536,7 +1562,8 @@
+                     depth -= 3;
+ 
+                 assert(depth > 0);
+-                alpha = value;  // Update alpha! Always alpha < beta
++                if (!(rootNode && astraAllChildren))
++                    alpha = value;  // Keep a full window for every experimental root child
+             }
+         }
+ 

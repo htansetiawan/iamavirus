@@ -1,0 +1,31 @@
+{
+  "records": [
+    {
+      "arm": "base",
+      "args": [
+        "make",
+        "-j2",
+        "build",
+        "ARCH=x86-64-avx2",
+        "COMP=gcc"
+      ],
+      "binary_sha256": "154ad263a8855d3022bbfc545d2fd74e92b2c4a6338ac88684b0887b57005c88"
+    },
+    {
+      "arm": "candidate",
+      "args": [
+        "make",
+        "-j2",
+        "build",
+        "ARCH=x86-64-avx2",
+        "COMP=gcc"
+      ],
+      "binary_sha256": "4f762ec46dc4dd16f7241aea116380129cf51363138f24c09cfcd1f43fc00134"
+    }
+  ],
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "provenance_sha256": "1063c2353bf900b66007af40332620daba53b6c34431158a41dcda5411f64a70",
+  "same_compile_flags": true,
+  "release_is_universal_pgo": true,
+  "limitation": "Rebuilt AVX2 non-PGO controls isolate algorithm; shipped universal PGO binary is a separate comparator."
+}
