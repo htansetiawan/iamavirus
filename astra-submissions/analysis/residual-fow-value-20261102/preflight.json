@@ -1,0 +1,87 @@
+{
+  "at": "2026-11-02T07:46:13.958209+00:00",
+  "native": {
+    "flat": {
+      "parameters": 160098,
+      "export_bytes": 640392,
+      "neutral_exact": true,
+      "nonzero_max_logit_error": 9.5367431640625e-07,
+      "microseconds": [
+        9.46441308684598,
+        9.392861718993117,
+        9.326113867302865,
+        9.274946289394848,
+        9.404348828923048,
+        9.517324805585758,
+        9.469773631565204
+      ],
+      "median_microseconds": 9.404348828923048,
+      "time_pass": true,
+      "size_pass": true,
+      "extreme_max_logit_error": 0.0
+    },
+    "query": {
+      "parameters": 64546,
+      "export_bytes": 561288,
+      "neutral_exact": true,
+      "nonzero_max_logit_error": 9.5367431640625e-07,
+      "microseconds": [
+        45.44666738297565,
+        43.86668886837697,
+        43.762966015492566,
+        43.87562500056674,
+        43.86590703120419,
+        43.93783418095154,
+        43.731834179538964
+      ],
+      "median_microseconds": 43.86668886837697,
+      "time_pass": true,
+      "size_pass": true,
+      "extreme_max_logit_error": 9.5367431640625e-07
+    }
+  },
+  "gradient_max_error": 2.220446049250313e-16,
+  "sanitizer": {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/sanity.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/flat.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/query.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/sanity"
+    ],
+    "exit": 0,
+    "stdout": "256 -122.507049590349\n",
+    "stderr": ""
+  },
+  "compiler": [
+    "gcc",
+    "-std=c11",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-shared",
+    "-fPIC",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/flat.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/query.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/residual.so"
+  ],
+  "sources": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/models.py": "487085e30781d0734fd3acdcac86858d32935f77a835eb77f1b66f228b9402a9",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/native.py": "ac4d08787c4ca4f5e7a4df6325339abef394fbd8c91c3ab899f6b446fc79ae87",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/preflight.py": "09f430c6af4ce0dadfa58e8fc043acc14c72b1c96526218113d1b8607f047526",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/flat.c": "f76d375949d2414e8f422024915cf182ed2d1ca36cab66ffd946ca8ead5b53af",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/query.c": "1e21edba5de982a0bcde9f3c1dfec2db6b0e440edc8763058e92566eae51a98a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/residual.so": "d7269422818a07cd93ea35f2c0bf5361d4a215e39b2263c3fa510a0b1b822c1f"
+  },
+  "passed": true,
+  "scope": "Untrained neutral/random/extreme heads; arithmetic, gradients, sanitizers and native one-core inference. No fit or model-quality score."
+}

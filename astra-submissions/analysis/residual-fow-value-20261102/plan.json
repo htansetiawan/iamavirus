@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-02T07:46:47.200840+00:00",
+  "name": "239 bounded SF-residual development screen",
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/train.py": "1b13805db203261aa4bcd365fa164d9e46453ebc388a272291e1cd5cec9dbd15",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/common.py": "cc16e08e334a83c1216af49fad1e82de06c15ad1ca3f58862c020fa6c820a900",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/launch.py": "bc2c3fbb35bcbcdeac8dcce2ff81164a6654b419e6370ac1939c22a744618785",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/preflight.py": "09f430c6af4ce0dadfa58e8fc043acc14c72b1c96526218113d1b8607f047526",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/models.py": "487085e30781d0734fd3acdcac86858d32935f77a835eb77f1b66f228b9402a9",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/native.py": "ac4d08787c4ca4f5e7a4df6325339abef394fbd8c91c3ab899f6b446fc79ae87",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/README.md": "cd5e9ae4634c9735082db02a7bd8a13b2a7f0132209f1798873e7fce583efdf5",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/models.py": "7ce3d726f5e1d19ed888965ada6669aadfb34fa917962943f20a86d1bd950af3",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/student_infer.c": "928a4bc3b17fb270a5517925c0ffc8f85f0a6c527dc080145aa0020b3f7e3ea4",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/models.py": "35900d4b842be15e031ee7c4b6c3a1074813a87bef68404a32d4962ae5824330",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/query_infer.c": "550e159a37ae3ed3745a3fc3ef385afcb146df2368c0b08a62a8e79b09b15583",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/dataset/data.npz": "2f74da06960d67a8d94c686778013f2aafae274990bd760b16b8b9f285fbccf6",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/selection.json": "5afd494feeb73a09a8eb2a501242aa385c7005e0473be94910a01d5603da5f02",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/dataset-review.json": "b4b81b0594efae70bf5cfa4f065e38692eaa34757a6a6546a3d3a75ff14c725e",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/flat.c": "f76d375949d2414e8f422024915cf182ed2d1ca36cab66ffd946ca8ead5b53af",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/query.c": "1e21edba5de982a0bcde9f3c1dfec2db6b0e440edc8763058e92566eae51a98a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/residual.so": "d7269422818a07cd93ea35f2c0bf5361d4a215e39b2263c3fa510a0b1b822c1f"
+  },
+  "arms": [
+    "flat",
+    "query"
+  ],
+  "optimization": {
+    "seed": 2391102,
+    "epochs": 32,
+    "batch": 512,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "gradient_clip": 1.0,
+    "schedule": "cosine",
+    "optimizer": "AdamW",
+    "loss": "equal-game outcome BCE",
+    "dtype": "FP32; TF32 disabled",
+    "gpu_wall_cap_seconds": 1200
+  },
+  "residual": {
+    "bound_log_odds": 2.0,
+    "sf_condition_scale": 4.0,
+    "neutral_output_initialization": true,
+    "distillation": false
+  },
+  "baseline": "Fixed237 training-only two-parameter calibration; no refit.",
+  "selection": "Minimum validation log loss over epochs, then arms.",
+  "gate": {
+    "relative_logloss_gain_min": 0.02,
+    "brier_difference_max": 0.0,
+    "hidden_threat_logloss_difference_max": 0.0,
+    "hidden_threat_min_positions": 100,
+    "hidden_threat_min_games": 30,
+    "native_max_bytes": 1048576,
+    "native_max_median_microseconds": 50,
+    "native_max_probability_error": 2e-05
+  },
+  "test_policy": "Do not score237 or238 tests. Passing development gate earns a separately frozen fresh confirmation, not integration.",
+  "scope": "Reused development validation; no unbiased generalization or strength inference. No Fable agreement assumed."
+}
