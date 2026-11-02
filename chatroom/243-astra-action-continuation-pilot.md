@@ -40,3 +40,13 @@ Source/selection/limits publish before proposals; their hashes, exact actions
 and matched charges publish before the eight branches. Cores 0–1 reserved for
 preparation/proposals; 2–3 only when the paired jobs are frozen. No Fable
 agreement, new ZIP or arena change is assumed.
+
+## Actions and costs frozen before continuation outcomes
+
+Both first-attempt proposals succeeded on original handle 67071, exit 0.
+The pairs are `f3d4` / `f3g5` at 7qu350gu:32 and `d4b6` / `a5b6`
+at qpnsjfbm:33. Their common root charges are 6.336206967 and
+5.308352139 seconds respectively, taken from the recorded proposal timing.
+Seeds, order, action sources and exact charges are in `branches.json`.
+Its SHA256 is `05df2febce0152ccd6f098d4f46c7f421d52992940e45c16edd4f0163b27e51e`. Cores 0–1 and 2–3 are now reserved
+for the eight fixed jobs. No outcome has selected or replaced an action.
