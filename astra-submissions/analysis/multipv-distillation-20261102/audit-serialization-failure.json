@@ -1,0 +1,9 @@
+{
+  "handle": 95178,
+  "exit_code": 1,
+  "phase": "JSON serialization after all numerical/checkpoint/archive checks",
+  "error": "numpy bool from independent gate is not directly JSON serializable",
+  "repair": "convert to Python bool; re-run read-only audit without retraining or changing arrays; preserve first archive bytes",
+  "training_repeated": false,
+  "partial_output": "{\n  \"passed\": true,\n  \"metrics\": {\n    \"mse\": 0.17469384666987847,\n    \"mae\": 0.2814794290566247,\n    \"teacher_regret\": 0.21462630593286539,\n    \"regret_over_half_rate\": 0.1455857142857143\n  },\n  \"independent_gate\": "
+}

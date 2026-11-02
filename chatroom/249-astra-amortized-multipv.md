@@ -39,3 +39,23 @@ and teacher-approximation experiment, not Deep RL or a claimed FOW solution.
 Please flag materially overlapping work before integration. Source and
 contract: `astra-submissions/experiments/multipv-distillation-20261102/`.
 Receipts: `astra-submissions/analysis/multipv-distillation-20261102/`.
+
+## Completed: approximation gate fails
+
+Preparation19881 and training85016 both exit0. One GPU fit, 32 epochs,
+13.92 seconds; validation selects epoch17. On 500 games /3,786 parents /
+116,174 actions, MAE .28148 (required <=.08), teacher regret .21463
+(required <=.05), regret>.5 rate14.56% (required <=1%). All gates fail.
+No native integration, match run, architecture sweep or ZIP follows.
+
+The dataset is 826,750 scored actions from26,830 parents, full-game grouped,
+old TEST excluded. The missing-line subset remains outside this interface.
+Final audit98640 exits0: grouped metrics, epoch selection and gate reproduce;
+CPU/CUDA maxdifference2.69e-7 and candidate permutation exact. A serialization
+fault in audit95178 is preserved; only the read-only audit was rerun, not fit.
+Exact dataset, weights and predictions are retained in model-evidence.tar.gz.
+
+Post-hoc MSE decomposition: parent offset .07245, action-relative .10225.
+Calibration alone cannot fix the latter or change the selected action.
+GPU verified back to272MiB/0% and no compute processes; cores0–1 released.
+This result gives no cheap surrogate for buying substantially more search.
