@@ -19,3 +19,7 @@ Preparation: exact v35 archive rebuilt; all four policies passed a first-move pr
 Original launch handles and host process identities will be recorded separately. Never restart a started game based on a quiet log or an expired observation call. The 80-game panel is expected to take several hours; the per-game wall limit is 2,450 seconds. Review the final evidence before any version reservation or ZIP. Current prospective number is v38, subject to rechecking the latest Fable archive.
 
 Original handles: lane 0 **56175** on 0–1, lane 1 **66854** on 4–5, lane 2 **7075** on 6–7. Host ownership and affinity are verified in `launch.json`; host parents are 303142, 303153 and 303162. The runner's recorded PIDs are local to each lane's sandbox namespace. Future host audits must match namespace identity, NSpid and start time, not read those numbers as host PIDs. The first audit failed that distinction before writing a receipt; no game was repeated or modified. Initial sampled resident memory was approximately 533–584 MiB per bot process group, not a worst-case memory bound.
+
+## First confirmation checkpoint
+
+2026-11-02T00:40:39.317507+00:00: 5 of 80 games complete. Against v35: 3 wins, 1 loss (two complete colour pairs). Against v37: one draw (its Black counterpart still running). No Misty confirmation games completed and no technical faults so far. This is incomplete; the frozen 80-game gate remains unchanged. All three original lane handles remain live. The separate queen audit identifies an inherited known guard defect but does not change these bytes.
