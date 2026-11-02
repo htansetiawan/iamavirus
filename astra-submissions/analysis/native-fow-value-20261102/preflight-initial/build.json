@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-02T06:30:36.373809+00:00",
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/leaf_collect.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/belief.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/movemodel.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/cfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/eval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/search.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/front.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/value-expansion-20261102/build/base/src/sfeval.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/build/leaf_collect"
+  ],
+  "exit": 0,
+  "stdout": "",
+  "stderr": "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/leaf_collect.c: In function \u2018main\u2019:\n/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/leaf_collect.c:15:45: warning: format \u2018%s\u2019 expects a matching \u2018char *\u2019 argument [-Wformat=]\n   15 |     while (scanf(\"%79s %64s %d %llx %d %d %7s\", id, board, &side, &castle, &ep, &halfmove) == 7) {\n      |                                           ~~^\n      |                                             |\n      |                                             char *\n"
+}

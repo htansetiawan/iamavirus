@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-02T06:29:51.481007+00:00",
+  "results": [
+    {
+      "model": "Teacher",
+      "parameters": 804737,
+      "fp32_bytes": 3218948,
+      "backward_finite": true
+    },
+    {
+      "model": "Student",
+      "parameters": 160065,
+      "fp32_bytes": 640260,
+      "backward_finite": true
+    }
+  ],
+  "initial_failure": "Pre-freeze CPU shape smoke caught reserved nn.Module.half name collision. Renamed fields; no training or dataset was created in failed smoke.",
+  "cpu_only": true
+}
