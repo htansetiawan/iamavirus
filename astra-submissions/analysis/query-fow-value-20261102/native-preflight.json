@@ -1,0 +1,71 @@
+{
+  "at": "2026-11-02T07:20:09.780191+00:00",
+  "trained": false,
+  "parameters": 64481,
+  "export_floats": 140257,
+  "export_bytes": 561028,
+  "positions": 320,
+  "real_training_positions": 64,
+  "cpu_affinity": [
+    0
+  ],
+  "max_logit_errors": [
+    2.384185791015625e-07,
+    2.980232238769531e-07
+  ],
+  "timings_microseconds": [
+    42.92223468761828,
+    43.116247708591494,
+    43.2331923957463,
+    43.16129145839417,
+    43.34919447956054,
+    43.35876489525011,
+    43.454522083266056
+  ],
+  "median_microseconds": 43.2331923957463,
+  "gates": {
+    "parity": true,
+    "size": true,
+    "time": true
+  },
+  "sanitizer": {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-O1",
+      "-g",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-fsanitize=address,undefined",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/build/sanity.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/build/sanity"
+    ],
+    "exit": 0,
+    "stdout": "320 -101.814301460981\n",
+    "stderr": ""
+  },
+  "compiler": [
+    "gcc",
+    "-std=c11",
+    "-O3",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-shared",
+    "-fPIC",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/query_infer.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/build/query.so"
+  ],
+  "sources": {
+    "models.py": "35900d4b842be15e031ee7c4b6c3a1074813a87bef68404a32d4962ae5824330",
+    "query_infer.c": "550e159a37ae3ed3745a3fc3ef385afcb146df2368c0b08a62a8e79b09b15583",
+    "native_check.py": "28f99d128702432eb5ec8bde0a4c8f3b83cb77104cebef378164b0bc56897d94",
+    "query.so": "fabd36ff2eebcfbba0573186aa0b647c1508f4f86f08626e6d17492d9faeba50"
+  },
+  "scope": "Two untrained weight seeds; folded native forward parity, sanitizers and one-core cached inference. Excludes feature encoding and search; not playing strength."
+}

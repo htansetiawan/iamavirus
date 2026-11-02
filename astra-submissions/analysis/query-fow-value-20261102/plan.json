@@ -1,0 +1,63 @@
+{
+  "at": "2026-11-02T07:24:49.490416+00:00",
+  "name": "238 matched-budget query value compression",
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/native_check.py": "28f99d128702432eb5ec8bde0a4c8f3b83cb77104cebef378164b0bc56897d94",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/train.py": "349192bd3bad4a280f2451dce11cee835a85b9c21899511ee139079f26aeb0b7",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/data.py": "7f178c212e2df69d2d1744df125c1ba8aac5f7ab25314018554ccec1bd4d71d5",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/common.py": "ff346098724dfd15112239fd1b865dcca35d53cd408fd8b3725848bb22d83606",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/launch.py": "cd8706e0753554ab4699bbdfe7fb17b7f467e25f0e25b1f624a29a3a45d2101e",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/review_data.py": "b330f7d6c1a2c62f394e903dc7d3a77026a52c1a9f1016f36ac94068737851a7",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/models.py": "35900d4b842be15e031ee7c4b6c3a1074813a87bef68404a32d4962ae5824330",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/query_infer.c": "550e159a37ae3ed3745a3fc3ef385afcb146df2368c0b08a62a8e79b09b15583",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/README.md": "22fcd74c942b6461a8bca3409d6a4ae1e0c97c251b13603cefdb834554618975",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/build/query.so": "fabd36ff2eebcfbba0573186aa0b647c1508f4f86f08626e6d17492d9faeba50",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/models.py": "7ce3d726f5e1d19ed888965ada6669aadfb34fa917962943f20a86d1bd950af3",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/training/teacher.pt": "1c4af0966fc1d675f889d90e87c79e0b3cf4765369e7a2d7b42483756dc1194b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/training/direct_student.pt": "28590198ae8b1b09c6c7c4cd951eeeed5ac05e2173a82ffc8f1bb3c03d5f9914",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/training/distilled_student.pt": "180ccfe3ef7c5fbe12ba7d2555cf8fff29a99ee0ea45bb39ec4084523735dbd7",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/dataset/data.npz": "2f74da06960d67a8d94c686778013f2aafae274990bd760b16b8b9f285fbccf6",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/selection.json": "5afd494feeb73a09a8eb2a501242aa385c7005e0473be94910a01d5603da5f02",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/training-review.json": "250214c7b99b23ab26c187418e15d856636d72c433113a82d61697b4b1041f91",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/work/holdout/data.npz": "3d847788394368f2376b7b8620a033a66e2d513ad1b18a37b3fb32135aa3b433",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/query-fow-value-20261102/games.json": "e5e02fad79d52a4f52d48878514448f6545e97a09f17c32dcb2a0dec5e447a29",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/query-fow-value-20261102/holdout-selection.json": "a3d391672a294e4886c467f0f55afeca7318070b2a5419bf3d776fb6f44770ff",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/query-fow-value-20261102/holdout-review.json": "25f5be4b5b30d72d3f233af8d02c6c26a2a9caccd8fcd23c33ca6c41a5da9e66",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/query-fow-value-20261102/native-preflight.json": "542f9d2c5f1a0d4d275d22ba4f3d51603a2ee165f6a6b28a67eadde73fc4a555"
+  },
+  "arms": [
+    "flat_distilled",
+    "query_direct",
+    "query_distilled"
+  ],
+  "optimization": {
+    "seed": 2381102,
+    "epochs_per_arm": 32,
+    "batch": 512,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "optimizer": "AdamW",
+    "schedule": "cosine",
+    "gradient_clip": 1.0,
+    "dtype": "FP32; TF32 disabled",
+    "distillation_teacher_weight": 0.5,
+    "loss": "equal-game weighted binary cross entropy",
+    "gpu_wall_cap_seconds": 1800
+  },
+  "model_selection": "Minimum equal-game validation log loss among all epochs and all three arms; freeze before fresh-test predictions.",
+  "baseline": "Frozen237 train-fitted SF calibration; no new calibration fitting.",
+  "gate": {
+    "relative_logloss_gain_min": 0.02,
+    "game_bootstrap_upper_difference_max": 0.0,
+    "brier_difference_max": 0.0,
+    "new_date_point_logloss_difference_max": 0.0,
+    "hidden_threat_point_logloss_difference_max": 0.0,
+    "hidden_threat_min_positions": 100,
+    "hidden_threat_min_games": 30,
+    "hidden_threat_insufficient": "Quality gate incomplete; no deployment inferred from missing subgroup.",
+    "native_max_probability_error": 2e-05,
+    "native_max_bytes": 1048576,
+    "native_max_median_microseconds": 50
+  },
+  "scope": "Outcome prediction on unused older/new-date game cohorts. Not self-play equilibrium values or arena Elo. No decision integration unless quality/native gates pass, followed by independent decision and full-game validation."
+}
