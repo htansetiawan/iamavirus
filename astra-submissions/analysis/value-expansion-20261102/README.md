@@ -1,4 +1,25 @@
-# Conditional-value expansion: passes replay screen, full-game test next
+# Conditional-value expansion: full-game pilot fails, configuration closed
+
+Final result, 2 November 2026: **7W–0D–9L against exact v37** in the frozen
+16-game, eight-pair, 180+2 pilot. The required score was 10/16 with no faults.
+All first attempts completed, with zero protocol/clock/rules faults and no
+restarted games. Original lane handles 50799 and 82429 both exited 0; a host
+process audit found no remaining benchmark engine or Stockfish processes.
+The prepared 80-game confirmation remains unlaunched. No ZIP or arena change.
+
+The independent review verifies all 1,237 frames, both views, moves and final
+outcomes against the course referee. Candidate losses comprise five king
+walks, two opened king lines and two ignored attacks. In eight of nine losses
+all final attackers were hidden; eight losses followed a material deficit of
+at least three held for four plies. Six fatal choices had a truth-legal safe
+alternative, which does not imply that alternative was known safe or survived
+the guard. Baseline losses have similar patterns. These are descriptions of
+this small matchup, not causal attribution or a population estimate.
+
+See `full-games/summary.json`, `review-final.json`, `taxonomy-h2h.{json,md}`,
+`terminal.json`, and every original job receipt/replay. The earlier partial
+review is retained. The correctness and replay-screen results below still
+hold; they did not predict an improvement in this full-game pilot.
 
 2 November 2026. Isolated search change from exact v37. Its expansion policy
 uses conditional action values and visit variance where the baseline uses
@@ -59,7 +80,7 @@ Original extraction/build failures and pre-command-alignment hashes remain
 recorded. Raw compiler logs and the valid unified diff are losslessly gzipped
 with their original hashes in `raw-text-archives.json`.
 
-## Authorized next stage
+## Original full-game contract (completed)
 
 The frozen fail-fast screen passes and its independent review is complete.
 The separate queue is16 games, eight colour-swapped pairs versus exact v37 at

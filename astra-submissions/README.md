@@ -35,12 +35,15 @@ main strength bottleneck; Fable already tested richer spatial features with
 level match results. No further prior fit follows from this audit alone.
 
 The [conditional-value expansion candidate](analysis/value-expansion-20261102/README.md)
-passes its same-belief replay screen: 11 immediate losses versus 12, with
-material events unchanged. The independently verified result advances only
-to a frozen 16-game test against exact v37; no release is earned yet.
+passed its same-belief replay screen: 11 immediate losses versus 12, with
+material events unchanged. Its full-clock pilot finished **7W–9L against
+exact v37**, below the required 10/16 points. All 16 first attempts completed
+without technical faults; the independent referee verifies 1,237 frames.
+This configuration is closed, with no release earned.
 Its [conditional confirmation design](analysis/value-expansion-confirmation-20261102/README.md)
-is prepared and smoke-tested, but cannot launch before the full original pilot
-qualifies. It tests both historical references plus a matched Misty control.
+remains unlaunched because the original pilot failed. Its prepared design
+tests both historical references plus a matched Misty control; no result is
+claimed from that preparation.
 
 Earlier learned-response full-game pilots did not earn promotion: the first
 search integration finished 0W–8L against v37; its observable-loss variant

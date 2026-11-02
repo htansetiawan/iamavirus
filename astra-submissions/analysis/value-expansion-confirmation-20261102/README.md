@@ -1,4 +1,9 @@
-# Conditional confirmation plan — not launched
+# Conditional confirmation plan — ineligible, not launched
+
+Final disposition: the original 234 pilot finished 7W–9L, below its required
+10 points. No confirmation plan was frozen and no confirmation game started.
+`disposition.json` links the final pilot receipts. The prepared design and
+its harness checks remain for audit; they confer no strength credit.
 
 2 November 2026. This is the follow-up for experiment 234 **only if** its entire
 16-game pilot reaches at least 10 points with no technical faults. The design
