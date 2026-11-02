@@ -1,0 +1,31 @@
+--- a/src/main.c
++++ b/src/main.c
+@@ -408,6 +408,11 @@
+                 /* what the queen added: out under the combined risk, not under the king's alone */
+                 qout[i] = out[i] && !(kriskt[i] > kleastt + guard || krisk[i] > kleast + guard);
+                 qdropped += qout[i];
++                if (getenv("ASTRA_QDUMP")) {
++                    char au[6]; move_to_uci(allowed.moves[i], au);
++                    fprintf(stderr, "astra_guard %s %.17g %.17g %.17g %.17g %d\n",
++                            au, krisk[i], kriskt[i], qrisk[i], qriskt[i], out[i]);
++                }
+                 if (out[i]) guarded[n++] = allowed.moves[i];
+                 else if (mguard >= 0 && have_mrisk && mrisk[i] > mleast + mguard) { guarded[n++] = allowed.moves[i]; ++mdropped; }
+             }
+@@ -416,6 +421,16 @@
+                 if (dropped > 0) fprintf(stderr, "mist: king guard left out %d of %d moves (safest %.3f, sharper %.3f)\n", dropped, allowed.count, least, leastt);
+                 if (qdropped > 0) fprintf(stderr, "mist: queen guard left out %d of %d moves (safest %.3f, sharper %.3f)\n", qdropped, allowed.count, qleast, qleastt);
+                 if (mdropped > 0) fprintf(stderr, "mist: material guard left out %d of %d moves (least %.2f)\n", mdropped, allowed.count, mleast);
++            }
++        }
++
++        if (getenv("ASTRA_QDUMP") && !(forced && *forced)) {
++            fprintf(stderr, "astra_population %zu %d %.17g\n", b.count, b.overflowed, guard_temp);
++            for (size_t ai = 0; ai < b.count; ++ai) {
++                char ab[65]; pos_to_board_string(&b.items[ai], ab);
++                fprintf(stderr, "astra_world %s %.17g %llu %d %d\n", ab,
++                        b.logw ? (double)b.logw[ai] : 0.0,
++                        (unsigned long long)b.items[ai].castle_rooks, b.items[ai].ep, b.items[ai].halfmove);
+             }
+         }
+         SearchResult r; int ok = 0;
