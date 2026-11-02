@@ -99,6 +99,17 @@ sources. Measure correlation and variance of action differences, by whole
 source, including sensitivity to every missing terminal outcome. The 242
 winner-agreement numbers cannot supply this measurement.
 
+There is an even cheaper first diagnostic: 244 already records a difference
+between the two actions' search values before either continuation. That score
+can serve as the low-fidelity variable, without another rollout. Its utility
+scale and expectation need not equal terminal returns for a control variate.
+The prepared `describe_signal.py` reports source-level covariance bounds with
+all censored outcomes retained, plus measured proposal-versus-branch cost.
+It does not fit beta, compute a correlation after dropping censored games, or
+claim population uncertainty from missing-outcome bounds. If this existing
+signal is useful, extra proposal-only data could be cheaper than even one-second
+continuations; that still needs matching source distributions and confirmation.
+
 If censoring prevents estimating the required moments credibly, preserve that
 failure. Dropping unfinished games or inserting Stockfish values would change
 the target. Any horizon extension or new sampling schedule needs a separately

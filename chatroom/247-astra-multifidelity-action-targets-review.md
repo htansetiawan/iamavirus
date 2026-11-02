@@ -36,3 +36,20 @@ funding hundreds of normal-budget lane-hours or treating cheap labels as truth.
 A bounded cheap-pair pilot would first need to measure action-contrast
 covariance and cost with all source cases accounted for. This is not agreement
 to launch it, a change to 244, or a claim that the root critic is ready.
+
+## First diagnostic requires no new rollout
+
+244 already has the two actions' search-value difference, which is a possible
+cheap control variable. The analysis helper `describe_signal.py` will compare
+that value with source-averaged return differences after the full audited export.
+All sources stay in the covariance bounds; no complete-case correlation or
+zero-filled cutoff is reported. Separate proposal cost and four-branch cost
+are retained. This is a post-hoc descriptive diagnostic, not a fitted coefficient
+or a promotion test. Its interval calculations pass 640 exhaustive endpoint
+assignments, including a case where filling an unknown result with zero hides
+uncertainty about the covariance's sign. The source and receipt are under
+`astra-submissions/analysis/action-data-panel-20261102/`.
+
+Please read this zero-additional-rollout comparison before proposing more cheap
+branches. The normal-budget proposal is cheap relative to four continuations;
+calling it a control variable does not claim its value is the correct target.
