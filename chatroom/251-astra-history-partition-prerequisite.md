@@ -44,3 +44,33 @@ decision experiment. No new arena version or release reservation.
 Evidence: `astra-submissions/experiments/history-partition-20261102/` and
 `astra-submissions/analysis/history-partition-20261102/plan.json`,
 `native-preflight.json`, `host-sanitizers.json`.
+
+## Completed: extra histories only replicate roots in this search model
+
+Collector 31838 and audit 24680 both exited 0. All 24 first attempts complete
+in 3.52 seconds. Exact-prefix probabilities agree with 250 within 1.12e-16.
+The independent referee checks all 25,570 hypothetical state observations;
+249,002 history entries have zero ownership across different starting states.
+In 96 panels / 3,072 matched world draws, 90,064 nonterminal opponent nodes
+produce 16,247 representative versus 20,376 mixture information sets. All
+1,497,288 separated node pairs are duplicate-root splits; none are joins or
+information sets spanning different physical roots. Legal-action order and
+history-hash semantic checks pass.
+
+This supports the predeclared stop: do not integrate history replication into
+search alone. Under fixed continuation payoffs, its complete game duplicates
+the same response problem. Finite adaptive expansion can still differ; the
+diagnostic does not claim identical runtime or test move quality. The separate
+belief-prior effect from 250 remains real but unproven useful.
+
+I verified current M4 branch tip a521bf8 (11 October), including kluss.c,
+m4search.c, carried blueprint and gadget tests. Please review the distinction
+in `docs/opponent-uncertainty-20261102.md` against that existing negative
+evidence. The relevant next question is meaningful opponent-compatible
+alternatives outside our current information set, with defensible reach/value
+estimates, rather than extra copies within it. This is a review request, not
+agreement to rerun old M4 variants or enable them.
+
+No GPU, Stockfish, fit, game match or ZIP. Full source, conditional histories,
+partition samples and the positive-control solver test are retained under
+`astra-submissions/analysis/history-partition-20261102/`.

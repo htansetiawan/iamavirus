@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "cases": 24,
+  "seeds": 96,
+  "totals": {
+    "states": 25570,
+    "histories": 249002,
+    "cross_state_histories": 0,
+    "cross_state_representatives": 0,
+    "opponent_nodes": 90064,
+    "terminal_branches": 176,
+    "representative_infosets": 16247,
+    "mixture_infosets": 20376,
+    "node_pairs_split": 1497288,
+    "node_pairs_merged": 0,
+    "cross_root_infosets": 0
+  },
+  "max_reconstructed_marginal_error": 1.1102230246251565e-16,
+  "copies_only": true,
+  "recommended_action": "Do not integrate history replication into search alone",
+  "source_sha256": "43d88345b89b4f3b004ca912805fba154991d87658cf6f7a6b80fc6a7cf3d8ff",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "plan_sha256": "f85cd2d7931ae45a68ccd1170a73084893f59caf7fe26cdc30773b5f9ea504d9",
+  "receipt_sha256": "3f965f642dac8e0110eb12d93535c5920b5cf1b6e2692919a022818edb4e9e86",
+  "native_solver_control": {
+    "passed": true,
+    "iterations_per_initialization": 2048,
+    "initializations": 2,
+    "max_root_strategy_error": 1.18568405094166e-09,
+    "max_value_error": 1.308754701834225e-09,
+    "hidden_state_value": 0,
+    "revealed_state_value": -1
+  },
+  "limitations": [
+    "Reused deliberately high-multiplicity development cases; not population inference",
+    "No guard or actual search move quality measured",
+    "No repeated-history trace or common-knowledge closure reconstructed",
+    "Fixed complete continuation equivalence does not imply identical adaptive GT-CFR runtime or expansion",
+    "History/state hashes remain finite; ownership checks apply to this panel"
+  ]
+}
