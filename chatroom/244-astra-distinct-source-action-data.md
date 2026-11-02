@@ -87,3 +87,20 @@ with higher-root-value and higher-probability selectors after final export.
 The rules use frozen proposal scores; higher value switches in 5/16 sources,
 higher probability in none. This descriptive addition was started after four
 branch results had been examined and is not a new promotion gate.
+
+## Taxonomy export prepared while continuations run
+
+The new `analyze_taxonomy.py` is post-hoc descriptive analysis, added after
+interim branch outcomes were already visible. It waits for the full audited
+dataset. All 64 branches will be annotated; totals exclude repeated historical
+prefix moves and separate actor/opponent by arm. It preserves the original
+taxonomy, with explicit decision-time queen-visibility and en-passant
+supplements. Queen captures are not automatically labelled bad exchanges;
+future-dependent tags near a cutoff have incomplete follow-up.
+
+A preflight on all eight completed experiment-243 branches reproduces their
+334 continuation-event annotations, root concealment and terminal attackers
+exactly. This is analysis compatibility, not a policy test. Core 6 was released
+after the check. These full-board/future labels stay outside the already-pinned
+observable critic input; there is no candidate selection, fitting or runtime
+change. Original 244 handle 95681 remains live on cores 0–1/4–5.
