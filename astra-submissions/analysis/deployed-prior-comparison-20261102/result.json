@@ -1,0 +1,593 @@
+{
+  "finished": "2026-11-02T01:57:58.032240+00:00",
+  "plan_sha256": "8e61c227ea1525a13ab3a9a6b4aa154b9d7fdb85d193f5924bbfbb9a5e761be9",
+  "games": 222,
+  "frames_validated": 19829,
+  "observable_proofs_verified": 8465,
+  "primary": {
+    "decisions": 10747,
+    "games": 221,
+    "gain": -0.02387392369415061,
+    "interval95": [
+      -0.044598987198238293,
+      -0.0025316779030491927
+    ],
+    "mean_nll": {
+      "full": 2.6757418958777714,
+      "cheap": 2.9099482630316404,
+      "student": 2.7185576147902744,
+      "projected": 2.699615819571922
+    },
+    "mean_raw_nll": {
+      "full": 2.7169515406237275,
+      "cheap": 2.9546519607252573,
+      "student": 2.753426446786269,
+      "projected": 2.73447477253578
+    },
+    "top1": {
+      "full": 0.25281473899692936,
+      "cheap": 0.22275983995533638,
+      "student": 0.2599795291709314,
+      "projected": 0.26221271052386713
+    },
+    "history_hits": 227,
+    "zero_target_probabilities": {
+      "full": 0,
+      "cheap": 0,
+      "student": 0,
+      "projected": 0
+    }
+  },
+  "surprise_captures": {
+    "decisions": 1084,
+    "games": 217,
+    "gain": -0.25523614643501663,
+    "interval95": [
+      -0.31638226672513536,
+      -0.1932441597550654
+    ],
+    "mean_nll": {
+      "full": 1.4596081312525604,
+      "cheap": 1.646063928654372,
+      "student": 1.745124194244389,
+      "projected": 1.7148442776875772
+    },
+    "mean_raw_nll": {
+      "full": 1.491411628381081,
+      "cheap": 1.6782342964335255,
+      "student": 1.7771625530557085,
+      "projected": 1.7468418713592107
+    },
+    "top1": {
+      "full": 0.5904059040590406,
+      "cheap": 0.5719557195571956,
+      "student": 0.5571955719557196,
+      "projected": 0.5627306273062731
+    },
+    "history_hits": 24,
+    "zero_target_probabilities": {
+      "full": 0,
+      "cheap": 0,
+      "student": 0,
+      "projected": 0
+    }
+  },
+  "all_moves": {
+    "decisions": 13143,
+    "games": 222,
+    "gain": -0.05142798564638771,
+    "interval95": [
+      -0.17423407617827238,
+      0.01547954021790576
+    ],
+    "mean_nll": {
+      "full": 2.4593734573118775,
+      "cheap": 2.6532981727608274,
+      "student": 2.4751312077405156,
+      "projected": 2.5108014429582655
+    },
+    "mean_raw_nll": {
+      "full": 2.7016958174402967,
+      "cheap": 2.916924242027802,
+      "student": 2.5864116079708936,
+      "projected": 2.6220231631291195
+    },
+    "top1": {
+      "full": 0.3112683557787415,
+      "cheap": 0.28600776078520884,
+      "student": 0.31948565776458954,
+      "projected": 0.3213878110020543
+    },
+    "history_hits": 1995,
+    "zero_target_probabilities": {
+      "full": 0,
+      "cheap": 0,
+      "student": 0,
+      "projected": 1
+    }
+  },
+  "by_team": {
+    "Greek Gift": {
+      "decisions": 996,
+      "games": 24,
+      "gain": -0.02777673744387727,
+      "interval95": [
+        -0.10186406775929513,
+        0.052381258891680105
+      ],
+      "mean_nll": {
+        "full": 2.7444502672158957,
+        "cheap": 2.972337077624229,
+        "student": 2.790013965372046,
+        "projected": 2.7722270046597735
+      },
+      "mean_raw_nll": {
+        "full": 2.803489974838883,
+        "cheap": 3.0321506183902116,
+        "student": 2.8396742769380094,
+        "projected": 2.8218873162257365
+      },
+      "top1": {
+        "full": 0.22991967871485944,
+        "cheap": 0.1857429718875502,
+        "student": 0.2248995983935743,
+        "projected": 0.22690763052208834
+      },
+      "history_hits": 24,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "Knight Vision": {
+      "decisions": 998,
+      "games": 28,
+      "gain": -0.09879755972965819,
+      "interval95": [
+        -0.1599836755891082,
+        -0.03341849242528873
+      ],
+      "mean_nll": {
+        "full": 2.609737802426664,
+        "cheap": 2.883817515037958,
+        "student": 2.735513959134216,
+        "projected": 2.708535362156322
+      },
+      "mean_raw_nll": {
+        "full": 2.659529656357763,
+        "cheap": 2.9368169105302573,
+        "student": 2.7758028544188096,
+        "projected": 2.748778594587228
+      },
+      "top1": {
+        "full": 0.30060120240480964,
+        "cheap": 0.25250501002004005,
+        "student": 0.2895791583166333,
+        "projected": 0.2925851703406814
+      },
+      "history_hits": 27,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "Strongly Invisible": {
+      "decisions": 1211,
+      "games": 30,
+      "gain": -0.010372680380789005,
+      "interval95": [
+        -0.05912748179244344,
+        0.03805073872536846
+      ],
+      "mean_nll": {
+        "full": 2.69872811955425,
+        "cheap": 2.9605731145327283,
+        "student": 2.728943388517934,
+        "projected": 2.7091007999350394
+      },
+      "mean_raw_nll": {
+        "full": 2.705879048594657,
+        "cheap": 2.9694240851306324,
+        "student": 2.7340467056930944,
+        "projected": 2.7142041171101994
+      },
+      "top1": {
+        "full": 0.23286540049545829,
+        "cheap": 0.20478943022295623,
+        "student": 0.24194880264244426,
+        "projected": 0.24525185796862098
+      },
+      "history_hits": 7,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "Decent Chess Bot": {
+      "decisions": 838,
+      "games": 29,
+      "gain": -0.04166902435920606,
+      "interval95": [
+        -0.11779724667718082,
+        0.03735342968794558
+      ],
+      "mean_nll": {
+        "full": 2.6064547028364915,
+        "cheap": 2.860280868147446,
+        "student": 2.65736068475462,
+        "projected": 2.648123727195697
+      },
+      "mean_raw_nll": {
+        "full": 2.7248979296863536,
+        "cheap": 2.9909896701409684,
+        "student": 2.7626983303151054,
+        "projected": 2.7534460898428432
+      },
+      "top1": {
+        "full": 0.29236276849642007,
+        "cheap": 0.2541766109785203,
+        "student": 0.29832935560859186,
+        "projected": 0.29952267303102625
+      },
+      "history_hits": 45,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "Crimson Fog": {
+      "decisions": 1036,
+      "games": 29,
+      "gain": -0.07340029671710326,
+      "interval95": [
+        -0.11675654252063758,
+        -0.02374383162479032
+      ],
+      "mean_nll": {
+        "full": 2.684646690496351,
+        "cheap": 2.936704765978033,
+        "student": 2.7890120137981955,
+        "projected": 2.7580469872134543
+      },
+      "mean_raw_nll": {
+        "full": 2.684646690496351,
+        "cheap": 2.936704765978033,
+        "student": 2.7890120137981955,
+        "projected": 2.7580469872134543
+      },
+      "top1": {
+        "full": 0.2644787644787645,
+        "cheap": 0.23745173745173745,
+        "student": 0.2528957528957529,
+        "projected": 0.2548262548262548
+      },
+      "history_hits": 0,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "Instructors": {
+      "decisions": 1409,
+      "games": 37,
+      "gain": -0.04819441782734937,
+      "interval95": [
+        -0.0968055807414912,
+        -0.004408251058507344
+      ],
+      "mean_nll": {
+        "full": 2.7597481677940485,
+        "cheap": 2.953113403986993,
+        "student": 2.827212665673418,
+        "projected": 2.8079425856213978
+      },
+      "mean_raw_nll": {
+        "full": 2.7620811810178547,
+        "cheap": 2.955325613367001,
+        "student": 2.8289463637960788,
+        "projected": 2.809676283744059
+      },
+      "top1": {
+        "full": 0.22285308729595457,
+        "cheap": 0.1994322214336409,
+        "student": 0.23491838183108588,
+        "projected": 0.2370475514549326
+      },
+      "history_hits": 1,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "Mist Opportunities": {
+      "decisions": 1395,
+      "games": 32,
+      "gain": 0.035381825533804,
+      "interval95": [
+        -0.03187305248778889,
+        0.1019036959434176
+      ],
+      "mean_nll": {
+        "full": 2.7462356652758118,
+        "cheap": 2.9474603885878525,
+        "student": 2.7241960363496203,
+        "projected": 2.7108538397420077
+      },
+      "mean_raw_nll": {
+        "full": 2.8090188596771077,
+        "cheap": 3.0159801734752665,
+        "student": 2.7734205397260494,
+        "projected": 2.760073188665053
+      },
+      "top1": {
+        "full": 0.22724014336917564,
+        "cheap": 0.196415770609319,
+        "student": 0.24946236559139784,
+        "projected": 0.25161290322580643
+      },
+      "history_hits": 42,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "duck": {
+      "decisions": 1463,
+      "games": 40,
+      "gain": -0.008636109470082542,
+      "interval95": [
+        -0.055929323775641124,
+        0.03798884592709693
+      ],
+      "mean_nll": {
+        "full": 2.6183015429318557,
+        "cheap": 2.8647457834813395,
+        "student": 2.6415126204125854,
+        "projected": 2.6269376524019385
+      },
+      "mean_raw_nll": {
+        "full": 2.6221483644361987,
+        "cheap": 2.868861722234323,
+        "student": 2.6437175387668406,
+        "projected": 2.6291425707561933
+      },
+      "top1": {
+        "full": 0.24606971975393027,
+        "cheap": 0.23103212576896787,
+        "student": 0.2617908407382092,
+        "projected": 0.26247436773752564
+      },
+      "history_hits": 5,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "HYPOTHERMIA": {
+      "decisions": 1401,
+      "games": 39,
+      "gain": 0.017414788843784872,
+      "interval95": [
+        -0.04276763962585427,
+        0.06714334107288487
+      ],
+      "mean_nll": {
+        "full": 2.594208078606205,
+        "cheap": 2.8168120750810557,
+        "student": 2.596772035335386,
+        "projected": 2.5767932897624197
+      },
+      "mean_raw_nll": {
+        "full": 2.686978501317081,
+        "cheap": 2.918872555462531,
+        "student": 2.6797667013961974,
+        "projected": 2.659758975889942
+      },
+      "top1": {
+        "full": 0.2826552462526767,
+        "cheap": 0.25481798715203424,
+        "student": 0.2955032119914347,
+        "projected": 0.2990720913633119
+      },
+      "history_hits": 76,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    }
+  },
+  "by_tag": {
+    "king_threat_unseen": {
+      "decisions": 274,
+      "games": 153,
+      "gain": -0.7985980450591523,
+      "interval95": [
+        -0.9202289141361628,
+        -0.6751154344193505
+      ],
+      "mean_nll": {
+        "full": 2.2586030962887724,
+        "cheap": 3.333360546956627,
+        "student": 3.0676426162448145,
+        "projected": 3.057201141347925
+      },
+      "mean_raw_nll": {
+        "full": 2.2586030962887724,
+        "cheap": 3.333360546956627,
+        "student": 3.0676426162448145,
+        "projected": 3.057201141347925
+      },
+      "top1": {
+        "full": 0.4197080291970803,
+        "cheap": 0.23722627737226276,
+        "student": 0.22992700729927007,
+        "projected": 0.23357664233576642
+      },
+      "history_hits": 0,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "queen_raid": {
+      "decisions": 474,
+      "games": 165,
+      "gain": -0.32095318766500736,
+      "interval95": [
+        -0.45310573417325073,
+        -0.19621247289300167
+      ],
+      "mean_nll": {
+        "full": 2.8793192879744325,
+        "cheap": 3.391675721053187,
+        "student": 3.2052974417871223,
+        "projected": 3.20027247563944
+      },
+      "mean_raw_nll": {
+        "full": 2.879688315903933,
+        "cheap": 3.393971371269072,
+        "student": 3.206762348689105,
+        "projected": 3.2016852695396407
+      },
+      "top1": {
+        "full": 0.2974683544303797,
+        "cheap": 0.2489451476793249,
+        "student": 0.22784810126582278,
+        "projected": 0.22784810126582278
+      },
+      "history_hits": 3,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "queen_exposed_unseen": {
+      "decisions": 22,
+      "games": 21,
+      "gain": 0.3069700434850358,
+      "interval95": [
+        -0.19151950370770096,
+        0.8467561663560832
+      ],
+      "mean_nll": {
+        "full": 1.432370905641789,
+        "cheap": 1.08708707248619,
+        "student": 1.171796114044706,
+        "projected": 1.1254008621567533
+      },
+      "mean_raw_nll": {
+        "full": 1.432370905641789,
+        "cheap": 1.08708707248619,
+        "student": 1.171796114044706,
+        "projected": 1.1254008621567533
+      },
+      "top1": {
+        "full": 0.7727272727272727,
+        "cheap": 0.7727272727272727,
+        "student": 0.8181818181818182,
+        "projected": 0.8181818181818182
+      },
+      "history_hits": 0,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "king_move": {
+      "decisions": 1630,
+      "games": 194,
+      "gain": 0.011017411020164309,
+      "interval95": [
+        -0.040709547654794016,
+        0.06392765722394068
+      ],
+      "mean_nll": {
+        "full": 2.5721244161708845,
+        "cheap": 2.8388717474946255,
+        "student": 2.637549167563952,
+        "projected": 2.56110700515072
+      },
+      "mean_raw_nll": {
+        "full": 2.588598252234934,
+        "cheap": 2.857092425106252,
+        "student": 2.6516571504039166,
+        "projected": 2.575214987990684
+      },
+      "top1": {
+        "full": 0.1754601226993865,
+        "cheap": 0.14846625766871166,
+        "student": 0.17239263803680982,
+        "projected": 0.18282208588957055
+      },
+      "history_hits": 21,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    },
+    "capture_unseen": {
+      "decisions": 1084,
+      "games": 217,
+      "gain": -0.25523614643501663,
+      "interval95": [
+        -0.31638226672513536,
+        -0.1932441597550654
+      ],
+      "mean_nll": {
+        "full": 1.4596081312525604,
+        "cheap": 1.646063928654372,
+        "student": 1.745124194244389,
+        "projected": 1.7148442776875772
+      },
+      "mean_raw_nll": {
+        "full": 1.491411628381081,
+        "cheap": 1.6782342964335255,
+        "student": 1.7771625530557085,
+        "projected": 1.7468418713592107
+      },
+      "top1": {
+        "full": 0.5904059040590406,
+        "cheap": 0.5719557195571956,
+        "student": 0.5571955719557196,
+        "projected": 0.5627306273062731
+      },
+      "history_hits": 24,
+      "zero_target_probabilities": {
+        "full": 0,
+        "cheap": 0,
+        "student": 0,
+        "projected": 0
+      }
+    }
+  },
+  "decision": "stop_blanket_prior_replacement",
+  "decisions_sha256": "b54b39557a260df4d7c7dbcd20c5174ca71d6032ab99956a27cb3836feca5aaf",
+  "zero_probability_reporting": "NLL uses floor1e-300; explicit zero counts retained, including visibly suicidal terminal moves.",
+  "scope": "Predictor screen on known true parents; no posterior or Elo claim."
+}

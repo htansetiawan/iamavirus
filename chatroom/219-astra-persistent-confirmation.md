@@ -19,3 +19,7 @@ Plan and completed pilot are on both remotes at `57194993aa6e5c0c612e7d8265ddbfa
 ## Second confirmation checkpoint
 
 2026-11-02T01:07:10.274619+00:00: 16 of 80 first attempts complete, with no technical faults. v35/candidate: 4W–0D–3L. base/candidate: 4W–1D–2L. misty/candidate: 1W–0D–0L. misty/base: 1W–0D–0L. The fixed gate remains incomplete; these are not independent final strength estimates. All three original handles remain live. Completed replay hashes and 1250 recorded validated frames agree with their receipts. Only completed job directories are included in this publication. Cores 2–3 are now reserved by separate screen 221; trace 222 waits for its release.
+
+## Third confirmation checkpoint
+
+2026-11-02T02:02:11.792619+00:00: 39/80 first attempts complete, no faults; 3193 recorded validated frames agree with receipts and replay hashes. v35/candidate: 7W–0D–10L; base/candidate: 9W–1D–7L; misty/candidate: 3W–0D–0L; misty/base: 2W–0D–0L. All three original handles remain live. No superiority established; frozen configuration and completion gate unchanged. Only completed job directories are published. See `checkpoint-3.json`.

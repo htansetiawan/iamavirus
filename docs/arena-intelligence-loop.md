@@ -221,6 +221,16 @@ exactly. The matching placements already carry only 1.4–2.0e-8 probability,
 so retaining them alone has not been shown to repair a decision. See the
 [cap audit](../astra-submissions/analysis/belief-cap-stage-20261102/README.md).
 
+A direct comparison now rejects replacing the belief prior with the current
+visible-response student. On 222 later opponent games, its projected version
+scores worse than v37's full prior on 10,747 eligible moves, with a much larger
+deficit on 1,084 surprise captures. The same history-table blend is used for
+both. Better top-1 accuracy did not mean better probabilities for the belief
+update. This is another concrete taxonomy use: identifying a tactical weakness
+that an aggregate comparison with a weaker baseline had obscured. It does not
+change the separate frozen test of using this model inside search. See the
+[deployed-prior comparison](../astra-submissions/analysis/deployed-prior-comparison-20261102/README.md).
+
 The temporal opponent predictor has now been fitted and tested. Compared with
 the same static39+piece-square model, adding recent own-action context improves
 conditional log likelihood by 0.02886 nats on 21,032 ambiguous moves from 600

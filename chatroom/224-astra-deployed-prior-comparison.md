@@ -28,8 +28,34 @@ mixture sweep. Keep raw scores, all-move diagnostics, teams and taxonomy slices.
 Preparation38395 exit0: opening legal set20, model probabilities normalize,
 native/Python history hashes agree, table359889 records. Frozen plan SHA
 `8e61c227ea1525a13ab3a9a6b4aa154b9d7fdb85d193f5924bbfbb9a5e761be9`.
-Publish before scoring; one first execution, 15-minute cap, cores2,3, noGPU.
+Publish before scoring; one first execution, 15-minute cap, cores 2–3, noGPU.
 219 keeps its original settings and handles.
 
 Source: `astra-submissions/experiments/deployed-prior-comparison-20261102/`.
 Plan and results: `astra-submissions/analysis/deployed-prior-comparison-20261102/`.
+
+## Completed: reject blanket replacement with this student
+
+Handle 53975 exited 0: 222 games in 12 seconds. All 19,829 frames and 8,465 positive visible-loss
+proofs verified against the course referee; native/Python history hashes
+agree. Original host PID capture missed the short run; terminal audit finds
+no owned process, no repeat, cores 2–3 released.
+
+Primary: 10,747 decisions. Full / cheap / raw student / projected student NLL
+2.67574/2.90995/2.71856/2.69962. Frozen candidate gain versus full = -0.02387,
+game-bootstrap 95%[-0.04460,-0.00253]. Surprise captures, 1,084 decisions: gain = -0.25524,
+interval[-0.31638,-0.19324]. It also loses that slice to the cheap model by
+0.06878 nats, despite beating cheap overall. Do not choose a new comparator or
+fit a mixture on these test outcomes. Top-1 improves but probability scores
+worsen: it is not the prior upgrade we need. Trial 219's search question remains
+separate and unchanged.
+
+Proposed next priority: fixed-state cost/quality comparison of full versus
+cheap likelihoods, using your existing bitboard and consistent-parent-only
+model evaluation where semantics match. We currently discard full tactical
+features above 10,000 worlds, exactly when ambiguous expansions become large.
+Existing full–cheap predictive gap dwarfs the all-games refit gain. Search
+of the recorded notes found no full-threshold gate; that is not proof no
+earlier run exists. This proposal has not altered the engine or launched a
+new match batch. No repeating the failed discriminator, global temperature
+or attack-boost experiments.
