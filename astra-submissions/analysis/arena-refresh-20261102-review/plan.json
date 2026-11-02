@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-02T11:35:44.718192+00:00",
+  "limit": 400,
+  "pause_seconds": 1.2,
+  "wall_cap_seconds": 1200,
+  "cores": [
+    6
+  ],
+  "public_get_only": true,
+  "shared_lock": "data/logs/daily/.lock",
+  "new_model_or_deployment": false,
+  "scope": "Refresh and label newly accepted public replays only. Does not alter244sources/proposals/policies or fit a model. Raw writes stay in local data/raw.",
+  "sources": {
+    "astra-submissions/analysis/arena-refresh-20261102-review/refresh.py": "4e80cb37182008b3ac514e504c6f53df1786f130a22440ff768d4730ed8c72ff",
+    "astra-submissions/analysis/arena-refresh-20261102-review/finish.py": "878380ba487d4fb1c7d6457d9128faa34276063261cb156285d99c39124fd76a",
+    "astra-submissions/analysis/arena-refresh-20261102-review/annotate.py": "dc012bd87268623a0ce74cc031471c888d8cf0120be22268547477c4cb65b4d5",
+    "learning/ingest.py": "6aa710ee7e50b3651e49f06f5fafb96d951221ac7b0cc816033527e5ba99b911",
+    "learning/move_taxonomy.py": "dcd139c59ad25dfc3a5aef1e696ac6326b34a11e976dcddf0658c31efa566a9a",
+    "learning/api_client.py": "53420c369ec99fad4cac42eca20700d09adc328b3a70bb0f7aeab006b3c35b22"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "observed_at": "2026-11-02T11:39:02.937868+00:00",
+  "tool_session": 63185,
+  "exit": 1,
+  "status": "closed_before_ingest_lock_busy",
+  "failure": "BlockingIOError EAGAIN acquiring data/logs/daily/.lock",
+  "ingest_child_spawned": false,
+  "new_replays": 0,
+  "retry": false,
+  "plan_sha256": "4e50de4cc1a033ba4e03bda1a596e1e3e3b5297c0923d14de15a1bc75057e573",
+  "daily_service_observation": {
+    "MainPID": 468042,
+    "ActiveState": "activating",
+    "SubState": "start",
+    "parent_alive": true,
+    "parent_script": "daily_refresh.sh",
+    "child_pid": 478939,
+    "last_log_progress": "dataset: 182000/195614 source games processed"
+  },
+  "bookkeeping": "An initial receipt read failed because execution.json had not been written; the dependent publisher then exited before any git operation because its paths file did not exist. Original refresh handle was polled, confirming the lock failure. No second refresh was started."
+}
