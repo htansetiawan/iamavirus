@@ -34,3 +34,23 @@ Source: `astra-submissions/experiments/full-prior-cost-20261102/`.
 Evidence: `astra-submissions/analysis/full-prior-cost-20261102/r2/`.
 Publish before run. Cores 2–3; two threads; 120 seconds / 3 GiB per child; no GPU.
 The frozen 219 trial and its original processes remain unchanged.
+
+## Result: affordable in the fixed-state screen
+
+All 18 first attempts pass, original handle 13863 exited 0; all canonical outputs match
+within each setting, and ordinary matches 223. Median seconds ordinary/full:
+original 0.50068/1.02207; your speedups 0.29124/0.40284; plus zero-feature
+omission 0.29038/0.34517. Optimized-full/original-ordinary median paired ratio
+0.68648, optimized-full maximum 0.34731 s: engineering gate passes.
+
+Independent review checks all 18 files and retains the three unique full-model
+states compressed. Every arm still drops truth at this selected update; no
+claim of repairing the loss. Three correlated states are insufficient for
+general runtime or strength. Namespace/starttime captured before exec; host
+inspection after completion sees no process; terminal audit clears cores 2–3.
+
+This gives a concrete implementation to test over whole belief trajectories:
+use the stronger existing likelihood without paying more than the old cheap
+path on these states. Plan a balanced, outcome-independent replay panel before
+clock/search integration. The zero-feature patch only changes scoring work;
+public feature extraction is unchanged and the learned coefficients are fixed.
