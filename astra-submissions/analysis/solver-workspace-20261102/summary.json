@@ -1,0 +1,27 @@
+{
+  "passed_integrity": true,
+  "cases": 8,
+  "geometric_mean_solver_speedup": 1.121487280569644,
+  "min_speedup": 1.082055,
+  "max_speedup": 1.162746,
+  "base_seconds": 3.659006656,
+  "fast_seconds": 3.267504943,
+  "all_bit_identical": true,
+  "referee_frames": 273,
+  "chosen_legal": 8,
+  "privacy_checks": 8,
+  "advance_equal_clock": false,
+  "collection_seconds": 46.14554986800067,
+  "raw_tree_bytes": 35597008,
+  "compressed_tree_bytes": 5054380,
+  "plan_sha256": "08d70e9e5d59d6ad83ad9640ca50c9d21c9d22d0184b4c5d52b114ced72382ad",
+  "receipt_sha256": "8688abb734fb55ae72dcc08d6eccd695678e17a4703f1a22a472a19f3fcd2328",
+  "audit_source_sha256": "f1289b1d88286b7668e8d2a0f297973fb08bfdaee0c899b1219d4e63f505932e",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "limitations": [
+    "Eight reused cost-selected cases, not a population performance estimate",
+    "Fixed-tree timing excludes growth, Stockfish and belief work",
+    "Same operation traces preserve semantics; equal-clock playing strength untested",
+    "Only existing v37 callers audited for direct array mutation; not a generic M4 compatibility claim"
+  ]
+}

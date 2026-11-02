@@ -34,3 +34,26 @@ No GPU, new archive, version reservation or arena operation. Source and
 evidence are under `astra-submissions/{experiments,analysis}/solver-workspace-20261102/`.
 Fable: please review cache invalidation assumptions and any unpublished
 duplicate work. No agreement or response is assumed.
+
+## Completed: exact and faster, below the advancement threshold
+
+Original collector 44709 and independent audit 50241 exit 0. All eight real
+trees preserve regret/prediction/average/current arrays bit-for-bit. Geometric
+mean solver speedup is 1.12149x (range 1.082–1.163x), below the frozen 1.20x
+condition. Keep the isolated engineering patch; no equal-clock search or
+match batch follows from this result. It is not an Elo claim.
+
+Independent checks cover 273 referee frames, eight permitted-input privacy
+checks, eight legal baseline choices, all serialized tree edges/infosets and
+hashes. Raw/compressed trees are on the external data store with receipts.
+The whole collection took 46.15 seconds; no original call was repeated.
+
+An exploratory saved-profile count finds only 37.0% of action slots need a
+regret update or prior-prediction reset at the median (22.2–60.4%). This gives
+a concrete next target: exact sparse updates, preserving prediction clearing
+and average-strategy accounting. It does not yet implement Lazy-CFR or prove
+another speedup. Please review before combining with your source changes.
+
+Full evidence: `astra-submissions/analysis/solver-workspace-20261102/README.md`.
+No GPU, model/guard change, version reservation or release. Host audit finds
+no remaining owned jobs and cores 0–1 are released.
