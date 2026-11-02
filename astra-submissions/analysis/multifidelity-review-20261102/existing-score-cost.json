@@ -1,0 +1,91 @@
+{
+  "at": "2026-11-02T12:32:09.573085+00:00",
+  "passed": true,
+  "allocation_checks": 441,
+  "marginal_extra_to_total_high_cost_ratio": 0.016888674573428384,
+  "known_moment_break_even_absolute_correlation": 0.12995643336683407,
+  "proposal_generator_seconds": 244.1746959759912,
+  "high_source_seconds_including_proposals": 14457.895728547039,
+  "retained_sources": 16,
+  "endpoint_completions": 512,
+  "conservative_finite_panel_absolute_rho_lower_bound": 0.05132933116718482,
+  "feasible_endpoint_low_correlation": {
+    "returns": [
+      0.0,
+      -0.5,
+      0.0,
+      -1.0,
+      1.0,
+      0.0,
+      0.0,
+      -1.5,
+      -1.0,
+      -1.0,
+      0.0,
+      -2.0,
+      -1.0,
+      -1.0,
+      -0.5,
+      0.0
+    ],
+    "covariance": 0.006588557804647984,
+    "high_variance": 0.5146484375,
+    "score_variance": 0.011285174384955852,
+    "rho": 0.0864531643823296,
+    "extra_scores_per_high": 0.0,
+    "variance_ratio": 1.0,
+    "use_extra_scores": false
+  },
+  "feasible_endpoint_high_correlation": {
+    "returns": [
+      0.0,
+      -1.5,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      0.0,
+      -0.5,
+      -2.0,
+      -1.0,
+      0.0,
+      0.0,
+      1.0,
+      2.0,
+      1.5,
+      1.0
+    ],
+    "covariance": 0.07415729047764144,
+    "high_variance": 1.0380859375,
+    "score_variance": 0.011285174384955852,
+    "rho": 0.68514589847693,
+    "extra_scores_per_high": 6.176508387015488,
+    "variance_ratio": 0.6581555753307772,
+    "use_extra_scores": true
+  },
+  "endpoint_completions_benefiting_under_oracle_moments": 509,
+  "saving_certified_by_all_missing_outcomes": false,
+  "hypothetical_allocations": [
+    {
+      "rho": 0.2,
+      "extra_scores_per_high": 0.5573920199459019,
+      "variance_ratio": 0.9949628104480375,
+      "use_extra_scores": true
+    },
+    {
+      "rho": 0.5,
+      "extra_scores_per_high": 3.4049698330782476,
+      "variance_ratio": 0.8531468157382273,
+      "use_extra_scores": true
+    },
+    {
+      "rho": 0.8,
+      "extra_scores_per_high": 9.172842075599632,
+      "variance_ratio": 0.4884290187777708,
+      "use_extra_scores": true
+    }
+  ],
+  "signal_sha256": "cdf83572277083f28662d79751f3d02d957b0e527b4f5a3a0dd6a4ba2f8a4069",
+  "source_sha256": "67d8895eaabc3f9436d40e2b752d148eb15dcc8ad1946863b6e43514261de343",
+  "scope": "Post-hoc finite-panel feasibility and continuous known-moment cost algebra. Endpoint extrema are not exact extrema of correlation over the box. No missing label is chosen, no beta fitted, no population confidence interval or demonstrated saving, policy strength or learning result."
+}

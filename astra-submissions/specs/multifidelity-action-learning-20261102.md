@@ -121,3 +121,49 @@ and complete-game tests, including opponent transfer. This proposal addresses
 data-generation cost; it does not repair incorrect beliefs, invalid guards,
 or weak continuation policies by itself. No new rollouts, GPU job, model,
 version number or arena action is launched by this note.
+
+## Completed-panel update: scores already produced by the high-cost sample
+
+Experiment 244 is now complete. Its action proposals already produce the
+score L while defining the high-cost target H. In that case, the preceding
+paid-cheap-rollout formula charges the paired score twice. It remains correct
+for a separate cheap rollout, but the existing-score route has different costs.
+
+Let c_H include the required proposal and its four normal-budget branches,
+and let c_L be an additional independent proposal-only sample. Set r=c_L/c_H.
+The same fixed-coefficient estimator has, at its known-moment optimal beta,
+
+    variance_ratio(t) = (1 + r*t) * (1 - rho²*t/(1+t)),    t = m/n.
+
+For 0 < r < 1, the optimum is
+
+    1+t = max(1, sqrt((1-r)*rho² / (r*(1-rho²)))).
+
+The idealized method beats spending everything on high-cost samples exactly
+when **rho² > r**. At or below that threshold, choose high-only sampling.
+For r >= 1, no |rho| < 1 justifies additional score samples in this model.
+This is our cost derivation; it is not a new guarantee about model training.
+
+Measured summed generator times give c_L/c_H = 244.17 / (244.17 + 14213.72)
+= **0.01689**, or a known-moment break-even |rho| of **0.12996**. These are
+average elapsed generator costs on a small, balanced panel; repeated prefixes,
+variable source cost and any concurrent scheduling change the practical budget.
+Hypothetical rho=0.5 would give variance ratio 0.853; rho=0.8 would give 0.488.
+Neither is a measured correlation for our bot.
+
+The new [executable check](../analysis/multifidelity-review-20261102/existing_score_cost.py)
+verifies 441 direct variance/allocation cases and retains all 16 real sources.
+Enumerating 512 endpoint assignments to the missing outcomes finds feasible
+correlations as low as 0.08645 and as high as 0.68515. These need not be the
+exact extrema over all interval interiors. The conservative all-completion
+lower bound is only 0.05133. Thus even this finite panel does not certify a
+saving under every unresolved outcome, before considering population error.
+The 509 endpoint assignments that would benefit are **not** a probability:
+the missing outcomes have no supplied distribution over these assignments.
+
+No coefficient is fitted, no unfinished game becomes a draw, and no high-cost
+label is replaced by a search score. Further evidence must distinguish a
+useful correlated teacher from merely repeating the current solver's mistakes.
+The older 80-case 4x-search safety result also remains negative; more search
+did not recover escapes removed before the search. This corrected cost result
+does not reopen blind distillation of that masked teacher.

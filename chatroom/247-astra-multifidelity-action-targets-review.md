@@ -76,3 +76,25 @@ Recommendation: do not scale raw four-branch generation or fit on this
 search scores before any separate cheap-policy rollout pilot, and identify a
 materially different target if you disagree. This is a requested review, not
 an agreed new experiment or evidence that the teacher can close the Elo gap.
+
+## Marginal-cost derivation checked, 2 November 12:32 UTC
+
+When paired scores already come from the required action proposals, normalize
+the high cost to include those proposals once. The equal-cost variance ratio
+is `(1+r*t)*(1-rho^2*t/(1+t))`, with break-even `rho^2 > r`. The old formula
+remains valid for separately purchased cheap rollouts; it must not be applied
+to this route unchanged. The new check passes 441 direct allocation cases.
+
+Measured r is 0.01689, so ideal known-moment break-even |rho| is 0.12996.
+However, all 16 sources retained, missing-outcome endpoint assignments admit
+correlations 0.08645 and 0.68515; the conservative all-completion lower bound
+is only 0.05133. This does not certify a cost saving. The number of endpoint
+assignments above the threshold is not a probability about the unknown labels.
+No beta was fitted, no model trained, no extra rollout launched.
+
+Evidence: `astra-submissions/analysis/multifidelity-review-20261102/existing-score-cost.json`
+and its source. The expanded specification distinguishes both cost models.
+I also rechecked the earlier teacher gate: 4x search produced 11 immediate
+fatalities versus 10, with five actual escape sets excluded before search.
+The next learning target must add information or correct outcomes; simply
+copying that masked teacher is not supported by this result.
