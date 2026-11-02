@@ -1,0 +1,65 @@
+--- a/src/belief.c
++++ b/src/belief.c
+@@ -1,3 +1,4 @@
++#include <assert.h>
+ /* mist-c: exact belief (milestone M2). See belief.h. */
+ #include "belief.h"
+ 
+@@ -278,6 +279,41 @@
+ /* A consistent successor found in the first pass: rebuilt in the second only
+  * if it is kept. */
+ typedef struct { uint64_t key; uint32_t parent; Move move; float logw; } Candidate;
++/* Inserted only in the offline audit copy, after Candidate is declared.
++ * Observers read immutable candidates and do not consume RNG or change weights. */
++static const char *astra_truth_board;
++void astra_stage_truth(const char *board) { astra_truth_board = board; }
++
++static void astra_stage_candidates(const Belief *b, const Candidate *candidates,
++                                  size_t count, const uint32_t *chosen, size_t keep,
++                                  const char *phase) {
++    if (!astra_truth_board) return;
++    double top = -INFINITY;
++    for (size_t k = 0; k < keep; ++k) {
++        const size_t i = chosen ? chosen[k] : k;
++        assert(i < count);
++        if (candidates[i].logw > top) top = candidates[i].logw;
++    }
++    double mass = 0, total = 0; size_t matches = 0;
++    for (size_t k = 0; k < keep; ++k) {
++        const size_t i = chosen ? chosen[k] : k;
++        const Candidate *c = &candidates[i];
++        const double weight = exp((double)c->logw - top);
++        total += weight;
++        Position p = b->items[c->parent]; Undo undo;
++        make_move(&p, c->move, &undo);
++        char board[65]; pos_to_board_string(&p, board);
++        if (strcmp(board, astra_truth_board) == 0) {
++            ++matches; mass += weight;
++            char move[6]; move_to_uci(c->move, move);
++            printf("{\"phase\":\"%s_match\",\"key\":\"%llx\",\"parent\":%u,\"move\":\"%s\",\"logw\":%.17g}\n",
++                phase, (unsigned long long)c->key, c->parent, move, (double)c->logw);
++        }
++    }
++    printf("{\"phase\":\"%s\",\"count\":%zu,\"truth_placements\":%zu,\"truth_mass\":%.17g}\n",
++        phase, keep, matches, total > 0 ? mass / total : 0);
++}
++
+ 
+ static int by_key(const void *a, const void *b) {
+     const uint64_t x = ((const Candidate *)a)->key, y = ((const Candidate *)b)->key;
+@@ -462,6 +498,7 @@
+         cand[m++] = best;
+         i = j;
+     }
++    astra_stage_candidates(b, cand, m, NULL, m, "before_cap");
+     /* past the cap: weighted sampling without replacement (exponential keys) */
+     size_t keep = m;
+     uint32_t *chosen = malloc((m ? m : 1) * sizeof(uint32_t));
+@@ -477,6 +514,7 @@
+     } else {
+         for (size_t i = 0; i < m; ++i) chosen[i] = (uint32_t)i;
+     }
++    astra_stage_candidates(b, cand, m, chosen, keep, "after_cap");
+     /* pass 2: rebuild the kept positions with their histories */
+     Vec next = {0};
+     next.capacity = keep ? keep : 1;
