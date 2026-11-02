@@ -1,0 +1,22 @@
+{
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/queen-terminal-backport-20261102/build-r2/base/src",
+    "-Dmove_logits=reference_move_logits",
+    "-Dmove_features=reference_move_features",
+    "-c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/queen-terminal-backport-20261102/build-r2/base/src/movemodel.c",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/full-prior-cost-20261102/build-r2/reference-model.o"
+  ],
+  "returncode": 0,
+  "error": null,
+  "elapsed": 0.08660164899629308,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

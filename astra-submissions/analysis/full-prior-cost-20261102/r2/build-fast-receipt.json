@@ -1,0 +1,25 @@
+{
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/full-prior-cost-20261102/build-r2/fast/src",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-cap-stage-20261102",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/full-prior-cost-20261102/bench.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/full-prior-cost-20261102/build-r2/fast/src/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/full-prior-cost-20261102/build-r2/fast/src/belief.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/full-prior-cost-20261102/build-r2/fast/src/movemodel.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/full-prior-cost-20261102/build-r2/fast/bench"
+  ],
+  "returncode": 0,
+  "error": null,
+  "elapsed": 0.8051079619981465,
+  "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

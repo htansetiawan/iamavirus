@@ -1,0 +1,43 @@
+--- a/src/movemodel.c
++++ b/src/movemodel.c
+@@ -14,18 +14,21 @@
+ static const float theta_full[MM_FEATURES] = {0.8256f, 6.1569f, 0.0000f, -0.5818f, -0.6813f, -0.1419f, -0.3730f, -0.3004f, 0.1104f, 2.5549f, 2.8820f, -1.1917f, -0.8334f, -0.1136f, 0.9504f, 1.5825f, 1.4175f, 1.2139f, 0.7535f, 1.0183f, -0.0249f, -1.5504f, -3.2408f, -3.1171f, 0.3764f, 0.2498f, 0.0000f, 0.0000f};
+ static const float theta_cheap[MM_FEATURES] = {0.5520f, 4.5402f, 0.0000f, -0.5542f, -0.6984f, -0.2373f, -0.7377f, -0.3945f, 0.1346f, 2.4762f, 1.8108f, -1.7176f, -1.5143f, -0.1353f, 0.7632f, 1.6151f, 1.7061f, 1.1334f, 0.0000f, 0.0000f, 0.0000f, 0.0000f, 0.0000f, 0.0000f, 0.0000f, 0.0000f, 0.0000f, 0.0000f};
+ 
++static void move_features_needed(const Position *, Move, Move, int, int, float *);
++
+ void move_logits(const Position *p, const MoveList *l, Move previous, int full, float *out) {
+     const float *theta = full ? theta_full : theta_cheap;
+     float x[MM_FEATURES];
+     for (int i = 0; i < l->count; ++i) {
+-        move_features(p, l->moves[i], previous, full, x);
++        move_features_needed(p, l->moves[i], previous, full,
++            theta[MM_CHECK_UNSEEN] != 0 || theta[MM_THREAT_UNSEEN] != 0, x);
+         float z = 0;
+         for (int k = 0; k < MM_FEATURES; ++k) z += theta[k] * x[k];
+         out[i] = z;
+     }
+ }
+ 
+-void move_features(const Position *p, Move m, Move previous, int full, float out[MM_FEATURES]) {
++static void move_features_needed(const Position *p, Move m, Move previous, int full, int hidden, float out[MM_FEATURES]) {
+     memset(out, 0, sizeof(float) * MM_FEATURES);
+     const int from = MOVE_FROM(m), to = MOVE_TO(m), promo = MOVE_PROMO(m);
+     const int mover = p->side, type = p->piece[from];
+@@ -79,7 +82,7 @@
+     /* pressure next to their king, and a line through one of their pieces to
+      * it (a pin or skewer: the threats a hidden piece prepares) */
+     const bb_t hits = attacks_from(&q, to);
+-    {
++    if (hidden) {
+         /* what the victim sees after the move: a check or a threat on a
+          * 3+ piece from a square outside its view is a hidden threat */
+         char seen[65];
+@@ -102,3 +105,7 @@
+         }
+     }
+ }
++
++void move_features(const Position *p, Move m, Move previous, int full, float out[MM_FEATURES]) {
++    move_features_needed(p, m, previous, full, 1, out);
++}
