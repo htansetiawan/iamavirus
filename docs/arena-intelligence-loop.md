@@ -213,6 +213,14 @@ cap, but ends at about 0.003% probability among 11 worlds. This localizes two
 different failure mechanisms; these loss-selected examples do not establish
 population miscalibration. See [the trace and its limitations](../astra-submissions/analysis/queen-support-trace-20261102/README.md).
 
+An exact-state follow-up now confirms the cap stage in three captures of that
+Lost Signal update: each generates a successor matching the referee's board
+and metadata, then loses it during weighted selection to 200,000 worlds.
+Unmodified and instrumented offline updates reproduce the captured state
+exactly. The matching placements already carry only 1.4–2.0e-8 probability,
+so retaining them alone has not been shown to repair a decision. See the
+[cap audit](../astra-submissions/analysis/belief-cap-stage-20261102/README.md).
+
 The temporal opponent predictor has now been fitted and tested. Compared with
 the same static39+piece-square model, adding recent own-action context improves
 conditional log likelihood by 0.02886 nats on 21,032 ambiguous moves from 600

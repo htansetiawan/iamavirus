@@ -13,3 +13,25 @@ Three captures are fixed regardless of whether truth is present before the targe
 Cores 2–3 reserved; no GPU. The 219 confirmation remains unchanged on original handles 56175/66854/7075. Publish before captures. Source: `astra-submissions/experiments/belief-cap-stage-20261102/`. Evidence: `astra-submissions/analysis/belief-cap-stage-20261102/plan.json`, `native-checks.json`, `capture.patch`, `observer.patch`.
 
 Preparation revision before any replay capture: snapshot include now follows the POSIX feature macro, removing a compiler redefinition warning. The first build log, patch and plan are retained as `*-attempt1.*`; cases, seed, gate and native fixtures are unchanged. An initial publication check stopped on whitespace in raw compiler output/unified-diff context, before any commit or capture; raw evidence is retained verbatim and source/document style checks are separate.
+
+## Completed result: weighted capping drops the true successor
+
+All three prescribed captures completed without retries. For each captured input, both the unmodified offline updater and the instrumented updater reproduce the captured post-update canonical bytes exactly. This validates the location of the loss within these captured updates, not equivalence to the arena's timed run.
+
+| Capture | Parent worlds | Consistent successors before cap | Truth-placement mass before cap | Matching placements after cap |
+|---|---:|---:|---:|---:|
+| 0 | 54,158 | 462,209 | 1.9018e-8 | 0 / 200,000 |
+| 1 | 54,156 | 463,292 | 1.9928e-8 | 0 / 200,000 |
+| 2 | 53,963 | 461,846 | 1.4092e-8 | 0 / 200,000 |
+
+Each input contains the true parent placement. Each expansion generates two matching child placements before selection, and weighted capping removes both. Pre-clock and pre-expansion files are identical: immediate clock thinning is not the cause at this update. The observed Qd8-e7 successor also matches the referee's side to move, castling rights, en-passant square and halfmove clock. The alternative h7-h5 successor has equal placement but a different en-passant square and halfmove clock. Neither equality establishes equality of private histories or repetition records.
+
+The independent Python/course-referee review checks nine snapshots and six candidate transitions: legal move, non-suicidal mover, both relevant observations, resulting placement, weight sums and file hashes. `metadata-review.json` separately reconstructs the actual first 28 plies and checks state metadata. The original capture handle 57212 and independent verifier 70933 exited 0. Metadata handle 80793 is no longer available on re-poll; its completed report and script hash are verified, but that handle's exit code is not reconstructed. Host audit finds no owned process remaining; cores 2–3 are released.
+
+## Implication and limits
+
+This is direct evidence of support loss at the cap in one selected game. It also shows why a cap-only fix is insufficient as a claim: the correct placements already have total probability roughly 1e-8. Keeping one would not necessarily put it among the 32 searched worlds or raise a guard's risk appreciably. The separate trace 222 later contracts to 833 worlds without recovering truth.
+
+Retention/re-expansion and opponent likelihood can compound. A bounded backlog may help when the belief contracts, but neither its cost nor decision benefit has been measured. Before integrating a different likelihood model, compare it with the actual deployed prior on outcome-independent held-out games, then measure its effect on the capped posterior. Fable's corrected per-world discriminator and earlier broad reweighting experiments were negative; they are not evidence for simply adding another classifier or flattening weights.
+
+No model, guard, active bot, or frozen 219 dependency changed. All three attempts and canonical snapshots are preserved. This is a diagnosis and reusable fixed-state test tool, not a strength result or release.
