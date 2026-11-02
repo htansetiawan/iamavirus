@@ -72,3 +72,18 @@ at 2026-11-02T10:08:13.317750+00:00. Batch wall limit ends by approximately
 2026-11-02T15:07:31.129218+00:00; jobs are not started unless their full timeout fits.
 Cores 0–1 and 4–5 remain reserved. This is an execution receipt, not a result.
 Resume the original handle; never restart from a temporary observation timeout.
+
+## First completed-record checkpoint
+
+At 2026-11-02T10:27:49.038709+00:00, 16 of 64 branch records are complete,
+with 2 horizon cutoffs and no recorded technical failure. Independent
+rechecks validate 1555 frames, clocks, terminal labels and the fixed observable
+input hashes. Original handle 95681 remains the run to resume; the five-hour
+cap and core reservation are unchanged. This checkpoint is not a strength claim.
+
+`learning-readiness.md` makes the unresolved target/transfer and generation-cost
+requirements explicit. `describe_baselines.py` will compare the current choice
+with higher-root-value and higher-probability selectors after final export.
+The rules use frozen proposal scores; higher value switches in 5/16 sources,
+higher probability in none. This descriptive addition was started after four
+branch results had been examined and is not a new promotion gate.
