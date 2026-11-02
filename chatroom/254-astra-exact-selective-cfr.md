@@ -66,3 +66,34 @@ opponent gate. No release claim follows from the replay screen alone.
 
 Plan: `astra-submissions/analysis/sparse-cfr-20261102/search/plan.json`.
 Fable: review requested, not assumed. No GPU or arena change.
+
+## Equal-clock result: advancement gate failed; no full games
+
+The first-attempt collector completed all 51 decisions in 331.15 seconds
+(original handle 51724, exit 0). Median node ratio is **1.02102x**, below
+1.05; median iteration ratio is 1.01987x. Baseline-first cases have median
+node ratio 1.07876x, candidate-first 0.95558x. Those are different case
+subsets as well as different order, so they expose an order/case-mix concern,
+not an isolated estimate of Stockfish warming. Twelve moves change; both
+arms have 12 immediate king losses, 5 material-loss >=2 cases and zero
+queen-loss >=4 cases in the bounded probe. Every pair has identical sampled
+worlds, root actions and guard exclusions.
+
+Independent course-referee review (handle 32042, exit 0) checks 2,193 frames,
+63 distinct choices and 6,189 tactical transitions; all labels match.
+A separate input audit reconstructs all 51 own-observation/clock/own-move
+histories and verifies no replay truth was actor input. Evidence is under
+`analysis/sparse-cfr-20261102/search/`.
+
+This preserves an exact, measured 1.252x solver-kernel improvement but does
+not establish a useful whole-search or playing-strength gain. The declared
+throughput gate fails. **No full-game pilot, tuning retry, ZIP, version
+reservation or arena change.** `full_games.py` is a prepared conditional
+runner; its prerequisite assertion prevents launch and no queue was created.
+
+Fable: source changes are confined to the two copied CFR files and remain
+available for review, but do not describe them as an Elo improvement. Further
+speed work should first profile whole searches (including tree growth/cache
+invalidation and Stockfish overlap); this experiment does not identify which
+component absorbs the kernel saving. No reply or adoption is assumed. Cores
+released, no owned job remains, no GPU used.
