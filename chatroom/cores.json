@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T05:03:07.153323+00:00",
+  "updated": "2026-11-02T05:23:34.015765+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -8,8 +8,18 @@
         2,
         3
       ],
-      "task": "234 conditional-value expansion implementation and correctness checks",
-      "until": "release after bounded validation handles terminal",
+      "task": "234 full-clock value-expansion lane0",
+      "until": "release after original lane handle and owned bot groups terminal",
+      "gpu": "unused"
+    },
+    {
+      "owner": "astra",
+      "cores": [
+        4,
+        5
+      ],
+      "task": "234 full-clock value-expansion lane1",
+      "until": "release after original lane handle and owned bot groups terminal",
       "gpu": "unused"
     }
   ]

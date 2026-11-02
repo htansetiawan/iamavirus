@@ -30,6 +30,11 @@ with a known parent. Its modest average lower bound does not establish the
 main strength bottleneck; Fable already tested richer spatial features with
 level match results. No further prior fit follows from this audit alone.
 
+The [conditional-value expansion candidate](analysis/value-expansion-20261102/README.md)
+passes its same-belief replay screen: 11 immediate losses versus 12, with
+material events unchanged. The independently verified result advances only
+to a frozen 16-game test against exact v37; no release is earned yet.
+
 Earlier learned-response full-game pilots did not earn promotion: the first
 search integration finished 0W–8L against v37; its observable-loss variant
 finished 2W–6L. The persistent-response confirmation also failed to establish
