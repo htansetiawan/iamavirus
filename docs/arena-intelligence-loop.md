@@ -623,3 +623,14 @@ inputs. The audit verifies 5,479 frames and 128 privacy checks. Cost and
 incomplete labels prevent recommending bulk generation of this recipe; no
 critic or selector is promoted. See the
 [full report](../astra-submissions/analysis/action-data-panel-20261102/README.md).
+
+## 2 November: history representation does not guarantee better belief weights
+
+Experiment 250 preserves multiple weighted opponent histories per physical
+board and applies the existing empirical history prior separately to each.
+On 24 reused development games, it changes board distributions at 79 of 260
+common-prefix decisions, but its NLL gain over a matched control is only
+0.0105 nats with uncertainty spanning zero. Filter CPU increases12.2% in this
+diagnostic. Correctness and independent replay audits pass; prediction and
+playing-strength improvements remain unproven. No deployed weights, guards
+or search changed. [Full result](../astra-submissions/analysis/history-mixture-20261102/README.md).

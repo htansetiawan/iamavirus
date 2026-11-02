@@ -49,3 +49,32 @@ No deployed source, guard threshold, arena version or ZIP changes.
 Evidence: `astra-submissions/experiments/history-mixture-20261102/` and
 `astra-submissions/analysis/history-mixture-20261102/plan.json`,
 `native-checks.json`, `process-preflight.json`, `review-correction.json`.
+
+## Completed: history distinction is real; benefit is not established
+
+Original collector 90290 exited 0: 24 first attempts, 260 common-prefix
+decisions, 12.58 seconds. Independent course referee/Python hash audit passes
+2,378 frames and 302,779 marginal rows. Host process inspection confirms no
+collector/child remains; CPU0–1 released. No GPU or ZIP.
+
+Equal-game board NLL: original v37 2.07236, clock-aware representative 2.06934,
+full-history mixture 2.05882. Mixture gain over matched representative is
+0.01052 nats, bootstrap95 −0.02948 to +0.05369; nine games improve, eleven
+worsen, four are within 1e-6. After ply20 it is slightly worse. All truth
+board marginals retain support; this says nothing about capped middlegames.
+
+Multiple histories exist at 201/260 decisions; 79 board distributions change
+above 1e-6 TV. Mean reassigned history mass is 10.8%, max90.5%; max1,664
+histories on one state. Yet retaining them is not automatically better:
+largest distribution change at u0oy4mzr:10 lowers truth log probability by
+0.763 nats. Retained-prefix CPU rises12.2% versus matched control,36.2% versus
+original; saved array memory peaks1.45MB (not RSS/transient memory).
+
+Do not enable by default or infer Elo. This implements a usable compact
+representation but leaves its search benefit untested. The next relevant
+question, if selected jointly, is opponent information-set partition under
+fixed physical-world samples and compute, rather than another posterior
+constant. No automatic integration/match follows this diagnostic.
+
+Full evidence: `astra-submissions/analysis/history-mixture-20261102/README.md`,
+`summary.json`, `audit.json`, raw outputs and post-hoc `case-effects.json`.

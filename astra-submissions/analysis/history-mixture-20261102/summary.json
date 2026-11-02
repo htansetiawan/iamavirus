@@ -1,0 +1,678 @@
+{
+  "games": 24,
+  "decisions": 260,
+  "seconds": 12.575843362006708,
+  "stops": {
+    "state/history-bound": 22,
+    "end-of-prefix": 2
+  },
+  "phases": {
+    "all": {
+      "decisions": 260,
+      "games": 24,
+      "metrics": {
+        "legacy": {
+          "nll": 2.0723601183014653,
+          "truth_mass": 0.4519230017713624,
+          "support": 1,
+          "full_support": 0.9916666666666667,
+          "full_nll": 2.2557441772968283,
+          "nonrepresentative_mass": 0,
+          "histories_per_state": 1.0
+        },
+        "representative": {
+          "nll": 2.0693432906903704,
+          "truth_mass": 0.45192650451443417,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 2.0807410449173926,
+          "nonrepresentative_mass": 0.0,
+          "histories_per_state": 1.0
+        },
+        "mixture": {
+          "nll": 2.0588229864245498,
+          "truth_mass": 0.45222988738981124,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 2.071077826052906,
+          "nonrepresentative_mass": 0.1079681986668411,
+          "histories_per_state": 5.15272852184211
+        }
+      },
+      "comparisons": {
+        "representative": {
+          "mean_nll_gain": 0.010520304265820355,
+          "descriptive_game_bootstrap95": [
+            -0.02948293917331651,
+            0.05368636312019274
+          ],
+          "better_games": 9,
+          "worse_games": 11
+        },
+        "legacy": {
+          "mean_nll_gain": 0.01353713187691527,
+          "descriptive_game_bootstrap95": [
+            -0.022411523289499267,
+            0.05467023053500796
+          ],
+          "better_games": 11,
+          "worse_games": 7
+        }
+      }
+    },
+    "noninitial": {
+      "decisions": 248,
+      "games": 24,
+      "metrics": {
+        "legacy": {
+          "nll": 2.169606841916986,
+          "truth_mass": 0.4207326896607619,
+          "support": 1,
+          "full_support": 0.9895833333333334,
+          "full_nll": 2.3988369156611897,
+          "nonrepresentative_mass": 0,
+          "histories_per_state": 1.0
+        },
+        "representative": {
+          "nll": 2.1663562263921223,
+          "truth_mass": 0.4207465479864921,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 2.1803785449595754,
+          "nonrepresentative_mass": 0.0,
+          "histories_per_state": 1.0
+        },
+        "mixture": {
+          "nll": 2.1565890865066377,
+          "truth_mass": 0.4207547707766299,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 2.1716852214830995,
+          "nonrepresentative_mass": 0.11384172385579666,
+          "histories_per_state": 5.307282620912275
+        }
+      },
+      "comparisons": {
+        "representative": {
+          "mean_nll_gain": 0.009767139885484673,
+          "descriptive_game_bootstrap95": [
+            -0.031909099371404216,
+            0.05352632709881551
+          ],
+          "better_games": 9,
+          "worse_games": 11
+        },
+        "legacy": {
+          "mean_nll_gain": 0.013017755410348109,
+          "descriptive_game_bootstrap95": [
+            -0.023955412630751117,
+            0.055036577166230394
+          ],
+          "better_games": 11,
+          "worse_games": 7
+        }
+      }
+    },
+    "history_merged": {
+      "decisions": 201,
+      "games": 24,
+      "metrics": {
+        "legacy": {
+          "nll": 2.828253758693025,
+          "truth_mass": 0.30894558095436403,
+          "support": 1,
+          "full_support": 0.9791666666666666,
+          "full_nll": 3.286713906181433,
+          "nonrepresentative_mass": 0,
+          "histories_per_state": 1.0
+        },
+        "representative": {
+          "nll": 2.8240573930769575,
+          "truth_mass": 0.30897676505102756,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 2.8493893559382015,
+          "nonrepresentative_mass": 0.0,
+          "histories_per_state": 1.0
+        },
+        "mixture": {
+          "nll": 2.8127020472523943,
+          "truth_mass": 0.30861482019724806,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 2.8394684980420375,
+          "nonrepresentative_mass": 0.13847110392892883,
+          "histories_per_state": 6.003739086564101
+        }
+      },
+      "comparisons": {
+        "representative": {
+          "mean_nll_gain": 0.011355345824563268,
+          "descriptive_game_bootstrap95": [
+            -0.03704345773168781,
+            0.06287986874976807
+          ],
+          "better_games": 9,
+          "worse_games": 11
+        },
+        "legacy": {
+          "mean_nll_gain": 0.015551711440630828,
+          "descriptive_game_bootstrap95": [
+            -0.02770787763417977,
+            0.06441168328394302
+          ],
+          "better_games": 11,
+          "worse_games": 7
+        }
+      }
+    },
+    "ply20plus": {
+      "decisions": 87,
+      "games": 9,
+      "metrics": {
+        "legacy": {
+          "nll": 3.841305949780223,
+          "truth_mass": 0.16112770327544113,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 3.841305949780223,
+          "nonrepresentative_mass": 0,
+          "histories_per_state": 1.0
+        },
+        "representative": {
+          "nll": 3.8234477037772825,
+          "truth_mass": 0.16119290602521116,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 3.8253409836847956,
+          "nonrepresentative_mass": 0.0,
+          "histories_per_state": 1.0
+        },
+        "mixture": {
+          "nll": 3.827432831087529,
+          "truth_mass": 0.1613697514788194,
+          "support": 1,
+          "full_support": 1,
+          "full_nll": 3.8293261109942183,
+          "nonrepresentative_mass": 0.35698951394721473,
+          "histories_per_state": 22.870217205839484
+        }
+      },
+      "comparisons": {
+        "representative": {
+          "mean_nll_gain": -0.003985127310246712,
+          "descriptive_game_bootstrap95": [
+            -0.015724111065234764,
+            0.0037093340589772635
+          ],
+          "better_games": 2,
+          "worse_games": 1
+        },
+        "legacy": {
+          "mean_nll_gain": 0.01387311869269403,
+          "descriptive_game_bootstrap95": [
+            2.671578769447332e-07,
+            0.03912635590306071
+          ],
+          "better_games": 3,
+          "worse_games": 0
+        }
+      }
+    }
+  },
+  "raw_marginal_rows_checked": 302779,
+  "referee_frames_checked": 2378,
+  "merged_history_decisions": 201,
+  "changed_board_marginal_decisions": 79,
+  "max_mixture_representative_tv": 0.4067461256968558,
+  "mean_mixture_representative_tv": 0.017825769119201956,
+  "max_nonrepresentative_mass": 0.9048741814973804,
+  "max_histories_per_state": 1664.0,
+  "max_histories_per_state_average": 152.7952029520295,
+  "max_stored_allocation_bytes": {
+    "legacy": 0,
+    "representative": 1012088.0,
+    "mixture": 1450784.0
+  },
+  "cpu_seconds_retained_prefix": {
+    "legacy": 1.255596817000001,
+    "representative": 1.5246021979999997,
+    "mixture": 1.7103087429999997
+  },
+  "cpu_seconds_including_stopped_update": {
+    "legacy": 2.328152484000001,
+    "representative": 2.774883241,
+    "mixture": 3.6134852410000002
+  },
+  "lookup_counts_retained_prefix": {
+    "representative": {
+      "table_lookups": 30986.0,
+      "table_hits": 2172.0
+    },
+    "mixture": {
+      "table_lookups": 314568.0,
+      "table_hits": 2955.0
+    }
+  },
+  "per_game": [
+    {
+      "game": "e68aa8co",
+      "side": 0,
+      "decisions": 5,
+      "last_ply": 8,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.06549934,
+        "representative": 0.05611301299999999,
+        "mixture": 0.05152608299999996
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.009752633999999996,
+        "representative": 0.010867346999999972,
+        "mixture": 0.01090734699999997
+      }
+    },
+    {
+      "game": "efxhdcf6",
+      "side": 0,
+      "decisions": 8,
+      "last_ply": 14,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.04466167299999996,
+        "representative": 0.052668376000000044,
+        "mixture": 0.05782913700000006
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.033181009999999955,
+        "representative": 0.04026017000000007,
+        "mixture": 0.039056198000000014
+      }
+    },
+    {
+      "game": "gv3af0w8",
+      "side": 0,
+      "decisions": 16,
+      "last_ply": 30,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.122171393,
+        "representative": 0.14474080300000006,
+        "mixture": 0.2067330599999999
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.11368562299999994,
+        "representative": 0.13378832799999998,
+        "mixture": 0.14868747799999993
+      }
+    },
+    {
+      "game": "pz23mdh6",
+      "side": 0,
+      "decisions": 8,
+      "last_ply": 14,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.12786644499999994,
+        "representative": 0.16247182799999998,
+        "mixture": 0.17720711500000003
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.057224917999999944,
+        "representative": 0.056637323,
+        "mixture": 0.04851955600000002
+      }
+    },
+    {
+      "game": "fukf7tgk",
+      "side": 0,
+      "decisions": 12,
+      "last_ply": 22,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.09357720900000002,
+        "representative": 0.13831486599999998,
+        "mixture": 0.1630533439999999
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.02311855800000004,
+        "representative": 0.031042377999999995,
+        "mixture": 0.03074168899999996
+      }
+    },
+    {
+      "game": "pbtapr7i",
+      "side": 0,
+      "decisions": 33,
+      "last_ply": 64,
+      "stop": "end-of-prefix",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.25687389600000066,
+        "representative": 0.35110786899999996,
+        "mixture": 0.38065104699999985
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.25687389600000066,
+        "representative": 0.35110786899999996,
+        "mixture": 0.38065104699999985
+      }
+    },
+    {
+      "game": "9axlu7qd",
+      "side": 0,
+      "decisions": 5,
+      "last_ply": 8,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.070317949,
+        "representative": 0.08988781399999998,
+        "mixture": 0.10045816700000001
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.020294368999999993,
+        "representative": 0.029829898999999993,
+        "mixture": 0.027037073999999994
+      }
+    },
+    {
+      "game": "c266z12n",
+      "side": 0,
+      "decisions": 5,
+      "last_ply": 8,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.07519360499999998,
+        "representative": 0.05180189700000003,
+        "mixture": 0.05563377600000004
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.011901452999999992,
+        "representative": 0.014239110000000013,
+        "mixture": 0.01423851800000002
+      }
+    },
+    {
+      "game": "gfzslyys",
+      "side": 0,
+      "decisions": 19,
+      "last_ply": 36,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.13231350900000016,
+        "representative": 0.1663301950000002,
+        "mixture": 0.17393016500000008
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.10572436500000017,
+        "representative": 0.13327201100000005,
+        "mixture": 0.13356121599999998
+      }
+    },
+    {
+      "game": "fbch7dn3",
+      "side": 0,
+      "decisions": 11,
+      "last_ply": 20,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.07607656699999996,
+        "representative": 0.10431635000000002,
+        "mixture": 0.11290650399999991
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.01651727499999997,
+        "representative": 0.02278300400000001,
+        "mixture": 0.02360327899999995
+      }
+    },
+    {
+      "game": "x5gwu32f",
+      "side": 0,
+      "decisions": 7,
+      "last_ply": 12,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.07610867100000002,
+        "representative": 0.06431781999999996,
+        "mixture": 0.06729131500000009
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.011366595000000007,
+        "representative": 0.012524862999999956,
+        "mixture": 0.011696375000000023
+      }
+    },
+    {
+      "game": "u0oy4mzr",
+      "side": 0,
+      "decisions": 16,
+      "last_ply": 30,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.12551296399999992,
+        "representative": 0.1661125809999999,
+        "mixture": 0.36725771599999996
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.11240475499999994,
+        "representative": 0.14933181699999984,
+        "mixture": 0.19198359699999995
+      }
+    },
+    {
+      "game": "t8v0f24c",
+      "side": 1,
+      "decisions": 13,
+      "last_ply": 25,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.14020355700000026,
+        "representative": 0.17367694799999994,
+        "mixture": 0.24135898399999983
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.13528329400000022,
+        "representative": 0.16811267299999993,
+        "mixture": 0.20601313699999974
+      }
+    },
+    {
+      "game": "kb4guejv",
+      "side": 1,
+      "decisions": 5,
+      "last_ply": 9,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.03415759400000003,
+        "representative": 0.038206963999999996,
+        "mixture": 0.038229862999999975
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.006115668000000005,
+        "representative": 0.006409076999999999,
+        "mixture": 0.006454864999999976
+      }
+    },
+    {
+      "game": "98l2tsv2",
+      "side": 1,
+      "decisions": 6,
+      "last_ply": 11,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.03956883700000001,
+        "representative": 0.05748082199999999,
+        "mixture": 0.06429887700000005
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.02443164199999999,
+        "representative": 0.030336636999999972,
+        "mixture": 0.03224315600000001
+      }
+    },
+    {
+      "game": "huagqbjn",
+      "side": 1,
+      "decisions": 32,
+      "last_ply": 63,
+      "stop": "end-of-prefix",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.06401295799999994,
+        "representative": 0.07607983399999979,
+        "mixture": 0.12477876600000032
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.06368526699999992,
+        "representative": 0.07567816899999974,
+        "mixture": 0.11864678800000034
+      }
+    },
+    {
+      "game": "1xtpmpfl",
+      "side": 1,
+      "decisions": 6,
+      "last_ply": 11,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.11661854700000004,
+        "representative": 0.11729609900000007,
+        "mixture": 0.12538572899999995
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.08381288300000003,
+        "representative": 0.08080046700000001,
+        "mixture": 0.08138561099999993
+      }
+    },
+    {
+      "game": "b5aviao1",
+      "side": 1,
+      "decisions": 5,
+      "last_ply": 9,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.04114135600000002,
+        "representative": 0.045519252999999996,
+        "mixture": 0.039989815999999984
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.006869967000000032,
+        "representative": 0.00977935800000003,
+        "mixture": 0.011985337999999984
+      }
+    },
+    {
+      "game": "i3o3iawb",
+      "side": 1,
+      "decisions": 4,
+      "last_ply": 7,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.15933791599999997,
+        "representative": 0.13779429799999998,
+        "mixture": 0.21189615600000006
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.04712749299999998,
+        "representative": 0.035199614999999976,
+        "mixture": 0.039087945
+      }
+    },
+    {
+      "game": "ihs9fxcu",
+      "side": 1,
+      "decisions": 25,
+      "last_ply": 49,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.14984753300000017,
+        "representative": 0.18779199400000007,
+        "mixture": 0.34695195300000015
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.05992437500000011,
+        "representative": 0.06833578200000008,
+        "mixture": 0.08162849400000009
+      }
+    },
+    {
+      "game": "bjk3nijq",
+      "side": 1,
+      "decisions": 8,
+      "last_ply": 15,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.139743458,
+        "representative": 0.23640892199999997,
+        "mixture": 0.334611367
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.03848899500000004,
+        "representative": 0.04414378099999998,
+        "mixture": 0.05120878699999998
+      }
+    },
+    {
+      "game": "ac0vg53d",
+      "side": 1,
+      "decisions": 5,
+      "last_ply": 9,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.11446218800000003,
+        "representative": 0.08951359800000006,
+        "mixture": 0.09439623299999998
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.010385037000000027,
+        "representative": 0.013047871000000044,
+        "mixture": 0.010931822999999966
+      }
+    },
+    {
+      "game": "fvurmy9r",
+      "side": 1,
+      "decisions": 3,
+      "last_ply": 5,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.035576024,
+        "representative": 0.03284081000000001,
+        "mixture": 0.039801796999999986
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.0043625410000000114,
+        "representative": 0.003199342000000008,
+        "mixture": 0.006215994000000016
+      }
+    },
+    {
+      "game": "updro1eg",
+      "side": 1,
+      "decisions": 3,
+      "last_ply": 5,
+      "stop": "state/history-bound",
+      "cpu_seconds_including_stopped_update": {
+        "legacy": 0.027309294999999983,
+        "representative": 0.034090287,
+        "mixture": 0.03730827100000002
+      },
+      "cpu_seconds_retained_prefix": {
+        "legacy": 0.003064203999999987,
+        "representative": 0.0038753070000000223,
+        "mixture": 0.00382343100000003
+      }
+    }
+  ],
+  "receipt_sha256": "579f13fd8f2be1509c4ce061bd9796c638ec5f6451c0bcd8210b71b9cf61d70a",
+  "plan_sha256": "8482e280ca311e501a87c12c3c3a85de8354b7f1caee0b1487c655d6715f3df3",
+  "caveats": [
+    "early/small common prefixes; reused development data",
+    "both modified filters include halfmove; original does not",
+    "memory counts retained state/history arrays, not transient candidates, libraries or RSS",
+    "CPU costs are diagnostic, unoptimized implementation, fixed arm order; not an arena speed claim",
+    "no search, decisions, wins, Elo, or promotion tested",
+    "NLL uses 1e-12 floor; support separately reported",
+    "repetition history omitted; hashes may collide"
+  ]
+}
