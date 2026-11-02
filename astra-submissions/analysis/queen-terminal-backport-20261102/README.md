@@ -28,3 +28,18 @@ All 32 first-attempt calls completed without technical faults. Independent refer
 Both fixed arms select Ne7 in HYPOTHERMIA, with zero bounded exchange loss; both parents select Qxf4, losing six points. The persistent arm also changes from a safe move to a four-point loss in Lost Signal. Both pass the frozen **aggregate** advancement condition, not a per-position no-regression claim. Other changes may reflect wall-clock belief/search variation. The independent fixed-world reprice in experiment 220 identifies the countercheck mechanism separately.
 
 The conditional 204-call development screen is authorized by the frozen plan. No playing-strength conclusion, release or changes to trial 219 follow from this result. See `r2/queen-summary.json`, `queen-labels.json`, `queen-referee-review.json`, and `queen-terminal.json`.
+
+## Broad phase result: gate failed
+
+All 204 calls completed without technical faults. Independent referee verification: 2,193 frames, 73 distinct choices, 7,169 transitions. Execution/summary/referee handles 19375/27591/22414 exited 0; owned processes are gone.
+
+| Arm | King losses | Queen exchange loss >=4 | Material exchange loss >=2 |
+|---|---:|---:|---:|
+| Exact v37 | 12 | 0 | 7 |
+| v37 fixed | 12 | 0 | 5 |
+| Persistent | 11 | 0 | 6 |
+| Persistent fixed | 12 | 0 | 6 |
+
+The combined gate requires both fixed arms to pass and therefore fails. No further games or release follow from 221; trial 219 retains its original bytes. The extra fatal move is `uczoi2xj:66` against duck, Kh3→Kg2. Both roots had only one guard survivor. Their clock-driven thinning counts and estimated king risks differ before search. No friendly queen is present in the observation, no promotion is available, and forced turns skip queen-risk evaluation, so the changed predicate is unreachable on an observation-consistent final board. This difference does not establish a causal strength regression from the corrected queen semantics. The measured failure remains in the record.
+
+This is a selected, reused, single-seed development screen with wall-clock variation, not an Elo experiment. Its zero large queen-loss labels provide no general queen-risk guarantee. Fixed-world semantic checks and full-clock strength tests answer different questions. See `r2/broad-labels.json`, `broad-summary.json`, `broad-referee-review.json`, `broad-terminal.json`, and the two `uczoi2xj-66-persistent*.stderr` files.

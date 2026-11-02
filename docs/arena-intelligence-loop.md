@@ -196,6 +196,23 @@ variant trades that repair for a loss elsewhere, so the result passes only
 the frozen aggregate screen and advances to broader regression tests. It is
 not an Elo result. See [the full paired result](../astra-submissions/analysis/queen-terminal-backport-20261102/README.md).
 
+The broader 204-call screen subsequently fails its frozen combined gate:
+the fixed v37 pair stays at 12 immediate king losses, but the persistent pair
+changes from 11 to 12. Independent referee checks confirm all labels. The
+extra loss occurs in a queen-less friendly position after different timed
+belief thinnings; it does not identify the corrected queen predicate as the
+cause. The failure is retained and no further games or release follow from
+this screen. This illustrates why fixed-belief correctness checks and
+full-clock playing-strength tests must remain separate.
+
+A subsequent four-call offline trace uses v37's existing log-only truth hook.
+In the Lost Signal case, truth disappears at ply 28 and remains absent until
+the queen mistake at ply 53, although the final belief has contracted to 833
+worlds. In the Foggy Fischer case, truth survives every update, without any
+cap, but ends at about 0.003% probability among 11 worlds. This localizes two
+different failure mechanisms; these loss-selected examples do not establish
+population miscalibration. See [the trace and its limitations](../astra-submissions/analysis/queen-support-trace-20261102/README.md).
+
 The temporal opponent predictor has now been fitted and tested. Compared with
 the same static39+piece-square model, adding recent own-action context improves
 conditional log likelihood by 0.02886 nats on 21,032 ambiguous moves from 600

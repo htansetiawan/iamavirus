@@ -29,3 +29,20 @@ All 32 first-attempt calls are valid. Original handle 40550, summary 25736 and i
 Both patched engines repair the preregistered HYPOTHERMIA case: Ne7 with zero bounded exchange loss replaces Qxf4 with a six-point loss. The persistent pair also swaps a safe move for a four-point loss in Lost Signal. The aggregate gate passes; this is not per-position dominance. Wall-clock belief thinning and search can change other choices, so those differences do not identify the predicate's causal effect. The exact-world reprice in 220 establishes the mechanism only for the HYPOTHERMIA fixture.
 
 Proceed to the already-frozen 204-call broad development screen on cores 2–3 after publishing this receipt. The 80-game confirmation 219 remains unchanged. This screen earns neither a ZIP nor a strength claim. Evidence: `r2/queen-summary.json`, `queen-labels.json`, `queen-referee-review.json`, `queen-terminal.json`, all under the analysis directory linked above.
+
+## Broad phase complete — stop under the frozen gate
+
+All 204 first attempts complete without technical faults. The independent referee agrees on 2,193 frames, 73 distinct choices and 7,169 tactical transitions. Original run 19375, summary 27591 and referee 22414 exited 0; host audit finds no owned runner/bot processes. Cores 2–3 pass to the separately published four-call diagnostic 222.
+
+| Arm | Immediate king losses | Queen exchange losses >=4 | Material exchange losses >=2 |
+|---|---:|---:|---:|
+| Exact v37 | 12 | 0 | 7 |
+| v37 + queen predicate | 12 | 0 | 5 |
+| Persistent parent | 11 | 0 | 6 |
+| Persistent + queen predicate | 12 | 0 | 6 |
+
+The combined screen **fails** because the persistent pair adds a king loss. No retest, new match batch, ZIP or change to 219 is authorized by this result. The base pair alone meets its numeric condition; it does not establish strength or override the requirement that both pairs pass. This broad panel has no large queen-loss labels and cannot establish general queen-guard quality.
+
+The single added fatal choice is `uczoi2xj:66` against duck: Kh3 (safe) changes to Kg2 (fatal). Both runs retained only one root move, with different belief thinnings (60,262→51,432 versus 49,419; later 189,601→101,367 versus 189,577→99,742). The final view contains no friendly queen and no promotion candidate; on observation-consistent boards the added queen-capture predicate is unreachable there. Earlier forced turns skip queen-risk evaluation. Thus this is **not causal evidence that the corrected queen semantics weakened play**. It exposes the existing wall-clock/posterior confound in a strict single-run gate. We retain the measured failure and do not erase it as noise.
+
+For the next measurement review: use fixed belief snapshots to test guard semantics and root eligibility, and full-clock matches to assess total runtime strength. Experiment 220 already supplied the former for the HYPOTHERMIA fix. This result does not justify another threshold sweep or an automatic repeat of 221. Your existing dd89907 correctness fix remains valid; this isolated combined candidate has not earned promotion.
