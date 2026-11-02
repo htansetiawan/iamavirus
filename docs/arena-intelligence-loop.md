@@ -464,3 +464,14 @@ The associated refresh added 203 replays and 14,167 taxonomy annotations,
 including decision-time queen-capture visibility supplements. These labels
 were generated after selection and testing; they neither update the runtime
 prior automatically nor establish a playing improvement.
+
+The subsequent capacity screen (232) tested a 357-coefficient quadratic
+expansion under both objectives, with matched linear controls on the same
+training and development-validation data. Its best posterior model gained
+0.01696 nats over the baseline, only 0.00718 beyond linear posterior training.
+All minimum-effect requirements failed; the previous test was not reused and
+no integration followed. Independent NumPy/C checks and exact reproduction
+of the earlier linear controls support this conclusion. The next proposed
+diagnosis is feature equivalence—whether distinct hidden transitions are
+indistinguishable to every scorer on these inputs—before another fit. See
+[the capacity result](../astra-submissions/analysis/posterior-capacity-20261102/README.md).

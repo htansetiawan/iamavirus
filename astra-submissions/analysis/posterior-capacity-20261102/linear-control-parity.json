@@ -1,0 +1,37 @@
+{
+  "scope": "Current CPU linear controls versus published231 GPU curves; no old test data used.",
+  "comparisons": [
+    {
+      "objective": "actor",
+      "ridge": 0.001,
+      "checkpoints": 12,
+      "loss_max_difference": 2.220446049250313e-16,
+      "nll_max_difference": 4.440892098500626e-16,
+      "coefficient_max_difference": 1.0547118733938987e-15
+    },
+    {
+      "objective": "actor",
+      "ridge": 0.01,
+      "checkpoints": 12,
+      "loss_max_difference": 2.220446049250313e-16,
+      "nll_max_difference": 4.440892098500626e-16,
+      "coefficient_max_difference": 8.465450562766819e-16
+    },
+    {
+      "objective": "posterior",
+      "ridge": 0.001,
+      "checkpoints": 12,
+      "loss_max_difference": 4.440892098500626e-16,
+      "nll_max_difference": 8.881784197001252e-16,
+      "coefficient_max_difference": 7.302491944471967e-14
+    },
+    {
+      "objective": "posterior",
+      "ridge": 0.01,
+      "checkpoints": 12,
+      "loss_max_difference": 4.440892098500626e-16,
+      "nll_max_difference": 8.881784197001252e-16,
+      "coefficient_max_difference": 3.267525139349914e-14
+    }
+  ]
+}

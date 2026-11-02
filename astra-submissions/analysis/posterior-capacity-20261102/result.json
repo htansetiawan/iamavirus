@@ -1,0 +1,109 @@
+{
+  "metrics": {
+    "primary": {
+      "cases": 536,
+      "games": 80,
+      "unsupported": 0,
+      "nll": {
+        "baseline": 2.659296643302892,
+        "linear-actor": 2.662710348944194,
+        "linear-posterior": 2.649517427563239,
+        "quadratic-actor": 2.662664847824023,
+        "quadratic-posterior": 2.6423385774802375
+      },
+      "actor_nll": {
+        "baseline": 1.5852508691060359,
+        "linear-actor": 1.5745134720209082,
+        "linear-posterior": 1.6027092887283914,
+        "quadratic-actor": 1.5626783207614934,
+        "quadratic-posterior": 1.5923929730853803
+      },
+      "gain": 0.016958065822654828,
+      "gain_over_linear-posterior": 0.007178850083001792,
+      "gain_over_quadratic-actor": 0.020326270343785566
+    },
+    "all": {
+      "cases": 810,
+      "games": 80,
+      "unsupported": 0,
+      "nll": {
+        "baseline": 2.058165751870674,
+        "linear-actor": 2.0616341202391277,
+        "linear-posterior": 2.050458976246697,
+        "quadratic-actor": 2.0627569805608323,
+        "quadratic-posterior": 2.044924114418297
+      },
+      "actor_nll": {
+        "baseline": 1.6022561851690984,
+        "linear-actor": 1.5965287547756994,
+        "linear-posterior": 1.6154538950153956,
+        "quadratic-actor": 1.5900448207788227,
+        "quadratic-posterior": 1.6104669805457312
+      },
+      "gain": 0.013241637452376609,
+      "gain_over_linear-posterior": 0.005534861828400068,
+      "gain_over_quadratic-actor": 0.01783286614253568
+    },
+    "late": {
+      "cases": 266,
+      "games": 36,
+      "unsupported": 0,
+      "nll": {
+        "baseline": 3.0216792967368895,
+        "linear-actor": 3.039636437997268,
+        "linear-posterior": 2.94604826277371,
+        "quadratic-actor": 3.0452175928950425,
+        "quadratic-posterior": 2.934816934617748
+      },
+      "actor_nll": {
+        "baseline": 2.3300818728605384,
+        "linear-actor": 2.3126408962470935,
+        "linear-posterior": 2.3457815602752516,
+        "quadratic-actor": 2.297723262842299,
+        "quadratic-posterior": 2.335851236213064
+      },
+      "gain": 0.0868623621191413,
+      "gain_over_linear-posterior": 0.011231328155961845,
+      "gain_over_quadratic-actor": 0.11040065827729387
+    },
+    "surprise": {
+      "cases": 44,
+      "games": 26,
+      "unsupported": 0,
+      "nll": {
+        "baseline": 1.4563894283678682,
+        "linear-actor": 1.4426513250032467,
+        "linear-posterior": 1.45725022154574,
+        "quadratic-actor": 1.4281125775750425,
+        "quadratic-posterior": 1.4244507662392298
+      },
+      "actor_nll": {
+        "baseline": 0.8799692830907576,
+        "linear-actor": 0.8235811870801764,
+        "linear-posterior": 1.0091581516954684,
+        "quadratic-actor": 0.7868013746950676,
+        "quadratic-posterior": 1.0016352144253853
+      },
+      "gain": 0.03193866212863846,
+      "gain_over_linear-posterior": 0.03279945530651025,
+      "gain_over_quadratic-actor": 0.0036618113358127353
+    }
+  },
+  "checks": {
+    "baseline_gain": false,
+    "linear_posterior": false,
+    "quadratic_actor": false,
+    "late": true,
+    "surprise_count": true,
+    "surprise": true,
+    "all": true,
+    "support": true
+  },
+  "passed": false,
+  "at": "2026-11-02T04:33:13.446016+00:00",
+  "elapsed": 586.742289021,
+  "scope": "Development capacity screen on reused231 train/validation only. No old test access, fresh test or strength claim.",
+  "plan_sha256": "1a9bb9cf405d2dc8013a1a3acf9985e25aeb4c7ab46c131a6f1b2c7b8d7cfbaf",
+  "selection_sha256": "4337972e238de7fbcb76205b06350cf2d00a8fab920f730b1dbee54ce1370e8f",
+  "scores_sha256": "25034852513ba5b39cbf577b5135dc0113b611b2a7c3ae94d28dd2184e0d54aa"
+}
