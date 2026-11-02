@@ -1,0 +1,10 @@
+{
+  "handle": 47159,
+  "exit": 1,
+  "cause": "The flat score record uses actor for model scores, replacing the actor team-name metadata. All other metadata, features and independent rules passed.",
+  "only_metadata_conflict": {
+    "actor": 1108
+  },
+  "training_or_prediction_change": false,
+  "repair": "Preserve original artifact; independently rebuild a nested metadata/predictions artifact, then complete numeric review with a separate reviewer."
+}

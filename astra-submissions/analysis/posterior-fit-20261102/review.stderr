@@ -1,0 +1,9 @@
+mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/queen-terminal-backport-20261102/build-r2/base/data/history.bin: 359889 records
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/posterior-fit-20261102/review.py", line 103, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/posterior-fit-20261102/review.py", line 65, in main
+    assert all(record[k]==v for k,v in row['meta'].items())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError

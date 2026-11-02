@@ -1,0 +1,95 @@
+{
+  "metrics": {
+    "primary": {
+      "cases": 779,
+      "games": 80,
+      "unsupported": 0,
+      "baseline_nll": 2.4313805003037494,
+      "baseline_actor_nll": 1.701323309199467,
+      "actor_nll": 2.4390956280120255,
+      "actor_actor_nll": 1.696550979149319,
+      "posterior_nll": 2.410861724403535,
+      "posterior_actor_nll": 1.722918244288681,
+      "gain": 0.0205187759002144,
+      "gain_over_actor": 0.028233903608490395,
+      "gain_ci95": [
+        0.0007304506664174987,
+        0.04173010631756443
+      ]
+    },
+    "all": {
+      "cases": 1108,
+      "games": 80,
+      "unsupported": 0,
+      "baseline_nll": 1.9270622784792124,
+      "baseline_actor_nll": 1.6898513763076661,
+      "actor_nll": 1.932049052051053,
+      "actor_actor_nll": 1.6861105379843866,
+      "posterior_nll": 1.9077684428833692,
+      "posterior_actor_nll": 1.704733265104014,
+      "gain": 0.019293835595843585,
+      "gain_over_actor": 0.02428060916768391
+    },
+    "late": {
+      "cases": 500,
+      "games": 41,
+      "unsupported": 0,
+      "baseline_nll": 3.147935820672202,
+      "baseline_actor_nll": 2.3191410284382328,
+      "actor_nll": 3.1614925789786046,
+      "actor_actor_nll": 2.304513182886276,
+      "posterior_nll": 3.109518762033245,
+      "posterior_actor_nll": 2.375500782149284,
+      "gain": 0.03841705863895705,
+      "gain_over_actor": 0.051973816945359595
+    },
+    "surprise": {
+      "cases": 69,
+      "games": 34,
+      "unsupported": 0,
+      "baseline_nll": 1.6310687187987596,
+      "baseline_actor_nll": 1.056768634628377,
+      "actor_nll": 1.6286103677332893,
+      "actor_actor_nll": 1.0059888569368858,
+      "posterior_nll": 1.6072327694404573,
+      "posterior_actor_nll": 1.215250465676531,
+      "gain": 0.023835949358302383,
+      "gain_over_actor": 0.021377598292831975
+    }
+  },
+  "checks": {
+    "baseline_gain": false,
+    "baseline_ci": true,
+    "matched_actor": false,
+    "late": true,
+    "surprise_count": true,
+    "surprise": true,
+    "all": true,
+    "support": true
+  },
+  "passed": false,
+  "at": "2026-11-02T04:08:58.719217+00:00",
+  "device": "cuda",
+  "elapsed": 50.66251755000121,
+  "parity": {
+    "train": {
+      "cases": 3058,
+      "probability_error": 2.619457314390061e-07,
+      "log_error": 1.6096620729655342e-06
+    },
+    "validation": {
+      "cases": 810,
+      "probability_error": 1.882097140915029e-07,
+      "log_error": 1.3996260204152122e-06
+    },
+    "test": {
+      "cases": 1108,
+      "probability_error": 3.74882038745028e-07,
+      "log_error": 1.3185354692524243e-06
+    }
+  },
+  "scores_sha256": "f9b4a072f01360745560b8c6f94eebe30757a230788d6619bb9db8a3725cf718",
+  "selection_sha256": "db6695852750fbf8a8fac852019a54865448754d79ed671fd53467455f8b5cca",
+  "plan_sha256": "b9753f0c5c88728daa1f9d044f6a5fcc4ef20e072994472f72f062aaa93a2c7f",
+  "scope": "One-step posterior fit on uncapped exact prefixes; same incoming baseline weights for both objectives."
+}
