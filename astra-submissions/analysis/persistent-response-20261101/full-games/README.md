@@ -1,4 +1,4 @@
-# Persistent-mode pilot: head-to-head complete, Misty running
+# Persistent-mode pilot: complete, eligible for confirmation
 
 **7 wins, 0 draws, 1 loss against exact v37**, across all eight planned 180+2 games. Candidate White: 4–0; candidate Black: 3–1. All 761 frames passed rules validation. No illegal move, protocol failure, timeout or other recorded technical fault. This is a small pilot, not proof of a true 87.5% win rate or arena Elo gain.
 
@@ -15,14 +15,13 @@ The unchanged gate advances to eight Misty games: four candidate and four exact-
 
 Source and immutable plan were published at 13e7201 before the first game. `taxonomy-h2h.md` and JSON describe every completed valid game; per-colour behaviour rates do not establish causation. The separate eight-decision queen screen is diagnostic and does not alter this match gate.
 
-## Conditional Misty progress
+## Conditional Misty result
 
-Only completed first-attempt games are listed. This phase is incomplete; interim rates are not a comparative strength result. Original lane handles **2093 and 20926** remain live.
+All eight original games completed without technical faults: **candidate 3W–1L, exact-v37 control 3W–1L**. Both policies won their two White games except the pair-1 v37 control; the candidate lost its pair-0 Black game and the controls won both Black games. Thus their equal totals conceal different paired outcomes, not identical play.
 
-| Pair | Colour | Policy | Result | Plies |
-|---|---|---|---|---:|
-| 0 | black | candidate | loss | 50 |
-| 0 | white | base | win | 50 |
-| 0 | white | candidate | win | 66 |
-| 1 | white | base | loss | 57 |
-| 1 | white | candidate | win | 66 |
+| Pair | Candidate White | v37 White | Candidate Black | v37 Black |
+|---|---|---|---|---|
+| 0 | win, 66 plies | win, 50 plies | loss, 50 plies | win, 49 plies |
+| 1 | win, 66 plies | loss, 57 plies | win, 101 plies | win, 97 plies |
+
+All 544 Misty-phase frames passed validation. Original handles 2093 and 20926 exited 0; the host confirms both parents, all eight workers and 16 bot groups are gone (`misty-terminal.json`). No games were repeated. The frozen pilot gate passes. The next experiment is an independently frozen 80-game confirmation, not a ZIP or arena Elo claim: `../../persistent-confirmation-20261102/plan.json`.
