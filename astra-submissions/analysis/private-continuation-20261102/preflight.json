@@ -1,0 +1,54 @@
+{
+  "at": "2026-11-02T08:32:21.657399+00:00",
+  "passed": true,
+  "fixtures": [
+    {
+      "fixture": "threefold",
+      "passed": true,
+      "result": "1/2-1/2",
+      "reason": "Threefold repetition",
+      "prefix_clocks_exact": true,
+      "all_frames_match": true,
+      "privacy_projection": true,
+      "replay_sha256": "bdd351cedfb0ac855afe9618575cb4b711dcc28d6bfc41d04b931cd336e984ec"
+    },
+    {
+      "fixture": "ep",
+      "passed": true,
+      "result": "*",
+      "reason": "Continuation horizon reached; censored, not a draw",
+      "prefix_clocks_exact": true,
+      "all_frames_match": true,
+      "privacy_projection": true,
+      "replay_sha256": "30b4241250645a2abd6f36cd199729cb27c87c5914d3c48ac61681ba4eecbab1"
+    },
+    {
+      "fixture": "castling",
+      "passed": true,
+      "result": "*",
+      "reason": "Continuation horizon reached; censored, not a draw",
+      "prefix_clocks_exact": true,
+      "all_frames_match": true,
+      "privacy_projection": true,
+      "replay_sha256": "6b07f09df499fb810ef249e93584577fba2fdbf3c0c760825811bf907825437f"
+    }
+  ],
+  "engine": [
+    {
+      "side": 0,
+      "exit": 0,
+      "forced_moves": 2,
+      "clocks_exact": true
+    },
+    {
+      "side": 1,
+      "exit": 0,
+      "forced_moves": 2,
+      "clocks_exact": true
+    }
+  ],
+  "source_sha256": "7409c066066ef3f82403121e0a1d83a9d1629fb3157ebb8a53a3e7d90ab30dc1",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "binary_sha256": "f1365e4dc032f26d79c0d391b4d6c461a48681a531fc77dd301a049d0ac9ff66",
+  "scope": "Synthetic restoration fixtures and real-engine forced-clock handling. No strength, speed or exact historical belief-state claim."
+}

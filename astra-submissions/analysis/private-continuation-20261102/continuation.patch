@@ -1,0 +1,42 @@
+--- v37/src/main.c
++++ continuation/src/main.c
+@@ -264,6 +264,10 @@
+     /* decision replay (tests): our first decisions play these moves (comma
+      * separated UCI, as the game went) and the next one is searched */
+     const char *forced = getenv("MIST_FORCE_MOVES");
++    const int prefix_continue = getenv("ASTRA_PREFIX_CONTINUE") &&
++        strcmp(getenv("ASTRA_PREFIX_CONTINUE"), "1") == 0;
++    const char *prefix_clocks = getenv("ASTRA_PREFIX_CLOCKS");
++
+     const char *truth_seq = getenv("MIST_TRUTH_SEQ");
+     /* MIST_STOCKFISH=path: Stockfish scores the search's leaves (paper, 3.3) */
+     if (getenv("MIST_STOCKFISH") && *getenv("MIST_STOCKFISH"))
+@@ -437,6 +441,19 @@
+             }
+             printf("move %s\n", want); fflush(stdout);
+             clock_left = reported - (now_seconds() - view_at) + increment;
++            if (prefix_continue) {
++                char *clock_end = NULL;
++                const double restored = prefix_clocks ? strtod(prefix_clocks, &clock_end) : -1;
++                if (!prefix_clocks || clock_end == prefix_clocks || !isfinite(restored) ||
++                    restored < 0 || (*clock_end && *clock_end != ',')) {
++                    fprintf(stderr, "astra-prefix: invalid post-move clock\n");
++                    break;
++                }
++                prefix_clocks = *clock_end == ',' ? clock_end + 1 : clock_end;
++                clock_left = restored;
++                fprintf(stderr, "astra-prefix: decision=%d clock=%.9f\n", decisions, clock_left);
++            }
++
+             front_play(&front, view, r.move);
+             last = r.move; moved = 1; ++decisions;
+             continue;
+@@ -487,7 +504,7 @@
+         clock_left = reported - (now_seconds() - view_at) + increment;
+         front_play(&front, view, r.move);
+         last = r.move; moved = 1;
+-        if (forced) break;   /* decision replay: one searched decision */
++        if (forced && !prefix_continue) break;   /* default replay remains one decision */
+     }
+     belief_free(&b);
+     sf_stop();

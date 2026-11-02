@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-02T08:34:08.717249+00:00",
+  "cases": [
+    {
+      "id": "continuation-0",
+      "game": "myg7umnl",
+      "branch_ply": 32,
+      "prefix": "astra-submissions/analysis/private-continuation-20261102/prefix-0.json",
+      "prefix_sha256": "6ca483081d4e7e0f92cf4afbdc6e91b5d68880b1455d27cc727f9a13c8998158",
+      "source_replay": "data/raw/games/myg7umnl/replay.json",
+      "source_replay_sha256": "c960778166b50504272bdc5b841d6722c52456e71e6a1569e5259ee379687a99",
+      "seed": 2411102
+    },
+    {
+      "id": "continuation-1",
+      "game": "idphh9oj",
+      "branch_ply": 33,
+      "prefix": "astra-submissions/analysis/private-continuation-20261102/prefix-1.json",
+      "prefix_sha256": "00c16d95f9b9c2683fccb76f725703e47258ed65f882ca79c7cbaf762d0c4517",
+      "source_replay": "data/raw/games/idphh9oj/replay.json",
+      "source_replay_sha256": "8f3f5b23206eda654142c137d9262dd24279ca96c3f9d5e4e8fb536eb3813d96",
+      "seed": 2411104
+    }
+  ],
+  "selection": "First two SHA256(241-prefix:id) games among refresh457, both teams in snapshot top12, more than34 frames; no outcome filter or score inspection.",
+  "deps": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-continuation-20261102/continuation.py": "d5436081767c2f6cbd674c1d97b7353a096bc25fb4d1727cd333df094402bf96",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-continuation-20261102/build.py": "2239bf6e0988d63d5988d4d366e944e2dc97cef3d82fbd88385e6857c989d62a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-continuation-20261102/preflight.py": "7409c066066ef3f82403121e0a1d83a9d1629fb3157ebb8a53a3e7d90ab30dc1",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-continuation-20261102/fixture_bot.py": "ad7a51ad590ea0279f175cb7ecfb5869ba798000e236e53679f5cdf862285d74",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-continuation-20261102/experiment.py": "a58b987e1a2fc2e35fab05135fb738a3737cfe005f5dbe5d164de2e5f288102d",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-continuation-20261102/README.md": "41b9bea50318295c3a7928955f3db30ee3528a7d00326f9ec68102d10087680c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-continuation-20261102/build/mist": "f1365e4dc032f26d79c0d391b4d6c461a48681a531fc77dd301a049d0ac9ff66",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/private-continuation-20261102/build.json": "2b124d57d1d7a5d86bde3bcd5ed4e396ba581b1fc649e2851a7b4a75c9b4c07d",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/private-continuation-20261102/preflight.json": "f6586d64c1747d3058428ae826a4f203c7bc83dd008e6e7fb0a4ecc02b1ebd62",
+    "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/queen-terminal-backport-20261102/build-r2/base/bin/stockfish": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/queen-terminal-backport-20261102/build-r2/base/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "/home/henrytan/git/iamavirus/fable-submissions/iamavirus-v37-mist-c-v14-allfit.zip": "41e02e280b61e0e0c031a831d2ab4b2cc8f52c6c59bd8c11fc026f3cc817c76c",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/local_turn_control.py": "7e72530a5871904df3a76107dff4751b67c8423e78af10beb3252fae8108189b",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/arena-refresh-20261102-residual/manifest.json": "639f9a3f37052b027bd366b7c0314fb9ca7c7dea7dc5fdf6a8fadfbd16cbd828",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/arena-refresh-20261102-residual/standings.json": "b057f2213f0cabb118b704d6ae871e6f4f090911fd7a6bf9073ce80c76166523"
+  },
+  "per_move_cap": 1.0,
+  "max_continuation_plies": 64,
+  "per_job_wall_seconds": 300,
+  "batch_wall_seconds": 650,
+  "cores": [
+    0,
+    1
+  ],
+  "retries": 0,
+  "gate": "No protocol/legality/privacy/state/clock-restoration failure. Report natural terminals, censored continuations and cost separately. Technical error stops subsequent jobs. No strength gate or training follows.",
+  "continuation_policy": "Reconstructed v37-v37, one second maximum search budget, recorded branch clocks and increment. Not original arena internal states or arena-budget policy.",
+  "data_use": "Feasibility only; all source games remain excluded from any later learned-model confirmation. No fitting on 240 holdout.",
+  "scope": "Data-generator feasibility and correctness, not a candidate match or playing-strength estimate."
+}
