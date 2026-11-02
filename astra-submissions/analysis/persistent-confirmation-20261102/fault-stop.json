@@ -1,0 +1,382 @@
+{
+  "audit_note": "First controller invocation stopped verified lane1 parent, then /proc scan encountered an unreadable unrelated process before child signals or receipt. This invocation tolerates unreadable non-owned entries and re-verifies ownership.",
+  "at": "2026-11-02T02:26:18.250510+00:00",
+  "reason": "219 recorded Misty control time forfeit disqualifies frozen no-fault gate; administrative termination, no retries",
+  "lanes": [
+    {
+      "lane": 0,
+      "expected_parent": {
+        "pid": 303142,
+        "state": "S",
+        "ppid": 303141,
+        "pgid": 303141,
+        "sid": 303141,
+        "starttime": 3524057,
+        "affinity": [
+          0,
+          1
+        ],
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "0"
+        ],
+        "namespace_pids": [
+          303142,
+          2
+        ],
+        "pid_namespace": "pid:[4026532680]",
+        "rss_kib": 42084,
+        "peak_rss_kib": 142556
+      },
+      "live_parent": null,
+      "signaled": []
+    },
+    {
+      "lane": 1,
+      "expected_parent": {
+        "pid": 303153,
+        "state": "S",
+        "ppid": 303152,
+        "pgid": 303152,
+        "sid": 303152,
+        "starttime": 3524173,
+        "affinity": [
+          4,
+          5
+        ],
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "1"
+        ],
+        "namespace_pids": [
+          303153,
+          2
+        ],
+        "pid_namespace": "pid:[4026532742]",
+        "rss_kib": 42108,
+        "peak_rss_kib": 142576
+      },
+      "live_parent": {
+        "pid": 303153,
+        "state": "T",
+        "ppid": 303152,
+        "starttime": 3524173,
+        "namespace": "pid:[4026532742]",
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "1"
+        ]
+      },
+      "signaled": [
+        {
+          "pid": 343762,
+          "starttime": 4225727,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.268819+00:00"
+        },
+        {
+          "pid": 343763,
+          "starttime": 4225871,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.268901+00:00"
+        },
+        {
+          "pid": 343767,
+          "starttime": 4225872,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.268979+00:00"
+        },
+        {
+          "pid": 343770,
+          "starttime": 4225907,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.269053+00:00"
+        },
+        {
+          "pid": 343773,
+          "starttime": 4225943,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.269129+00:00"
+        },
+        {
+          "pid": 343777,
+          "starttime": 4225957,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.269203+00:00"
+        },
+        {
+          "pid": 303153,
+          "starttime": 3524173,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.269285+00:00"
+        }
+      ],
+      "parent_stopped_at": "2026-11-02T02:26:18.250688+00:00",
+      "owned_children": [
+        {
+          "pid": 343762,
+          "state": "S",
+          "ppid": 303153,
+          "starttime": 4225727,
+          "namespace": "pid:[4026532742]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/.venv/bin/python",
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+            "worker",
+            "--job",
+            "confirm-misty-p2-white-candidate"
+          ]
+        },
+        {
+          "pid": 343763,
+          "state": "T",
+          "ppid": 343762,
+          "starttime": 4225871,
+          "namespace": "pid:[4026532742]",
+          "argv": [
+            "./mist"
+          ]
+        },
+        {
+          "pid": 343767,
+          "state": "T",
+          "ppid": 343763,
+          "starttime": 4225872,
+          "namespace": "pid:[4026532742]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+          ]
+        },
+        {
+          "pid": 343770,
+          "state": "T",
+          "ppid": 343763,
+          "starttime": 4225907,
+          "namespace": "pid:[4026532742]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+          ]
+        },
+        {
+          "pid": 343773,
+          "state": "R",
+          "ppid": 343762,
+          "starttime": 4225943,
+          "namespace": "pid:[4026532742]",
+          "argv": [
+            "/home/henrytan/fable-persist/scratchpad/misty/venv/bin/python",
+            "-u",
+            "misty_bot.py"
+          ]
+        },
+        {
+          "pid": 343777,
+          "state": "S",
+          "ppid": 343773,
+          "starttime": 4225957,
+          "namespace": "pid:[4026532742]",
+          "argv": [
+            "/home/henrytan/fable-persist/scratchpad/misty/bin/stockfish"
+          ]
+        }
+      ],
+      "unfinished": [
+        "confirm-misty-p2-white-candidate"
+      ]
+    },
+    {
+      "lane": 2,
+      "expected_parent": {
+        "pid": 303162,
+        "state": "S",
+        "ppid": 303161,
+        "pgid": 303161,
+        "sid": 303161,
+        "starttime": 3524289,
+        "affinity": [
+          6,
+          7
+        ],
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "2"
+        ],
+        "namespace_pids": [
+          303162,
+          2
+        ],
+        "pid_namespace": "pid:[4026532802]",
+        "rss_kib": 41980,
+        "peak_rss_kib": 142448
+      },
+      "live_parent": {
+        "pid": 303162,
+        "state": "S",
+        "ppid": 303161,
+        "starttime": 3524289,
+        "namespace": "pid:[4026532802]",
+        "argv": [
+          ".venv/bin/python",
+          "astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+          "lane",
+          "--phase",
+          "confirm",
+          "--lane",
+          "2"
+        ]
+      },
+      "signaled": [
+        {
+          "pid": 344272,
+          "starttime": 4237251,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.287758+00:00"
+        },
+        {
+          "pid": 344275,
+          "starttime": 4237395,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.287841+00:00"
+        },
+        {
+          "pid": 344279,
+          "starttime": 4237396,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.287918+00:00"
+        },
+        {
+          "pid": 344282,
+          "starttime": 4237431,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.287992+00:00"
+        },
+        {
+          "pid": 344285,
+          "starttime": 4237466,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.288061+00:00"
+        },
+        {
+          "pid": 344289,
+          "starttime": 4237466,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.288131+00:00"
+        },
+        {
+          "pid": 344292,
+          "starttime": 4237501,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.288201+00:00"
+        },
+        {
+          "pid": 303162,
+          "starttime": 3524289,
+          "signal": "SIGKILL",
+          "at": "2026-11-02T02:26:18.288279+00:00"
+        }
+      ],
+      "parent_stopped_at": "2026-11-02T02:26:18.269513+00:00",
+      "owned_children": [
+        {
+          "pid": 344272,
+          "state": "S",
+          "ppid": 303162,
+          "starttime": 4237251,
+          "namespace": "pid:[4026532802]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/.venv/bin/python",
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/run.py",
+            "worker",
+            "--job",
+            "confirm-v35-p10-white"
+          ]
+        },
+        {
+          "pid": 344275,
+          "state": "T",
+          "ppid": 344272,
+          "starttime": 4237395,
+          "namespace": "pid:[4026532802]",
+          "argv": [
+            "./mist"
+          ]
+        },
+        {
+          "pid": 344279,
+          "state": "T",
+          "ppid": 344275,
+          "starttime": 4237396,
+          "namespace": "pid:[4026532802]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+          ]
+        },
+        {
+          "pid": 344282,
+          "state": "T",
+          "ppid": 344275,
+          "starttime": 4237431,
+          "namespace": "pid:[4026532802]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/candidate/bin/stockfish"
+          ]
+        },
+        {
+          "pid": 344285,
+          "state": "R",
+          "ppid": 344272,
+          "starttime": 4237466,
+          "namespace": "pid:[4026532802]",
+          "argv": [
+            "./mist"
+          ]
+        },
+        {
+          "pid": 344289,
+          "state": "S",
+          "ppid": 344285,
+          "starttime": 4237466,
+          "namespace": "pid:[4026532802]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/v35/bin/stockfish"
+          ]
+        },
+        {
+          "pid": 344292,
+          "state": "S",
+          "ppid": 344285,
+          "starttime": 4237501,
+          "namespace": "pid:[4026532802]",
+          "argv": [
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/persistent-confirmation-20261102/build/v35/bin/stockfish"
+          ]
+        }
+      ],
+      "unfinished": [
+        "confirm-v35-p10-white"
+      ]
+    }
+  ],
+  "finished_at": "2026-11-02T02:26:19.288479+00:00",
+  "remaining_owned": []
+}

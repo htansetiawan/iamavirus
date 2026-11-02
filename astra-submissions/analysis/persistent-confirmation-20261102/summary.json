@@ -1,40 +1,74 @@
 {
-  "completed": 16,
+  "completed": 46,
   "planned": 80,
-  "faults": [],
+  "faults": [
+    {
+      "job": {
+        "id": "confirm-misty-p1-white-base",
+        "phase": "confirm",
+        "panel": "misty",
+        "lane": 0,
+        "pair": 33,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 219202,
+        "opponent_seed": 219203,
+        "opponent": "misty"
+      },
+      "result": "1-0",
+      "reason": "Time forfeit",
+      "score": 1.0,
+      "faults": [
+        "bot failure: black Time forfeit"
+      ],
+      "plies": 113,
+      "final_clocks": [
+        26.93527,
+        36.262941
+      ],
+      "persistent_decisions": 0,
+      "model_decisions": 0,
+      "model_seconds": 0,
+      "replay_sha256": "edea131a423e1a06291e9970f07cf96208c6513703b72af0f56e2312081978d0",
+      "validated_frames": 114,
+      "exit": 0,
+      "elapsed_seconds": 562.7581566070003,
+      "finished": "2026-11-02T02:08:02.816517+00:00"
+    }
+  ],
   "panels": {
     "v35/candidate": {
-      "games": 7,
-      "wins": 4,
+      "games": 20,
+      "wins": 9,
       "draws": 0,
-      "losses": 3,
-      "points": 4.0,
-      "score": 0.5714285714285714
+      "losses": 11,
+      "points": 9.0,
+      "score": 0.45
     },
     "base/candidate": {
-      "games": 7,
-      "wins": 4,
+      "games": 20,
+      "wins": 10,
       "draws": 1,
-      "losses": 2,
-      "points": 4.5,
-      "score": 0.6428571428571429
+      "losses": 9,
+      "points": 10.5,
+      "score": 0.525
     },
     "misty/candidate": {
-      "games": 1,
-      "wins": 1,
+      "games": 3,
+      "wins": 3,
       "draws": 0,
       "losses": 0,
-      "points": 1.0,
+      "points": 3.0,
       "score": 1.0
     },
     "misty/base": {
-      "games": 1,
-      "wins": 1,
+      "games": 3,
+      "wins": 3,
       "draws": 0,
       "losses": 0,
-      "points": 1.0,
+      "points": 3.0,
       "score": 1.0
     }
   },
-  "decision": "incomplete"
+  "decision": "technical_failure_no_promotion"
 }

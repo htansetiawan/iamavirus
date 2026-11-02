@@ -23,3 +23,11 @@ Plan and completed pilot are on both remotes at `57194993aa6e5c0c612e7d8265ddbfa
 ## Third confirmation checkpoint
 
 2026-11-02T02:02:11.792619+00:00: 39/80 first attempts complete, no faults; 3193 recorded validated frames agree with receipts and replay hashes. v35/candidate: 7W–0D–10L; base/candidate: 9W–1D–7L; misty/candidate: 3W–0D–0L; misty/base: 2W–0D–0L. All three original handles remain live. No superiority established; frozen configuration and completion gate unchanged. Only completed job directories are published. See `checkpoint-3.json`.
+
+## Closed after a control timeout
+
+At 02:08 UTC, authentic Misty timed out as Black in a v37 control, after 113 plies. The last recorded board clock of 36.262941 seconds is the clock **before** that failed turn. The complete protocol records its clock prompt and no response; the failure arrives 36.274 seconds later. This is consistent with exhaustion of that budget, not evidence of a premature referee timeout. There is no captured Misty stderr; the internal cause remains unknown.
+
+The frozen no-fault promotion gate therefore cannot pass. On noticing the fault, Astra stopped the remaining lanes by verified host PID, namespace and process start time. The initial cleanup scan encountered an unreadable unrelated /proc entry after stopping one parent; the corrected scan finished cleanup without targeting unrelated processes. All owned processes are terminal. Two in-flight games are retained as administrative aborts, never scored or retried; 32 jobs never started.
+
+There are 46 recorded results: 45 valid games and one control timeout. Candidate versus v35: **9W–0D–11L**; versus v37: **10W–1D–9L**. Candidate Misty: 3W/3; valid v37 Misty controls: 2W/2, plus the excluded timeout. These incomplete panels do not establish superiority. Every completed replay and its hash was independently revalidated; see `closure.json` for the complete file manifest, valid-only counts, timeout transcript and process receipts. No new ZIP follows from this configuration.
