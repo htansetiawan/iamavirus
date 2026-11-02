@@ -1,0 +1,79 @@
+[
+  {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-pthread",
+      "-I",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src",
+      "-O2",
+      "-shared",
+      "-fPIC",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/filter.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/movemodel.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/filter.so"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-pthread",
+      "-I",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src",
+      "-O2",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/check.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/movemodel.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/check"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-pthread",
+      "-I",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/check.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/src/movemodel.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/history-mixture-20261102/build/check-san"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": "check",
+    "exit_code": 0,
+    "stdout": "PASS 48 independent weighted-history comparisons; both colours; temperature1/2; empirical histories alter predictions; no-table board parity; empty update. Board=232 history=16 candidate=32\n",
+    "stderr": ""
+  },
+  {
+    "command": "check-san",
+    "exit_code": 1,
+    "stdout": "",
+    "stderr": "==32==LeakSanitizer has encountered a fatal error.\n==32==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1\n==32==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)\n"
+  }
+]

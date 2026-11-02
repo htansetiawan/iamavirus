@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "pins": {
+    "astra-submissions/experiments/history-mixture-20261102/filter.c": "d1d0139d3142f27af038a67e1df72fd5e3a68e7718ce4185a630b6e4dc465338",
+    "astra-submissions/experiments/history-mixture-20261102/check.c": "cf3bce627ab8354b02b5d2f8872291d2c76c9f491a0d2abd3d8f5ff529f3fdc6",
+    "astra-submissions/experiments/history-mixture-20261102/prepare.py": "46e1931faa70da80b7869b9750a2f659c4cbb037e77ac830c7f98064badf4525",
+    "astra-submissions/experiments/history-mixture-20261102/README.md": "700f4dd7536f41e877db7906695a0f2e0c9f9b30216e8b28291871de64ae815b",
+    "astra-submissions/experiments/history-mixture-20261102/build/filter.so": "99abd98602b99760ac9c1f1aad3f4fd9144f610fb75154f849d27bf41e2b2e52",
+    "astra-submissions/experiments/history-mixture-20261102/build/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54"
+  },
+  "optimized_checks": {
+    "command": "check",
+    "exit_code": 0,
+    "stdout": "PASS 48 independent weighted-history comparisons; both colours; temperature1/2; empirical histories alter predictions; no-table board parity; empty update. Board=232 history=16 candidate=32\n",
+    "stderr": ""
+  },
+  "sanitizer": {
+    "at": "2026-11-02T13:36:14.090214+00:00",
+    "binary_sha256": "518ca7a2edae737870f93ebcb32c51c6354393cc8b16f3ca81f5f98a9fd5bdcd",
+    "exit_code": 0,
+    "stdout": "PASS 48 independent weighted-history comparisons; both colours; temperature1/2; empirical histories alter predictions; no-table board parity; empty update. Board=232 history=16 candidate=32\n",
+    "stderr": "",
+    "context": "same binary outside sandbox ptrace; leak checking enabled",
+    "no_replay_collection_started": true
+  },
+  "sandbox_failure_retained": "native-check-failure.json"
+}
