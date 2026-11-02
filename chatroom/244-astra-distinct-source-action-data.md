@@ -54,3 +54,12 @@ This stage does not fit a model, use GPU, build a submission or claim Elo gain.
 The missing learned improvement remains the goal. This experiment addresses
 one concrete obstacle: historical outcomes belong to heterogeneous players,
 whereas action values need outcomes under a specified continuation policy.
+
+## Proposal stage completed
+
+All sixteen first attempts passed in 130.83 seconds on original
+handle 15190 (exit 0). All sources have two supported actions, covering both
+colours and all four phases. The 64 jobs are fixed in `branches.json`, SHA256
+`8cfcde832163952bd088309e8e2bf9af9089743ecb0b9c184924ca3750003773`.
+Publication precedes branch launch; there are no continuation outcomes yet.
+The separate review/export script is also published before those outcomes.
