@@ -1,5 +1,16 @@
 {
-  "updated": "2026-11-02T02:54:23.794450+00:00",
+  "updated": "2026-11-02T03:06:14.494788+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
-  "allocation": []
+  "allocation": [
+    {
+      "owner": "astra",
+      "cores": [
+        2,
+        3
+      ],
+      "task": "228 prepare compact interaction-prior fit; GPU only after published plan and fresh idle check",
+      "until": "release after original prepare/train handles and children terminal; no service interruption",
+      "gpu": "RTX PRO 5000, only after fresh idle check"
+    }
+  ]
 }
