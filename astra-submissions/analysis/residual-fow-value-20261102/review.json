@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-02T07:53:24.179199+00:00",
+  "passed": true,
+  "seconds": 3.6403342300036456,
+  "chosen": "flat",
+  "development_gate_pass": true,
+  "native": {
+    "flat": {
+      "cpu_cuda_probability_error": 1.0135776573605426e-07,
+      "native_cuda_probability_error": 1.0572459829827352e-07,
+      "bounded_residual_max": 1.7931709289550781,
+      "export_bytes": 640392,
+      "export_sha256": "f21a5e19c60c29eec1e8ba0a3d96ed59ca8da16640a1c23d6e38ce24a89d86c6",
+      "microseconds": [
+        9.372011719221973,
+        9.367460546627626,
+        9.330077539004833,
+        9.325139647842207,
+        9.327753321031196,
+        9.40119785184379,
+        9.40277636658493
+      ],
+      "median_microseconds": 9.367460546627626,
+      "passes": true
+    },
+    "query": {
+      "cpu_cuda_probability_error": 1.0674846151470518e-07,
+      "native_cuda_probability_error": 1.1618425110881958e-07,
+      "bounded_residual_max": 1.9736766815185547,
+      "export_bytes": 561288,
+      "export_sha256": "57da30579aaac4c7e96bd420cba0cfc567248cc7ba159157f51353d6dc2481ca",
+      "microseconds": [
+        45.01792421933715,
+        45.18167773426285,
+        45.00015175779026,
+        44.72693183714682,
+        44.2925410155226,
+        45.460554882481574,
+        44.91041757717085
+      ],
+      "median_microseconds": 45.00015175779026,
+      "passes": true
+    }
+  },
+  "native_gate_pass": true,
+  "fresh_confirmation_eligible": true,
+  "source_sha256": "d1e605d438ed315dac2764e83fd18d00aeda52af94ea2a4d77a3cbedf617f5cb",
+  "scope": "Independent reused-validation metrics/selection/gates and all native predictions; no fresh test, search or Elo evaluation."
+}

@@ -1,0 +1,82 @@
+{
+  "at": "2026-11-02T07:50:40.432932+00:00",
+  "selection": {
+    "flat": {
+      "epoch": 3,
+      "validation_logloss": 0.44631593315056184,
+      "sha256": "2eefb0317290ebf30e08831786178f58181cdba29ab01f9eefbd72c3541989ff",
+      "parameters": 160098
+    },
+    "query": {
+      "epoch": 3,
+      "validation_logloss": 0.44698620460632715,
+      "sha256": "144f1d068f7047cf267549f2b7bdd49034d58a4465583bb77a58540577113397",
+      "parameters": 64546
+    }
+  },
+  "chosen": "flat",
+  "validation": {
+    "calibrated_sf": {
+      "logloss": 0.4676685593945143,
+      "brier": 0.14223794072756188,
+      "positions": 8746,
+      "games": 1145
+    },
+    "raw_sf": {
+      "logloss": 0.4916564694576053,
+      "brier": 0.1481867190460452,
+      "positions": 8746,
+      "games": 1145
+    },
+    "flat": {
+      "logloss": 0.44631593315056184,
+      "brier": 0.13545378146388154,
+      "positions": 8746,
+      "games": 1145
+    },
+    "query": {
+      "logloss": 0.44698620460632715,
+      "brier": 0.1358622745818413,
+      "positions": 8746,
+      "games": 1145
+    }
+  },
+  "hidden_threat": {
+    "calibrated_sf": {
+      "logloss": 0.32638258979039436,
+      "brier": 0.10201472240930708,
+      "positions": 181,
+      "games": 171
+    },
+    "raw_sf": {
+      "logloss": 0.358089611902196,
+      "brier": 0.11009249024622524,
+      "positions": 181,
+      "games": 171
+    },
+    "flat": {
+      "logloss": 0.29403391409884244,
+      "brier": 0.0927510978891517,
+      "positions": 181,
+      "games": 171
+    },
+    "query": {
+      "logloss": 0.2966474451738483,
+      "brier": 0.09374283829833881,
+      "positions": 181,
+      "games": 171
+    }
+  },
+  "gates": {
+    "logloss_gain": true,
+    "brier": true,
+    "hidden_threat": true
+  },
+  "pass_development": true,
+  "seconds": 99.54229931600275,
+  "calibration": [
+    0.06541149970072252,
+    0.6808964794753857
+  ],
+  "scope": "Reused development validation only. No test or strength result; pass earns fresh confirmation, not integration."
+}

@@ -41,3 +41,7 @@ was fitted during that correction.
 CPU 0–1 reserved for preparation. Source and contract:
 `astra-submissions/experiments/residual-fow-value-20261102/` and
 `astra-submissions/analysis/residual-fow-value-20261102/`.
+
+## Development complete
+
+One99.54sGPUfit89370 exits0. Both arms pass; flat epoch3 wins development selection:4.57% lower log loss, better Brier, better hidden-threat score. Reviewer64127 independently verifies all scores and native predictions; native flat640KB/9.37us. No opened test was scored. This earns fresh confirmation240, whose contract freezes the exact candidate and prevents swapping in query after results. Public refresh20824 continues on4–5; noGPUwork or enginepatch. Full result and verified model archive are in analysis/residual-fow-value-20261102/.

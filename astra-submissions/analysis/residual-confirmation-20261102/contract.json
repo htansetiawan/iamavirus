@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-02T07:59:13.308797+00:00",
+  "primary": "flat",
+  "secondary": [
+    "query"
+  ],
+  "candidate_selection": "Frozen239 development choice; no alternative selection on test.",
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-confirmation-20261102/evaluate.py": "812bcd38f8abc76a4bc601e7e78b3621b88046c4ba3123dd89e2cb81c6ce7062",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-confirmation-20261102/data.py": "ae8ad35160828ff0c020463412a55350bb57d743696bc15b0afa8b90bcdb0ee3",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-confirmation-20261102/common.py": "07fce452034321a9fcd5c393cd87f57e4a507051ca8dc39f4ec0f481d942cd84",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-confirmation-20261102/review_data.py": "9791e5605998d5b492294763abe3ca7354170e576c7e7a872b517ff6228ebed2",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-confirmation-20261102/README.md": "2b8769be67471432eb14acac0562b20dd403c328b8a0f10f44746b017caa2842",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/data.py": "9c0b658b174743d5bd7dcab274f2bb8930ad9a6e9980649968a687e8dafc1304",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/build/leaf_collect": "bd5a95c64a2fc6ee43644a1a8294c762a7e5db6c349037600b2972bcfad5bb5e",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/build/residual.so": "d7269422818a07cd93ea35f2c0bf5361d4a215e39b2263c3fa510a0b1b822c1f",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/work/training/flat.fp32.bin": "f21a5e19c60c29eec1e8ba0a3d96ed59ca8da16640a1c23d6e38ce24a89d86c6",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/work/training/query.fp32.bin": "57da30579aaac4c7e96bd420cba0cfc567248cc7ba159157f51353d6dc2481ca",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/work/training/flat.pt": "2eefb0317290ebf30e08831786178f58181cdba29ab01f9eefbd72c3541989ff",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/residual-fow-value-20261102/work/training/query.pt": "144f1d068f7047cf267549f2b7bdd49034d58a4465583bb77a58540577113397",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/residual-fow-value-20261102/result.json": "8ca02cc1a6790ee50f4a330909d69578cbe92f8c4177892ea4f8ee1b692589ec",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/residual-fow-value-20261102/review.json": "bbeee6c8445edb6b73209aa3586ab423209375106dfb37b2107964db1a570fc8",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/selection.json": "5afd494feeb73a09a8eb2a501242aa385c7005e0473be94910a01d5603da5f02",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-fow-value-20261102/work/holdout/data.npz": "3d847788394368f2376b7b8620a033a66e2d513ad1b18a37b3fb32135aa3b433",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/query-fow-value-20261102/games.json": "e5e02fad79d52a4f52d48878514448f6545e97a09f17c32dcb2a0dec5e447a29",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/games.json": "f00a9ec1c1d6cf6703e1cb6fc37d80a8ebb669cca7de252a77e3fe17772024cf",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/arena-refresh-20261102-residual/refresh.py": "b9ca6fbe6cfaab84198c9ce5d38a2ff1b1408c286bdce3fb98162f237545abed"
+  },
+  "development_plan_sha256": "97a83efd26f07cb836c35347a587fd6f8a50e0dd626f1503003a4c24228a2bce",
+  "selection": {
+    "older_dates": [
+      "2026-10-10",
+      "2026-10-31"
+    ],
+    "older_max": 2000,
+    "new_max": 500,
+    "new_source": "Newly accepted2November games in one completed bounded600-game refresh; existing canonical states excluded.",
+    "required_new_source_games": 30,
+    "required_total_source_games": 1500,
+    "team_cohort": "237 pinned top12",
+    "game_order": "SHA256(240-holdout:game_id)",
+    "max_positions_per_game": 8,
+    "all_prior_237_238_features_excluded": true
+  },
+  "gate": {
+    "relative_logloss_gain_min": 0.02,
+    "game_bootstrap_upper_difference_max": 0.0,
+    "brier_difference_max": 0.0,
+    "new_date_logloss_difference_max": 0.0,
+    "new_date_brier_difference_max": 0.0,
+    "new_date_min_games": 30,
+    "new_date_min_positions": 200,
+    "hidden_threat_logloss_difference_max": 0.0,
+    "hidden_threat_min_games": 30,
+    "hidden_threat_min_positions": 100,
+    "ordinary_logloss_difference_max": 0.0,
+    "bootstrap_replicates": 2000,
+    "bootstrap_seed": 2401103
+  },
+  "scope": "Fresh prediction confirmation; older-unused plus separately checked new-date cohort. No training, search integration or Elo claim."
+}
