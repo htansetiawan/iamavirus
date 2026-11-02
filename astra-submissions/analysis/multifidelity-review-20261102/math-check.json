@@ -1,0 +1,113 @@
+{
+  "at": "2026-11-02T11:31:20.802784+00:00",
+  "passed": true,
+  "exact_fixtures": [
+    {
+      "agreement": 0.0,
+      "target_mean": 0.2,
+      "cheap_mean": 1.1,
+      "exact_estimator_and_gradient_checks": 4
+    },
+    {
+      "agreement": 0.25,
+      "target_mean": 0.2,
+      "cheap_mean": 1.3,
+      "exact_estimator_and_gradient_checks": 4
+    },
+    {
+      "agreement": 0.5,
+      "target_mean": 0.2,
+      "cheap_mean": 1.5,
+      "exact_estimator_and_gradient_checks": 4
+    },
+    {
+      "agreement": 0.8,
+      "target_mean": 0.2,
+      "cheap_mean": 1.74,
+      "exact_estimator_and_gradient_checks": 4
+    },
+    {
+      "agreement": 1.0,
+      "target_mean": 0.2,
+      "cheap_mean": 1.9,
+      "exact_estimator_and_gradient_checks": 4
+    }
+  ],
+  "allocation_checks": 315,
+  "hypothetical_scenarios": [
+    {
+      "rho": 0.5,
+      "cheap_cost_ratio": 0.02,
+      "extra_cheap_per_pair": 3.0824829046386304,
+      "paired_method_variance_ratio": 0.8774744871391588,
+      "selected_variance_ratio": 0.8774744871391588,
+      "selected": "paired_plus_cheap"
+    },
+    {
+      "rho": 0.8,
+      "cheap_cost_ratio": 0.02,
+      "extra_cheap_per_pair": 8.428090415820636,
+      "paired_method_variance_ratio": 0.5085645019878171,
+      "selected_variance_ratio": 0.5085645019878171,
+      "selected": "paired_plus_cheap"
+    },
+    {
+      "rho": 0.95,
+      "cheap_cost_ratio": 0.02,
+      "extra_cheap_per_pair": 20.513263648747316,
+      "paired_method_variance_ratio": 0.1994517282301145,
+      "selected_variance_ratio": 0.1994517282301145,
+      "selected": "paired_plus_cheap"
+    },
+    {
+      "rho": 0.5,
+      "cheap_cost_ratio": 0.1,
+      "extra_cheap_per_pair": 0.8257418583505536,
+      "paired_method_variance_ratio": 1.048861278752583,
+      "selected_variance_ratio": 1.0,
+      "selected": "high_only"
+    },
+    {
+      "rho": 0.8,
+      "cheap_cost_ratio": 0.1,
+      "extra_cheap_per_pair": 3.2163702135578403,
+      "paired_method_variance_ratio": 0.7275786553761643,
+      "selected_variance_ratio": 0.7275786553761643,
+      "selected": "paired_plus_cheap"
+    },
+    {
+      "rho": 0.95,
+      "cheap_cost_ratio": 0.1,
+      "extra_cheap_per_pair": 8.621023987294832,
+      "paired_method_variance_ratio": 0.3753599677522494,
+      "selected_variance_ratio": 0.3753599677522494,
+      "selected": "paired_plus_cheap"
+    },
+    {
+      "rho": 0.5,
+      "cheap_cost_ratio": 0.2,
+      "extra_cheap_per_pair": 0.2909944487358056,
+      "paired_method_variance_ratio": 1.1872983346207417,
+      "selected_variance_ratio": 1.0,
+      "selected": "high_only"
+    },
+    {
+      "rho": 0.8,
+      "cheap_cost_ratio": 0.2,
+      "extra_cheap_per_pair": 1.98142396999972,
+      "paired_method_variance_ratio": 0.9173250516799597,
+      "selected_variance_ratio": 0.9173250516799597,
+      "selected": "paired_plus_cheap"
+    },
+    {
+      "rho": 0.95,
+      "cheap_cost_ratio": 0.2,
+      "extra_cheap_per_pair": 5.803091303374611,
+      "paired_method_variance_ratio": 0.5433205608316098,
+      "selected_variance_ratio": 0.5433205608316098,
+      "selected": "paired_plus_cheap"
+    }
+  ],
+  "source_sha256": "103babbdb21d8ad31aa2ec4ed76e48a0af41bbb0ae735d794b541c823273d7af",
+  "scope": "Synthetic exact enumeration and continuous-budget algebra only. No arena correlation, policy strength, learned model or launch decision measured."
+}
