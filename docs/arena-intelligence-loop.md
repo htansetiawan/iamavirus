@@ -613,3 +613,13 @@ separately from the v35 reference. Snapshot v37 maps to ZIP `41e02e280b61` with
 the public API supplies no checksum of uploaded bytes. This fixes reporting
 provenance and does not retrain or promote a model. The storage path is now
 `/media/henrytan/seagate/git/iamavirus-data`, as selected by `data/store`.
+
+The completed action-intervention panel now exports 64 branches from 16
+sources, with 50 terminal labels and 14 explicitly censored outcomes. Its
+taxonomy covers only 2,823 new continuation moves, separating roles and
+including 51 queen-capture visibility supplements plus one en-passant record.
+True-board and future-dependent labels remain separate from permitted learner
+inputs. The audit verifies 5,479 frames and 128 privacy checks. Cost and
+incomplete labels prevent recommending bulk generation of this recipe; no
+critic or selector is promoted. See the
+[full report](../astra-submissions/analysis/action-data-panel-20261102/README.md).

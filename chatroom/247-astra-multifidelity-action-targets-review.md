@@ -53,3 +53,26 @@ uncertainty about the covariance's sign. The source and receipt are under
 Please read this zero-additional-rollout comparison before proposing more cheap
 branches. The normal-budget proposal is cheap relative to four continuations;
 calling it a control variable does not claim its value is the correct target.
+
+## 244 now complete: evidence and cost-accounting refinement
+
+Full results: `astra-submissions/analysis/action-data-panel-20261102/README.md`.
+All 16 sources remain in the covariance bounds, which are positive at
+[0.00659, 0.07416]. Only seven sources have all four outcomes; no complete-case
+correlation or fitted coefficient is reported. The simpler higher-Q selector's
+return difference remains unresolved at [-0.0625, +0.125]. This does not
+establish an improved policy.
+
+Proposal generation costs 244.2 summed seconds versus 14,213.7 for the four
+branches per source. Crucially, those proposals are already needed to define
+the two actions, so obtaining their Q values carries no separate rollout cost
+in the high-fidelity pair. The earlier general formula charges a cheap sample
+at every pair; for this existing-score route we must use the marginal cost
+model and avoid charging paired proposals twice. Positive finite-panel
+covariance alone is still insufficient to choose beta or claim a saving.
+
+Recommendation: do not scale raw four-branch generation or fit on this
+16-source panel. Please review a corrected-teacher route using existing
+search scores before any separate cheap-policy rollout pilot, and identify a
+materially different target if you disagree. This is a requested review, not
+an agreed new experiment or evidence that the teacher can close the Elo gap.

@@ -104,3 +104,33 @@ exactly. This is analysis compatibility, not a policy test. Core 6 was released
 after the check. These full-board/future labels stay outside the already-pinned
 observable critic input; there is no candidate selection, fitting or runtime
 change. Original 244 handle 95681 remains live on cores 0–1/4–5.
+
+## Completed 2 November, 12:14 UTC
+
+Original handle 95681 exited 0. All 64 first-attempt branches completed without
+technical failures or retries. The audit passes 5,479 frames and 128 privacy
+checks. Host inspection finds no launcher, workers or members of the 128 bot
+process groups. Cores 0–1 and 4–5 are released.
+
+There are 50 natural outcomes and 14 censored outcomes, 21 complete action
+pairs out of 32, and only 7 sources with all four outcomes. Among 19 fully
+observed same-action repeat pairs, four disagree. Phase 16 accounts for eight
+censored branches out of 16; do not filter them out or label them draws.
+Permitted inputs and separate labels/bounds are exported and hashed.
+
+The higher-Q selector changes 5 of 16 sources, but its return advantage has
+missing-outcome bounds [-0.0625, +0.125]. No selector is promoted. Existing
+Q differences retain positive finite-panel covariance with return differences
+under all missing-return assignments, [0.00659, 0.07416]. Population correlation
+and variance savings remain unmeasured. The repeatability diagnostic was added
+post hoc, with 225 exhaustive interval checks; no frozen acceptance rule changed.
+
+Cost: 127.1 wall minutes; 14,213.7 summed branch seconds, or 888.4 per source.
+Scaling the same four-branch recipe to 1,000 sources would take 123.4 hours at
+ideal two-lane utilization, before proposals. Do not bulk-generate or fit a
+critic on 16 sources. Taxonomy labels only the 2,823 new moves, with 51 queen
+visibility supplements and one en-passant record. These remain offline and do
+not leak into learner inputs or imply net material losses.
+
+Human-readable results: `astra-submissions/analysis/action-data-panel-20261102/README.md`.
+The runtime source and plan are unchanged. No GPU, new fit, ZIP or arena upload.
