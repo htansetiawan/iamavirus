@@ -1,0 +1,236 @@
+{
+  "at": "2026-11-02T09:01:59.026855+00:00",
+  "passed": true,
+  "frames_checked": 1132,
+  "delivered_observations_checked": 2228,
+  "clock_prompts_checked": 1120,
+  "cases": [
+    {
+      "case": "p0",
+      "source": "7qu350gu",
+      "branch_ply": 32,
+      "kind": "hash_selected",
+      "historical_result": "0-1",
+      "comparisons": {
+        "cheap_vs_normal": {
+          "first_move_agrees": true,
+          "both_natural": true,
+          "same_outcome": true
+        },
+        "normal_vs_normal_repeat": {
+          "first_move_agrees": true,
+          "both_natural": false,
+          "same_outcome": null
+        }
+      },
+      "arms": {
+        "cheap": {
+          "first_move": "f3d4",
+          "natural_result": "0-1",
+          "censored": false,
+          "new_plies": 43,
+          "wall_seconds": 48.18369816100312,
+          "warmup_seconds": 0.25724301299487706,
+          "continuation_seconds": 39.36780232004094
+        },
+        "normal": {
+          "first_move": "f3d4",
+          "natural_result": "0-1",
+          "censored": false,
+          "new_plies": 43,
+          "wall_seconds": 234.40954685999895,
+          "warmup_seconds": 0.26176121900061844,
+          "continuation_seconds": 224.17552070901002
+        },
+        "normal_repeat": {
+          "first_move": "f3d4",
+          "natural_result": null,
+          "censored": true,
+          "new_plies": 64,
+          "wall_seconds": 307.17431295600545,
+          "warmup_seconds": 0.2558104639465455,
+          "continuation_seconds": 302.24873493197083
+        }
+      }
+    },
+    {
+      "case": "p1",
+      "source": "qpnsjfbm",
+      "branch_ply": 33,
+      "kind": "hash_selected",
+      "historical_result": "1-0",
+      "comparisons": {
+        "cheap_vs_normal": {
+          "first_move_agrees": false,
+          "both_natural": false,
+          "same_outcome": null
+        },
+        "normal_vs_normal_repeat": {
+          "first_move_agrees": true,
+          "both_natural": false,
+          "same_outcome": null
+        }
+      },
+      "arms": {
+        "normal": {
+          "first_move": "e7c6",
+          "natural_result": null,
+          "censored": true,
+          "new_plies": 64,
+          "wall_seconds": 272.1858119830067,
+          "warmup_seconds": 1.203052659984678,
+          "continuation_seconds": 261.5249157970102
+        },
+        "normal_repeat": {
+          "first_move": "e7c6",
+          "natural_result": "0-1",
+          "censored": false,
+          "new_plies": 56,
+          "wall_seconds": 241.26658924401272,
+          "warmup_seconds": 1.2174212580430321,
+          "continuation_seconds": 235.5803541320347
+        },
+        "cheap": {
+          "first_move": "e8g8",
+          "natural_result": "0-1",
+          "censored": false,
+          "new_plies": 20,
+          "wall_seconds": 25.000071810994996,
+          "warmup_seconds": 1.300660203982261,
+          "continuation_seconds": 17.991702410014113
+        }
+      }
+    },
+    {
+      "case": "p2",
+      "source": "updro1eg",
+      "branch_ply": 94,
+      "kind": "post_hoc_failure",
+      "historical_result": "0-1",
+      "comparisons": {
+        "cheap_vs_normal": {
+          "first_move_agrees": true,
+          "both_natural": true,
+          "same_outcome": true
+        },
+        "normal_vs_normal_repeat": {
+          "first_move_agrees": true,
+          "both_natural": true,
+          "same_outcome": true
+        }
+      },
+      "arms": {
+        "normal_repeat": {
+          "first_move": "d6d7",
+          "natural_result": "1-0",
+          "censored": false,
+          "new_plies": 10,
+          "wall_seconds": 43.46653448899451,
+          "warmup_seconds": 2.4805830241384683,
+          "continuation_seconds": 31.0194953760074
+        },
+        "cheap": {
+          "first_move": "d6d7",
+          "natural_result": "1-0",
+          "censored": false,
+          "new_plies": 10,
+          "wall_seconds": 20.304039174006903,
+          "warmup_seconds": 2.4651926369406283,
+          "continuation_seconds": 9.589417620984023
+        },
+        "normal": {
+          "first_move": "d6d7",
+          "natural_result": "1-0",
+          "censored": false,
+          "new_plies": 8,
+          "wall_seconds": 35.12392552700476,
+          "warmup_seconds": 2.435069275976275,
+          "continuation_seconds": 24.830207420003717
+        }
+      }
+    },
+    {
+      "case": "p3",
+      "source": "g9nruayl",
+      "branch_ply": 78,
+      "kind": "post_hoc_failure",
+      "historical_result": "1-0",
+      "comparisons": {
+        "cheap_vs_normal": {
+          "first_move_agrees": true,
+          "both_natural": true,
+          "same_outcome": true
+        },
+        "normal_vs_normal_repeat": {
+          "first_move_agrees": true,
+          "both_natural": true,
+          "same_outcome": true
+        }
+      },
+      "arms": {
+        "cheap": {
+          "first_move": "b7b8",
+          "natural_result": "0-1",
+          "censored": false,
+          "new_plies": 25,
+          "wall_seconds": 29.34209590801038,
+          "warmup_seconds": 0.8050953239580849,
+          "continuation_seconds": 23.8228174780088
+        },
+        "normal": {
+          "first_move": "b7b8",
+          "natural_result": "0-1",
+          "censored": false,
+          "new_plies": 41,
+          "wall_seconds": 147.4019380660029,
+          "warmup_seconds": 0.7879791520390427,
+          "continuation_seconds": 141.42103960302484
+        },
+        "normal_repeat": {
+          "first_move": "b7b8",
+          "natural_result": "0-1",
+          "censored": false,
+          "new_plies": 25,
+          "wall_seconds": 100.83187744099996,
+          "warmup_seconds": 0.7801910670095822,
+          "continuation_seconds": 91.39612233701337
+        }
+      }
+    }
+  ],
+  "costs": {
+    "cheap": {
+      "jobs": 4,
+      "natural_terminals": 4,
+      "censored": 0,
+      "wall_seconds_sum": 122.8299050540154,
+      "new_decisions": 98,
+      "seconds_per_new_decision": 1.253366378102198,
+      "seconds_per_natural_terminal_including_censored_cost": 30.70747626350385,
+      "warmup_seconds_sum": 4.828191177875851
+    },
+    "normal": {
+      "jobs": 4,
+      "natural_terminals": 3,
+      "censored": 1,
+      "wall_seconds_sum": 689.1212224360133,
+      "new_decisions": 156,
+      "seconds_per_new_decision": 4.4174437335641885,
+      "seconds_per_natural_terminal_including_censored_cost": 229.70707414533777,
+      "warmup_seconds_sum": 4.687862307000614
+    },
+    "normal_repeat": {
+      "jobs": 4,
+      "natural_terminals": 3,
+      "censored": 1,
+      "wall_seconds_sum": 692.7393141300126,
+      "new_decisions": 155,
+      "seconds_per_new_decision": 4.469285897612985,
+      "seconds_per_natural_terminal_including_censored_cost": 230.9131047100042,
+      "warmup_seconds_sum": 4.734005813137628
+    }
+  },
+  "summary_sha256": "ac45e0b56beb60f0b0e55d5a798684d3b646e7bba84477d569ed8873f730eb19",
+  "source_sha256": "3942cac3ce673d3a68295683c6f3ad29d39f2ed731494e5634f69c148401b8d6",
+  "scope": "Four development prefixes; two selected after prior prediction failures. All planned replicates retained. Censoring is not a draw. Outcome/first-move agreement describes these cases only, not cheap-label equivalence or playing strength."
+}

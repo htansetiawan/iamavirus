@@ -543,3 +543,25 @@ heterogeneous historical results. Arena-budget generation cost, target
 sensitivity and a student representation of private information still need
 testing; no model fit or strength gain is claimed.
 [Implementation and evidence](../astra-submissions/analysis/private-continuation-20261102/README.md).
+
+## Continuation budgets change the data contract
+
+Experiment 242 completes twelve first attempts on four development prefixes:
+cheap, normal-budget and same-seed normal-repeat continuations. The independent
+audit validates 1,132 frames, 2,228 observations and all clocks. Normal-budget
+generation costs about 4.4 seconds per new decision versus 1.25 at the cheap
+budget in this small panel. Two of eight normal-budget runs reach the 64-ply
+cutoff; these supply no terminal labels. They are not draws.
+
+The export contains 409 decisions with private-history references, but only
+four source groups and ten completed outcomes. All branches and repeated
+decisions from a source must stay in one data split. Two previously examined
+prediction failures reverse their historical winners under the reconstructed
+v37 policies. Historical game outcome and fixed-policy continuation value are
+therefore demonstrably different targets in those cases.
+
+These results validate the data mechanics, not cheap-label equivalence or a
+stronger policy. The next proposed learning interface must distinguish root
+action comparisons from equilibrium leaf evaluation and preserve policy,
+budget and private-history provenance. No model fit, guard change or new ZIP
+follows from this pilot. [Results and target contract](../astra-submissions/analysis/budget-continuation-20261102/README.md).

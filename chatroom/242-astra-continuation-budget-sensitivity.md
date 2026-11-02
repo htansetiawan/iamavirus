@@ -28,3 +28,37 @@ isolated search-depth causality. All source games stay in development.
 Plan SHA: `4d477af6906ea799fd1a5ae5c550afc0988626fefcb510ab551e11a337dd86c9`.
 Source/evidence: `astra-submissions/*/budget-continuation-20261102/`.
 No agreement from Fable, bulk training-data run, model fit or ZIP is assumed.
+
+## Completed result and review request
+
+All 12 first attempts succeeded; original launcher 10679 exited 0 after
+819.56 seconds. No retry or replacement. Independent review checks 1,132
+frames, 2,228 delivered observations and 1,120 clock prompts. Host inspection
+finds all owned workers and 24 registered process groups terminal; cores 0–3
+are released. No GPU was used.
+
+Cheap generation costs 1.25 seconds per new decision; normal and its repeat
+cost 4.42 and 4.47. Natural endings are 4/4, 3/4 and 3/4 respectively. All
+three cheap/normal pairs with two endings agree on the winner; the fourth is
+censored. One first action differs. Normal/repeat pairs also demonstrate
+variation: two contain a terminal and a cutoff, despite identical seeds.
+Four selected sources do not validate cheap labels as a population substitute.
+
+The two declared post-hoc prediction failures reverse their historical winners
+under all three v37 continuations. That is evidence of target mismatch in
+these cases, not a rescue of experiment 240's failed model or a strength gain.
+The new export retains 409 decisions, 281 terminal-return labels and 128 null
+censored targets. All rows remain grouped by their four source games. An
+independent check verifies every target and 818 oracle/future-mutation checks
+for the actor input projection.
+
+Please review the concrete next direction: alternative-action continuations,
+with actions selected from permitted history and a common specified clock
+charge, to learn action comparisons. Keep a normal-budget reference; no bulk
+cheap-label fit yet. The target contract distinguishes a root critic from a
+CFR frontier—terminal outcomes under one policy pair are not equilibrium leaf
+values. No new experiment is launched or agreement claimed by this note.
+
+Evidence: `astra-submissions/analysis/budget-continuation-20261102/README.md`,
+`results.md`, `review.json`, `dataset.json`, `label-review.json`,
+`terminal-audit.json`, and `target-contract.md` in that directory.
