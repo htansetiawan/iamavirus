@@ -601,3 +601,15 @@ small improvement on played-move log loss. Independent label and metric audits
 pass, but no model, guard or belief update follows. This closes that reuse
 experiment, not neural learning generally.
 [Full result](../astra-submissions/analysis/recurrent-risk-complement-20261102/README.md).
+
+## 2 November: active archive and completed daily refresh
+
+The daily service finished at 11:49:59 UTC, rebuilding training inputs from
+195,614 source games and refreshing the taxonomy and intelligence reports.
+The intel report now resolves the active version through the shared release
+map, checks the local archive hash, and reports its packaged model/table
+separately from the v35 reference. Snapshot v37 maps to ZIP `41e02e280b61` with
+359,889 history records. Unknown or inconsistent mappings remain unresolved;
+the public API supplies no checksum of uploaded bytes. This fixes reporting
+provenance and does not retrain or promote a model. The storage path is now
+`/media/henrytan/seagate/git/iamavirus-data`, as selected by `data/store`.

@@ -1,5 +1,6 @@
 import json
 import datetime as dt
+import hashlib
 from pathlib import Path
 import struct
 import subprocess
@@ -11,6 +12,7 @@ import zipfile
 from learning.daily_report import previous_report, version_taxonomy
 from learning import daily_report
 from daily_intel_status import reference_archive, rolling_losses
+import daily_intel_status as intel
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -71,6 +73,46 @@ class IntelRefreshTests(unittest.TestCase):
                 archive.writestr('src/movemodel.c', 'parameters')
                 archive.writestr('data/history.bin', struct.pack('<8sII', b'MISTHIST', 1, 2))
             self.assertIn('error', reference_archive(path, 35))
+
+    def test_active_archive_uses_arena_mapping_and_checks_packaged_history(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root/'old-local-v12.zip'
+            with zipfile.ZipFile(path, 'w') as archive:
+                archive.writestr('src/movemodel.c', 'parameters')
+                archive.writestr('data/history.bin', struct.pack('<8sII', b'MISTHIST', 1, 2) + bytes(32))
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            registry = root/'README.md'
+            registry.write_text(f'| **37** | date | `{path.name}` (was `another-name.zip`) | `{digest[:12]}` |\n')
+            with patch.object(intel, 'ROOT', root):
+                result = intel.mapped_active_archive(registry, 37)
+            self.assertTrue(result['mapping_verified'])
+            self.assertEqual(result['arena_version'], 37)
+            self.assertEqual(result['history']['records'], 2)
+            self.assertEqual(result['sha256'], digest)
+
+    def test_active_archive_refuses_unknown_duplicate_changed_or_external_mapping(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            path = root/'bot.zip'
+            with zipfile.ZipFile(path, 'w') as archive:
+                archive.writestr('src/movemodel.c', 'parameters')
+                archive.writestr('data/history.bin', struct.pack('<8sII', b'MISTHIST', 1, 0))
+            digest = hashlib.sha256(path.read_bytes()).hexdigest()
+            row = f'| 37 | date | `bot.zip` | `{digest[:12]}` |\n'
+            registry = root/'README.md'
+            with patch.object(intel, 'ROOT', root):
+                for content, version, error in [
+                    (row, None, 'unavailable'), (row, 38, 'found 0'),
+                    (row + row, 37, 'found 2'),
+                    (row.replace(digest[:12], '0' * 12), 37, 'does not match'),
+                    (row.replace('bot.zip', '../outside.zip'), 37, 'outside the project'),
+                ]:
+                    with self.subTest(version=version, error=error):
+                        registry.write_text(content)
+                        result = intel.mapped_active_archive(registry, version)
+                        self.assertFalse(result['mapping_verified'])
+                        self.assertIn(error, result['error'])
 
     def test_daily_publish_commits_available_reports_without_other_staged_work(self):
         # Exercise the actual scheduled publication block: optional steps may

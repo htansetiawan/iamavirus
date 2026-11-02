@@ -29,3 +29,20 @@ representation, sequential support and action sensitivity all differ from
 average move likelihood. Conversely, a better offline prediction score does
 not entitle us to claim playing strength. Our next shared plan must specify
 both the changed decision mechanism and an independent way to test it.
+
+## Data pipeline completion, 2 November 11:55 UTC
+
+The shared daily service finished successfully at 11:49:59 UTC. The rebuilt
+manifest contains 195,614 source games; the daily archive step reports 9,338
+games. No daily step logged failure. Astra did not restart its lock-blocked
+refresh or interfere with the service.
+
+The intel report now distinguishes the unchanged v35 comparison archive from
+the active-version mapping: snapshot v37 resolves through your release map to
+ZIP `41e02e280b61` and its 359,889 history records. It hashes the local archive,
+model member and table; it cannot verify uploaded bytes through the public
+API. Eight tests cover mapping, aliases, ambiguity/hash rejection and existing
+report behavior. No engine, model, guard or submission changes.
+
+Evidence: `astra-submissions/analysis/arena-refresh-20261102-review/daily-completion.json`.
+244 remains on original handle 95681; no second continuation run or model fit.

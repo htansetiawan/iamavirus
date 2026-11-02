@@ -87,6 +87,49 @@ def reference_archive(path: Path, arena_version: int) -> dict:
     return report
 
 
+def mapped_active_archive(registry: Path, arena_version: int | None) -> dict:
+    """Resolve the arena column, not a ZIP's potentially historical vN label.
+
+    This verifies a local file against the shared release map. The public API
+    supplies the active version, but does not expose the uploaded ZIP checksum.
+    Unknown or ambiguous mappings stay unknown instead of falling back to v35.
+    """
+    report = {'arena_version': arena_version, 'registry': str(registry),
+              'mapping_verified': False,
+              'provenance': 'Repository release map; uploaded bytes are not API-verifiable.'}
+    try:
+        if not isinstance(arena_version, int) or isinstance(arena_version, bool):
+            raise ValueError('active arena version unavailable')
+        rows = []
+        for line in registry.read_text().splitlines():
+            if not line.startswith('|'):
+                continue
+            cells = [cell.strip() for cell in line.strip().strip('|').split('|')]
+            if cells and cells[0].strip('*` ') == str(arena_version):
+                rows.append(cells)
+        if len(rows) != 1 or len(rows[0]) < 4:
+            raise ValueError(f'expected one release-map row for v{arena_version}; found {len(rows)}')
+        cells = rows[0]
+        names = re.findall(r'`([^`]+\.zip)`', cells[2])
+        hashes = re.findall(r'`([0-9a-f]{12,64})`', cells[3])
+        if not names or len(hashes) != 1:
+            raise ValueError('release-map row lacks an archive name or SHA-256 prefix')
+        # The first archive in the cell is canonical; later names may be aliases.
+        path = (registry.parent / names[0]).resolve()
+        if not path.is_relative_to(ROOT):
+            raise ValueError('mapped archive is outside the project')
+        archived = reference_archive(path, arena_version)
+        report.update(archived, expected_sha256_prefix=hashes[0])
+        if not archived.get('exists') or archived.get('error'):
+            raise ValueError(archived.get('error', 'mapped archive missing'))
+        if not archived['sha256'].startswith(hashes[0]):
+            raise ValueError('mapped archive SHA-256 does not match the release-map prefix')
+        report['mapping_verified'] = True
+    except (OSError, ValueError) as exc:
+        report['error'] = str(exc)
+    return report
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--raw', type=Path, default=ROOT/'data/raw')
@@ -95,6 +138,7 @@ def main():
     ap.add_argument('--suite', type=Path, default=Path.home()/'fable-persist/suite/suite.json')
     ap.add_argument('--reference-archive', type=Path, default=ROOT/'fable-submissions/iamavirus-v35-mist-c-v14.zip')
     ap.add_argument('--reference-version', type=int, default=35)
+    ap.add_argument('--registry', type=Path, default=ROOT/'fable-submissions/README.md')
     args = ap.parse_args(); now = dt.datetime.now(dt.timezone.utc); day = now.strftime('%Y-%m-%d')
     report = latest_report(args.out)
     rows = accepted_rows(str(args.raw))
@@ -122,6 +166,7 @@ def main():
             suite['error'] = str(exc)
     archived = reference_archive(args.reference_archive, args.reference_version)
     active = report.get('our_active_version')
+    active_archive = mapped_active_archive(args.registry, active)
     # A stale reference must not be silently labelled as the newly active bot.
     archived['matches_active_version_in_report'] = active == args.reference_version
     failures = rolling_losses(rows, (now-dt.timedelta(days=7)).isoformat())
@@ -133,7 +178,8 @@ def main():
               'taxonomy_version_colour_groups': len(report.get('taxonomy_by_version_colour', [])),
               'dataset': datasets,
               'move_exports': [artifact(ROOT/f'data/derived/moves/arena-latest-{s}.txt') for s in ('train', 'test')],
-              'working_model': model, 'reference_archive': archived, 'frozen_regression_suite': suite,
+              'working_model': model, 'reference_archive': archived, 'active_archive': active_archive,
+              'frozen_regression_suite': suite,
               'rolling_loss_index': failures,
               'policy': {'automatic': ['replays', 'training exports', 'taxonomy', 'insights', 'scorecard', 'intel status and loss index'],
                          'candidate_only': ['fit model', 'rebuild history table', 'build regression supplement'],
@@ -145,12 +191,22 @@ def main():
           f"| Replay and training data | Manifest modified {datasets.get('modified_at', 'unavailable')}; move-export metadata in JSON | Training input; no automatic promotion |",
           f"| Taxonomy | {status['taxonomy_version_colour_groups']} played-version/colour groups; previous report {status['taxonomy_previous_report']} | Diagnosis and case selection; not an input to the live policy or belief |",
           f"| Working move model | Declared fit {model.get('declared_fit_date', 'unknown')}, {model.get('declared_fit_games', 'unknown')} games | Candidate probabilities; requires validation and packaging |",
+          f"| Active archive's history table | Snapshot v{active}; "
+          + (f"{active_archive['history']['records']:,} records; release-map hash checked" if active_archive['mapping_verified']
+             else f"mapping unresolved: {active_archive.get('error', 'unknown')}")
+          + ' | Packaged model/table; changes require a new submission |',
           f"| Reference history table | Archive v{args.reference_version}, {archived.get('history', {}).get('records', 'unknown')} records | Fixed table packaged inside that archive; not updated by replay ingest |",
           f"| Frozen regression suite | {suite.get('decisions', 'unknown')} decisions; file modified {suite.get('modified_at', 'unknown')} | Fixed comparison set; retain it across experiments |",
           f"| Rolling loss index | {len(failures)} recent examples, at most 3 per opponent version / our version / colour | Supplement candidates; not replay-tested or a strength estimate |", '',
           '## Reference versus active version', '',
           f"Snapshot active version: **{active}**. Reference archive: **v{args.reference_version}**. "
-          + ('Versions match; hashes are recorded in the JSON.' if archived['matches_active_version_in_report'] else '**Mapping update required:** do not treat this reference as the active deployment.'), '',
+          + ('Versions match; hashes are recorded in the JSON.' if archived['matches_active_version_in_report']
+             else 'The reference is retained for comparison; it is not the active deployment.'), '',
+          (f"Active archive: `{Path(active_archive['path']).name}`, SHA-256 `{active_archive['sha256']}`. "
+           'Its hash matches the shared release map; model-member and history-table hashes are in the JSON. '
+           'The public API identifies the active version but cannot verify uploaded ZIP bytes.'
+           if active_archive['mapping_verified'] else
+           f"**Mapping update required:** {active_archive.get('error', 'active archive unavailable')}."), '',
           'File modification dates are filesystem freshness, not proof of retraining or dataset coverage. '
           'The working model is not necessarily the model in the active archive. '
           'Rebuilding inputs does not change the submitted ZIP.', '',

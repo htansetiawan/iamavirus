@@ -1,4 +1,4 @@
-# Learning and intelligence status, 2026-11-02 11:45 UTC
+# Learning and intelligence status, 2026-11-02 11:54 UTC
 
 Corpus: **195,614 games**. Latest game: 2026-11-02T10:41:22.278259884+00:00. Leaderboard snapshot: 2026-11-02T11:01:38.062629+00:00.
 
@@ -7,13 +7,16 @@ Corpus: **195,614 games**. Latest game: 2026-11-02T10:41:22.278259884+00:00. Lea
 | Replay and training data | Manifest modified 2026-11-02T11:41:55.130000+00:00; move-export metadata in JSON | Training input; no automatic promotion |
 | Taxonomy | 82 played-version/colour groups; previous report 2026-11-01T11:46:13 | Diagnosis and case selection; not an input to the live policy or belief |
 | Working move model | Declared fit 2026-10-29, 6776 games | Candidate probabilities; requires validation and packaging |
+| Active archive's history table | Snapshot v37; 359,889 records; release-map hash checked | Packaged model/table; changes require a new submission |
 | Reference history table | Archive v35, 151316 records | Fixed table packaged inside that archive; not updated by replay ingest |
 | Frozen regression suite | 1379 decisions; file modified 2026-10-12T00:48:04.508580+00:00 | Fixed comparison set; retain it across experiments |
 | Rolling loss index | 282 recent examples, at most 3 per opponent version / our version / colour | Supplement candidates; not replay-tested or a strength estimate |
 
 ## Reference versus active version
 
-Snapshot active version: **37**. Reference archive: **v35**. **Mapping update required:** do not treat this reference as the active deployment.
+Snapshot active version: **37**. Reference archive: **v35**. The reference is retained for comparison; it is not the active deployment.
+
+Active archive: `iamavirus-v37-mist-c-v14-allfit.zip`, SHA-256 `41e02e280b61e0e0c031a831d2ab4b2cc8f52c6c59bd8c11fc026f3cc817c76c`. Its hash matches the shared release map; model-member and history-table hashes are in the JSON. The public API identifies the active version but cannot verify uploaded ZIP bytes.
 
 File modification dates are filesystem freshness, not proof of retraining or dataset coverage. The working model is not necessarily the model in the active archive. Rebuilding inputs does not change the submitted ZIP.
 
