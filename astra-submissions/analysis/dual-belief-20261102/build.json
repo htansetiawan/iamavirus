@@ -1,0 +1,161 @@
+{
+  "records": [
+    {
+      "command": [
+        "bash",
+        "build.sh"
+      ],
+      "cwd": "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/base",
+      "exit_code": 0,
+      "stdout": "build: done (gcc)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "bash",
+        "build.sh"
+      ],
+      "cwd": "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate",
+      "exit_code": 0,
+      "stdout": "build: done (gcc)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=200809L",
+        "-pthread",
+        "-O2",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/check.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/check"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=200809L",
+        "-pthread",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/check.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/check-san"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=200809L",
+        "-pthread",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/base/src",
+        "-DDUAL=0",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/bridge.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/base/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/base/src/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/base/filter.so"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-D_POSIX_C_SOURCE=200809L",
+        "-pthread",
+        "-O2",
+        "-shared",
+        "-fPIC",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src",
+        "-DDUAL=1",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/bridge.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/src/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/dual-belief-20261102/build/candidate/filter.so"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "pins": {
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/eval.h": "4020fcce58269aaac95642fd23781e5af5babcddbd4189a7614ce9f10b6d6e76",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/guard_reference.h": "c2417dc7732ca23dabce635a74fadeba5cae95c48f5ea954fb2f2fd0a0ab4884",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/movemodel.c": "6c01d104941fa911122bcc3db2176037e5014d87c5069da2ebaaf9753e61a2fe",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/mist": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/filter.so": "44c1cac767849680d55be8627e59d1fb6f17e6de131f63d166cc9bf14b6f029a",
+    "astra-submissions/experiments/dual-belief-20261102/build/base/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/belief.c": "78bd1fc001e588c44404cfaae6021d355c89c49a9f1c4b06136dac191dc7ead8",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/belief.h": "b889006a5e5e3186aef5b6f9ec5c6d722b7c9aec5c80f21ec1019df1d4cdc64a",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/eval.h": "4020fcce58269aaac95642fd23781e5af5babcddbd4189a7614ce9f10b6d6e76",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/guard_reference.h": "80e0d5c1c8d21d3d1b993420ffc77275f4e55352cd69b4de078f221ed671cb22",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/main.c": "4f64ba73061616cfc9076637781498f331ba44d033e8ea4faeb284db1ac8871e",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/movemodel.c": "6c01d104941fa911122bcc3db2176037e5014d87c5069da2ebaaf9753e61a2fe",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/mist": "c3747e6cf2ac4c11bca67946cf9580b62bfb367a08dc1ade4a1f2c8f55c0254d",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/filter.so": "f9626274137e0d73db36a007c64d70ebf5719d7fae7ab7b40100d5b41977d827",
+    "astra-submissions/experiments/dual-belief-20261102/build/candidate/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54"
+  }
+}
