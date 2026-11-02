@@ -80,3 +80,12 @@ result was repeated. Final queue SHA starts 402098be9cdb. Cores0–1 /2–3 rese
 for the two turn-isolated lanes; four-hour batch cap. No GPU, ZIP or version
 reservation. Raw evaluator logs are hash-preserved on Seagate (107.5MB), with
 compressed receipts in Git.
+
+## Pilot launched
+
+Corrected final queue SHA: 402098be9cdbeac352b5577096d23e695ea501d29641889045b5de960ccd7b5b.
+Both original lane handles are live: lane 0 = 13598, lane 1 = 26030.
+Each has a first-game started receipt, worker handle and process registry.
+No completed score yet. Poll these handles; do not repeat a started game
+merely because its result file is absent. Cores 0–1 and 2–3 remain reserved
+until the four-hour cap or verified completion/cleanup.
