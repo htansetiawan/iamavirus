@@ -45,3 +45,33 @@ scripts. Large extraction arrays and model checkpoints stay under ignored
 `work/` on the local SSD while the external disk is unavailable. No existing
 service is stopped. GPU training requires a fresh availability check, a
 reservation, a complete verified dataset, and a terminal extraction receipt.
+
+## Completed extraction and runtime feasibility
+
+Original extraction handle 35699 exited 0 in 361.76 seconds, with no native
+collector stderr. It validated 2,637,733 frames in 26,918 games and saved
+208,216 unique feature states: 193,517 training, 8,746 validation and 5,953 test.
+The exact native parent calls produced 6,681,148 child action values. Duplicate
+features are removed within and across folds; counts and hashes are in
+`dataset-receipt.json`. No model has yet been evaluated on those test labels.
+
+A native C implementation of the compact student matches PyTorch on 256
+inputs (including all 24 real pilot states), maximum logit error 5.22e-8.
+With seeded random weights it takes median 9.27 microseconds per position on
+one core and needs 640,260 FP32 parameter bytes. This is cached inference
+arithmetic/timing, not a trained-model or end-to-end engine result. Raw and
+source hashes are in `native-preflight.json`; trained-weight parity remains
+required if a model passes.
+
+GPU forward/backward smoke checks pass for both architectures. SciPy 1.16.3
+was added with `uv --no-deps` after an import check exposed the missing
+package; the virtual environment has no pip module. Existing package versions
+were not replaced. These checks did not fit a model or alter the frozen source.
+
+The first full row-audit implementation repeatedly accessed members through
+`NpzFile`, which reloads a complete array each time. Source inspection identified
+quadratic I/O. The exact owned reviewer PID/start-time was checked before a
+SIGTERM; original handle 46145 exited 143. Its source and logs are preserved
+under `review-first-attempt/`, with the identity and reason in
+`dataset-review-interruption.json`. The corrected reviewer materializes each
+array once. No data extraction, benchmark game or model fit was repeated.

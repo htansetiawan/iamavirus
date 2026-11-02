@@ -1,0 +1,15 @@
+{
+  "at": 1793602025.1683977,
+  "action": "SIGTERM to identified own reviewer",
+  "identity": {
+    "pid": 419666,
+    "starttime": "5783520",
+    "argv": [
+      ".venv/bin/python",
+      "astra-submissions/analysis/native-fow-value-20261102/verify_dataset.py"
+    ]
+  },
+  "reason": "Code review found NpzFile x/y/game/fold arrays reloaded inside every row; explicit O(N^2) I/O. Stop before further wasted work, cache arrays once. No fit, game or collector is repeated.",
+  "source_sha256": "5702809dd49d385356034052e2529a13eb7b06ed9bae48f9f803bac72ed43578",
+  "original_handle": 46145
+}

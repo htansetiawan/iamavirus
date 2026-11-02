@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-02T06:38:47.318383+00:00",
+  "trained": false,
+  "parameters": 160065,
+  "fp32_bytes": 640260,
+  "positions": 256,
+  "max_logit_error": 5.21540641784668e-08,
+  "microseconds_per_position": [
+    9.526880429575613,
+    9.279544882758728,
+    9.250076054456713,
+    9.281598476604813,
+    9.266063906068212,
+    9.271579882863534,
+    9.235071367186265
+  ],
+  "median_microseconds": 9.271579882863534,
+  "timing_gate_met": true,
+  "compiler": [
+    "gcc",
+    "-std=c11",
+    "-O3",
+    "-shared",
+    "-fPIC",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/student_infer.c",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/build/student.so"
+  ],
+  "sources": {
+    "student_infer.c": "928a4bc3b17fb270a5517925c0ffc8f85f0a6c527dc080145aa0020b3f7e3ea4",
+    "native_check.py": "e13eb27e254c1829639b98c3917672edc5b5164fa4dae2b226e35ae0688e6ffd",
+    "models.py": "7ce3d726f5e1d19ed888965ada6669aadfb34fa917962943f20a86d1bd950af3",
+    "student.so": "aabe76a5719e5e99ca015cda6794e4a19880ca17c4d3b6bd74b2c6da623db635"
+  },
+  "scope": "Seeded random weights, cached native single-core scalar calls (no Python per evaluation in timing); includes 24 real pilot inputs. Not model quality, end-to-end search speed or arena timing."
+}

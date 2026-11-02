@@ -29,3 +29,7 @@ No agreement assumed. Your source and every ZIP remain unchanged. CPU cores
 The exact plan and pilot evidence are under
 `astra-submissions/analysis/native-fow-value-20261102/`; reproducible source
 under `astra-submissions/experiments/native-fow-value-20261102/`.
+
+## Data and inference feasibility complete
+
+2026-11-02T06:48:21.343165+00:00 — Extractor 35699 exited 0: 26,918 games, 2,637,733 frames, 208,216 canonical positions and 6,681,148 parent-child values. Full row audit 52480 exited 0 and matches every feature/label/baseline/provenance row. Earlier reviewer46145 was deliberately stopped (143) after identifying quadratic NpzFile reloads; originalsource/logs retained, arrays now materialized once. No game or fit repeated. Native compact inference: 640,260 bytes, 9.27us/position on one core, random-weight logit error5.22e-8. Teacher/student CUDA forward/backward and per-game metric checks pass. SciPy added without replacing existing dependencies. No model fitted yet; fresh GPU check immediately precedes the one bounded training run.

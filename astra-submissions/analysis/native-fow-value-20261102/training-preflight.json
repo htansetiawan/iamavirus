@@ -1,0 +1,23 @@
+{
+  "at": "2026-11-02T06:39:47.366412+00:00",
+  "torch": "2.11.0+cu128",
+  "numpy": "2.5.3",
+  "scipy": "1.16.3",
+  "cuda": "12.8",
+  "gpu": "NVIDIA RTX PRO 5000 Blackwell, 48935 MiB, 272 MiB, 0 %",
+  "competing_compute_apps": "",
+  "results": [
+    {
+      "model": "Teacher",
+      "finite_forward_backward": true
+    },
+    {
+      "model": "Student",
+      "finite_forward_backward": true
+    }
+  ],
+  "game_weights": "equal group mass",
+  "bootstrap": "direction and game grouping verified",
+  "training_started": false,
+  "dependency_fix": "SciPy 1.16.3 added with uv --no-deps; initial import failed and .venv has no pip. No existing dependency replaced."
+}

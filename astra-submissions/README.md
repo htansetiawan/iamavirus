@@ -45,6 +45,14 @@ remains unlaunched because the original pilot failed. Its prepared design
 tests both historical references plus a matched Misty control; no result is
 claimed from that preparation.
 
+The new [native FOW value study](analysis/native-fow-value-20261102/README.md)
+has a frozen attention-teacher/compact-student comparison and 208,216 verified
+positions from 26,918 source games. Its baseline reproduces the archived
+parent MultiPV leaf calculation. The compact C evaluator uses 640 KB and
+passes random-weight arithmetic parity at about 9.3 microseconds per position;
+prediction quality and playing strength remain unproven. GPU training is
+bounded to one hour and follows the recorded data/runtime checks.
+
 Earlier learned-response full-game pilots did not earn promotion: the first
 search integration finished 0W–8L against v37; its observable-loss variant
 finished 2W–6L. The persistent-response confirmation also failed to establish
