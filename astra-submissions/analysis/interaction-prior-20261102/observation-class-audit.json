@@ -1,0 +1,216 @@
+{
+  "at": "2026-11-02T03:19:04.843925+00:00",
+  "cohorts": {
+    "all": {
+      "decisions": 14048,
+      "modes": {
+        "18": {
+          "action": {
+            "gain": 0.04792215995705395,
+            "interval95": [
+              0.042704530001218675,
+              0.053394282826997125
+            ]
+          },
+          "observation": {
+            "gain": 0.037616058328501636,
+            "interval95": [
+              0.03329739793208658,
+              0.04203612446929216
+            ]
+          },
+          "conditional": {
+            "gain": 0.010306101628552307,
+            "interval95": [
+              0.006257884166240434,
+              0.014513855966314966
+            ]
+          }
+        },
+        "26": {
+          "action": {
+            "gain": 0.06217402825553229,
+            "interval95": [
+              0.05553633930629094,
+              0.0692575485734823
+            ]
+          },
+          "observation": {
+            "gain": 0.04813834413075155,
+            "interval95": [
+              0.04263481373762925,
+              0.053852285848674776
+            ]
+          },
+          "conditional": {
+            "gain": 0.014035684124780743,
+            "interval95": [
+              0.010471203239289975,
+              0.017607302034581176
+            ]
+          }
+        }
+      }
+    },
+    "ambiguous": {
+      "decisions": 8294,
+      "modes": {
+        "18": {
+          "action": {
+            "gain": 0.03874970224620817,
+            "interval95": [
+              0.0314898036403064,
+              0.04587735436536813
+            ]
+          },
+          "observation": {
+            "gain": 0.021293696015450655,
+            "interval95": [
+              0.0162453579513815,
+              0.025922884721662123
+            ]
+          },
+          "conditional": {
+            "gain": 0.017456006230757513,
+            "interval95": [
+              0.010698140841455575,
+              0.024301866453971234
+            ]
+          }
+        },
+        "26": {
+          "action": {
+            "gain": 0.07366665765910174,
+            "interval95": [
+              0.06448668561754664,
+              0.08272226677728624
+            ]
+          },
+          "observation": {
+            "gain": 0.04989365421264408,
+            "interval95": [
+              0.043946513689541965,
+              0.056179582293444864
+            ]
+          },
+          "conditional": {
+            "gain": 0.023773003446457667,
+            "interval95": [
+              0.01790682501120743,
+              0.030059603203363542
+            ]
+          }
+        }
+      }
+    },
+    "singleton": {
+      "decisions": 5754,
+      "modes": {
+        "18": {
+          "action": {
+            "gain": 0.061143634453709295,
+            "interval95": [
+              0.05326435046534958,
+              0.06929852444845948
+            ]
+          },
+          "observation": {
+            "gain": 0.061143634453709295,
+            "interval95": [
+              0.05326435046534958,
+              0.06929852444845948
+            ]
+          },
+          "conditional": {
+            "gain": 0.0,
+            "interval95": [
+              0.0,
+              0.0
+            ]
+          }
+        },
+        "26": {
+          "action": {
+            "gain": 0.045608183925812944,
+            "interval95": [
+              0.03573882003700112,
+              0.05607372294291103
+            ]
+          },
+          "observation": {
+            "gain": 0.045608183925812944,
+            "interval95": [
+              0.03573882003700112,
+              0.05607372294291103
+            ]
+          },
+          "conditional": {
+            "gain": 0.0,
+            "interval95": [
+              0.0,
+              0.0
+            ]
+          }
+        }
+      }
+    },
+    "surprise": {
+      "decisions": 1497,
+      "modes": {
+        "18": {
+          "action": {
+            "gain": -0.012278773972743798,
+            "interval95": [
+              -0.030301243843375774,
+              0.004895406830854541
+            ]
+          },
+          "observation": {
+            "gain": 0.0038951652840199073,
+            "interval95": [
+              -0.012851649987687319,
+              0.020724515487188108
+            ]
+          },
+          "conditional": {
+            "gain": -0.01617393925676371,
+            "interval95": [
+              -0.02346710422085325,
+              -0.00917829932332609
+            ]
+          }
+        },
+        "26": {
+          "action": {
+            "gain": -0.033389058099102774,
+            "interval95": [
+              -0.04966533704092528,
+              -0.016501423606540264
+            ]
+          },
+          "observation": {
+            "gain": -0.025153715436130104,
+            "interval95": [
+              -0.04055777732545249,
+              -0.008961645440324174
+            ]
+          },
+          "conditional": {
+            "gain": -0.008235342662972671,
+            "interval95": [
+              -0.015015606649813832,
+              -0.0015719034169475038
+            ]
+          }
+        }
+      }
+    }
+  },
+  "sources": {
+    "astra-submissions/experiments/interaction-prior-20261102/class_audit.py": "b8026d33a093108f0bf936205e977c7ca71ed85a2ff2795b9c932fb6b21de405",
+    "astra-submissions/experiments/interaction-prior-20261102/class_probe.c": "694039c2900ace2fa890a7f62cb7e491609997e11de134130f5eca9410b2ecb7",
+    "astra-submissions/experiments/interaction-prior-20261102/build/class-probe.so": "de6769e3c6390b7e65e4e26f487b02c2e2fb4662a555c8dc2006cab9aa251a76"
+  },
+  "rows_sha256": "8fad7ea8e20eca28451400901a6b3578eed5b80817bebcf91bd6fc02960589ae",
+  "scope": "Post-fit diagnosis with fixed coefficients. Both class likelihood and within-class likelihood can affect a multi-parent belief; this true-parent decomposition is not a posterior or strength test. The failed 228 gate remains closed."
+}

@@ -1,0 +1,60 @@
+{
+  "modes": {
+    "18": {
+      "primary_decisions": 14048,
+      "surprise_captures": 1497,
+      "nll": {
+        "base": 2.888286376146359,
+        "linear": 2.891149707105198,
+        "quadratic": 2.8403642155860633
+      },
+      "gain": 0.04792216056029549,
+      "interval95": [
+        0.04270453057905812,
+        0.05339428402581349
+      ],
+      "matched_linear_gain": 0.050785491519134446,
+      "surprise_gain": -0.012278768896757948,
+      "all_move_gain": 0.04476024152619666,
+      "zeros_primary": 0,
+      "conditions": {
+        "gain": true,
+        "interval": true,
+        "matched_linear": true,
+        "surprise": true,
+        "all_move": true,
+        "no_zeros": true
+      }
+    },
+    "26": {
+      "primary_decisions": 14048,
+      "surprise_captures": 1497,
+      "nll": {
+        "base": 2.643360708856176,
+        "linear": 2.639990828136822,
+        "quadratic": 2.5811866841369975
+      },
+      "gain": 0.0621740247191782,
+      "interval95": [
+        0.05553633619897429,
+        0.06925754556755334
+      ],
+      "matched_linear_gain": 0.0588041439998236,
+      "surprise_gain": -0.033389086605268715,
+      "all_move_gain": 0.05661497412147348,
+      "zeros_primary": 0,
+      "conditions": {
+        "gain": true,
+        "interval": true,
+        "matched_linear": true,
+        "surprise": false,
+        "all_move": true,
+        "no_zeros": true
+      }
+    }
+  },
+  "decision": "close_interaction_configuration",
+  "selection_sha256": "5f7a96c0cbdda310ee9c42c6c9e0718b8a5aedb085b61f894512d29ce0abea3d",
+  "scores_sha256": "b7323d76b2222dddd6e93591d8e280fc336abeb72531daccde003cf9d9ebd637",
+  "scope": "Conditional move-predictor test on true parent boards. No belief/search integration or strength claim."
+}
