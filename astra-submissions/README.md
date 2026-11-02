@@ -24,6 +24,12 @@ the matched linear posterior control; all minimum-effect requirements failed.
 It is closed, with the old test untouched. See the
 [verified result](analysis/posterior-capacity-20261102/README.md).
 
+The [feature-equivalence audit](analysis/feature-equivalence-20261102/README.md)
+proves some rook moves are indistinguishable to the existing scorer, even
+with a known parent. Its modest average lower bound does not establish the
+main strength bottleneck; Fable already tested richer spatial features with
+level match results. No further prior fit follows from this audit alone.
+
 Earlier learned-response full-game pilots did not earn promotion: the first
 search integration finished 0W–8L against v37; its observable-loss variant
 finished 2W–6L. The persistent-response confirmation also failed to establish
