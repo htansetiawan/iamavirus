@@ -1,19 +1,19 @@
-# Learning and intelligence status, 2026-11-01 11:49 UTC
+# Learning and intelligence status, 2026-11-02 11:45 UTC
 
-Corpus: **190,970 games**. Latest game: 2026-11-01T10:15:08.012205522+00:00. Leaderboard snapshot: 2026-11-01T10:15:32.740411+00:00.
+Corpus: **195,614 games**. Latest game: 2026-11-02T10:41:22.278259884+00:00. Leaderboard snapshot: 2026-11-02T11:01:38.062629+00:00.
 
 | Feed | Latest evidence | How it reaches the bot |
 |---|---|---|
-| Replay and training data | Manifest modified unavailable; move-export metadata in JSON | Training input; no automatic promotion |
-| Taxonomy | 86 played-version/colour groups; previous report 2026-10-31T12:17:11 | Diagnosis and case selection; not an input to the live policy or belief |
+| Replay and training data | Manifest modified 2026-11-02T11:41:55.130000+00:00; move-export metadata in JSON | Training input; no automatic promotion |
+| Taxonomy | 82 played-version/colour groups; previous report 2026-11-01T11:46:13 | Diagnosis and case selection; not an input to the live policy or belief |
 | Working move model | Declared fit 2026-10-29, 6776 games | Candidate probabilities; requires validation and packaging |
 | Reference history table | Archive v35, 151316 records | Fixed table packaged inside that archive; not updated by replay ingest |
 | Frozen regression suite | 1379 decisions; file modified 2026-10-12T00:48:04.508580+00:00 | Fixed comparison set; retain it across experiments |
-| Rolling loss index | 208 recent examples, at most 3 per opponent version / our version / colour | Supplement candidates; not replay-tested or a strength estimate |
+| Rolling loss index | 282 recent examples, at most 3 per opponent version / our version / colour | Supplement candidates; not replay-tested or a strength estimate |
 
 ## Reference versus active version
 
-Snapshot active version: **35**. Reference archive: **v35**. Versions match; hashes are recorded in the JSON.
+Snapshot active version: **37**. Reference archive: **v35**. **Mapping update required:** do not treat this reference as the active deployment.
 
 File modification dates are filesystem freshness, not proof of retraining or dataset coverage. The working model is not necessarily the model in the active archive. Rebuilding inputs does not change the submitted ZIP.
 
@@ -25,23 +25,23 @@ Select a behaviour by played version and colour, inspect actual replay cases, an
 
 The JSON contains the full bounded index. These are game pointers, not newly validated decision tests.
 
-- [qqzttbee](https://www.mit.edu/~6.7980/fow/?tab=arena&game=qqzttbee): our v35 as black vs Knight Vision v36, 100 plies, King capturable.
-- [o1mwc9qk](https://www.mit.edu/~6.7980/fow/?tab=arena&game=o1mwc9qk): our v35 as white vs HYPOTHERMIA v4, 77 plies, King capturable.
-- [tw4bgl4x](https://www.mit.edu/~6.7980/fow/?tab=arena&game=tw4bgl4x): our v35 as black vs HYPOTHERMIA v4, 78 plies, King capturable.
-- [6s8o5nwd](https://www.mit.edu/~6.7980/fow/?tab=arena&game=6s8o5nwd): our v35 as black vs Strongly Invisible v41, 62 plies, King capturable.
-- [wejeypy0](https://www.mit.edu/~6.7980/fow/?tab=arena&game=wejeypy0): our v35 as black vs Mist Opportunities v2, 82 plies, King capturable.
-- [5tg2v31k](https://www.mit.edu/~6.7980/fow/?tab=arena&game=5tg2v31k): our v35 as white vs Strongly Invisible v41, 111 plies, King capturable.
-- [kj58ovnv](https://www.mit.edu/~6.7980/fow/?tab=arena&game=kj58ovnv): our v35 as black vs Gravel Road v4, 108 plies, King capturable.
-- [fh5vhk62](https://www.mit.edu/~6.7980/fow/?tab=arena&game=fh5vhk62): our v35 as white vs Gravel Road v4, 55 plies, King capturable.
-- [dyz2p2hb](https://www.mit.edu/~6.7980/fow/?tab=arena&game=dyz2p2hb): our v35 as black vs Foggy Fischer v4, 58 plies, King capturable.
-- [wtcylq1d](https://www.mit.edu/~6.7980/fow/?tab=arena&game=wtcylq1d): our v35 as white vs Crimson Fog v4, 63 plies, King capturable.
-- [uuzgl59z](https://www.mit.edu/~6.7980/fow/?tab=arena&game=uuzgl59z): our v35 as black vs HYPOTHERMIA v4, 80 plies, King capturable.
-- [aya0q0ax](https://www.mit.edu/~6.7980/fow/?tab=arena&game=aya0q0ax): our v35 as black vs Crimson Fog v4, 24 plies, King capturable.
-- [08ula1jh](https://www.mit.edu/~6.7980/fow/?tab=arena&game=08ula1jh): our v35 as black vs TA Baseline S v3, 104 plies, King capturable.
-- [f3n19ty1](https://www.mit.edu/~6.7980/fow/?tab=arena&game=f3n19ty1): our v35 as white vs Farsight v6, 59 plies, King capturable.
-- [xusofggg](https://www.mit.edu/~6.7980/fow/?tab=arena&game=xusofggg): our v35 as black vs Farsight v6, 58 plies, King capturable.
-- [047wdp5z](https://www.mit.edu/~6.7980/fow/?tab=arena&game=047wdp5z): our v35 as white vs Lost Signal v19, 201 plies, King capturable.
-- [r82lsby1](https://www.mit.edu/~6.7980/fow/?tab=arena&game=r82lsby1): our v35 as white vs HYPOTHERMIA v4, 81 plies, King capturable.
-- [z5jir9rk](https://www.mit.edu/~6.7980/fow/?tab=arena&game=z5jir9rk): our v35 as black vs HYPOTHERMIA v4, 74 plies, King capturable.
-- [nqq6kiuw](https://www.mit.edu/~6.7980/fow/?tab=arena&game=nqq6kiuw): our v35 as black vs Strongly Invisible v41, 82 plies, King capturable.
-- [4zy248z7](https://www.mit.edu/~6.7980/fow/?tab=arena&game=4zy248z7): our v35 as white vs Strongly Invisible v41, 67 plies, King capturable.
+- [pz23mdh6](https://www.mit.edu/~6.7980/fow/?tab=arena&game=pz23mdh6): our v37 as white vs HYPOTHERMIA v4, 117 plies, King capturable.
+- [kb4guejv](https://www.mit.edu/~6.7980/fow/?tab=arena&game=kb4guejv): our v37 as black vs Decent Chess Bot v7, 160 plies, King capturable.
+- [2m37bpdd](https://www.mit.edu/~6.7980/fow/?tab=arena&game=2m37bpdd): our v37 as white vs Decent Chess Bot v7, 93 plies, King capturable.
+- [d7vw090z](https://www.mit.edu/~6.7980/fow/?tab=arena&game=d7vw090z): our v37 as white vs RATIRL v2, 33 plies, King capturable.
+- [dcjmc276](https://www.mit.edu/~6.7980/fow/?tab=arena&game=dcjmc276): our v37 as black vs Mist Opportunities v2, 102 plies, King capturable.
+- [j8lp2i8l](https://www.mit.edu/~6.7980/fow/?tab=arena&game=j8lp2i8l): our v37 as white vs Farsight v10, 127 plies, King capturable.
+- [50rn3g1q](https://www.mit.edu/~6.7980/fow/?tab=arena&game=50rn3g1q): our v37 as black vs Greek Gift v25, 86 plies, King capturable.
+- [ym5zy4qh](https://www.mit.edu/~6.7980/fow/?tab=arena&game=ym5zy4qh): our v37 as black vs Farsight v10, 82 plies, King capturable.
+- [rm29nf1u](https://www.mit.edu/~6.7980/fow/?tab=arena&game=rm29nf1u): our v37 as black vs Strongly Invisible v41, 82 plies, King capturable.
+- [1j3etgyz](https://www.mit.edu/~6.7980/fow/?tab=arena&game=1j3etgyz): our v37 as white vs Strongly Invisible v41, 73 plies, King capturable.
+- [tq07thws](https://www.mit.edu/~6.7980/fow/?tab=arena&game=tq07thws): our v37 as white vs duck v6, 71 plies, King capturable.
+- [e853z9pl](https://www.mit.edu/~6.7980/fow/?tab=arena&game=e853z9pl): our v37 as black vs duck v6, 60 plies, King capturable.
+- [tsu6bpsn](https://www.mit.edu/~6.7980/fow/?tab=arena&game=tsu6bpsn): our v37 as black vs Lost Signal v19, 102 plies, King capturable.
+- [4g691bkw](https://www.mit.edu/~6.7980/fow/?tab=arena&game=4g691bkw): our v37 as black vs Crimson Fog v4, 234 plies, King capturable.
+- [9klhxuj1](https://www.mit.edu/~6.7980/fow/?tab=arena&game=9klhxuj1): our v37 as white vs Crimson Fog v4, 79 plies, King capturable.
+- [xj3kjrdx](https://www.mit.edu/~6.7980/fow/?tab=arena&game=xj3kjrdx): our v37 as white vs duck v6, 111 plies, King capturable.
+- [p8cdqaf1](https://www.mit.edu/~6.7980/fow/?tab=arena&game=p8cdqaf1): our v37 as white vs Instructors v4, 63 plies, King capturable.
+- [mas9e1ni](https://www.mit.edu/~6.7980/fow/?tab=arena&game=mas9e1ni): our v37 as white vs Cranberry Lemon v8, 75 plies, King capturable.
+- [fukf7tgk](https://www.mit.edu/~6.7980/fow/?tab=arena&game=fukf7tgk): our v37 as white vs HYPOTHERMIA v4, 119 plies, King capturable.
+- [i2s3an5a](https://www.mit.edu/~6.7980/fow/?tab=arena&game=i2s3an5a): our v37 as black vs Greek Gift v25, 112 plies, King capturable.
