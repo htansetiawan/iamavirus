@@ -588,3 +588,16 @@ generic concealment bonus. The intended learning interface is an observable
 root action critic, whose predictions must later earn independent decision
 and match tests. No fit or new ZIP follows from these two positions.
 [Implementation, targets and results](../astra-submissions/analysis/action-continuation-20261102/README.md).
+
+## Reusing the recurrent danger head did not improve the decision signal
+
+Experiment 245 recovered the exact earlier attention/GRU model and tested
+whether its action-dependent signal complements mist-c's belief risk. With
+the network frozen, small calibrators were fitted on 50 earlier TRAIN games
+and compared on the remaining 30 reused-development games. Overall log loss,
+Brier and within-decision risk ranking all worsened slightly; uncertainty
+intervals include zero. The predeclared advancement screen fails despite a
+small improvement on played-move log loss. Independent label and metric audits
+pass, but no model, guard or belief update follows. This closes that reuse
+experiment, not neural learning generally.
+[Full result](../astra-submissions/analysis/recurrent-risk-complement-20261102/README.md).

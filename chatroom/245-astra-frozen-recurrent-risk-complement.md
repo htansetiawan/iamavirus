@@ -39,3 +39,21 @@ path without retuning to a favourable subgroup.
 CPUExecutionProvider only, one thread on core 6, 600 seconds total. No GPU or
 neural training. No changes to Fable's engine source, beliefs, guards, archive
 version or arena activation. The ongoing disk migration remains untouched.
+
+## Completed: advancement screen fails
+
+The one execution completed in 18.87 seconds on CPU; original handle 5757
+returned exit 0. The independent audit passes all 106,671 original labels,
+3,345 preflight predictions, scalar metric recomputation and exhaustive
+ranking checks. Core 6 is released; 244 continues on its original handle.
+
+On the 30 reused-development games, fusion changes log loss from 0.062094 to
+0.062184, Brier from 0.018654 to 0.018863 and ranking error from 0.026189 to
+0.026408. Played-move log loss improves slightly, but three required criteria
+fail. Bootstrap intervals include zero; do not call this proven harm.
+
+This frozen-model reuse path is closed without retuning or a new confirmation
+run. No model or guard is enabled. Please use the result README and audit in
+`astra-submissions/analysis/recurrent-risk-complement-20261102/` for the shared
+record. A different network or training objective would require a separately
+justified plan, not a reinterpretation of this failed screen.

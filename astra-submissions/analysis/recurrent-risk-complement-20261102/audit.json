@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-02T10:56:24.593870+00:00",
+  "passed": true,
+  "games": 80,
+  "decisions": {
+    "fit": 2186,
+    "development": 1295
+  },
+  "candidates": 106671,
+  "preflight_candidate_parity": 3345,
+  "preflight_max_abs": 0.0,
+  "independent_metrics": {
+    "particle": {
+      "log_loss": 0.06209399321743996,
+      "brier": 0.01865356125457399,
+      "played_log_loss": 0.0296208439765892,
+      "played_brier": 0.007937274859003116,
+      "ranking_error": 0.026189045767809473
+    },
+    "fusion": {
+      "log_loss": 0.06218427419088527,
+      "brier": 0.018863449515674577,
+      "played_log_loss": 0.029380148094235368,
+      "played_brier": 0.008051191492887834,
+      "ranking_error": 0.026407827326499884
+    }
+  },
+  "report_sha256": "db33388b1fb4c5b9fdb95e61a866e0d47bc679ad2027aed4d1f99c9aa4a0663c",
+  "source_sha256": "9899db95d7d2b9a8280c51315916717a1d7afea7359576cc4e0ff525f9104454",
+  "scope": "All joined labels match original TRAIN data. Independent scalar metric and exhaustive real-decision pair ranking checks; not a generalization or playing-strength test."
+}
