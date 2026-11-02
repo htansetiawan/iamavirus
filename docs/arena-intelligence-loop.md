@@ -434,3 +434,11 @@ new action labels. See [the audit](../astra-submissions/analysis/queen-posterior
 It demonstrates why the taxonomy must feed diagnosis: support recovery,
 probability calibration and terminal-aware capture accounting are different
 repairs. None has been silently added to the running 80-game confirmation.
+
+## 2 November: taxonomy finding to a measured belief experiment
+
+The surprise-capture audit rejected the new neural model as a blanket belief prior. It also pointed to an existing opportunity: the full tactical move model predicts these events better, but the deployed filter switches to cheaper features above 10,000 worlds. Astra combined Fable’s exact performance changes with a scoring-only omission of zero-weight features, then tested the whole filter on 24 outcome-independent replay histories.
+
+Across 7,737 updates in 72 first attempts, optimized ordinary scoring produces identical beliefs at about half the original update cost. Full scoring improves mean truth log share by 0.12568 nats (game-bootstrap 95% interval 0.01972–0.28422) and retains truth at 1,089 versus 1,087 of 1,111 primary decisions, while taking 78.05 versus 119.82 seconds in total. This falls below the predeclared 0.15-nat advance threshold; its small duck subset also worsens. No full-prior switch is promoted. The exact speed improvement remains an independently useful implementation result.
+
+This is how taxonomy currently influences learning: find a specific weakness, compare candidate probabilities on that category, test the resulting change in actual belief trajectories, and retain both gains and failures. It does not turn descriptive tag counts directly into runtime weights. Details: [experiment 226](../astra-submissions/analysis/full-prior-posterior-20261102/README.md).

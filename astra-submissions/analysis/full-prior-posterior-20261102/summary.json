@@ -1,0 +1,77 @@
+{
+  "primary_decisions": 1111,
+  "games": 24,
+  "large_regime_games": 16,
+  "support": {
+    "original": 1087,
+    "full": 1089
+  },
+  "mean_truth_nll": {
+    "original": 6.046744638129276,
+    "full": 5.921065241201768
+  },
+  "gain_nats": 0.12567939692750713,
+  "interval95": [
+    0.019716703667457095,
+    0.2842208829419696
+  ],
+  "gain_sensitivity": {
+    "1e-09": 0.1099648668257995,
+    "1e-12": 0.12567939692750713,
+    "1e-15": 0.13811459994997724
+  },
+  "update_seconds": {
+    "original": {
+      "total": 119.81816824400101,
+      "p95": 0.13399855389999998,
+      "maximum": 1.76487071
+    },
+    "optimized": {
+      "total": 60.33701559194719,
+      "p95": 0.05153948349999995,
+      "maximum": 0.942175211
+    },
+    "full": {
+      "total": 78.04797167104941,
+      "p95": 0.06686888849999997,
+      "maximum": 1.28785505
+    }
+  },
+  "exact_control_fingerprints": true,
+  "by_team": {
+    "Instructors": {
+      "decisions": 129,
+      "gain_nats": 0.19796013683867636
+    },
+    "duck": {
+      "decisions": 150,
+      "gain_nats": -0.0871176967775469
+    },
+    "HYPOTHERMIA": {
+      "decisions": 193,
+      "gain_nats": 0.07960487997080631
+    },
+    "Greek Gift": {
+      "decisions": 226,
+      "gain_nats": 0.04605680157412497
+    },
+    "Knight Vision": {
+      "decisions": 236,
+      "gain_nats": -0.0006018909312484954
+    },
+    "Strongly Invisible": {
+      "decisions": 177,
+      "gain_nats": 0.5736162379692655
+    }
+  },
+  "conditions": {
+    "support": true,
+    "gain": false,
+    "interval": true,
+    "large_regime": true,
+    "total_time": true,
+    "p95_time": true
+  },
+  "decision": "close_full_prior_configuration",
+  "scope": "Capped-posterior development gate, not timed policy or Elo; one observer per game; no test-outcome tuning."
+}
