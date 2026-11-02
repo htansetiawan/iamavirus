@@ -1,0 +1,156 @@
+{
+  "confirmation_proposal_gate": false,
+  "phases": {
+    "all_hidden": {
+      "games": 16,
+      "decisions": 890,
+      "metrics": {
+        "sharp": {
+          "nll": 0.9931710645770004,
+          "brier": 0.45209806880215464,
+          "truth_mass": 0.5977993506425503,
+          "nonzero_support": 1.0
+        },
+        "flat": {
+          "nll": 0.9879746071057882,
+          "brier": 0.4383165935503808,
+          "truth_mass": 0.5495007760533661,
+          "nonzero_support": 1.0
+        },
+        "cnn": {
+          "nll": 1.7198024386263102,
+          "brier": 0.659520744505427,
+          "truth_mass": 0.40891687722899994,
+          "nonzero_support": 1.0
+        },
+        "pool": {
+          "nll": 0.9696097335786094,
+          "brier": 0.437492846820352,
+          "truth_mass": 0.5985920191841284,
+          "nonzero_support": 1.0
+        }
+      },
+      "pool_nll_improvement": {
+        "sharp": {
+          "mean": 0.023561330998391018,
+          "descriptive_game_bootstrap_95": [
+            -0.08642888546441,
+            0.13892077914863163
+          ]
+        },
+        "flat": {
+          "mean": 0.018364873527178853,
+          "descriptive_game_bootstrap_95": [
+            -0.11206849607583849,
+            0.14337185121061458
+          ]
+        }
+      }
+    },
+    "hidden_ply30plus": {
+      "games": 16,
+      "decisions": 650,
+      "metrics": {
+        "sharp": {
+          "nll": 1.3340140213375635,
+          "brier": 0.605805893207214,
+          "truth_mass": 0.4693729328830858,
+          "nonzero_support": 1.0
+        },
+        "flat": {
+          "nll": 1.2939751814999518,
+          "brier": 0.5711224782716875,
+          "truth_mass": 0.4245440731984347,
+          "nonzero_support": 1.0
+        },
+        "cnn": {
+          "nll": 2.226630244667522,
+          "brier": 0.8153833059730307,
+          "truth_mass": 0.2831565120409391,
+          "nonzero_support": 1.0
+        },
+        "pool": {
+          "nll": 1.3055954637672285,
+          "brier": 0.584360744826972,
+          "truth_mass": 0.4729937806973607,
+          "nonzero_support": 1.0
+        }
+      },
+      "pool_nll_improvement": {
+        "sharp": {
+          "mean": 0.028418557570335127,
+          "descriptive_game_bootstrap_95": [
+            -0.12477505959267408,
+            0.19167781054174518
+          ]
+        },
+        "flat": {
+          "mean": -0.011620282267276467,
+          "descriptive_game_bootstrap_95": [
+            -0.18616345628761113,
+            0.15395435529364632
+          ]
+        }
+      }
+    },
+    "hidden_early": {
+      "games": 16,
+      "decisions": 240,
+      "metrics": {
+        "sharp": {
+          "nll": 0.12320151710326177,
+          "brier": 0.06647068659637213,
+          "truth_mass": 0.9280390541301126,
+          "nonzero_support": 1.0
+        },
+        "flat": {
+          "nll": 0.19653140220709053,
+          "brier": 0.09990364772589458,
+          "truth_mass": 0.8696352458860943,
+          "nonzero_support": 1.0
+        },
+        "cnn": {
+          "nll": 0.4265159769051887,
+          "brier": 0.2634219348374029,
+          "truth_mass": 0.7357653263207785,
+          "nonzero_support": 1.0
+        },
+        "pool": {
+          "nll": 0.11846636261530685,
+          "brier": 0.06971148938966014,
+          "truth_mass": 0.9224296597321634,
+          "nonzero_support": 1.0
+        }
+      },
+      "pool_nll_improvement": {
+        "sharp": {
+          "mean": 0.004735154487954927,
+          "descriptive_game_bootstrap_95": [
+            -0.032075391963514284,
+            0.05224059032276689
+          ]
+        },
+        "flat": {
+          "mean": 0.0780650395917837,
+          "descriptive_game_bootstrap_95": [
+            0.018637793513265884,
+            0.14068269726382077
+          ]
+        }
+      }
+    },
+    "visible": {
+      "games": 0,
+      "decisions": 0,
+      "metrics": {},
+      "pool_nll_improvement": {}
+    }
+  },
+  "elapsed_seconds": 83.06521778499882,
+  "total_decisions": 890,
+  "thinnings": 5,
+  "rebuilds": 0,
+  "summary_script_sha256": "37d12cf4c3cb219d2f8e9de7b3fac566878f5ddc0d7b3a3234570388bdc85f17",
+  "receipt_sha256": "017a6bd02440893c9bf5f29ed8f7ca57d6405e3286a32eddc5a5f083e0fe2ffa",
+  "scope": "Frozen development probe. Equal game weighting. Bootstrap is descriptive. No fit, current-engine integration, strength claim or ZIP."
+}
