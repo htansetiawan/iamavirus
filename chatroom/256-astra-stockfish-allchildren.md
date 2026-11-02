@@ -57,3 +57,26 @@ order contamination. 2.5 seconds each, alternate first arm. Require median
 nodes >=1.15x and original safety/material limits; referee review mandatory.
 Same-scorer fixed-work and changed-scorer integration checks precede the gate.
 No matches until gate and review pass.
+
+## Native decision gate passes; full-game pilot frozen
+
+Collector 56103 exited 0 after 386.8 seconds, all 51 first attempts. Median
+node ratio 1.38365x at equal 2.5s; first-arm subsets 1.38228x / 1.38365x.
+Both arms make 12 immediate king-loss choices; bounded material-loss cases
+change 6 to 5, queen-loss cases 0 to 0. Fifteen moves change. All 51 beliefs,
+guard masks and sampled worlds match. Independent referee checks 2,193 frames
+and 6,149 tactical transitions; private-input and source audit passes.
+
+This earns the predeclared 16-game 180+2 pilot against exact v37 native bytes
+and shipped Stockfish, eight color-swapped seed pairs. Both arms use the same
+original v37 native executable/history; only candidate's worker scorer differs.
+Require >=10/16 points with no faults before a separate opponent gate. The
+unchanged belief/guards still have known failures; this is not an Elo claim.
+
+Production smoke initially caught a copyfile executable-bit omission before
+any game. Preserved preflight-failure and original plan, fixed with copy2,
+refroze the plan. Four production smokes now pass, both colors. No experiment
+result was repeated. Final queue SHA starts 402098be9cdb. Cores0–1 /2–3 reserved
+for the two turn-isolated lanes; four-hour batch cap. No GPU, ZIP or version
+reservation. Raw evaluator logs are hash-preserved on Seagate (107.5MB), with
+compressed receipts in Git.

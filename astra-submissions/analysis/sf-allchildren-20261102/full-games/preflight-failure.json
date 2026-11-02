@@ -1,0 +1,11 @@
+{
+  "at": "2026-11-02T16:33:39.175221+00:00",
+  "stage": "production-smoke-before-any-game",
+  "arm": "base",
+  "side": 0,
+  "exit_code": 126,
+  "stderr": "build/base/run.sh: line 6: build/base/mist: Permission denied",
+  "cause": "copyfile did not preserve executable permission on copied native binary",
+  "fix": "copy2 preserves original file mode; identical native binary content; freeze corrected plan, retaining previous plan.",
+  "games_started": 0
+}

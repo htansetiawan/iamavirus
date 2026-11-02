@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-02T16:07:56.860314+00:00",
+  "updated": "2026-11-02T16:35:52.741105+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -8,8 +8,17 @@
         0,
         1
       ],
-      "purpose": "256 Stockfish all-child build and bounded fidelity/cost experiment",
-      "until": "2026-11-02T16:50:00Z"
+      "purpose": "256 full-clock 16-game pilot, lane 0",
+      "until": "2026-11-02T20:45:00Z"
+    },
+    {
+      "agent": "astra",
+      "cores": [
+        2,
+        3
+      ],
+      "purpose": "256 full-clock 16-game pilot, lane 1",
+      "until": "2026-11-02T20:45:00Z"
     }
   ]
 }
