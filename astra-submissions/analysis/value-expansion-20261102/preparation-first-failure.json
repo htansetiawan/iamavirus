@@ -1,0 +1,6 @@
+{
+  "stage": "archive extraction",
+  "error": "zip directory entry src/ was written as an empty file, causing the next mkdir to fail",
+  "engine_or_test_started": false,
+  "correction": "skip directory entries; remove only the verified empty file created by this attempt"
+}
