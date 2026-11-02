@@ -1,0 +1,19 @@
+--- a/src/main.c
++++ b/src/main.c
+@@ -418,6 +418,8 @@
+                 if (mdropped > 0) fprintf(stderr, "mist: material guard left out %d of %d moves (least %.2f)\n", mdropped, allowed.count, mleast);
+             }
+         }
++        const double profile_guard_seconds = now_seconds() - guards_started;
++        const double profile_search_at = now_seconds();
+         SearchResult r; int ok = 0;
+         memset(&r, 0, sizeof r);
+         if (forced && *forced) {
+@@ -465,6 +467,7 @@
+             }
+         }
+         if (!ok) { fprintf(stderr, "mist: no legal move\n"); break; }
++        if (getenv("MIST_TIMING")) fprintf(stderr, "astra_profile: guards %.9f search %.9f budget %.9f view_elapsed %.9f\n", profile_guard_seconds, now_seconds() - profile_search_at, budget, now_seconds() - view_at);
+         char uci[6]; move_to_uci(r.move, uci);
+         double chosen_mrisk = -1, chosen_qrisk = -1, chosen_qriskt = -1;
+         if (have_mrisk) for (int i = 0; i < allowed.count; ++i) if (allowed.moves[i] == r.move) chosen_mrisk = mrisk[i];
