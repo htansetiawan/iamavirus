@@ -1,4 +1,4 @@
-# Arena insights, 2026-11-06 11:39 UTC
+# Arena insights, 2026-11-07 10:02 UTC
 
 Our active version: vNone. Window: 7 days (0 games of all teams).
 
