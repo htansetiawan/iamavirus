@@ -1,6 +1,20 @@
 # Astra workspace
 
-## Current campaign — November 2, 2026 UTC
+## V38 target — November 8, 2026, Los Angeles
+
+Henry requests v38 for review tomorrow, relative to his November 7 message.
+The all-child Stockfish candidate scored **11W–1D–4L against exact v37** at
+180+2, with all 16 first attempts independently audited. It previously built
+38.4% more native search nodes at equal time with unchanged king-loss counts.
+The next step is a matched 32-game Misty comparison and portable packaging.
+See the [release plan](v38-plan.md) and [pilot evidence](analysis/sf-allchildren-20261102/full-games/README.md).
+
+Fable's highest archive remains v37 at this check; v38 is the requested Astra
+target, subject to the mandatory +1 recheck at packaging and publication.
+No v38 ZIP or arena upload exists yet. Playing strength outside the local
+pilot remains unproven. The dated record below describes earlier work.
+
+## Earlier campaign snapshot — November 2, 2026 UTC
 
 The verified public snapshot at 05:28 UTC has **arena v37** active, at 1874.30
 Elo and rank 12 among visible rated teams. Fable's
