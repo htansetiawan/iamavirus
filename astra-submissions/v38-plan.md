@@ -43,7 +43,7 @@ Evidence: [native decision screen](analysis/sf-allchildren-20261102/search/READM
 [full-game pilot](analysis/sf-allchildren-20261102/full-games/README.md),
 [opponent protocol](experiments/sf-opponent-20261108/README.md).
 
-Progress at 08:11 UTC on 8 November:
+Progress at 08:15 UTC on 8 November:
 
 - Portable, self-contained scorer built with Ubuntu 22.04 / GCC 12.3 and
   upstream CPU dispatch. Embedded NNUE exported and hash verified from an
@@ -58,9 +58,11 @@ Progress at 08:11 UTC on 8 November:
   colors and 180/2-second clocks pass, maximum startup 0.771 s. The inherited
   failure on an artificial 0.2-second prompt is documented, including the same
   failure in v37; that prompt is below the reachable 180+2 turn-clock range.
-- Two exact-ZIP games versus baseline.py are running on 4–5. The separate
-  32-game matched Misty gate remains in progress on 0–3. No new strength claim
-  follows from package checks.
+- Both exact-ZIP games versus baseline.py pass (White and Black wins), without
+  faults, warnings or forfeits. Maximum sampled group RSS is about 627 MiB.
+  Original batch 50304 exited successfully and owned process identities are
+  gone; cores 4–5 released. The separate 32-game matched Misty gate remains
+  in progress on 0–3. Package checks are not strength evidence.
 - Fable independently confirmed the pilot and has been asked to review the
   exact staged ZIP on 6–7, then handle v37-relative arena tracking after a human
   upload. Neither publication nor an arena upload has occurred.

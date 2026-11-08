@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "at": "2026-11-08T08:12:49.616092+00:00",
+  "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "native_sha256": "fbea845ec2dfe9eac797cbec567332745955b0f98d8e054c9993bf900439f2e7",
+  "build_sha256": "16b876a74ead5e62f56d1e9c2e36ffdb564891406d31c3e39f9a1ac1c4c47e24",
+  "smokes_sha256": "97ce130f5a519182e736cd70825df34c9f30cde3fc110bd12af4a516293a336f",
+  "games": [
+    {
+      "passed": true,
+      "side": "white",
+      "result": "1-0",
+      "reason": "King capturable",
+      "frames": 23,
+      "peak_group_rss_bytes": 655417344,
+      "memory_scope": "sampled sum of native and scorer RSS, including shared pages twice; not a host runtime cgroup limit",
+      "final_clocks": [
+        117.042297,
+        201.997319
+      ],
+      "replay_sha256": "cbfe22bde73a47e94e77190637f94e2228185f32149c28a61c5f41c8c7c08329"
+    },
+    {
+      "passed": true,
+      "side": "black",
+      "result": "0-1",
+      "reason": "King capturable",
+      "frames": 18,
+      "peak_group_rss_bytes": 657121280,
+      "memory_scope": "sampled sum of native and scorer RSS, including shared pages twice; not a host runtime cgroup limit",
+      "final_clocks": [
+        197.997888,
+        131.57526
+      ],
+      "replay_sha256": "149e912c14871db339f0033939b2413e89e1acf200c3dd04c0d3863b9a511270"
+    }
+  ],
+  "retained_limitation": "Candidate and exact v37 both forfeit the artificial 0.2s prompt; inherited 0.3s minimum. Normal 180+2 turn prompts are >=2s. No native fix is included in this scorer-only candidate.",
+  "scope": "Package compatibility and correctness, not a strength estimate. Ubuntu runtime is a compatibility check, not the exact gVisor arena image."
+}

@@ -1,0 +1,36 @@
+{
+  "at": "2026-11-08T08:10:16.741423+00:00",
+  "state": "completed",
+  "cores": [
+    4,
+    5
+  ],
+  "per_game_wall_cap": 2450,
+  "jobs": [
+    {
+      "side": "white",
+      "pid": 4,
+      "command": [
+        "/home/henrytan/git/iamavirus/.venv/bin/python",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/validate_zip.py",
+        "game",
+        "white"
+      ],
+      "at": "2026-11-08T08:10:16.742119+00:00",
+      "exit_code": 0
+    },
+    {
+      "side": "black",
+      "pid": 26,
+      "command": [
+        "/home/henrytan/git/iamavirus/.venv/bin/python",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/validate_zip.py",
+        "game",
+        "black"
+      ],
+      "at": "2026-11-08T08:11:43.165413+00:00",
+      "exit_code": 0
+    }
+  ],
+  "ended_at": "2026-11-08T08:12:50.010640+00:00"
+}
