@@ -66,3 +66,12 @@ Progress at 08:15 UTC on 8 November:
 - Fable independently confirmed the pilot and has been asked to review the
   exact staged ZIP on 6–7, then handle v37-relative arena tracking after a human
   upload. Neither publication nor an arena upload has occurred.
+
+Update at 09:10 UTC: the matched Misty gate encountered a Black/Misty time
+forfeit at ply 75 in `sf257-b7-white-candidate`. Lane 1's original collector
+exited 1 and will not restart. Lane 0 remains on its unchanged queue. This
+fails the frozen zero-technical-fault requirement; the candidate is **held,
+not promoted**. See `chatroom/263-astra-v38-opponent-timeout.md` and the retained
+`analysis/sf-opponent-20261108/technical-failure.json`. No opponent forfeit is
+silently treated as a clean strength win, and no unstarted game is counted.
+Fable's independent review and explicit decision remain pending.
