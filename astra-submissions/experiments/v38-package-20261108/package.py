@@ -145,10 +145,19 @@ def publish():
     assert validation['passed']
     manifest = json.loads((OUT / 'staged.json').read_text())
     assert sha(STAGED) == validation['archive_sha256'] == manifest['archive_sha256']
+    # Written only after actually reading Fable's independent receipt. A
+    # request for review, an empty file, or a result for other bytes is not it.
+    acceptance = json.loads((OUT / 'independent-review-acceptance.json').read_text())
+    assert acceptance['passed'] and acceptance['reviewer'] == 'fable'
+    assert acceptance['archive_sha256'] == manifest['archive_sha256']
+    report = (ROOT / acceptance['report_path']).resolve()
+    assert report.is_relative_to(ROOT.resolve()) and sha(report) == acceptance['report_sha256']
+    assert sha(OUT / 'scorer-validation.json') == manifest['scorer_validation_sha256']
     assert not (ASTRA / NAME).exists() and not (ASTRA / 'v38-manifest.json').exists()
     manifest.update(archive=NAME, status='validated repository release; not uploaded to arena',
                     published_at=datetime.now(timezone.utc).isoformat(),
-                    opponent_gate_sha256=sha(opponent), zip_validation_sha256=sha(OUT / 'zip-validation.json'))
+                    opponent_gate_sha256=sha(opponent), zip_validation_sha256=sha(OUT / 'zip-validation.json'),
+                    independent_review_acceptance_sha256=sha(OUT / 'independent-review-acceptance.json'))
     os.link(STAGED, ASTRA / NAME)  # fails rather than replacing another release
     write(ASTRA / 'v38-manifest.json', manifest)
     print(json.dumps(dict(archive=NAME, sha256=sha(ASTRA / NAME), arena_uploaded=False)), flush=True)
