@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse, bisect, collections, datetime, glob, json, os, re, statistics, sys
 import chess
 from learning.move_taxonomy import fen
+from learning.daily_report import accepted_rows
 
 # A fixed cohort: the leaderboard's top six on 13 October, when the report was designed. Kept
 # fixed so sections 3 and 4 compare like with like over time; the current leaders (which may
@@ -93,6 +94,17 @@ def main():
     ap.add_argument("--raw", default="data/raw"); ap.add_argument("--out", default="data/reports/daily")
     ap.add_argument("--days", type=int, default=7)
     args = ap.parse_args()
+    # A missing mounted archive is not evidence of zero games. Load the same
+    # accepted-game index used by the daily report, rather than doing hundreds
+    # of thousands of random listing-file reads from the external disk.
+    if not all(os.path.isdir(os.path.join(args.raw, name)) for name in ('games', 'snapshots')):
+        ap.error('raw archive unavailable; preserving the last good insights')
+    try:
+        accepted = accepted_rows(args.raw)
+    except (OSError, ValueError, KeyError) as exc:
+        ap.error(f'accepted-game index unavailable: {exc}; preserving the last good insights')
+    if not accepted:
+        ap.error('accepted-game index is empty; preserving the last good insights')
     now = datetime.datetime.now(datetime.timezone.utc)
     cut7 = now - datetime.timedelta(days=args.days)
     cut3 = now - datetime.timedelta(days=3)
@@ -116,17 +128,15 @@ def main():
                 ts[r["name"]].append((t, r["rating"]))
     for k in ts:
         ts[k].sort()
+    if latest_t is None:
+        ap.error('no usable leaderboard snapshot in the report window; preserving the last good insights')
     leaders_now = [r["name"] for r in sorted(
         (r for r in latest_rows if r.get("rating") is not None),
         key=lambda r: -r["rating"]) if r["name"] != ME][:6]
 
     our_version = active.get(ME)
     listings = []
-    for g in glob.glob(os.path.join(args.raw, "games", "*", "listing.json")):
-        try:
-            r = json.load(open(g))
-        except Exception:
-            continue
+    for r in accepted:
         completed_at = parse_utc(r.get("createdAt"))
         if completed_at is None or not cut7 <= completed_at <= now:
             continue
@@ -236,6 +246,8 @@ def main():
         out.append(f"| {ph} | " + " | ".join(f"{100*haz[(ph,L)][1]/max(1,haz[(ph,L)][0]):.1f}% of {haz[(ph,L)][0]}" for L in range(4)) + " |")
     out += ["", "## 6. Our losses in 20 plies or fewer, last 3 days", ""]
     out += [f"- {gid} vs {them} as {us}, {plies} plies: `{moves}`" for gid, them, us, plies, moves in short] or ["- none"]
+    if not all(os.path.isdir(os.path.join(args.raw, name)) for name in ('games', 'snapshots')):
+        ap.error('raw archive disappeared during analysis; preserving the last good insights')
     os.makedirs(args.out, exist_ok=True)
     text = "\n".join(out) + "\n"
     open(os.path.join(args.out, f"insights-{now.strftime('%Y-%m-%d')}.md"), "w").write(text)

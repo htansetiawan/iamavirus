@@ -33,11 +33,18 @@ DATASET=1; PUSH=1
 for a in "$@"; do
     case "$a" in --no-dataset) DATASET=0 ;; --no-push) PUSH=0 ;; esac
 done
-mkdir -p data/logs/daily data/derived/moves data/reports/daily
+mkdir -p data/logs/daily data/reports/daily
 LOG="data/logs/daily/$(date -u +%F).log"
 exec 9>data/logs/daily/.lock
 flock -n 9 || { echo "daily refresh already running" >&2; exit 0; }
 step() { echo "== $(date -u +%H:%M:%S) $*" >>"$LOG"; }
+require_raw() {
+    if ! "$PY" astra-submissions/tools/check_raw_available.py --raw data/raw "$@" >>"$LOG" 2>&1; then
+        step "raw archive unavailable; preserving existing reports; refresh failed"
+        exit 1
+    fi
+}
+require_raw
 STORE="${STORE:-$(head -n1 data/store 2>/dev/null)}"
 SEAGATE=0; [ -n "$STORE" ] && [ -d "$STORE/raw-archive" ] && SEAGATE=1
 [ "$SEAGATE" = 1 ] || step "storage ${STORE:-unset (STORE or data/store)} not available (drive not mounted?): training data and mirror skipped"
@@ -45,10 +52,12 @@ run() { "$@" >>"$LOG" 2>&1 || echo "   step failed (exit $?): $*" >>"$LOG"; }
 
 step "ingest ours";      run nice -n 10 $PY -m learning.ingest --team IAmAVirus --output data/raw --limit 1000
 step "ingest all teams"; run nice -n 10 $PY -m learning.ingest --all --output data/raw --limit 6000
+require_raw --reports
 step "games held: $(wc -l <data/raw/accepted.jsonl) accepted lines"
 
 MIST_C="${MIST_C:-$HOME/git/fowsearch-c}"
 if [ "$SEAGATE" = 1 ] && [ -f "$MIST_C/tools/export_moves.py" ]; then
+    mkdir -p data/derived/moves
     step "mist-c move export"
     run nice -n 10 python3 "$MIST_C/tools/export_moves.py" data/raw/games data/derived/moves/arena-latest \
         --games 1000000 --since "$(date -u -d '21 days ago' +%F)"
@@ -61,6 +70,7 @@ if [ "$SEAGATE" = 1 ]; then
     step "mirror replays to $STORE"
     run $PY tools/mirror_raw.py --raw data/raw --store "$STORE/raw-archive"
 fi
+require_raw --reports
 step "daily report";     run $PY -m learning.daily_report --raw data/raw --out data/reports/daily
 # the deeper analysis: opponent version changes, rating point flow, queen events,
 # king walking, the fog-line hazard table and the short losses (learning.daily_insights)
