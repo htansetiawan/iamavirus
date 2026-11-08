@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-08T07:43:06.496391+00:00",
+  "command": [
+    "docker",
+    "run",
+    "--name",
+    "astra-v38-portable-20261108",
+    "--runtime=runc",
+    "--cpuset-cpus=4,5",
+    "--memory=4g",
+    "--pids-limit=256",
+    "--env",
+    "BUILD_UID=1000",
+    "--mount",
+    "type=bind,src=/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build,dst=/work",
+    "--mount",
+    "type=bind,src=/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/container-build.sh,dst=/container-build.sh,readonly",
+    "nvidia/cuda@sha256:80d4d9ac041242f6ae5d05f9be262b3374e0e0b8bb5a49c6c3e94e192cde4a44",
+    "/bin/sh",
+    "/container-build.sh"
+  ],
+  "state": "completed",
+  "exit_code": 0,
+  "seconds": 247.55504141699998,
+  "ended_at": "2026-11-08T07:47:14.051577+00:00"
+}

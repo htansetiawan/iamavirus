@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-08T07:58:18.998907+00:00",
+  "invalid": true,
+  "reason": "Ubuntu build image lacked hexdump; upstream scripts/net.sh returned success after writing an empty NNUE include. Universal binary was 6.3 MB and loaded the external NNUE during scorer parity. Staged ZIP was rejected before any promotion or exact-archive gameplay.",
+  "repair": "Install bsdextrautils, assert embedded include and binary sizes, export/check embedded network from standalone binary, repeat parity and all package validation.",
+  "laboratory_games_affected": false,
+  "arena_uploads": 0
+}

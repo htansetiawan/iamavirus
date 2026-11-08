@@ -1,0 +1,131 @@
+{
+  "at": "2026-11-08T07:49:01.251982+00:00",
+  "state": "completed",
+  "portable_sha256": "09ddff14934c390fa86cb7f5c8e7f6b6e93c1f842a8996274b965b03670ed3c0",
+  "measured_sha256": "4f762ec46dc4dd16f7241aea116380129cf51363138f24c09cfcd1f43fc00134",
+  "shipped_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "abi_requirements": {
+    "GLIBC": "2.35",
+    "GLIBCXX": null,
+    "CXXABI": null
+  },
+  "script_sha256": "427519f6c6daf07b2c205517f025808bc3679b3e6b66fb7b9df3912e45eceba7",
+  "pairs": 3072,
+  "special_calls": 64,
+  "regimes": {
+    "played-cold": {
+      "panel_sha256": "67ed364d79f69e6eba3a9825aafd7f31f28362728a3bea5752ff87c02abd7823",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.5685133420042803,
+        "measured": 0.5585112719941208,
+        "shipped": 0.857132896996518
+      },
+      "per_pass": [
+        {
+          "portable": 0.20264774000088437,
+          "measured": 0.19826859899990268,
+          "shipped": 0.3001213929996993
+        },
+        {
+          "measured": 0.1730667929973606,
+          "shipped": 0.2730264589995386,
+          "portable": 0.1776675540004362
+        },
+        {
+          "shipped": 0.28398504499728006,
+          "portable": 0.1881980480029597,
+          "measured": 0.18717587999685747
+        }
+      ],
+      "median_speedup_shipped": 1.5089691312463238,
+      "speed_gate": true
+    },
+    "played-warm": {
+      "panel_sha256": "67ed364d79f69e6eba3a9825aafd7f31f28362728a3bea5752ff87c02abd7823",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.4935722540003553,
+        "measured": 0.47770263900224563,
+        "shipped": 0.781400864002535
+      },
+      "per_pass": [
+        {
+          "portable": 0.16612873199733258,
+          "measured": 0.16026502900103878,
+          "shipped": 0.2602698280002187
+        },
+        {
+          "measured": 0.15353682600107277,
+          "shipped": 0.25249961700069434,
+          "portable": 0.15556157000219173
+        },
+        {
+          "shipped": 0.2686314190016219,
+          "portable": 0.171881952000831,
+          "measured": 0.16390078400013408
+        }
+      ],
+      "median_speedup_shipped": 1.5666755826704177,
+      "speed_gate": true
+    },
+    "frontier-cold": {
+      "panel_sha256": "bbcf6869e4f917fc42804fc1c5309594978c1a01f4e6c99418e9f3127925df86",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.6385822989986991,
+        "measured": 0.6198522259978745,
+        "shipped": 1.0273757270006172
+      },
+      "per_pass": [
+        {
+          "portable": 0.2201534690002518,
+          "measured": 0.21414595999749508,
+          "shipped": 0.3478097470006105
+        },
+        {
+          "measured": 0.19462120100047287,
+          "shipped": 0.3327154689991403,
+          "portable": 0.20262254499971277
+        },
+        {
+          "shipped": 0.3468505110008664,
+          "portable": 0.21580628499873455,
+          "measured": 0.21108506499990654
+        }
+      ],
+      "median_speedup_shipped": 1.6072308135182451,
+      "speed_gate": true
+    },
+    "frontier-warm": {
+      "panel_sha256": "bbcf6869e4f917fc42804fc1c5309594978c1a01f4e6c99418e9f3127925df86",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.5610584709961586,
+        "measured": 0.5508500140040269,
+        "shipped": 0.9681915840023976
+      },
+      "per_pass": [
+        {
+          "portable": 0.17977986999812856,
+          "measured": 0.17996970300282555,
+          "shipped": 0.3137428520010417
+        },
+        {
+          "measured": 0.18155223499957174,
+          "shipped": 0.31934755600013887,
+          "portable": 0.1834029729991471
+        },
+        {
+          "shipped": 0.335101176001217,
+          "portable": 0.19787562799888292,
+          "measured": 0.1893280760016296
+        }
+      ],
+      "median_speedup_shipped": 1.7412343473931797,
+      "speed_gate": true
+    }
+  },
+  "passed": true,
+  "ended_at": "2026-11-08T07:49:58.177636+00:00"
+}

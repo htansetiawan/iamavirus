@@ -8,6 +8,7 @@ import os
 from pathlib import Path
 import re
 import statistics
+import shutil
 import subprocess
 import sys
 import time
@@ -18,7 +19,8 @@ sys.path.insert(0, str(OLD))
 spec = importlib.util.spec_from_file_location('v38_scorer_protocol', OLD / 'run.py')
 protocol = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(protocol)
-PORTABLE = HERE / 'build/stockfish/src/stockfish'
+BUILT = HERE / 'build/stockfish/src/stockfish'
+PORTABLE = HERE / 'build/standalone/bin/stockfish'
 MEASURED = OLD / 'build/candidate/src/stockfish'
 SHIPPED = OLD.parent / 'queen-terminal-backport-20261102/build-r2/base/bin/stockfish'
 PANELS = ROOT / 'astra-submissions/analysis/sf-allchildren-20261102'
@@ -31,6 +33,21 @@ def main():
     os.sched_setaffinity(0, {4, 5})
     assert json.loads((OUT / 'container-build.json').read_text())['exit_code'] == 0
     source = json.loads((OUT / 'source.json').read_text())
+    PORTABLE.parent.mkdir(parents=True, exist_ok=False)
+    shutil.copy2(BUILT, PORTABLE)
+    assert sha(PORTABLE) == sha(BUILT) and PORTABLE.stat().st_size > 98000000
+    assert list(PORTABLE.parent.iterdir()) == [PORTABLE]
+    # Verify the network from the binary alone, with neither an adjacent nor
+    # current-directory NNUE to hide a missing embedding.
+    exported = HERE / 'build/exported-embedded.nnue'
+    assert not exported.exists()
+    output = subprocess.run([str(PORTABLE)], input=f'export_net {exported}\nquit\n',
+                            cwd=PORTABLE.parent, capture_output=True, text=True, timeout=30)
+    assert output.returncode == 0 and exported.exists(), output.stdout + output.stderr
+    assert sha(exported) == source['network_sha256']
+    with (OUT / 'embedded-network.json').open('x') as f:
+        json.dump(dict(passed=True, binary_sha256=sha(PORTABLE), exported_sha256=sha(exported),
+                       cwd=str(PORTABLE.parent), stdout=output.stdout, stderr=output.stderr), f, indent=2)
     for p, h in source['source_files'].items():
         assert sha(HERE / 'build/stockfish' / p) == h, p
     assert sha(MEASURED) == source['measured_binary_sha256']
@@ -43,6 +60,7 @@ def main():
     assert tuple(map(int, versions['GLIBC'].split('.'))) <= (2, 35)
     record = dict(at=datetime.now(timezone.utc).isoformat(), state='running',
                   portable_sha256=sha(PORTABLE), measured_sha256=sha(MEASURED),
+                  embedded_network_sha256=sha(exported),
                   shipped_sha256=sha(SHIPPED), abi_requirements=versions,
                   script_sha256=sha(__file__), pairs=0, special_calls=0, regimes={})
     path = OUT / 'scorer-validation.json'

@@ -6,6 +6,14 @@ Build the exact experiment-256 Stockfish 19 source patch in a dedicated Ubuntu
 The official universal target selects among eight x86 instruction sets and
 statically links libstdc++/libgcc. No GPU, host service, or Fable source is used.
 
+The first portable build is **rejected**, retained under
+`analysis/v38-package-20261108/invalid-attempt0/`. Ubuntu lacked `hexdump`;
+upstream `scripts/net.sh` returned success with an empty embedding include.
+Scorer parity used the adjacent NNUE and therefore did not detect the missing
+embedding. The staged archive's implausibly small size exposed it before any
+package promotion or game. Rebuild with `bsdextrautils`, export and hash the
+NNUE from a standalone copy of the binary, then repeat all package checks.
+
 Before release, require identical move scores, best moves and node counts
 against the measured binary on the frozen played-parent and search-frontier
 panels, cold and warm. Check special moves, terminal cases, disabled controls,
