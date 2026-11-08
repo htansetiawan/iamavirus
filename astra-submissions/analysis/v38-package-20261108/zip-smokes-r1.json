@@ -1,0 +1,75 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "side": "white",
+      "remaining": 180.0,
+      "startup_seconds": 0.7362338769999042,
+      "moves": [
+        {
+          "move": "d2d4",
+          "elapsed": 8.613079190000008
+        },
+        {
+          "move": "c1f4",
+          "elapsed": 8.63490954100007
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/zip-extracted/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=4233 nodes=312664 iters=3640 p=0.60 v=+0.093 lead=+0 clock=180.0 sf=11345/5.8s mr=-1.00/-1.00 hist=0/0 move=d2d4\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=2 |P|=14 samples=14 moves=28 infosets=3829 nodes=320971 iters=3470 p=0.34 v=+0.057 lead=+0 clock=180.0 sf=22143/12.0s mr=-1.00/-1.00 hist=1/1 move=c1f4\n",
+      "failure": null
+    },
+    {
+      "side": "white",
+      "remaining": 2.0,
+      "startup_seconds": 0.7270162410000012,
+      "moves": [
+        {
+          "move": "e2e4",
+          "elapsed": 0.2589593220000097
+        },
+        {
+          "move": "b1c3",
+          "elapsed": 0.25961190199996054
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/zip-extracted/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=299 nodes=24531 iters=350 p=0.40 v=+0.056 lead=+0 clock=2.0 sf=958/0.4s mr=-1.00/-1.00 hist=0/0 move=e2e4\nmist: king guard left out 2 of 30 moves (safest 0.000, sharper 0.000)\nmist: queen guard left out 2 of 30 moves (safest 0.000, sharper 0.000)\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=2 |P|=13 samples=13 moves=28 infosets=347 nodes=22725 iters=280 p=0.38 v=+0.056 lead=+0 clock=2.0 sf=1731/0.8s mr=-1.00/-1.00 hist=1/1 move=b1c3\n",
+      "failure": null
+    },
+    {
+      "side": "black",
+      "remaining": 180.0,
+      "startup_seconds": 0.728641128000163,
+      "moves": [
+        {
+          "move": "d7d5",
+          "elapsed": 8.607292347000111
+        },
+        {
+          "move": "c8f5",
+          "elapsed": 8.605313830999876
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/zip-extracted/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=3683 nodes=286239 iters=3160 p=0.47 v=-0.065 lead=+0 clock=180.0 sf=9850/6.1s mr=-1.00/-1.00 hist=1/1 move=d7d5\nmist: king guard left out 1 of 27 moves (safest 0.000, sharper 0.000)\nmist: queen guard left out 1 of 27 moves (safest 0.000, sharper 0.000)\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=2 |P|=20 samples=20 moves=26 infosets=3661 nodes=306609 iters=3100 p=0.34 v=-0.048 lead=+0 clock=180.0 sf=19554/12.4s mr=-1.00/-1.00 hist=2/2 move=c8f5\n",
+      "failure": null
+    },
+    {
+      "side": "black",
+      "remaining": 2.0,
+      "startup_seconds": 0.7705925449999995,
+      "moves": [
+        {
+          "move": "g8f6",
+          "elapsed": 0.2670006440002908
+        },
+        {
+          "move": "e7e6",
+          "elapsed": 0.27385124800002814
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/zip-extracted/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=351 nodes=22336 iters=300 p=0.29 v=-0.063 lead=+0 clock=2.0 sf=822/0.4s mr=-1.00/-1.00 hist=1/1 move=g8f6\nmist: king guard left out 2 of 22 moves (safest 0.000, sharper 0.000)\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=2 |P|=275 samples=7 moves=20 infosets=367 nodes=21692 iters=280 p=0.65 v=-0.105 lead=+0 clock=2.0 sf=1593/0.9s mr=-1.00/-1.00 hist=19/19 move=e7e6\n",
+      "failure": null
+    }
+  ],
+  "retained_out_of_domain_stress": "zip-smokes.json and cold-subincrement-control.json",
+  "clock_floor_reason": "Successful moves add two seconds; both first clocks are 180."
+}

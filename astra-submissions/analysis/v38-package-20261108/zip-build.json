@@ -1,0 +1,24 @@
+{
+  "command": [
+    "docker",
+    "run",
+    "--rm",
+    "--name",
+    "astra-v38-zip-validation",
+    "--runtime=runc",
+    "--network=none",
+    "--cpuset-cpus=4,5",
+    "--memory=4g",
+    "--pids-limit=64",
+    "--mount",
+    "type=bind,src=/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/zip-extracted,dst=/work",
+    "sha256:89f08877815e0fc7a51234dd71b6faffd02c4687f73dede860f37429137bbcd7",
+    "/bin/sh",
+    "-c",
+    "set -eu\nln -s /usr/bin/gcc-12 /usr/local/bin/gcc\nln -s /usr/bin/g++-12 /usr/local/bin/g++\nrunuser -u builder -- sh -eu -c 'cd /work; bash build.sh; ./run.sh < smoke.input > container-smoke.stdout 2> container-smoke.stderr'\n"
+  ],
+  "exit_code": 0,
+  "seconds": 12.641193663000195,
+  "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "environment": "Ubuntu 22.04, gcc/g++ 12.3, no network or GPU, 4 GiB cgroup, 64 PID limit"
+}

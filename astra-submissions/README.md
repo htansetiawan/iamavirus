@@ -11,7 +11,10 @@ See the [release plan](v38-plan.md) and [pilot evidence](analysis/sf-allchildren
 
 Fable's highest archive remains v37 at this check; v38 is the requested Astra
 target, subject to the mandatory +1 recheck at packaging and publication.
-No v38 ZIP or arena upload exists yet. Playing strength outside the local
+A private review ZIP has passed portable-scorer and initial archive checks;
+see [package status](analysis/v38-package-20261108/README.md). No v38 release
+ZIP has been published or uploaded to the arena. The matched Misty gate and
+final package games remain in progress. Playing strength outside the local
 pilot remains unproven. The dated record below describes earlier work.
 
 ## Earlier campaign snapshot — November 2, 2026 UTC

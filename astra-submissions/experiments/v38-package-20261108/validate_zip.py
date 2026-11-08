@@ -86,7 +86,10 @@ def smokes():
     ref = referee()
     rows = []
     for side in (True, False):
-        for remaining in (180., .2):
+        # At 180+2 every successful move leaves at least two seconds on the
+        # clock. The earlier 0.2s synthetic probe is retained separately: both
+        # v37 and this candidate fail its inherited fixed 0.3s search minimum.
+        for remaining in (180., 2.):
             board = ref.FowBoard()
             start = time.monotonic()
             bot = ref.Bot(command(), side, 180, 2, initialization_timeout=15)
@@ -109,9 +112,11 @@ def smokes():
                 bot.close()
                 row.update(stderr=bot.stderr_excerpt.decode(), failure=bot.failure)
                 rows.append(row)
-                (OUT/'zip-smokes.json').write_text(json.dumps(dict(passed=False, rows=rows), indent=2)+'\n')
+                (OUT/'zip-smokes-r1.json').write_text(json.dumps(dict(passed=False, rows=rows), indent=2)+'\n')
             assert bot.failure is None and 'mist: stockfish ready' in row['stderr']
-    (OUT/'zip-smokes.json').write_text(json.dumps(dict(passed=True, rows=rows), indent=2)+'\n')
+    (OUT/'zip-smokes-r1.json').write_text(json.dumps(dict(passed=True, rows=rows,
+            retained_out_of_domain_stress='zip-smokes.json and cold-subincrement-control.json',
+            clock_floor_reason='Successful moves add two seconds; both first clocks are 180.'), indent=2)+'\n')
     print(json.dumps(dict(protocol_smokes=4, legal_decisions=8, maximum_startup_seconds=max(r['startup_seconds'] for r in rows))),flush=True)
 
 def game(side):
@@ -163,14 +168,15 @@ def game(side):
 
 def finish():
     build_record = json.loads((OUT/'zip-build.json').read_text())
-    smoke = json.loads((OUT/'zip-smokes.json').read_text())
+    smoke = json.loads((OUT/'zip-smokes-r1.json').read_text())
     games = [json.loads((OUT/('zip-game-'+side)/'result.json').read_text()) for side in ('white','black')]
     assert build_record['exit_code'] == 0 and smoke['passed'] and all(r['passed'] for r in games)
     assert sha(STAGED) == build_record['archive_sha256'] == json.loads((OUT/'staged.json').read_text())['archive_sha256']
     manifest = json.loads((DEST/'astra-release.json').read_text())
     for n,h in manifest['source_sha256'].items(): assert sha(DEST/n)==h,n
     write(OUT/'zip-validation.json',dict(passed=True,at=datetime.now(timezone.utc).isoformat(),archive_sha256=sha(STAGED),native_sha256=sha(DEST/'mist'),
-          build_sha256=sha(OUT/'zip-build.json'),smokes_sha256=sha(OUT/'zip-smokes.json'),games=games,
+          build_sha256=sha(OUT/'zip-build.json'),smokes_sha256=sha(OUT/'zip-smokes-r1.json'),games=games,
+          retained_limitation='Candidate and exact v37 both forfeit the artificial 0.2s prompt; inherited 0.3s minimum. Normal 180+2 turn prompts are >=2s. No native fix is included in this scorer-only candidate.',
           scope='Package compatibility and correctness, not a strength estimate. Ubuntu runtime is a compatibility check, not the exact gVisor arena image.'))
     print(json.dumps(dict(passed=True,archive_sha256=sha(STAGED))),flush=True)
 

@@ -42,3 +42,25 @@ the deadline does not turn a failed test into evidence of strength.
 Evidence: [native decision screen](analysis/sf-allchildren-20261102/search/README.md),
 [full-game pilot](analysis/sf-allchildren-20261102/full-games/README.md),
 [opponent protocol](experiments/sf-opponent-20261108/README.md).
+
+Progress at 08:11 UTC on 8 November:
+
+- Portable, self-contained scorer built with Ubuntu 22.04 / GCC 12.3 and
+  upstream CPU dispatch. Embedded NNUE exported and hash verified from an
+  otherwise empty executable directory. The first incomplete embedding build
+  was rejected and its evidence retained.
+- 3,072 paired queries and 64 special-case calls pass with identical scores,
+  best moves and nodes relative to the laboratory candidate. Actual packaged
+  scorer throughput is 1.57–1.68x the shipped v37 scorer on the four panels.
+- Staged ZIP: 84,989,047 bytes, SHA256
+  `ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f`.
+  Offline Ubuntu build and first move pass. Four protocol checks across both
+  colors and 180/2-second clocks pass, maximum startup 0.771 s. The inherited
+  failure on an artificial 0.2-second prompt is documented, including the same
+  failure in v37; that prompt is below the reachable 180+2 turn-clock range.
+- Two exact-ZIP games versus baseline.py are running on 4–5. The separate
+  32-game matched Misty gate remains in progress on 0–3. No new strength claim
+  follows from package checks.
+- Fable independently confirmed the pilot and has been asked to review the
+  exact staged ZIP on 6–7, then handle v37-relative arena tracking after a human
+  upload. Neither publication nor an arena upload has occurred.
