@@ -1,0 +1,132 @@
+{
+  "at": "2026-11-08T08:03:37.209269+00:00",
+  "state": "completed",
+  "portable_sha256": "ee37a332307846bf5180d178fc3450d2e3415e2e3b31f224fef2bb3d959e715a",
+  "measured_sha256": "4f762ec46dc4dd16f7241aea116380129cf51363138f24c09cfcd1f43fc00134",
+  "embedded_network_sha256": "1a298aa575a085434d29027978dc36867fe9c5bcea9376654b7a8eba1e52dfc2",
+  "shipped_sha256": "0f83d24cc46d2c66c60f16001af5444873bc112b7d028594513426894c12da19",
+  "abi_requirements": {
+    "GLIBC": "2.35",
+    "GLIBCXX": null,
+    "CXXABI": null
+  },
+  "script_sha256": "72b8ad11d65058a7fe59652933f6729562d597a4c1a6430d27be4a0373d48acc",
+  "pairs": 3072,
+  "special_calls": 64,
+  "regimes": {
+    "played-cold": {
+      "panel_sha256": "67ed364d79f69e6eba3a9825aafd7f31f28362728a3bea5752ff87c02abd7823",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.5211438240089592,
+        "measured": 0.5094349049936682,
+        "shipped": 0.8127640419997988
+      },
+      "per_pass": [
+        {
+          "portable": 0.17473266599881754,
+          "measured": 0.16974782099623553,
+          "shipped": 0.27360263099899385
+        },
+        {
+          "measured": 0.17171435599402685,
+          "shipped": 0.26907522399869777,
+          "portable": 0.17488701000365836
+        },
+        {
+          "shipped": 0.2700861870021072,
+          "portable": 0.1715241480064833,
+          "measured": 0.1679727280034058
+        }
+      ],
+      "median_speedup_shipped": 1.5658356119905215,
+      "speed_gate": true
+    },
+    "played-warm": {
+      "panel_sha256": "67ed364d79f69e6eba3a9825aafd7f31f28362728a3bea5752ff87c02abd7823",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.4773797879929589,
+        "measured": 0.4637511840001025,
+        "shipped": 0.764438921000874
+      },
+      "per_pass": [
+        {
+          "portable": 0.1490069359942936,
+          "measured": 0.14337142300109917,
+          "shipped": 0.2451147960009621
+        },
+        {
+          "measured": 0.17247104399666568,
+          "shipped": 0.2711346660030358,
+          "portable": 0.17631546099801199
+        },
+        {
+          "shipped": 0.24818945899687606,
+          "portable": 0.1520573910006533,
+          "measured": 0.14790871700233765
+        }
+      ],
+      "median_speedup_shipped": 1.632209111070502,
+      "speed_gate": true
+    },
+    "frontier-cold": {
+      "panel_sha256": "bbcf6869e4f917fc42804fc1c5309594978c1a01f4e6c99418e9f3127925df86",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.6239658970021082,
+        "measured": 0.6099909149934319,
+        "shipped": 1.017514831999506
+      },
+      "per_pass": [
+        {
+          "portable": 0.2101241090044823,
+          "measured": 0.20300329899737335,
+          "shipped": 0.34293806500363644
+        },
+        {
+          "measured": 0.19813417999966987,
+          "shipped": 0.3334956259941464,
+          "portable": 0.20253991600066001
+        },
+        {
+          "shipped": 0.34108114100172315,
+          "portable": 0.21130187199696593,
+          "measured": 0.20885343599638873
+        }
+      ],
+      "median_speedup_shipped": 1.6320738568667577,
+      "speed_gate": true
+    },
+    "frontier-warm": {
+      "panel_sha256": "bbcf6869e4f917fc42804fc1c5309594978c1a01f4e6c99418e9f3127925df86",
+      "queries_per_arm": 768,
+      "timing_seconds": {
+        "portable": 0.5829043110070415,
+        "measured": 0.5746246769986101,
+        "shipped": 0.988694068998484
+      },
+      "per_pass": [
+        {
+          "portable": 0.19714971300118123,
+          "measured": 0.19517746500196154,
+          "shipped": 0.3313193069980116
+        },
+        {
+          "measured": 0.2053416439925968,
+          "shipped": 0.3465126810010588,
+          "portable": 0.20859553600121217
+        },
+        {
+          "shipped": 0.3108620809994136,
+          "portable": 0.17715906200464815,
+          "measured": 0.17410556800405175
+        }
+      ],
+      "median_speedup_shipped": 1.6805467375751468,
+      "speed_gate": true
+    }
+  },
+  "passed": true,
+  "ended_at": "2026-11-08T08:04:33.015350+00:00"
+}

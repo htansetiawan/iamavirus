@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-08T07:58:44.052703+00:00",
+  "command": [
+    "docker",
+    "run",
+    "--name",
+    "astra-v38-portable-r1-20261108",
+    "--runtime=runc",
+    "--cpuset-cpus=4,5",
+    "--memory=4g",
+    "--pids-limit=256",
+    "--mount",
+    "type=bind,src=/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build,dst=/work",
+    "--mount",
+    "type=bind,src=/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/container-rebuild.sh,dst=/container-rebuild.sh,readonly",
+    "sha256:89f08877815e0fc7a51234dd71b6faffd02c4687f73dede860f37429137bbcd7",
+    "/bin/sh",
+    "/container-rebuild.sh"
+  ],
+  "state": "completed",
+  "attempt": 1,
+  "replaces_invalid_attempt": "invalid-attempt0/REJECTED.json",
+  "exit_code": 0,
+  "seconds": 250.6135682889999,
+  "ended_at": "2026-11-08T08:02:54.666415+00:00"
+}
