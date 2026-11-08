@@ -47,6 +47,33 @@ def latest_report(out: Path) -> dict:
     return {}
 
 
+def corpus_coverage(rows: list[dict], now: dt.datetime) -> dict:
+    """Separate our watcher from the all-team feed; a recent own game hides gaps."""
+    latest = {'ours': None, 'other_only': None}
+    recent = Counter()
+    daily = {}
+    cutoff = now-dt.timedelta(days=1)
+    for row in rows:
+        try:
+            at = dt.datetime.fromisoformat(row['createdAt'].replace('Z', '+00:00'))
+        except (KeyError, ValueError, AttributeError):
+            continue
+        if at.tzinfo is None or at > now:
+            continue
+        key = 'ours' if 'IAmAVirus' in (row.get('white'), row.get('black')) else 'other_only'
+        latest[key] = max(latest[key], at) if latest[key] else at
+        if at >= cutoff:
+            recent[key] += 1
+        if at >= now-dt.timedelta(days=7):
+            daily.setdefault(at.astimezone(dt.timezone.utc).date().isoformat(), Counter())[key] += 1
+    stale = latest['other_only'] is None or latest['other_only'] < cutoff
+    return dict(latest={k:v.isoformat() if v else None for k,v in latest.items()},
+                last_24h={k:recent[k] for k in latest},
+                days={k:dict(v) for k,v in sorted(daily.items())},
+                other_feed_stale=stale,
+                limitation='Local archive coverage, not API completeness. A stale other-team feed can bias field taxonomy even when our games are current.')
+
+
 def rolling_losses(rows, since: str, per_group=3) -> list[dict]:
     """Bounded fresh loss index; not a validated decision suite or a training set."""
     count = Counter(); selected = []
@@ -142,6 +169,7 @@ def main():
     args = ap.parse_args(); now = dt.datetime.now(dt.timezone.utc); day = now.strftime('%Y-%m-%d')
     report = latest_report(args.out)
     rows = accepted_rows(str(args.raw))
+    coverage = corpus_coverage(rows, now)
     manifest_path = ROOT/'data/manifests/arena-latest.json'
     datasets = artifact(manifest_path)
     if datasets['exists']:
@@ -174,6 +202,7 @@ def main():
               'source_report': report.get('report_path'), 'source_report_generated': report.get('generated'),
               'leaderboard_fetched_at': report.get('leaderboard_fetched_at'),
               'corpus_games': len(rows), 'latest_game_at': max((r.get('createdAt') or '' for r in rows), default=None),
+              'corpus_coverage': coverage,
               'taxonomy_previous_report': report.get('previous_report_generated'),
               'taxonomy_version_colour_groups': len(report.get('taxonomy_by_version_colour', [])),
               'dataset': datasets,
@@ -187,6 +216,13 @@ def main():
     md = [f'# Learning and intelligence status, {now:%Y-%m-%d %H:%M UTC}', '',
           f"Corpus: **{len(rows):,} games**. Latest game: {status['latest_game_at']}. "
           f"Leaderboard snapshot: {status['leaderboard_fetched_at']}.", '',
+          f"Coverage: last 24 hours include **{coverage['last_24h']['ours']} of our games** and "
+          f"**{coverage['last_24h']['other_only']} games solely between other teams**. "
+          f"Newest other-team game: {coverage['latest']['other_only']}.", '',
+          ('**Coverage warning:** the other-team feed is over 24 hours old or absent. '
+           'Field-wide taxonomy is incomplete and must not be read as a current representative sample.'
+           if coverage['other_feed_stale'] else
+           'Both feeds have recent records; this freshness check does not establish complete API coverage.'), '',
           '| Feed | Latest evidence | How it reaches the bot |', '|---|---|---|',
           f"| Replay and training data | Manifest modified {datasets.get('modified_at', 'unavailable')}; move-export metadata in JSON | Training input; no automatic promotion |",
           f"| Taxonomy | {status['taxonomy_version_colour_groups']} played-version/colour groups; previous report {status['taxonomy_previous_report']} | Diagnosis and case selection; not an input to the live policy or belief |",

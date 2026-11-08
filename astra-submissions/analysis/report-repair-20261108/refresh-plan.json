@@ -1,0 +1,65 @@
+{
+  "at": "2026-11-08T08:42:51.913298+00:00",
+  "cores": [
+    4,
+    5
+  ],
+  "commands": [
+    [
+      "daily",
+      [
+        "/home/henrytan/git/iamavirus/.venv/bin/python",
+        "-m",
+        "learning.daily_report",
+        "--raw",
+        "data/raw",
+        "--out",
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/report-repair-20261108/reports"
+      ],
+      1200
+    ],
+    [
+      "insights",
+      [
+        "/home/henrytan/git/iamavirus/.venv/bin/python",
+        "-m",
+        "learning.daily_insights",
+        "--raw",
+        "data/raw",
+        "--out",
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/report-repair-20261108/reports"
+      ],
+      300
+    ],
+    [
+      "scorecard",
+      [
+        "/home/henrytan/git/iamavirus/.venv/bin/python",
+        "-m",
+        "learning.scorecard",
+        "--raw",
+        "data/raw",
+        "--out",
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/report-repair-20261108/reports",
+        "--days",
+        "3"
+      ],
+      1200
+    ],
+    [
+      "intel",
+      [
+        "/home/henrytan/git/iamavirus/.venv/bin/python",
+        "astra-submissions/tools/daily_intel_status.py",
+        "--raw",
+        "data/raw",
+        "--out",
+        "/home/henrytan/git/iamavirus/astra-submissions/analysis/report-repair-20261108/reports"
+      ],
+      180
+    ]
+  ],
+  "raw_resolved": "/media/henrytan/seagate/git/iamavirus-data/raw",
+  "previous_sha256": "215858737de03c1f50b015b14a3c0da5747081433919f165b300a850834b1618",
+  "limitation": "Rolling read-only view of a live mirror; not a frozen experiment or a model refresh."
+}

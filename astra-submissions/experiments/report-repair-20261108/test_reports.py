@@ -16,6 +16,10 @@ sys.path.insert(0, str(ROOT))
 from learning import daily_insights
 spec = importlib.util.spec_from_file_location('raw_guard', ROOT/'astra-submissions/tools/check_raw_available.py')
 guard = importlib.util.module_from_spec(spec); spec.loader.exec_module(guard)
+spec = importlib.util.spec_from_file_location('intel_status', ROOT/'astra-submissions/tools/daily_intel_status.py')
+intel = importlib.util.module_from_spec(spec); spec.loader.exec_module(intel)
+spec = importlib.util.spec_from_file_location('repair_backfill', Path(__file__).with_name('backfill.py'))
+backfill = importlib.util.module_from_spec(spec); spec.loader.exec_module(backfill)
 
 
 class ReportInputs(unittest.TestCase):
@@ -108,6 +112,25 @@ class ReportInputs(unittest.TestCase):
         with patch.object(daily_insights.os.path, 'isdir', side_effect=available):
             with self.assertRaises(SystemExit): self.run_insights()
         self.assert_preserved()
+
+    def test_recent_own_feed_does_not_hide_stale_other_feed(self):
+        now = datetime.now(timezone.utc)
+        rows = [dict(createdAt=now.isoformat(), white='IAmAVirus', black='Other'),
+                dict(createdAt=(now-timedelta(days=2)).isoformat(), white='Other', black='Else')]
+        c = intel.corpus_coverage(rows, now)
+        self.assertTrue(c['other_feed_stale'])
+        self.assertEqual(c['last_24h'], dict(ours=1, other_only=0))
+        rows.append(dict(createdAt=(now-timedelta(hours=1)).isoformat(), white='Other', black='Else'))
+        self.assertFalse(intel.corpus_coverage(rows, now)['other_feed_stale'])
+
+    def test_backfill_excludes_watcher_and_known_games_and_stops_at_cutoff(self):
+        row = dict(id='abcdefgh', createdAt='2026-11-08T00:00:00Z', white='Other', black='Else')
+        self.assertEqual(backfill.selection(row, set()), 'fetch')
+        self.assertEqual(backfill.selection(row, {'abcdefgh'}), 'known')
+        self.assertEqual(backfill.selection(dict(row, white='IAmAVirus'), set()), 'our_watcher')
+        self.assertEqual(backfill.selection(dict(row, black='IAmAVirus'), set()), 'our_watcher')
+        self.assertEqual(backfill.selection(dict(row, createdAt='2026-11-05T23:00:00-08:00'), set()), 'before_cutoff')
+        self.assertEqual(backfill.selection(dict(row, createdAt='2026-11-06T09:36:00Z'), set()), 'fetch')
 
 
 if __name__ == '__main__':
