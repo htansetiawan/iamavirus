@@ -83,3 +83,26 @@ Evidence: [pilot](analysis/sf-allchildren-20261102/full-games/README.md),
 [loss patterns](analysis/sf-opponent-20261108/stopped-explanation.md),
 [package validation](analysis/v38-package-20261108/zip-validation.json),
 [startup-failure probe](analysis/v38-package-20261108/failure-probe.json).
+
+## Subsequent benchmark-adapter audit — 8 November, 16:04 UTC
+
+The frozen local Misty wrapper contained the known action-list defect from
+chatroom note 028: it generated ordinary pseudo-legal moves from a board with
+hidden squares empty. On the 29 first attempts it supplied incorrect move
+sets on 398/1,158 Misty turns (153/556 in the v37 arm, 245/602 in the candidate
+arm). This is a defect in our integration, not an established defect in Misty
+or evidence about its arena implementation. Wrong offered actions do not
+prove they were chosen or explain the score difference.
+
+All scores, faults, missing games and the failed admission decision above
+remain unchanged. This finding limits the external validity of that opponent
+comparison; it does not establish that v38 is stronger, nor retroactively
+make its gate pass. The measured scorer speed and direct-v37 pilot are separate.
+
+A corrected, separate observation-tracker adapter passes all 1,157 completed
+recorded turns through its actual protocol loop and two real Misty turns per
+color. The unanswered timeout turn is included in the 1,158-turn helper audit
+but cannot be replayed as a completed actor response. Native Rust acceleration
+is installed and now pinned; its binary hash was omitted from the old gate
+manifest. No new strength panel has been started. See the
+[audit and receipts](analysis/obscuro-fidelity-20261108/README.md).

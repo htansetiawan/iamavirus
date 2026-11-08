@@ -1,0 +1,119 @@
+{
+  "at": "2026-11-08T16:10:49.874028+00:00",
+  "engine_archive": {
+    "path": "fable-submissions/iamavirus-v37-mist-c-v14-allfit.zip",
+    "sha256": "41e02e280b61e0e0c031a831d2ab4b2cc8f52c6c59bd8c11fc026f3cc817c76c"
+  },
+  "archive_src_sha256": {
+    "src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+    "src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+    "src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+    "src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "src/eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+    "src/eval.h": "4020fcce58269aaac95642fd23781e5af5babcddbd4189a7614ce9f10b6d6e76",
+    "src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "src/front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+    "src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+    "src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+    "src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+    "src/movemodel.c": "6c01d104941fa911122bcc3db2176037e5014d87c5069da2ebaaf9753e61a2fe",
+    "src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+    "src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+    "src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+    "src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d"
+  },
+  "anchors": {
+    "src/gtcfr.c": {
+      "expansion_probability_plus_bonus": [
+        259,
+        264
+      ],
+      "new_tree": [
+        279,
+        284
+      ],
+      "chance_root_own_history": [
+        303,
+        315
+      ],
+      "root_argmax": [
+        418,
+        421
+      ],
+      "free_tree": [
+        425,
+        427
+      ]
+    },
+    "src/belief.c": {
+      "deduplicate_position_retain_history": [
+        56,
+        60
+      ]
+    }
+  },
+  "public_sources": {
+    "paper": {
+      "url": "https://arxiv.org/html/2506.01242v2",
+      "download_sha256": "6bb80fd0582e18d20cd13461ecb7c3ba49fe175de636c20d1c5c7c156137e81a",
+      "download_mtime_utc": "2026-11-08T15:55:41.381957+00:00"
+    },
+    "author_repositories": {
+      "url": "https://api.github.com/users/brianhzhang/repos?per_page=100",
+      "download_sha256": "5fe08f3621ed7b49737b4da457ee52a11b6ffe2bf266666c5945da561e48b872",
+      "repositories": [
+        {
+          "name": "ggp-base",
+          "fork": true,
+          "url": "https://github.com/brianhzhang/ggp-base"
+        },
+        {
+          "name": "lc0",
+          "fork": true,
+          "url": "https://github.com/brianhzhang/lc0"
+        },
+        {
+          "name": "open_spiel",
+          "fork": true,
+          "url": "https://github.com/brianhzhang/open_spiel"
+        },
+        {
+          "name": "Stockfish",
+          "fork": true,
+          "url": "https://github.com/brianhzhang/Stockfish"
+        }
+      ]
+    }
+  },
+  "original_obscuro": {
+    "runnable_source_located": false,
+    "language_verified": false,
+    "duel_run": false
+  },
+  "misty_reference_metadata": {
+    "repo": "https://github.com/brianhliou/misty",
+    "checkout_commit": "5ba2c31e52868ba79e34e3eb2e042e14847ab4a9",
+    "note": "Commit verified below; only README and pyproject metadata inspected, no implementation source."
+  },
+  "adapter_checks": {
+    "adapter-audit.json": {
+      "sha256": "d5d6da264764fc3acab26f406292d51f3a0d8160b8ecdc7da43cb9db575d61bf"
+    },
+    "adapter-integration.json": {
+      "sha256": "ded7e064ee1f1c542cbe58883596cd12e3d7bae8804dcb4a42bb04e99f2ce9f1"
+    },
+    "adapter-smoke.json": {
+      "sha256": "79791077d209b6d2731b4a01f683fd8782345b207c4447cbae89e404eb8a724f"
+    }
+  },
+  "scripts": {
+    "astra-submissions/experiments/obscuro-fidelity-20261108/audit_opponent_adapter.py": "a3834810e25c7c59034b92e05b91de21c72d4c6eda967aa3a8afcedcfed57b23",
+    "astra-submissions/experiments/obscuro-fidelity-20261108/check_adapter.py": "1c8ce34a233d5c59b5690b6168a4703802b92d17366bb0660700e39bdb97f30a",
+    "astra-submissions/experiments/obscuro-fidelity-20261108/misty_adapter.py": "f64b200426088a41e689dbb371269c95b3cbbfab8c7adaad9085531b11f4f9ca",
+    "astra-submissions/experiments/obscuro-fidelity-20261108/smoke_adapter.py": "9dbac746390cdb6cd2b910aa7ce9abb6c1330af18686d2675a3d69befbad8ecc"
+  },
+  "scope": "Exact v37 code audit, original-source availability research, correction of our local Misty wrapper. No new strength games, model update, numbered release or arena action."
+}
