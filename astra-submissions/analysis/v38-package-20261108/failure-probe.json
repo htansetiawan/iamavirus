@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-08T09:19:34.768062+00:00",
+  "passed": true,
+  "rows": [
+    {
+      "mode": "absent",
+      "side": "white",
+      "startup_seconds": 0.003936690999580605,
+      "move": "g1f3",
+      "elapsed_seconds": 0.26235192400054075,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/failure-probe/absent/data/history.bin: 359889 records\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=623 nodes=59348 iters=850 p=0.32 v=+0.022 lead=+0 clock=2.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=g1f3\n",
+      "failure": null,
+      "live_members": []
+    },
+    {
+      "mode": "absent",
+      "side": "black",
+      "startup_seconds": 0.0037132090001250617,
+      "move": "g8f6",
+      "elapsed_seconds": 0.26444531499964796,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/failure-probe/absent/data/history.bin: 359889 records\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=638 nodes=61337 iters=680 p=0.62 v=-0.005 lead=+0 clock=2.0 sf=0/0.0s mr=-1.00/-1.00 hist=1/1 move=g8f6\n",
+      "failure": null,
+      "live_members": []
+    },
+    {
+      "mode": "startup_exit_127",
+      "side": "white",
+      "startup_seconds": 0.004699105999861786,
+      "move": "g1f3",
+      "elapsed_seconds": 0.265271448999556,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/failure-probe/startup_exit_127/data/history.bin: 359889 records\nmist: stockfish failed to start; our evaluator scores the leaves\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=623 nodes=59348 iters=850 p=0.32 v=+0.022 lead=+0 clock=2.0 sf=0/0.0s mr=-1.00/-1.00 hist=0/0 move=g1f3\n",
+      "failure": null,
+      "live_members": []
+    },
+    {
+      "mode": "startup_exit_127",
+      "side": "black",
+      "startup_seconds": 0.004357935999905749,
+      "move": "g8f6",
+      "elapsed_seconds": 0.26496773100006976,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/v38-package-20261108/build/failure-probe/startup_exit_127/data/history.bin: 359889 records\nmist: stockfish failed to start; our evaluator scores the leaves\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=638 nodes=61337 iters=680 p=0.62 v=-0.005 lead=+0 clock=2.0 sf=0/0.0s mr=-1.00/-1.00 hist=1/1 move=g8f6\n",
+      "failure": null,
+      "live_members": []
+    }
+  ],
+  "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "native_sha256": "fbea845ec2dfe9eac797cbec567332745955b0f98d8e054c9993bf900439f2e7",
+  "script_sha256": "2471be7d3b86bbe8a369263cb9df585207df3e300be8b7f18210f6b20b8a2c3a",
+  "scope": "Exact run.sh/history and previously validated native build; isolated copies omit or replace only the scorer. Two-second clock probes, both colors; resilience only, not playing strength or all runtime failure modes. Staged ZIP and timed-game bytes are untouched."
+}

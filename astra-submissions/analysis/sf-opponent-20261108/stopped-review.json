@@ -1,0 +1,1023 @@
+{
+  "at": "2026-11-08T09:30:10.675463+00:00",
+  "completed": 29,
+  "unstarted": [
+    {
+      "id": "sf257-b7-white-base",
+      "phase": "misty",
+      "lane": 1,
+      "pair": 7,
+      "arm": "base",
+      "side": "white",
+      "engine_seed": 2572014,
+      "opponent_seed": 2572015,
+      "opponent": "misty"
+    },
+    {
+      "id": "sf257-b7-black-base",
+      "phase": "misty",
+      "lane": 1,
+      "pair": 7,
+      "arm": "base",
+      "side": "black",
+      "engine_seed": 2572014,
+      "opponent_seed": 2572015,
+      "opponent": "misty"
+    },
+    {
+      "id": "sf257-b7-black-candidate",
+      "phase": "misty",
+      "lane": 1,
+      "pair": 7,
+      "arm": "candidate",
+      "side": "black",
+      "engine_seed": 2572014,
+      "opponent_seed": 2572015,
+      "opponent": "misty"
+    }
+  ],
+  "gate_pass": false,
+  "decision": "technical_failure_no_promotion",
+  "faults": [
+    {
+      "job": {
+        "id": "sf257-b7-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 7,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572014,
+        "opponent_seed": 2572015,
+        "opponent": "misty"
+      },
+      "report": {
+        "code": "time_limit",
+        "side": "black",
+        "phase": "move",
+        "ply": 75,
+        "clockSeconds": 0,
+        "observation": "????????????????????????p????????p???---?????-p-?????prp?????-k-",
+        "received": null,
+        "atMs": 469586,
+        "transcript": [
+          {
+            "direction": "output",
+            "text": "move b6b5"
+          },
+          {
+            "direction": "input",
+            "text": "????????????????????????p?B??????p???---?????-p-????-p-p????-kr-"
+          },
+          {
+            "direction": "input",
+            "text": "????????????????????????p????????p???---?????-p-????-p-p????-kr-"
+          },
+          {
+            "direction": "input",
+            "text": "45.444292864"
+          },
+          {
+            "direction": "output",
+            "text": "move g8g7"
+          },
+          {
+            "direction": "input",
+            "text": "????????????????????????p????????p???---?????-p-????-prp????-k-?"
+          },
+          {
+            "direction": "input",
+            "text": "????????????????????????p????????p???---?????-p-????-prp????-k-?"
+          },
+          {
+            "direction": "input",
+            "text": "42.880549495"
+          },
+          {
+            "direction": "output",
+            "text": "move f8g8"
+          },
+          {
+            "direction": "input",
+            "text": "????????????????????????p????????p???---?????-p-?????prp?????-k-"
+          },
+          {
+            "direction": "input",
+            "text": "????????????????????????p????????p???---?????-p-?????prp?????-k-"
+          },
+          {
+            "direction": "input",
+            "text": "35.477702992"
+          }
+        ],
+        "truncated": true
+      },
+      "prompt": {
+        "atMs": 434080,
+        "ply": 75,
+        "side": "black",
+        "direction": "input",
+        "text": "35.477702992"
+      },
+      "elapsed_to_report_seconds": 35.506
+    }
+  ],
+  "arms": {
+    "base": {
+      "attempts": 14,
+      "clean_games": 14,
+      "technical_games": 0,
+      "unstarted": 2,
+      "clean_wins": 10,
+      "clean_draws": 1,
+      "clean_losses": 3,
+      "clean_points": 10.5,
+      "recorded_points_including_technical": 10.5,
+      "points_bounds_with_technical_and_unstarted_unknown": [
+        10.5,
+        12.5
+      ]
+    },
+    "candidate": {
+      "attempts": 15,
+      "clean_games": 14,
+      "technical_games": 1,
+      "unstarted": 1,
+      "clean_wins": 8,
+      "clean_draws": 2,
+      "clean_losses": 4,
+      "clean_points": 9.0,
+      "recorded_points_including_technical": 10.0,
+      "points_bounds_with_technical_and_unstarted_unknown": [
+        9.0,
+        11.0
+      ]
+    }
+  },
+  "fully_observed_clean_block_point_differences": {
+    "0": 0.0,
+    "1": -1.0,
+    "2": 0.0,
+    "3": -0.5,
+    "4": 1.5,
+    "5": -1.0,
+    "6": -0.5
+  },
+  "referee_frames": 2339,
+  "process_identities_checked": 203,
+  "live_owned_processes": [],
+  "rows": [
+    {
+      "job": {
+        "id": "sf257-b0-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 78,
+      "final_clocks": [
+        44.494184,
+        78.270779
+      ],
+      "artifacts": {
+        "started.json": "a7fd9642d94d07b7669eed41c8b47a86613280f8eae6ede0ccc001ad4885e72f",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "87dac120ec3f6525736686034ac6c9b06fd336f33c3c6cc6a9d867bd38fccbb9",
+        "result.json": "99900f6d3258f2fc505f97d0e345fcddbdcfb6573ef23284ed48ad5cd6e0ee82",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "aa0d1ac4bf522e606a8eace5cc24ecf370f5982e2d6402899b3e1846d8caa814",
+        "handle.json": "02a965cd0a9106ef7456b64b7d7de169445608a0d6c4d1133dba88359b2fea24"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b0-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 52,
+      "final_clocks": [
+        67.103057,
+        108.62738
+      ],
+      "artifacts": {
+        "started.json": "e50200cb0b0f01378f4e5921c0b6630f6c3b2227dbfa581b0d47ab5ead26b227",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "c5258a0a747d660fe208a272c5846c617c4c88c940de7ce8bc33cb349ef11853",
+        "result.json": "4e90cb8ff6b7fbed9300a8649e9a8fb84e6836aae2620825657d8fa05e7fe2dc",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "5bf381b2c1a9fbf65847c5cd4c374fcdce21a48b21f07a48ff699bb38f64743e",
+        "handle.json": "f122efab2e0d1da3453601472240df67143b590e3b658244280f5478b64df619"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b0-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 67,
+      "final_clocks": [
+        89.153218,
+        51.470706
+      ],
+      "artifacts": {
+        "started.json": "888abc1f2f47101f2d6a2804174378bc10623bf69a7ecb617cb27471fc08834f",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "b206d4470a7b38df9b562fccf44dee422d508b42d0501652ba4a8ddccb384e03",
+        "result.json": "bf1309b3451ec6a7a335ed1baf8886720302b39a4ce484a45a12c2b4e3290815",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "a93d4d8cf5897b2a55332c06b01830ff0d747c5579a0e51ed80852d2d34d9986",
+        "handle.json": "7363f128cc87c0ce102d43053830f0b93c239cb9f058ba16bcb85d2513e68d08"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b0-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 107,
+      "final_clocks": [
+        62.480562,
+        30.148083
+      ],
+      "artifacts": {
+        "started.json": "38ca4b13a31497ebd459e1a8c5ba2ccee32636159adc1b9e5497a15bb57bc571",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "fb66da278e14c3b9a9e2658ec03d97b14e2f1e6d115743add0f1da2fdf3d4d50",
+        "result.json": "1b692b30b16cbbc6ed43dabc5bdcbb2cef357672e7d0932728a178ee07e5a4cd",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "8c99e5fa63f1e6b1aebb4c58350e5c8abaf31150b0f8dd990856c9dc500f9463",
+        "handle.json": "f80adb989800393402959b2d8869193a69948eda3d4f28669b68a12d67241f85"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b1-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 30,
+      "final_clocks": [
+        100.487987,
+        120.191286
+      ],
+      "artifacts": {
+        "started.json": "605ffd477f454ede0df8f6a30b0bfba63f26563c0f2b4a1b4dbea153d090d26b",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "a965927199b365b2a1357e268095dc228777e4678b1d478af43b714f1785a201",
+        "result.json": "f3f2d4479914d60e7e1f2ea318d8a8341439544a2beabaf29572f4f65f2cc27a",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "a0221f264002893d6792b35f9de6d17d7cf2f58c127d0f78c4a93f3346b782a0",
+        "handle.json": "2611e2d2fc90c1eeb823c344f1c2429c75037d289add5cad90d9d54d2a7443ea"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b1-white-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 34,
+      "final_clocks": [
+        89.084046,
+        104.648653
+      ],
+      "artifacts": {
+        "started.json": "565c0aee04e12990aa21ce77abda3dcb3a7c69f32b6a904dcc025f50f7945824",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "1b69ef3e4e0ffb94c56de7ebe972a27363168d308aa2fd687c9e3003df4ccddb",
+        "result.json": "5ebdfaa06dfbef1859d56be006d6f1a3d4f6e42ea57ca40552f42436477228d0",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "64f91b6de1c13005558492aa0811b74e6c110848c7662a2bff9932a67b7270a5",
+        "handle.json": "7381e7547bb5ae34cf9fae845d2de56f7889e25f6fb297ac7bba1bccac5ef415"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b1-black-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 77,
+      "final_clocks": [
+        76.396828,
+        45.755219
+      ],
+      "artifacts": {
+        "started.json": "eac0e051905626b652a23f077270a2f52b614a7624eb95c05e804a35a371efc0",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "5988a3938af8a45141ae5686641379afeef2b69d35d47b83754a3a700ff8eb9a",
+        "result.json": "bc4e848098801e25844b59c14461af6dd393c9ad64f8c3625d728922830b5d58",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "15d36ea23a5255a4d1baccb6116dc2b017ed0591fb53c940032c8a976eb97049",
+        "handle.json": "d1a368e7ae54f939b86303633b452fd34259e4cae569bddc400c42bdd8b27cd6"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b1-black-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "faults": [],
+      "plies": 72,
+      "final_clocks": [
+        87.569706,
+        48.176505
+      ],
+      "artifacts": {
+        "started.json": "51abda9eeabb5b7cff015c8f194e2024eb26ef997ab867900adc4e36d34f67a6",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "1ec4becc8865366574edd6df1fe8c88570ae2556d3e074ba0d1e6d1a191ba5d5",
+        "result.json": "a523b1113ae9a16c3980a32578b1e1ac244120a3f73f423ac2c657a878fddea8",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "2013dda2ce400a5c14ad7abdec7db45940285c001a9c4235f12a51014f582d4b",
+        "handle.json": "af468e159e48036c1229d1446fb0ec1d9999ca51f86dc782ff5b2fe9acfdac6c"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b2-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 66,
+      "final_clocks": [
+        53.150069,
+        55.442565
+      ],
+      "artifacts": {
+        "started.json": "e1e45b09b25f2d15c7b26619e31567dedaf0fd29053949af535c86881af97e3a",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "c42e7eacc2ce56c5df70fbadfa926cc2b27007076330a932f873c5a8cf41fdc2",
+        "result.json": "a86da9efeeca6e99c39af0fcd9659cb5db882adf60c59b41f23462e785a21b87",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "011b9ae734b1f6e4ca3a9f6af6fce0f24e5c259e22a11a5290f8060b3a02948c",
+        "handle.json": "2ee08b534413a17a171819fe9a2974972e59cbd12044ebabecf71d044fdcecc5"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b2-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 52,
+      "final_clocks": [
+        66.534319,
+        86.284424
+      ],
+      "artifacts": {
+        "started.json": "6c3661090b2bff22f14c4a945c9f96889360eb9ed798394852eb3ba86432bdff",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "01ba6176382d82c0e7bb6bf179266087f9ade63f2d35de2973539108f01f34be",
+        "result.json": "a2654f90a847c3cc17e1d517d8508886cdf949d63e3b54c976a1855176051e80",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "814420c44c91b32cef573840ffbec55302aca0c03f573578210586fc503c8aed",
+        "handle.json": "369ccd67bdac9cf20122b6f19c946971c7b8eaf90a67aebf0bedf4c43abef39e"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b2-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "faults": [],
+      "plies": 114,
+      "final_clocks": [
+        66.045475,
+        27.874254
+      ],
+      "artifacts": {
+        "started.json": "371d048ccb3a759fc363d7297eecc32de0a3cb3edcfe56126fceb2e0e993d4c0",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "95186b17413c0461bcefb545a7568cacd7577f2e23a870ab7cffba3e2e703a0d",
+        "result.json": "12d826cf55a212ceccd63824811abfe6243cfa28388178e7250287dbf744aedb",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "34fd7f7f78accdbb9eab48c716af27e3b3db34e4e81d7d6d22ebc2e6e990dec8",
+        "handle.json": "e47ea7f18ba6a77dda58c81af5f0fa73176595d67d20ce195065bb8a5900d264"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b2-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "faults": [],
+      "plies": 88,
+      "final_clocks": [
+        54.367813,
+        37.32372
+      ],
+      "artifacts": {
+        "started.json": "a4c446ce67853aa5f7baceaf0871018a1dfc460fc73c3bae6313a4a1d05d1476",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "50570bcf52d4a0640424e01c4512d3b9ca8e8bd9623be3cd9d408cf1c5940343",
+        "result.json": "6ab71776af23587de66b6f194cd8165e546e15394fbf7a0124b71128a8a62ead",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "4453bc791b5aac6fddebf9a6708e851c1fb870f0fb8a341b65d2c6eb78850daa",
+        "handle.json": "37b042a8edd0f8b88106836b23f4cb552d7140948b4c05d78fa15e4fdfe501fa"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b3-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 78,
+      "final_clocks": [
+        44.369394,
+        76.924455
+      ],
+      "artifacts": {
+        "started.json": "6baf2bc2cb3f5ab87214023b9018d936e442be90caf1165e9e0a84b437cbea02",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "7ac7f0850a661e9b7836052e60d564ade17659d0092d429717e909e30008dab0",
+        "result.json": "006fd5f9a51c308a2876f0b17b3944e3c7cfc967c700e3f991e34899f4f42dde",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "c5278a565175063bc3200c3771f9da82f3fd0a44488d6ca4ae1895a5a755ac69",
+        "handle.json": "f4dd6d466fd5ea068ea54930b2f62feb5cd1e1d6a88a273788f150b71fb906a0"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b3-white-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 84,
+      "final_clocks": [
+        40.139983,
+        64.295029
+      ],
+      "artifacts": {
+        "started.json": "6d74d7fded774fbabc25b45f3911a0dd38c99335f3d25be220df1153561ee535",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "7bd8d88de5e1f81bf9de9554af4203632f6fc7f08d38f726815bfb64ae87da62",
+        "result.json": "ec4b7c097c12c46df6c8bca4ff189ad62854d6931049a59f8497ed822365c049",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "576a091551088f07c15e73df4d1fadff6cb1d4c1220da0d4fc6adea2fc04e7ed",
+        "handle.json": "e5591910de522b3b8410d31c15d3e955108d411b633c240ce62cfa453de56787"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b3-black-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 109,
+      "final_clocks": [
+        36.937654,
+        29.84805
+      ],
+      "artifacts": {
+        "started.json": "c852230405bf4101d0c9339172a4a24a9a60d17686cc57fa6a7f8c41520399ae",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "2d6ee78af6cbd80d8ec897d8c93d969dfbc516d7e444d1cdcc20964498fc6717",
+        "result.json": "0984c66af6497d36f615efe4ea27755cc4bc660c39f5a94afd60868281d89d49",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "fc5f675703739e9b671287c9ea10ed16124bbd753db914d9c1699026fc006966",
+        "handle.json": "1964bab3030a3edbb3e63c5ecf5739324b34d020708f17f8e63d0a04b05f17ea"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b3-black-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 0.5,
+      "faults": [],
+      "plies": 102,
+      "final_clocks": [
+        48.064653,
+        31.931231
+      ],
+      "artifacts": {
+        "started.json": "9cbb33735f660b455dd1fa69a160da0d5db5458b46d5183dd12a3e30a705bab7",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "c0a96eccc56dbb8310d3a8af74c1f65b49c85a9df5c6eaf853c32dd223d4264c",
+        "result.json": "1c978d08ee22169ddb1e3d6a437e0385d9ee7316448c7600d7218304c03654e0",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "8933f431256ad795224321f48e13a1a3e8cb28cbbba589a7a9dff309588a4fa3",
+        "handle.json": "a1bc9562a03be23e677030c382a48d386b64bf4e13dfe1633bf5e5b3d12b4f85"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b4-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "faults": [],
+      "plies": 75,
+      "final_clocks": [
+        44.377659,
+        72.821737
+      ],
+      "artifacts": {
+        "started.json": "b91465c3e7954dcfcbe1fec9b050892e1ddeeea4ee14e897a8c209d45c59e76c",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "86b52a5ef5e1daf4f7486ad8e252e534f926c57bd713b188c2199f81455e0ca7",
+        "result.json": "326be45c60c90ea588401ec2522d6ad18f4cd3f60afeaecab5fb5e49f5a40246",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "3120f17c32c0f6bd5dbe933375a1a5f5575ab34711a9b951618ddd4759a77a54",
+        "handle.json": "166b00c033b8e1e847df7b91af1e868607d9a2a18a1d609a48de239b4a0736fc"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b4-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 0.5,
+      "faults": [],
+      "plies": 107,
+      "final_clocks": [
+        28.974006,
+        46.04361
+      ],
+      "artifacts": {
+        "started.json": "a41c60461e37b10244790a9c1fe32688c30a5b4cda9f4bb8df8336a274273406",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "8104f9c87b813f9f3becbef45de23e1224c78da94f1d080296ed9dfcf4876e38",
+        "result.json": "05988eb6efd4d63472e4fbc4bab2b8a9982d8e56c018915c427f02178d34eddb",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "afe3213ae01c501b65c23aae4f5b7aef05a7d058cbb18c109019bdcaed18258c",
+        "handle.json": "19e163de4cfee2196641970b5d072250fb634ebd7a956aa7b0fb4e2ce7d82fbe"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b4-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 81,
+      "final_clocks": [
+        79.08664,
+        42.534566
+      ],
+      "artifacts": {
+        "started.json": "86eb625637388ba6952a40613adca8b0c661eaf34a82f8f7b77529b27261f80d",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "4b2b48a74cf0310737b947dadf98b9da2b08ef3fdc425458350ea0cef2d921a8",
+        "result.json": "f289c4c1bdac9f2a822e9118f140170ea5fd12df54e2e7ff690e066584171b53",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "cc5b7f1960c2bdb2c18bfc687a29954222be788f1967053f9294ba8fb65be0b1",
+        "handle.json": "85a5e86ed822adaac3f600bbe79933950efd66773ec08ded59649efb57250c75"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b4-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "faults": [],
+      "plies": 50,
+      "final_clocks": [
+        95.844261,
+        68.343166
+      ],
+      "artifacts": {
+        "started.json": "f25d1b9af61f595c40ed0d6e321cc6e1913daba0bb160091450889d2aae677b1",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "d140895e2ba051f575934dfaead247b900516061ea60ed431a605b58d896e285",
+        "result.json": "5db3eb75f37834d70efb110efa883706cd5f997a66414b84ad9e47215edff542",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "97b418cfb2bbf25592c0ed126f9e7f8ab022daf24becd2ef889a9bead958435b",
+        "handle.json": "99bd2ba4f2f80c5b4521bf4d988456b35c734027e40d21e96e1c6bf4602665bb"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b5-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 68,
+      "final_clocks": [
+        51.788095,
+        50.916715
+      ],
+      "artifacts": {
+        "started.json": "c604613c2f139c0fb57400e3a7ac55e5fa41f2aa8c1435dd53ffc346d8b8b65e",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "f2893a05699dd10d205f0b3e001ccc54eadc4c897239d68b04756d9f3b3bba50",
+        "result.json": "21c3e5699a698dbd986cb82651006f9b5c7e2c8f2903bab717d8593400c72d29",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "7964bad3084e499a2be1f39b9e33c901b4a035337b1d0ae5d1974b9763fcb576",
+        "handle.json": "d5877906659c35fadf00992d7768ace153aec66437c649fa554ceecf0bddffe6"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b5-white-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 36,
+      "final_clocks": [
+        90.080836,
+        118.257122
+      ],
+      "artifacts": {
+        "started.json": "8eb81ab2ba59c295deee7d5ed605e73fbaf05e2508eb5fd1c296f08fa42bb0f0",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "e0c0b9cb94390feb2df1d92f01b4ccc815847a2d2982fef7f0d6748465ad15de",
+        "result.json": "a8e8a05f07653ff9b5027e7dd429f95b330a15541524c74991883d414fb62d1e",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "980a125b98c0b11d702df7c361d83f8ef2c4eda1a354be40852c94cb4ad0ad04",
+        "handle.json": "1f7eb1b7765209fac9e819de157d61bc3d966fd1b561fd73749f100502b252c6"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b5-black-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 107,
+      "final_clocks": [
+        29.19648,
+        29.709341
+      ],
+      "artifacts": {
+        "started.json": "ea322302073d800348c4332d7f00b50749526960f7723d37a7b54f1dff40121a",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "c4c82d0c55a9a81c2d26c95cd2d87a08a86f834b15d9d6376207f7182abba645",
+        "result.json": "d8cb11a30484357dc35efb5151555ef600cf71789b15416f4433f1b5aeb0f8a6",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "0a5c2791c09a8e63c24c1b96e8a1a6d0b2bc4b527a6395fbf18674399a68366c",
+        "handle.json": "fee3eb64a38fc29b1821d9bee7082acc417dc41d189c03d6cf02a5f5b71d1e7a"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b5-black-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "faults": [],
+      "plies": 116,
+      "final_clocks": [
+        32.121151,
+        24.619435
+      ],
+      "artifacts": {
+        "started.json": "8b30ce021dfaa0c814035bb271b09ae9ed0c6a0ee7b136e3fc8f20bf63d7f4d3",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "2c11d7ba14a1a6e0f4215cae83cb1cb022222035333833cd184447b5aadbd801",
+        "result.json": "5c20a0a07b0d7439d9094fc08cc507e65e1b18e5cd4ab7ccb30cd247aa522159",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "17ce69d2ddfe6b692b2aad44606bec88e6a3ebc661f5e77b019a25661afd7ab8",
+        "handle.json": "89a1979a5d696cf69c5202397c1fedd64cdd43922b0de9000e851dccd506f625"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b6-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 100,
+      "final_clocks": [
+        31.093931,
+        55.704087
+      ],
+      "artifacts": {
+        "started.json": "8a5f6d2c550d8c7fbf94ae31cdd959f276482c9e437d662f78bb732203f962f7",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "390b204fbc897a45c5cb00b30e8dd4dc2d952504dcdd9d81f8d6c84124e2f04d",
+        "result.json": "e8eb6636b0dd9479d6113f5acb63f75ffabd1104d2fa0b218a28f5adc61f9880",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "39d742b7f1586bbd08e82f00b7b3f1e44e6813e7dc2c6a457d0ac18e813abf27",
+        "handle.json": "e757a0515ea75e260ebed8be465ecf238c42c6095386301e8e6832672d2d450e"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b6-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [],
+      "plies": 94,
+      "final_clocks": [
+        35.282206,
+        44.497363
+      ],
+      "artifacts": {
+        "started.json": "97fd68b87fe4f589395ddf97cb56aedb254908b8c17a9f29a4ab0e6fcc3e13e5",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "b120c2aea089153ed1c9938fd5c43b83349f358e68011c9fee69d6914d252c0f",
+        "result.json": "ca52763b80a66fc6868a2aca4fa7af26a331d210f45f677f77ba27a04de10825",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "cbf4c85dc17f5be49a41362b60bc167741362ef9ee3e1a86c11e35b13b5f2936",
+        "handle.json": "b1daca11dde3d9e7bc096260a815341c752a11877dcfa92692fc57c283d28ea2"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b6-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "faults": [],
+      "plies": 94,
+      "final_clocks": [
+        76.573372,
+        34.807364
+      ],
+      "artifacts": {
+        "started.json": "d3c4b26b9a5c16c95a80ee1d1e517977b592205aa6e3abd6e204bec72358c9b7",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "0bb3b6a750e0ca51d44356572c08d0826126352704a1df0fa734ea0f09f8d35c",
+        "result.json": "dc303a85f7cb2c9c473913e49b5ce5503aa8bcc77af42a913049d0ad195f5077",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "555909cb2ee49703cf78ac84a57f9852237b47255ce5dce787650380cf620abe",
+        "handle.json": "e8668290be57a3673bb68f540ecd9452aee0ce72d1ceefce52e9431f1ff3f5ff"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b6-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 0.5,
+      "faults": [],
+      "plies": 97,
+      "final_clocks": [
+        47.130602,
+        32.304551
+      ],
+      "artifacts": {
+        "started.json": "fa36cf8735dbb8d367c7a6bfb2fea9e30ed0bf72fb7b50a4c72690d6170ddad7",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "f45544ce724a0d298550ce3c293a0d0d1480213dcca2f49b1d80f3fe43e7381f",
+        "result.json": "ee0b85910e7dcce62f9a4766951decf79b0a8d94fd272124aa32f0ce7f3939e4",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "a3294474b7bc9f71f1ca75f75c1972e675642ad1dea276a903423f2e11524efd",
+        "handle.json": "5f9e41245d66c3d9dc77accc5108846fe2bf7fde61cb1bc3fae949ce3b54da96"
+      }
+    },
+    {
+      "job": {
+        "id": "sf257-b7-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 7,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572014,
+        "opponent_seed": 2572015,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "faults": [
+        "bot failure: black Time forfeit"
+      ],
+      "plies": 75,
+      "final_clocks": [
+        45.268975,
+        35.477703
+      ],
+      "artifacts": {
+        "started.json": "36e9793219508de9013bbd499c1609f467197acaeae0fbd7131f7af8dd4b2f7f",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "58e7cdf1265ed17622a3af6e4ef8df94ae7cd1234c17f865b0f3e00820d67670",
+        "result.json": "2fe5f003db3a8d934bb01b3f6d4aa35fdc2ff219cc044d760d184706fe72600a",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "replay.json": "84a44cef0a7afb771d3535fb105b2f7b7b2b58324d43842534d95fa23855a327",
+        "handle.json": "34d5627ec91d6492007c2ad775c15b029af8d180ca7d55ecaa058278f32a6a71"
+      }
+    }
+  ],
+  "plan_sha256": "c3a6ce72ab404a24fb90cf6b3fd738374d6a702899b17721c8d74ff388d3c6cd",
+  "script_sha256": "8a4c3114f16ff3d8364d948d4d5a9add7cc70d07f17dddf56118c934475bbfcb",
+  "collector_closure_sha256": "729963e942642e4f4e8b6ff1e7de11f3cb808f760423ae131648b38eca7c79dc",
+  "limitations": [
+    "Preserves the stopped first-attempt batch, including the opponent forfeit and every unstarted job.",
+    "Clean-only counts and observed-block differences are descriptive; missing games are outcome-dependent.",
+    "Completion bounds are worst/best possible points, not confidence intervals or replacement results.",
+    "No gate threshold is changed; this audit cannot grant publication."
+  ]
+}

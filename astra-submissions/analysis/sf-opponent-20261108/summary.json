@@ -1,0 +1,53 @@
+{
+  "at": "2026-11-08T09:19:57.689378+00:00",
+  "completed": 27,
+  "planned": 32,
+  "arms": {
+    "base": {
+      "games": 13,
+      "wins": 10,
+      "draws": 0,
+      "losses": 3,
+      "points": 10.0
+    },
+    "candidate": {
+      "games": 14,
+      "wins": 9,
+      "draws": 2,
+      "losses": 3,
+      "points": 10.0
+    }
+  },
+  "faults": [
+    {
+      "job": {
+        "id": "sf257-b7-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 7,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572014,
+        "opponent_seed": 2572015,
+        "opponent": "misty"
+      },
+      "result": "1-0",
+      "reason": "Time forfeit",
+      "score": 1.0,
+      "faults": [
+        "bot failure: black Time forfeit"
+      ],
+      "plies": 75,
+      "final_clocks": [
+        45.268975,
+        35.477703
+      ],
+      "replay_sha256": "84a44cef0a7afb771d3535fb105b2f7b7b2b58324d43842534d95fa23855a327",
+      "validated_frames": 76,
+      "exit": 0,
+      "elapsed_seconds": 470.4493335899997,
+      "finished": "2026-11-08T09:04:25.011455+00:00"
+    }
+  ],
+  "decision": "technical_failure_no_promotion"
+}

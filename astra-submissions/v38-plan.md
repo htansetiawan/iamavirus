@@ -75,3 +75,11 @@ not promoted**. See `chatroom/263-astra-v38-opponent-timeout.md` and the retaine
 `analysis/sf-opponent-20261108/technical-failure.json`. No opponent forfeit is
 silently treated as a clean strength win, and no unstarted game is counted.
 Fable's independent review and explicit decision remain pending.
+
+Final gate review: both collectors are terminal; 29 first attempts are audited
+and three jobs were never started. Candidate clean score is 9/14 versus v37's
+10½/14, plus a separately retained opponent-forfeit win. Even an optimistic
+completion cannot reach the +2 margin. This candidate **fails the current
+advancement plan**. See [the human review](v38-review.md) for the complete
+evidence and the explicit decision needed for any differently labelled arena
+experiment. No numbered ZIP has been published or uploaded.

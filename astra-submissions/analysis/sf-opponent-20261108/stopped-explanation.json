@@ -1,0 +1,1183 @@
+{
+  "at": "2026-11-08T09:31:37.373146+00:00",
+  "audit_sha256": "ea8a34993fcb36b348c282ca615494dfd821d3cc13cbd038b563936c501b8d1c",
+  "script_sha256": "69fb71610e2b8f98287b0b400f6984f5232d0350678623be9c8a23fe235fc11d",
+  "referee_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "arms": {
+    "base": {
+      "win_king_move_into_attack": 5,
+      "win_forced_before_last_move": 3,
+      "win_all_attackers_hidden": 9,
+      "win_uncovered_own_king": 1,
+      "win_ignored_existing_attack": 4,
+      "loss_king_move_into_attack": 2,
+      "loss_forced_before_last_move": 0,
+      "loss_all_attackers_hidden": 3,
+      "loss_ignored_existing_attack": 1,
+      "draws": 1
+    },
+    "candidate": {
+      "win_king_move_into_attack": 3,
+      "win_forced_before_last_move": 1,
+      "win_all_attackers_hidden": 7,
+      "win_ignored_existing_attack": 3,
+      "loss_king_move_into_attack": 3,
+      "loss_forced_before_last_move": 1,
+      "loss_all_attackers_hidden": 4,
+      "win_king_capture_into_attack": 2,
+      "draws": 2,
+      "loss_ignored_existing_attack": 1,
+      "technical": 1
+    }
+  },
+  "rows": [
+    {
+      "job": {
+        "id": "sf257-b0-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 78,
+        "final_move": "h8g8",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [],
+        "forced_before_last_move": true,
+        "attackers": [
+          {
+            "square": "b3",
+            "piece": "B",
+            "hidden_before_move": true
+          },
+          {
+            "square": "f8",
+            "piece": "Q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 78,
+      "final_clock": 44.494184
+    },
+    {
+      "job": {
+        "id": "sf257-b0-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 52,
+        "final_move": "g8f8",
+        "loser": "black",
+        "already_attacked": false,
+        "truth_safe_replies": [
+          "a7a5",
+          "a7a6",
+          "b7b5",
+          "b7b6",
+          "d4d3",
+          "e6c4",
+          "e6d5",
+          "e6f7",
+          "e8a8",
+          "e8b8",
+          "e8c8",
+          "e8d8",
+          "e8e7",
+          "e8f8",
+          "f6f2",
+          "f6f3",
+          "f6f4",
+          "f6f5",
+          "f6f7",
+          "f6f8",
+          "g7f8",
+          "g7h6",
+          "g7h8",
+          "g8f7",
+          "g8h7",
+          "g8h8"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "e7",
+            "piece": "P",
+            "hidden_before_move": false
+          }
+        ]
+      },
+      "plies": 52,
+      "final_clock": 67.103057
+    },
+    {
+      "job": {
+        "id": "sf257-b0-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 67,
+        "final_move": "g1f1",
+        "loser": "white",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "g1f2"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "e1",
+            "piece": "r",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 67,
+      "final_clock": 51.470706
+    },
+    {
+      "job": {
+        "id": "sf257-b0-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 0,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572000,
+        "opponent_seed": 2572001,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 107,
+        "final_move": "a2a1",
+        "loser": "white",
+        "already_attacked": false,
+        "truth_safe_replies": [
+          "a2b2"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "d1",
+            "piece": "q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 107,
+      "final_clock": 30.148083
+    },
+    {
+      "job": {
+        "id": "sf257-b1-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 30,
+        "final_move": "h8g8",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "e8d8",
+          "e8e7",
+          "e8f8",
+          "e8g8",
+          "g7g6"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "h5",
+            "piece": "Q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 30,
+      "final_clock": 100.487987
+    },
+    {
+      "job": {
+        "id": "sf257-b1-white-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "uncovered_own_king",
+        "final_ply": 34,
+        "final_move": "f7e8",
+        "loser": "black",
+        "already_attacked": false,
+        "truth_safe_replies": [
+          "a7a5",
+          "a7a6",
+          "a8b8",
+          "a8c8",
+          "a8d8",
+          "a8e8",
+          "b7a6",
+          "b7c8",
+          "c6a5",
+          "c6b4",
+          "c6b8",
+          "c6d4",
+          "c6d8",
+          "c6e5",
+          "e7d8",
+          "e7f6",
+          "e7g5",
+          "e7h4",
+          "f7d5",
+          "f7e6",
+          "f8b8",
+          "f8c8",
+          "f8d8",
+          "f8e8",
+          "g7g5",
+          "g7g6",
+          "g8h7",
+          "g8h8",
+          "h6h5"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "d5",
+            "piece": "B",
+            "hidden_before_move": false
+          }
+        ]
+      },
+      "plies": 34,
+      "final_clock": 89.084046
+    },
+    {
+      "job": {
+        "id": "sf257-b1-black-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 77,
+        "final_move": "h3g2",
+        "loser": "white",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "h3h4"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "e2",
+            "piece": "r",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 77,
+      "final_clock": 45.755219
+    },
+    {
+      "job": {
+        "id": "sf257-b1-black-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 1,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572002,
+        "opponent_seed": 2572003,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 72,
+        "final_move": "f8g7",
+        "loser": "black",
+        "already_attacked": false,
+        "truth_safe_replies": [
+          "f8e8",
+          "h6h5"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "a7",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 72,
+      "final_clock": 48.176505
+    },
+    {
+      "job": {
+        "id": "sf257-b2-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 66,
+        "final_move": "h6h5",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "g7h7"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "g4",
+            "piece": "Q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 66,
+      "final_clock": 53.150069
+    },
+    {
+      "job": {
+        "id": "sf257-b2-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_capture_into_attack",
+        "final_ply": 52,
+        "final_move": "c7d7",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "c7b6",
+          "c7b8"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "d1",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 52,
+      "final_clock": 66.534319
+    },
+    {
+      "job": {
+        "id": "sf257-b2-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 114,
+        "final_move": "f7e7",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [],
+        "forced_before_last_move": true,
+        "attackers": [
+          {
+            "square": "h7",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 114,
+      "final_clock": 27.874254
+    },
+    {
+      "job": {
+        "id": "sf257-b2-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 2,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572004,
+        "opponent_seed": 2572005,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 88,
+        "final_move": "g6h6",
+        "loser": "black",
+        "already_attacked": false,
+        "truth_safe_replies": [
+          "b5b4",
+          "f6f5",
+          "g6f7",
+          "g6g5",
+          "g6g7"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "h1",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 88,
+      "final_clock": 37.32372
+    },
+    {
+      "job": {
+        "id": "sf257-b3-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 78,
+        "final_move": "a5a4",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "h8g7",
+          "h8h7"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "d8",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 78,
+      "final_clock": 44.369394
+    },
+    {
+      "job": {
+        "id": "sf257-b3-white-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 84,
+        "final_move": "f4f3",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "e8d8"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "b5",
+            "piece": "B",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 84,
+      "final_clock": 40.139983
+    },
+    {
+      "job": {
+        "id": "sf257-b3-black-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 109,
+        "final_move": "b6b7",
+        "loser": "white",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "h2g1"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "h4",
+            "piece": "q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 109,
+      "final_clock": 29.84805
+    },
+    {
+      "job": {
+        "id": "sf257-b3-black-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 3,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572006,
+        "opponent_seed": 2572007,
+        "opponent": "misty"
+      },
+      "score": 0.5,
+      "terminal": {
+        "category": "draw",
+        "reason": "Threefold repetition"
+      },
+      "plies": 102,
+      "final_clock": 31.931231
+    },
+    {
+      "job": {
+        "id": "sf257-b4-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 75,
+        "final_move": "b4b5",
+        "loser": "white",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "h1h2"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "d1",
+            "piece": "q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 75,
+      "final_clock": 44.377659
+    },
+    {
+      "job": {
+        "id": "sf257-b4-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 0.5,
+      "terminal": {
+        "category": "draw",
+        "reason": "Threefold repetition"
+      },
+      "plies": 107,
+      "final_clock": 28.974006
+    },
+    {
+      "job": {
+        "id": "sf257-b4-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 81,
+        "final_move": "g2h3",
+        "loser": "white",
+        "already_attacked": false,
+        "truth_safe_replies": [
+          "g2f1",
+          "g2f2",
+          "g2g1",
+          "g2h1"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "b3",
+            "piece": "q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 81,
+      "final_clock": 42.534566
+    },
+    {
+      "job": {
+        "id": "sf257-b4-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 4,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572008,
+        "opponent_seed": 2572009,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 50,
+        "final_move": "f8e7",
+        "loser": "black",
+        "already_attacked": false,
+        "truth_safe_replies": [
+          "a7a5",
+          "a7a6",
+          "a8b8",
+          "a8c8",
+          "a8d8",
+          "a8e8",
+          "b6b5",
+          "c7c5",
+          "c7c6",
+          "e6e5",
+          "f6f5",
+          "f8e8",
+          "f8g7",
+          "f8g8",
+          "h6h5"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "d7",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 50,
+      "final_clock": 68.343166
+    },
+    {
+      "job": {
+        "id": "sf257-b5-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_capture_into_attack",
+        "final_ply": 68,
+        "final_move": "g7g8",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [],
+        "forced_before_last_move": true,
+        "attackers": [
+          {
+            "square": "d8",
+            "piece": "Q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 68,
+      "final_clock": 51.788095
+    },
+    {
+      "job": {
+        "id": "sf257-b5-white-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 36,
+        "final_move": "c7c5",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [],
+        "forced_before_last_move": true,
+        "attackers": [
+          {
+            "square": "h4",
+            "piece": "Q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 36,
+      "final_clock": 90.080836
+    },
+    {
+      "job": {
+        "id": "sf257-b5-black-base",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 107,
+        "final_move": "b3c2",
+        "loser": "white",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "b3c3",
+          "b3c4"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "d1",
+            "piece": "q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 107,
+      "final_clock": 29.709341
+    },
+    {
+      "job": {
+        "id": "sf257-b5-black-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 5,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572010,
+        "opponent_seed": 2572011,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 116,
+        "final_move": "f5f4",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "f8e7",
+          "f8f7",
+          "f8g7"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "b8",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 116,
+      "final_clock": 24.619435
+    },
+    {
+      "job": {
+        "id": "sf257-b6-white-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "base",
+        "side": "white",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 100,
+        "final_move": "h5g6",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [],
+        "forced_before_last_move": true,
+        "attackers": [
+          {
+            "square": "f5",
+            "piece": "Q",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 100,
+      "final_clock": 31.093931
+    },
+    {
+      "job": {
+        "id": "sf257-b6-white-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "ignored_existing_attack",
+        "final_ply": 94,
+        "final_move": "c1a2",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "h6g6"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "h1",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 94,
+      "final_clock": 35.282206
+    },
+    {
+      "job": {
+        "id": "sf257-b6-black-candidate",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "candidate",
+        "side": "black",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 0.0,
+      "terminal": {
+        "category": "king_move_into_attack",
+        "final_ply": 94,
+        "final_move": "g6h5",
+        "loser": "black",
+        "already_attacked": true,
+        "truth_safe_replies": [
+          "g6f5",
+          "g6f6",
+          "g6f7"
+        ],
+        "forced_before_last_move": false,
+        "attackers": [
+          {
+            "square": "h8",
+            "piece": "R",
+            "hidden_before_move": true
+          }
+        ]
+      },
+      "plies": 94,
+      "final_clock": 34.807364
+    },
+    {
+      "job": {
+        "id": "sf257-b6-black-base",
+        "phase": "misty",
+        "lane": 0,
+        "pair": 6,
+        "arm": "base",
+        "side": "black",
+        "engine_seed": 2572012,
+        "opponent_seed": 2572013,
+        "opponent": "misty"
+      },
+      "score": 0.5,
+      "terminal": {
+        "category": "draw",
+        "reason": "Threefold repetition"
+      },
+      "plies": 97,
+      "final_clock": 32.304551
+    },
+    {
+      "job": {
+        "id": "sf257-b7-white-candidate",
+        "phase": "misty",
+        "lane": 1,
+        "pair": 7,
+        "arm": "candidate",
+        "side": "white",
+        "engine_seed": 2572014,
+        "opponent_seed": 2572015,
+        "opponent": "misty"
+      },
+      "score": 1.0,
+      "terminal": {
+        "category": "technical",
+        "reason": "Time forfeit",
+        "failed_side": "black"
+      },
+      "plies": 75,
+      "final_clock": 45.268975
+    }
+  ],
+  "paired_first_divergence": [
+    {
+      "pair": 0,
+      "side": "white",
+      "first_different_ply": 3,
+      "first_different_actor": "arm",
+      "base_move": "b1c3",
+      "candidate_move": "c2c4"
+    },
+    {
+      "pair": 0,
+      "side": "black",
+      "first_different_ply": 2,
+      "first_different_actor": "arm",
+      "base_move": "g8f6",
+      "candidate_move": "c7c6"
+    },
+    {
+      "pair": 1,
+      "side": "white",
+      "first_different_ply": 5,
+      "first_different_actor": "arm",
+      "base_move": "b1c3",
+      "candidate_move": "g1f3"
+    },
+    {
+      "pair": 1,
+      "side": "black",
+      "first_different_ply": 2,
+      "first_different_actor": "arm",
+      "base_move": "g8f6",
+      "candidate_move": "d7d5"
+    },
+    {
+      "pair": 2,
+      "side": "white",
+      "first_different_ply": 2,
+      "first_different_actor": "Misty",
+      "base_move": "d7d5",
+      "candidate_move": "d7d6"
+    },
+    {
+      "pair": 2,
+      "side": "black",
+      "first_different_ply": 2,
+      "first_different_actor": "arm",
+      "base_move": "g8f6",
+      "candidate_move": "d7d5"
+    },
+    {
+      "pair": 3,
+      "side": "white",
+      "first_different_ply": 1,
+      "first_different_actor": "arm",
+      "base_move": "c2c3",
+      "candidate_move": "d2d4"
+    },
+    {
+      "pair": 3,
+      "side": "black",
+      "first_different_ply": 2,
+      "first_different_actor": "arm",
+      "base_move": "g8f6",
+      "candidate_move": "c7c6"
+    },
+    {
+      "pair": 4,
+      "side": "white",
+      "first_different_ply": 1,
+      "first_different_actor": "arm",
+      "base_move": "d2d4",
+      "candidate_move": "c2c4"
+    },
+    {
+      "pair": 4,
+      "side": "black",
+      "first_different_ply": 2,
+      "first_different_actor": "arm",
+      "base_move": "g8f6",
+      "candidate_move": "d7d5"
+    },
+    {
+      "pair": 5,
+      "side": "white",
+      "first_different_ply": 3,
+      "first_different_actor": "arm",
+      "base_move": "c1f4",
+      "candidate_move": "c2c4"
+    },
+    {
+      "pair": 5,
+      "side": "black",
+      "first_different_ply": 2,
+      "first_different_actor": "arm",
+      "base_move": "b8c6",
+      "candidate_move": "d7d5"
+    },
+    {
+      "pair": 6,
+      "side": "white",
+      "first_different_ply": 2,
+      "first_different_actor": "Misty",
+      "base_move": "g8f6",
+      "candidate_move": "d7d5"
+    },
+    {
+      "pair": 6,
+      "side": "black",
+      "first_different_ply": 2,
+      "first_different_actor": "arm",
+      "base_move": "c7c6",
+      "candidate_move": "d7d5"
+    },
+    {
+      "pair": 7,
+      "side": "white",
+      "unpaired": true
+    },
+    {
+      "pair": 7,
+      "side": "black",
+      "unpaired": true
+    }
+  ],
+  "first_diverging_actors": {
+    "arm": 12,
+    "Misty": 2
+  },
+  "unmatched_pairs": 2,
+  "gate_status": "technical_failure_no_promotion",
+  "limitations": [
+    "Post-hoc description of this complete development batch, not another advancement gate.",
+    "Truth-safe replies are offline labels; the actors were not given the true boards.",
+    "First divergence and last moves do not establish the causal decision that won or lost.",
+    "A matching seed is not deterministic control of wall-clock search or every opponent random source."
+  ]
+}
