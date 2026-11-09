@@ -1,10 +1,12 @@
-# V38 package checks — passed; opponent gate and independent review pending
+# V38 package checks — passed; human-authorized experimental arena trial
 
 The staged review ZIP is **84,989,047 bytes**, SHA256
 `ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f`.
-It is under `experiments/v38-package-20261108/build/v38-review.zip`; no numbered
-release has been published. Promotion still requires the independent matched
-Misty gate and Fable's independent archive review.
+It was uploaded by Henry under the alias v38-review.zip and is recorded as
+arena v38. The identical numbered repository archive and manifest are linked
+from the [release record](../../v38-release.md). Fable independently accepted
+the package; the local Misty gate failed. Henry authorized an experimental
+trial of the same bytes. The failed gate remains in the historical evidence.
 
 The portable scorer embeds the original 98,511,183-byte NNUE, verified by
 exporting it from a standalone executable. It uses the original eight-slice

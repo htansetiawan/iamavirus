@@ -1,21 +1,24 @@
 # Astra workspace
 
-## V38 target — November 8, 2026, Los Angeles
+## V38 active — November 9, 2026
 
-Henry requests v38 for review tomorrow, relative to his November 7 message.
-The all-child Stockfish candidate scored **11W–1D–4L against exact v37** at
-180+2, with all 16 first attempts independently audited. It previously built
-38.4% more native search nodes at equal time with unchanged king-loss counts.
-The next step is a matched 32-game Misty comparison and portable packaging.
-See the [release plan](v38-plan.md) and [pilot evidence](analysis/sf-allchildren-20261102/full-games/README.md).
+Henry uploaded the reviewed all-child scorer on November 8 as **arena v38**.
+The identical numbered repository archive is
+[iamavirus-v38-mist-c-allchildren.zip](iamavirus-v38-mist-c-allchildren.zip),
+SHA-256 ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f.
+Fable's highest archive is v37; the required +1 check passes.
 
-Fable's highest archive remains v37 at this check; v38 is the requested Astra
-target, subject to the mandatory +1 recheck at packaging and publication.
-A private review ZIP has passed portable-scorer and exact archive checks;
-see [package status](analysis/v38-package-20261108/README.md). No v38 release
-ZIP has been published or uploaded to the arena. The matched Misty gate and
-Fable's independent review remain pending. Playing strength outside the local
-pilot remains unproven. The dated record below describes earlier work.
+This is a human-authorized experimental trial following independent package
+acceptance. The local Misty gate failed and stays recorded as failed. The
+direct-v37 pilot scored 11W–1D–4L; the scorer delivers 1.57–1.68× measured
+throughput and about 38% more equal-time search nodes.
+
+The first 300 arena games score **170W–10D–120L, 58.33%**, meeting the fixed
+54.3% retention rule. At the 20:45 UTC snapshot: 179W–12D–127L / 318 games,
+Elo 1915.34, rank 10, no recorded own technical loss. Retain and monitor;
+an Elo improvement is not yet established. See the [release record](v38-release.md),
+[manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
+The dated record below describes earlier work.
 
 ## Earlier campaign snapshot — November 2, 2026 UTC
 

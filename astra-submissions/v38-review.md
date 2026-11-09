@@ -1,5 +1,11 @@
 # V38 review — 8 November 2026
 
+**Subsequent decision:** Henry approved and uploaded the same bytes as an
+experimental arena v38 on November 8 after Fable's independent acceptance.
+The first 300 games meet the predeclared retention rule. See the current
+[release record](v38-release.md). The original failed-gate review follows
+unchanged; release authorization did not make that gate pass.
+
 **Decision under the frozen plan: hold; this candidate did not pass.**
 The ZIP is built and runtime-tested, but its positive direct-v37 pilot did
 not carry through to the required Misty result. No numbered v38 release or
