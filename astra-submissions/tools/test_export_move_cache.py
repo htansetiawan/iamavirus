@@ -44,7 +44,7 @@ class MoveCache(unittest.TestCase):
         self.journal.touch()
         self.args = argparse.Namespace(raw=self.raw, out_prefix=self.root/'published/arena',
             cache=self.root/'cache/moves.sqlite', since='2026-10-19', games=1000000,
-            test_share=.15, seed=7, seed_export=[], wall_seconds=30, legacy_links=True)
+            test_share=.15, seed=7, seed_export=[], wall_seconds=30, legacy_files=True)
 
     def game(self, gid, moves='e2e4 e7e5 g1f3 b8c6', **changes):
         row = dict(id=gid, white='Knight Vision', black='IAmAVirus', createdAt='2026-11-09T00:00:00Z',
@@ -149,6 +149,7 @@ class MoveCache(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'no eligible'):
             self.run_export()
         self.assertFalse(Path(str(self.args.out_prefix)+'-current').exists())
+        self.assertFalse(Path(str(self.args.out_prefix)+'-current.json').exists())
         self.journal.write_text('{broken json}\n')
         with self.assertRaises(json.JSONDecodeError):
             self.run_export()
@@ -198,6 +199,30 @@ class MoveCache(unittest.TestCase):
         self.run_export()
         self.assertEqual((records(Path(old['train'])), records(Path(old['test']))), before)
         self.assertEqual(sum(len(r) for r in self.split_records().values()), 2)
+
+    def test_no_symlink_filesystem_and_publication_only_recovery(self):
+        self.game('game0001')
+        with mock.patch('os.symlink', side_effect=PermissionError('exFAT has no symlinks')):
+            first = self.run_export()
+            Path(str(self.args.out_prefix)+'-current.json').unlink()
+            with mock.patch.object(exporter, 'journal_snapshot', side_effect=AssertionError('must not re-extract')):
+                result = exporter.publish_generation(self.args.out_prefix, Path(first['generation']), True)
+            self.assertEqual(result['generation'], first['generation'])
+            self.assertEqual(self.resolved()['generation'], first['generation'])
+            self.assertFalse(Path(str(self.args.out_prefix)+'-train.txt').is_symlink())
+
+    def test_pointer_paths_relative_to_actual_mounted_directory(self):
+        self.game('game0001')
+        physical = self.root/'drive'
+        physical.mkdir()
+        logical = self.root/'long/nested/workspace/mounted'
+        logical.parent.mkdir(parents=True)
+        logical.symlink_to(physical, target_is_directory=True)
+        self.args.out_prefix = logical/'arena'
+        first = self.run_export()
+        pointer = json.loads((physical/'arena-current.json').read_text())
+        self.assertEqual(pointer['generation'], str(Path(first['generation']).relative_to(physical)))
+        self.assertEqual(self.resolved()['generation'], first['generation'])
 
 
 if __name__ == '__main__':

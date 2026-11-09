@@ -2,8 +2,8 @@
 """Export accepted moves through an SSD cache and publish complete generations.
 
 The accepted journal is scanned sequentially; only missing move hashes require
-random replay reads. Resolve PREFIX-current once before opening train/test.
-Legacy PREFIX-{train,test}.txt links are conveniences, not a two-open snapshot.
+random replay reads. Resolve PREFIX-current.json once before opening train/test.
+Legacy PREFIX-{train,test}.txt files are conveniences, not a two-open snapshot.
 """
 import argparse
 from contextlib import contextmanager
@@ -188,26 +188,70 @@ def seed_cache(db, rows, sources, check):
     return counts
 
 
-def resolve(prefix):
-    """Resolve once: returned immutable paths remain valid across later exports."""
-    generation = Path(str(prefix) + '-current').resolve(strict=True)
+def verify_generation(generation):
     manifest = json.loads((generation/'manifest.json').read_text())
     if manifest['format'] != FORMAT or not manifest['complete']:
         raise ValueError('generation is not complete')
+    if set(manifest['files']) != {'train.txt', 'test.txt', 'games.jsonl'}:
+        raise ValueError('unexpected generation members')
     for name, expected in manifest['files'].items():
-        if file_sha(generation/name) != expected['sha256']:
+        if (generation/name).stat().st_size != expected['bytes'] or file_sha(generation/name) != expected['sha256']:
             raise ValueError(f'generation file hash mismatch: {name}')
+    return manifest
+
+
+def resolve(prefix):
+    """Resolve once: returned immutable paths remain valid across later exports."""
+    pointer = Path(str(prefix) + '-current.json')
+    if pointer.exists():
+        current = json.loads(pointer.read_text())
+        if current['format'] != FORMAT:
+            raise ValueError('unsupported current-pointer format')
+        generation = (pointer.parent/current['generation']).resolve(strict=True)
+        if file_sha(generation/'manifest.json') != current['manifest_sha256']:
+            raise ValueError('current generation manifest hash mismatch')
+    else:
+        # Read-only compatibility for early local fixtures; publication no longer
+        # relies on symlink support (the bulk drive is exFAT).
+        generation = Path(str(prefix) + '-current').resolve(strict=True)
+    verify_generation(generation)
     return dict(generation=str(generation), train=str(generation/'train.txt'),
                 test=str(generation/'test.txt'), manifest=str(generation/'manifest.json'))
 
 
-def swap_link(path, target):
+def copy_atomic(source, path):
     temporary = path.with_name(path.name + '.tmp-' + uuid.uuid4().hex)
     try:
-        temporary.symlink_to(target)
+        with source.open('rb') as src, temporary.open('xb') as dest:
+            shutil.copyfileobj(src, dest, length=1 << 20)
+            dest.flush()
+            os.fsync(dest.fileno())
         os.replace(temporary, path)
     finally:
         temporary.unlink(missing_ok=True)
+
+
+def publish_generation(prefix, generation, legacy_files, check=lambda: None):
+    """Caller owns the prefix lock. Works on filesystems without symlinks."""
+    prefix, generation = prefix.absolute(), generation.resolve(strict=True)
+    verify_generation(generation)
+    pointer = Path(str(prefix) + '-current.json')
+    temporary = pointer.with_name(pointer.name + '.tmp-' + uuid.uuid4().hex)
+    try:
+        durable_json(temporary, dict(format=FORMAT, generation=os.path.relpath(generation, pointer.parent.resolve()),
+                     manifest_sha256=file_sha(generation/'manifest.json'), publisher_sha256=file_sha(Path(__file__))))
+        check()
+        os.replace(temporary, pointer)
+        sync_dir(prefix.parent)
+    finally:
+        temporary.unlink(missing_ok=True)
+    if legacy_files:
+        for split in ('train', 'test'):
+            copy_atomic(generation/f'{split}.txt', Path(str(prefix)+f'-{split}.txt'))
+        sync_dir(prefix.parent)
+    return dict(generation=str(generation), manifest=str(generation/'manifest.json'),
+                manifest_sha256=file_sha(generation/'manifest.json'), current_pointer=str(pointer),
+                legacy_files_updated=legacy_files)
 
 
 def export(args):
@@ -288,18 +332,8 @@ def export(args):
             staging.rename(generation)
             staging = None
             sync_dir(generations)
-            # The one authoritative publication point. Existing legacy files are
-            # untouched until this complete generation has been published.
-            current = Path(str(prefix) + '-current')
-            check()
-            swap_link(current, os.path.relpath(generation, current.parent))
-            if args.legacy_links:
-                for split in ('train', 'test'):
-                    alias = Path(str(prefix) + f'-{split}.txt')
-                    swap_link(alias, os.path.relpath(current/f'{split}.txt', alias.parent))
-            sync_dir(prefix.parent)
-            result = dict(generation=str(generation), manifest=str(generation/'manifest.json'),
-                          manifest_sha256=file_sha(generation/'manifest.json'), **counts,
+            publication = publish_generation(prefix, generation, args.legacy_files, check)
+            result = dict(**publication, **counts,
                           elapsed_seconds=time.monotonic()-started)
             print(json.dumps(result), flush=True)
             return result
@@ -320,13 +354,19 @@ def main():
     parser.add_argument('--seed', type=int, default=7)
     parser.add_argument('--seed-export', type=Path, action='append', default=[])
     parser.add_argument('--wall-seconds', type=float, default=2400)
-    parser.add_argument('--legacy-links', action='store_true')
+    parser.add_argument('--legacy-files', '--legacy-links', dest='legacy_files', action='store_true',
+                        help='Atomically replace individual compatibility files; resolve current.json for a consistent pair')
     parser.add_argument('--resolve', action='store_true')
+    parser.add_argument('--publish-generation', type=Path,
+                        help='Recover publication of an already complete, hash-verified generation; no extraction')
     args = parser.parse_args()
     if args.games < 1 or args.wall_seconds <= 0 or not 0 <= args.test_share <= 1:
         parser.error('games/wall-seconds must be positive and test-share in [0,1]')
     if args.resolve:
         print(json.dumps(resolve(args.out_prefix)))
+    elif args.publish_generation:
+        with exclusive(Path(str(args.out_prefix)+'-export.lock')):
+            print(json.dumps(publish_generation(args.out_prefix, args.publish_generation, args.legacy_files)), flush=True)
     else:
         export(args)
 
