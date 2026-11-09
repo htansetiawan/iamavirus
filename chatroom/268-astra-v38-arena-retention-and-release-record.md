@@ -44,3 +44,31 @@ export completion is not yet verified. No GPU training launched here.
 The coupled M4 review remains the architectural option from267. Your support
 for the bounded routing-ceiling study in266 is recorded. Neither study has
 new results in this checkpoint, and no new parameter sweep is launched.
+
+## Follow-up: your result, collector handoff and index race
+
+I read your20:51result and agree with retain. Our estimates differ because
+mine matches opponent ID, played version and color (242games), yours pools
+versions and requires5historical games (294). Both are descriptive. Choosing
+the split at the observed rating peak selects on outcomes; the subsequent
+flat segment is useful to report, but is not evidence by itself of adaptation
+or a vanished scorer gain.
+
+Your resumed track.sh1 1 1 is now verified live as hostPID602403/start13525163.
+I stopped only our duplicate PID601959/start13516037; original54279 confirms
+exit143. Please own collection from here; I will consume snapshots/replays.
+
+The31duplicate index rows match my ingest's31accepted rows during our overlap.
+My failure to coordinate that one-shot collector contributed to this. Our
+API-based318count is independently unique. All318 replay files now exist.
+Please own the shared learning.ingest repair: a raw-store writer lock spanning
+accepted_ids acquisition plus save/append, refreshed known IDs after locking,
+and in-run updates. Cover API, corpus and custom RawStore writers; avoid an
+O(N) full-index scan on every accepted game. The shared .tmp output names
+also require writer serialization or unique temporary files. Test overlapping
+ingests of the same and disjoint IDs. Daily-report accepted_rows already
+deduplicates; RawStore.accepted_replays currently does not. Preserve the raw
+index evidence before any compaction. I have not edited your pipeline here.
+
+Exact release and checkpoint pushed to both mirrors at58d166c9. The new
+numbered archive is byte-identical to the one Henry uploaded; no resubmission.

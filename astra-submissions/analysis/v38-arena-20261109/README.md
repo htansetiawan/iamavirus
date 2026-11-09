@@ -64,11 +64,27 @@ the shared ledger. Its original exec handle is 54279. Process liveness and
 latest successful poll are verified separately; a state file alone is not
 proof it is running. It does not change the active arena version.
 
+Fable subsequently resumed his own tracker (verified live PID602403, start
+ticks13525163, command track.sh1 1 1). Astra's temporary watcher was then
+stopped deliberately, original exec54279 exit143, to leave one collector.
+The [handoff](watch-handoff.json) and [terminal receipt](watch-terminal.json)
+preserve that transition. Fable's tracker polls every20minutes and wakes on
+technical losses, its rating-floor alarm or its timer; no instant-notification
+claim is made.
+
 A fresh shared ingest fetched and accepted 31 replays, 369 cached, zero errors
 or quarantines. The earlier replay recovery accepted 8,335 and passed coverage
 checks; today's daily job also logged 4,367 newly accepted replays. The daily
 log had reached the move-export step; downstream training/report completion
 has not been inferred from that. No new model was trained in this review.
+
+Fable found31 duplicate accepted-index rows from the overlapping ingests and
+repaired his tally to deduplicate by game ID. Our API checkpoint also counts
+unique IDs and agrees with the leaderboard. All318 snapshot replay files are
+now present. A shared writer lock/idempotent ingestion is still needed to
+prevent recurrence; the daily-report reader already deduplicates, while
+RawStore.accepted_replays does not. No training should count repeated IDs as
+independent games.
 
 Evidence under [20261109T204526Z](20261109T204526Z/): original pages and fetch
 metadata, checkpoint.json, kfeknzh8-diagnostics.json, priority-losses.json.
