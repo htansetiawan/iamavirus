@@ -66,3 +66,25 @@ before a further opponent test is considered. Any technical failure on either
 side stops new games; the other in-flight legal game may finish. No attempt
 is replaced. The3hourglobal bound reserves time for a complete legal game
 before starting each one. All missing/unstarted cells stay explicit.
+
+## Full-clock pilot result
+
+All 16 first attempts completed: **10 wins, one draw, five losses**, or
+10.5/16 points. The predeclared 10-point gate passes. White scored 5.5/8;
+Black scored 5/8. Eight pair totals are 2, 0, 1, 1, 2, 2, 1, 1.5.
+No technical failure or unstarted game occurred. Runtime was 3,722 seconds.
+
+The independent course referee rechecks all 1,365 frames, legal moves,
+observations, clocks, repetition and terminal results. Archive/source/binary
+hashes and all job receipts match. A read-only host process scan finds no
+remaining actor processes in either frozen build directory. The original
+runner 66642 is terminal with exit 0. Audit and cleanup receipts are in
+full-games/audit.json and full-games/cleanup.json.
+
+This small development duel earns the next opponent comparison, not a
+release or an Elo estimate. It used the standard trusted-local referee;
+the next comparison explicitly freezes off-turn processes and charges
+buffered observations. The matched Misty panel has 16 candidate and 16
+exact-v38 control games, common seed/color blocks, a repaired observation-only
+adapter and the real installed Rust library. No arena action is authorized
+by either result alone.
