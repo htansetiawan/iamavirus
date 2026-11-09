@@ -1,0 +1,30 @@
+{
+  "command": [
+    "gcc",
+    "-O2",
+    "-std=c11",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/belief.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/movemodel.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/cfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/eval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/search.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/gtcfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/front.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/sfeval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/main.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/teacher_targets.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/teacher_dump.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/pair.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/mist"
+  ],
+  "stdout": "",
+  "stderr": "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/pair.c:1: warning: \"_POSIX_C_SOURCE\" redefined\n    1 | #define _POSIX_C_SOURCE 200809L\n      | \n<command-line>: note: this is the location of the previous definition\n",
+  "sha256": "2c117d11aaf216f6bf643285e3f480177ae38d2941a8019264c0b3615e571d1d"
+}
