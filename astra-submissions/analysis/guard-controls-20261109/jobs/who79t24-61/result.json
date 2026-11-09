@@ -1,0 +1,305 @@
+{
+  "case": {
+    "game": "who79t24",
+    "side": "black",
+    "ply": 61,
+    "opponent": "Decent Chess Bot",
+    "kind": "king_later",
+    "replay_path": "/home/henrytan/git/iamavirus/data/raw/games/who79t24/replay.json",
+    "replay_sha256": "aa81914babbe5c621ee687534872eef41bc20bc35876f2305ea4ef5279a22616",
+    "id": "who79t24-61"
+  },
+  "elapsed": 11.858678891003365,
+  "exercised": true,
+  "arms": {
+    "base": {
+      "move": "f7g8",
+      "elapsed": 2.152448537,
+      "belief_fingerprint": "16846308958241562299",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "f7g8",
+        "root_infoset": 0,
+        "root_value": -0.9861735718610223,
+        "solver_value": -0.9861735718610223,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 14,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1102,
+        "nodes": 106437,
+        "infosets": 2361,
+        "slots": 47647,
+        "iterations": 2560,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 14,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 0,
+            "weight": 0.04602817646734544,
+            "hypothesis_board": "-b----K-P--B----p--------P----PP---p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 1,
+            "weight": 0.542977664930032,
+            "hypothesis_board": "-b----K-P--B---Pp--------P----P----p------p---p--p-R-k----------"
+          },
+          {
+            "belief_index": 2,
+            "weight": 0.03685361404155259,
+            "hypothesis_board": "-b----K-P--B---Pp--------P----P----p------p---p--p---k-----R----"
+          },
+          {
+            "belief_index": 3,
+            "weight": 0.03258599173124368,
+            "hypothesis_board": "-b---K--P--B---Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 4,
+            "weight": 0.04683206767082774,
+            "hypothesis_board": "-b----K-P--B----p------P-P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 5,
+            "weight": 0.007083904588096674,
+            "hypothesis_board": "-b----K-P------Pp--------P----P----p------pR--pB-p---k----------"
+          },
+          {
+            "belief_index": 6,
+            "weight": 0.015378908733108664,
+            "hypothesis_board": "-b--B-K-P------Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 7,
+            "weight": 0.015378908733108664,
+            "hypothesis_board": "-bB---K-P------Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 8,
+            "weight": 0.05138613121325668,
+            "hypothesis_board": "-b----K-P------Pp-B------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 9,
+            "weight": 0.048393638663857826,
+            "hypothesis_board": "-b------P--B-K-Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 10,
+            "weight": 0.048393638663857826,
+            "hypothesis_board": "-b------P--B--KPp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 11,
+            "weight": 0.03258599173124368,
+            "hypothesis_board": "-b-----KP--B---Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 12,
+            "weight": 0.04257078919172363,
+            "hypothesis_board": "-b----K-P------Pp---B----P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 13,
+            "weight": 0.03355057364074498,
+            "hypothesis_board": "-b----K-P------Pp--------P---BP----p------pR--p--p---k----------"
+          }
+        ],
+        "avoid_moves": [
+          "b1a2",
+          "b1c2",
+          "b1d3",
+          "b1e4",
+          "b1f5",
+          "d5d4",
+          "c6c5",
+          "g6g5",
+          "b7b6",
+          "b7b5",
+          "f7e6",
+          "f7f6",
+          "f7e7",
+          "f7g7",
+          "f7f8"
+        ],
+        "actions": [
+          {
+            "uci": "f7e8",
+            "probability": 0.1563220448496093,
+            "cf_q": -0.9877734198729742,
+            "q": -0.9877734198729742,
+            "advantage": -0.0015998480119518987
+          },
+          {
+            "uci": "f7g8",
+            "probability": 0.8436779551503907,
+            "cf_q": -0.9858771417941345,
+            "q": -0.9858771417941345,
+            "advantage": 0.00029643006688773177
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    },
+    "candidate": {
+      "move": "f7g8",
+      "elapsed": 2.156210593,
+      "belief_fingerprint": "16846308958241562299",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "f7g8",
+        "root_infoset": 0,
+        "root_value": -0.9870270833297803,
+        "solver_value": -0.9870270833297803,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 14,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 963,
+        "nodes": 114398,
+        "infosets": 2493,
+        "slots": 50104,
+        "iterations": 2740,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 14,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 0,
+            "weight": 0.04602817646734544,
+            "hypothesis_board": "-b----K-P--B----p--------P----PP---p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 1,
+            "weight": 0.542977664930032,
+            "hypothesis_board": "-b----K-P--B---Pp--------P----P----p------p---p--p-R-k----------"
+          },
+          {
+            "belief_index": 2,
+            "weight": 0.03685361404155259,
+            "hypothesis_board": "-b----K-P--B---Pp--------P----P----p------p---p--p---k-----R----"
+          },
+          {
+            "belief_index": 3,
+            "weight": 0.03258599173124368,
+            "hypothesis_board": "-b---K--P--B---Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 4,
+            "weight": 0.04683206767082774,
+            "hypothesis_board": "-b----K-P--B----p------P-P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 5,
+            "weight": 0.007083904588096674,
+            "hypothesis_board": "-b----K-P------Pp--------P----P----p------pR--pB-p---k----------"
+          },
+          {
+            "belief_index": 6,
+            "weight": 0.015378908733108664,
+            "hypothesis_board": "-b--B-K-P------Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 7,
+            "weight": 0.015378908733108664,
+            "hypothesis_board": "-bB---K-P------Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 8,
+            "weight": 0.05138613121325668,
+            "hypothesis_board": "-b----K-P------Pp-B------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 9,
+            "weight": 0.048393638663857826,
+            "hypothesis_board": "-b------P--B-K-Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 10,
+            "weight": 0.048393638663857826,
+            "hypothesis_board": "-b------P--B--KPp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 11,
+            "weight": 0.03258599173124368,
+            "hypothesis_board": "-b-----KP--B---Pp--------P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 12,
+            "weight": 0.04257078919172363,
+            "hypothesis_board": "-b----K-P------Pp---B----P----P----p------pR--p--p---k----------"
+          },
+          {
+            "belief_index": 13,
+            "weight": 0.03355057364074498,
+            "hypothesis_board": "-b----K-P------Pp--------P---BP----p------pR--p--p---k----------"
+          }
+        ],
+        "avoid_moves": [
+          "b1a2",
+          "b1c2",
+          "b1d3",
+          "b1e4",
+          "b1f5",
+          "d5d4",
+          "c6c5",
+          "g6g5",
+          "b7b6",
+          "b7b5",
+          "f7e6",
+          "f7f6",
+          "f7e7",
+          "f7g7"
+        ],
+        "actions": [
+          {
+            "uci": "f7e8",
+            "probability": 0.14113903751727802,
+            "cf_q": -0.9864950741765829,
+            "q": -0.9864950741765829,
+            "advantage": 0.0005320091531973992
+          },
+          {
+            "uci": "f7f8",
+            "probability": 0.03395944114075157,
+            "cf_q": -0.9869835957498707,
+            "q": -0.9869835957498707,
+            "advantage": 4.3487579909573526e-05
+          },
+          {
+            "uci": "f7g8",
+            "probability": 0.8249015213419704,
+            "cf_q": -0.9871198993469195,
+            "q": -0.9871198993469195,
+            "advantage": -9.281601713917453e-05
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    }
+  },
+  "live_owned_members": [],
+  "files": {
+    "started.json": "a01b7efafb0ff9eea3ad83eafa6af0fb5457cb37497656197e60703fc20932d6",
+    "stdout.txt": "fc3010698b37c8f99450c5f6ec2a18cc8262395a1cf16265bc531ab5208f1940",
+    "input.txt": "f2950796bb785c426374e8d75072c37df4d7f6d79efdf5c6b45990d2ca8caef0",
+    "stderr.txt": "06ab0bffab3c9dc5b209f5406c73553b253d1e24941e121b7a3a67d41a95d3e9",
+    "process.json": "0f42bb91f5c1e81b005b42742f5bd4d1f82be955a1a61c5d038c859bcdf65025",
+    "targets.jsonl": "4269ede9b7ab14d9c6d9e2cc3e782e1a431c4c4367f76d7c7681f9439d3b02b6"
+  }
+}

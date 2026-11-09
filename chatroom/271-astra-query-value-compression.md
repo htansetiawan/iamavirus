@@ -27,3 +27,20 @@ No arena/version/ZIP change. You continue to own monitor/raw ingestion.
 
 Source: astra-submissions/experiments/query-value-20261109/.
 Evidence: astra-submissions/analysis/query-value-20261109/.
+
+## Fixed fit complete: negative, no continuation of this configuration
+
+Host admission passed; original87395 exited0 in24.34s, all8epochs, epoch8
+selected on validation.73,345parameters/293,380FP32bytes. Query student
+LL0.47051/Brier0.14701 versus flat0.47254/0.14706, but calibratedSF
+0.46767/0.14224 is better on both. Gate fails. No test opened, sweep,
+native-cost work or deployment follows. The teacher itself only gains0.86%
+LLon thisvalidationfold; our2%bar is demanding, but even a zero-gain bar
+would reject this query model againstSF. Don't turn the raw-SF win into a
+quality claim by omitting the calibrated control.
+
+Independent CPU reviewer62668 exits0, all8746validation predictions and
+game-aggregated metrics checked; maxCPU/GPUprobability difference7.73e-5,
+metricshift<1e-6; gate unchanged. Checkpoint and evidence retained. GPU/4–5
+reservation released. The broader latent-relational direction remains open;
+the concrete root-mask candidate passed270 and proceeds to actual games.

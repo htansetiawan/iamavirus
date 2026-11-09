@@ -1,0 +1,407 @@
+{
+  "case": {
+    "game": "v82o5qee",
+    "side": "white",
+    "ply": 4,
+    "opponent": "Knight Vision",
+    "kind": "opening",
+    "replay_path": "/home/henrytan/git/iamavirus/data/raw/games/v82o5qee/replay.json",
+    "replay_sha256": "57e1193012dd4873d7b3faa2c0fcb61de041fbaa2d9282e8cf3a7c1d0f778d4d",
+    "id": "v82o5qee-4"
+  },
+  "elapsed": 6.2703546340053435,
+  "exercised": true,
+  "arms": {
+    "base": {
+      "move": "b1c3",
+      "elapsed": 2.14717174,
+      "belief_fingerprint": "10062077854741977011",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "b1c3",
+        "root_infoset": 0,
+        "root_value": 0.07393789701318106,
+        "solver_value": 0.07393789701318106,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 16,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1380,
+        "nodes": 140209,
+        "infosets": 2513,
+        "slots": 86081,
+        "iterations": 1370,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 16,
+        "belief_overflowed": false,
+        "samples": [
+          {
+            "belief_index": 0,
+            "weight": 0.04332656136004929,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P----q-p-------------pp-ppppprnb-kbnr"
+          },
+          {
+            "belief_index": 1,
+            "weight": 9.035511812051016e-09,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-------------ppqppppprnb-kbnr"
+          },
+          {
+            "belief_index": 2,
+            "weight": 1.0110380062749448e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-----p--------p-ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 3,
+            "weight": 0.00013979203220759992,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-------n-----pp-pppppr-bqkbnr"
+          },
+          {
+            "belief_index": 4,
+            "weight": 0.8902899937601387,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p---------p---pp-p-ppprnbqkbnr"
+          },
+          {
+            "belief_index": 5,
+            "weight": 1.8724818876244118e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P-----pp-------------p--ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 6,
+            "weight": 3.388327104802016e-05,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p------p------p--ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 7,
+            "weight": 3.528465560983644e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p--p----------pp-pp-pprnbqkbnr"
+          },
+          {
+            "belief_index": 8,
+            "weight": 0.0005737264273964656,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p------q------pp-ppppprnb-kbnr"
+          },
+          {
+            "belief_index": 9,
+            "weight": 1.5283510644056068e-06,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P----p-p--------------p-ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 10,
+            "weight": 0.06563243811727835,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p----------n--pp-ppppprnbqkb-r"
+          },
+          {
+            "belief_index": 11,
+            "weight": 3.590092621604078e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p--------p----pp--pppprnbqkbnr"
+          },
+          {
+            "belief_index": 12,
+            "weight": 1.9051860625142822e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-----------p-pp-ppp-prnbqkbnr"
+          },
+          {
+            "belief_index": 13,
+            "weight": 1.9027349110215895e-06,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-----n-------pp-pppppr-bqkbnr"
+          },
+          {
+            "belief_index": 14,
+            "weight": 9.9368266002919e-09,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p----p--------pp-pppp-rnbqkbnr"
+          },
+          {
+            "belief_index": 15,
+            "weight": 3.590092621604078e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p----------p--pp-pp-pprnbqkbnr"
+          }
+        ],
+        "avoid_moves": [
+          "b1a3",
+          "c1e3",
+          "c1f4",
+          "c1g5",
+          "c1h6",
+          "d1d3",
+          "e1d2",
+          "h1g1",
+          "a2a3",
+          "a2a4",
+          "b2b3",
+          "c2c4",
+          "e2e3",
+          "e2e4",
+          "g2g3",
+          "g2g4",
+          "h2h3",
+          "h2h4",
+          "f3g1",
+          "f3h4",
+          "f3e5",
+          "f3g5",
+          "d4d5",
+          "d4c5"
+        ],
+        "actions": [
+          {
+            "uci": "b1d2",
+            "probability": 0,
+            "cf_q": 0.03232210066521589,
+            "q": 0.03232210066521589,
+            "advantage": -0.04161579634796517
+          },
+          {
+            "uci": "b1c3",
+            "probability": 1,
+            "cf_q": 0.07393789701318106,
+            "q": 0.07393789701318106,
+            "advantage": 0
+          },
+          {
+            "uci": "c1d2",
+            "probability": 0,
+            "cf_q": -0.00878352110642833,
+            "q": -0.00878352110642833,
+            "advantage": -0.08272141811960938
+          },
+          {
+            "uci": "d1d2",
+            "probability": 0,
+            "cf_q": 0.004718656176438376,
+            "q": 0.004718656176438376,
+            "advantage": -0.06921924083674268
+          },
+          {
+            "uci": "b2b4",
+            "probability": 0,
+            "cf_q": -0.11785679511745688,
+            "q": -0.11785679511745688,
+            "advantage": -0.19179469213063793
+          },
+          {
+            "uci": "c2c3",
+            "probability": 0,
+            "cf_q": 0.016678725331541314,
+            "q": 0.016678725331541314,
+            "advantage": -0.05725917168163974
+          },
+          {
+            "uci": "f3d2",
+            "probability": 0,
+            "cf_q": -0.14951153092369582,
+            "q": -0.14951153092369582,
+            "advantage": -0.2234494279368769
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    },
+    "candidate": {
+      "move": "b1c3",
+      "elapsed": 2.159621271,
+      "belief_fingerprint": "10062077854741977011",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "b1c3",
+        "root_infoset": 0,
+        "root_value": 0.07588479560536367,
+        "solver_value": 0.07588479560536367,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 16,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1461,
+        "nodes": 152210,
+        "infosets": 2707,
+        "slots": 92947,
+        "iterations": 1480,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 16,
+        "belief_overflowed": false,
+        "samples": [
+          {
+            "belief_index": 0,
+            "weight": 0.04332656136004929,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P----q-p-------------pp-ppppprnb-kbnr"
+          },
+          {
+            "belief_index": 1,
+            "weight": 9.035511812051016e-09,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-------------ppqppppprnb-kbnr"
+          },
+          {
+            "belief_index": 2,
+            "weight": 1.0110380062749448e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-----p--------p-ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 3,
+            "weight": 0.00013979203220759992,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-------n-----pp-pppppr-bqkbnr"
+          },
+          {
+            "belief_index": 4,
+            "weight": 0.8902899937601387,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p---------p---pp-p-ppprnbqkbnr"
+          },
+          {
+            "belief_index": 5,
+            "weight": 1.8724818876244118e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P-----pp-------------p--ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 6,
+            "weight": 3.388327104802016e-05,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p------p------p--ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 7,
+            "weight": 3.528465560983644e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p--p----------pp-pp-pprnbqkbnr"
+          },
+          {
+            "belief_index": 8,
+            "weight": 0.0005737264273964656,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p------q------pp-ppppprnb-kbnr"
+          },
+          {
+            "belief_index": 9,
+            "weight": 1.5283510644056068e-06,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P----p-p--------------p-ppppprnbqkbnr"
+          },
+          {
+            "belief_index": 10,
+            "weight": 0.06563243811727835,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p----------n--pp-ppppprnbqkb-r"
+          },
+          {
+            "belief_index": 11,
+            "weight": 3.590092621604078e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p--------p----pp--pppprnbqkbnr"
+          },
+          {
+            "belief_index": 12,
+            "weight": 1.9051860625142822e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-----------p-pp-ppp-prnbqkbnr"
+          },
+          {
+            "belief_index": 13,
+            "weight": 1.9027349110215895e-06,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p-----n-------pp-pppppr-bqkbnr"
+          },
+          {
+            "belief_index": 14,
+            "weight": 9.9368266002919e-09,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p----p--------pp-pppp-rnbqkbnr"
+          },
+          {
+            "belief_index": 15,
+            "weight": 3.590092621604078e-08,
+            "hypothesis_board": "RNBQKB-RPPP-PPPP-----N-----P------p----------p--pp-pp-pprnbqkbnr"
+          }
+        ],
+        "avoid_moves": [
+          "b1a3",
+          "c1e3",
+          "c1f4",
+          "c1g5",
+          "c1h6",
+          "d1d3",
+          "e1d2",
+          "h1g1",
+          "a2a3",
+          "a2a4",
+          "b2b3",
+          "c2c4",
+          "e2e3",
+          "e2e4",
+          "g2g3",
+          "g2g4",
+          "h2h3",
+          "h2h4",
+          "f3g1",
+          "f3h4",
+          "f3e5",
+          "f3g5",
+          "d4d5",
+          "d4c5"
+        ],
+        "actions": [
+          {
+            "uci": "b1d2",
+            "probability": 0,
+            "cf_q": 0.048283749600849996,
+            "q": 0.048283749600849996,
+            "advantage": -0.02760104600451367
+          },
+          {
+            "uci": "b1c3",
+            "probability": 1,
+            "cf_q": 0.07588479560536367,
+            "q": 0.07588479560536367,
+            "advantage": 0
+          },
+          {
+            "uci": "c1d2",
+            "probability": 0,
+            "cf_q": -0.008174948264147577,
+            "q": -0.008174948264147577,
+            "advantage": -0.08405974386951125
+          },
+          {
+            "uci": "d1d2",
+            "probability": 0,
+            "cf_q": 0.004960179222013538,
+            "q": 0.004960179222013538,
+            "advantage": -0.07092461638335013
+          },
+          {
+            "uci": "b2b4",
+            "probability": 0,
+            "cf_q": -0.11785679511745688,
+            "q": -0.11785679511745688,
+            "advantage": -0.19374159072282054
+          },
+          {
+            "uci": "c2c3",
+            "probability": 0,
+            "cf_q": 0.01225327447436526,
+            "q": 0.01225327447436526,
+            "advantage": -0.0636315211309984
+          },
+          {
+            "uci": "f3d2",
+            "probability": 0,
+            "cf_q": -0.14938439016645924,
+            "q": -0.14938439016645924,
+            "advantage": -0.22526918577182292
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    }
+  },
+  "live_owned_members": [],
+  "files": {
+    "started.json": "d4caeeca6f03dc06426ac6dde8e6615b59febf54692192ac808de932d9086413",
+    "stdout.txt": "68de556c8949a77d0ed50d5eaffe870db78b9fe9d9b93fbace9fc50e7d5a746e",
+    "input.txt": "c3aa792a1cbc72844f4ab5cd9f8f1c7487016f1f44418d753e1c02ebf99d29bb",
+    "stderr.txt": "7de1170cdf35cc989d1afe9cc955073d7d16887e2b57ed57766f2d7e0cbd015f",
+    "process.json": "3f9059bcffd3749be2e8cce61f20c656a125a0b26d70117958c99388b5551bb8",
+    "targets.jsonl": "bf05e1b8a4b0ecadc30b1a88fe7ece935d520d64b5434abd286786b7cb5dd548"
+  }
+}

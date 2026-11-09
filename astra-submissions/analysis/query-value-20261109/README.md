@@ -36,3 +36,36 @@ failures are retained. Native CPU preflight verifies shape and finite gradients.
 Sources: [model](../../experiments/query-value-20261109/model.py),
 [training](../../experiments/query-value-20261109/train.py),
 [admission/launcher](../../experiments/query-value-20261109/launch.py).
+
+## Completed: close this configuration
+
+Original87395 exited0 in24.34seconds; eightepochs ran and validation selected
+epoch8. The73,345parameter model uses293,380bytes of FP32 parameters, about
+46% of the flat student's parameter count. It improves on that student a
+little, but fails the stronger control:
+
+| Validation model | Log loss | Brier |
+|---|---:|---:|
+| Raw archived SF | 0.49166 | 0.14819 |
+| Train-calibrated SF | **0.46767** | **0.14224** |
+| Retained attention teacher | 0.46363 | 0.14435 |
+| Retained flat distilled student | 0.47254 | 0.14706 |
+| New query student | 0.47051 | 0.14701 |
+
+The query student fails both log-loss and Brier requirements against calibrated
+SF. It would still lose to that control without the2%margin. The teacher's
+own validation gain is only0.86%, so the2%development target is demanding;
+that qualification does not change this candidate's negative comparison.
+These validation data select the model and are not a fresh confirmatory set.
+
+Independent CPU review62668 exited0. It reproduces every metric by averaging
+per-game losses, verifies epoch selection and saved hashes, and predicts all
+8,746validation inputs from the checkpoint. Maximum CPU/GPU probability
+difference7.73e-5; CPU log loss differs by9.54e-7 and the failed gate stays
+failed. The old test fold is not evaluated in either script.
+
+No test evaluation, native optimization, search integration, additional fit or
+threshold change follows this configuration. Continuous query compression
+remains a broader idea; this single eight-epoch design did not meet the bar.
+The GPU reservation is released. Checkpoint, predictions and source are
+preserved in model-evidence.tar.gz with an adjacent hash/member manifest.

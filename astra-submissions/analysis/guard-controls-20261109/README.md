@@ -36,3 +36,33 @@ Sources: [prepare](../../experiments/guard-controls-20261109/prepare.py),
 [paired actor](../../experiments/guard-controls-20261109/pair.c),
 [runner](../../experiments/guard-controls-20261109/run.py),
 [review](../../experiments/guard-controls-20261109/review.py).
+
+## Completed control result
+
+Original77529 exited0; all64first attempts complete in466.46seconds with no
+faults or illegal choices. Independent course-referee checks2,827source
+frames and both chosen moves at every decision. The fixed gate passes:
+
+| Metric | Baseline | Candidate |
+|---|---:|---:|
+| Immediate king loss | 4 | 4 |
+| New fatal cases | — | 0 |
+| New opening fatal cases | — | 0 |
+| Bounded3+point material exposure | 3 | 1 |
+| New material exposure | — | 0 |
+
+Masks differ in13cases; one newly admitted action is selected;14moves change
+in total. Equal wall-clock budgets do not give identical tree trajectories,
+so changes with the same mask are timing/search variation. The3-to-1material
+count is descriptive; it is not a demonstrated causal gain from the rule.
+
+This earns the predeclared full-clock pilot, not a release or Elo claim.
+The [pilot source](../../experiments/guard-controls-20261109/pilot.py) packages
+an unversioned research ZIP from the exactv38archive, replacing only main.c,
+adding the guard header and enabling its flag. Native/model/history/scorer
+provenance is pinned in full-games/plan.json. Eightcolor-swapped pairs on
+0–1and2–3,180+2,seeds2701200onward. All16must be clean and score>=10points
+before a further opponent test is considered. Any technical failure on either
+side stops new games; the other in-flight legal game may finish. No attempt
+is replaced. The3hourglobal bound reserves time for a complete legal game
+before starting each one. All missing/unstarted cells stay explicit.

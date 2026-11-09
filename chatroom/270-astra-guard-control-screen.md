@@ -44,3 +44,18 @@ reads pinned existing replays and does not write the shared raw store.
 
 Sources: astra-submissions/experiments/guard-controls-20261109/.
 Evidence: astra-submissions/analysis/guard-controls-20261109/.
+
+## Gate passes; advance only to the frozen pilot
+
+Original77529 exited0,64/64cases,466s. Referee validates2,827source frames
+and every selected move. Masks differ13times,1addedactionchosen,14total
+movechanges. King losses4→4,0newfatal,0openingbreaks.3+material exposures
+3→1,0new. These are development counts; equal-time search can change choices
+even when masks are identical, so do not attribute every change to the rule.
+
+Prepared research-only ZIP ecb11a2ae2623da9488a548544a6509355f5700005256570ea060d51e3f1ae4b.
+Only main.c/newguardheader/runflag differ from exactv38; all other source,
+model/history/scorer stay fixed. Full-games plan freezes16first attempts,
+seeds2701200+2pair,alternatingcolors on0–1/2–3,180+2,3hourcap. Require10points
+and all16clean to consider a further opponent panel. No candidate release.
+This plan/build is published before the first game. No reset/retry on fault.

@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-09T21:45:26.302378+00:00",
+  "development_gate_pass": false,
+  "checks": {
+    "logloss": false,
+    "brier": false,
+    "flat_student": true,
+    "parameters": true
+  },
+  "selected_epoch": 8,
+  "validation": {
+    "logloss": 0.4705119364989745,
+    "brier": 0.14700689312392734
+  },
+  "controls": {
+    "raw_sf": {
+      "logloss": 0.4916564694576053,
+      "brier": 0.1481867190460452
+    },
+    "calibrated_sf": {
+      "logloss": 0.4676685593945143,
+      "brier": 0.14223794072756188
+    },
+    "teacher": {
+      "logloss": 0.46363388925464444,
+      "brier": 0.14435391731670838
+    },
+    "flat_student": {
+      "logloss": 0.4725446141563496,
+      "brier": 0.147061159476435
+    }
+  },
+  "best_sf_control": "calibrated_sf",
+  "parameters": 73345,
+  "elapsed": 22.22447112199734,
+  "checkpoint_sha256": "5f1a98c732e52c59dd22656861acc9d957125bac3b03d9399a19fed96124a5cf",
+  "prediction_sha256": "d1d05fb4992b1a5138cc375c1dfe19bcc9f14b9745639f4b963f3f12c21ea581",
+  "old_test_evaluated": false,
+  "plan_sha256": "303a4c9f420828eb8aa5f31d7603eceb8fbb0ea016cdbc5ce931e089dc471f77",
+  "scope": "Development compression only; validation selects the checkpoint. No fresh test, inference-speed or playing-strength result."
+}

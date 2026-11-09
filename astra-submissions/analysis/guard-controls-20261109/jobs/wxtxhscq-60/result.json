@@ -1,0 +1,341 @@
+{
+  "case": {
+    "game": "wxtxhscq",
+    "side": "white",
+    "ply": 60,
+    "opponent": "Knight Vision",
+    "kind": "king_later",
+    "replay_path": "/home/henrytan/git/iamavirus/data/raw/games/wxtxhscq/replay.json",
+    "replay_sha256": "5800592241af98f5f74d532736169e33524624db161f393cbca57503c0443aec",
+    "id": "wxtxhscq-60"
+  },
+  "elapsed": 7.248824092996074,
+  "exercised": true,
+  "arms": {
+    "base": {
+      "move": "b1a2",
+      "elapsed": 2.163799965,
+      "belief_fingerprint": "10374247584681422615",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "b1a2",
+        "root_infoset": 0,
+        "root_value": -0.7007948104459267,
+        "solver_value": -0.7007948104459267,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 15,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1543,
+        "nodes": 137565,
+        "infosets": 2909,
+        "slots": 78690,
+        "iterations": 1730,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 142,
+        "belief_overflowed": false,
+        "samples": [
+          {
+            "belief_index": 27,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p---kq-r-b-----"
+          },
+          {
+            "belief_index": 38,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp--------ppQp----b-----qr-----k-"
+          },
+          {
+            "belief_index": 42,
+            "weight": 0.09375,
+            "hypothesis_board": "-K----q--P------P---P-----PPp--Bp---------pQp----p------r-b---k-"
+          },
+          {
+            "belief_index": 46,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp-qBp--------rpQp----p--------b---k-"
+          },
+          {
+            "belief_index": 58,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp-qBp---------pQp----p------r-b---k-"
+          },
+          {
+            "belief_index": 60,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp---rp----q---b---k-"
+          },
+          {
+            "belief_index": 67,
+            "weight": 0.03125,
+            "hypothesis_board": "-K----q--P------P---P-----PPp--Bp--------rpQp----p--------b---k-"
+          },
+          {
+            "belief_index": 72,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp--------rpQp----p----q---b----k"
+          },
+          {
+            "belief_index": 76,
+            "weight": 0.09375,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p-----qr-b---k-"
+          },
+          {
+            "belief_index": 78,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp--q-p------r-b---k-"
+          },
+          {
+            "belief_index": 89,
+            "weight": 0.1875,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p---q--r-b---k-"
+          },
+          {
+            "belief_index": 94,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p----qkr-b-----"
+          },
+          {
+            "belief_index": 110,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp--------ppQp---------q-r-b---k-"
+          },
+          {
+            "belief_index": 121,
+            "weight": 0.15625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p------r-b---kq"
+          },
+          {
+            "belief_index": 131,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp-q--p------r-b---k-"
+          }
+        ],
+        "avoid_moves": [
+          "b1a1",
+          "b1c1",
+          "b1c2",
+          "b2b3",
+          "b2b4",
+          "a3a4",
+          "c4c5",
+          "d4d5",
+          "h4f2",
+          "h4g3",
+          "h4g5",
+          "h4f6",
+          "h4e7",
+          "h4d8",
+          "d6h2",
+          "d6g3",
+          "d6b4",
+          "d6f4",
+          "d6c5",
+          "d6d5",
+          "d6e5",
+          "d6c6",
+          "d6e6",
+          "d6c7",
+          "d6d7",
+          "d6e7",
+          "d6b8",
+          "d6d8",
+          "d6f8"
+        ],
+        "actions": [
+          {
+            "uci": "b1a2",
+            "probability": 0.9077907745485477,
+            "cf_q": -0.700581960248523,
+            "q": -0.700581960248523,
+            "advantage": 0.00021285019740358013
+          },
+          {
+            "uci": "h4e1",
+            "probability": 0.09220922545145224,
+            "cf_q": -0.7028902997488436,
+            "q": -0.7028902997488436,
+            "advantage": -0.0020954893029170307
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 1,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false,
+      "worst_capture": "a6c4",
+      "best_response": "a2a1"
+    },
+    "candidate": {
+      "move": "b1a2",
+      "elapsed": 2.160354569,
+      "belief_fingerprint": "10374247584681422615",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "b1a2",
+        "root_infoset": 0,
+        "root_value": -0.7033613863997953,
+        "solver_value": -0.7033613863997953,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 15,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1594,
+        "nodes": 143778,
+        "infosets": 3034,
+        "slots": 82109,
+        "iterations": 1810,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 142,
+        "belief_overflowed": false,
+        "samples": [
+          {
+            "belief_index": 27,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p---kq-r-b-----"
+          },
+          {
+            "belief_index": 38,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp--------ppQp----b-----qr-----k-"
+          },
+          {
+            "belief_index": 42,
+            "weight": 0.09375,
+            "hypothesis_board": "-K----q--P------P---P-----PPp--Bp---------pQp----p------r-b---k-"
+          },
+          {
+            "belief_index": 46,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp-qBp--------rpQp----p--------b---k-"
+          },
+          {
+            "belief_index": 58,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp-qBp---------pQp----p------r-b---k-"
+          },
+          {
+            "belief_index": 60,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp---rp----q---b---k-"
+          },
+          {
+            "belief_index": 67,
+            "weight": 0.03125,
+            "hypothesis_board": "-K----q--P------P---P-----PPp--Bp--------rpQp----p--------b---k-"
+          },
+          {
+            "belief_index": 72,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp--------rpQp----p----q---b----k"
+          },
+          {
+            "belief_index": 76,
+            "weight": 0.09375,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p-----qr-b---k-"
+          },
+          {
+            "belief_index": 78,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp--q-p------r-b---k-"
+          },
+          {
+            "belief_index": 89,
+            "weight": 0.1875,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p---q--r-b---k-"
+          },
+          {
+            "belief_index": 94,
+            "weight": 0.03125,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p----qkr-b-----"
+          },
+          {
+            "belief_index": 110,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp--------ppQp---------q-r-b---k-"
+          },
+          {
+            "belief_index": 121,
+            "weight": 0.15625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp----p------r-b---kq"
+          },
+          {
+            "belief_index": 131,
+            "weight": 0.0625,
+            "hypothesis_board": "-K-------P------P---P-----PPp--Bp---------pQp-q--p------r-b---k-"
+          }
+        ],
+        "avoid_moves": [
+          "b1a1",
+          "b1c1",
+          "b1c2",
+          "b2b3",
+          "b2b4",
+          "a3a4",
+          "c4c5",
+          "d4d5",
+          "h4f2",
+          "h4g3",
+          "h4g5",
+          "h4f6",
+          "h4e7",
+          "h4d8",
+          "d6h2",
+          "d6g3",
+          "d6b4",
+          "d6f4",
+          "d6c5",
+          "d6d5",
+          "d6e5",
+          "d6c6",
+          "d6e6",
+          "d6c7",
+          "d6d7",
+          "d6e7",
+          "d6b8",
+          "d6d8",
+          "d6f8"
+        ],
+        "actions": [
+          {
+            "uci": "b1a2",
+            "probability": 0.9117646976252355,
+            "cf_q": -0.7033307943566506,
+            "q": -0.7033307943566506,
+            "advantage": 3.059204314448394e-05
+          },
+          {
+            "uci": "h4e1",
+            "probability": 0.08823530237476453,
+            "cf_q": -0.7036775041465101,
+            "q": -0.7036775041465101,
+            "advantage": -0.0003161177467150278
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 1,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false,
+      "worst_capture": "a6c4",
+      "best_response": "a2a1"
+    }
+  },
+  "live_owned_members": [],
+  "files": {
+    "started.json": "62832a0d29f2525f0de9f56b0324418624cdee0945d3d45108c495c9c304a954",
+    "stdout.txt": "b5f800528e455cae9fb44cf7a1b3b5007fb8bce1e629462485aaef3836f3d443",
+    "input.txt": "f45f751bf5a0d83ed2f0ca224b7a258d4d7a13f6705f5b3084d1b98731653a0a",
+    "stderr.txt": "e5f9d23e42710bfc141168800e42c310214dd7668b49d36fba3bd8284658ec96",
+    "process.json": "00839f00d1ffca6e4e4748a832526f255ad8ee2ff31cd05958409ac04d59555a",
+    "targets.jsonl": "d028b22120b6ead924754851fcdc8d2ae82ff57663382be73550dbae52f9389b"
+  }
+}

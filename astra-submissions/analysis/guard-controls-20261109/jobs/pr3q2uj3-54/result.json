@@ -1,0 +1,601 @@
+{
+  "case": {
+    "game": "pr3q2uj3",
+    "side": "white",
+    "ply": 54,
+    "opponent": "Mist Opportunities",
+    "kind": "king_later",
+    "replay_path": "/home/henrytan/git/iamavirus/data/raw/games/pr3q2uj3/replay.json",
+    "replay_sha256": "939f3e9e65a3e5f5cff945b4c57ad1061f9682f17e0ffd15d46316676a0959a3",
+    "id": "pr3q2uj3-54"
+  },
+  "elapsed": 11.888614474999486,
+  "exercised": true,
+  "arms": {
+    "candidate": {
+      "move": "h1h2",
+      "elapsed": 2.164002797,
+      "belief_fingerprint": "15417784807946291995",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "h1h2",
+        "root_infoset": 0,
+        "root_value": 0.8895652426357018,
+        "solver_value": 0.8895652426357018,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 13,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1443,
+        "nodes": 150972,
+        "infosets": 2510,
+        "slots": 75062,
+        "iterations": 1560,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 40,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 0,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N------np---p-pp----p-k-----q--"
+          },
+          {
+            "belief_index": 4,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---p-pp----p--------k-"
+          },
+          {
+            "belief_index": 8,
+            "weight": 0.21875,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq--p--np-----pp----p-------k--"
+          },
+          {
+            "belief_index": 10,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N---q--np---p-pp----p-------k--"
+          },
+          {
+            "belief_index": 12,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N---q--np---p-pp----p-k--------"
+          },
+          {
+            "belief_index": 13,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N------np---p-pp----p----q--k--"
+          },
+          {
+            "belief_index": 14,
+            "weight": 0.09375,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq--p--np-----pp----p-k--------"
+          },
+          {
+            "belief_index": 24,
+            "weight": 0.28125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---p-pp----pk---------"
+          },
+          {
+            "belief_index": 28,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---p-pp----p-k--------"
+          },
+          {
+            "belief_index": 29,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N---q--np---p-pp----p---------k"
+          },
+          {
+            "belief_index": 30,
+            "weight": 0.09375,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq--p--np-----pp----p---------k"
+          },
+          {
+            "belief_index": 33,
+            "weight": 0.0625,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N------np---p-pp----p----q----k"
+          },
+          {
+            "belief_index": 39,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---pkpp----p----------"
+          }
+        ],
+        "avoid_moves": [
+          "e1b1",
+          "e1c1",
+          "e1f2",
+          "e1e3",
+          "e1b4",
+          "e1e4",
+          "e1a5",
+          "e1e5",
+          "e1e6",
+          "e1e7",
+          "e1e8",
+          "h1g1"
+        ],
+        "actions": [
+          {
+            "uci": "e1a1",
+            "probability": 0,
+            "cf_q": 0.8775732753362081,
+            "q": 0.8775732753362081,
+            "advantage": -0.0119919672994937
+          },
+          {
+            "uci": "e1d1",
+            "probability": 0.24701074059959016,
+            "cf_q": 0.8870739537730566,
+            "q": 0.8870739537730566,
+            "advantage": -0.002491288862645158
+          },
+          {
+            "uci": "e1f1",
+            "probability": 0,
+            "cf_q": 0.8821717098587573,
+            "q": 0.8821717098587573,
+            "advantage": -0.007393532776944545
+          },
+          {
+            "uci": "e1g1",
+            "probability": 0,
+            "cf_q": 0.8694093196500767,
+            "q": 0.8694093196500767,
+            "advantage": -0.020155922985625074
+          },
+          {
+            "uci": "e1d2",
+            "probability": 0.24309887881160275,
+            "cf_q": 0.88655082424956,
+            "q": 0.88655082424956,
+            "advantage": -0.003014418386141804
+          },
+          {
+            "uci": "e1e2",
+            "probability": 0,
+            "cf_q": 0.8862771757456184,
+            "q": 0.8862771757456184,
+            "advantage": -0.0032880668900834298
+          },
+          {
+            "uci": "e1c3",
+            "probability": 0,
+            "cf_q": 0.8813124172702609,
+            "q": 0.8813124172702609,
+            "advantage": -0.008252825365440919
+          },
+          {
+            "uci": "h1h2",
+            "probability": 0.4923848816676204,
+            "cf_q": 0.892364048603971,
+            "q": 0.892364048603971,
+            "advantage": 0.0027988059682692024
+          },
+          {
+            "uci": "g2f1",
+            "probability": 0.017505498921186687,
+            "cf_q": 0.8878564705131886,
+            "q": 0.8878564705131886,
+            "advantage": -0.0017087721225131913
+          },
+          {
+            "uci": "g2f3",
+            "probability": 0,
+            "cf_q": 0.8082561143549502,
+            "q": 0.8082561143549502,
+            "advantage": -0.08130912828075165
+          },
+          {
+            "uci": "g2h3",
+            "probability": 0,
+            "cf_q": 0.6914215015514726,
+            "q": 0.6914215015514726,
+            "advantage": -0.19814374108422916
+          },
+          {
+            "uci": "g2e4",
+            "probability": 0,
+            "cf_q": 0.5052726599957773,
+            "q": 0.5052726599957773,
+            "advantage": -0.3842925826399245
+          },
+          {
+            "uci": "g2d5",
+            "probability": 0,
+            "cf_q": -0.0312032929707661,
+            "q": -0.0312032929707661,
+            "advantage": -0.9207685356064679
+          },
+          {
+            "uci": "g2c6",
+            "probability": 0,
+            "cf_q": -0.17351133952237935,
+            "q": -0.17351133952237935,
+            "advantage": -1.0630765821580812
+          },
+          {
+            "uci": "g2b7",
+            "probability": 0,
+            "cf_q": 0.7708348851193996,
+            "q": 0.7708348851193996,
+            "advantage": -0.11873035751630223
+          },
+          {
+            "uci": "g2a8",
+            "probability": 0,
+            "cf_q": 0.7158296736209478,
+            "q": 0.7158296736209478,
+            "advantage": -0.17373556901475395
+          },
+          {
+            "uci": "b3b4",
+            "probability": 0,
+            "cf_q": 0.8143640865278818,
+            "q": 0.8143640865278818,
+            "advantage": -0.07520115610781997
+          },
+          {
+            "uci": "g3g4",
+            "probability": 0,
+            "cf_q": 0.867413173185922,
+            "q": 0.867413173185922,
+            "advantage": -0.022152069449779765
+          },
+          {
+            "uci": "a4a5",
+            "probability": 0,
+            "cf_q": 0.13237395332396165,
+            "q": 0.13237395332396165,
+            "advantage": -0.7571912893117402
+          },
+          {
+            "uci": "h4h5",
+            "probability": 0,
+            "cf_q": 0.7862428463126041,
+            "q": 0.7862428463126041,
+            "advantage": -0.1033223963230977
+          },
+          {
+            "uci": "b5a3",
+            "probability": 0,
+            "cf_q": 0.4120710725710681,
+            "q": 0.4120710725710681,
+            "advantage": -0.4774941700646337
+          },
+          {
+            "uci": "b5c3",
+            "probability": 0,
+            "cf_q": 0.8557465277640999,
+            "q": 0.8557465277640999,
+            "advantage": -0.03381871487160193
+          },
+          {
+            "uci": "b5d4",
+            "probability": 0,
+            "cf_q": 0.04200953594327396,
+            "q": 0.04200953594327396,
+            "advantage": -0.8475557066924279
+          },
+          {
+            "uci": "b5d6",
+            "probability": 0,
+            "cf_q": 0.316189792408113,
+            "q": 0.316189792408113,
+            "advantage": -0.5733754502275887
+          },
+          {
+            "uci": "b5a7",
+            "probability": 0,
+            "cf_q": 0.8798053918562602,
+            "q": 0.8798053918562602,
+            "advantage": -0.009759850779441637
+          },
+          {
+            "uci": "b5c7",
+            "probability": 0,
+            "cf_q": 0.18980513013039269,
+            "q": 0.18980513013039269,
+            "advantage": -0.6997601125053091
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    },
+    "base": {
+      "move": "h1h2",
+      "elapsed": 2.161341631,
+      "belief_fingerprint": "15417784807946291995",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "h1h2",
+        "root_infoset": 0,
+        "root_value": 0.8766927783944258,
+        "solver_value": 0.8766927783944258,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 13,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1756,
+        "nodes": 158227,
+        "infosets": 2892,
+        "slots": 85495,
+        "iterations": 1700,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 40,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 0,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N------np---p-pp----p-k-----q--"
+          },
+          {
+            "belief_index": 4,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---p-pp----p--------k-"
+          },
+          {
+            "belief_index": 8,
+            "weight": 0.21875,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq--p--np-----pp----p-------k--"
+          },
+          {
+            "belief_index": 10,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N---q--np---p-pp----p-------k--"
+          },
+          {
+            "belief_index": 12,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N---q--np---p-pp----p-k--------"
+          },
+          {
+            "belief_index": 13,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N------np---p-pp----p----q--k--"
+          },
+          {
+            "belief_index": 14,
+            "weight": 0.09375,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq--p--np-----pp----p-k--------"
+          },
+          {
+            "belief_index": 24,
+            "weight": 0.28125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---p-pp----pk---------"
+          },
+          {
+            "belief_index": 28,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---p-pp----p-k--------"
+          },
+          {
+            "belief_index": 29,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N---q--np---p-pp----p---------k"
+          },
+          {
+            "belief_index": 30,
+            "weight": 0.09375,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq--p--np-----pp----p---------k"
+          },
+          {
+            "belief_index": 33,
+            "weight": 0.0625,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-N------np---p-pp----p----q----k"
+          },
+          {
+            "belief_index": 39,
+            "weight": 0.03125,
+            "hypothesis_board": "----Q--K------B--P----P-P------P-Nq-----np---pkpp----p----------"
+          }
+        ],
+        "avoid_moves": [
+          "e1b1",
+          "e1c1",
+          "e1d1",
+          "e1d2",
+          "e1e2",
+          "e1f2",
+          "e1e3",
+          "e1b4",
+          "e1e4",
+          "e1a5",
+          "e1e5",
+          "e1e6",
+          "e1e7",
+          "e1e8",
+          "h1g1"
+        ],
+        "actions": [
+          {
+            "uci": "e1a1",
+            "probability": 0.19183804478672772,
+            "cf_q": 0.8832406211574869,
+            "q": 0.8832406211574869,
+            "advantage": 0.006547842763061307
+          },
+          {
+            "uci": "e1f1",
+            "probability": 0.10753834527307113,
+            "cf_q": 0.8836618754626339,
+            "q": 0.8836618754626339,
+            "advantage": 0.006969097068208252
+          },
+          {
+            "uci": "e1g1",
+            "probability": 0,
+            "cf_q": 0.8565510023709457,
+            "q": 0.8565510023709457,
+            "advantage": -0.020141776023479885
+          },
+          {
+            "uci": "e1c3",
+            "probability": 0,
+            "cf_q": 0.8746005801658079,
+            "q": 0.8746005801658079,
+            "advantage": -0.0020921982286177254
+          },
+          {
+            "uci": "h1h2",
+            "probability": 0.7006236099402012,
+            "cf_q": 0.8738302278158485,
+            "q": 0.8738302278158485,
+            "advantage": -0.0028625505785770944
+          },
+          {
+            "uci": "g2f1",
+            "probability": 0,
+            "cf_q": 0.8746965295005195,
+            "q": 0.8746965295005195,
+            "advantage": -0.0019962488939061496
+          },
+          {
+            "uci": "g2f3",
+            "probability": 0,
+            "cf_q": 0.7969257740751629,
+            "q": 0.7969257740751629,
+            "advantage": -0.07976700431926276
+          },
+          {
+            "uci": "g2h3",
+            "probability": 0,
+            "cf_q": 0.7123836831578471,
+            "q": 0.7123836831578471,
+            "advantage": -0.16430909523657855
+          },
+          {
+            "uci": "g2e4",
+            "probability": 0,
+            "cf_q": 0.4370430924703359,
+            "q": 0.4370430924703359,
+            "advantage": -0.4396496859240897
+          },
+          {
+            "uci": "g2d5",
+            "probability": 0,
+            "cf_q": -0.21377593824314509,
+            "q": -0.21377593824314509,
+            "advantage": -1.0904687166375706
+          },
+          {
+            "uci": "g2c6",
+            "probability": 0,
+            "cf_q": 0.007339893795081547,
+            "q": 0.007339893795081547,
+            "advantage": -0.869352884599344
+          },
+          {
+            "uci": "g2b7",
+            "probability": 0,
+            "cf_q": 0.7886621091762018,
+            "q": 0.7886621091762018,
+            "advantage": -0.08803066921822378
+          },
+          {
+            "uci": "g2a8",
+            "probability": 0,
+            "cf_q": 0.7153588263489357,
+            "q": 0.7153588263489357,
+            "advantage": -0.16133395204548995
+          },
+          {
+            "uci": "b3b4",
+            "probability": 0,
+            "cf_q": 0.7493267575735967,
+            "q": 0.7493267575735967,
+            "advantage": -0.12736602082082893
+          },
+          {
+            "uci": "g3g4",
+            "probability": 0,
+            "cf_q": 0.828359331280062,
+            "q": 0.828359331280062,
+            "advantage": -0.048333447114363604
+          },
+          {
+            "uci": "a4a5",
+            "probability": 0,
+            "cf_q": 0.04102872550900887,
+            "q": 0.04102872550900887,
+            "advantage": -0.8356640528854168
+          },
+          {
+            "uci": "h4h5",
+            "probability": 0,
+            "cf_q": 0.6750581520262069,
+            "q": 0.6750581520262069,
+            "advantage": -0.20163462636821872
+          },
+          {
+            "uci": "b5a3",
+            "probability": 0,
+            "cf_q": 0.24840290974781354,
+            "q": 0.24840290974781354,
+            "advantage": -0.6282898686466121
+          },
+          {
+            "uci": "b5c3",
+            "probability": 0,
+            "cf_q": 0.8321079582667158,
+            "q": 0.8321079582667158,
+            "advantage": -0.04458482012770981
+          },
+          {
+            "uci": "b5d4",
+            "probability": 0,
+            "cf_q": 0.30153635733702283,
+            "q": 0.30153635733702283,
+            "advantage": -0.5751564210574027
+          },
+          {
+            "uci": "b5d6",
+            "probability": 0,
+            "cf_q": 0.5270469948699227,
+            "q": 0.5270469948699227,
+            "advantage": -0.34964578352450293
+          },
+          {
+            "uci": "b5a7",
+            "probability": 0,
+            "cf_q": 0.8727887906182821,
+            "q": 0.8727887906182821,
+            "advantage": -0.003903987776143536
+          },
+          {
+            "uci": "b5c7",
+            "probability": 0,
+            "cf_q": 0.17910479925333805,
+            "q": 0.17910479925333805,
+            "advantage": -0.6975879791410875
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    }
+  },
+  "live_owned_members": [],
+  "files": {
+    "started.json": "619aa5391d21ec9a48f21fcf63ae969fbff2763a92d3e05a3c856fd110bb3228",
+    "stdout.txt": "3c0cdc4c85f5017107bbe6d2359b8791da8ff929303eb6da891fcc455f2f3b81",
+    "input.txt": "2cbd3c9a48c2a1386eb6d3ed91d897ad4403f78dbcaa6980fd0a4b6e6b08ad61",
+    "stderr.txt": "88ba05be1e48688750b658af241d1f40259de69e64eadc990a87d39a2d759a66",
+    "process.json": "5b2e4ee0407247d4c0d3e56c0f35587b9c0becf564d5c63b686fe9d0a7bcab9b",
+    "targets.jsonl": "9573a5c0a466d5b74a226f7bcb10e50ff7d670345791dad1ff2479959a8bf813"
+  }
+}
