@@ -1,0 +1,42 @@
+{
+  "at": "2026-11-09T22:23:05.183846+00:00",
+  "cores": [
+    6
+  ],
+  "wall_seconds": 2430,
+  "command": [
+    "/home/henrytan/miniconda3/bin/python3",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/export_move_cache.py",
+    "--raw",
+    "/home/henrytan/git/iamavirus/data/raw",
+    "--cache",
+    "/home/henrytan/git/iamavirus/data/cache/move-export.sqlite",
+    "--out-prefix",
+    "/home/henrytan/git/iamavirus/data/derived/moves/arena-latest",
+    "--since",
+    "2026-10-19",
+    "--games",
+    "1000000",
+    "--wall-seconds",
+    "2400",
+    "--legacy-links",
+    "--seed-export",
+    "/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-train.txt",
+    "--seed-export",
+    "/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-test.txt"
+  ],
+  "exporter_sha256": "63c2d62c98c223d066d2cbad1fc381eaa7a884a3941fdc8676a2aba42dbfa063",
+  "launcher_sha256": "fb4c78fbcf113f4734f3bc11ebdf19f9abf53e6848a42222db68d50c9cda2bac",
+  "parity_sha256": "faa01e0ff66fbb07c2945961b1593dda8b2fa41601828cab8b908c1c5799577c",
+  "seeds": {
+    "/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-train.txt": {
+      "bytes": 30903692,
+      "sha256": "73efb3519e89fe79ca4f87c95dd8d563d12f6eaa1a1650cf525247bc8b26168d"
+    },
+    "/home/henrytan/git/iamavirus/data/derived/moves/arena-latest-test.txt": {
+      "bytes": 5316296,
+      "sha256": "a4ee1bea9e9d242932718676a2e7d364bb0563ba76673261be9bbe1a458b95fd"
+    }
+  },
+  "scope": "One bounded cache/bootstrap/full-recent move export. No model fit, dataset episode rebuild or arena action."
+}

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-09T22:03:15.013284+00:00",
+  "updated": "2026-11-09T22:21:02.772272+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -28,6 +28,14 @@
       ],
       "purpose": "272 read-only staged report refresh after daily-service timeout; no ingest or model/export changes",
       "until": "2026-11-09T23:03:15.013540+00:00"
+    },
+    {
+      "agent": "astra",
+      "cores": [
+        6
+      ],
+      "purpose": "273 move-cache parity and one bounded production export; no model fit",
+      "until": "2026-11-09T23:11:02.772272+00:00"
     }
   ]
 }
