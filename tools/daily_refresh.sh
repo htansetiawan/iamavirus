@@ -19,13 +19,13 @@
 # the later ones):
 #   1. ingest our games (newest 1,000) and all teams' games (newest 6,000;
 #      the arena plays about 4,000 a day; already-held games are skipped)
-#   2. training data, rebuilt from all of data/raw:
+#   2. daily report, insights, scorecard and learning-artifact freshness
+#   3. mirror current reports, commit them (path-limited), and push
+#   4. heavy training data exports, rebuilt from all of data/raw:
 #        data/manifests/arena-latest.json (+ shards)  imitation/RL episodes
 #        data/derived/moves/arena-latest-{train,test}.txt  mist-c opponent-model
 #        moves (last 21 days; fit with fowsearch-c tools/fit_move_model.py)
-#   3. data/reports/daily/<date>.{md,json} and latest.md (learning.daily_report)
-#   4. insights, scorecard and learning-artifact freshness / rolling loss index
-#   5. mirror current reports, commit them (path-limited), and push with tools/push_safe.sh
+#   5. archive raw replays; a timeout here cannot preempt report publication
 set -u
 cd "$(dirname "$0")/.."
 PY=.venv/bin/python
@@ -56,20 +56,6 @@ require_raw --reports
 step "games held: $(wc -l <data/raw/accepted.jsonl) accepted lines"
 
 MIST_C="${MIST_C:-$HOME/git/fowsearch-c}"
-if [ "$SEAGATE" = 1 ] && [ -f "$MIST_C/tools/export_moves.py" ]; then
-    mkdir -p data/derived/moves
-    step "mist-c move export"
-    run nice -n 10 python3 "$MIST_C/tools/export_moves.py" data/raw/games data/derived/moves/arena-latest \
-        --games 1000000 --since "$(date -u -d '21 days ago' +%F)"
-fi
-if [ "$SEAGATE" = 1 ] && [ "$DATASET" = 1 ]; then
-    step "dataset manifest"; run nice -n 10 $PY -m learning.dataset --raw data/raw --manifest data/manifests/arena-latest.json
-fi
-
-if [ "$SEAGATE" = 1 ]; then
-    step "mirror replays to $STORE"
-    run $PY tools/mirror_raw.py --raw data/raw --store "$STORE/raw-archive"
-fi
 require_raw --reports
 step "daily report";     run $PY -m learning.daily_report --raw data/raw --out data/reports/daily
 # the deeper analysis: opponent version changes, rating point flow, queen events,
@@ -103,5 +89,21 @@ if [ "${#PUBLISH[@]}" -gt 0 ]; then
     else
         step "report staging failed; not pushing"
     fi
+fi
+# Heavy exports follow report publication: a service timeout must not prevent
+# the current standings/taxonomy from reaching the repository.
+if [ "$SEAGATE" = 1 ] && [ -f "$MIST_C/tools/export_moves.py" ]; then
+    mkdir -p data/derived/moves
+    step "mist-c move export"
+    run nice -n 10 python3 "$MIST_C/tools/export_moves.py" data/raw/games data/derived/moves/arena-latest \
+        --games 1000000 --since "$(date -u -d '21 days ago' +%F)"
+fi
+if [ "$SEAGATE" = 1 ] && [ "$DATASET" = 1 ]; then
+    step "dataset manifest"; run nice -n 10 $PY -m learning.dataset --raw data/raw --manifest data/manifests/arena-latest.json
+fi
+
+if [ "$SEAGATE" = 1 ]; then
+    step "mirror replays to $STORE"
+    run $PY tools/mirror_raw.py --raw data/raw --store "$STORE/raw-archive"
 fi
 step "done"
