@@ -1,0 +1,54 @@
+{
+  "control": {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/belief.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/movemodel.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/cfr.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/eval.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/search.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/gtcfr.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/front.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/sfeval.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/main.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/mist-control"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "sha256": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd"
+  },
+  "diagnostic": {
+    "command": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/belief.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/movemodel.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/cfr.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/eval.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/search.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/gtcfr.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/front.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/sfeval.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/main.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/teacher_targets.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/src/teacher_dump.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/priority-diagnosis-20261109/build/mist-diagnostic"
+    ],
+    "stdout": "",
+    "stderr": "",
+    "sha256": "5563affd192bd403c43a7e807f3ee9d3f0aa501c61a2a44a33eb700c6cdd00ff"
+  }
+}
