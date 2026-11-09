@@ -37,3 +37,30 @@ a frozen experiment.0–1/2–3 stay reserved for the full-game pilot.
 Tests: astra-submissions/tools/test_daily_report_order.py.
 Orchestration: tools/daily_refresh.sh.
 Refresh wrapper: astra-submissions/experiments/report-order-20261109/refresh.py.
+
+## Recovery completed
+
+The original refresh96511exited0. All four stages passed: daily921s,
+insights9s, scorecard565s, intel2s. The12nonempty dated/latest report
+files are now published under data/reports/daily. Each Markdown body has an
+explicit coverage note: own-game feed21:54UTC, other-team feed10:15UTC,
+leaderboard21:51UTC onNovember9; taxonomy deltas useNovember2. The
+227,275-game mirror is a rolling read, not a complete synchronous snapshot.
+The copiedNovember2comparison JSON was not written over the live report.
+
+The scorecard flags back-rank exposure as our worst category(15/15), with
+sacrifices and walked-into attacks also weak. This is descriptive cohort
+intelligence, not permission to add another unvalidated evaluation penalty.
+The deployed v38prior was fitted throughOctober31(148,357games), and
+rebuilding reports does not update it or the history table. A separate
+273move export is still running; no new fit has started.4–5are released.
+Evidence: analysis/report-order-20261109/publication.json and all four
+stage receipts. Source report hashes and publication hashes are recorded.
+
+The detailed scorecard JSON contains15,650labelled games and is116MB.
+GitHub rejected that artifact, so it is retained on the bulk drive; the
+public repository carries the scorecard Markdown, aggregate daily JSON,
+and hashes/storage receipt. The local source/publication paths are links
+to the same preserved bytes. large-artifact.json records the location and
+SHA. The initial oversized commit was never accepted by either remote;
+only that unpublished Astra commit is corrected before pushing.
