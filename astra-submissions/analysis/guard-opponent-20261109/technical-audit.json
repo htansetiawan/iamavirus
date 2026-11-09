@@ -1,0 +1,44 @@
+{
+  "at": "2026-11-09T23:20:36.551268+00:00",
+  "terminal_original_exec": 8929,
+  "exit_code": 0,
+  "technical_games": 3,
+  "valid_strength_games": 0,
+  "unstarted": 29,
+  "referee_frames": 6,
+  "rows": [
+    {
+      "id": "p0-white-base",
+      "arm": "base",
+      "reason": "Time forfeit",
+      "elapsed_seconds": 191.55158587300684,
+      "sent_opponent_clocks": [
+        180.0
+      ],
+      "result_sha256": "ef223196e2597c8c742e4acfe5d4998b96666a991fd3d9add6de6cfe3c7b5a29"
+    },
+    {
+      "id": "p1-white-candidate",
+      "arm": "candidate",
+      "reason": "Time forfeit",
+      "elapsed_seconds": 191.33513670001412,
+      "sent_opponent_clocks": [
+        180.0
+      ],
+      "result_sha256": "1fb7eb9cad3ce84d247c9926fd323b1c8d55cc19c6daeef88826e44de34d436f"
+    },
+    {
+      "id": "p2-white-base",
+      "arm": "base",
+      "reason": "Time forfeit",
+      "elapsed_seconds": 191.33772415900603,
+      "sent_opponent_clocks": [
+        180.0
+      ],
+      "result_sha256": "835712cdf9db530b0e0b254c25121e3f4b6dd0cfc4a398e454f83813e26d7a0d"
+    }
+  ],
+  "cause": "Harness disabled FOW_V2_CLOCK_TIME and supplied no fixed search budget. Adapter zero becomes None; installed Strategy then uses iteration limit only. Fixed50ms preflight did not cover the full-run configuration.",
+  "primary_code": "fow_chess/engine_v2.py Strategy._clock_time_enabled and pick_move budget selection",
+  "next": "Preserve this failed run. Enable clock manager, assert configuration at startup, use full-clock probes and fresh seeds."
+}

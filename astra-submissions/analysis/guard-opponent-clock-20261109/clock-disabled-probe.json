@@ -1,0 +1,10 @@
+{
+  "at": "2026-11-09T23:21:32.097123+00:00",
+  "passed": true,
+  "expected_failure": true,
+  "exit_code": 1,
+  "seconds": 0.1628399530018214,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-opponent-clock-20261109/checked_adapter.py\", line 30, in <module>\n    adapter.main()\n    ~~~~~~~~~~~~^^\n  File \"/home/henrytan/git/iamavirus/astra-submissions/experiments/obscuro-fidelity-20261108/misty_adapter.py\", line 44, in main\n    strategy = PROFILES[os.environ.get('MISTY_PROFILE', 'v1.6')].build_strategy(\n        seed=int(os.environ.get('FOW_SEED', '1')),\n        time_budget_seconds=float(os.environ.get('MISTY_BUDGET', '0')) or None,\n        p_max_size=getattr(engine_v2, '_DEFAULT_P_MAX_SIZE', None))\n  File \"/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-opponent-clock-20261109/checked_adapter.py\", line 19, in build_strategy\n    raise RuntimeError('Misty gate requires its clock manager ON and no fixed budget')\nRuntimeError: Misty gate requires its clock manager ON and no fixed budget\n",
+  "scope": "Negative configuration probe: disabled clock rejects before ready, rather than burning180seconds. No match."
+}

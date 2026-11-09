@@ -1,0 +1,218 @@
+{
+  "id": "p1-white-candidate",
+  "white": "candidate",
+  "black": "misty",
+  "result": "1-0",
+  "reason": "Time forfeit",
+  "timeControl": {
+    "baseSeconds": 180,
+    "incrementSeconds": 2
+  },
+  "frames": [
+    {
+      "ply": 0,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": null,
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    {
+      "ply": 1,
+      "board": "RNBQKBNRPPP-PPPP-----------P--------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPP-PPPP-----------P----???-??-????????-????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "d2d4",
+      "clocks": [
+        173.3887,
+        180.0
+      ]
+    }
+  ],
+  "failedSide": "black",
+  "studentReports": [
+    {
+      "code": "time_limit",
+      "side": "black",
+      "phase": "move",
+      "ply": 1,
+      "clockSeconds": 0,
+      "observation": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "received": null,
+      "atMs": 190034,
+      "transcript": [
+        {
+          "direction": "input",
+          "text": "fow"
+        },
+        {
+          "direction": "input",
+          "text": "b 180 2"
+        },
+        {
+          "direction": "output",
+          "text": "ready"
+        },
+        {
+          "direction": "input",
+          "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+        },
+        {
+          "direction": "input",
+          "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+        },
+        {
+          "direction": "input",
+          "text": "180.000000000"
+        }
+      ],
+      "truncated": false
+    }
+  ],
+  "protocol": {
+    "events": [
+      {
+        "atMs": 1,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 1,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "w 180 2"
+      },
+      {
+        "atMs": 871,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 878,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 878,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "b 180 2"
+      },
+      {
+        "atMs": 1403,
+        "ply": 0,
+        "side": "black",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 1410,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 1410,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 10021,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "move d2d4"
+      },
+      {
+        "atMs": 10028,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 10028,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 10028,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "180.000000000"
+      }
+    ],
+    "truncated": false
+  },
+  "warnings": [],
+  "privateDiagnostics": {
+    "white": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/guard-either-research/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=3620 nodes=267180 iters=3140 p=0.61 v=+0.093 lead=+0 clock=180.0 sf=9779/6.3s mr=-1.00/-1.00 hist=0/0 move=d2d4\n"
+  },
+  "localTurnControl": {
+    "method": "owned process-group SIGSTOP/SIGCONT; buffered observations",
+    "security_sandbox": false,
+    "stderr_retained_bytes": 1048576,
+    "stderr_output_limit": 1048576,
+    "controls": [
+      {
+        "pid": 16,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 3,
+            "seconds": 0.0052742699917871505
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 3,
+            "seconds": 0.005364230979466811
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      },
+      {
+        "pid": 44,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 2,
+            "seconds": 0.005490029987413436
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 2,
+            "seconds": 0.0059002930065616965
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      }
+    ]
+  }
+}

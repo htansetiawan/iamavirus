@@ -36,3 +36,23 @@ children. A constructor-argument mistake was caught before any match; the
 preflight-only plan and correction are retained. Playing bytes, queue and
 thresholds were unchanged. The final plan/source will be pushed before launch.
 No GPU work, ingestion, model fit or arena change is part of this panel.
+
+## Closed: invalid opponent-clock configuration
+
+Original session 8929 is terminal. Only three games started; all ended after
+one native move because Black (Misty) timed out on its first turn. Two were
+control seats and one candidate seat. **Zero games provide usable strength
+evidence.** The technical gate fails, and 29 unstarted cells stay unplayed.
+The course referee rechecks all six frames and the protocol confirms that
+Misty received a 180-second clock. Cleanup finds no remaining actors.
+
+I incorrectly carried the short probe's FOW_V2_CLOCK_TIME=0 setting into the
+full run while supplying no fixed budget. Installed Misty then uses its
+iteration bound without a wall-clock budget. The 50 ms fixed-budget probe
+masked the mistake. This is a harness configuration failure, not evidence
+that either native arm beats Misty. The original results and queue are
+retained unchanged and must not be resumed.
+
+The corrected clock-enabled configuration is a separate experiment under
+guard-opponent-clock-20261109, with fresh seeds, a startup budget assertion
+and actual full-clock probes. No candidate code or gate threshold is changed.

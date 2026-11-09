@@ -1,0 +1,102 @@
+{
+  "at": "2026-11-09T23:21:59.972396+00:00",
+  "passed": true,
+  "error": null,
+  "records": [
+    {
+      "arm": "base",
+      "side": "white",
+      "turns": [
+        {
+          "move": "d2d4",
+          "sent_clock": 180.0,
+          "elapsed_seconds": 0.08940897599677555
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=159 nodes=11160 iters=180 p=0.40 v=+0.058 lead=+0 clock=180.0 sf=448/0.1s mr=-1.00/-1.00 hist=0/0 move=d2d4\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "base",
+      "side": "black",
+      "turns": [
+        {
+          "move": "c7c6",
+          "sent_clock": 180.0,
+          "elapsed_seconds": 0.09179116098675877
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=192 nodes=11218 iters=170 p=0.43 v=-0.027 lead=+0 clock=180.0 sf=424/0.1s mr=-1.00/-1.00 hist=1/1 move=c7c6\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "candidate",
+      "side": "white",
+      "turns": [
+        {
+          "move": "d2d4",
+          "sent_clock": 180.0,
+          "elapsed_seconds": 0.09016165099455975
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/guard-either-research/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=159 nodes=11160 iters=180 p=0.40 v=+0.058 lead=+0 clock=180.0 sf=448/0.1s mr=-1.00/-1.00 hist=0/0 move=d2d4\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "candidate",
+      "side": "black",
+      "turns": [
+        {
+          "move": "c7c6",
+          "sent_clock": 180.0,
+          "elapsed_seconds": 0.08750294501078315
+        }
+      ],
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/guard-either-research/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=182 nodes=10384 iters=160 p=0.35 v=-0.033 lead=+0 clock=180.0 sf=392/0.1s mr=-1.00/-1.00 hist=1/1 move=c7c6\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "misty",
+      "side": "white",
+      "turns": [
+        {
+          "move": "c2c4",
+          "sent_clock": 180.0,
+          "elapsed_seconds": 5.001969897013623
+        },
+        {
+          "move": "g1f3",
+          "sent_clock": 176.99803010298638,
+          "elapsed_seconds": 5.0310502579959575
+        }
+      ],
+      "stderr": "misty-clock: enabled=1 fixed=none budget180=5.000\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "misty",
+      "side": "black",
+      "turns": [
+        {
+          "move": "d7d5",
+          "sent_clock": 180.0,
+          "elapsed_seconds": 5.034090517001459
+        },
+        {
+          "move": "d5e4",
+          "sent_clock": 176.96590948299854,
+          "elapsed_seconds": 5.00378570499015
+        }
+      ],
+      "stderr": "misty-clock: enabled=1 fixed=none budget180=5.000\n",
+      "failure": null,
+      "live_owned_members": []
+    }
+  ],
+  "scope": "Protocol/runtime preflight with real full-clock opponent budgeting, not a playing-strength result"
+}

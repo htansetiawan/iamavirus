@@ -1,0 +1,218 @@
+{
+  "id": "p0-white-base",
+  "white": "base",
+  "black": "misty",
+  "result": "1-0",
+  "reason": "Time forfeit",
+  "timeControl": {
+    "baseSeconds": 180,
+    "incrementSeconds": 2
+  },
+  "frames": [
+    {
+      "ply": 0,
+      "board": "RNBQKBNRPPPPPPPP--------------------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPPPPPPP----------------????????????????????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": null,
+      "clocks": [
+        180.0,
+        180.0
+      ]
+    },
+    {
+      "ply": 1,
+      "board": "RNBQKBNRPPP-PPPP-----------P--------------------pppppppprnbqkbnr",
+      "white": "RNBQKBNRPPP-PPPP-----------P----???-??-????????-????????????????",
+      "black": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "move": "d2d4",
+      "clocks": [
+        173.403171,
+        180.0
+      ]
+    }
+  ],
+  "failedSide": "black",
+  "studentReports": [
+    {
+      "code": "time_limit",
+      "side": "black",
+      "phase": "move",
+      "ply": 1,
+      "clockSeconds": 0,
+      "observation": "????????????????????????????????----------------pppppppprnbqkbnr",
+      "received": null,
+      "atMs": 190521,
+      "transcript": [
+        {
+          "direction": "input",
+          "text": "fow"
+        },
+        {
+          "direction": "input",
+          "text": "b 180 2"
+        },
+        {
+          "direction": "output",
+          "text": "ready"
+        },
+        {
+          "direction": "input",
+          "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+        },
+        {
+          "direction": "input",
+          "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+        },
+        {
+          "direction": "input",
+          "text": "180.000000000"
+        }
+      ],
+      "truncated": false
+    }
+  ],
+  "protocol": {
+    "events": [
+      {
+        "atMs": 2,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 2,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "w 180 2"
+      },
+      {
+        "atMs": 963,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 967,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "fow"
+      },
+      {
+        "atMs": 967,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "b 180 2"
+      },
+      {
+        "atMs": 1906,
+        "ply": 0,
+        "side": "black",
+        "direction": "output",
+        "text": "ready"
+      },
+      {
+        "atMs": 1913,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "RNBQKBNRPPPPPPPP----------------????????????????????????????????"
+      },
+      {
+        "atMs": 1913,
+        "ply": 0,
+        "side": "white",
+        "direction": "input",
+        "text": "180.000000000"
+      },
+      {
+        "atMs": 10510,
+        "ply": 0,
+        "side": "white",
+        "direction": "output",
+        "text": "move d2d4"
+      },
+      {
+        "atMs": 10517,
+        "ply": 0,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 10517,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "????????????????????????????????----------------pppppppprnbqkbnr"
+      },
+      {
+        "atMs": 10517,
+        "ply": 1,
+        "side": "black",
+        "direction": "input",
+        "text": "180.000000000"
+      }
+    ],
+    "truncated": false
+  },
+  "warnings": [],
+  "privateDiagnostics": {
+    "white": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=3692 nodes=275092 iters=3220 p=0.51 v=+0.080 lead=+0 clock=180.0 sf=10057/6.3s mr=-1.00/-1.00 hist=0/0 move=d2d4\n"
+  },
+  "localTurnControl": {
+    "method": "owned process-group SIGSTOP/SIGCONT; buffered observations",
+    "security_sandbox": false,
+    "stderr_retained_bytes": 1048576,
+    "stderr_output_limit": 1048576,
+    "controls": [
+      {
+        "pid": 24,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 3,
+            "seconds": 0.0031329129997175187
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 3,
+            "seconds": 0.005230117996688932
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      },
+      {
+        "pid": 52,
+        "events": [
+          {
+            "op": "freeze",
+            "members": 2,
+            "seconds": 0.005836872005602345
+          },
+          {
+            "op": "resume"
+          },
+          {
+            "op": "freeze",
+            "members": 2,
+            "seconds": 0.0040565310046076775
+          },
+          {
+            "op": "resume"
+          }
+        ]
+      }
+    ]
+  }
+}
