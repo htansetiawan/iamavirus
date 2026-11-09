@@ -1,36 +1,55 @@
-# Move export: parity verified; full recent export prepared
+# Cached move export: full recent cohort published
 
-The cache exporter matches the unchanged mist-c exporter on128actual games:
-110train/18test, exact per-game moves and tags. A second pass after removing
-only the disposable fixture's replay files completed from the cache with
-zero replay reads. Local fixture timing is not an external-drive throughput
-claim. Source IDs, hashes and the finite accepted-index prefix are in
-real-parity.json.
+The daily move exporter now scans the accepted journal sequentially and
+uses an SSD SQLite cache. Only new or changed move hashes require random
+replay reads. It preserves the existing game-ID SHA1 train/test split and
+recorded team tags. Only accepted, dated fow-v1games in the requested window
+are eligible; duplicate journal IDs resolve to the last accepted row.
 
-Eight contract tests pass: filtering/split parity, warm cache without replays,
-changed hashes and duplicate rows, an incomplete journal tail, corrupted and
-truncated seed records, bad-replay rollback, malformed/empty input, a writer
-lock, forced process death before publication, and stable previously resolved
-paths after a later publication. Unit fixture construction initially needed
-a correction for duplicate keyword arguments; the final eight-test run passed.
+The November9export contains**95,557games and7,111,047moves** fromOctober19
+onward:81,347train and14,210test.88,073move lists were recovered from
+SHA-matching records in the interrupted legacy export, and7,484were read
+from replays. The independent auditor verifies the entire selected cohort,
+every move-list hash, team tags, split, ply counts and file hashes against
+the exact100,801,911-byte accepted-journal prefix. No source replays are
+changed. Current data are on the bulk drive; model weights are unchanged.
 
-production-plan.json freezes one40minute export on core6 into the existing
-arena-latest prefix, using complete individually SHA-verified records in the
-interrupted legacy export to seed the SSD cache. The external replay archive
-is read-only. Complete generations and compatibility links are the only
-external-drive writes. No model refit, rollout data rebuild or arena release
-is included. The plan/source will be published before launch. Results and a
-separate full-generation audit remain pending.
+Extraction took363seconds. It initially failed at publication because the
+drive isexFAT and does not support symlinks. That failed attempt is retained
+as exit1in production-terminal.json. The completed generation was audited
+and then published without re-extraction, using the repaired JSON pointer.
+Publication recovery took1.46seconds and verified both compatibility files;
+pre-recovery checks prove the old files survived the failed attempt.
+Today's old exporter had hit the service's6hourlimit, but this is not a
+controlled same-cohort throughput comparison or an Elo claim.
 
-For a consistent input pair, run:
+A128-real-game comparison matches the old exporter's per-game moves, team
+tags and split. The final publication code passes the same comparison from
+cache with zero replay reads. Ten tests cover invalidation, duplicate rows,
+truncated input, bad hashes, exclusive writers, forced process death,
+previously resolved immutable paths, exFAT-style lack of symlinks, and
+publication-only recovery through a mounted-directory symlink. Two complete
+shell integration tests verify report-first ordering, including a later
+exporter terminating its parent. The shared daily script now uses this
+exporter with a40minutebound; no global ingest or service was restarted.
+
+Resolve a consistent input pair before a fit:
 
 ```sh
 python3 astra-submissions/tools/export_move_cache.py \
   --out-prefix data/derived/moves/arena-latest --resolve
 ```
 
-Open the returned immutable train/test paths. Legacy aliases can cross a
-publication between two independent opens; resolving once avoids that race.
-The first read remains O(N)sequential journal bytes, and output is O(M)games;
-SQLite uses indexed move-hash lookups and avoids repeated random file reads.
-This is an I/O and publication fix, not an Elo or learned-weight claim.
+The JSON result names immutable train/test/manifest files. The authoritative
+pointer is arena-latest-current.json. Legacy train/test files are replaced
+individually and can straddle an update if opened independently; they are
+not a snapshot transaction. Keep the original generation paths for a fit.
+The frozen first generation's manifest is copied here; its original data
+exporter hash and the repaired publisher's hash are recorded separately.
+
+Cost: the journal scan remains O(N)sequential bytes and output remains
+O(M)games. Indexed cache lookups replace repeated random listing/replay
+opens; random replay reads become O(new/changedgames), then zero for a fully
+warm cache. Initial fixture timing is not a disk benchmark. This repairs
+data plumbing; no opponent model, history table or arena submission was
+updated. A new fit needs a separate validation and playing gate.

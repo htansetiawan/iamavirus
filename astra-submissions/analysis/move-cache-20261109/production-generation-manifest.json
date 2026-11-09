@@ -1,0 +1,57 @@
+{
+  "format": 1,
+  "complete": true,
+  "at": "2026-11-09T22:30:24.957888+00:00",
+  "journal": {
+    "path": "/media/henrytan/seagate/git/iamavirus-data/raw/accepted.jsonl",
+    "bytes": 100801911,
+    "sha256": "a9927cc2d064b4631462c4494ce25748d1d7d8a6ddc6a5ef37da4fbc31b110ac",
+    "accepted_lines": 227306,
+    "duplicate_lines": 31,
+    "unique_games": 227275,
+    "ignored_incomplete_tail_bytes": 0,
+    "device": 2081,
+    "inode": 1821
+  },
+  "exclusions": {
+    "outside_date_or_undated": 131701,
+    "short_game": 17
+  },
+  "eligible_games": 95557,
+  "requested_games": 1000000,
+  "selected_games": 95557,
+  "counts": {
+    "train": 81347,
+    "test": 14210,
+    "replay_reads": 7484,
+    "cache_hits": 88073
+  },
+  "seed_sources": {
+    "records": 88091,
+    "matching": 88073,
+    "inserted": 88073,
+    "invalid": 0,
+    "incomplete_tail": 0
+  },
+  "since": "2026-10-19",
+  "test_share": 0.15,
+  "seed": 7,
+  "ordering": "sorted accepted IDs then seeded shuffle; full eligible cohort when games >= eligible",
+  "split": "existing SHA1(game_id) mod 1000 < test_share*1000",
+  "exporter_sha256": "63c2d62c98c223d066d2cbad1fc381eaa7a884a3941fdc8676a2aba42dbfa063",
+  "elapsed_seconds": 362.9434578270011,
+  "files": {
+    "train.txt": {
+      "bytes": 33461113,
+      "sha256": "87a8ae39fd7b1e24937a296bfc18fd0b7a2e14d25b6c6ddb6d43242126504c75"
+    },
+    "test.txt": {
+      "bytes": 5841730,
+      "sha256": "d0b289ea62db19b169c3711909a27b7597f6d67669197a3266d39c4386682cba"
+    },
+    "games.jsonl": {
+      "bytes": 21257255,
+      "sha256": "43da32e165ba9ed059cfd93f03e522e596583fed576a42d268ac904276d2d371"
+    }
+  }
+}

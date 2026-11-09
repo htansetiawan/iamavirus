@@ -13,10 +13,10 @@ class ReportOrder(unittest.TestCase):
     def exercise(self,kill):
         with tempfile.TemporaryDirectory() as temporary:
             root=Path(temporary)
-            for name in ('tools','bin','.venv/bin','data/raw','store/raw-archive','mist/tools'):(root/name).mkdir(parents=True,exist_ok=True)
+            for name in ('tools','bin','.venv/bin','data/raw','store/raw-archive','mist/tools','astra-submissions/tools'):(root/name).mkdir(parents=True,exist_ok=True)
             (root/'tools/daily_refresh.sh').write_bytes((ROOT/'tools/daily_refresh.sh').read_bytes())
             (root/'data/raw/accepted.jsonl').write_text('{"id":"fixture"}\n')
-            (root/'mist/tools/export_moves.py').write_text('# fake exporter\n')
+            (root/'astra-submissions/tools/export_move_cache.py').write_text('# fake exporter\n')
             driver=root/'driver.py'
             driver.write_text('''#!/usr/bin/python3
 import json,os,signal,sys,time
@@ -26,7 +26,7 @@ with (root/'actions.jsonl').open('a') as f:f.write(json.dumps(args)+'\\n')
 if any(s in args for s in ['learning.daily_report','learning.daily_insights','learning.scorecard','astra-submissions/tools/daily_intel_status.py']):
  p=root/'data/reports/daily';p.mkdir(parents=True,exist_ok=True)
  for n in ['2026-11-09.md','2026-11-09.json','latest.md','insights-2026-11-09.md','insights-latest.md','scorecard-2026-11-09.md','scorecard-latest.md','intel-2026-11-09.md','intel-2026-11-09.json','intel-latest.md','intel-latest.json']:(p/n).write_text('fixture\\n')
-if any(s.endswith('export_moves.py') for s in args) and os.environ['ORDER_KILL']=='1':
+if any(s.endswith('export_move_cache.py') for s in args) and os.environ['ORDER_KILL']=='1':
  os.kill(os.getppid(),signal.SIGTERM);time.sleep(.05)
 ''')
             driver.chmod(0o755)
@@ -51,7 +51,7 @@ echo '["published"]' >>"$ORDER_ROOT/actions.jsonl"
                      ORDER_ROOT=str(root),ORDER_KILL='1' if kill else '0')
             result=subprocess.run(['bash',str(root/'tools/daily_refresh.sh')],env=env,capture_output=True,text=True,timeout=10)
             actions=[json.loads(line) for line in (root/'actions.jsonl').read_text().splitlines()]
-            published=actions.index(['published']);export=next(i for i,a in enumerate(actions) if any(s.endswith('export_moves.py') for s in a))
+            published=actions.index(['published']);export=next(i for i,a in enumerate(actions) if any(s.endswith('export_move_cache.py') for s in a))
             self.assertLess(published,export)
             for name in ['learning.daily_report','learning.daily_insights','learning.scorecard']:
                 self.assertLess(next(i for i,a in enumerate(actions) if name in a),published)

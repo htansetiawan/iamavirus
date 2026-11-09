@@ -23,8 +23,9 @@
 #   3. mirror current reports, commit them (path-limited), and push
 #   4. heavy training data exports, rebuilt from all of data/raw:
 #        data/manifests/arena-latest.json (+ shards)  imitation/RL episodes
-#        data/derived/moves/arena-latest-{train,test}.txt  mist-c opponent-model
-#        moves (last 21 days; fit with fowsearch-c tools/fit_move_model.py)
+#        data/derived/moves/arena-latest-current.json + immutable generation
+#        mist-c opponent-model moves (last 21 days; resolve the pointer once
+#        before a fit; legacy -{train,test}.txt paths are individual files)
 #   5. archive raw replays; a timeout here cannot preempt report publication
 set -u
 cd "$(dirname "$0")/.."
@@ -92,11 +93,15 @@ if [ "${#PUBLISH[@]}" -gt 0 ]; then
 fi
 # Heavy exports follow report publication: a service timeout must not prevent
 # the current standings/taxonomy from reaching the repository.
-if [ "$SEAGATE" = 1 ] && [ -f "$MIST_C/tools/export_moves.py" ]; then
+if [ "$SEAGATE" = 1 ] && [ -f astra-submissions/tools/export_move_cache.py ]; then
     mkdir -p data/derived/moves
-    step "mist-c move export"
-    run nice -n 10 python3 "$MIST_C/tools/export_moves.py" data/raw/games data/derived/moves/arena-latest \
-        --games 1000000 --since "$(date -u -d '21 days ago' +%F)"
+    step "mist-c cached move export (complete generations)"
+    run nice -n 10 $PY astra-submissions/tools/export_move_cache.py \
+        --raw data/raw --cache data/cache/move-export.sqlite \
+        --out-prefix data/derived/moves/arena-latest --legacy-files \
+        --seed-export data/derived/moves/arena-latest-train.txt \
+        --seed-export data/derived/moves/arena-latest-test.txt \
+        --games 1000000 --wall-seconds 2400 --since "$(date -u -d '21 days ago' +%F)"
 fi
 if [ "$SEAGATE" = 1 ] && [ "$DATASET" = 1 ]; then
     step "dataset manifest"; run nice -n 10 $PY -m learning.dataset --raw data/raw --manifest data/manifests/arena-latest.json

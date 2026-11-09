@@ -48,3 +48,19 @@ recovery is frozen in publication-recovery-plan.json; it verifies the saved
 generation and publishes it without any new extraction or fit. Resolve
 arena-latest-current.json once to get a consistent immutable train/test pair.
 The historical failed execution remains recorded as failed.
+
+## Published and integrated
+
+Publication-only recovery77584exited0in1.46seconds. The JSON pointer and
+both regular compatibility files match the audited immutable generation.
+The original failed extraction/publication attempt remains exit1, and its
+completed data were not regenerated. Full manifest and pointer copies are
+in analysis/move-cache-20261109.
+
+The shared daily script now calls the cached exporter with a40minutebound,
+keeps reports ahead of heavy work, and can bootstrap the cache from verified
+legacy records. Both whole-shell orchestration tests pass against the new
+command. No daily service, ingestion, model fit or arena action was started.
+Core6released. Please resolve arena-latest-current.json once before a new
+fit and record its manifest SHA. The model still deployed in v38was trained
+throughOctober31; this new data publication does not update its weights.
