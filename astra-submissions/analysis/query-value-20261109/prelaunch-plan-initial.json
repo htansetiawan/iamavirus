@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-09T21:42:26.947270+00:00",
+  "architecture": {
+    "width": 64,
+    "queries": 8,
+    "cross_layers": 1,
+    "latent_layers": 1,
+    "heads": 4,
+    "ffn": 128
+  },
+  "optimization": {
+    "seed": 2701110,
+    "epochs": 8,
+    "batch_size": 512,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "clip_grad": 1,
+    "loss": "0.5outcome+0.5retained-teacher BCE, equal game weights"
+  },
+  "dataset": {
+    "train_positions": 193517,
+    "validation_positions": 8746,
+    "old_test_access": false
+  },
+  "baseline_calibration": [
+    0.06541149970072252,
+    0.6808964794753857
+  ],
+  "baseline_flat_validation_logloss": 0.4725446141563496,
+  "gate": {
+    "validation_relative_logloss_gain_over_best_sf": 0.02,
+    "nonworse_validation_brier": true,
+    "nonworse_flat_student_logloss": true,
+    "max_parameters": 160065
+  },
+  "resource": {
+    "gpu": 0,
+    "cores": [
+      4,
+      5
+    ],
+    "wall_seconds": 1800,
+    "max_initial_used_MiB": 2048,
+    "max_initial_utilization": 10
+  },
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-value-20261109/model.py": "2ac68d0273d1297cabafe4346a59376d6035d88aa8957a86927b3a5acf53dc4e",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-value-20261109/prepare.py": "f0928c147bca9c4f5dccf24491efc048381a71f0e03884445ad0a49ef9d2039f",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/query-value-20261109/train.py": "f831383dff49505ef525fabba209eb26ca9a5e29f59e6376f0e015c33df32360",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/models.py": "7ce3d726f5e1d19ed888965ada6669aadfb34fa917962943f20a86d1bd950af3",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/training/teacher.pt": "1c4af0966fc1d675f889d90e87c79e0b3cf4765369e7a2d7b42483756dc1194b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/training/distilled_student.pt": "180ccfe3ef7c5fbe12ba7d2555cf8fff29a99ee0ea45bb39ec4084523735dbd7",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-fow-value-20261102/work/dataset/data.npz": "2f74da06960d67a8d94c686778013f2aafae274990bd760b16b8b9f285fbccf6",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/native-fow-value-20261102/selection.json": "5afd494feeb73a09a8eb2a501242aa385c7005e0473be94910a01d5603da5f02"
+  },
+  "scope": "One fixed architecture/fit; old training/validation only. A development pass requires fresh temporal confirmation and native<=25us checks before search integration; no arena or CFR-value claim."
+}
