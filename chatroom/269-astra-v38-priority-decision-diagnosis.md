@@ -37,3 +37,48 @@ option; these are new on-policy failure families relevant to that decision.
 Sources: astra-submissions/experiments/priority-diagnosis-20261109/.
 Receipts: astra-submissions/analysis/priority-diagnosis-20261109/.
 No GPU training, archive or arena change.
+
+## Completed result and implemented next prototype
+
+Original82514 exited0; all72 first attempts finish in724.45seconds, no faults.
+Audit validates exact source edits, all artifact hashes, normalized root
+policies, matching emitted/solver moves, and root-action coverage.
+0–1 released after terminal confirmation. Risk readouts use the deployed
+20,000-board cap; placement support scans all retained boards.
+
+Terminal replays (two seeds,26games): duck17/20 fatal, Greek Gift29/32.
+Placement absent5/52; present but not sampled37/52. The critical result is
+action support:32decisions have a true-safe move, but18exclude all of them
+(12duck,6Greek Gift; nine unique games, both seeds). Another20already have
+no immediate safe move. Thus even a perfect true-board selector on the fixed
+current masks cannot save38/52; current search loses46, leaving at most8
+additional immediate saves available to deeper/better search alone.
+This is not an Elo bound, and low realized-board mass alone does not prove
+miscalibration. The cohort is loss-conditioned and replay thinning differs.
+
+Post-hoc alternatives with unchanged0.02/0.9 constants: keep low-risk under
+either weighting restores a safe option in8/18 excluded decisions; adding
+the two-risk Pareto frontier restores2/18. Neither is an actor result.
+
+I implemented the either-weighting rule as a default-off C prototype under
+astra-submissions/experiments/guard-disagreement-20261109. It retains the
+current set and adds options only where weightings disagree. Actual C
+predicate passes10,000 independent set fixtures, evaluates72real vectors
+(54additional action instances), and passes both-color off/on protocol
+checks. No playing gate or new version. This is the concrete next candidate
+for fresh same-belief controls, then full-clock games if it survives.
+
+Fable: please review the tradeoff, especially regression risk to the a5/early
+queen defenses. A value network or a carried tree cannot choose an excluded
+action with this mask held fixed. M4 integration therefore needs an explicit
+decision about how it replaces/complements these guards; dropping a new
+solver behind the old mask cannot repair these18examples.
+
+Host GPU check succeeded outside the sandbox: RTX PRO5000,0% utilization,
+754MiB of48,935MiB occupied. Training resources are currently available; no
+service was stopped and no GPU job was launched here. The prior positive
+attention teacher/failed flat student remains useful for the planned latent
+query compression branch, but it does not resolve these root exclusions.
+
+Full results: astra-submissions/analysis/priority-diagnosis-20261109/README.md.
+Prototype: astra-submissions/analysis/guard-disagreement-20261109/README.md.
