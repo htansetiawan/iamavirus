@@ -1,0 +1,69 @@
+{"at": "2026-11-10T16:27:28.382692+00:00", "split": "future", "games": 300, "decisions": 15203, "width": 64, "native_frames": 25906, "unpacked_sha256": "da1772071ac6e90d7f1cdc6f7d1e1573cd9ae014433b2dc3b93907b190afc5e4", "array_bytes": 114022500, "seconds": 1.7024064210127108}
+{
+  "at": "2026-11-10T16:27:32.951547+00:00",
+  "metrics": {
+    "primary": 12257,
+    "nll": {
+      "base": 2.6842277184768593,
+      "linear": 2.6679133209654973,
+      "quadratic": 2.6332351162704892
+    },
+    "gain": 0.050992602206370086,
+    "interval95": [
+      0.04408074517550345,
+      0.0577891855954105
+    ],
+    "matched_linear_gain": 0.034678204695007896,
+    "all_move_gain": 0.04522103769790912,
+    "surprise_captures": 1375,
+    "capture_target_error": 0.0,
+    "capture_action_error": 0.0,
+    "priority": {
+      "instructors": {
+        "games": 69,
+        "decisions": 2415,
+        "gain": 0.039271705046943994
+      },
+      "8d775e234808489c815a4a9f6bbabfe4": {
+        "games": 38,
+        "decisions": 1332,
+        "gain": 0.058861070284448744
+      },
+      "e2f593ca1fea4710b07a8120dd6b3477": {
+        "games": 33,
+        "decisions": 1240,
+        "gain": 0.06537589203362623
+      }
+    }
+  },
+  "conditions": {
+    "primary_count": true,
+    "gain": true,
+    "confidence": true,
+    "matched_linear": true,
+    "all_moves": true,
+    "captures": true,
+    "surprises": true,
+    "priority_coverage": true,
+    "priority_nonregression": true
+  },
+  "native_checks": {
+    "base": {
+      "capture_actions": 27635,
+      "capture_logp_error": 0.0
+    },
+    "linear": {
+      "capture_actions": 27635,
+      "capture_logp_error": 0.0
+    },
+    "quadratic": {
+      "capture_actions": 27635,
+      "capture_logp_error": 0.0
+    }
+  },
+  "decision": "native_cost_and_posterior_design_allowed",
+  "plan_sha256": "9584c46308917ece59f093d959dcb2bb7502e18a21b621c2400e43d24b0490ca",
+  "cohort_sha256": "3cfe2d57b0a42db20c7bb261b659aa175c76ace68ef6075b6658de31e8ac3968",
+  "scores_sha256": "3c7b0802e6324b57036d6d20baac9f8fefaba0767786906757dbe8a10b828408",
+  "scope": "Prospective predictive confirmation only. The293combined gate remains failed. No fitting, playing, runtime integration or new version."
+}

@@ -75,3 +75,29 @@ is untouched, v38 stays active, and no agreement is assumed.
 · [fit source](../astra-submissions/experiments/world-quiet-attention-20261110/fit.py)
 · [CPU reviewer](../astra-submissions/experiments/world-quiet-attention-20261110/verify_fit.py)
 · [architecture and earlier failures](319-astra-world-quiet-attention-prototype.md).
+
+## First execution — completed fit, failed portability check
+
+Original tool session68927 exits1. Source/plan `f993c81d` was verified on both
+mirrors before launch. Two host probes found0%util/750MiB/no compute apps;
+no service was stopped. Fit completes all12epochs per model in71.60s, peak
+Torch allocation771,201,024bytes. Selected teacher epoch11 on development.
+
+Development primary teacher gain is0.148920nats versus native and0.099037
+versus matched quadratic,95%whole-game interval versus quadratic
+[0.086876,0.110626]. All numerical predictive conditions pass, including
+22,469 exact capture-action checks and nonnegative covered priority groups.
+These reused-development results are not prospective strength evidence.
+
+The required CPU checkpoint review fails on teacher maximum per-row
+CPU/GPU log-probability difference **0.000929832**, versus the frozen
+**0.000100000** limit. Its original error and all weights/scores are retained.
+No full independent-review pass is claimed. The final decision is **withhold
+advancement / close this fixed configuration on the parity requirement**;
+`result.json` is the fit's provisional predictive result, not the final gate.
+Do not relax the threshold, retrain or select another checkpoint to rescue it.
+Cores2–3/GPU are released; no arena change. This leaves a positive learning
+signal and a concrete numerical portability question, not a qualified model.
+
+[Final decision](../astra-submissions/analysis/world-quiet-fit-20261110/final-decision.json)
+· [original error](../astra-submissions/analysis/world-quiet-fit-20261110/verify_fit.stderr).

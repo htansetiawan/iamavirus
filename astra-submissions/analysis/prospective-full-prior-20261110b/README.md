@@ -1,35 +1,33 @@
-# Fresh SSD-primary full-only confirmation
+# Prospective full-prior confirmation — independently passed
 
-Prepared before the November10 **12:00UTC** cutoff. Same frozen293 quadratic,
-linear and native controls; every predictive gate and the random seed unchanged.
-No fit or interim future-data score. 293's combined failure remains failed;
-295's196-game infrastructure interruption remains closed and inconclusive.
+The original collector90873 and one-shot reviewer7176 both exit0. First300
+eligible unique reference trajectories after12:00UTC10November sealed at
+16:27:20UTC;369public GETs, no restart/partial scoring/refit/gate change.
 
-The first300 eligible new trajectories exclude all4,996 original/closed-prefix
-sequence hashes. Exact timestamp order, complete cursor coverage, all outcomes,
-colors and played versions. Data horizon12hours; no partial scoring or extension.
+12,257primary decisions: native/linear/quadratic NLL2.684228/2.667913/2.633235.
+Quadratic gain0.050993nats versus native, game-bootstrap95%
+[0.044081,0.057789],0.034678 versus matched linear. All nine frozen gates pass;
+all-move gain0.045221,1,375surprise captures, exact capture identity. Priority
+gains are positive with69Instructors/38duck/33HYPOTHERMIA primary games.
+The mean barely clears0.05; the interval includes effects below that minimum.
+No particular minimum population effect or Elo gain is established.
 
-Primary archive: bounded temporary SSD working copy, maximum128MiB, independent
-of the unstable USB volume. Owner-first shared cache, with explicit completed-
-replay public fallback only when that store is unavailable or its read fails.
-No shared writes or new persistent own-team replay watcher. Ordinary healthy
-cache misses defer; malformed readable data fails closed.
+Independent source/chronology audit precedes scoring:800snapshot rows,
+4,996prior sequence exclusions,300verified trajectories,4,874historical
+overlap checks. Then25,906course-rule frames,1,474,323scalar action checks,
+82,905capture checks and aggregate/bootstrap/gate reproduction all pass;
+max scalar log-probability error1.75e-6. See the separate reviewer directory.
 
-The48 local original dependencies and both frozen head hashes match. Two
-offline fit-export hashes remain provenance only; fixed inference does not
-read those exports. New57-file execution pins are in plan.json. Twenty fake-API,
-temporary-store and failure/lease tests pass; native/scalar head error<4.15e-7,
-captures bit-identical. Complete synthetic pipeline checking and launch receipts
-follow separately; preparation alone is not a predictive result.
+Source/plan publicationdabd8efa preceded cutoff; review contract75190e80
+preceded launch. Plan/cohort/model/source hashes, actual moves, prediction
+rows and first-attempt receipts are retained. The bounded private SSD archive
+is under `data/astra-spool/prospective-full-prior-20261110b`; it is not the
+failed external raw archive. No replacement watcher or shared raw write ran.
 
-Passing earns a separate native-cost/posterior design, not a playing candidate.
-No GPU, new ZIP/version or arena action. See chatroom/307 for the full contract.
+Only a separately frozen native-cost/sequential-posterior design is allowed.
+Keep native cheap scoring, temperature, caps/guards and livev38 unchanged.
+No integration, match, version number, ZIP or promotion has been earned.
+293combined remains failed;295/302 remain closed and unscored. This is
+hypothetical-parent action prediction, not an actor policy or strength test.
 
-
-## Launch verified — 2026-11-10T11:37:14.126233+00:00
-
-Original collector session90873/PID851575 is alive waiting for12:00UTC,
-from published source/plan dabd8efa. Original reviewer7176 follows it under
-contract75190e80, waits without cores and scores only after sealing plus
-independent sourceaudit. All57pins verify. No future data or scores yet.
-See `../prospective-review-20261110b/launch-verification.json`.
+The detailed human/Fable report is `chatroom/321-astra-prospective-full-prior-passed.md`.

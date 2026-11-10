@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-10T16:29:25.694924+00:00",
+  "metrics": {
+    "primary": 8987,
+    "capture_targets": 2817,
+    "nll": {
+      "base": 2.656598795349545,
+      "linear": 2.641255904007253,
+      "quadratic": 2.6067149656965807,
+      "teacher": 2.5076784575947064
+    },
+    "gain": 0.14892033775483884,
+    "matched_quadratic_gain": 0.0990365081018742,
+    "interval95_vs_quadratic": [
+      0.08687638538933964,
+      0.1106255721722524
+    ],
+    "all_move_gain": 0.13387540164361264,
+    "capture_target_error": 0.0,
+    "priority": {
+      "duck": {
+        "games": 88,
+        "decisions": 1282,
+        "gain": 0.1522247086449086
+      },
+      "Instructors": {
+        "games": 73,
+        "decisions": 1147,
+        "gain": 0.09820729325206361
+      },
+      "HYPOTHERMIA": {
+        "games": 81,
+        "decisions": 1187,
+        "gain": 0.12682984650084825
+      }
+    }
+  },
+  "conditions": {
+    "primary_count": true,
+    "native_gain": true,
+    "matched_quadratic": true,
+    "confidence": true,
+    "all_moves": true,
+    "capture_identity": true,
+    "capture_coverage": true,
+    "priority_coverage": true,
+    "priority_nonregression": true
+  },
+  "selection": {
+    "linear": {
+      "kind": "linear",
+      "best_epoch": 6,
+      "primary_nll": 2.641255904007253,
+      "checkpoint_sha256": "9192dc959603106e69c156996f32fb6d4051efb81a8452bf4300dd392ad684f1",
+      "capture_actions_verified": 22469
+    },
+    "quadratic": {
+      "kind": "quadratic",
+      "best_epoch": 11,
+      "primary_nll": 2.6067149656965807,
+      "checkpoint_sha256": "3514c13c71661bf3efbbdf1a5814508bfaf161d3e0dc89e1934d13ab88fd879b",
+      "capture_actions_verified": 22469
+    },
+    "teacher": {
+      "kind": "teacher",
+      "best_epoch": 11,
+      "primary_nll": 2.5076784575947064,
+      "checkpoint_sha256": "ba468558fb0d266b2eb89dfc56cc4f5419ff762fa26cd408f303e277832c7542",
+      "capture_actions_verified": 22469
+    }
+  },
+  "decision": "fresh_confirmation_design_allowed",
+  "plan_sha256": "fc98dab9a1dd29e92494180c06fe6b0a233c7956ee4f3da1ae22f5d75a38322c",
+  "scores_sha256": "f60e595f747172132e8b94b7bcec36eb02dbdc876032c03209e7c1824460f60f",
+  "capture_actions_verified": 22469,
+  "max_gpu_bytes": 771201024,
+  "scope": "One development fit of a full-world capture-preserving quiet-prior teacher and same-split refitted linear/quadratic controls. Exactly original293 TRAIN rows split3500/500 whole games; old validation/test and307 trajectories not processed or scored. Captures/fatal/opening TRAIN rows retained; primary development evaluation after8 own moves excluding immediate self-king-fatal moves. One architecture,seed and12epochs, each checkpoint selected on development primary NLL. Reused development data are not independent confirmation. No identity/result/future input; full parent and both masks are privileged world-prior inputs, not an actor policy. No model choice based on307 or prior failed test outcomes. Failure closes this fixed configuration; all gates plus full CPU/raw-score verification only permit fresh temporal confirmation design, then separately reviewed student/native/posterior stages, no runtime candidate/ZIP/arena action. Native capture bit identity remains untested; current capture identity is within identical Torch normalization. GPU must be free at two host checks; no other service stopped."
+}

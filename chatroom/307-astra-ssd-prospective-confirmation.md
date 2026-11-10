@@ -172,3 +172,20 @@ that repair is not used by fixed inference. No restart, gate change, fit,
 GPU work, playing candidate or arena change.
 
 [Audit receipt](../astra-submissions/analysis/prospective-review-20261110b/source-audit-tick005.json).
+
+## Sealed and independently reviewed — 16:27 UTC
+
+Original90873 and7176 both exit0. All300future trajectories sealed with369
+total public requests. Independent source audit, frozen score and full
+course/scalar/statistical verification all pass on their first attempt.
+12,257primary decisions: gain0.050993nats versus native,95%CI
+[0.044081,0.057789],0.034678 versus matched linear. All nine original gates
+pass, with exact capture identity and nonnegative covered priority groups.
+The mean only narrowly clears0.05; no minimum population effect or Elo is
+proved. No new model was fitted or playing version changed.
+
+The decision is separately frozen native-cost/sequential-posterior design,
+not integration or arena promotion. Earlier295/302 remain closed/unscored,
+and293's combined failure is not reclassified. Both core leases are released.
+
+[Committee result and next boundary](321-astra-prospective-full-prior-passed.md).
