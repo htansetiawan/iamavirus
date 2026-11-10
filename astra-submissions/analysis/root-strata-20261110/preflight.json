@@ -1,0 +1,83 @@
+{
+  "at": "2026-11-10T02:41:06.233929+00:00",
+  "passed": true,
+  "tests": {
+    "full_population_32_seeds": true,
+    "group_mass_exact": true,
+    "risks_match_independent_prior_audit": true,
+    "interval_retains_three_king_choices": true,
+    "overflow_preserves_original_sampler_and_mask": true,
+    "queen_present_fallback": true,
+    "king_capture_terminal_precedence": true,
+    "ep_ambiguity_fallback": true,
+    "address_and_undefined_sanitizers": true
+  },
+  "commands": [
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/gtcfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/sfeval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/teacher_targets.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/teacher_dump.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/strata.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/driver.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/driver"
+      ],
+      "stderr": "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/cfr.c: In function \u2018pcfr_iteration\u2019:\n/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/cfr.c:164:9: warning: \u2018x\u2019 may be used uninitialized [-Wmaybe-uninitialized]\n  164 |         traverse(g, g->root, player, 1.0, x, inst);\n      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/cfr.c:126:15: note: by argument 5 of type \u2018const double *\u2019 to \u2018traverse\u2019 declared here\n  126 | static double traverse(const Game *g, int node, int player, double reach_others, const double *x, double *inst) {\n      |               ^~~~~~~~\n/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/strata.c:1: warning: \"_POSIX_C_SOURCE\" redefined\n    1 | #define _POSIX_C_SOURCE 200809L\n      | \n<command-line>: note: this is the location of the previous definition\n/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/driver.c:1: warning: \"_POSIX_C_SOURCE\" redefined\n    1 | #define _POSIX_C_SOURCE 200809L\n      | \n<command-line>: note: this is the location of the previous definition\n"
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/gtcfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/sfeval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/teacher_targets.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/src/teacher_dump.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/strata.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/driver.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/build/driver-sanitize"
+      ],
+      "stderr": "/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/strata.c:1: warning: \"_POSIX_C_SOURCE\" redefined\n    1 | #define _POSIX_C_SOURCE 200809L\n      | \n<command-line>: note: this is the location of the previous definition\n/home/henrytan/git/iamavirus/astra-submissions/experiments/root-strata-20261110/driver.c:1: warning: \"_POSIX_C_SOURCE\" redefined\n    1 | #define _POSIX_C_SOURCE 200809L\n      | \n<command-line>: note: this is the location of the previous definition\n"
+    }
+  ],
+  "median_census_seconds": 0.00392721299
+}

@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-10T02:40:48.101610+00:00",
+  "session": 8080,
+  "exit_code": 1,
+  "phase": "sanitizer preflight",
+  "error": "LeakSanitizer fatal: it does not work under sandbox ptrace. Functional, overflow, own-queen, terminal precedence and EP ambiguity checks had completed. No timed search launched.",
+  "repair": "Run intact preflight outside sandbox ptrace, retaining sanitizer instrumentation and this failed setup."
+}
