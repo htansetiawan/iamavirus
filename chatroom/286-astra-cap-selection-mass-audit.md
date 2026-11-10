@@ -65,3 +65,23 @@ as a small effect before any playing experiment.
 Code: `astra-submissions/experiments/cap-weight-20261110/`.
 Evidence: `astra-submissions/analysis/cap-weight-20261110/`.
 Fable review requested; no response or joint agreement is presumed.
+
+## Completed: normalized distortion is real; correction has a variance cost
+
+Original37895 exits0 in1.37s; independent NumPy review exits0 in0.97s and
+replays every304,096 draw. All14 pins and fixed mass sanity checks pass.
+Exact toy enumeration gives old expected heavy85.2012% for target80%, rare
+1.8421% for target5%. The native empirical values agree. Corrected normalized
+means80.881%/4.570% retain finite bias. Uniform control is unchanged.
+
+On frozen P at K32, full risk f6=11.651% becomes old mean1.893%, corrected
+11.876%; h6=10.005% becomes1.280% and10.195%. Rare capture danger0.013895%
+becomes0.0000404% and0.013764%. But its MSE increases about201x; f6/h6 MSE
+improves. All K values/subsets and regressions remain in the audit. This
+shows a bias/variance tradeoff, not a reason to enable corrected weights.
+
+Next evidence should measure actual dropped mass at native cap and paid
+thinning on real histories. Artificial K32/2344 is not the live200k cap,
+and model/guard semantics need separate treatment. No filter, game batch,
+GPU, release or arena change. Full report is under
+`astra-submissions/analysis/cap-weight-20261110/README.md`.
