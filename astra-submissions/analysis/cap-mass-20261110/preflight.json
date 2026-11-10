@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-10T03:19:41.939064+00:00",
+  "passed": true,
+  "commands": [
+    [
+      "gcc",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-I",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110",
+      "-I",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110",
+      "-O2",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/belief.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/movemodel.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/cfr.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/eval.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/search.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/gtcfr.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/front.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/sfeval.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/src/main.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/mist"
+    ],
+    [
+      "gcc",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-I",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110",
+      "-I",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/unit.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-mass-20261110/build/unit"
+    ]
+  ],
+  "openings": [
+    {
+      "side": "white",
+      "move": "d2d4"
+    },
+    {
+      "side": "black",
+      "move": "g8f6"
+    }
+  ],
+  "compile_stderr": "",
+  "sanitizer_stderr": "astra-cap-mass: {\"stage\":\"opponent\",\"n\":3,\"keep\":2,\"cutoff\":3,\"max_logw\":-0.22314354777336121,\"scaled_total\":1.2499999943636566,\"scaled_retained\":1.1874999967024653,\"discarded_fraction\":0.049999998354406786,\"corrected_fraction\":0.95775406541234931,\"effective_size\":1.5037593871478176,\"observer_seconds\":0.000479581,\"bytes\":76}\nastra-cap-mass: {\"stage\":\"paid\",\"n\":3,\"keep\":2,\"cutoff\":3,\"max_logw\":0,\"scaled_total\":3,\"scaled_retained\":2,\"discarded_fraction\":0.33333333333333331,\"corrected_fraction\":0.66666666792811924,\"effective_size\":3,\"observer_seconds\":3.6103e-05,\"bytes\":76}\n",
+  "tests": [
+    "strided candidate float access",
+    "uniform NULL weights",
+    "cutoff and subset identity",
+    "duplicate suppression",
+    "input immutability",
+    "address/undefined sanitizers"
+  ]
+}
