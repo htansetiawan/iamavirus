@@ -1,0 +1,32 @@
+--- a/src/belief.c
++++ b/src/belief.c
+@@ -9,0 +10 @@
++#include "native_head.h"
+@@ -177,0 +179 @@
++static int astra_quiet_mode = 0;
+@@ -234,0 +237,6 @@
++    if ((e = getenv("ASTRA_CAPTURE_FIXED"))) {
++        if (strcmp(e, "0") == 0) astra_quiet_mode = 0;
++        else if (strcmp(e, "1") == 0) astra_quiet_mode = 1;
++        else if (strcmp(e, "2") == 0) astra_quiet_mode = 2;
++        else { fprintf(stderr, "astra: invalid fixed-prior mode\n"); exit(2); }
++    }
+@@ -328,6 +336,12 @@
+-            move_logits(&p, &l, b->last_own, w->full, logit);
+-            float top = -INFINITY;
+-            for (int j = 0; j < l.count; ++j) if (logit[j] > top) top = logit[j];
+-            double z = 0;
+-            for (int j = 0; j < l.count; ++j) z += exp((double)(logit[j] - top));
+-            log_z = top + (float)log(z);
++            if (w->full && astra_quiet_mode) {
++                /* Already normalized by the OLD global normalizer. Keeping
++                 * log_z=0 preserves every capture entry before history/temp. */
++                astra_full_logp(&p, &l, b->last_own, astra_quiet_mode == 2, logit);
++            } else {
++                move_logits(&p, &l, b->last_own, w->full, logit);
++                float top = -INFINITY;
++                for (int j = 0; j < l.count; ++j) if (logit[j] > top) top = logit[j];
++                double z = 0;
++                for (int j = 0; j < l.count; ++j) z += exp((double)(logit[j] - top));
++                log_z = top + (float)log(z);
++            }
