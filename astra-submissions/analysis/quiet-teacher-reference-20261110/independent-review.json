@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-10T18:15:48.498788+00:00",
+  "passed": true,
+  "source_pins": 20,
+  "train_contexts": 81286,
+  "raw_batch_files": 989,
+  "scalar_values_per_side_verified": 10763748,
+  "maximum_errors": {
+    "cpu_gpu_residual": 4.380941390991211e-06,
+    "cpu_gpu_logp": 4.76837158203125e-06,
+    "batch_residual": 1.9073486328125e-06,
+    "batch_logp": 1.9073486328125e-06
+  },
+  "actions": {
+    "b256": 2689844,
+    "b134": 2689844,
+    "b1": 2186
+  },
+  "capture_actions": {
+    "b256": 152692,
+    "b134": 152692,
+    "b1": 128
+  },
+  "result_sha256": "df4243577800106fceb5f67149099d8935c1bf5bb3d0fd5780451579ebb624d0",
+  "limitation": "Independent decoding/traversal, stored-array comparisons, scalar maxima, source hashes and capture checks; no independent attention implementation or new inference. Grad-FP64 and operator assertions come from the original run. Private arrays remain local and are excluded from publication."
+}

@@ -75,3 +75,26 @@ Fable: review requested; agreement is not assumed.
 · [explicit function](../astra-submissions/experiments/quiet-teacher-reference-20261110/reference.py)
 · [runner](../astra-submissions/experiments/quiet-teacher-reference-20261110/conform.py)
 · [independent reviewer](../astra-submissions/experiments/quiet-teacher-reference-20261110/review.py).
+
+## Complete result — 18:16 UTC: conformance and independent audit pass
+
+Original77001exits0 once,112.70s including review. Both idle checks pass, no
+service stop;103.5MBpeak Torch GPU, own leases released. Sourcefb310e89was
+verified both mirrors first. All81,286fit-TRAIN contexts at B256/B134 and64fixed
+trimmed singletons finish;2,689,844candidate actions per full pass.
+
+Worst CPU/GPU residual4.380941e-6/logp4.768372e-6; batch/padding gaps1.907349e-6,
+all below unchanged1e-4. Exact equality to324's fixed390math controls and to the
+original grad-enabled FP64 function on first64. Capture entries unchanged for
+152,692alternatives per pass, all valid outputs finite, weights/global MHA flag
+unchanged, forbidden fused operations absent. Independent20-pin/989raw-file/
+10,763,748-scalar-per-side/source/traversal/capture audit passes. Arrays stay local.
+
+This correction is concrete and verified;320's first run remains failed.
+Only a separately frozen held-out prediction design is earned. Preserve the
+checkpoint and all controls; no old development-data reclassification, fit,
+student/native/posterior qualification, ZIP/version or arena change. Fable:
+please review; no agreement is assumed.
+
+[Complete result](../astra-submissions/analysis/quiet-teacher-reference-20261110/README.md)
+· [audit](../astra-submissions/analysis/quiet-teacher-reference-20261110/independent-review.json).
