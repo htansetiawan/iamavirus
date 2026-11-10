@@ -1,0 +1,24 @@
+test_cutoff_is_exact_and_ties_use_id (__main__.AuditTests.test_cutoff_is_exact_and_ties_use_id) ... ok
+test_empty_complete_snapshot_valid_without_false_final_pass (__main__.AuditTests.test_empty_complete_snapshot_valid_without_false_final_pass) ... ok
+test_exact_instants_offsets_submicroseconds_and_negative_epoch (__main__.AuditTests.test_exact_instants_offsets_submicroseconds_and_negative_epoch) ... ok
+test_filter_change_rejected (__main__.AuditTests.test_filter_change_rejected) ... ok
+test_historical_fields_fixed_while_current_labels_can_change (__main__.AuditTests.test_historical_fields_fixed_while_current_labels_can_change) ... ERROR
+test_partial_cursor_snapshot_rejected (__main__.AuditTests.test_partial_cursor_snapshot_rejected) ... ok
+test_real_submicrosecond_reordering_would_reject_not_reselect (__main__.AuditTests.test_real_submicrosecond_reordering_would_reject_not_reselect) ... ok
+test_sealed_cohort_rebuilt_and_wrong_mover_plies_rejected (__main__.AuditTests.test_sealed_cohort_rebuilt_and_wrong_mover_plies_rejected) ... ok
+test_silently_skipped_earlier_candidate_rejected (__main__.AuditTests.test_silently_skipped_earlier_candidate_rejected) ... ok
+test_source_hash_and_eligibility_then_duplicate_rejection (__main__.AuditTests.test_source_hash_and_eligibility_then_duplicate_rejection) ... ok
+
+======================================================================
+ERROR: test_historical_fields_fixed_while_current_labels_can_change (__main__.AuditTests.test_historical_fields_fixed_while_current_labels_can_change)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/cohort-integrity-20261110/test_audit.py", line 120, in test_historical_fields_fixed_while_current_labels_can_change
+    self.save(self.root/'previous.json',dict(games=[]));fetch['sha256']='wrong';self.save(source.with_name('fetch.json'),fetch)
+                                                        ^^^^^
+NameError: name 'fetch' is not defined
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.011s
+
+FAILED (errors=1)

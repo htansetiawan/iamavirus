@@ -1,0 +1,124 @@
+"""Independent selection-audit fixtures, including timestamps beyond microseconds."""
+from copy import deepcopy
+import hashlib
+import json
+from pathlib import Path
+import tempfile
+import unittest
+from audit import audit,candidates,stamp_ns
+
+
+class AuditTests(unittest.TestCase):
+    def setUp(self):
+        self.temp=tempfile.TemporaryDirectory(prefix='astra-cohort-audit-');self.addCleanup(self.temp.cleanup)
+        self.root=Path(self.temp.name);self.archive=self.root/'raw';self.archive.mkdir()
+        self.plan=dict(cutoff='2026-11-10T07:15:00Z',data_deadline='2026-11-10T19:15:00Z',
+                       teams={'ref':'Reference'},games=2,archive=str(self.archive),previous_plan=str(self.root/'previous.json'))
+        self.save(self.root/'previous.json',dict(games=[]))
+        self.plan_sha=self.save(self.root/'plan.json',self.plan)
+        self.save(self.root/'execution.json',dict(plan_sha256=self.plan_sha,ticks=1,status='running'))
+
+    def save(self,path,value):
+        path.parent.mkdir(parents=True,exist_ok=True);raw=json.dumps(value).encode();path.write_bytes(raw)
+        return hashlib.sha256(raw).hexdigest()
+
+    def row(self,game='zero0000',at='2026-11-10T07:14:59.999999999Z'):
+        return dict(id=game,createdAt=at,plies=4,result='1-0',white='Reference',black='Other',
+                    whitePlayerId='ref',blackPlayerId='other',whiteVersion=1,blackVersion=1)
+
+    def snapshot(self,rows,cursor=None):
+        self.save(self.archive/'page-000-00.json',dict(page=dict(games=rows,nextCursor=cursor,sort='played',order='desc'),
+                  fetch=dict(url='https://6s890.lids.mit.edu/api/games?sort=played&order=desc&limit=100')))
+
+    def tick(self,decisions=(),eligible=0,pending=None,candidates=0):
+        self.save(self.archive/'tick-000.json',dict(pages=1,candidates=candidates,decisions=list(decisions),eligible=eligible,pending=pending))
+
+    def test_exact_instants_offsets_submicroseconds_and_negative_epoch(self):
+        self.assertEqual(stamp_ns('1970-01-01T00:00:00Z'),0)
+        self.assertEqual(stamp_ns('1969-12-31T23:59:59.999999999Z'),-1)
+        self.assertEqual(stamp_ns('2026-11-10T02:15:00-05:00'),stamp_ns('2026-11-10T07:15:00Z'))
+        self.assertEqual(stamp_ns('2026-11-10T07:15:00.1Z'),stamp_ns('2026-11-10T07:15:00.100000000+00:00'))
+        self.assertEqual(stamp_ns('2026-11-10T07:15:00.123456999Z')-stamp_ns('2026-11-10T07:15:00.123456001Z'),998)
+        for bad in ('2026-11-10T07:15:00','2026-11-10T07:15:00.1234567891Z'):
+            with self.assertRaises(AssertionError):stamp_ns(bad)
+
+    def test_cutoff_is_exact_and_ties_use_id(self):
+        rows=[self.row('zero0002','2026-11-10T07:15:00.000000001Z'),
+              self.row('zero0001','2026-11-10T07:15:00Z'),self.row('zero0000'),
+              self.row('zero0003','2026-11-10T07:15:00.000000000Z')]
+        self.assertEqual([r['id'] for r in candidates(rows,self.plan)],['zero0001','zero0003','zero0002'])
+
+    def test_empty_complete_snapshot_valid_without_false_final_pass(self):
+        self.snapshot([self.row()],cursor='later');self.tick()
+        result=audit(self.root);self.assertTrue(result['passed']);self.assertFalse(result['complete_cohort_verified'])
+        with self.assertRaisesRegex(AssertionError,'not sealed'):audit(self.root,require_sealed=True)
+
+    def test_partial_cursor_snapshot_rejected(self):
+        self.snapshot([self.row(at='2026-11-10T07:16:00Z')],cursor='next');self.tick(candidates=1)
+        with self.assertRaisesRegex(AssertionError,'never reached cutoff'):audit(self.root)
+
+    def test_silently_skipped_earlier_candidate_rejected(self):
+        self.snapshot([self.row(at='2026-11-10T07:16:00Z'),self.row('older000')]);self.tick(candidates=1)
+        with self.assertRaisesRegex(AssertionError,'silently skipped'):audit(self.root)
+
+    def test_real_submicrosecond_reordering_would_reject_not_reselect(self):
+        a=self.row('aaaa0000','2026-11-10T07:16:00.123456999Z')
+        z=self.row('zzzz0000','2026-11-10T07:16:00.123456001Z')
+        self.snapshot([a,z,self.row('older000')]);self.tick(candidates=2)
+        with self.assertRaisesRegex(AssertionError,'precision changed'):audit(self.root)
+
+    def test_filter_change_rejected(self):
+        self.snapshot([self.row()]);self.tick()
+        path=self.archive/'page-000-00.json';record=json.loads(path.read_text());record['fetch']['url']+='&player=ref';self.save(path,record)
+        with self.assertRaises(AssertionError):audit(self.root)
+
+    def test_source_hash_and_eligibility_then_duplicate_rejection(self):
+        row=self.row(at='2026-11-10T07:16:00Z')
+        rp={k:v for k,v in row.items() if k!='plies'}
+        rp.update(rulesVersion='fow-v1',frames=[dict(move=None)]+[dict(move=m) for m in ['e2e4','e7e5','g1f3','b8c6']])
+        source=self.archive/'games'/row['id']/'replay.json';digest=self.save(source,rp)
+        fetch=dict(sha256=digest);self.save(source.with_name('fetch.json'),fetch)
+        decision=dict(game=row['id'],created_at=row['createdAt'],eligible=True,exclusion=None,source=fetch)
+        self.snapshot([row,self.row('older000')]);self.tick([decision],eligible=1,candidates=1)
+        self.assertEqual(audit(self.root)['verified_eligible'],1)
+        # A trajectory already used for training cannot be counted as new.
+        signature=hashlib.sha256('e2e4 e7e5 g1f3 b8c6'.encode()).hexdigest()
+        self.save(self.root/'previous.json',dict(games=[dict(sequence_sha256=signature)]))
+        with self.assertRaises(AssertionError):audit(self.root)
+        self.save(self.root/'previous.json',dict(games=[]));fetch['sha256']='wrong';self.save(source.with_name('fetch.json'),fetch)
+        with self.assertRaises(AssertionError):audit(self.root)
+
+    def test_sealed_cohort_rebuilt_and_wrong_mover_plies_rejected(self):
+        row=self.row(at='2026-11-10T07:16:00Z');moves=['e2e4','e7e5','g1f3','b8c6']
+        rp={k:v for k,v in row.items() if k!='plies'}
+        rp.update(rulesVersion='fow-v1',frames=[dict(move=None)]+[dict(move=m) for m in moves])
+        source=self.archive/'games'/row['id']/'replay.json';digest=self.save(source,rp)
+        fetch=dict(sha256=digest);self.save(source.with_name('fetch.json'),fetch)
+        decision=dict(game=row['id'],created_at=row['createdAt'],eligible=True,exclusion=None,source=fetch)
+        self.plan['games']=1;self.plan_sha=self.save(self.root/'plan.json',self.plan)
+        self.save(self.root/'execution.json',dict(plan_sha256=self.plan_sha,ticks=1,status='complete',phase='sealed'))
+        self.snapshot([row,self.row('older000')]);self.tick([decision],eligible=1,candidates=1)
+        game=dict(game=row['id'],split='future',created_at=row['createdAt'],white='Reference',black='Other',
+                  white_id='ref',black_id='other',white_version=1,black_version=1,selected_plies=[0,2],
+                  moves=moves,sequence_sha256=hashlib.sha256(' '.join(moves).encode()).hexdigest(),
+                  replay_sha256=digest,frames=5)
+        cohort=dict(games=[game],exclusions=[decision],collection_tick=0,plan_sha256=self.plan_sha,
+                    no_models_or_predictions_opened=True)
+        self.save(self.root/'cohort.json',cohort)
+        self.assertTrue(audit(self.root,require_sealed=True)['complete_cohort_verified'])
+        cohort['games'][0]['selected_plies']=[0];self.save(self.root/'cohort.json',cohort)
+        with self.assertRaises(AssertionError):audit(self.root,require_sealed=True)
+
+    def test_historical_fields_fixed_while_current_labels_can_change(self):
+        old=self.row();old['whiteCurrentVersion']=1;self.snapshot([old]);self.tick()
+        current=deepcopy(json.loads((self.archive/'page-000-00.json').read_text()))
+        current['page']['games'][0]['whiteCurrentVersion']=2
+        self.save(self.archive/'page-001-00.json',current)
+        self.save(self.archive/'tick-001.json',json.loads((self.archive/'tick-000.json').read_text()))
+        self.save(self.root/'execution.json',dict(plan_sha256=self.plan_sha,ticks=2,status='running'))
+        self.assertEqual(audit(self.root)['historical_overlap_rows_checked'],1)
+        current['page']['games'][0]['whiteVersion']=9;self.save(self.archive/'page-001-00.json',current)
+        with self.assertRaisesRegex(AssertionError,'historical row changed'):audit(self.root)
+
+
+if __name__=='__main__':unittest.main()

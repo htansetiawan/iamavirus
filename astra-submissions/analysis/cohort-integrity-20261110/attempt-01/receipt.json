@@ -1,0 +1,7 @@
+{
+  "wrapper_exit_code": 0,
+  "child_test_exit_code": "not separately captured; child log explicitly reports failure",
+  "test_log": "10cases,1NameError in newly edited fixture; live audit afterward succeeded",
+  "defect": "The source-hash negative fixture lines were accidentally placed in the historical-metadata test, referring to variables local to another test. Test-driver error only; audit/collector/model unchanged.",
+  "failed_source_sha256": "e599af5d8490f2e99016b0348ad533a55f75e9757591e18b7aa980772e364fbd"
+}
