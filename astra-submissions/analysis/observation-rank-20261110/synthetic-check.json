@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-10T07:54:11.708582+00:00",
+  "passed": true,
+  "cases": 1000,
+  "values_checked": 129799,
+  "powered_mass_checks": 35008,
+  "temperatures": [
+    0.5,
+    1,
+    2,
+    3
+  ],
+  "invalid_inputs_checked": true,
+  "zero_change_identity": true,
+  "ineligible_bits_unchanged": true,
+  "per_group_multisets_bit_exact": true,
+  "aliasing_checked": true,
+  "merge_measure_counterexample": true,
+  "untempered_only_counterexample": true,
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observation-rank-20261110/rank.c": "cde1cd1038ebb06195b0b7a6676011dd3190a886f4c80b9e5eef5d02e15c85ad",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observation-rank-20261110/check.py": "2844cf9656a757283958bda1043be88606366c96d60e5084e80156a5ea1919c9"
+  },
+  "command": [
+    "gcc",
+    "-O2",
+    "-std=c11",
+    "-shared",
+    "-fPIC",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observation-rank-20261110/rank.c",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/observation-rank-20261110/build/rank.so"
+  ],
+  "scope": "Synthetic C primitive correctness only. Exact observation grouping and native-filter integration are not implemented; no model, replay, posterior or strength test."
+}

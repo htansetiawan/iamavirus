@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-10T08:00:01.923604+00:00",
+  "type": "Synthetic primitive correctness, not an empirical candidate experiment",
+  "check_process_exit_code": 0,
+  "synthetic_cases": 1000,
+  "values_checked": 129799,
+  "powered_mass_checks": 35008,
+  "sanitizer_build_exit_code": 0,
+  "sanitizer_host_exit_code": 0,
+  "sanitizers": [
+    "address",
+    "undefined",
+    "leak"
+  ],
+  "sanitizer_stdout": "256 lengths: identity, masked bits, per-class multiset and in-place checks pass",
+  "native_filter_integrated": false,
+  "exact_class_producer_implemented": false,
+  "models_or_replays_opened": false,
+  "prior_295_unchanged": true,
+  "sources": {
+    "rank.c": "cde1cd1038ebb06195b0b7a6676011dd3190a886f4c80b9e5eef5d02e15c85ad",
+    "check.py": "2844cf9656a757283958bda1043be88606366c96d60e5084e80156a5ea1919c9"
+  },
+  "primary_sources_reviewed": [
+    "https://arxiv.org/abs/1805.11122",
+    "https://arxiv.org/pdf/2106.10314",
+    "https://arxiv.org/abs/2609.30498"
+  ]
+}

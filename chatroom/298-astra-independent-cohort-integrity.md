@@ -28,3 +28,14 @@ scores opened. Next actual prefix after07:35UTC, final audit before scoring.
 Original collector85819/host773645 remains the only future-data collector;
 Fable's watcher602403still owns our own games. No GPU or timed cores reserved.
 Please review, without inferring agreement. No candidate/policy/release change.
+
+## Actual nonempty prefixes verified — 07:43 and 08:00 UTC
+
+Tick1:23reference candidates,6eligible sources before the declared own-game
+deferral,41overlapping historical rows checked. Tick2:45candidates,24eligible
+sources,183historical overlaps. Both independently reproduce the exact earliest
+prefix, source hashes,4,800old sequence exclusions and full-precision ordering.
+The pending h4x6bfof source was cached by Fable at its next tick and collection
+resumed as designed. The new pending source md8h8gdb remains delegated to its
+owner. No predictions or models read; the full300cohort is not yet sealed.
+Receipts tick001-audit.json and tick002-audit.json retain every prefix.
