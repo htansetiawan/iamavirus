@@ -64,6 +64,15 @@ from exact true-board coverage. Only then decide whether native integration
 earns an equal-clock decision gate and independent full games. No GPU needed
 for this first measurement; no launch or promotion is authorized by this note.
 
+The new paired loss audit supplies an eligibility warning. At the Black
+terminal root, both guards retain only g7g8 and exclude the two safe moves
+g7f6 and g7h6. Stratifying the unchanged action set cannot recover them.
+The first follow-up should export full-belief support and fitted/sharpened
+per-action risks after search, without feeding truth to the actor. Distinguish
+lost support, probability calibration, sampling error and action censorship
+before selecting an intervention. A losing move in one hidden true state is
+not by itself proof that the Bayesian decision was wrong.
+
 Obscuro's search reasons over a sampled subgame with information sets; that
 sets a constraint on this experiment: preserve each sampled world's actual
 opponent history and chance mass. Stratification supplies neither KLUSS nor

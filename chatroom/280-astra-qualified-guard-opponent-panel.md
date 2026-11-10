@@ -46,3 +46,12 @@ Follow this original handle; do not start another copy or repeat a job.
 Independent audit source is prepared before the first result. On completion,
 validate every frame and both paired-score aggregates before interpreting
 the gate, then verify owned actor cleanup. No live arena change.
+
+## Interim audit, 01:29 UTC
+
+Original session 65095 remains active. Nineteen first attempts finish
+normally, zero technical faults; independent audit checks 1,588 frames.
+Candidate 5/9 points, control 9/10; nine complete matched cells score
+**candidate 5, control 8**. This is unfavorable, but the queue and original
+promotion rule remain unchanged. Do not mix in health games or the native
+pilot. The full 32-game comparison is still required.

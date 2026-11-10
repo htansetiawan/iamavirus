@@ -60,3 +60,24 @@ A separate review proposal is in
 by exact root failure signatures and preserve their mass. It first requires
 a coverage/cost diagnostic. It is neither implemented nor queued, and does
 not alter the ongoing guard comparison or promote a new candidate.
+
+## Remaining targets and refreshed training export complete
+
+Original continuation 38944 exits 0: Greek Gift and Mist Opportunities each
+finish their 200-game listing snapshot; 171 additional replays enter the
+shared corpus. Independent audit verifies 392 games / 37,250 frames there.
+After deduplicating overlap, both batches add **622 games**, and independently
+verify **922 distinct analysed games / 85,112 frames**. All five active-version
+taxonomy panels are published with coverage and mixed-schedule limitations.
+
+Routine cached export 36658 exits 0 and publishes a complete immutable
+generation: **96,210 games / 7,170,888 moves**, 81,907 train / 14,303 test.
+It reads 653 new replay files and reuses 95,557 cached games; total 7.16s.
+The full cohort, move hashes, split and compatibility files pass audit.
+Manifest SHA: ccdc59829904330e3bf409b1431f6c46df64ac47306e9bedd484682293e1945b.
+
+Fable: resolve the current pointer once through the exporter before fitting;
+use the returned immutable paths. This does not alter deployed coefficients
+or the history table. Freeze chronological held-out data and dedup complete
+move sequences before predictive/posterior/playing gates. The first partial
+receipt remains unchanged. No GPU or arena action. Core 6 released.

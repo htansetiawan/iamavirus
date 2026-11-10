@@ -1,0 +1,508 @@
+{
+  "case": {
+    "id": "p0-black-candidate-79",
+    "game": "p0-black-candidate",
+    "side": "black",
+    "ply": 79,
+    "kind": "preceding",
+    "opponent": "bounded-local-Misty",
+    "replay_path": "/home/henrytan/git/iamavirus/astra-submissions/analysis/guard-opponent-bounded-20261110/jobs/p0-black-candidate/replay.json",
+    "replay_sha256": "b49c3e6deabea3571ffa31f8a2564c67391b3d9f879b17fa8c5b3bd660ba8def",
+    "actual": "h3g2"
+  },
+  "elapsed": 16.859369724988937,
+  "exercised": true,
+  "arms": {
+    "base": {
+      "move": "h3h2",
+      "elapsed": 2.183132873,
+      "belief_fingerprint": "16960114846245696067",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "h3h2",
+        "root_infoset": 0,
+        "root_value": -0.9506193676878805,
+        "solver_value": -0.9506193676878805,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 32,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1010,
+        "nodes": 66263,
+        "infosets": 1455,
+        "slots": 34222,
+        "iterations": 1270,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 200000,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 3237,
+            "weight": 0.03125,
+            "hypothesis_board": "------R-------P---K--P-p----P-p-P---R----------------pk---------"
+          },
+          {
+            "belief_index": 12397,
+            "weight": 0.03125,
+            "hypothesis_board": "R---K-R-------P-----PP-p------p----------P-----------pk---------"
+          },
+          {
+            "belief_index": 18694,
+            "weight": 0.03125,
+            "hypothesis_board": "---R----------P--P--KP-p----P-p----R-----------------pk---------"
+          },
+          {
+            "belief_index": 21095,
+            "weight": 0.03125,
+            "hypothesis_board": "----R---------P------P-pP--K--p-----P------R---------pk---------"
+          },
+          {
+            "belief_index": 22111,
+            "weight": 0.03125,
+            "hypothesis_board": "-R---R-------KP-----PP-pP-----p----------------------pk---------"
+          },
+          {
+            "belief_index": 23003,
+            "weight": 0.03125,
+            "hypothesis_board": "--R-----------P----K-P-pP---P-p-----------R----------pk---------"
+          },
+          {
+            "belief_index": 26605,
+            "weight": 0.03125,
+            "hypothesis_board": "------R-----K-P------P-pP-R-P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 27317,
+            "weight": 0.03125,
+            "hypothesis_board": "----KR------R-P-----PP-p------p-P--------------------pk---------"
+          },
+          {
+            "belief_index": 28496,
+            "weight": 0.03125,
+            "hypothesis_board": "----KR----R---P------P-pP-----p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 32990,
+            "weight": 0.03125,
+            "hypothesis_board": "---R------K---P----R-P-pP-----p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 36123,
+            "weight": 0.03125,
+            "hypothesis_board": "---K--R-------P---R--P-pP---P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 47642,
+            "weight": 0.03125,
+            "hypothesis_board": "---R--R--K----P------P-pP---P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 57677,
+            "weight": 0.03125,
+            "hypothesis_board": "----K--------RP--P-R-P-p------p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 61154,
+            "weight": 0.03125,
+            "hypothesis_board": "---R-------K--P------P-p---R--p-P---P----------------pk---------"
+          },
+          {
+            "belief_index": 79653,
+            "weight": 0.03125,
+            "hypothesis_board": "---R----------P----KPP-p------p-P----------------R---pk---------"
+          },
+          {
+            "belief_index": 80466,
+            "weight": 0.03125,
+            "hypothesis_board": "-------R------P-----KP-pP--R--p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 87603,
+            "weight": 0.03125,
+            "hypothesis_board": "------R----RK-P------P-p-P--P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 89192,
+            "weight": 0.03125,
+            "hypothesis_board": "--R---R------KP-----PP-p-P----p----------------------pk---------"
+          },
+          {
+            "belief_index": 91473,
+            "weight": 0.03125,
+            "hypothesis_board": "---K--R-------P-----PP-pP-----p----R-----------------pk---------"
+          },
+          {
+            "belief_index": 93197,
+            "weight": 0.03125,
+            "hypothesis_board": "---------K----P--R---P-pP---P-p---------R------------pk---------"
+          },
+          {
+            "belief_index": 102029,
+            "weight": 0.03125,
+            "hypothesis_board": "----------K---P--P---P-p-R---Rp-----P----------------pk---------"
+          },
+          {
+            "belief_index": 116570,
+            "weight": 0.03125,
+            "hypothesis_board": "R----------K--P------P-p------p-----P------R----P----pk---------"
+          },
+          {
+            "belief_index": 116645,
+            "weight": 0.03125,
+            "hypothesis_board": "----------K---P-----PP-p------p-P--R------R----------pk---------"
+          },
+          {
+            "belief_index": 128559,
+            "weight": 0.03125,
+            "hypothesis_board": "-K--R-----R---P-----PP-p------p----------------------pk-Q-------"
+          },
+          {
+            "belief_index": 129076,
+            "weight": 0.03125,
+            "hypothesis_board": "------R----K--P-----RP-pP---P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 130133,
+            "weight": 0.03125,
+            "hypothesis_board": "-----R--------P------P-pP--KP-p---------R------------pk---------"
+          },
+          {
+            "belief_index": 137142,
+            "weight": 0.03125,
+            "hypothesis_board": "-------R---R--P--K--PP-p------p-P--------------------pk---------"
+          },
+          {
+            "belief_index": 138973,
+            "weight": 0.03125,
+            "hypothesis_board": "--------R-K---P--P---P-p--R---p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 170674,
+            "weight": 0.03125,
+            "hypothesis_board": "RR---------K--P--P--PP-p------p----------------------pk---------"
+          },
+          {
+            "belief_index": 177987,
+            "weight": 0.03125,
+            "hypothesis_board": "Q---K-R-------P---R-PP-p------p----------------------pk---------"
+          },
+          {
+            "belief_index": 182979,
+            "weight": 0.03125,
+            "hypothesis_board": "-K------------P-RP-RPP-p------p----------------------pk---------"
+          },
+          {
+            "belief_index": 184343,
+            "weight": 0.03125,
+            "hypothesis_board": "R--K-R--------P------P-p----P-p----------------------pk--Q------"
+          }
+        ],
+        "avoid_moves": [
+          "f7f6",
+          "f7f5",
+          "g7f6",
+          "g7g6",
+          "g7h6",
+          "g7f8",
+          "g7g8",
+          "g7h8"
+        ],
+        "actions": [
+          {
+            "uci": "h3h2",
+            "probability": 1,
+            "cf_q": -0.9506193676878805,
+            "q": -0.9506193676878805,
+            "advantage": 0
+          },
+          {
+            "uci": "h3g2",
+            "probability": 0,
+            "cf_q": -0.95102929310839,
+            "q": -0.95102929310839,
+            "advantage": -0.0004099254205095493
+          },
+          {
+            "uci": "g4g3",
+            "probability": 0,
+            "cf_q": -0.9559539225851359,
+            "q": -0.9559539225851359,
+            "advantage": -0.005334554897255428
+          },
+          {
+            "uci": "g4f3",
+            "probability": 0,
+            "cf_q": -0.9532094188276925,
+            "q": -0.9532094188276925,
+            "advantage": -0.002590051139812033
+          },
+          {
+            "uci": "g7h7",
+            "probability": 0,
+            "cf_q": -0.9666058513963858,
+            "q": -0.9666058513963858,
+            "advantage": -0.015986483708505306
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    },
+    "candidate": {
+      "move": "h3h2",
+      "elapsed": 2.198331773,
+      "belief_fingerprint": "16960114846245696067",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "h3h2",
+        "root_infoset": 0,
+        "root_value": -0.9508947587635874,
+        "solver_value": -0.9508947587635874,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 32,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 1142,
+        "nodes": 79731,
+        "infosets": 1720,
+        "slots": 40049,
+        "iterations": 1520,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 200000,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 3237,
+            "weight": 0.03125,
+            "hypothesis_board": "------R-------P---K--P-p----P-p-P---R----------------pk---------"
+          },
+          {
+            "belief_index": 12397,
+            "weight": 0.03125,
+            "hypothesis_board": "R---K-R-------P-----PP-p------p----------P-----------pk---------"
+          },
+          {
+            "belief_index": 18694,
+            "weight": 0.03125,
+            "hypothesis_board": "---R----------P--P--KP-p----P-p----R-----------------pk---------"
+          },
+          {
+            "belief_index": 21095,
+            "weight": 0.03125,
+            "hypothesis_board": "----R---------P------P-pP--K--p-----P------R---------pk---------"
+          },
+          {
+            "belief_index": 22111,
+            "weight": 0.03125,
+            "hypothesis_board": "-R---R-------KP-----PP-pP-----p----------------------pk---------"
+          },
+          {
+            "belief_index": 23003,
+            "weight": 0.03125,
+            "hypothesis_board": "--R-----------P----K-P-pP---P-p-----------R----------pk---------"
+          },
+          {
+            "belief_index": 26605,
+            "weight": 0.03125,
+            "hypothesis_board": "------R-----K-P------P-pP-R-P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 27317,
+            "weight": 0.03125,
+            "hypothesis_board": "----KR------R-P-----PP-p------p-P--------------------pk---------"
+          },
+          {
+            "belief_index": 28496,
+            "weight": 0.03125,
+            "hypothesis_board": "----KR----R---P------P-pP-----p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 32990,
+            "weight": 0.03125,
+            "hypothesis_board": "---R------K---P----R-P-pP-----p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 36123,
+            "weight": 0.03125,
+            "hypothesis_board": "---K--R-------P---R--P-pP---P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 47642,
+            "weight": 0.03125,
+            "hypothesis_board": "---R--R--K----P------P-pP---P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 57677,
+            "weight": 0.03125,
+            "hypothesis_board": "----K--------RP--P-R-P-p------p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 61154,
+            "weight": 0.03125,
+            "hypothesis_board": "---R-------K--P------P-p---R--p-P---P----------------pk---------"
+          },
+          {
+            "belief_index": 79653,
+            "weight": 0.03125,
+            "hypothesis_board": "---R----------P----KPP-p------p-P----------------R---pk---------"
+          },
+          {
+            "belief_index": 80466,
+            "weight": 0.03125,
+            "hypothesis_board": "-------R------P-----KP-pP--R--p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 87603,
+            "weight": 0.03125,
+            "hypothesis_board": "------R----RK-P------P-p-P--P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 89192,
+            "weight": 0.03125,
+            "hypothesis_board": "--R---R------KP-----PP-p-P----p----------------------pk---------"
+          },
+          {
+            "belief_index": 91473,
+            "weight": 0.03125,
+            "hypothesis_board": "---K--R-------P-----PP-pP-----p----R-----------------pk---------"
+          },
+          {
+            "belief_index": 93197,
+            "weight": 0.03125,
+            "hypothesis_board": "---------K----P--R---P-pP---P-p---------R------------pk---------"
+          },
+          {
+            "belief_index": 102029,
+            "weight": 0.03125,
+            "hypothesis_board": "----------K---P--P---P-p-R---Rp-----P----------------pk---------"
+          },
+          {
+            "belief_index": 116570,
+            "weight": 0.03125,
+            "hypothesis_board": "R----------K--P------P-p------p-----P------R----P----pk---------"
+          },
+          {
+            "belief_index": 116645,
+            "weight": 0.03125,
+            "hypothesis_board": "----------K---P-----PP-p------p-P--R------R----------pk---------"
+          },
+          {
+            "belief_index": 128559,
+            "weight": 0.03125,
+            "hypothesis_board": "-K--R-----R---P-----PP-p------p----------------------pk-Q-------"
+          },
+          {
+            "belief_index": 129076,
+            "weight": 0.03125,
+            "hypothesis_board": "------R----K--P-----RP-pP---P-p----------------------pk---------"
+          },
+          {
+            "belief_index": 130133,
+            "weight": 0.03125,
+            "hypothesis_board": "-----R--------P------P-pP--KP-p---------R------------pk---------"
+          },
+          {
+            "belief_index": 137142,
+            "weight": 0.03125,
+            "hypothesis_board": "-------R---R--P--K--PP-p------p-P--------------------pk---------"
+          },
+          {
+            "belief_index": 138973,
+            "weight": 0.03125,
+            "hypothesis_board": "--------R-K---P--P---P-p--R---p-----P----------------pk---------"
+          },
+          {
+            "belief_index": 170674,
+            "weight": 0.03125,
+            "hypothesis_board": "RR---------K--P--P--PP-p------p----------------------pk---------"
+          },
+          {
+            "belief_index": 177987,
+            "weight": 0.03125,
+            "hypothesis_board": "Q---K-R-------P---R-PP-p------p----------------------pk---------"
+          },
+          {
+            "belief_index": 182979,
+            "weight": 0.03125,
+            "hypothesis_board": "-K------------P-RP-RPP-p------p----------------------pk---------"
+          },
+          {
+            "belief_index": 184343,
+            "weight": 0.03125,
+            "hypothesis_board": "R--K-R--------P------P-p----P-p----------------------pk--Q------"
+          }
+        ],
+        "avoid_moves": [
+          "f7f6",
+          "f7f5",
+          "g7f6",
+          "g7g6",
+          "g7h6",
+          "g7f8",
+          "g7g8",
+          "g7h8"
+        ],
+        "actions": [
+          {
+            "uci": "h3h2",
+            "probability": 1,
+            "cf_q": -0.9508947587635874,
+            "q": -0.9508947587635874,
+            "advantage": 0
+          },
+          {
+            "uci": "h3g2",
+            "probability": 0,
+            "cf_q": -0.9511874784886902,
+            "q": -0.9511874784886902,
+            "advantage": -0.00029271972510280797
+          },
+          {
+            "uci": "g4g3",
+            "probability": 0,
+            "cf_q": -0.9559539225851359,
+            "q": -0.9559539225851359,
+            "advantage": -0.0050591638215484735
+          },
+          {
+            "uci": "g4f3",
+            "probability": 0,
+            "cf_q": -0.9547022688487119,
+            "q": -0.9547022688487119,
+            "advantage": -0.003807510085124477
+          },
+          {
+            "uci": "g7h7",
+            "probability": 0,
+            "cf_q": -0.9666058513963858,
+            "q": -0.9666058513963858,
+            "advantage": -0.01571109263279835
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": false,
+      "terminal": null,
+      "exchange_loss": 0,
+      "queen_exchange_loss": 0,
+      "forced_king_loss_after_capture": false
+    }
+  },
+  "live_owned_members": [],
+  "files": {
+    "started.json": "9d7620d593ed0806d0ee95e0706c88e3d2ad3a721305ad4aa2a180ee2e00ba5f",
+    "stdout.txt": "c8d9ea1c8b717e47f03403760b59c6197474dab37bb6ae4b0ce62d2756502a43",
+    "input.txt": "60172e89e660fe7d32b7d1d01142cc8b7a3a2a494a9f823601eddc7c4aa1288c",
+    "stderr.txt": "3f2bda5b2e5c372d189bb0be613cb841486ffd146996c1caf493de633b312390",
+    "process.json": "fa18af68e57d59753572971502ae15f2fbfe36d7df82f15cff89f4143ba26e04",
+    "targets.jsonl": "3cec3da526eda61d8bf3e2392815fcab5b2460f1d715807016eed60ea8576af0"
+  }
+}

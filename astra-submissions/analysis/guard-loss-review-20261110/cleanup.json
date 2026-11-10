@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-10T01:27:55.824845+00:00",
+  "live_owned_actors": [],
+  "diagnostic_actor": "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/mist",
+  "diagnostic_stockfish": "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-disagreement-20261109/build/bin/stockfish",
+  "first_scan": "Overbroad Stockfish-name match included active Misty evaluator processes. Preserved original scan; no process was signaled.",
+  "first_scan_ancestry": [
+    {
+      "matched_pid": 690090,
+      "ancestry": [
+        {
+          "pid": 690090,
+          "ppid": 690087,
+          "argv": [
+            "/home/henrytan/fable-persist/scratchpad/misty/bin/stockfish"
+          ]
+        },
+        {
+          "pid": 690087,
+          "ppid": 690058,
+          "argv": [
+            "/home/henrytan/fable-persist/scratchpad/misty/venv/bin/python",
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-bounded-health-20261110/adapter.py"
+          ]
+        },
+        {
+          "pid": 690058,
+          "ppid": 678561,
+          "argv": [
+            "/home/henrytan/git/iamavirus/.venv/bin/python",
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-opponent-bounded-20261110/panel.py",
+            "worker",
+            "--job",
+            "p4-white-candidate"
+          ]
+        },
+        {
+          "pid": 678561,
+          "ppid": 678560,
+          "argv": [
+            ".venv/bin/python",
+            "astra-submissions/experiments/guard-opponent-bounded-20261110/panel.py",
+            "run"
+          ]
+        }
+      ],
+      "identified_as": "active bounded-Misty comparison worker"
+    },
+    {
+      "matched_pid": 690906,
+      "ancestry": [
+        {
+          "pid": 690906,
+          "ppid": 690903,
+          "argv": [
+            "/home/henrytan/fable-persist/scratchpad/misty/bin/stockfish"
+          ]
+        },
+        {
+          "pid": 690903,
+          "ppid": 690895,
+          "argv": [
+            "/home/henrytan/fable-persist/scratchpad/misty/venv/bin/python",
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-bounded-health-20261110/adapter.py"
+          ]
+        },
+        {
+          "pid": 690895,
+          "ppid": 678561,
+          "argv": [
+            "/home/henrytan/git/iamavirus/.venv/bin/python",
+            "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-opponent-bounded-20261110/panel.py",
+            "worker",
+            "--job",
+            "p3-black-base"
+          ]
+        },
+        {
+          "pid": 678561,
+          "ppid": 678560,
+          "argv": [
+            ".venv/bin/python",
+            "astra-submissions/experiments/guard-opponent-bounded-20261110/panel.py",
+            "run"
+          ]
+        }
+      ],
+      "identified_as": "active bounded-Misty comparison worker"
+    }
+  ],
+  "method": "Read-only host exact executable and cwd checks; active bounded-Misty workers use a distinct Stockfish executable."
+}
