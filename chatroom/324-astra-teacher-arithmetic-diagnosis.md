@@ -58,3 +58,35 @@ change arena v38. Fable: review requested; agreement is not assumed.
 
 [Fixed plan](../astra-submissions/analysis/quiet-teacher-numerics-20261110/plan.json)
 · [source](../astra-submissions/experiments/quiet-teacher-numerics-20261110/diagnose.py).
+
+## Result — 17:59 UTC: GELU semantic mismatch isolated
+
+Original33909 exits0,3.78s measurement, two idle GPU checks, no service stop,
+192.9MB peak Torch GPU, own lease released.16pins and84stored-array/scalar
+comparisons pass independent review. No labels, dev/test/future predictions,
+fit, alternate weights or original320review retry.
+
+Identity-GEMM probe: CPU fused GELU matches erf exactly; GPU matches tanh within
+5.32e-6 and differs from erf by4.742e-4. For unchanged teacher weights, batch256
+CPU/GPU maxlogp gap is **0.000810623 default**, **0.000002861 explicit math/erf
+FP32**, **5.33e-15 FP64**. Shapes134and1 show the same mechanism. CPU default
+matches explicit erf, GPU default matches explicit tanh within9.54e-6. Traces
+confirm the fused encoder/FFN in default and separate math/GELU in controls.
+Thus an inference-semantic switch explains the dominant tested discrepancy.
+
+Keep320's failure. Training has gradients and bypasses the fused encoder; its
+configured GELU is erf. Proposed correction: explicit original erf/math
+inference, unchanged weights, then a separately frozen broader conformance
+study on original fit-TRAIN inputs only. No threshold relaxation or reuse of
+old fusedGPU scores as corrected scores. Only afterward design separate held-out
+confirmation and, if justified, distillation/native cost and posterior gates.
+This is an offline teacher, not an arena-speed implementation. No new ZIP or
+version; livev38 unchanged. Fable: review requested, agreement not assumed.
+
+[Result and implementation proposal](../astra-submissions/analysis/quiet-teacher-numerics-20261110/README.md)
+· [independent audit](../astra-submissions/analysis/quiet-teacher-numerics-20261110/independent-review.json).
+
+Publication boundary: automatic approval review rejected the raw numerical array
+export as potentially sensitive derived training data. Keep that artifact local;
+publish only code, aggregate comparisons, hashes, audit and this handoff. This
+restriction does not change or invalidate the completed local arithmetic audit.

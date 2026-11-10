@@ -1,0 +1,487 @@
+{"stage": "default-f32_cpu_b256", "contexts": 256, "actions": 7909}
+{"stage": "default-f32_cpu_b134", "contexts": 134, "actions": 4110}
+{"stage": "default-f32_cpu_b1", "contexts": 1, "actions": 29}
+{"stage": "default-f32_cuda_b256", "contexts": 256, "actions": 7909}
+{"stage": "default-f32_cuda_b134", "contexts": 134, "actions": 4110}
+{"stage": "default-f32_cuda_b1", "contexts": 1, "actions": 29}
+{"stage": "math-erf-f32_cpu_b256", "contexts": 256, "actions": 7909}
+{"stage": "math-erf-f32_cpu_b134", "contexts": 134, "actions": 4110}
+{"stage": "math-erf-f32_cpu_b1", "contexts": 1, "actions": 29}
+{"stage": "math-erf-f32_cuda_b256", "contexts": 256, "actions": 7909}
+{"stage": "math-erf-f32_cuda_b134", "contexts": 134, "actions": 4110}
+{"stage": "math-erf-f32_cuda_b1", "contexts": 1, "actions": 29}
+{"stage": "math-tanh-f32_cpu_b256", "contexts": 256, "actions": 7909}
+{"stage": "math-tanh-f32_cpu_b134", "contexts": 134, "actions": 4110}
+{"stage": "math-tanh-f32_cpu_b1", "contexts": 1, "actions": 29}
+{"stage": "math-tanh-f32_cuda_b256", "contexts": 256, "actions": 7909}
+{"stage": "math-tanh-f32_cuda_b134", "contexts": 134, "actions": 4110}
+{"stage": "math-tanh-f32_cuda_b1", "contexts": 1, "actions": 29}
+{"stage": "math-erf-f64_cpu_b256", "contexts": 256, "actions": 7909}
+{"stage": "math-erf-f64_cpu_b134", "contexts": 134, "actions": 4110}
+{"stage": "math-erf-f64_cpu_b1", "contexts": 1, "actions": 29}
+{"stage": "math-erf-f64_cuda_b256", "contexts": 256, "actions": 7909}
+{"stage": "math-erf-f64_cuda_b134", "contexts": 134, "actions": 4110}
+{"stage": "math-erf-f64_cuda_b1", "contexts": 1, "actions": 29}
+{
+  "input_sha256": "f6542451899eee02163ce2c155bc2c45124c92a232ae1d2ea08eb82ba0a6ab6d",
+  "operator_probe": {
+    "cpu": {
+      "none": {
+        "maximum": 0.0,
+        "rms": 0.0
+      },
+      "tanh": {
+        "maximum": 0.0004734992980957031,
+        "rms": 0.00024642487125472784
+      }
+    },
+    "cuda": {
+      "none": {
+        "maximum": 0.0004742145538330078,
+        "rms": 0.0002463621979883732
+      },
+      "tanh": {
+        "maximum": 5.3122639656066895e-06,
+        "rms": 1.7252654177869608e-06
+      }
+    }
+  },
+  "comparisons": {
+    "default-f32_b256": {
+      "residual": {
+        "maximum": 0.001377686858177185,
+        "rms": 0.00029534130481516325
+      },
+      "logp": {
+        "maximum": 0.0008106231689453125,
+        "rms": 0.00015528850676810158
+      }
+    },
+    "math-erf-f32_b256": {
+      "residual": {
+        "maximum": 2.682209014892578e-06,
+        "rms": 5.07493176193623e-07
+      },
+      "logp": {
+        "maximum": 2.86102294921875e-06,
+        "rms": 6.038475901002786e-07
+      }
+    },
+    "math-tanh-f32_b256": {
+      "residual": {
+        "maximum": 3.0994415283203125e-06,
+        "rms": 4.985584681216281e-07
+      },
+      "logp": {
+        "maximum": 3.814697265625e-06,
+        "rms": 6.010257282338272e-07
+      }
+    },
+    "math-erf-f64_b256": {
+      "residual": {
+        "maximum": 5.10702591327572e-15,
+        "rms": 9.138724750999463e-16
+      },
+      "logp": {
+        "maximum": 5.329070518200751e-15,
+        "rms": 1.051802894633114e-15
+      }
+    },
+    "default-f32_cpu_b256_vs_f64_erf": {
+      "residual": {
+        "maximum": 2.532725360770982e-06,
+        "rms": 4.964764159015542e-07
+      },
+      "logp": {
+        "maximum": 4.051920603487247e-06,
+        "rms": 5.563781387932986e-07
+      }
+    },
+    "math-erf-f32_cpu_b256_vs_f64_erf": {
+      "residual": {
+        "maximum": 2.191668321160911e-06,
+        "rms": 4.823191559721746e-07
+      },
+      "logp": {
+        "maximum": 2.82295357223461e-06,
+        "rms": 5.548816832178709e-07
+      }
+    },
+    "math-tanh-f32_cpu_b256_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.0013764147829603557,
+        "rms": 0.0002953880877584593
+      },
+      "logp": {
+        "maximum": 0.0008133928602767071,
+        "rms": 0.00015529306355962718
+      }
+    },
+    "default-f32_cuda_b256_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.0013781731199845881,
+        "rms": 0.00029537070049142055
+      },
+      "logp": {
+        "maximum": 0.0008110086744865797,
+        "rms": 0.00015529513464752166
+      }
+    },
+    "math-erf-f32_cuda_b256_vs_f64_erf": {
+      "residual": {
+        "maximum": 2.92436515203498e-06,
+        "rms": 4.970980790097626e-07
+      },
+      "logp": {
+        "maximum": 2.9807156183281336e-06,
+        "rms": 5.527044139460614e-07
+      }
+    },
+    "math-tanh-f32_cuda_b256_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.0013765786957368464,
+        "rms": 0.0002954093250290976
+      },
+      "logp": {
+        "maximum": 0.0008133928602775953,
+        "rms": 0.00015529509403099337
+      }
+    },
+    "default-f32_b134": {
+      "residual": {
+        "maximum": 0.0012131929397583008,
+        "rms": 0.0002933712111986079
+      },
+      "logp": {
+        "maximum": 0.00072479248046875,
+        "rms": 0.00014910024866850112
+      }
+    },
+    "math-erf-f32_b134": {
+      "residual": {
+        "maximum": 2.1457672119140625e-06,
+        "rms": 5.338809359050463e-07
+      },
+      "logp": {
+        "maximum": 2.86102294921875e-06,
+        "rms": 5.862241574541316e-07
+      }
+    },
+    "math-tanh-f32_b134": {
+      "residual": {
+        "maximum": 1.9669532775878906e-06,
+        "rms": 5.150132970179451e-07
+      },
+      "logp": {
+        "maximum": 2.86102294921875e-06,
+        "rms": 5.885221376756887e-07
+      }
+    },
+    "math-erf-f64_b134": {
+      "residual": {
+        "maximum": 4.218847493575595e-15,
+        "rms": 9.07664407935914e-16
+      },
+      "logp": {
+        "maximum": 4.440892098500626e-15,
+        "rms": 1.078846422128398e-15
+      }
+    },
+    "default-f32_cpu_b134_vs_f64_erf": {
+      "residual": {
+        "maximum": 2.509769153835606e-06,
+        "rms": 5.009306373938281e-07
+      },
+      "logp": {
+        "maximum": 2.7277185026264306e-06,
+        "rms": 5.670542206585437e-07
+      }
+    },
+    "math-erf-f32_cpu_b134_vs_f64_erf": {
+      "residual": {
+        "maximum": 2.542649685355336e-06,
+        "rms": 5.091791157507873e-07
+      },
+      "logp": {
+        "maximum": 2.8973655714636948e-06,
+        "rms": 5.599427410041231e-07
+      }
+    },
+    "math-tanh-f32_cpu_b134_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.0012153499470750617,
+        "rms": 0.00029357872387898406
+      },
+      "logp": {
+        "maximum": 0.0007234794203085926,
+        "rms": 0.0001490759427007065
+      }
+    },
+    "default-f32_cuda_b134_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.001213144575217373,
+        "rms": 0.00029338617395784344
+      },
+      "logp": {
+        "maximum": 0.0007234794203103689,
+        "rms": 0.00014909705434241414
+      }
+    },
+    "math-erf-f32_cuda_b134_vs_f64_erf": {
+      "residual": {
+        "maximum": 2.520355442126032e-06,
+        "rms": 4.952662554178403e-07
+      },
+      "logp": {
+        "maximum": 2.814744505919009e-06,
+        "rms": 5.429383081026681e-07
+      }
+    },
+    "math-tanh-f32_cuda_b134_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.0012142770634681055,
+        "rms": 0.00029358499383973176
+      },
+      "logp": {
+        "maximum": 0.0007244330946267752,
+        "rms": 0.00014907185202094815
+      }
+    },
+    "default-f32_b1": {
+      "residual": {
+        "maximum": 0.0011579394340515137,
+        "rms": 0.0005709365754473929
+      },
+      "logp": {
+        "maximum": 0.0003414154052734375,
+        "rms": 8.477321412807153e-05
+      }
+    },
+    "math-erf-f32_b1": {
+      "residual": {
+        "maximum": 1.7285346984863281e-06,
+        "rms": 7.715926274774866e-07
+      },
+      "logp": {
+        "maximum": 3.814697265625e-06,
+        "rms": 9.202015698948053e-07
+      }
+    },
+    "math-tanh-f32_b1": {
+      "residual": {
+        "maximum": 1.9073486328125e-06,
+        "rms": 7.759515092716965e-07
+      },
+      "logp": {
+        "maximum": 1.9073486328125e-06,
+        "rms": 7.301726279151692e-07
+      }
+    },
+    "math-erf-f64_b1": {
+      "residual": {
+        "maximum": 2.220446049250313e-15,
+        "rms": 1.1240151438116956e-15
+      },
+      "logp": {
+        "maximum": 3.552713678800501e-15,
+        "rms": 9.329883202704717e-16
+      }
+    },
+    "default-f32_cpu_b1_vs_f64_erf": {
+      "residual": {
+        "maximum": 1.0998909516501953e-06,
+        "rms": 5.596663391222361e-07
+      },
+      "logp": {
+        "maximum": 2.234029096825907e-06,
+        "rms": 5.666574041501787e-07
+      }
+    },
+    "math-erf-f32_cpu_b1_vs_f64_erf": {
+      "residual": {
+        "maximum": 1.8845320147731215e-06,
+        "rms": 7.297589824035437e-07
+      },
+      "logp": {
+        "maximum": 2.234029096825907e-06,
+        "rms": 6.083299715573676e-07
+      }
+    },
+    "math-tanh-f32_cpu_b1_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.0011582407559875274,
+        "rms": 0.0005702002242546548
+      },
+      "logp": {
+        "maximum": 0.00033810432280745317,
+        "rms": 8.460219335922727e-05
+      }
+    },
+    "default-f32_cuda_b1_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.0011579427327648717,
+        "rms": 0.000571077111452628
+      },
+      "logp": {
+        "maximum": 0.00034001167144026567,
+        "rms": 8.448375814592998e-05
+      }
+    },
+    "math-erf-f32_cuda_b1_vs_f64_erf": {
+      "residual": {
+        "maximum": 9.445176685218826e-07,
+        "rms": 4.263184617230307e-07
+      },
+      "logp": {
+        "maximum": 1.5806681687990931e-06,
+        "rms": 4.6143986960985444e-07
+      }
+    },
+    "math-tanh-f32_cuda_b1_vs_f64_erf": {
+      "residual": {
+        "maximum": 0.001157525500251444,
+        "rms": 0.0005701391501727574
+      },
+      "logp": {
+        "maximum": 0.0003390579971238594,
+        "rms": 8.459955281259279e-05
+      }
+    },
+    "default_cpu_b256_vs_math-erf-f32": {
+      "residual": {
+        "maximum": 2.1457672119140625e-06,
+        "rms": 4.09613778756345e-07
+      },
+      "logp": {
+        "maximum": 2.86102294921875e-06,
+        "rms": 5.029727659602547e-07
+      }
+    },
+    "default_cpu_b256_vs_math-tanh-f32": {
+      "residual": {
+        "maximum": 0.001375928521156311,
+        "rms": 0.0002953584180750672
+      },
+      "logp": {
+        "maximum": 0.0008130073547363281,
+        "rms": 0.00015528591150931588
+      }
+    },
+    "default_cuda_b256_vs_math-erf-f32": {
+      "residual": {
+        "maximum": 0.0013783127069473267,
+        "rms": 0.00029531230980959133
+      },
+      "logp": {
+        "maximum": 0.0008091926574707031,
+        "rms": 0.00015527779499265013
+      }
+    },
+    "default_cuda_b256_vs_math-tanh-f32": {
+      "residual": {
+        "maximum": 9.298324584960938e-06,
+        "rms": 1.5903071464735794e-06
+      },
+      "logp": {
+        "maximum": 9.5367431640625e-06,
+        "rms": 1.4794414435976015e-06
+      }
+    },
+    "default_cpu_b134_vs_math-erf-f32": {
+      "residual": {
+        "maximum": 1.817941665649414e-06,
+        "rms": 4.061028162436713e-07
+      },
+      "logp": {
+        "maximum": 1.9073486328125e-06,
+        "rms": 4.938013452779715e-07
+      }
+    },
+    "default_cpu_b134_vs_math-tanh-f32": {
+      "residual": {
+        "maximum": 0.0012153983116149902,
+        "rms": 0.0002935634659859287
+      },
+      "logp": {
+        "maximum": 0.00072479248046875,
+        "rms": 0.000149078624004793
+      }
+    },
+    "default_cuda_b134_vs_math-erf-f32": {
+      "residual": {
+        "maximum": 0.001212775707244873,
+        "rms": 0.00029335110146038097
+      },
+      "logp": {
+        "maximum": 0.0007228851318359375,
+        "rms": 0.00014910809194222156
+      }
+    },
+    "default_cuda_b134_vs_math-tanh-f32": {
+      "residual": {
+        "maximum": 7.62939453125e-06,
+        "rms": 1.6296877548000337e-06
+      },
+      "logp": {
+        "maximum": 7.62939453125e-06,
+        "rms": 1.4960927328026042e-06
+      }
+    },
+    "default_cpu_b1_vs_math-erf-f32": {
+      "residual": {
+        "maximum": 1.430511474609375e-06,
+        "rms": 5.918438921071114e-07
+      },
+      "logp": {
+        "maximum": 9.5367431640625e-07,
+        "rms": 3.541857493916547e-07
+      }
+    },
+    "default_cpu_b1_vs_math-tanh-f32": {
+      "residual": {
+        "maximum": 0.0011582374572753906,
+        "rms": 0.0005700589352745911
+      },
+      "logp": {
+        "maximum": 0.000339508056640625,
+        "rms": 8.488597401353985e-05
+      }
+    },
+    "default_cuda_b1_vs_math-erf-f32": {
+      "residual": {
+        "maximum": 0.0011581480503082275,
+        "rms": 0.0005709315014524511
+      },
+      "logp": {
+        "maximum": 0.000339508056640625,
+        "rms": 8.446986696913341e-05
+      }
+    },
+    "default_cuda_b1_vs_math-tanh-f32": {
+      "residual": {
+        "maximum": 5.27501106262207e-06,
+        "rms": 2.2610060266638003e-06
+      },
+      "logp": {
+        "maximum": 3.814697265625e-06,
+        "rms": 1.2396501228707915e-06
+      }
+    }
+  },
+  "runtime": {
+    "torch": "2.11.0+cu128",
+    "torch_git": "70d99e998b4955e0049d13a98d77ae1b14db1f45",
+    "cuda": "12.8",
+    "matmul_precision": "highest",
+    "cuda_tf32": false,
+    "cudnn_tf32": false,
+    "initial_mha_fastpath": true,
+    "precision_environment": {}
+  },
+  "arrays_sha256": "ec68d983ff2961e0e3b67d63f492f2cd711502cd969d9b892c552cbf5858a293",
+  "peak_torch_gpu_bytes": 192868352,
+  "checkpoint_unchanged": true,
+  "decision": "diagnostic_only_no_model_qualification_or_old_gate_reclassification",
+  "scope": "324 separate arithmetic cause diagnosis after320failed parity. Unchanged epoch11 checkpoint, first390 contexts of320fit TRAIN only; shapes256/134/1 fixed. No target actions, results, names, future data or NLL/accuracy selection. Synthetic identity-GEMM GELU probe plus default fusedFP32, unfusedmath erfFP32/tanhFP32/erfFP64, all results reported; no best-backend selection. Compare all valid candidate residual/logp values and operator traces, same-backend capture identity; records are full-world prior inputs, not actor policy. Fresh two idleGPUchecks, no service stop, own cores2-3lease, five-minute bound, one original attempt. No refit, checkpoint change, threshold relaxation, old320review retry/reclassification, fresh confirmation/student/nativehook/ZIP/version/arena action. Findings only earn a separately justified implementation-correction/conformance proposal, not model qualification. Nearest319-320teacher failed .0001parity at .000929832;271different value target also failed quality and stays closed.",
+  "at": "2026-11-10T17:58:16.436094+00:00"
+}
