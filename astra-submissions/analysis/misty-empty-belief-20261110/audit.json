@@ -1,0 +1,45 @@
+{
+  "at": "2026-11-10T02:11:12.312573+00:00",
+  "redacted_input_verified": true,
+  "referee_frames": 24,
+  "capped_failure_reproduced": true,
+  "uncapped_completed": true,
+  "rows": {
+    "200000": {
+      "result_sha256": "3f7ec5572f1d5bff715755c4f42feb630809529584a7af224ed315bb4d14f37e",
+      "exit_code": 1,
+      "seconds": 1.1168683619762305,
+      "completed": false,
+      "max_positions": 200000,
+      "peak_rss_kib": 130196,
+      "last_event": {
+        "kind": "exception",
+        "elapsed": 0.6253138820175081,
+        "cap": 200000,
+        "peak_rss_kib": 130196,
+        "ply": 23,
+        "error": "RuntimeError('P became empty after own move d1a4; no candidate position admitted it. This is a soundness violation.')",
+        "positions": 0
+      }
+    },
+    "none": {
+      "result_sha256": "bd7d166c595542f3a92636381efd2db07e06b05f3055e8f868a525e8674619cc",
+      "exit_code": 0,
+      "seconds": 1.2726628849923145,
+      "completed": true,
+      "max_positions": 447682,
+      "peak_rss_kib": 156584,
+      "last_event": {
+        "kind": "complete",
+        "elapsed": 0.7943219110020436,
+        "cap": null,
+        "peak_rss_kib": 156584,
+        "frames": 24,
+        "positions": 6
+      }
+    }
+  },
+  "plan_sha256": "76d79365adfc5975ee786593e45610837922d2a0732d91c3141e414837136c6f",
+  "auditor_sha256": "02d041fbd9ef81a2533f155671d1d65dbe379a958e1d1d27f60d905087cfb08f",
+  "scope": "Supports cap-loss explanation for this belief-update component. Historical searches skipped; not exact live set/carryover/timing or universal library reliability. No candidate scoring, model change or next game batch."
+}

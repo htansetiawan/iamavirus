@@ -1,0 +1,31 @@
+belief downsample fired (bottom-k): |P|->200000 (cap=200000, M_est=447837, total=1)
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-empty-belief-20261110/trace.py", line 80, in <module>
+    main()
+    ~~~~^^
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-empty-belief-20261110/trace.py", line 56, in main
+    strategy.observe_own_move(pending, Observation(visibility_mask=visible, visible_pieces=pieces))
+    ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1657, in observe_own_move
+    self._record(
+    ~~~~~~~~~~~~^
+        "observe_own_move",
+        ^^^^^^^^^^^^^^^^^^^
+        lambda: self._engine.observe_own_move(move, observation),  # type: ignore[union-attr]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1776, in _record
+    fn()
+    ~~^^
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1659, in <lambda>
+    lambda: self._engine.observe_own_move(move, observation),  # type: ignore[union-attr]
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 474, in observe_own_move
+    self.enumerator.update_own_move(move, observation)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/p_enum/enumerator.py", line 283, in update_own_move
+    raise RuntimeError(
+    ...<2 lines>...
+    )
+RuntimeError: P became empty after own move d1a4; no candidate position admitted it. This is a soundness violation.

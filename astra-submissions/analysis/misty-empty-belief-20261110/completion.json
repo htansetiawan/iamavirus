@@ -1,0 +1,57 @@
+{
+  "at": "2026-11-10T02:04:02.669701+00:00",
+  "rows": [
+    {
+      "cap": "200000",
+      "exit_code": 1,
+      "timed_out": false,
+      "seconds": 1.1168683619762305,
+      "completed": false,
+      "max_positions": 200000,
+      "peak_rss_kib": 130196,
+      "last_event": {
+        "kind": "exception",
+        "elapsed": 0.6253138820175081,
+        "cap": 200000,
+        "peak_rss_kib": 130196,
+        "ply": 23,
+        "error": "RuntimeError('P became empty after own move d1a4; no candidate position admitted it. This is a soundness violation.')",
+        "positions": 0
+      },
+      "unverified_cleanup": [],
+      "files": {
+        "events.jsonl": "d8aeaeb5735c1bbb46b768a73dbeb49bd5365282e6564a23ea53277e06893297",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "75a3a02640e2e44a1f7d8b92f1dcfc374a22ff949212ba9624f7156437d4099c",
+        "events.telemetry.jsonl": "3ff4a4edf7e0130586242784512b396c9714058388622030b1f00288a276d06e",
+        "stderr.txt": "1bc4359cf26b196e621f0e54d5c723f6a2893bd9a498533b04fe91c696178eae"
+      }
+    },
+    {
+      "cap": "none",
+      "exit_code": 0,
+      "timed_out": false,
+      "seconds": 1.2726628849923145,
+      "completed": true,
+      "max_positions": 447682,
+      "peak_rss_kib": 156584,
+      "last_event": {
+        "kind": "complete",
+        "elapsed": 0.7943219110020436,
+        "cap": null,
+        "peak_rss_kib": 156584,
+        "frames": 24,
+        "positions": 6
+      },
+      "unverified_cleanup": [],
+      "files": {
+        "events.jsonl": "237295d621607d2ab2d7c22757518dbbbe1b76dd6bfc46064910afb5a59f87b5",
+        "stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "processes.json": "1adf3d74b5b77e19b8a63462180fce99e68c1cca9b79c4a4244d39ec2f73e570",
+        "events.telemetry.jsonl": "20076b6c86feb06e44fb6f6b6939004fdf3c4656b88242ca10e2388430608222",
+        "stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ],
+  "scope": "Observation/own-action component trace, historical searches skipped. Same seed/capture inference. Compare bounded and uncapped own-view consistency at ply23, not strength or exact search/carryover. 4GiB address space is a diagnostic bound, not the arena RSS limit. No package changes or fourth match batch."
+}

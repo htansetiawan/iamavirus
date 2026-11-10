@@ -40,3 +40,27 @@ own concrete design and tests; this census is measurement only.
 
 Source: `astra-submissions/experiments/root-population-20261110/`.
 Plan: `astra-submissions/analysis/root-population-20261110/plan.json`.
+
+## Completed census
+
+Original 35063 exits 0. All 2,344 exported worlds and 35,160 action/world
+labels pass independent course checks. The true board and rule metadata are
+present. The chosen capture's sharpened fatal mass is 0.01390%, versus 11.65%
+and 10.00% for f6/h6. The 32-world sample assigns the capture zero fatal mass;
+both guard masks exclude the actual escapes. No guard striding occurs here.
+This measures the reconstructed population, not global calibration or the
+exact live population.
+
+There are six royal-fatality signatures for the 15 root actions. A design
+update combines mass-preserving strata with payoff-bound pruning: for
+nonfatal values in [L,U] and root loss -kappa, action value lies between
+(1-r)L-kappa*r and (1-r)U-kappa*r. The frozen source's nonfatal values lie
+in [-1,1]. At this root the interval test retains all three king choices and
+removes the certain-fatal actions. It does not certify an escape's eventual
+value or remove the need for a playing gate. The four-arm isolation study
+and a queenless first scope are proposals, not implemented or launched.
+
+A separate cost scan finds only 9 of 944 native turns searched a single
+remaining action, at most 0.61% of local-panel turn time. No shortcut work
+follows from this small bound. Evidence and limits are in
+`astra-submissions/analysis/root-population-20261110/`.

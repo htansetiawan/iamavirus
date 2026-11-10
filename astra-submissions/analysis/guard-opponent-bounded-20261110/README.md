@@ -1,39 +1,31 @@
-# Guard candidate versus a qualified bounded Misty proxy
+# Guard comparison closed: no promotion
 
-**Running, with no strength result yet.** Original session **65095** began
-at 00:40:40 UTC on November 10. The queue and source were published on both
-mirrors at `38ccde76c6da215ab8fd50b1d747a086b0f981dc` before launch.
-All 212 dependency pins match. Six actual-command probes pass, both colors.
+Original session **65095 exited 0** after 23 first attempts: 22 normal games,
+one opponent exception and nine unstarted jobs. The all-clean/full-32 gate
+fails. This queue is not resumed and these candidate bytes are not promoted.
 
-The candidate is the unchanged unversioned guard experiment from the
-10W–1D–5L native pilot against exact uploaded v38. The control is that exact
-v38. Only the root action-support rule differs; models, thresholds and
-search remain fixed. No arena promotion or new version number is assigned.
+The independent course audit checks **1,916 frames**, source/result hashes,
+move legality, both observations, clocks, outcomes, paired seeds, process
+controls and population-cap telemetry. Host cleanup finds no owned actors.
 
-The local opponent is Brian Liou's Misty 0.1.3 with its v1.6 profile,
-live clock manager, required Rust backend, 200,000-state cap and telemetry.
-Two score-independent health games passed, including 38 real cap events,
-171 independently verified frames and host cleanup. This is a qualified
-local proxy, not verified arena-opponent bytes or original Obscuro.
+The raw all-attempt receipt records candidate 8/12 points and control 10/11.
+One candidate win came from Misty exiting after its own Qa4. Excluding that
+fault leaves **ten complete clean matched cells: candidate 6, control 9**.
+The incomplete scores are unfavorable; they do not prove an arena Elo gap.
+The original native 10.5/16 pilot remains a separate result, not pooled here.
 
-The queue contains 32 first attempts: eight seed blocks, both colors,
-candidate and control, matched seeds within each cell and alternating
-first arm. Three reserved core pairs, 180+2 clocks, off-turn freezing and
-charged buffered observations, 2,450 seconds per game, four-hour batch bound.
-The initial three games are live; telemetry confirms continued play.
+The comparator used Brian Liou's local Misty 0.1.3/v1.6 profile with Rust,
+a live clock manager, 200,000-state cap, telemetry and off-turn freezing.
+Two prior score-independent health games passed, including real cap events.
+That did not establish universal runtime reliability: in this panel the cap
+left no state consistent with a newly revealed own-move observation.
+A separate component trace reproduces the capped exception while uncapped
+updates finish. No fourth comparison or package change is automatic.
 
-The advancement rule is unchanged from the earlier plans: **32 clean games,
-candidate at least 8/16 points and at least two points above control**.
-A pass earns review, not an Elo claim or automatic promotion. Any technical
-fault stops new games. Started first attempts are never repeated or dropped;
-old stopped comparisons stay separate and do not enter this estimate.
+All started attempts are retained; none is replaced or discarded. Source
+and queue were published at 38ccde76 before launch. The declared gate and
+seeds stayed unchanged. Independent audit and cleanup are terminal receipts.
 
-The independent auditor checks the course rules, all frames and clocks,
-normal outcomes, input/source/result hashes, seed pairing, process controls
-and population telemetry. It reports complete clean matched cells separately
-from all attempts. Partial checkpoints always have `gate_pass: false`.
-An audit and host cleanup are required when the original handle is terminal.
-
-See [plan.json](plan.json), [smoke.json](smoke.json),
-[launch-receipt.json](launch-receipt.json) and
-[the health audit](../misty-bounded-health-20261110/audit.json).
+See [audit.json](audit.json), [completion.json](completion.json),
+[cleanup.json](cleanup.json), [the cap diagnostic](../misty-empty-belief-20261110/README.md)
+and [the full root census](../root-population-20261110/README.md).

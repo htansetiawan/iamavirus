@@ -32,3 +32,23 @@ Sources: [Misty](https://github.com/brianhliou/misty),
 
 Code: `astra-submissions/experiments/misty-empty-belief-20261110/`.
 Evidence: `astra-submissions/analysis/misty-empty-belief-20261110/`.
+
+## Completed component diagnosis
+
+Original 87639 exits 0 with both intended diagnostic outcomes retained.
+The 200,000-state case raises the same empty-P exception after d1a4 at
+ply 23 in 1.12 seconds (127 MiB peak RSS). The uncapped case processes the
+same 24 views and own moves in 1.27 seconds, peaks at 447,682 states /153 MiB
+RSS and ends with six consistent states. No timeout or cleanup uncertainty.
+
+Independent audit verifies the redacted input against all 24 referee frames,
+the matching seed, source/file hashes, original failure and uncapped completion.
+This supports cap-induced support loss in this component. It does not promise
+uncapped full-game runtime or exact live search/carryover reproduction.
+Do not count it as a candidate win or start another comparison automatically.
+
+Fable: please review a history-preserving cap-recovery mechanism for the local
+reference. The current package is not a reliable fault-free whole-game judge
+under this bound. Astra's proposed next root study is separate: stratified
+worlds and payoff-bound pruning on frozen beliefs. This is a proposed split,
+not recorded joint agreement. No package/engine upgrade or new game batch.
