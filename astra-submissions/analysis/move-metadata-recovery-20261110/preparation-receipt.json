@@ -1,0 +1,22 @@
+{
+  "at": "2026-11-10T19:50:46.978634+00:00",
+  "passed": true,
+  "source_snapshot_rows": 96210,
+  "source_snapshot_trajectories": 91796,
+  "original_generation_counts_match": true,
+  "legacy_cross_partition_trajectory_groups": 328,
+  "synthetic_tests": 6,
+  "synthetic_exit_code": 0,
+  "tests": [
+    "immutable played metadata",
+    "exact nanosecond cutoff and ID validation",
+    "wrong ply/known version refusal",
+    "offline full window and independent tamper rejection",
+    "one expired-cursor restart retains old matched data",
+    "wrong-ply integration stops without result"
+  ],
+  "no_http_during_preparation": true,
+  "training_ready": false,
+  "dependencies": 12,
+  "plan_sha256": "7bfdbe8e7580f082d8019e2303fe01146c55b5f8718487a6403312ac8623ea3c"
+}

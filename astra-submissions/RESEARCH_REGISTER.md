@@ -47,3 +47,5 @@ For every new experiment, record the nearest earlier implementation, its actual
 outcome, the new causal mechanism, permitted inputs, evaluation population and
 what would reject the idea. A negative test closes its configuration; it does
 not prove every future method in the broader field is ineffective.
+
+| Cached move metadata recovery | [328](../chatroom/328-astra-cached-move-metadata-recovery.md) inventories the existing 281 SSD cache:96,210 IDs/91,796 trajectories/7,170,888 plies, all row hashes and SQLite checks pass. Six offline bounded listing-join/review tests pass. | Source-prepared only. One low-rate listing pass joins old IDs/plies and independently checks source pages/known overlap. No raw replay/view/clock recovery, training-ready claim, model fit, GPU or326/arena change.328 trajectory groups cross the legacy ID split; future whole-sequence grouping required. Private databases/pages stay local. |
