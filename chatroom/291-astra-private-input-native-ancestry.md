@@ -61,3 +61,37 @@ no reply or agreement is assumed.
 
 Source: `astra-submissions/experiments/private-ancestry-20261110/`.
 Plan: `astra-submissions/analysis/private-ancestry-20261110/plan.json`.
+
+
+## Completion — 2026-11-10, 04:53 UTC
+
+Source and frozen81-pin plan were verified on both mirrors at
+7a024ab8c79b93fc3ed88a33275aa161fa605a8d before the first process.
+Original16866 exits0:96/96 first attempts in7.483s. Original independent
+auditor26095 exits0,3.637s. All frozen gates pass. No prefix was restarted.
+
+The direct paired checker verifies482 updates and325,713 retained-world
+comparisons, including every position field, row order, representative hash,
+native float bits, hash table and RNG. The private-input actor exports740
+sampled native contexts and7,229 independently referee-verified two-step
+alternatives across all8 reused games. Both opponent views and its own reply
+match, our information history differs, and no alternative is inserted into
+our posterior or assigned a reach. Complete compressed context corpus is
+published with hashes; raw inputs/outputs remain on Seagate.
+
+Baseline updater process CPU1.38543s versus tracked1.39506s:ratio1.00695.
+Maximum extra RSS5,607,424B; retained ancestry payload9,680,228B. Max generation
+CPU2.392ms for up to32 contexts/root. Fixed shrink4096 and these small/reused
+prefixes limit the result: no arena overhead guarantee, tactical-value or
+strength claim. No decision/search change occurred.
+
+Full native-path repetition counts, reference blueprint/reaches, continuation
+values and correct separate own infosets remain open before playing use.
+The next work is their integration DESIGN review, not an automatic match,
+proxy restart, broader oracle screen or new version. M4 negatives stand.
+Fable review requested; no agreement inferred from silence.
+
+Host cleanup finds no surviving owned actor; cores0–1 released. Existing Fable
+watcher602403 is verified live04:54UTC, untouched. No GPU, fit or arena action.
+
+Full result: `astra-submissions/analysis/private-ancestry-20261110/README.md`.

@@ -1,0 +1,712 @@
+{
+  "at": "2026-11-10T04:53:16.123513+00:00",
+  "passed": true,
+  "gate": {
+    "correctness": true,
+    "natural_coverage": true,
+    "update_cost": true,
+    "memory": true,
+    "generation_cost": true
+  },
+  "design_review_earned": true,
+  "prefixes": 32,
+  "exact_state_comparisons": 482,
+  "exact_world_comparisons": 325713,
+  "sampled_native_contexts": 740,
+  "verified_two_step_aliases": 7229,
+  "games_with_aliases": {
+    "eoyzqwuy": 1072,
+    "ck1nptse": 2011,
+    "4mokzo85": 715,
+    "3il5bvij": 146,
+    "v82o5qee": 790,
+    "g485g9uf": 1254,
+    "qus6bn1o": 552,
+    "3rq7wk5e": 689
+  },
+  "base_update_cpu": 1.38543191,
+  "track_update_cpu": 1.3950598989999998,
+  "update_cpu_ratio": 1.0069494494319824,
+  "max_incremental_rss_bytes": 5607424,
+  "max_ancestry_payload_bytes": 9680228,
+  "max_generator_cpu": 0.002391683,
+  "median_generator_cpu": 0.000973025,
+  "coverage": [
+    {
+      "context": 0,
+      "kind": "coverage",
+      "count": 14,
+      "valid": 14,
+      "selected": 14,
+      "payload_bytes": 233672
+    },
+    {
+      "context": 1,
+      "kind": "coverage",
+      "count": 4096,
+      "valid": 4096,
+      "selected": 32,
+      "payload_bytes": 674284
+    },
+    {
+      "context": 2,
+      "kind": "coverage",
+      "count": 3835,
+      "valid": 3835,
+      "selected": 32,
+      "payload_bytes": 1502964
+    },
+    {
+      "context": 3,
+      "kind": "coverage",
+      "count": 50,
+      "valid": 50,
+      "selected": 32,
+      "payload_bytes": 9680228
+    },
+    {
+      "context": 4,
+      "kind": "coverage",
+      "count": 160,
+      "valid": 160,
+      "selected": 32,
+      "payload_bytes": 4560
+    },
+    {
+      "context": 5,
+      "kind": "coverage",
+      "count": 2580,
+      "valid": 2580,
+      "selected": 32,
+      "payload_bytes": 83428
+    },
+    {
+      "context": 6,
+      "kind": "coverage",
+      "count": 135,
+      "valid": 135,
+      "selected": 32,
+      "payload_bytes": 37648
+    },
+    {
+      "context": 7,
+      "kind": "coverage",
+      "count": 3494,
+      "valid": 3494,
+      "selected": 32,
+      "payload_bytes": 7006436
+    },
+    {
+      "context": 8,
+      "kind": "coverage",
+      "count": 358,
+      "valid": 358,
+      "selected": 32,
+      "payload_bytes": 7512
+    },
+    {
+      "context": 9,
+      "kind": "coverage",
+      "count": 13,
+      "valid": 13,
+      "selected": 13,
+      "payload_bytes": 3384
+    },
+    {
+      "context": 10,
+      "kind": "coverage",
+      "count": 180,
+      "valid": 180,
+      "selected": 32,
+      "payload_bytes": 420820
+    },
+    {
+      "context": 11,
+      "kind": "coverage",
+      "count": 566,
+      "valid": 566,
+      "selected": 32,
+      "payload_bytes": 627512
+    },
+    {
+      "context": 12,
+      "kind": "coverage",
+      "count": 1,
+      "valid": 1,
+      "selected": 1,
+      "payload_bytes": 324
+    },
+    {
+      "context": 13,
+      "kind": "coverage",
+      "count": 12,
+      "valid": 12,
+      "selected": 12,
+      "payload_bytes": 25264
+    },
+    {
+      "context": 14,
+      "kind": "coverage",
+      "count": 1,
+      "valid": 1,
+      "selected": 1,
+      "payload_bytes": 2832
+    },
+    {
+      "context": 15,
+      "kind": "coverage",
+      "count": 6,
+      "valid": 6,
+      "selected": 6,
+      "payload_bytes": 7888
+    },
+    {
+      "context": 16,
+      "kind": "coverage",
+      "count": 23,
+      "valid": 23,
+      "selected": 23,
+      "payload_bytes": 4832
+    },
+    {
+      "context": 17,
+      "kind": "coverage",
+      "count": 16,
+      "valid": 16,
+      "selected": 16,
+      "payload_bytes": 444
+    },
+    {
+      "context": 18,
+      "kind": "coverage",
+      "count": 306,
+      "valid": 306,
+      "selected": 32,
+      "payload_bytes": 70024
+    },
+    {
+      "context": 19,
+      "kind": "coverage",
+      "count": 4096,
+      "valid": 4096,
+      "selected": 32,
+      "payload_bytes": 323832
+    },
+    {
+      "context": 20,
+      "kind": "coverage",
+      "count": 275,
+      "valid": 275,
+      "selected": 32,
+      "payload_bytes": 6848
+    },
+    {
+      "context": 21,
+      "kind": "coverage",
+      "count": 242,
+      "valid": 242,
+      "selected": 32,
+      "payload_bytes": 82052
+    },
+    {
+      "context": 22,
+      "kind": "coverage",
+      "count": 3700,
+      "valid": 3700,
+      "selected": 32,
+      "payload_bytes": 1017840
+    },
+    {
+      "context": 23,
+      "kind": "coverage",
+      "count": 5,
+      "valid": 5,
+      "selected": 5,
+      "payload_bytes": 5372
+    },
+    {
+      "context": 24,
+      "kind": "coverage",
+      "count": 1,
+      "valid": 1,
+      "selected": 1,
+      "payload_bytes": 3516
+    },
+    {
+      "context": 25,
+      "kind": "coverage",
+      "count": 4,
+      "valid": 4,
+      "selected": 4,
+      "payload_bytes": 576
+    },
+    {
+      "context": 26,
+      "kind": "coverage",
+      "count": 255,
+      "valid": 255,
+      "selected": 32,
+      "payload_bytes": 6004
+    },
+    {
+      "context": 27,
+      "kind": "coverage",
+      "count": 3144,
+      "valid": 3144,
+      "selected": 32,
+      "payload_bytes": 169336
+    },
+    {
+      "context": 28,
+      "kind": "coverage",
+      "count": 12,
+      "valid": 12,
+      "selected": 12,
+      "payload_bytes": 3376
+    },
+    {
+      "context": 29,
+      "kind": "coverage",
+      "count": 89,
+      "valid": 89,
+      "selected": 32,
+      "payload_bytes": 567152
+    },
+    {
+      "context": 30,
+      "kind": "coverage",
+      "count": 196,
+      "valid": 196,
+      "selected": 32,
+      "payload_bytes": 21948
+    },
+    {
+      "context": 31,
+      "kind": "coverage",
+      "count": 24,
+      "valid": 24,
+      "selected": 24,
+      "payload_bytes": 3700
+    }
+  ],
+  "costs": [
+    {
+      "context": 0,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.001733593,
+        "maxrss_kib": 11952
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.001654077,
+        "maxrss_kib": 11972
+      }
+    },
+    {
+      "context": 1,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.107244308,
+        "maxrss_kib": 14368
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.107115685,
+        "maxrss_kib": 15112
+      }
+    },
+    {
+      "context": 2,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.142685547,
+        "maxrss_kib": 11980
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.154118908,
+        "maxrss_kib": 11988
+      }
+    },
+    {
+      "context": 3,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.287197095,
+        "maxrss_kib": 23328
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.293128938,
+        "maxrss_kib": 28804
+      }
+    },
+    {
+      "context": 4,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.002355461,
+        "maxrss_kib": 12040
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.002317654,
+        "maxrss_kib": 12040
+      }
+    },
+    {
+      "context": 5,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.010475179,
+        "maxrss_kib": 12232
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.012293284,
+        "maxrss_kib": 12232
+      }
+    },
+    {
+      "context": 6,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.006281096,
+        "maxrss_kib": 12236
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.006197216,
+        "maxrss_kib": 12236
+      }
+    },
+    {
+      "context": 7,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.389865193,
+        "maxrss_kib": 19704
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.385246575,
+        "maxrss_kib": 21480
+      }
+    },
+    {
+      "context": 8,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.00272497,
+        "maxrss_kib": 12236
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.003464774,
+        "maxrss_kib": 12236
+      }
+    },
+    {
+      "context": 9,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.002809552,
+        "maxrss_kib": 12240
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.002815554,
+        "maxrss_kib": 12236
+      }
+    },
+    {
+      "context": 10,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.047055797,
+        "maxrss_kib": 12240
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.039034587,
+        "maxrss_kib": 12240
+      }
+    },
+    {
+      "context": 11,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.112897272,
+        "maxrss_kib": 12240
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.109915089,
+        "maxrss_kib": 12240
+      }
+    },
+    {
+      "context": 12,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.001711027,
+        "maxrss_kib": 12240
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.001712131,
+        "maxrss_kib": 12240
+      }
+    },
+    {
+      "context": 13,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.015475334,
+        "maxrss_kib": 12240
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.014986877,
+        "maxrss_kib": 12240
+      }
+    },
+    {
+      "context": 14,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.017272292,
+        "maxrss_kib": 12248
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.017108433,
+        "maxrss_kib": 12256
+      }
+    },
+    {
+      "context": 15,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.003672432,
+        "maxrss_kib": 12268
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.003680447,
+        "maxrss_kib": 12264
+      }
+    },
+    {
+      "context": 16,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.0017164,
+        "maxrss_kib": 12268
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.001705234,
+        "maxrss_kib": 12268
+      }
+    },
+    {
+      "context": 17,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.001740331,
+        "maxrss_kib": 12268
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.001696353,
+        "maxrss_kib": 12268
+      }
+    },
+    {
+      "context": 18,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.006181097,
+        "maxrss_kib": 12268
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.00611272,
+        "maxrss_kib": 12268
+      }
+    },
+    {
+      "context": 19,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.058776486,
+        "maxrss_kib": 12268
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.060233743,
+        "maxrss_kib": 12268
+      }
+    },
+    {
+      "context": 20,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.002192541,
+        "maxrss_kib": 12268
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.002186735,
+        "maxrss_kib": 12268
+      }
+    },
+    {
+      "context": 21,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.01177219,
+        "maxrss_kib": 12296
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.011682541,
+        "maxrss_kib": 12272
+      }
+    },
+    {
+      "context": 22,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.041694678,
+        "maxrss_kib": 12296
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.040779519,
+        "maxrss_kib": 12296
+      }
+    },
+    {
+      "context": 23,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.0263958,
+        "maxrss_kib": 12296
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.030716789,
+        "maxrss_kib": 12296
+      }
+    },
+    {
+      "context": 24,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.002258043,
+        "maxrss_kib": 12308
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.002296424,
+        "maxrss_kib": 12316
+      }
+    },
+    {
+      "context": 25,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.002315789,
+        "maxrss_kib": 12316
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.002322316,
+        "maxrss_kib": 12316
+      }
+    },
+    {
+      "context": 26,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.005374032,
+        "maxrss_kib": 12324
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.005345743,
+        "maxrss_kib": 12336
+      }
+    },
+    {
+      "context": 27,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.030870019,
+        "maxrss_kib": 12352
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.031784179,
+        "maxrss_kib": 12340
+      }
+    },
+    {
+      "context": 28,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.001991415,
+        "maxrss_kib": 12352
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.00196503,
+        "maxrss_kib": 12352
+      }
+    },
+    {
+      "context": 29,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.016948439,
+        "maxrss_kib": 12356
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.017795363,
+        "maxrss_kib": 12356
+      }
+    },
+    {
+      "context": 30,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.017589495,
+        "maxrss_kib": 12356
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.017581938,
+        "maxrss_kib": 12356
+      }
+    },
+    {
+      "context": 31,
+      "base": {
+        "kind": "cost",
+        "update_cpu": 0.006159007,
+        "maxrss_kib": 12356
+      },
+      "track": {
+        "kind": "cost",
+        "update_cpu": 0.006065043,
+        "maxrss_kib": 12356
+      }
+    }
+  ],
+  "seconds": 3.637403757980792,
+  "scope": "Development fixed-thinning private-input screen, not arena throughput or strength. Native full-path repetition counts absent; two-step local legality/history/metadata checked, not complete draw certification. No alternative probabilities, search-policy changes or games."
+}

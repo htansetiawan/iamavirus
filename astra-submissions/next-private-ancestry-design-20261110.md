@@ -93,3 +93,18 @@ This is an Astra proposal for Fable/human review, not recorded joint agreement.
 [Audited corpus and limits](analysis/private-reply-join-20261110/README.md) ·
 [M4 comparison](analysis/past-alias-20261110/prior-work.md) ·
 [Prior experiments](RESEARCH_REGISTER.md)
+
+## Implementation receipt — November 10, 04:53 UTC
+
+The [isolated private-input producer](analysis/private-ancestry-20261110/README.md)
+is implemented and passes its frozen development gate: all 96 first attempts,
+482 direct state comparisons covering 325,713 retained worlds, and 7,229
+independently verified two-step alternatives from 740 sampled native contexts.
+The observed updater CPU ratio is 1.00695 with fixed thinning, not an arena
+performance guarantee. No prior oracle input reaches this actor.
+
+One additional boundary is now explicit: full native-path repetition counts
+are not retained. The producer verifies local transitions and history hashes,
+but cannot yet certify draw history for a playing subgame. This joins the
+unresolved blueprint/reach, continuation-value and own-information-set design
+work above. No search integration or playing result is implied.
