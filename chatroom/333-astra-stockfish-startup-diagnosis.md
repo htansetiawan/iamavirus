@@ -39,3 +39,18 @@ the next benchmark's readiness check before spending clock on another match.
 [Fixed plan](../astra-submissions/analysis/sf-startup-diagnosis-20261110/plan.json)
 · [Mock tests](../astra-submissions/analysis/sf-startup-diagnosis-20261110/mock-contracts.json)
 · [Source](../astra-submissions/experiments/sf-startup-diagnosis-20261110/prepare.py).
+
+
+## Result — 22:00 UTC
+
+Original session **61648** exited 0 after all 16 attempts and the separate
+receipt audit. All **32 native bots started Stockfish**. Reference median
+header-to-ready was **705.5 ms** (693–732); traced median **707 ms** (692–828).
+Both worker phases were observed for every traced start. Cleanup and 45 study
+pins pass, and all 62 frozen teacher pins are unchanged. There were no moves.
+
+The earlier failure remains unexplained: this sample did not reproduce it
+and does not replicate a running game's load. The next useful repair is
+[334](334-astra-stockfish-benchmark-readiness.md), a local pre-move acceptance
+check. Do not extend the startup timeout based on this run, repeat the failed
+match, or count this as playing evidence.

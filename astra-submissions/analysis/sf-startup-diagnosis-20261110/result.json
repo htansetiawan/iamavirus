@@ -1,0 +1,788 @@
+{
+  "at": "2026-11-10T22:00:09.947795+00:00",
+  "complete": true,
+  "pins": 45,
+  "attempts": 16,
+  "bot_slots": 32,
+  "plies": 0,
+  "totals": {
+    "reference": {
+      "stockfish_ready": 16
+    },
+    "diagnostic": {
+      "stockfish_ready": 16
+    }
+  },
+  "protocol_initialization_ms": {
+    "diagnostic": {
+      "n": 16,
+      "min": 692,
+      "median": 707.0,
+      "max": 828
+    },
+    "reference": {
+      "n": 16,
+      "min": 693,
+      "median": 705.5,
+      "max": 732
+    }
+  },
+  "cleanup_verified": true,
+  "rows": [
+    {
+      "job": "sf-init-00",
+      "lane": 0,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 828,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 442.273804
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 13.193444999999997
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 356.586495
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.283314000000018
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "9cd78b1f5ca9d7277756cb697fa83874fe45a498004ed7d1f3a9219c7697fad7"
+    },
+    {
+      "job": "sf-init-00",
+      "lane": 0,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 725,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "9cd78b1f5ca9d7277756cb697fa83874fe45a498004ed7d1f3a9219c7697fad7"
+    },
+    {
+      "job": "sf-init-01",
+      "lane": 1,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 730,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "de4705cc43b23194f4e0154a843760c0a8808f2b75b56436e84774529fd28b9c"
+    },
+    {
+      "job": "sf-init-01",
+      "lane": 1,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 719,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 343.787798
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 15.310307000000023
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 338.250748
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 16.971180000000004
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "de4705cc43b23194f4e0154a843760c0a8808f2b75b56436e84774529fd28b9c"
+    },
+    {
+      "job": "sf-init-02",
+      "lane": 0,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 731,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "f79c3d03c9811763ec9dff04590f7f5ee6dec4d91f1ec4f111e766196e9b4ba2"
+    },
+    {
+      "job": "sf-init-02",
+      "lane": 0,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 711,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 342.754877
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 13.558425
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 336.089721
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.756935999999996
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "f79c3d03c9811763ec9dff04590f7f5ee6dec4d91f1ec4f111e766196e9b4ba2"
+    },
+    {
+      "job": "sf-init-03",
+      "lane": 1,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 707,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 332.522279
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 17.23792199999997
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 337.320486
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 16.337085000000002
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "a8be88e9977b643eee8b68a88c697b8ab6cf373bef69adbe7125569e0fa7f3b2"
+    },
+    {
+      "job": "sf-init-03",
+      "lane": 1,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 706,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "a8be88e9977b643eee8b68a88c697b8ab6cf373bef69adbe7125569e0fa7f3b2"
+    },
+    {
+      "job": "sf-init-04",
+      "lane": 0,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 730,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 350.641286
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 13.483654999999999
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 349.028319
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.499045000000024
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "c1e2fd6c07a342a1dae77400747edc23a5ae27b9297fa83397c3da6e3a013f24"
+    },
+    {
+      "job": "sf-init-04",
+      "lane": 0,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 712,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "c1e2fd6c07a342a1dae77400747edc23a5ae27b9297fa83397c3da6e3a013f24"
+    },
+    {
+      "job": "sf-init-05",
+      "lane": 1,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 705,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "dc42e78b0d7345642167ec2913a1dae9c234fdbea5df646616e7cb24d55309df"
+    },
+    {
+      "job": "sf-init-05",
+      "lane": 1,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 707,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 337.986882
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 15.212357999999995
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 333.530081
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 14.97737699999999
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "dc42e78b0d7345642167ec2913a1dae9c234fdbea5df646616e7cb24d55309df"
+    },
+    {
+      "job": "sf-init-06",
+      "lane": 0,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 732,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "a61e4d775d86a25153bd26c5645350eb049b0cc2b55ed6c15d255fff9fcce499"
+    },
+    {
+      "job": "sf-init-06",
+      "lane": 0,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 711,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 342.764055
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 13.847969999999975
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 336.44662
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.886844999999994
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "a61e4d775d86a25153bd26c5645350eb049b0cc2b55ed6c15d255fff9fcce499"
+    },
+    {
+      "job": "sf-init-07",
+      "lane": 1,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 703,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 332.10731899999996
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 15.791243000000009
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 336.891866
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 15.514239000000032
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "8831bef8c77fd8a26f51a8f76d135ee341422634a2c0021bd88128f09f525ebd"
+    },
+    {
+      "job": "sf-init-07",
+      "lane": 1,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 704,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "8831bef8c77fd8a26f51a8f76d135ee341422634a2c0021bd88128f09f525ebd"
+    },
+    {
+      "job": "sf-init-08",
+      "lane": 0,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 702,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 333.597998
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 13.377400000000023
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 338.38127499999996
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.471327999999971
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "112c24c84bbefaaed14e4b11e45532dfc70accbe3c8e40eda46cd844fa550d50"
+    },
+    {
+      "job": "sf-init-08",
+      "lane": 0,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 702,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "112c24c84bbefaaed14e4b11e45532dfc70accbe3c8e40eda46cd844fa550d50"
+    },
+    {
+      "job": "sf-init-09",
+      "lane": 1,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 693,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "e7a0c1730c807c9c48f4fa1b7e73bfa00374f769be3460a2d459b92903f7c259"
+    },
+    {
+      "job": "sf-init-09",
+      "lane": 1,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 706,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 332.072593
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 16.198578999999995
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 335.299062
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 16.28573399999999
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "e7a0c1730c807c9c48f4fa1b7e73bfa00374f769be3460a2d459b92903f7c259"
+    },
+    {
+      "job": "sf-init-10",
+      "lane": 0,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 703,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "87abf85ca381e17ed120426d9392d09c1e9e8f6069fd4e24ca0b85ae9e79992d"
+    },
+    {
+      "job": "sf-init-10",
+      "lane": 0,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 700,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 334.8864
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 13.655165999999952
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 333.20041200000003
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.747135000000014
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "87abf85ca381e17ed120426d9392d09c1e9e8f6069fd4e24ca0b85ae9e79992d"
+    },
+    {
+      "job": "sf-init-11",
+      "lane": 1,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 692,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 325.3829
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 14.661113
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 334.189074
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 14.445983000000012
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "634fcabc1d95a978815e348a26ab9755a11cdbe655db94f91f7565f688a45c0d"
+    },
+    {
+      "job": "sf-init-11",
+      "lane": 1,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 702,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "634fcabc1d95a978815e348a26ab9755a11cdbe655db94f91f7565f688a45c0d"
+    },
+    {
+      "job": "sf-init-12",
+      "lane": 0,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 705,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 335.641316
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 13.912177000000042
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 337.295866
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.82385800000003
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "78efc729aa005065ac7567df7d02aa37931fec6f7c17c68c10aad1aa99d05315"
+    },
+    {
+      "job": "sf-init-12",
+      "lane": 0,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 704,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "78efc729aa005065ac7567df7d02aa37931fec6f7c17c68c10aad1aa99d05315"
+    },
+    {
+      "job": "sf-init-13",
+      "lane": 1,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 693,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "8990b3824953561eb48388fccceea7098da51c1a86f4e8abd3bb2a49384f1319"
+    },
+    {
+      "job": "sf-init-13",
+      "lane": 1,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 704,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 333.60040599999996
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 14.949313000000018
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 334.728002
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 14.144357999999954
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "8990b3824953561eb48388fccceea7098da51c1a86f4e8abd3bb2a49384f1319"
+    },
+    {
+      "job": "sf-init-14",
+      "lane": 0,
+      "side": "white",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 714,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "c47059c488c21480f44a41f3d9da41cc61e3323b94b60b077f958bdc7697e6c2"
+    },
+    {
+      "job": "sf-init-14",
+      "lane": 0,
+      "side": "black",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 708,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 344.48346100000003
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 14.346181000000001
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 331.55365
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 13.27104300000002
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "c47059c488c21480f44a41f3d9da41cc61e3323b94b60b077f958bdc7697e6c2"
+    },
+    {
+      "job": "sf-init-15",
+      "lane": 1,
+      "side": "white",
+      "arm": "diagnostic",
+      "status": "stockfish_ready",
+      "initialization_ms": 712,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [
+        {
+          "worker": 0,
+          "phase": "uci",
+          "ms": 329.021791
+        },
+        {
+          "worker": 0,
+          "phase": "ready",
+          "ms": 15.900666999999999
+        },
+        {
+          "worker": 1,
+          "phase": "uci",
+          "ms": 344.365938
+        },
+        {
+          "worker": 1,
+          "phase": "ready",
+          "ms": 19.254128999999978
+        }
+      ],
+      "trace_events": 62,
+      "source_sha256": "868e069783f39c41f29cbd56b146dd0dfab6f78620b0168c1267d657f36704d9"
+    },
+    {
+      "job": "sf-init-15",
+      "lane": 1,
+      "side": "black",
+      "arm": "reference",
+      "status": "stockfish_ready",
+      "initialization_ms": 708,
+      "failed_phase": null,
+      "failed_worker": null,
+      "traced_phases": [],
+      "trace_events": 0,
+      "source_sha256": "868e069783f39c41f29cbd56b146dd0dfab6f78620b0168c1267d657f36704d9"
+    }
+  ],
+  "reproduced_stockfish_fallback": false,
+  "strength_evidence": false,
+  "scope": "A small startup-only diagnostic; no full pilot load, cold-cache guarantee, root-cause claim for the historic failure, or playing result."
+}

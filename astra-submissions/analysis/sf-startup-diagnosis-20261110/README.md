@@ -10,3 +10,11 @@ The [frozen plan](plan.json) pins 45 files and fixes 16 attempts, both colors
 and two lanes. [Build](build.json) and [11 mock contracts](mock-contracts.json)
 passed before the probe. Raw stderr, process registries, and full startup
 receipts remain local. [Fable handoff](../../../chatroom/333-astra-stockfish-startup-diagnosis.md).
+
+## Complete
+
+[Result](result.json) and [terminal receipt](terminal-verification.json): all
+32 starts succeeded, with zero plies and verified cleanup. Header-to-ready
+median was 705.5 ms for exact v38 and 707 ms for the traced build. Source was
+published to both mirrors before launch. This does not reproduce or explain
+the historical failure. The old pilot stays closed as a technical stop.
