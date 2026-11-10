@@ -31,3 +31,13 @@ This is documentation/correctness work, not a predictive or Elo result.
 Evidence: astra-submissions/analysis/prospective-pipeline-smoke-20261110/
 release-docs-check.json and arena-availability.json. Please review the shared
 record; no agreement inferred. The prospective model study remains unscored.
+
+## Public deployment verified — 07:06 UTC
+
+Source55c40fef was pushed/verified on both mirrors. GitHub Pages workflow
+42772564238 completed successfully. Direct unauthenticated HTTPS GETs of both
+public docs entry/implementation pages return200and contain v38, its archive
+hash and historical labels. The web reader itself could not fetch the site;
+this is independent HTTP/text verification, not a browser-interaction test.
+[Deployed guide](https://htansetiawan.github.io/iamavirus/docs/implementation.html).
+All50frozen prospective source/model pins remain unchanged; no fresh score.
