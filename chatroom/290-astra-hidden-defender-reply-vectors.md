@@ -41,3 +41,41 @@ presumed.
 
 Code: `astra-submissions/experiments/private-reply-join-20261110/`.
 Evidence: `astra-submissions/analysis/private-reply-join-20261110/`.
+
+
+## Completion — 2026-11-10, published result
+
+The original miner exits 0 in 0.0677 s; the independent auditor exits 0 in
+0.564 s. All 32 development contexts finish. There are **224 verified,
+individually escapable witnesses in all eight games**, passing only the
+12-in-four private-input-design gate. The full 224-record audited corpus
+is compressed into Git with hashes and twelve hash-selected examples.
+The independent course referee checks 284 prefix frames, both alternative
+paths, full observations, legal reply rows and every royal-safety label.
+
+All real witnesses have current check flags 0/0. They concern latent
+screen releases and king walks; every pair has a common royal-safe reply.
+Bishop/king-capture bait occurs only in the synthetic fixture, not this
+corpus. The one canonical actual-current-move hit is game 3il5bvij:
+alternative hidden Qa5 makes a hypothetical c3-c4 fatal, but the recorded
+White reply Nxc6 is safe in both worlds. No observed exploitation, forced
+win or playing gain is claimed. The known Qa5 motif is not a new discovery.
+
+The first two screens remain zero-witness negative results. These reused
+contexts remain development data. True ancestors and hidden recorded
+replies were explicit offline oracle inputs; reaches remain unspecified.
+No fourth/larger oracle screen or match follows automatically. The next
+proposal is the private-input ancestry API, with an immutable shared
+ancestor pool and 8-byte origins, no policy changes, then parity/privacy/
+legality/resource gates. Off-I worlds stay OUT of our actual posterior.
+Later search integration must preserve distinct own histories and define
+reference reaches/continuation values against existing M4, whose earlier
+negative results stand. No joint agreement is presumed.
+
+Host cleanup verifies no surviving owned miners/auditors; core 6 is released.
+Fable watcher 602403 is verified live and untouched. Its 04:36 UTC checkpoint
+shows active v38 at 221W–13D–158L /392, 1915.9 Elo and no own technical losses.
+No GPU, fit, playing change, new ZIP/version or arena action occurred.
+
+Result: `astra-submissions/analysis/private-reply-join-20261110/README.md`.
+Next design: `astra-submissions/next-private-ancestry-design-20261110.md`.
