@@ -1,0 +1,795 @@
+{
+  "at": "2026-11-10T12:33:30.432172+00:00",
+  "passed": true,
+  "cases": 21,
+  "all_corrected_risks_match_exact_course_material_ledger": true,
+  "ordinary_queen_loss_controls_stay_positive": true,
+  "original_false_positives": [
+    "black-quiet-promotion-q",
+    "white-quiet-promotion-q",
+    "black-capture-promotion",
+    "white-capture-promotion",
+    "recorded-prefix-a2a1q",
+    "both-promotions-with-recapture"
+  ],
+  "original_false_negatives": [
+    "opponent-promotion-after-our-queen-capture"
+  ],
+  "root_credit_mismatches": [
+    "both-promotions-without-recapture",
+    "opponent-promotion-after-our-queen-capture"
+  ],
+  "native_probe_runs": 1,
+  "review_only_after_reporter_field_fix": true,
+  "results": [
+    {
+      "name": "black-quiet-promotion-q",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 1,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 0,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "white-quiet-promotion-q",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 1,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": -4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 1,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "black-quiet-promotion-r",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1r",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 2,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "white-quiet-promotion-r",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8r",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 3,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "black-quiet-promotion-b",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1b",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 4,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "white-quiet-promotion-b",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8b",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 5,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "black-quiet-promotion-n",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1n",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 6,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "white-quiet-promotion-n",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8n",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 7,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "black-capture-promotion",
+      "board": "R----RK--p-----------------------------------------------------k",
+      "move": "b2a1q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": -4,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -9,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": -4,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 8,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "white-capture-promotion",
+      "board": "------K------------------------------------------P------r----r-k",
+      "move": "b7a8q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": -4,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": -9,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": -4,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 9,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "ordinary-black-queen",
+      "board": "-----RK-q------------------------------------------------------k",
+      "move": "a2a1",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 9,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": 4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 9,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 10,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        1,
+        1
+      ],
+      "ledger": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "ordinary-white-queen",
+      "board": "------K-----------------------------------------Q------------r-k",
+      "move": "a7a8",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 9,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": 4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 9,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 11,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        1,
+        1
+      ],
+      "ledger": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "ordinary-queen-capture",
+      "board": "R----RK--q-----------------------------------------------------k",
+      "move": "b2a1",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 4,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -1,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 4,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 12,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        1,
+        1
+      ],
+      "ledger": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "recorded-prefix-a2a1q",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "a2a1q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 1,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -5,
+            "material_after_root": 3,
+            "best_material_after_capture_and_optional_recapture": -6,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 13,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "recorded-prefix-a2a1r",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "a2a1r",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 14,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "recorded-prefix-d4f2",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "d4f2",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 8,
+        "captures": [
+          {
+            "reply": "f7f2",
+            "material_before": -5,
+            "material_after_root": -4,
+            "best_material_after_capture_and_optional_recapture": -13,
+            "net_loss": 8,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "g1f2",
+            "material_before": -5,
+            "material_after_root": -4,
+            "best_material_after_capture_and_optional_recapture": -13,
+            "net_loss": 8,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "f1f2",
+            "material_before": -5,
+            "material_after_root": -4,
+            "best_material_after_capture_and_optional_recapture": -13,
+            "net_loss": 8,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 15,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        1,
+        1
+      ],
+      "ledger": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "recorded-prefix-d4c4",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "d4c4",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 9,
+        "captures": [
+          {
+            "reply": "f7c4",
+            "material_before": -5,
+            "material_after_root": -5,
+            "best_material_after_capture_and_optional_recapture": -14,
+            "net_loss": 9,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 16,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        1,
+        1
+      ],
+      "ledger": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "both-promotions-without-recapture",
+      "board": "---Q--K-----p-----------------------------------P------------r-k",
+      "move": "a7a8q",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 9,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 3,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1q",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 9,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1r",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": -1,
+            "net_loss": 5,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1b",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 1,
+            "net_loss": 3,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1n",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 1,
+            "net_loss": 3,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 17,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "both-promotions-with-recapture",
+      "board": "--KQ--------p-----------------------------------P------------r-k",
+      "move": "a7a8q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 1,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 3,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1q",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 4,
+            "net_loss": 0,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          },
+          {
+            "reply": "e2d1r",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 4,
+            "net_loss": 0,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          },
+          {
+            "reply": "e2d1b",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 4,
+            "net_loss": 0,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          },
+          {
+            "reply": "e2d1n",
+            "material_before": 4,
+            "material_after_root": 12,
+            "best_material_after_capture_and_optional_recapture": 4,
+            "net_loss": 0,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          }
+        ]
+      },
+      "case": 18,
+      "old": [
+        1,
+        1
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    },
+    {
+      "name": "opponent-promotion-after-our-queen-capture",
+      "board": "R--Q---K----p-------------------------------------------q----r-k",
+      "move": "a1a8",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 8,
+        "captures": [
+          {
+            "reply": "e2d1q",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": -9,
+            "net_loss": 8,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1r",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 4,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1b",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": -3,
+            "net_loss": 2,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "e2d1n",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": -3,
+            "net_loss": 2,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 19,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        1,
+        1
+      ]
+    },
+    {
+      "name": "opponent-promotion-with-recapture",
+      "board": "R-KQ--------p-------------------------------------------q----r-k",
+      "move": "a1a8",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": -1,
+        "captures": [
+          {
+            "reply": "e2d1q",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": 0,
+            "net_loss": -1,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          },
+          {
+            "reply": "e2d1r",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": 0,
+            "net_loss": -1,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          },
+          {
+            "reply": "e2d1b",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": 0,
+            "net_loss": -1,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          },
+          {
+            "reply": "e2d1n",
+            "material_before": -1,
+            "material_after_root": 8,
+            "best_material_after_capture_and_optional_recapture": 0,
+            "net_loss": -1,
+            "legal_safe_recaptures": [
+              "c1d1"
+            ]
+          }
+        ]
+      },
+      "case": 20,
+      "old": [
+        0,
+        0
+      ],
+      "root_credit": [
+        0,
+        0
+      ],
+      "ledger": [
+        0,
+        0
+      ]
+    }
+  ],
+  "scope": "Promotion material bookkeeping correctness on21 fixtures. No policy, learning, posterior, replay-strength or global guard-correctness claim.",
+  "limitations": [
+    "Original terminal/recapture feasibility approximations stay unchanged.",
+    "The incomplete root-only correction is rejected for use; both promotion increments and recapture value are required.",
+    "Queen promotion still permits the recorded guarded Qg8 net; this is not a fix for that loss or an arena-strength result."
+  ],
+  "source_hashes": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-ledger-20261110/review_existing.py": "a101daff56fcdbd9e41538b094dcb36109e59ac2d6e78e0bf74a1717774947b4",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-ledger-20261110/check.py": "51cb8c3be1d6dd627d87d4fe4d1c2993419e33e229afd4977be617090009f5d0",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-ledger-20261110/bridge.c": "b093d91ffa3e81a5743f29aa5475b315dc145097c50948443faa23bcbbfa3ab6",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-ledger-20261110/promotion-ledger.patch.gz": "6f0f4b0e9004a6fab5e4fbc4e6d3860e81770839028064dd76be5a480212891b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-ledger-20261110/build/probe": "f55a0620864c4db64af1478faf3bb5f81be4fbbfc3b72692c561f6beffb66a4e",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/promotion-ledger-20261110/probe.stdout": "a6fafd0adfab2cdd30018f630c0fc99d6618f99656ebffb2a155b9677e1b53ff",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/promotion-ledger-20261110/fixtures.json": "36c9b775f106a23bc869746e121c540bae96a46c16ef609fe24775b9d2bcc82c",
+    "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+  }
+}

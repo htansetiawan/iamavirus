@@ -1,0 +1,500 @@
+{
+  "at": "2026-11-10T12:29:11.991424+00:00",
+  "passed": true,
+  "cases": 17,
+  "changed": [
+    "black-quiet-promotion-q",
+    "white-quiet-promotion-q",
+    "black-capture-promotion",
+    "white-capture-promotion",
+    "recorded-prefix-a2a1q"
+  ],
+  "all_corrected_risks_match_exact_course_material_ledger": true,
+  "ordinary_queen_loss_controls_stay_positive": true,
+  "old_false_positives": 5,
+  "results": [
+    {
+      "name": "black-quiet-promotion-q",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 1,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 0,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": true
+    },
+    {
+      "name": "white-quiet-promotion-q",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 1,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": -4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 1,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": true
+    },
+    {
+      "name": "black-quiet-promotion-r",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1r",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 2,
+      "old": [
+        0,
+        0
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "white-quiet-promotion-r",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8r",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 3,
+      "old": [
+        0,
+        0
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "black-quiet-promotion-b",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1b",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 4,
+      "old": [
+        0,
+        0
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "white-quiet-promotion-b",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8b",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 5,
+      "old": [
+        0,
+        0
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "black-quiet-promotion-n",
+      "board": "-----RK-p------------------------------------------------------k",
+      "move": "a2a1n",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 6,
+      "old": [
+        0,
+        0
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "white-quiet-promotion-n",
+      "board": "------K-----------------------------------------P------------r-k",
+      "move": "a7a8n",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 7,
+      "old": [
+        0,
+        0
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "black-capture-promotion",
+      "board": "R----RK--p-----------------------------------------------------k",
+      "move": "b2a1q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": -4,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -9,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": -4,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 8,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": true
+    },
+    {
+      "name": "white-capture-promotion",
+      "board": "------K------------------------------------------P------r----r-k",
+      "move": "b7a8q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": -4,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": -9,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": -4,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 9,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": true
+    },
+    {
+      "name": "ordinary-black-queen",
+      "board": "-----RK-q------------------------------------------------------k",
+      "move": "a2a1",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 9,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": 4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 9,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 10,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        1,
+        1
+      ],
+      "changed": false
+    },
+    {
+      "name": "ordinary-white-queen",
+      "board": "------K-----------------------------------------Q------------r-k",
+      "move": "a7a8",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 9,
+        "captures": [
+          {
+            "reply": "f8a8",
+            "material_before": 4,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 9,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 11,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        1,
+        1
+      ],
+      "changed": false
+    },
+    {
+      "name": "ordinary-queen-capture",
+      "board": "R----RK--q-----------------------------------------------------k",
+      "move": "b2a1",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 4,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -1,
+            "material_after_root": 4,
+            "best_material_after_capture_and_optional_recapture": -5,
+            "net_loss": 4,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 12,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        1,
+        1
+      ],
+      "changed": false
+    },
+    {
+      "name": "recorded-prefix-a2a1q",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "a2a1q",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 1,
+        "captures": [
+          {
+            "reply": "f1a1",
+            "material_before": -5,
+            "material_after_root": 3,
+            "best_material_after_capture_and_optional_recapture": -6,
+            "net_loss": 1,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 13,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": true
+    },
+    {
+      "name": "recorded-prefix-a2a1r",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "a2a1r",
+      "reference": {
+        "risk": 0,
+        "worst_net_loss": 0,
+        "captures": []
+      },
+      "case": 14,
+      "old": [
+        0,
+        0
+      ],
+      "credit": [
+        0,
+        0
+      ],
+      "changed": false
+    },
+    {
+      "name": "recorded-prefix-d4f2",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "d4f2",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 8,
+        "captures": [
+          {
+            "reply": "f7f2",
+            "material_before": -5,
+            "material_after_root": -4,
+            "best_material_after_capture_and_optional_recapture": -13,
+            "net_loss": 8,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "g1f2",
+            "material_before": -5,
+            "material_after_root": -4,
+            "best_material_after_capture_and_optional_recapture": -13,
+            "net_loss": 8,
+            "legal_safe_recaptures": []
+          },
+          {
+            "reply": "f1f2",
+            "material_before": -5,
+            "material_after_root": -4,
+            "best_material_after_capture_and_optional_recapture": -13,
+            "net_loss": 8,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 15,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        1,
+        1
+      ],
+      "changed": false
+    },
+    {
+      "name": "recorded-prefix-d4c4",
+      "board": "-----RK-pPP--PP------------qp----------P---r---pp----Qpk-----R--",
+      "move": "d4c4",
+      "reference": {
+        "risk": 1,
+        "worst_net_loss": 9,
+        "captures": [
+          {
+            "reply": "f7c4",
+            "material_before": -5,
+            "material_after_root": -5,
+            "best_material_after_capture_and_optional_recapture": -14,
+            "net_loss": 9,
+            "legal_safe_recaptures": []
+          }
+        ]
+      },
+      "case": 16,
+      "old": [
+        1,
+        1
+      ],
+      "credit": [
+        1,
+        1
+      ],
+      "changed": false
+    }
+  ],
+  "scope": "Correctness of root promotion material credit on17fixed fixtures; no deployment, policy, playing strength or global guard-correctness claim.",
+  "limitations": [
+    "The original terminal-capture/recapture approximations remain unchanged.",
+    "Queen and rook promotion both permit the recorded Qg8 king net; crediting material does not save that game by itself.",
+    "No broader replay/match gate or arena version is earned by this check."
+  ],
+  "source_hashes": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-credit-20261110/check.py": "e86b5788358911dbbd5d43a37b96aead94ac31e56d8e14edd997af97be405c9d",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-credit-20261110/bridge.c": "58bd755662f2a0492a2ae63255e0d9fae0516d9d8a31ba00f29a995a49094c41",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-credit-20261110/promotion-credit.patch.gz": "57db0b116500d8d941dea75834605e1c46113c72d7a760529167a710d7a87f8b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-credit-20261110/build/probe": "c1e60e6d66bc51e75e1b43e789e7401c68a99b13958e9180a4d7e627cf8878d1",
+    "/home/henrytan/git/iamavirus/data/astra-spool/v38-latest-ten-20261110/0xe4vmwz.json": "e4a3a2e3e396abdcd01612ab5e4148ee2ca6cbf943828482416c81f3cf39c626",
+    "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+  },
+  "compile_command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-credit-20261110/bridge.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/belief.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/movemodel.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/cfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/eval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/search.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/gtcfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/front.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/sfeval.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-credit-20261110/build/probe"
+  ]
+}
