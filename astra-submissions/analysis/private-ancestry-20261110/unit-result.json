@@ -1,0 +1,28 @@
+{
+  "at": "2026-11-10T04:45:36.035730+00:00",
+  "command": [
+    "gcc",
+    "-O1",
+    "-g",
+    "-std=c11",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-ancestry-20261110/build/track",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-ancestry-20261110",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-ancestry-20261110/unit.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-ancestry-20261110/build/track/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-ancestry-20261110/build/track/belief.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-ancestry-20261110/build/track/movemodel.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-ancestry-20261110/build/unit"
+  ],
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "fixture e5d6 h8g8 color=0\nfixture d4e3 e1d1 color=1\nfixture e1g1 a7a6 color=0\nfixture e1c1 a7a6 color=0\nfixture e8g8 a2a3 color=1\nfixture e8c8 a2a3 color=1\nfixture a7a8q h8g7 color=0\nfixture a7a8n h8g7 color=0\nfixture c4d5 h8h7 color=0\n==15==LeakSanitizer has encountered a fatal error.\n==15==HINT: For debugging, try setting environment variable LSAN_OPTIONS=verbosity=1:log_threads=1\n==15==HINT: LeakSanitizer does not work under ptrace (strace, gdb, etc)\n",
+  "correction": "The capture fixture originally moved Black Kh8-g8 onto the Bd5 diagonal; corrected reply Kh8-h7 before any prefix collection."
+}
