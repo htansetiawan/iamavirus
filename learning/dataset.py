@@ -63,6 +63,63 @@ def assign_splits(rows: list[dict], fractions=(0.8, 0.1, 0.1), seed: int = 0,
     return assignment
 
 
+def dataset_source_rows(path: Path, limit: int | None = None) -> tuple[list[dict], dict]:
+    """Read a finite journal snapshot; callers hold RawStore.writer().
+
+    Older journals can contain repeated IDs from concurrent ingestion. Keep
+    each game once before splitting or limiting, and refuse conflicting
+    source identities instead of silently changing a game's training split.
+    Unknown extra journal fields do not change the consumed source identity.
+    """
+    identities = ("moves_sha256", "createdAt", "white", "black",
+                  "whitePlayerId", "blackPlayerId", "whiteVersion", "blackVersion",
+                  "result", "reason", "plies", "rulesVersion", "termination")
+    rows: dict[str, dict] = {}
+    digest = hashlib.sha256()
+    lines = duplicates = size = 0
+    with path.open("rb") as handle:
+        before = os.fstat(handle.fileno())
+        remaining = before.st_size
+        while remaining:
+            line = handle.readline(remaining)
+            if not line:
+                raise ValueError("accepted journal shrank during dataset snapshot")
+            remaining -= len(line)
+            if not line.endswith(b"\n"):
+                raise ValueError("accepted journal has an incomplete final row")
+            digest.update(line)
+            size += len(line)
+            if not line.strip():
+                continue
+            row = json.loads(line)
+            game = row["id"]
+            previous = rows.get(game)
+            if previous is not None:
+                for field in identities:
+                    # Date/hash are consumed for splitting; missing versus
+                    # present is also a conflict there. Other immutable fields
+                    # can be absent from an older, minimal journal format.
+                    compare = field in ("moves_sha256", "createdAt") or (
+                        field in previous and field in row)
+                    if compare and previous.get(field) != row.get(field):
+                        raise ValueError(f"conflicting accepted game {game}: {field}")
+                duplicates += 1
+            else:
+                rows[game] = row
+            lines += 1
+        current = path.stat()
+        if (before.st_dev, before.st_ino) != (current.st_dev, current.st_ino):
+            raise ValueError("accepted journal replaced during dataset snapshot")
+        if os.fstat(handle.fileno()).st_size < before.st_size:
+            raise ValueError("accepted journal truncated during dataset snapshot")
+    selected = list(rows.values())
+    if limit:
+        selected = selected[:limit]
+    return selected, {"bytes": size, "sha256": digest.hexdigest(),
+                      "accepted_lines": lines, "duplicate_lines": duplicates,
+                      "unique_games": len(rows), "selected_games": len(selected)}
+
+
 def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 0.1, 0.1),
                   seed: int = 0, limit: int | None = None) -> dict:
     """Publish a complete immutable generation, preserving the last dataset on failure.
@@ -118,9 +175,10 @@ def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 
 
 def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions, seed, limit) -> dict:
     store = ingest.RawStore(raw)
-    rows = [json.loads(line) for line in store.accepted.read_text().splitlines() if line.strip()]
-    if limit:
-        rows = rows[:limit]
+    # Lock only the journal snapshot; replay validation and episode building
+    # must not block the watcher for the duration of an export.
+    with store.writer():
+        rows, source_journal = dataset_source_rows(store.accepted, limit)
     assignment = assign_splits(rows, fractions, seed)
     stats: dict = {split: Counter() for split in SPLITS}
     by_opponent: dict = {split: Counter() for split in SPLITS}
@@ -135,7 +193,7 @@ def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions,
             replay = json.loads(replay_bytes)
             states, problems = ingest.validate_replay(replay)
             if problems:
-                continue
+                raise ValueError(f"accepted replay {row['id']} failed validation: {problems}")
             split = assignment[row["id"]]
             source_hash = hashlib.sha256(replay_bytes).hexdigest()
             for side in (rules.WHITE, rules.BLACK):
@@ -167,6 +225,7 @@ def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions,
         "opponents": {split: dict(by_opponent[split]) for split in SPLITS},
         "candidate_mismatches": mismatches,
         "source_games": len(rows),
+        "source_journal": source_journal,
         "undated_source_games": sum(not row.get("createdAt") for row in rows),
         "split_method": "chronological_duplicate_groups" if all(row.get("createdAt") for row in rows)
                         else "seeded_duplicate_groups_missing_timestamps",
