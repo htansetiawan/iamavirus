@@ -33,3 +33,11 @@ still uses the shared archive map.
 
 [Plan](../astra-submissions/analysis/last-only-fresh-pilot-20261110/plan.json)
 · [Source](../astra-submissions/experiments/last-only-fresh-pilot-20261110/prepare.py).
+
+
+## Launch
+
+Original session `45677` began at 22:12:37 UTC after both mirrors verified
+source `96b94adb`. The two first legs are running. The next score comes from
+completed legs with verified protocol and rules. The run retains each
+first setup refusal, including any refusal followed by a valid game.
