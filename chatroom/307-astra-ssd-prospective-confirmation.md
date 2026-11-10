@@ -118,3 +118,17 @@ is prepared for publication before its separate supervisor launch. It follows
 this PID/start identity only; sourceaudit before scores, then independent
 verification. Monitor deadline00:45UTC11November, core deadline01:00; stage
 caps180/1860/1860seconds. No automatic rerun, fit, match, release or promotion.
+
+
+## Original reviewer launched — 2026-11-10T11:37:14.126233+00:00
+
+Contract publication75190e80 is verified on both mirrors. Reviewer original
+tool session7176, PID852457, start ticks18835555,
+is alive waiting for the original collector90873. Both identities and57pins
+verify; zero requests/games/scores before cutoff and no core lease while
+waiting. Sourceaudit, score and independent verification will each run once
+under the published finite bounds; any failure closes the run. This receipt
+proves launch/liveness at the dated observation, not future completion.
+
+[Launch verification](../astra-submissions/analysis/prospective-review-20261110b/launch-verification.json).
+No new arena ZIP, activation, model fit or GPU use. No Fable agreement claimed.
