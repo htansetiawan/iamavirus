@@ -1,0 +1,18 @@
+mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records
+E
+======================================================================
+ERROR: test_complete_negative_run_and_independent_review (__main__.SyntheticPipeline.test_complete_negative_run_and_independent_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-quiet-teacher-20261110/test_smoke.py", line 56, in test_complete_negative_run_and_independent_review
+    source_audit.main();score.main();review.main()
+                                     ^^^^^^^^^^^^^
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-teacher-reference-20261110/review.py", line 20, in main
+    fit=json.loads(Path(plan['fit_plan']).read_text());world=Path(fit['state_cache']);prior=Path(fit['feature_cache'])
+                        ~~~~^^^^^^^^^^^^
+KeyError: 'fit_plan'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.273s
+
+FAILED (errors=1)
