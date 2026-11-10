@@ -1,0 +1,143 @@
+{
+  "at": "2026-11-10T15:01:12.361998+00:00",
+  "passed": true,
+  "native_special_frames": 26,
+  "native_checks": [
+    {
+      "fixture": "white-en-passant",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "white-en-passant",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "black-en-passant",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "black-en-passant",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "white-castle-through-attack",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "white-castle-through-attack",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "black-castle-through-attack",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "black-castle-through-attack",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "white-castle-into-attack-candidate",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "white-castle-into-attack-candidate",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "king-must-escape",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "king-must-escape",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "white-promotion-quiet",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "white-promotion-quiet",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "white-promotion-capture",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "white-promotion-capture",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "black-promotion-quiet",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "black-promotion-quiet",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "black-promotion-capture",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "black-promotion-capture",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "white-king-capture-candidate",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "white-king-capture-candidate",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "black-king-capture-candidate",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "black-king-capture-candidate",
+      "phase": 1,
+      "passed": true
+    },
+    {
+      "fixture": "explicit-king-capture",
+      "phase": 0,
+      "passed": true
+    },
+    {
+      "fixture": "explicit-king-capture",
+      "phase": 1,
+      "passed": true
+    }
+  ],
+  "codec_privacy_contracts": 16,
+  "codec_tests_exit_code": 0,
+  "codec_test_command": "PYTHONPATH=astra-submissions/tools:. .venv/bin/python -m pytest -q astra-submissions/tools/test_reconstructed_cache.py astra-submissions/tools/test_experience_index.py",
+  "training_trajectories_materialized": false,
+  "api_requests": 0,
+  "models_fitted": false
+}
