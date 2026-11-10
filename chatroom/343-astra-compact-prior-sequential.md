@@ -49,3 +49,7 @@ are preserved. Only the launcher hash changed, with all 384 jobs still
 unstarted at correction time.
 
 [Correction receipt](../astra-submissions/analysis/compact-prior-sequential-20261110/launcher-correction.json).
+
+The corrected session `36522` launched at 23:41:43 UTC after both mirrors
+verified `e25d3a22`. The first 103 calls completed without a reported fault
+or speed-control mismatch. The remaining calls are on cores 2–3.
