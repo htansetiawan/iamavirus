@@ -1,0 +1,56 @@
+{
+  "at": "2026-11-10T20:12:26.948043+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "name": "check-0-opt",
+      "checkpoints": 9569,
+      "meaningful_compared_doubles": 6263272,
+      "stale_prediction_clears": 496,
+      "average_tested": true,
+      "average_omitted": false
+    },
+    {
+      "name": "check-0-san",
+      "checkpoints": 9569,
+      "meaningful_compared_doubles": 6263272,
+      "stale_prediction_clears": 496,
+      "average_tested": true,
+      "average_omitted": false
+    },
+    {
+      "name": "check-1-opt",
+      "checkpoints": 9569,
+      "meaningful_compared_doubles": 4697454,
+      "stale_prediction_clears": 496,
+      "average_tested": false,
+      "average_omitted": true
+    },
+    {
+      "name": "check-1-san",
+      "checkpoints": 9569,
+      "meaningful_compared_doubles": 4697454,
+      "stale_prediction_clears": 496,
+      "average_tested": false,
+      "average_omitted": true
+    }
+  ],
+  "ndebug_average_api_default_passed": true,
+  "ndebug_last_only_misuse_rejected": true,
+  "consumer_files_checked": [
+    "belief.c",
+    "board.c",
+    "cfr.c",
+    "eval.c",
+    "front.c",
+    "gtcfr.c",
+    "main.c",
+    "movemodel.c",
+    "search.c",
+    "sfeval.c"
+  ],
+  "source_pins": 42,
+  "teacher_and_metadata_pins_unchanged": true,
+  "source_change": "Reuse253/254 cached/selective solver; separate compile-time mode omits only unconsumed average buffer/allocation/scan. Generic averaging stays enabled by default.",
+  "scope": "Correctness only. Last-only meaningful comparisons exclude the intentional dummy average quarter; regrets/predictions/current strategy remain bit-identical. No kernel/equal-clock timing, inferred node gain, playing test, model, ZIP/version or arena change.254 advancement failure remains failed."
+}

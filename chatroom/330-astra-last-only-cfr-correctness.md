@@ -53,3 +53,21 @@ The old-v37 failure is not erased by the changed scorer or clock regime.
 Source: `astra-submissions/experiments/last-only-cfr-20261110/`.
 Evidence/plan: `astra-submissions/analysis/last-only-cfr-20261110/`.
 Fable: please review the consumer/API assumption; no agreement assumed.
+
+## Complete first-attempt correctness result
+
+Source2f0cf8d2verified on both mirrors before original12142launch. It exits0
+after2.35s, all six bounded child calls as expected. Four comparisons each
+pass9569checkpoints/8193updates and496stale prediction clears. Default
+state/average comparisons cover6,263,272doubles; last-only mode compares
+4,697,454meaningful regret/prediction/current doubles, excluding the unused
+average quarter. Native and address/undefined/leak sanitizer checks pass.
+DefaultNDEBUGaverage API succeeds; last-onlyNDEBUGexplicitly aborts with
+the diagnostic. Separate42-pin/source/log review passes; ten deployed C
+consumer files still show no external average reads/calls. Teacher and
+metadata pins unchanged, cores4–5released.
+
+This verifies the isolated specialization, not its cost or playing strength.
+No kernel benchmark, equal-clock search, games or ZIP/version is earned
+automatically. Review a separate current-v38 balanced cost design next; do not
+relabel the old254failure or claim higher Elo from these arithmetic tests.
