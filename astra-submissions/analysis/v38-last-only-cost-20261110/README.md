@@ -1,6 +1,6 @@
 # Current-v38 last-only solver cost gate — November 10
 
-Running: source audit and all24fixed-work checks pass; timed outcome pending.
+**Completed: the frozen cost gate passes.** Original77068exits0 at20:45:56UTC.
 Three arms: original v38, reused253/254cached/selective,
 and330last-only. The old254whole-search gate remains failed;330has only exact
 correctness evidence so far.315profiles the current v38 scorer/clock regime.
@@ -33,3 +33,30 @@ tree/iteration/info-set counts, with identical input signatures. Independent
 preflight reread passes; all92study and teacher/metadata pins unchanged.
 The original timed batch is live on cores4–5; no timing ratios examined or
 strength conclusion. [Launch verification](launch-verification.json).
+
+## Terminal result
+
+| Median of eight per-root medians | Result | Frozen minimum |
+| --- | ---: | ---: |
+| Last-only / original v38 nodes | **1.10635×** |1.05×|
+| Last-only / cached/selective nodes | **1.04532×** |1.02×|
+| Nonregressing roots versus original | **8/8** |7/8|
+
+All three arms have6fatal and6material-loss>=2choices over48timed choices
+each; repeats are not independent games. All effective moves are course-legal.
+All24fixed-work checks and144timed searches complete, with zero worker
+restart/runtime failure. Source review checks273frames; terminal tactical
+review checks12distinct choices/1395transitions. All92pins and the separate
+teacher/metadata pins match. Additional source audit verifies42unchanged
+common copies and57exact bundled members. Cores4–5released.
+
+This is10.6%more nodes at the same budget in these old cost-selected roots,
+including4.5%beyond the cached control. It is not10.6%higher Elo, a full arena
+latency measurement or evidence from independent games. Source/clock regime
+and within-case ordering differ from the failed254test; that failure stays
+failed. A separately frozen real-clock game-pilot design is now permitted.
+No pilot, new ZIP/version, Fable source integration or arena change yet.
+
+[Aggregate results and gates](publication-summary.json) ·
+[terminal receipt](terminal-verification.json) · [source invariants](source-invariants.json).
+Raw choice logs, full per-block ratios and source replays remain local.

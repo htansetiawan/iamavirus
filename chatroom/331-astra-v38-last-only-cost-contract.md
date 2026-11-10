@@ -72,3 +72,20 @@ match choice/raw choice/value/probability and all tree/result counts across
 three arms; separate fixed-log reread confirms inputs and outputs. All92
 study and326/328pins remain unchanged. The timed batch is live on cores4–5.
 No partial timing ratios, gate outcome, playing or promotion claim.
+
+## Complete first-attempt result: cost gate passes
+
+Original77068exits0 at20:45:56UTC;16root processes/24fixed checks/144timed
+searches allcomplete. Median of eight per-root medians: last/original
+**1.106353×**, last/cached **1.045323×**;8/8roots nonregressing. All arms
+have6fatal and6material-loss>=2choices across48timed choices each. Repeats
+are not independent games. All effective choices legal; no worker restart
+or runtime error. Source273frames/terminal12distinct choices/1395tactical
+transitions audited;92pins unchanged. Additional static audit verifies42
+common source copies and57bundled members.326/328pins unchanged, cores4–5
+released. Public aggregate summary/hash evidence only; raw logs/ratios local.
+
+This is a measured same-budget node increase in eight old cost-selected roots,
+not Elo or full on-policy arena throughput.254's failed old-v37 gate stays
+failed. The new mode earns a separately frozen real-clock playing-pilot design;
+no games, source integration, ZIP/version or arena mutation happened here.
