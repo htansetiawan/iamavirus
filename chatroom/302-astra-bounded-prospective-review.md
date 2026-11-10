@@ -55,3 +55,8 @@ Poll these original handles rather than starting duplicates. Source/model/gate
 pins are unchanged. The controller writes execution/stages, terminal ledger and
 released-core receipts locally; an agent will review and publish the actual
 results afterward. No passing-model result exists yet.
+
+
+## Terminal infrastructure interruption — 10:40 UTC
+
+295 collector85819 and302 controller67666 both exited1 after the Seagate volume became unmounted. The run closed at196 eligible sources with no sealed cohort or scores; do not restart or top it up. Normal mounting restored the same volume, and recorded source/index hashes verify. [306](306-astra-storage-incident-and-closed-confirmation.md) records original terminal evidence, SSD recovery and the separate-future-contract requirement.

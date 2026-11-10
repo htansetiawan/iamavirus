@@ -1,0 +1,80 @@
+{
+  "at": "2026-11-10T10:50:50.027134+00:00",
+  "classification": "Infrastructure interruption; full-only predictive run inconclusive and closed without scoring",
+  "failure_at": "2026-11-10T10:39:44.881359+00:00",
+  "failed_write": "/media/henrytan/seagate/iamavirus/astra/prospective-full-prior-20261110/page-010-00.json",
+  "host_before_recovery": {
+    "seagate_mounted": false,
+    "raw_symlink_dangling": true,
+    "attached_device": "/dev/sdc1",
+    "label": "seagate",
+    "filesystem": "exfat",
+    "uuid": "5EFE-C661"
+  },
+  "collector": {
+    "original_session": 85819,
+    "exit_code": 1,
+    "pid": 773645,
+    "terminal": {
+      "started_at": "2026-11-10T06:43:15.100896+00:00",
+      "status": "failed",
+      "phase": "closed without scoring",
+      "pid": 773645,
+      "publication_commit": "ff2e7d33ff300e060f40bdd0cdb5dfeb2b9cfa46",
+      "plan_sha256": "d425bbade7c0ca4022d1edc62bc56215170c83e783bbe7e16fc9f13281ceb84a",
+      "requests": 210,
+      "collected": 196,
+      "ticks": 10,
+      "pending": null,
+      "updated_at": "2026-11-10T10:19:44.274941+00:00",
+      "error": "FileNotFoundError(2, 'No such file or directory')",
+      "ended_at": "2026-11-10T10:39:44.881359+00:00"
+    }
+  },
+  "reviewer": {
+    "original_session": 67666,
+    "exit_code": 1,
+    "pid": 812006,
+    "terminal": {
+      "started_at": "2026-11-10T09:09:38.994081+00:00",
+      "status": "failed",
+      "phase": "waiting_for_original_collector",
+      "pid": 812006,
+      "collector": {
+        "pid": 773645,
+        "start_ticks": 17076603,
+        "original_tool_session": 85819
+      },
+      "contract_sha256": "b431983cb86fd720de0997644cc7ae840af8c6f70f460e3e29df596978fadcbf",
+      "collection_restarted": false,
+      "models_fitted": false,
+      "updated_at": "2026-11-10T10:40:09.282023+00:00",
+      "collector_status": "failed",
+      "collector_phase": "closed without scoring",
+      "collected": 196,
+      "error": "AssertionError('collector terminated without a cohort')",
+      "ended_at": "2026-11-10T10:40:09.282002+00:00",
+      "core_lease_released": false
+    }
+  },
+  "scoring_artifacts_absent": {
+    "cohort.json": true,
+    "scoring.json": true,
+    "result.json": true,
+    "independent-review.json": true,
+    "decisions.jsonl.gz": true
+  },
+  "core_reservations": [],
+  "raw_available_after_normal_mount": true,
+  "restarted": false,
+  "old_cutoff_or_cohort_changed": false,
+  "old_partial_scores_opened": false,
+  "source_terminal_hashes": {
+    "astra-submissions/analysis/prospective-full-prior-20261110/execution.json": "de276e02eb4ad5cb35f8b13741b0dfb628393eea6b25c7e5712a587fb2eec1c4",
+    "astra-submissions/analysis/prospective-full-prior-20261110/collector.stdout": "2648877ca82206d0d21cf4659f974bf91aae3777230b66a8cb920de951bae1f2",
+    "astra-submissions/analysis/prospective-full-prior-20261110/collector.stderr": "2fb6e670e82b893aa44e6041ed58ad48b460bbd3b4769e24323e0aabd1e3357f",
+    "astra-submissions/analysis/prospective-auto-review-20261110/execution.json": "2965475e51d1da6635030c5fb986a365b87d3d06212062df78d18b3f59f86425",
+    "astra-submissions/analysis/prospective-auto-review-20261110/stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "astra-submissions/analysis/prospective-auto-review-20261110/stderr.txt": "581e52e2fce30ab5fccd8a2de53a8b4d73eef37793da693dc8a50f7454a04560"
+  }
+}

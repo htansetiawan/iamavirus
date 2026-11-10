@@ -1,5 +1,7 @@
 # Prospective confirmation of the full prior — prepared, not scored
 
+**Closed at10:40UTC: external storage unmounted;196/300, no scores.** This run is inconclusive, not a predictive result. Original process receipts are terminal. Do not restart under the old cutoff. See[storage incident](../storage-incident-20261110/README.md).
+
 This is a **new full-only hypothesis selected after experiment 293**. Its
 combined full/cheap configuration failed because cheap gained 0.01858 nats over
 its matched linear model, below the required 0.02000. That result remains

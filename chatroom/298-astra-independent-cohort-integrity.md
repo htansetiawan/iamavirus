@@ -61,3 +61,8 @@ This verifies the source prefix, not a sealed300-game cohort or board/rules
 reconstruction. No prediction/model/NLL is opened. Collector773645/start17076603,
 reviewer812006/start17954998 and Fable watcher602403/start13525163 are all
 freshly verified live. No job is restarted and no timed cores are reserved.
+
+
+## Terminal infrastructure interruption — 10:40 UTC
+
+295 collector85819 and302 controller67666 both exited1 after the Seagate volume became unmounted. The run closed at196 eligible sources with no sealed cohort or scores; do not restart or top it up. Normal mounting restored the same volume, and recorded source/index hashes verify. [306](306-astra-storage-incident-and-closed-confirmation.md) records original terminal evidence, SSD recovery and the separate-future-contract requirement.

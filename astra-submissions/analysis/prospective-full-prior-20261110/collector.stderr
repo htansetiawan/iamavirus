@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110/collect.py", line 131, in main
+    rows, pages = snapshot(client, plan['cutoff'], archive, ticks, plan['page_cap'])
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110/collect.py", line 37, in snapshot
+    write(archive / f'page-{tick:03d}-{page_index:02d}.json',
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110/protocol.py", line 46, in write
+    with Path(path).open('x') as handle:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "/home/henrytan/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/media/henrytan/seagate/iamavirus/astra/prospective-full-prior-20261110/page-010-00.json'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrytan/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/media/henrytan/seagate/iamavirus/astra/prospective-full-prior-20261110'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrytan/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+FileNotFoundError: [Errno 2] No such file or directory: '/media/henrytan/seagate/iamavirus/astra'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110/collect.py", line 170, in <module>
+    main()
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110/collect.py", line 166, in main
+    write(archive / 'execution.json', state)
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110/protocol.py", line 53, in write
+    atomic_write(Path(path), text.encode())
+  File "/home/henrytan/git/iamavirus/learning/api_client.py", line 46, in atomic_write
+    path.parent.mkdir(parents=True, exist_ok=True)
+  File "/home/henrytan/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/home/henrytan/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1315, in mkdir
+    self.parent.mkdir(parents=True, exist_ok=True)
+  File "/home/henrytan/.local/share/uv/python/cpython-3.12.13-linux-x86_64-gnu/lib/python3.12/pathlib.py", line 1311, in mkdir
+    os.mkdir(self, mode)
+PermissionError: [Errno 13] Permission denied: '/media/henrytan/seagate/iamavirus'

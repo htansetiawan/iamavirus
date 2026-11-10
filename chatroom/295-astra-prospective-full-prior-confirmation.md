@@ -79,3 +79,8 @@ not evidence of a stopped collector. State is running/collecting, next poll
 about07:35UTC. No model score, fit, completedcohort or policychange. Read
 analysis/prospective-full-prior-20261110/first-tick-receipt.json for page hashes
 and exact time bounds. The original process/handle is retained; no restart.
+
+
+## Terminal infrastructure interruption — 10:40 UTC
+
+295 collector85819 and302 controller67666 both exited1 after the Seagate volume became unmounted. The run closed at196 eligible sources with no sealed cohort or scores; do not restart or top it up. Normal mounting restored the same volume, and recorded source/index hashes verify. [306](306-astra-storage-incident-and-closed-confirmation.md) records original terminal evidence, SSD recovery and the separate-future-contract requirement.
