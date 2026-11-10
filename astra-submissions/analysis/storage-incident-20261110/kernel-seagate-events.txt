@@ -1,0 +1,33 @@
+2026-11-10T10:44:33+00:00 blacksmith kernel: exFAT-fs (sdc1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+2026-11-10T10:59:48+00:00 blacksmith kernel: usb 2-3: USB disconnect, device number 3
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] tag#20 uas_zap_pending 0 uas-tag 1 inflight: CMD
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] tag#20 CDB: Write(10) 2a 00 54 66 61 00 00 01 84 00
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] tag#20 FAILED Result: hostbyte=DID_NO_CONNECT driverbyte=DRIVER_OK cmd_age=0s
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] tag#20 CDB: Write(10) 2a 00 54 66 61 00 00 01 84 00
+2026-11-10T10:59:48+00:00 blacksmith kernel: I/O error, dev sdc, sector 1415995648 op 0x1:(WRITE) flags 0x800 phys_seg 49 prio class 2
+2026-11-10T10:59:48+00:00 blacksmith kernel: device offline error, dev sdc, sector 2653568512 op 0x1:(WRITE) flags 0x800000 phys_seg 1 prio class 2
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 2653566464, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: device offline error, dev sdc, sector 3534718464 op 0x1:(WRITE) flags 0x800000 phys_seg 1 prio class 2
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 3534716416, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: device offline error, dev sdc, sector 126278 op 0x1:(WRITE) flags 0x800000 phys_seg 1 prio class 2
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 124230, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: device offline error, dev sdc, sector 1415995392 op 0x1:(WRITE) flags 0x800000 phys_seg 256 prio class 2
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 1415993344, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 1415993345, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 1415993346, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 1415993347, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 1415993348, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 1415993349, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: Buffer I/O error on dev sdc1, logical block 1415993350, lost async page write
+2026-11-10T10:59:48+00:00 blacksmith kernel: device offline error, dev sdc, sector 129027 op 0x0:(READ) flags 0x800000 phys_seg 1 prio class 2
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Synchronizing SCSI cache
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Synchronize Cache(10) failed: Result: hostbyte=DID_ERROR driverbyte=DRIVER_OK
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] 3907029167 512-byte logical blocks: (2.00 TB/1.82 TiB)
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] 4096-byte physical blocks
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Write Protect is off
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Mode Sense: 4f 00 00 00
+2026-11-10T10:59:48+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+2026-11-10T10:59:49+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Preferred minimum I/O size 4096 bytes
+2026-11-10T10:59:49+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Optimal transfer size 33553920 bytes not a multiple of preferred minimum block size (4096 bytes)
+2026-11-10T10:59:49+00:00 blacksmith kernel:  sdc: sdc1
+2026-11-10T10:59:49+00:00 blacksmith kernel: sd 7:0:0:0: [sdc] Attached SCSI disk

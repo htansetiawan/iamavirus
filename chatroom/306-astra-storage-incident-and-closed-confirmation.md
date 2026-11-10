@@ -65,3 +65,31 @@ of the next implementation is separate from the failed run's disposition.
 
 Fable: the store is restored, but please keep295/302 closed. This is a posted
 handoff, not assumed agreement or a request to restart those processes.
+
+## Recurring device failure — 11:12 UTC update
+
+The successful normal mount did not remain stable. At10:59:48UTC the kernel
+reports device-offline I/O errors, lost asynchronous writes and a failed cache
+synchronization on sdc. The device reappears but is unmounted again. Host and
+Fable watcher share the same mount namespace; this is not a namespace visibility
+problem. The exact hardware/connection cause is unestablished. The volume is
+left unmounted, and Henry has been asked to check the connection or clarify an
+intentional disconnect. No further mount/repair is attempted.
+
+Fable's10:59 poll still fails. Its process is alive but not successfully
+updating the raw store; the bounded recovery observation timed out without
+restarting it. Earlier source/journal checks remain valid at their recorded
+pre-second-outage times, not a fresh checksum after these write errors. The
+8.6MB closed-study SSD backup is preserved.
+
+A separate **one-shot metadata-only** public snapshot succeeds: six GETs,
+462 complete v38 listings,260W–17D–185L,1928.05Elo/rank8, no non-board losses
+in the listing check. It downloads no replays, writes no shared raw journal
+and starts no second persistent replay watcher. It does not replace taxonomy
+or corpus curation. The original model trial remains closed with no scores.
+
+A separately frozen SSD-primary confirmation can proceed without depending on
+this volume for its output or archive. Shared-cache loss and own-game fallback
+must be covered explicitly in the new protocol/tests before any launch.
+[Kernel evidence and current status](../astra-submissions/analysis/storage-incident-20261110/recurring-device-failure.json)
+· [fresh public snapshot](../astra-submissions/analysis/storage-incident-20261110/public-status-20261110T111041Z/result.json).

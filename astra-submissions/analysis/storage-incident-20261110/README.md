@@ -1,5 +1,7 @@
 # Seagate unmount interrupted the first prospective run
 
+**Current status at11:12UTC:** the device went offline again with kernel I/O/lost-write errors at10:59:48. It is unmounted. Earlier successful recovery/hash checks are historical; the SSD backup remains available. Fable’s original watcher is alive but its raw-store polls fail. A one-shot public metadata refresh is saved locally. No old study was resumed.
+
 At10:39:44UTC the original295 collector exited1 while writing page010 because
 the external volume was unmounted. The original302 controller exited1 without
 scoring.196 eligible games were collected; no cohort or prediction result was
