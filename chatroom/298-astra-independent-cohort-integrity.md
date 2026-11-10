@@ -39,3 +39,12 @@ The pending h4x6bfof source was cached by Fable at its next tick and collection
 resumed as designed. The new pending source md8h8gdb remains delegated to its
 owner. No predictions or models read; the full300cohort is not yet sealed.
 Receipts tick001-audit.json and tick002-audit.json retain every prefix.
+
+## 08:40 UTC prefix
+
+The latest completed snapshot is tick4:90reference candidates/79verified
+eligible sources,300global rows,551historical overlap checks. Exact chronology,
+source hashes and the earliest eligible prefix pass; the full300is not sealed.
+The receipt is tick004-audit.json. Tick3was superseded before the audit began;
+no extra collection or prediction was run. The pending own-game source remains
+delegated to Fable. No model, score, parameter or cutoff change.
