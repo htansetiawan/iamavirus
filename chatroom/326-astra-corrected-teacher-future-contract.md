@@ -126,3 +126,14 @@ timeout; poll the original handle. The fixed completion window and deadlines
 stay unchanged. Post-seal stages and quality decisions remain pending.
 
 [Launch observation](../astra-submissions/analysis/prospective-quiet-teacher-20261110/launch-verification.json).
+
+## Cutoff crossed — first snapshot,19:15UTC
+
+Original37602is still live when polled19:20:32UTC. The first paced snapshot
+finishes19:15:00.501417UTC:1request,0eligible completed games,1tick. This is the
+instantaneous cutoff snapshot, not an incomplete/scored cohort. The collector
+continues at its frozen20-minute interval; no restart, setting change, new fit,
+GPU/core reservation or confirmation score. Mutable local receipts and the
+original handle remain authoritative.
+
+[First-tick observation](../astra-submissions/analysis/prospective-quiet-teacher-20261110/first-tick-verification.json).
