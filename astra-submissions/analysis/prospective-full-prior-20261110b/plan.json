@@ -95,7 +95,7 @@
     "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/freeze.py": "7f88a7314d525c5280639ff933dd9ce4d5308e70d30c5e8ebcaf44e07302e2d6",
     "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/protocol.py": "f025556446ffc69829441d9cec3bb35237f0ba753819bb5b67e3a5f54a6abd6b",
     "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/score.py": "ea18a0615722a6abec9c4a4c51fb45d6cbd4b4eb2f0b17dbd4e61940b82ffe95",
-    "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/smoke.py": "4a04ae36b8372ffa6dbdb67c96c633705688c04de8b27406071d1bb31b3afb0c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/smoke.py": "03392211e82de15809b9fadc4b8ef532e2a9392aa84a20eca3a85399d219d9a1",
     "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/supervise.py": "7a73123e8226aa9df600d93db2aaa81f2c4b5b7ebe9f522047811bbb793b8987",
     "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/test_protocol.py": "a55a80533c846f53897346cf4115a3c9c055902bbcd1153f7d361322ce60a1d7",
     "/home/henrytan/git/iamavirus/astra-submissions/experiments/prospective-full-prior-20261110b/test_storage.py": "0e5be7892560753c0cc69d5844b9a47d0131f3066a387b3c5af2af871dbdc10e",
@@ -112,5 +112,10 @@
   "primary": "All reference-team decisions after eight own moves, excluding demonstrated moves that leave the mover king capturable, as in293. All-move nonregression includes the excluded opening/fatal decisions. Game-cluster bootstrap2000draws.",
   "models": "Frozen293 full22-feature quadratic versus its frozen matched linear and native baseline/history. Cheap branch unchanged. No fit/epoch/temperature/feature/threshold changes.",
   "scope": "Fresh execution of the same frozen full-only hypothesis after295 infrastructure interruption.295 remains closed/inconclusive without scores;293 combined-gate failure stays failed. New cutoff/population with4996 exclusions, bounded SSD primary, explicit cache-loss fallback and exact timestamps; no model/gate/feature/fit changes. This confirmation can reject post-selection optimism; it cannot retroactively turn293 or295 into a pass. Predictive scoring of hypothetical full-parent features, not an observation-only opponent policy or an Elo experiment.",
-  "next": "Only all conditions plus independent audit allow a separately designed native-cost and sequential-posterior experiment. No automatic runtime integration, match, archive/version reservation, arena change, refit or GPU use. Insufficient data or collection failure closes this run without moving cutoff/extending cohort."
+  "next": "Only all conditions plus independent audit allow a separately designed native-cost and sequential-posterior experiment. No automatic runtime integration, match, archive/version reservation, arena change, refit or GPU use. Insufficient data or collection failure closes this run without moving cutoff/extending cohort.",
+  "prelaunch_revision": {
+    "at": "2026-11-10T11:31:01.686598+00:00",
+    "initial_plan_sha256": "12f7e370cf537142d5529ed0a7ca9aa7de5840566263774100e46b16d183503a",
+    "reason": "Only synthetic smoke fixture receipt now supplies plan_sha256 for the independent source auditor. Production collector, models, gates, dates, selection and cohort remain unchanged. No model scoring occurred in the failed fixture and no real future data exists."
+  }
 }

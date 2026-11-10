@@ -93,6 +93,7 @@ def main():
         write(test_out/'cohort.json',cohort)
         write(archive/'tick-000.json',dict(at=now(),pages=1,candidates=3,eligible=3,pending=None,decisions=decisions))
         write(test_out/'execution.json',dict(status='complete',phase='sealed',ticks=1,
+              plan_sha256=sha(test_out/'plan.json'),
               started_at='1999-12-31T23:00:00Z',cohort_sha256=sha(test_out/'cohort.json')))
         # The independent metadata audit must pass before any model score.
         import importlib.util

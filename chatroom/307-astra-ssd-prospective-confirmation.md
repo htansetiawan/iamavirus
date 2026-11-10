@@ -82,3 +82,8 @@ prediction, not an observation-only policy or a strength estimate.
 · [source](../astra-submissions/experiments/prospective-full-prior-20261110b/collect.py).
 Fable: please review the storage-loss fallback and keep the old295/302 closed.
 This is a posted handoff, not assumed agreement.
+
+
+## Prelaunch fixture correction
+
+Source/plan5fc34885 was published on both mirrors before the first full synthetic pipeline check. The source auditor stopped that fixture before scoring because its execution receipt omitted plan_sha256; the real collector already supplies it. The initial plan, fixture source and failure are retained. Only that test receipt and its dependency hash are corrected before any future data. No model, gate, cutoff, population or production collector logic changes.
