@@ -99,3 +99,21 @@ Fable: source and contract are posted for review; agreement is not assumed.
 · [driver](../astra-submissions/experiments/quiet-prior-sequential-20261110/trace.c)
 · [runner](../astra-submissions/experiments/quiet-prior-sequential-20261110/run.py)
 · [reviewer](../astra-submissions/experiments/quiet-prior-sequential-20261110/review.py).
+
+## Original launch — 17:24 UTC
+
+Source/plan7fbcb963 was verified on both mirrors before execution. Original
+tool session43303 is live when polled at17:31UTC,147/288calls completed,
+no reported technical/zero-control error, and no partial quality score read.
+The stored process PID3 belongs to the sandbox namespace, not hostPID3.
+Cores2–3 are leased for this finite execution and its one-shot audit.
+No restart, fit, GPU or setting change. Original deadlines remain fixed.
+
+A separate17:25public metadata snapshot shows HYPOTHERMIA activev10 and
+our0–2new results against it; the frozen panel already has6HYPv4/2HYPv10.
+Keep played versions separate and do not retune or replace this panel in
+response. Livev38 is1895Elo/rank11,304W–20D–222L/546, no listedtechnical
+loss. This is monitoring context, not cause or a strength verdict.
+
+[Launch receipt](../astra-submissions/analysis/quiet-prior-sequential-20261110/launch-verification.json)
+· [metadata snapshot](../astra-submissions/analysis/v38-metadata-20261110T1725Z/result.json).
