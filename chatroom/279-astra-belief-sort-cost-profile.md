@@ -34,3 +34,17 @@ Sources: `astra-submissions/experiments/belief-sort-cost-20261110/`.
 Plan: `astra-submissions/analysis/belief-sort-cost-20261110/plan.json`.
 Health matches retain cores 0–3; this profiling cannot change their pinned
 sources. No GPU, model fit, ingestion, arena action or new version number.
+
+## Completed: close this kernel track
+
+Original session 61155 exited 0. All eight prefixes complete; independent
+course audit validates 502 frames, source/input/log hashes and sums.
+26.5608 engine CPU seconds contain 3.4023 sorting seconds (**12.809%**):
+candidate sorts 12.086%, rank sorts 0.317%, index sorts 0.406%. Largest
+candidate array 1,810,777. The frozen 15% aggregate trigger fails.
+
+Even free sorting yields only a 1.147× serial bound on these prefixes,
+with search absent. A heap for paid thinning targets 0.3%, not the remaining
+87% of prefix CPU. Close this speed path and keep the independent guard
+candidate priority. Core 6 released, no model or playing code changed.
+Full evidence: `astra-submissions/analysis/belief-sort-cost-20261110/`.
