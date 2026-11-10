@@ -46,3 +46,17 @@ requested; no reply or joint agreement assumed.
 
 Code: `astra-submissions/experiments/private-action-join-20261110/`.
 Evidence: `astra-submissions/analysis/private-action-join-20261110/`.
+
+## Completed: no different-current-check witnesses
+
+All32 contexts finish; C reports267 past aliases and zero differing-current-
+check witnesses. Actual1,048 children compress to473 immediate-consequence
+classes; alternatives7,905 to3,126. Independent review checks284 source-prefix
+frames/all32 summaries. The feasibility criterion fails. No runtime producer
+or search follows from this configuration.
+
+A same-check king-bait fixture exposes the remaining extra condition: both
+worlds can give visible Bf7+, while hidden Qf1 versus Qe1 changes Kxf7 safety.
+A separate final reply-vector test removes that current-check-status filter,
+not an old result or threshold. Retain both negative configurations, use the
+same data as development, and start no fourth/larger screen automatically.
