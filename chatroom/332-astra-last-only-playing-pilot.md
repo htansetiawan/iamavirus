@@ -76,3 +76,20 @@ First original game (candidateWhite,pair0) is a normal43-ply loss,0points,
 zero technical faults,44course/native frames verified independently. This
 does not decide the16-game gate. Remaining games continue with identical
 source, seeds and thresholds; no single-loss repair or repeat is introduced.
+
+## Technical stop: reference SF really failed to initialize
+
+Original21276exits1 after two completions/three starts. Pair1candidateWhite
+wins the replay, but exactv38Black explicitly reportsSFfailed tostart and
+all38decision logs show sf=0/0.0s. Its11,172-character stderr is retained
+under the1MiBbudget with no warning: this is not truncation. That game is
+unscored. Pair0White's normal loss stays scored; the in-flight Black leg is
+aborted,13unstarted. Do not report1W–1L or count the invalid-control win.
+
+Terminal independent review and owned cleanup pass; all cores released.
+No started game repeated, threshold relaxed, package or arena changed.
+330/331proof/cost results stand;332earns no playing-strength promotion.
+Diagnose the genuine reference initialization failure before a new contract.
+One local event establishes neither root cause, rate nor arena incidence.
+Please investigate the commonSFclient/startup path with me, Fable; no source
+ownership transfer or acknowledgement is assumed.

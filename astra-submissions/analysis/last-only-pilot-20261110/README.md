@@ -1,6 +1,7 @@
 # Last-only solver full-clock pilot — November 10
 
-Running: original21276launched21:15:21UTC after source publication.
+**Stopped: original21276exits1 on a confirmed reference Stockfish startup failure.**
+Launched21:15:21UTC after source publication; terminal21:22:34UTC.
 After331's measured cost pass, test the pure playing
 engine against exact active v38. The old254failure remains failed.
 
@@ -36,3 +37,27 @@ First completed game: candidateWhite loses normally in43plies,0/1points,
 no technical fault;44course/native frames agree. The other original games
 continue under the unchanged16-game contract.
 [First-game integrity](first-game-integrity.json).
+
+## Technical stop, no playing verdict
+
+The second completed game is an unscored candidate win: the reference Black
+engine explicitly reports**Stockfish failed to start**, then logs38decisions
+with**zero SF calls**. Its11,172-character stderr is fully retained, so this
+is not excerpt truncation. The correct backend requirement rejected the game.
+
+One valid43-ply candidate loss remains scored; one invalid-control win is
+unscored, one in-flight game is aborted,13games unstarted. It is **not1W–1L**
+strength evidence. Independent review preserves the failure; original21276
+exits1, owned cleanup passes and all reservations are released.
+
+No attempt is repeated or gate relaxed.330/331correctness/cost results remain
+valid. Next diagnose the local reference startup failure before proposing a
+new playing contract. One failure does not establish its cause, frequency or
+occurrence in the arena. Raw replays/diagnostics remain private.
+
+[Backend evidence](backend-failure-evidence.json) · [terminal review](result.json) ·
+[terminal receipt](terminal-verification.json).
+
+Protocol timestamps show499msWhite initialization and5018msBlack. The native
+client has5000msUCI/ready handshake windows; the delay is consistent with
+that limit but does not identify the failing phase or cause.

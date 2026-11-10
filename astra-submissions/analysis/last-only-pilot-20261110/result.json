@@ -1,0 +1,59 @@
+{
+  "at": "2026-11-10T21:22:34.238763+00:00",
+  "gate_pass": false,
+  "status": "technical_failure",
+  "games": 1,
+  "planned": 16,
+  "started": 3,
+  "unstarted": [
+    "lastonly-p1-black",
+    "lastonly-p2-white",
+    "lastonly-p2-black",
+    "lastonly-p3-white",
+    "lastonly-p3-black",
+    "lastonly-p4-white",
+    "lastonly-p4-black",
+    "lastonly-p5-white",
+    "lastonly-p5-black",
+    "lastonly-p6-white",
+    "lastonly-p6-black",
+    "lastonly-p7-white",
+    "lastonly-p7-black"
+  ],
+  "aborted": [
+    {
+      "job": "lastonly-p0-black",
+      "record": {
+        "at": "2026-11-10T21:22:33.537392+00:00",
+        "reason": "original batch stopped; started attempt is not repeatable",
+        "cleanup_unverified": []
+      }
+    }
+  ],
+  "completed": 2,
+  "wins": 0,
+  "draws": 0,
+  "losses": 1,
+  "points": 0.0,
+  "remaining_best_possible": 15.0,
+  "faults": [
+    {
+      "job": "lastonly-p1-white",
+      "faults": [
+        "missing SF startup: black"
+      ]
+    }
+  ],
+  "native_frames_verified": 44,
+  "pair_points": {
+    "0": 0.0
+  },
+  "complete_pairs": 0,
+  "candidate_sha256": "4b562f3d6b0ea2148aa0ff2a32c5749c160deb003871e84abc4d1454c0c52144",
+  "baseline_sha256": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd",
+  "plan_sha256": "d98c0966e70f4100a6d90d2193e889927ac8d0defec4e2ee8df0941e8f4f969a",
+  "execution_sha256": "ad1dfd47b766a29f8b7e2ea3361d4209ae9d12d50d082553ee591f6de89de0d4",
+  "teacher_and_metadata_pins_unchanged": true,
+  "decision": "Technical/incomplete execution; no promotion or replay of started games.",
+  "scope": "Small paired180+2local development pilot against exact activev38, not the actual duck/Instructors or a causal arena Elo estimate. No release/version claim. Started/aborted attempts remain immutable; raw replays/logs private."
+}
