@@ -1,0 +1,76 @@
+{
+  "at": "2026-11-10T12:15:33.611960+00:00",
+  "passed": true,
+  "checks": [
+    {
+      "side": 0,
+      "fixed_work_moves_match": true,
+      "restored_clocks": [
+        179.75,
+        179.25
+      ]
+    },
+    {
+      "side": 1,
+      "fixed_work_moves_match": true,
+      "restored_clocks": [
+        179.0
+      ]
+    }
+  ],
+  "private_projection_unchanged": true,
+  "commands": [
+    {
+      "arm": "control",
+      "argv": [
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "src/board.c",
+        "src/belief.c",
+        "src/movemodel.c",
+        "src/cfr.c",
+        "src/eval.c",
+        "src/search.c",
+        "src/gtcfr.c",
+        "src/front.c",
+        "src/sfeval.c",
+        "src/main.c",
+        "-lm",
+        "-o",
+        "mist"
+      ],
+      "binary_sha256": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd"
+    },
+    {
+      "arm": "observer",
+      "argv": [
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "src/board.c",
+        "src/belief.c",
+        "src/movemodel.c",
+        "src/cfr.c",
+        "src/eval.c",
+        "src/search.c",
+        "src/gtcfr.c",
+        "src/front.c",
+        "src/sfeval.c",
+        "src/main.c",
+        "src/teacher_targets.c",
+        "src/teacher_dump.c",
+        "src/observe.c",
+        "-lm",
+        "-o",
+        "mist"
+      ],
+      "binary_sha256": "4698bbbf1c73be977975e4fd48696e17cfe69897b1761d6bd69a2187385aadee"
+    }
+  ],
+  "control_matches_deployed_binary": true
+}

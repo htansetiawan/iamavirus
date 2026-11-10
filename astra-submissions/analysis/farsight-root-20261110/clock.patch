@@ -1,0 +1,27 @@
+--- v38/main.c
++++ observer/main.c
+@@ -264,6 +264,7 @@
+     /* decision replay (tests): our first decisions play these moves (comma
+      * separated UCI, as the game went) and the next one is searched */
+     const char *forced = getenv("MIST_FORCE_MOVES");
++    const char *post_clocks = getenv("ASTRA_POST_CLOCKS");
+     const char *truth_seq = getenv("MIST_TRUTH_SEQ");
+     /* MIST_STOCKFISH=path: Stockfish scores the search's leaves (paper, 3.3) */
+     if (getenv("MIST_STOCKFISH") && *getenv("MIST_STOCKFISH"))
+@@ -437,6 +438,16 @@
+             }
+             printf("move %s\n", want); fflush(stdout);
+             clock_left = reported - (now_seconds() - view_at) + increment;
++            if (post_clocks) {
++                char *end_clock = NULL;
++                const double restored = strtod(post_clocks, &end_clock);
++                if (end_clock == post_clocks || !isfinite(restored) || restored < 0 ||
++                    (*end_clock && *end_clock != ',')) exit(87);
++                post_clocks = *end_clock == ',' ? end_clock + 1 : end_clock;
++                clock_left = restored;
++                fprintf(stderr, "astra-prefix: clock=%.17g\n", clock_left);
++            }
++
+             front_play(&front, view, r.move);
+             last = r.move; moved = 1; ++decisions;
+             continue;
