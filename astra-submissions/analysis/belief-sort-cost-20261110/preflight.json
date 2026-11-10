@@ -1,0 +1,206 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "side": "white",
+      "move": "d2d4",
+      "profile": {
+        "process_cpu_ns": 2940272,
+        "buckets": [
+          {
+            "width": 24,
+            "calls": 0,
+            "elements": 0,
+            "max_elements": 0,
+            "thread_cpu_ns": 0,
+            "wall_ns": 0
+          },
+          {
+            "width": 16,
+            "calls": 0,
+            "elements": 0,
+            "max_elements": 0,
+            "thread_cpu_ns": 0,
+            "wall_ns": 0
+          },
+          {
+            "width": 4,
+            "calls": 0,
+            "elements": 0,
+            "max_elements": 0,
+            "thread_cpu_ns": 0,
+            "wall_ns": 0
+          }
+        ]
+      }
+    },
+    {
+      "side": "black",
+      "move": "g8f6",
+      "profile": {
+        "process_cpu_ns": 3012697,
+        "buckets": [
+          {
+            "width": 24,
+            "calls": 1,
+            "elements": 20,
+            "max_elements": 20,
+            "thread_cpu_ns": 2466,
+            "wall_ns": 5093
+          },
+          {
+            "width": 16,
+            "calls": 0,
+            "elements": 0,
+            "max_elements": 0,
+            "thread_cpu_ns": 0,
+            "wall_ns": 0
+          },
+          {
+            "width": 4,
+            "calls": 0,
+            "elements": 0,
+            "max_elements": 0,
+            "thread_cpu_ns": 0,
+            "wall_ns": 0
+          }
+        ]
+      }
+    }
+  ],
+  "commands": [
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/board.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/board.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-Dqsort=astra_qsort",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/belief.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/belief.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/movemodel.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/movemodel.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/cfr.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/cfr.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/eval.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/eval.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/search.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/search.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/gtcfr.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/gtcfr.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/front.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/front.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/sfeval.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/sfeval.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/src/main.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/main.o"
+    ],
+    [
+      "gcc",
+      "-O2",
+      "-std=c11",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/profile.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/board.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/belief.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/movemodel.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/cfr.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/eval.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/search.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/gtcfr.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/front.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/sfeval.o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/main.o",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/belief-sort-cost-20261110/build/mist-profile"
+    ]
+  ],
+  "delegated_sort": "Only belief.c qsort symbol redirects; wrapper calls the same libc qsort, comparator and array."
+}

@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-10T00:27:56.992233+00:00",
+  "updated": "2026-11-10T00:32:45.843949+00:00",
   "policy": "real-clock lanes own their core pair exclusively; write here before taking cores",
   "allocation": [
     {
@@ -19,6 +19,14 @@
       ],
       "purpose": "277 bounded Misty deployment health check against unchanged v38; both colors, no candidate and no score gate",
       "until": "2026-11-10T01:17:56.992233+00:00"
+    },
+    {
+      "agent": "astra",
+      "cores": [
+        6
+      ],
+      "purpose": "279 forced-prefix native belief qsort CPU profile, no search/GPU; eight fixed histories",
+      "until": "2026-11-10T00:54:45.843949+00:00"
     }
   ]
 }
