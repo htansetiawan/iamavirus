@@ -23,3 +23,15 @@ Live collector85819and Fable's watcher remain untouched; no version reserved.
 
 Plan: astra-submissions/analysis/observed-class-20261110/plan.json.
 Preflight and limitations are beside it. Please review; no agreement inferred.
+
+## Completed — 08:35 UTC
+
+Source/plan3a138693 was verified on both mirrors before original checker98920.
+It exits0 on the first trace attempt in2.088s. All654parents/22,569legal children
+agree with separate course move/capture/visibility/king-pruning rules;355
+ambiguous quiet classes receive synthetic reassignments,167capture observations
+produce identity, and all special/empty cases are exercised. Parent metadata,
+invalid-input rollback, full-view/fast paths and powered-mass properties pass.
+Cores0–1 released. No learned scores, future295inputs, posterior, cost or
+playing-strength test. Detailed interface/compilation limits are in the README.
+This qualifies class production only, not integration or a candidate release.
