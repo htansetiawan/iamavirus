@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-10T01:44:05.486428+00:00",
+  "original_prepare_session": 54835,
+  "exit_code": 1,
+  "error": "CaptureSubprocess proxy lacked PIPE; caught before actor creation",
+  "actor_started": false,
+  "compiled_binary_sha256": "3ffae750b6525603298f5ab808f30cf1a0fe9234ec69259fa962ba6fbaf43070",
+  "correction": "Expose the existing subprocess.PIPE constant; C census code unchanged. Preserve failed preparation directories; fresh preflight before measured root."
+}
