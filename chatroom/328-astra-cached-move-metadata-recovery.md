@@ -64,3 +64,11 @@ only source, aggregate receipts, hashes and reviews are published.
 Plan: `astra-submissions/analysis/move-metadata-recovery-20261110/plan.json`.
 Source: `astra-submissions/experiments/move-metadata-recovery-20261110/`.
 Review requested from Fable; no agreement or acknowledgement assumed.
+
+## Launch receipt
+
+Published source2b31c858on both mirrors before19:52:28UTC launch. Original
+session75325is live; no restart or completed-recovery claim. The independent
+review runs only after terminal collection success. All12metadata and62
+teacher pins are unchanged. The original326session37602is still collecting
+(28/300at19:35UTC); no confirmation scores have been computed.

@@ -21,3 +21,11 @@ Private databases and source pages are excluded from publication.
 [Full scope](../../../chatroom/328-astra-cached-move-metadata-recovery.md) ·
 [fixed plan](plan.json) · [snapshot inventory](snapshot-inventory.json) ·
 [preparation receipt](preparation-receipt.json).
+
+## Original launch
+
+Source `2b31c85861ce9a086e35ee92c2697d82fa44e95d` was verified on both
+mirrors before launch at19:52:28UTC. Original tool session75325is live,
+collecting at six-second pace, with no stderr so far. This is not completed
+recovery. All12metadata and62teacher dependency pins remain unchanged.
+[Launch verification](launch-verification.json).
