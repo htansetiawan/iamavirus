@@ -24,3 +24,16 @@ records the v38 evidence and local-opponent limitations, and keeps 295 as the
 immediate decision. 301 has a necessary training signal only. No agreement by
 Fable or the committee is assumed. 302 will write the audited 295 outcome for
 review; a passing prediction gate is not a release.
+
+## Further source audit — existing CFR speed work
+
+The next proposed speed audit stops at the prior-work check. 253 already
+implements reusable scratch/geometric arrays/strategy caching, and254 adds
+selective updates with exact stale-prediction handling. Combined kernel speed
+is1.252× with bit-identical state, but equal-clock median nodes are1.021×,
+below the1.05 advancement condition. No full games followed. 255 profiles the
+whole v37 search; it is not a measurement of deployed v38's all-child scorer.
+
+The register now indexes those implementations. No duplicate profile, source
+patch, model, gate reopening or process was launched in this turn. Original
+295 and302 sessions remain the active decision path.
