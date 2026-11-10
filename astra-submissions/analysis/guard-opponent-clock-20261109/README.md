@@ -42,3 +42,22 @@ clock input as a number. Neither setup correction changes playing outcomes.
 
 Source and final plan will be pushed before launch. No GPU work, data ingest,
 model fit, numbered release or arena action is part of this comparison.
+
+## Closed after a late opponent timeout
+
+Original 89024 exited 0 after five attempts. Four games are normal; Misty
+timed out at ply 85 in the fifth. The strict technical gate fails and 27
+unstarted jobs remain unplayed. Two matched clean White cells score one
+candidate point versus 1.5 control points; no Black cells completed. This is
+inconclusive, not a strength gain or evidence that the candidate is weaker.
+The timeout win is preserved in its receipt and excluded from clean scores.
+The independent course audit checks all 406 frames and hashes. No actor
+process remains. Unlike the earlier opening-timeout bug, the clock assertion
+was present and full games had already completed normally.
+
+The local deployment inherited an uncapped belief population. The separate
+misty-belief-cost diagnostic demonstrates multi-million-state growth and
+resource-limit failure with historical searches skipped. A 200,000-state
+component replay completes, but this does not reproduce live carryover or
+prove strength. A separate score-independent bounded-opponent health check
+must qualify before further candidate comparison. Original results stay closed.

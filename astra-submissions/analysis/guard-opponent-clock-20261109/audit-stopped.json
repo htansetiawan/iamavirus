@@ -1,0 +1,77 @@
+{
+  "at": "2026-11-10T00:08:52.967116+00:00",
+  "gate_pass": false,
+  "decision": "technical_stop_inconclusive",
+  "attempted": 5,
+  "clean_games": 4,
+  "technical_games": 1,
+  "own_technical_failures": 0,
+  "unstarted": 27,
+  "referee_frames": 406,
+  "matched_clean_cells": [
+    {
+      "pair": 0,
+      "side": "white",
+      "base": 1.0,
+      "candidate": 0.0
+    },
+    {
+      "pair": 2,
+      "side": "white",
+      "base": 0.5,
+      "candidate": 1.0
+    }
+  ],
+  "matched_control_points": 1.5,
+  "matched_candidate_points": 1.0,
+  "rows": [
+    {
+      "id": "p0-white-base",
+      "arm": "base",
+      "score": 1.0,
+      "clean": true,
+      "reason": "King capturable",
+      "plies": 92,
+      "result_sha256": "038972e9a01dc905d773d2490ba3d2c47fa9e945ccbcc34f2763f8e7d82b5bd2"
+    },
+    {
+      "id": "p0-white-candidate",
+      "arm": "candidate",
+      "score": 0.0,
+      "clean": true,
+      "reason": "King capturable",
+      "plies": 103,
+      "result_sha256": "9ed3e13ca2c2d20ca0797493a02acf442218a4521004b34fda8860f8d5618640"
+    },
+    {
+      "id": "p1-white-candidate",
+      "arm": "candidate",
+      "score": 1.0,
+      "clean": false,
+      "reason": "Time forfeit",
+      "plies": 85,
+      "result_sha256": "c6f77d78bac521c1db418b6b4ff425659d43c1ccd218a107fc41475e498099d3"
+    },
+    {
+      "id": "p2-white-base",
+      "arm": "base",
+      "score": 0.5,
+      "clean": true,
+      "reason": "Threefold repetition",
+      "plies": 47,
+      "result_sha256": "7bf95e8ed1143e73aff741c0315540d075b41c5dc9cbf9f742c908a8d243a830"
+    },
+    {
+      "id": "p2-white-candidate",
+      "arm": "candidate",
+      "score": 1.0,
+      "clean": true,
+      "reason": "King capturable",
+      "plies": 74,
+      "result_sha256": "440771d904bbd28a72bdc756d54055105585235a3a32d9c64aee5c4b62f62625"
+    }
+  ],
+  "auditor_sha256": "3a2a30eb1ab4b694d0a5b1c41d6c4e3a3fdedd164a2461ae6743e1e51df98c16",
+  "plan_sha256": "6dafd2fa947c3f7d8813809d5ec951e26a7f49910930ea4b48207f8d6d42e34b",
+  "scope": "No promotion or Elo conclusion. Two matched White cells only; no Black games. Timeout win stays in original receipt but is excluded from clean matched scores."
+}

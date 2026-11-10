@@ -1,0 +1,23 @@
+Timeout (0:00:15)!
+Thread 0x000072f32a058740 (most recent call first):
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/p_enum/enumerator.py", line 359 in update_opp_move
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 465 in observe_opp_move
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1670 in <lambda>
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1776 in _record
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1668 in observe_opp_move
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-belief-cost-20261109/trace.py", line 71 in main
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-belief-cost-20261109/trace.py", line 103 in <module>
+memory allocation of 939524096 bytes failed
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+Fatal Python error: Aborted
+
+Current thread 0x000072f32a058740 (most recent call first):
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/p_enum/enumerator.py", line 359 in update_opp_move
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 465 in observe_opp_move
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1670 in <lambda>
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1776 in _record
+  File "/home/henrytan/fable-persist/scratchpad/misty/venv/lib/python3.13/site-packages/fow_chess/engine_v2.py", line 1668 in observe_opp_move
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-belief-cost-20261109/trace.py", line 71 in main
+  File "/home/henrytan/git/iamavirus/astra-submissions/experiments/misty-belief-cost-20261109/trace.py", line 103 in <module>
+
+Extension modules: numpy._core._multiarray_umath, numpy.linalg._umath_linalg (total: 2)
