@@ -1,7 +1,9 @@
 """Replay the fixed compact prior through the ordinary v38 belief updater."""
 from collections import Counter
+from contextlib import contextmanager
 from datetime import datetime, timezone
 import ctypes
+import fcntl
 import hashlib
 import json
 import math
@@ -271,16 +273,34 @@ def verify():
 
 
 def run():
-    sys.path.insert(0, str(EXPERIMENTS/'compact-prior-holdout-20261110'))
-    from importlib.util import module_from_spec, spec_from_file_location
-    spec = spec_from_file_location('compact_holdout_lease', EXPERIMENTS/'compact-prior-holdout-20261110/run.py')
-    holdout = module_from_spec(spec); spec.loader.exec_module(holdout)
-    holdout.OWNER = 'astra-'+HERE.name
     sequential.OUT, sequential.BUILD = PRIVATE, BUILD
     assert read(OUT/'plan-summary.json')['plan_sha256']==sha(PRIVATE/'plan.json')
-    with holdout.lease(read(PRIVATE/'plan.json')['cores']):
+    with lease(read(PRIVATE/'plan.json')['cores']):
         sequential.main()
         verify()
+
+
+@contextmanager
+def lease(cores):
+    path = ROOT/'chatroom/cores.json'
+    owner = 'astra-'+HERE.name
+    def change(take):
+        with Path('/tmp/iamavirus-cores-json.lock').open('a') as lock:
+            fcntl.flock(lock, fcntl.LOCK_EX)
+            state = read(path)
+            if take:
+                assert all(not set(cores)&set(row['cores']) for row in state['allocation'])
+                state['allocation'].append(dict(owner=owner, cores=cores, pid=os.getpid(), at=now(),
+                                                purpose='fixed compact sequential comparison and audit'))
+            else:
+                state['allocation'] = [row for row in state['allocation'] if row['owner']!=owner]
+            state['updated'] = now()
+            sequential.atomic(path, state)
+    change(True)
+    try:
+        yield
+    finally:
+        change(False)
 
 
 if __name__ == '__main__':

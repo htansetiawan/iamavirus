@@ -39,3 +39,13 @@ trace and weight files stay local.
 
 [Plan summary](../astra-submissions/analysis/compact-prior-sequential-20261110/plan-summary.json)
 · [Driver](../astra-submissions/experiments/compact-prior-sequential-20261110/driver.py).
+
+## Launcher correction
+
+The first launcher exited before acquiring cores or starting a trace. Two
+Python modules shared the name `prepare`. The corrected launcher uses the
+existing core-lock protocol directly. The original plan digest and failure
+are preserved. Only the launcher hash changed, with all 384 jobs still
+unstarted at correction time.
+
+[Correction receipt](../astra-submissions/analysis/compact-prior-sequential-20261110/launcher-correction.json).
