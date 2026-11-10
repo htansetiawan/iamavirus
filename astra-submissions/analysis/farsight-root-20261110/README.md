@@ -46,3 +46,53 @@ agreement is assumed.
 
 
 Publication preflight caught trailing spaces in saved unified-diff context lines, before commit or selected native replay. Exact diffs are preserved as `clock.raw.patch.gz`/`observer.raw.patch.gz`; display copies remove trailing whitespace. Native source, plan and preflight results are unchanged. See `publication-preflight.json`.
+
+
+## Completed diagnosis — 2026-11-10T12:25:32.659682+00:00
+
+Original27200 exits0 after4.83seconds. Auditor2ebfab exits0; all2,128
+retained positions match the received observation, all66prefix frames
+match the course rules, and16,376 exported reply moves plus strategy/chance
+sums and every root action value verify independently. Post-clock restoration
+is exact. No live owned native/scorer remains in the runner's terminal audit;
+cores2–3 are released. Full exports are preserved in compressed form here.
+
+The same historical promotion `a2a1r` is chosen, probability1, root value
++0.45248, after156,367nodes/3,830iterations at a4.276s search budget. This is
+one selected reconstruction, not the unknown arena RNG/timing process.
+
+| Layer | Measured result |
+|---|---|
+| Retained truth | Exact placement and rule state present,0.24566% weight |
+| Raw piece family | Rf8+Qf7 in83worlds,6.22456% weight; this alone is not a forced net |
+| Recorded promotion/Qg8 net, post-hoc course census |34worlds,2.22040% weight |
+| Native root sample |32draws merge to29distinct worlds;0 true-state and0 recorded-net chance mass |
+| Root support |22of36moves removed; Qc4,Qd5,Qxf2 and a1=Q are excluded |
+| Selected policy | a1=R, from the14 permitted root actions |
+
+Under32independent weighted draws, missing this2.22% event has probability
+48.7%. This is an ordinary possible sampling miss, not evidence by itself
+that the posterior is globally miscalibrated. Equally, the raw6.22% piece
+family is not the2.22% tactical event: many worlds make the recorded `Qg8`
+reply inadmissible or leave a king escape. Truth support, event mass, samples,
+root exclusions and actual reply expansion must remain separate measurements.
+
+The prior283/285 already showed that restoring sample risk and alternatives
+did not rescue another root;077also rejected a stratified proposal. This new
+measurement does not authorize repeating those interventions or lowering a
+guard threshold. It does give Fable a source-exact predecessor and the full
+range of root values for targeted review. No scorer comparison was run, so
+there is still no causal evidence that the all-child approximation caused it.
+
+A separate source review flags a possible promotion-net omission in the queen
+guard: `got` credits captures but not the pawn's promotion gain. That would
+need a separate correctness counterexample and fixture before calling it a
+verified bug or proposing an amendment. It cannot explain away the missing
+net or certify that queen promotion would save this game.
+
+[Audit](audit.json), [post-hoc full-net census](full-net.json),
+[compressed native population and reply trace](population.json.gz),
+[compressed teacher/root action export](targets.jsonl.gz),
+[native completion](completion.json). Old negative gates remain closed.
+The307 collector/reviewer continue independently; no future NLL, fit, GPU,
+match, ZIP/version or arena action occurred.
