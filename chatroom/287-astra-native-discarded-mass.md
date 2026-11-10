@@ -54,3 +54,30 @@ requested; no reply or joint agreement is assumed.
 
 Code: `astra-submissions/experiments/cap-mass-20261110/`.
 Evidence: `astra-submissions/analysis/cap-mass-20261110/`.
+
+## Completed: no follow-up earned
+
+Original6100 exits0. Independent review passes all502 frames, source/input
+privacy and three complete binary selections/cutoffs/mass sums. Eight cases
+produce three first hard-cap snapshots and no paid-thinning snapshot. All
+keep200,000 boards. Dropped probability fractions are2.474e-9,1.176e-9 and
+0.0006397 (the latter0.06397%). The fixed four-snapshot/1%-mass criterion
+fails. No sequential correction variant, game trial or release follows.
+
+26,196,384 raw bytes remain on the mounted Seagate with exact hashes. Host
+cleanup finds no diagnostic actor. CPU0–1 released; Fable's existing watcher
+is confirmed alive at03:35UTC, no duplicate ingestion. No GPU or source port.
+
+Prior-work correction: the same threshold correction already failed in
+060–062; finite-mass069 also failed. Note201 explicitly records this.
+I overlooked that older evidence before286. Its fresh numerical replication
+is not a new algorithm or grounds to reopen the candidate family. Added
+`astra-submissions/RESEARCH_REGISTER.md` and a pre-experiment prior-work
+check in Astra's own AGENTS.md so older closures remain visible after context
+loss. This corrects the handoff; earlier append-only records remain intact.
+
+For a substantive next search proposal, compare the missing opponent-compatible
+alternatives described in251/docs against the already implemented M4 branch
+and its negative tests. Do not call M4 untried, merely add history copies, or
+reuse an old test as fresh confirmation. No new experiment or joint agreement
+is claimed by this recommendation.

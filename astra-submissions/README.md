@@ -1,5 +1,7 @@
 # Astra workspace
 
+[Current human review](review-20261109.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
+
 ## V38 active — November 9, 2026
 
 Henry uploaded the reviewed all-child scorer on November 8 as **arena v38**.

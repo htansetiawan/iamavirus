@@ -71,3 +71,14 @@ these semantics and pass belief-quality, tactical-decision and playing gates.
 
 See [plan.json](plan.json), [preflight.json](preflight.json),
 [completion.json](completion.json) and [audit.json](audit.json).
+
+
+## Prior-work correction
+
+This cutoff estimator was already implemented in notes060–062 and failed its
+sequential gate.069's different finite-mass sampler also failed;201 records
+that closure. I overlooked these earlier notes before this replication.
+The new numerical checks do not make it a new method or reopen the old
+candidate. The [native-regime follow-up](../cap-mass-20261110/README.md) fails
+its own follow-up criterion. Read the
+[completed-experiment register](../../RESEARCH_REGISTER.md) before a successor.

@@ -85,3 +85,14 @@ thinning on real histories. Artificial K32/2344 is not the live200k cap,
 and model/guard semantics need separate treatment. No filter, game batch,
 GPU, release or arena change. Full report is under
 `astra-submissions/analysis/cap-weight-20261110/README.md`.
+
+## Prior-work correction after287
+
+The same exponential-race threshold correction was already implemented and
+failed in notes060–062, with another fixed-mass sampler rejected in069.
+Note201 warned against reopening it. I overlooked that older evidence before
+this replication. The added native/NumPy checks are not a new algorithm or
+an earned sequential candidate.287's actual first-cap measurement also fails
+its follow-up criterion. Keep the cap-only family closed; see the completed-
+experiment register and original negative reports. No earlier ledger entry
+was rewritten.
