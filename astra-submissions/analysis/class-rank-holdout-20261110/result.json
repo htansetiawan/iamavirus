@@ -1,0 +1,168 @@
+{
+  "at": "2026-11-10T13:34:36.846935+00:00",
+  "primary": {
+    "decisions": 3704,
+    "games": 80,
+    "tempered_log_gain": {
+      "linear": 0.0033312192745909063,
+      "quadratic": 0.009309266864867242
+    },
+    "quadratic_vs_linear": 0.005978047590276335,
+    "changed": {
+      "linear": 1593,
+      "quadratic": 1729
+    },
+    "changed_games": {
+      "linear": 79,
+      "quadratic": 79
+    },
+    "oracle_ceiling_gain": 0.5987923045363076
+  },
+  "interval95_game_bootstrap": [
+    -0.00557142083876844,
+    0.02349617425187223
+  ],
+  "priority": {
+    "instructors": {
+      "decisions": 1169,
+      "games": 37,
+      "tempered_log_gain": {
+        "linear": 0.003927115602713553,
+        "quadratic": 0.01545100542497594
+      },
+      "quadratic_vs_linear": 0.011523889822262387,
+      "changed": {
+        "linear": 499,
+        "quadratic": 526
+      },
+      "changed_games": {
+        "linear": 37,
+        "quadratic": 37
+      },
+      "oracle_ceiling_gain": 0.6962233367794288
+    },
+    "8d775e234808489c815a4a9f6bbabfe4": {
+      "decisions": 558,
+      "games": 17,
+      "tempered_log_gain": {
+        "linear": 0.010001901657350602,
+        "quadratic": 0.005336073991645622
+      },
+      "quadratic_vs_linear": -0.00466582766570498,
+      "changed": {
+        "linear": 306,
+        "quadratic": 320
+      },
+      "changed_games": {
+        "linear": 17,
+        "quadratic": 17
+      },
+      "oracle_ceiling_gain": 0.7279069180129677
+    },
+    "e2f593ca1fea4710b07a8120dd6b3477": {
+      "decisions": 1001,
+      "games": 28,
+      "tempered_log_gain": {
+        "linear": 0.000983902505346826,
+        "quadratic": 0.02017370732752355
+      },
+      "quadratic_vs_linear": 0.019189804822176724,
+      "changed": {
+        "linear": 354,
+        "quadratic": 419
+      },
+      "changed_games": {
+        "linear": 27,
+        "quadratic": 27
+      },
+      "oracle_ceiling_gain": 0.49114849981847225
+    }
+  },
+  "all_reference": {
+    "decisions": 4602,
+    "games": 80,
+    "tempered_log_gain": {
+      "linear": 0.0019667705003720997,
+      "quadratic": 0.0074597122046492605
+    },
+    "quadratic_vs_linear": 0.005492941704277161,
+    "changed": {
+      "linear": 1928,
+      "quadratic": 2070
+    },
+    "changed_games": {
+      "linear": 80,
+      "quadratic": 80
+    },
+    "oracle_ceiling_gain": 0.5742343710666633
+  },
+  "all_prefixes": {
+    "decisions": 6691,
+    "games": 80,
+    "tempered_log_gain": {
+      "linear": 0.0012170650413477835,
+      "quadratic": 0.008802734082669104
+    },
+    "quadratic_vs_linear": 0.007585669041321321,
+    "changed": {
+      "linear": 2775,
+      "quadratic": 2989
+    },
+    "changed_games": {
+      "linear": 80,
+      "quadratic": 80
+    },
+    "oracle_ceiling_gain": 0.575186331654108
+  },
+  "ambiguous_primary": {
+    "decisions": 2072,
+    "games": 80,
+    "tempered_log_gain": {
+      "linear": 0.005955036772724284,
+      "quadratic": 0.01664166238777426
+    },
+    "quadratic_vs_linear": 0.010686625615049973,
+    "changed": {
+      "linear": 1593,
+      "quadratic": 1729
+    },
+    "changed_games": {
+      "linear": 79,
+      "quadratic": 79
+    },
+    "oracle_ceiling_gain": 1.0704279420861407
+  },
+  "checks": {
+    "parents": 6691,
+    "actions": 210216,
+    "course_children": 210216,
+    "capture_actions": 11686,
+    "masked_actions": 150444,
+    "powered_moments": 53528,
+    "capture_observations_identity": 1471,
+    "state_frames": 6691,
+    "history_active": 1077,
+    "excluded_native_terminal": 74
+  },
+  "max_history_scalar_error": 5.662544833029415e-07,
+  "max_model_scalar_error": 1.0167173094544069e-06,
+  "conditions": {
+    "primary_count": true,
+    "changed": true,
+    "changed_games": true,
+    "gain": false,
+    "confidence": false,
+    "over_linear": false,
+    "all_reference_nonregression": true,
+    "priority_coverage": true,
+    "priority_nonregression": true,
+    "mask_capture_multiset_and_scalar_checks": true
+  },
+  "decision": "close_frozen_rank_configuration",
+  "scope": "Independent retrospective holdout from model fitting and ranking selection, not a prospective or globally unseen arena-data claim. Window after293 Nov2-9 datasets and before29507:15cutoff; exclude4800original+196unscored closed295. No source/outcome/model selection from current307 future cohort.293combined failure,295infrastructure closure,307contract and all earlier negative gates remain unchanged. Parent evidence preservation does not preserve nonlinear fitted-guard normalization after merging, future caps/history/clock, or safety.",
+  "cases_sha256": "7119e9fbb4f4228cab248e74d67f39b2e0c5d436affab95d1ba48613f6b596ff",
+  "plan_sha256": "920c0832d431a2c14155b00b1b64cc4f66100399d2f479006b6d04214afc944f",
+  "cohort_sha256": "278629f98b3dd6fb71cfd1af5da4e43575585485bb8af1f815a4b8b8be7d803a",
+  "models_fitted": false,
+  "primary307_predictions_opened": false
+}

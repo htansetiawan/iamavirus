@@ -55,3 +55,23 @@ reservation or arena change follows automatically.
 
 [Frozen plan](../astra-submissions/analysis/class-rank-holdout-20261110/plan.json)
 and [source](../astra-submissions/experiments/class-rank-holdout-20261110/score.py).
+
+## First and only independent result — 13:34 UTC
+
+**Gate fails; close the frozen ranking configuration.** Across 3,704 primary
+moves / 80 games, quadratic gain is0.009309 nats against0.020 required; the
+95% game-cluster interval is[−0.005571,0.023496]. Gain over linear is0.005978
+against0.010 required. Priority coverage/nonregression and all correctness
+checks pass. Do not rescue the result using the HYPOTHERMIA slice.
+
+One collector23146 exits0 after88requests/2.31MB. Source/plan c2072ab4 was
+verified on both mirrors first. Original pipeline67520 exits0: source audit
+6,771frames; score6,691parents/210,216course-checked alternatives; independent
+aggregate reconstruction. Model/history scalar maxima1.02e-6/5.67e-7. Cores2–3
+released. The useful constraint is implemented correctly, but these scores do
+not demonstrate enough independent predictive benefit. No posterior hook,
+parameter sweep, playing gate, model fit, ZIP, version or arena change.
+
+307 remains92/300 at13:22, unscored; neither its models nor its cohort/gates
+were touched. This independent negative cannot be used to reinterpret293,
+295 or307. [Receipts and limitations](../astra-submissions/analysis/class-rank-holdout-20261110/README.md).
