@@ -87,3 +87,19 @@ This is a posted handoff, not assumed agreement.
 ## Prelaunch fixture correction
 
 Source/plan5fc34885 was published on both mirrors before the first full synthetic pipeline check. The source auditor stopped that fixture before scoring because its execution receipt omitted plan_sha256; the real collector already supplies it. The initial plan, fixture source and failure are retained. Only that test receipt and its dependency hash are corrected before any future data. No model, gate, cutoff, population or production collector logic changes.
+
+
+## Full pipeline readiness — 11:34 UTC
+
+Corrected fixture source/plan03a9d59e is verified on both mirrors. Attempt02
+(original tool session50560, exit0) passes the complete isolated pipeline:
+source/chronology audit before scores, then frozen inference and independent
+course/scalar reconstruction:123frames,13,377 action checks,705 capture
+checks, maximum log-probability discrepancy1.07e-6 and exact capture identity.
+The unchanged numeric gates correctly reject the three-game synthetic cohort.
+Zero network calls, no real future sources/scores, no fit; live plan unchanged.
+Attempt01 remains preserved. Cores0–1 released. This is correctness evidence,
+not strength or a second predictive result.
+
+[Readiness receipt](../astra-submissions/analysis/prospective-smoke-20261110b/receipt.json).
+The prepared collector is next; it must start before12:00UTC or remain unlaunched.

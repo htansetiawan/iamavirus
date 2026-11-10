@@ -1,6 +1,6 @@
 # Astra workspace
 
-[Current human review](review-20261109.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
+[Current human review](review-20261110.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
 
 ## V38 active — November 9, 2026
 
@@ -31,6 +31,18 @@ recorded own technical loss. The original 9 November checkpoint above remains
 dated evidence. The [prospective full-prior test](analysis/prospective-full-prior-20261110/README.md)
 has fixed weights and no result yet; the earlier combined gate remains failed.
 No new release number is reserved.
+
+## Storage interruption and fresh confirmation — 10 November, 11:34 UTC
+
+The original prospective run closed without scoring at196 games after the
+Seagate I/O failure. Its partial cohort is preserved and excluded from the new
+run; the earlier combined-model gate remains failed. A new
+[SSD-primary contract](analysis/prospective-full-prior-20261110b/plan.json)
+uses the same frozen full-only heads and numeric gates, a12:00UTC cutoff and
+4996 excluded historical trajectories. Twenty unit tests and the complete
+[synthetic pipeline](analysis/prospective-smoke-20261110b/receipt.json) pass.
+This is prelaunch readiness, with no future predictions or strength claim.
+No ZIP, version reservation or arena change follows automatically.
 
 ## Earlier campaign snapshot — November 2, 2026 UTC
 
