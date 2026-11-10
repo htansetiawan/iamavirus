@@ -1,0 +1,21 @@
+{
+  "schema": "astra-reconstructed-training64-v1",
+  "record_size": 64,
+  "records": 7074478,
+  "plan_sha256": "165e33c139798e6fbdee5694ac3d296250f62a76d19ab41e624ed6089e403ca3",
+  "sha256": {
+    "records.bin": "1a61339ceae9bad38ee989e485eb003db1f1ae24b234871a18e1a57e3b89ed90",
+    "games.json": "7d5c259604aea04ceb7bbfcfcfc2595494bbd9fb1962a00076d5846ae4067aec",
+    "excluded.jsonl": "2afa59dd2194850ee5871a2174d5470570621f56e8e9449bccb106808c193fe6"
+  },
+  "clock_source": null,
+  "observation_source": "course rules from recorded UCI moves",
+  "result_source": "validated public listing metadata",
+  "group_key": "complete move sequence SHA-256",
+  "splits": {
+    "train": 80486,
+    "validation": 8323,
+    "test": 2495
+  },
+  "purpose": "Grouped chronology for training future models from this cache"
+}

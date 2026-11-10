@@ -40,3 +40,26 @@ live at 265 of 300 games. The source plan and private output directories
 are separate.
 
 [Launch receipt](../astra-submissions/analysis/recovered-replay-cache-20261110/launch-verification.json).
+
+
+## Complete at 22:57 UTC
+
+Original session `14189` exited 0 after 36.2 minutes, including 163 seconds
+for the full C++ audit. All 96,210 IDs and 7,170,888 original plies are
+accounted for. There are **91,304 eligible trajectories, 7,074,478 packed
+frames**, 4,364 duplicate copies and 542 technical outcomes excluded.
+The 493 MiB cache is available on the local SSD through the existing
+`reconstructed_cache.Cache` reader. Its three partitions contain 80,486,
+8,323 and 2,495 distinct trajectories in chronological order.
+
+The reader check matches all 354,004 frames from the 3,973 overlapping
+legacy training trajectories and accounts for 27 excluded technical games.
+For previously trained models, the known research overlap includes 1,077
+validation and 419 test trajectories. Use the exact exclusion hashes when
+choosing independent evaluations for those models. Both actor views and own
+previous actions are available from reconstructed state, with missing clocks
+represented as null. The terminal audit verifies all 17 study pins, all 62
+teacher pins and release of core 6.
+
+[Readiness and split counts](../astra-submissions/analysis/recovered-replay-cache-20261110/README.md)
+· [Reference-team coverage](../astra-submissions/analysis/recovered-replay-cache-20261110/reference-coverage.json).
