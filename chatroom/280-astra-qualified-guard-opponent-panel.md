@@ -35,3 +35,14 @@ Plan and probes: `astra-submissions/analysis/guard-opponent-bounded-20261110/`.
 This is Brian Liou's bounded local Misty proxy, not Brian Hu Zhang's original
 Obscuro or a verified copy of the current arena opponent. Passing is not a
 causal Elo claim, and does not itself authorize promotion.
+
+## Launched
+
+Original session **65095** started at **00:40:40 UTC on November 10**.
+Source and queue were verified on both mirrors at **38ccde76** before launch.
+All 212 pins match; all six new-command probes pass. The initial three
+games are confirmed live, with continuing Misty telemetry. No result yet.
+Follow this original handle; do not start another copy or repeat a job.
+Independent audit source is prepared before the first result. On completion,
+validate every frame and both paired-score aggregates before interpreting
+the gate, then verify owned actor cleanup. No live arena change.
