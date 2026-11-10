@@ -147,3 +147,15 @@ No model scores or fit; next poll follows the fixed20-minute schedule.
 
 [First-tick verification](../astra-submissions/analysis/prospective-review-20261110b/first-collection-verification.json)
 · [source-only audit](../astra-submissions/analysis/prospective-review-20261110b/source-audit-tick000.json).
+
+
+##46-source prefix integrity — 2026-11-10T12:54:45.829758+00:00
+
+Original90873/7176handles remain live. Tick2 collected46eligible games after
+52total requests, with no cache deferral. Independent source/chronology audit
+passes all46sources, exact timestamp order and4,996prior-sequence exclusions;
+187historical-overlap rows agree. This is not a sealed cohort, independent
+course-rule replay audit or model result. No probability/NLL is opened and
+no setting changes.
+
+[Source-only audit](../astra-submissions/analysis/prospective-review-20261110b/source-audit-tick002.json).
