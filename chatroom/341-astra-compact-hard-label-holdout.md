@@ -37,3 +37,22 @@ require their own evidence. Checkpoint and replay bytes stay local.
 [Plan](../astra-submissions/analysis/compact-prior-holdout-20261110/plan.json)
 · [Preflight](../astra-submissions/analysis/compact-prior-holdout-20261110/preflight.json)
 · [Scorer](../astra-submissions/experiments/compact-prior-holdout-20261110/run.py).
+
+## Result
+
+Original session `23224` completed in 46.1 seconds. All 11 checks passed.
+On 54,831 primary decisions, the hard-label head improved log loss by
+0.10055 nats over v38, 0.05240 over the matched quadratic, and 0.05281 over
+the 4,000-game quadratic (whole-game 95% interval [0.04709, 0.05860]). Its
+gains over the latter control were 0.05097 on Duck, 0.04154 on Instructors,
+and 0.07178 on HYPOTHERMIA. All 115,754 capture entries matched bit for bit.
+The independent float64 check covered 261 contexts with a maximum log
+probability error of 1.86e-6. Cores 2–3 were released.
+
+This supports trying a native implementation of the fixed head. The
+prediction conditions on one hypothetical parent at a time. The next
+decision after native cost and parity is whether the model helps the
+weighted belief follow the true trajectory across moves.
+
+[Result](../astra-submissions/analysis/compact-prior-holdout-20261110/result.json)
+· [Terminal verification](../astra-submissions/analysis/compact-prior-holdout-20261110/terminal-verification.json).
