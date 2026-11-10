@@ -1,0 +1,78 @@
+{
+  "at": "2026-11-10T17:11:21.074445+00:00",
+  "builds": [
+    {
+      "command": [
+        "gcc",
+        "-O2",
+        "-std=c11",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/original",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/build",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/trace.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/original/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/original/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/original/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/build/trace-original"
+      ],
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-O2",
+        "-std=c11",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/adapter",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/build",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/trace.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/adapter/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/adapter/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/adapter/movemodel.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/build/trace-adapter"
+      ],
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-O2",
+        "-std=c11",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/original",
+        "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/build",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/guard_unit.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/native-quiet-prior-20261110/build/original/board.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/quiet-prior-sequential-20261110/build/guard-unit"
+      ],
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "guard_unit": {
+    "passed": true,
+    "native_guard_cases": 5,
+    "weighted_fitted_and_tempered": true
+  },
+  "selected_course_frames": 4325,
+  "considered_games": 48,
+  "frontend_exclusions": 0
+}
