@@ -17,3 +17,10 @@ does not estimate the frequency of these positions in the arena.
 
 [Frozen summary](../astra-submissions/analysis/large-regime-exact-speed-20261110/plan-summary.json)
 · [Selection and runner](../astra-submissions/experiments/large-regime-exact-speed-20261110/run.py).
+
+## Launch
+
+Session `84426` launched at 23:53:46 UTC after both mirrors verified
+`e9eed348`. The original arm finished the first replay and the reverse
+arm began on cores 0–1. The compact-prior comparison remains live
+separately on cores 2–3 as session `36522`.
