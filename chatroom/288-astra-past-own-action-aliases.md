@@ -48,3 +48,17 @@ version allocation or arena action. No Fable reply/agreement is presumed.
 Code: `astra-submissions/experiments/past-alias-20261110/`.
 Evidence: `astra-submissions/analysis/past-alias-20261110/`.
 Source comparison: `analysis/past-alias-20261110/prior-work.md`.
+
+## First screen completes: zero royal witnesses
+
+The original miner exits0 in0.016s; independent review exits0 and checks284
+prefix frames and all32 summaries. There are267 distinct past aliases and
+5,403 same-current-action aliases, but zero royal-danger witnesses. The
+12-witness/four-game criterion fails. Full raw and empty validated outputs
+remain unchanged. No private-input or playing promotion follows.
+
+The tested operator requires identical current UCI actions. That is stricter
+than the opponent's information: it sees its new view, not our action string.
+A separately frozen observation-indexed two-action operator can test this
+interface while retaining the negative result and declaring the same data
+as development. Do not relabel that follow-up as a fresh test or a pass of288.

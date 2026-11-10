@@ -1,0 +1,113 @@
+{
+  "at": "2026-11-10T04:09:39.042439+00:00",
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-action-join-20261110/mine.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-action-join-20261110/build/mine"
+      ],
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-action-join-20261110/mine.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/private-action-join-20261110/build/mine-sanitize"
+      ],
+      "stderr": ""
+    }
+  ],
+  "sanitized_equal": true,
+  "different_current_action_fixture": {
+    "kind": "witness",
+    "context": 0,
+    "actual_previous": "a1e1",
+    "alternative_previous": "a1f1",
+    "same_opponent_move": "a7a6",
+    "actual_current_move": "e2g4",
+    "alternative_current_move": "e2f3",
+    "shared_opponent_view": "????????????????????????????????-???????p??????????---?????-k-??",
+    "actual_danger": 1,
+    "alternative_danger": 0,
+    "safe_counts": [
+      3,
+      6
+    ],
+    "safe_intersection": 3,
+    "reach_weights": null,
+    "ancestor": {
+      "board": "R------K----B-----------------------------------p-----------k---",
+      "side": 0,
+      "castle": "0000000000000000",
+      "ep": -1,
+      "halfmove": 0
+    },
+    "actual_root": {
+      "board": "----R--K----B---------------------------p-------------------k---",
+      "side": 0,
+      "castle": "0000000000000000",
+      "ep": -1,
+      "halfmove": 0
+    },
+    "alternative_root": {
+      "board": "-----R-K----B---------------------------p-------------------k---",
+      "side": 0,
+      "castle": "0000000000000000",
+      "ep": -1,
+      "halfmove": 0
+    },
+    "replies": [
+      {
+        "uci": "a6a5",
+        "actual_safe": 0,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8d7",
+        "actual_safe": 0,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8e7",
+        "actual_safe": 0,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8f7",
+        "actual_safe": 1,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8d8",
+        "actual_safe": 1,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8f8",
+        "actual_safe": 1,
+        "alternative_safe": 1
+      }
+    ]
+  },
+  "fixture_witnesses": 339,
+  "scope": "Synthetic oracle fixture; current action equality is NOT required. Not a corpus or playing result."
+}
