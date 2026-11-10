@@ -1,0 +1,30 @@
+{
+  "at": "2026-11-10T16:03:30.754441+00:00",
+  "cores": [
+    2,
+    3
+  ],
+  "max_seconds": 600,
+  "max_bytes": 536870912,
+  "state_cache": "/home/henrytan/git/iamavirus/data/astra-spool/reconstructed-train-20261110",
+  "destination": "/home/henrytan/git/iamavirus/data/astra-spool/ragged-train-20261110",
+  "original_plan": "/home/henrytan/git/iamavirus/astra-submissions/analysis/capture-fixed-prior-20261110/plan.json",
+  "original_receipt": "/home/henrytan/git/iamavirus/astra-submissions/analysis/capture-fixed-prior-20261110/train-data.json",
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/prior_training_cache.py": "9aac9c9ffc56ddfaf4657299d630326cdcf1a28e561169fda2b558b8d5ab4599",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/reconstructed_cache.py": "5e347e149d598eb759263d1390266ca15fc00f40c1d9c7160c73b0d1f6de5df7",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/experience_index.py": "f3df44ab40a391b5457d7980e789594e9ecf4279aee730e6109e1a4937db8466",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110/prepare.py": "cab5116e7d9330e24fa9dc2fba315eff91fd8ebfd0c8aacf8a0b0f566e3af42e",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110/bridge.c": "6f3bbcd08daecf7f69dd8a245852f27c4f93aecbe09ab870228d23ef73b56ae5",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110/build/bridge.so": "25fbdd1c0c5f27ac501ab93efa0cd0813541bf6715e9aa17dc3cd7f2b75ab66a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/capture-fixed-prior-20261110/plan.json": "27f2c493e11bd91bac67daa6a39e6203311111b8c00f7235e39d02ad4282bdf7",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/capture-fixed-prior-20261110/train-data.json": "6805a6478ddaee892cbec9f6d7a9cf662821a9da2d39efcdcdb3a0a247cc2296",
+    "/home/henrytan/git/iamavirus/data/astra-spool/reconstructed-train-20261110/manifest.json": "1148780075405986b9d499644806f8c3b9d13794992638fdf483144f21eaf3a6",
+    "/home/henrytan/git/iamavirus/data/astra-spool/reconstructed-train-20261110/records.bin": "8ae1c12c7b8e9703e4a5ffb240a3a994194a22f23cc2ec588eee01e32025bc92",
+    "/home/henrytan/git/iamavirus/data/astra-spool/reconstructed-train-20261110/games.json": "ca346a3b26b425581454d9d583441ba8309e0a8ebab43dabe14d438450cb524c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/ragged-train-20261110/verify.py": "5b5d37480588bea8511a3bc22ca541a97fb251d516ec8049433fdf0f63977dab",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/ragged-train-20261110/export.py": "1b331b6c6206012f8dad90f102d2c2d5d3f3c482b25873303026ec615a4632e1"
+  },
+  "scope": "Lossless streaming recovery of exactly original293 TRAIN selection/feature bytes using existing native293 bridge and316 states. Original feature checksum must match before publication, then independently match from decoded ragged data. No new selection, capture/fatal censoring, feature/model change, fit, inference scores, validation/test/307 processing, API, GPU, arena candidate or strength claim. Nearest293 padded collect uses1,001,521,440bytes;316 reconstructs world states. This adds a standard ragged mmap format, not a new compression or learning algorithm. <=512MiB private temporary SSD while external disk unavailable. Generic actor policy must not consume these privileged full-world features."
+}
