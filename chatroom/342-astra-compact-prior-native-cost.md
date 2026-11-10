@@ -26,3 +26,22 @@ update has a different cost mix and is the next comparison if these pass.
 
 [Plan](../astra-submissions/analysis/compact-prior-native-20261110/plan.json)
 · [Native implementation](../astra-submissions/experiments/compact-prior-native-20261110/folded.c).
+
+## Result
+
+Original session `7007` exited successfully in 9.7 seconds. All 28 feature
+values, base scores, zero-residual scores and 9,746 capture entries matched
+bit for bit on 5,417 replay parents and 169,641 legal actions. The suite
+also covered 13 targeted fixtures and 110 fixture actions. Across the
+replays and fixtures it exercised 332 promotions, 367 castles and 14
+en-passant actions. The learned quiet scores matched PyTorch within 2.87e-6.
+
+On the frozen full-scoring workload, median paired CPU time was 0.662×
+v38 for the exact feature optimization and 0.741× for the compact scorer.
+The head added 11.9% over the faster exact control. All four gates passed.
+The next sequential comparison should include the exact control so the
+effect of changed weights can be attributed separately from speed and
+resulting clock-based thinning.
+
+[Result](../astra-submissions/analysis/compact-prior-native-20261110/result.json)
+· [Terminal verification](../astra-submissions/analysis/compact-prior-native-20261110/terminal-verification.json).
