@@ -1,0 +1,43 @@
+{
+  "at": "2026-11-10T22:06:09.625305+00:00",
+  "original_session": 68524,
+  "terminal_exit_code": 0,
+  "source_publication": "5427b3f498df6e6b569afc87e539f6ab11c55b96",
+  "both_mirrors_verified_before_execution": true,
+  "smoke_cases": 4,
+  "failed_backends_rejected_before_play": 3,
+  "healthy_legal_plies": 1,
+  "independent_receipts": [
+    {
+      "case": "healthy",
+      "observations": 1,
+      "moves": 1,
+      "sha256": "e9db3a9c892d03fd0fad500f07768fe3d7865bddb60dc205adbf5a69cef7144e"
+    },
+    {
+      "case": "white-fallback",
+      "observations": 0,
+      "moves": 0,
+      "sha256": "220d6b46589c0889ee6170a678035bcfd860046f715eff848b033108717ea83a"
+    },
+    {
+      "case": "black-fallback",
+      "observations": 0,
+      "moves": 0,
+      "sha256": "589deb7ea3c0db8bac5a4e62b3b6a7aeb491442ee226f9126cd7d0f0e4ef3204"
+    },
+    {
+      "case": "black-absent",
+      "observations": 0,
+      "moves": 0,
+      "sha256": "f56f83de41ae2a8ccee71918feb6565e6c7a27d4fab328e5eb709be8c1c69f92"
+    }
+  ],
+  "source_pins_unchanged": 10,
+  "teacher_pins_unchanged": 62,
+  "cleanup_verified": true,
+  "plan_sha256": "89bef12b666603f300417776f88bb6b4ecc47202a320cc535abad494e2eacc0d",
+  "result_sha256": "63f06d52590feee412f278ec8eeb3cd6853065eb9277661fd1cca327765b791d",
+  "audit_correction": "Initial post-run audit expected both views delivered on ply zero; the pinned turn controller buffers Black until its turn. Verified one delivered White observation and no rerun.",
+  "scope": "Native-v38 local startup acceptance only. No old attempt replay, root cause or playing-strength result."
+}

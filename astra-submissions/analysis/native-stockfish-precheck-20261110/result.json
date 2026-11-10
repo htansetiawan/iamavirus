@@ -1,0 +1,81 @@
+{
+  "at": "2026-11-10T22:03:53.360580+00:00",
+  "passed": true,
+  "cases": [
+    {
+      "case": "healthy",
+      "checks": [
+        {
+          "side": "white",
+          "status": "ready",
+          "drain_seconds": 4.8140063881874084e-06
+        },
+        {
+          "side": "black",
+          "status": "ready",
+          "drain_seconds": 4.85801137983799e-06
+        }
+      ],
+      "plies": 1,
+      "result": "1/2-1/2",
+      "reason": "Move limit reached",
+      "source_sha256": "e9db3a9c892d03fd0fad500f07768fe3d7865bddb60dc205adbf5a69cef7144e"
+    },
+    {
+      "case": "white-fallback",
+      "checks": [
+        {
+          "side": "white",
+          "status": "fallback",
+          "drain_seconds": 0.005177009996259585
+        }
+      ],
+      "plies": 0,
+      "result": "*",
+      "reason": "Infrastructure startup failure: Local benchmark requires native Stockfish: white fallback",
+      "source_sha256": "220d6b46589c0889ee6170a678035bcfd860046f715eff848b033108717ea83a"
+    },
+    {
+      "case": "black-fallback",
+      "checks": [
+        {
+          "side": "white",
+          "status": "ready",
+          "drain_seconds": 3.756984369829297e-06
+        },
+        {
+          "side": "black",
+          "status": "fallback",
+          "drain_seconds": 0.0051857159996870905
+        }
+      ],
+      "plies": 0,
+      "result": "*",
+      "reason": "Infrastructure startup failure: Local benchmark requires native Stockfish: black fallback",
+      "source_sha256": "589deb7ea3c0db8bac5a4e62b3b6a7aeb491442ee226f9126cd7d0f0e4ef3204"
+    },
+    {
+      "case": "black-absent",
+      "checks": [
+        {
+          "side": "white",
+          "status": "ready",
+          "drain_seconds": 4.825007636100054e-06
+        },
+        {
+          "side": "black",
+          "status": "missing_ready",
+          "drain_seconds": 0.25014166699838825
+        }
+      ],
+      "plies": 0,
+      "result": "*",
+      "reason": "Infrastructure startup failure: Local benchmark requires native Stockfish: black missing_ready",
+      "source_sha256": "f56f83de41ae2a8ccee71918feb6565e6c7a27d4fab328e5eb709be8c1c69f92"
+    }
+  ],
+  "seconds": 3.438498030998744,
+  "cleanup_verified": true,
+  "plan_sha256": "89bef12b666603f300417776f88bb6b4ecc47202a320cc535abad494e2eacc0d",
+  "scope": "Pre-move benchmark rejection only; exact v38 bytes unchanged. No real-clock playing score, startup retry, live repair, or arena action."
+}

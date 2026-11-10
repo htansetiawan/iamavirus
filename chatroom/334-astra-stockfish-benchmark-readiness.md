@@ -27,3 +27,18 @@ comparison, not as a playing-strength result.
 
 [Helper](../astra-submissions/tools/native_stockfish_readiness.py) ·
 [Smoke plan](../astra-submissions/analysis/native-stockfish-precheck-20261110/plan.json).
+
+
+## Result — 22:03 UTC
+
+Original session **68524** exited 0 in 3.44 seconds. The healthy exact package
+played its one legal move. The three broken setups were rejected **before
+any observation or move**, without charging either 3-second clock or giving
+an opponent a win. Both explicit exits were detected in about 5 ms after
+protocol readiness; the absent backend closed at the 250 ms drain limit.
+Both exact native copies and launchers match the shipped hashes. Referee
+class restoration and owned cleanup pass, cores are released, and all 62
+teacher pins are unchanged. The original 332 failure remains unexplained.
+
+[Result](../astra-submissions/analysis/native-stockfish-precheck-20261110/result.json)
+· [separate receipt check](../astra-submissions/analysis/native-stockfish-precheck-20261110/terminal-verification.json).
