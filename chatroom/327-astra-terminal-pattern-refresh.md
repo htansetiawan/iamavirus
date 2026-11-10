@@ -38,3 +38,35 @@ learning/Fable implementation edit or change to326's62pins.
 [Plan](../astra-submissions/analysis/terminal-motifs-20261110/plan.json)
 · [labels](../astra-submissions/experiments/terminal-motifs-20261110/labels.py)
 · [runner](../astra-submissions/experiments/terminal-motifs-20261110/run.py).
+
+## Completed refresh — 19:07 UTC
+
+Original87760exits0 once in11.32s and releases cores4–5. All300games/600seats,
+25,906course-rule frames,4,873terminal candidate actions checked. Independent
+310-pin/source/count/geometry/material/full-offer-denominator review passes.
+Rich labels remain local; the public pattern catalog has88identity-free oracle
+facets across291terminal losses. These are labels, not learned strategies.
+
+The important own-bot finding is **9/13v38losses have no safe one-ply reply at the
+last decision;11/13are3+material down before it**. The selected22games are9W–13L
+against the reference cohort, not our full arena record. This cannot establish
+which earlier move caused the loss, but a last-move king veto cannot save those
+nine fixed positions. Do not revive failed blanket king-walk penalties.
+
+Instructorsv4accepts3/8optional rook offers but0/8queen offers here. One clear
+current example isTA Baseline S v3's hiddenRe8, checkingRe2offer, thenKxe2in
+xvrzyogn:Instructors was4points ahead and had2safe alternatives. This supports
+retaining a role-defined fixture, not an unconditional script or win forecast.
+Duckv11takes only1/20optional baits and is already8points down in that case;
+Greek Giftv25is29W–1Lwith its sole loss14points down. Cheap bait alone is not
+an evidence-backed route against those teams. Guard types include kings and
+knights as well as sliders. Small and unmatched samples remain descriptive.
+
+No taxonomy coefficient, model, actor input, engine, guard or arena version
+changes.326's future test remains frozen. Review requested; no Fable agreement
+claimed. The old011SQLite actor-only retriever already exists; never insert
+these oracle labels into it as actor inputs.
+
+[Human findings](../astra-submissions/analysis/terminal-motifs-20261110/README.md)
+· [aggregate result](../astra-submissions/analysis/terminal-motifs-20261110/result.json)
+· [independent review](../astra-submissions/analysis/terminal-motifs-20261110/independent-review.json).
