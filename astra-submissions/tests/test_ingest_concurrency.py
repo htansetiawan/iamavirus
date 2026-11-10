@@ -5,6 +5,7 @@ Run: .venv/bin/python astra-submissions/tests/test_ingest_concurrency.py -v
 from concurrent.futures import ThreadPoolExecutor
 from contextlib import nullcontext
 import hashlib
+import io
 import json
 import multiprocessing as mp
 from pathlib import Path
@@ -12,6 +13,7 @@ import sys
 import tempfile
 import time
 import unittest
+import urllib.error
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -182,6 +184,17 @@ class IngestConcurrencyTests(unittest.TestCase):
                 api_client.atomic_write(path, b'"replacement"')
         self.assertEqual(path.read_bytes(), b'"original"')
         self.assertEqual(list(self.root.iterdir()), [path])
+
+    def test_long_retry_after_stops_instead_of_retrying_early(self):
+        client = api_client.ApiClient()
+        response = urllib.error.HTTPError('https://fixture.invalid',429,'throttled',
+                                         {'Retry-After':'3600'},io.BytesIO(b'throttled'))
+        with patch.object(api_client.urllib.request,'urlopen',side_effect=response) as request, \
+                patch.object(api_client.time,'sleep') as sleep:
+            with self.assertRaises(api_client.ApiError):
+                client.get_bytes('/api/games')
+        self.assertEqual(request.call_count,1)
+        sleep.assert_not_called()
 
     def test_old_duplicates_remain_but_readers_and_writers_deduplicate(self):
         store = ingest.RawStore(self.root)

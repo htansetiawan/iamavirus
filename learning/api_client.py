@@ -113,7 +113,11 @@ class ApiClient:
                     wait = max(wait, delay) + random.uniform(0, 1.0)
                     last_error = ApiError(error.code, url, body)
                     if attempt < MAX_ATTEMPTS:
-                        time.sleep(min(wait, 120.0))
+                        # A long Retry-After is a request to stop this bounded
+                        # client, not permission to retry early at our sleep cap.
+                        if wait > 120.0:
+                            raise last_error from None
+                        time.sleep(wait)
                         delay = min(delay * 2, 60.0)
                         continue
                     raise last_error from None
