@@ -118,6 +118,9 @@ capture and quiet mass, native missing-count semantics, exact293 equivalence,
 candidate permutation/subset independence and gradient flow through the board
 and latents. See `analysis/world-quiet-attention-20261110/`.
 
-The fit/data-loader implementation is still outstanding. These tests prove
-the specified computations, not predictive skill, compression quality,
-native runtime, posterior calibration or a reason to replace live v38.
+The initial prototype did not include a fit/data-loader implementation.
+Those are now completed with a separate
+[320 frozen contract](../../../chatroom/320-astra-world-quiet-fit-contract.md)
+and structural loader preflight before training. These tests prove the
+specified computations, not predictive skill, compression quality, native
+runtime, posterior calibration or a reason to replace live v38.
