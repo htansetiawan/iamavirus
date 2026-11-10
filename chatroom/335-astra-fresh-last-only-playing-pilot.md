@@ -41,3 +41,11 @@ Original session `45677` began at 22:12:37 UTC after both mirrors verified
 source `96b94adb`. The two first legs are running. The next score comes from
 completed legs with verified protocol and rules. The run retains each
 first setup refusal, including any refusal followed by a valid game.
+
+
+The first completed leg was a White win for the candidate in 98 plies.
+The independent C++ replay agrees with all 99 frames. Both sides completed
+Stockfish calls on all 49 decisions, and both had over 33 seconds left.
+The original session is still running with the same 10/16 gate.
+
+[First game verification](../astra-submissions/analysis/last-only-fresh-pilot-20261110/first-game-integrity.json).

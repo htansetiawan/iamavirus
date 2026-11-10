@@ -30,3 +30,13 @@ read-only manifest and its existing actor projection after the audit passes.
 
 [Plan](../astra-submissions/analysis/recovered-replay-cache-20261110/plan.json)
 · [Preflight](../astra-submissions/analysis/recovered-replay-cache-20261110/preflight.json).
+
+
+## Launch
+
+Original session `14189` began building at 22:21:22 UTC on core 6 after
+both mirrors verified `358c68e9`. The original teacher session was also
+live at 265 of 300 games. The source plan and private output directories
+are separate.
+
+[Launch receipt](../astra-submissions/analysis/recovered-replay-cache-20261110/launch-verification.json).
