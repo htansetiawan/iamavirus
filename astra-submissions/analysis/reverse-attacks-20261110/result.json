@@ -1,0 +1,153 @@
+{
+  "at": "2026-11-10T23:45:55.630242+00:00",
+  "checked": {
+    "frames": 14683,
+    "timed_parents": 14491,
+    "expanded_parents": 760,
+    "children": 22750,
+    "ep_parents": 1054,
+    "castling_rights_parents": 5083,
+    "missing_king_parents": 0,
+    "synthetic": 384,
+    "comparisons": 4840576
+  },
+  "timing": {
+    "checksum": 305262,
+    "passes": [
+      {
+        "order": [
+          0,
+          1
+        ],
+        "original_seconds": 0.168542672,
+        "reverse_seconds": 0.024865335000000002,
+        "ratio": 0.14753139193141546
+      },
+      {
+        "order": [
+          1,
+          0
+        ],
+        "original_seconds": 0.16758152,
+        "reverse_seconds": 0.024847905,
+        "ratio": 0.14827353875296034
+      },
+      {
+        "order": [
+          0,
+          1
+        ],
+        "original_seconds": 0.167819505,
+        "reverse_seconds": 0.025026954,
+        "ratio": 0.14913018602932954
+      },
+      {
+        "order": [
+          1,
+          0
+        ],
+        "original_seconds": 0.16990190400000002,
+        "reverse_seconds": 0.025117032,
+        "ratio": 0.1478325516587501
+      },
+      {
+        "order": [
+          0,
+          1
+        ],
+        "original_seconds": 0.169994007,
+        "reverse_seconds": 0.025153426000000003,
+        "ratio": 0.14796654566769524
+      },
+      {
+        "order": [
+          1,
+          0
+        ],
+        "original_seconds": 0.16934900800000002,
+        "reverse_seconds": 0.025113002000000002,
+        "ratio": 0.14829140304146335
+      },
+      {
+        "order": [
+          0,
+          1
+        ],
+        "original_seconds": 0.168823533,
+        "reverse_seconds": 0.025154726000000002,
+        "ratio": 0.14900011599686167
+      },
+      {
+        "order": [
+          1,
+          0
+        ],
+        "original_seconds": 0.168336752,
+        "reverse_seconds": 0.025127764,
+        "ratio": 0.14927081401689393
+      },
+      {
+        "order": [
+          0,
+          1
+        ],
+        "original_seconds": 0.16797409900000002,
+        "reverse_seconds": 0.024940777,
+        "ratio": 0.14847989748705245
+      },
+      {
+        "order": [
+          1,
+          0
+        ],
+        "original_seconds": 0.16800974899999999,
+        "reverse_seconds": 0.024760334000000002,
+        "ratio": 0.14737438837552222
+      },
+      {
+        "order": [
+          0,
+          1
+        ],
+        "original_seconds": 0.16818745100000002,
+        "reverse_seconds": 0.024787488,
+        "ratio": 0.14738012766481606
+      },
+      {
+        "order": [
+          1,
+          0
+        ],
+        "original_seconds": 0.167823828,
+        "reverse_seconds": 0.025283505,
+        "ratio": 0.15065503689976611
+      }
+    ],
+    "median_ratio": 0.14828247089721186
+  },
+  "conditions": {
+    "parity": true,
+    "cost": true
+  },
+  "compiled": {
+    "source_sha256": "52522427573fe429068b4b9d54976d88e746d137081814d095bdaf85e21c6ade",
+    "binary_sha256": "c9c2799b1499ddc7aba38461842f16718cc2a72e2891f21ff95c2b554bbe81d9",
+    "command": [
+      "gcc",
+      "-O3",
+      "-std=c11",
+      "-Wall",
+      "-Wextra",
+      "-Werror",
+      "-shared",
+      "-fPIC",
+      "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+      "/home/henrytan/git/iamavirus/data/astra-spool/reverse-attacks-20261110/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/reverse-attacks-20261110/probe.c",
+      "-o",
+      "/home/henrytan/git/iamavirus/data/astra-spool/reverse-attacks-20261110/probe.so"
+    ]
+  },
+  "plan_sha256": "5ae9818c96426dec805d29260dbc60a927af5c0c13c3384e874c78f6968d9f16",
+  "decision": "native_trajectory_check_allowed"
+}

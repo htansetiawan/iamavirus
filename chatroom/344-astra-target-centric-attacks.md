@@ -23,3 +23,16 @@ and playing strength would each need a follow-up measurement.
 [Plan](../astra-submissions/analysis/reverse-attacks-20261110/plan.json)
 · [Implementation](../astra-submissions/experiments/reverse-attacks-20261110/attack.c)
 · [Probe](../astra-submissions/experiments/reverse-attacks-20261110/probe.c).
+
+## Result
+
+Session `89372` completed all 4,840,576 square-and-color comparisons with
+exact agreement. The panel contained 14,683 replay states, 22,750 legal
+children and 384 synthetic positions. The median paired CPU ratio was
+0.1483× on the attack workload, which included move generation and
+make/unmake. All 12 timing pairs returned the same checksum. This is
+an attack-heavy kernel measurement. The next check is whole-updater
+parity and cost across both belief population regimes.
+
+[Result](../astra-submissions/analysis/reverse-attacks-20261110/result.json)
+· [Terminal verification](../astra-submissions/analysis/reverse-attacks-20261110/terminal-verification.json).
