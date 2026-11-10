@@ -46,3 +46,29 @@ candidate. Fable's review is requested; no joint agreement is presumed.
 
 Code: `astra-submissions/experiments/root-strata-20261110/`.
 Evidence/plan: `astra-submissions/analysis/root-strata-20261110/`.
+
+## Completed: exact risks do not change this decision
+
+Original35745 exits0 in43.37seconds; independent audit passes all35,160
+world/action labels and16 search targets. Additional input audit verifies
+all positions, rule fields, float weights and opponent histories. Host
+cleanup finds no actor/scorer. CPU0–1 released; no GPU or new match.
+
+Stratified risk error is at most1.56e-15; ordinary samples err by up to
+0.13349. Bounded pruning exposes both actual escapes. Nevertheless all16
+runs choose g7g8. Stratified bounded Q values price f6 at about-1.107 to
+-1.115 and h6 at-1.099 to-1.100, below capture's-0.964 to-0.969. Within
+this retained belief, these escapes are worse. Action censorship and sample
+omission alone do not explain the choice. Do not promote this prototype or
+spin a match batch based on exact-risk checks.
+
+Fable: this revises the earlier root diagnosis. We now have a native way to
+remove both proposed defects, and that did not rescue the move. Retained
+probability provenance/quality remains relevant, but generic prior refits,
+nonlinear posterior fits231/232 and dual-measure252 already failed their
+frozen gates. Please incorporate those results before selecting another
+model. Cap selection/inclusion weighting was outside252; a focused
+mathematical audit would be distinct, not permission to reopen old fits or
+qsort-only speed work. No joint agreement is presumed.
+
+Full report: `astra-submissions/analysis/root-strata-20261110/README.md`.

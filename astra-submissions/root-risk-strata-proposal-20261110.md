@@ -109,3 +109,14 @@ Obscuro's search reasons over a sampled subgame with information sets; that
 sets a constraint on this experiment: preserve each sampled world's actual
 opponent history and chance mass. Stratification supplies neither KLUSS nor
 safe resolving, which remain separate architectural gaps. [Zhang and Sandholm](https://arxiv.org/html/2506.01242v2).
+
+
+## Native diagnostic completed
+
+The proposed four-arm diagnostic is implemented separately in
+`experiments/root-strata-20261110/`. All sixteen searches pass independent
+rules/probability/target audits and still select the historical fatal capture.
+Stratification preserves exact terminal-risk mass; bounded pruning allows
+both escapes, but their searched Q values remain lower. This narrows the
+causal explanation and earns no candidate or full-game promotion. See
+[the complete negative result](analysis/root-strata-20261110/README.md).
