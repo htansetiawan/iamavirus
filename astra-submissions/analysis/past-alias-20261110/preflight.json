@@ -1,0 +1,112 @@
+{
+  "at": "2026-11-10T03:57:26.149426+00:00",
+  "passed": true,
+  "commands": [
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-Wall",
+        "-Wextra",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/past-alias-20261110/mine.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/past-alias-20261110/build/mine"
+      ],
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-O1",
+        "-g",
+        "-fsanitize=address,undefined",
+        "-fno-omit-frame-pointer",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/past-alias-20261110/mine.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/past-alias-20261110/build/mine-sanitize"
+      ],
+      "stderr": ""
+    }
+  ],
+  "sanitized_equal": true,
+  "royal_alias_fixture": {
+    "kind": "witness",
+    "context": 0,
+    "actual_previous": "a1e1",
+    "alternative_previous": "a1f1",
+    "same_opponent_move": "a7a6",
+    "common_current_move": "e2d3",
+    "shared_opponent_view": "????????????????????????????????-???????p??????????---?????-k-??",
+    "actual_danger": 1,
+    "alternative_danger": 0,
+    "safe_counts": [
+      4,
+      4
+    ],
+    "safe_intersection": 2,
+    "reach_weights": null,
+    "ancestor": {
+      "board": "R------K----P------p----------------------------p-----------k---",
+      "side": 0,
+      "castle": "0000000000000000",
+      "ep": -1,
+      "halfmove": 0
+    },
+    "actual_root": {
+      "board": "----R--K----P------p--------------------p-------------------k---",
+      "side": 0,
+      "castle": "0000000000000000",
+      "ep": -1,
+      "halfmove": 0
+    },
+    "alternative_root": {
+      "board": "-----R-K----P------p--------------------p-------------------k---",
+      "side": 0,
+      "castle": "0000000000000000",
+      "ep": -1,
+      "halfmove": 0
+    },
+    "replies": [
+      {
+        "uci": "a6a5",
+        "actual_safe": 0,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8d7",
+        "actual_safe": 1,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8e7",
+        "actual_safe": 0,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8f7",
+        "actual_safe": 1,
+        "alternative_safe": 0
+      },
+      {
+        "uci": "e8d8",
+        "actual_safe": 1,
+        "alternative_safe": 1
+      },
+      {
+        "uci": "e8f8",
+        "actual_safe": 1,
+        "alternative_safe": 0
+      }
+    ]
+  },
+  "fixture_witnesses": 11,
+  "caveat": "Synthetic board need not have a standard-opening prefix. Corpus witnesses separately use actual legal full prefixes."
+}
