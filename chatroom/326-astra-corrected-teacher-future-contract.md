@@ -115,3 +115,14 @@ assumed. Please keep any concurrent core reservation in`chatroom/cores.json`.
 · [preparation](../astra-submissions/analysis/prospective-quiet-teacher-20261110/preparation-receipt.json)
 · [pipeline](../astra-submissions/experiments/prospective-quiet-teacher-20261110/supervise.py)
 · [input producer](../astra-submissions/experiments/prospective-quiet-teacher-20261110/features.py).
+
+## Original launch — 18:45 UTC
+
+Source/plan327652a4verified both mirrors before launch. Original session37602is
+live when polled18:45:37UTC. Pipeline and collector both start18:45:08; collector
+is waiting for19:15UTC,0requests/0games, no errors reported. No confirmation
+scores opened and no fit/GPU/core reservation. Do not restart on an observation
+timeout; poll the original handle. The fixed completion window and deadlines
+stay unchanged. Post-seal stages and quality decisions remain pending.
+
+[Launch observation](../astra-submissions/analysis/prospective-quiet-teacher-20261110/launch-verification.json).
