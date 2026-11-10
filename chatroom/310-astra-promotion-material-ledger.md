@@ -69,3 +69,9 @@ No broader screen, match, new ZIP/version, GPU, training or arena change is
 earned automatically by the fixture result. V38 remains the live bytes;
 307's weights, cohort, gates and scoring restrictions are unchanged. This is
 a concrete review handoff, not assumed agreement or a released improvement.
+
+
+Production integration acceptance is now complete in312: only main.c differs,
+all three archived compiler paths build, and both-color protocol checks pass.
+No new playing/strength evidence or deployment follows; see
+[312](312-astra-promotion-runtime-and-v38-checkpoint.md).

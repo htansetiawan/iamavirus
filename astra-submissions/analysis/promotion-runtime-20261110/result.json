@@ -1,0 +1,394 @@
+{
+  "at": "2026-11-10T13:01:43.040696+00:00",
+  "passed": true,
+  "changed_archive_members": [
+    "src/main.c"
+  ],
+  "main_sha256": "251cf64d70755afd5a06dd60a11b10c853981380e1bf5017de57d77e4d28ada8",
+  "source_matches_tested_patch": true,
+  "build_commands": [
+    {
+      "label": "packaged-build-script",
+      "argv": [
+        "bash",
+        "build.sh"
+      ],
+      "exit_code": 0,
+      "seconds": 1.574549762008246,
+      "stdout": "build: done (gcc)\n",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-board",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/board.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/board.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1376454799901694,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-belief",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/belief.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/belief.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.39601049400516786,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-movemodel",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/movemodel.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/movemodel.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06052398998872377,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-cfr",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/cfr.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/cfr.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.13124343700474128,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-eval",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/eval.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/eval.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.07792396799777634,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-search",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/search.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/search.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.06671735501731746,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-gtcfr",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/gtcfr.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/gtcfr.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.1984810730209574,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-front",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/front.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/front.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0646908640046604,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-sfeval",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/sfeval.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/sfeval.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.14825247501721606,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-main",
+      "argv": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "src/main.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/main.o"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2780665140016936,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-c-link",
+      "argv": [
+        "g++",
+        "-pthread",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/board.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/belief.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/movemodel.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/cfr.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/eval.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/search.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/gtcfr.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/front.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/sfeval.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/build/objects-xc/main.o",
+        "-lm",
+        "-o",
+        "mist-xc"
+      ],
+      "exit_code": 0,
+      "seconds": 0.024078427988570184,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "label": "g++-cpp",
+      "argv": [
+        "g++",
+        "-x",
+        "c++",
+        "-std=c++20",
+        "-fpermissive",
+        "-w",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "src/board.c",
+        "src/belief.c",
+        "src/movemodel.c",
+        "src/cfr.c",
+        "src/eval.c",
+        "src/search.c",
+        "src/gtcfr.c",
+        "src/front.c",
+        "src/sfeval.c",
+        "src/main.c",
+        "-lm",
+        "-o",
+        "mist-cpp"
+      ],
+      "exit_code": 0,
+      "seconds": 2.5072702890029177,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "protocol_checks": [
+    {
+      "side": 0,
+      "build": "parent",
+      "move": "d2d4",
+      "parent_move": "d2d4",
+      "seconds": 0.5644893779826816,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd"
+    },
+    {
+      "side": 0,
+      "build": "gcc-script",
+      "move": "d2d4",
+      "parent_move": "d2d4",
+      "seconds": 0.5644272409845144,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "aa6e1c9c17e2245c82afc46dab17911896b87431a54547a1d634564b6e5fda56"
+    },
+    {
+      "side": 0,
+      "build": "g++-c",
+      "move": "d2d4",
+      "parent_move": "d2d4",
+      "seconds": 0.5643399760010652,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "770f3a4cffa82c20bd3db222ec4cd9a2df9f3899ebeec44e33fad0dae96e2c4b"
+    },
+    {
+      "side": 0,
+      "build": "g++-cpp",
+      "move": "d2d4",
+      "parent_move": "d2d4",
+      "seconds": 0.5583608059969265,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "db27fa5f84e4d0c19b3a38ca02dd61b6625a81ab6008321d9d331135836454e2"
+    },
+    {
+      "side": 1,
+      "build": "parent",
+      "move": "d7d5",
+      "parent_move": "d7d5",
+      "seconds": 0.5670186200004537,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd"
+    },
+    {
+      "side": 1,
+      "build": "gcc-script",
+      "move": "d7d5",
+      "parent_move": "d7d5",
+      "seconds": 0.5689113130210899,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "aa6e1c9c17e2245c82afc46dab17911896b87431a54547a1d634564b6e5fda56"
+    },
+    {
+      "side": 1,
+      "build": "g++-c",
+      "move": "d7d5",
+      "parent_move": "d7d5",
+      "seconds": 0.5641448800161015,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "770f3a4cffa82c20bd3db222ec4cd9a2df9f3899ebeec44e33fad0dae96e2c4b"
+    },
+    {
+      "side": 1,
+      "build": "g++-cpp",
+      "move": "d7d5",
+      "parent_move": "d7d5",
+      "seconds": 0.5665661490056664,
+      "legal": true,
+      "exited_zero": true,
+      "owned_processes_closed": true,
+      "binary_sha256": "db27fa5f84e4d0c19b3a38ca02dd61b6625a81ab6008321d9d331135836454e2"
+    }
+  ],
+  "modes": [
+    "packaged-gcc-script",
+    "g++-C-front-end",
+    "g++-C++20-fallback"
+  ],
+  "all_opening_gcc_choices_match_parent": true,
+  "stockfish_and_history_unchanged": true,
+  "scope": "Local build/protocol acceptance only. Zero timed growth fixes20finalCFRiterations; this is not an arena-clock or strength test. Only the promotion arithmetic source differs.",
+  "limitations": [
+    "Host compiler versions and timings do not reproduce the course machine.",
+    "Opening smokes do not exercise promotions;310supplies21 arithmetic fixtures and311supplies a real fixed-belief mask comparison.",
+    "Original recapture/terminal approximations remain. No ZIP, release number, live arena or Fable-source change."
+  ],
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-runtime-20261110/check.py": "fd3527576c3e178b49658967c1c4e9c5edfe0563b6b1c834d2bd78d64c72fb61",
+    "/home/henrytan/git/iamavirus/astra-submissions/iamavirus-v38-mist-c-allchildren.zip": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/promotion-ledger-20261110/promotion-ledger.patch.gz": "6f0f4b0e9004a6fab5e4fbc4e6d3860e81770839028064dd76be5a480212891b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/study.py": "5e036d51aad544f7d3b40bcba1ba29286c7e2179d6d009d03aed387387bf4805",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/bin/stockfish": "ee37a332307846bf5180d178fc3450d2e3415e2e3b31f224fef2bb3d959e715a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+  },
+  "local_binaries": {
+    "mist-gcc": "bb748149c9e0ad73e277737dcf5f3582c875337f5c8da6fb4cbd994fcbbd6e46",
+    "mist-xc": "770f3a4cffa82c20bd3db222ec4cd9a2df9f3899ebeec44e33fad0dae96e2c4b",
+    "mist-cpp": "db27fa5f84e4d0c19b3a38ca02dd61b6625a81ab6008321d9d331135836454e2"
+  }
+}
