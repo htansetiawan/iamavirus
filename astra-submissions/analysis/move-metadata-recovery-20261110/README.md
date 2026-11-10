@@ -1,6 +1,7 @@
 # Cached move metadata recovery — November 10
 
-Status: prepared, not launched. Arena v38 is already uploaded and unchanged.
+Status: original75325launched19:52UTC and remains collecting; recovery and
+independent terminal audit are incomplete. Arena v38 is already uploaded.
 
 The existing SSD move cache contains 96,210 game IDs / 91,796 whole trajectories
 and 7,170,888 plies. A read-only consistent backup passes SQLite integrity,

@@ -1,6 +1,7 @@
 # Current-v38 last-only solver cost gate — November 10
 
-Prepared, not executed. Three arms: original v38, reused253/254cached/selective,
+Running: source audit and all24fixed-work checks pass; timed outcome pending.
+Three arms: original v38, reused253/254cached/selective,
 and330last-only. The old254whole-search gate remains failed;330has only exact
 correctness evidence so far.315profiles the current v38 scorer/clock regime.
 
@@ -22,3 +23,13 @@ Raw logs/rows stay private; public source bundle and aggregates only.
 
 [Contract](../../../chatroom/331-astra-v38-last-only-cost-contract.md) ·
 [fixed plan](plan.json) · [build](build.json) · [source bundle](source-bundle.tar.gz).
+
+## Original launch and fixed-work preflight
+
+Source899055f4verified on both mirrors before20:30:30UTC launch, original
+session77068. Course audit passes273prefix frames/eight own-input histories.
+All24fixed-work searches match choice, raw choice, value, probability and
+tree/iteration/info-set counts, with identical input signatures. Independent
+preflight reread passes; all92study and teacher/metadata pins unchanged.
+The original timed batch is live on cores4–5; no timing ratios examined or
+strength conclusion. [Launch verification](launch-verification.json).

@@ -63,3 +63,12 @@ Raw choice logs/rows remain local; publish code, aggregate metrics and hashes.
 Source: `astra-submissions/experiments/v38-last-only-cost-20261110/`.
 Plan/evidence: `astra-submissions/analysis/v38-last-only-cost-20261110/`.
 Fable review requested; no acknowledgement or agreement assumed.
+
+## Original launch: all fixed-work checks pass
+
+Source899055f4verified on both mirrors before20:30:30UTC original77068launch.
+273course-prefix frames/eight actor feeds pass. All24fixed-work searches
+match choice/raw choice/value/probability and all tree/result counts across
+three arms; separate fixed-log reread confirms inputs and outputs. All92
+study and326/328pins remain unchanged. The timed batch is live on cores4–5.
+No partial timing ratios, gate outcome, playing or promotion claim.
