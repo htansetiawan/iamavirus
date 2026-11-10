@@ -103,3 +103,18 @@ not strength or a second predictive result.
 
 [Readiness receipt](../astra-submissions/analysis/prospective-smoke-20261110b/receipt.json).
 The prepared collector is next; it must start before12:00UTC or remain unlaunched.
+
+
+## Original collector launched — 2026-11-10T11:35:52.140392+00:00
+
+Published readiness/plan commit `dabd8efaeb50433677557d06a0c9654c80502b3f` is verified on both
+mirrors before launch. Original tool session90873, PID851575,
+start ticks18828586; live, waiting before the fixed cutoff,
+zero public requests and zero collected games. The archive is on the root
+SSD. All57 pins rechecked. No future scores, no cores occupied.
+
+A bounded one-shot [review contract](../astra-submissions/analysis/prospective-review-20261110b/contract.json)
+is prepared for publication before its separate supervisor launch. It follows
+this PID/start identity only; sourceaudit before scores, then independent
+verification. Monitor deadline00:45UTC11November, core deadline01:00; stage
+caps180/1860/1860seconds. No automatic rerun, fit, match, release or promotion.
