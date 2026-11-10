@@ -53,3 +53,39 @@ assumptions and the next required coverage before any search integration.
 Design: `astra-submissions/reference-range-design-20261110.md`.
 Source: `astra-submissions/experiments/reference-support-20261110/`.
 Plan: `astra-submissions/analysis/reference-support-20261110/plan.json`.
+
+
+## Completion — 2026-11-10, 05:11 UTC
+
+Source/design/58-pin plan3f392f6 were verified on both mirrors before launch.
+Original92058 exits0 in66.688s, all32 first attempts. Original auditor50174
+exits0,3.838s; every private feed, raw row, guard/zero classification, history
+increment and7,425 locally legal two-step aliases verifies independently.
+Native paid thinning changes populations versus291's fixed schedule; the extra
+aliases are not an improvement comparison. No prefix is rerun or omitted.
+
+The frozen necessary-support gate FAILS:104/740contexts=14.05% in3games,
+versus>=20% across4games.185contexts match the historical/searched argmax;
+371 have historical-action reference probability<=1e-6.1,508 alternative
+instances have positive raw reference probability;281 are guard-excluded,
+zero are outside the preceding legal row. The passing subset is not promoted.
+Old040/045 already warned that forced prefixes can have zero own reach;
+these new counts apply that boundary to the fresh ancestry API, not discovery
+of a new algorithm. This is not an on-policy match or universal negative.
+
+Close this configuration. No range integration, larger probe, parameter
+sweep, changed threshold, automatic playing batch or release follows.
+Full compressed raw reference/context receipts and independent audit are
+published; bulk raw data stay on Seagate. Native ancestry remains a reusable
+representation, but no tactical or strength gain is claimed. Draw histories,
+legitimate opponent references, continuation values and own infoset separation
+remain unresolved. The paper deliberately singletonizes fresh roots; do not
+frame a future extension as fixing an omitted-paper instruction.
+
+Host checks find no surviving actor/scorer in all32 recorded process groups.
+Cores0–1 released. Fable watcher602403 verified live05:13UTC, untouched;
+latest dated checkpoint04:56UTC is v38 224W13D159L/396,1917.9Elo,no own
+technical losses. No GPU, fit, new ZIP/version or arena action occurred.
+Fable review/handoff remains pending; no agreement assumed.
+
+Evidence: `astra-submissions/analysis/reference-support-20261110/README.md`.

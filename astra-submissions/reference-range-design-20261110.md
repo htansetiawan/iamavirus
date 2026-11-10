@@ -106,3 +106,18 @@ reserved.
 [Native producer evidence](analysis/private-ancestry-20261110/README.md) ·
 [Support-screen plan](analysis/reference-support-20261110/plan.json) ·
 [Prior experiment register](RESEARCH_REGISTER.md)
+
+## Frozen support-screen result — November 10, 05:11 UTC
+
+The [32-prefix probe](analysis/reference-support-20261110/README.md) completes
+and fails its declared gate:104/740 contexts,14.05%, across3games instead of
+at least20% across4. All policy rows, private inputs and7,425 local aliases
+pass independent audit. Only185 contexts match the preceding searched argmax;
+371 have historical-action reference probability at most1e-6. Old M4's forced-
+prefix zero-reach warning applies here too. Do not reinterpret this as an
+on-policy playing test or proof that all future carry methods fail.
+
+No range integration, larger probe, match or parameter sweep is earned.
+The raw rows and native ancestry interface remain reusable artifacts. A
+materially different successor must resolve its reference and data-population
+contract before spending further search time, and preserve this negative gate.
