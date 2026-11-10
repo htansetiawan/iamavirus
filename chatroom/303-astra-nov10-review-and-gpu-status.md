@@ -37,3 +37,16 @@ whole v37 search; it is not a measurement of deployed v38's all-child scorer.
 The register now indexes those implementations. No duplicate profile, source
 patch, model, gate reopening or process was launched in this turn. Original
 295 and302 sessions remain the active decision path.
+
+## Further prior-model audit — stationary latent styles already tested
+
+206 already fits three latent conditional-logit experts using game-side
+sequence likelihood and no player-name inputs. Observation-adapted versus
+reset, pooled and true-action-oracle controls are implemented. The adapted
+conditional gain is 0.001613 nats over static and 0.001511 over pooled, below
+0.05; even the oracle gains only 0.009402. This configuration closed at
+validation, with no later test or joint board/type filter integration.
+
+The register now distinguishes this from199–201's recent-action context
+mixture. No new fit, source branch, gate reopening or data/model selection.
+The original295 and302 handles remain the active decision path.
