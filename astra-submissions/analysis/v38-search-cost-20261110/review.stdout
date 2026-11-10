@@ -1,0 +1,75 @@
+{
+  "at": "2026-11-10T14:26:32.106905+00:00",
+  "search_wall": 43.527088748,
+  "main_thread_cpu": 25.255594016,
+  "target_turn_wall": 50.31065095,
+  "buckets": {
+    "other": {
+      "wall": 0.218169789,
+      "cpu": 0.185884653,
+      "calls": 8,
+      "wall_share": 0.005012276154352836
+    },
+    "solver": {
+      "wall": 13.749118251,
+      "cpu": 13.749245866999999,
+      "calls": 21710,
+      "wall_share": 0.3158749791560951
+    },
+    "strategy": {
+      "wall": 5.785679581,
+      "cpu": 5.784629729,
+      "calls": 45583,
+      "wall_share": 0.13292135420533593
+    },
+    "growth": {
+      "wall": 0.023080887,
+      "cpu": 0.023125789,
+      "calls": 2163,
+      "wall_share": 0.0005302648916776115
+    },
+    "selection": {
+      "wall": 0.045064738,
+      "cpu": 0.045245176,
+      "calls": 68960,
+      "wall_share": 0.0010353262599504924
+    },
+    "expansion": {
+      "wall": 2.708526109,
+      "cpu": 2.708914892,
+      "calls": 64416,
+      "wall_share": 0.062226217900328853
+    },
+    "stockfish": {
+      "wall": 20.997449393,
+      "cpu": 2.75854791,
+      "calls": 128990,
+      "wall_share": 0.48239958143225925
+    }
+  },
+  "instrumentation": {
+    "median_profiled_node_ratio": 0.9982955106372476,
+    "ratios": [
+      0.9881357234807001,
+      1.0,
+      1.0207858224099524,
+      0.9965910212744953,
+      0.9827568156120441,
+      1.0033818713021205,
+      1.012102392006651,
+      0.979134822105407
+    ],
+    "changed_belief_counts": 0
+  },
+  "fixed_work_serial_bounds": {
+    "eliminate_solver_and_strategy": 1.8142114440173205,
+    "halve_stockfish_call_wall": 1.317869958079961
+  },
+  "actor_inputs": 8,
+  "legal_choices": 16,
+  "course_frames": 273,
+  "preserved_function_bodies": 10,
+  "decision": "Cost attribution only. No candidate, strength claim, reopened254gate or automatic benchmark.",
+  "plan_sha256": "3311f76e00bec9f66612818ab979a3761d089fd02c3a0c85a5555de226e2c672",
+  "receipt_sha256": "827ebdb8f717d13606d15ff52817bf8d6b147b0d969384e643600bfe86b5e32b"
+}

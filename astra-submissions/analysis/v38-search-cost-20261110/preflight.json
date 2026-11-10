@@ -1,0 +1,41 @@
+{
+  "passed": true,
+  "rows": [
+    {
+      "side": 0,
+      "arm": "control",
+      "exit_code": 0,
+      "error": null,
+      "seconds": 0.5647824860061519,
+      "stdout": "ready\nmove d2d4\n",
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: timing queen guard 0.000 s |P| 1 moves 20\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=1 nodes=22 iters=20 p=1.00 v=+0.075 lead=+0 clock=180.0 sf=1/0.0s mr=-1.00/-1.00 hist=0/0 move=d2d4\n"
+    },
+    {
+      "side": 0,
+      "arm": "profile",
+      "exit_code": 0,
+      "error": null,
+      "seconds": 0.5490028529893607,
+      "stdout": "ready\nmove d2d4\n",
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: timing queen guard 0.000 s |P| 1 moves 20\nastra-search-cost {\"wall\":0.000619379,\"cpu\":0.000228207,\"nodes\":22,\"iterations\":20,\"budget\":0.000000000,\"async\":0,\"buckets\":{\"other\":{\"wall\":0.000056313,\"cpu\":0.000055377,\"calls\":1},\"solver\":{\"wall\":0.000017779,\"cpu\":0.000017824,\"calls\":20},\"strategy\":{\"wall\":0.000010040,\"cpu\":0.000009995,\"calls\":41},\"growth\":{\"wall\":0.000000253,\"cpu\":0.000000242,\"calls\":1},\"selection\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0},\"expansion\":{\"wall\":0.000101160,\"cpu\":0.000101224,\"calls\":1},\"stockfish\":{\"wall\":0.000433834,\"cpu\":0.000043545,\"calls\":3}}}\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=1 nodes=22 iters=20 p=1.00 v=+0.075 lead=+0 clock=180.0 sf=1/0.0s mr=-1.00/-1.00 hist=0/0 move=d2d4\nastra-turn-wall 0.000659558\n"
+    },
+    {
+      "side": 1,
+      "arm": "control",
+      "exit_code": 0,
+      "error": null,
+      "seconds": 0.5541662370087579,
+      "stdout": "ready\nmove d7d5\n",
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: timing opp update 0.000 s |P| 1 -> 20\nmist: timing queen guard 0.000 s |P| 20 moves 20\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=1 nodes=421 iters=20 p=0.95 v=-0.028 lead=+0 clock=180.0 sf=20/0.0s mr=-1.00/-1.00 hist=1/1 move=d7d5\n"
+    },
+    {
+      "side": 1,
+      "arm": "profile",
+      "exit_code": 0,
+      "error": null,
+      "seconds": 0.5568059160141274,
+      "stdout": "ready\nmove d7d5\n",
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: timing opp update 0.000 s |P| 1 -> 20\nmist: timing queen guard 0.000 s |P| 20 moves 20\nastra-search-cost {\"wall\":0.005009690,\"cpu\":0.001717431,\"nodes\":421,\"iterations\":20,\"budget\":0.000000000,\"async\":0,\"buckets\":{\"other\":{\"wall\":0.000056223,\"cpu\":0.000054705,\"calls\":1},\"solver\":{\"wall\":0.000058180,\"cpu\":0.000057518,\"calls\":20},\"strategy\":{\"wall\":0.000010019,\"cpu\":0.000010443,\"calls\":41},\"growth\":{\"wall\":0.000000223,\"cpu\":0.000000221,\"calls\":1},\"selection\":{\"wall\":0.000000000,\"cpu\":0.000000000,\"calls\":0},\"expansion\":{\"wall\":0.000520429,\"cpu\":0.000520961,\"calls\":20},\"stockfish\":{\"wall\":0.004364616,\"cpu\":0.001073583,\"calls\":60}}}\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=1 nodes=421 iters=20 p=0.95 v=-0.028 lead=+0 clock=180.0 sf=20/0.0s mr=-1.00/-1.00 hist=1/1 move=d7d5\nastra-turn-wall 0.005241071\n"
+    }
+  ]
+}

@@ -58,3 +58,27 @@ with no dropped case or retry.
 
 [Plan](../astra-submissions/analysis/v38-search-cost-20261110/plan.json),
 [source](../astra-submissions/experiments/v38-search-cost-20261110/study.py).
+
+## Complete first-attempt result
+
+Original63497 exits0; all16processes complete, source/course review passes273
+frames/eight actor inputs/16legal choices, ten original bodies preserved.
+Search totals43.5271s: CFR31.59%, strategy13.29%, Stockfish48.24%, expansion6.22%.
+Target turns total50.3107s; CFR+strategy38.83%, Stockfish41.74% of that total.
+The current regime has a meaningful solver budget. Historical255 used a
+2.5-second cap and different scorer, so do not attribute this shift solely
+to the scorer or treat these as a paired speed test.
+
+Median profile/control nodes0.99830, range0.9791–1.0208, population counts
+match8/8 but populations themselves are not fingerprint-certified. Independent
+raw-log arithmetic passes; main CPU excludes workers. No technical error,
+source change, fit or candidate. Cores2–3 released.307174/300 at14:24UTC,
+still unscored. No automatic retest of254; its old failed gate stands.
+
+Please review cached/selective solver work in this newly measured regime
+once307 finishes. A separate source inventory finds `pcfr_average` unused
+by deployed GT-CFR while average sums are maintained; any future omission
+must preserve the generic API for average-policy consumers and needs tests.
+This is a question to evaluate, not an implemented optimization or strength claim.
+
+[Current cost table, bounds and full limitations](../astra-submissions/analysis/v38-search-cost-20261110/README.md).
