@@ -1,0 +1,89 @@
+{
+  "at": "2026-11-10T05:39:47.271119+00:00",
+  "modes": {
+    "14": {
+      "primary": 17846,
+      "surprise_captures": 1817,
+      "nll": {
+        "base": 2.9031610857991206,
+        "linear": 2.891363155386644,
+        "quadratic": 2.8727789628762133
+      },
+      "gain": 0.030382122922907356,
+      "interval95": [
+        0.026671937440070653,
+        0.03408772423835332
+      ],
+      "matched_linear_gain": 0.018584192510430864,
+      "all_move_gain": 0.026542039461553105,
+      "surprise_gain": 0.0,
+      "capture_target_max_error": 0.0,
+      "conditions": {
+        "gain": true,
+        "confidence": true,
+        "matched_linear": false,
+        "all_moves": true,
+        "capture_identity": true
+      }
+    },
+    "22": {
+      "primary": 17846,
+      "surprise_captures": 1817,
+      "nll": {
+        "base": 2.6652979195925446,
+        "linear": 2.6490393209802408,
+        "quadratic": 2.6140939662382294
+      },
+      "gain": 0.05120395335431536,
+      "interval95": [
+        0.04664767325767167,
+        0.05614695163148531
+      ],
+      "matched_linear_gain": 0.03494535474201171,
+      "all_move_gain": 0.044797555061886485,
+      "surprise_gain": 0.0,
+      "capture_target_max_error": 0.0,
+      "conditions": {
+        "gain": true,
+        "confidence": true,
+        "matched_linear": true,
+        "all_moves": true,
+        "capture_identity": true
+      }
+    }
+  },
+  "native_checks": {
+    "14": {
+      "base": {
+        "capture_actions": 38933,
+        "capture_logp_error": 0.0
+      },
+      "linear": {
+        "capture_actions": 38933,
+        "capture_logp_error": 0.0
+      },
+      "quadratic": {
+        "capture_actions": 38933,
+        "capture_logp_error": 0.0
+      }
+    },
+    "22": {
+      "base": {
+        "capture_actions": 38933,
+        "capture_logp_error": 0.0
+      },
+      "linear": {
+        "capture_actions": 38933,
+        "capture_logp_error": 0.0
+      },
+      "quadratic": {
+        "capture_actions": 38933,
+        "capture_logp_error": 0.0
+      }
+    }
+  },
+  "decision": "close_capture_fixed_configuration",
+  "selection_sha256": "bfb2e57ebc124eab035d1af9ad0f999ff99710622e72435c2afc444155f2fc88",
+  "scores_sha256": "39326591e56ff9a7bd0ef50bfeac585626f086327f338e8f5f7e68bd52a45d6f",
+  "scope": "New constrained conditional prior architecture; existing capture probabilities and total capture mass fixed while quiet odds are learned. Quiet means non-capturing, not observation-silent. Native features/base coefficients/history table fixed; no identities as model inputs. True parent public replay features are the same representation the belief prior uses per hypothesis, not an information-set-realizable opponent policy. Fresh chronological fit splits relative to old Nov2 predictors; late evaluation may overlap previously curated taxonomy, so not pristine prospective confirmation. Matched constrained linear isolates interactions from recency; no old model/test is reclassified as passed."
+}

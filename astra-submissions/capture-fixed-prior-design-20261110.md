@@ -42,15 +42,15 @@ No runtime integration follows from a predictive gain alone.
 
 ## Distinction from the old experiments
 
--066 learned tactical **group masses** while preserving within-group odds;
+- 066 learned tactical **group masses** while preserving within-group odds;
   its sequential gate failed in067. This experiment holds the capture/quiet
   partition masses fixed and learns within-quiet odds: the opposite degree
   of freedom. It is not that old gate reused.
--228 learned unconstrained feature interactions and failed its capture
+- 228 learned unconstrained feature interactions and failed its capture
   safeguard. The new architecture makes true-parent capture likelihood
   invariant by construction. Old228 remains negative; no old subgroup is
   selected as a winner and no old test is relabelled as passed.
--231/232's posterior-objective fits and201's temporal mixture also remain
+- 231/232's posterior-objective fits and201's temporal mixture also remain
   closed. There is no new hidden-history duplication, posterior objective
   retuning, global check bonus or threshold adjustment here.
 
@@ -96,3 +96,25 @@ No version number or candidate is reserved.
 [Prior-work register](RESEARCH_REGISTER.md) ·
 [Frozen plan](analysis/capture-fixed-prior-20261110/plan.json) ·
 [Source and tests](experiments/capture-fixed-prior-20261110/)
+
+## Result and review boundary — November 10
+
+The [completed study](analysis/capture-fixed-prior-20261110/README.md) learns
+a positive full head:0.05120nats over baseline and0.03495 over its linear
+control, with unchanged capture likelihoods. All its predictive conditions pass.
+The combined configuration still fails: cheap improves0.01858 over linear
+instead of the required0.02000. No threshold changes or passing-subgroup
+promotion follow. Models and the independent audit are retained.
+
+The constraint has a rules explanation: a victim's own pieces are always
+visible, so opponent capture/non-capture is observable as a one-piece loss.
+All34,574 test-sequence moves corroborate it. Given identical parents and a
+fixed update/RNG schedule, a capture-only observation would admit only
+successors whose likelihoods the head preserves. This is a conditional
+one-step property, not integrated posterior or king safety. Quiet histories
+and clock thinning can still change later beliefs.
+
+The full artifact warrants committee review of a **new prospective full-only
+hypothesis**, with cheap unchanged. That would be a changed intervention
+requiring later data and a new design, not a reinterpretation of this failed
+combined gate. No new trial or runtime integration is started here.

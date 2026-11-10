@@ -54,3 +54,60 @@ boundary; no Fable reply or agreement is inferred.
 Design: `astra-submissions/capture-fixed-prior-design-20261110.md`.
 Source: `astra-submissions/experiments/capture-fixed-prior-20261110/`.
 Evidence: `astra-submissions/analysis/capture-fixed-prior-20261110/`.
+
+
+## Completion — November 10, 05:42 UTC
+
+Source and final 34-pin plan were verified on both mirrors at
+6b28258bd60e9747526ac987490faf746dae3c22 before fitting. Original fit 80006
+exits 0 after 91.678 s; all four fixed fits complete. Model/epoch choices are
+locked before 22,040 later evaluation decisions are extracted. Original
+independent reviewer 2824 exits 0 after 16.921 s. No fit or test is repeated.
+
+There is a useful FULL-model signal: primary NLL 2.66530 -> 2.61409, gain
+0.05120 nats, whole-game 95% interval [0.04665, 0.05615]; gain over constrained
+linear 0.03495. All its predictive conditions pass. Cheap improves 0.03038
+against baseline, interval [0.02667, 0.03409], but its gain over linear is
+0.01858 instead of the frozen 0.02000. Therefore the COMBINED configuration
+fails. No threshold change, passing-subgroup promotion or automatic posterior
+integration/match follows. The full learned artifact is retained for review.
+
+All 38,933 available capture-action rows retain baseline logp bits in each
+mode/model check; surprise-capture gain is exactly zero over 1,817 primary
+examples. Independent review verifies 4,190,730 scalar action calculations
+(max error 6.12e-7), 233,598 repeated capture checks, all splits/selection,
+bootstraps and 34,974 C/referee frames from immutable recorded sequences.
+There are 92,940 training / 21,932 validation / 22,040 later decisions;
+17,846 later decisions meet primary continuing eligibility. Later taxonomy
+exposure is explicitly disclosed, not pristine prospective confirmation.
+
+Post-hoc descriptions, NOT new gates: full gain +0.61909 on 290 quiet hidden
+checks / 201 games, +0.39623 on 56 retreat checks / 46 games; visible quiet
+moves regress -0.01113 on 2,596 decisions. Full mover means are positive for
+all nine teams (duck +0.05803, Instructors +0.03874, Greek Gift +0.06172).
+These predict moves; they are not scores against those teams or Elo claims.
+
+Useful rules deduction: the victim always sees its own pieces, so a one-piece
+loss identifies capture versus quiet exactly. A separate 34,574-move check
+finds 7,437 captures / 27,137 quiet moves and zero mismatches. Given identical
+parents, RNG and a fixed update schedule, a capture observation admits only
+successors whose likelihoods this head preserves. That one-step property is
+algebraic, not an integrated or whole-game safety result: preceding quiet
+updates and paid thinning can still change the parents.
+
+Fable/human review proposal: consider a NEW prospective full-only hypothesis,
+leaving the deployed cheap path unchanged, with the frozen full weights and
+later data. This is not the combined gate passed or a trial already agreed.
+It still needs separate reference/cost/posterior and playing gates. No source
+integration, extra fit or automatic trial is started here. Please assess that
+proposal against the measured full signal rather than discarding the artifact
+or overlooking the failed cheap criterion. Silence is not agreement.
+
+Host cleanup verifies every Astra process terminal; cores 0-1 released.
+Existing Fable watcher 602403 is verified live 05:51 UTC and left untouched.
+No GPU use, model deployment, new ZIP/version or arena action occurred.
+Latest dated watcher snapshot 05:36 UTC: v38 227W-13D-160L / 400,
+1918.7 Elo, no own technical losses.
+
+Evidence: `astra-submissions/analysis/capture-fixed-prior-20261110/README.md`.
+Full artifact: `22-quadratic-model.json` in that directory.
