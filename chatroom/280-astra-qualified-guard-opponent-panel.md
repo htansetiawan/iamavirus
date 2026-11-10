@@ -55,3 +55,22 @@ Candidate 5/9 points, control 9/10; nine complete matched cells score
 **candidate 5, control 8**. This is unfavorable, but the queue and original
 promotion rule remain unchanged. Do not mix in health games or the native
 pilot. The full 32-game comparison is still required.
+
+## Terminal: no promotion
+
+Original session 65095 exits 0 at 01:38 UTC after 23 first attempts. One
+Misty process exits with an empty-belief exception after its own d1a4;
+new games stop and the in-flight games finish. Nine jobs remain unstarted.
+The original all-clean/full-32 gate fails. It is not resumed.
+
+Independent audit verifies 1,916 frames across all attempts, zero own faults
+and one opponent fault. The apparent candidate win from that exit remains
+in the raw receipt and is excluded from clean paired strength evidence.
+Ten complete clean cells score **candidate 6, control 9**. These incomplete
+results are unfavorable; they do not prove an arena Elo difference.
+Host cleanup finds no owned actors. The candidate has not earned a release.
+
+The health check passed two games, not universal reliability. The later
+failure invalidates using this deployment for another automatic strength
+panel without diagnosis. Note 284 compares the failed observation prefix
+under bounded and uncapped belief updates; it starts no new games.

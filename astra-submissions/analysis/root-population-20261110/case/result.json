@@ -1,0 +1,471 @@
+{
+  "case": {
+    "id": "p0-black-candidate-81",
+    "game": "p0-black-candidate",
+    "side": "black",
+    "ply": 81,
+    "kind": "terminal",
+    "opponent": "bounded-local-Misty",
+    "replay_path": "/home/henrytan/git/iamavirus/astra-submissions/analysis/guard-opponent-bounded-20261110/jobs/p0-black-candidate/replay.json",
+    "replay_sha256": "b49c3e6deabea3571ffa31f8a2564c67391b3d9f879b17fa8c5b3bd660ba8def",
+    "actual": "g7g8"
+  },
+  "elapsed": 15.815054909995524,
+  "exercised": true,
+  "arms": {
+    "candidate": {
+      "move": "g7g8",
+      "elapsed": 2.152705334,
+      "belief_fingerprint": "12572375964822474413",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "g7g8",
+        "root_infoset": 0,
+        "root_value": -0.9657052080882566,
+        "solver_value": -0.9657052080882566,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 32,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 794,
+        "nodes": 102468,
+        "infosets": 2309,
+        "slots": 55646,
+        "iterations": 1890,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 2344,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 79,
+            "weight": 0.03125,
+            "hypothesis_board": "R-R-------K---p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 102,
+            "weight": 0.03125,
+            "hypothesis_board": "R-KR----------p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 224,
+            "weight": 0.03125,
+            "hypothesis_board": "-RK-----R-----p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 272,
+            "weight": 0.03125,
+            "hypothesis_board": "---R----R--K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 282,
+            "weight": 0.03125,
+            "hypothesis_board": "--RK------R---p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 343,
+            "weight": 0.03125,
+            "hypothesis_board": "R-KR----------p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 385,
+            "weight": 0.03125,
+            "hypothesis_board": "R--R----------p----KPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 416,
+            "weight": 0.03125,
+            "hypothesis_board": "R--K----------p---R-PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 429,
+            "weight": 0.03125,
+            "hypothesis_board": "---------R-K-Rp-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 511,
+            "weight": 0.03125,
+            "hypothesis_board": "----R----R-K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 553,
+            "weight": 0.03125,
+            "hypothesis_board": "R----------K--p-----PP--------p----------R-----------pk-------Q-"
+          },
+          {
+            "belief_index": 618,
+            "weight": 0.03125,
+            "hypothesis_board": "--R-K---------p--R--PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 675,
+            "weight": 0.03125,
+            "hypothesis_board": "--RR-------K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 942,
+            "weight": 0.03125,
+            "hypothesis_board": "----R------K--p---R-PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 949,
+            "weight": 0.03125,
+            "hypothesis_board": "-R-K-----R----p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 976,
+            "weight": 0.03125,
+            "hypothesis_board": "RR-K----------p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1024,
+            "weight": 0.03125,
+            "hypothesis_board": "--KR----------p-----PP-----R--p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1091,
+            "weight": 0.03125,
+            "hypothesis_board": "-----------KR-p----RPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1178,
+            "weight": 0.03125,
+            "hypothesis_board": "R--KR---------p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1296,
+            "weight": 0.03125,
+            "hypothesis_board": "--R------R-K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1344,
+            "weight": 0.03125,
+            "hypothesis_board": "---R-------K--p------P------P-p------------R---------pk-------Q-"
+          },
+          {
+            "belief_index": 1453,
+            "weight": 0.03125,
+            "hypothesis_board": "--R-R------K--p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1510,
+            "weight": 0.03125,
+            "hypothesis_board": "R---K---------p-----PP--------p---R------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1552,
+            "weight": 0.03125,
+            "hypothesis_board": "R-R--------K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1668,
+            "weight": 0.03125,
+            "hypothesis_board": "---R-------K--p-----PP-----R--p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1690,
+            "weight": 0.03125,
+            "hypothesis_board": "---KR---R-----p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1704,
+            "weight": 0.03125,
+            "hypothesis_board": "R-------------p---RKPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1867,
+            "weight": 0.03125,
+            "hypothesis_board": "R-------------p----RKP------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2015,
+            "weight": 0.03125,
+            "hypothesis_board": "R-------R--K--p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2120,
+            "weight": 0.03125,
+            "hypothesis_board": "R---R---------p----KPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2232,
+            "weight": 0.03125,
+            "hypothesis_board": "R----------K--p----RPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2276,
+            "weight": 0.03125,
+            "hypothesis_board": "RRK-----------p-----PP--------p----------------------pk-------Q-"
+          }
+        ],
+        "avoid_moves": [
+          "g2g1q",
+          "g2g1r",
+          "g2g1b",
+          "g2g1n",
+          "g4g3",
+          "g4f3",
+          "f7f6",
+          "f7f5",
+          "g7f6",
+          "g7g6",
+          "g7h6",
+          "g7h7",
+          "g7f8",
+          "g7h8"
+        ],
+        "actions": [
+          {
+            "uci": "g7g8",
+            "probability": 1,
+            "cf_q": -0.9657052080882566,
+            "q": -0.9657052080882566,
+            "advantage": 0
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": true,
+      "terminal": [
+        "1-0",
+        "King capturable"
+      ],
+      "exchange_loss": null,
+      "queen_exchange_loss": null,
+      "forced_king_loss_after_capture": false
+    },
+    "base": {
+      "move": "g7g8",
+      "elapsed": 2.157316028,
+      "belief_fingerprint": "12572375964822474413",
+      "target": {
+        "schema": 1,
+        "stage": "solver_before_frontend_fallback",
+        "solver_move": "g7g8",
+        "root_infoset": 0,
+        "root_value": -0.9655800896563361,
+        "solver_value": -0.9655800896563361,
+        "cf_mass": 1,
+        "own_reach": 1,
+        "root_histories": 32,
+        "own_reach_consistent": true,
+        "zero_mass_infosets": 799,
+        "nodes": 103008,
+        "infosets": 2319,
+        "slots": 55901,
+        "iterations": 1900,
+        "search_budget_seconds": 2.5,
+        "root_loss_value": -2,
+        "belief_count": 2344,
+        "belief_overflowed": true,
+        "samples": [
+          {
+            "belief_index": 79,
+            "weight": 0.03125,
+            "hypothesis_board": "R-R-------K---p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 102,
+            "weight": 0.03125,
+            "hypothesis_board": "R-KR----------p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 224,
+            "weight": 0.03125,
+            "hypothesis_board": "-RK-----R-----p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 272,
+            "weight": 0.03125,
+            "hypothesis_board": "---R----R--K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 282,
+            "weight": 0.03125,
+            "hypothesis_board": "--RK------R---p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 343,
+            "weight": 0.03125,
+            "hypothesis_board": "R-KR----------p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 385,
+            "weight": 0.03125,
+            "hypothesis_board": "R--R----------p----KPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 416,
+            "weight": 0.03125,
+            "hypothesis_board": "R--K----------p---R-PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 429,
+            "weight": 0.03125,
+            "hypothesis_board": "---------R-K-Rp-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 511,
+            "weight": 0.03125,
+            "hypothesis_board": "----R----R-K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 553,
+            "weight": 0.03125,
+            "hypothesis_board": "R----------K--p-----PP--------p----------R-----------pk-------Q-"
+          },
+          {
+            "belief_index": 618,
+            "weight": 0.03125,
+            "hypothesis_board": "--R-K---------p--R--PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 675,
+            "weight": 0.03125,
+            "hypothesis_board": "--RR-------K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 942,
+            "weight": 0.03125,
+            "hypothesis_board": "----R------K--p---R-PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 949,
+            "weight": 0.03125,
+            "hypothesis_board": "-R-K-----R----p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 976,
+            "weight": 0.03125,
+            "hypothesis_board": "RR-K----------p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1024,
+            "weight": 0.03125,
+            "hypothesis_board": "--KR----------p-----PP-----R--p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1091,
+            "weight": 0.03125,
+            "hypothesis_board": "-----------KR-p----RPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1178,
+            "weight": 0.03125,
+            "hypothesis_board": "R--KR---------p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1296,
+            "weight": 0.03125,
+            "hypothesis_board": "--R------R-K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1344,
+            "weight": 0.03125,
+            "hypothesis_board": "---R-------K--p------P------P-p------------R---------pk-------Q-"
+          },
+          {
+            "belief_index": 1453,
+            "weight": 0.03125,
+            "hypothesis_board": "--R-R------K--p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1510,
+            "weight": 0.03125,
+            "hypothesis_board": "R---K---------p-----PP--------p---R------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1552,
+            "weight": 0.03125,
+            "hypothesis_board": "R-R--------K--p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1668,
+            "weight": 0.03125,
+            "hypothesis_board": "---R-------K--p-----PP-----R--p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1690,
+            "weight": 0.03125,
+            "hypothesis_board": "---KR---R-----p-----PP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1704,
+            "weight": 0.03125,
+            "hypothesis_board": "R-------------p---RKPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 1867,
+            "weight": 0.03125,
+            "hypothesis_board": "R-------------p----RKP------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2015,
+            "weight": 0.03125,
+            "hypothesis_board": "R-------R--K--p------P------P-p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2120,
+            "weight": 0.03125,
+            "hypothesis_board": "R---R---------p----KPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2232,
+            "weight": 0.03125,
+            "hypothesis_board": "R----------K--p----RPP--------p----------------------pk-------Q-"
+          },
+          {
+            "belief_index": 2276,
+            "weight": 0.03125,
+            "hypothesis_board": "RRK-----------p-----PP--------p----------------------pk-------Q-"
+          }
+        ],
+        "avoid_moves": [
+          "g2g1q",
+          "g2g1r",
+          "g2g1b",
+          "g2g1n",
+          "g4g3",
+          "g4f3",
+          "f7f6",
+          "f7f5",
+          "g7f6",
+          "g7g6",
+          "g7h6",
+          "g7h7",
+          "g7f8",
+          "g7h8"
+        ],
+        "actions": [
+          {
+            "uci": "g7g8",
+            "probability": 1,
+            "cf_q": -0.9655800896563361,
+            "q": -0.9655800896563361,
+            "advantage": 0
+          }
+        ]
+      },
+      "legal": true,
+      "fatal": true,
+      "terminal": [
+        "1-0",
+        "King capturable"
+      ],
+      "exchange_loss": null,
+      "queen_exchange_loss": null,
+      "forced_king_loss_after_capture": false
+    }
+  },
+  "live_owned_members": [],
+  "files": {
+    "started.json": "eeb8e4f6ecbba7ba267d09bdf2408a9b5c86b3a00982428e85eeb6bc4d5ea6e8",
+    "stdout.txt": "9deeb3b01c57d0a4b1a96b4dd9ce8f95cf87fade2a4dbe5c03f735de11d46a2d",
+    "input.txt": "9c7bcbd180268542948f479a1b61f5fa538934cb1d51b5badd34926a6a1ca712",
+    "population.json": "2f9fe7091cfede8b26bbab8f745688a4426b788d7f81293934b43d915b49de6d",
+    "stderr.txt": "113ed2f2d33665fddea46c6db1215154c48fe14c87a7798ba3879bcc48c919c6",
+    "process.json": "783e492a7e62f5d0f20d99262562bf9c5ae686f6f93db5abfdd662abb30623a1",
+    "targets.jsonl": "48570c0756cd4b5d14c5a5b795617bdc44b39ad0a2f805c8f872e84ddc447c0c"
+  }
+}
