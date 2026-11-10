@@ -1,8 +1,70 @@
-# IAmAVirus: current implementation
+# IAmAVirus: deployed release and implementation history
 
-*Revision 3, 26 October 2026. A descriptive specification of what exists, for team members joining the project. Revise it when the deployed version or the pipeline changes; record the change in the table at the end.*
+*Revision 4, 10 November 2026. The current release summary comes first. The detailed 26 October specification below is retained as explicitly dated implementation history.*
 
 [TOC]
+
+## Current release and move lifecycle — 10 November
+
+**Arena v38 is active**, verified by the public API at 1:55 a.m. Boston time
+(06:55 UTC). Its archive is Astra's `iamavirus-v38-mist-c-allchildren.zip`,
+SHA-256 `ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f`.
+The native C engine, move model and history table match Fable's v37
+(`f76a09e2f58b`). The playing changes are the modified Stockfish 19 binary and
+launcher enabling its approximate all-child scorer. Its source and build
+recipe ship in the ZIP; the [manifest](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-manifest.json)
+pins individual members. The checkout's latest source is not the release.
+
+```mermaid
+flowchart LR
+  V[Own observation and clock] --> B[Update weighted consistent boards]
+  B --> G[Legality and king/queen risk guards]
+  G --> W[Sample hidden worlds]
+  W --> C[Growing-tree predictive CFR+]
+  C --> S[Stockfish all-child frontier scores]
+  S --> C
+  C --> M[Purify root strategy and send move]
+```
+
+The underlying decision architecture remains the v35-derived C engine:
+weighted board enumeration with caps and merges, 32 sampled worlds by default,
+information sets based on each player's observation history, a new search tree
+per move, Stockfish frontier values, and root guards. The reviewed M4 resolving
+prototype remains separate. The hybrid-era CNN–GRU/PPO policy is not deployed.
+The 28-feature opponent move model and empirical history counts are learned
+offline; v37 refreshed them on 148,357 games / 359,889 history records.
+
+The all-child scorer measured 1.57–1.68 times reference scoring throughput and
+about 38% more equal-time search nodes on its panel. Its values are approximate,
+not identical. The direct development pilot scored 11W–1D–4L; the later local
+Misty gate failed. Henry separately authorized the experimental arena trial.
+Neither later operational success nor that authorization rewrites the failed
+gate. The first 300 arena games met the retention rule at 58.33%; the 06:37 UTC
+checkpoint is 232W–14D–164L / 410 games, 1920.9 Elo, no recorded own technical
+loss. Historical schedule differences prevent a causal Elo claim. See the
+[release record](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md).
+
+The data pipeline continues to accumulate replays and taxonomy. At the
+06:21 UTC audit the raw journal held 227,977 unique games and 31 duplicate extra
+rows. The shared writer is now serialized per game with incremental journal
+reads; readers deduplicate while the original rows remain intact. The [repair
+evidence](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/raw-writer-repair-20261110/README.md)
+distinguishes correctness from playing strength.
+
+The new full-only prior confirmation freezes the selected head, leaves cheap
+unchanged and collects the first 300 eligible future trajectories after
+07:15 UTC. No fresh scores exist yet. The combined experiment 293 failed;
+this separately declared confirmation cannot turn it into a pass. No GPU
+training or native playing-model change has been launched. The [frozen
+contract](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/prospective-full-prior-20261110/README.md)
+requires predictive, coverage and independent-audit conditions before even
+designing an actual-filter/runtime experiment.
+
+## Historical specification — 26 October 2026
+
+All numbered sections below describe the 26 October snapshot. Their v35
+status, corpus sizes, model fit and experiment references are historical;
+use the current summary and linked release manifest for today's deployed bytes.
 
 ## 1. Scope and status
 
@@ -174,3 +236,4 @@ Checkout-only knobs, not in v35:
 | 1 | 2026-10-25 | Fable | first version, at arena v35 / mist-c v14 |
 | 2 | 2026-10-26 | Fable | storage written as the per-machine `{storage}` placeholder; `STORE` read from the environment or `data/store` |
 | 3 | 2026-10-26 | Fable | corrections from Astra's review (note 152): v35 knobs separated from checkout-only knobs; belief merges by position with one representative history; 24/40 is cap overflow; hazard double-counting stated as a hypothesis; the point-flow reporting defect recorded |
+| 4 | 2026-11-10 | Astra | current v38 provenance and lifecycle; distinguish frozen release, retrospective results, pipeline repair and unscored prospective research from the archived v35 specification |

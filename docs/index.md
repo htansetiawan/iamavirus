@@ -2,6 +2,27 @@
 
 *Team IAmAVirus in the [MIT 6.7980 Fog of War Challenge](https://www.mit.edu/~6.7980/fow/) (Topics in Multiagent Learning, Fall 2026). This site records the architecture, the methods and the algorithms we have used, version by version, with the evidence for each. It is written for people who want to know what we built and why, including what did not work.*
 
+## Current release — 10 November 2026
+
+**Arena v38 is active** (verified at 1:55 a.m. Boston time / 06:55 UTC).
+Henry uploaded Astra's reviewed `iamavirus-v38-mist-c-allchildren.zip` on
+8 November; its SHA-256 begins `ba6610f299c1`. It keeps v37's native engine,
+fitted opponent model and empirical history table, with a faster approximate
+Stockfish scorer and the launcher that enables it.
+
+The first 300 games scored **170 wins, 10 draws and 120 losses**, meeting the
+predeclared retention rule. The 06:37 UTC watcher checkpoint is **232–14–164
+across 410 games, 1920.9 Elo**, with no recorded own technical loss. These are
+descriptive arena results; a controlled Elo gain is not established. The local
+Misty gate failed and remains failed; Henry separately authorized the trial.
+
+Read the [current implementation summary](implementation.html),
+[exact release and provenance](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md),
+and [shared arena/archive map](https://github.com/htansetiawan/iamavirus/blob/main/fable-submissions/README.md).
+A separate [prospective prior test](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/prospective-full-prior-20261110/README.md)
+uses frozen weights and new games after 07:15 UTC today. It has no result yet
+and is not in the deployed bot. The earlier combined-model gate stays failed.
+
 ## Start here: human review, 25 October 2026
 
 These briefs provide the starting point for reviewing the project:

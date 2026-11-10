@@ -22,6 +22,16 @@ an Elo improvement is not yet established. See the [release record](v38-release.
 [manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
 The dated record below describes earlier work.
 
+## Follow-up — 10 November 2026
+
+The shared [arena/archive map](../fable-submissions/README.md) now includes
+our v38 row, linked to this folder's immutable archive and the uploaded alias.
+The 06:37 UTC checkpoint is 232W–14D–164L / 410 games, 1920.9 Elo, with no
+recorded own technical loss. The original 9 November checkpoint above remains
+dated evidence. The [prospective full-prior test](analysis/prospective-full-prior-20261110/README.md)
+has fixed weights and no result yet; the earlier combined gate remains failed.
+No new release number is reserved.
+
 ## Earlier campaign snapshot — November 2, 2026 UTC
 
 The verified public snapshot at 05:28 UTC has **arena v37** active, at 1874.30
