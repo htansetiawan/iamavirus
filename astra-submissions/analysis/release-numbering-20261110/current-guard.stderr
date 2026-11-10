@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/henrytan/git/iamavirus/astra-submissions/tools/package_release.py", line 107, in <module>
+    main()
+  File "/home/henrytan/git/iamavirus/astra-submissions/tools/package_release.py", line 58, in main
+    require_unused_version(version)
+  File "/home/henrytan/git/iamavirus/astra-submissions/tools/package_release.py", line 43, in require_unused_version
+    raise FileExistsError(
+FileExistsError: Astra v38 is already used by iamavirus-v38-mist-c-allchildren.zip, v38-manifest.json; cannot reuse it or skip the required Fable+1 rule

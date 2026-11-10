@@ -2,7 +2,7 @@
 
 [Current human review](review-20261110.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
 
-## V38 active — November 9, 2026
+## V38 active — November 10, 2026
 
 Henry uploaded the reviewed all-child scorer on November 8 as **arena v38**.
 The identical numbered repository archive is
@@ -22,7 +22,29 @@ an Elo improvement is not yet established. See the [release record](v38-release.
 [manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
 The dated record below describes earlier work.
 
-## Follow-up — 10 November 2026
+## Current follow-up — 10 November, 19:10 UTC checkpoint
+
+The latest complete saved metadata is **309W–20D–229L / 558 games**,
+1893.21 Elo, rank 11, v38 active, with no listed own technical loss.
+[Current opponent-version counts](analysis/v38-metadata-20261110T1910Z/README.md).
+The upload is complete; no neural model or new prior has replaced its bytes.
+
+The full-only quadratic prior passed its independent action-prediction test
+([321](../chatroom/321-astra-prospective-full-prior-passed.md)), but failed the
+subsequent whole-history posterior gate
+([323](../chatroom/323-astra-fixed-prior-sequential-contract.md)); it is not a
+playing candidate. The attention teacher's corrected arithmetic passes broad
+conformance. Its separate, unchanged-weight future confirmation
+([326](../chatroom/326-astra-corrected-teacher-future-contract.md)) is collecting,
+with no confirmation scores yet. No successor ZIP or version is reserved.
+
+Fable's highest numbered archive remains v37, so the +1 rule yields v38,
+**which is already used**. A new suffix cannot reuse v38 or replace its
+manifest. The [packager](tools/package_release.py) now refuses that case;
+it does not silently increment to v39 or fabricate a Fable release.
+[Regression and byte-preservation audit](analysis/release-numbering-20261110/README.md).
+
+## Earlier follow-up — 10 November, 06:37 UTC
 
 The shared [arena/archive map](../fable-submissions/README.md) now includes
 our v38 row, linked to this folder's immutable archive and the uploaded alias.
@@ -123,9 +145,9 @@ the arena model automatically.
 fixed 20-pair test finished 16W–0D–24L against v35; the archive is retained as
 an experimental artifact. No new Astra release is recommended.
 
-Fable's highest numbered archive is v37 at this check, so a future Astra
-release would use **v38**, subject to the required recheck at packaging and
-publication. No number is reserved here. Current coordination is in
+At that earlier check, Fable's v37 made v38 the next Astra number. V38 has
+since been published and cannot be reused; current numbering is stated above.
+Current coordination is in
 [the chatroom](../chatroom/README.md).
 
 The sections below document earlier C++/hybrid work; they do not describe the
@@ -144,6 +166,10 @@ label is not an arena version; the human performs the upload.
 ## Release numbering
 
 Use the [shared version table](../fable-submissions/README.md) to identify actual arena uploads by artifact hash. Before creating a new Astra release archive, read the highest version in `../fable-submissions/` and use exactly that integer plus one; recheck before publication and never overwrite a historical artifact. The existing Astra **v10/v11 labels are provisional safety candidates**, not arena version numbers or the output of the new 24-hour campaign. v11 was packaged when Fable's highest label was v10; its manifest preserves that fact. Repository checkpoints preserve these earlier artifacts without reserving an arena version. The human performs arena uploads.
+
+Any existing Astra archive or release manifest reserves its entire major
+version, including a different suffix or minor-label alias. If Fable+1 is
+already used, packaging must stop. A new filename is not a new version.
 
 Independent analysis and implementation for IAmAVirus, established 2026-10-07 at the user's request. Shared root source files, existing uncommitted work, and `fable-submissions/` are owned by the existing workflow; edit Astra's copy here. Coordination lives in `../chatroom/`.
 

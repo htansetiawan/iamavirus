@@ -13,17 +13,36 @@ ROOT = Path(__file__).resolve().parents[2]
 ASTRA = ROOT / "astra-submissions"
 
 
+def archive_major(path):
+    match = re.fullmatch(r"iamavirus-v(\d+)(?:\.\d+)?(?:-[A-Za-z0-9]+)*\.zip", path.name)
+    return int(match[1]) if match else None
+
+
 def next_version():
     versions = []
     for path in (ROOT / "fable-submissions").glob("*.zip"):
         # Candidate/model suffixes still reserve a major version. In particular,
         # v12-candidate-hybrid must not be ignored in favour of a plain v11 ZIP.
-        match = re.fullmatch(r"iamavirus-v(\d+)(?:\.\d+)?(?:-[A-Za-z0-9]+)+\.zip", path.name)
-        if match:
-            versions.append(int(match[1]))
+        major = archive_major(path)
+        if major is not None:
+            versions.append(major)
     if not versions:
         raise RuntimeError("No numbered Fable archives found; cannot establish the +1 rule")
     return max(versions) + 1
+
+
+def require_unused_version(version):
+    # A release's major belongs to its provenance, not its filename suffix.
+    # For example, a published v38-mist-c ZIP prohibits a new v38-hybrid ZIP
+    # and must never have its manifest replaced by this older packager.
+    conflicts = [path.name for path in ASTRA.glob("*.zip") if archive_major(path) == version]
+    manifest = ASTRA / f"v{version}-manifest.json"
+    if manifest.exists():
+        conflicts.append(manifest.name)
+    if conflicts:
+        raise FileExistsError(
+            f"Astra v{version} is already used by {', '.join(sorted(conflicts))}; "
+            "cannot reuse it or skip the required Fable+1 rule")
 
 
 def main():
@@ -36,6 +55,7 @@ def main():
     version = next_version()
     if args.expected_version is not None and version != args.expected_version:
         raise RuntimeError(f"Expected v{args.expected_version}, but Fable numbering requires v{version}")
+    require_unused_version(version)
     output = ASTRA / f"iamavirus-v{version}-hybrid.zip"
     if output.exists():
         raise FileExistsError(f"Refusing to overwrite {output}")
@@ -72,12 +92,14 @@ def main():
                 archive.writestr(entry, data)
         if next_version() != version:
             raise RuntimeError("Fable published a newer version while packaging; retry")
+        require_unused_version(version)
         os.link(temporary, output)  # atomic publication, fails if output exists
     finally:
         Path(temporary).unlink(missing_ok=True)
     metadata["archive"] = output.name
     metadata["archive_sha256"] = hashlib.sha256(output.read_bytes()).hexdigest()
-    (ASTRA / f"v{version}-manifest.json").write_text(json.dumps(metadata, indent=2) + "\n")
+    with (ASTRA / f"v{version}-manifest.json").open("x") as manifest:
+        manifest.write(json.dumps(metadata, indent=2) + "\n")
     print(json.dumps({k: metadata[k] for k in ("archive", "version", "fable_version", "archive_sha256")}, indent=2))
 
 

@@ -1,0 +1,9 @@
+{
+  "scope": "Verification harness preparation, not release packaging",
+  "error": "Initial member lookup expected an enclosing directory; the existing archive stores run.sh at its root.",
+  "stage": "Before invoking the real-tree refusal check",
+  "real_files_modified": false,
+  "correction": "Accept either the exact member name or one unambiguous enclosing-directory suffix. Keep source hashes mandatory.",
+  "second_preparation_error": "Suffix-only matching ambiguously selected both native src/search.h and third_party/stockfish19/src/search.h before invoking the real-tree refusal check.",
+  "final_correction": "Resolve one enclosing prefix from the exact launcher hash, then require each complete manifest member path exactly once."
+}
