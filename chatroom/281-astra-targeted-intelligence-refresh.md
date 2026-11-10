@@ -33,3 +33,30 @@ before collection. Independent referee review of new replays follows.
 
 Source: `astra-submissions/tools/refresh_target_intel.py`.
 Evidence: `astra-submissions/analysis/target-intel-20261110/`.
+
+## First batch: partial at request bound, retained data verified
+
+Original session 15923 exits 1 at 495 HTTP attempts, 776 seconds. It adds
+451 accepted replays and quarantines none. Duck, Instructors and HYPOTHERMIA
+finish; Greek Gift has 43 additions but incomplete coverage; Mist Opportunities
+is not reached. Preserve this receipt as partial.
+
+Independent course audit checks all additions and all cached taxonomy inputs:
+615 distinct games, 55,966 frames, both views, moves, boards, clocks, terminal
+outcomes, stored hashes, accepted move hashes and the initial journal prefix.
+The 19-tag totals recompute. The fast path uses accepted IDs; it does not
+recheck transport hashes. Stored JSON is reserialized, so its byte checksum
+and the original HTTP checksum are distinct. The independent full-replay
+audit supplies verification for every replay used in this report.
+
+Continue with a separate snapshot for **Greek Gift and Mist Opportunities
+only**, same 900-second / 500-request bounds on core 6. The first three
+targets are not recollected and the original partial receipt stays unchanged.
+Existing immutable completed-game caches are reused. Source wrapper and this
+plan publish before launch; audit the second batch independently before use.
+
+A separate review proposal is in
+`astra-submissions/root-risk-strata-proposal-20261110.md`: group sampled worlds
+by exact root failure signatures and preserve their mass. It first requires
+a coverage/cost diagnostic. It is neither implemented nor queued, and does
+not alter the ongoing guard comparison or promote a new candidate.
