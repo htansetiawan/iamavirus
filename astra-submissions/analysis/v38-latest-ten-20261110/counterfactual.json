@@ -1,0 +1,202 @@
+{
+  "at": "2026-11-10T11:53:15.223195+00:00",
+  "game": "0xe4vmwz",
+  "decision_ply": 66,
+  "actual_move": "a2a1r",
+  "recorded_reply": "f7g8",
+  "counts": {
+    "our_move_immediately_loses": 5,
+    "actual_reply_traps_all_responses": 28,
+    "actual_reply_leaves_a_safe_response": 2,
+    "actual_reply_would_lose_opponent_king": 1
+  },
+  "moves": [
+    {
+      "move": "h7h8",
+      "case": "our_move_immediately_loses"
+    },
+    {
+      "move": "h7g8",
+      "case": "our_move_immediately_loses"
+    },
+    {
+      "move": "h7g6",
+      "case": "our_move_immediately_loses"
+    },
+    {
+      "move": "d6d8",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6d7",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6g6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6f6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6e6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6c6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6b6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6a6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d6d5",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4f6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4b6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4e5",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4d5",
+      "case": "actual_reply_leaves_a_safe_response",
+      "safe_responses": [
+        "d5g8"
+      ]
+    },
+    {
+      "move": "d4c5",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4c4",
+      "case": "actual_reply_leaves_a_safe_response",
+      "safe_responses": [
+        "c4g8"
+      ]
+    },
+    {
+      "move": "d4b4",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4a4",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4e3",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4d3",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4c3",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4f2",
+      "case": "actual_reply_would_lose_opponent_king"
+    },
+    {
+      "move": "d4d2",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4b2",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "d4d1",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "g7g6",
+      "case": "our_move_immediately_loses"
+    },
+    {
+      "move": "a7a6",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "e4e3",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "a2a1q",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "a2a1r",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "a2a1b",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "a2a1n",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    },
+    {
+      "move": "g7g5",
+      "case": "our_move_immediately_loses"
+    },
+    {
+      "move": "a7a5",
+      "case": "actual_reply_traps_all_responses",
+      "safe_responses": []
+    }
+  ],
+  "scope": "Post-selection oracle description on the already fixed pre-cutoff health game. Enumerate all our legal moves, then only the recorded opponent reply, then our one-ply king survival. No engine, fitted model, new data, promotion threshold or runtime recommendation.",
+  "limitations": [
+    "An alternative that survives this reply is not certified against other opponent replies.",
+    "The actual hidden positions are oracle inputs; belief membership, weights and live information remain unmeasured.",
+    "Does not include repetition/fifty-move outcomes of counterfactual histories; only king-capturability is tested."
+  ],
+  "replay_sha256": "e4a3a2e3e396abdcd01612ab5e4148ee2ca6cbf943828482416c81f3cf39c626",
+  "script_sha256": "db07cbd1a7d1d06b3d6bc5f8ab1b619f540ee4c91e4ee0c8d5c8f8430f506ace",
+  "course_source_sha256": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be"
+}
