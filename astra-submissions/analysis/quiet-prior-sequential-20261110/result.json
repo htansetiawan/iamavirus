@@ -1,0 +1,150 @@
+{
+  "primary": 3520,
+  "distinct_primary": 1760,
+  "support": {
+    "original": 3393,
+    "learned": 3405
+  },
+  "mean_truth_nll": {
+    "original": 6.9271419528811835,
+    "learned": 6.824794803011604
+  },
+  "gain": 0.10234714986957855,
+  "interval95": [
+    -0.0033634642750185466,
+    0.21871224141429235
+  ],
+  "sensitivity": {
+    "1e-09": 0.07856259961474492,
+    "1e-12": 0.10234714986957855,
+    "1e-15": 0.1258963155933813
+  },
+  "by_team": {
+    "Instructors": {
+      "games": 8,
+      "decisions": 600,
+      "gain": 0.3499812748944574
+    },
+    "duck": {
+      "games": 8,
+      "decisions": 502,
+      "gain": 0.23763142169050458
+    },
+    "HYPOTHERMIA": {
+      "games": 8,
+      "decisions": 580,
+      "gain": 0.06461442504886813
+    },
+    "Greek Gift": {
+      "games": 8,
+      "decisions": 712,
+      "gain": 0.05656244958947515
+    },
+    "Knight Vision": {
+      "games": 8,
+      "decisions": 578,
+      "gain": -0.07987569380177656
+    },
+    "Strongly Invisible": {
+      "games": 8,
+      "decisions": 548,
+      "gain": -0.0010920633266683563
+    }
+  },
+  "collapsed_case_seeds": {
+    "original": 2,
+    "zero": 2,
+    "learned": 2
+  },
+  "full_updates": {
+    "original": 3307,
+    "zero": 3307,
+    "learned": 3307
+  },
+  "large_regime_games": 39,
+  "native_guard_brier": {
+    "king1": {
+      "original": 0.012632929911937305,
+      "learned": 0.011919001816767196,
+      "delta": -0.0007139280951701069,
+      "interval95": [
+        -0.0015117470688412117,
+        -3.788066808911058e-05
+      ]
+    },
+    "kingt": {
+      "original": 0.01325508005846909,
+      "learned": 0.013054833141773536,
+      "delta": -0.00020024691669555224,
+      "interval95": [
+        -0.0020420334691986434,
+        0.0016378431985717048
+      ]
+    },
+    "queen1": {
+      "original": 0.008108043538367289,
+      "learned": 0.00786003574708011,
+      "delta": -0.00024800779128718065,
+      "interval95": [
+        -0.0006932960643654846,
+        0.00011214917363464185
+      ]
+    },
+    "queent": {
+      "original": 0.008431638628434665,
+      "learned": 0.007837181929134381,
+      "delta": -0.0005944566993002854,
+      "interval95": [
+        -0.0014332778424852117,
+        4.4719149040753165e-05
+      ]
+    }
+  },
+  "unique_positive_guard_events": {
+    "king_label": 33,
+    "queen_label": 25
+  },
+  "risk_rows": 3520,
+  "risk_available": {
+    "original": 3502,
+    "learned": 3502
+  },
+  "time": {
+    "original": {
+      "total": 451.7813981194714,
+      "p95": 0.16751025749999984,
+      "maximum": 1.95189602
+    },
+    "zero": {
+      "total": 454.32715733738445,
+      "p95": 0.17163266819999992,
+      "maximum": 1.9641615
+    },
+    "learned": {
+      "total": 454.532803138187,
+      "p95": 0.17028863769999994,
+      "maximum": 1.98395696
+    }
+  },
+  "conditions": {
+    "primary_coverage": true,
+    "truth_support": true,
+    "gain": false,
+    "confidence": false,
+    "floor_sensitivity": true,
+    "no_extra_collapse": true,
+    "regime_coverage": true,
+    "priority_coverage": true,
+    "priority_nonregression": true,
+    "total_cost": true,
+    "p95_cost": true,
+    "guard_coverage": true,
+    "guard_availability": true,
+    "guard_nonregression": true
+  },
+  "decision": "close_frozen_full_head_sequential",
+  "scope": "Fixed full293 quadratic head with native ordinary10000-parent cutoff; cheap/history/temp2/cap200000/pruning/guards unchanged. Original andzero-head native controls, two explicit sampler initialstates(default+fixedalternate),288firstcalls, no clock thinning/search/recovery aftercollapse. 48unique games/8per6targetopponents hash-selected from already321one-step-tested300-game cohort; no outcome or posterior-score selection. All4,325course frames and own-prefix frontend compatibility checked with only observation and derived own castling history. This is a sequential development gate, not pristine independent posterior confirmation or arena strength. Truth labels native position-key class(board/side/castle/EP; not halfmove/history), never inserts or weights a world. Existing native guard predicates measured after recorded own action, literal queen-exchange approximation and known promotion limits retained; not actual future material-loss/win probabilities. All primary risk rows included, unavailable predictions use fixed0.5 and are counted; unsupported sampled actions are technical failure. Guard predictions/labels cannot alter P, verified by before/after fingerprints. Brier<=baseline+.002 is an observed tolerance, not a statistical no-harm guarantee; report game-CIs and unique positives. All criteria plus independent raw/hash/arithmetic/bootstrap audit only earn separately frozen real-clock decision design. No fit/GPU/API/Fable-source edit/performance-backport/mixing/ZIP/version/arena action. Old226full-at-all-sizes and293combined failures remain closed; no threshold/seed/opponent rescue or automatic retry.",
+  "at": "2026-11-10T17:48:57.901770+00:00",
+  "plan_sha256": "2bf355163f2b124fa5e89ddb4f498405e1a4080dcfb5a0a1c938c36194d33234",
+  "calls_sha256": "293a2ee752ec02c1c9d9da6cc8b0b960eb3fe153447e2733e5cfcad79d32d946"
+}

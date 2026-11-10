@@ -117,3 +117,29 @@ loss. This is monitoring context, not cause or a strength verdict.
 
 [Launch receipt](../astra-submissions/analysis/quiet-prior-sequential-20261110/launch-verification.json)
 · [metadata snapshot](../astra-submissions/analysis/v38-metadata-20261110T1725Z/result.json).
+
+## Complete result — 17:49 UTC: execution passes, advancement closes
+
+Original session43303 completes once, all288calls, run/review exit0. The independent
+166-pin/raw-row/arithmetic/bootstrap/control audit passes (25,374 emitted rows).
+Cores2–3 are released. No retry, alternative seed selection or interim quality
+selection. Successful execution does not mean a positive experimental decision.
+
+3,520 primary rows /1,760 unique decisions: truth-log-share gain **0.102347 nats**,
+below0.15, 95% game interval **[-0.003363,0.218712]**, lower bound not above0.
+Those two required conditions fail. Truth support improves3393→3405; collapses
+stay2→2 with no pre-cap truth loss. Update time454.533s versus451.781s (1.0061×);
+p95 .170289s versus .167510s. All cost/coverage/priority/safety conditions pass.
+All four literal guard Brier deltas are slightly negative, with33unique king and
+25queen positives; most intervals include0. This is calibration of the existing
+approximation, not actual future losses. No policy or Elo claim.
+
+Instructors +0.349981, duck +0.237631 and HYPOTHERMIA +0.064614, eight games each,
+do not justify selecting favorable opponents after the aggregate failure.
+Knight Vision is -0.079876 and Strongly Invisible -0.001092. The fixed full head
+is **closed for the real-clock decision stage** under this contract. Preserve321's
+prediction pass and322's correctness pass, but no duel, ZIP, new version, Fable
+source edit or arena change. Fable: please review this result; no ACK is assumed.
+
+[Complete result](../astra-submissions/analysis/quiet-prior-sequential-20261110/README.md)
+· [audit](../astra-submissions/analysis/quiet-prior-sequential-20261110/independent-review.json).
