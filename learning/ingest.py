@@ -21,9 +21,14 @@ rules reproduce exactly. Unexplained mismatches are quarantined, never patched.
 from __future__ import annotations
 
 import argparse
+from contextlib import contextmanager
+import copy
+import fcntl
 import hashlib
 import json
+import os
 import sys
+import threading
 from pathlib import Path
 
 from . import api_client, rules
@@ -112,25 +117,120 @@ class RawStore:
         self.accepted = self.root / "accepted.jsonl"
         for directory in (self.games, self.quarantine, self.snapshots):
             directory.mkdir(parents=True, exist_ok=True)
+        self._thread_lock = threading.RLock()
+        self._writer_depth = 0
+        # Read the journal once, then only its appended tail. Existing duplicate
+        # rows remain on disk as evidence but cannot duplicate future datasets.
+        self._accepted_ids: dict[str, None] = {}
+        self._index_identity = None
+        self._index_offset = 0
+        self._incomplete_tail = False
+        self._index_bytes_read = 0
+
+    @contextmanager
+    def writer(self):
+        """Serialize one game's transaction, never a network request or batch.
+
+        Reentrant for this store, including nested save/append calls. Construct
+        a new RawStore in each process; do not carry an active lock across fork.
+        Other writers must use this API/the same .writer.lock convention.
+        """
+        with self._thread_lock:
+            if self._writer_depth:
+                self._writer_depth += 1
+                try:
+                    yield
+                finally:
+                    self._writer_depth -= 1
+                return
+            with open(self.root / ".writer.lock", "a+b") as handle:
+                fcntl.flock(handle, fcntl.LOCK_EX)
+                self._writer_depth = 1
+                try:
+                    yield
+                finally:
+                    self._writer_depth = 0
+                    fcntl.flock(handle, fcntl.LOCK_UN)
+
+    def _refresh_accepted(self) -> None:
+        """Read complete new lines under writer(); preserve partial tail bytes."""
+        try:
+            handle = self.accepted.open("rb")
+        except FileNotFoundError:
+            self._accepted_ids.clear()
+            self._index_identity = None
+            self._index_offset = 0
+            self._incomplete_tail = False
+            return
+        with handle:
+            stat = os.fstat(handle.fileno())
+            identity = (stat.st_dev, stat.st_ino)
+            if identity != self._index_identity or stat.st_size < self._index_offset:
+                self._accepted_ids.clear()
+                self._index_offset = 0
+            self._index_identity = identity
+            handle.seek(self._index_offset)
+            self._incomplete_tail = False
+            while line := handle.readline():
+                self._index_bytes_read += len(line)
+                if not line.endswith(b"\n"):
+                    self._incomplete_tail = True
+                    break
+                if line.strip():
+                    self._accepted_ids[json.loads(line)["id"]] = None
+                self._index_offset = handle.tell()
+
+    def _accepted_complete(self, game_id: str, listing: bool = False,
+                           diagnostics: bool = False) -> bool:
+        directory = self.games / game_id
+        required = ["replay.json", "fetch_metadata.json"]
+        if listing:
+            required.append("listing.json")
+        if diagnostics:
+            required.append("diagnostics.json")
+        return game_id in self._accepted_ids and all((directory / name).is_file() for name in required)
 
     def accepted_ids(self) -> set[str]:
-        if not self.accepted.exists():
-            return set()
-        return {json.loads(line)["id"] for line in self.accepted.read_text().splitlines() if line.strip()}
+        with self.writer():
+            self._refresh_accepted()
+            return set(self._accepted_ids)
 
     def write_json(self, path: Path, payload) -> str:
-        return api_client.atomic_write(path, json.dumps(payload, indent=1, sort_keys=True).encode())
+        with self.writer():
+            return api_client.atomic_write(path, json.dumps(payload, indent=1, sort_keys=True).encode())
 
     def save_game(self, replay: dict, listing: dict | None, fetch: dict, diagnostics: dict | None) -> None:
-        directory = self.games / replay["id"]
-        self.write_json(directory / "replay.json", replay)
-        if listing is not None:
-            self.write_json(directory / "listing.json", listing)
-        if diagnostics is not None:
-            self.write_json(directory / "diagnostics.json", diagnostics)
-        self.write_json(directory / "fetch_metadata.json", fetch)
+        with self.writer():
+            self._refresh_accepted()
+            if self._accepted_complete(replay["id"], listing is not None, diagnostics is not None):
+                return
+            directory = self.games / replay["id"]
+            # Completed accepted sources are immutable. A recovery fills only
+            # missing files; it must not replace the original fetched evidence.
+            accepted = replay["id"] in self._accepted_ids
+            replay_path = directory / "replay.json"
+            replay_missing = not replay_path.is_file()
+            if not accepted or replay_missing:
+                digest = self.write_json(replay_path, replay)
+            else:
+                digest = api_client.sha256_bytes(replay_path.read_bytes())
+            if listing is not None and (not accepted or not (directory / "listing.json").is_file()):
+                self.write_json(directory / "listing.json", listing)
+            if diagnostics is not None and (not accepted or not (directory / "diagnostics.json").is_file()):
+                self.write_json(directory / "diagnostics.json", diagnostics)
+            metadata_path = directory / "fetch_metadata.json"
+            if not accepted or not metadata_path.is_file() or replay_missing:
+                metadata = (json.loads(metadata_path.read_text()) if accepted and metadata_path.is_file()
+                            else copy.deepcopy(fetch))
+                if isinstance(metadata.get("replay"), dict):
+                    record = metadata["replay"]
+                    if record.get("sha256") != digest and "sha256" in record:
+                        record.setdefault("source_bytes_sha256", record["sha256"])
+                    record["sha256"] = digest
+                self.write_json(metadata_path, metadata)
 
-    def record_accepted(self, replay: dict, problems_none: bool = True) -> None:
+    def record_accepted(self, replay: dict, problems_none: bool = True) -> bool:
+        """Append at most once per ID, including across independent processes."""
         frames = replay["frames"]
         row = {"id": replay["id"], "white": replay.get("white"), "black": replay.get("black"),
                "whitePlayerId": replay.get("whitePlayerId"), "blackPlayerId": replay.get("blackPlayerId"),
@@ -139,8 +239,18 @@ class RawStore:
                "plies": len(frames) - 1, "createdAt": replay.get("createdAt"),
                "rulesVersion": replay.get("rulesVersion"), "moves_sha256": replay_hash(replay),
                "termination": classify_termination(replay.get("result", "*"), replay.get("reason", ""))}
-        with open(self.accepted, "a") as handle:
-            handle.write(json.dumps(row, sort_keys=True) + "\n")
+        with self.writer():
+            self._refresh_accepted()
+            if replay["id"] in self._accepted_ids:
+                return False
+            if self._incomplete_tail:
+                raise ValueError(f"incomplete journal tail: {self.accepted}; preserve and repair before appending")
+            with open(self.accepted, "ab") as handle:
+                handle.write((json.dumps(row, sort_keys=True) + "\n").encode())
+                handle.flush()
+                os.fsync(handle.fileno())
+            self._refresh_accepted()
+            return True
 
     def record_quarantine(self, game_id: str, problems: list[str], replay: dict | None) -> None:
         self.write_json(self.quarantine / f"{game_id}.json",
@@ -150,25 +260,48 @@ class RawStore:
                          "rulesVersion": replay.get("rulesVersion") if replay else None})
 
     def accepted_replays(self):
-        for row in self.accepted.read_text().splitlines() if self.accepted.exists() else []:
-            if not row.strip():
-                continue
-            game_id = json.loads(row)["id"]
+        with self.writer():
+            self._refresh_accepted()
+            game_ids = list(self._accepted_ids)
+        # Do not hold the writer lock while a downstream trainer consumes data.
+        for game_id in game_ids:
             path = self.games / game_id / "replay.json"
             if path.exists():
                 yield json.loads(path.read_text())
 
 
+class ReplayProblems(list[str]):
+    """Backwards-compatible validation result with per-call ingestion status."""
+    def __init__(self, problems=(), *, cached=False, recovered=False):
+        super().__init__(problems)
+        self.cached = cached
+        self.recovered = recovered
+
+
 def ingest_replay(store: RawStore, replay: dict, listing: dict | None, fetch: dict,
-                  diagnostics: dict | None) -> list[str]:
+                  diagnostics: dict | None) -> ReplayProblems:
     """Stores a replay, validates it, and files the verdict. Returns the problems."""
-    store.save_game(replay, listing, fetch, diagnostics)
-    _, problems = validate_replay(replay)
-    if problems:
-        store.record_quarantine(replay["id"], problems, replay)
-    else:
-        store.record_accepted(replay)
-    return problems
+    with store.writer():
+        store._refresh_accepted()
+        game_id = replay["id"]
+        if store._accepted_complete(game_id, listing is not None, diagnostics is not None):
+            return ReplayProblems(cached=True)
+        recovering = game_id in store._accepted_ids
+        if recovering:
+            # Check the original source too when repairing missing metadata.
+            saved = store.games / game_id / "replay.json"
+            if saved.is_file():
+                replay = json.loads(saved.read_text())
+        else:
+            store.save_game(replay, listing, fetch, diagnostics)
+        _, problems = validate_replay(replay)
+        if problems:
+            store.record_quarantine(game_id, problems, replay)
+        else:
+            if recovering:
+                store.save_game(replay, listing, fetch, diagnostics)
+            store.record_accepted(replay)
+        return ReplayProblems(problems, recovered=recovering and not problems)
 
 
 def resolve_team_id(leaderboard: dict, name: str) -> str | None:
@@ -204,13 +337,17 @@ def ingest_from_api(output: Path, team: str | None, player_id: str | None, limit
         params["outcome"] = outcome
     print(f"listing games with {params}", file=sys.stderr)
     known = store.accepted_ids()
-    counts = {"listed": 0, "fetched": 0, "cached": 0, "accepted": 0, "quarantined": 0, "errors": 0}
+    counts = {"listed": 0, "fetched": 0, "cached": 0, "accepted": 0, "quarantined": 0, "errors": 0,
+              "already_accepted": 0, "recovered": 0}
     for summary, _ in client.iter_games(params, limit):
         counts["listed"] += 1
         game_id = summary["id"]
         if summary.get("result") not in ("1-0", "0-1", "1/2-1/2"):
             continue
-        if game_id in known and (store.games / game_id / "replay.json").exists():
+        required = ["replay.json", "fetch_metadata.json", "listing.json"]
+        if with_diagnostics:
+            required.append("diagnostics.json")
+        if game_id in known and all((store.games / game_id / name).is_file() for name in required):
             counts["cached"] += 1
             continue
         try:
@@ -229,7 +366,11 @@ def ingest_from_api(output: Path, team: str | None, player_id: str | None, limit
             except api_client.ApiError as error:
                 fetch["diagnostics_error"] = str(error)
         problems = ingest_replay(store, replay, summary, fetch, diagnostics)
-        counts["quarantined" if problems else "accepted"] += 1
+        if problems:
+            counts["quarantined"] += 1
+        else:
+            known.add(game_id)
+            counts["already_accepted" if problems.cached else "recovered" if problems.recovered else "accepted"] += 1
         if counts["listed"] % 25 == 0:
             print(f"  {counts}", file=sys.stderr)
     print(f"done: {counts}; {client.requests_made} requests", file=sys.stderr)
@@ -241,14 +382,15 @@ def ingest_from_corpus(output: Path, corpus: Path) -> dict:
     from .histories import replay_from_moves
 
     store = RawStore(output)
-    counts = {"accepted": 0, "quarantined": 0, "skipped": 0}
+    counts = {"accepted": 0, "quarantined": 0, "skipped": 0, "recovered": 0}
     seen = store.accepted_ids()
     for line in corpus.read_text().splitlines():
         fields = line.split()
         if len(fields) < 6:
             continue
         game_id, side, result, reason, opponent = fields[:5]
-        if game_id in seen:
+        if game_id in seen and all((store.games / game_id / name).is_file()
+                                  for name in ("replay.json", "fetch_metadata.json")):
             counts["skipped"] += 1
             continue
         seen.add(game_id)
@@ -263,7 +405,8 @@ def ingest_from_corpus(output: Path, corpus: Path) -> dict:
         fetch = {"replay": {"url": f"corpus:{corpus.name}", "fetched_at": api_client.utc_now(),
                             "sha256": hashlib.sha256(line.encode()).hexdigest(), "status": 0, "attempts": 0}}
         problems = ingest_replay(store, replay, None, fetch, None)
-        counts["quarantined" if problems else "accepted"] += 1
+        counts["quarantined" if problems else "skipped" if problems.cached else
+               "recovered" if problems.recovered else "accepted"] += 1
         if problems:
             print(f"  {game_id}: {problems[0]}", file=sys.stderr)
     print(f"corpus: {counts}", file=sys.stderr)

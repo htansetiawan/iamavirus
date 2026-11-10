@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import random
+import tempfile
 import time
 import urllib.error
 import urllib.parse
@@ -43,12 +44,18 @@ def sha256_bytes(data: bytes) -> str:
 
 def atomic_write(path: Path, data: bytes) -> str:
     path.parent.mkdir(parents=True, exist_ok=True)
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    with open(temporary, "wb") as handle:
-        handle.write(data)
-        handle.flush()
-        os.fsync(handle.fileno())
-    os.replace(temporary, path)
+    # A fixed .tmp name lets concurrent writers replace or unlink each other's
+    # in-flight output. Each writer owns a same-directory temporary instead.
+    fd, name = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+    temporary = Path(name)
+    try:
+        with os.fdopen(fd, "wb") as handle:
+            handle.write(data)
+            handle.flush()
+            os.fsync(handle.fileno())
+        os.replace(temporary, path)
+    finally:
+        temporary.unlink(missing_ok=True)
     return sha256_bytes(data)
 
 

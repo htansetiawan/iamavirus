@@ -1,0 +1,46 @@
+{
+  "completed_at": "2026-11-10T06:23:24.110838+00:00",
+  "type": "pipeline correctness maintenance, not a strength experiment",
+  "prior_commit": "e8d9612b8a06bf9e7fe4e07f7e843e94cee4bf93",
+  "sources_sha256": {
+    "learning/api_client.py": "551d59c9d689157a4f17d9c5d3e33d6ab7698e5a5428ff52f3d151273076d41e",
+    "learning/ingest.py": "141a47ad84c703e835e55bb293aa2ade443704eb7fe275ebb8d33287b7187b91",
+    "astra-submissions/tools/collect_recent.py": "89bf7c76a3357a71ae9fd5d79c9960db200a9de438e5f2e6f951d35121c36d25",
+    "astra-submissions/tests/test_ingest_concurrency.py": "99064eea7d3d5c7623c1b1a13ec2fc80959c8e59fca6838a7397e610ffd8fdaa",
+    "astra-submissions/analysis/raw-writer-repair-20261110/audit_live.py": "b273d7436d12b8ae098220af80ebb76b4b1694adb54e6ecf0c19032272445643"
+  },
+  "tests": {
+    "command": ".venv/bin/python astra-submissions/tests/test_ingest_concurrency.py -v",
+    "original_session": 46224,
+    "exit_code": 0,
+    "cases": 9,
+    "reported_seconds": 2.408,
+    "temporary_stores_only": true,
+    "network_requests": 0,
+    "stderr_sha256": "410445af599edc690305180e65392021bbb20c0667822e9890a86cdb65515f10"
+  },
+  "live_audit": {
+    "original_session": 89110,
+    "exit_code": 0,
+    "receipt_sha256": "23ee126c824f7e0e32d080498f23ae3cc0b1a2a8e662c8c397cc60611fffcaef",
+    "prefix_unchanged": true,
+    "raw_replay_writes": 0,
+    "journal_appends": 0,
+    "only_raw_write": "advisory .writer.lock creation/open"
+  },
+  "watcher": {
+    "host_pid": 602403,
+    "start_ticks": 13525163,
+    "verified_live": "2026-11-10T06:20:00Z (approximate process scan)",
+    "not_restarted": true
+  },
+  "no_gpu_job": true,
+  "no_new_arena_upload": true,
+  "no_version_reserved": true,
+  "limitations": [
+    "Cooperating POSIX advisory-lock writers only. Construct each RawStore in its process; do not inherit an active lock across fork.",
+    "Serialized per-game operations, not crash-atomic multi-file storage; missing-source repair covers interrupted saves.",
+    "No raw journal compaction; 31 duplicate extra rows remain on disk, reader emits unique IDs.",
+    "New saved replay metadata hashes actual serialized bytes and retains fetched-source digest. Legacy accepted metadata is left unchanged."
+  ]
+}

@@ -1,0 +1,17 @@
+test_api_reuses_hash_of_stored_bytes_and_preserves_source_digest (__main__.IngestConcurrencyTests.test_api_reuses_hash_of_stored_bytes_and_preserves_source_digest) ... ok
+test_append_cost_is_incremental_and_replacement_invalidates_cache (__main__.IngestConcurrencyTests.test_append_cost_is_incremental_and_replacement_invalidates_cache) ... ok
+test_atomic_failure_keeps_previous_file_and_cleans_own_temp (__main__.IngestConcurrencyTests.test_atomic_failure_keeps_previous_file_and_cleans_own_temp) ... ok
+test_atomic_writers_same_and_disjoint_files (__main__.IngestConcurrencyTests.test_atomic_writers_same_and_disjoint_files) ... ok
+test_missing_sources_recovered_without_new_accepted_row (__main__.IngestConcurrencyTests.test_missing_sources_recovered_without_new_accepted_row) ... ok
+test_old_duplicates_remain_but_readers_and_writers_deduplicate (__main__.IngestConcurrencyTests.test_old_duplicates_remain_but_readers_and_writers_deduplicate) ... ok
+test_overlapping_api_corpus_and_custom_writers (__main__.IngestConcurrencyTests.test_overlapping_api_corpus_and_custom_writers) ... listing games with {'sort': 'played', 'order': 'desc', 'limit': 100}
+corpus: {'accepted': 4, 'quarantined': 0, 'skipped': 1, 'recovered': 0}
+done: {'listed': 5, 'fetched': 4, 'cached': 1, 'accepted': 2, 'quarantined': 0, 'errors': 0, 'already_accepted': 2, 'recovered': 0}; 0 requests
+ok
+test_partial_tail_preserved_and_append_refused_until_completed (__main__.IngestConcurrencyTests.test_partial_tail_preserved_and_append_refused_until_completed) ... ok
+test_same_store_thread_reentrancy_and_quarantine (__main__.IngestConcurrencyTests.test_same_store_thread_reentrancy_and_quarantine) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.408s
+
+OK

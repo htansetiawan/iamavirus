@@ -89,7 +89,6 @@ def main():
                 raise ValueError('duplicate game id in snapshot')
             write_json(listing_path, listing)
         store = ingest.RawStore(output / 'raw')
-        known = store.accepted_ids()
         journal = output / 'validation.jsonl'
         journal.touch(exist_ok=True)
         records = [json.loads(line) for line in journal.read_text().splitlines()] if journal.exists() else []
@@ -128,18 +127,18 @@ def main():
             fetch.setdefault('url', 'https://6s890.lids.mit.edu/api/games/' + game)
             fetch.setdefault('fetched_at', now())
             fetch['source_bytes_sha256'] = fetch.pop('sha256')
-            store.save_game(replay, row, {'replay': fetch}, None)
-            fetch['sha256'] = sha(saved)
-            store.write_json(saved.parent / 'fetch_metadata.json', {'replay': fetch})
-            states, rule_problems = ingest.validate_replay(replay)
-            problems += rule_problems
-            if not problems and row.get('plies') != len(states)-1:
-                problems.append('listing/replay ply-count disagreement')
-            if problems:
-                store.record_quarantine(game, problems, replay)
-            elif game not in known:
-                store.record_accepted(replay)
-                known.add(game)
+            # Keep source save, exact validation and the accepted append in one
+            # transaction. RawStore owns stored-byte hashes and ID deduplication.
+            with store.writer():
+                store.save_game(replay, row, {'replay': fetch}, None)
+                states, rule_problems = ingest.validate_replay(replay)
+                problems += rule_problems
+                if not problems and row.get('plies') != len(states)-1:
+                    problems.append('listing/replay ply-count disagreement')
+                if problems:
+                    store.record_quarantine(game, problems, replay)
+                else:
+                    store.record_accepted(replay)
             record = {'id': game, 'accepted': not problems, 'problems': problems,
                       'source': fetch['source'], 'frames_checked': len(states),
                       'replay_sha256': sha(saved),
