@@ -25,3 +25,25 @@ The final source, queue and 207 pinned dependencies publish before launch.
 An explicit non-normal-result rejection was added before any match; the
 preflight-only initial plan is retained. No candidate game, new arena version,
 GPU work, model update or ingestion is part of this step.
+# Completed qualification
+
+Original session 19465 exited 0. Both unchanged-v38 games finished normally
+without technical faults, warnings or adapter fallbacks. Independent course
+audit checks all **171 frames**, moves, observations, clocks, normal outcomes,
+turn-control events, telemetry and source/result hashes. Host cleanup finds
+no owned native, Misty or evaluator actor remaining.
+
+| Health game | Plies | Max post-update states | Cap events | Max raw successors | Max update |
+|---|---:|---:|---:|---:|---:|
+| Native White | 110 | 200,000 | 38 | 4,933,981 | 443 ms |
+| Native Black | 59 | 5,061 | 0 | 13,957 | 2.15 ms |
+
+The cap is exercised on a substantial hidden-state expansion. This checks
+the bounded deployment's runtime in these two games. It does not promise
+that every future game is fault-free or reproduce the current arena team's
+settings. Both native wins are incidental: scores were absent from the
+qualification gate, and no candidate played.
+
+This deployment now qualifies for the separately frozen candidate/control
+panel. See [audit.json](audit.json), [cleanup.json](cleanup.json) and the
+per-game replays. No arena or model change follows from qualification alone.

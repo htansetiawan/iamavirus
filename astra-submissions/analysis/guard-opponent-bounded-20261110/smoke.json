@@ -1,0 +1,62 @@
+{
+  "at": "2026-11-10T00:38:50.487225+00:00",
+  "passed": true,
+  "error": null,
+  "records": [
+    {
+      "arm": "base",
+      "side": "white",
+      "move": "d2d4",
+      "elapsed_seconds": 0.08873056198353879,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=144 nodes=11283 iters=190 p=0.80 v=+0.064 lead=+0 clock=180.0 sf=453/0.1s mr=-1.00/-1.00 hist=0/0 move=d2d4\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "base",
+      "side": "black",
+      "move": "d7d5",
+      "elapsed_seconds": 0.0931430869968608,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=192 nodes=11190 iters=170 p=1.00 v=-0.029 lead=+0 clock=180.0 sf=428/0.1s mr=-1.00/-1.00 hist=1/1 move=d7d5\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "candidate",
+      "side": "white",
+      "move": "d2d4",
+      "elapsed_seconds": 0.09008006198564544,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/guard-either-research/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=1 samples=1 moves=20 infosets=144 nodes=11283 iters=190 p=0.80 v=+0.064 lead=+0 clock=180.0 sf=453/0.1s mr=-1.00/-1.00 hist=0/0 move=d2d4\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "candidate",
+      "side": "black",
+      "move": "d7d5",
+      "elapsed_seconds": 0.09037008800078183,
+      "stderr": "mist: history table /home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/guard-either-research/data/history.bin: 359889 records\nmist: stockfish ready\nmist: queen risk chosen 0.000/0.000 least 0.000/0.000\nmist: n=1 |P|=20 samples=20 moves=20 infosets=192 nodes=11190 iters=170 p=1.00 v=-0.029 lead=+0 clock=180.0 sf=428/0.1s mr=-1.00/-1.00 hist=1/1 move=d7d5\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "misty",
+      "side": "white",
+      "move": "c2c4",
+      "elapsed_seconds": 5.002045767992968,
+      "stderr": "misty-clock: enabled=1 fixed=none budget180=5.000\nmisty-cap: states=200000\n",
+      "failure": null,
+      "live_owned_members": []
+    },
+    {
+      "arm": "misty",
+      "side": "black",
+      "move": "d7d5",
+      "elapsed_seconds": 5.033327083016047,
+      "stderr": "misty-clock: enabled=1 fixed=none budget180=5.000\nmisty-cap: states=200000\n",
+      "failure": null,
+      "live_owned_members": []
+    }
+  ],
+  "scope": "Actual new commands in both colors, full-clock Misty; protocol/runtime only."
+}

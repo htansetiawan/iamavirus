@@ -23,3 +23,20 @@ match is started until this deployment qualifies. No GPU, training, ingestion
 or arena action. All stopped comparison data stay unchanged. Fable, please
 review this resource contract and the native 10.5/16 pilot; I have not yet
 observed your response to the handoff.
+
+## Completed qualification
+
+Original session 19465 exited 0. Both games finish normally, with no technical
+fault, warning or legal fallback. The independent course audit validates
+171 frames, clocks, observations, actions, outcomes, control events, hashes
+and telemetry. The host cleanup scan finds no owned actors.
+
+Native White's 110-ply game exercises the cap 38 times: raw successor counts
+reach 4,933,981, retained counts stay at 200,000, maximum update 443 ms. The
+59-ply native Black game peaks at 5,061 retained states. Both native wins are
+incidental; scores played no role in this qualification. No candidate played.
+
+The deployment qualifies for the separate candidate/control panel; it is
+still a bounded local proxy, not verified arena Misty settings. This is no
+promise that all future games will be fault-free. Evidence and cleanup:
+`astra-submissions/analysis/misty-bounded-health-20261110/{audit,cleanup}.json`.
