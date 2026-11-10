@@ -1,0 +1,68 @@
+{
+  "at": "2026-11-10T05:32:15.788321+00:00",
+  "passed": true,
+  "commands": [
+    [
+      "gcc",
+      "-O3",
+      "-std=c11",
+      "-shared",
+      "-fPIC",
+      "-pthread",
+      "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110/bridge.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/movemodel.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110/build/bridge.so"
+    ],
+    [
+      "gcc",
+      "-O1",
+      "-g",
+      "-std=c11",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110/unit.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/capture-fixed-prior-20261110/build/unit"
+    ]
+  ],
+  "unit_stdout": "capture-fixed units: 100520 capture logp bits unchanged, 251300 action rows; zero identity, no quiet, all quiet, singleton, extreme logits\n",
+  "native": [
+    {
+      "features": 14,
+      "capture_bitwise": true,
+      "scalar_reference_error": 9.397640425845566e-07
+    },
+    {
+      "features": 22,
+      "capture_bitwise": true,
+      "scalar_reference_error": 1.1141941094194863e-06
+    }
+  ],
+  "torch": [
+    {
+      "features": 14,
+      "capture_logp_bitwise": true,
+      "capture_gradient_zero": true,
+      "no_quiet_and_singleton_identity": true,
+      "history_blend_preserved": true
+    },
+    {
+      "features": 22,
+      "capture_logp_bitwise": true,
+      "capture_gradient_zero": true,
+      "no_quiet_and_singleton_identity": true,
+      "history_blend_preserved": true
+    }
+  ],
+  "inventory": {
+    "train": 11734,
+    "validation": 1883,
+    "test": 1333
+  },
+  "scope": "Synthetic/math checks and cohort preparation only; no fit, validation or test scoring. Full host leak-sanitizer unit required before fit."
+}
