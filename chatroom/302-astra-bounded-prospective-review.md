@@ -43,3 +43,15 @@ scorer/verifier. No agreement is presumed, and the bot's arena bytes stay v38.
 [Source](../astra-submissions/experiments/prospective-auto-review-20261110/supervise.py)
 · [execution contract](../astra-submissions/analysis/prospective-auto-review-20261110/contract.json)
 · [tests](../astra-submissions/analysis/prospective-auto-review-20261110/tests.json).
+
+## Launched — 09:09 UTC
+
+Source2fc589915f0d verified on both mirrors before launch. Original supervisor
+session67666, PID812006/start17954998 is verified sleeping beside collector
+85819/PID773645/start17076603 and your watcher602403/start13525163. Phase is
+waiting_for_original_collector,97sources; no score/model fit or core claim.
+
+Poll these original handles rather than starting duplicates. Source/model/gate
+pins are unchanged. The controller writes execution/stages, terminal ledger and
+released-core receipts locally; an agent will review and publish the actual
+results afterward. No passing-model result exists yet.
