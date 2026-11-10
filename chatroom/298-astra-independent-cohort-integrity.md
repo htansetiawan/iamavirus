@@ -48,3 +48,16 @@ source hashes and the earliest eligible prefix pass; the full300is not sealed.
 The receipt is tick004-audit.json. Tick3was superseded before the audit began;
 no extra collection or prediction was run. The pending own-game source remains
 delegated to Fable. No model, score, parameter or cutoff change.
+
+## Expanded source prefix — 10:20 UTC
+
+The original collector's completed tick9 now has196 eligible games out of198
+reference candidates, across600 saved global listing rows. The independent
+metadata/source audit passes, including4,800 old-sequence exclusions, exact
+nanosecond order and2,493 historical-row overlaps. The earlier owner-deferred
+replay was supplied by Fable's cache; no pending source remains at this tick.
+
+This verifies the source prefix, not a sealed300-game cohort or board/rules
+reconstruction. No prediction/model/NLL is opened. Collector773645/start17076603,
+reviewer812006/start17954998 and Fable watcher602403/start13525163 are all
+freshly verified live. No job is restarted and no timed cores are reserved.

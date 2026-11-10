@@ -51,3 +51,6 @@ scalar-likelihood review remain separate requirements after sealing.
 
 [Tests](tests.stderr), [receipt](receipt.json), [initial live audit](tick000-audit.json).
 No playing engine, GPU job, arena setting or release/version changed.
+
+
+Later source-only audit: tick009 verifies196 eligible games /198 reference candidates /600 global listing rows, with2,493 immutable historical overlaps. No pending source, no NLL or model read, and the cohort is still not sealed. See tick009-audit.json.
