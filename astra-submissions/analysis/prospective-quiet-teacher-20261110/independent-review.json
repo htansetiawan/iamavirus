@@ -1,0 +1,34 @@
+{
+  "passed": true,
+  "at": "2026-11-10T23:04:58.432748+00:00",
+  "rows": 17384,
+  "primary": 14080,
+  "input_digest_verified": true,
+  "capture_actions": 31297,
+  "fp64_contexts": 64,
+  "fp64_max_residual_error": 2.440183704877086e-06,
+  "independent_nll": {
+    "base": 2.701902228444146,
+    "linear": 2.684970066024179,
+    "quadratic": 2.648369459217137,
+    "production": 2.647502659344112,
+    "teacher": 2.553071653010893
+  },
+  "conditions": {
+    "primary": true,
+    "native_gain": true,
+    "matched_quadratic": true,
+    "production_quadratic": true,
+    "native_confidence": true,
+    "production_confidence": true,
+    "all_moves": true,
+    "capture_identity": true,
+    "capture_coverage": true,
+    "native_control_parity": true,
+    "priority_coverage": true,
+    "priority_nonregression": true
+  },
+  "decision": "distillation_design_allowed",
+  "result_sha256": "8c5afcc218361324244556fba5b1db1e647ff8a09718d06a3f39dc9a95f2a07e",
+  "limitation": "Raw inputs are regenerated through the same producer with C/course checks; independent scalar aggregation/bootstrap and exact stored-target/capture checks. FP64uses the corrected reference architecture, not a separately trained/implemented network. Native control parity comes from the original pinned C comparison. Raw tensors/row probabilities stay local."
+}

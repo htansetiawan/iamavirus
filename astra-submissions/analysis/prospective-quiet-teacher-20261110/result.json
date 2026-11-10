@@ -1,0 +1,169 @@
+{
+  "at": "2026-11-10T23:02:55.254835+00:00",
+  "metrics": {
+    "primary": 14080,
+    "decisions": 17384,
+    "capture_targets": 3798,
+    "surprise_captures": 1449,
+    "nll": {
+      "base": 2.701902228444146,
+      "linear": 2.684970066024179,
+      "quadratic": 2.648369459217137,
+      "production": 2.647502659344112,
+      "teacher": 2.553071653010893
+    },
+    "priority": {
+      "instructors": {
+        "games": 34,
+        "decisions": 1284,
+        "gain": 0.10279570329597806
+      },
+      "8d775e234808489c815a4a9f6bbabfe4": {
+        "games": 36,
+        "decisions": 1335,
+        "gain": 0.16822560341114856
+      },
+      "e2f593ca1fea4710b07a8120dd6b3477": {
+        "games": 38,
+        "decisions": 1379,
+        "gain": 0.13069662734855336
+      }
+    },
+    "by_team_version": [
+      {
+        "team_id": "0729dbf4b76c841d7582c2dddea32faa",
+        "name": "Farsight",
+        "version": 28,
+        "games": 50,
+        "decisions": 1782,
+        "gain": 0.16859158556636603
+      },
+      {
+        "team_id": "31f523b6aaac47adbfb957d0b0123408",
+        "name": "Crimson Fog",
+        "version": 4,
+        "games": 39,
+        "decisions": 1307,
+        "gain": 0.15310895615118372
+      },
+      {
+        "team_id": "46f21742c86746bb8fe897d62b81318d",
+        "name": "In Pawn Sight",
+        "version": 12,
+        "games": 37,
+        "decisions": 1055,
+        "gain": 0.13105452598129969
+      },
+      {
+        "team_id": "8d775e234808489c815a4a9f6bbabfe4",
+        "name": "duck",
+        "version": 11,
+        "games": 36,
+        "decisions": 1335,
+        "gain": 0.16822560341114856
+      },
+      {
+        "team_id": "d0335ee36a454199b847210e1e94d5ee",
+        "name": "Mist Opportunities",
+        "version": 2,
+        "games": 47,
+        "decisions": 1821,
+        "gain": 0.17059775553173184
+      },
+      {
+        "team_id": "db107815c3b14827a79ec9e3d12f4726",
+        "name": "Decent Chess Bot",
+        "version": 7,
+        "games": 17,
+        "decisions": 654,
+        "gain": 0.14027964285025174
+      },
+      {
+        "team_id": "e2f593ca1fea4710b07a8120dd6b3477",
+        "name": "HYPOTHERMIA",
+        "version": 10,
+        "games": 38,
+        "decisions": 1379,
+        "gain": 0.13069662734855336
+      },
+      {
+        "team_id": "f394d843d970454f868c38c7f6963cc9",
+        "name": "Greek Gift",
+        "version": 25,
+        "games": 20,
+        "decisions": 633,
+        "gain": 0.15760284881173717
+      },
+      {
+        "team_id": "instructors",
+        "name": "Instructors",
+        "version": 4,
+        "games": 34,
+        "decisions": 1284,
+        "gain": 0.10279570329597806
+      },
+      {
+        "team_id": "knight-vision",
+        "name": "Knight Vision",
+        "version": 36,
+        "games": 39,
+        "decisions": 1554,
+        "gain": 0.11746070366184991
+      },
+      {
+        "team_id": "strongly-invisible",
+        "name": "Strongly Invisible",
+        "version": 41,
+        "games": 32,
+        "decisions": 1276,
+        "gain": 0.18434868125846393
+      }
+    ],
+    "gain": 0.14883057543325282,
+    "gain_interval95": [
+      0.1345482125418111,
+      0.16340771266857698
+    ],
+    "matched_quadratic_gain": 0.09529780620624397,
+    "matched_quadratic_gain_interval95": [
+      0.083171631880373,
+      0.10729926698709955
+    ],
+    "production_quadratic_gain": 0.09443100633321923,
+    "production_quadratic_gain_interval95": [
+      0.08188442600454503,
+      0.10679746726066497
+    ],
+    "all_move_gain": 0.14175225996673346,
+    "capture_target_error": 0.0
+  },
+  "conditions": {
+    "primary": true,
+    "native_gain": true,
+    "matched_quadratic": true,
+    "production_quadratic": true,
+    "native_confidence": true,
+    "production_confidence": true,
+    "all_moves": true,
+    "capture_identity": true,
+    "capture_coverage": true,
+    "native_control_parity": true,
+    "priority_coverage": true,
+    "priority_nonregression": true
+  },
+  "checks": {
+    "capture_actions": 31297,
+    "capture_action_error": 0.0,
+    "native_control_max_error": 3.814697265625e-06
+  },
+  "decision": "distillation_design_allowed",
+  "source_frames": 26285,
+  "source_audit_sha256": "598626885a560e233337e6fcfdab98e25da249f125dd935691a424a581379fcb",
+  "input_sha256": "7b178db7d5b923d79f5d1be9b983452be727b8b114fdf5ffe5cf77635babe130",
+  "plan_sha256": "59e0a9eafbbefc90916728f148a8a061d09b9b0f452c743a2d7ef8b1f7c2d3b3",
+  "cohort_sha256": "32cfcb5b77708753b19ed44820e07c6ea11124249bb27d8145f6a36d7ca30cf8",
+  "scores_sha256": "d878ce94c8eeedfac5f48dc44b0d055bf23c865a923ae6767a0925009ccfa2ec",
+  "batch_receipts_sha256": "204c8dc8bf4b3eb7bdf308bc85b8ffb40013cdc00fb38b334ffc0a5d913724aa",
+  "weights_unchanged": true,
+  "scope": "Corrected explicit-erf teacher future action prediction only, all controls fixed. No fit, posterior, runtime, playing or old320reclassification. Raw tensors/row predictions local only; aggregate publication."
+}
