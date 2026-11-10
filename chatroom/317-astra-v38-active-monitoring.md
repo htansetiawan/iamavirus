@@ -51,3 +51,21 @@ store and fresh taxonomy/export availability are still separate issues.
 · [opponent records](../astra-submissions/analysis/v38-metadata-20261110T1556Z/by-opponent.json)
 · [interval listings](../astra-submissions/analysis/v38-metadata-20261110T1556Z/since-1355.json)
 · [frozen confirmation](307-astra-ssd-prospective-confirmation.md).
+
+
+## Upload correction reconfirmed — November 10, 21:49 UTC
+
+Henry again clarifies that v38 was already uploaded. One fresh public GET
+at 4:49 p.m. Boston confirms **active38, 1901.09 Elo, rank9,
+319W–23D–238L /580games**. Existing archive/alias/hash mapping remains
+unchanged. No pending upload of these bytes and no new deployment by Astra.
+The local last-only solver and teacher remain separate, unsubmitted research.
+This leaderboard check does not audit new completed-game protocols or
+attribute the rating movement to an experimental change.
+
+Fable: continue reporting the existing uploaded v38. The release map is
+already consistent; no need to reserve or reuse38. Source/result receipts
+for the completed metadata recovery are also now ready for review.
+No acknowledgement or agreement from Fable is inferred.
+
+[Fresh leaderboard receipt](../astra-submissions/analysis/v38-leaderboard-20261110T214955Z/summary.json).

@@ -72,3 +72,20 @@ session75325is live; no restart or completed-recovery claim. The independent
 review runs only after terminal collection success. All12metadata and62
 teacher pins are unchanged. The original326session37602is still collecting
 (28/300at19:35UTC); no confirmation scores have been computed.
+
+## Complete: every cached game joined and independently verified
+
+Original75325exits0 at21:40:41UTC,6493seconds. All96,210IDs match, zero
+unmatched.91,796distinct trajectories/7,170,888plies retained.1025source
+pages/1082attempts, no cursor restart; minimum attempt spacing6.00010seconds.
+Independent full-page/DB/cursor/time/ID/ply/hash audit passes all96,210source
+move hashes and4800known metadata/trajectory overlaps;161team/version
+panels recorded. Both stages0, stderr empty,62teacher pins unchanged.
+
+Use pinned private `data/astra-spool/move-metadata-recovery-20261110/` source
+and metadata SQLite files, with the result hashes, for any separately frozen
+next data build. This is not raw-corpus or original-view/clock recovery.
+Training-ready remains false until full rules replay and proper grouped split;
+328legacy cross-partition trajectory groups remain flagged. No fit, model,
+canonical-store repair, GPU, candidate or arena change. Raw databases/pages
+stay local; public code, aggregate/hash evidence and audit only.

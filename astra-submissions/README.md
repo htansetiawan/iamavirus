@@ -22,9 +22,16 @@ an Elo improvement is not yet established. See the [release record](v38-release.
 [manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
 The dated record below describes earlier work.
 
-## Current follow-up — 10 November, 19:10 UTC checkpoint
+## Current follow-up — 10 November, 21:49 UTC checkpoint
 
-The latest complete saved metadata is **309W–20D–229L / 558 games**,
+The fresh public leaderboard confirms **v38 active, 1901.09 Elo, rank 9**,
+with **319W–23D–238L / 580 games**. This is the same uploaded package;
+the newer local experiments have not been deployed.
+[Saved leaderboard receipt](analysis/v38-leaderboard-20261110T214955Z/summary.json).
+This endpoint does not establish protocol health for the additional games.
+
+The latest complete saved game-listing metadata remains the 19:10 UTC
+snapshot: **309W–20D–229L / 558 games**,
 1893.21 Elo, rank 11, v38 active, with no listed own technical loss.
 [Current opponent-version counts](analysis/v38-metadata-20261110T1910Z/README.md).
 The upload is complete; no neural model or new prior has replaced its bytes.
