@@ -1,0 +1,9 @@
+{
+  "stage": "preparation metadata, before any trace check or publication",
+  "first_command_exit": 1,
+  "reason": "System Python lacked chess; referee import failed before writes. Use repository .venv/bin/python.",
+  "dependent_publisher_exit": 1,
+  "publisher_reason": "Unconditionally attempted after failed preparation; missing paths JSON caused failure before any commit/push.",
+  "trace_checker_started": false,
+  "runtime_or_collector_changed": false
+}

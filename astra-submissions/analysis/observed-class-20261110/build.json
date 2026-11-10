@@ -1,0 +1,46 @@
+[
+  {
+    "argv": [
+      "gcc",
+      "-O2",
+      "-shared",
+      "-fPIC",
+      "-std=c11",
+      "-pthread",
+      "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/observed-class-20261110/producer.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/observation-rank-20261110/rank.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/movemodel.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/observed-class-20261110/build/producer.so"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "gcc",
+      "-O1",
+      "-g",
+      "-fsanitize=address,undefined",
+      "-fno-omit-frame-pointer",
+      "-DASTRA_CLASS_UNIT",
+      "-std=c11",
+      "-pthread",
+      "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/observed-class-20261110/producer.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/observation-rank-20261110/rank.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/movemodel.c",
+      "-lm",
+      "-o",
+      "/home/henrytan/git/iamavirus/astra-submissions/experiments/observed-class-20261110/build/unit-sanitize"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]
