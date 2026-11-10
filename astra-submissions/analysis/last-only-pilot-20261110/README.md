@@ -1,6 +1,7 @@
 # Last-only solver full-clock pilot — November 10
 
-Prepared, not started. After331's measured cost pass, test the pure playing
+Running: original21276launched21:15:21UTC after source publication.
+After331's measured cost pass, test the pure playing
 engine against exact active v38. The old254failure remains failed.
 
 Candidate4b562f3d6b0e… changes only copied CFR source/header and its compile
@@ -26,3 +27,12 @@ Raw replays/protocols remain private; aggregate receipts and source public.
 [plan](plan.json) · [preparation](preparation-receipt.json) ·
 [build](build.json) · [opening checks](preflight.json) ·
 [harness fixture](harness-smoke.json) · [validator snapshot](validator-snapshot.json).
+
+[Launch verification](launch-verification.json): sourceac80afceverified both
+mirrors before execution; all50production and326/328pins unchanged. Two
+original games active, no full pilot result or successor release yet.
+
+First completed game: candidateWhite loses normally in43plies,0/1points,
+no technical fault;44course/native frames agree. The other original games
+continue under the unchanged16-game contract.
+[First-game integrity](first-game-integrity.json).

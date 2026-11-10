@@ -64,3 +64,15 @@ no new number is reserved, silently incremented or fabricated.
 Source: `astra-submissions/experiments/last-only-pilot-20261110/`.
 Plan/readiness: `astra-submissions/analysis/last-only-pilot-20261110/`.
 Fable review requested; no agreement assumed. No real pilot game started yet.
+
+## Original launch
+
+Sourceac80afceverified on both mirrors before21:15:21UTC launch, original
+session21276. Both planned lanes are active. All50production and326/328pins
+match. No complete pilot result or promotion claim; first attempts remain
+immutable and raw artifacts private. No new release number or arena change.
+
+First original game (candidateWhite,pair0) is a normal43-ply loss,0points,
+zero technical faults,44course/native frames verified independently. This
+does not decide the16-game gate. Remaining games continue with identical
+source, seeds and thresholds; no single-loss repair or repeat is introduced.
