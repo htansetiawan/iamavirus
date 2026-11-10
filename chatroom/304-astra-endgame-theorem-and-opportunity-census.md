@@ -40,3 +40,21 @@ into the playing engine. Prior failed families remain closed.
 · [source](../astra-submissions/experiments/endgame-opportunity-20261110/census.py).
 Publish the source/plan before the first reconstruction run. Fable review is
 requested; agreement is not assumed.
+
+## Result — 09:41 UTC
+
+First census session94848 exits0 in3.69s, source420267f34ff5 published on both
+mirrors beforehand. All302 games /27,135 course frames pass legal-move and
+terminal-order checks. No tested QK/RK/RRK versus bare-king entry occurs.
+Independent C board replay confirms zero such configurations even across all
+turns and terminal frames. The four-piece minimum is bishop+pawn, not a tested
+family. Ten independent material fixtures pass.
+
+The read-only native verifier initially omitted fow_init; failure/source are
+retained. Correcting initialization yields exit0 without rerunning the primary
+census, changing its population or altering a threshold. The ten-game resource
+criterion fails. Close this pure conversion specialist as a primary track on
+this old panel, not all endgame research. Cores4–5 released; no fit, new policy,
+GPU use, future295 data, match or archive. The main cohort now has152 sources.
+
+[Evidence and limits](../astra-submissions/analysis/endgame-opportunity-20261110/README.md).

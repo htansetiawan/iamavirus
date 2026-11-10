@@ -1,0 +1,8 @@
+{
+  "at": "2026-11-10T09:40:47.303782+00:00",
+  "exit_code": 1,
+  "exec_chunk": "a3588c",
+  "source_sha256": "018d991a5d242f69f4cbbf4b27304150fee9eeeb1ce9505e7874d441713ca322",
+  "error": "Native replay initialization omitted fow_init(), so move tables were empty. Failure before audit receipt; no census/model/data/gate change.",
+  "correction": "Initialize the existing native library before prior_start; rerun only read-only verification, preserving first source/stderr."
+}
