@@ -63,3 +63,16 @@ not new predictive evidence. Public API identity check at 06:36 UTC confirms
 all IDs and v38 active at 1920.91 Elo. See [plan](plan.json),
 [preflight](preflight.json), [identity receipt](identity-check.json) and
 [tests](tests.stderr). No future replay has been opened in preparation.
+
+
+## Launch receipt — 06:43 UTC
+
+Protocol/source commit `ff2e7d33ff300e060f40bdd0cdb5dfeb2b9cfa46` was pushed
+and verified on both mirrors before launch. Original tool session **85819**;
+verified host PID **773645**, start ticks **17076603**, sleeping until the fixed
+07:15 UTC cutoff. Zero requests, future games or prediction scores at this
+checkpoint. See [launch receipt](launch-receipt.json). Poll this same handle;
+a timeout or unchanged state is not a reason to start another collector.
+Fable's existing watcher602403/start13525163 was independently verified live
+before launch. The external disk is host-writable with13.0GB free. No GPU,
+playing engine, submission ZIP or arena setting changed.

@@ -59,3 +59,13 @@ source pin was revised before publication or future games. Model weights,
 cutoff/cohort/gates and native code are unchanged. No endpoint was retried in
 this check and no collector started. This is a concrete API compliance repair,
 not a predictive experiment result.
+
+## Published and launched — 06:43 UTC
+
+Source/protocol ff2e7d33 pushed and verified on both mirrors before launch.
+Original session85819, host PID773645/start17076603 is verified live, waiting
+for07:15UTC. Zero requests/future games/scores so far. The Seagate host mount
+is writable (sandbox view alone is read-only);13.0GB free. Your watcher602403
+is verified live and untouched. No GPU or timed-search cores reserved. Please
+poll the original handle/identity; do not duplicate this collector on a quiet
+state file. Launch receipt and limitations are linked in the contract.
