@@ -1,0 +1,130 @@
+{
+  "at": "2026-11-10T21:54:28.557133+00:00",
+  "passed": true,
+  "changed_original_files": [
+    "sfeval.c"
+  ],
+  "new_source_files": [
+    "startup_trace.h"
+  ],
+  "unchanged_launchers": true,
+  "unchanged_handshake_deadlines_ms": 5000,
+  "no_retry": true,
+  "commands": [
+    {
+      "command": [
+        "bash",
+        "build.sh"
+      ],
+      "cwd": "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic",
+      "code": 0,
+      "stdout": "build: done (gcc)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/driver.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/src/sfeval.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/reference-driver"
+      ],
+      "cwd": null,
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "gcc",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-I",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/driver.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/sfeval.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic-driver"
+      ],
+      "cwd": null,
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-pthread",
+        "-fpermissive",
+        "-w",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/gtcfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/sfeval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/main.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic-cpp"
+      ],
+      "cwd": null,
+      "code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/eval.h": "4020fcce58269aaac95642fd23781e5af5babcddbd4189a7614ce9f10b6d6e76",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/movemodel.c": "6c01d104941fa911122bcc3db2176037e5014d87c5069da2ebaaf9753e61a2fe",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/sfeval.c": "a2fd6c431622f535d0bb79f4e4c8239fd877af246c4ec23e88fc65244b47788e",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/src/startup_trace.h": "80c696e29ac8cb6145fb7464ce809799b049bd6a3455cfe0d9f916a609a8a782",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/run.sh": "aa6e1c9c17e2245c82afc46dab17911896b87431a54547a1d634564b6e5fda56",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/build.sh": "e83c84a58ea6cf581528e7295f7ca2ba5000350c393eab7d10a2bb59854c4ab1",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic/mist": "8cd3307ac3c02a9e9dc676b214b3b8f12ea79c2535ff3bb694e00fbb65fac5fc",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic-cpp": "7a3772b5d96e2553983f1e80cad0485b8b7c2569318fa42fa72b967385c64939",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/reference-driver": "2a057364259d72f2e772a39310a7de39375837a6e528476b08144c23b3fc809e",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/diagnostic-driver": "5f4f4a16fc289e0fa7cb4777baf2649a082e3da8cd638a28233ff9d4ed3804c3",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/build/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/mist": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/bin/stockfish": "ee37a332307846bf5180d178fc3450d2e3415e2e3b31f224fef2bb3d959e715a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/prepare.py": "9ee34a509ebf9850b3aa658003222b83c0d289886e5fd20b40e01657b7ad46f0",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/driver.c": "ee20e54a361e7b749eba87351a1f7f18c77fbbec9333174207dba5babf1159b2",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/fake_engine.py": "8140507793dfc18573a626496c17b5edd28a0cf4f676b014e3a0e7c3b9a95965",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/sf-startup-diagnosis-20261110/startup_trace.h": "80c696e29ac8cb6145fb7464ce809799b049bd6a3455cfe0d9f916a609a8a782"
+  }
+}

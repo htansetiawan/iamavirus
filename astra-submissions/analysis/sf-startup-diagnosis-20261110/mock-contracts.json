@@ -1,0 +1,129 @@
+{
+  "at": "2026-11-10T21:56:10.735119+00:00",
+  "passed": true,
+  "calls": 11,
+  "rows": [
+    {
+      "case": 0,
+      "mode": "ready",
+      "arm": "diagnostic",
+      "trace": true,
+      "seconds": 0.016092281002784148,
+      "phase": null,
+      "events": 16,
+      "sha256": "e04efd4e8283ad1f00d3c9ebdaa18568c68de04ead4c17b9f6da8467d6821cec",
+      "passed": true
+    },
+    {
+      "case": 1,
+      "mode": "delayed",
+      "arm": "diagnostic",
+      "trace": true,
+      "seconds": 0.3493803459859919,
+      "phase": null,
+      "events": 16,
+      "sha256": "025d0ceaabd5599b3af8cf9444d6128969a7f7da29f6b2a7a7dc1cd82988bf80",
+      "passed": true
+    },
+    {
+      "case": 2,
+      "mode": "bad-exec",
+      "arm": "diagnostic",
+      "trace": true,
+      "seconds": 0.004339142993558198,
+      "phase": "uci",
+      "events": 3,
+      "sha256": "d8768a23fef33fc8c678b39db20746bd387ada5c9e0d84169ac030e6988fcb6e",
+      "passed": true
+    },
+    {
+      "case": 3,
+      "mode": "uci-eof",
+      "arm": "diagnostic",
+      "trace": true,
+      "seconds": 0.040661395993083715,
+      "phase": "uci",
+      "events": 3,
+      "sha256": "30e23b90a6c65030c3365a5f74266439622a1cbd7b14713b4a719fbe51f276d2",
+      "passed": true
+    },
+    {
+      "case": 4,
+      "mode": "ready-eof",
+      "arm": "diagnostic",
+      "trace": true,
+      "seconds": 0.015541875996859744,
+      "phase": "ready",
+      "events": 7,
+      "sha256": "6e3c52c9dbbe69bc3071f800917e468c9672fb6c952c0d15d54332a1b0aadc62",
+      "passed": true
+    },
+    {
+      "case": 5,
+      "mode": "uci-stall",
+      "arm": "diagnostic",
+      "trace": true,
+      "seconds": 5.02639815400471,
+      "phase": "uci",
+      "events": 3,
+      "sha256": "311baf1d72a2257b50166ac147acec2107689add0373927d2cb3811afab7c8ad",
+      "passed": true
+    },
+    {
+      "case": 6,
+      "mode": "ready-stall",
+      "arm": "diagnostic",
+      "trace": true,
+      "seconds": 5.0634122070041485,
+      "phase": "ready",
+      "events": 7,
+      "sha256": "c38eb73fa77ad565bc03f85152ff15168de9f069d0d1ba489515d6f37542a20f",
+      "passed": true
+    },
+    {
+      "case": 7,
+      "mode": "ready",
+      "arm": "diagnostic",
+      "trace": false,
+      "seconds": 0.022536072006914765,
+      "phase": null,
+      "events": 0,
+      "sha256": "7c8072dce9d0603121fe10fc357a7b97c631b12e34cb3e18364ada521afae4da",
+      "passed": true
+    },
+    {
+      "case": 8,
+      "mode": "ready",
+      "arm": "reference",
+      "trace": false,
+      "seconds": 0.015102903009392321,
+      "phase": null,
+      "events": 0,
+      "sha256": "9536d58c1bb9eb293870935c2962a16a4ad1dcb4e7ac9b871c423a1dbdad4dc1",
+      "passed": true
+    },
+    {
+      "case": 9,
+      "mode": "uci-eof",
+      "arm": "reference",
+      "trace": false,
+      "seconds": 0.009319317992776632,
+      "phase": null,
+      "events": 0,
+      "sha256": "8fb00675bde3c4eca93ff717cf4cd21e56b662c4e2086a2848989644355e59c7",
+      "passed": true
+    },
+    {
+      "case": 10,
+      "mode": "ready-eof",
+      "arm": "reference",
+      "trace": false,
+      "seconds": 0.009177088999422267,
+      "phase": null,
+      "events": 0,
+      "sha256": "1e7a798b4bc9fb233e8daf2fb0ccf0b8861f41f1cd5953ffe16c0ab120e7178d",
+      "passed": true
+    }
+  ],
+  "scope": "Owned mock transport contracts only. Two-worker success, both wait phases, EOF/exec failure, bounded stalls and disabled trace parity; no real startup prevalence or strength evidence."
+}
