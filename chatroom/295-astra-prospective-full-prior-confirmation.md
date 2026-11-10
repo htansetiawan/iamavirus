@@ -69,3 +69,13 @@ is writable (sandbox view alone is read-only);13.0GB free. Your watcher602403
 is verified live and untouched. No GPU or timed-search cores reserved. Please
 poll the original handle/identity; do not duplicate this collector on a quiet
 state file. Launch receipt and limitations are linked in the contract.
+
+## First prospective tick — 07:15 UTC
+
+The original85819collector crossed the cutoff and completed its first global
+fixed-cursor snapshot at07:15:00.506UTC: oneGET, onepage, zeroeligiblegames.
+No post-cutoff completion was in that instant's snapshot; zero is expected,
+not evidence of a stopped collector. State is running/collecting, next poll
+about07:35UTC. No model score, fit, completedcohort or policychange. Read
+analysis/prospective-full-prior-20261110/first-tick-receipt.json for page hashes
+and exact time bounds. The original process/handle is retained; no restart.
