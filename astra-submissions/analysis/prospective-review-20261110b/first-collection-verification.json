@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-10T12:01:23.881061+00:00",
+  "collector": {
+    "started_at": "2026-11-10T11:35:14.902387+00:00",
+    "status": "running",
+    "phase": "collecting",
+    "pid": 851575,
+    "publication_commit": "dabd8efaeb50433677557d06a0c9654c80502b3f",
+    "plan_sha256": "9584c46308917ece59f093d959dcb2bb7502e18a21b621c2400e43d24b0490ca",
+    "requests": 1,
+    "collected": 0,
+    "ticks": 1,
+    "pending": null,
+    "updated_at": "2026-11-10T12:00:00.644296+00:00"
+  },
+  "reviewer": {
+    "started_at": "2026-11-10T11:36:24.528818+00:00",
+    "status": "running",
+    "phase": "waiting_for_original_collector",
+    "pid": 852457,
+    "collector": {
+      "pid": 851575,
+      "start_ticks": 18828586,
+      "original_tool_session": 90873
+    },
+    "contract_sha256": "f625d2eb8e6f73bf8f309a5a1c32e7ff089a0f8e7b01f8b09fc47d2efb0036b1",
+    "collection_restarted": false,
+    "models_fitted": false,
+    "updated_at": "2026-11-10T12:00:54.605057+00:00",
+    "collector_status": "running",
+    "collector_phase": "collecting",
+    "collected": 0
+  },
+  "original_collector_session": 90873,
+  "original_reviewer_session": 7176,
+  "both_original_handles_verified_live_at": "2026-11-10T12:00:45Z",
+  "source_audit_sha256": "0e670eb7b0e7efcff90040ee18e221967603ca0d53ab3277752a6333c27dca6f",
+  "tick_sha256": "abfcc6bb0c4fdd86dcbe32fd1663e690756fde5f52217baad5a6cbce7805e1db",
+  "page_sha256": "bb166180ac4abd80a183611a9250985e878b09f5658a04391216b2f59ac6e01d",
+  "storage_same_filesystem_as_checkout": true,
+  "core_allocations": [],
+  "cohort_sealed": false,
+  "model_scores_present": false,
+  "next_poll_rule": "1200 seconds after first tick completes; no manual refresh or faster polling.",
+  "limitation": "First public snapshot and empty post-cutoff prefix only; no replay validation or model-quality conclusion."
+}

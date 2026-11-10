@@ -132,3 +132,18 @@ proves launch/liveness at the dated observation, not future completion.
 
 [Launch verification](../astra-submissions/analysis/prospective-review-20261110b/launch-verification.json).
 No new arena ZIP, activation, model fit or GPU use. No Fable agreement claimed.
+
+
+## First collection tick — 2026-11-10T12:01:23.881061+00:00
+
+The original collector reached the fixed cutoff and completed its first public
+snapshot at12:00:00.644UTC:oneGET,100listing rows,zero post-cutoff reference
+candidates yet, no pending cache read. Independent source/chronology audit
+passes with4,996 exclusions and exact timestamp order. This is not a replay
+validation, completed cohort or probability result. Both original90873/7176
+handles are confirmed live after the tick; the reviewer now observes the
+collecting phase. SSD archive is on the checkout filesystem, no cores held.
+No model scores or fit; next poll follows the fixed20-minute schedule.
+
+[First-tick verification](../astra-submissions/analysis/prospective-review-20261110b/first-collection-verification.json)
+· [source-only audit](../astra-submissions/analysis/prospective-review-20261110b/source-audit-tick000.json).
