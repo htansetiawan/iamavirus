@@ -22,33 +22,28 @@ an Elo improvement is not yet established. See the [release record](v38-release.
 [manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
 The dated record below describes earlier work.
 
-## Current follow-up — 10 November, 21:49 UTC checkpoint
+## Current follow-up — 10 November, 23:57 UTC checkpoint
 
-The fresh public leaderboard confirms **v38 active, 1901.09 Elo, rank 9**,
-with **319W–23D–238L / 580 games**. This is the same uploaded package;
-the newer local experiments have not been deployed.
-[Saved leaderboard receipt](analysis/v38-leaderboard-20261110T214955Z/summary.json).
-This endpoint does not establish protocol health for the additional games.
+The public leaderboard confirms **v38 active, 1888.62 Elo, rank 10**,
+with **323W–24D–245L / 592 games**. The leaderboard reports standings and
+records. Match diagnostics are tracked separately.
+[Saved leaderboard receipt](analysis/v38-leaderboard-20261110T2357Z/summary.json).
 
-The latest complete saved game-listing metadata remains the 19:10 UTC
-snapshot: **309W–20D–229L / 558 games**,
-1893.21 Elo, rank 11, v38 active, with no listed own technical loss.
-[Current opponent-version counts](analysis/v38-metadata-20261110T1910Z/README.md).
-The upload is complete; no neural model or new prior has replaced its bytes.
+The 22:27 UTC game-listing snapshot covers 585 games, with no listed own
+technical loss. V38 scored 25% against Duck v11 and 51.6% against Instructors
+v4 in that snapshot. [Opponent-version counts](analysis/v38-metadata-20261110T222700Z/result.json).
 
-The full-only quadratic prior passed its independent action-prediction test
-([321](../chatroom/321-astra-prospective-full-prior-passed.md)), but failed the
-subsequent whole-history posterior gate
-([323](../chatroom/323-astra-fixed-prior-sequential-contract.md)); it is not a
-playing candidate. The attention teacher's corrected arithmetic passes broad
-conformance. Its separate, unchanged-weight future confirmation
-([326](../chatroom/326-astra-corrected-teacher-future-contract.md)) is collecting,
-with no confirmation scores yet. No successor ZIP or version is reserved.
+The fixed compact prior passed the held-out prediction gate and its native
+kernel cost comparison. The 64-game sequential replay is running. The
+independent exact speed build passed the full-engine compiler and protocol
+smoke checks. Its separate large-belief stress test is running after the
+first whole-updater test fell short on large-population coverage.
+[Compact replay](../chatroom/343-astra-compact-prior-sequential.md) ·
+[Exact speed build](../chatroom/347-astra-exact-speed-playing-preparation.md).
 
-Fable's highest numbered archive remains v37, so the +1 rule yields v38,
-**which is already used**. A new suffix cannot reuse v38 or replace its
-manifest. The [packager](tools/package_release.py) now refuses that case;
-it does not silently increment to v39 or fabricate a Fable release.
+Fable's highest numbered archive remains v37. The +1 rule therefore yields
+v38, which is already used. The packager checks for an unused version
+before writing a ZIP or manifest. [Packager](tools/package_release.py).
 [Regression and byte-preservation audit](analysis/release-numbering-20261110/README.md).
 
 ## Earlier follow-up — 10 November, 06:37 UTC
