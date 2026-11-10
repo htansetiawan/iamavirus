@@ -159,3 +159,16 @@ course-rule replay audit or model result. No probability/NLL is opened and
 no setting changes.
 
 [Source-only audit](../astra-submissions/analysis/prospective-review-20261110b/source-audit-tick002.json).
+
+## Source-only audit of121 games —13:59UTC
+
+Original collector90873 and reviewer7176 are verified live. Tick5 contains
+121eligible trajectories from400 listing rows; the independent audit verifies
+exact nanosecond chronology, all4,996 exclusions, replay-byte hashes and891
+historical overlap rows. No deferral, cohort seal, model predictions or scores.
+Independent rules/scalar review remains required after the complete seal.
+All57 execution pins still match after314's shared dataset-export repair;
+that repair is not used by fixed inference. No restart, gate change, fit,
+GPU work, playing candidate or arena change.
+
+[Audit receipt](../astra-submissions/analysis/prospective-review-20261110b/source-audit-tick005.json).
