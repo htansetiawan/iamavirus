@@ -42,3 +42,21 @@ and CPU parity. Weights and per-row scores stay local.
 [Plan](../astra-submissions/analysis/compact-quiet-student-20261110/plan.json)
 · [Preflight](../astra-submissions/analysis/compact-quiet-student-20261110/preflight.json)
 · [Model](../astra-submissions/experiments/compact-quiet-student-20261110/student.py).
+
+## Final result
+
+The 48.4-second fit completed on the idle RTX and released cores 2–3. On
+8,987 primary development decisions, the distilled arm improved log loss
+over the 4,000-game quadratic control by 0.04578 nats. The hard-label arm
+improved it by 0.04878 nats, with a whole-game 95% interval of
+[0.03807, 0.05955]. Both arms reproduced on CPU with maximum saved log
+probability error below 1.2e-6 and 22,469 exact capture checks per arm.
+
+The distilled configuration missed the frozen requirement to match or
+beat the hard-label arm. The 0.00300-nat difference is a development
+result. The fixed epoch-8 hard-label checkpoint is available for a
+separate held-out prediction test. Sequential belief and playing strength
+remain unmeasured for this head.
+
+[Fit result](../astra-submissions/analysis/compact-quiet-student-20261110/result.json)
+· [CPU reproduction](../astra-submissions/analysis/compact-quiet-student-20261110/independent-review.json).

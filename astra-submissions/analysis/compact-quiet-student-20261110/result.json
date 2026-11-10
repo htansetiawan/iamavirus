@@ -1,0 +1,166 @@
+{
+  "at": "2026-11-10T23:15:03.467986+00:00",
+  "primary": 8987,
+  "nll": {
+    "base": 2.656598795349545,
+    "quadratic": 2.6067149656965807,
+    "production": 2.6052089989689593,
+    "teacher": 2.5076751708984375,
+    "hard": 2.556425429459819,
+    "distilled": 2.5594267245405073
+  },
+  "gains": {
+    "base": 0.09717207080903778,
+    "quadratic": 0.04728824115607333,
+    "production": 0.04578227442845195,
+    "hard": -0.0030012950806881378
+  },
+  "priority": {
+    "duck": {
+      "games": 88,
+      "gain": 0.10790416647138164
+    },
+    "Instructors": {
+      "games": 73,
+      "gain": 0.06618007744720113
+    },
+    "HYPOTHERMIA": {
+      "games": 81,
+      "gain": 0.08595460600579799
+    }
+  },
+  "production_gain_interval95": [
+    0.03575051017283579,
+    0.055161477887597586
+  ],
+  "conditions": {
+    "native": true,
+    "quadratic": true,
+    "production": true,
+    "hard_label_control": false,
+    "confidence": true,
+    "primary": true,
+    "all_moves": true,
+    "priorities": true,
+    "numeric": true
+  },
+  "arms": {
+    "hard": {
+      "best_epoch": 8,
+      "nll": 2.556425429459819,
+      "curve": [
+        {
+          "epoch": 1,
+          "primary_nll": 2.569148234875805
+        },
+        {
+          "epoch": 2,
+          "primary_nll": 2.5648815809989176
+        },
+        {
+          "epoch": 3,
+          "primary_nll": 2.5611406168642286
+        },
+        {
+          "epoch": 4,
+          "primary_nll": 2.5618052648391587
+        },
+        {
+          "epoch": 5,
+          "primary_nll": 2.5589694049686673
+        },
+        {
+          "epoch": 6,
+          "primary_nll": 2.5611455123475073
+        },
+        {
+          "epoch": 7,
+          "primary_nll": 2.556513966430968
+        },
+        {
+          "epoch": 8,
+          "primary_nll": 2.556425429459819
+        },
+        {
+          "epoch": 9,
+          "primary_nll": 2.5577266485429364
+        },
+        {
+          "epoch": 10,
+          "primary_nll": 2.5581274360307433
+        },
+        {
+          "epoch": 11,
+          "primary_nll": 2.557340573836928
+        },
+        {
+          "epoch": 12,
+          "primary_nll": 2.558847594210287
+        }
+      ],
+      "checkpoint_sha256": "4339702d3abf149c74904640195dc56e0f304b2159ce9bf1f4c116fe250da4ec",
+      "exact_capture_checks": 22469,
+      "max_cpu_gpu_error": 3.814697265625e-06
+    },
+    "distilled": {
+      "best_epoch": 11,
+      "nll": 2.5594267245405073,
+      "curve": [
+        {
+          "epoch": 1,
+          "primary_nll": 2.570969897651734
+        },
+        {
+          "epoch": 2,
+          "primary_nll": 2.5660712364842797
+        },
+        {
+          "epoch": 3,
+          "primary_nll": 2.564864061322178
+        },
+        {
+          "epoch": 4,
+          "primary_nll": 2.5634539601207647
+        },
+        {
+          "epoch": 5,
+          "primary_nll": 2.562919005918599
+        },
+        {
+          "epoch": 6,
+          "primary_nll": 2.561365243471053
+        },
+        {
+          "epoch": 7,
+          "primary_nll": 2.5618788340258183
+        },
+        {
+          "epoch": 8,
+          "primary_nll": 2.559839874969782
+        },
+        {
+          "epoch": 9,
+          "primary_nll": 2.5601553600498477
+        },
+        {
+          "epoch": 10,
+          "primary_nll": 2.5611466563494627
+        },
+        {
+          "epoch": 11,
+          "primary_nll": 2.5594267245405073
+        },
+        {
+          "epoch": 12,
+          "primary_nll": 2.5595101553842894
+        }
+      ],
+      "checkpoint_sha256": "59b36695a074480f4c5ee708bc9b8698fe86c731a55dab367f48e112f3d255cd",
+      "exact_capture_checks": 22469,
+      "max_cpu_gpu_error": 3.814697265625e-06
+    }
+  },
+  "decision": "close_student_configuration",
+  "max_gpu_bytes": 536920576,
+  "plan_sha256": "e64b744280e742927dae2de86c40dbe42f72bb193653f61ccf0d1db210a5a38c"
+}

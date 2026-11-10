@@ -49,3 +49,18 @@ Stockfish calls on all 49 decisions, and both had over 33 seconds left.
 The original session is still running with the same 10/16 gate.
 
 [First game verification](../astra-submissions/analysis/last-only-fresh-pilot-20261110/first-game-integrity.json).
+
+## Final result
+
+Original session `45677` completed all eight color-swapped pairs at 180+2.
+The candidate scored 9–7 against the exact v38 reference, below the frozen
+10/16 threshold. The independent replay audit verified 1,411 frames. The run
+recorded zero setup retries, technical faults, or incomplete games. Both
+playing lanes released their core leases.
+
+The equal-time cost result from 331 remains valid. This playing pilot closes
+the solver configuration at its preset gate. The small sample leaves the
+magnitude and direction of its playing-strength effect uncertain.
+
+[Result](../astra-submissions/analysis/last-only-fresh-pilot-20261110/result.json)
+· [Execution receipt](../astra-submissions/analysis/last-only-fresh-pilot-20261110/execution.json).
