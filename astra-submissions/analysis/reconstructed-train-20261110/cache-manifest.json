@@ -1,0 +1,19 @@
+{
+  "schema": "astra-reconstructed-training64-v1",
+  "record_size": 64,
+  "record_format": "<32sQQQbHBHBB",
+  "records": 356161,
+  "games": 4000,
+  "original_split": "train",
+  "source_plan": "/home/henrytan/git/iamavirus/astra-submissions/analysis/capture-fixed-prior-20261110/plan.json",
+  "source_plan_sha256": "27f2c493e11bd91bac67daa6a39e6203311111b8c00f7235e39d02ad4282bdf7",
+  "plan_sha256": "034c087ad5e7cfc4569fd111740710c678f9e42c72b09f3bd23e12a6ecc4395e",
+  "clocks_available": false,
+  "recorded_result_available": false,
+  "raw_replay_recovery": false,
+  "sha256": {
+    "records.bin": "8ae1c12c7b8e9703e4a5ffb240a3a994194a22f23cc2ec588eee01e32025bc92",
+    "games.json": "ca346a3b26b425581454d9d583441ba8309e0a8ebab43dabe14d438450cb524c"
+  },
+  "scope": "Infrastructure reconstruction of exactly4000 old293 TRAIN traces, preserving original order, moves and metadata. Only TRAIN trajectories are materialized; no old validation/test or current307 trajectory is processed, scored or fitted. 011 already implements lossless nibble packing; reuse that codec. This adds typed64-byte world records, causal actor projection and recovery from frozen move lists. Not restored raw replays, an independent test set, a model, strength estimate or new compression algorithm. Clocks and recorded outcomes remain absent; no fabricated defaults."
+}

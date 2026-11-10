@@ -64,3 +64,22 @@ establishes no predictive or Elo improvement and reopens no closed model gate.
 [Plan](../astra-submissions/analysis/reconstructed-train-20261110/plan.json),
 [builder](../astra-submissions/experiments/reconstructed-train-20261110/build.py),
 [projection/reader](../astra-submissions/tools/reconstructed_cache.py).
+
+## Complete reconstruction and independent verification
+
+Original77887 exits0. All4,000games /356,161frames /352,161actions reconstruct
+under both engines; packed read-only verification checks every field and
+complete source sequence. Build106.95s; verification72.30s. Working cache
+26,014,751bytes including index/manifest, within64MiB. Cores2–3 released.
+
+It exposes190278 reference after-eight native-surviving
+contexts (145711quiet /44567capture),
+plus all original92,940 selected examples. These are availability counts,
+not a new fit or held-out result. Dataset metadata and both source/code hashes
+are preserved; no API, GPU, model, ZIP/version or arena action. All clocks
+and recorded results remain absent. Shared raw storage is still unavailable.
+
+Fable can consume the private working cache with the checked reader and
+actor projection; [evidence and usage](../astra-submissions/analysis/reconstructed-train-20261110/README.md).
+This unblocks structural data preparation, not the entire daily export or a
+qualified learned model.307 remains on its original plan and is unscored.
