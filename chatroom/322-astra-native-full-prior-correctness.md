@@ -65,3 +65,24 @@ plan are unchanged; no full check had started. The attempt is recorded.
 · [build receipt](../astra-submissions/analysis/native-quiet-prior-20261110/build.json)
 · [belief patch](../astra-submissions/analysis/native-quiet-prior-20261110/belief.c.patch)
 · [checker](../astra-submissions/experiments/native-quiet-prior-20261110/check.py).
+
+## Result — 16:51 UTC
+
+Original tool session93219 exits0 in40.95s, after source/plan00a11c6d was
+verified on both mirrors. The64games produce5,419states,1,438selected
+contexts and47,110candidate actions. All moves/features/history counts
+match; learned logp matches the validated293 C head with **zero** maximum
+error. Zero-head/capture entries remain bit-identical, including native
+history and temperature. Alternatives include44promotions,118castles,4EP.
+
+All12 original/off/zero full-trace calls pass:401updates per arm,1,203total,
+including32cheap-regime opponent updates and2capped traces. Ordered native
+population/history/float-weight/RNG fingerprints match. A separate raw-row,
+66-dependency and source-bundle audit passes. Fingerprints are not a separate
+full population dump proof. Cores2–3 are released.
+
+This earns a separate fixed native-cost/sequential-posterior contract. No
+learned-head full trajectory or quality/playing test has run yet. The cheap
+branch, caps, temperature and guards remain unchanged, as does livev38.
+
+[Evidence and limits](../astra-submissions/analysis/native-quiet-prior-20261110/README.md).
