@@ -1,0 +1,98 @@
+{
+  "at": "2026-11-10T03:02:44.703130+00:00",
+  "datasets": [
+    {
+      "id": "toy-heavy",
+      "weights": [
+        0.8,
+        0.15,
+        0.05
+      ],
+      "keep": 2,
+      "repeats": 100000,
+      "seed": 2862000
+    },
+    {
+      "id": "toy-uniform",
+      "weights": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "keep": 3,
+      "repeats": 100000,
+      "seed": 2862001
+    },
+    {
+      "id": "toy-mixed",
+      "weights": [
+        1,
+        0.3,
+        0.1,
+        0.03,
+        0.01,
+        0.003
+      ],
+      "keep": 3,
+      "repeats": 100000,
+      "seed": 2862002
+    },
+    {
+      "id": "population-32",
+      "population": "/home/henrytan/git/iamavirus/astra-submissions/analysis/root-population-20261110/case/population.json",
+      "keep": 32,
+      "repeats": 1024,
+      "seed": 2863000
+    },
+    {
+      "id": "population-128",
+      "population": "/home/henrytan/git/iamavirus/astra-submissions/analysis/root-population-20261110/case/population.json",
+      "keep": 128,
+      "repeats": 1024,
+      "seed": 2863001
+    },
+    {
+      "id": "population-512",
+      "population": "/home/henrytan/git/iamavirus/astra-submissions/analysis/root-population-20261110/case/population.json",
+      "keep": 512,
+      "repeats": 1024,
+      "seed": 2863002
+    },
+    {
+      "id": "population-2048",
+      "population": "/home/henrytan/git/iamavirus/astra-submissions/analysis/root-population-20261110/case/population.json",
+      "keep": 2048,
+      "repeats": 1024,
+      "seed": 2863003
+    }
+  ],
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110/correction.h": "16120913bbfc3415cfcfa2afb858d04e206753b97c0706893d36e7bbc5f18978",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110/native.c": "84296cec4ec1f43d1eb700b849fdbfa2b179f4fabbb0e262a6d2ec320c1e528a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110/common.py": "517891271e1a296cd2740d1219548f2ddee609d2a3ee3b6c00e0a238473a1b14",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110/prepare.py": "34e97b7b1cb667ce01c749fc064bb65f9a583a2c005f697ccbc514a1d174eae6",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110/run.py": "5a2fb0554182d8dbb5f3416df91a982622c87ec5351a83cc2a20d8540b32f49b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110/audit.py": "87fbe0d223da434a91b521bb4651102c18aa2f6bd39725a358f26fb7da89e880",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/cap-weight-20261110/build/cap.so": "df0ef27d0292e4da2f364cc08aaafc1eb467692e4a3cdc9eac814db0c72db61c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/board.c": "4073412a224fb2ef14ce5aaeab714f519c08187fb38e7e9a3b3e9db768586ca0",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/movemodel.c": "6c01d104941fa911122bcc3db2176037e5014d87c5069da2ebaaf9753e61a2fe",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/root-population-20261110/case/population.json": "2f9fe7091cfede8b26bbab8f745688a4426b788d7f81293934b43d915b49de6d"
+  },
+  "core": 6,
+  "wall_seconds": 120,
+  "method": "Exact native exponential rank keys and selected indices, with smallest-excluded cutoff. Original masses versus q-corrected masses on the SAME selected worlds. Fixed arbitrary subset labels. All rows/seeds/k values reported; no optimization, true-board target or model fit.",
+  "checks": "Native RNG/index/metadata parity; numeric/scale invariance; unnormalized corrected sample means within six empirical standard errors of exact subset masses; original normalized toy means agree with independent exact ordered-WOR enumeration. Report normalized bias/MSE, including regressions. These mathematical checks never authorize a playing promotion.",
+  "qualifications": "Ideal continuous-key unbiasedness is for unnormalized masses. Native keys use finite pseudo-random uniforms; self-normalized ratios retain bias, and corrected estimates may have higher variance. The existing fitted guard raises all log-weights to power 1/temp, which would also transform the correction. A sequential candidate needs separately defined measures/guard semantics. This is not closed dual-measure252, a global temperature refit or a qsort-speed experiment.",
+  "sources": [
+    "https://jmlr.org/papers/volume21/19-985/19-985.pdf#page=25",
+    "https://nickduffield.net/download/papers/priority.pdf"
+  ],
+  "prepublication_correction": "Remove a blank EOF line caught by git diff --check; no logic or binary change."
+}
