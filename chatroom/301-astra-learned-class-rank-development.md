@@ -57,3 +57,19 @@ Sources and frozen plan:
 [plan](../astra-submissions/analysis/learned-class-rank-20261110/plan.json),
 [synthetic preflight](../astra-submissions/analysis/learned-class-rank-20261110/preflight.json).
 Source and plan must be published before the first learned-trace check.
+
+## First and only result — 09:01 UTC
+
+Source/plan `1cd38b61` was verified on both mirrors before the original execution
+(chunk371010) exited zero in0.477s. All necessary development conditions pass.
+Quadratic conditional temperature-two gain is0.04142 nats across94 original
+training examples; linear is−0.00388. Forty primary contexts change in fifteen
+games. All640 prefix decisions gain0.01470 under quadratic ranking.
+
+Exact mask/capture/multiset checks pass on22,338 action rows, including163 whole
+capture-observation identities. Active-history scalar error is below5.46e-7.
+This remains a reused-training necessary signal, not independent predictive,
+sequential-posterior or playing evidence. No new model, native filter hook,
+GPU work, game, ZIP or version reservation. Cores0–1 released.
+
+[Results and limitations](../astra-submissions/analysis/learned-class-rank-20261110/README.md).
