@@ -1,0 +1,104 @@
+{
+ "antecedents": [
+  "011 existing actor-only packed SQLite retrieval",
+  "027 strategy-first skill contracts; not deployed",
+  "327 existing identity-free hindsight terminal catalogue",
+  "413 existing heap query streamed with identical rankings"
+ ],
+ "at": "2026-11-11T19:23:36.135915+00:00",
+ "cohorts": {
+  "current_game_source": "astra-submissions/analysis/checkpoint-ingest-20261111T1745Z/plan.json",
+  "current_games": 68,
+  "new_heldout_status": "68 already inspected in411/412/413; no fresh holdout claim",
+  "old_game_source": "astra-submissions/analysis/terminal-motifs-20261110/plan.json",
+  "old_heldout_status": "300 already inspected in327 and excluded from326; no fresh holdout claim",
+  "old_labelled_games": 300
+ },
+ "execution": {
+  "API_requests": 0,
+  "GPU": false,
+  "cores": [
+   4,
+   5
+  ],
+  "full_production_export": false,
+  "maximum_private_bytes": 268435456,
+  "maximum_seconds": 900,
+  "private_output": "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111",
+  "reuse_native_no_rebuild": true
+ },
+ "fixed_checks": [
+  "reuse all600 old seat rows unchanged; source pin remains exact",
+  "new68 complete replays agree course referee at every frame; terminal complete one-ply safe sets agree existing C checker",
+  "all368 source replays bound by exact saved SHA, no source mutation",
+  "private combined actor index has both seats, zero candidate mismatches, trajectory-hash-v1 seed0",
+  "facet filters use piece/move/visibility/forced-safety roles, no player-name lookup",
+  "post-ranking annotation preserves all original actor query result fields and rank except elapsed time",
+  "seven fixed queries exclude own complete trajectory and search train references only",
+  "separate explicit self-reference binding control is not retrieval-quality evidence",
+  "stale label source SHA never attaches, label-only mutations cannot change actor ranks, all-or-nothing build validation",
+  "database and canonical input hashes unchanged by reads"
+ ],
+ "functional_receipts": {
+  "final": "functional-final.xml",
+  "final_result": "6pass plus4subtests",
+  "initial": "functional-initial.xml",
+  "initial_result": "5pass/1failure: test assumed decisionIDs1/2, but existing builder writes test fold first. Corrected fixture assertion to use retrieved decision IDs; library source unchanged."
+ },
+ "implementation_frozen_at": "2026-11-11T19:27:42.969154+00:00",
+ "implementation_pins": {
+  "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "astra-submissions/experiments/experience-catalogue-20261111/run.py": "7838f92073444081d3600c91b66172d37a6853bc099f3b3ae238eb4c8c274a53",
+  "astra-submissions/experiments/last-only-pilot-20261110/build/native-validator.so": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+  "astra-submissions/tools/experience_catalogue.py": "4d5ec7bd53615484a9195d7d1b8d755b28021c82657e3126737eb87a46280d7a",
+  "astra-submissions/tools/test_experience_catalogue.py": "bcea3661c6d3cea432671f6aa0db9358e0f317e87c860a3d6a8e7356341fee56"
+ },
+ "limits": [
+  "Terminal catalogue selection cannot estimate bait acceptance or strategy success; no denominator of all opportunities.",
+  "Safe alternatives refer to actual complete board, not an information-set-realizable winning move.",
+  "No latent strategy discovery, learned representation, runtime retrieval, model fit, Elo or globally nearest-neighbor recall claim.",
+  "Existing model exposure and all closed experiments remain unchanged.",
+  "No website deployment or new bot release."
+ ],
+ "queries": [
+  {
+   "game": "abt27me2",
+   "ply": 139
+  },
+  {
+   "game": "abt27me2",
+   "ply": 138
+  },
+  {
+   "game": "x0l4i8ns",
+   "ply": 83
+  },
+  {
+   "game": "x0l4i8ns",
+   "ply": 82
+  },
+  {
+   "game": "abt27me2",
+   "ply": 0
+  },
+  {
+   "game": "qi16y1oe",
+   "ply": 101
+  },
+  {
+   "game": "qi16y1oe",
+   "ply": 100
+  }
+ ],
+ "scope": "Analyst-only indexed browse of existing hindsight terminal facets and post-ranking source-bound annotation of the existing actor retriever. No strategy/controller/embedding, arena change or playing-strength test.",
+ "source_pins": {
+  "astra-submissions/analysis/checkpoint-ingest-20261111T1745Z/plan.json": "51bd6829b6829c4d67df28e16312d308c71b70979fc16e83190f05c5f25db942",
+  "astra-submissions/analysis/terminal-motifs-20261110/plan.json": "c05e9501d24d30b2e7fbfea5248e24eb0337a2247f2b5980f2dae78dee9b4e2d",
+  "astra-submissions/experiments/observed-class-20261110/build/producer.so": "44cdb305fb691db8da1ce54efd4a422220d348ee06a7ad056f6f245a6f4cd875",
+  "astra-submissions/experiments/terminal-motifs-20261110/labels.py": "49932175b8341925518425d5c03d01e863de793194d5a574ad9b6eb58ede2f29",
+  "astra-submissions/tools/experience_index.py": "27b75b26bc8850aa780cda5b858b9470e90ad956ffc5e0a7cabf46c73a64b189",
+  "data/astra-spool/terminal-motifs-20261110/rows.json": "65c53305452994eebdc68d6f86c8c648ecc457a20468c46b7e88b5f2e182a91f",
+  "learning/dataset.py": "3e76dec9391e72db259c4123f911ebb8cb130af71311a7b64540a859a8850560"
+ },
+ "substantive_difference": "Add separate indexed catalogue and strict game/seat/predecision-ply/source-SHA annotation join after actor ranking. Do not alter actor source, candidate pool, rank, observations or targets."
+}
