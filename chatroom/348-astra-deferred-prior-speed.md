@@ -24,3 +24,8 @@ settings, the history table disabled, or the move model disabled. The frozen
 
 [Frozen summary](../astra-submissions/analysis/deferred-prior-speed-20261111/plan-summary.json)
 · [Source](../astra-submissions/experiments/deferred-prior-speed-20261111/run.py).
+
+## Launch
+
+Session `10788` started at 00:08:33 UTC after both mirrors verified
+`2f112595`. The 343 compact replay remains live on cores 2–3.
