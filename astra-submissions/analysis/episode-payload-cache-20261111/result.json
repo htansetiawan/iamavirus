@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-11T13:06:01.828845+00:00",
+  "status": "complete",
+  "plan_sha256": "938ce0a6c6896e3a55eb71492603ac41ed88556377dd244fd2b4b4d65dff1a0f",
+  "cases": 32,
+  "color_fold_line_comparisons": 192,
+  "controls": [
+    "pipeline-version-miss",
+    "source-content-miss",
+    "malformed-key",
+    "unknown-fold",
+    "episode-source-mismatch",
+    "interrupted-builder",
+    "failed-write",
+    "compressed-corruption",
+    "raw-hash-corruption",
+    "framing-corruption",
+    "metadata-source-substitution",
+    "decompression-cap"
+  ],
+  "builder_calls": {
+    "reference": 32,
+    "cold": 32,
+    "baseline": 192,
+    "control": 2
+  },
+  "cold_seconds": 0.9138799359789118,
+  "baseline_median_seconds": 0.30976130347698927,
+  "warm_median_seconds": 0.010487021500011906,
+  "warm_ratio": 0.033855169713898556,
+  "cold_ratio": 2.950271469421292,
+  "gates": {
+    "exact_output_and_error_checks": true,
+    "warm_median_ratio_max": true,
+    "cold_ratio_max": false
+  },
+  "all_gates_pass": false,
+  "measurements_sha256": "ffbed1673f44a7858113781806662598e1ef324a23afcaa73ea8aa2b558811e4",
+  "database_bytes": 299008,
+  "scope": "Isolated canonical-payload cache. Already pinned in-memory inputs; no mutable-raw freshness assertion, full gzip/publication cost, production integration, model fit, engine, game or strength claim."
+}

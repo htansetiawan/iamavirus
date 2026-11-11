@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-11T13:10:33.878196+00:00",
+  "status": "complete_review",
+  "result_sha256": "b4d37a181a01fcc2d26e29bb2bdfe503392471a3aad8982acbaeaa67d0739622",
+  "review_source_sha256": "738b165604df5943678a6be061c35dc6c2ddc9b6244edc38a78f8cef7ef4ea32",
+  "database_sha256": "439b05b9afaa578aa75aafe59bbec6c5e5d059087e212fa29672e4609c866882",
+  "database_read_only_unchanged": true,
+  "records": 32,
+  "episodes": 64,
+  "decisions": 2734,
+  "all_twelve_output_digests_reproduced": true,
+  "gate_verdict_preserved": {
+    "exact_output_and_error_checks": true,
+    "warm_median_ratio_max": true,
+    "cold_ratio_max": false
+  },
+  "all_gates_pass": false,
+  "conditional_cost_model": {
+    "formula": "h * warm_ratio + (1-h) * cold_ratio",
+    "break_even_hit_fraction": 0.6687219069571667,
+    "limitations": "Assumes these small-probe per-case costs mix linearly; excludes raw-identity discovery, gzip/publication, disk scale, first-deployment economics and production scheduling. Does not change the failed cold gate or qualify integration."
+  },
+  "scope": "Read-only SQLite decoding/source alignment and original-measurement/gate arithmetic. No timed rerun, native rule replay, retraining, export or new candidate."
+}

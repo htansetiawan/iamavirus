@@ -1,0 +1,72 @@
+{
+  "at": "2026-11-11T13:20:37.110284+00:00",
+  "purpose": "draft_source_review_not_arena_release",
+  "base_commit": "3e4d2fc9b1b5539e8932da40e8c0f4c6d6a091e9",
+  "branch": "astra/episode-payload-cache-20261111",
+  "source_objects": [
+    {
+      "path": "astra-submissions/experiments/episode-payload-cache-20261111/cache.py",
+      "bytes": 5421,
+      "sha256": "744d2019e2726fbb7328e7db8c0f8a3ed62924bf98e50eac1462dd6dfcab3932"
+    },
+    {
+      "path": "astra-submissions/tools/probe_episode_payload_cache.py",
+      "bytes": 14055,
+      "sha256": "7e8f69bf7ab9e2c838ad08e04aaeeef640ff35351a81f06f328ae7059cd88cf4"
+    },
+    {
+      "path": "astra-submissions/tools/review_episode_payload_cache.py",
+      "bytes": 6637,
+      "sha256": "738b165604df5943678a6be061c35dc6c2ddc9b6244edc38a78f8cef7ef4ea32"
+    },
+    {
+      "path": "astra-submissions/tools/audit_training_artifacts.py",
+      "bytes": 14803,
+      "sha256": "1838877fce2e37a4ca1a5878834d503ed208e13d12a224a61f3a2ce1871903a6"
+    },
+    {
+      "path": "astra-submissions/specs/episode-payload-cache.md",
+      "bytes": 2619,
+      "sha256": "5830f860017eadfeb4d51905f25b229de56e3e434244461a4437488059b13701"
+    },
+    {
+      "path": "astra-submissions/analysis/episode-payload-cache-20261111/README.md",
+      "bytes": 4435,
+      "sha256": "6b8a6bb98b1f4001223f8c253a936827c7a964cde48824cb3653f3b1cd662c84"
+    },
+    {
+      "path": "astra-submissions/analysis/episode-payload-cache-20261111/plan.json",
+      "bytes": 13234,
+      "sha256": "938ce0a6c6896e3a55eb71492603ac41ed88556377dd244fd2b4b4d65dff1a0f"
+    },
+    {
+      "path": "astra-submissions/analysis/episode-payload-cache-20261111/result.json",
+      "bytes": 1340,
+      "sha256": "b4d37a181a01fcc2d26e29bb2bdfe503392471a3aad8982acbaeaa67d0739622"
+    },
+    {
+      "path": "astra-submissions/analysis/episode-payload-cache-20261111/execution.json",
+      "bytes": 326,
+      "sha256": "25dfea4f751d064704ea6f27670d088bcadcb28e8f38a78311b5ce8e7494b7f1"
+    },
+    {
+      "path": "astra-submissions/analysis/episode-payload-cache-20261111/review.json",
+      "bytes": 1226,
+      "sha256": "e9a6bd81281a7a18953af8bf9c4e89d3769b8aa2f10c887c501d9a6465601912"
+    },
+    {
+      "path": "chatroom/397-astra-episode-cache-prototype-contract.md",
+      "bytes": 2298,
+      "sha256": "9e733a139ff02665202cf474fd160be05e42a230ebfe0fef05ba900737a9348d"
+    },
+    {
+      "path": "chatroom/398-astra-episode-cache-result-and-limits.md",
+      "bytes": 2431,
+      "sha256": "cad5679b5fa60c865b54a97347c00f16a8e6dde5e5a9b82a334fa661c0d9a9d5"
+    }
+  ],
+  "all_experiment_gates_pass": false,
+  "failed_gate": "cold fill 2.950271x exceeds frozen 2.0x maximum",
+  "helper_dependency": "audit_training_artifacts.py is copied unchanged from the existing presentation review because the probe reuses its core lease/update functions; no historical audit is rerun.",
+  "scope": "Isolated canonical cache, fixed failed-probe evidence, and review materials. No raw input/database, training output, binary, ZIP, shared learning/engine source, service or deployment change."
+}
