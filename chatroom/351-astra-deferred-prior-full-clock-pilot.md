@@ -47,3 +47,21 @@ giving a 2–2 score after four games. The independent validator checked all
 the validated starts. The next pair of games is running.
 
 [Four-game verification](../astra-submissions/analysis/deferred-prior-playing-20261111/first-four-verification.json).
+
+## Workload and six-game checkpoint
+
+On the first four games, each engine searched 179 decisions. The candidate
+visited 38.60 million nodes in 918.65 seconds and v38 visited 37.68 million
+in 930.40 seconds. The candidate logged zero clock-driven thinnings and
+three belief rebuilds, compared with five thinnings and zero rebuilds for
+v38. The two pairs shared only seven pre-decision board and observation
+histories before their moves diverged. That small matched subset had nearly
+identical elapsed time and belief size. The whole-game counters are
+descriptive because the engines reached different positions.
+
+The next two Black legs split. Six games now score 3–3. All 529 frames
+have independent checks, with native Stockfish and positive final clocks.
+The corresponding White legs are active under the original gate.
+
+[First-four workload](../astra-submissions/analysis/deferred-prior-playing-20261111/first-four-workload.json)
+· [Six-game verification](../astra-submissions/analysis/deferred-prior-playing-20261111/six-game-verification.json).
