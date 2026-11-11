@@ -1,0 +1,66 @@
+{
+ "analysis_type": "Post-hoc saved-trace arithmetic; no new native calls or model selection.",
+ "at": "2026-11-11T21:46:38.639058+00:00",
+ "checks": {
+  "all_previous_root_values_reconciled": true,
+  "final_png_visually_inspected": true,
+  "first_numeric_reviewer_observed_exit_code": 1,
+  "float32_weight_restoration_verified": true,
+  "lp_and_one_world_control": true,
+  "native_actor_calls": 0,
+  "numeric_reviewer_observed_exit_code": 0,
+  "producer_observed_exit_code": 0,
+  "svg_xml_parses": true
+ },
+ "figure_revision": {
+  "first_private_artifacts": {
+   "/home/henrytan/git/iamavirus/data/astra-spool/decision-tradeoff-20261111/figure-first/decision-tradeoff.png": "42f8099e9f1d31b054cf26c1502a0e6b58505b34a3e392290310e78f1a09d7a7",
+   "/home/henrytan/git/iamavirus/data/astra-spool/decision-tradeoff-20261111/figure-first/decision-tradeoff.svg": "b50544f3571c54625de65692145883de54f0d8ce6bd7f3f2041b042fe870c8c6",
+   "/home/henrytan/git/iamavirus/data/astra-spool/decision-tradeoff-20261111/figure-first/figure.json": "b8696ece609f2a823e43c957b75bae63651505441c275d17ae9ec320fa3afc7e",
+   "/home/henrytan/git/iamavirus/data/astra-spool/decision-tradeoff-20261111/figure-first/plot.py": "4cb85f57e591481ada799c170dba2401c5b5f78e6b81812e11f6d7c9e74c62ed"
+  },
+  "numeric_input_unchanged": true,
+  "reason": "First actual-world tick label clipped; moved annotation inside axes and clarified model-weight/value wording."
+ },
+ "frontier_measurement": "Conditional on forcing the named root action, with saved chance and continuation policies. Excludes root-action probability; not a time-allocation or unconditional-policy statistic.",
+ "geometry_review": {
+  "current_visibility_agrees_with_existing_native_reply_capture_availability": 22,
+  "new_native_calls": 0,
+  "queen_line_checks": 22,
+  "scope": "Independent queen line scan on board64 after d1d5; current enemy visibility agrees with complete native replies already checked by417. No inference of full opponent knowledge."
+ },
+ "limitations": [
+  "Same saved tree and both continuation policies throughout; no new native engine, replay, sample, model, fit or game.",
+  "Values are approximate solver utilities, not calibrated win probabilities, Elo or definitive true-position values.",
+  "Local one-decision deviation gap is not exploitability/Nash convergence or a global best response.",
+  "Frozen-value sensitivity changes hypothetical chance weights or expected values analytically; an actual re-solve changes continuations and can behave differently.",
+  "Frontier counts describe exported first two plies only. They do not prove an evaluation error, inferior compute allocation or the outcome of extra search.",
+  "No new raw data, GPU, candidate ZIP/version, production source/default/service or website deployment."
+ ],
+ "previous_goal_turn": "Progress:418measured all-outcome reach and demoted the small correctness repair as a primary strength track.",
+ "primary_source": {
+  "claims": [
+   "PCFR+average guarantee versus empirical last iterate",
+   "Growingtree expansion and depth1 Stockfish frontier estimates",
+   "Conditional action purification rather than universal mixing"
+  ],
+  "scope": "Targeted reread of solver/expansion/frontier/action-extraction passages, not a new full-paper/course review.",
+  "sections": [
+   "3.2",
+   "3.3",
+   "C.5",
+   "C.8"
+  ],
+  "url": "https://arxiv.org/html/2506.01242v2"
+ },
+ "source_pins": {
+  "/home/henrytan/git/iamavirus/astra-submissions/analysis/decision-tradeoff-20261111/figure.json": "0fe33d545bd33462ba029ea0717c363e5d026d0948edf395672e5507c849c754",
+  "/home/henrytan/git/iamavirus/astra-submissions/analysis/decision-tradeoff-20261111/numeric-review.json": "241c07f134b0142dc28d23a27a609a96cda03639b4c3ea7d410eaa1d1770b82e",
+  "/home/henrytan/git/iamavirus/astra-submissions/analysis/decision-tradeoff-20261111/result.json": "bc60f13a9ad7fee29c8c19dc7a42a8426d5f2d794a255bcb8b94be67f8c7c700",
+  "/home/henrytan/git/iamavirus/astra-submissions/analysis/decision-tradeoff-20261111/threat-geometry.json": "aedb72cb53250fcb42b629a93587ecce9445b8bf1464e341438dc08052f08a47",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/decision-tradeoff-20261111/analyze.py": "907ead8f36e672629425192d20bb897e9d08e2738c7b44cc3119c0be2b735fe9",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/decision-tradeoff-20261111/geometry.py": "777c096b6cfa133b63fecef355c0faa85ae463673fd93c253cbdfb7d1faa449d",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/decision-tradeoff-20261111/plot.py": "1281d3e17521a5cad94edc38a966387ec0b1acca6d9f9dc437ed0e91cdedd109",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/decision-tradeoff-20261111/review.py": "bfe75c7408408d949c292711d15d6478620685b5a25f765fc46d5937738c49e5"
+ }
+}
