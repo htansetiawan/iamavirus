@@ -1,0 +1,331 @@
+{
+ "actor_index": {
+  "actor_payload_bytes": {
+   "ages": 64,
+   "history_fingerprint": 32,
+   "last_seen": 32,
+   "legal_move": 2,
+   "observation": 32,
+   "rights": 8
+  },
+  "built_at": "2026-11-11T19:28:01.599389+00:00",
+  "code_sha256": "27b75b26bc8850aa780cda5b858b9470e90ad956ffc5e0a7cabf46c73a64b189",
+  "counts": {
+   "test_decisions": 3868,
+   "test_episodes": 86,
+   "train_decisions": 24247,
+   "train_episodes": 572,
+   "validation_decisions": 3203,
+   "validation_episodes": 78
+  },
+  "database_bytes": 11939840,
+  "database_sha256": "540b1e1f27a22b73bb64ec2f5a5f7ffa7f30041f072639f647599e3a5c3efea0",
+  "distinct_trajectories": 368,
+  "elapsed_seconds": 2.7140334009891376,
+  "games": 368,
+  "inputs_sha256": {
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/test.jsonl.gz": "a4a67dc383279b5b1b06093f498b8a934d1a0410b7097ffe0751e8511f7f4a55",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/train.jsonl.gz": "e24841247fb0c55203bbe8abe9d8eacca17c7fbff7b7ac1b9422f4d31e2a003f",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/validation.jsonl.gz": "568547a18c5054483d8b0b924ae77ae87e1fdbb3ce6644bbc7455a2bc3713565",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/episodes.json": "94b113aece254325f83b56dff8308b54be10af6eb049211e9d84af8956fb1ac9",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/raw/accepted.jsonl": "8dcd63544c87f4999389c2b2b57187443157fb47eaab822030f2661655c07af2"
+  },
+  "limitations": [
+   "Research index only; no learned embedding or policy yet.",
+   "History fingerprint excludes clocks absent from source actor schema.",
+   "Last-seen memory/age is an approximate feature, not an exact belief.",
+   "No actor feature depends on true boards, hidden moves, or outcomes."
+  ],
+  "schema": "astra-experience-v1",
+  "source_manifest": {
+   "action_version": "actions-v1",
+   "candidate_mismatches": [],
+   "content_sha256": "7fe236c4aaae85a6261a2cab3fdd7780cfe3b6cbff15c8b26d32461541683729",
+   "counts": {
+    "test": {
+     "color_black": 43,
+     "color_white": 43,
+     "decisions": 3868,
+     "episodes": 86,
+     "events": 7736,
+     "games": 43.0,
+     "outcome_0-1": 23.0,
+     "outcome_1-0": 17.0,
+     "outcome_1/2-1/2": 3.0,
+     "termination_normal": 43.0
+    },
+    "train": {
+     "color_black": 286,
+     "color_white": 286,
+     "decisions": 24247,
+     "episodes": 572,
+     "events": 48498,
+     "games": 286.0,
+     "outcome_0-1": 115.0,
+     "outcome_1-0": 166.0,
+     "outcome_1/2-1/2": 5.0,
+     "termination_crash": 1.0,
+     "termination_normal": 284.0,
+     "termination_time": 1.0
+    },
+    "validation": {
+     "color_black": 39,
+     "color_white": 39,
+     "decisions": 3203,
+     "episodes": 78,
+     "events": 6406,
+     "games": 39.0,
+     "outcome_0-1": 17.0,
+     "outcome_1-0": 21.0,
+     "outcome_1/2-1/2": 1.0,
+     "termination_normal": 39.0
+    }
+   },
+   "created_at": "2026-11-11T19:27:58.780318+00:00",
+   "feature_version": "features-v2",
+   "fractions": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "opponents": {
+    "test": {
+     "0729dbf4b76c841d7582c2dddea32faa@v28": 1,
+     "0729dbf4b76c841d7582c2dddea32faa@v29": 2,
+     "31f523b6aaac47adbfb957d0b0123408@v4": 3,
+     "3bea823a845e4dc1a21cce1e667867b6@v4": 1,
+     "4380015e62e24736aab6607e59877d01@v5": 1,
+     "46f21742c86746bb8fe897d62b81318d@v11": 1,
+     "46f21742c86746bb8fe897d62b81318d@v12": 1,
+     "46fcfa5cd0604ff0a5e92b2bc238c45d@v9": 1,
+     "4c181de5ace742458d7a6f91d657e912@v32": 2,
+     "6a94236ecb6a417e846ae6a977a668fe@v5": 1,
+     "8267630788344cce9804fe6c56133829@v5": 3,
+     "8b848465fc5a4658bae38ab8e418a784@v6": 2,
+     "8b848465fc5a4658bae38ab8e418a784@v8": 1,
+     "8d775e234808489c815a4a9f6bbabfe4@v11": 8,
+     "a2c35173659545c99752376a70418438@v38": 13,
+     "aafa5b1bdd48458c910eb534ee9f5677@v5": 2,
+     "b69919bc85f945a596f081662d74539a@v1": 1,
+     "b995966bef144efba4e3fd956dc1b64b@v26": 3,
+     "bcabd873eb2df93768a3e2afa44c0c05@v6": 2,
+     "be376c75a2334ec0b6e93a46d7e2a78a@v4": 1,
+     "d0335ee36a454199b847210e1e94d5ee@v2": 6,
+     "db107815c3b14827a79ec9e3d12f4726@v7": 4,
+     "dc80b193f365cb27bb6aed2e74605669@v2": 2,
+     "e2f593ca1fea4710b07a8120dd6b3477@v10": 1,
+     "e2f593ca1fea4710b07a8120dd6b3477@v4": 3,
+     "f394d843d970454f868c38c7f6963cc9@v25": 2,
+     "fc6ff594942440bc935357fc46259914@v2": 3,
+     "instructors@v4": 8,
+     "knight-vision@v36": 2,
+     "strongly-invisible@v41": 5
+    },
+    "train": {
+     "0729dbf4b76c841d7582c2dddea32faa@v28": 17,
+     "0729dbf4b76c841d7582c2dddea32faa@v29": 2,
+     "31f523b6aaac47adbfb957d0b0123408@v4": 38,
+     "3bea823a845e4dc1a21cce1e667867b6@v4": 1,
+     "40dc2eab4fbc41ae97db862957fda802@v4": 5,
+     "4380015e62e24736aab6607e59877d01@v5": 3,
+     "46f21742c86746bb8fe897d62b81318d@v11": 18,
+     "46f21742c86746bb8fe897d62b81318d@v12": 4,
+     "46f21742c86746bb8fe897d62b81318d@v14": 2,
+     "46fcfa5cd0604ff0a5e92b2bc238c45d@v9": 15,
+     "4c181de5ace742458d7a6f91d657e912@v32": 13,
+     "6a94236ecb6a417e846ae6a977a668fe@v5": 4,
+     "8267630788344cce9804fe6c56133829@v5": 11,
+     "88969c2256f1425bb1e4cc0758a4a223@v9": 2,
+     "89eb01bf83fa4a14b9c2a487a9aa1b10@v8": 15,
+     "8b848465fc5a4658bae38ab8e418a784@v6": 7,
+     "8b848465fc5a4658bae38ab8e418a784@v7": 2,
+     "8b848465fc5a4658bae38ab8e418a784@v8": 1,
+     "8d775e234808489c815a4a9f6bbabfe4@v11": 26,
+     "a2c35173659545c99752376a70418438@v38": 68,
+     "aafa5b1bdd48458c910eb534ee9f5677@v5": 9,
+     "afc51e1cc33bf20d08d8de3142fd653c@v16": 1,
+     "b69919bc85f945a596f081662d74539a@v1": 7,
+     "b995966bef144efba4e3fd956dc1b64b@v26": 14,
+     "baseline@v1": 2,
+     "bcabd873eb2df93768a3e2afa44c0c05@v5": 2,
+     "bcabd873eb2df93768a3e2afa44c0c05@v6": 10,
+     "be376c75a2334ec0b6e93a46d7e2a78a@v4": 4,
+     "c6c8b24b4f2149e68b226170e25f6daf@v3": 2,
+     "d0335ee36a454199b847210e1e94d5ee@v2": 30,
+     "db107815c3b14827a79ec9e3d12f4726@v7": 42,
+     "dc80b193f365cb27bb6aed2e74605669@v2": 18,
+     "ded6c6b3f1694f5f98451fbe47fe8bab@v3": 10,
+     "e2f593ca1fea4710b07a8120dd6b3477@v10": 12,
+     "e2f593ca1fea4710b07a8120dd6b3477@v4": 20,
+     "e8915d7524054718ab675bc9ba14da0a@v2": 2,
+     "f394d843d970454f868c38c7f6963cc9@v25": 24,
+     "fc6ff594942440bc935357fc46259914@v2": 5,
+     "instructors@v4": 58,
+     "knight-vision@v36": 23,
+     "strongly-invisible@v41": 23
+    },
+    "validation": {
+     "0729dbf4b76c841d7582c2dddea32faa@v28": 2,
+     "40dc2eab4fbc41ae97db862957fda802@v4": 1,
+     "4380015e62e24736aab6607e59877d01@v5": 2,
+     "46f21742c86746bb8fe897d62b81318d@v11": 2,
+     "46f21742c86746bb8fe897d62b81318d@v12": 1,
+     "46fcfa5cd0604ff0a5e92b2bc238c45d@v9": 2,
+     "4c181de5ace742458d7a6f91d657e912@v32": 3,
+     "6a94236ecb6a417e846ae6a977a668fe@v5": 1,
+     "8267630788344cce9804fe6c56133829@v5": 3,
+     "89eb01bf83fa4a14b9c2a487a9aa1b10@v8": 3,
+     "8b848465fc5a4658bae38ab8e418a784@v6": 1,
+     "8d775e234808489c815a4a9f6bbabfe4@v11": 7,
+     "a2c35173659545c99752376a70418438@v38": 9,
+     "aafa5b1bdd48458c910eb534ee9f5677@v5": 1,
+     "afc51e1cc33bf20d08d8de3142fd653c@v16": 1,
+     "b995966bef144efba4e3fd956dc1b64b@v26": 1,
+     "bcabd873eb2df93768a3e2afa44c0c05@v5": 2,
+     "bcabd873eb2df93768a3e2afa44c0c05@v6": 2,
+     "be376c75a2334ec0b6e93a46d7e2a78a@v4": 1,
+     "d0335ee36a454199b847210e1e94d5ee@v2": 3,
+     "db107815c3b14827a79ec9e3d12f4726@v7": 6,
+     "e2f593ca1fea4710b07a8120dd6b3477@v10": 1,
+     "e2f593ca1fea4710b07a8120dd6b3477@v4": 3,
+     "f394d843d970454f868c38c7f6963cc9@v25": 4,
+     "instructors@v4": 6,
+     "knight-vision@v36": 6,
+     "strongly-invisible@v41": 4
+    }
+   },
+   "raw": "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/raw",
+   "rules_fingerprint": "fow-v1/iamavirus-rules-capi",
+   "seed": 0,
+   "shard_sha256": {
+    "test": "a4a67dc383279b5b1b06093f498b8a934d1a0410b7097ffe0751e8511f7f4a55",
+    "train": "e24841247fb0c55203bbe8abe9d8eacca17c7fbff7b7ac1b9422f4d31e2a003f",
+    "validation": "568547a18c5054483d8b0b924ae77ae87e1fdbb3ce6644bbc7455a2bc3713565"
+   },
+   "shards": {
+    "test": "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/test.jsonl.gz",
+    "train": "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/train.jsonl.gz",
+    "validation": "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/validation.jsonl.gz"
+   },
+   "source_games": 368,
+   "source_journal": {
+    "accepted_lines": 368,
+    "bytes": 125759,
+    "duplicate_lines": 0,
+    "selected_games": 368,
+    "sha256": "8dcd63544c87f4999389c2b2b57187443157fb47eaab822030f2661655c07af2",
+    "unique_games": 368
+   },
+   "split_method": "trajectory_hash_v1",
+   "undated_source_games": 0,
+   "version": "analyst-review"
+  }
+ },
+ "all_seven_actor_result_fields_and_ranks_unchanged": true,
+ "at": "2026-11-11T19:28:01.787821+00:00",
+ "browse_example_count": 10,
+ "catalogue": {
+  "games": 368,
+  "limitation": "Oracle hindsight terminal examples, not actor features or move advice. True-board one-ply safe alternatives need not be realizable from fog information. Terminal examples alone do not measure bait acceptance or strategy success.",
+  "schema": "astra-analyst-terminal-catalogue-v1",
+  "seats": 736,
+  "source_rows_sha256": "98dc6ce1de13718bed44454557a555d6478d523783ead2039aa2fbb85ffaa1d6",
+  "terminal_examples": 357
+ },
+ "fixed_queries": [
+  {
+   "annotation_statuses": {
+    "no_terminal_label_at_this_decision": 1
+   },
+   "candidates": 1,
+   "game": "abt27me2",
+   "ply": 139,
+   "truncated": false
+  },
+  {
+   "annotation_statuses": {
+    "labelled_terminal": 1,
+    "no_terminal_label_at_this_decision": 9
+   },
+   "candidates": 75,
+   "game": "abt27me2",
+   "ply": 138,
+   "truncated": false
+  },
+  {
+   "annotation_statuses": {
+    "no_terminal_label_at_this_decision": 10
+   },
+   "candidates": 26,
+   "game": "x0l4i8ns",
+   "ply": 83,
+   "truncated": false
+  },
+  {
+   "annotation_statuses": {
+    "no_terminal_label_at_this_decision": 10
+   },
+   "candidates": 12,
+   "game": "x0l4i8ns",
+   "ply": 82,
+   "truncated": false
+  },
+  {
+   "annotation_statuses": {
+    "no_terminal_label_at_this_decision": 10
+   },
+   "candidates": 1537,
+   "game": "abt27me2",
+   "ply": 0,
+   "truncated": false
+  },
+  {
+   "annotation_statuses": {
+    "no_terminal_label_at_this_decision": 1
+   },
+   "candidates": 1,
+   "game": "qi16y1oe",
+   "ply": 101,
+   "truncated": false
+  },
+  {
+   "annotation_statuses": {
+    "no_terminal_label_at_this_decision": 10
+   },
+   "candidates": 34,
+   "game": "qi16y1oe",
+   "ply": 100,
+   "truncated": false
+  }
+ ],
+ "fresh_course_frames": 5780,
+ "fresh_native_terminal_alternatives": 1165,
+ "fresh_terminal_examples": 66,
+ "games": 368,
+ "limits": [
+  "Terminal catalogue selection cannot estimate bait acceptance or strategy success; no denominator of all opportunities.",
+  "Safe alternatives refer to actual complete board, not an information-set-realizable winning move.",
+  "No latent strategy discovery, learned representation, runtime retrieval, model fit, Elo or globally nearest-neighbor recall claim.",
+  "Existing model exposure and all closed experiments remain unchanged.",
+  "No website deployment or new bot release."
+ ],
+ "old_seat_rows_unchanged": true,
+ "private_artifact_bytes": 24951375,
+ "private_hashes": {
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/actors/actors.sqlite": "540b1e1f27a22b73bb64ec2f5a5f7ffa7f30041f072639f647599e3a5c3efea0",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/browse.json": "0d19cb02a7fb9ea910d5b36109d16fa9e81a45558280b8efbf1a66413906d010",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/catalogue.sqlite": "73cbf5ee12570339fd23f49328611814961277584f63601b7e3b6a270b8ad8e1",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/queries.json": "113ac4f21eda898ba1504545ac1a7fea902026f12d2667802d9d9a38f3f5233d",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/rows.json": "98dc6ce1de13718bed44454557a555d6478d523783ead2039aa2fbb85ffaa1d6",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/source-replays.json": "c549348484d46df9de6450dac21f68836b627baac2e823a62e68dbc3ec107a2c"
+ },
+ "read_databases_and_all_source_replays_unchanged": true,
+ "seconds": 10.598205957037862,
+ "self_reference_binding_control": {
+  "game": "01h7hwrg",
+  "id": 3931,
+  "ply": 124,
+  "side": 0
+ },
+ "self_reference_control_is_not_quality_evidence": true
+}

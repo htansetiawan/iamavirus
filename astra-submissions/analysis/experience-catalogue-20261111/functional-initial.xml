@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="10" time="2.865" timestamp="2026-11-11T11:24:45.550986-08:00" hostname="blacksmith"><testcase classname="astra-submissions.tools.test_experience_catalogue.CatalogueTests" name="test_existing_database_is_not_overwritten" time="0.356" /><testcase classname="astra-submissions.tools.test_experience_catalogue.CatalogueTests" name="test_label_mutation_cannot_change_actor_rank_or_database" time="0.364" /><testcase classname="astra-submissions.tools.test_experience_catalogue.CatalogueTests" name="test_labels_attach_only_to_exact_predecision_and_source" time="0.353"><failure message="KeyError: '1'">self = &lt;test_experience_catalogue.CatalogueTests testMethod=test_labels_attach_only_to_exact_predecision_and_source&gt;
+
+    def test_labels_attach_only_to_exact_predecision_and_source(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            actors, _, rows, db = setup(root)
+            catalogue.build(rows, root / "raw", db)
+            view = old.actor()["observations"][0]
+            before = catalogue.actors.query(actors, view, 0)
+            after = catalogue.query(actors, db, view, 0)
+            self.assertEqual(logical(before), logical(after["actor_result"]))
+&gt;           self.assertEqual(after["oracle_annotations"]["1"]["status"], "no_terminal_label_at_this_decision")
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: '1'
+
+astra-submissions/tools/test_experience_catalogue.py:82: KeyError</failure></testcase><testcase classname="astra-submissions.tools.test_experience_catalogue.CatalogueTests" name="test_no_heldout_or_excluded_reference_can_be_resurrected_by_labels" time="0.352" /><testcase classname="astra-submissions.tools.test_experience_catalogue.CatalogueTests" name="test_role_facets_and_all_seat_sources_are_retained" time="0.357" /><testcase classname="astra-submissions.tools.test_experience_catalogue.CatalogueTests" name="test_source_or_row_validation_failure_leaves_no_database" time="0.615" /></testsuite></testsuites>
