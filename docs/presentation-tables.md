@@ -187,7 +187,7 @@ future events, so they are not automatically available runtime features.
 Fitting and table rebuilding are offline operations. The historical neural
 pipeline and current native engine consume different products.
 
-| Product | November 11 verification | What it means |
+| Product | Before the November 11 scheduled refresh | What it means |
 | --- | --- | --- |
 | Raw journal snapshot | 233,482 unique game IDs | Retained inputs, with duplicates and provenance qualifications |
 | Episode generation | November 2; 195,614 games / 391,228 color episodes | Intact old imitation/RL input; 37,868 newer raw games absent |
@@ -198,9 +198,15 @@ The old export's age has operational evidence. The daily service timed out
 at six hours on November 3–5 and 9; November 3/4 reached only partial episode
 progress after spending over 3.5 hours in the earlier move exporter. Storage
 I/O failures then interrupted other runs. Report ordering and cached move
-export were changed on November 9. Their code is present, but a successful
-full scheduled refresh after storage recovery remains unverified. Successful
-reads of old shards do not certify that next run.
+export were changed on November 9. At that early audit, a successful full
+scheduled refresh after storage recovery remained unverified. Successful
+reads of old shards did not certify the next run.
+
+The November 11 run subsequently published **234,911 games / 469,822 color
+episodes** and completed its incremental archive. Independent shard and archive
+checks now pass. The [dated recovery checkpoint](data-refresh-20261111.html)
+records that new snapshot and the remaining metadata/holdout limits; the
+earlier audit table and service failures above remain historical evidence.
 
 There is also a smaller provenance correction: the original 164-seat tactical
 corpus named only the selected seat's opponent. Its importer invented
@@ -212,8 +218,8 @@ not a representative record of our play. No measured Elo effect is claimed.
 
 Local evidence: `chatroom/379` (export integrity), `chatroom/381` (provenance)
 and `astra-submissions/analysis/dataset-freshness-lineage-20261111/` (saved
-failure timeline and current orchestration). These findings are local while
-website publishing remains disabled.
+failure timeline and orchestration). The [draft review packet](https://github.com/htansetiawan/iamavirus/pull/1)
+provides source evidence while website publishing remains disabled.
 
 ## Which parts are learned, exact, or heuristic?
 

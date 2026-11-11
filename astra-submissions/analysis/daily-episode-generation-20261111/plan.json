@@ -1,0 +1,55 @@
+{
+  "at": "2026-11-11T14:42:31.835219+00:00",
+  "core": 6,
+  "wall_seconds": 900,
+  "max_compressed_read_bytes": 2147483648,
+  "max_decompressed_bytes": 68719476736,
+  "max_line_bytes": 67108864,
+  "max_episode_rows": 1000000,
+  "files": [
+    {
+      "split": "test",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/manifests/arena-latest/generation-793de646309d4ac8a16073454cd1e42d/test.jsonl.gz",
+      "bytes": 84643779,
+      "sha256": "7b4f70ff83c6ec044e690adf798238850c76ba86441c5188f6b899edeba676ed",
+      "device": 2097,
+      "inode": 4767813
+    },
+    {
+      "split": "train",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/manifests/arena-latest/generation-793de646309d4ac8a16073454cd1e42d/train.jsonl.gz",
+      "bytes": 669829464,
+      "sha256": "1ce094afc0933587c2191d1fe6c205b23dc716899d1e7062def897cb60cbd9c5",
+      "device": 2097,
+      "inode": 4767811
+    },
+    {
+      "split": "validation",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/manifests/arena-latest/generation-793de646309d4ac8a16073454cd1e42d/validation.jsonl.gz",
+      "bytes": 83905255,
+      "sha256": "4e9149b76f54fcd3387c54946572f0fd2117171867bc302e1d9fe583124c8973",
+      "device": 2097,
+      "inode": 4767812
+    }
+  ],
+  "source_journal": {
+    "bytes": 104270050,
+    "sha256": "febdba189a339e1710894a50c288ec9de12ae9022971ac275f479a6340074074",
+    "accepted_lines": 234942,
+    "duplicate_lines": 31,
+    "unique_games": 234911,
+    "selected_games": 234911
+  },
+  "manifest_created_at": "2026-11-11T14:42:12.843404+00:00",
+  "source_games": 234911,
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_daily_episode_generation.py": "6a6ecfce88ca5b79cd47f67ec9a523f3998456a159b5ea47c5fbb7b945dbe3b5",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_training_artifacts.py": "1838877fce2e37a4ca1a5878834d503ed208e13d12a224a61f3a2ce1871903a6",
+    "/home/henrytan/git/iamavirus/learning/dataset.py": "1a64094657907a547bd6e1f0bbe70edbd2c1bc98654b8363d42c27dee7cc08fb",
+    "/home/henrytan/git/iamavirus/data/astra-spool/daily-episode-generation-20261111/manifest.json": "d020c844ab330f3d8976495cae8cd9fdc27623d2945e1f9bc9a752d0ed52dbc5",
+    "/home/henrytan/git/iamavirus/data/astra-spool/daily-episode-generation-20261111/journal-prefix.jsonl": "febdba189a339e1710894a50c288ec9de12ae9022971ac275f479a6340074074",
+    "/home/henrytan/git/iamavirus/data/astra-spool/episode-split-lineage-20261111/projected-folds.jsonl": "c0c6ff1f32bcd82a2dd1a9b3b386674c248319d7213173908910923a29b91d79",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/episode-split-lineage-20261111/result.json": "be61e58f13268994391f0853a60cb0a67ff1e2884d84208a07d2449372fe16b7"
+  },
+  "scope": "All three new episode-shard file hashes, gzip/JSON, dimensions, color pairing, complete demonstrated-move hashes, technical masks and saved fold projection. No rules/feature recomputation, global interleaved content-digest recomputation, fitting or playing-strength claim."
+}

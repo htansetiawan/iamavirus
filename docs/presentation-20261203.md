@@ -153,8 +153,9 @@ The [experiment map](presentation-experiments.html) explains the chain.
   affect raw arena scores. Selected losses explain failures, not their rate.
 - **Data lineage:** raw replays, completed training exports and the frozen
   submitted models advance separately. The [data-flow review](presentation-tables.html#how-the-arena-record-reaches-the-bot)
-  records the stale episode generation, known service failures and corrected
-  legacy team attribution without treating them as measured Elo causes.
+  records the historical export gap, its [November 11 recovery](data-refresh-20261111.html),
+  and pending legacy metadata corrections without treating them as measured
+  Elo causes.
 
 ## Preparation checkpoints through December 3
 
