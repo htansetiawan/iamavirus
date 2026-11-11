@@ -2,6 +2,20 @@
 
 *Team IAmAVirus in the [MIT 6.7980 Fog of War Challenge](https://www.mit.edu/~6.7980/fow/) (Topics in Multiagent Learning, Fall 2026). This site records the architecture, the methods and the algorithms we have used, version by version, with the evidence for each. It is written for people who want to know what we built and why, including what did not work.*
 
+## December 3 presentation preparation — November 11 audit
+
+Henry has prioritized understanding over producing another candidate. Start
+with the new [presentation review](presentation-20261203.html), then read
+[the tables and algorithms](presentation-tables.html) and
+[the experiments and lessons](presentation-experiments.html). They distinguish
+the immutable v38 package, experimental code and retired architectures.
+
+The archive audit verifies **359,889 empirical history/move records**, two
+28-coefficient move-model vectors and the four per-decision CFR arrays.
+The latest confirmed-prior candidate failed its full-clock playing screen
+at **1W–8L**, despite improved replay posterior scores. It is not a release.
+The new pages link the actual source inventory, results and limitations.
+
 ## Current release — 10 November 2026
 
 **Arena v38 is active** (verified at 1:55 a.m. Boston time / 06:55 UTC).
@@ -19,9 +33,10 @@ Misty gate failed and remains failed; Henry separately authorized the trial.
 Read the [current implementation summary](implementation.html),
 [exact release and provenance](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md),
 and [shared arena/archive map](https://github.com/htansetiawan/iamavirus/blob/main/fable-submissions/README.md).
-A separate [prospective prior test](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/prospective-full-prior-20261110/README.md)
-uses frozen weights and new games after 07:15 UTC today. It has no result yet
-and is not in the deployed bot. The earlier combined-model gate stays failed.
+The older 07:15 UTC prospective prior test closed unscored after a storage
+failure. Separate later prediction and posterior studies completed, followed
+by the rejected 1–8 playing pilot. None changed the deployed bot.
+[Current experiment map](presentation-experiments.html).
 
 ## Start here: human review, 25 October 2026
 

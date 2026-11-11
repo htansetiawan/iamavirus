@@ -28,3 +28,31 @@ scores cannot establish a strength change for another policy. The original
 
 [Frozen plan](../astra-submissions/analysis/onpolicy-prior-diagnosis-20261111/plan-summary.json)
 · [Driver](../astra-submissions/experiments/onpolicy-prior-diagnosis-20261111/diagnose.py).
+
+## Completed diagnosis and independent reduction
+
+Original 71719 completed all twelve calls in 71.68 seconds. The source and
+frozen plan had been published on both mirrors at `7f4d849f` before launch.
+The independent post-run audit checked all 32 dependency hashes, twelve
+output receipts and 583 audit rows. The 247 primary decisions improve pooled
+truth log share by **0.61221 nats**, with support 242→246. Four of six game
+paths improve, including four of the five losses. All 293 reconstructed/live
+population-size and cap comparisons match. Live weight fingerprints were
+not recorded and are not certified by this agreement.
+
+The true position is present at every one of the five final losing decisions.
+The learned weighting raises the fatal move's king-risk estimate in all five,
+but three estimates remain below one percent. In `mass-p2-black` the belief
+contains only six worlds: the actual search includes all of them. The fatal
+king step still receives only 0.0262% sharpened risk. This particular failure
+cannot be explained by missing the true world in a 32-draw sample.
+
+These results demonstrate a gap between overall posterior improvement and
+useful decisions. They do not identify its sole cause. Action-risk ranking,
+earlier material decisions, opponent information modelling and approximate
+continuation values remain separate questions. No refit or successor test
+has been authorized by these descriptive scores.
+
+[Result](../astra-submissions/analysis/onpolicy-prior-diagnosis-20261111/result.json)
+· [Independent reduction](../astra-submissions/analysis/onpolicy-prior-diagnosis-20261111/independent-audit.json)
+· [Post-run audit source](../astra-submissions/experiments/onpolicy-prior-diagnosis-20261111/audit.py).

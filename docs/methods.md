@@ -2,6 +2,11 @@
 
 *Each method we have used, in the order the problem forced it on us: what it is, why we tried it, what it measured, and whether it is still in the bot. "Kept" means it is in the active version; "withdrawn" means it was tried in the arena or the bench and taken out; "null" means it was measured and made no difference.*
 
+**Historical methods narrative.** Deployment labels and results below span
+earlier versions. For the November 11 v38 audit, including limits of the
+represented information sets, use [tables and algorithms](presentation-tables.html)
+and the [current experiment map](presentation-experiments.html).
+
 [TOC]
 
 ## 1. Rules and observation

@@ -1,6 +1,6 @@
 # IAmAVirus: deployed release and implementation history
 
-*Revision 4, 10 November 2026. The current release summary comes first. The detailed 26 October specification below is retained as explicitly dated implementation history.*
+*Revision 5, 11 November 2026 UTC. Use the new [presentation audit](presentation-20261203.html) and [table/algorithm reference](presentation-tables.html) for the current human review. The dated release summary and detailed 26 October specification below are retained as implementation history.*
 
 [TOC]
 
@@ -44,21 +44,24 @@ checkpoint is 232W–14D–164L / 410 games, 1920.9 Elo, no recorded own technic
 loss. Historical schedule differences prevent a causal Elo claim. See the
 [release record](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md).
 
-The data pipeline continues to accumulate replays and taxonomy. At the
+At the historical
 06:21 UTC audit the raw journal held 227,977 unique games and 31 duplicate extra
 rows. The shared writer is now serialized per game with incremental journal
 reads; readers deduplicate while the original rows remain intact. The [repair
 evidence](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/raw-writer-repair-20261110/README.md)
 distinguishes correctness from playing strength.
 
-The new full-only prior confirmation freezes the selected head, leaves cheap
-unchanged and collects the first 300 eligible future trajectories after
-07:15 UTC. No fresh scores exist yet. The combined experiment 293 failed;
-this separately declared confirmation cannot turn it into a pass. No GPU
-training or native playing-model change has been launched. The [frozen
-contract](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/prospective-full-prior-20261110/README.md)
-requires predictive, coverage and independent-audit conditions before even
-designing an actual-filter/runtime experiment.
+Later storage I/O failures left the shared raw/derived paths unavailable.
+A separate bounded local collection is running under note 359; this does not
+mean the shared daily training/taxonomy pipeline has been restored.
+
+The 07:15 UTC prior confirmation closed unscored after the storage incident.
+A separately declared later prediction confirmation passed. Subsequent
+attention/compact-prior studies reached positive prediction and posterior
+results, but the complete mass-preserving compact-prior engine failed its
+playing screen 1–8 against v38. No new neural prior is deployed. See the
+[dated experiment map](presentation-experiments.html) for the chain rather
+than interpreting historical running-status entries as current work.
 
 ## Historical specification — 26 October 2026
 

@@ -2,6 +2,11 @@
 
 *Every claim about an engine change is backed by one of three instruments: the regression suite, the local bench, or a schedule-adjusted arena checkpoint. This page says what each one is, what it can and cannot tell us, and the rules we hold ourselves to.*
 
+**Historical measurement overview.** Specific thresholds and pipeline status
+below describe earlier protocols. Current studies retain their own frozen
+contracts. See the [November 11 experiment map](presentation-experiments.html)
+for evidence levels, completed results and current qualifications.
+
 [TOC]
 
 ## 1. The regression suite

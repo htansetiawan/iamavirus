@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-11T02:22:37.405419+00:00",
+  "dependency_hashes_verified": 32,
+  "result_sha256": "70f58263af244a27b78df3b68b174a513df1a8fef7caf45299eb9d46cf3a5737",
+  "calls": 12,
+  "rows": 583,
+  "games": 6,
+  "primary_decisions": 247,
+  "support": {
+    "native": 242,
+    "learned": 246
+  },
+  "pooled_log_truth_gain": 0.612214552419736,
+  "equal_game_mean_log_truth_gain": 0.6381071346023388,
+  "positive_gain_games": 4,
+  "positive_gain_losing_games": 4,
+  "live_population_counts_matched": 293,
+  "terminal_losses": [
+    {
+      "game": "mass-p0-white",
+      "worlds": 17181,
+      "truth_present": true,
+      "old_king_risk": 0.0008811626544714058,
+      "learned_king_risk": 0.009326909299869958,
+      "learned_truth_share": 0.0009430104386785737
+    },
+    {
+      "game": "mass-p1-black",
+      "worlds": 3151,
+      "truth_present": true,
+      "old_king_risk": 0.010676725482651644,
+      "learned_king_risk": 0.052831956434281464,
+      "learned_truth_share": 0.0019470544515562333
+    },
+    {
+      "game": "mass-p0-black",
+      "worlds": 4669,
+      "truth_present": true,
+      "old_king_risk": 0.0009932302498632856,
+      "learned_king_risk": 0.001176447147026269,
+      "learned_truth_share": 1.3241808626695337e-05
+    },
+    {
+      "game": "mass-p3-black",
+      "worlds": 7071,
+      "truth_present": true,
+      "old_king_risk": 0.21308204759068602,
+      "learned_king_risk": 0.5550554760353494,
+      "learned_truth_share": 0.0013538880738640598
+    },
+    {
+      "game": "mass-p2-black",
+      "worlds": 6,
+      "truth_present": true,
+      "old_king_risk": 6.276627367188455e-05,
+      "learned_king_risk": 0.00026230585667120105,
+      "learned_truth_share": 0.00026230585667120105
+    }
+  ],
+  "scope": "Independent reduction, hashes and live count agreement on all six frozen paths. Counts do not certify live weight fingerprints. No strength estimate or policy counterfactual."
+}

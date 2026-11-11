@@ -1,0 +1,125 @@
+{
+  "at": "2026-11-11T02:28:22.277042+00:00",
+  "archive": "astra-submissions/iamavirus-v38-mist-c-allchildren.zip",
+  "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "manifest_sha256": "08aeafacb25fb91894702344d731780002b1b3aab2f2621521d27b8102a7988a",
+  "manifest_member_hashes_verified": 114,
+  "zip_members": 115,
+  "history": {
+    "file": "data/history.bin",
+    "sha256": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "bytes": 5758240,
+    "header_bytes": 16,
+    "record_bytes": 16,
+    "records": 359889,
+    "distinct_history_hashes": 219137,
+    "total_recorded_move_counts": 2200230,
+    "maximum_distinct_moves_per_history_hash": 35,
+    "sorted_by_history_hash": true,
+    "unique_history_move_pairs": true,
+    "meaning": "Each row is a 64-bit history hash, encoded move and empirical count. Hash-key count is not a count of complete games or collision-free full histories."
+  },
+  "move_model": {
+    "coefficient_vectors": {
+      "full": {
+        "count": 28,
+        "nonzero": 25,
+        "values": [
+          0.8256,
+          6.1569,
+          0.0,
+          -0.5818,
+          -0.6813,
+          -0.1419,
+          -0.373,
+          -0.3004,
+          0.1104,
+          2.5549,
+          2.882,
+          -1.1917,
+          -0.8334,
+          -0.1136,
+          0.9504,
+          1.5825,
+          1.4175,
+          1.2139,
+          0.7535,
+          1.0183,
+          -0.0249,
+          -1.5504,
+          -3.2408,
+          -3.1171,
+          0.3764,
+          0.2498,
+          0.0,
+          0.0
+        ]
+      },
+      "cheap": {
+        "count": 28,
+        "nonzero": 17,
+        "values": [
+          0.552,
+          4.5402,
+          0.0,
+          -0.5542,
+          -0.6984,
+          -0.2373,
+          -0.7377,
+          -0.3945,
+          0.1346,
+          2.4762,
+          1.8108,
+          -1.7176,
+          -1.5143,
+          -0.1353,
+          0.7632,
+          1.6151,
+          1.7061,
+          1.1334,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "source_recorded_fit": "148,357 games, 9,901,850 moves, September 1\u2013October 31; 26,029 held-out games, 1,734,620 moves. Read from archived source; not independently reconstructed by this audit."
+  },
+  "solver": {
+    "per_information_set_action_arrays": [
+      "regret",
+      "last",
+      "strategy",
+      "strategy_sum"
+    ],
+    "array_count": 4,
+    "entries": "sum of action counts across current information sets, variable per decision",
+    "tree_carried_between_moves": false,
+    "final_action": "maximum-probability current action"
+  },
+  "behavior_checks": {
+    "board_only_belief_merge": true,
+    "all_child_scorer_enabled": true
+  },
+  "source_sha256": {
+    "src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+    "src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+    "src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+    "src/movemodel.c": "6c01d104941fa911122bcc3db2176037e5014d87c5069da2ebaaf9753e61a2fe",
+    "src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+    "src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+    "third_party/stockfish19/astra-allchildren.patch": "73e1ac9faebb59709ce7f692bedeb10d3945add8f7e9f9aa8a54abeb1c9cd88a"
+  },
+  "scope": "Read-only archive/hash/structure/count audit. Does not verify the arena server ZIP hash, training population, exact posterior correctness, equilibrium guarantees or playing strength."
+}

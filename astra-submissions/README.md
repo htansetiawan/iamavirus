@@ -2,6 +2,19 @@
 
 [Current human review](review-20261110.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
 
+## Presentation first — November 11
+
+Henry has made understanding the system for December 3 the immediate priority.
+No new candidate experiment or training run is being started in this phase.
+The [presentation review](../docs/presentation-20261203.md),
+[table/algorithm reference](../docs/presentation-tables.md) and
+[experiment map](../docs/presentation-experiments.md) separate deployed v38,
+experimental branches and retired learning code. The [archive inventory](analysis/presentation-audit-20261111/inventory.json)
+verifies all 114 manifest member hashes, 359,889 history records and both
+28-coefficient move-model vectors. The existing bounded field collection
+continues into its isolated local cache; the shared daily pipeline remains
+unavailable after the storage fault.
+
 ## V38 active — November 10, 2026
 
 Henry uploaded the reviewed all-child scorer on November 8 as **arena v38**.
@@ -29,18 +42,21 @@ The public API confirms **v38 active, 1897.77 Elo, rank 9**, with
 Mist Opportunities v2 and smusebots v1, both colors in each matchup.
 [Saved arena receipt](analysis/v38-leaderboard-20261111T0118Z/summary.json).
 
-The **candidate aimed at arena v39** uses a compact learned quiet-move prior
+The **rejected unnumbered candidate** uses a compact learned quiet-move prior
 with the original per-parent observation mass preserved after history
 weighting and temperature. Its independent confirmation passed all 14
 conditions on 63 later replay histories. Truth log share improved
 0.47277 nats, with a 95% whole-game interval of [0.23297, 0.76503].
 Instructors, Duck and HYPOTHERMIA each improved. Only two observer games
-are ours, so a complete-engine playing test follows.
+are ours; the separate complete-engine test below failed.
 [Confirmed replay result](../chatroom/355-astra-compact-mass-confirmation.md).
 
 The complete engine passes all three compiler paths, both-color opening
 checks and 1,428 exact posterior audit rows. Its fresh paired 180+2 trial
-against the exact deployed v38 bytes is running. The separate speed-only
+against the exact deployed v38 bytes finished **1W–8L** at irreversible
+futility, with 901 independently checked frames and no technical faults.
+Seven legs remained unstarted. This fixed playing configuration is closed;
+no successor ZIP is qualified. The separate speed-only
 configuration closed at 4W–7L below its pre-set playing threshold.
 [Current playing contract](../chatroom/357-astra-confirmed-prior-playing-pilot.md) ·
 [Closed speed pilot](../chatroom/351-astra-deferred-prior-full-clock-pilot.md).

@@ -80,3 +80,27 @@ have 595 independently checked frames through 360's preparation. Both
 candidate and reference had zero rebuilds and zero clock thinnings in
 the first four. The learned prior's own-path diagnosis is frozen in
 [360](360-astra-candidate-own-path-prior-diagnosis.md).
+
+## Final rejection, 02:16 UTC
+
+Original session 85942 exited successfully after **1W–0D–8L**. Once ten
+points became unreachable, the runner stopped new starts and finished the
+remaining active game. Seven legs stayed unstarted. There were no setup
+retries, technical faults, aborted games or unverified cleanup. Both the
+terminal checker and a separate post-run audit verified all **901 frames**.
+Both seats had zero belief rebuilds and zero clock thinnings. Four color
+pairs completed; the ninth game was the already active White leg of pair 5.
+
+This fixed complete-engine configuration is closed. No extra seed, threshold
+change, numbered ZIP or arena promotion follows. The independent 355 posterior
+result remains valid, but it did not predict a passing full-game result here.
+The six-path diagnosis in 360 includes all results from that frozen cohort.
+
+Five losses ended with a king walk, one with king bait, and two with an
+ignored attack. Six of the eight final decisions had a true safe alternative.
+Seven losses had already sustained a three-point material deficit, so a
+terminal safety explanation alone is incomplete. One loss occurred while
+nine material points ahead. These are descriptive oracle labels.
+
+[Final result](../astra-submissions/analysis/compact-mass-playing-20261111/result.json)
+· [Independent rules, clocks and tactical audit](../astra-submissions/analysis/compact-mass-playing-20261111/independent-audit.json).

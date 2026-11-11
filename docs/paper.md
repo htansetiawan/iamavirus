@@ -2,6 +2,12 @@
 
 *Draft workshop paper for the 6.7980 project presentation (1 December 2026). Written on 16 October as a shadow of the final talk, to be revised as the numbers change. About four pages. Team IAmAVirus.*
 
+**Historical draft.** Henry's current presentation target is **December 3**.
+The architecture, numerical results and planned work below reflect October 16
+and are not current claims. Use the [November 11 presentation review](presentation-20261203.html),
+[table inventory](presentation-tables.html) and [experiment map](presentation-experiments.html)
+while preparing the new talk.
+
 [TOC]
 
 ## Abstract

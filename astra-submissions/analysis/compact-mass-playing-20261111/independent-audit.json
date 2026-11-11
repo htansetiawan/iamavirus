@@ -1,0 +1,1194 @@
+{
+  "at": "2026-11-11T02:22:37.830563+00:00",
+  "dependency_hashes_verified": 145,
+  "result_sha256": "32006eba043732fcc646c5b12def0b2a096e2726d2d3e6b575989c804baf1970",
+  "validator_sha256": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+  "frames": 901,
+  "games": 9,
+  "counters": {
+    "candidate_rebuilds": 0,
+    "candidate_clock_thins": 0,
+    "reference_rebuilds": 0,
+    "reference_clock_thins": 0
+  },
+  "terminal_kinds": {
+    "ignored_check": 2,
+    "king_bait": 1,
+    "king_walk": 5
+  },
+  "losses_with_true_safe_alternative": 6,
+  "rows": [
+    {
+      "id": "mass-p0-white",
+      "side": "white",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 103,
+      "reason": "King capturable",
+      "final_clock": 30.288086,
+      "offers": [],
+      "checks": [
+        {
+          "ply": 69,
+          "hidden": false,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "c6"
+          ]
+        },
+        {
+          "ply": 103,
+          "hidden": true,
+          "avoidable": true,
+          "failed": true,
+          "attackers": [
+            "h5"
+          ]
+        }
+      ],
+      "heavy_moves": 15,
+      "heavy_exposures": [
+        {
+          "ply": 51,
+          "move": "d2d4",
+          "piece": "Q",
+          "hidden_cover": [
+            "f6"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 69,
+          "move": "e8c6",
+          "piece": "Q",
+          "hidden_cover": [
+            "b7"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": {
+        "ply": 103,
+        "move": "h6h7",
+        "kind": "ignored_check",
+        "already_attacked": true,
+        "killers": [
+          {
+            "piece": "q",
+            "square": "h5",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "h2g3",
+          "h2g2",
+          "h2g1"
+        ],
+        "material_margin": -11
+      },
+      "castles": [
+        {
+          "ply": 21,
+          "move": "e1g1"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": true,
+      "job": "mass-p0-white"
+    },
+    {
+      "id": "mass-p0-black",
+      "side": "black",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 80,
+      "reason": "King capturable",
+      "final_clock": 39.91861,
+      "offers": [
+        {
+          "ply": 80,
+          "move": "h7h8",
+          "piece": "R",
+          "check": true,
+          "taken": true,
+          "cover": [
+            "a8"
+          ],
+          "already_attacked": true,
+          "avoidable": true,
+          "safe_moves": [
+            "h7g6"
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "ply": 80,
+          "hidden": false,
+          "avoidable": true,
+          "failed": true,
+          "attackers": [
+            "h8"
+          ]
+        }
+      ],
+      "heavy_moves": 5,
+      "heavy_exposures": [
+        {
+          "ply": 20,
+          "move": "d7d5",
+          "piece": "Q",
+          "hidden_cover": [
+            "c3"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 24,
+          "move": "d8d5",
+          "piece": "R",
+          "hidden_cover": [
+            "c4"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 40,
+          "move": "a8a4",
+          "piece": "R",
+          "hidden_cover": [
+            "a1"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": {
+        "ply": 80,
+        "move": "h7h8",
+        "kind": "king_bait",
+        "already_attacked": true,
+        "killers": [
+          {
+            "piece": "R",
+            "square": "a8",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "h7g6"
+        ],
+        "material_margin": -1
+      },
+      "castles": [
+        {
+          "ply": 22,
+          "move": "e8c8"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": true,
+      "job": "mass-p0-black"
+    },
+    {
+      "id": "mass-p1-white",
+      "side": "white",
+      "score": 1.0,
+      "opponent": "exact-v38",
+      "plies": 88,
+      "reason": "King capturable",
+      "final_clock": 37.606496,
+      "offers": [],
+      "checks": [],
+      "heavy_moves": 19,
+      "heavy_exposures": [
+        {
+          "ply": 53,
+          "move": "e3e6",
+          "piece": "R",
+          "hidden_cover": [
+            "c6"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 55,
+          "move": "e6e7",
+          "piece": "R",
+          "hidden_cover": [
+            "d7",
+            "f8"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 57,
+          "move": "e2e7",
+          "piece": "Q",
+          "hidden_cover": [
+            "f8"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 77,
+          "move": "e7e8",
+          "piece": "R",
+          "hidden_cover": [
+            "d8"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": null,
+      "castles": [
+        {
+          "ply": 11,
+          "move": "e1g1"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": false,
+      "job": "mass-p1-white"
+    },
+    {
+      "id": "mass-p1-black",
+      "side": "black",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 78,
+      "reason": "King capturable",
+      "final_clock": 43.040728,
+      "offers": [
+        {
+          "ply": 68,
+          "move": "h7g7",
+          "piece": "R",
+          "check": true,
+          "taken": false,
+          "cover": [
+            "e5"
+          ],
+          "already_attacked": true,
+          "avoidable": true,
+          "safe_moves": [
+            "h7h8",
+            "g6g7"
+          ]
+        },
+        {
+          "ply": 72,
+          "move": "h7g7",
+          "piece": "B",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "c7"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "h7g8",
+            "h7g6",
+            "b4a3",
+            "h6h5",
+            "e6e5",
+            "f5f4",
+            "a5a4",
+            "b4b3"
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "ply": 68,
+          "hidden": false,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "g7"
+          ]
+        },
+        {
+          "ply": 74,
+          "hidden": true,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "c7"
+          ]
+        }
+      ],
+      "heavy_moves": 10,
+      "heavy_exposures": [
+        {
+          "ply": 34,
+          "move": "a8c8",
+          "piece": "R",
+          "hidden_cover": [
+            "c1"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 50,
+          "move": "c6c2",
+          "piece": "R",
+          "hidden_cover": [
+            "d2"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 68,
+          "move": "g6g7",
+          "piece": "Q",
+          "hidden_cover": [
+            "e5"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": {
+        "ply": 78,
+        "move": "g6f7",
+        "kind": "king_walk",
+        "already_attacked": false,
+        "killers": [
+          {
+            "piece": "Q",
+            "square": "c7",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "g6h5",
+          "g6g5",
+          "h6h5",
+          "f5f4"
+        ],
+        "material_margin": -12
+      },
+      "castles": [
+        {
+          "ply": 20,
+          "move": "e8g8"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": true,
+      "job": "mass-p1-black"
+    },
+    {
+      "id": "mass-p2-black",
+      "side": "black",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 116,
+      "reason": "King capturable",
+      "final_clock": 25.549287,
+      "offers": [
+        {
+          "ply": 82,
+          "move": "g6g5",
+          "piece": "P",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "f4"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "g8h8",
+            "g8f8",
+            "g8e8",
+            "g8d8",
+            "g8c8",
+            "g8g7",
+            "b8c6",
+            "b8a6",
+            "d7f8",
+            "d7f6",
+            "d7b6",
+            "d7e5",
+            "d7c5",
+            "g6h7",
+            "g6g7",
+            "g6f7",
+            "g6h5",
+            "g6f5",
+            "b7b6",
+            "e6e5",
+            "b7b5"
+          ]
+        },
+        {
+          "ply": 84,
+          "move": "g6g5",
+          "piece": "P",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "f4"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "h8g8",
+            "h8f8",
+            "h8e8",
+            "h8d8",
+            "h8c8",
+            "h8h7",
+            "h8h6",
+            "h8h5",
+            "h8h4",
+            "h8h3",
+            "h8h2",
+            "h8h1",
+            "b8c6",
+            "b8a6",
+            "d7f8",
+            "d7f6",
+            "d7b6",
+            "d7e5",
+            "d7c5",
+            "g6h7",
+            "g6g7",
+            "g6f7",
+            "g6h5",
+            "d5e4",
+            "b7b6",
+            "e6e5",
+            "b7b5"
+          ]
+        },
+        {
+          "ply": 86,
+          "move": "g6g5",
+          "piece": "P",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "f4"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "h8g8",
+            "h8f8",
+            "h8e8",
+            "h8d8",
+            "h8c8",
+            "h8h7",
+            "h8h6",
+            "h8h5",
+            "h8h4",
+            "h8h3",
+            "h8h2",
+            "h8h1",
+            "b8c6",
+            "b8a6",
+            "d7f8",
+            "d7f6",
+            "d7b6",
+            "d7e5",
+            "d7c5",
+            "g6h7",
+            "g6g7",
+            "g6f7",
+            "b7b6",
+            "e6e5",
+            "e4e3",
+            "b7b5"
+          ]
+        },
+        {
+          "ply": 92,
+          "move": "g6f5",
+          "piece": "P",
+          "check": true,
+          "taken": false,
+          "cover": [
+            "g4"
+          ],
+          "already_attacked": true,
+          "avoidable": true,
+          "safe_moves": [
+            "g6h7",
+            "g6f7",
+            "g6h6",
+            "g6f6",
+            "g6g5",
+            "e6f5"
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "ply": 28,
+          "hidden": false,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "c8"
+          ]
+        },
+        {
+          "ply": 92,
+          "hidden": false,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "f5"
+          ]
+        }
+      ],
+      "heavy_moves": 19,
+      "heavy_exposures": [
+        {
+          "ply": 48,
+          "move": "c7c1",
+          "piece": "R",
+          "hidden_cover": [
+            "e1"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 64,
+          "move": "f8a3",
+          "piece": "Q",
+          "hidden_cover": [
+            "b2"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 98,
+          "move": "f7f3",
+          "piece": "R",
+          "hidden_cover": [
+            "e2"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 114,
+          "move": "f3d3",
+          "piece": "R",
+          "hidden_cover": [
+            "e2"
+          ],
+          "captured_next": false
+        }
+      ],
+      "terminal": {
+        "ply": 116,
+        "move": "f4f3",
+        "kind": "king_walk",
+        "already_attacked": false,
+        "killers": [
+          {
+            "piece": "K",
+            "square": "e2",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "d7f8",
+          "d7b8",
+          "d7f6",
+          "d7b6",
+          "d7e5",
+          "d7c5",
+          "f4g5",
+          "f4f5",
+          "f4e5",
+          "f4g4",
+          "d3d6",
+          "d3d5",
+          "d3d4",
+          "d3f3",
+          "d3e3",
+          "d3c3",
+          "d3b3",
+          "d3a3",
+          "d3d2",
+          "d3d1",
+          "e4e3",
+          "g3g2"
+        ],
+        "material_margin": 9
+      },
+      "castles": [
+        {
+          "ply": 20,
+          "move": "e8g8"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": false,
+      "job": "mass-p2-black"
+    },
+    {
+      "id": "mass-p2-white",
+      "side": "white",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 147,
+      "reason": "King capturable",
+      "final_clock": 20.661126,
+      "offers": [],
+      "checks": [
+        {
+          "ply": 51,
+          "hidden": true,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "a1"
+          ]
+        }
+      ],
+      "heavy_moves": 9,
+      "heavy_exposures": [
+        {
+          "ply": 57,
+          "move": "a8a4",
+          "piece": "R",
+          "hidden_cover": [
+            "a1"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": {
+        "ply": 147,
+        "move": "g2f1",
+        "kind": "king_walk",
+        "already_attacked": false,
+        "killers": [
+          {
+            "piece": "r",
+            "square": "a1",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "g2h3",
+          "g2g3",
+          "g2f3",
+          "g2h2",
+          "f2f3",
+          "f2f4"
+        ],
+        "material_margin": -6
+      },
+      "castles": [
+        {
+          "ply": 11,
+          "move": "e1g1"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": true,
+      "job": "mass-p2-white"
+    },
+    {
+      "id": "mass-p3-black",
+      "side": "black",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 124,
+      "reason": "King capturable",
+      "final_clock": 23.615997,
+      "offers": [
+        {
+          "ply": 114,
+          "move": "h5g4",
+          "piece": "R",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "h3"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "h5h6",
+            "f7f6",
+            "f7f5"
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "ply": 62,
+          "hidden": false,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "d8"
+          ]
+        },
+        {
+          "ply": 102,
+          "hidden": true,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "b6"
+          ]
+        }
+      ],
+      "heavy_moves": 12,
+      "heavy_exposures": [
+        {
+          "ply": 60,
+          "move": "f8d8",
+          "piece": "R",
+          "hidden_cover": [
+            "d1"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 66,
+          "move": "d7d5",
+          "piece": "Q",
+          "hidden_cover": [
+            "e4"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 78,
+          "move": "b2b1",
+          "piece": "R",
+          "hidden_cover": [
+            "g1"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": {
+        "ply": 124,
+        "move": "h7g6",
+        "kind": "king_walk",
+        "already_attacked": false,
+        "killers": [
+          {
+            "piece": "R",
+            "square": "g3",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "h7h8",
+          "h7h6"
+        ],
+        "material_margin": -7
+      },
+      "castles": [
+        {
+          "ply": 28,
+          "move": "e8g8"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": true,
+      "job": "mass-p3-black"
+    },
+    {
+      "id": "mass-p3-white",
+      "side": "white",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 75,
+      "reason": "King capturable",
+      "final_clock": 45.718916,
+      "offers": [
+        {
+          "ply": 37,
+          "move": "e1f2",
+          "piece": "N",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "f6"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "a7c8",
+            "a7c6",
+            "a7b5",
+            "a4c6",
+            "a4a6",
+            "a4b5",
+            "a4a5",
+            "a4c4",
+            "a4b4",
+            "a4b3",
+            "a4a3",
+            "h1h2",
+            "g1f3",
+            "g1e2",
+            "e1e2",
+            "e1d2",
+            "e1f1",
+            "a1d1",
+            "a1c1",
+            "a1b1",
+            "e1c1",
+            "e3e4",
+            "c2c3",
+            "b2b3",
+            "a2a3",
+            "c2c4",
+            "b2b4"
+          ]
+        },
+        {
+          "ply": 39,
+          "move": "e1f2",
+          "piece": "N",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "f6"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "a4c6",
+            "a4a6",
+            "a4b5",
+            "a4a5",
+            "a4c4",
+            "a4b4",
+            "a4b3",
+            "a4a3",
+            "h1h2",
+            "g1f3",
+            "g1e2",
+            "e1e2",
+            "e1d2",
+            "e1f1",
+            "a1d1",
+            "a1c1",
+            "a1b1",
+            "e1c1",
+            "e3e4",
+            "c2c3",
+            "b2b3",
+            "a2a3",
+            "c2c4",
+            "b2b4"
+          ]
+        },
+        {
+          "ply": 41,
+          "move": "e1f2",
+          "piece": "N",
+          "check": false,
+          "taken": false,
+          "cover": [
+            "f6"
+          ],
+          "already_attacked": false,
+          "avoidable": true,
+          "safe_moves": [
+            "a4c6",
+            "a4a6",
+            "a4b5",
+            "a4a5",
+            "a4c4",
+            "a4b4",
+            "a4b3",
+            "a4a3",
+            "h2g2",
+            "h2f2",
+            "h2h1",
+            "g1f3",
+            "g1e2",
+            "e1e2",
+            "e1d2",
+            "e1f1",
+            "a1d1",
+            "a1c1",
+            "a1b1",
+            "e1c1",
+            "e3e4",
+            "c2c3",
+            "b2b3",
+            "a2a3",
+            "c2c4",
+            "b2b4"
+          ]
+        },
+        {
+          "ply": 67,
+          "move": "b2c2",
+          "piece": "R",
+          "check": true,
+          "taken": false,
+          "cover": [
+            "c5"
+          ],
+          "already_attacked": true,
+          "avoidable": true,
+          "safe_moves": [
+            "d2c2",
+            "b2b1",
+            "b2a1"
+          ]
+        },
+        {
+          "ply": 69,
+          "move": "b2c2",
+          "piece": "Q",
+          "check": true,
+          "taken": false,
+          "cover": [
+            "c6"
+          ],
+          "already_attacked": true,
+          "avoidable": true,
+          "safe_moves": [
+            "b2a3",
+            "b2a1"
+          ]
+        },
+        {
+          "ply": 75,
+          "move": "a4a5",
+          "piece": "R",
+          "check": true,
+          "taken": false,
+          "cover": [
+            "c3"
+          ],
+          "already_attacked": true,
+          "avoidable": false,
+          "safe_moves": []
+        }
+      ],
+      "checks": [
+        {
+          "ply": 67,
+          "hidden": false,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "c2"
+          ]
+        },
+        {
+          "ply": 69,
+          "hidden": false,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "c2"
+          ]
+        },
+        {
+          "ply": 75,
+          "hidden": false,
+          "avoidable": false,
+          "failed": true,
+          "attackers": [
+            "a5"
+          ]
+        }
+      ],
+      "heavy_moves": 14,
+      "heavy_exposures": [
+        {
+          "ply": 41,
+          "move": "h2f2",
+          "piece": "R",
+          "hidden_cover": [
+            "f6"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 57,
+          "move": "f2f7",
+          "piece": "R",
+          "hidden_cover": [
+            "e7"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 59,
+          "move": "f7f8",
+          "piece": "R",
+          "hidden_cover": [
+            "c5"
+          ],
+          "captured_next": false
+        },
+        {
+          "ply": 67,
+          "move": "d2c2",
+          "piece": "Q",
+          "hidden_cover": [
+            "c5"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": {
+        "ply": 75,
+        "move": "a4b4",
+        "kind": "king_walk",
+        "already_attacked": true,
+        "killers": [
+          {
+            "piece": "q",
+            "square": "c3",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [],
+        "material_margin": -5
+      },
+      "castles": [
+        {
+          "ply": 43,
+          "move": "e1c1"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": true,
+      "job": "mass-p3-white"
+    },
+    {
+      "id": "mass-p5-white",
+      "side": "white",
+      "score": 0.0,
+      "opponent": "exact-v38",
+      "plies": 81,
+      "reason": "King capturable",
+      "final_clock": 41.210786,
+      "offers": [],
+      "checks": [
+        {
+          "ply": 63,
+          "hidden": true,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "a1"
+          ]
+        },
+        {
+          "ply": 79,
+          "hidden": true,
+          "avoidable": true,
+          "failed": false,
+          "attackers": [
+            "f4"
+          ]
+        },
+        {
+          "ply": 81,
+          "hidden": true,
+          "avoidable": false,
+          "failed": true,
+          "attackers": [
+            "h1"
+          ]
+        }
+      ],
+      "heavy_moves": 8,
+      "heavy_exposures": [
+        {
+          "ply": 37,
+          "move": "a1a7",
+          "piece": "R",
+          "hidden_cover": [
+            "b6"
+          ],
+          "captured_next": true
+        },
+        {
+          "ply": 61,
+          "move": "d1a1",
+          "piece": "Q",
+          "hidden_cover": [
+            "b2",
+            "a8"
+          ],
+          "captured_next": true
+        }
+      ],
+      "terminal": {
+        "ply": 81,
+        "move": "g2g3",
+        "kind": "ignored_check",
+        "already_attacked": true,
+        "killers": [
+          {
+            "piece": "q",
+            "square": "h1",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [],
+        "material_margin": -25
+      },
+      "castles": [
+        {
+          "ply": 19,
+          "move": "e1g1"
+        }
+      ],
+      "first_heavy_loss": null,
+      "ever_down3_held4": true,
+      "job": "mass-p5-white"
+    }
+  ],
+  "clock_audit": {
+    "at": "2026-11-11T02:22:38.056139+00:00",
+    "games": 9,
+    "complete_pairs": 4,
+    "result_sha256": "32006eba043732fcc646c5b12def0b2a096e2726d2d3e6b575989c804baf1970",
+    "aggregate": {
+      "candidate": {
+        "moves": 448,
+        "reported_searches": 448,
+        "total_nodes": 94055648,
+        "total_stockfish_calls": 3267140,
+        "capped_searches": 92
+      },
+      "reference": {
+        "moves": 444,
+        "reported_searches": 444,
+        "total_nodes": 93821938,
+        "total_stockfish_calls": 3315375,
+        "capped_searches": 73
+      }
+    },
+    "paired_median_differences": {
+      "white": {
+        "first_move_difference": -0.0008804999999938445,
+        "total_seconds_difference": 26.009597999999983,
+        "nodes_difference": 698387.5
+      },
+      "black": {
+        "first_move_difference": -0.008636500000008596,
+        "total_seconds_difference": -24.007818,
+        "nodes_difference": -608081.0
+      }
+    },
+    "scope": "Descriptive elapsed clocks and native diagnostics on actual game paths. Different positions, legal moves and seeds affect workload. The playing gate uses the independent game result only."
+  },
+  "scope": "All nine immutable actual games. Independent C++ rules, course tactical walk, hashes, clocks and final futility. Selected small development match, no arena Elo inference. Tactical true safe moves are oracle diagnostics."
+}
