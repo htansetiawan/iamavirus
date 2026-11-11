@@ -29,3 +29,12 @@ Session `1880` started at 00:20:56 UTC after both mirrors verified
 registries. The compact-prior replay continues separately on cores 2–3.
 
 [Launch verification](../astra-submissions/analysis/deferred-prior-playing-20261111/launch-verification.json).
+
+## First two results
+
+The candidate lost both White legs by king capture. The independent C++
+validator checked all 140 frames. Both engines started native Stockfish,
+and both games ended with positive clocks and no technical fault. The
+swapped-color legs are running. The fixed 10/16 threshold remains in force.
+
+[First two checks](../astra-submissions/analysis/deferred-prior-playing-20261111/first-two-verification.json).

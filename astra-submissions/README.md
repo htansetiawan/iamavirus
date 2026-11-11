@@ -33,13 +33,12 @@ The 22:27 UTC game-listing snapshot covers 585 games, with no listed own
 technical loss. V38 scored 25% against Duck v11 and 51.6% against Instructors
 v4 in that snapshot. [Opponent-version counts](analysis/v38-metadata-20261110T222700Z/result.json).
 
-The fixed compact prior passed the held-out prediction gate and its native
-kernel cost comparison. The 64-game sequential replay is running. The
-independent exact speed build passed the full-engine compiler and protocol
-smoke checks. Its large-belief stress test met coverage and parity, with
-total time at 85.9% of v38 against an 85% gate. The build remains staged.
+The fixed compact prior passed held-out prediction and improved sequential
+truth log share overall. It missed the Instructors priority gate. The
+combined exact speed engine used 84.5% of v38's update time in the stress
+panel. Its paired 180+2 comparison against exact v38 is running.
 [Compact replay](../chatroom/343-astra-compact-prior-sequential.md) ·
-[Exact speed build](../chatroom/347-astra-exact-speed-playing-preparation.md).
+[Playing comparison](../chatroom/351-astra-deferred-prior-full-clock-pilot.md).
 
 Fable's highest numbered archive remains v37. The +1 rule therefore yields
 v38, which is already used. The packager checks for an unused version

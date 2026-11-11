@@ -53,3 +53,24 @@ unstarted at correction time.
 The corrected session `36522` launched at 23:41:43 UTC after both mirrors
 verified `e25d3a22`. The first 103 calls completed without a reported fault
 or speed-control mismatch. The remaining calls are on cores 2–3.
+
+## Result
+
+Session `36522` completed all 384 calls in 2,721 seconds. The independent
+review checked 36,018 rows, 12,006 exact control rows and all 167 pins.
+The compact head improved truth log share by **0.29271 nats** over 5,064
+primary decisions, with a whole-game 95% interval of [0.02149, 0.60175].
+Support rose from 4,820 to 4,871 and case-seed collapses fell from four
+to three. The 14 IAmAVirus observer games gained 0.11326 nats.
+
+The priority gate failed on Instructors at **−0.23467 nats**. Duck gained
+0.44247 and HYPOTHERMIA gained 0.08147. On all 544 Instructors decisions
+both arms retained truth and neither had capped. The regression was in
+weights. Three of eight Instructors games were negative, and the descriptive
+whole-game interval is wide, [−1.31773, 0.42645]. The fixed compact model
+stays closed under its original gate. The group result does not identify an
+opponent or board feature to use as a runtime switch.
+
+[Result](../astra-submissions/analysis/compact-prior-sequential-20261110/result.json)
+· [Support decomposition](../astra-submissions/analysis/compact-prior-sequential-20261110/support-decomposition.json)
+· [Terminal verification](../astra-submissions/analysis/compact-prior-sequential-20261110/terminal-verification.json).

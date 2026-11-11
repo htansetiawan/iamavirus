@@ -1,0 +1,160 @@
+{
+  "primary": 5064,
+  "distinct_primary": 2532,
+  "support": {
+    "original": 4820,
+    "learned": 4871
+  },
+  "mean_truth_nll": {
+    "original": 7.537924514970475,
+    "learned": 7.245212297043803
+  },
+  "gain": 0.29271221792667124,
+  "interval95": [
+    0.02148679018134628,
+    0.6017542277179943
+  ],
+  "sensitivity": {
+    "1e-09": 0.22365656164205858,
+    "1e-12": 0.29271221792667124,
+    "1e-15": 0.3622808433666572
+  },
+  "by_team": {
+    "Instructors": {
+      "games": 8,
+      "decisions": 544,
+      "gain": -0.2346702737506316
+    },
+    "duck": {
+      "games": 8,
+      "decisions": 546,
+      "gain": 0.442471208260332
+    },
+    "HYPOTHERMIA": {
+      "games": 8,
+      "decisions": 788,
+      "gain": 0.08147144489456702
+    },
+    "Greek Gift": {
+      "games": 8,
+      "decisions": 536,
+      "gain": 1.3706449872351694
+    },
+    "Knight Vision": {
+      "games": 7,
+      "decisions": 488,
+      "gain": -0.05599154270477255
+    },
+    "Strongly Invisible": {
+      "games": 8,
+      "decisions": 870,
+      "gain": 0.5071576682334471
+    },
+    "Crimson Fog": {
+      "games": 7,
+      "decisions": 566,
+      "gain": -0.10153819839791965
+    },
+    "Mist Opportunities": {
+      "games": 8,
+      "decisions": 726,
+      "gain": 0.2934822738649425
+    }
+  },
+  "collapsed_case_seeds": {
+    "original": 4,
+    "zero": 4,
+    "learned": 3
+  },
+  "full_updates": {
+    "original": 4611,
+    "zero": 4611,
+    "learned": 4618
+  },
+  "large_regime_games": 50,
+  "native_guard_brier": {
+    "king1": {
+      "original": 0.012504106604825697,
+      "learned": 0.012329415916853445,
+      "delta": -0.0001746906879722505,
+      "interval95": [
+        -0.0007818765506568146,
+        0.00033626824519305566
+      ]
+    },
+    "kingt": {
+      "original": 0.012619910860181648,
+      "learned": 0.013458655917626251,
+      "delta": 0.0008387450574446018,
+      "interval95": [
+        -0.00041302809057473995,
+        0.0021981730148688482
+      ]
+    },
+    "queen1": {
+      "original": 0.0073755587261219715,
+      "learned": 0.007133752215751989,
+      "delta": -0.00024180651036998058,
+      "interval95": [
+        -0.000773172224961951,
+        0.00017121561777576442
+      ]
+    },
+    "queent": {
+      "original": 0.007614724348393361,
+      "learned": 0.0075092096514599955,
+      "delta": -0.0001055146969333662,
+      "interval95": [
+        -0.0008403025161822505,
+        0.0005584071650842855
+      ]
+    }
+  },
+  "unique_positive_guard_events": {
+    "king_label": 39,
+    "queen_label": 22
+  },
+  "risk_rows": 5064,
+  "risk_available": {
+    "original": 4996,
+    "learned": 5000
+  },
+  "time": {
+    "original": {
+      "total": 860.1655084061675,
+      "p95": 0.43211227025,
+      "maximum": 2.02505636
+    },
+    "zero": {
+      "total": 839.8771145951748,
+      "p95": 0.43556649375,
+      "maximum": 2.09468569
+    },
+    "learned": {
+      "total": 856.0526509628874,
+      "p95": 0.4388704715,
+      "maximum": 2.03771771
+    }
+  },
+  "conditions": {
+    "primary_coverage": true,
+    "truth_support": true,
+    "gain": true,
+    "confidence": true,
+    "floor_sensitivity": true,
+    "no_extra_collapse": true,
+    "regime_coverage": true,
+    "priority_coverage": true,
+    "priority_nonregression": false,
+    "total_cost": true,
+    "p95_cost": true,
+    "guard_coverage": true,
+    "guard_availability": true,
+    "guard_nonregression": true
+  },
+  "decision": "close_frozen_full_head_sequential",
+  "scope": "64 later replays, fixed 200k cap and same two sampler states. Original v38 vs feature-equivalent speed-only vs speed-only plus fixed compact. No wall thinning, search, recovery after collapse or truth as actor input.",
+  "at": "2026-11-11T00:27:04.549333+00:00",
+  "plan_sha256": "30cec3abe4b9b15d03ae7a87c774161af25daac0ae5bd644e66dbf8cd61adcfc",
+  "calls_sha256": "12757389ce3cac31fd841e92cf8bd7722304274d7185a3bdffc1369d1a3f414c"
+}
