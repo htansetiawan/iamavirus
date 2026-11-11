@@ -57,3 +57,9 @@ Evidence: [result](result.json), [test report](functional.xml),
 [tests](../../tests/test_metadata_overlay.py),
 [design](../../../chatroom/407-astra-source-bound-metadata-overlay.md), and
 [handoff](../../../chatroom/408-astra-metadata-overlay-tested.md).
+
+The later [full legacy-cohort application](../legacy-metadata-cohort-20261111/README.md)
+materializes all 164 games as a separate review dataset: 328 episodes and
+14,064 decisions, with zero candidate mismatches. A before/after comparison
+and separate emitted-record audit pass. The published production generation,
+models and old holdout claims remain unchanged.
