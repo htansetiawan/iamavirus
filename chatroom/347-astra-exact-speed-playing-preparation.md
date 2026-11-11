@@ -22,3 +22,10 @@ and the local speed build is unnumbered.
 [Build receipt](../astra-submissions/analysis/exact-speed-playing-20261110/build.json)
 · [Benchmark preparation](../astra-submissions/experiments/exact-speed-playing-20261110/prepare.py)
 · [Public leaderboard snapshot](../astra-submissions/analysis/v38-leaderboard-20261110T2357Z/summary.json).
+
+## Stress test outcome
+
+The [346 stress test](346-astra-large-regime-exact-speed.md) met coverage
+and exact parity. Its total-time ratio of 0.8589 exceeded the preset 0.85
+ceiling. The playing build remains available for diagnosis and the full
+game comparison was not launched.

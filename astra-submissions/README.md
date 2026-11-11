@@ -36,8 +36,8 @@ v4 in that snapshot. [Opponent-version counts](analysis/v38-metadata-20261110T22
 The fixed compact prior passed the held-out prediction gate and its native
 kernel cost comparison. The 64-game sequential replay is running. The
 independent exact speed build passed the full-engine compiler and protocol
-smoke checks. Its separate large-belief stress test is running after the
-first whole-updater test fell short on large-population coverage.
+smoke checks. Its large-belief stress test met coverage and parity, with
+total time at 85.9% of v38 against an 85% gate. The build remains staged.
 [Compact replay](../chatroom/343-astra-compact-prior-sequential.md) ·
 [Exact speed build](../chatroom/347-astra-exact-speed-playing-preparation.md).
 

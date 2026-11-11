@@ -1,0 +1,72 @@
+{
+  "counts": {
+    "updates": 2328,
+    "games": 24,
+    "v38_observers": 0,
+    "full": 763,
+    "large": 397,
+    "guard": 1168
+  },
+  "metrics": {
+    "original": {
+      "seconds": {
+        "all": 202.83614850685535,
+        "full": 17.12804428914829,
+        "large": 167.677772907,
+        "guard": 5.94016565719868
+      },
+      "ratio": {
+        "all": 1.0,
+        "full": 1.0,
+        "large": 1.0,
+        "guard": 1.0
+      },
+      "p95": 0.37760382625
+    },
+    "reverse": {
+      "seconds": {
+        "all": 179.92945881859677,
+        "full": 10.55172597459654,
+        "large": 154.66510643,
+        "guard": 2.383587832168211
+      },
+      "ratio": {
+        "all": 0.8870680110183398,
+        "full": 0.6160496666441792,
+        "large": 0.9223948037274012,
+        "guard": 0.4012662221430852
+      },
+      "p95": 0.35707538425,
+      "median_game_ratio": 0.8577464589977106,
+      "faster_games": 24
+    },
+    "combined": {
+      "seconds": {
+        "all": 174.22175974433733,
+        "full": 6.56242844381311,
+        "large": 152.944949661,
+        "guard": 2.409816069664903
+      },
+      "ratio": {
+        "all": 0.8589285540414857,
+        "full": 0.3831393901737415,
+        "large": 0.9121360989558746,
+        "guard": 0.40568162720252265
+      },
+      "p95": 0.36110842945,
+      "median_game_ratio": 0.834223571531771,
+      "faster_games": 24
+    }
+  },
+  "conditions": {
+    "parity": true,
+    "coverage": true,
+    "aggregate_cost": false,
+    "median_game_cost": true,
+    "tail_cost": true
+  },
+  "decision": "close_exact_speed_gate",
+  "at": "2026-11-11T00:03:34.888625+00:00",
+  "plan_sha256": "1511558a83ccb46748e2fb8eaf1ae07dc5a114a1b0a995452b9aca33cecb8218",
+  "calls_sha256": "360949b623c833ced8b49ce35f2882a886183d9308de576b20f1634ff5ececd8"
+}

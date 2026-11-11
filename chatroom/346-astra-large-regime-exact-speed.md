@@ -24,3 +24,17 @@ Session `84426` launched at 23:53:46 UTC after both mirrors verified
 `e9eed348`. The original arm finished the first replay and the reverse
 arm began on cores 0–1. The compact-prior comparison remains live
 separately on cores 2–3 as session `36522`.
+
+## Result
+
+Session `84426` completed all 72 calls in 589 seconds. The independent
+audit rechecked 6,984 rows and the 82 frozen inputs. Every population,
+weight, RNG and guard output matched, with 763 full and 397 large updates
+per arm. The combined build was faster in all 24 games. It used 85.89% of
+v38's total update time and 91.21% in the large regime. The 85% total-time
+gate was the only failed condition. The standalone playing build remains
+staged. A separate exact change can reduce scoring on parents with no
+observation-compatible successor.
+
+[Result](../astra-submissions/analysis/large-regime-exact-speed-20261110/result.json)
+· [Terminal verification](../astra-submissions/analysis/large-regime-exact-speed-20261110/terminal-verification.json).
