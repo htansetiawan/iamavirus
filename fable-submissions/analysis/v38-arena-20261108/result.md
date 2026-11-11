@@ -53,3 +53,19 @@ sit at 2074-2352; v38 scores 0.30 against them. Reaching rank 3 needs roughly
 
 Tracking continues (`track.sh 1 1 1`): wake on any technical loss, a rating
 below 1850, or daily.
+
+## 620 games (11 Nov 03:27Z)
+
+339-27-254, score 0.569; still no technical losses. Rating 1909, rank 9.
+
+| Stretch | Games | v38 | v37, same opponents | Difference | Top six |
+|---|---|---|---|---|---|
+| 1-127 | 127 | 0.663 | 0.540 | +0.122 | 0.338 |
+| 128-318 | 191 | 0.518 | 0.517 | +0.000 | 0.273 |
+| 319-620 | 302 | 0.545 | 0.539 | +0.006 | 0.257 |
+| All | 620 | 0.563 | 0.533 | +0.030 (1.4 SD) | 0.280 |
+
+Since game 127, 493 games, v38 has played at v37's level. The early edge
+looks like a good run, not a lasting gain. v38 is no worse than v37, so the
+keep decision stands; it should not be described as stronger. Against the top
+six it is at 0.28 (v37 0.244). Greek Gift 1-0-27.
