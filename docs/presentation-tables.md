@@ -108,6 +108,50 @@ Fable's saved fit receipts record a refit on 148,357 games. The later
 matches all 56 deployed coefficients to those outputs and the saved history
 binary to the ZIP. It does not reproduce training from the original corpus.
 
+## What “exact belief” does and does not mean
+
+The engine enumerates observation-compatible **successors of retained
+positions**. That is a precise rules operation. The resulting data structure
+is still an approximation to the full game information state:
+
+| Reduction | What remains | What can be lost |
+| --- | --- | --- |
+| Merge identical native position keys | Pieces, side, castling rights, en-passant square; summed weight | Distinct opponent histories and halfmove counts; the key omits both |
+| Cap or clock-based thinning | A weighted subset of positions | Compatible physical positions, possibly the real one |
+| Draw worlds for this decision | Normally 32 draws, with repeats merged | Search coverage of low-mass positions; the larger retained belief still exists |
+
+The merge keeps the **heaviest incoming candidate's** opponent history.
+A stale source comment says “first history”; the executable merge loop
+chooses the heaviest. It does not retain the conditional history mixture.
+
+Why can that matter? In a constructed example, one physical board has two
+possible opponent histories with conditional weights 60% and 40%. If a move
+has likelihood 90% after the first history and 10% after the second, its
+mixture likelihood is `0.6 × 0.9 + 0.4 × 0.1 = 0.58`. Using only the heavier
+history gives `0.90`. With the native squared-likelihood update and the same
+incoming masses, the corresponding unnormalized contributions are `0.49`
+and `0.81`. These illustrate information loss, not measured error rates.
+
+We already implemented a compact history mixture in **experiment 250**.
+Across 24 early replay prefixes / 260 decisions, its mean truth-log gain
+over the matched clock-aware control was **0.01052 nats**, descriptive 95%
+interval **[−0.02948, +0.05369]**, at **12.2% more retained-prefix filter CPU**.
+The diagnostic established the distinction, without reliable predictive or
+playing benefit. **Experiment 251** then found that attaching these histories
+to the same physical roots only split equivalent search branches. It did
+not supply opponent-compatible alternatives to our earlier private moves.
+
+[Saved representation results](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/history-mixture-20261102/README.md)
+· [Search partition result](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/251-astra-history-partition-prerequisite.md)
+· [Current source and saved-metric review](https://github.com/htansetiawan/iamavirus/blob/astra/presentation-review-20261111/astra-submissions/analysis/belief-semantics-20261111/review.json).
+
+Therefore “enumerative, capped weighted belief” is the presentation wording.
+Neither “exact posterior” nor “all possible information histories” describes
+the deployed distribution. Rebuilding an empty population from the current
+view also does not reconstruct all the earlier observations. The separate
+[common-knowledge example](presentation-knowledge.html) explains the search
+limitation; this review does not reopen the old integration gates.
+
 ## How the two offline models are built
 
 ```mermaid
