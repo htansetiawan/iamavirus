@@ -65,3 +65,14 @@ The corresponding White legs are active under the original gate.
 
 [First-four workload](../astra-submissions/analysis/deferred-prior-playing-20261111/first-four-workload.json)
 · [Six-game verification](../astra-submissions/analysis/deferred-prior-playing-20261111/six-game-verification.json).
+
+### Four pairs complete
+
+At 2026-11-11T00:54:15.475334+00:00 the independently audited score is 3W–0D–5L.
+White is 0–4 and Black is 3–1. The last two White losses ended with
+positive clocks on both seats. All 737 frames match the C++ rules
+check and both Stockfish processes started in every game. This early
+color split spans four seeds and does not identify a cause.
+The original run needs 7 of the remaining 8 points under its frozen gate.
+
+[Eight-game audit](../astra-submissions/analysis/deferred-prior-playing-20261111/eight-game-verification.json).
