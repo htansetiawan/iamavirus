@@ -1,0 +1,182 @@
+{
+  "primary": 5064,
+  "distinct_primary": 2532,
+  "support": {
+    "original": 4820,
+    "learned": 4860
+  },
+  "mean_truth_nll": {
+    "original": 7.537924514970475,
+    "learned": 7.289712369722045
+  },
+  "gain": 0.24821214524843027,
+  "interval95": [
+    0.05732128152465457,
+    0.4542288280074255
+  ],
+  "sensitivity": {
+    "1e-09": 0.19536419784280806,
+    "1e-12": 0.24821214524843027,
+    "1e-15": 0.3027757730444977
+  },
+  "by_team": {
+    "Instructors": {
+      "games": 8,
+      "decisions": 544,
+      "gain": 0.05882003118545892
+    },
+    "duck": {
+      "games": 8,
+      "decisions": 546,
+      "gain": 0.3420448495500674
+    },
+    "HYPOTHERMIA": {
+      "games": 8,
+      "decisions": 788,
+      "gain": 0.246905004537146
+    },
+    "Greek Gift": {
+      "games": 8,
+      "decisions": 536,
+      "gain": 0.8675259624252721
+    },
+    "Knight Vision": {
+      "games": 7,
+      "decisions": 488,
+      "gain": -0.0048644374972078505
+    },
+    "Strongly Invisible": {
+      "games": 8,
+      "decisions": 870,
+      "gain": 0.29137021226864945
+    },
+    "Crimson Fog": {
+      "games": 7,
+      "decisions": 566,
+      "gain": -0.059681017089404605
+    },
+    "Mist Opportunities": {
+      "games": 8,
+      "decisions": 726,
+      "gain": 0.2221733826186266
+    }
+  },
+  "collapsed_case_seeds": {
+    "original": 4,
+    "zero": 4,
+    "learned": 3
+  },
+  "full_updates": {
+    "original": 4611,
+    "zero": 4611,
+    "learned": 4642
+  },
+  "large_regime_games": 50,
+  "native_guard_brier": {
+    "king1": {
+      "original": 0.012504106604825697,
+      "learned": 0.011131631193979372,
+      "delta": -0.001372475410846324,
+      "interval95": [
+        -0.004096402308125639,
+        0.00024702651240477417
+      ]
+    },
+    "kingt": {
+      "original": 0.012619910860181648,
+      "learned": 0.012172226354871718,
+      "delta": -0.0004476845053099286,
+      "interval95": [
+        -0.0034440666207653857,
+        0.0015813120313881105
+      ]
+    },
+    "queen1": {
+      "original": 0.0073755587261219715,
+      "learned": 0.005849490243379436,
+      "delta": -0.001526068482742535,
+      "interval95": [
+        -0.004157053086104565,
+        -5.577902979763322e-06
+      ]
+    },
+    "queent": {
+      "original": 0.007614724348393361,
+      "learned": 0.006188466590768818,
+      "delta": -0.001426257757624544,
+      "interval95": [
+        -0.004092058788421152,
+        0.0002843952437240162
+      ]
+    }
+  },
+  "unique_positive_guard_events": {
+    "king_label": 39,
+    "queen_label": 22
+  },
+  "risk_rows": 5064,
+  "risk_available": {
+    "original": 4996,
+    "learned": 5024
+  },
+  "time": {
+    "original": {
+      "total": 860.1655084061675,
+      "p95": 0.43211227025,
+      "maximum": 2.02505636
+    },
+    "zero": {
+      "total": 860.1655084061675,
+      "p95": 0.43211227025,
+      "maximum": 2.02505636
+    },
+    "learned": {
+      "total": 908.2955635620091,
+      "p95": 0.46906168275000004,
+      "maximum": 2.19509323
+    }
+  },
+  "conditions": {
+    "primary_coverage": true,
+    "truth_support": true,
+    "gain": true,
+    "confidence": true,
+    "floor_sensitivity": true,
+    "no_extra_collapse": true,
+    "regime_coverage": true,
+    "priority_coverage": true,
+    "priority_nonregression": true,
+    "total_cost": true,
+    "p95_cost": true,
+    "guard_coverage": true,
+    "guard_availability": true,
+    "guard_nonregression": true
+  },
+  "decision": "fresh_confirmation_design_allowed",
+  "scope": "Causal development ablation on the same 343 observations and both sampler states. Previous original and unconstrained compact outputs are reused with hash checks. Paired live timing on the first two games of each stratum. No new fit or opened 349 replay.",
+  "gain_vs_unconstrained": {
+    "Instructors": 0.29349030493609046,
+    "duck": -0.10042635871026462,
+    "HYPOTHERMIA": 0.16543355964257897,
+    "Greek Gift": -0.5031190248098973,
+    "Knight Vision": 0.05112710520756471,
+    "Strongly Invisible": -0.21578745596479768,
+    "Crimson Fog": 0.04185718130851505,
+    "Mist Opportunities": -0.07130889124631595
+  },
+  "paired_time": {
+    "original": {
+      "total": 59.00714448204807,
+      "p95": 0.08808903125
+    },
+    "preserved": {
+      "total": 55.497672382357905,
+      "p95": 0.08307319575
+    }
+  },
+  "paired_timing_calls": 32,
+  "reused_control_trajectories": 256,
+  "at": "2026-11-11T00:58:05.643376+00:00",
+  "plan_sha256": "216c069d71ffa07f60c40ae022d40603ad3a7857573d28d5925ff6953c43c449",
+  "calls_sha256": "ded391b02f443636a122c2d45b3f94bcd9e8a97322efa6cad6c741b240f791c8"
+}

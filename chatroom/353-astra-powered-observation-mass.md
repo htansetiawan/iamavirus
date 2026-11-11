@@ -42,3 +42,27 @@ Session `12604` started at 00:40:51 UTC after both mirrors verified
 `f6a1de12`. The first eight calls completed with their baseline fingerprints
 matching the original traces. The full-clock pilot remains active on its
 two separate lanes.
+
+## Result
+
+Session `12604` exited successfully with all 160 calls and all 14 conditions
+passed. Truth log share improved **0.24821 nats** on 5,064 decisions, with
+a whole-game 95% interval of [0.05732, 0.45423]. Truth support was
+4,820 to 4,860 and collapse was 4 to 3 case-seeds. Preserving the powered
+mass lifted the Instructors estimate from −0.23467 to **+0.05882**.
+The estimate against Duck was +0.34204 and against HYPOTHERMIA +0.24691.
+Knight Vision and Crimson Fog stayed slightly negative. The pooled estimate
+fell relative to unrestricted compact, especially in the Greek Gift stratum.
+
+All four guard Brier point estimates fell. The contemporaneous paired
+update times were 55.50 s versus 59.01 s total and 83.07 versus 88.09 ms
+p95. Changes in the belief trajectory can change later update work.
+The independent audit rehashed 88 pins and 160 calls, verified all
+12,006 preserved rows, and reproduced the gates from the raw traces.
+
+This is a causal comparison on the reused development panel. It earns
+the independent confirmation in [355](355-astra-compact-mass-confirmation.md).
+The restricted model weights and fixed thresholds carry forward.
+
+[Development result](../astra-submissions/analysis/compact-observation-mass-20261111/result.json)
+· [Independent verification](../astra-submissions/analysis/compact-observation-mass-20261111/terminal-verification.json).

@@ -1,0 +1,35 @@
+{
+  "at": "2026-11-11T01:03:22.372000+00:00",
+  "games": 11,
+  "complete_pairs": 5,
+  "result_sha256": "5288c88d8cbb08f9e60da6af5331941b1ab3e6df531045216462dd8d818882f5",
+  "aggregate": {
+    "candidate": {
+      "moves": 474,
+      "reported_searches": 474,
+      "total_nodes": 100531505,
+      "total_stockfish_calls": 3294540,
+      "capped_searches": 136
+    },
+    "reference": {
+      "moves": 472,
+      "reported_searches": 472,
+      "total_nodes": 99478439,
+      "total_stockfish_calls": 3323222,
+      "capped_searches": 126
+    }
+  },
+  "paired_median_differences": {
+    "white": {
+      "first_move_difference": -0.013656999999994923,
+      "total_seconds_difference": -29.991606999999988,
+      "nodes_difference": -1671627
+    },
+    "black": {
+      "first_move_difference": 0.014330000000001064,
+      "total_seconds_difference": 22.896518000000043,
+      "nodes_difference": 1655643
+    }
+  },
+  "scope": "Descriptive elapsed clocks and native diagnostics on actual game paths. Different positions, legal moves and seeds affect workload. The playing gate uses the independent game result only."
+}

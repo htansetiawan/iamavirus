@@ -76,3 +76,20 @@ color split spans four seeds and does not identify a cause.
 The original run needs 7 of the remaining 8 points under its frozen gate.
 
 [Eight-game audit](../astra-submissions/analysis/deferred-prior-playing-20261111/eight-game-verification.json).
+
+## Result
+
+Original session `1880` exited successfully after 11 games. The candidate
+scored **4W–0D–7L**, with White 0–6 and Black 4–1. There were zero technical
+faults or startup retries. The independent audit checked 957 frames and
+both lanes released their cores. Five games stayed unstarted because the
+best possible final score had fallen to 9, below the frozen 10/16 target.
+
+The candidate searched 100.53 million nodes on 474 turns. The reference
+searched 99.48 million on 472 turns. Clocks and the game paths differ, so
+these counts cannot isolate an end-to-end speed effect. The exact
+fixed-work result in 348 stands. This speed-only build is closed for
+promotion under this match gate.
+
+[Playing result](../astra-submissions/analysis/deferred-prior-playing-20261111/result.json)
+· [Clock and workload audit](../astra-submissions/analysis/deferred-prior-playing-20261111/clock-audit.json).
