@@ -1,0 +1,581 @@
+{
+ "AST_unchanged_outside_query": true,
+ "baseline_sha256": "f3df44ab40a391b5457d7980e789594e9ecf4279aee730e6109e1a4937db8466",
+ "fixed_memory_gate_passed": true,
+ "limits": [
+  "Python traced allocations only; not RSS or SQLite internal memory.",
+  "One fixed memory screen, no latency or playing-strength conclusion.",
+  "Historical actor retrieval is not a learned strategy or a globally nearest-neighbor guarantee.",
+  "No oracle label bridge, model, GPU, arena version or website deployment."
+ ],
+ "memory_arms": {
+  "baseline": {
+   "Python_peak_bytes": 85786532,
+   "elapsed_seconds": 9.283737411955371,
+   "logical_result": {
+    "candidate_budget": 100000,
+    "candidates_examined": 100000,
+    "limitation": "Bounded context retrieval; no global nearest-neighbor recall guarantee. Current view similarity does not imply matching hidden-state histories.",
+    "matches": [
+     {
+      "decision_id": 99001,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198000,
+      "side": 0
+     },
+     {
+      "decision_id": 99002,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198002,
+      "side": 0
+     },
+     {
+      "decision_id": 99003,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198004,
+      "side": 0
+     },
+     {
+      "decision_id": 99004,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198006,
+      "side": 0
+     },
+     {
+      "decision_id": 99005,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198008,
+      "side": 0
+     },
+     {
+      "decision_id": 99006,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198010,
+      "side": 0
+     },
+     {
+      "decision_id": 99007,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198012,
+      "side": 0
+     },
+     {
+      "decision_id": 99008,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198014,
+      "side": 0
+     },
+     {
+      "decision_id": 99009,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198016,
+      "side": 0
+     },
+     {
+      "decision_id": 99010,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198018,
+      "side": 0
+     }
+    ],
+    "mode": "bounded_observation_context",
+    "train_only": true,
+    "truncated": false
+   }
+  },
+  "stream": {
+   "Python_peak_bytes": 21405,
+   "elapsed_seconds": 7.760912453988567,
+   "logical_result": {
+    "candidate_budget": 100000,
+    "candidates_examined": 100000,
+    "limitation": "Bounded context retrieval; no global nearest-neighbor recall guarantee. Current view similarity does not imply matching hidden-state histories.",
+    "matches": [
+     {
+      "decision_id": 99001,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198000,
+      "side": 0
+     },
+     {
+      "decision_id": 99002,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198002,
+      "side": 0
+     },
+     {
+      "decision_id": 99003,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198004,
+      "side": 0
+     },
+     {
+      "decision_id": 99004,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198006,
+      "side": 0
+     },
+     {
+      "decision_id": 99005,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198008,
+      "side": 0
+     },
+     {
+      "decision_id": 99006,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198010,
+      "side": 0
+     },
+     {
+      "decision_id": 99007,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198012,
+      "side": 0
+     },
+     {
+      "decision_id": 99008,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198014,
+      "side": 0
+     },
+     {
+      "decision_id": 99009,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198016,
+      "side": 0
+     },
+     {
+      "decision_id": 99010,
+      "distance": 0,
+      "game": "synthetic",
+      "ply": 198018,
+      "side": 0
+     }
+    ],
+    "mode": "bounded_observation_context",
+    "train_only": true,
+    "truncated": false
+   }
+  }
+ },
+ "private_artifact_bytes": 36114015,
+ "real_actor_database_sha256": "55ce00af7933a999e2f09db85dd10df89298bddd4441152ac4dd222c14f353d3",
+ "real_actor_database_unchanged_by_queries": true,
+ "real_candidate_mismatches": 0,
+ "real_games": 68,
+ "real_index_manifest": {
+  "actor_payload_bytes": {
+   "ages": 64,
+   "history_fingerprint": 32,
+   "last_seen": 32,
+   "legal_move": 2,
+   "observation": 32,
+   "rights": 8
+  },
+  "built_at": "2026-11-11T19:08:43.254232+00:00",
+  "code_sha256": "27b75b26bc8850aa780cda5b858b9470e90ad956ffc5e0a7cabf46c73a64b189",
+  "counts": {
+   "test_decisions": 1058,
+   "test_episodes": 22,
+   "train_decisions": 4168,
+   "train_episodes": 102,
+   "validation_decisions": 486,
+   "validation_episodes": 12
+  },
+  "database_bytes": 2170880,
+  "database_sha256": "55ce00af7933a999e2f09db85dd10df89298bddd4441152ac4dd222c14f353d3",
+  "distinct_trajectories": 68,
+  "elapsed_seconds": 0.5210003579850309,
+  "games": 68,
+  "inputs_sha256": {
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/episodes.json": "fb862764ed946291000c07b3116b1d1e151e237f7ad5abdb43c56586c6b2f6ca",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/raw/accepted.jsonl": "18743079de4a3afc9f77bc52c30c76a0d089bd98d0df95df6eda1ffd9e3ecc16",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/review/generation-dfbb162a3b8c4702badf7afb4866631d/test.jsonl.gz": "46800c18db0741d0207a1641afbe79dd56330dbf37e7e1eedef645bb64d63076",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/review/generation-dfbb162a3b8c4702badf7afb4866631d/train.jsonl.gz": "9d632fcd3df1908b7dd2c31cb77ae25faf45de5c758d2533fb78ae3bba50af8c",
+   "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/review/generation-dfbb162a3b8c4702badf7afb4866631d/validation.jsonl.gz": "027d49230a76dd4cfca998358f45fe2b1fa9f1ce8b544fef34b2b4918f23ddfa"
+  },
+  "limitations": [
+   "Research index only; no learned embedding or policy yet.",
+   "History fingerprint excludes clocks absent from source actor schema.",
+   "Last-seen memory/age is an approximate feature, not an exact belief.",
+   "No actor feature depends on true boards, hidden moves, or outcomes."
+  ],
+  "schema": "astra-experience-v1",
+  "source_manifest": {
+   "action_version": "actions-v1",
+   "candidate_mismatches": [],
+   "content_sha256": "b5d522c46c1615a4ba8d24eca65b527c692caa536dfbdd88807d8ae318ae393b",
+   "counts": {
+    "test": {
+     "color_black": 11,
+     "color_white": 11,
+     "decisions": 1058,
+     "episodes": 22,
+     "events": 2116,
+     "games": 11.0,
+     "outcome_0-1": 6.0,
+     "outcome_1-0": 4.0,
+     "outcome_1/2-1/2": 1.0,
+     "termination_normal": 11.0
+    },
+    "train": {
+     "color_black": 51,
+     "color_white": 51,
+     "decisions": 4168,
+     "episodes": 102,
+     "events": 8338,
+     "games": 51.0,
+     "outcome_0-1": 21.0,
+     "outcome_1-0": 30.0,
+     "termination_crash": 1.0,
+     "termination_normal": 50.0
+    },
+    "validation": {
+     "color_black": 6,
+     "color_white": 6,
+     "decisions": 486,
+     "episodes": 12,
+     "events": 972,
+     "games": 6.0,
+     "outcome_0-1": 2.0,
+     "outcome_1-0": 4.0,
+     "termination_normal": 6.0
+    }
+   },
+   "created_at": "2026-11-11T19:08:42.649225+00:00",
+   "feature_version": "features-v2",
+   "fractions": [
+    0.8,
+    0.1,
+    0.1
+   ],
+   "opponents": {
+    "test": {
+     "0729dbf4b76c841d7582c2dddea32faa@v29": 2,
+     "31f523b6aaac47adbfb957d0b0123408@v4": 1,
+     "46f21742c86746bb8fe897d62b81318d@v12": 1,
+     "46fcfa5cd0604ff0a5e92b2bc238c45d@v9": 1,
+     "6a94236ecb6a417e846ae6a977a668fe@v5": 1,
+     "8b848465fc5a4658bae38ab8e418a784@v6": 1,
+     "8d775e234808489c815a4a9f6bbabfe4@v11": 1,
+     "a2c35173659545c99752376a70418438@v38": 11,
+     "e2f593ca1fea4710b07a8120dd6b3477@v10": 1,
+     "fc6ff594942440bc935357fc46259914@v2": 1,
+     "strongly-invisible@v41": 1
+    },
+    "train": {
+     "0729dbf4b76c841d7582c2dddea32faa@v29": 2,
+     "31f523b6aaac47adbfb957d0b0123408@v4": 1,
+     "46f21742c86746bb8fe897d62b81318d@v12": 4,
+     "46f21742c86746bb8fe897d62b81318d@v14": 2,
+     "46fcfa5cd0604ff0a5e92b2bc238c45d@v9": 4,
+     "4c181de5ace742458d7a6f91d657e912@v32": 4,
+     "6a94236ecb6a417e846ae6a977a668fe@v5": 1,
+     "8267630788344cce9804fe6c56133829@v5": 2,
+     "89eb01bf83fa4a14b9c2a487a9aa1b10@v8": 1,
+     "8b848465fc5a4658bae38ab8e418a784@v6": 3,
+     "8d775e234808489c815a4a9f6bbabfe4@v11": 1,
+     "a2c35173659545c99752376a70418438@v38": 51,
+     "baseline@v1": 2,
+     "db107815c3b14827a79ec9e3d12f4726@v7": 4,
+     "dc80b193f365cb27bb6aed2e74605669@v2": 6,
+     "ded6c6b3f1694f5f98451fbe47fe8bab@v3": 2,
+     "e2f593ca1fea4710b07a8120dd6b3477@v10": 5,
+     "e8915d7524054718ab675bc9ba14da0a@v2": 2,
+     "fc6ff594942440bc935357fc46259914@v2": 1,
+     "instructors@v4": 2,
+     "knight-vision@v36": 2
+    },
+    "validation": {
+     "46f21742c86746bb8fe897d62b81318d@v12": 1,
+     "46fcfa5cd0604ff0a5e92b2bc238c45d@v9": 1,
+     "89eb01bf83fa4a14b9c2a487a9aa1b10@v8": 1,
+     "a2c35173659545c99752376a70418438@v38": 6,
+     "db107815c3b14827a79ec9e3d12f4726@v7": 2,
+     "strongly-invisible@v41": 1
+    }
+   },
+   "raw": "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/raw",
+   "rules_fingerprint": "fow-v1/iamavirus-rules-capi",
+   "seed": 0,
+   "shard_sha256": {
+    "test": "46800c18db0741d0207a1641afbe79dd56330dbf37e7e1eedef645bb64d63076",
+    "train": "9d632fcd3df1908b7dd2c31cb77ae25faf45de5c758d2533fb78ae3bba50af8c",
+    "validation": "027d49230a76dd4cfca998358f45fe2b1fa9f1ce8b544fef34b2b4918f23ddfa"
+   },
+   "shards": {
+    "test": "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/review/generation-dfbb162a3b8c4702badf7afb4866631d/test.jsonl.gz",
+    "train": "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/review/generation-dfbb162a3b8c4702badf7afb4866631d/train.jsonl.gz",
+    "validation": "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111/real/review/generation-dfbb162a3b8c4702badf7afb4866631d/validation.jsonl.gz"
+   },
+   "source_games": 68,
+   "source_journal": {
+    "accepted_lines": 68,
+    "bytes": 30986,
+    "duplicate_lines": 0,
+    "selected_games": 68,
+    "sha256": "18743079de4a3afc9f77bc52c30c76a0d089bd98d0df95df6eda1ffd9e3ecc16",
+    "unique_games": 68
+   },
+   "split_method": "trajectory_hash_v1",
+   "undated_source_games": 0,
+   "version": "review"
+  }
+ },
+ "real_query_parity": [
+  {
+   "game": "abt27me2",
+   "ply": 0,
+   "result": {
+    "candidate_budget": 2048,
+    "candidates_examined": 274,
+    "limitation": "Bounded context retrieval; no global nearest-neighbor recall guarantee. Current view similarity does not imply matching hidden-state histories.",
+    "matches": [
+     {
+      "decision_id": 1059,
+      "distance": 0,
+      "game": "tseoaxov",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1170,
+      "distance": 0,
+      "game": "zupin8sp",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1306,
+      "distance": 0,
+      "game": "7ca7cgik",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1383,
+      "distance": 0,
+      "game": "taj0omp0",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1477,
+      "distance": 0,
+      "game": "cwd5s54q",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1617,
+      "distance": 0,
+      "game": "pziqqwvi",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1701,
+      "distance": 0,
+      "game": "2cnre7yw",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1782,
+      "distance": 0,
+      "game": "addq9m20",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1820,
+      "distance": 0,
+      "game": "ixr72c9g",
+      "ply": 0,
+      "side": 0
+     },
+     {
+      "decision_id": 1887,
+      "distance": 0,
+      "game": "mmmfa8x1",
+      "ply": 0,
+      "side": 0
+     }
+    ],
+    "mode": "bounded_observation_context",
+    "train_only": true,
+    "truncated": false
+   }
+  },
+  {
+   "game": "abt27me2",
+   "ply": 138,
+   "result": {
+    "candidate_budget": 2048,
+    "candidates_examined": 12,
+    "limitation": "Bounded context retrieval; no global nearest-neighbor recall guarantee. Current view similarity does not imply matching hidden-state histories.",
+    "matches": [
+     {
+      "decision_id": 2947,
+      "distance": 24,
+      "game": "0fpotw5q",
+      "ply": 78,
+      "side": 0
+     },
+     {
+      "decision_id": 4595,
+      "distance": 25,
+      "game": "z3mt9v0b",
+      "ply": 50,
+      "side": 0
+     },
+     {
+      "decision_id": 3042,
+      "distance": 26,
+      "game": "l9nj7oh3",
+      "ply": 78,
+      "side": 0
+     },
+     {
+      "decision_id": 3039,
+      "distance": 27,
+      "game": "l9nj7oh3",
+      "ply": 72,
+      "side": 0
+     },
+     {
+      "decision_id": 3041,
+      "distance": 27,
+      "game": "l9nj7oh3",
+      "ply": 76,
+      "side": 0
+     },
+     {
+      "decision_id": 3043,
+      "distance": 27,
+      "game": "l9nj7oh3",
+      "ply": 80,
+      "side": 0
+     },
+     {
+      "decision_id": 3044,
+      "distance": 27,
+      "game": "l9nj7oh3",
+      "ply": 82,
+      "side": 0
+     },
+     {
+      "decision_id": 4594,
+      "distance": 27,
+      "game": "z3mt9v0b",
+      "ply": 48,
+      "side": 0
+     },
+     {
+      "decision_id": 4450,
+      "distance": 28,
+      "game": "g50aluq7",
+      "ply": 82,
+      "side": 0
+     },
+     {
+      "decision_id": 4451,
+      "distance": 28,
+      "game": "g50aluq7",
+      "ply": 84,
+      "side": 0
+     }
+    ],
+    "mode": "bounded_observation_context",
+    "train_only": true,
+    "truncated": false
+   }
+  },
+  {
+   "game": "abt27me2",
+   "ply": 139,
+   "result": {
+    "candidate_budget": 2048,
+    "candidates_examined": 1,
+    "limitation": "Bounded context retrieval; no global nearest-neighbor recall guarantee. Current view similarity does not imply matching hidden-state histories.",
+    "matches": [
+     {
+      "decision_id": 4080,
+      "distance": 12,
+      "game": "7qsrjcyc",
+      "ply": 139,
+      "side": 1
+     }
+    ],
+    "mode": "bounded_observation_context",
+    "train_only": true,
+    "truncated": false
+   }
+  },
+  {
+   "game": "x0l4i8ns",
+   "ply": 82,
+   "result": {
+    "candidate_budget": 2048,
+    "candidates_examined": 0,
+    "limitation": "Bounded context retrieval; no global nearest-neighbor recall guarantee. Current view similarity does not imply matching hidden-state histories.",
+    "matches": [],
+    "mode": "bounded_observation_context",
+    "train_only": true,
+    "truncated": false
+   }
+  },
+  {
+   "game": "x0l4i8ns",
+   "ply": 83,
+   "result": {
+    "candidate_budget": 2048,
+    "candidates_examined": 2,
+    "limitation": "Bounded context retrieval; no global nearest-neighbor recall guarantee. Current view similarity does not imply matching hidden-state histories.",
+    "matches": [
+     {
+      "decision_id": 5052,
+      "distance": 20,
+      "game": "lyaw3hnt",
+      "ply": 87,
+      "side": 1
+     },
+     {
+      "decision_id": 5051,
+      "distance": 22,
+      "game": "lyaw3hnt",
+      "ply": 85,
+      "side": 1
+     }
+    ],
+    "mode": "bounded_observation_context",
+    "train_only": true,
+    "truncated": false
+   }
+  }
+ ],
+ "stream_sha256": "27b75b26bc8850aa780cda5b858b9470e90ad956ffc5e0a7cabf46c73a64b189",
+ "stream_to_baseline_Python_peak_ratio": 0.00024951469072091644,
+ "synthetic_is_not_a_chess_corpus": true,
+ "synthetic_rows": 100000
+}

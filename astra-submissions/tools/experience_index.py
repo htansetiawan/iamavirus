@@ -264,17 +264,27 @@ def query(database: Path, view: str, side: int, top: int = 10,
             params.append(exclude_game)
         sql = ("SELECT d.*, e.game, e.trajectory_sha256 FROM decisions d JOIN episodes e ON e.id=d.episode WHERE "
                + " AND ".join(conditions) + " ORDER BY d.id LIMIT ?")
-        candidates = db.execute(sql, (*params, budget + 1)).fetchall()
-        truncated = len(candidates) > budget
-        candidates = candidates[:budget]
-        # O(M log k), M <= budget; avoids sorting the full candidate set.
-        ranked = heapq.nsmallest(top, candidates,
-                                key=lambda row: (distance(packed, row["observation"]), row["id"]))
-        return dict(mode=mode, candidate_budget=budget, candidates_examined=len(candidates),
+        cursor = db.execute(sql, (*params, budget + 1))
+        examined, truncated = 0, False
+
+        def scored_candidates():
+            nonlocal examined, truncated
+            for row in cursor:
+                if examined == budget:
+                    truncated = True
+                    break
+                examined += 1
+                yield distance(packed, row["observation"]), row
+
+        # O(M log k) time, M <= budget; keep O(k) scored rows in Python.
+        # The extra SQL row records truncation without joining the heap.
+        ranked = heapq.nsmallest(top, scored_candidates(),
+                                key=lambda item: (item[0], item[1]["id"]))
+        return dict(mode=mode, candidate_budget=budget, candidates_examined=examined,
                     truncated=truncated, train_only=True,
                     elapsed_ms=(time.monotonic()-started)*1000,
                     matches=[dict(game=r["game"], side=r["side"], ply=r["ply"],
-                        decision_id=r["id"], distance=distance(packed, r["observation"])) for r in ranked],
+                        decision_id=r["id"], distance=score) for score, r in ranked],
                     limitation="Bounded context retrieval; no global nearest-neighbor recall guarantee. "
                                "Current view similarity does not imply matching hidden-state histories.")
     finally:

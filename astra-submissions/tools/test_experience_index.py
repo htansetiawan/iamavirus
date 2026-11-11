@@ -117,6 +117,53 @@ class ExperienceTests(unittest.TestCase):
                 index.build(manifest, accepted, root / "index")
             self.assertFalse((root / "index" / "manifest.json").exists())
 
+    def test_query_empty_exact_budget_and_top_equal_budget(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            manifest, accepted = fixture(root, splits=("train",))
+            index.build(manifest, accepted, root / "index")
+            database = root / "index/actors.sqlite"
+            view = actor()["observations"][0]
+            exact = index.query(database, view, 0, top=2, budget=2)
+            self.assertEqual(exact["candidates_examined"], 2)
+            self.assertFalse(exact["truncated"])
+            self.assertEqual([r["ply"] for r in exact["matches"]], [0, 2])
+            over = index.query(database, view, 0, top=1, budget=1)
+            self.assertEqual(over["candidates_examined"], 1)
+            self.assertTrue(over["truncated"])
+            changed = list(view); changed[4], changed[3] = "-", "K"
+            empty = index.query(database, "".join(changed), 0, top=1, budget=2)
+            self.assertEqual(empty["matches"], [])
+            self.assertEqual(empty["candidates_examined"], 0)
+            self.assertFalse(empty["truncated"])
+
+    def test_top_one_can_find_later_best_candidate(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            manifest, accepted = fixture(root, splits=("train",))
+            index.build(manifest, accepted, root / "index")
+            database = root / "index/actors.sqlite"
+            views = actor()["observations"]
+            with sqlite3.connect(database) as db:
+                db.execute("UPDATE decisions SET observation=? WHERE ply=0", (index.pack_view(views[2]),))
+                db.execute("UPDATE decisions SET observation=? WHERE ply=2", (index.pack_view(views[0]),))
+            answer = index.query(database, views[0], 0, top=1, budget=2)
+            self.assertEqual(answer["candidates_examined"], 2)
+            self.assertEqual([(r["ply"], r["distance"]) for r in answer["matches"]], [(2, 0)])
+
+    def test_equal_scores_keep_decision_id_order(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            manifest, accepted = fixture(root, splits=("train",))
+            index.build(manifest, accepted, root / "index")
+            database = root / "index/actors.sqlite"
+            view = actor()["observations"][0]
+            with sqlite3.connect(database) as db:
+                db.execute("UPDATE decisions SET observation=?", (index.pack_view(view),))
+            answer = index.query(database, view, 0, top=2, budget=2)
+            self.assertEqual([r["decision_id"] for r in answer["matches"]], [1, 2])
+            self.assertEqual([r["distance"] for r in answer["matches"]], [0, 0])
+
 
 if __name__ == "__main__":
     unittest.main()
