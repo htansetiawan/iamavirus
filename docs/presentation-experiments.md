@@ -160,7 +160,9 @@ are kept separate from private observations and recorded candidate actions.
 There is no policy, belief-model or guard update from this table.
 Local source, definitions and selected loss/recovery figures:
 `astra-submissions/analysis/field-material-onsets-20261111/README.md`.
-These latest additions remain local while publishing is disabled.
+This evidence is included in the
+[source review](https://github.com/htansetiawan/iamavirus/pull/1).
+Website publishing remains disabled; the live site is a separate snapshot.
 
 ## Our contribution and the attribution boundary
 

@@ -9,6 +9,11 @@ process, data structures, connection to the course, experimental findings
 and limits. Henry has made this more important than producing v39. No new
 candidate experiment or training run is part of this review phase.
 
+The current materials are in the
+[source review](https://github.com/htansetiawan/iamavirus/pull/1).
+Website publishing remains disabled, so the live site retains its earlier
+snapshot.
+
 Read next: [speaking outline](presentation-rehearsal.html) ·
 [one real decision](presentation-move.html) ·
 [tables and algorithms](presentation-tables.html) ·
@@ -154,8 +159,9 @@ The [experiment map](presentation-experiments.html) explains the chain.
 - **Data lineage:** raw replays, completed training exports and the frozen
   submitted models advance separately. The [data-flow review](presentation-tables.html#how-the-arena-record-reaches-the-bot)
   records the historical export gap, its [November 11 recovery](data-refresh-20261111.html),
-  and pending legacy metadata corrections without treating them as measured
-  Elo causes.
+  and the [prepared source fixes](data-refresh-20261111.html#source-fixes-prepared-after-this-snapshot).
+  Those options have not changed a production generation or submitted model;
+  they are not measured Elo causes.
 
 ## Preparation checkpoints through December 3
 

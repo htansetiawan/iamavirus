@@ -212,9 +212,14 @@ There is also a smaller provenance correction: the original 164-seat tactical
 corpus named only the selected seat's opponent. Its importer invented
 IAmAVirus for the unnamed seat; **136 games were actually other teams**.
 Exact API matches recover dates, real IDs and played versions across all
-14,228 positions. Corrections remain in a separate verified sidecar; old raw
-records and splits are preserved. All selected seats lost, so this corpus is
-not a representative record of our play. No measured Elo effect is claimed.
+14,228 positions. A source-bound, opt-in exporter overlay is now available
+in [PR 6](https://github.com/htansetiawan/iamavirus/pull/6); its seven metadata
+fields are applied only to an explicitly chosen future generation. Raw files
+and the published November 11 generation remain unchanged. The
+[data checkpoint](data-refresh-20261111.html#source-fixes-prepared-after-this-snapshot)
+separates that repair from the future-import fix and stable-fold option.
+All selected seats lost, so this corpus is not a representative record of
+our play. No measured Elo effect is claimed.
 
 Local evidence: `chatroom/379` (export integrity), `chatroom/381` (provenance)
 and `astra-submissions/analysis/dataset-freshness-lineage-20261111/` (saved
@@ -260,8 +265,10 @@ applied to the shared reports. This is a reporting defect, separate from
 the engine's move legality.
 
 Local review evidence: `astra-submissions/analysis/taxonomy-understanding-20261111/`
-and `astra-submissions/analysis/taxonomy-en-passant-20261111/`. These new
-artifacts remain unpublished while website publishing is disabled.
+and `astra-submissions/analysis/taxonomy-en-passant-20261111/`. Both are now
+included in the [source review](https://github.com/htansetiawan/iamavirus/pull/1).
+Website publishing remains disabled; source publication does not update the
+live site or the deployed labeler.
 
 The later local refresh labels all **453,622 moves in 6,000 reviewed games**
 with both versions. The isolated correction changes 352 en-passant move
