@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-11T11:12:12.788880+00:00",
+  "status": "preexisting_publication_fixture_failure_reproduced",
+  "tests": 8,
+  "errors": 1,
+  "failures": 0,
+  "shell_error": {
+    "test": "baseline_intel_refresh.IntelRefreshTests.test_daily_publish_commits_available_reports_without_other_staged_work",
+    "exit_code": 127,
+    "stderr": "bash: line 28: SEAGATE: unbound variable\n"
+  },
+  "sources": {
+    "before_daily_intel_status.py": "a1194210389733b85f9b8174dd7eda7747e1b210b3222a811eed661eba8a9b25",
+    "before_test_intel_refresh.py": "3f10667130063af17b8aa3f2548a8e5ce665e3363fc4e36a247837e10f81e620"
+  },
+  "scope": "Unchanged pre-archive-fix reporter and eight-test fixture, loaded with original project paths. The current report-first shell script reaches heavy-export guards after the extracted publication block."
+}

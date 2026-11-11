@@ -28,3 +28,20 @@ published status is preserved as historical evidence; it was generated before
 the fix. No daily-service restart, report overwrite, replay mutation, fitting,
 new engine, game, release number or website deployment is part of this change.
 This is a reporting correction, not evidence of higher playing strength.
+
+## Full-suite follow-up
+
+The full ten-test suite initially exposed an older publication-fixture error:
+the report-first daily script now reaches heavy-export guards after the
+extracted publication block, but the fixture did not initialize `SEAGATE`.
+The unchanged pre-fix reporter and eight-test fixture reproduce that same
+shell error. This was not introduced by the archive-link resolver change.
+
+The fixture now explicitly disables heavy exports with `SEAGATE=0` and
+`DATASET=0`. It still performs actual report commits in a temporary Git
+repository and asserts that unrelated staged work remains uncommitted.
+All **10 tests pass**. The production resolver is unchanged from the four-test
+validation above; no production daily-script change was needed.
+
+[Pre-fix full-suite baseline](baseline-suite.json) ·
+[Ten-test validation](suite-review.json).

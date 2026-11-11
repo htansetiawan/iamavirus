@@ -170,7 +170,9 @@ class IntelRefreshTests(unittest.TestCase):
                 return subprocess.check_output(['git', *args], cwd=root, text=True, stderr=subprocess.STDOUT)
             git('init', '-q'); git('config', 'user.email', 'test@example.invalid')
             git('config', 'user.name', 'Test'); git('add', 'unrelated.txt')
-            subprocess.run(['bash', '-c', 'set -u\nLOG=run.log\nPUSH=0\nstep() { :; }\n' + publication],
+            # The report-first script now has export guards after publication.
+            # This fixture exercises report commits with heavy exports disabled.
+            subprocess.run(['bash', '-c', 'set -u\nLOG=run.log\nPUSH=0\nSEAGATE=0\nDATASET=0\nstep() { :; }\n' + publication],
                            cwd=root, check=True, capture_output=True, text=True)
             committed = set(git('show', '--pretty=', '--name-only', 'HEAD').splitlines())
             self.assertEqual(committed, {f'data/reports/daily/{day}.md', 'data/reports/daily/latest.md'})
