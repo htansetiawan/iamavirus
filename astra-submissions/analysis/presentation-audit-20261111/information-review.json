@@ -1,0 +1,61 @@
+{
+  "at": "2026-11-11T02:54:10.097750+00:00",
+  "parent_commit": "f76a09e2f58b",
+  "core_files_match_parent": {
+    "src/belief.c": "26b03ddf62f8cdfe92ef6c81ae3b896dc3ff3cf56d3c5c43fe1d2929875566ee",
+    "src/movemodel.c": "6c01d104941fa911122bcc3db2176037e5014d87c5069da2ebaaf9753e61a2fe",
+    "src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340"
+  },
+  "history_builder": {
+    "path": "tools/history_table.c",
+    "sha256": "5da2612e44a42d8c011c3462ec11494beb9ec678f93ed423d865f91b0a6ce2cc",
+    "in_parent_tree": true,
+    "names_in_key": false,
+    "default_excluded_name": "IAmAVirus"
+  },
+  "streamed_fitter": {
+    "path": "tools/fit_move_model_stream.py",
+    "in_parent_tree": false,
+    "local_exists": true,
+    "local_sha256": "52ab3d7b6a1f9e3f0f6ad7f0ccaf1aa98b9c7ade0cc5c1017b5db8126e513f02",
+    "fit_reproduced": false
+  },
+  "information_map": {
+    "source": "src/gtcfr.c",
+    "source_lines": [
+      48,
+      74
+    ],
+    "nominal_key": "history_mix(hist, 0x5eed0000 + player) | 1",
+    "reuse_check": "g.is_actions[I] == actions",
+    "ordered_action_signature_checked": false
+  },
+  "history_mix": {
+    "source": "src/belief.c",
+    "source_lines": [
+      50,
+      54
+    ],
+    "input_transform": "value | 1",
+    "player_tags": [
+      "0x5eed0001",
+      "0x5eed0001"
+    ],
+    "same_tags": true,
+    "real_cross_player_collision_demonstrated": false
+  },
+  "table_runtime_minimum": {
+    "default_min_count": 3,
+    "stored_history_hashes": 219137,
+    "stored_hashes_below_runtime_minimum": 112712,
+    "stored_rows_below_runtime_minimum": 145345,
+    "scope": "Stored aggregate counts only; not a live query-coverage estimate."
+  },
+  "full_feature_threshold": {
+    "source": "src/belief.c",
+    "condition": "b.count <= model_full_below",
+    "default": 10000
+  },
+  "scope": "Read-only source/count/provenance audit. No bot, model, fitting, replay inference, new game or performance measurement. No actual information-set collision or match-loss cause established."
+}

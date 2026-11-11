@@ -21,7 +21,7 @@ the whole strategy.
 | Belief rows | Complete position + representative opponent history + log weight | Up to **200,000** retained entries by default; can be smaller | Across turns within one game |
 | Belief membership index | 64-bit position key → membership | Open-addressing hash table; grows with retained entries | Rebuilt/updated with the belief |
 | Search nodes and edges | Chance/player/frontier nodes, action edges and chance probabilities | Variable; configured node limit **1,500,000** | One move |
-| Information-set index | Acting player + represented history/action signature → information-set ID | Open-addressing map, variable | One move |
+| Information-set index | Represented history hash with nominal player tag → ID; action count checked on reuse | Open-addressing map; tag qualification below; no full ordered-action signature comparison | One move |
 | Four CFR arrays | `(information-set ID, action)` → regret, previous instantaneous regret, allocated generic strategy field, accumulated strategy sum | **Four allocated arrays**; each has one slot per information-set/action pair | One move |
 | Expansion visits and frontier records | Action visits; leaf board/history; node → leaf index | Variable with the tree | One move |
 | Front-end repetition record | Our piece configurations and visit counts | Capacity **1,024 configurations** | Across turns within one game |
@@ -79,6 +79,13 @@ back to the fitted model. The lookup first binary-searches the sorted history
 hashes, then scans that history's move records. It is not a player-name lookup
 or an exact solution lookup.
 
+Of the 219,137 stored history keys, **106,425 meet that default count
+threshold**; 112,712 have fewer than three recorded occurrences. The latter
+occupy 145,345 of the loaded rows but do not activate the default blend.
+These are file-level counts, not a live query-coverage rate. Table size and
+useful coverage of the positions we actually face are different quantities.
+[Source/count audit](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/presentation-audit-20261111/information-review.json).
+
 For every observation-compatible successor, the native default update adds
 `2 × log(p_blend)` to its parent's log weight. This temperature sharpens move
 likelihoods. Duplicate positions add their incoming weights; one opponent
@@ -89,6 +96,68 @@ sharpened weights should not be called a guaranteed calibrated posterior.
 The source comment records a refit on 148,357 arena games. Our audit verifies
 the archived coefficients and their counts; it does not independently
 reconstruct that historical training job.
+
+## How the two offline models are built
+
+```mermaid
+flowchart TD
+  R[Completed public replays] --> P[Reconstruct positions and each player's private views]
+  P --> F[Hand-coded move features and recorded actions]
+  F --> L[Offline conditional-logit fitting]
+  L --> C[Two frozen 28-coefficient vectors]
+  P --> H[Hash each mover's own views and actions]
+  H --> N[Count history/action occurrences and sort records]
+  N --> T[Frozen history.bin]
+  C --> B[Runtime hypothetical-move likelihood]
+  T --> B
+  B --> W[Update retained-board weights]
+```
+
+The history builder computes both players' observations while replaying
+completed games. Each key summarizes the **mover's own** views and moves,
+not the full true board or our current private view. Team names can filter
+which data enters the builder, but player identity is not part of the stored
+lookup key. The builder's default skips IAmAVirus. At runtime, each retained
+world supplies a hypothesized opponent history for this lookup. Merging
+boards can retain only one representative history.
+
+The archive's parent commit contains `tools/history_table.c`, which describes
+and implements this count/sort process. The final ZIP freezes the resulting
+file, not an automatically refreshed database. New downloaded games affect
+the deployed table only after rebuilding and uploading a new package.
+
+The fitted move model has a different input: features calculated from each
+**hypothetical complete board** and candidate move. Offline training can use
+completed-game truth. Live play has only its hypothetical boards; it never
+receives the true current board. This conditional model is a likelihood model
+for inference, not automatically an implementable opponent policy that must
+choose identically at every indistinguishable private history. Its ability
+to predict moves does not establish correct information-set reasoning.
+
+The source records the historical fit population, and a streamed fitting
+script exists in the development checkout. That script is not present in the
+recorded release-parent commit. We have verified the deployed coefficients,
+not reproduced their fit from a pinned training command and dataset. This is
+a provenance limit for the presentation, rather than evidence that the
+recorded training count is wrong.
+
+## Which parts are learned, exact, or heuristic?
+
+| Component | What determines it | What changes during a live game? |
+| --- | --- | --- |
+| Rules and observations | Explicit game rules and deterministic code | Board state, not learned parameters |
+| The 28 feature definitions | Hand-coded design | Feature values on hypothetical boards |
+| Full/cheap coefficient vectors | Offline statistical fitting | Neither vector changes |
+| Empirical history counts | Offline recorded occurrences | Lookup results change; counts do not |
+| Board weights | Observation filtering plus the fixed likelihood model | Belief distribution changes each turn |
+| CFR regrets | Counterfactual calculations on the local search tree | Recomputed during this decision, then discarded |
+| Stockfish frontier values | Borrowed pretrained NNUE and short search | Evaluated positions and search state change; NNUE weights do not |
+| Guard margins and utility mapping | Fixed engineering choices | Calculated risks change; thresholds do not |
+
+Consequently, “our bot learns” needs a qualifier. It performs online belief
+updating and search-time regret minimization, and uses offline learned
+coefficients. V38 does not train a new neural policy from arena rewards while
+it plays.
 
 ## What do “32 weighted samples” mean?
 
@@ -194,6 +263,22 @@ parts, with failed continuation/match evidence. This limits what we can claim
 about solving the correct full-game information problem, even if the local
 CFR implementation is arithmetically correct.
 [Current comparison](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/358-astra-current-obscuro-gaps.md).
+
+There is a narrower implementation assumption too: `infoset_for` hashes the
+player and represented history, and checks only the number of actions before
+sharing an existing information set. It does not explicitly compare the full
+ordered legal-move lists. A mismatching count creates a separate information
+set. This observation does not prove that a real incompatible merge occurred;
+it defines the check the deployed source actually performs. Describing that
+key as a complete action signature would overstate the implementation.
+
+The nominal player tag also deserves a technical qualification. The map
+passes `0x5eed0000 + player` into `history_mix`, whose helper uses
+`value | 1`. Thus those two tags become identical when the incoming history
+hash is identical. Different players normally have different histories, but
+the tag itself does not guarantee separation. We have not measured a real
+cross-player information-set collision. This is a source-level limit on the
+claimed key design, not an established cause of the match losses.
 
 ## What the guards guarantee—and what they do not
 

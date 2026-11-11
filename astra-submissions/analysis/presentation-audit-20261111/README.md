@@ -36,3 +36,13 @@ fixtures and generated SVGs. [The generator](../../tools/illustrate_presentation
 uses recorded private views, exports two selected snapshots and runs no bot.
 The [walkthrough](../../../docs/presentation-cases.md) distinguishes the arena
 v38 win from the rejected experimental candidate's local loss.
+
+## Information keys and data lineage
+
+[Source/count review](information-review.json) checks the four core archived
+files against their parent commit and records the actual information-set
+reuse check. It also distinguishes loaded history records from the subset
+meeting the runtime count floor. The [human reference](../../../docs/presentation-tables.md)
+now explains the data-to-coefficients/counts path and which parameters can
+change at runtime. The old streamed-fit population remains source-recorded:
+the exact fitting command/dataset has not been reconstructed by this audit.
