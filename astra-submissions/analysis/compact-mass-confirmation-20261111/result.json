@@ -1,0 +1,165 @@
+{
+  "primary": 5074,
+  "distinct_primary": 2537,
+  "support": {
+    "original": 4852,
+    "learned": 4907
+  },
+  "mean_truth_nll": {
+    "original": 6.91190733646696,
+    "learned": 6.439142247173958
+  },
+  "gain": 0.4727650892930028,
+  "interval95": [
+    0.23297110717669473,
+    0.7650292984175165
+  ],
+  "sensitivity": {
+    "1e-09": 0.3982379908954438,
+    "1e-12": 0.4727650892930028,
+    "1e-15": 0.5476570615174415
+  },
+  "by_team": {
+    "Instructors": {
+      "games": 7,
+      "decisions": 612,
+      "gain": 0.4602261213338107
+    },
+    "duck": {
+      "games": 8,
+      "decisions": 542,
+      "gain": 0.7660732535876996
+    },
+    "HYPOTHERMIA": {
+      "games": 8,
+      "decisions": 628,
+      "gain": 0.5962073072387291
+    },
+    "Greek Gift": {
+      "games": 8,
+      "decisions": 818,
+      "gain": -0.06440643070780512
+    },
+    "Knight Vision": {
+      "games": 8,
+      "decisions": 546,
+      "gain": 0.24014555447156802
+    },
+    "Strongly Invisible": {
+      "games": 8,
+      "decisions": 768,
+      "gain": 1.0763148628636425
+    },
+    "Crimson Fog": {
+      "games": 8,
+      "decisions": 482,
+      "gain": 0.166553476515524
+    },
+    "Mist Opportunities": {
+      "games": 8,
+      "decisions": 678,
+      "gain": 0.5047170820703506
+    }
+  },
+  "collapsed_case_seeds": {
+    "original": 4,
+    "zero": 4,
+    "learned": 4
+  },
+  "full_updates": {
+    "original": 4817,
+    "zero": 4817,
+    "learned": 4807
+  },
+  "large_regime_games": 53,
+  "native_guard_brier": {
+    "king1": {
+      "original": 0.008968303948795277,
+      "learned": 0.008671541935074556,
+      "delta": -0.0002967620137207222,
+      "interval95": [
+        -0.0008924811827882048,
+        0.0002410822334466141
+      ]
+    },
+    "kingt": {
+      "original": 0.009082630557009046,
+      "learned": 0.00871967164402851,
+      "delta": -0.0003629589129805363,
+      "interval95": [
+        -0.00153704296141929,
+        0.0007226995941115071
+      ]
+    },
+    "queen1": {
+      "original": 0.006453911968984102,
+      "learned": 0.006313360939802059,
+      "delta": -0.00014055102918204414,
+      "interval95": [
+        -0.0002583606850022988,
+        -3.1602965056775934e-05
+      ]
+    },
+    "queent": {
+      "original": 0.0066627048640114294,
+      "learned": 0.006389974274723026,
+      "delta": -0.0002727305892884033,
+      "interval95": [
+        -0.000566513233510836,
+        -1.0483022506543942e-05
+      ]
+    }
+  },
+  "unique_positive_guard_events": {
+    "king_label": 34,
+    "queen_label": 31
+  },
+  "risk_rows": 5074,
+  "risk_available": {
+    "original": 5032,
+    "learned": 5032
+  },
+  "time": {
+    "original": {
+      "total": 731.5443372568365,
+      "p95": 0.20650788934999983,
+      "maximum": 1.91825159
+    },
+    "zero": {
+      "total": 731.5443372568365,
+      "p95": 0.20650788934999983,
+      "maximum": 1.91825159
+    },
+    "learned": {
+      "total": 710.7346553210926,
+      "p95": 0.207714734349999,
+      "maximum": 1.95679458
+    }
+  },
+  "conditions": {
+    "primary_coverage": true,
+    "truth_support": true,
+    "gain": true,
+    "confidence": true,
+    "floor_sensitivity": true,
+    "no_extra_collapse": true,
+    "regime_coverage": true,
+    "priority_coverage": true,
+    "priority_nonregression": true,
+    "total_cost": true,
+    "p95_cost": true,
+    "guard_coverage": true,
+    "guard_availability": true,
+    "guard_nonregression": true
+  },
+  "decision": "full_clock_integration_design_allowed",
+  "scope": "Fixed prospective replay confirmation on the sealed 349 games. Selection uses metadata and rules/frontend eligibility only. All paired timing uses the same invocation order balance and original baseline. Two fresh fixed RNG states. No search, clock thinning or recovery.",
+  "at": "2026-11-11T01:30:43.356671+00:00",
+  "plan_sha256": "cff2dfa974bdd4f3c3d589306072266bbced0ecc88ccc3b2963b702f69d868aa",
+  "calls_sha256": "1ee50946051daab39c7b2656088bc1602edff98735df132f5edd8b951f5e307a",
+  "arms": {
+    "original": "v38 native prior",
+    "learned": "fixed compact, powered observation mass preserved",
+    "zero": "internal alias for the original arm"
+  }
+}
