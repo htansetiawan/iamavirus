@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-11T01:48:45.540422+00:00",
+  "source_sha256": "bd7974653b9f8f16ded96295fa6c32ab11ffd3bc97428a849841fe7e49f4275e",
+  "cases": [
+    {
+      "case": "cached-replays",
+      "accepted": 2,
+      "frames": 175,
+      "network_used": false,
+      "core_released": true
+    },
+    {
+      "case": "request-budget",
+      "expected_error": "snapshot request bound reached",
+      "core_released": true
+    },
+    {
+      "case": "actual-retries-counted",
+      "requests": 2,
+      "network_used": false
+    }
+  ],
+  "scope": "Actual two-replay C++ collector validation with mocked public metadata, early-budget cleanup, and real transport retry loop under mocked HTTP failures."
+}

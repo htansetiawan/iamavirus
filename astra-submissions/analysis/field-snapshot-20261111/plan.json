@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-11T01:46:02.171761+00:00",
+  "limit": 6000,
+  "request_limit": 6500,
+  "min_interval": 1.2,
+  "wall_seconds": 10800,
+  "replay_bytes_cap": 2097152,
+  "raw_json_bytes_cap": 4294967296,
+  "min_disk_free": 8589934592,
+  "cores": [
+    2,
+    3
+  ],
+  "caches": [
+    "/home/henrytan/git/iamavirus/data/astra-spool/later-replay-window-20261111/games",
+    "/home/henrytan/git/iamavirus/data/astra-spool/prospective-quiet-teacher-20261110/games"
+  ],
+  "store": "/home/henrytan/git/iamavirus/data/astra-spool/field-snapshot-20261111",
+  "validator_sha256": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/field-snapshot-20261111/collect.py": "bd7974653b9f8f16ded96295fa6c32ab11ffd3bc97428a849841fe7e49f4275e",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/collect_recent.py": "89bf7c76a3357a71ae9fd5d79c9960db200a9de438e5f2e6f951d35121c36d25",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/last-only-pilot-20261110/build/native-validator.so": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/monitor_arena.py": "dc6e0581e9f7d036f9cd9f888b166c87b232a9249f18fcba2e11455b17d29143",
+    "/home/henrytan/git/iamavirus/learning/ingest.py": "141a47ad84c703e835e55bb293aa2ade443704eb7fe275ebb8d33287b7187b91",
+    "/home/henrytan/git/iamavirus/learning/api_client.py": "226d8144e4f14d76c29fe8b96d16bb4c66b87b60665f621f013b2c9aab32d787",
+    "/home/henrytan/git/iamavirus/learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+    "/home/henrytan/git/iamavirus/learning/_native.py": "3bf861fb77073b385e53b36e42b5e2a6e309b2229e9fdbb0cf1cb0e98d5cfe35"
+  },
+  "selection": "One newest-first fixed-cursor snapshot of 6000 completed games, all teams and outcomes.",
+  "purpose": "Restore current all-team replay collection in an independent local store after the shared external raw archive failed. Original clocks and views retained; existing raw links and reports remain archival inputs.",
+  "scope": "Public read-only collection and rules validation. No fit, test selection, history rebuild or deployment."
+}
