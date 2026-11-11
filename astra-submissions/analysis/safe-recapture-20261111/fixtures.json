@@ -1,0 +1,592 @@
+{
+ "cases": [
+  {
+   "board": "R--QK--RPP---PPP--P---------P------p-b-------p--pp----ppr--qr-k-",
+   "castle": "0000000000000081",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d1d5",
+   "name": "real-pinned-pawn",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -10,
+      "legal_safe_recaptures": [],
+      "material_after_root": -1,
+      "material_before": -2,
+      "net_loss": 8,
+      "reply": "d8d5"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 0
+  },
+  {
+   "board": "RN-QK-NRPPP--PPP----P--------B------p-----p-b---p-p--pppr--qkbnr",
+   "castle": "8100000000000081",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "d1d8",
+   "name": "real-sound-trade",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [],
+      "material_after_root": 9,
+      "material_before": 0,
+      "net_loss": 0,
+      "reply": "e8d8"
+     },
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [],
+      "material_after_root": 9,
+      "material_before": 0,
+      "net_loss": 0,
+      "reply": "a8d8"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": 0
+   },
+   "side": 0
+  },
+  {
+   "board": "R--Q--KRPP---PPP--P---------P------p-b-------p--pp----ppr--qr-k-",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d1d5",
+   "name": "same-position-unpinned-control",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -1,
+      "legal_safe_recaptures": [
+       "e4d5"
+      ],
+      "material_after_root": -1,
+      "material_before": -2,
+      "net_loss": -1,
+      "reply": "d8d5"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": -1
+   },
+   "side": 0
+  },
+  {
+   "board": "R--QK--RPP---PPP--P-------B-P------p-b-------p--pp----ppr--qr-k-",
+   "castle": "0000000000000081",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d1d5",
+   "name": "second-safe-defender-control",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 2,
+      "legal_safe_recaptures": [
+       "c4d5"
+      ],
+      "material_after_root": 2,
+      "material_before": 1,
+      "net_loss": -1,
+      "reply": "d8d5"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": -1
+   },
+   "side": 0
+  },
+  {
+   "board": "R--QK--RPP--NPPP--P----------------p-b-------p--pp----ppr--qr-k-",
+   "castle": "0000000000000081",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d1d5",
+   "name": "unguarded-queen-loss-control",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -8,
+      "legal_safe_recaptures": [],
+      "material_after_root": 1,
+      "material_before": 0,
+      "net_loss": 8,
+      "reply": "d8d5"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 0
+  },
+  {
+   "board": "----K-------B---Q--p---------------------------------------qr--k",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "a3d3",
+   "name": "pinned-bishop",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -11,
+      "legal_safe_recaptures": [],
+      "material_after_root": -2,
+      "material_before": -3,
+      "net_loss": 8,
+      "reply": "d8d3"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 0
+  },
+  {
+   "board": "----K-------N---Q-p---------------------------------------q-r--k",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "a3c3",
+   "name": "pinned-knight",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -11,
+      "legal_safe_recaptures": [],
+      "material_after_root": -2,
+      "material_before": -3,
+      "net_loss": 8,
+      "reply": "c8c3"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 0
+  },
+  {
+   "board": "--------------K--------p-------Q-----b------------------k------r",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h4h3",
+   "name": "unsafe-king-recapture",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -8,
+      "legal_safe_recaptures": [],
+      "material_after_root": 1,
+      "material_before": 0,
+      "net_loss": 8,
+      "reply": "h8h3"
+     },
+     {
+      "best_material_after_capture_and_optional_recapture": -8,
+      "legal_safe_recaptures": [],
+      "material_after_root": 1,
+      "material_before": 0,
+      "net_loss": 8,
+      "reply": "f5h3"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 0
+  },
+  {
+   "board": "--------------K--------p-------Q------------------------k------r",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h4h3",
+   "name": "safe-king-recapture-control",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [
+       "g2h3"
+      ],
+      "material_after_root": 4,
+      "material_before": 3,
+      "net_loss": 3,
+      "reply": "h8h3"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": 3
+   },
+   "side": 0
+  },
+  {
+   "board": "-------K---------------------------------------Q------P-k--q---r",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h6h8",
+   "name": "safe-promotion-recapture",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 9,
+      "legal_safe_recaptures": [
+       "g7h8q",
+       "g7h8r",
+       "g7h8b",
+       "g7h8n"
+      ],
+      "material_after_root": 1,
+      "material_before": -4,
+      "net_loss": -13,
+      "reply": "d8h8"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": -13
+   },
+   "side": 0
+  },
+  {
+   "board": "------K--------------------------------q-------Q------P-k-----rr",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h6h8",
+   "name": "pinned-promotion-recapture",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [
+       "g7h8q",
+       "g7h8r",
+       "g7h8b",
+       "g7h8n"
+      ],
+      "material_after_root": -4,
+      "material_before": -9,
+      "net_loss": -9,
+      "reply": "g8h8"
+     },
+     {
+      "best_material_after_capture_and_optional_recapture": -13,
+      "legal_safe_recaptures": [],
+      "material_after_root": -4,
+      "material_before": -9,
+      "net_loss": 4,
+      "reply": "h5h8"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 4
+   },
+   "side": 0
+  },
+  {
+   "board": "R--QR-K-PP----PP-----P-----P-B------p-----p-----pp---pppr--qk--r",
+   "castle": "8100000000000000",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d8d4",
+   "name": "real-pinned-pawn-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -10,
+      "legal_safe_recaptures": [],
+      "material_after_root": -1,
+      "material_before": -2,
+      "net_loss": 8,
+      "reply": "d1d4"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 1
+  },
+  {
+   "board": "R--QKBNRP-P--PPP--P-B-------P--------b------p---ppp--ppprn-qk-nr",
+   "castle": "8100000000000081",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "d8d1",
+   "name": "real-sound-trade-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [],
+      "material_after_root": 9,
+      "material_before": 0,
+      "net_loss": 0,
+      "reply": "e1d1"
+     },
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [],
+      "material_after_root": 9,
+      "material_before": 0,
+      "net_loss": 0,
+      "reply": "a1d1"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": 0
+   },
+   "side": 1
+  },
+  {
+   "board": "R--QR-K-PP----PP-----P-----P-B------p-----p-----pp---pppr--q--kr",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d8d4",
+   "name": "same-position-unpinned-control-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -1,
+      "legal_safe_recaptures": [
+       "e5d4"
+      ],
+      "material_after_root": -1,
+      "material_before": -2,
+      "net_loss": -1,
+      "reply": "d1d4"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": -1
+   },
+   "side": 1
+  },
+  {
+   "board": "R--QR-K-PP----PP-----P-----P-B----b-p-----p-----pp---pppr--qk--r",
+   "castle": "8100000000000000",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d8d4",
+   "name": "second-safe-defender-control-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 2,
+      "legal_safe_recaptures": [
+       "c5d4"
+      ],
+      "material_after_root": 2,
+      "material_before": 1,
+      "net_loss": -1,
+      "reply": "d1d4"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": -1
+   },
+   "side": 1
+  },
+  {
+   "board": "R--QR-K-PP----PP-----P-----P-B------------p-----pp--npppr--qk--r",
+   "castle": "8100000000000000",
+   "ep": -1,
+   "halfmove": 1,
+   "move": "d8d4",
+   "name": "unguarded-queen-loss-control-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -8,
+      "legal_safe_recaptures": [],
+      "material_after_root": 1,
+      "material_before": 0,
+      "net_loss": 8,
+      "reply": "d1d4"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 1
+  },
+  {
+   "board": "---QR--K--------------------------------q--P--------b-------k---",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "a6d6",
+   "name": "pinned-bishop-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -11,
+      "legal_safe_recaptures": [],
+      "material_after_root": -2,
+      "material_before": -3,
+      "net_loss": 8,
+      "reply": "d1d6"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 1
+  },
+  {
+   "board": "--Q-R--K--------------------------------q-P---------n-------k---",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "a6c6",
+   "name": "pinned-knight-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -11,
+      "legal_safe_recaptures": [],
+      "material_after_root": -2,
+      "material_before": -3,
+      "net_loss": 8,
+      "reply": "c1c6"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 1
+  },
+  {
+   "board": "K------R---------------------B---------q-------P------k---------",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h5h6",
+   "name": "unsafe-king-recapture-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -8,
+      "legal_safe_recaptures": [],
+      "material_after_root": 1,
+      "material_before": 0,
+      "net_loss": 8,
+      "reply": "f4h6"
+     },
+     {
+      "best_material_after_capture_and_optional_recapture": -8,
+      "legal_safe_recaptures": [],
+      "material_after_root": 1,
+      "material_before": 0,
+      "net_loss": 8,
+      "reply": "h1h6"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "side": 1
+  },
+  {
+   "board": "K------R-------------------------------q-------P------k---------",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h5h6",
+   "name": "safe-king-recapture-control-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [
+       "g7h6"
+      ],
+      "material_after_root": 4,
+      "material_before": 3,
+      "net_loss": 3,
+      "reply": "h1h6"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": 3
+   },
+   "side": 1
+  },
+  {
+   "board": "K--Q---R------p--------q---------------------------------------k",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h3h1",
+   "name": "safe-promotion-recapture-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 9,
+      "legal_safe_recaptures": [
+       "g2h1q",
+       "g2h1r",
+       "g2h1b",
+       "g2h1n"
+      ],
+      "material_after_root": 1,
+      "material_before": -4,
+      "net_loss": -13,
+      "reply": "d1h1"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": -13
+   },
+   "side": 1
+  },
+  {
+   "board": "K-----RR------p--------q-------Q------------------------------k-",
+   "castle": "0000000000000000",
+   "ep": -1,
+   "halfmove": 0,
+   "move": "h3h1",
+   "name": "pinned-promotion-recapture-mirror",
+   "reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -13,
+      "legal_safe_recaptures": [],
+      "material_after_root": -4,
+      "material_before": -9,
+      "net_loss": 4,
+      "reply": "h4h1"
+     },
+     {
+      "best_material_after_capture_and_optional_recapture": 0,
+      "legal_safe_recaptures": [
+       "g2h1q",
+       "g2h1r",
+       "g2h1b",
+       "g2h1n"
+      ],
+      "material_after_root": -4,
+      "material_before": -9,
+      "net_loss": -9,
+      "reply": "g1h1"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 4
+   },
+   "side": 1
+  }
+ ],
+ "scope": "Frozen course-reference labels before invoking the native helper; constructed cases are not error-frequency estimates.",
+ "threshold": 4
+}

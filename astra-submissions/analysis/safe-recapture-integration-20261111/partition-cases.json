@@ -1,0 +1,46 @@
+[
+  {
+    "name": "pinned-defender",
+    "board": "R---K-------B---Q--p------------------------------------r--qr--k",
+    "queen_reference": {
+      "risk": 1,
+      "worst_net_loss": 8,
+      "captures": [
+        {
+          "reply": "d8d3",
+          "material_before": -3,
+          "material_after_root": -2,
+          "best_material_after_capture_and_optional_recapture": -11,
+          "net_loss": 8,
+          "legal_safe_recaptures": []
+        }
+      ]
+    },
+    "other_piece_capture": "a8a1",
+    "other_piece_net_loss": 4,
+    "safe_recaptures": []
+  },
+  {
+    "name": "rook-removed-control",
+    "board": "R---K-------B---Q--p------------------------------------r--q---k",
+    "queen_reference": {
+      "risk": 0,
+      "worst_net_loss": -1,
+      "captures": [
+        {
+          "reply": "d8d3",
+          "material_before": 2,
+          "material_after_root": 3,
+          "best_material_after_capture_and_optional_recapture": 3,
+          "net_loss": -1,
+          "legal_safe_recaptures": [
+            "e2d3"
+          ]
+        }
+      ]
+    },
+    "other_piece_capture": "a8a1",
+    "other_piece_net_loss": 4,
+    "safe_recaptures": []
+  }
+]

@@ -1,0 +1,75 @@
+{
+ "antecedents": [
+  "032 hidden-pin motif already known",
+  "168/221 enemy-capture terminal semantics already implemented/tested; failed gate preserved",
+  "310 explicitly leaves recapture-feasibility approximation; promotion patch remains separate",
+  "337/338 earlier material diagnostics with exact capture/support checks",
+  "309 validated post-clock-restored v38 observer/population export"
+ ],
+ "at": "2026-11-11T20:49:03.322791+00:00",
+ "fixed_replay": {
+  "allowed_after_component_pass": true,
+  "batch_seconds": 600,
+  "cores": [
+   2,
+   3
+  ],
+  "existing_observer_binary": "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/observer/mist",
+  "guard_reprice_cap": 20000,
+  "inputs": "Only actor observations, own clocks and forced preceding own moves; restored own post-move clocks. No true board/opponent move/outcome input.",
+  "maximum_private_bytes": 268435456,
+  "no_retry_or_seed_sweep": true,
+  "policy_changed": false,
+  "process_seconds": 150,
+  "queen_loss_threshold": 4,
+  "queen_weight": 0.9,
+  "readouts": "After selection, inspect retained population, recorded-capture support, sample occupancy, old/amended queen risks and root eligibility on the identical exported population.",
+  "replays": 2,
+  "root_margin": 0.02,
+  "seed": 4171111
+ },
+ "helper_checks": [
+  "actual static queen_risks from immutable v38 C source, not a rewritten baseline",
+  "real loss and valid queen-trade control, safe/unpinned controls plus pinned pawn/bishop/knight/king and promotion recaptures, both colors",
+  "corrected flags match bounded course-reference capture/optional-safe-recapture labels on all frozen cases",
+  "targeted bitboard recapture predicate matches exhaustive FOW move enumeration on every tested capture child",
+  "source patch changes only recapture feasibility, retaining known enemy-terminal and promotion limitations"
+ ],
+ "limits": [
+  "A bounded immediate exchange helper, not a complete material search or strategy.",
+  "Corrections in168/221 and310 remain distinct, with their old outcomes unchanged.",
+  "Actual-board fixtures do not establish posterior mass, decision repair, throughput or Elo.",
+  "Reconstructed native histories have unknown arena RNG and load-dependent thinning; snapshots are not certified live states.",
+  "No patched policy call, model fit, GPU, full game, new ZIP/version, Fable-source/default/service or website deployment."
+ ],
+ "private_output": "/home/henrytan/git/iamavirus/data/astra-spool/safe-recapture-20261111",
+ "scope": "Verify the documented recapture-feasibility approximation in the exact v38 queen helper using a real pinned-defender loss and sound queen-trade control. Isolated helper amendment and fixed-population post-hoc repricing only; actor replays remain unmodified v38. No candidate/training/strength trial.",
+ "selected_pair": {
+  "control": {
+   "game": "do0s3j6i",
+   "recorded_move": "d1d8",
+   "root_ply": 12
+  },
+  "loss": {
+   "game": "ewav2dzr",
+   "recorded_move": "d1d5",
+   "root_ply": 34
+  },
+  "selection": "Sole current68 White-v38 win against DCBv7; earliest same-color/version loss. Selected retrospectively for teaching, not a representative sample or causal pair."
+ },
+ "source_pins": {
+  "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/control/src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/build/observer/mist": "4698bbbf1c73be977975e4fd48696e17cfe69897b1761d6bd69a2187385aadee",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/observe.c": "c2eb359b6bd2c456f13cadea29c2836aa883890bcebc790fa29f8f68cba23d57",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/observe.h": "937e5eaaa5218306c43d3ab94f3dfc0d514918b6d99f4071e9bd5553bcdf9f39",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/farsight-root-20261110/study.py": "5e036d51aad544f7d3b40bcba1ba29286c7e2179d6d009d03aed387387bf4805",
+  "/home/henrytan/git/iamavirus/astra-submissions/iamavirus-v38-mist-c-allchildren.zip": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "/home/henrytan/git/iamavirus/chatroom/168-fable-terminal-aware-capture-events.md": "7d11d60a78c6a7ed6b8a7f0df01a641e482796c0d7c03effcbbf93e814b738de",
+  "/home/henrytan/git/iamavirus/chatroom/221-astra-minimal-queen-backport.md": "0c6fe3e99fd25d56b6e1e4cfe8566e8b680ac50c6dd32b34ece2fdba8cf55fc0",
+  "/home/henrytan/git/iamavirus/chatroom/310-astra-promotion-material-ledger.md": "dad41937bd57a7051e3d79052a6693118cb4b01ca42973908afbe0cdc4c2a7fd",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/raw/games/do0s3j6i/replay.json": "d6f6e7e823114efb873a877153748263430e32933b8245d9ffb0b7878541b225",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/raw/games/ewav2dzr/replay.json": "f47ae4ac555b8c78f7e36f497967746583cb991b981fa07a074719b8fc08bfc5"
+ },
+ "substantive_difference": "Check whether a nominal defender can recapture without immediately losing its king, rather than granting credit from is_attacked alone. Do not alter second-ply capture terminal handling, promotion arithmetic, thresholds, weights, search or deployed source."
+}

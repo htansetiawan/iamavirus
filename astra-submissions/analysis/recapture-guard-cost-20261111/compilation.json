@@ -1,0 +1,55 @@
+[
+  {
+    "binary": "bench",
+    "argv": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "src/board.c",
+      "src/belief.c",
+      "src/movemodel.c",
+      "src/cfr.c",
+      "src/eval.c",
+      "src/search.c",
+      "src/gtcfr.c",
+      "src/front.c",
+      "src/sfeval.c",
+      "src/component-bench.c",
+      "-lm",
+      "-o",
+      "bench"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "binary": "trace",
+    "argv": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "-DASTRA_COUNT_GUARD",
+      "src/board.c",
+      "src/belief.c",
+      "src/movemodel.c",
+      "src/cfr.c",
+      "src/eval.c",
+      "src/search.c",
+      "src/gtcfr.c",
+      "src/front.c",
+      "src/sfeval.c",
+      "src/component-bench.c",
+      "-lm",
+      "-o",
+      "trace"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  }
+]

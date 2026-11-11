@@ -1,0 +1,87 @@
+{
+  "spec_sha256": "8aa4c993a4bb72ff9bfca0b511934e7e80f38f4aa71df5183cecba3ce8a006f8",
+  "cases": [
+    {
+      "name": "saved-control-1",
+      "kind": "saved",
+      "source": "data/astra-spool/safe-recapture-20261111/control/population.json",
+      "input_path": "data/astra-spool/recapture-guard-cost-20261111/saved-control-1.txt",
+      "input_sha256": "6ed3fb3cbf1f7fa224641c96c4682b98c57abc304599a3ab1caca186895fc59f",
+      "worlds": 1,
+      "us": 0,
+      "temperature": 2
+    },
+    {
+      "name": "saved-loss-22",
+      "kind": "saved",
+      "source": "data/astra-spool/safe-recapture-20261111/loss/population.json",
+      "input_path": "data/astra-spool/recapture-guard-cost-20261111/saved-loss-22.txt",
+      "input_sha256": "e6234cd84a9fe675127fcb21a3f8ee5ad5723c420ba9c71819e19fbbfc4b3d38",
+      "worlds": 22,
+      "us": 0,
+      "temperature": 2
+    },
+    {
+      "name": "saved-farsight-2128",
+      "kind": "saved",
+      "source": "data/astra-spool/farsight-root-20261110/actor/population.json",
+      "input_path": "data/astra-spool/recapture-guard-cost-20261111/saved-farsight-2128.txt",
+      "input_sha256": "26d1698642321340e0722a5f68c73cb9a908c1cc6585836b56c87aec001fc72e",
+      "worlds": 2128,
+      "us": 1,
+      "temperature": 2
+    },
+    {
+      "name": "cycled-2128-to-20000",
+      "kind": "cycle-saved",
+      "source": "data/astra-spool/farsight-root-20261110/actor/population.json",
+      "count": 20000,
+      "input_path": "data/astra-spool/recapture-guard-cost-20261111/cycled-2128-to-20000.txt",
+      "input_sha256": "b3a4a00b8d8ef9c5c30f47da279e0aa8cc37745681ed1225fa449bad0b217c76",
+      "worlds": 20000,
+      "us": 1,
+      "temperature": 2
+    },
+    {
+      "name": "constructed-pinned-20000",
+      "kind": "constructed-repeat",
+      "source": "astra-submissions/analysis/safe-recapture-integration-20261111/partition-cases.json",
+      "count": 20000,
+      "input_path": "data/astra-spool/recapture-guard-cost-20261111/constructed-pinned-20000.txt",
+      "input_sha256": "9974ca5856b159eff98c45ea5ae375310c4b8d1ea4655d859b5454eae6026e27",
+      "worlds": 20000,
+      "us": 0,
+      "temperature": 2
+    }
+  ],
+  "binaries": {
+    "bench": {
+      "path": "astra-submissions/experiments/recapture-guard-cost-20261111/build/tree/bench",
+      "sha256": "8e0d7c3de779d404cd74c62bfdc536180c7883f09f48265b19f29d6ceedc61e3"
+    },
+    "trace": {
+      "path": "astra-submissions/experiments/recapture-guard-cost-20261111/build/tree/trace",
+      "sha256": "dafffd0bcf43ad1f249f705fb06628ad98242a28295ab6a1dbe6440d218c26cb"
+    }
+  },
+  "generated_source_sha256": {
+    "component-bench.c": "1ab71cdb8b675ba367a0df86ba63c48cafcb659e8ca914ae27f4cb4a9cf7eeb8",
+    "profile-main.c": "42ddacfada075ce926d6bd99113d218b5a2158516daa5e4840a474a13f60b590"
+  },
+  "runner_sha256": "3d3374ada7c63227b947783e22a6f348ac7322dd7dcc20435952438b0aa74340",
+  "instrumentation": "Timed binary has no counter increments; preprocessor blocks strip exactly back to tested coherent source. Separate binary traces one untimed pass.",
+  "blocks": 4,
+  "order": "AB BA AB BA",
+  "minimum_cpu_ns": 1000000,
+  "case_seconds": 60,
+  "batch_seconds": 120,
+  "no_retries": true,
+  "no_policy": true,
+  "limits": [
+    "Three old inspected replay populations, not representative arena cost or untouched data",
+    "Two synthetic stresses duplicate saved worlds or a constructed position, not natural cap-sized beliefs",
+    "Only queen+piece computation, not whole guard, turn, startup or playing strength",
+    "Hot repeated data and one current-source compiler layout; four block ratios descriptive, no independent population confidence claim",
+    "No new candidate, training, GPU, backend, policy, game, ZIP/version, source ownership or deployment change"
+  ]
+}

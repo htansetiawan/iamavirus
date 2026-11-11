@@ -1,0 +1,49 @@
+{
+  "diagnostic_completed": true,
+  "queen_only_patch_preserves_composite_partition": false,
+  "source_sha256": "baececf6f2afa66b8506009b39fe1b3c52662112f955ae06e71cd8b519b064d0",
+  "rows": [
+    {
+      "case": 0,
+      "queen_original": 0,
+      "queen_amended": 1,
+      "piece_unchanged": 1,
+      "combined": 1.658
+    },
+    {
+      "case": 1,
+      "queen_original": 0,
+      "queen_amended": 0,
+      "piece_unchanged": 1,
+      "combined": 0.758
+    }
+  ],
+  "compile": {
+    "argv": [
+      "gcc",
+      "-std=c11",
+      "-O2",
+      "-pthread",
+      "-D_POSIX_C_SOURCE=199309L",
+      "src/board.c",
+      "src/belief.c",
+      "src/movemodel.c",
+      "src/cfr.c",
+      "src/eval.c",
+      "src/search.c",
+      "src/gtcfr.c",
+      "src/front.c",
+      "src/sfeval.c",
+      "src/partition-probe.c",
+      "-lm",
+      "-o",
+      "partition-probe"
+    ],
+    "exit_code": 0,
+    "stderr": ""
+  },
+  "probe_exit_code": 0,
+  "policy_or_backend_runs": 0,
+  "conclusion": "Do not integrate the queen-only patch into current default composite guard. Its queen exclusion in best_capture_net needs the same safe-recapture semantics.",
+  "limits": "Two constructed component positions; no population frequency, policy, performance or strength evidence. The 26 queen-helper compiler checks remain passing and narrow."
+}

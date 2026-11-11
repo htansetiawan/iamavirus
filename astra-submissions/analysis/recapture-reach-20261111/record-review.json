@@ -1,0 +1,117 @@
+{
+ "all_changed_course_references_checked": true,
+ "at": "2026-11-11T21:25:41.653024+00:00",
+ "changed_actions": 23,
+ "cohort_aggregates_reproduced": true,
+ "conservative_view_ep_exclusions": [
+  {
+   "game": "7qsrjcyc",
+   "move": "d5c6",
+   "played": false,
+   "ply": 40,
+   "side": 0
+  },
+  {
+   "game": "8rrvmg4h",
+   "move": "e4f3",
+   "played": false,
+   "ply": 21,
+   "side": 1
+  },
+  {
+   "game": "b7oioacc",
+   "move": "g5f6",
+   "played": false,
+   "ply": 28,
+   "side": 0
+  },
+  {
+   "game": "kuh96cbr",
+   "move": "e5f6",
+   "played": true,
+   "ply": 48,
+   "side": 0
+  },
+  {
+   "game": "mmmfa8x1",
+   "move": "d5e6",
+   "played": false,
+   "ply": 14,
+   "side": 0
+  },
+  {
+   "game": "pziqqwvi",
+   "move": "d4c3",
+   "played": true,
+   "ply": 33,
+   "side": 1
+  },
+  {
+   "game": "s0f152rd",
+   "move": "d5e6",
+   "played": true,
+   "ply": 34,
+   "side": 0
+  }
+ ],
+ "counts": {
+  "course_frames": 7692,
+  "decisions": 3798,
+  "games": 90,
+  "native_king_checks": 121590,
+  "true_legal_choices": 121594,
+  "view_choices": 121587
+ },
+ "no_native_reinvocation": true,
+ "passed": true,
+ "played_reference_differences": [
+  {
+   "action": "d1d5",
+   "course_reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": -10,
+      "legal_safe_recaptures": [],
+      "material_after_root": -1,
+      "material_before": -2,
+      "net_loss": 8,
+      "reply": "d8d5"
+     }
+    ],
+    "risk": 1,
+    "worst_net_loss": 8
+   },
+   "flags": 2,
+   "game": "ewav2dzr",
+   "ply": 34,
+   "side": 0
+  }
+ ],
+ "scope": "Independent saved-record coverage/aggregate audit and course recheck of all actual moves and all changed actions. Original native king checks on every alternative were not repeated. No runtime posterior, policy or strength claim.",
+ "source_sha256": "cd08ac8af80d254c5ccd6a6ffcc9d6f62747e7df16936009e8cd91078ebd1870",
+ "unchanged_other_reference_mismatches": [
+  {
+   "action": "b7b8q",
+   "course_reference": {
+    "captures": [
+     {
+      "best_material_after_capture_and_optional_recapture": 7,
+      "legal_safe_recaptures": [
+       "c6b8"
+      ],
+      "material_after_root": 11,
+      "material_before": 3,
+      "net_loss": -4,
+      "reply": "f8b8"
+     }
+    ],
+    "risk": 0,
+    "worst_net_loss": -4
+   },
+   "flags": 3,
+   "game": "do0s3j6i",
+   "ply": 90,
+   "side": 0
+  }
+ ]
+}

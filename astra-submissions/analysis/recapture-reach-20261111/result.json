@@ -1,0 +1,111 @@
+{
+ "at": "2026-11-11T21:21:36.297577+00:00",
+ "changed_actions": 23,
+ "changed_played_examples": [
+  {
+   "action": "d1d5",
+   "actual_next_reply": "d8d5",
+   "amended": true,
+   "cohort": "current68",
+   "enemy_terminal_approximation": false,
+   "game": "ewav2dzr",
+   "original": false,
+   "outcome": "loss",
+   "ply": 34,
+   "promotion_approximation": false,
+   "reference_risk": 1,
+   "side": 0
+  }
+ ],
+ "cohorts": {
+  "current68": {
+   "changed_choices": 23,
+   "changed_choices_enemy_terminal": 0,
+   "changed_choices_promotion": 0,
+   "changed_choices_reference_1": 23,
+   "changed_decisions": 4,
+   "changed_games": 2,
+   "changed_played_decisions": 1,
+   "changed_played_games": 1,
+   "course_frames": 5780,
+   "decisions": 2852,
+   "draw_games": 1,
+   "games": 68,
+   "loss_games": 24,
+   "native_king_checks": 89289,
+   "played_amended_0_reference_0": 2824,
+   "played_amended_1_reference_0": 1,
+   "played_amended_1_reference_1": 3,
+   "played_king_losses": 24,
+   "played_original_0_reference_0": 2824,
+   "played_original_0_reference_1": 1,
+   "played_original_1_reference_0": 1,
+   "played_original_1_reference_1": 2,
+   "true_legal_choices": 89292,
+   "view_choices": 89287,
+   "win_games": 43
+  },
+  "old327": {
+   "changed_games": 0,
+   "changed_played_games": 0,
+   "course_frames": 1912,
+   "decisions": 946,
+   "games": 22,
+   "loss_games": 13,
+   "native_king_checks": 32301,
+   "played_amended_0_reference_0": 930,
+   "played_amended_1_reference_1": 3,
+   "played_king_losses": 13,
+   "played_original_0_reference_0": 930,
+   "played_original_1_reference_1": 3,
+   "true_legal_choices": 32302,
+   "view_choices": 32300,
+   "win_games": 9
+  }
+ },
+ "counts": {
+  "course_frames": 7692,
+  "decisions": 3798,
+  "games": 90,
+  "native_king_checks": 121590,
+  "true_legal_choices": 121594,
+  "view_choices": 121587
+ },
+ "limits": [
+  "The90games are reused descriptive data, not an untouched holdout or representative arena population. The68new ownmatches and22older field-selected ownmatches stay separate.",
+  "A true-board event can have negligible runtime posterior mass; occurrence is not a bound on guard activation, chosenmoves, savedgames or Elo.",
+  "All legal choices count repeated/hypothetical opportunities; keep denominator distinct from actualplayed decisions and games.",
+  "The amendment only removes unsound recapture credit; originalenemy-capture terminal and promotion limitations stay. Fullcourse references may expose their interactions; retain everymismatch.",
+  "No new API download, belief/search reconstruction, patched policy, fit/GPU, botgame, runtime/default/Fablesource/service change, ZIP/version/arena action or website deployment.",
+  "The bounded exchange reference checks king outcomes but does not certify continuation past counterfactual repetition or fifty-move draws. It is not a full exchange search or game value."
+ ],
+ "private_bytes": 141810,
+ "private_hashes": {
+  "/home/henrytan/git/iamavirus/data/astra-spool/recapture-reach-20261111/changed-actions.jsonl.gz": "f474f4d999c651fb7bf1f80c7a53043928aacf8033508cdd7cf5f6b872255f8b",
+  "/home/henrytan/git/iamavirus/data/astra-spool/recapture-reach-20261111/decisions.jsonl.gz": "8524f9bf10b9fbaba07d363302a97f92afb85c7950b4c1fd28027825fea08cb6"
+ },
+ "seconds": 11.717264198989142,
+ "view_generator_diagnostics": [
+  {
+   "game": "kuh96cbr",
+   "kind": "recorded_move_outside_view_generator",
+   "ply": 48,
+   "recorded": "e5f6",
+   "side": 0
+  },
+  {
+   "game": "pziqqwvi",
+   "kind": "recorded_move_outside_view_generator",
+   "ply": 33,
+   "recorded": "d4c3",
+   "side": 1
+  },
+  {
+   "game": "s0f152rd",
+   "kind": "recorded_move_outside_view_generator",
+   "ply": 34,
+   "recorded": "d5e6",
+   "side": 0
+  }
+ ]
+}
