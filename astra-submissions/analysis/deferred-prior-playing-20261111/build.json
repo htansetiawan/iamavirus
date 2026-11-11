@@ -1,0 +1,349 @@
+{
+  "at": "2026-11-11T00:14:47.360687+00:00",
+  "passed": true,
+  "changes": [
+    "belief.c",
+    "board.c",
+    "movemodel.c"
+  ],
+  "preflight": [
+    {
+      "binary": "v38",
+      "side": "white",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "d48dde7afa87d39bd7d5f2d0a327a939d9cff9d1fa093c48c06c8160c75f5a95",
+      "stderr_sha256": "1a7d314d84df8ba9197df8bb8eb66c573d6c93736b584540a0d5f3a23a36224f"
+    },
+    {
+      "binary": "v38",
+      "side": "black",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "1830af00f7ba11f1c2194bd05d7b739e9abf0c3e1f06f87543e7bf3b677b54e8",
+      "stderr_sha256": "3ba410501c8d719f2d7f32cea45cac847813b80be6fa01b11876c62e95f9ccfc"
+    },
+    {
+      "binary": "gcc",
+      "side": "white",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "d48dde7afa87d39bd7d5f2d0a327a939d9cff9d1fa093c48c06c8160c75f5a95",
+      "stderr_sha256": "6b500d21ba2aeec2a56245e1c82dea69c61100d6bed300a8dec7696ce3a2866c"
+    },
+    {
+      "binary": "gcc",
+      "side": "black",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "1830af00f7ba11f1c2194bd05d7b739e9abf0c3e1f06f87543e7bf3b677b54e8",
+      "stderr_sha256": "3ba410501c8d719f2d7f32cea45cac847813b80be6fa01b11876c62e95f9ccfc"
+    },
+    {
+      "binary": "gpp-c",
+      "side": "white",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "d48dde7afa87d39bd7d5f2d0a327a939d9cff9d1fa093c48c06c8160c75f5a95",
+      "stderr_sha256": "1a7d314d84df8ba9197df8bb8eb66c573d6c93736b584540a0d5f3a23a36224f"
+    },
+    {
+      "binary": "gpp-c",
+      "side": "black",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "142a4e9940b0bbceef6f70d2a5a2c77bc3ae26c660f4866f7ebad8290f7aa7ee",
+      "stderr_sha256": "7b4de799889f7288d6044f9291f033c9d256b2f6ac9eb1cbcefb8e0cdf3e3b72"
+    },
+    {
+      "binary": "gpp-cpp",
+      "side": "white",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "d48dde7afa87d39bd7d5f2d0a327a939d9cff9d1fa093c48c06c8160c75f5a95",
+      "stderr_sha256": "1a7d314d84df8ba9197df8bb8eb66c573d6c93736b584540a0d5f3a23a36224f"
+    },
+    {
+      "binary": "gpp-cpp",
+      "side": "black",
+      "backend": "ready",
+      "legal": true,
+      "stdout_sha256": "142a4e9940b0bbceef6f70d2a5a2c77bc3ae26c660f4866f7ebad8290f7aa7ee",
+      "stderr_sha256": "39fc94d00a17ec970c92fe80e9681a5a7512eadc5b580fc6ca9f898f781d7db0"
+    }
+  ],
+  "binaries": {
+    "v38": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd",
+    "gcc": "8945bc2b140b0997b2f7bef740bc45bc0ecde0546424d76f33b752a711f205f4",
+    "gpp-c": "0592252d61b7505be7c9f29dd268c4752012ee5017b5a986da52bac2894473dc",
+    "gpp-cpp": "a29f5fb10beb19da8a39abe5fcafce3252c9794a4271cdebad00c75b2012dc79"
+  },
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/stage.py": "ed866450561e97d8167a4945e9f3e121ff95fe7377accc428cfcb6efd96f40d0",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/exact-speed-playing-20261110/build.py": "fdaeb1c75401634f17f7fdb66c76d966906600160f63cd03660bbf848335a247",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/exact-speed-playing-20261110/prepare.py": "c19f0762ef385a9746eb0812ae49440a31ad77106aa7e537fae3d099c014b7f7",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/deferred-prior-speed-20261111/plan-summary.json": "3f30f7efb69329bd36bc63dc59c16870a14c4af3f25d8635fdf569ed6e2cc086",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/mist": "14ac30b34999a6a667e4dcdfb1b4606b184dbacbdc2fcfdf7f6b257513543fcd",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/mist": "8945bc2b140b0997b2f7bef740bc45bc0ecde0546424d76f33b752a711f205f4",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/gpp-c": "0592252d61b7505be7c9f29dd268c4752012ee5017b5a986da52bac2894473dc",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/gpp-cpp": "a29f5fb10beb19da8a39abe5fcafce3252c9794a4271cdebad00c75b2012dc79",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/front.c": "0a4b81f89b131c94235b1b04195fe129324f7608afd5f92a3f55fa7ac650cc05",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/fow.h": "5721cff41131d9a0c1b66d5dbafc6bbd7997cf366892f122bf7142b9511cad1f",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/belief.c": "d345b1eaa9fa8844faec66524667809c1997433df02e7ac7f2791f270b374c31",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/sfeval.h": "15fc387070a5abec7f88472a230aca4b2d3642586ee1c2be5e19fc1a67c1dc3d",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/movemodel.h": "3d2018131887fe9939e944b95b95783e89db310e9091781f6cf91f6e757c513a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/search.h": "6e2c215bb8bdb4abbde9d8f68be7556df0cf8a2088f00998a2f0c444a70aac75",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/movemodel.c": "3cc813e92ebc86923858c13fe03b18c65ea9e5d96d2742a3ade83e0a7f77185d",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/main.c": "462719d498b488ead239361361ce309c0b64b460075ca6b1f0e346bf1f1f664b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/eval.h": "4020fcce58269aaac95642fd23781e5af5babcddbd4189a7614ce9f10b6d6e76",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/search.c": "55142534a2f78ac48fa87f3c67f23725597ecee031bdee59f83dcfbcdf65e242",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/belief.h": "04483836c6dc00a06a7de42c3e413d72b0cee8c4d65ea00ebc0f8d7bfbb16c16",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/gtcfr.h": "3d30809c2eceb08277777e7640513ade1c6b3d11f6b996850ed7c2bd9393b97c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/board.c": "58a1fde89a98ad123c0cd759a5b3e9b3262aea39fc54ad4e11a1d4995853f3d1",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/front.h": "4c392b96fba741c1691ae1b5fa64c205859aa141f3d0a9f725e586d18cea3606",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/build.sh": "e83c84a58ea6cf581528e7295f7ca2ba5000350c393eab7d10a2bb59854c4ab1",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/run.sh": "aa6e1c9c17e2245c82afc46dab17911896b87431a54547a1d634564b6e5fda56",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/bin/stockfish": "ee37a332307846bf5180d178fc3450d2e3415e2e3b31f224fef2bb3d959e715a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/guard-controls-20261109/build/pilot/extracted/iamavirus-v38-mist-c-allchildren/data/history.bin": "3d58d8ec129af10954b1835e341d386599442f6f350bce26780dd26bc080ed54",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/native-validator.so": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+    "/home/henrytan/git/iamavirus/data/astra-spool/deferred-prior-speed-20261111/belief.c": "d345b1eaa9fa8844faec66524667809c1997433df02e7ac7f2791f270b374c31"
+  },
+  "compiler_commands": [
+    {
+      "command": [
+        "bash",
+        "build.sh"
+      ],
+      "stdout": "build: done (gcc)\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/board.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/board.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/belief.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/belief.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/movemodel.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/movemodel.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/cfr.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/cfr.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/eval.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/eval.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/search.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/search.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/gtcfr.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/gtcfr.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/front.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/front.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/sfeval.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/sfeval.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c",
+        "-std=c11",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "-c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/main.c",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/main.o"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/board.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/belief.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/movemodel.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/cfr.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/eval.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/search.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/gtcfr.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/front.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/sfeval.o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/main.o",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/gpp-c"
+      ],
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "g++",
+        "-x",
+        "c++",
+        "-std=c++20",
+        "-fpermissive",
+        "-w",
+        "-O2",
+        "-pthread",
+        "-D_POSIX_C_SOURCE=199309L",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/board.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/belief.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/movemodel.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/cfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/eval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/search.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/gtcfr.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/front.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/sfeval.c",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/candidate/src/main.c",
+        "-lm",
+        "-o",
+        "/home/henrytan/git/iamavirus/astra-submissions/experiments/deferred-prior-playing-20261111/build/compiler-checks/gpp-cpp"
+      ],
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "scope": "Unnumbered local build. Matched full-clock games require the independent 348 gate and audit."
+}
