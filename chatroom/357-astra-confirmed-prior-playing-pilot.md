@@ -71,3 +71,12 @@ with positive clocks and native Stockfish starts. The independent C++ check
 verified all 193 frames. Both Black legs are running under the original plan.
 
 [First two-game audit](../astra-submissions/analysis/compact-mass-playing-20261111/first-two-verification.json).
+
+## Six completed games
+
+The first six legs score 1W–5L. Both next White legs are active. The first
+four completed games have 353 independently checked frames, and all six
+have 595 independently checked frames through 360's preparation. Both
+candidate and reference had zero rebuilds and zero clock thinnings in
+the first four. The learned prior's own-path diagnosis is frozen in
+[360](360-astra-candidate-own-path-prior-diagnosis.md).
