@@ -114,6 +114,47 @@ class IntelRefreshTests(unittest.TestCase):
                         self.assertFalse(result['mapping_verified'])
                         self.assertIn(error, result['error'])
 
+    def test_active_archive_follows_canonical_markdown_link_before_upload_alias(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            registry = root/'fable-submissions/README.md'
+            registry.parent.mkdir()
+            canonical = root/'astra-submissions/iamavirus-v38-canonical.zip'
+            canonical.parent.mkdir()
+            for path, count in ((canonical, 2), (registry.parent/'v38-review.zip', 0)):
+                with zipfile.ZipFile(path, 'w') as archive:
+                    archive.writestr('src/movemodel.c', 'parameters')
+                    archive.writestr('data/history.bin', struct.pack('<8sII', b'MISTHIST', 1, count) + bytes(16 * count))
+            digest = hashlib.sha256(canonical.read_bytes()).hexdigest()
+            # Same cell shape as the real arena-v38 registry row. The alias
+            # exists too, so existence-based fallback cannot hide the bug.
+            for label in (canonical.name, f'`{canonical.name}`'):
+                registry.write_text(f'| **38** | date | Astra [{label}](../astra-submissions/{canonical.name}), uploaded alias `v38-review.zip` | `{digest[:12]}` |\n')
+                with self.subTest(label=label), patch.object(intel, 'ROOT', root):
+                    result = intel.mapped_active_archive(registry, 38)
+                    self.assertTrue(result['mapping_verified'], result.get('error'))
+                    self.assertEqual(result['path'], str(canonical))
+                    self.assertEqual(result['sha256'], digest)
+                    self.assertEqual(result['history']['records'], 2)
+
+    def test_active_archive_does_not_replace_a_bad_canonical_link_with_an_alias(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            registry = root/'fable-submissions/README.md'
+            registry.parent.mkdir()
+            alias = registry.parent/'alias.zip'
+            with zipfile.ZipFile(alias, 'w') as archive:
+                archive.writestr('src/movemodel.c', 'parameters')
+                archive.writestr('data/history.bin', struct.pack('<8sII', b'MISTHIST', 1, 0))
+            digest = hashlib.sha256(alias.read_bytes()).hexdigest()
+            for target, expected in (('../astra-submissions/missing.zip', 'No such file'),
+                                     ('../../outside.zip', 'outside the project')):
+                registry.write_text(f'| 38 | date | [canonical]({target}), uploaded alias `alias.zip` | `{digest[:12]}` |\n')
+                with self.subTest(target=target), patch.object(intel, 'ROOT', root):
+                    result = intel.mapped_active_archive(registry, 38)
+                    self.assertFalse(result['mapping_verified'])
+                    self.assertIn(expected, result['error'])
+
     def test_daily_publish_commits_available_reports_without_other_staged_work(self):
         # Exercise the actual scheduled publication block: optional steps may
         # fail, and another agent may have staged unrelated work concurrently.
