@@ -24,3 +24,12 @@ source ledger additions are append-only Astra entries. Shared queues,
 core reservations, shared engine code and deployment workflows are outside
 the checkpoint. Publication status and PR URL will be recorded separately
 after the remote branch is verified.
+
+## Later course-map source revision
+
+The original payload manifest and validation above describe initial packet
+commit `24635504b7cc099bb9ee504c7f5000b21611a94e`. A later documentation-only
+revision checks the posted RL/calibration slides and the retained trainer.
+Its [separate source review](../course-reading-followup-20261111/review.json)
+records the old and new course-map hashes and reading limits. The original
+experiment results, manifest and initial packet evidence remain preserved.

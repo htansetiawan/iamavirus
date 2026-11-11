@@ -145,13 +145,19 @@ Guards can cover some sampled-out danger but cannot guarantee survival.
 
 ### Multiagent deep RL (15 October)
 
-**Course.** The schedule lists modern multiagent deep reinforcement learning
-for imperfect-information games. This review separates the project's
-historical training code from the source actually deployed now; it does not
-infer experimental outcomes from a lecture topic.
+**Course.** The posted slides distinguish neural best-response/regret
+approximation, including NFSP, PSRO and Deep CFR, from policy-gradient
+self-play. They discuss regularization and refining a policy with rollout
+values at decision time. Their stated convergence result has tabular-policy
+and exploration assumptions; it does not certify arbitrary neural PPO.
+[Lecture 9, slides 4–8, 18–31](https://www.mit.edu/~6.7980/slides/L09_deep_rl.html?overview=1).
 
 **In the bot.** The historical hybrid has CNN–GRU imitation/PPO code and a
-batched C++ simulator. Those policy networks do not play in v38. The deployed
+batched C++ simulator. The retained trainer already contains a KL pull toward
+the imitation reference, a training-only scalar true-board critic and GAE
+over recorded trajectories (`learning/rl_train.py`, `learning/critic.py`).
+A privileged critic or reference-policy penalty is therefore not a new
+architecture for this project. These policy networks do not play in v38. The deployed
 opponent model is a frozen conditional logit plus a count table; Stockfish's
 borrowed NNUE is a different network. There is no deployed neural regret
 approximator or self-play-trained FoW value replacing Stockfish.
@@ -161,6 +167,29 @@ within-game belief updating and within-decision regret updates are distinct.
 The recent compact prior improved prediction and inference but lost its
 playing pilot. That evidence does not support a universal conclusion about
 when deep RL can work. See the [experiment map](presentation-experiments.html).
+
+**Further reading.** Fan and Farina study action-sampling variance that can
+remain even with an exact state-value critic. Their Q-boosting uses an
+action-value critic and expected backups. That estimator is absent from our
+retained GAE code; its relevance to our trainer is an unmeasured question.
+[GAE Falls Short, v2, abstract and introduction](https://arxiv.org/html/2605.19235v2).
+
+### Forecasting and calibration (3 November)
+
+**Course.** Calibration compares outcomes within groups of similar forecasts.
+The lecture develops multicalibration and a route to Φ-regret using additional
+optimization primitives and private forecast sampling.
+[Lecture 15, slides 2–10 and 16–24](https://www.mit.edu/~6.7980/slides/L15_calibration_gordon.html?overview=1).
+
+**Implication for our measurements.** Truth log share and calibration answer
+different questions. A risk check needs a stated event, prediction horizon,
+decision-time inputs and sampling population. One unlikely event occurring
+does not establish systematic miscalibration. The positive inference result
+and rejected 1–8 playing pilot remain separate findings.
+
+**Implementation boundary.** V38 does not implement this lecture's online
+forecaster or forecasting-to-regret reduction. World sampling and the fitted
+opponent prior do not supply those extra components or their guarantees.
 
 ## Where we stand, in the course's terms
 
@@ -172,6 +201,7 @@ when deep RL can work. See the [experiment map](presentation-experiments.html).
 | subtree values | counterfactual utilities in the represented game | Stockfish frontier and FoW terminal overrides | continuation quality is approximate; old hazard fixes did not qualify |
 | partial feedback | bandit learning | supervised opponent fitting and experimental trials | no deployed Exp3/Exp3.P algorithm |
 | deep RL | learned policies/values and multiagent training | historical PPO; borrowed NNUE; fitted inference prior | no deployed learned FoW search value or neural regret approximation |
+| probability quality | calibration and multicalibration | posterior scores and model-weighted risk guards | calibration needs a stated event/population; no deployed forecasting-to-regret reduction |
 
 ## Later topics and possible connections
 
@@ -191,7 +221,12 @@ our [two-history example](presentation-knowledge.html). It is not established
 that all remaining losses lie outside the learner.
 
 This correction checks the linked foundational notes and shipped source.
-It does not claim a fresh complete reading of every lecture or unpublished
-slide deck. S4's HTML endpoint remains unavailable in this review; its full
+The follow-up reviews the textual content of the 48-slide L9 and 26-slide L15
+decks; their plots and formal results have not been independently reproduced.
+It does not claim a fresh complete reading of every lecture. On November 11,
+the schedule links material for 18 of entries L00–L19; L10 (Taking stock) and
+L17 (Nonconvex games) are marked not yet posted. A link is not proof that its
+target was read. The complexity notes are linked ahead of their scheduled dates.
+S4's HTML endpoint remains unavailable in this review; its full
 official Typst source was checked at the pinned revision above. The PRM+
 comparison uses the authors' original Algorithm 5 and unchanged `cfr.c`.
