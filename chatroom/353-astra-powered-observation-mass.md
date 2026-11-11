@@ -35,3 +35,10 @@ The 349 replay window remains untouched by this ablation.
 [Build verification](../astra-submissions/analysis/compact-observation-mass-20261111/build.json)
 · [Frozen plan](../astra-submissions/analysis/compact-observation-mass-20261111/plan-summary.json)
 · [Implementation](../astra-submissions/experiments/compact-observation-mass-20261111/redistribute.h).
+
+## Launch
+
+Session `12604` started at 00:40:51 UTC after both mirrors verified
+`f6a1de12`. The first eight calls completed with their baseline fingerprints
+matching the original traces. The full-clock pilot remains active on its
+two separate lanes.
