@@ -1,6 +1,9 @@
 # Astra workspace
 
-[Current human review](review-20261110.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
+[Review packet](review-20261111.md) · [Presentation review](../docs/presentation-20261203.md) · [Speaking outline](../docs/presentation-rehearsal.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
+
+[Two-page printable handout](../docs/assets/presentation/iamavirus-v38-review-20261111.pdf)
+· [Matching Markdown and evidence paths](../docs/presentation-handout.md).
 
 ## Presentation first — November 11
 
@@ -11,14 +14,77 @@ The [presentation review](../docs/presentation-20261203.md),
 [experiment map](../docs/presentation-experiments.md) separate deployed v38,
 experimental branches and retired learning code. The [archive inventory](analysis/presentation-audit-20261111/inventory.json)
 verifies all 114 manifest member hashes, 359,889 history records and both
-28-coefficient move-model vectors. The existing bounded field collection
-continues into its isolated local cache; the shared daily pipeline remains
-unavailable after the storage fault.
+28-coefficient move-model vectors. The bounded field collection and its
+independent review are complete: **6,000 replays / 459,622 frames**. The
+[versioned behavior refresh](analysis/field-taxonomy-20261111/README.md)
+labels all 453,622 moves, retains both v0 and the isolated EP correction,
+and discloses duplicates and prior-data overlap. The shared raw archive is
+readable again. The [verified offline import](analysis/field-archive-merge-20261111/README.md)
+adds 4,341 missing games, preserves 1,659 accepted originals, and brings the
+journal to 233,482 unique IDs without adding duplicate rows. The
+[training-export audit](analysis/training-artifact-readiness-20261111/README.md)
+verifies all 391,228 existing episode rows and the separate move generation.
+The episode export is still dated November 2 and omits 37,868 current raw
+games. The move export retains its known 328 cross-split trajectory groups.
+The [original-corpus recovery](analysis/corpus-metadata-recovery-20261111/README.md)
+now verifies dates and historical identity for all 164 undated imports. It
+also identifies 136 games falsely attributed to IAmAVirus by the importer.
+A [tested isolated patch](analysis/corpus-attribution-fix-20261111/README.md)
+prevents that assumption in future imports; Fable integration is pending.
+Verified corrections remain separate from raw records and old generations.
+The [saved job timeline](analysis/dataset-freshness-lineage-20261111/README.md)
+explains the episode gap: earlier six-hour timeouts and later storage errors.
+The existing November 9 orchestration fixes are present; a complete daily
+refresh after recovery still needs verification. The presentation's table
+reference now separates raw collection, offline exports and shipped models.
+The original November 11 daily refresh is running. Its completed own-team
+stage adds 30 v38 games: the [whole-cohort review](analysis/daily-own-cohort-20261111/README.md)
+checks all 2,557 frames and records 20 wins and 10 losses. These descriptive
+results are not an Elo estimate. Later reports, exports and archive remain
+unverified. The presentation packet is prepared for repository review;
+website publishing stays off at Henry's request.
+
+The [earlier material-onset review](analysis/field-material-onsets-20261111/README.md)
+includes every outcome in our 345-game window. It separates temporary trade
+dips from five-frame deficits, records recovered wins as controls, and
+provides two source-linked timeline figures. These are hindsight diagnostics,
+not automatically bad-move labels or a new risk-training dataset.
 
 The [illustrated walkthrough](../docs/presentation-cases.md) adds a real v38
 hidden-support win, the experimental six-world loss, both private views and
 an explanation of each search-log field. These are selected teaching cases,
 not a new experiment or strength estimate.
+
+The [source-checked numerical example](analysis/presentation-pcfr-20261111/README.md)
+shows one actual regret update, a shared-information-set solution and why
+choosing separately in each hidden world or purifying a mixture can change
+its value. It uses a tiny invented game, not an arena strength estimate.
+
+The [real-decision walkthrough](../docs/presentation-move.md) connects all
+stages on a recorded v38 private history. Independent referee enumeration
+confirms an early 14-to-1 belief reduction; all 32 initial child values,
+first regret updates and the final argmax are checked. It is a shortened
+offline reconstruction, not the original arena search or a new candidate.
+The [earlier fourteen-world calculation](analysis/presentation-belief-weights-20261111/README.md)
+also reconciles fitted logits, history counts, observation filtering and
+powered weights, with the limits of inverse-temperature weighting after merges.
+The [later multi-world trace](analysis/presentation-multistate-20261111/README.md)
+adds 128 retained positions, all 32 reproduced random draws and two sampled
+chance branches. Both feed one root strategy; all 78 initial child values
+and the first shared-root updates reconcile. Its exported figure also separates
+the 39 root actions from worlds, nodes and information sets. The native
+halfmove/history projection and the corrected reviewer join are explicit.
+
+The [frontier-scoring walkthrough](analysis/frontier-source-audit-20261111/README.md)
+traces a parent FEN through Stockfish's borrowed quantized NNUE, UCI score
+matching, conditional fallback and CFR utility. It separates source facts
+from unmeasured runtime frequency or strength claims.
+
+The [course-source correspondence](analysis/course-optimism-source-20261111/README.md)
+closes the unavailable S4 HTML gap using pinned official source. A small
+unchanged-native fixture matches the original PRM+ loss-notation update on
+39 scalar comparisons. Its local formula and the whole-agent guarantee are
+kept separate; earlier average-strategy findings and playing gates stand.
 
 ## V38 active — November 10, 2026
 
@@ -40,7 +106,25 @@ an Elo improvement is not yet established. See the [release record](v38-release.
 [manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
 The dated record below describes earlier work.
 
-## Current follow-up — November 11, 01:18 UTC checkpoint
+## Latest saved full-version follow-up — November 11, 03:27 UTC
+
+Fable records **339W–27D–254L / 620 games**, 56.9%, with no technical losses,
+rating 1909 and rank 9 at that saved checkpoint. After the first 127 games,
+the later 493 approximately match v37's historical same-opponent scores.
+This does not establish a lasting strength gain. Keep the measured scorer
+speedup separate from the observational arena result.
+[Fable's 620-game follow-up](../fable-submissions/analysis/v38-arena-20261108/result.md).
+
+The [release-record check](analysis/presentation-audit-20261111/release-record-review.json)
+confirms the exact archive, its staged upload alias, all 114 member hashes,
+both shared version-map rows and v38 = Fable's highest physical v37 + 1.
+All 19 native C/header files and the history binary match v37; only
+`run.sh` and `bin/stockfish` differ among common package members. Added files
+carry the scorer source, rebuild recipe, license and release metadata.
+The immutable manifest and archive remain unchanged. Version 38 is occupied;
+there is no qualified successor package or new number reservation.
+
+## Earlier follow-up — November 11, 01:18 UTC checkpoint
 
 The public API confirms **v38 active, 1897.77 Elo, rank 9**, with
 **327W–24D–245L / 596 games**. The four newly recorded games are wins over

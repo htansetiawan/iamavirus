@@ -1,0 +1,20 @@
+{
+  "at": "2026-11-11T08:23:09.703924+00:00",
+  "status": "complete",
+  "episode_rows": 391228,
+  "episode_games": 195614,
+  "episode_split_overlap": 0,
+  "move_games": 96210,
+  "move_split_overlap": 328,
+  "result_sha256": "6b9643f31d0b86887f8c8cd4629d4e5134b8a1d5f97880e70a4aa4c61a4366bd",
+  "review_source_sha256": "027f0ceba156c5c3ed613e1e24e6256504de9d5794f268a57c62ca08d893823b",
+  "checks": [
+    "Original six-file audit ended within original cap; inputs/source and index hashes match.",
+    "Independent sorting checks both color records and shared source identity for every episode game.",
+    "All split counts, raw-ID coverage and the absence list reconcile.",
+    "Independent sorted full-sequence grouping matches both exports overlap maps.",
+    "Source generations retain their inode/size; move-file hashes checked independently again.",
+    "Original core lease released."
+  ],
+  "scope": "Saved-index and generation reconciliation, not a second gzip scan, rule/target walk, new export, fit, calibration or playing test."
+}

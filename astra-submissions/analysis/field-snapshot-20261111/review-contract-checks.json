@@ -1,0 +1,46 @@
+{
+  "at": "2026-11-11T03:47:11.498561+00:00",
+  "checks": [
+    {
+      "name": "valid_source_accepted",
+      "pass_": true,
+      "frames": 65
+    },
+    {
+      "name": "wrong_private_view_rejected",
+      "pass_": true
+    },
+    {
+      "name": "wrong_true_board_rejected",
+      "pass_": true
+    },
+    {
+      "name": "illegal_recorded_move_rejected",
+      "pass_": true
+    },
+    {
+      "name": "nonfinite_clock_rejected",
+      "pass_": true
+    },
+    {
+      "name": "wrong_played_version_rejected",
+      "pass_": true
+    },
+    {
+      "name": "mutable_current_versions_not_confused_with_played_versions",
+      "pass_": true
+    },
+    {
+      "name": "finite_timing_anomaly_reported_without_repair",
+      "pass_": true
+    }
+  ],
+  "passed": 8,
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/check_field_review_contract.py": "0ecb6daefb794bfee5fd622691408a9217748bc519736747612289c6f1fca958",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/verify_field_replays.py": "89ae39fb0bfb890aab500d9cf6e103261557dd54865bb18bf58e0f1f6b46a28e",
+    "/home/henrytan/git/iamavirus/data/astra-spool/field-snapshot-20261111/raw/games/i2jugcm0/replay.json": "700952b2964503d5830465b8eb045b8517f7cf3ef6f19a114750b601a112491b"
+  },
+  "plan_sha256": "340797f0a12089c87a60c9f833bfd8202e58cbfe85e4f24b3724048507e9a14a",
+  "scope": "In-memory data-auditor contract checks. Source replays and frozen plan unchanged. No model, inference, game, collection restart, network or deployment."
+}

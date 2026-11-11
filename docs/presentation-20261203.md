@@ -9,7 +9,9 @@ process, data structures, connection to the course, experimental findings
 and limits. Henry has made this more important than producing v39. No new
 candidate experiment or training run is part of this review phase.
 
-Read next: [tables and algorithms](presentation-tables.html) ·
+Read next: [speaking outline](presentation-rehearsal.html) ·
+[one real decision](presentation-move.html) ·
+[tables and algorithms](presentation-tables.html) ·
 [experiments and lessons](presentation-experiments.html) ·
 [two illustrated game walkthroughs](presentation-cases.html).
 
@@ -119,6 +121,14 @@ The first 300 arena games passed a predeclared operational retention rule.
 These are distinct findings, not a controlled estimate of arena Elo gain.
 [Release evidence](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md).
 
+Fable's later **620-game** reading records 339W–27D–254L, a **56.9%** raw
+score with no technical losses. After the first 127 games, v38 scored
+approximately at v37's historical level against the same opponents. This
+supports retaining the candidate, but does not establish a lasting strength
+gain. The comparison is observational, with changing opponent versions and
+scheduling rather than randomized assignment.
+[Arena follow-up](https://github.com/htansetiawan/iamavirus/blob/main/fable-submissions/analysis/v38-arena-20261108/result.md).
+
 The latest learned prior improved independent replay posterior scores but
 then lost **1–8** to v38 at 180+2. All 901 game frames passed independent
 rules validation, with no technical faults. This is a useful scientific
@@ -133,12 +143,18 @@ The [experiment map](presentation-experiments.html) explains the chain.
   risks. One observed low-probability event alone does not prove miscalibration.
 - **Information:** history keys describe distinctions inside the constructed
   tree. They cannot create missing opponent-compatible possibilities outside it.
+  The [two-history example](presentation-knowledge.html) shows this even when
+  our own current board is uniquely determined.
 - **Continuation:** Stockfish supplies ordinary-chess guidance on each complete
   world. It does not directly value ignorance, information leakage or bluffing.
 - **Guarantees:** last-iterate finite search, guards, pruning and argmax action
   selection do not establish a Nash guarantee for full FoW chess.
 - **Measurement:** changing opponents, versions, color balance and scheduling
   affect raw arena scores. Selected losses explain failures, not their rate.
+- **Data lineage:** raw replays, completed training exports and the frozen
+  submitted models advance separately. The [data-flow review](presentation-tables.html#how-the-arena-record-reaches-the-bot)
+  records the stale episode generation, known service failures and corrected
+  legacy team attribution without treating them as measured Elo causes.
 
 ## Preparation checkpoints through December 3
 

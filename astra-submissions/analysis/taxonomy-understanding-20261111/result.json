@@ -1,0 +1,115 @@
+{
+  "at": "2026-11-11T03:37:24.975128+00:00",
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_taxonomy_semantics.py": "cbfb71a46825da82eb1e65094c1a0299d8532a418dc37ace94509565d26112e0",
+    "/home/henrytan/git/iamavirus/learning/move_taxonomy.py": "dcd139c59ad25dfc3a5aef1e696ac6326b34a11e976dcddf0658c31efa566a9a",
+    "/home/henrytan/git/iamavirus/learning/daily_report.py": "b0c999ecacee843df64038e6cd101b9a4d49626099681bba4acf7286fe273f89",
+    "/home/henrytan/git/iamavirus/tools/daily_refresh.sh": "d78200f7f3c0534d1a0340c027dfd853dcb1da5d0ce2e0977c6b01ec0927c972",
+    "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p3-black/replay.json": "4eebdda2190f7a44e2c0f50dd4c3d8f056bfc58c6dae8c01b2e72d4a25c7aad8",
+    "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p3-black/result.json": "3534f2dd07690394d051c0c09efe91b1e68e64ab6eeee9c5c9d3d8794339c40b",
+    "/home/henrytan/git/iamavirus/data/astra-spool/v38-mist-wins-20261111/c8ozqj0m.json": "a24ff3e5a00b19e021ca638d2bc8d8afdc30f76667092775ebad12070d148b0a"
+  },
+  "aggregate_keys": [
+    "capture",
+    "capture_unseen",
+    "victim_walked_in",
+    "long_strike",
+    "fog_route",
+    "forcing_chain",
+    "king_threat",
+    "king_threat_unseen",
+    "sacrifice",
+    "king_hunt_sacrifice",
+    "vision_gain",
+    "vision_loss",
+    "king_move",
+    "castle",
+    "king_leaves_home",
+    "queen_raid",
+    "queen_exposed_unseen",
+    "walk_into_unseen",
+    "back_rank_bare"
+  ],
+  "aggregate_key_count": 19,
+  "daily_columns": [
+    "capture_unseen",
+    "victim_walked_in",
+    "fog_route",
+    "king_threat",
+    "king_threat_unseen",
+    "walk_into_unseen",
+    "queen_exposed_unseen",
+    "sacrifice",
+    "king_leaves_home",
+    "king_move",
+    "vision_gain"
+  ],
+  "daily_column_count": 11,
+  "statically_emitted_tags": [
+    "back_rank_bare",
+    "capture",
+    "capture_unseen",
+    "castle",
+    "fog_route",
+    "forcing_chain",
+    "king_capture",
+    "king_hunt_sacrifice",
+    "king_leaves_home",
+    "king_move",
+    "king_threat",
+    "king_threat_unseen",
+    "long_strike",
+    "queen_exposed_unseen",
+    "queen_raid",
+    "quiet",
+    "sacrifice",
+    "victim_walked_in",
+    "vision_gain",
+    "vision_loss",
+    "walk_into_unseen"
+  ],
+  "emitted_but_not_core_aggregate": [
+    "king_capture",
+    "quiet"
+  ],
+  "en_passant": {
+    "game": "mass-p3-black",
+    "ply": 119,
+    "move": "e5f6",
+    "actual_capture": true,
+    "victim_square": "f5",
+    "labeler_tags": [
+      "quiet"
+    ],
+    "defect": "v0 destination-only victim check labels en passant quiet"
+  },
+  "hidden_support_example": {
+    "game": "c8ozqj0m",
+    "ply": 33,
+    "move": "g5g7",
+    "tags": [
+      "capture",
+      "fog_route",
+      "king_threat",
+      "sacrifice",
+      "king_hunt_sacrifice",
+      "vision_gain"
+    ],
+    "explicit_hidden_support_bait_tag": false,
+    "scope": "Actual v38 win; visible checking rook supported by an unseen queen. Not an unseen-check counter."
+  },
+  "data_flow": {
+    "uses_replay_truth_and_both_private_views": true,
+    "some_labels_use_future_frames": true,
+    "all_labels_actor_observable_before_move": false,
+    "native_v38_loads_taxonomy_report": false,
+    "automatic_deployed_weight_update": false
+  },
+  "limitations": [
+    "Two selected already-audited fixtures, no frequency or strength inference.",
+    "The source labeler and historical reports are left unchanged.",
+    "Nineteen report metrics are overlapping tags, not nineteen exclusive strategy classes.",
+    "No full replay review or new full-field taxonomy has completed in this audit."
+  ]
+}

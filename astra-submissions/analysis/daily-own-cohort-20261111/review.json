@@ -1,0 +1,26 @@
+{
+  "at": "2026-11-11T10:32:39.703862+00:00",
+  "status": "complete",
+  "games": 30,
+  "frames": 2557,
+  "result_sha256": "f56cd0ce0924a5f5b389c6ec2e15e555fd51db777af6225f17df8a5330ed71a3",
+  "plan_sha256": "f532ceee4c65d73e4662599d1d75ee6cba304a732b82c2fb59236743f0b20f1b",
+  "execution_seconds": 1.3305103100137785,
+  "outcomes": {
+    "losses": 10,
+    "wins": 20
+  },
+  "five_frame_deficits_by_outcome": {
+    "losses": 9,
+    "wins": 1
+  },
+  "old_6000_id_overlap": [],
+  "clock_flags_observed": 0,
+  "checks": [
+    "All frozen sources, journal prefix, result and execution hashes reconcile.",
+    "Every own identity, played version, result, opponent/color cell and full move-sequence hash rederived from cached replays.",
+    "Material trajectories independently computed from piece symbol counts; all five-frame onsets, decision observations and source visibility checked.",
+    "Every per-game clock flag is zero; no technical termination in the original dual-rules pass."
+  ],
+  "scope": "Monitoring data validation, not a playing-strength estimate, untouched holdout, causal diagnosis or deployed model update."
+}

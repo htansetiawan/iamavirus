@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-11T08:42:58.149889+00:00",
+  "expected_games": 164,
+  "pilot_games": 3,
+  "wall_seconds": 900,
+  "min_request_interval_seconds": 1.2,
+  "timeout_seconds": 15,
+  "max_http_attempts": 200,
+  "max_response_bytes": 5242880,
+  "max_total_response_bytes": 52428800,
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/recover_corpus_metadata.py": "8a36f5dd56c68860d53f8a19c0ec945cd59e303b08d6501aa5a303d908b0a546",
+    "/home/henrytan/git/iamavirus/learning/api_client.py": "226d8144e4f14d76c29fe8b96d16bb4c66b87b60665f621f013b2c9aab32d787",
+    "/home/henrytan/git/iamavirus/data/astra-spool/training-artifact-readiness-20261111/journal.jsonl": "9829a40632b0b3d01f578ed7954f5bee0a956237439ddc1586be835342c9237f",
+    "/home/henrytan/git/iamavirus/data/astra-spool/corpus-metadata-recovery-20261111/sources.json": "c20e8535e3e9eb23dbb015de8fb0a6b562855e6cc019459350e27be806ffec97"
+  },
+  "antecedents": "155/156 documented 164 undated corpus imports; 328 recovered recent move-list metadata, with no hits for these IDs. 379 verified the old episode split fallback.",
+  "scope": "A separate provenance supplement. Preserve canonical raw bytes, journal, old generations and splits. No rules revalidation, label rebuilding, fit, GPU, matches, model changes, release, commit, push or deployment."
+}

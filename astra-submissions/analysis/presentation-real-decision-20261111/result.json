@@ -1,0 +1,1388 @@
+{
+  "at": "2026-11-11T06:42:00.773079+00:00",
+  "status": "complete",
+  "scope": "Two single-decision offline reconstructions for teaching. No candidate, match, model fit, performance comparison, promotion or publication.",
+  "plan_sha256": "d822cfa2deb948df6e20460f9100e23798179fae7a69b0c04b9bc3ec967568df",
+  "review_source_sha256": "4f623c8e9c6fce9d3800a051a4114d14efd4d1b9c88c1cde397a5211809f5cf7",
+  "annotation_inserted_lines": {
+    "cfr.c": 9,
+    "gtcfr.c": 27,
+    "main.c": 25
+  },
+  "observed_belief_counts": [
+    1,
+    1,
+    14,
+    1,
+    1
+  ],
+  "opponent_moves_consistent_with_received_views": {
+    "2": [
+      "a7a5",
+      "a7a6",
+      "b7b5",
+      "b7b6",
+      "b8a6",
+      "b8c6",
+      "c7c6",
+      "d7d6",
+      "e7e6",
+      "f7f5",
+      "f7f6",
+      "g7g6",
+      "g8f6",
+      "h7h5"
+    ],
+    "4": [
+      "d7d5"
+    ]
+  },
+  "retained_world_count": 1,
+  "search_world_count": 1,
+  "root_actions": 32,
+  "all_initial_children_scored": true,
+  "guard_exclusions": 0,
+  "initial_strategy_value": -0.1426440139380333,
+  "second_strategy_value": -0.01308755692480946,
+  "initial_children": [
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 0,
+      "move": "b1d2",
+      "sf_scored": 1,
+      "sf_cp": 12,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.029991003238820143
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 1,
+      "move": "b1a3",
+      "sf_scored": 1,
+      "sf_cp": -19,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.04746430825312217
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 2,
+      "move": "b1c3",
+      "sf_scored": 1,
+      "sf_cp": 6,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.014998875101240778
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 3,
+      "move": "d1c1",
+      "sf_scored": 1,
+      "sf_cp": -18,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.044969649583600245
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 4,
+      "move": "d1d2",
+      "sf_scored": 1,
+      "sf_cp": -13,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.03248856212414491
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 5,
+      "move": "d1d3",
+      "sf_scored": 1,
+      "sf_cp": -17,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.042474429932548186
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 6,
+      "move": "e1d2",
+      "sf_scored": 1,
+      "sf_cp": -109,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.26594955336092135
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 7,
+      "move": "g1f3",
+      "sf_scored": 1,
+      "sf_cp": 15,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.03748243175707047
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 8,
+      "move": "g1h3",
+      "sf_scored": 1,
+      "sf_cp": -64,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.1586485042974989
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 9,
+      "move": "a2a3",
+      "sf_scored": 1,
+      "sf_cp": 7,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.01749821376048069
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 10,
+      "move": "a2a4",
+      "sf_scored": 1,
+      "sf_cp": 1,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.0024999947916796877
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 11,
+      "move": "b2b3",
+      "sf_scored": 1,
+      "sf_cp": -12,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.029991003238820143
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 12,
+      "move": "b2b4",
+      "sf_scored": 1,
+      "sf_cp": -20,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.04995837495787998
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 13,
+      "move": "c2c3",
+      "sf_scored": 1,
+      "sf_cp": 7,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.01749821376048069
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 14,
+      "move": "c2c4",
+      "sf_scored": 1,
+      "sf_cp": -17,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.042474429932548186
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 15,
+      "move": "e2e3",
+      "sf_scored": 1,
+      "sf_cp": -6,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.014998875101240778
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 16,
+      "move": "e2e4",
+      "sf_scored": 1,
+      "sf_cp": -71,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.17565907696502286
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 17,
+      "move": "f2f3",
+      "sf_scored": 1,
+      "sf_cp": -11,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.02749306980470986
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 18,
+      "move": "g2g3",
+      "sf_scored": 1,
+      "sf_cp": -12,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.029991003238820143
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 19,
+      "move": "g2g4",
+      "sf_scored": 1,
+      "sf_cp": -181,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.423951838825587
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 20,
+      "move": "h2h3",
+      "sf_scored": 1,
+      "sf_cp": 11,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.02749306980470986
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 21,
+      "move": "h2h4",
+      "sf_scored": 1,
+      "sf_cp": 2,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": 0.004999958333749996
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 22,
+      "move": "f4c1",
+      "sf_scored": 1,
+      "sf_cp": -25,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.062418746747512514
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 23,
+      "move": "f4d2",
+      "sf_scored": 1,
+      "sf_cp": -21,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.05245181874413747
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 24,
+      "move": "f4e3",
+      "sf_scored": 1,
+      "sf_cp": -30,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.07485969068749909
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 25,
+      "move": "f4g3",
+      "sf_scored": 1,
+      "sf_cp": -6,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.014998875101240778
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 26,
+      "move": "f4e5",
+      "sf_scored": 1,
+      "sf_cp": -12,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.029991003238820143
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 27,
+      "move": "f4g5",
+      "sf_scored": 1,
+      "sf_cp": -22,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.05494460868918742
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 28,
+      "move": "f4d6",
+      "sf_scored": 1,
+      "sf_cp": -818,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.9670727104726874
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 29,
+      "move": "f4h6",
+      "sf_scored": 1,
+      "sf_cp": -847,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.9714537242590623
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 30,
+      "move": "f4c7",
+      "sf_scored": 1,
+      "sf_cp": -859,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.9730937654026277
+    },
+    {
+      "kind": "initial_child",
+      "board": "RN-QKBNRPPP-PPPP-----------P-B-----p------p-----pp--pppprnbqkbnr",
+      "action": 31,
+      "move": "f4b8",
+      "sf_scored": 1,
+      "sf_cp": -52,
+      "matched_scores": 32,
+      "ranked_floor": 0,
+      "frontier": 1,
+      "utility": -0.12927258360605834
+    }
+  ],
+  "first_two_updates": [
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 0,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.17263501717685345
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 1,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.09517970568491113
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 2,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.1576428890392741
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 3,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.09767436435443305
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 4,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.11015545181388839
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 5,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.10016958400548512
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 6,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": -0.12330553942288805
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 7,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.18012644569510378
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 8,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": -0.016004490359465606
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 9,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.160142227698514
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 10,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.145144008729713
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 11,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.11265301069921316
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 12,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.09268563898015333
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 13,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.160142227698514
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 14,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.10016958400548512
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 15,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.12764513883679252
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 16,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": -0.03301506302698956
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 17,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.11515094413332344
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 18,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.11265301069921316
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 19,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": -0.2813078248875537
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 20,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.17013708374274317
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 21,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.1476439722717833
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 22,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.08022526719052078
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 23,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.09019219519389583
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 24,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.06778432325053421
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 25,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.12764513883679252
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 26,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.11265301069921316
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 27,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.08769940524884588
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 28,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": -0.8244286965346541
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 29,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": -0.828809710321029
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 30,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": -0.8304497514645944
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 1,
+      "action": 31,
+      "strategy": 0.03125,
+      "regret_before": 0,
+      "last_before": 0,
+      "instantaneous": 0.013371430331974965
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 0,
+      "strategy": 0.058772947426958114,
+      "regret_before": 0.17263501717685345,
+      "last_before": 0.17263501717685345,
+      "instantaneous": 0.0430785601636296
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 1,
+      "strategy": 0.032403575646544204,
+      "regret_before": 0.09517970568491113,
+      "last_before": 0.09517970568491113,
+      "instantaneous": -0.034376751328312714
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 2,
+      "strategy": 0.05366893334419814,
+      "regret_before": 0.1576428890392741,
+      "last_before": 0.1576428890392741,
+      "instantaneous": 0.028086432026050236
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 3,
+      "strategy": 0.03325287288200493,
+      "regret_before": 0.09767436435443305,
+      "last_before": 0.09767436435443305,
+      "instantaneous": -0.03188209265879079
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 4,
+      "strategy": 0.03750201253560348,
+      "regret_before": 0.11015545181388839,
+      "last_before": 0.11015545181388839,
+      "instantaneous": -0.01940100519933545
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 5,
+      "strategy": 0.03410236110153435,
+      "regret_before": 0.10016958400548512,
+      "last_before": 0.10016958400548512,
+      "instantaneous": -0.029386873007738727
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 6,
+      "strategy": 0,
+      "regret_before": 0,
+      "last_before": -0.12330553942288805,
+      "instantaneous": -0.2528619964361119
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 7,
+      "strategy": 0.061323376312454096,
+      "regret_before": 0.18012644569510378,
+      "last_before": 0.18012644569510378,
+      "instantaneous": 0.05056998868187993
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 8,
+      "strategy": 0,
+      "regret_before": 0,
+      "last_before": -0.016004490359465606,
+      "instantaneous": -0.14556094737268946
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 9,
+      "strategy": 0.05451982386469542,
+      "regret_before": 0.160142227698514,
+      "last_before": 0.160142227698514,
+      "instantaneous": 0.03058577068529015
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 10,
+      "strategy": 0.04941373618117339,
+      "regret_before": 0.145144008729713,
+      "last_before": 0.145144008729713,
+      "instantaneous": 0.015587551716489146
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 11,
+      "strategy": 0.03835229713871242,
+      "regret_before": 0.11265301069921316,
+      "last_before": 0.11265301069921316,
+      "instantaneous": -0.016903446314010685
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 12,
+      "strategy": 0.03155447994327856,
+      "regret_before": 0.09268563898015333,
+      "last_before": 0.09268563898015333,
+      "instantaneous": -0.03687081803307052
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 13,
+      "strategy": 0.05451982386469542,
+      "regret_before": 0.160142227698514,
+      "last_before": 0.160142227698514,
+      "instantaneous": 0.03058577068529015
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 14,
+      "strategy": 0.03410236110153435,
+      "regret_before": 0.10016958400548512,
+      "last_before": 0.10016958400548512,
+      "instantaneous": -0.029386873007738727
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 15,
+      "strategy": 0.04345631122147239,
+      "regret_before": 0.12764513883679252,
+      "last_before": 0.12764513883679252,
+      "instantaneous": -0.0019113181764313196
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 16,
+      "strategy": 0,
+      "regret_before": 0,
+      "last_before": -0.03301506302698956,
+      "instantaneous": -0.1625715200402134
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 17,
+      "strategy": 0.039202709255557786,
+      "regret_before": 0.11515094413332344,
+      "last_before": 0.11515094413332344,
+      "instantaneous": -0.014405512879900401
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 18,
+      "strategy": 0.03835229713871242,
+      "regret_before": 0.11265301069921316,
+      "last_before": 0.11265301069921316,
+      "instantaneous": -0.016903446314010685
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 19,
+      "strategy": 0,
+      "regret_before": 0,
+      "last_before": -0.2813078248875537,
+      "instantaneous": -0.41086428190077756
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 20,
+      "strategy": 0.057922535310112745,
+      "regret_before": 0.17013708374274317,
+      "last_before": 0.17013708374274317,
+      "instantaneous": 0.040580626729519315
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 21,
+      "strategy": 0.05026483944069859,
+      "regret_before": 0.1476439722717833,
+      "last_before": 0.1476439722717833,
+      "instantaneous": 0.018087515258559454
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 22,
+      "strategy": 0.027312392862172654,
+      "regret_before": 0.08022526719052078,
+      "last_before": 0.08022526719052078,
+      "instantaneous": -0.049331189822703056
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 23,
+      "strategy": 0.03070559631029198,
+      "regret_before": 0.09019219519389583,
+      "last_before": 0.09019219519389583,
+      "instantaneous": -0.03936426181932801
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 24,
+      "strategy": 0.02307691991998558,
+      "regret_before": 0.06778432325053421,
+      "last_before": 0.06778432325053421,
+      "instantaneous": -0.061772133762689634
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 25,
+      "strategy": 0.04345631122147239,
+      "regret_before": 0.12764513883679252,
+      "last_before": 0.12764513883679252,
+      "instantaneous": -0.0019113181764313196
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 26,
+      "strategy": 0.03835229713871242,
+      "regret_before": 0.11265301069921316,
+      "last_before": 0.11265301069921316,
+      "instantaneous": -0.016903446314010685
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 27,
+      "strategy": 0.02985693527510477,
+      "regret_before": 0.08769940524884588,
+      "last_before": 0.08769940524884588,
+      "instantaneous": -0.04185705176437796
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 28,
+      "strategy": 0,
+      "regret_before": 0,
+      "last_before": -0.8244286965346541,
+      "instantaneous": -0.9539851535478779
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 29,
+      "strategy": 0,
+      "regret_before": 0,
+      "last_before": -0.828809710321029,
+      "instantaneous": -0.9583661673342528
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 30,
+      "strategy": 0,
+      "regret_before": 0,
+      "last_before": -0.8304497514645944,
+      "instantaneous": -0.9600062084778183
+    },
+    {
+      "kind": "cfr_update",
+      "iteration": 2,
+      "action": 31,
+      "strategy": 0.004552253562319376,
+      "regret_before": 0.013371430331974965,
+      "last_before": 0.013371430331974965,
+      "instantaneous": -0.11618502668124889
+    }
+  ],
+  "final_root_strategy": [
+    {
+      "kind": "root",
+      "action": 0,
+      "move": "b1d2",
+      "probability": 0.18006523389772075,
+      "regret": 0.6340078774050139,
+      "last": -0.006048176266454285,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 1,
+      "move": "b1a3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.07796414866315764,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 2,
+      "move": "b1c3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.05017936298968293,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 3,
+      "move": "d1c1",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.043453420185678875,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 4,
+      "move": "d1d2",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.049536620347422886,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 5,
+      "move": "d1d3",
+      "probability": 0.0835643083105355,
+      "regret": 0.2926598780244495,
+      "last": -0.0012376143444945906,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 6,
+      "move": "e1d2",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.20527186236124467,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 7,
+      "move": "g1f3",
+      "probability": 0.1581445943838843,
+      "regret": 0.5488070180832285,
+      "last": 0.0027066199263781968,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 8,
+      "move": "g1h3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.1279724587142928,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 9,
+      "move": "a2a3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.021869365541630048,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 10,
+      "move": "a2a4",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.020325677880100194,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 11,
+      "move": "b2b3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.050149662988510445,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 12,
+      "move": "b2b4",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.06716578859913624,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 13,
+      "move": "c2c3",
+      "probability": 0.0393743899183527,
+      "regret": 0.13604393896624536,
+      "last": 0.0012703531401713555,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 14,
+      "move": "c2c4",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.042473848052894544,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 15,
+      "move": "e2e3",
+      "probability": 0.5314962408965471,
+      "regret": 1.8521725071864599,
+      "last": 0.0013680867698523669,
+      "selected": 1,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 16,
+      "move": "e2e4",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.26020352925295587,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 17,
+      "move": "f2f3",
+      "probability": 0.007355232592959536,
+      "regret": 0.02542948040971519,
+      "last": 0.00022116608600419863,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 18,
+      "move": "g2g3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.03996099274360057,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 19,
+      "move": "g2g4",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.1357947629052762,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 20,
+      "move": "h2h3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.03440386593400197,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 21,
+      "move": "h2h4",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.027289237221092118,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 22,
+      "move": "f4c1",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.08130855951758559,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 23,
+      "move": "f4d2",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.09971333232428192,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 24,
+      "move": "f4e3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.07408557020365962,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 25,
+      "move": "f4g3",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.021737626744437327,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 26,
+      "move": "f4e5",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.10235281621214873,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 27,
+      "move": "f4g5",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.08889506641940079,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 28,
+      "move": "f4d6",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.26788711401542215,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 29,
+      "move": "f4h6",
+      "probability": 0,
+      "regret": 0,
+      "last": -1.0114613366544283,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 30,
+      "move": "f4c7",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.37432621024311613,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    },
+    {
+      "kind": "root",
+      "action": 31,
+      "move": "f4b8",
+      "probability": 0,
+      "regret": 0,
+      "last": -0.10649297290297396,
+      "selected": 0,
+      "value": 0.060422210610029246,
+      "root_infoset": 0
+    }
+  ],
+  "control_log": "mist: n=3 |P|=1 samples=1 moves=32 infosets=1653 nodes=136824 iters=1360 p=0.53 v=+0.060 lead=+0 clock=166.8 sf=4161/2.0s mr=0.00/0.00 hist=2/2 move=e2e3",
+  "trace_log": "mist: n=3 |P|=1 samples=1 moves=32 infosets=1653 nodes=136824 iters=1360 p=0.53 v=+0.060 lead=+0 clock=166.8 sf=4161/2.1s mr=0.00/0.00 hist=2/2 move=e2e3",
+  "selected_move": "e2e3",
+  "recorded_arena_move": "e2e3",
+  "same_move_as_control": true,
+  "checks": [
+    "All frozen dependencies and raw protocol/log hashes match.",
+    "All control source members match v38; trace has insertions only in the three declared files.",
+    "Independent course enumeration matches all four belief-count transitions and final complete states.",
+    "All world views and chance weights reconcile; truth joined only after execution.",
+    "All 32 initial child utilities match returned centipawn conversion.",
+    "First two root updates match independent expected values, instantaneous regrets and clipped previous update.",
+    "Final strategy matches normalized positive regret plus prediction; selected move is its argmax.",
+    "All reported root actions legal; core lease released."
+  ],
+  "limitations": [
+    "Search time shortened to two seconds; not the original arena search or exact root strategy.",
+    "Read-only annotations cost time; different node counts or moves between arms are not a strength or speed estimate.",
+    "Early belief has no claimed coverage of later capped middlegames; source output limited to first 4096 worlds.",
+    "Initial Stockfish child utilities differ from final values after tree expansion.",
+    "One-world prefix illustrates inference and search, not a nontrivial 32-draw distribution.",
+    "One retained true world does not establish common knowledge or a complete Obscuro subgame."
+  ]
+}

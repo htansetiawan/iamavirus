@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-11T06:22:34.341777+00:00",
+  "status": "complete",
+  "processed": 6000,
+  "counts": {
+    "newly_accepted": 4341,
+    "cached": 1659
+  },
+  "initial_unique_ids": 229141,
+  "final_unique_ids": 233482,
+  "rawstore_index_bytes_read": 103619710,
+  "atomic_writes": {
+    "bytes": 112819588,
+    "files": 13023
+  },
+  "import_journal_sha256": "a5b7b340f20aac28bb7a363edadc5ca6c2cfeacf66022f62d26fd0fa281119f7",
+  "final_archive_index": {
+    "lines": 233513,
+    "unique_ids": 233482,
+    "duplicate_extra_lines": 31,
+    "journal_sha256": "c0cdb7b6aceaa31a80b6ce490e84a4b0c4bda7c73cb780d5a32836733f55002c",
+    "latest": {
+      "ours": {
+        "id": "o93ifomg",
+        "createdAt": "2026-11-11T05:27:05.747888518+00:00"
+      },
+      "other_teams": {
+        "id": "i2jugcm0",
+        "createdAt": "2026-11-11T01:51:20.303947793+00:00"
+      }
+    }
+  },
+  "scope": "Offline shared-archive data import only. No new HTTP requests, bot search/game, model fit, history rebuild, training split, GPU, report publication, commit, push or deployment.",
+  "limitations": [
+    "Archive additions do not refit or deploy a model or regenerate the shared reports.",
+    "The old 31 duplicate journal rows are retained as evidence; new ingestion uses the existing deduplicating transaction API.",
+    "Current source equality checks cover boards/views/moves/result, not a recertification of every historical clock or mutable metadata field.",
+    "The global corpus count can also include another writer; per-ID transaction statuses provide our attribution.",
+    "A successful bounded import does not certify the hardware or the next daily job."
+  ]
+}

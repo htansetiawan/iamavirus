@@ -93,6 +93,16 @@ history represents the merged board. Consequently, the implementation is
 not a lossless distribution over every possible private history, and the
 sharpened weights should not be called a guaranteed calibrated posterior.
 
+There are two precise qualifications. The source does not normalize the
+squared move probabilities separately for each parent world before applying
+the observation filter. Also, taking the square root after summing several
+powered histories is not the same as summing their original probabilities.
+The guard's inverse-temperature weighting therefore does not exactly restore
+the unpowered distribution after history merges. For paths (1/4, 1/4) into
+one board and 1/2 into another, it yields about 41.42%/58.58% rather than
+50%/50%. This arithmetic qualification is not a measured cause of arena losses
+or an authorization to reopen prior failed weighting experiments.
+
 Fable's saved fit receipts record a refit on 148,357 games. The later
 [lineage audit](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/presentation-audit-20261111/fit-lineage.json)
 matches all 56 deployed coefficients to those outputs and the saved history
@@ -151,6 +161,60 @@ per-mover summaries contain only the top 30 groups and omit 2,418 held-out
 opponent moves, so those summaries cannot reconstruct the complete global
 score. This limits reproducibility without invalidating the preserved fit.
 
+## How the arena record reaches the bot
+
+**Downloading games, exporting examples and updating the submitted bot are
+separate operations.** The arena process reads its packaged coefficients and
+history file. A daily report does not change either one.
+
+```mermaid
+flowchart TD
+  API[Completed public replays] --> RAW[Accepted immutable sources]
+  RAW --> REPORT[Taxonomy, standings and failure reports]
+  REPORT --> REVIEW[Human review and experiment selection]
+  RAW --> MOVES[Move examples and recorded team metadata]
+  MOVES --> FIT[Fit opponent-move coefficients]
+  MOVES --> COUNT[Count private history and action occurrences]
+  FIT --> ZIP[Build and validate a new package]
+  COUNT --> ZIP
+  ZIP --> UPLOAD[Human arena upload]
+  RAW --> EPISODES[Observation-history and target episodes]
+  EPISODES --> HYBRID[Historical CNN-GRU and PPO pipeline]
+```
+
+The taxonomy is analyst intelligence. Some tags use full replay truth or
+future events, so they are not automatically available runtime features.
+Fitting and table rebuilding are offline operations. The historical neural
+pipeline and current native engine consume different products.
+
+| Product | November 11 verification | What it means |
+| --- | --- | --- |
+| Raw journal snapshot | 233,482 unique game IDs | Retained inputs, with duplicates and provenance qualifications |
+| Episode generation | November 2; 195,614 games / 391,228 color episodes | Intact old imitation/RL input; 37,868 newer raw games absent |
+| Native move export | November 10; 96,210 game IDs / 91,796 complete trajectories | Newer fitting input; its legacy ID split has 328 cross-fold trajectory groups |
+| Deployed move vectors and history | Frozen v38 package, original fit recorded November 1 | Downloading or exporting later games does not update this package |
+
+The old export's age has operational evidence. The daily service timed out
+at six hours on November 3–5 and 9; November 3/4 reached only partial episode
+progress after spending over 3.5 hours in the earlier move exporter. Storage
+I/O failures then interrupted other runs. Report ordering and cached move
+export were changed on November 9. Their code is present, but a successful
+full scheduled refresh after storage recovery remains unverified. Successful
+reads of old shards do not certify that next run.
+
+There is also a smaller provenance correction: the original 164-seat tactical
+corpus named only the selected seat's opponent. Its importer invented
+IAmAVirus for the unnamed seat; **136 games were actually other teams**.
+Exact API matches recover dates, real IDs and played versions across all
+14,228 positions. Corrections remain in a separate verified sidecar; old raw
+records and splits are preserved. All selected seats lost, so this corpus is
+not a representative record of our play. No measured Elo effect is claimed.
+
+Local evidence: `chatroom/379` (export integrity), `chatroom/381` (provenance)
+and `astra-submissions/analysis/dataset-freshness-lineage-20261111/` (saved
+failure timeline and current orchestration). These findings are local while
+website publishing remains disabled.
+
 ## Which parts are learned, exact, or heuristic?
 
 | Component | What determines it | What changes during a live game? |
@@ -169,6 +233,39 @@ updating and search-time regret minimization, and uses offline learned
 coefficients. V38 does not train a new neural policy from arena rewards while
 it plays.
 
+## What the replay taxonomy changes
+
+The taxonomy is a **retrospective diagnostic**, not another deployed model.
+Its 19 core report metrics overlap; they are not 19 mutually exclusive
+strategy classes. The daily report displays 11 selected metrics. A move can
+receive several tags, so their rates need not sum to 100%.
+
+Reports help us compare habits and select hypotheses. They do not
+automatically change belief coefficients, empirical history counts or
+king/queen guard thresholds. New replay files must pass a separate fitting,
+evaluation and packaging process before they can change the arena bot.
+
+Some labels use the true board, the opponent's private view or subsequent
+moves. Those can be training targets or analyst diagnostics; feeding them
+directly into a decision-time policy would leak unavailable information.
+The existing labeler also misses en-passant captures when the destination
+was empty. A tested correction is isolated under Astra; it is not yet
+applied to the shared reports. This is a reporting defect, separate from
+the engine's move legality.
+
+Local review evidence: `astra-submissions/analysis/taxonomy-understanding-20261111/`
+and `astra-submissions/analysis/taxonomy-en-passant-20261111/`. These new
+artifacts remain unpublished while website publishing is disabled.
+
+The later local refresh labels all **453,622 moves in 6,000 reviewed games**
+with both versions. The isolated correction changes 352 en-passant move
+records; the 5,655 games without en passant are unchanged apart from the
+labeler version. This measures the reporting correction without attributing
+a change in game results to it. The separate shared-archive import also
+leaves the shipped v38 weights and history file unchanged.
+The [experiment review](presentation-experiments.html#case-study-diagnosing-losses-requires-winning-controls)
+shows why these labels need winning controls before becoming learning targets.
+
 ## What do “32 weighted samples” mean?
 
 Let retained board probabilities be `p[1] ... p[N]`. For `N > 32`, build their
@@ -184,6 +281,11 @@ A world with probability 10% is ten times as likely to be drawn as one with
 The root guards examine more retained worlds, but remain limited by their
 weighting, stride and definitions of danger.
 
+The [later real-prefix reconstruction](presentation-move.html#7-a-later-decision-128-positions-and-32-draws)
+has 128 retained positions and reproduces every draw. Twenty-nine select W98
+and three select W36, producing **two** distinct search branches with chance
+weights 29/32 and 3/32. The full retained belief remains available afterward.
+
 Three different numbers must stay separate:
 
 - Retained worlds: at most 200,000 by default, representing current uncertainty.
@@ -198,10 +300,25 @@ which can include tactical continuation work rather than a single static
 network call. NNUE supplies conventional chess evaluation within Stockfish.
 It does not see our weighted belief as one input.
 
+The shipped Stockfish source uses piece-square, threat and pawn-pair feature
+families, a 1,024-element transformed input and small heads selected by piece
+count. Its arithmetic already mixes 8-bit, 16-bit and 32-bit integer types.
+Those are upstream NNUE parameters, not our own trained FoW policy or a
+codebook of strategies. The raw NNUE scalar also goes through Stockfish's
+evaluation/UCI scaling before we receive a centipawn score.
+
 The v38 patch changes how full root-child scoring is performed. It increases
 throughput but does not promise the same numerical scores as unmodified
 Stockfish. An outer FoW tree can still be many plies deep: “Stockfish depth 1”
 describes each frontier scoring request, not the depth of our entire tree.
+
+Each request scores moves from a complete **parent** FEN. The controller
+matches returned PV first moves to our native FoW children; `bestmove` marks
+completion rather than selecting our arena action. An unscored nonterminal
+child normally takes our handwritten evaluation. The worst-scored-sibling
+floor applies only when the matched score count reaches the requested
+MultiPV count, which is 256 by default. It does not apply automatically to
+every move Stockfish omits.
 
 The C engine converts a centipawn score to a bounded utility:
 
@@ -215,6 +332,12 @@ overrides the heuristic, and our own immediately fatal root move has default
 utility −2 rather than the ordinary −1 loss value.
 
 ## Where regret minimization happens
+
+The [real-decision walkthrough](presentation-move.html) connects these
+equations to a recorded private history: the first uniform root mixture,
+two numerical regret updates and the final 53.15% argmax action. Its early
+belief has only one world; it is a teaching reconstruction, not a strength
+or exploitability estimate.
 
 An **information set** groups decision nodes that the represented player
 cannot distinguish. The same action probabilities must be used throughout

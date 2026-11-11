@@ -1,0 +1,141 @@
+{
+  "at": "2026-11-11T08:18:15.657317+00:00",
+  "status": "complete",
+  "plan_sha256": "9206e2e70164c2c06bf2c35c053ffdb643cda6140f7bdaed51290f311329cb3a",
+  "raw_games": 233482,
+  "episode_generation": "2026-11-02T11:41:55.130131+00:00",
+  "episode_source_games": 195614,
+  "raw_games_absent_from_episode_generation": 37868,
+  "episode_rows": 391228,
+  "episode_statistics": {
+    "test": {
+      "counts": {
+        "episodes": 39136,
+        "decisions": 1359344,
+        "events": 2718798,
+        "color_white": 19568,
+        "outcome_1-0": 19846,
+        "termination_normal": 39026,
+        "value_valid_normal": 1354587,
+        "color_black": 19568,
+        "outcome_0-1": 18166,
+        "outcome_1/2-1/2": 1124,
+        "termination_time": 88,
+        "value_valid_time": 0,
+        "termination_illegal": 4,
+        "value_valid_illegal": 0,
+        "termination_crash": 16,
+        "value_valid_crash": 0,
+        "termination_unknown": 2,
+        "value_valid_unknown": 0
+      },
+      "missing_versions": {
+        "played_version": 32,
+        "opponent_version": 32
+      }
+    },
+    "validation": {
+      "counts": {
+        "episodes": 39656,
+        "decisions": 1359342,
+        "events": 2719248,
+        "color_white": 19828,
+        "outcome_1-0": 20468,
+        "termination_normal": 39092,
+        "value_valid_normal": 1353929,
+        "color_black": 19828,
+        "outcome_0-1": 18042,
+        "outcome_1/2-1/2": 1146,
+        "termination_crash": 428,
+        "value_valid_crash": 0,
+        "termination_time": 132,
+        "value_valid_time": 0,
+        "termination_unknown": 2,
+        "value_valid_unknown": 0,
+        "termination_illegal": 2,
+        "value_valid_illegal": 0
+      },
+      "missing_versions": {
+        "played_version": 20,
+        "opponent_version": 20
+      }
+    },
+    "train": {
+      "counts": {
+        "episodes": 312436,
+        "decisions": 10859804,
+        "events": 21720550,
+        "color_white": 156218,
+        "outcome_1-0": 160558,
+        "termination_normal": 311494,
+        "value_valid_normal": 10826425,
+        "color_black": 156218,
+        "outcome_0-1": 142706,
+        "outcome_1/2-1/2": 9172,
+        "termination_crash": 188,
+        "value_valid_crash": 0,
+        "termination_time": 726,
+        "value_valid_time": 0,
+        "termination_illegal": 22,
+        "value_valid_illegal": 0,
+        "termination_unknown": 6,
+        "value_valid_unknown": 0
+      },
+      "missing_versions": {
+        "played_version": 276,
+        "opponent_version": 276
+      }
+    }
+  },
+  "episode_distinct_trajectories": 192165,
+  "episode_cross_split_trajectory_groups": 0,
+  "episode_split_method": "seeded_duplicate_groups_missing_timestamps",
+  "episode_undated_source_games": 164,
+  "episode_version_labels_match_current": {
+    "feature_version": true,
+    "action_version": true,
+    "rules_fingerprint": true
+  },
+  "move_generation": "2026-11-10T01:21:08.360900+00:00",
+  "move_source_games": 96210,
+  "move_counts": {
+    "train": 81907,
+    "test": 14303
+  },
+  "move_distinct_trajectories": 91796,
+  "move_cross_split_trajectory_groups": 328,
+  "move_split_method": "existing SHA1(game_id) mod 1000 < test_share*1000",
+  "bytes_read": 752867902,
+  "episode_decompressed_bytes": 7515164923,
+  "receipts": [
+    {
+      "kind": "episodes",
+      "split": "test",
+      "bytes": 69368442,
+      "sha256": "46a7d5f849fb2792919b8121124ee6e00004de0768f6302ed74ef0f1b6bc595e",
+      "rows": 39136
+    },
+    {
+      "kind": "episodes",
+      "split": "validation",
+      "bytes": 69379351,
+      "sha256": "9a839493577f3b1a17c9dcb3fb69e5ae030ba4e7563c6d248cc5cfc4033095c3",
+      "rows": 39656
+    },
+    {
+      "kind": "episodes",
+      "split": "train",
+      "bytes": 553091724,
+      "sha256": "71c82a8fb59345d5c9a1327ac18110527ab9146ae3a63829c6291b6a28bde74d",
+      "rows": 312436
+    }
+  ],
+  "index_sha256": "b5a437ed8d4b545ac83ab0ef3c5ee9afcef7f5f2a6968089158297c257d46474",
+  "scope": "Read existing immutable exports completely for hashes, gzip/JSON, metadata/count/ID coverage and whole-trajectory split overlap. No full rules/feature/actor-target-semantic recertification, new export, split reassignment, fit, GPU, game, package, commit, push or deployment.",
+  "limitations": [
+    "Integrity matches each saved generation, not a current full-corpus training export.",
+    "Whole-trajectory leakage in legacy ID-split moves was already documented in 281/328; do not silently rewrite that used test set.",
+    "All JSON and metadata dimensions are checked; board legality, target semantics, feature values and provenance of each original replay are not rewalked.",
+    "No calibration, model-quality, playing-strength, hardware-health or next-daily-job claim."
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-11T04:29:47.445048+00:00",
+  "games": 6000,
+  "wall_seconds": 1800,
+  "cores": [
+    6
+  ],
+  "selection": "All 6000 reviewed IDs in frozen listing order, all teams, outcomes and lengths. No performance-based exclusion.",
+  "taxonomy_versions": [
+    "v0",
+    "astra-ep-v1"
+  ],
+  "aggregates": "One-pass raw counts by exact team ID, played version, color; opponent/version/color cells retained. All actual game IDs count, with duplicate full sequences disclosed.",
+  "terminal_diagnostics": "Four existing last-move geometry classes, attacker visibility in the predecision view, true material before the fatal move. No safe-reply search or causal attribution.",
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/field_taxonomy_report.py": "eeb41c7e34786f8c8194ad3d79c93376f5a1cee2efe7a2fe2996cf5c3ab14eaa",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/baseline.py": "dcd139c59ad25dfc3a5aef1e696ac6326b34a11e976dcddf0658c31efa566a9a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/move_taxonomy.py": "090677692f0a36c81ed00101a593f6fe61fb2bcca787a1969e633307331b68ef",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/origin.json": "1b2ccdd277f8d40149dbbcfd5f1b11031b236c1ced94bc70292c2f902a86671b",
+    "/home/henrytan/git/iamavirus/learning/move_taxonomy.py": "dcd139c59ad25dfc3a5aef1e696ac6326b34a11e976dcddf0658c31efa566a9a",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/taxonomy-en-passant-20261111/result.json": "0cd72502edaebc0431fc4aa402044f8c73896e1b9d0ffcb1ba839ecbe43e1d24",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/field-snapshot-20261111/closure-review.json": "940586c2be2b6209aa0e03646ca76ec3f941816e09801da4ee0d6786033ca5bd",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/field-snapshot-20261111/review-result.json": "afc937d110791a261aa9abde4da33017735f6a3a83a81d31e43518d39442d3a4",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/field-snapshot-20261111/listing-review.json": "d6eda2931bcd7c83209b3239082dd02dab37035c4db9b50333aa52f1917caa67",
+    "/home/henrytan/git/iamavirus/data/astra-spool/field-snapshot-20261111/listing.json": "5a595188201da11a09514ea26ce5a47b72fc38d9bb0263d87895414d04a4b737",
+    "/home/henrytan/git/iamavirus/data/astra-spool/field-snapshot-20261111/validation.jsonl": "d369bfc04414414d74cbaf692206cb35ff6a0bca4598cc3f7f044408e687ec03",
+    "/home/henrytan/git/iamavirus/data/astra-spool/field-snapshot-20261111/leaderboard.json": "d0031da460a0077910759fdd52041f4fd5f5b8c219ac8c71bef2405e6f65cdcf",
+    "/home/henrytan/git/iamavirus/.venv/lib/python3.12/site-packages/chess/__init__.py": "1fde6a8e932508d14b31f6a584497b49c2969fc3c7cdc675347f819f0d667a5b"
+  },
+  "antecedents": [
+    "chatroom/015-fable-move-taxonomy-capability-map-and-gym.md",
+    "chatroom/189-astra-daily-intel-maintenance.md",
+    "chatroom/216-astra-taxonomy-use-and-refresh.md",
+    "chatroom/327-astra-terminal-pattern-refresh.md",
+    "chatroom/368-astra-tested-ep-taxonomy-reporting-patch.md"
+  ],
+  "difference": "Refresh existing diagnostics on the fully reviewed 6000-game local snapshot; measure EP label deltas against the frozen v0, with separate version/color denominators. No new strategy algorithm.",
+  "scope": "Retrospective local data analysis only. No actor features, model fitting, split assignment, bot search, new game, shared report replacement, network, GPU, package, commit, push or deployment."
+}

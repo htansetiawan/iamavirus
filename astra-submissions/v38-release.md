@@ -65,3 +65,18 @@ and changing opponents prevent a causal claim. [Full checkpoint and evidence](an
 **Recommendation: retain v38 and continue monitoring.** Duck v11 and Greek
 Gift v25 remain the clearest measured weaknesses. The campaign continues;
 there is no claim that this release reaches the 2000-Elo objective.
+
+## Later follow-up — November 11
+
+Fable's 03:27 UTC reading records **339W–27D–254L / 620 games**, 56.9%,
+with no technical losses. After the first 127 games, the later 493 play
+approximately at v37's historical same-opponent level. The keep decision
+remains operational; the record does not establish a lasting strength gain.
+[620-game follow-up](../fable-submissions/analysis/v38-arena-20261108/result.md).
+
+The local [release-record reconciliation](analysis/presentation-audit-20261111/release-record-review.json)
+verifies all member hashes, the staged upload alias, the unchanged parent
+native source/history and the shared version-map entries. The original
+archive, manifest and dated checkpoints above are preserved. This follow-up
+is documentation only: no rebuild, new upload or version reservation.
+Website publishing remains disabled.
