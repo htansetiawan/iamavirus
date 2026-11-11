@@ -1,0 +1,52 @@
+{
+ "amended_mismatches": 0,
+ "at": "2026-11-11T20:55:43.384987+00:00",
+ "cases": 22,
+ "changed_cases": [
+  "real-pinned-pawn",
+  "pinned-bishop",
+  "pinned-knight",
+  "pinned-promotion-recapture",
+  "real-pinned-pawn-mirror",
+  "pinned-bishop-mirror",
+  "pinned-knight-mirror",
+  "pinned-promotion-recapture-mirror"
+ ],
+ "initial_run": {
+  "failure": "Reporter guessed10baseline mismatches; actual8. All22amended and recapture assertions were reached before that final count check. Raw per-case rows were not retained.",
+  "observed_exit_code": 1,
+  "session": 46625
+ },
+ "limits": [
+  "A bounded immediate exchange helper, not a complete material search or strategy.",
+  "Corrections in168/221 and310 remain distinct, with their old outcomes unchanged.",
+  "Actual-board fixtures do not establish posterior mass, decision repair, throughput or Elo.",
+  "Reconstructed native histories have unknown arena RNG and load-dependent thinning; snapshots are not certified live states.",
+  "No patched policy call, model fit, GPU, full game, new ZIP/version, Fable-source/default/service or website deployment."
+ ],
+ "mismatch_reason": "The unsafe-king-recapture fixtures also allow the bishop to capture the queen. The original best-capture helper already crosses its threshold through that second capture; cases retained unchanged.",
+ "optimized_exhaustive_course_recapture_checks": 28,
+ "original_false_negatives": 8,
+ "passed": true,
+ "patch_applies_to_exact_source": true,
+ "patched_function_matches_tested_copy": true,
+ "readback": "Separate22-case deterministic helper invocation from unchanged compiled probe. No recompilation or policy replay. Raw results retained and reviewed here.",
+ "real_loss": {
+  "amended": true,
+  "original": false
+ },
+ "sound_trade_control": {
+  "amended": false,
+  "original": false
+ },
+ "source_pins": {
+  "/home/henrytan/git/iamavirus/astra-submissions/analysis/safe-recapture-20261111/native-readback.json": "9f898362dd7de37db50701fcf1cd0cec7699e4c711195be13f456e8873e50855",
+  "/home/henrytan/git/iamavirus/astra-submissions/analysis/safe-recapture-20261111/prepare-first.py": "5f39245d2f35864f62aaba69b2e5bc0f77c05117c3c5766be28cbead0e752d3f",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/safe-recapture-20261111/bridge.c": "3b2ef6bb7ae5b6dfad7ec4e77d9708958836f7665ed550ba1c1edbffc9db770f",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/safe-recapture-20261111/build/main_probe.c": "326547f1463176d9c2e56c76d5715ca0969f82c4f66b3e0cca4c1d6977f8688c",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/safe-recapture-20261111/build/probe.so": "406cedeb8f1fb5076e1418017c13343f04228fd5db1c9738a9a1579bd2b9be87",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/safe-recapture-20261111/prepare.py": "99957d11cb04fb7ede9eafb3db7aed1198a3d6d33a18dd803cf3c16e8c2fb663",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/safe-recapture-20261111/review_component.py": "f922e613d3fc525c48c1dd18050acbb90ff8a111559c654e4a1f3026740f4e99",
+  "/home/henrytan/git/iamavirus/astra-submissions/experiments/safe-recapture-20261111/safe_recapture.h": "b0bb92eee0f9a7fdd21fff61f86dff521663ff9a499c9c165442beb2224e1b77"
+ }
+}
