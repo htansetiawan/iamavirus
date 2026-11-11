@@ -29,3 +29,15 @@ to infer how the learned prior changes v38's actions or results.
 
 [Implementation](../astra-submissions/experiments/compact-mass-confirmation-20261111/confirm.py)
 · [Frozen plan](../astra-submissions/analysis/compact-mass-confirmation-20261111/plan-summary.json).
+
+## Launch
+
+Session `15698` started at 2026-11-11T01:05:01.610910+00:00 after both mirrors verified
+`07f56fdd`. The first 124 of 252 calls completed without
+a recorded fault. Cores 2–3 are reserved. The separate verifier reproduced
+all fourteen original 353 conditions from 24,012 raw control/learned rows
+and rejected a modified gain. Its initial import-by-path test omitted
+the script directory and was corrected before the successful verifier test.
+It will audit the confirmation's actual outputs after termination.
+
+[Launch receipt](../astra-submissions/analysis/compact-mass-confirmation-20261111/launch-verification.json).
