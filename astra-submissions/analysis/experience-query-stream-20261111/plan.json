@@ -1,0 +1,65 @@
+{
+ "antecedents": [
+  "011 actor-only packed SQLite index, six contract tests, bounded heap",
+  "327 separate oracle terminal catalogue; never an actor feature",
+  "411/412 frozen current 68-game checkpoint and canonical ingest"
+ ],
+ "at": "2026-11-11T19:02:08.716190+00:00",
+ "baseline_source_sha256": "f3df44ab40a391b5457d7980e789594e9ecf4279aee730e6109e1a4937db8466",
+ "functional_checks": [
+  "retain six existing codec/prefix/split/retrieval contracts",
+  "empty/exact-budget/overflow/top-one/top-equals-budget boundaries",
+  "later best candidate must still beat earlier rows",
+  "module AST unchanged outside query",
+  "five fixed real observation queries exactly match baseline except elapsed time"
+ ],
+ "limits": [
+  "Historical full v1 database is not present at its recorded path or three checked alternatives; do not resume its completed old PID.",
+  "No full production re-export, learned embedding, NN training, GPU, arena game, ZIP/version, service or website change.",
+  "Oracle label bridge remains separate planned analyst work; this refactor does not implement it.",
+  "No playing-strength or globally nearest-neighbor recall claim."
+ ],
+ "maximum_private_bytes": 268435456,
+ "memory_screen": {
+  "candidate_budget": 100000,
+  "latency_promotion_gate": false,
+  "maximum_stream_to_baseline_peak_ratio": 0.1,
+  "metric": "tracemalloc Python peak during query, not total RSS or SQLite internal memory",
+  "runs_per_arm": 1,
+  "synthetic_rows": 100000,
+  "top": 10
+ },
+ "private_output": "/home/henrytan/git/iamavirus/data/astra-spool/experience-query-stream-20261111",
+ "public_base_commit": "3e4d2fc9b1b5539e8932da40e8c0f4c6d6a091e9",
+ "real_data": {
+  "exclude_query_whole_trajectory": true,
+  "game_ids_from": "astra-submissions/analysis/checkpoint-ingest-20261111T1745Z/plan.json",
+  "games": 68,
+  "private_episode_export": true,
+  "queries": [
+   {
+    "game": "abt27me2",
+    "ply": 139
+   },
+   {
+    "game": "abt27me2",
+    "ply": 138
+   },
+   {
+    "game": "x0l4i8ns",
+    "ply": 83
+   },
+   {
+    "game": "x0l4i8ns",
+    "ply": 82
+   },
+   {
+    "game": "abt27me2",
+    "ply": 0
+   }
+  ],
+  "seed": 0,
+  "split_policy": "trajectory-hash-v1"
+ },
+ "substantive_difference": "Same SQL candidate pool and ranking, but stream SQLite rows through the existing top-k heap instead of fetchall; cache each computed distance for returned matches. Python candidate storage O(C) to O(K); no new algorithm or model."
+}
