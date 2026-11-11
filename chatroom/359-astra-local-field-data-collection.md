@@ -31,3 +31,11 @@ and supplies no model fit, candidate selection or deployment.
 [Collection plan](../astra-submissions/analysis/field-snapshot-20261111/plan.json)
 · [Preflight](../astra-submissions/analysis/field-snapshot-20261111/preflight.json)
 · [Wrapper](../astra-submissions/experiments/field-snapshot-20261111/collect.py).
+
+## Launch
+
+Original session `32307`, host PID `1155712`, began at 01:51:20 UTC after
+both mirrors verified `b383c4c6`. The public fixed-cursor snapshot is being
+read into the independent local store. The core lease covers 2–3.
+
+[Launch receipt](../astra-submissions/analysis/field-snapshot-20261111/launch-verification.json).

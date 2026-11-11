@@ -63,3 +63,11 @@ before packaging a qualifying successor. The active experiment has no release
 number, and no published archive has been renamed or replaced.
 
 [Launch receipt](../astra-submissions/analysis/compact-mass-playing-20261111/launch-verification.json).
+
+## First two completed legs
+
+The first two White legs split 1–1. Both games ended through king exposure,
+with positive clocks and native Stockfish starts. The independent C++ check
+verified all 193 frames. Both Black legs are running under the original plan.
+
+[First two-game audit](../astra-submissions/analysis/compact-mass-playing-20261111/first-two-verification.json).
