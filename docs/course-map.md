@@ -210,6 +210,26 @@ are not measured costs or guarantees for our two-player GT-CFR search.
 See the [two-history example](presentation-knowledge.html) for the actual
 information-model limitation we can demonstrate in our bot.
 
+### Human–AI agreement and delegated oversight (5 and 10 November)
+
+**Course.** L13 studies prediction exchange, conversation calibration and
+conditional benefits from competing information providers. L14 studies
+unanimous authorization relative to a baseline under coalitional alignment.
+These are different constructions with explicit incentive assumptions.
+[L13 slides](https://www.mit.edu/~6.7980/slides/L13_alignment_I.pdf),
+[L14 slides](https://www.mit.edu/~6.7980/slides/L14_alignment_II.pdf).
+
+**In the bot.** Opponents supply moves and visibility, not cooperative
+forecasts. V38 has neither conversation-calibrated prediction exchange nor
+reviewers satisfying the oversight model. Our king/queen guards estimate
+immediate risk over retained worlds; they do not compare exact baseline
+continuation values under an alignment theorem.
+
+**Limit.** Agreement between Fable and Astra is engineering review, not an
+instance with the lecture's guarantees. Likewise, two guard conditions do
+not establish baseline-policy improvement. These readings help specify what
+a safety claim would require; they do not certify the current bot.
+
 ### Forecasting and calibration (3 November)
 
 **Course.** Calibration compares outcomes within groups of similar forecasts.
@@ -226,6 +246,48 @@ and rejected 1–8 playing pilot remain separate findings.
 **Implementation boundary.** V38 does not implement this lecture's online
 forecaster or forecasting-to-regret reduction. World sampling and the fitted
 opponent prior do not supply those extra components or their guarantees.
+
+### High-dimensional games and exact compact strategies (29 October)
+
+**Course.** L16 represents distributions over combinatorial pure strategies
+through their mean realization plans. Efficient kernels can reproduce vertex
+multiplicative weights without enumerating every plan. For a finite
+perfect-recall tree, shared backward/forward passes make the learner linear
+in its sequence representation, beyond payoff-gradient cost.
+[Lecture 16](https://www.mit.edu/~6.7980/kernelized.html).
+
+**In the bot.** V38 uses local predictive regret matching. It does not
+enumerate full contingent plans or implement the kernelized learner. For a
+fixed represented tree, `pcfr_iteration` already makes two traversals plus
+action-table passes: `O(N + E + A)` for nodes, edges and information-set
+action slots, under ordinary scalar-operation accounting. Tree construction,
+world filtering and frontier scoring are additional work.
+
+**Limit.** The compact mean represents strategies, not the hidden-board
+belief. Replacing the update would change the algorithm; this reading gives
+no measured speed or strength gain. Earlier workspace and sparse-update
+studies retain their failed promotion gates; the separate combined-speed
+playing pilot also failed. Their evidence remains in the experiment register.
+
+### Equilibrium existence and computational complexity (17 and 19 November)
+
+**Course.** L18 separates polynomial verification from finding a guaranteed
+solution, introducing total search and End-of-Line. L19 outlines circuit
+gadgets behind general Nash hardness; its posted note explicitly remains
+unfinished. Both notes were available ahead of their scheduled classes.
+[Lecture 18](https://www.mit.edu/~6.7980/tfnp.html),
+[Lecture 19](https://www.mit.edu/~6.7980/ppad_completeness.html).
+
+**In the bot.** These are complexity explanations, not deployed algorithms.
+General Nash hardness is not a lower bound on every two-player zero-sum
+solver, nor an explanation of our particular arena losses. Finite-game
+representation size, sampled information structure and frontier quality
+still determine what our local calculation means.
+
+**Limit.** Checking rules, regret arithmetic or a small-game best response
+does not certify a full-game equilibrium. We have not reproduced the complete
+hardness reductions, measured full-game exploitability, or proved that our
+approximations preserve perfect recall.
 
 ## Where we stand, in the course's terms
 
@@ -258,9 +320,12 @@ that all remaining losses lie outside the learner.
 
 This correction checks the linked foundational notes and shipped source.
 The follow-up reviews the textual content of L9 (48 slides), L11 (41 pages),
-L12 (40 pages) and L15 (26 slides). Four selected L11/L12 pages were also
-inspected as images. Their formal results and experiments have not been independently reproduced.
-It does not claim a fresh complete reading of every lecture. On November 11,
+L12 (40 pages) and L15 (26 slides). A later pass adds L13 (67 pages), L14
+(22 pages) and the complete posted HTML notes for L16, L18 and L19. Four
+selected pages from L11/L12 and four from L13/L14 were also inspected as
+images. Formal results and experiments were not independently reproduced.
+A fresh complete reading of L00 and every foundational note L01–L08 is still
+not claimed. Downloading a file does not establish reading coverage. On November 11,
 the schedule links material for 18 of entries L00–L19; L10 (Taking stock) and
 L17 (Nonconvex games) are marked not yet posted. A link is not proof that its
 target was read. The complexity notes are linked ahead of their scheduled dates.
