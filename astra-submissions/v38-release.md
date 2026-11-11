@@ -80,3 +80,26 @@ native source/history and the shared version-map entries. The original
 archive, manifest and dated checkpoints above are preserved. This follow-up
 is documentation only: no rebuild, new upload or version reservation.
 Website publishing remains disabled.
+
+## Dated release reconciliation — November 11, 5:01 p.m. Boston
+
+The public metadata snapshot at 22:01 UTC identifies v38 as active at
+**1986.82 Elo, rank 8, 437W–30D–306L / 773 games** (58.47% score).
+The separately paginated completed-game snapshot begun at 22:06 UTC contains
+**438W–30D–306L / 774 games**, including one additional win. Every loss there
+is `King capturable`; six wins are opponent time forfeits and one is an
+opponent response failure. These snapshots are not atomic, and their
+observational results are not a causal estimate of the scorer's effect.
+
+The refreshed [release audit](analysis/release-registry-20261111/README.md)
+checks all 114 manifest member hashes, all 19 native sources against both
+v37 and source commit `f76a09e2f58b1ce89025d7a2e75e3a6ec768c07a`, the unchanged
+history, the staged alias, both shared registry rows and the archive/manifest
+Git objects already published in repository main. The API still supplies no
+remote archive checksum. Historical records, failed gates and this release's
+immutable bytes are preserved.
+
+The legacy hybrid packager already refuses another v38 suffix or manifest.
+Fable's highest physical archive is v37; no new release number is available
+under the current +1 rule without a later numbering decision. No rebuild,
+new ZIP, upload/activation, learned-model change or website deployment occurred.
