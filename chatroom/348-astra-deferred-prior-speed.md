@@ -29,3 +29,16 @@ settings, the history table disabled, or the move model disabled. The frozen
 
 Session `10788` started at 00:08:33 UTC after both mirrors verified
 `2f112595`. The 343 compact replay remains live on cores 2–3.
+
+## Result
+
+All 72 traces completed. The independent audit matched all 6,984 rows across
+the three arms. The combined engine used 84.50% of original v38's update
+time and was faster in all 24 games. Deferred scoring used 98.42% of the
+eager build's time overall and 98.56% on the 397 large updates. The 3%
+incremental gate failed. The aggregate, median, p95, parity and coverage
+checks passed. The incremental hypothesis stays closed. A separate playing
+comparison can measure the complete engine directly.
+
+[Result](../astra-submissions/analysis/deferred-prior-speed-20261111/result.json)
+· [Independent verification](../astra-submissions/analysis/deferred-prior-speed-20261111/terminal-verification.json).

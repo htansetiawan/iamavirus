@@ -1,0 +1,77 @@
+{
+  "counts": {
+    "updates": 2328,
+    "games": 24,
+    "v38_observers": 0,
+    "full": 763,
+    "large": 397,
+    "guard": 1168
+  },
+  "metrics": {
+    "original": {
+      "seconds": {
+        "all": 201.3895828321481,
+        "full": 17.15408723222323,
+        "large": 166.205468423,
+        "guard": 5.937557058938477
+      },
+      "ratio": {
+        "all": 1.0,
+        "full": 1.0,
+        "large": 1.0,
+        "guard": 1.0
+      },
+      "p95": 0.37419099004999995
+    },
+    "eager": {
+      "seconds": {
+        "all": 172.91293601415737,
+        "full": 6.55213332514672,
+        "large": 151.642945699,
+        "guard": 2.349152476481409
+      },
+      "ratio": {
+        "all": 0.8585992064856446,
+        "full": 0.38195756127663927,
+        "large": 0.9123824091820025,
+        "guard": 0.3956429307816021
+      },
+      "p95": 0.35720404645000003,
+      "median_game_ratio": 0.8357671493566307,
+      "faster_games": 24
+    },
+    "combined": {
+      "seconds": {
+        "all": 170.18270415225155,
+        "full": 6.18196505450708,
+        "large": 149.46525977898,
+        "guard": 2.314728150175036
+      },
+      "ratio": {
+        "all": 0.8450422398168106,
+        "full": 0.360378548320223,
+        "large": 0.8992800369154192,
+        "guard": 0.3898452052246662
+      },
+      "p95": 0.3514157587,
+      "median_game_ratio": 0.8181852079167982,
+      "faster_games": 24
+    }
+  },
+  "conditions": {
+    "parity": true,
+    "coverage": true,
+    "aggregate_cost": true,
+    "median_game_cost": true,
+    "tail_cost": true,
+    "incremental_cost": false
+  },
+  "decision": "close_exact_deferred_speed_gate",
+  "incremental_ratio_vs_eager": {
+    "all": 0.9842103666455454,
+    "large": 0.985639385267927
+  },
+  "at": "2026-11-11T00:18:09.531604+00:00",
+  "plan_sha256": "6e7deea0588edbf306030839d264a260c23e7aa539661c62ed19c0f1eeb44b1a",
+  "calls_sha256": "92306b8ecc91d9d0b8a4632f593eb3434e042c2f34ede7c87bbd66f5b38b1eb4"
+}

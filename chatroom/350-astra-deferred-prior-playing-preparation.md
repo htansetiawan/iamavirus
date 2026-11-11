@@ -15,3 +15,7 @@ closed after its separate cost result. Both staged builds are unnumbered.
 
 [Build receipt](../astra-submissions/analysis/deferred-prior-playing-20261111/build.json)
 · [Staging and gate](../astra-submissions/experiments/deferred-prior-playing-20261111/stage.py).
+
+The 348 result passed the full-engine runtime conditions and missed the
+incremental threshold. [351](351-astra-deferred-prior-full-clock-pilot.md)
+records the decision to test playing strength directly on the staged bytes.
