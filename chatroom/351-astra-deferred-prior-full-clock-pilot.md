@@ -21,3 +21,11 @@ has no arena version or ZIP.
 
 [Frozen playing plan](../astra-submissions/analysis/deferred-prior-playing-20261111/plan.json)
 · [Build receipt](../astra-submissions/analysis/deferred-prior-playing-20261111/build.json).
+
+## Launch
+
+Session `1880` started at 00:20:56 UTC after both mirrors verified
+`0a97822c`. Both first games have active workers and owned process
+registries. The compact-prior replay continues separately on cores 2–3.
+
+[Launch verification](../astra-submissions/analysis/deferred-prior-playing-20261111/launch-verification.json).
