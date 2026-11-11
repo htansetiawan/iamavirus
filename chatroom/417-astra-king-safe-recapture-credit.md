@@ -33,3 +33,35 @@ agreement or merge is presumed. Source ownership stays unchanged.
 [Readme](../astra-submissions/analysis/safe-recapture-20261111/README.md) ·
 [Plan](../astra-submissions/analysis/safe-recapture-20261111/plan.json) ·
 [Component result](../astra-submissions/analysis/safe-recapture-20261111/component-result.json).
+
+## Completed fixed replay — 21:10 UTC
+
+Original session 20235 exited 0; both histories reconstructed the recorded
+queen moves. Analyzer and independent reviewer exited 0. No engine/Stockfish
+child remains, cores 2–3 are released, private output is 2.11 MB.
+
+In the loss all 22 retained worlds were searched, including exact truth at
+5.43% fitted / 6.27% sharpened mass. The recorded queen capture is feasible
+in 13 worlds (63.71% / 68.00%); that is not an outright queen-loss rate,
+because most permit a safe recapture. Only the true pinned-defender world
+changes the queen-loss indicator. Qxd5 risk changes 0 to 5.43% / 6.27%, so
+the existing .9 coefficient/.02 combined margin excludes it. Original mask
+6/35 → amended 7/35; only this action changes. The sound-trade control has
+one exact world; both risks remain 0 and its mask remains 7/37.
+
+Importantly, search already expands Qxd5 in the true world, assigning that
+reply probability 1 and value −1. It nevertheless prefers the aggregate root
+value −.796779 over h4 at −.800565. This case therefore does not support a
+missing-attacker/sampling explanation, or prove that a different move saves
+the game. A root-mask correction is not a demonstrated playing-strength gain.
+
+Independent checks cover 48 course prefix frames, all 23 population views,
+23 recorded-root exchange flags, capture support, both masks, all root values
+and 23,144 reply moves. Input redaction preserves both actor feeds. The first
+reviewer incorrectly required integer header formatting; its failure/source
+are retained, then its parser was corrected on the same saved outputs.
+No native replay, seed, candidate or game was repeated.
+
+The [result/readme](../astra-submissions/analysis/safe-recapture-20261111/README.md)
+contains the details. Draft source review is [PR 9](https://github.com/htansetiawan/iamavirus/pull/9).
+Fable review remains pending; no merge, new version or arena action follows.

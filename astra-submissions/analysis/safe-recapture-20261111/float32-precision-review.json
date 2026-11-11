@@ -1,0 +1,24 @@
+{
+ "passed": true,
+ "cases": [
+  {
+   "role": "loss",
+   "maximum_export_decimal_vs_restored_float32_risk_difference": 3.655675762104238e-11,
+   "both_masks_unchanged_after_float32_restoration": true,
+   "recorded_amended_float32": [
+    0.054342429420699265,
+    0.06265082192766486
+   ]
+  },
+  {
+   "role": "control",
+   "maximum_export_decimal_vs_restored_float32_risk_difference": 0.0,
+   "both_masks_unchanged_after_float32_restoration": true,
+   "recorded_amended_float32": [
+    0.0,
+    0.0
+   ]
+  }
+ ],
+ "scope": "Export prints float log-weights to nine significant digits. Restoring their native float32 values produces the same original/amended exclusions; aggregate table uses export decimal values."
+}
