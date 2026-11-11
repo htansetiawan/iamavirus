@@ -174,6 +174,42 @@ action-value critic and expected backups. That estimator is absent from our
 retained GAE code; its relevance to our trainer is an unmeasured question.
 [GAE Falls Short, v2, abstract and introduction](https://arxiv.org/html/2605.19235v2).
 
+### Information and mechanism design (22 October)
+
+**Course.** The lecture connects commitment, communication and incentive
+constraints through strategies for a mediator. Its examples include
+Stackelberg commitment, correlated recommendations and Bayesian persuasion.
+[Lecture 11, slides 1–18 and 28–41](https://www.mit.edu/~6.7980/slides/L11_mechanism_design.pdf).
+
+**In the bot.** A move changes the board and potentially the opponent's next
+view. Concealed support can affect the opponent's choice. The arena's
+visibility rules constrain this information; the bot cannot freely choose a
+signaling scheme or enforce recommendations. The observed hidden-support
+win illustrates visibility and tactics, not a solved persuasion mechanism.
+
+**Limit.** V38 implements neither the lecture's mechanism-design LP nor its
+mediator construction. The polynomial statement is relative to the supplied
+game tree and model assumptions; it does not make a complete FoW tree small.
+
+### Team games and hidden roles (27 October)
+
+**Course.** Teammates' independent policies and privately correlated joint
+strategies can define different optimization problems. The lecture uses
+common-knowledge structure in a team-belief DAG and separately studies
+unknown team membership.
+[Lecture 12, slides 2–20 and 23–37](https://www.mit.edu/~6.7980/slides/L12_team_games.pdf).
+
+**In the bot.** Each side's pieces have one controller, with fixed ownership.
+There is no teammate-membership inference or team-belief DAG in v38.
+Its retained board distribution is our private range. The representation's
+history distinctions still matter: a memory approximation needs its own
+justification before importing a perfect-recall result.
+
+**Limit.** The lecture's team-specific construction and complexity bounds
+are not measured costs or guarantees for our two-player GT-CFR search.
+See the [two-history example](presentation-knowledge.html) for the actual
+information-model limitation we can demonstrate in our bot.
+
 ### Forecasting and calibration (3 November)
 
 **Course.** Calibration compares outcomes within groups of similar forecasts.
@@ -221,12 +257,13 @@ our [two-history example](presentation-knowledge.html). It is not established
 that all remaining losses lie outside the learner.
 
 This correction checks the linked foundational notes and shipped source.
-The follow-up reviews the textual content of the 48-slide L9 and 26-slide L15
-decks; their plots and formal results have not been independently reproduced.
+The follow-up reviews the textual content of L9 (48 slides), L11 (41 pages),
+L12 (40 pages) and L15 (26 slides). Four selected L11/L12 pages were also
+inspected as images. Their formal results and experiments have not been independently reproduced.
 It does not claim a fresh complete reading of every lecture. On November 11,
 the schedule links material for 18 of entries L00–L19; L10 (Taking stock) and
 L17 (Nonconvex games) are marked not yet posted. A link is not proof that its
 target was read. The complexity notes are linked ahead of their scheduled dates.
-S4's HTML endpoint remains unavailable in this review; its full
+S4's HTML fetch failed in the earlier source audit; its full
 official Typst source was checked at the pinned revision above. The PRM+
 comparison uses the authors' original Algorithm 5 and unchanged `cfr.c`.

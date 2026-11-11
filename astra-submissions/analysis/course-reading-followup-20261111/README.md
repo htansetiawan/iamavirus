@@ -23,3 +23,18 @@ the original payload hash list describes every later PR edit.
 All 24 pages render locally. Research/source review only: no training,
 new candidate, model, engine, game, split, archive change or service restart.
 Website publishing stays off. Reading every lecture is not claimed complete.
+
+## Mechanism and team lecture follow-up
+
+The L11/L12 PDF text is reviewed, with four selected pages also inspected as
+images. PDF/text hashes, page counts and visual reading scope are recorded
+separately. The source PDFs and rasters stay private.
+
+The team lecture's displayed bound is `(b+1)^k poly(N)`, with `k` counting
+last information sets in its team construction. This is not a complexity
+bound for our private-range GT-CFR implementation. The course map keeps the
+model boundary explicit rather than presenting this as a new optimization.
+
+[PDF sources](mechanism-team-sources.json) · [Source/visual review](mechanism-team-review.json).
+This follows course-map commit `3e187142`; the previous source is preserved.
+No proof, algorithm or new bot configuration was implemented or evaluated.

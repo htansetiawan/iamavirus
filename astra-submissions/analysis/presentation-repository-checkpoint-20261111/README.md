@@ -33,3 +33,8 @@ revision checks the posted RL/calibration slides and the retained trainer.
 Its [separate source review](../course-reading-followup-20261111/review.json)
 records the old and new course-map hashes and reading limits. The original
 experiment results, manifest and initial packet evidence remain preserved.
+
+A further L11/L12 source-reading revision follows course-map commit
+`3e187142`. Its [PDF/visual review](../course-reading-followup-20261111/mechanism-team-review.json)
+records the next source hash and reading scope. This changes one document's
+course correspondence; the original game and model evidence stays unchanged.
