@@ -81,6 +81,10 @@ def main():
         if path.exists():
             raise FileExistsError(path)
         fig.savefig(path, dpi=160, bbox_inches="tight", facecolor="white")
+        if extension == "svg":
+            # SVG path line endings are whitespace separators. Normalize the
+            # generated source without changing coordinates, labels or style.
+            path.write_text("\n".join(line.rstrip() for line in path.read_text().splitlines()) + "\n")
         print(path)
     plt.close(fig)
 
