@@ -45,4 +45,14 @@ reuse check. It also distinguishes loaded history records from the subset
 meeting the runtime count floor. The [human reference](../../../docs/presentation-tables.md)
 now explains the data-to-coefficients/counts path and which parameters can
 change at runtime. The old streamed-fit population remains source-recorded:
-the exact fitting command/dataset has not been reconstructed by this audit.
+the exact fitting command/dataset has not been reconstructed by that audit.
+
+## Original fit outputs located
+
+[The lineage join](fit-lineage.json) now links Fable's original November 1
+fit JSONs to all 56 deployed coefficients and verifies the saved history copy
+against the ZIP. It also finds both committed trainer versions and the
+correct old cheap baseline. [Audit source](../../tools/audit_v38_fit_lineage.py).
+The original corpus membership/hashes and reported scores have not been
+independently reproduced. The per-mover report contains only the top 30
+groups, so its rounded means are not a complete global score reconstruction.

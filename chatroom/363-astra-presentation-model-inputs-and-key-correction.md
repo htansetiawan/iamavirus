@@ -48,3 +48,13 @@ stays explicitly source-recorded rather than independently reconstructed.
 
 [Updated tables, lineage and learning classification](../docs/presentation-tables.md)
 · [Source-audit receipt](../astra-submissions/analysis/presentation-audit-20261111/information-review.json).
+
+## Follow-up: original fit receipts located
+
+The subsequent source search found the existing
+`fable-submissions/analysis/refit-all-20261101/` records and the fitter's
+separate main-branch commits. [364](364-astra-original-fit-lineage-located.md)
+narrows the earlier uncertainty: all deployed coefficients and the saved
+history binary match those records. End-to-end dataset/score reproduction
+remains unperformed; absence of the trainer from the release-parent tree
+is not evidence that its source was uncommitted.

@@ -39,6 +39,7 @@ tested configuration; it does not prove that an entire research area cannot work
 
 | Question and attempt | Observed outcome | What we learned |
 | --- | --- | --- |
+| Refit the same 28-feature model on much more data, v37/v38 prior | 148,357 recorded training games; full-model held-out gain +0.0077 nats over v35. Suite net +1 of 399; historical duel 56W–2D–42L, with interruption/replay qualifications | Saved fit outputs match deployed weights, but no decisive strength improvement follows from this small predictive gain. [Original report](https://github.com/htansetiawan/iamavirus/blob/main/fable-submissions/analysis/refit-all-20261101/result.md), [lineage audit](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/presentation-audit-20261111/fit-lineage.json) |
 | Faster frontier scoring, deployed v38 | About 1.6× scoring throughput and 38% more equal-time nodes; 11W–1D–4L vs v37; Misty gate failed; human-authorized arena trial retained | A measured engineering contribution. Neither node gain nor retention alone identifies causal arena Elo gain. [Release](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md) |
 | Cheaper exact CFR workspace/cached strategies/selective updates | 253/254 improve solver cost but old whole-search node gate fails | Local speed and whole-move speed differ. [254](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/254-astra-exact-selective-cfr.md) |
 | Last-only solver specialization on v38 | Correctness and +10.6% equal-time nodes pass; full-clock comparison ends 9W–7L below 10/16 screen | A correct speed improvement can miss its playing criterion. [335](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/335-astra-fresh-last-only-playing-pilot.md) |
@@ -60,6 +61,32 @@ tested configuration; it does not prove that an entire research area cannot work
 The complete navigation register contains older guard/hazard, opening,
 endgame, arithmetic, data recovery and measurement work. Avoid presenting
 this curated table as an exhaustive count of all experiments.
+
+## Case study: 73 times more games, the same representation
+
+The historical v37 refit increased the recorded training set from 2,029 to
+148,357 games while retaining the 28 feature definitions. Our lineage audit
+matches its saved coefficients to v38 and its old baseline coefficients to
+the v35 ZIP. The saved metrics compare both models on the same 1,734,620
+held-out opponent moves:
+
+| Formula | v35 nats over uniform | Refit nats over uniform | Top-1 change |
+| --- | --- | --- | --- |
+| Full | 0.6375 | 0.6452 | 26.73% → 27.05% |
+| Cheap | 0.4718 | 0.4743 | 24.50% → 24.83% |
+
+The full gain is about 0.0077 nats: a roughly 1.0077 geometric likelihood
+ratio for recorded actions, not a 0.77% win-rate improvement. More data can
+reduce estimation error without changing what the feature family can
+represent. That is a possible explanation for the small gain, not a proved
+diagnosis of underfitting.
+
+The historical suite result stayed within its noise floor. The reported
+100-game duel scored 57%, with a paired interval of 47–68% and documented
+interruption/replayed-attempt qualifications. This does not establish either
+zero benefit or a decisive gain. The table was built from the complete
+export, so a held-out coefficient score is not an end-to-end holdout for
+the history table and bot. The original report and audit are linked above.
 
 ## Case study: a better posterior that lost more games
 

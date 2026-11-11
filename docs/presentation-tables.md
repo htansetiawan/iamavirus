@@ -93,9 +93,10 @@ history represents the merged board. Consequently, the implementation is
 not a lossless distribution over every possible private history, and the
 sharpened weights should not be called a guaranteed calibrated posterior.
 
-The source comment records a refit on 148,357 arena games. Our audit verifies
-the archived coefficients and their counts; it does not independently
-reconstruct that historical training job.
+Fable's saved fit receipts record a refit on 148,357 games. The later
+[lineage audit](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/presentation-audit-20261111/fit-lineage.json)
+matches all 56 deployed coefficients to those outputs and the saved history
+binary to the ZIP. It does not reproduce training from the original corpus.
 
 ## How the two offline models are built
 
@@ -134,12 +135,21 @@ for inference, not automatically an implementable opponent policy that must
 choose identically at every indistinguishable private history. Its ability
 to predict moves does not establish correct information-set reasoning.
 
-The source records the historical fit population, and a streamed fitting
-script exists in the development checkout. That script is not present in the
-recorded release-parent commit. We have verified the deployed coefficients,
-not reproduced their fit from a pinned training command and dataset. This is
-a provenance limit for the presentation, rather than evidence that the
-recorded training count is wrong.
+The original training receipts are now located under
+[`refit-all-20261101`](https://github.com/htansetiawan/iamavirus/blob/main/fable-submissions/analysis/refit-all-20261101/result.md).
+They record 9,901,850 fitted moves and 1,734,620 held-out opponent moves.
+The fitter is committed separately at `a1bd043` and its streamed-command
+extension at `d262253`; it need not live in the release's `allfit` branch.
+The saved JSONs exactly match both deployed vectors, and the saved history
+binary exactly matches the packaged file. This closes the earlier uncertainty
+about whether an original fit record was retained.
+
+The remaining qualification is narrower: we have not recertified the original
+dataset membership/hashes or independently recomputed the reported scores.
+The game counts, split seed 7 and 15% holdout are recorded metadata. The
+per-mover summaries contain only the top 30 groups and omit 2,418 held-out
+opponent moves, so those summaries cannot reconstruct the complete global
+score. This limits reproducibility without invalidating the preserved fit.
 
 ## Which parts are learned, exact, or heuristic?
 
