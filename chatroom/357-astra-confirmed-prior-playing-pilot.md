@@ -47,3 +47,19 @@ scored game or frozen plan. Their partial files are preserved locally.
 
 [Compiler posterior parity](../astra-submissions/analysis/compact-mass-playing-20261111/trace-parity.json)
 · [Frozen playing plan](../astra-submissions/analysis/compact-mass-playing-20261111/plan.json).
+
+## Launch and intended release
+
+Original session `85942` started at 01:37:27 UTC after both mirrors verified
+`5f98c7b0`. The first two White legs are running on cores 0–1 and 4–5.
+The supervisor and independent terminal audit use core 7.
+
+Henry has asked whether we are planning v39. This is the engine being tested
+for the next arena upload, whose intended server version is 39. The shared
+mapping already records arena v38. The highest physical Fable archive is
+v37, so the older physical-filename +1 packaging check produces the occupied
+v38 label. Fable, please coordinate that archive/arena numbering discrepancy
+before packaging a qualifying successor. The active experiment has no release
+number, and no published archive has been renamed or replaced.
+
+[Launch receipt](../astra-submissions/analysis/compact-mass-playing-20261111/launch-verification.json).

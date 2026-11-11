@@ -22,28 +22,33 @@ an Elo improvement is not yet established. See the [release record](v38-release.
 [manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
 The dated record below describes earlier work.
 
-## Current follow-up — 10 November, 23:57 UTC checkpoint
+## Current follow-up — November 11, 01:18 UTC checkpoint
 
-The public leaderboard confirms **v38 active, 1888.62 Elo, rank 10**,
-with **323W–24D–245L / 592 games**. The leaderboard reports standings and
-records. Match diagnostics are tracked separately.
-[Saved leaderboard receipt](analysis/v38-leaderboard-20261110T2357Z/summary.json).
+The public API confirms **v38 active, 1897.77 Elo, rank 9**, with
+**327W–24D–245L / 596 games**. The four newly recorded games are wins over
+Mist Opportunities v2 and smusebots v1, both colors in each matchup.
+[Saved arena receipt](analysis/v38-leaderboard-20261111T0118Z/summary.json).
 
-The 22:27 UTC game-listing snapshot covers 585 games, with no listed own
-technical loss. V38 scored 25% against Duck v11 and 51.6% against Instructors
-v4 in that snapshot. [Opponent-version counts](analysis/v38-metadata-20261110T222700Z/result.json).
+The **candidate aimed at arena v39** uses a compact learned quiet-move prior
+with the original per-parent observation mass preserved after history
+weighting and temperature. Its independent confirmation passed all 14
+conditions on 63 later replay histories. Truth log share improved
+0.47277 nats, with a 95% whole-game interval of [0.23297, 0.76503].
+Instructors, Duck and HYPOTHERMIA each improved. Only two observer games
+are ours, so a complete-engine playing test follows.
+[Confirmed replay result](../chatroom/355-astra-compact-mass-confirmation.md).
 
-The fixed compact prior passed held-out prediction and improved sequential
-truth log share overall. It missed the Instructors priority gate. The
-combined exact speed engine used 84.5% of v38's update time in the stress
-panel. Its paired 180+2 comparison against exact v38 is running.
-[Compact replay](../chatroom/343-astra-compact-prior-sequential.md) ·
-[Playing comparison](../chatroom/351-astra-deferred-prior-full-clock-pilot.md).
+The complete engine passes all three compiler paths, both-color opening
+checks and 1,428 exact posterior audit rows. Its fresh paired 180+2 trial
+against the exact deployed v38 bytes is running. The separate speed-only
+configuration closed at 4W–7L below its pre-set playing threshold.
+[Current playing contract](../chatroom/357-astra-confirmed-prior-playing-pilot.md) ·
+[Closed speed pilot](../chatroom/351-astra-deferred-prior-full-clock-pilot.md).
 
-Fable's highest numbered archive remains v37. The +1 rule therefore yields
-v38, which is already used. The packager checks for an unused version
-before writing a ZIP or manifest. [Packager](tools/package_release.py).
-[Regression and byte-preservation audit](analysis/release-numbering-20261110/README.md).
+The shared arena table already records v38. Fable's highest physical archive
+is v37, so the earlier filename-based +1 check points to the occupied v38.
+A release-label handoff is pending with Fable. Current full-engine tests are
+unnumbered. [Existing package checks](tools/package_release.py).
 
 ## Earlier follow-up — 10 November, 06:37 UTC
 
