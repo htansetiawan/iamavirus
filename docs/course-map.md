@@ -18,9 +18,23 @@ running in the deployed decision loop.
 
 ## Lecture by lecture
 
+### Course overview (10 September)
+
+The overview frames multiagent learning around incentives and interacting
+policies, whose behavior can differ from isolated optimization. It lists
+several approaches to FoW. Our deployed contribution combines inference,
+local game solving, offline learned coefficients and engine engineering;
+the historical neural-policy pipeline is a separate implementation.
+[Lecture 0](https://www.mit.edu/~6.7980/slides/L00_course_intro.pdf).
+
 ### Nash equilibrium, zero-sum games, linear programming (15 to 22 September)
 
-**Course.** Nash existence; in two-player zero-sum games the equilibrium value is a minimax and the strategies come from a linear programme; correlated equilibria.
+**Course.** L1 defines mixed equilibrium through unilateral deviations. L2
+connects existence to Brouwer fixed points and Sperner's combinatorial
+argument. L3 connects two-player zero-sum equilibrium to minimax and linear
+programming, and distinguishes correlated equilibrium.
+[Lecture 1](https://www.mit.edu/~6.7980/nfgs_nash.html),
+[Lecture 2](https://www.mit.edu/~6.7980/brouwer.html).
 
 **In the bot.** A zero-sum model motivates robustness to an adversary.
 The earlier hybrid used a root matrix approximation; v38 uses a local game
@@ -28,7 +42,9 @@ tree. Solving either approximation does not establish optimal play in the
 original FoW game. Earlier losses alone do not prove that one architectural
 omission caused them. [Lecture 3](https://www.mit.edu/~6.7980/correlated.html).
 
-**Beyond the course.** The LP is never formed; at arena scale the equilibrium is approximated by learning dynamics, which is the point of the next three lectures.
+**Limit.** The deployed engine forms no full-game LP or Sperner graph.
+Existence of a mixed equilibrium does not prove that a particular finite
+solver reaches it. The representation we solve is itself an approximation.
 
 ### Learning in games, foundations and algorithms (24 and 29 September)
 
@@ -43,6 +59,14 @@ updates averaging state even though that state does not select the move.
 The [numerical walkthrough](presentation-move.html) checks actual updates;
 the [experiment map](presentation-experiments.html) preserves the failed
 playing gate for the faster last-only specialization.
+
+For a fixed game, external regret compares the sequence of played strategies
+with the best single strategy in hindsight. The zero-sum saddle gap of the
+averaged realization plans is `(R1(T) + R2(T)) / T` in the lecture's canonical
+setup. Here `T` counts solver iterations. In our runtime, those utilities
+come from the constructed tree and its frontier values; they are not the
+results of `T` arena games. Local regret updates do not refit the opponent
+model.
 
 **Limit.** The course's no-regret-to-Nash statement concerns average
 strategies under its assumptions. It does not certify our finite last
@@ -291,7 +315,7 @@ approximations preserve perfect recall.
 
 ## Where we stand, in the course's terms
 
-| concept | course | bot | gap we are working on |
+| concept | course | bot | implementation limit |
 | --- | --- | --- | --- |
 | equilibrium notion | Nash, zero-sum minimax | approximate local-game optimization | no full-game exploitability certificate |
 | learner | regret matching and variants | predictive CFR+; final last-iterate argmax | finite changing game and purification need qualification |
@@ -324,11 +348,19 @@ L12 (40 pages) and L15 (26 slides). A later pass adds L13 (67 pages), L14
 (22 pages) and the complete posted HTML notes for L16, L18 and L19. Four
 selected pages from L11/L12 and four from L13/L14 were also inspected as
 images. Formal results and experiments were not independently reproduced.
-A fresh complete reading of L00 and every foundational note L01–L08 is still
-not claimed. Downloading a file does not establish reading coverage. On November 11,
-the schedule links material for 18 of entries L00–L19; L10 (Taking stock) and
-L17 (Nonconvex games) are marked not yet posted. A link is not proof that its
-target was read. The complexity notes are linked ahead of their scheduled dates.
+The final foundational pass reads the overview's 51-page extracted text
+and the full posted HTML main text for L01–L08. Two selected overview pages
+were also inspected as images. Together, the dated reading records cover one
+textual source for **all 18 currently posted lecture entries**. The official
+schedule was checked again at 16:09 UTC on November 11: L10 (Taking stock)
+and L17 (Nonconvex games) remain unposted. L19 labels its posted note unfinished.
+The complexity notes are available ahead of their scheduled dates.
+
+[Lecture-by-lecture coverage and source hashes](https://github.com/htansetiawan/iamavirus/blob/astra/presentation-review-20261111/astra-submissions/analysis/course-reading-followup-20261111/lecture-coverage.json)
+distinguish reading from download and connect earlier dated records. This
+is textual-source coverage, not a review of every graphic, lecture video,
+supplementary reading, proof or future revision. The earlier incomplete
+coverage statements remain dated historical records.
 S4's HTML fetch failed in the earlier source audit; its full
 official Typst source was checked at the pinned revision above. The PRM+
 comparison uses the authors' original Algorithm 5 and unchanged `cfr.c`.
