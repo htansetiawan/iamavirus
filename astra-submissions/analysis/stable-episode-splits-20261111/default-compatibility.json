@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-11T16:42:54.111687+00:00",
+  "baseline_commit": "3e4d2fc9b1b5539e8932da40e8c0f4c6d6a091e9",
+  "baseline_source_sha256": "1a64094657907a547bd6e1f0bbe70edbd2c1bc98654b8363d42c27dee7cc08fb",
+  "updated_source_sha256": "df1e6627d5dc8453ca65eb82952259b4b19a43faec9e01339f425a9c42bc372b",
+  "cases": [
+    {
+      "undated_input": false,
+      "split_method": "chronological_duplicate_groups",
+      "source_games": 3,
+      "episodes": 6,
+      "content_sha256": "211d993a0e094f593c0fa93a5d5241e5aa8c4a0806f2da6b12bc4cf0583f1aa7",
+      "all_episode_records_match": true,
+      "all_nonphysical_manifest_fields_match": true
+    },
+    {
+      "undated_input": true,
+      "split_method": "seeded_duplicate_groups_missing_timestamps",
+      "source_games": 3,
+      "episodes": 6,
+      "content_sha256": "211d993a0e094f593c0fa93a5d5241e5aa8c4a0806f2da6b12bc4cf0583f1aa7",
+      "all_episode_records_match": true,
+      "all_nonphysical_manifest_fields_match": true
+    }
+  ],
+  "native_validator_preexisting": true,
+  "native_source_rebuilt": false,
+  "scope": "Two small temporary-store original-versus-updated default-export comparisons. Logical episodes/content digest and nonphysical manifest fields match in both legacy split modes. Physical generation paths, timestamps and gzip bytes are excluded. No production export, training, playing or speed claim."
+}

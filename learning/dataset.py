@@ -6,6 +6,8 @@ Splits are assigned to whole games before any sequence is cut, both colours of
 a game share a split, and exact duplicate move sequences are grouped so they
 cannot straddle a split. The default is 80/10/10 with the most recent games
 held out for validation and test where timestamps exist.
+An opt-in trajectory-hash-v1 policy keeps each complete move sequence in a
+stable fold as the corpus grows; it is not a chronological holdout.
 
 Shards are gzip JSON lines of `PlayerEpisode.to_dict()`, one episode per line:
 compact observation strings and action arrays, loadable without unpickling.
@@ -27,6 +29,7 @@ import tempfile
 import uuid
 from collections import Counter, defaultdict
 from dataclasses import dataclass
+from fractions import Fraction
 from pathlib import Path
 
 import numpy as np
@@ -35,15 +38,53 @@ from . import features, histories, ingest, labels, rules
 from .action_codec import encode_action, split_action
 
 SPLITS = ("train", "validation", "test")
+SPLIT_POLICIES = ("adaptive", "trajectory-hash-v1")
+_SPLIT_HASH_NAMESPACE = b"iamavirus/trajectory-split/v1\0"
 
 
 # ---------------------------------------------------------------------------
 # Building
 # ---------------------------------------------------------------------------
 
+def _trajectory_hash_splits(rows: list[dict], fractions, seed: int) -> dict[str, str]:
+    """Stable complete-trajectory partition; validate parameters without floats."""
+    try:
+        weights = tuple(Fraction(str(value)) for value in fractions)
+    except (ValueError, ZeroDivisionError, TypeError) as exc:
+        raise ValueError("fractions must be three nonnegative numbers summing to one") from exc
+    if len(weights) != 3 or any(value < 0 for value in weights) or sum(weights) != 1:
+        raise ValueError("fractions must be three nonnegative numbers summing to one")
+    if isinstance(seed, bool) or not isinstance(seed, int):
+        raise ValueError("trajectory-hash-v1 requires an integer seed")
+    space = 1 << 256
+    train_cut = int(weights[0] * space)
+    validation_cut = int((weights[0] + weights[1]) * space)
+    prefix = _SPLIT_HASH_NAMESPACE + str(seed).encode("ascii") + b"\0"
+    seen = {}
+    assignment = {}
+    for row in rows:
+        game, moves = row.get("id"), row.get("moves_sha256")
+        if not isinstance(game, str) or not game:
+            raise ValueError("trajectory-hash-v1 requires nonempty string game IDs")
+        if (not isinstance(moves, str) or len(moves) != 64
+                or any(c not in "0123456789abcdef" for c in moves)):
+            raise ValueError(f"game {game}: trajectory-hash-v1 requires a lowercase SHA-256 move hash")
+        if game in seen and seen[game] != moves:
+            raise ValueError(f"conflicting move hashes for game {game}")
+        seen[game] = moves
+        value = int.from_bytes(hashlib.sha256(prefix + bytes.fromhex(moves)).digest(), "big")
+        assignment[game] = ("train" if value < train_cut else
+                            "validation" if value < validation_cut else "test")
+    return assignment
+
+
 def assign_splits(rows: list[dict], fractions=(0.8, 0.1, 0.1), seed: int = 0,
-                  chronological: bool = True) -> dict[str, str]:
-    """game id -> split. Duplicate move sequences share a group and a split."""
+                  chronological: bool = True, *, policy: str = "adaptive") -> dict[str, str]:
+    """game id -> split. Adaptive is the historical default; hash folds are stable."""
+    if policy == "trajectory-hash-v1":
+        return _trajectory_hash_splits(rows, fractions, seed)
+    if policy != "adaptive":
+        raise ValueError(f"unknown split policy {policy!r}")
     groups: dict[str, list[dict]] = defaultdict(list)
     for row in rows:
         groups[row["moves_sha256"]].append(row)
@@ -121,7 +162,7 @@ def dataset_source_rows(path: Path, limit: int | None = None) -> tuple[list[dict
 
 
 def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 0.1, 0.1),
-                  seed: int = 0, limit: int | None = None) -> dict:
+                  seed: int = 0, limit: int | None = None, *, split_policy: str = "adaptive") -> dict:
     """Publish a complete immutable generation, preserving the last dataset on failure.
 
     Resolve an existing manifest symlink before replacing its target. A new
@@ -139,7 +180,8 @@ def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 
     temporary_manifest = None
     published = False
     try:
-        manifest = _build_dataset_generation(raw, generation, version, fractions, seed, limit)
+        manifest = _build_dataset_generation(raw, generation, version, fractions, seed, limit,
+                                             split_policy=split_policy)
         hashes = {}
         for split, path in manifest["shards"].items():
             # Reading through EOF validates gzip trailers, including failures
@@ -173,13 +215,14 @@ def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 
             shutil.rmtree(generation)
 
 
-def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions, seed, limit) -> dict:
+def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions, seed, limit,
+                              *, split_policy: str = "adaptive") -> dict:
     store = ingest.RawStore(raw)
     # Lock only the journal snapshot; replay validation and episode building
     # must not block the watcher for the duration of an export.
     with store.writer():
         rows, source_journal = dataset_source_rows(store.accepted, limit)
-    assignment = assign_splits(rows, fractions, seed)
+    assignment = assign_splits(rows, fractions, seed, policy=split_policy)
     stats: dict = {split: Counter() for split in SPLITS}
     by_opponent: dict = {split: Counter() for split in SPLITS}
     mismatches = []
@@ -194,6 +237,8 @@ def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions,
             states, problems = ingest.validate_replay(replay)
             if problems:
                 raise ValueError(f"accepted replay {row['id']} failed validation: {problems}")
+            if split_policy == "trajectory-hash-v1" and ingest.replay_hash(replay) != row["moves_sha256"]:
+                raise ValueError(f"accepted replay {row['id']} move hash differs from its journal")
             split = assignment[row["id"]]
             source_hash = hashlib.sha256(replay_bytes).hexdigest()
             for side in (rules.WHITE, rules.BLACK):
@@ -227,8 +272,9 @@ def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions,
         "source_games": len(rows),
         "source_journal": source_journal,
         "undated_source_games": sum(not row.get("createdAt") for row in rows),
-        "split_method": "chronological_duplicate_groups" if all(row.get("createdAt") for row in rows)
-                        else "seeded_duplicate_groups_missing_timestamps",
+        "split_method": ("trajectory_hash_v1" if split_policy == "trajectory-hash-v1" else
+                         "chronological_duplicate_groups" if all(row.get("createdAt") for row in rows)
+                         else "seeded_duplicate_groups_missing_timestamps"),
     }
     return manifest
 
@@ -397,10 +443,13 @@ def main(argv=None):
     parser.add_argument("--manifest", type=Path, required=True)
     parser.add_argument("--version", default=None, help="defaults to the manifest file stem")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--split-policy", choices=SPLIT_POLICIES, default="adaptive",
+                        help="adaptive keeps historical cutoffs; trajectory-hash-v1 has stable, nonchronological folds")
     parser.add_argument("--limit", type=int, default=None)
     args = parser.parse_args(argv)
     version = args.version or args.manifest.stem
-    manifest = build_dataset(args.raw, args.manifest, version, seed=args.seed, limit=args.limit)
+    manifest = build_dataset(args.raw, args.manifest, version, seed=args.seed, limit=args.limit,
+                             split_policy=args.split_policy)
     print(json.dumps({k: manifest[k] for k in ("version", "counts", "content_sha256")}, indent=1))
     if manifest["candidate_mismatches"]:
         print(f"WARNING: {len(manifest['candidate_mismatches'])} episodes with candidate mismatches "
