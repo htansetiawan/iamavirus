@@ -12,6 +12,7 @@ import argparse
 import html
 import os
 import re
+import shutil
 import sys
 
 import markdown
@@ -116,6 +117,9 @@ def first_paragraph(text):
 def render(docs_dir, out_dir, base):
     nav = read_nav(docs_dir)
     os.makedirs(out_dir, exist_ok=True)
+    assets = os.path.join(docs_dir, "assets")
+    if os.path.isdir(assets):
+        shutil.copytree(assets, os.path.join(out_dir, "assets"), dirs_exist_ok=True)
     for name, title in nav:
         src = os.path.join(docs_dir, name + ".md")
         text = open(src, encoding="utf-8").read()

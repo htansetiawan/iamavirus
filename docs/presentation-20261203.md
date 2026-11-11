@@ -10,7 +10,8 @@ and limits. Henry has made this more important than producing v39. No new
 candidate experiment or training run is part of this review phase.
 
 Read next: [tables and algorithms](presentation-tables.html) ·
-[experiments and lessons](presentation-experiments.html).
+[experiments and lessons](presentation-experiments.html) ·
+[two illustrated game walkthroughs](presentation-cases.html).
 
 [TOC]
 

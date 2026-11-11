@@ -9,6 +9,8 @@ with the new [presentation review](presentation-20261203.html), then read
 [the tables and algorithms](presentation-tables.html) and
 [the experiments and lessons](presentation-experiments.html). They distinguish
 the immutable v38 package, experimental code and retired architectures.
+The [illustrated game walkthroughs](presentation-cases.html) compare true
+boards with both private views and decode a real search log field by field.
 
 The archive audit verifies **359,889 empirical history/move records**, two
 28-coefficient move-model vectors and the four per-decision CFR arrays.

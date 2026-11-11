@@ -15,6 +15,11 @@ verifies all 114 manifest member hashes, 359,889 history records and both
 continues into its isolated local cache; the shared daily pipeline remains
 unavailable after the storage fault.
 
+The [illustrated walkthrough](../docs/presentation-cases.md) adds a real v38
+hidden-support win, the experimental six-world loss, both private views and
+an explanation of each search-log field. These are selected teaching cases,
+not a new experiment or strength estimate.
+
 ## V38 active — November 10, 2026
 
 Henry uploaded the reviewed all-child scorer on November 8 as **arena v38**.

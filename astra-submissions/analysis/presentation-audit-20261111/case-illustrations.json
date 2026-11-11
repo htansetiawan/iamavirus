@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-11T02:41:26.351014+00:00",
+  "source_sha256": {
+    "astra-submissions/tools/illustrate_presentation_cases.py": "d2763d9d9ed2fabda63ef6ea0ff7ddf6a22fd131934d64101cb6710034e07833",
+    "astra-submissions/analysis/v38-mist-positive-20261111/result.json": "e55fd8e9f1cf7a5ba0c5ccc0a2833b6d1fe7ceee3e080fca3c28d3cf520bbd95",
+    "data/astra-spool/v38-mist-wins-20261111/c8ozqj0m.json": "a24ff3e5a00b19e021ca638d2bc8d8afdc30f76667092775ebad12070d148b0a",
+    "data/astra-spool/compact-mass-playing-20261111/jobs/mass-p2-black/replay.json": "486620b31322733b69a538e0ff3ad8466298c5f7a360b3761296fd46e0cde069",
+    "data/astra-spool/compact-mass-playing-20261111/jobs/mass-p2-black/result.json": "dee0ed0058592aa4260c1c2166098128c47a0fe0e7772b354f3ae0bae5b1613a",
+    "astra-submissions/analysis/onpolicy-prior-diagnosis-20261111/result.json": "70f58263af244a27b78df3b68b174a513df1a8fef7caf45299eb9d46cf3a5737"
+  },
+  "figures": {
+    "presentation-hidden-support.svg": "c39011a6d55692361c758d2eb8c05b366fcaed476596d459599b13e60103b481",
+    "presentation-six-world-loss.svg": "97420475fbb4b5d42e0dd9f763322b820974ca0ac6c067948b0986586f978287"
+  },
+  "win": {
+    "game": "c8ozqj0m",
+    "frame": 33,
+    "ply": 34,
+    "move": "g8g7",
+    "visible_bait": "g7",
+    "hidden_attacker": "g4",
+    "surviving_reply": [
+      "g8h8"
+    ],
+    "labels_from": "existing 356 course/C++ audit"
+  },
+  "loss": {
+    "game": "mass-p2-black",
+    "frame": 115,
+    "ply": 116,
+    "move": "f4f3",
+    "hidden_attacker": "e2",
+    "candidate_search_log": "mist: n=58 |P|=6(capped) samples=6 moves=24 infosets=1528 nodes=53020 iters=6490 p=1.00 v=+0.999 lead=+9 clock=26.0 sf=437672/237.7s mr=-1.00/-1.00 hist=30/963365 move=f4f3",
+    "reconstructed_fatal_mass": 0.00026230585667120105,
+    "reconstructed_truth_share": 0.00026230585667120105,
+    "labels_from": "existing 357/360 course/C++/fixed-history audits"
+  },
+  "scope": "Illustration of two already-audited selected fixtures. Public snapshots only; no full raw export, new model, bot invocation, game, performance estimate or counterfactual policy. Private panels use recorded observations; unseen attacker lines omitted from them. The loss is an experimental candidate, not arena-v38."
+}

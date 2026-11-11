@@ -28,3 +28,11 @@ freed after every decision. Model weights and history counts are frozen.
 The public API cannot verify the uploaded ZIP hash. The recorded archive/arena
 association comes from the human upload and registry. Counts are structural
 facts about that artifact, not playing-strength or equilibrium guarantees.
+
+## Selected replay illustrations
+
+[Case provenance](case-illustrations.json) pins the two already-audited replay
+fixtures and generated SVGs. [The generator](../../tools/illustrate_presentation_cases.py)
+uses recorded private views, exports two selected snapshots and runs no bot.
+The [walkthrough](../../../docs/presentation-cases.md) distinguishes the arena
+v38 win from the rejected experimental candidate's local loss.
