@@ -36,6 +36,7 @@ import numpy as np
 
 from . import features, histories, ingest, labels, rules
 from .action_codec import encode_action, split_action
+from .metadata_overlay import MetadataOverlay, load_metadata_overlay
 
 SPLITS = ("train", "validation", "test")
 SPLIT_POLICIES = ("adaptive", "trajectory-hash-v1")
@@ -162,7 +163,8 @@ def dataset_source_rows(path: Path, limit: int | None = None) -> tuple[list[dict
 
 
 def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 0.1, 0.1),
-                  seed: int = 0, limit: int | None = None, *, split_policy: str = "adaptive") -> dict:
+                  seed: int = 0, limit: int | None = None, *, split_policy: str = "adaptive",
+                  metadata_overlay: Path | None = None) -> dict:
     """Publish a complete immutable generation, preserving the last dataset on failure.
 
     Resolve an existing manifest symlink before replacing its target. A new
@@ -172,6 +174,7 @@ def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 
     """
     if not version or Path(version).name != version or version in (".", ".."):
         raise ValueError("version must be a single directory name")
+    overlay = load_metadata_overlay(metadata_overlay) if metadata_overlay is not None else None
     manifest_path = manifest_path.resolve()
     out_dir = manifest_path.parent / version
     out_dir.mkdir(parents=True, exist_ok=True)
@@ -181,7 +184,7 @@ def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 
     published = False
     try:
         manifest = _build_dataset_generation(raw, generation, version, fractions, seed, limit,
-                                             split_policy=split_policy)
+                                             split_policy=split_policy, metadata_overlay=overlay)
         hashes = {}
         for split, path in manifest["shards"].items():
             # Reading through EOF validates gzip trailers, including failures
@@ -216,12 +219,16 @@ def build_dataset(raw: Path, manifest_path: Path, version: str, fractions=(0.8, 
 
 
 def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions, seed, limit,
-                              *, split_policy: str = "adaptive") -> dict:
+                              *, split_policy: str = "adaptive",
+                              metadata_overlay: MetadataOverlay | None = None) -> dict:
     store = ingest.RawStore(raw)
     # Lock only the journal snapshot; replay validation and episode building
     # must not block the watcher for the duration of an export.
     with store.writer():
         rows, source_journal = dataset_source_rows(store.accepted, limit)
+    applied_metadata = []
+    if metadata_overlay is not None:
+        rows, applied_metadata = metadata_overlay.apply_rows(rows)
     assignment = assign_splits(rows, fractions, seed, policy=split_policy)
     stats: dict = {split: Counter() for split in SPLITS}
     by_opponent: dict = {split: Counter() for split in SPLITS}
@@ -241,6 +248,8 @@ def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions,
                 raise ValueError(f"accepted replay {row['id']} move hash differs from its journal")
             split = assignment[row["id"]]
             source_hash = hashlib.sha256(replay_bytes).hexdigest()
+            if metadata_overlay is not None:
+                replay = metadata_overlay.apply_replay(row["id"], replay, source_hash)
             for side in (rules.WHITE, rules.BLACK):
                 episode = histories.build_episode(replay, states, side, ingest.RULES_FINGERPRINT, source_hash)
                 episode.metadata.split = split
@@ -276,6 +285,10 @@ def _build_dataset_generation(raw: Path, out_dir: Path, version: str, fractions,
                          "chronological_duplicate_groups" if all(row.get("createdAt") for row in rows)
                          else "seeded_duplicate_groups_missing_timestamps"),
     }
+    if metadata_overlay is not None:
+        snapshot = out_dir / "metadata-overlay.json"
+        metadata_overlay.write_snapshot(snapshot)
+        manifest["metadata_overlay"] = metadata_overlay.manifest_info(applied_metadata, snapshot)
     return manifest
 
 
@@ -445,11 +458,13 @@ def main(argv=None):
     parser.add_argument("--seed", type=int, default=0)
     parser.add_argument("--split-policy", choices=SPLIT_POLICIES, default="adaptive",
                         help="adaptive keeps historical cutoffs; trajectory-hash-v1 has stable, nonchronological folds")
+    parser.add_argument("--metadata-overlay", type=Path, default=None,
+                        help="explicit source-bound metadata corrections; snapshotted in the new generation")
     parser.add_argument("--limit", type=int, default=None)
     args = parser.parse_args(argv)
     version = args.version or args.manifest.stem
     manifest = build_dataset(args.raw, args.manifest, version, seed=args.seed, limit=args.limit,
-                             split_policy=args.split_policy)
+                             split_policy=args.split_policy, metadata_overlay=args.metadata_overlay)
     print(json.dumps({k: manifest[k] for k in ("version", "counts", "content_sha256")}, indent=1))
     if manifest["candidate_mismatches"]:
         print(f"WARNING: {len(manifest['candidate_mismatches'])} episodes with candidate mismatches "
