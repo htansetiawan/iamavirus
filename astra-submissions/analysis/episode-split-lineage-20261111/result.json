@@ -1,0 +1,67 @@
+{
+  "at": "2026-11-11T12:19:53.857260+00:00",
+  "status": "complete_projection",
+  "plan_sha256": "5cada7bff08e3929d58bd3f8780f5a195ce1a1893d4d12bc4262a0db4e22ca86",
+  "old_generation": "2026-11-02T11:41:55.130131+00:00",
+  "old_games": 195614,
+  "old_trajectories": 192165,
+  "source_games": 234911,
+  "newly_available_games": 39297,
+  "undated_games": 164,
+  "projected_split_method": "seeded_duplicate_groups_missing_timestamps",
+  "old_subset_reconstruction_mismatches": 0,
+  "old_by_projected_game_matrix": {
+    "train": {
+      "train": 152869,
+      "validation": 2536,
+      "test": 813
+    },
+    "validation": {
+      "train": 2555,
+      "validation": 17065,
+      "test": 208
+    },
+    "test": {
+      "train": 795,
+      "validation": 117,
+      "test": 18656
+    }
+  },
+  "old_by_projected_trajectory_matrix": {
+    "train": {
+      "train": 150484,
+      "validation": 2463,
+      "test": 785
+    },
+    "validation": {
+      "train": 2492,
+      "validation": 16609,
+      "test": 115
+    },
+    "test": {
+      "train": 789,
+      "validation": 116,
+      "test": 18312
+    }
+  },
+  "new_game_counts": {
+    "train": 31031,
+    "test": 4399,
+    "validation": 3867
+  },
+  "projected_game_counts": {
+    "train": 187250,
+    "validation": 23585,
+    "test": 24076
+  },
+  "projected_trajectories": 228748,
+  "projected_within_generation_cross_fold_groups": 0,
+  "projection_index_sha256": "c0c6ff1f32bcd82a2dd1a9b3b386674c248319d7213173908910923a29b91d79",
+  "seconds": 5.984546911960933,
+  "limitations": [
+    "The live export has not published this projection; reconcile actual shard membership when complete.",
+    "Published old validation/test membership is known; this audit does not establish which training runs consumed it.",
+    "No replay, date, attribution, split, training model or existing result is repaired or reassigned.",
+    "No rules/feature/target-semantic certification or playing-strength claim."
+  ]
+}

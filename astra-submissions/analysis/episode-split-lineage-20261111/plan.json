@@ -1,0 +1,29 @@
+{
+  "at": "2026-11-11T12:19:49.973355+00:00",
+  "wall_cap_seconds": 180,
+  "journal": {
+    "bytes": 104270050,
+    "sha256": "febdba189a339e1710894a50c288ec9de12ae9022971ac275f479a6340074074",
+    "accepted_lines": 234942,
+    "duplicate_lines": 31,
+    "unique_games": 234911,
+    "selected_games": 234911
+  },
+  "old_index_expected_sha256": "b5a437ed8d4b545ac83ab0ef3c5ee9afcef7f5f2a6968089158297c257d46474",
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_episode_split_lineage.py": "2af1a8f24abff2b57a7927765db0af54ed4f4ab1ea49a023b33db35fb5532a69",
+    "/home/henrytan/git/iamavirus/learning/dataset.py": "1a64094657907a547bd6e1f0bbe70edbd2c1bc98654b8363d42c27dee7cc08fb",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_training_artifacts.py": "1838877fce2e37a4ca1a5878834d503ed208e13d12a224a61f3a2ce1871903a6",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/training-artifact-readiness-20261111/result.json": "6b9643f31d0b86887f8c8cd4629d4e5134b8a1d5f97880e70a4aa4c61a4366bd",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/training-artifact-readiness-20261111/review.json": "bcdb74f87e93f0ed8f70d786a16c3c1cbeb41d1e44eb434e396fe12869a55224",
+    "/home/henrytan/git/iamavirus/data/astra-spool/training-artifact-readiness-20261111/episodes.json": "20353028446f32875dfb88fe1a3187e9cc0956e911da593bd2d3e5e4e8e24955",
+    "/home/henrytan/git/iamavirus/tools/daily_refresh.sh": "d78200f7f3c0534d1a0340c027dfd853dcb1da5d0ce2e0977c6b01ec0927c972",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/daily-refresh-observation-20261111/output-review.json": "994f35d47a485721080c8c5234c5a8013e6330dbdf5340c0b3530a8de3169724",
+    "/home/henrytan/git/iamavirus/data/astra-spool/episode-split-lineage-20261111/journal-split-rows.jsonl": "1f8e55c229ad013ee9c8ab2ec74321460247dc5932b1cd8835b212f65726b5d2"
+  },
+  "old_manifest_created_at": "2026-11-02T11:41:55.130131+00:00",
+  "current_generation_state": "unfinished; split assignment projection only",
+  "comparison": "All old/new fold cells by game and whole trajectory; no outcome selection or effect-size gate.",
+  "old_subset_reconstruction": "Informational check using current journal order restricted to old IDs, not an assumption that the old journal is available.",
+  "antecedents": "379 verifies the old episode generation and within-generation grouping; 381 pins unresolved original-import metadata. No prior dataset or holdout is rewritten."
+}

@@ -1,0 +1,21 @@
+{
+  "at": "2026-11-11T12:32:48.032036+00:00",
+  "status": "complete",
+  "plan_sha256": "d1a661be849281fcdc4e64492eb7316cbbefe9287d6ab1d9dfab7b2de8fad897",
+  "games": 30,
+  "counts": {
+    "episodes": 60,
+    "events": 5054,
+    "decisions": 2527,
+    "checked_square_events": 323456
+  },
+  "interventions_per_kind": 60,
+  "receipt_sha256": "33aa90fa062d0556887aa7b43ba7d3241342e85b1d0e8ae5570a1d781f0399ef",
+  "scope": "Actor encoding, timing, candidate/source alignment and explicit label/metadata interventions; no logits, model fit, raw export, split, native build, game or strength claim.",
+  "limitations": [
+    "Only this exposed 30-game cohort; not every historical or future episode.",
+    "Interventions test the data interface; they are not alternate valid full-game histories or a complete information-set proof.",
+    "No C++ feature-parity rerun or trained-model/logit evaluation.",
+    "The episode-policy pipeline is retired from deployed v38; no current v38 strength result."
+  ]
+}
