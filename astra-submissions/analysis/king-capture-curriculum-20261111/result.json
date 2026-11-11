@@ -1,0 +1,68 @@
+{
+ "all550legacy_offers_reproduced": true,
+ "all_actor_prefix_bindings_match": true,
+ "all_source_replays_shards_and_actor_index_unchanged": true,
+ "at": "2026-11-11T19:47:35.414520+00:00",
+ "chosen_capture_records": 304,
+ "chosen_fatal_capture_records": 66,
+ "complete_true_safe_sets": 1551,
+ "contexts": {
+  "fatal_hidden": 664,
+  "fatal_visible_or_mixed": 185,
+  "safe": 811
+ },
+ "contexts_by_cohort": {
+  "current68": {
+   "fatal_hidden": 114,
+   "fatal_hidden_played": 7,
+   "fatal_visible_or_mixed": 34,
+   "fatal_visible_or_mixed_played": 0,
+   "safe": 122,
+   "safe_played": 36
+  },
+  "old327": {
+   "fatal_hidden": 550,
+   "fatal_hidden_played": 56,
+   "fatal_visible_or_mixed": 151,
+   "fatal_visible_or_mixed_played": 3,
+   "safe": 689,
+   "safe_played": 202
+  }
+ },
+ "decisions_in_source": 31318,
+ "episodes": 736,
+ "exact_capture_outcome_checks": 1660,
+ "features_logical_sha256": "01a20934fcec594ac814b614518ec51fa13e31ee0256009e6ac7df5a2f1e0566",
+ "folds": {
+  "test": 179,
+  "train": 1382,
+  "validation": 99
+ },
+ "full_course_frames": 31686,
+ "games": 368,
+ "invalid_imitation_records": 1,
+ "limits": [
+  "Curriculum reorganization of existing supervision, not a new learner, strategy, classifier or strength gate.",
+  "All368games already inspected; no untouched holdout claim and no training initiated.",
+  "Observed capture/refusal rates are descriptive, repeated offers cluster within games and actions are not randomized.",
+  "Safe means actual-board immediate non-loss, not long-term win or a fog-realizable choice.",
+  "Enemy king captures excluded because they are immediate terminal wins, not bait.",
+  "No arena artifact/version, GPU, service or website change."
+ ],
+ "old_hidden_offer_records_matched": 550,
+ "optional_hidden_offers": 614,
+ "optional_hidden_offers_taken": 39,
+ "output": "/home/henrytan/git/iamavirus/data/astra-spool/king-capture-curriculum-20261111/candidates.jsonl.gz",
+ "output_bytes": 378358,
+ "output_sha256": "da9b650c0406576109e2de86a15cd6cfabea113415273f88b79a6cd4638143ff",
+ "private_artifact_bytes": 378358,
+ "schema": "astra-king-capture-opportunities-v1",
+ "seconds": 22.0893940749811,
+ "selected_candidate_records": 1660,
+ "selected_decisions": 1551,
+ "source_shards": {
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/test.jsonl.gz": "a4a67dc383279b5b1b06093f498b8a934d1a0410b7097ffe0751e8511f7f4a55",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/train.jsonl.gz": "e24841247fb0c55203bbe8abe9d8eacca17c7fbff7b7ac1b9422f4d31e2a003f",
+  "/home/henrytan/git/iamavirus/data/astra-spool/experience-catalogue-20261111/analyst-review/generation-b8e9a55862b14ca79fcd291ec6ba9bf7/validation.jsonl.gz": "568547a18c5054483d8b0b924ae77ae87e1fdbb3ce6644bbc7455a2bc3713565"
+ }
+}
