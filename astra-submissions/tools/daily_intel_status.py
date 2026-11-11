@@ -137,12 +137,15 @@ def mapped_active_archive(registry: Path, arena_version: int | None) -> dict:
         if len(rows) != 1 or len(rows[0]) < 4:
             raise ValueError(f'expected one release-map row for v{arena_version}; found {len(rows)}')
         cells = rows[0]
-        names = re.findall(r'`([^`]+\.zip)`', cells[2])
+        # Match links and code spans in source order. A linked canonical ZIP
+        # can precede a backticked upload alias in another submission folder.
+        names = re.findall(r'\[[^\]]+\]\(([^)\s]+\.zip)\)|`([^`]+\.zip)`', cells[2])
         hashes = re.findall(r'`([0-9a-f]{12,64})`', cells[3])
         if not names or len(hashes) != 1:
             raise ValueError('release-map row lacks an archive name or SHA-256 prefix')
         # The first archive in the cell is canonical; later names may be aliases.
-        path = (registry.parent / names[0]).resolve()
+        name = next(link or code for link, code in names)
+        path = (registry.parent / name).resolve()
         if not path.is_relative_to(ROOT):
             raise ValueError('mapped archive is outside the project')
         archived = reference_archive(path, arena_version)

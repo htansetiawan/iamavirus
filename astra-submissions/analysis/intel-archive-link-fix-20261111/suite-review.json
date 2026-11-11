@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-11T11:12:46.355892+00:00",
+  "status": "pass",
+  "full_suite_tests": 10,
+  "full_suite_exit_code": 0,
+  "initial_current_suite_tests": 10,
+  "initial_current_suite_errors": 1,
+  "baseline_tests": 8,
+  "baseline_errors": 1,
+  "baseline_failure": "SEAGATE unbound after the report-first script moved heavy-export guards after the publication block.",
+  "correction": "Publication fixture explicitly sets SEAGATE=0 and DATASET=0. Real temporary-Git report commits and preservation of unrelated staged files are still asserted.",
+  "production_reporter_unchanged_since_initial_fix": true,
+  "source_sha256": {
+    "astra-submissions/tools/daily_intel_status.py": "ed31be852348c1827d3a17f128fd333e81aaa3fb9c28b42f1cbc2889a6b47ee3",
+    "astra-submissions/tools/test_intel_refresh.py": "67c87af01ee0e30b3003d4a65e71030af1434b53fe48b0eaf7c865134f072a51"
+  },
+  "scope": "Full reporter regression suite plus a test-fixture setup correction. No production daily script, report, fit, engine, archive, data generation or service mutation."
+}
