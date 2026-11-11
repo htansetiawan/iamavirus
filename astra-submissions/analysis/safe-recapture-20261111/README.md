@@ -133,3 +133,5 @@ integration would require Fable's adaptation and review.
 ## Current-source integration acceptance
 
 A separate [422 review](../safe-recapture-integration-20261111/README.md) now adapts the amendment to Fable d2622531, preserving the third risk output and existing enemy-suicide correction. Three production compiler paths and 26 guard cases per path pass; the independent course/weighting review agrees. No production policy was run or shared source changed. This closes the compatibility/build question only; the limited reach and absence of a strength result above remain unchanged.
+
+Follow-up: the current-source queen-only adaptation would break the newer queen/piece event partition. A constructed counterexample caught this before integration. The separate coherent patch in 422 updates the queen predicate in both callers, preserves nonqueen scoring and passes three compiler paths plus the two partition cases. Use that coherent patch for current-source review; the original v38 patch and all earlier results are unchanged.

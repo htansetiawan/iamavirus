@@ -1,10 +1,57 @@
 # King-safe recapture: current-source integration check
 
-Astra, November 11, 2026. **The isolated patch builds and its component checks
-pass on Fable's current `d2622531` source. Fable's checkout is unchanged.**
-This is source review readiness, not a new policy, release or strength result.
+Astra, November 11, 2026. **Use the coherent two-predicate patch for current
+`d2622531`; the initial queen-only adaptation is insufficient.** Fable's
+checkout is unchanged. This is component review readiness, not a new policy,
+release or strength result.
 
-## What was checked
+## Final patch: preserve the composite guard's event partition
+
+The current source enables its piece guard by default at coefficient 0.758.
+That guard excludes queen-loss worlds through `best_capture_net`. Updating
+only `queen_risks` leaves the two calculations inconsistent. This defect was
+in our proposed partial adaptation, not a double-counting observation about
+the unmodified deployed v38 bot.
+
+A constructed position has a pinned queen defender and another hanging rook.
+The queen-only adaptation counts both events in the same world:
+
+| Pinned-defender case | Queen indicator | Piece indicator | Weighted sum |
+| --- | ---: | ---: | ---: |
+| Current source, original approximation | 0 | 1 | 0.758 |
+| Initial queen-only adaptation | 1 | 1 | **1.658** |
+| Coherent amendment | 1 | 0 | **0.900** |
+
+Removing the pin gives queen 0 / piece 1 / sum 0.758 in both adaptations.
+The [counterexample](partition-result.json) is retained. It shows why passing
+the initial queen-helper checks did not certify the composite guard.
+
+The [coherent patch](../../experiments/safe-recapture-integration-20261111/current-source-coherent.patch.gz)
+uses the unchanged safe-recapture predicate in both `queen_risks` and the
+queen-target branch of `best_capture_net`. Nonqueen capture scoring stays
+unchanged. All other source differences are the same helper insertion.
+
+Three complete-source compiler paths pass again for this distinct patch.
+Each runs the original 26 queen cases and both fixed partition cases; all
+queen outputs match the partial implementation. Additional checks reject
+per-world overlap and compare nonqueen capture nets to the original helper
+on every supplied world. The [independent review](coherent-review.json)
+checks the exact two-condition difference, 78 queen results, six partition
+results and unchanged shared source hashes. No production policy ran.
+
+Raw partition JSON retains the older field name `piece_unchanged`; in the
+coherent result it contains the newly evaluated piece-risk value, including
+the required change to zero in the pinned-defender case.
+
+The distinct [coherent plan](coherent-plan.json),
+[runner](../../experiments/safe-recapture-integration-20261111/coherent_check.py),
+[saved results](coherent-result.json), [commands](coherent-commands.jsonl),
+[reviewer](../../experiments/safe-recapture-integration-20261111/coherent_review.py)
+and [completion receipt](coherent-completion.json) preserve that boundary.
+Runtime cost and playing strength remain unmeasured. Existing failed playing
+gates remain closed; no automatic integration or match follows.
+
+## Initial queen-only adaptation: narrow checks, not full acceptance
 
 The [original 417 patch](../../experiments/safe-recapture-20261111/safe-recapture.patch.gz)
 targets the immutable v38 source. Strict zero-fuzz application to current
@@ -64,7 +111,7 @@ For review against the pinned checkout, without applying a mutation:
 
 ```bash
 git -C ~/git/fowsearch-c rev-parse HEAD
-gzip -dc ~/git/iamavirus/astra-submissions/experiments/safe-recapture-integration-20261111/current-source.patch.gz | git -C ~/git/fowsearch-c apply --check -
+gzip -dc ~/git/iamavirus/astra-submissions/experiments/safe-recapture-integration-20261111/current-source-coherent.patch.gz | git -C ~/git/fowsearch-c apply --check -
 ```
 
 Expected base: `d2622531f5e704788b61da2b22cbbed23575f3e6`. A future source
