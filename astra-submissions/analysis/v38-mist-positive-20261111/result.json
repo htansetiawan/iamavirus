@@ -1,0 +1,92 @@
+{
+  "at": "2026-11-11T01:22:21.066597+00:00",
+  "games": 2,
+  "verified_frames": 137,
+  "current_archive": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "records": [
+    {
+      "id": "0kr3vl4i",
+      "our_color": "black",
+      "completed_at": "2026-11-11T00:39:23.972296588+00:00",
+      "frames": 102,
+      "replay_sha256": "c471feec08d2fde9a7af07e160b52c6e43fb09e9bb01258cdb0b9b9bcab56f0f",
+      "ending": {
+        "ply": 101,
+        "move": "g4h4",
+        "kind": "king_walk",
+        "already_attacked": true,
+        "killers": [
+          {
+            "piece": "q",
+            "square": "e4",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "g4h5",
+          "g4g5"
+        ],
+        "material_margin": -8
+      },
+      "our_material_at_end": 8,
+      "tail": [
+        "g4h4",
+        "c2c1q",
+        "g2g3",
+        "c1e1",
+        "h4g4",
+        "e1e4",
+        "g4h4"
+      ],
+      "source": "https://6s890.lids.mit.edu/api/games/0kr3vl4i"
+    },
+    {
+      "id": "c8ozqj0m",
+      "our_color": "white",
+      "completed_at": "2026-11-11T00:34:24.750561044+00:00",
+      "frames": 35,
+      "replay_sha256": "a24ff3e5a00b19e021ca638d2bc8d8afdc30f76667092775ebad12070d148b0a",
+      "ending": {
+        "ply": 34,
+        "move": "g8g7",
+        "kind": "king_bait",
+        "already_attacked": true,
+        "killers": [
+          {
+            "piece": "Q",
+            "square": "g4",
+            "hidden": true
+          }
+        ],
+        "safe_moves": [
+          "g8h8"
+        ],
+        "material_margin": 4
+      },
+      "our_material_at_end": -4,
+      "tail": [
+        "f6e4",
+        "d3e4",
+        "d5e4",
+        "d1g4",
+        "b6d8",
+        "g5g7",
+        "g8g7"
+      ],
+      "source": "https://6s890.lids.mit.edu/api/games/c8ozqj0m"
+    }
+  ],
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/v38-mist-positive-20261111/audit.py": "963d44add7a86abad64278117b479945b491a408519ec9e04039180b7f22becb",
+    "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/last-only-pilot-20261110/build/native-validator.so": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/v38-leaderboard-20261111T0118Z/games.json": "f3055e64c846c5b449c8de3d75804699043095f2d12439eb2e9a0c96dbb9c809",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_top6_tactics.py": "21524d02cb9ae6c8e56e1eb09619d2f6ba846a3553ef58f17a72bf3f9ae2a66b",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/analyze_mist.py": "a94d46b8caf141508866526cd34b3580201a82a579e350a7cab761b40fdffe14",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/mine_top6_exploits.py": "99f36d33de2f0eb3327bb3f35e9437128165177dce0b15b448a6daa7176d0b61",
+    "/home/henrytan/git/iamavirus/learning/ingest.py": "141a47ad84c703e835e55bb293aa2ade443704eb7fe275ebb8d33287b7187b91",
+    "/home/henrytan/git/iamavirus/learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+    "/home/henrytan/git/iamavirus/learning/_native.py": "3bf861fb77073b385e53b36e42b5e2a6e309b2229e9fdbb0cf1cb0e98d5cfe35"
+  },
+  "scope": "All two newest recorded v38 games against Mist v2 in the frozen ten-game snapshot. Positive-pattern curation with C++ and course checks. Oracle terminal alternatives and hidden-attacker labels are diagnostics. No runtime policy change or match-rate inference."
+}
