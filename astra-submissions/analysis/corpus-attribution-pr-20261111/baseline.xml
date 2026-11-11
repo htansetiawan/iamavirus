@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="3" skipped="0" tests="4" time="0.399" timestamp="2026-11-11T08:21:15.819908-08:00" hostname="blacksmith"><testcase classname="astra-submissions.tests.test_ingest_corpus_attribution" name="test_real_corpus_seats_preserve_replay_without_inventing_identity[13r3tgga-b-Knight Vision-45]" time="0.235"><failure message="AssertionError: assert 'IAmAVirus' == 'Unknown corpus seat'&#10;  &#10;  - Unknown corpus seat&#10;  + IAmAVirus">tmp_path = PosixPath('/tmp/pytest-of-henrytan/pytest-5/test_real_corpus_seats_preserv0')
+game_id = '13r3tgga', side = 'b', opponent = 'Knight Vision', frames = 45
+
+    @pytest.mark.parametrize("game_id,side,opponent,frames", [
+        ("13r3tgga", "b", "Knight Vision", 45),
+        ("1b8luqb3", "w", "Greek Gift", 152),
+    ])
+    def test_real_corpus_seats_preserve_replay_without_inventing_identity(
+            tmp_path, game_id, side, opponent, frames):
+        line = corpus_line(game_id)
+        fields = line.split()
+        assert fields[1] == side
+        source = write_fixture(tmp_path, [line])
+        output = tmp_path / "raw"
+    
+        counts = ingest.ingest_from_corpus(output, source)
+        assert counts == {"accepted": 1, "quarantined": 0, "skipped": 0, "recovered": 0}
+        replay = json.loads((output / "games" / game_id / "replay.json").read_text())
+        selected, other = ("white", "black") if side == "w" else ("black", "white")
+&gt;       assert replay[selected] == "Unknown corpus seat"
+E       AssertionError: assert 'IAmAVirus' == 'Unknown corpus seat'
+E         
+E         - Unknown corpus seat
+E         + IAmAVirus
+
+astra-submissions/tests/test_ingest_corpus_attribution.py:43: AssertionError</failure></testcase><testcase classname="astra-submissions.tests.test_ingest_corpus_attribution" name="test_real_corpus_seats_preserve_replay_without_inventing_identity[1b8luqb3-w-Greek Gift-152]" time="0.025"><failure message="AssertionError: assert 'IAmAVirus' == 'Unknown corpus seat'&#10;  &#10;  - Unknown corpus seat&#10;  + IAmAVirus">tmp_path = PosixPath('/tmp/pytest-of-henrytan/pytest-5/test_real_corpus_seats_preserv1')
+game_id = '1b8luqb3', side = 'w', opponent = 'Greek Gift', frames = 152
+
+    @pytest.mark.parametrize("game_id,side,opponent,frames", [
+        ("13r3tgga", "b", "Knight Vision", 45),
+        ("1b8luqb3", "w", "Greek Gift", 152),
+    ])
+    def test_real_corpus_seats_preserve_replay_without_inventing_identity(
+            tmp_path, game_id, side, opponent, frames):
+        line = corpus_line(game_id)
+        fields = line.split()
+        assert fields[1] == side
+        source = write_fixture(tmp_path, [line])
+        output = tmp_path / "raw"
+    
+        counts = ingest.ingest_from_corpus(output, source)
+        assert counts == {"accepted": 1, "quarantined": 0, "skipped": 0, "recovered": 0}
+        replay = json.loads((output / "games" / game_id / "replay.json").read_text())
+        selected, other = ("white", "black") if side == "w" else ("black", "white")
+&gt;       assert replay[selected] == "Unknown corpus seat"
+E       AssertionError: assert 'IAmAVirus' == 'Unknown corpus seat'
+E         
+E         - Unknown corpus seat
+E         + IAmAVirus
+
+astra-submissions/tests/test_ingest_corpus_attribution.py:43: AssertionError</failure></testcase><testcase classname="astra-submissions.tests.test_ingest_corpus_attribution" name="test_explicitly_named_iamavirus_opponent_is_retained" time="0.020"><failure message="AssertionError: assert 'IAmAVirus' == 'Unknown corpus seat'&#10;  &#10;  - Unknown corpus seat&#10;  + IAmAVirus">tmp_path = PosixPath('/tmp/pytest-of-henrytan/pytest-5/test_explicitly_named_iamaviru0')
+
+    def test_explicitly_named_iamavirus_opponent_is_retained(tmp_path):
+        source = write_fixture(tmp_path, [
+            "knowniam b 1-0 King_capturable IAmAVirus e2e4 f7f6 d1h5 g7g5",
+        ])
+        output = tmp_path / "raw"
+        assert ingest.ingest_from_corpus(output, source)["accepted"] == 1
+        replay = json.loads((output / "games/knowniam/replay.json").read_text())
+        assert replay["white"] == "IAmAVirus"
+&gt;       assert replay["black"] == "Unknown corpus seat"
+E       AssertionError: assert 'IAmAVirus' == 'Unknown corpus seat'
+E         
+E         - Unknown corpus seat
+E         + IAmAVirus
+
+astra-submissions/tests/test_ingest_corpus_attribution.py:70: AssertionError</failure></testcase><testcase classname="astra-submissions.tests.test_ingest_corpus_attribution" name="test_existing_accepted_corpus_bytes_are_not_rewritten" time="0.023" /></testsuite></testsuites>
