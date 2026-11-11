@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-11T00:39:22.196376+00:00",
+  "teams": [
+    "Instructors",
+    "duck",
+    "HYPOTHERMIA",
+    "Greek Gift",
+    "Knight Vision",
+    "Strongly Invisible",
+    "Crimson Fog",
+    "Mist Opportunities"
+  ],
+  "priority": [
+    "Instructors",
+    "duck",
+    "HYPOTHERMIA"
+  ],
+  "gate": {
+    "primary_min": 3000,
+    "distinct_min": 1500,
+    "gain": 0.15,
+    "large_games": 6,
+    "full_updates": 300,
+    "priority_games": 6,
+    "total_ratio": 1.2,
+    "p95_floor": 0.1,
+    "p95_ratio": 1.5,
+    "risk_rows": 500,
+    "positive_events": 10,
+    "brier_tolerance": 0.002
+  },
+  "cores": [
+    2,
+    3
+  ],
+  "seeds": [
+    120299675987299,
+    11400603865502863734
+  ],
+  "seconds_cap": 2400,
+  "child_seconds": 120,
+  "scope": "Causal development ablation on the same 343 observations and both sampler states. Previous original and unconstrained compact outputs are reused with hash checks. Paired live timing on the first two games of each stratum. No new fit or opened 349 replay.",
+  "plan_sha256": "216c069d71ffa07f60c40ae022d40603ad3a7857573d28d5925ff6953c43c449",
+  "dependencies": 88,
+  "paired_timing_games": 16,
+  "games": 64,
+  "new_calls": 160,
+  "baseline_reuse": 128,
+  "unconstrained_reuse": 128
+}

@@ -38,3 +38,12 @@ and both games ended with positive clocks and no technical fault. The
 swapped-color legs are running. The fixed 10/16 threshold remains in force.
 
 [First two checks](../astra-submissions/analysis/deferred-prior-playing-20261111/first-two-verification.json).
+
+## First two complete pairs
+
+The candidate won both Black legs by king capture. Both seed pairs split,
+giving a 2–2 score after four games. The independent validator checked all
+362 frames and all clocks. Both engines used native Stockfish throughout
+the validated starts. The next pair of games is running.
+
+[Four-game verification](../astra-submissions/analysis/deferred-prior-playing-20261111/first-four-verification.json).
