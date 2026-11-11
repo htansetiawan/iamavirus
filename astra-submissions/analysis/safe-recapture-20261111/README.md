@@ -129,3 +129,7 @@ Read-only inspection of Fable's current checkout at `d2622531` also finds the
 nominal `is_attacked` recapture condition still present. Its helper signature
 has evolved: this patch targets the immutable v38 archive, so current-source
 integration would require Fable's adaptation and review.
+
+## Current-source integration acceptance
+
+A separate [422 review](../safe-recapture-integration-20261111/README.md) now adapts the amendment to Fable d2622531, preserving the third risk output and existing enemy-suicide correction. Three production compiler paths and 26 guard cases per path pass; the independent course/weighting review agrees. No production policy was run or shared source changed. This closes the compatibility/build question only; the limited reach and absence of a strength result above remain unchanged.
