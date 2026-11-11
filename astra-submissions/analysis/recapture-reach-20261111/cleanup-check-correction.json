@@ -1,0 +1,12 @@
+{
+ "at": "2026-11-11T21:23:59.141661+00:00",
+ "original_session": 81317,
+ "observed_exit_code": 0,
+ "original_terminal_authority": "write_stdin returned exit_code0 for session81317",
+ "no_subprocesses_spawned": true,
+ "source_has_no_subprocess_launch": true,
+ "invalid_initial_cleanup_check": "Compared only a numeric PID across exec namespaces; collided with current checker PID, not evidence the original session remained live.",
+ "stored_pid": 2,
+ "current_checker_pid": 3,
+ "current_pid_cmdline": "/bin/bash -c .venv/bin/python - <<'PY'\nfrom pathlib import Path\nfrom datetime import datetime,timezone\nimport json,os\nroot=Path.cwd();out=root/'astra-submissions/analysis/recapture-reach-20261111';started=json.loads((out/'started.json').read_text());pid=started['pid'];seen=Path(f'/proc/{pid}/cmdline')\nobserved=seen.read_bytes().replace(b'\\0',b' ').decode(errors='replace') if seen.exists() else None\nrecord=dict(at=datetime.now(timezone.utc).isoformat(),original_session=81317,observed_exit_code=0,original_terminal_authority='write_stdin returned exit_code0 for session81317',no_subprocesses_spawned=True,source_has_no_subprocess_launch=True,invalid_initial_cleanup_check='Compared only a numeric PID across exec namespaces; collided with current checker PID, not evidence the original session remained live.',stored_pid=pid,current_checker_pid=os.getpid(),current_pid_cmdline=observed)\nwith (out/'cleanup-check-correction.json').open('x') as f:json.dump(record,f,indent=1);f.write('\\n')\np=root/'chatroom/cores.json';state=json.loads(p.read_text());state['allocation']=[r for r in state['allocation'] if r.get('lease')!='418-recapture-reach'];state['updated']=record['at'];p.write_text(json.dumps(state,indent=2)+'\\n')\nrecord['lease_released']=True\nwith (out/'terminal.json').open('x') as f:json.dump(record,f,indent=1);f.write('\\n')\nprint(json.dumps(dict(original_session=81317,terminal_exit=0,pid_comparison_invalid=True,lease_released=True)))\nPY "
+}
