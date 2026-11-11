@@ -18,6 +18,7 @@ Read next: [speaking outline](presentation-rehearsal.html) ·
 [one real decision](presentation-move.html) ·
 [tables and algorithms](presentation-tables.html) ·
 [experiments and lessons](presentation-experiments.html) ·
+[next learning decision](learning-review-20261111.html) ·
 [two illustrated game walkthroughs](presentation-cases.html).
 
 [TOC]

@@ -1,0 +1,79 @@
+{
+ "assumptions": "Independent draw-free fixed-sample Bernoulli games; standard logistic Elo mapping.",
+ "corrected_claim": {
+  "old_sha256": "bc3cf88973935ba1d6b4b466c805f3a57d3bee44ed6f4f444b4bcfaf52ac2121",
+  "path": "docs/evaluation.md",
+  "text": "Forty games resolve a 15-point gap at best"
+ },
+ "fixed_ten_of_sixteen_gate": [
+  {
+   "assumed_elo_difference": 0,
+   "ten_of_sixteen_fail_probability": 0.7727508544921875,
+   "ten_of_sixteen_pass_probability": 0.2272491455078125,
+   "true_win_probability": 0.5
+  },
+  {
+   "assumed_elo_difference": 15,
+   "ten_of_sixteen_fail_probability": 0.7167329553663853,
+   "ten_of_sixteen_pass_probability": 0.2832670446336147,
+   "true_win_probability": 0.5215733330511455
+  },
+  {
+   "assumed_elo_difference": 100,
+   "ten_of_sixteen_fail_probability": 0.3426110650312749,
+   "ten_of_sixteen_pass_probability": 0.6573889349687251,
+   "true_win_probability": 0.6400649998028851
+  },
+  {
+   "assumed_elo_difference": 200,
+   "ten_of_sixteen_fail_probability": 0.06607776758644324,
+   "ten_of_sixteen_pass_probability": 0.9339222324135568,
+   "true_win_probability": 0.7597469266479578
+  }
+ ],
+ "limits": [
+  "A pointwise illustrative interval, not a selection-adjusted retrospective claim for an engine.",
+  "Actual paired games, draws, schedule changes and early stopping differ from these assumptions.",
+  "The original16-game screens retain their predeclared outcomes; no failed candidate is reopened.",
+  "No new match, fit, GPU job, ZIP/version, service or website deployment."
+ ],
+ "null_gate_exact_fraction": "14893/65536",
+ "score_80_percent_elo": 240.823996531185,
+ "source_sha256": "5d53b1e1b671df320381104612a0194facc1018a3497bb08003b90cd05b4aca5",
+ "validation": {
+  "exact_rational_null": true,
+  "scipy_binomial_tail_cases": 4,
+  "scipy_wilson_cases": 2,
+  "zero_one_controls": true
+ },
+ "wilson95": {
+  "20_of_40": {
+   "elo_interval": [
+    -106.0165398402655,
+    106.01653984026551
+   ],
+   "elo_point": 0.0,
+   "games": 40,
+   "score": 0.5,
+   "score_interval": [
+    0.35199526933465386,
+    0.6480047306653461
+   ],
+   "wins": 20
+  },
+  "9_of_16": {
+   "elo_interval": [
+    -121.62334716936647,
+    208.9389227094209
+   ],
+   "elo_point": 43.657787770027234,
+   "games": 16,
+   "score": 0.5625,
+   "score_interval": [
+    0.33178556398811904,
+    0.7690134759450764
+   ],
+   "wins": 9
+  }
+ }
+}
