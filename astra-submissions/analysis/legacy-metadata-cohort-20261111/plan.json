@@ -1,0 +1,29 @@
+{
+ "antecedents": [
+  "380/381 saved 164-game recovery",
+  "407/408 opt-in metadata overlay and two-seat tests",
+  "401 unchanged full production generation",
+  "328/336 separate recovered move cache"
+ ],
+ "at": "2026-11-11T17:34:15.778224+00:00",
+ "difference": "Materialize and compare every one of the 164 historical inputs in a separate small review cohort; no full production rebuild or new playing experiment.",
+ "expected_episodes": 328,
+ "expected_frames": 14228,
+ "expected_games": 164,
+ "gates": [
+  "Every source hash and move identity matches the sealed recovery and overlay.",
+  "All 164 games produce exactly two episodes; original sources remain byte-identical.",
+  "Actors, targets, source hashes, stable folds and all other metadata except IDs/played versions compare exactly before and after.",
+  "Every corrected episode matches the verified IDs/versions, all dates are restored, and the generation retains the exact overlay bytes.",
+  "Report candidate mismatches and any technical failure; do not reinterpret older exposure as an untouched holdout."
+ ],
+ "maximum_completed_artifact_bytes": 67108864,
+ "native_sha256": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+ "overlay_sha256": "cf894da62d06b1da39dccae2cfe635b08301fe4efaf21ee93bbd7c0d3701ae5b",
+ "policy": "trajectory-hash-v1",
+ "scope": "Private isolated review exports only. No canonical raw/journal, daily arguments, existing generation, model, GPU service, match, ZIP/version or website deployment change.",
+ "seed": 0,
+ "source_commit": "73260702b9dc4ac215d2792dd486a6537382b668",
+ "source_inventory_sha256": "c20e8535e3e9eb23dbb015de8fb0a6b562855e6cc019459350e27be806ffec97",
+ "wall_cap_seconds": 180
+}

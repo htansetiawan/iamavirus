@@ -1,0 +1,77 @@
+{
+ "at": "2026-11-11T17:15:31Z",
+ "base_commit": "4e11e04f0cc19b3cd1c67f1df842943f66d47364",
+ "base_dataset_sha256": "df1e6627d5dc8453ca65eb82952259b4b19a43faec9e01339f425a9c42bc372b",
+ "functional": {
+  "CLI_wiring_checked": true,
+  "actor_and_target_records_equal": true,
+  "episodes_per_export": 4,
+  "errors": 0,
+  "existing_cases": 20,
+  "exit_code": 0,
+  "failures": 0,
+  "fixture_frames": 197,
+  "nanosecond_date_strings_retained": true,
+  "new_overlay_cases": 24,
+  "original_source_hash_retained": true,
+  "overlay_records_used": 2,
+  "raw_and_journal_unchanged": true,
+  "real_games": [
+   "13r3tgga",
+   "1b8luqb3"
+  ],
+  "session": 24901,
+  "skipped": 0,
+  "snapshot_survives_input_change": true,
+  "stable_fold_membership_equal": true,
+  "stale_raw_and_move_identity_rollback": true,
+  "tests": 44,
+  "undated_games_after": 0,
+  "undated_games_before": 2,
+  "unused_records": 162,
+  "xml_seconds": 1.745
+ },
+ "hashes": {
+  "astra-submissions/analysis/corpus-metadata-overlay-20261111/functional.xml": "65fa2c5341054f3f2f5cb106bc39075819af88f96d364545006be8ebad20b51e",
+  "astra-submissions/analysis/corpus-metadata-overlay-20261111/overlay.json": "cf894da62d06b1da39dccae2cfe635b08301fe4efaf21ee93bbd7c0d3701ae5b",
+  "astra-submissions/tests/test_metadata_overlay.py": "c53e62e1c6fd6e6532caf6f2b9189cfd1771bdeabedf12200b3713f976b02494",
+  "astra-submissions/tools/export_corpus_metadata_overlay.py": "f03a32f99f66a5a7f88a1ce0de02089bf1faf135267a34313d02d5f0ce1d0638",
+  "learning/dataset.py": "3e76dec9391e72db259c4123f911ebb8cb130af71311a7b64540a859a8850560",
+  "learning/metadata_overlay.py": "91166ee6ce1a8c42356fbb50a88caa63e7574168aa660fa92107e0ba48c46913"
+ },
+ "kind": "data-interface correctness, not playing strength",
+ "limits": [
+  "The 164-game recovery is byte/receipt reconciliation against a prior sealed review, not a fresh rules audit.",
+  "Tiny real-path exports prove metadata-only integration and rollback, not production-scale I/O or playing strength.",
+  "Restored dates can change adaptive partitions. Fixed hash folds do not undo previous model exposure.",
+  "Shared source now exposes the option; no existing generation, timer arguments, or model consumption was changed.",
+  "Stacked source review and Fable/human acknowledgement remain pending."
+ ],
+ "native": {
+  "existing_library_reused": true,
+  "path": "astra-submissions/experiments/last-only-pilot-20261110/build/native-validator.so",
+  "rebuild": false,
+  "sha256": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3"
+ },
+ "operational": {
+  "GPU_used": false,
+  "arena_version_reserved": false,
+  "default_overlay": null,
+  "default_split_policy": "adaptive",
+  "full_production_export": false,
+  "games_played": 0,
+  "model_fit": false,
+  "old_generation_or_holdout_relabelled": false,
+  "raw_replay_or_journal_mutation": false,
+  "scheduled_export_arguments_changed": false,
+  "website_deployed": false
+ },
+ "recovery": {
+  "new_API_requests": 0,
+  "new_all_corpus_board_or_rules_audit": false,
+  "overlay_bytes": 96051,
+  "prior_review_sha256": "793e8c9ce466679173bba99df1f42f8d6bede2b35c2fe4c8f347a797884bbb5c",
+  "records": 164,
+  "saved_original_response_receipt_move_hashes_reconciled": true
+ }
+}
