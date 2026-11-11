@@ -48,8 +48,12 @@ The distinct [coherent plan](coherent-plan.json),
 [saved results](coherent-result.json), [commands](coherent-commands.jsonl),
 [reviewer](../../experiments/safe-recapture-integration-20261111/coherent_review.py)
 and [completion receipt](coherent-completion.json) preserve that boundary.
-Runtime cost and playing strength remain unmeasured. Existing failed playing
-gates remain closed; no automatic integration or match follows.
+The later [423 cost diagnostic](../recapture-guard-cost-20261111/README.md)
+measures queen+piece computation on three saved populations and two synthetic
+stresses. Natural-case paired median ratios are 1.036–1.142; the largest
+saved population goes from 26.2 to 27.3 CPU ms per pass. Whole-turn cost,
+archived-v38 patch cost and playing strength remain unmeasured. Existing
+failed playing gates remain closed; no automatic integration or match follows.
 
 ## Initial queen-only adaptation: narrow checks, not full acceptance
 

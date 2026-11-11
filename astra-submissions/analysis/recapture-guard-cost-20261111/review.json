@@ -1,0 +1,166 @@
+{
+  "review_passed": true,
+  "cases": [
+    {
+      "name": "saved-control-1",
+      "kind": "saved",
+      "worlds": 1,
+      "moves": 37,
+      "repeats": 1772,
+      "original_pass_cpu_ms": 0.019710170993227992,
+      "coherent_pass_cpu_ms": 0.02257576326185102,
+      "cpu_ratios": [
+        1.134249535150422,
+        1.1716684933388621,
+        1.133197788456441,
+        1.150747101574579
+      ],
+      "median_cpu_ratio": 1.1424983183625006,
+      "wall_ratios": [
+        1.1321370225835328,
+        1.172117002598811,
+        1.1337449079934991,
+        1.150745756879964
+      ],
+      "changed_action_vectors": 0,
+      "trace_counts": {
+        "calls": 52,
+        "scanned_pieces": 202,
+        "attempts": 52
+      },
+      "trace_calls_per_world_action": 1.4054054054054055
+    },
+    {
+      "name": "saved-loss-22",
+      "kind": "saved",
+      "worlds": 22,
+      "moves": 35,
+      "repeats": 86,
+      "original_pass_cpu_ms": 0.1665609418604651,
+      "coherent_pass_cpu_ms": 0.17259660465116278,
+      "cpu_ratios": [
+        1.0558027870132825,
+        1.028602840572867,
+        1.0090157720316895,
+        1.0438901538649727
+      ],
+      "median_cpu_ratio": 1.03624649721892,
+      "wall_ratios": [
+        1.0523716425292589,
+        1.0281163383650103,
+        1.0090190917791493,
+        1.041789188664706
+      ],
+      "changed_action_vectors": 1,
+      "trace_counts": {
+        "calls": 36,
+        "scanned_pieces": 346,
+        "attempts": 36
+      },
+      "trace_calls_per_world_action": 0.046753246753246755
+    },
+    {
+      "name": "saved-farsight-2128",
+      "kind": "saved",
+      "worlds": 2128,
+      "moves": 36,
+      "repeats": 1,
+      "original_pass_cpu_ms": 26.203488,
+      "coherent_pass_cpu_ms": 27.320688,
+      "cpu_ratios": [
+        1.0572036128419524,
+        1.0452940121479604,
+        1.0263620163082183,
+        1.045074840189224
+      ],
+      "median_cpu_ratio": 1.0451844261685923,
+      "wall_ratios": [
+        1.05704229323059,
+        1.0464150983424343,
+        1.0265093931475051,
+        1.0449711733316764
+      ],
+      "changed_action_vectors": 0,
+      "trace_counts": {
+        "calls": 17018,
+        "scanned_pieces": 46358,
+        "attempts": 17018
+      },
+      "trace_calls_per_world_action": 0.2221439014202172
+    },
+    {
+      "name": "cycled-2128-to-20000",
+      "kind": "cycle-saved",
+      "worlds": 20000,
+      "moves": 36,
+      "repeats": 1,
+      "original_pass_cpu_ms": 243.08588500000002,
+      "coherent_pass_cpu_ms": 253.93408699999998,
+      "cpu_ratios": [
+        1.0290459560596372,
+        1.0454772251297633,
+        1.0438095774913827,
+        1.0478612602539334
+      ],
+      "median_cpu_ratio": 1.044643401310573,
+      "wall_ratios": [
+        1.028845125926534,
+        1.0454930999839207,
+        1.0437638262862576,
+        1.0478935276693115
+      ],
+      "changed_action_vectors": 0,
+      "trace_counts": {
+        "calls": 159888,
+        "scanned_pieces": 435512,
+        "attempts": 159888
+      },
+      "trace_calls_per_world_action": 0.22206666666666666
+    },
+    {
+      "name": "constructed-pinned-20000",
+      "kind": "constructed-repeat",
+      "worlds": 20000,
+      "moves": 30,
+      "repeats": 1,
+      "original_pass_cpu_ms": 141.9682705,
+      "coherent_pass_cpu_ms": 159.584047,
+      "cpu_ratios": [
+        1.1368037488066554,
+        1.1248563698182104,
+        1.1155629110236625,
+        1.115064495819822
+      ],
+      "median_cpu_ratio": 1.1202096404209363,
+      "wall_ratios": [
+        1.1367367169163956,
+        1.1247580695882606,
+        1.1156278088598632,
+        1.11508877168932
+      ],
+      "changed_action_vectors": 1,
+      "trace_counts": {
+        "calls": 520000,
+        "scanned_pieces": 640000,
+        "attempts": 520000
+      },
+      "trace_calls_per_world_action": 0.8666666666666667
+    }
+  ],
+  "source_pins": 29,
+  "input_world_rows": 42151,
+  "minimum_timer_precision_passed": true,
+  "normal_trace_checksum_parity": true,
+  "original_coherent_risk_invariants_passed": true,
+  "natural_cost_concerns": [],
+  "source_sha256": "cbe1c21093abefff28928389ed0d962c8b1e7b23c11402bfb741c95ae03bfb9b",
+  "runs_sha256": "1df6fc86ca35beb16ec379675ede0d087ff0a65e1fdcb7aae81e04945d950d57",
+  "policy_or_backend_processes": 0,
+  "limits": [
+    "Three old inspected replay populations, not representative arena cost or untouched data",
+    "Two synthetic stresses duplicate saved worlds or a constructed position, not natural cap-sized beliefs",
+    "Only queen+piece computation, not whole guard, turn, startup or playing strength",
+    "Hot repeated data and one current-source compiler layout; four block ratios descriptive, no independent population confidence claim",
+    "No new candidate, training, GPU, backend, policy, game, ZIP/version, source ownership or deployment change"
+  ]
+}
