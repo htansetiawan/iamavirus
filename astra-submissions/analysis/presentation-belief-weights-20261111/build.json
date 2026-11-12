@@ -1,0 +1,19 @@
+{
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "-I/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-belief-weights-20261111/probe.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/movemodel.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-belief-weights-20261111/probe"
+  ],
+  "code": 0,
+  "stdout": "",
+  "stderr": ""
+}

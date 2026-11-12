@@ -1,0 +1,106 @@
+{
+  "at": "2026-11-11T04:45:42.066003+00:00",
+  "fixture": "Invented two-world hidden-action zero-sum game, not a chess position.",
+  "chance_probabilities": [
+    "3/4",
+    "1/4"
+  ],
+  "utility_matrices": [
+    [
+      [
+        "3/5",
+        "-1/5"
+      ],
+      [
+        "-2/5",
+        "2/5"
+      ]
+    ],
+    [
+      [
+        "-1",
+        "3/5"
+      ],
+      [
+        "3/5",
+        "-1/5"
+      ]
+    ]
+  ],
+  "exact_shared_information_set_solution": {
+    "probability_A": "1/2",
+    "value": "1/40",
+    "opponent_X_W0": "17/24",
+    "opponent_X_W1": "1"
+  },
+  "exact_pure_action_worst_values": {
+    "A": "-2/5",
+    "B": "-7/20"
+  },
+  "information_leaking_worldwise_relaxation_value": "11/120",
+  "first_iteration_checked_against_hand_arithmetic": true,
+  "first_iteration_regret": [
+    0.024999999999999994,
+    0,
+    0,
+    0.30000000000000004,
+    0.2,
+    0
+  ],
+  "first_iteration_last": [
+    0.024999999999999994,
+    -0.024999999999999994,
+    -0.30000000000000004,
+    0.30000000000000004,
+    0.2,
+    -0.2
+  ],
+  "final_iteration": 10000,
+  "final_current": [
+    0.5,
+    0.5,
+    0.7083333333333335,
+    0.29166666666666663,
+    1,
+    0
+  ],
+  "final_value": 0.02500000000000001,
+  "final_toy_best_response_gain_sum": 9.71445146547012e-17,
+  "purified_final_action": "A",
+  "purified_toy_worst_value": -0.4,
+  "source_sha256": {
+    "astra-submissions/iamavirus-v38-mist-c-allchildren.zip": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+    "astra-submissions/experiments/presentation-pcfr-20261111/demo.c": "ba178efba564b6dd97520ad8f8f2202f0ef25e44c890d07a2e1ae374dd356d6a",
+    "astra-submissions/experiments/presentation-pcfr-20261111/verify.py": "2a9babbee3068de791de176204b7588186fe9ba75d53101f7a7a49b1b447bdfc",
+    "astra-submissions/experiments/presentation-pcfr-20261111/build/cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "astra-submissions/experiments/presentation-pcfr-20261111/build/cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8",
+    "astra-submissions/experiments/presentation-pcfr-20261111/build/demo": "bbba4d059beae616dab34951f101ba564d774a9dbb7c551a9d7cae9cda9e78be"
+  },
+  "compile_command": [
+    "cc",
+    "-O2",
+    "-std=c11",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-Wno-error=maybe-uninitialized",
+    "-I",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-pcfr-20261111/build",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-pcfr-20261111/demo.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-pcfr-20261111/build/cfr.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-pcfr-20261111/build/demo"
+  ],
+  "trace_sha256": "9f4063087a33ca6e039171fd51f7503c2b8faf17e2fcd092c245b79173752847",
+  "compiler_diagnostics_sha256": "cf8d092534c0c4f78aaafd3f4c1109aa5dffe29f92797e1d37c742fe21d1fff5",
+  "preparation_note": "Initial -Werror build stopped on the unchanged shipped source maybe-uninitialized warning; original preparation preserved. No numerical result preceded this correction.",
+  "limitations": [
+    "Fixed toy utilities and perfect-recall information sets; no FoW state, learned model, guards, tree growth or world resampling.",
+    "Only the unchanged generic CFR solver is exercised; this does not validate the deployed FoW subgame construction.",
+    "Toy best-response gaps are not full-game FoW exploitability or Elo estimates.",
+    "The deployed argmax depends on stochastic sampled worlds; the toy purification comparison does not quantify an arena penalty.",
+    "Existing failed mixing experiments remain closed; this is presentation material, not a successor design."
+  ],
+  "scope": "Source-checked numerical teaching fixture. No bot match, training, candidate, source-package change, commit, push or deployment."
+}

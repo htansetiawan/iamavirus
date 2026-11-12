@@ -1,0 +1,17 @@
+{
+  "at": "2026-11-11T09:19:11.722497+00:00",
+  "original_tool_chunk": "f7f29d",
+  "exit_code": 1,
+  "error": "AssertionError: this teaching join requires unique board strings",
+  "cause": "The reviewer attempted a piece-board-only association. Native state identity also includes side/castling/en-passant. Original trace outputs are valid and retained.",
+  "correction": "Associate root child blocks in the pinned builder\u2019s sampled-index order; check each complete block and its board/action sequence. Join truth using complete native position identity.",
+  "bot_rerun": false,
+  "raw_output_hashes": {
+    "data/astra-spool/presentation-multistate-20261111/probe.stdout": "65d09de7a7761de261ebc8296ce92da3bae2ce87d72c66f71c08df0bf75a43e4",
+    "data/astra-spool/presentation-multistate-20261111/probe.stderr": "056be877f316272cb44225d019087d2c65e259ea3ffde0ba847e8dde3d223354",
+    "data/astra-spool/presentation-multistate-20261111/control.stdout": "c7ccf7255ca6d993c48f7c2bcca8bdf47165fd67811e2e2568f9b4c9a9018481",
+    "data/astra-spool/presentation-multistate-20261111/control.stderr": "d6e5536f70bf2e81799d00105a8b526625a1aaca9760e651eac9f044e49ad52c",
+    "data/astra-spool/presentation-multistate-20261111/trace.stdout": "c7ccf7255ca6d993c48f7c2bcca8bdf47165fd67811e2e2568f9b4c9a9018481",
+    "data/astra-spool/presentation-multistate-20261111/trace.stderr": "401118052cbbaae36e8db8ff9edb974363dc0cc637f5398a73e36a3ce4cd3869"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "at": "2026-11-11T15:22:15.443111+00:00",
+  "core": 6,
+  "wall_seconds": 900,
+  "archive": {
+    "path": "/media/henrytan/seagate/git/iamavirus-data/raw-archive/daily-2026-11-11T1442Z.tar.gz",
+    "bytes": 163956013,
+    "device": 2097,
+    "inode": 5218395,
+    "max_compressed_bytes": 4294967296,
+    "max_decoded_bytes": 34359738368,
+    "max_replay_bytes": 67108864,
+    "journal_prefix_bytes": 104270050,
+    "journal_prefix_sha256": "febdba189a339e1710894a50c288ec9de12ae9022971ac275f479a6340074074",
+    "journal_lines": 234942,
+    "before_last_snapshot": "2026-11-02T110137.383166Z0000",
+    "after_last_snapshot": "2026-11-11T100543.191524Z0000"
+  },
+  "before_cursor": 195614,
+  "after_cursor": 234942,
+  "suffix_journal_rows": 39328,
+  "unique_expected_replays": 39297,
+  "replay_reference_counts": {
+    "verified_episode_index": 39297
+  },
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_daily_raw_archive.py": "4d726beec0f6d5f00495b6d6ee7b0081bd18cd42a42682546ebde0338c506d55",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/check_daily_archive_stream.py": "28795b5fe811868251af4a8aeaa37657177c36bcf2b02d46980e0f90ccb842f3",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_training_artifacts.py": "1838877fce2e37a4ca1a5878834d503ed208e13d12a224a61f3a2ce1871903a6",
+    "/home/henrytan/git/iamavirus/tools/mirror_raw.py": "240f75fc8cf2ef71c7dc49424c461e6ccc5d486f351894d1a4bc3c4a7fe74c04",
+    "/home/henrytan/git/iamavirus/data/astra-spool/daily-refresh-observation-20261111/archive-before.json": "1dd88f04a8b0b979ec86495a322309d28b58a40ae1e3a50d4dd87f5426c20d80",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/daily-refresh-observation-20261111/archive-stream-functional-checks.json": "d9924bfc65a7ff49754d57c4f285a255788b826a5549826a0751ae807997abf2",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/daily-episode-generation-20261111/result.json": "c495ac9e3efacf44a5989c99560ba54b5d0cfc1e02241d413c3c0c94e6c83540",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/daily-episode-generation-20261111/review.json": "c0832806195a8f12a7c89274c186418de759a3c34960604f1fd95193587cd31b",
+    "/home/henrytan/git/iamavirus/data/astra-spool/daily-episode-generation-20261111/episode-index.jsonl": "7d2a6ea5ba2cb503c30fdf9731d5478fef73c75e7b32875ca31ee0be63555e54",
+    "/home/henrytan/git/iamavirus/data/astra-spool/daily-raw-archive-20261111/after-state.json": "d05388d0187a25bbef51d0b94c9905236cd00059c010b44dfa2e28d48e51e146",
+    "/home/henrytan/git/iamavirus/data/astra-spool/daily-raw-archive-20261111/journal-prefix.jsonl": "febdba189a339e1710894a50c288ec9de12ae9022971ac275f479a6340074074",
+    "/home/henrytan/git/iamavirus/data/astra-spool/daily-raw-archive-20261111/expected-replays.json": "ee4d71b3899ea4f260a779bd6bed3c9ae63885d2138d1b5fe1f14a69b564f1eb"
+  },
+  "scope": "One new daily archive: full gzip EOF/CRC, all compressed bytes, indexed journal prefix, exact replay multiplicities/hashes and snapshot frontier. No filesystem extraction, all-auxiliary-file comparison, old archive-chain certification, device-health, training or strength claim."
+}

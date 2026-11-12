@@ -1,0 +1,25 @@
+{
+  "at": "2026-11-11T11:46:18.704540+00:00",
+  "status": "source_followup_reviewed",
+  "initial_packet_commit": "24635504b7cc099bb9ee504c7f5000b21611a94e",
+  "previous_course_map_sha256": "a9467e48208482649da83a67ba79ada3b9a93234e7c3528a6366c1a9c0342646",
+  "updated_course_map_sha256": "273003ed0dd7431f5d36846a9528545f83f2b5362c729ae02c80b7e4f7544b93",
+  "unchanged_training_source_hashes": {
+    "learning/rl_train.py": "a8f2f5e89a289c720ac73a27acef2ddcb6ae15b00fde0d41d4bcd171ae2e06b5",
+    "learning/critic.py": "a40e2fefb4555dade67aaa8990f5f6ee69c459d6d033bc6dcf7dc2bc6309ab4a"
+  },
+  "source_snapshot_hashes_verified": 3,
+  "rendered_pages": 24,
+  "reading_scope": "Official L9/L15 textual slides; selected paper abstract/introduction and source-code correspondence. No claim to reading all course lectures, auditing plots or reproducing formal guarantees.",
+  "checked_code_facts": [
+    "Retained trainer uses GAE, imitation-reference KL and a training-only scalar true-board critic.",
+    "That is distinct from an action-value expected-backup estimator.",
+    "The retained trainer is not the v38 deployed policy; source correspondence is not a diagnosis of prior failed training."
+  ],
+  "publication_scope": "Proposed documentation-only follow-up to PR1. The original 209-file payload hash list applies to initial packet commit24635504; this later course-map revision is recorded separately.",
+  "limitations": [
+    "All-lecture reading remains incomplete; two numbered entries are listed not posted as of November11.",
+    "Research connections are neither implemented changes nor qualified successor plans.",
+    "No source file, training/model parameter, data split, archive or active process was changed besides this documentation and evidence."
+  ]
+}

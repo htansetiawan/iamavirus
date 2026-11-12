@@ -1,0 +1,106 @@
+{
+  "at": "2026-11-11T15:17:11.461782+00:00",
+  "status": "complete",
+  "plan_sha256": "e90819c5165df8a09e488180b9ff60b11e20de65f95a2be2489b44311c8e05bb",
+  "manifest_created_at": "2026-11-11T14:42:12.843404+00:00",
+  "source_games": 234911,
+  "episode_rows": 469822,
+  "split_statistics": {
+    "validation": {
+      "episodes": 47170,
+      "decisions": 1644982,
+      "events": 3290592,
+      "color_white": 23585,
+      "outcome_1-0": 23888,
+      "termination_normal": 46542,
+      "value_valid_normal": 1637038,
+      "color_black": 23585,
+      "outcome_0-1": 21770,
+      "outcome_1/2-1/2": 1512,
+      "termination_crash": 436,
+      "value_valid_crash": 0,
+      "termination_time": 186,
+      "value_valid_time": 0,
+      "termination_unknown": 2,
+      "value_valid_unknown": 0,
+      "termination_illegal": 4,
+      "value_valid_illegal": 0
+    },
+    "test": {
+      "episodes": 48152,
+      "decisions": 1667295,
+      "events": 3334786,
+      "color_white": 24076,
+      "outcome_1-0": 24826,
+      "termination_normal": 47956,
+      "value_valid_normal": 1659275,
+      "color_black": 24076,
+      "outcome_0-1": 21920,
+      "outcome_1/2-1/2": 1406,
+      "termination_time": 172,
+      "value_valid_time": 0,
+      "termination_illegal": 6,
+      "value_valid_illegal": 0,
+      "termination_crash": 16,
+      "value_valid_crash": 0,
+      "termination_unknown": 2,
+      "value_valid_unknown": 0
+    },
+    "train": {
+      "episodes": 374500,
+      "decisions": 13162878,
+      "events": 26327362,
+      "color_white": 187250,
+      "outcome_1-0": 192798,
+      "termination_normal": 372894,
+      "value_valid_normal": 13109276,
+      "color_black": 187250,
+      "outcome_0-1": 170080,
+      "outcome_1/2-1/2": 11622,
+      "termination_crash": 220,
+      "value_valid_crash": 0,
+      "termination_time": 1348,
+      "value_valid_time": 0,
+      "termination_illegal": 32,
+      "value_valid_illegal": 0,
+      "termination_unknown": 6,
+      "value_valid_unknown": 0
+    }
+  },
+  "complete_move_hashes_verified": 234911,
+  "declared_mismatch_games_not_move_reconstructed": 0,
+  "candidate_mismatch_episodes": 0,
+  "distinct_trajectories": 228748,
+  "cross_fold_trajectory_groups": 0,
+  "all_saved_projected_folds_match": true,
+  "file_receipts": [
+    {
+      "split": "validation",
+      "bytes": 83905255,
+      "sha256": "4e9149b76f54fcd3387c54946572f0fd2117171867bc302e1d9fe583124c8973"
+    },
+    {
+      "split": "test",
+      "bytes": 84643779,
+      "sha256": "7b4f70ff83c6ec044e690adf798238850c76ba86441c5188f6b899edeba676ed"
+    },
+    {
+      "split": "train",
+      "bytes": 669829464,
+      "sha256": "1ce094afc0933587c2191d1fe6c205b23dc716899d1e7062def897cb60cbd9c5"
+    }
+  ],
+  "compressed_bytes_read": 838378498,
+  "decompressed_bytes": 9114446585,
+  "index_sha256": "7d2a6ea5ba2cb503c30fdf9731d5478fef73c75e7b32875ca31ee0be63555e54",
+  "undated_source_games": 164,
+  "split_method": "seeded_duplicate_groups_missing_timestamps",
+  "global_interleaved_content_digest_recomputed": false,
+  "scope": "All three new episode-shard file hashes, gzip/JSON, dimensions, color pairing, complete demonstrated-move hashes, technical masks and saved fold projection. No rules/feature recomputation, global interleaved content-digest recomputation, fitting or playing-strength claim.",
+  "limitations": [
+    "Existing original-import identity/date corrections remain a separate sidecar, not a repaired generation.",
+    "All new shard files are checked, not all rules, feature values, hidden-board targets or model quality.",
+    "Saved projection match does not make moved historical holdouts untouched.",
+    "Archive completion and device health are separate claims."
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "at": "2026-11-11T08:12:55.454342+00:00",
+  "core": 6,
+  "wall_seconds": 900,
+  "max_compressed_read_bytes": 2147483648,
+  "max_decompressed_bytes": 68719476736,
+  "max_line_bytes": 67108864,
+  "max_episode_rows": 1000000,
+  "journal": {
+    "bytes": 103619710,
+    "sha256": "c0cdb7b6aceaa31a80b6ce490e84a4b0c4bda7c73cb780d5a32836733f55002c",
+    "accepted_lines": 233513,
+    "duplicate_lines": 31,
+    "unique_games": 233482,
+    "selected_games": 233482
+  },
+  "current_unique_games": 233482,
+  "undated_current_games": 164,
+  "files": [
+    {
+      "kind": "episodes",
+      "split": "test",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/manifests/arena-latest/generation-3ad3318f628e4856a7f2dde78ff0174d/test.jsonl.gz",
+      "bytes": 69368442,
+      "sha256": "46a7d5f849fb2792919b8121124ee6e00004de0768f6302ed74ef0f1b6bc595e",
+      "device": 2097,
+      "inode": 4746779
+    },
+    {
+      "kind": "episodes",
+      "split": "train",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/manifests/arena-latest/generation-3ad3318f628e4856a7f2dde78ff0174d/train.jsonl.gz",
+      "bytes": 553091724,
+      "sha256": "71c82a8fb59345d5c9a1327ac18110527ab9146ae3a63829c6291b6a28bde74d",
+      "device": 2097,
+      "inode": 4746780
+    },
+    {
+      "kind": "episodes",
+      "split": "validation",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/manifests/arena-latest/generation-3ad3318f628e4856a7f2dde78ff0174d/validation.jsonl.gz",
+      "bytes": 69379351,
+      "sha256": "9a839493577f3b1a17c9dcb3fb69e5ae030ba4e7563c6d248cc5cfc4033095c3",
+      "device": 2097,
+      "inode": 4746781
+    },
+    {
+      "kind": "moves",
+      "name": "train.txt",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/derived/moves/arena-latest-generations/gen-800092857d6f4c6082f4b2a06a2b971c/train.txt",
+      "bytes": 33737608,
+      "sha256": "7160470850c43cdab3f9efa4e3857357d9831f08aa7117a658540c892e9813d2",
+      "device": 2097,
+      "inode": 4746793
+    },
+    {
+      "kind": "moves",
+      "name": "test.txt",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/derived/moves/arena-latest-generations/gen-800092857d6f4c6082f4b2a06a2b971c/test.txt",
+      "bytes": 5889364,
+      "sha256": "e86497c42955fd41bf09c128bf01270c463db9c32a68e3476afdc36e4217b64c",
+      "device": 2097,
+      "inode": 4746792
+    },
+    {
+      "kind": "moves",
+      "name": "games.jsonl",
+      "path": "/media/henrytan/seagate/git/iamavirus-data/derived/moves/arena-latest-generations/gen-800092857d6f4c6082f4b2a06a2b971c/games.jsonl",
+      "bytes": 21401413,
+      "sha256": "f1cb9acdbf565239a990aa73537216514dac5bc78b5000c82fe2844c1943ab60",
+      "device": 2097,
+      "inode": 4746790
+    }
+  ],
+  "current_versions": {
+    "feature_version": "features-v2",
+    "action_version": "actions-v1",
+    "rules_fingerprint": "fow-v1/iamavirus-rules-capi"
+  },
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/audit_training_artifacts.py": "1838877fce2e37a4ca1a5878834d503ed208e13d12a224a61f3a2ce1871903a6",
+    "/home/henrytan/git/iamavirus/learning/dataset.py": "1a64094657907a547bd6e1f0bbe70edbd2c1bc98654b8363d42c27dee7cc08fb",
+    "/home/henrytan/git/iamavirus/learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10",
+    "/home/henrytan/git/iamavirus/learning/features.py": "4b4a0a9893c7751d13a4e6b9d00da74093b873e142ae39e9a35d1bcb9014d88c",
+    "/home/henrytan/git/iamavirus/learning/ingest.py": "141a47ad84c703e835e55bb293aa2ade443704eb7fe275ebb8d33287b7187b91",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/export_move_cache.py": "d65d70074b576d76da5d0911c6980a01985d5a04d5012215f15f55fefe1336e7",
+    "/home/henrytan/git/iamavirus/data/astra-spool/training-artifact-readiness-20261111/episodes.json": "20353028446f32875dfb88fe1a3187e9cc0956e911da593bd2d3e5e4e8e24955",
+    "/home/henrytan/git/iamavirus/data/astra-spool/training-artifact-readiness-20261111/moves.json": "ccdc59829904330e3bf409b1431f6c46df64ac47306e9bedd484682293e1945b",
+    "/home/henrytan/git/iamavirus/data/astra-spool/training-artifact-readiness-20261111/move-pointer.json": "d88efd020bd978e24328dbce4d289ff985d89bfdc8f4899ee32c167d19edb168",
+    "/home/henrytan/git/iamavirus/data/astra-spool/training-artifact-readiness-20261111/journal.jsonl": "9829a40632b0b3d01f578ed7954f5bee0a956237439ddc1586be835342c9237f"
+  },
+  "antecedents": "314 episode journal deduplication; 281/328 known ID-based move-export trajectory overlap; 336 independently grouped reconstructed cache. Not a new split design or candidate.",
+  "scope": "Read existing immutable exports completely for hashes, gzip/JSON, metadata/count/ID coverage and whole-trajectory split overlap. No full rules/feature/actor-target-semantic recertification, new export, split reassignment, fit, GPU, game, package, commit, push or deployment."
+}

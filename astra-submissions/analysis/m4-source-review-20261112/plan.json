@@ -1,0 +1,49 @@
+{
+  "at": "2026-11-12T00:08:56.788321+00:00",
+  "scope": "Source inventory and six unchanged generic-M4 fixture checks against immutable v38 CFR core. No chess adapter/actor, backend, policy or candidate experiment.",
+  "source_sha256": "5450b5b07b7e917bc54cb4a60792ecf45b9b61f3861f115262b7b82a9707cc94",
+  "m4_commit": "a521bf8c14a1253c3effc87dae15e55de47b4e13",
+  "m4_sources": {
+    "src/gadget.c": "d8dedbdb13cf1856a2424c76611697565fbcc64c45bbfa5eb1575c354e3a7475",
+    "src/gadget.h": "d273a2be5cbd0618d2d566d8f5626e24798d69c08052a2f409aa4714a9adcccc",
+    "src/kluss.c": "4884f4936fa6868eff1b9d208ce8b34564856cc9bc92e635e0308fe5e7a813d1",
+    "src/kluss.h": "c5c802b6f37b16c1e49a67913946d5d2e4d91fee8d422adc5856461c28da2449",
+    "src/m4search.c": "c4983195dcca10515089b6fc28155ad86a1cdbd8a2bae245b493d6f0167ab40b",
+    "src/m4search.h": "b69ab286772a03d6faf1d5c24f6e27fce38148cb0b3548fefaf2201b4cc99884",
+    "src/m4policy.c": "1d9b1c50f7cc4e893b28cf64cfd5fcf45f71892c004947802833299bec1df9f8",
+    "src/m4policy.h": "302cfdf26eb5785819ddaa80ae3949db5906acec53ad87987a40e2814fb9130b",
+    "src/m4sf.c": "b64ba53d3c4e8fbd76c6d0ae43b790286910d786ee5596d94bce0ca8d1eae20f",
+    "src/m4sf.h": "1c2b0117e033d0fd13127aa73966db33a50cc30402ac12ae8daf6be4de206d90",
+    "src/m4main.c": "7dffe3a8ab56d66d14c0310e503286206a6897e37734807e4f3037cac1f7ff06",
+    "src/m4sample.c": "e91a26245423b74e4a0af3fe7daa7eb02a6a4df5c371aea41559260de9b6b0fe",
+    "src/m4sample.h": "6d8e46a4000b4e019e8ee34e6c0a6c5b7cc4b00f72c29241d9149b3579b0c25e",
+    "tests/test_gadget.c": "1f73ea543dbe56bb9498876e7621fc294e4c7463028a39459ec1d4a33075daa3",
+    "tests/test_kluss.c": "57c2e16d5b4a8837fbf1dec5faa3930f44742214fabd88fcafa147c4b10b47ae",
+    "tests/test_gadget_controller.c": "e3f77157e34084d97d199611d76476118bcf00f41efa9c17e879002257e196be",
+    "tests/test_gadget_kuhn.c": "5596f4567e1c1e69c19fab57dee012ce90e3ea676da73662101c8db6ed7a58c1",
+    "tests/test_kluss_carry.c": "bcfd1689a915ef500a898116b96838bc53df002431230d3ad0c39e70c2be9b30",
+    "tests/test_kluss_prepare.c": "34f51bcf5601c03977e832a11e571f4e2fb61f884228504b921e07df935ed0cc",
+    "docs/M4.md": "b3f506ff252270968443e982334c8b90445c56d1e7ec5f572cba4c7e2965bbaf",
+    "docs/M4_ROOT_POLICY.md": "85f528b73e0d2c881053942eb50861bae85c0600087772993373b16d1d1ff900",
+    "docs/M4_ROOT_SETUP.md": "545954e53f0d602e5143e8482196c39deb5aa01359fb288aaf5e79a13097adde"
+  },
+  "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "v38_core_sha256": {
+    "cfr.c": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+    "cfr.h": "311669ccb7312bba5f19f6e93fb5e1d174cb594877326121c603695ac8038dc8"
+  },
+  "nearest_prior": [
+    "039 generic controller/capture tests on older shared core",
+    "041 already tested on-policy chess carry, four own decisions per colour",
+    "052 root setup failure and repair; repaired full-clock M4 screen0\u20134",
+    "054 negative settling screen;251 histories-only integration closed;292 forced-prefix reference support failed"
+  ],
+  "interpretation": "A pass establishes only compatibility with the existing generic fixtures. It cannot qualify a chess port, exercise new pending initializer paths, reverse old failed gates or grant automatic games.",
+  "limits": {
+    "batch_seconds": 120,
+    "compile_seconds": 15,
+    "fixture_seconds": 30,
+    "retries": 0,
+    "assertions_enabled": true
+  }
+}

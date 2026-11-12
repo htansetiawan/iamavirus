@@ -1,0 +1,184 @@
+{
+  "at": "2026-11-11T09:45:24.617761+00:00",
+  "status": "passed",
+  "plan_sha256": "3e54ff4605effbf6f6449e1c4b0d5d3c494888de3704beeaed485de177468505",
+  "course_commit": "f7c4d29fd95e5629c65e0d2c9d38f71867c8ed49",
+  "paper_algorithm": 5,
+  "prediction_choice": "previous counterfactual loss vector",
+  "native_rounds": [
+    {
+      "round": 1,
+      "utility": [
+        1,
+        0,
+        -1
+      ],
+      "strategy": [
+        0.3333333333333333,
+        0.3333333333333333,
+        0.3333333333333333
+      ],
+      "regret": [
+        1,
+        0,
+        0
+      ],
+      "last": [
+        1,
+        0,
+        -1
+      ],
+      "next": [
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "round": 2,
+      "utility": [
+        -1,
+        1,
+        0
+      ],
+      "strategy": [
+        1,
+        0,
+        0
+      ],
+      "regret": [
+        1,
+        2,
+        1
+      ],
+      "last": [
+        0,
+        2,
+        1
+      ],
+      "next": [
+        0.14285714285714285,
+        0.5714285714285714,
+        0.2857142857142857
+      ]
+    },
+    {
+      "round": 3,
+      "utility": [
+        -1,
+        0,
+        1
+      ],
+      "strategy": [
+        0.14285714285714285,
+        0.5714285714285714,
+        0.2857142857142857
+      ],
+      "regret": [
+        0,
+        1.8571428571428572,
+        1.8571428571428572
+      ],
+      "last": [
+        -1.1428571428571428,
+        -0.14285714285714285,
+        0.8571428571428572
+      ],
+      "next": [
+        0,
+        0.3870967741935484,
+        0.6129032258064516
+      ]
+    }
+  ],
+  "exact_loss_notation": [
+    {
+      "round": 1,
+      "strategy": [
+        "1/3",
+        "1/3",
+        "1/3"
+      ],
+      "regret": [
+        "1",
+        "0",
+        "0"
+      ],
+      "instantaneous": [
+        "1",
+        "0",
+        "-1"
+      ],
+      "next_strategy": [
+        "1",
+        "0",
+        "0"
+      ]
+    },
+    {
+      "round": 2,
+      "strategy": [
+        "1",
+        "0",
+        "0"
+      ],
+      "regret": [
+        "1",
+        "2",
+        "1"
+      ],
+      "instantaneous": [
+        "0",
+        "2",
+        "1"
+      ],
+      "next_strategy": [
+        "1/7",
+        "4/7",
+        "2/7"
+      ]
+    },
+    {
+      "round": 3,
+      "strategy": [
+        "1/7",
+        "4/7",
+        "2/7"
+      ],
+      "regret": [
+        "0",
+        "13/7",
+        "13/7"
+      ],
+      "instantaneous": [
+        "-8/7",
+        "-1/7",
+        "6/7"
+      ],
+      "next_strategy": [
+        "0",
+        "12/31",
+        "19/31"
+      ]
+    }
+  ],
+  "final_strategy_exact": [
+    "0",
+    "12/31",
+    "19/31"
+  ],
+  "linearly_weighted_root_average_exact": [
+    "29/63",
+    "43/126",
+    "25/126"
+  ],
+  "scalar_values_compared": 39,
+  "source_unchanged": true,
+  "equivalence": "For m(t)=-u(t-1), the paper prediction <m(t),x(t-1)>1-m(t) equals the stored previous instantaneous regret. Updates match after sign conversion.",
+  "limitations": [
+    "Three invented local feedback rounds, not a convergence-rate experiment, full-tree average validation or strength result.",
+    "The published PCFR+ experiment uses quadratic sequence-form averaging; the deployed path selects the last iterate then root argmax.",
+    "Growing-tree initialization/frontier changes and information-set approximations require separate analysis."
+  ],
+  "scope": "One three-action local-learner fixture with invented changing feedback. Exact rational loss-notation comparison, not convergence or playing strength. No engine edit, FoW search, Stockfish, fit, GPU, game, service, package, commit, push or deployment."
+}

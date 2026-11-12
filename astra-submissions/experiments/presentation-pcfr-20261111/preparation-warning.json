@@ -1,0 +1,9 @@
+{
+  "at": "2026-11-11T04:45:41.602031+00:00",
+  "stage": "compile preparation; numerical fixture not executed",
+  "failure": "-Werror promoted the unchanged shipped cfr.c maybe-uninitialized warning at traverse(..., x, ...), line 164. Confirmed with the same compiler flags in a separate diagnostic invocation.",
+  "original_driver_sha256": "7001eba6ee500f2275bef64cb8096947d7f0baa90a233835c45b139894157a58",
+  "demo_sha256": "ba178efba564b6dd97520ad8f8f2202f0ef25e44c890d07a2e1ae374dd356d6a",
+  "shipped_cfr_sha256": "11442b198bf47477276130b9897101e7235f3b3e5f3a82cc237cee91b9d1c340",
+  "correction": "Keep shipped source unchanged; retain warning diagnostics and exempt only maybe-uninitialized from warning-as-error for this educational build. No bot match or scientific result discarded."
+}

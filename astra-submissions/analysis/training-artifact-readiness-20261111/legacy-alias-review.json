@@ -1,0 +1,18 @@
+{
+  "at": "2026-11-11T08:30:45.327364+00:00",
+  "checks": {
+    "train": {
+      "path": "data/derived/moves/arena-latest-train.txt",
+      "bytes": 33737608,
+      "sha256": "7160470850c43cdab3f9efa4e3857357d9831f08aa7117a658540c892e9813d2",
+      "matches_frozen_generation": true
+    },
+    "test": {
+      "path": "data/derived/moves/arena-latest-test.txt",
+      "bytes": 5889364,
+      "sha256": "e86497c42955fd41bf09c128bf01270c463db9c32a68e3476afdc36e4217b64c",
+      "matches_frozen_generation": true
+    }
+  },
+  "scope": "Supplemental read-only comparison of legacy individual file aliases with the already audited saved generation. Not atomic binding of future reads; resolve the immutable generation pointer once before fitting."
+}

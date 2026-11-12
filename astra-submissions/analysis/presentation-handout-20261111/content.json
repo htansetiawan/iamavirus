@@ -1,0 +1,134 @@
+{
+  "title": "IAmAVirus: one move through fog",
+  "reviewed": "11 November 2026",
+  "archive": "v38",
+  "scope": "Source-checked review of the immutable v38 package; presentation preparation, not a new release.",
+  "rule": "The arena ends when a mover leaves its own king capturable. Attacking the other king alone does not end the game.",
+  "cards": [
+    [
+      "Observe",
+      "Read our 64-square private view and clock. A hidden square is unknown; it is not a visibly empty square."
+    ],
+    [
+      "Infer",
+      "Advance weighted possible positions through compatible moves. Merge native position keys. The configured retained-population cap is 200,000."
+    ],
+    [
+      "Screen and sample",
+      "Apply root king/queen risk guards. Normally draw 32 worlds by weight with replacement; merge repeated draws into chance branches."
+    ],
+    [
+      "Grow and evaluate",
+      "Build one local game tree. Stockfish depth-1 child scoring sees both sides on each complete imagined board, not the live true board."
+    ],
+    [
+      "Update the strategy",
+      "PRM+ compares each action with the current mixture using counterfactual values. These regret updates happen inside this move, not across old games."
+    ],
+    [
+      "Act",
+      "Execute the highest-probability permitted root action. Retain belief/front-end history. Discard the FoW tree and regret arrays before the next move."
+    ]
+  ],
+  "example_title": "A real prefix: 128 positions → 32 draws → 2 branches",
+  "sample_rows": [
+    [
+      "W98",
+      "93.7145%",
+      "29",
+      "90.625%"
+    ],
+    [
+      "W36",
+      "6.2280%",
+      "3",
+      "9.375%"
+    ],
+    [
+      "Other 126",
+      "0.0575%",
+      "0",
+      "0%"
+    ]
+  ],
+  "example": "Both branches share one root strategy across 39 actions. The sampler keeps all 128 positions in belief for later observations.",
+  "example_limit": "Fresh two-second reconstruction of c8ozqj0m, White decision 5. Both local runs choose g1f3; the recorded arena action is c2c3. This is a teaching trace.",
+  "memory": "Belief and front-end history survive between moves. Stockfish can retain its own cache. The FoW tree is rebuilt; coefficients and history counts stay frozen between uploads.",
+  "evidence": [
+    [
+      "Scoring",
+      "1.57–1.68× scorer throughput; about 38% more equal-time nodes on the fixed panel. Scores change: the scorer is approximate. The failed Misty gate remains failed; the arena trial was separately authorized."
+    ],
+    [
+      "Inference → play",
+      "Replay panel: 63 games, only two IAmAVirus observers; truth-log-share gain +0.47277 nats. The full-engine pilot ends 1W–8L under futility, seven legs unstarted; all 901 frames pass rules checks. Configuration closed."
+    ],
+    [
+      "Arena snapshot",
+      "11 Nov, 03:27 UTC: 339W–27D–254L in 620 games; raw score 56.9%. The later 493 games track v37's historical same-opponent level. Changing opponents and scheduling limit causal claims."
+    ]
+  ],
+  "limitations": [
+    [
+      "Belief and sampling",
+      "Capping can lose the real position; weighting can underrate it; a small sample can omit it. These are separate failure modes."
+    ],
+    [
+      "Information model",
+      "One representative opponent history per position. Opponent-compatible past alternatives, full 2-KLUSS gadgets and cross-turn blueprint reuse are absent from v38."
+    ],
+    [
+      "Continuation values",
+      "Stockfish is a perfect-information evaluator on imagined boards. No qualified learned FoW frontier value replaces it."
+    ],
+    [
+      "Strategy output",
+      "The root takes an argmax. World-sampling randomness is distinct from drawing an action from the computed mixed strategy. No full-game Nash certificate."
+    ],
+    [
+      "Data lineage",
+      "Raw collection, taxonomy, exported examples, fitting and packaged models advance separately. Historical metadata and holdout limitations remain explicit."
+    ]
+  ],
+  "learning": "Shipped: two 28-coefficient move models and one 359,889-record history file; borrowed Stockfish NNUE. The historical CNN–GRU/PPO policy and neural regret approximation do not play in v38.",
+  "stance": "Our contribution is native implementation, replay instrumentation and measured engineering around published ideas. Faster scoring is established on its panel; a lasting arena strength gain is not established.",
+  "sources": [
+    [
+      "Runtime and table inventory",
+      "astra-submissions/analysis/presentation-audit-20261111/"
+    ],
+    [
+      "Real multi-world trace",
+      "astra-submissions/analysis/presentation-multistate-20261111/"
+    ],
+    [
+      "Speed and release decision",
+      "astra-submissions/v38-release.md"
+    ],
+    [
+      "Confirmed prior and rejected playing pilot",
+      "chatroom/355 and chatroom/357"
+    ],
+    [
+      "620-game reading",
+      "fable-submissions/analysis/v38-arena-20261108/result.md"
+    ],
+    [
+      "Information-set example and source comparison",
+      "docs/presentation-knowledge.md and chatroom/358"
+    ]
+  ],
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/presentation-audit-20261111/inventory.json": "198ce5f0fca132912bccd7028d7bc2d55cf44c7eeb9f859123963119ade8592b",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/presentation-multistate-20261111/result.json": "26c9d985b9bd0797a5fbe9a4944c53cf92828fc605bd3278209e5a2f637927ce",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/compact-mass-confirmation-20261111/result.json": "2c6ee39e4ef622f28f9420956f52e08cf0a396f28c2df7cae3cb34b93ca43e3f",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/compact-mass-playing-20261111/result.json": "32006eba043732fcc646c5b12def0b2a096e2726d2d3e6b575989c804baf1970",
+    "/home/henrytan/git/iamavirus/fable-submissions/analysis/v38-arena-20261108/result.md": "15a1e4daa2a7605ca6cb28d0f9f9430b2b97bce8b96aa42ae1e7ca91061aae97",
+    "/home/henrytan/git/iamavirus/astra-submissions/v38-release.md": "d494378c309d276dca1483bc06990b9aa9d13d647541ad0044d8d5563b736066",
+    "/home/henrytan/git/iamavirus/chatroom/355-astra-compact-mass-confirmation.md": "fdd8925086ec1cd28a41918956e629aeb86237c8e2fe1aeb084bb5408c34b4bc",
+    "/home/henrytan/git/iamavirus/docs/presentation-20261203.md": "259be5615d42aea14380b5428dcf4d31244674c76ebf90e3445b381ff81908f0",
+    "/home/henrytan/git/iamavirus/docs/presentation-tables.md": "bc184e58795893fe2af62bfbcaeeaa1447bf9672084b80294d93cae580dd2141",
+    "/home/henrytan/git/iamavirus/docs/presentation-experiments.md": "aa44662a69d915ba59c240150c2d3f618932179c3fe44e6285666d7c6a0fd4f7",
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/build_review_handout.py": "7b0fdf03d834572c844cf9a0cf72ed6a211f7e3a41e2e2b515873a88d89ebd93"
+  }
+}

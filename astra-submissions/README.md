@@ -1,46 +1,87 @@
 # Astra workspace
 
-[Current human review](review-20261110.md) · [Completed-experiment register](RESEARCH_REGISTER.md)
+[Release record](v38-release.md) · [Presentation review](../docs/presentation-20261203.md) · [Speaking outline](../docs/presentation-rehearsal.md) · [Table/algorithm reference](../docs/presentation-tables.md) · [Experiment register](RESEARCH_REGISTER.md)
 
-## Presentation first — November 11
+[Two-page printable handout](../docs/assets/presentation/iamavirus-v38-review-20261111.pdf)
+· [Matching Markdown](../docs/presentation-handout.md).
 
-Henry has made understanding the system for December 3 the immediate priority.
-No new candidate experiment or training run is being started in this phase.
-The [presentation review](../docs/presentation-20261203.md),
-[table/algorithm reference](../docs/presentation-tables.md) and
-[experiment map](../docs/presentation-experiments.md) separate deployed v38,
-experimental branches and retired learning code. The [archive inventory](analysis/presentation-audit-20261111/inventory.json)
-verifies all 114 manifest member hashes, 359,889 history records and both
-28-coefficient move-model vectors. The existing bounded field collection
-continues into its isolated local cache; the shared daily pipeline remains
-unavailable after the storage fault.
+## Current release — November 11, 5:01 p.m. Boston time
 
-The [illustrated walkthrough](../docs/presentation-cases.md) adds a real v38
-hidden-support win, the experimental six-world loss, both private views and
-an explanation of each search-log field. These are selected teaching cases,
-not a new experiment or strength estimate.
+The public API identifies **arena v38** as active: **1986.82 Elo, rank 8** among
+visible rated teams, **437W–30D–306L / 773 games**, 58.47% score. These are
+observations at 22:01 UTC, not a causal estimate of the scorer's strength.
+A separate completed-game snapshot at 5:06 p.m. includes one additional win:
+**438W–30D–306L / 774**. All 306 losses in that snapshot are `King capturable`;
+seven wins came from opponent process/time failures. Do not combine the later
+774-game record with the earlier rating as if they were one atomic snapshot.
+[Cached sources and independent reconciliation](analysis/release-registry-20261111/README.md).
 
-## V38 active — November 10, 2026
-
-Henry uploaded the reviewed all-child scorer on November 8 as **arena v38**.
-The identical numbered repository archive is
+The archive associated with this submission is
 [iamavirus-v38-mist-c-allchildren.zip](iamavirus-v38-mist-c-allchildren.zip),
-SHA-256 ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f.
-Fable's highest archive is v37; the required +1 check passes.
+SHA-256 `ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f`.
+Henry uploaded the identical staged alias `v38-review.zip` on November 8.
+The [manifest](v38-manifest.json) and archive are already present in repository
+main. The API does not expose an uploaded ZIP checksum: the archive-to-arena
+association rests on the human upload and Fable's recorded same-bytes decision.
 
-This is a human-authorized experimental trial following independent package
-acceptance. The local Misty gate failed and stays recorded as failed. The
-direct-v37 pilot scored 11W–1D–4L; the scorer delivers 1.57–1.68× measured
-throughput and about 38% more equal-time search nodes.
+| Runtime part | What the reviewed v38 archive contains |
+| --- | --- |
+| Rules, belief, PCFR+ search and guards | Nineteen C/header files identical to v37, source commit `f76a09e2f58b` |
+| Leaf scorer | Modified Stockfish 19 all-child scoring, enabled by `run.sh`; its source/licence/rebuild recipe are bundled |
+| Active opponent prior | V37's compiled 28-feature coefficient vectors and unchanged 359,889-record empirical history table |
+| Neural evaluation | Stockfish's quantized NNUE; the retired CNN–GRU/PPO policy is outside this runtime |
+| Online updates | Belief positions/weights update from observations; regrets update inside the current move's tree. This is not persistent neural training |
 
-The first 300 arena games score **170W–10D–120L, 58.33%**, meeting the fixed
-54.3% retention rule. At the 20:45 UTC snapshot: 179W–12D–127L / 318 games,
-Elo 1915.34, rank 10, no recorded own technical loss. Retain and monitor;
-an Elo improvement is not yet established. See the [release record](v38-release.md),
-[manifest](v38-manifest.json), and [checkpoint](analysis/v38-arena-20261109/README.md).
-The dated record below describes earlier work.
+The current `fowsearch-c` checkout and the Astra experiment directories contain
+later work. Their presence does not change this archive. In particular, the
+terminal/promotion/recapture amendments, learned-prior candidates and M4
+subgame prototypes are not newly deployed by source publication.
 
-## Current follow-up — November 11, 01:18 UTC checkpoint
+V38 was a human-authorized experimental trial; the failed local Misty gate
+remains failed. The direct-v37 pilot was 11W–1D–4L. The measured scorer speedup
+is 1.57–1.68×, with about 38% more equal-time search nodes; scores are approximate.
+The first 300 arena games met the fixed 54.3% retention rule. Neither retention
+nor today's Elo establishes a controlled lasting strength gain.
+
+Fable's highest physical numbered archive is still v37. The required Astra
+major is therefore v38, which is **already occupied**. The existing numbering
+guard refuses reuse across suffixes/manifests; it does not silently choose v39.
+No successor package qualifies or new version is reserved.
+
+## Current review and data state
+
+Understanding the implementation for December 3 remains the immediate priority.
+No new candidate playing experiment or training run is being started here;
+website publishing stays disabled at Henry's request.
+
+The daily refresh completed at **15:04 UTC**, and its episodes and replay archive
+were independently checked. The generation covers **234,911 source games,
+469,822 player episodes and 16,475,155 demonstrated decisions**. A later
+[68-game canonical import](analysis/checkpoint-ingest-20261111T1745Z/result.json)
+records **234,979 unique accepted raw games** through its saved frontier.
+The [data-refresh review](../docs/data-refresh-20261111.md) explains metadata,
+fold/exposure limits and the prepared source fixes. New data do not automatically
+refit the coefficients or replace the table inside the submitted ZIP.
+
+The completed [6,000-game field review](analysis/field-taxonomy-20261111/README.md)
+and [earlier material-onset analysis](analysis/field-material-onsets-20261111/README.md)
+remain hindsight intelligence, with winning controls and duplicate/overlap
+limits. They are not automatically new policy targets or strength evidence.
+
+Recent source reviews have distinct roles:
+
+- [PR 7](https://github.com/htansetiawan/iamavirus/pull/7): the existing analyst retriever now streams candidates through its bounded heap; this is not a runtime search change.
+- [PR 8](https://github.com/htansetiawan/iamavirus/pull/8): source-bound tactical examples and paired king-capture supervision; no new learner is deployed.
+- [PR 9](https://github.com/htansetiawan/iamavirus/pull/9): the recapture-credit correction, limited 90-game reach and an illustrated explanation of the Qxd5 weighted-value tradeoff. No strength gain is established.
+
+The [experiment map](../docs/presentation-experiments.md) preserves the negative
+results. In particular, the compact prior's better replay likelihood did not
+survive its 1W–8L complete-engine gate, and the speed-only pilot closed at
+4W–7L. No new ZIP follows from these source reviews.
+
+The dated sections below are historical records, not an active candidate queue.
+
+## Earlier follow-up — November 11, 01:18 UTC checkpoint
 
 The public API confirms **v38 active, 1897.77 Elo, rank 9**, with
 **327W–24D–245L / 596 games**. The four newly recorded games are wins over

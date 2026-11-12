@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-11T03:56:26.508302+00:00",
+  "source_result_sha256": "7fcdb901cf62d6c5fa294b92b15761279ce65e198ac9f7fb136e38365568474f",
+  "audit_source_sha256": "41961fed7d149d5c64d161e5d2ae0830ed07d97dfbe197fa424dee120285cbb3",
+  "games": 6000,
+  "sources": {
+    "public API": 5598,
+    "shared cache": 402
+  },
+  "cached_source_hashes_verified": 402,
+  "cache_root_counts": {
+    "/home/henrytan/git/iamavirus/data/astra-spool/later-replay-window-20261111/games": 101,
+    "/home/henrytan/git/iamavirus/data/astra-spool/prospective-quiet-teacher-20261110/games": 301
+  },
+  "metadata_http_attempts": 5808,
+  "reported_http_attempts": 5808,
+  "request_limit": 6500,
+  "attempts_beyond_one_per_success": 149,
+  "saved_replay_bytes": 156029894,
+  "maximum_saved_replay_bytes": 125811,
+  "original_raw_json_files_bytes": 161814632,
+  "reported_growth_counter": 161814632,
+  "saved_json_bytes": 171006352,
+  "raw_json_bound": 4294967296,
+  "scope": "Local byte/source/request-budget reconciliation. No new HTTP request, replay inference, fit, split, game or deployment.",
+  "limitations": [
+    "Saved wrapper/replay bytes are verified; original public HTTP response bodies were not retained independently.",
+    "Start-time pacing follows the pinned client implementation; this is not a transport-start timestamp audit.",
+    "Reused cached data is not automatically an untouched holdout."
+  ]
+}

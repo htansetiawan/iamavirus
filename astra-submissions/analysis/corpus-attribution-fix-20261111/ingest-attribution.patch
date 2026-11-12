@@ -1,0 +1,23 @@
+--- a/learning/ingest.py
++++ b/learning/ingest.py
+@@ -396,12 +396,16 @@
+         seen.add(game_id)
+         moves = fields[5:]
+         reason_text = reason.replace("_", " ")
+-        white = opponent.replace("_", " ") if side == "b" else "IAmAVirus"
+-        black = "IAmAVirus" if side == "b" else opponent.replace("_", " ")
++        # The corpus records an arbitrary selected seat, not our team.
++        # Its player name/ID and the opponent ID are absent from this format.
++        unknown = "Unknown corpus seat"
++        white = opponent.replace("_", " ") if side == "b" else unknown
++        black = unknown if side == "b" else opponent.replace("_", " ")
+         replay = replay_from_moves(game_id, moves, result, reason_text, white, black)
+-        replay["whitePlayerId"] = white
+-        replay["blackPlayerId"] = black
++        replay["whitePlayerId"] = None
++        replay["blackPlayerId"] = None
+         replay["source"] = "corpus"
++        replay["corpusSeat"] = side
+         fetch = {"replay": {"url": f"corpus:{corpus.name}", "fetched_at": api_client.utc_now(),
+                             "sha256": hashlib.sha256(line.encode()).hexdigest(), "status": 0, "attempts": 0}}
+         problems = ingest_replay(store, replay, None, fetch, None)

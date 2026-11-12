@@ -1,0 +1,367 @@
+{
+  "at": "2026-11-11T05:04:57.099538+00:00",
+  "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "source_sha256": {
+    "run.sh": "aa6e1c9c17e2245c82afc46dab17911896b87431a54547a1d634564b6e5fda56",
+    "src/sfeval.c": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+    "src/gtcfr.c": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+    "src/eval.c": "abd7e21f3426b93a41a39557b75bb44e5ad23daf1222e3d53e0b94c25070dc13",
+    "third_party/stockfish19/astra-allchildren.patch": "73e1ac9faebb59709ce7f692bedeb10d3945add8f7e9f9aa8a54abeb1c9cd88a",
+    "third_party/stockfish19/ASTRA-NOTICE.md": "e250371f4cc8658838586f9a7e0f559eb9167c3ff4da5a9a1a2bcdd9a084dcf5",
+    "third_party/stockfish19/src/evaluate.h": "bab0750b2d80c72bb121bfe730a55ecba5fc221394d3d8a7ae2aa3ae04fe9998",
+    "third_party/stockfish19/src/evaluate.cpp": "68a1675ef7ae943026ca0e54368b88ab90dd0082d22b5504f743afb2765dffb7",
+    "third_party/stockfish19/src/uci.cpp": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21",
+    "third_party/stockfish19/src/search.cpp": "2aec3d048781db52a61d04011293d306594cfba2fd3e8c0b6b88e90dfebdfc23",
+    "third_party/stockfish19/src/nnue/network.h": "9f5f0e8282ed8478a59005946618dfbfb4d8484a9d38923cfbe1a261436359c8",
+    "third_party/stockfish19/src/nnue/network.cpp": "95cafe51c0d05842fdeffb8d2690549e9deee43edc0b56caf277f21fda63ec4b",
+    "third_party/stockfish19/src/nnue/nnue_architecture.h": "00870050cb0c7c8862b76ed0ee65da2fd0118343432bcebbdb896f885283bc8e",
+    "third_party/stockfish19/src/nnue/nnue_feature_transformer.h": "9edc933b6bd53871ff8ba8cda35d35490a4eef34f0b72b6562da17b60fa888bc",
+    "third_party/stockfish19/src/nnue/nnue_common.h": "89a9c40893ea8e341bb7874796fcec2e69aecf548e969b55fa33a59579b60eae",
+    "third_party/stockfish19/src/nnue/features/half_ka_v2_hm.h": "c6c24b6246a10278e992e5494f38a02f96436764fe0fb0e11f21e96e6b3b45d5",
+    "third_party/stockfish19/src/nnue/features/full_threats.h": "dd1d9b1cd360b8c5e41b5e0e9836c335cc250ade8a30fc28357e482f0aeff874",
+    "third_party/stockfish19/src/nnue/features/pp_3wide.h": "3889a046b7eb5c9147d0c89be69514200d414e276a68809b4f512c8fe139e635",
+    "third_party/stockfish19/src/nnue/layers/affine_transform.h": "b0a30ba12d1f11e8fddab66d8592c42ac3ca56233d0117ccf3bb9a9c27fefda2",
+    "third_party/stockfish19/src/nnue/layers/affine_transform_sparse_input.h": "5471180cbe69b91f7f39278bef5c79ce37f538307cb8f11d3f51fafe9a0eab14"
+  },
+  "audit_source_sha256": "7bc97267006f087913e8be6f4f63a0e3973f1f8d19e9902b060386a1999f375a",
+  "source_evidence": [
+    {
+      "member": "run.sh",
+      "first_line": 7,
+      "last_line": 7,
+      "meaning": "Launcher enables the opt-in scorer."
+    },
+    {
+      "member": "src/sfeval.c",
+      "first_line": 127,
+      "last_line": 127,
+      "meaning": "Each worker: one thread, 16 MiB hash, requested MultiPV."
+    },
+    {
+      "member": "src/sfeval.c",
+      "first_line": 143,
+      "last_line": 143,
+      "meaning": "Two Stockfish workers by default."
+    },
+    {
+      "member": "src/sfeval.c",
+      "first_line": 122,
+      "last_line": 122,
+      "meaning": "MultiPV 256 by default."
+    },
+    {
+      "member": "src/sfeval.c",
+      "first_line": 216,
+      "last_line": 216,
+      "meaning": "A parent FEN and depth-one request, not one request per child."
+    },
+    {
+      "member": "src/sfeval.c",
+      "first_line": 206,
+      "last_line": 206,
+      "meaning": "Reject parent positions where the mover can already take the other king."
+    },
+    {
+      "member": "src/sfeval.c",
+      "first_line": 250,
+      "last_line": 250,
+      "meaning": "Match returned PV first moves to FoW move entries."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "first_line": 113,
+      "last_line": 113,
+      "meaning": "Missing-score floor is conditional on receiving the requested MultiPV count."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "first_line": 132,
+      "last_line": 140,
+      "meaning": "Scored child conversion, conditional floor, otherwise native child fallback."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "first_line": 133,
+      "last_line": 133,
+      "meaning": "Map UCI centipawn score to a bounded heuristic utility."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "first_line": 125,
+      "last_line": 125,
+      "meaning": "Exact FoW king-loss handling precedes heuristic child value assignment."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "first_line": 285,
+      "last_line": 285,
+      "meaning": "Root own-king loss can use the configured extra penalty."
+    },
+    {
+      "member": "third_party/stockfish19/astra-allchildren.patch",
+      "first_line": 22,
+      "last_line": 24,
+      "meaning": "Modified mode is conditional on depth, threads, strength/tablebase state and full legal-root coverage."
+    },
+    {
+      "member": "src/eval.c",
+      "first_line": 93,
+      "last_line": 101,
+      "meaning": "Native fallback optional fog-line term defaults to zero."
+    },
+    {
+      "member": "src/eval.c",
+      "first_line": 94,
+      "last_line": 101,
+      "meaning": "Native fallback optional fog-knight term defaults to zero."
+    },
+    {
+      "member": "src/eval.c",
+      "first_line": 142,
+      "last_line": 142,
+      "meaning": "Native fallback also uses bounded utility, without a neural head."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_architecture.h",
+      "first_line": 45,
+      "last_line": 45,
+      "meaning": "Feature vector length."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_architecture.h",
+      "first_line": 46,
+      "last_line": 46,
+      "meaning": "First affine output width."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_architecture.h",
+      "first_line": 47,
+      "last_line": 47,
+      "meaning": "Second affine output width."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_architecture.h",
+      "first_line": 50,
+      "last_line": 50,
+      "meaning": "Small-network material buckets."
+    },
+    {
+      "member": "third_party/stockfish19/src/evaluate.h",
+      "first_line": 36,
+      "last_line": 36,
+      "meaning": "Default pretrained network filename."
+    },
+    {
+      "member": "third_party/stockfish19/ASTRA-NOTICE.md",
+      "first_line": 14,
+      "last_line": 14,
+      "meaning": "Declared embedded upstream network hash; not independently exported here."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/network.cpp",
+      "first_line": 153,
+      "last_line": 153,
+      "meaning": "Piece count selects a shared-transformer head."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/network.h",
+      "first_line": 100,
+      "last_line": 100,
+      "meaning": "Eight heads share one feature transformer, not eight full separate networks."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/network.cpp",
+      "first_line": 103,
+      "last_line": 103,
+      "meaning": "Default embedded network loading exists."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_feature_transformer.h",
+      "first_line": 232,
+      "last_line": 232,
+      "meaning": "Both board perspectives contribute to the transformed input."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_feature_transformer.h",
+      "first_line": 253,
+      "last_line": 253,
+      "meaning": "Each perspective contributes half the transformed input."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_common.h",
+      "first_line": 58,
+      "last_line": 58,
+      "meaning": "Feature-transformer biases use 16-bit integers."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_common.h",
+      "first_line": 60,
+      "last_line": 60,
+      "meaning": "Piece-square feature-transformer weights use 16-bit integers."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_common.h",
+      "first_line": 59,
+      "last_line": 59,
+      "meaning": "Threat/pawn-pair transformer weights use 8-bit integers."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_common.h",
+      "first_line": 61,
+      "last_line": 61,
+      "meaning": "PSQT weights use 32-bit integers."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/nnue_common.h",
+      "first_line": 99,
+      "last_line": 99,
+      "meaning": "Transformed inputs occupy unsigned 8-bit integers."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/layers/affine_transform.h",
+      "first_line": 418,
+      "last_line": 418,
+      "meaning": "Dense affine weights use signed 8-bit integers."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/layers/affine_transform.h",
+      "first_line": 130,
+      "last_line": 130,
+      "meaning": "Affine outputs/biases use 32-bit integers."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/features/half_ka_v2_hm.h",
+      "first_line": 48,
+      "last_line": 48,
+      "meaning": "Eleven piece-square categories."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/features/half_ka_v2_hm.h",
+      "first_line": 65,
+      "last_line": 65,
+      "meaning": "Piece-square index-space formula."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/features/full_threats.h",
+      "first_line": 43,
+      "last_line": 43,
+      "meaning": "Threat-feature index-space size."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/features/pp_3wide.h",
+      "first_line": 36,
+      "last_line": 36,
+      "meaning": "Ninety-six pawn-square identities."
+    },
+    {
+      "member": "third_party/stockfish19/src/nnue/features/pp_3wide.h",
+      "first_line": 37,
+      "last_line": 37,
+      "meaning": "Pawn-pair index-space formula."
+    },
+    {
+      "member": "third_party/stockfish19/src/uci.cpp",
+      "first_line": 593,
+      "last_line": 593,
+      "meaning": "UCI centipawns normalize internal evaluation units; raw NNUE output is not passed directly to CFR."
+    },
+    {
+      "member": "third_party/stockfish19/src/evaluate.cpp",
+      "first_line": 50,
+      "last_line": 50,
+      "meaning": "Ordinary evaluation calls the pretrained NNUE."
+    }
+  ],
+  "worker_defaults": {
+    "processes": 2,
+    "threads_per_process": 1,
+    "hash_mib_per_process": 16,
+    "multipv": 256,
+    "requested_depth": 1
+  },
+  "network": {
+    "default_name": "nn-1a298aa575a0.nnue",
+    "declared_embedded_sha256": "1a298aa575a085434d29027978dc36867fe9c5bcea9376654b7a8eba1e52dfc2",
+    "feature_index_spaces": {
+      "piece_square": 22528,
+      "threats": 59808,
+      "pawn_pairs": 4560,
+      "total": 86896
+    },
+    "transformed_input": 1024,
+    "perspective_accumulator_width": 1024,
+    "contributed_features_per_perspective": 512,
+    "fc0": [
+      1024,
+      32
+    ],
+    "fc1": [
+      64,
+      32
+    ],
+    "fc2": [
+      128,
+      1
+    ],
+    "material_heads": 8,
+    "note": "Clipped and squared activations concatenate; final scalar also has an fc0 skip and a separate learned PSQT contribution. This is not simply a linear 1024-32-32-1 stack."
+  },
+  "source_derived_score_examples": [
+    {
+      "parent_mover": "white",
+      "our_color": "white",
+      "uci_cp": 100,
+      "cfr_utility": 0.24491866240370913
+    },
+    {
+      "parent_mover": "white",
+      "our_color": "white",
+      "uci_cp": 400,
+      "cfr_utility": 0.7615941559557649
+    },
+    {
+      "parent_mover": "white",
+      "our_color": "black",
+      "uci_cp": 100,
+      "cfr_utility": -0.24491866240370913
+    },
+    {
+      "parent_mover": "white",
+      "our_color": "black",
+      "uci_cp": 400,
+      "cfr_utility": -0.7615941559557649
+    },
+    {
+      "parent_mover": "black",
+      "our_color": "white",
+      "uci_cp": 100,
+      "cfr_utility": -0.24491866240370913
+    },
+    {
+      "parent_mover": "black",
+      "our_color": "white",
+      "uci_cp": 400,
+      "cfr_utility": -0.7615941559557649
+    },
+    {
+      "parent_mover": "black",
+      "our_color": "black",
+      "uci_cp": 100,
+      "cfr_utility": 0.24491866240370913
+    },
+    {
+      "parent_mover": "black",
+      "our_color": "black",
+      "uci_cp": 400,
+      "cfr_utility": 0.7615941559557649
+    }
+  ],
+  "missing_child_score_rule": "Use worst scored sibling only if sf>0 and sf>=requested MultiPV; otherwise native evaluate(child, us). Normal default is 256 requested lines, not the number of legal moves.",
+  "scope": "Read-only bundled-source/model-declaration audit with source-derived arithmetic. No neural inference, new bot game, fit, performance benchmark, candidate or deployment.",
+  "limitations": [
+    "Source declarations and packaged network notices are inspected; embedded model weights are not exported/rehash-verified by this audit.",
+    "No live counts of fallback frequency, active modified-mode calls, worker RSS or network latency are measured.",
+    "No FoW policy/value network or online NNUE training is established by the presence of Stockfish NNUE.",
+    "Neither conditional fallback nor ordinary-chess evaluation is established here as the cause of a particular loss."
+  ]
+}

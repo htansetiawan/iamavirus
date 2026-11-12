@@ -1,0 +1,24 @@
+{
+  "at": "2026-11-11T05:24:33.731955+00:00",
+  "status": "complete",
+  "games": 345,
+  "frames": 30945,
+  "event_rows": 142,
+  "game_controls": 203,
+  "quiet_promotion_onsets": 5,
+  "generic_hidden_source_facets": 130,
+  "prior_337_overlap": 12,
+  "checks": [
+    "All source/result/journal hashes and original execution complete within original cap.",
+    "Every saved replay hash and complete move sequence checked.",
+    "Material trajectories rederived from symbol counts and every five-frame onset checked.",
+    "All event observations, candidate actions, source pieces and decision-time visibility checked against raw frames.",
+    "Outcome-group event counts, captures, victims, recoveries and medians independently reduced."
+  ],
+  "normalization": "Original scan/metrics preserved. V2 replaces the capturer-specific hidden facet with generic source visibility, also correct for quiet promotions; candidate action is separated from observation.",
+  "source_sha256": "8d0b529f88c2246b41789ff5424401285e8273e1ac225c2a32a17d10042733a0",
+  "original_result_sha256": "c14a1073fbd63dd1b959d8fec336dc2fc773a6d1dbeb360e005631cfa1a7007e",
+  "original_rows_sha256": "27d2e14d1312a5b972dcaf66cbca2063c0402a88e0d6529ac6b241107e2ea955",
+  "event_view_sha256": "82445aa13bdd440ada458090d726add3de18ea0fa6237b659ae1a6a8c44f9f85",
+  "scope": "Local data review/schema clarification only. No model, actor-feature promotion, matched-negative dataset, bot search, safe-reply enumeration, game, commit, push or deployment."
+}

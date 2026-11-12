@@ -65,3 +65,41 @@ and changing opponents prevent a causal claim. [Full checkpoint and evidence](an
 **Recommendation: retain v38 and continue monitoring.** Duck v11 and Greek
 Gift v25 remain the clearest measured weaknesses. The campaign continues;
 there is no claim that this release reaches the 2000-Elo objective.
+
+## Later follow-up — November 11
+
+Fable's 03:27 UTC reading records **339W–27D–254L / 620 games**, 56.9%,
+with no technical losses. After the first 127 games, the later 493 play
+approximately at v37's historical same-opponent level. The keep decision
+remains operational; the record does not establish a lasting strength gain.
+[620-game follow-up](../fable-submissions/analysis/v38-arena-20261108/result.md).
+
+The local [release-record reconciliation](analysis/presentation-audit-20261111/release-record-review.json)
+verifies all member hashes, the staged upload alias, the unchanged parent
+native source/history and the shared version-map entries. The original
+archive, manifest and dated checkpoints above are preserved. This follow-up
+is documentation only: no rebuild, new upload or version reservation.
+Website publishing remains disabled.
+
+## Dated release reconciliation — November 11, 5:01 p.m. Boston
+
+The public metadata snapshot at 22:01 UTC identifies v38 as active at
+**1986.82 Elo, rank 8, 437W–30D–306L / 773 games** (58.47% score).
+The separately paginated completed-game snapshot begun at 22:06 UTC contains
+**438W–30D–306L / 774 games**, including one additional win. Every loss there
+is `King capturable`; six wins are opponent time forfeits and one is an
+opponent response failure. These snapshots are not atomic, and their
+observational results are not a causal estimate of the scorer's effect.
+
+The refreshed [release audit](analysis/release-registry-20261111/README.md)
+checks all 114 manifest member hashes, all 19 native sources against both
+v37 and source commit `f76a09e2f58b1ce89025d7a2e75e3a6ec768c07a`, the unchanged
+history, the staged alias, both shared registry rows and the archive/manifest
+Git objects already published in repository main. The API still supplies no
+remote archive checksum. Historical records, failed gates and this release's
+immutable bytes are preserved.
+
+The legacy hybrid packager already refuses another v38 suffix or manifest.
+Fable's highest physical archive is v37; no new release number is available
+under the current +1 rule without a later numbering decision. No rebuild,
+new ZIP, upload/activation, learned-model change or website deployment occurred.

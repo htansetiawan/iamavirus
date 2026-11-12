@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-11T07:26:32.126741+00:00",
+  "status": "complete",
+  "plan_sha256": "021b089fabfe4ebd7d4002655b1fcaf6bff7171ee021ef73f06691b432809156",
+  "frames_checked": 12,
+  "rules_sources": [
+    "Course referee Python",
+    "Pinned independent C++ rules library"
+  ],
+  "actual_white_history_counts": [
+    1,
+    1,
+    14,
+    1,
+    1
+  ],
+  "black_views_equal_at_all_six_frames": true,
+  "black_own_actions_equal": true,
+  "black_protocol_with_held_clocks_identical": true,
+  "different_white_private_histories": true,
+  "black_final_legal_actions": 28,
+  "actual_four_ply_information_set_histories": 1,
+  "minimum_black_compatible_histories": 2,
+  "record_sha256": "b9ff5a3dfdba9dcc15421bf1906726857940a478174715d5e369e233e7beae6e",
+  "black_protocol_sha256": "d063b9fea288fe9eff866a619380c498f3969b073ad19718cf893ae1ac2067ea",
+  "scope": "Validate two five-ply histories and the actual four-ply information set. No policy, search, payoff, reach-weight, calibration, model, match, GPU or publication experiment.",
+  "limitations": [
+    "Alternative Nc3 history is constructed, not an observed arena game.",
+    "Clock messages are held equal by construction; no timing side-channel model.",
+    "Membership by views and own actions does not establish positive policy reach or a posterior probability.",
+    "This is not a full common-knowledge-set enumeration, KLUSS implementation, exploitability or playing-strength result."
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "at": "2026-11-11T04:34:40.465429+00:00",
+  "status": "complete",
+  "games": 6000,
+  "moves": 453622,
+  "frames": 459622,
+  "team_version_color_groups": 116,
+  "own_terminal_cases_directly_checked": 144,
+  "checks": [
+    "Original execution complete within its original cap; source and artifact hashes match.",
+    "Every game ID and played metadata reconciles to the frozen full listing.",
+    "Per-move tag counts, aggregate denominators, outcomes and EP deltas reconcile.",
+    "All 144 own terminal cases: material and recorded input visibility checked directly against saved raw frames.",
+    "Owned core lease released."
+  ],
+  "own_terminal_mechanisms": {
+    "king_move_from_existing_attack": 40,
+    "king_move_into_attack": 55,
+    "nonking_move_did_not_resolve_attack": 47,
+    "nonking_move_opened_attack": 2
+  },
+  "own_material_down_at_least_three": 125,
+  "own_all_attackers_hidden_before": 133,
+  "result_sha256": "1031aa8492596865e52695b861c31d763430100037c0f16312a703af04cdfc35",
+  "execution_sha256": "7252e4d39ce9f7e7478aef75f5d22d635633b0281ab5e10ce82f70ca1181240a",
+  "scope": "Independent reduction and raw-frame spot of all own terminal cases; no model, new game, actor inference, safe-reply search, strength estimate or deployment."
+}

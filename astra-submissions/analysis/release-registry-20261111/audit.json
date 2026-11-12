@@ -1,0 +1,46 @@
+{
+ "archive_bytes": 84989047,
+ "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+ "at": "2026-11-11T22:12:20.927579+00:00",
+ "changed_common_members": [
+  "bin/stockfish",
+  "run.sh"
+ ],
+ "embedded_status": "candidate awaiting final validation and opponent gate",
+ "fable_highest_physical_archive": 37,
+ "limits": [
+  "The provided published commit is checked by its local Git objects; its remote-main identity was independently read with git ls-remote this turn.",
+  "The arena API provides version metadata but no uploaded ZIP checksum. Bytes-to-version association remains the recorded human upload and Fable same-bytes decision.",
+  "No archive/manifest was rewritten, package built, arena upload/activation or new version reservation made.",
+  "Elo and WDL are dated observations; local speed and arena retention are not a causal strength estimate."
+ ],
+ "manifest_members_verified": 114,
+ "manifest_sha256": "08aeafacb25fb91894702344d731780002b1b3aab2f2621521d27b8102a7988a",
+ "matching_git_objects": {
+  "astra-submissions/iamavirus-v38-mist-c-allchildren.zip": "bf32ba84ab03e6b0fae8a45b9be4e6623f71d4f0",
+  "astra-submissions/v38-manifest.json": "02e18630fd83a4f7d0710e8d934e456e437a864d"
+ },
+ "native_source_members": 19,
+ "numbering_guard_sha256": "b8e015b4e44939a4ae1065c3cc69e95df2d642acf5eaa5c032766f2e067d9a7d",
+ "occupied_version_refused": "Astra v38 is already used by iamavirus-v38-mist-c-allchildren.zip, v38-manifest.json; cannot reuse it or skip the required Fable+1 rule",
+ "parent_archive_sha256": "41e02e280b61e0e0c031a831d2ab4b2cc8f52c6c59bd8c11fc026f3cc817c76c",
+ "parent_source_commit": "f76a09e2f58b1ce89025d7a2e75e3a6ec768c07a",
+ "passed": true,
+ "public_commit_provided": "3e4d2fc9b1b5539e8932da40e8c0f4c6d6a091e9",
+ "raw_inputs_unchanged": true,
+ "required_astra_version": 38,
+ "shared_registry_rows": {
+  "MUTATIONS.md": {
+   "row": "| **38** | v37 | Modified Stockfish 19 all-child scoring; same native C/model/history; about38% more equal-time nodes. | `astra-submissions/iamavirus-v38-mist-c-allchildren.zip` (`ba6610f299c1`) | 318 | 179\u201312\u2013127 | 0.5818 | \u2014 | \u2014 | \u2014 | **Active experimental trial, 9 November20:45UTC.** Human uploaded8November; failed local Misty gate preserved. First300:58.33%, meets54.3% retention rule; no own technical loss. [Release and provenance](astra-submissions/v38-release.md). |",
+   "sha256": "75b63a37c3f1a4a9a56eb02bf73adfa26b2d715208eaf282351f88b702345e01"
+  },
+  "fable-submissions/README.md": {
+   "row": "| **38** | 2026-11-08 16:30:06 UTC (API creation; human upload) | Astra [iamavirus-v38-mist-c-allchildren.zip](../astra-submissions/iamavirus-v38-mist-c-allchildren.zip), uploaded alias `v38-review.zip` | `ba6610f299c1` | native parent mist-c `f76a09e2f58b`; [scorer/source hashes](../astra-submissions/v38-manifest.json) | **C** + modified Stockfish 19 | v37 move model/history unchanged | Faster approximate all-child scorer, enabled by launcher; [Astra release record](../astra-submissions/v38-release.md) | **Active** in 10 November 06:55 UTC API read; first 300: 170W\u201310D\u2013120L (58.33%), passes 54.3% retention rule. Watcher 06:37 UTC: 232W\u201314D\u2013164L / 410, 1920.9 Elo, no recorded own technical loss. Human-authorized experimental trial; failed local Misty gate preserved. Public API does not expose ZIP hashes. |",
+   "sha256": "49c65dcf9debfd3e58ac40b12ad1aeeeedfe709a3cb3348622573b6cffc0def6"
+  }
+ },
+ "snapshot_directory": "data/astra-spool/release-registry-20261111T220142Z",
+ "source_sha256": "b4507dd6d2f330d867e4b8f8017d140740c2e455bc16e157e2de218940ff0a9f",
+ "staged_alias_same_bytes": true,
+ "version": 38
+}

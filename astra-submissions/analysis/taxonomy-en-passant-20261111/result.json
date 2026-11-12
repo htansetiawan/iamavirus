@@ -1,0 +1,150 @@
+{
+  "at": "2026-11-11T04:06:51.854398+00:00",
+  "checked_moves": 1035,
+  "checked_frames": 1047,
+  "real_games": 11,
+  "synthetic_prefixes": 1,
+  "synthetic_cpp_frames": 9,
+  "untouched_no_ep_games": 10,
+  "ep_cases": [
+    {
+      "game": "mass-p3-black",
+      "ply": 119,
+      "move": "e5f6",
+      "side": 0,
+      "tags": [
+        "capture",
+        "capture_unseen",
+        "victim_walked_in",
+        "fog_route"
+      ]
+    },
+    {
+      "game": "epblack0",
+      "ply": 6,
+      "move": "e4d3",
+      "side": 1,
+      "tags": [
+        "capture",
+        "capture_unseen",
+        "victim_walked_in",
+        "fog_route",
+        "forcing_chain"
+      ]
+    }
+  ],
+  "differences": [
+    {
+      "game": "mass-p3-black",
+      "ply": 119,
+      "move": "e5f6",
+      "before": [
+        "quiet"
+      ],
+      "after": [
+        "capture",
+        "capture_unseen",
+        "victim_walked_in",
+        "fog_route"
+      ]
+    },
+    {
+      "game": "epblack0",
+      "ply": 6,
+      "move": "e4d3",
+      "before": [
+        "quiet"
+      ],
+      "after": [
+        "capture",
+        "capture_unseen",
+        "victim_walked_in",
+        "fog_route",
+        "forcing_chain"
+      ]
+    }
+  ],
+  "fixtures": [
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p0-black/replay.json",
+      "sha256": "498949ceb50127bfb0141055eeaabf99e3eec2848fd47420f0f5d7a4ec2ff5cf",
+      "frames": 81,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p0-white/replay.json",
+      "sha256": "d978284ac076223eb573cb2c8a441ff58aa2a770389af80116eba8e52a7bebde",
+      "frames": 104,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p1-black/replay.json",
+      "sha256": "76e0cb4e7803a4adcd0960458a0b7fb94bc143af3833c551dc4257a9a8abe2f8",
+      "frames": 79,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p1-white/replay.json",
+      "sha256": "780497e66c300fe27fcce787813b2ec037265b64db78c52948d0815e62afc0b6",
+      "frames": 89,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p2-black/replay.json",
+      "sha256": "486620b31322733b69a538e0ff3ad8466298c5f7a360b3761296fd46e0cde069",
+      "frames": 117,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p2-white/replay.json",
+      "sha256": "f6d57e1f7a99adab6682b03dabdae7a7b904f1e205b9027b43cfec777c61b8a8",
+      "frames": 148,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p3-black/replay.json",
+      "sha256": "4eebdda2190f7a44e2c0f50dd4c3d8f056bfc58c6dae8c01b2e72d4a25c7aad8",
+      "frames": 125,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p3-white/replay.json",
+      "sha256": "699c079b9da36068721f14fbd29f11c573ce574f80b364289eeb7d2b7a88fb18",
+      "frames": 76,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/compact-mass-playing-20261111/jobs/mass-p5-white/replay.json",
+      "sha256": "5c6b3357387b5fc87518a1fdff6bf5fe257f44e395e6fd7e3757ebbf1794c458",
+      "frames": 82,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/v38-mist-wins-20261111/0kr3vl4i.json",
+      "sha256": "c471feec08d2fde9a7af07e160b52c6e43fb09e9bb01258cdb0b9b9bcab56f0f",
+      "frames": 102,
+      "synthetic": false
+    },
+    {
+      "source": "/home/henrytan/git/iamavirus/data/astra-spool/v38-mist-wins-20261111/c8ozqj0m.json",
+      "sha256": "a24ff3e5a00b19e021ca638d2bc8d8afdc30f76667092775ebad12070d148b0a",
+      "frames": 35,
+      "synthetic": false
+    },
+    {
+      "source": "constructed rules-valid Black EP capture chain",
+      "sha256": null,
+      "frames": 9,
+      "synthetic": true
+    }
+  ],
+  "source_sha256": {
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/verify.py": "2f150f27bc2ef23b64d1cb9a7c7961da2d059a352aee9aec8fd6fe14472d5871",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/baseline.py": "dcd139c59ad25dfc3a5aef1e696ac6326b34a11e976dcddf0658c31efa566a9a",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/move_taxonomy.py": "090677692f0a36c81ed00101a593f6fe61fb2bcca787a1969e633307331b68ef",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/origin.json": "1b2ccdd277f8d40149dbbcfd5f1b11031b236c1ced94bc70292c2f902a86671b",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/taxonomy-en-passant-20261111/reporting-fix.patch": "dd076133005943db689815b80affa2a835739b34f39c233bc32c1ac99c389a6a"
+  },
+  "shared_root_source_unchanged": true,
+  "scope": "Isolated report-label correctness change; course capture oracle on all fixture moves and separate C++ validation of constructed prefix. No model, game, fit, deployment or strength estimate. Prior taxonomy limitations remain."
+}

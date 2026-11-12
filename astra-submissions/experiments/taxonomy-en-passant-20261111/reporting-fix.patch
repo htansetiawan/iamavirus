@@ -1,0 +1,80 @@
+--- a/learning/move_taxonomy.py
++++ b/learning/move_taxonomy.py
+@@ -38,6 +38,7 @@
+ 
+ TEAM_ID = "a2c35173659545c99752376a70418438"
+ VALUE = {"p": 1, "n": 3, "b": 3, "r": 5, "q": 9, "k": 0}
++TAXONOMY_VERSION = "astra-ep-v1"
+ 
+ 
+ def material(board: str, colour: int) -> int:
+@@ -65,6 +66,34 @@
+ 
+ def visible(view: str) -> int:
+     return 64 - view.count("?")
++
++
++def captured_piece(before: chess.Board, after: chess.Board, uci: str):
++    """Victim and its square, including EP, on a rules-validated transition.
++
++    Standalone frame FENs omit en-passant rights. Use the pawn's observed
++    transition and removed adjacent pawn, without inventing those rights.
++    """
++    src, dst = chess.parse_square(uci[:2]), chess.parse_square(uci[2:4])
++    victim = before.piece_at(dst)
++    if victim is not None:
++        return victim, dst
++    piece = before.piece_at(src)
++    if piece is None or piece.piece_type != chess.PAWN:
++        return None, None
++    rank = chess.square_rank(src)
++    direction = 1 if piece.color else -1
++    if rank != (4 if piece.color else 3) or chess.square_rank(dst) != rank + direction:
++        return None, None
++    if abs(chess.square_file(src) - chess.square_file(dst)) != 1:
++        return None, None
++    square = chess.square(chess.square_file(dst), rank)
++    victim = before.piece_at(square)
++    if (victim is not None and victim.piece_type == chess.PAWN and victim.color != piece.color
++            and after.piece_at(square) is None and after.piece_at(src) is None
++            and after.piece_at(dst) == piece):
++        return victim, square
++    return None, None
+ 
+ 
+ def label_game(r: dict) -> dict:
+@@ -98,7 +127,7 @@
+         o_col = chess.BLACK if S == 0 else chess.WHITE
+         piece = before.piece_at(src)
+         ptype = piece.symbol().lower() if piece else "?"
+-        victim = before.piece_at(dst)
++        victim, captured_square = captured_piece(before, after, mv)
+         tags = []
+         viewS_before, viewS_after = frames[k - 1][view_key[S]], f[view_key[S]]
+         viewO_before, viewO_after = frames[k - 1][view_key[O]], f[view_key[O]]
+@@ -108,7 +137,7 @@
+             vtype = victim.symbol().lower()
+             if viewO_before[src] == "?":
+                 tags.append("capture_unseen")
+-            if k >= 2 and frames[k - 1]["move"] and chess.parse_square(frames[k - 1]["move"][2:4]) == dst:
++            if k >= 2 and frames[k - 1]["move"] and chess.parse_square(frames[k - 1]["move"][2:4]) == captured_square:
+                 tags.append("victim_walked_in")
+             if ptype in "brq" and chess.square_distance(src, dst) >= 3:
+                 tags.append("long_strike")
+@@ -129,7 +158,7 @@
+             # forcing chain: alternating captures from here
+             chain = 1
+             j = k + 1
+-            while j <= n and frames[j]["move"] and boards[j - 1].piece_at(chess.parse_square(frames[j]["move"][2:4])):
++            while j <= n and frames[j]["move"] and captured_piece(boards[j - 1], boards[j], frames[j]["move"])[0] is not None:
+                 chain += 1
+                 j += 1
+             if chain >= 3:
+@@ -192,6 +221,7 @@
+             counts[S][t] += 1
+         moves_out.append({"ply": p, "side": S, "move": mv, "piece": ptype, "tags": tags})
+     return {"id": r["id"], "white": r["white"], "black": r["black"], "result": r["result"], "plies": n,
++            "taxonomy_version": TAXONOMY_VERSION,
+             "counts": {"white": dict(counts[0]), "black": dict(counts[1])}, "moves": moves_out}
+ 
+ 

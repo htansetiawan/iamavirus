@@ -1,0 +1,19 @@
+{
+  "at": "2026-11-11T12:22:22.358406+00:00",
+  "status": "complete_projection_review",
+  "result_sha256": "be61e58f13268994391f0853a60cb0a67ff1e2884d84208a07d2449372fe16b7",
+  "review_source_sha256": "9e4a12341260c5ea8053225ffe3276d264b6a89ee2625e1bdb78da30fdef52e1",
+  "old_games": 195614,
+  "source_games": 234911,
+  "old_test_games_projected_train": 795,
+  "old_validation_games_projected_train": 2555,
+  "old_train_games_projected_test": 813,
+  "checks": [
+    "Old audited index hash and both-color pairing match.",
+    "Frozen journal metadata and every projected ID/trajectory match.",
+    "All nine game and trajectory cells independently reconcile by set intersection.",
+    "Projected counts and newly available IDs reconcile; no within-generation group straddles folds.",
+    "Original source pins, execution wall cap and released lease verified."
+  ],
+  "scope": "Independent saved-metadata reduction; not an actual-shard audit or a model-training/strength result."
+}

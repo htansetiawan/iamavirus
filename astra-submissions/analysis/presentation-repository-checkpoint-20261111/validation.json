@@ -1,0 +1,39 @@
+{
+  "at": "2026-11-11T10:42:53.701408+00:00",
+  "status": "pass_with_preserved_evidence_whitespace",
+  "payload_files": 209,
+  "payload_hashes_verified": 209,
+  "python_syntax_checks": 35,
+  "local_markdown_target_checks": 423,
+  "html_site_links_resolved_to_existing_markdown_sources": 34,
+  "unexpected_missing_targets": [],
+  "rendered_pages": 24,
+  "pdf_pages": 2,
+  "shipped_inventory_exact_except_timestamp": true,
+  "v38_member_hashes_verified": 114,
+  "staged_files": 203,
+  "unchanged_archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "scope": "Documentation snapshot/source-target validation and read-only ZIP audit. HTML sibling links refer to rendered site navigation; this is not a claim that every literal .html URL works in GitHub source view. Entry-point reading route uses .md links. No fresh game, fit, model, version or deployment.",
+  "whitespace_check": {
+    "full_diff_exit": 2,
+    "preserved_evidence_warning_lines": {
+      "astra-submissions/analysis/field-material-onsets-20261111/assets/material-timelines.svg": 1222,
+      "astra-submissions/analysis/presentation-real-decision-20261111/trace-annotations.patch": 4,
+      "astra-submissions/experiments/taxonomy-en-passant-20261111/reporting-fix.patch": 9,
+      "docs/assets/presentation/multistate-sampling.svg": 196
+    },
+    "all_other_files_exit": 0,
+    "preservation": "Keep original figure and unified-diff bytes to retain source evidence hashes; both SVGs parse as XML. Patch context whitespace is not newly edited engine code."
+  },
+  "versioning": {
+    "fable_highest_physical_archive": 37,
+    "existing_astra_version": 38,
+    "plus_one_rule_satisfied": true,
+    "new_version_created": false
+  },
+  "checkpoint_preflight_corrections": [
+    "The initial copy omitted six evidence links; dependencies added and target check passed.",
+    "Generated CFR build copies were excluded after ordinary git add refused ignored build paths; no force-add.",
+    "The first whitespace classifier assumed SVG only; two preserved patch files also have context whitespace. The initial local commit preceded this final metadata check; it remained unpublished while validation completed."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "at": "2026-11-11T04:21:10.971452+00:00",
+  "status": "complete",
+  "checks": [
+    "original review and waiter terminal, child exit 0",
+    "review result, journal and pinned dependencies hash match",
+    "all 6000 saved replay hashes still match",
+    "journal identities/order and reductions reconcile",
+    "full-sequence overlap recomputed against unique old cache",
+    "original review stayed below 1800-second cap; own core lease released"
+  ],
+  "games": 6000,
+  "frames": 459622,
+  "unique_sequences": 5872,
+  "duplicate_extra_ids": 128,
+  "original_review_seconds": 1363.366121155006,
+  "continuation_launched": false,
+  "prior_cache_rows": 91304,
+  "unique_full_sequences_overlapping_prior_cache": {
+    "train": 107,
+    "validation": 7,
+    "test": 474
+  },
+  "current_ids_whose_full_sequence_overlaps_prior_cache": {
+    "train": 221,
+    "validation": 12,
+    "test": 474
+  },
+  "current_ids_matching_prior_cache_representative_ids": {
+    "test": 471
+  },
+  "unique_full_sequences_absent_from_that_prior_cache": 5284,
+  "sources": {
+    "public API": 5598,
+    "shared cache": 402
+  },
+  "clock_flags": {
+    "negative_clock_values": 0,
+    "nonmoving_clock_changes": 0,
+    "elapsed_below_minus_two_ms": 0
+  },
+  "artifact_sha256": {
+    "astra-submissions/analysis/field-snapshot-20261111/review-plan.json": "340797f0a12089c87a60c9f833bfd8202e58cbfe85e4f24b3724048507e9a14a",
+    "astra-submissions/analysis/field-snapshot-20261111/review-result.json": "afc937d110791a261aa9abde4da33017735f6a3a83a81d31e43518d39442d3a4",
+    "astra-submissions/analysis/field-snapshot-20261111/review-execution.json": "40c0819afe23d77cbc1b87c75a07e94432c3b908f5717d1b2958a8c3c779561a",
+    "astra-submissions/analysis/field-snapshot-20261111/review-wait.json": "c5496a6caccbe288d8bb9678114e1f6b9bdfa9bac4a11e68d6d2ec1d67e6dd6b",
+    "astra-submissions/analysis/field-snapshot-20261111/result.json": "7fcdb901cf62d6c5fa294b92b15761279ce65e198ac9f7fb136e38365568474f",
+    "data/astra-spool/field-snapshot-20261111/review-rows.jsonl": "c607b448df7dc29eeacafbc10f91b1ec6b578d6b9571f1f42a66af406a869423",
+    "data/astra-spool/field-snapshot-20261111/validation.jsonl": "d369bfc04414414d74cbaf692206cb35ff6a0bca4598cc3f7f044408e687ec03",
+    "data/astra-spool/field-snapshot-20261111/raw/accepted.jsonl": "4517967bd0daaca5d53c417936319e9b7e00df960c5ed842e05acb41bc4773a9",
+    "data/astra-spool/recovered-replay-cache-20261110/games.json": "7d5c259604aea04ceb7bbfcfcfc2595494bbd9fb1962a00076d5846ae4067aec"
+  },
+  "limitations": [
+    "Original review field game_ids_overlapping_old_336_split counts current IDs whose complete sequence exists in the old cache; it is not an exact game-ID join.",
+    "Old cache contains one representative ID per unique sequence, not every original source ID.",
+    "Sequence absence from one cache does not establish untouched data: shared opening prefixes, other experiments and cache reuse are not excluded.",
+    "Rules correctness and provenance do not establish move quality, calibration or playing strength."
+  ],
+  "scope": "Read-only final reconciliation plus this local receipt. No rules rerun, collection, model fitting, split assignment, candidate, arena game, commit, push or deployment."
+}

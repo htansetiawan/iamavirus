@@ -1,0 +1,50 @@
+{
+  "at": "2026-11-11T06:23:57.216020+00:00",
+  "status": "complete",
+  "games": 6000,
+  "frames": 459622,
+  "transaction_counts": {
+    "newly_accepted": 4341,
+    "cached": 1659
+  },
+  "clocks": {
+    "missing_target_clock_fields": 0,
+    "different_clock_values": 0,
+    "equivalent_clock_values": 6000
+  },
+  "stored_metadata": {
+    "stored_fetch_hash_matches": 5471,
+    "accepted_originals_preserved": 1659,
+    "legacy_or_missing_fetch_hash": 529
+  },
+  "archive_index_at_review": {
+    "lines": 233513,
+    "unique_ids": 233482,
+    "duplicate_extra_lines": 31,
+    "journal_sha256": "c0cdb7b6aceaa31a80b6ce490e84a4b0c4bda7c73cb780d5a32836733f55002c",
+    "latest": {
+      "ours": {
+        "id": "o93ifomg",
+        "createdAt": "2026-11-11T05:27:05.747888518+00:00"
+      },
+      "other_teams": {
+        "id": "i2jugcm0",
+        "createdAt": "2026-11-11T01:51:20.303947793+00:00"
+      }
+    }
+  },
+  "newly_imported_ids": 4341,
+  "old_duplicate_lines_retained": 31,
+  "checks": [
+    "Original execution terminal within original cap; frozen inputs and importer source unchanged.",
+    "All 6000 ordered source and destination replay hashes match their transaction receipts.",
+    "Every board, both observations, move, result and frame index matches the already dual-validated source.",
+    "All newly imported response contents, including clocks and optional metadata, match the source.",
+    "Every source ID is accepted in the shared journal; no increase in duplicate journal lines.",
+    "Destination remains the original store; own core lease released."
+  ],
+  "result_sha256": "1cc252e65cae0d3a680ca86cab4945d03dd0c19110bbda3325f4620d2bb8ce5b",
+  "import_journal_sha256": "a5b7b340f20aac28bb7a363edadc5ca6c2cfeacf66022f62d26fd0fa281119f7",
+  "review_source_sha256": "3cc9e3f841fe2183eff9190b87ae184af5fb75d8ea041962c500e05fb0f9944a",
+  "scope": "Read-only archive reconciliation, not a second rules walk, new collection, hardware certification, model fit or deployment."
+}

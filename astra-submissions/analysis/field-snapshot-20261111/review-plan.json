@@ -1,0 +1,33 @@
+{
+  "at": "2026-11-11T03:26:25.776608+00:00",
+  "games": 6000,
+  "selection": "Every accepted replay in the unchanged frozen 359 listing; no team/outcome selection.",
+  "cores": [
+    6
+  ],
+  "wall_seconds": 1800,
+  "dependencies": {
+    "/home/henrytan/git/iamavirus/astra-submissions/tools/verify_field_replays.py": "89ae39fb0bfb890aab500d9cf6e103261557dd54865bb18bf58e0f1f6b46a28e",
+    "/home/henrytan/git/iamavirus/astra-submissions/analysis/field-snapshot-20261111/listing-review.json": "d6eda2931bcd7c83209b3239082dd02dab37035c4db9b50333aa52f1917caa67",
+    "/home/henrytan/git/iamavirus/data/astra-spool/field-snapshot-20261111/listing.json": "5a595188201da11a09514ea26ce5a47b72fc38d9bb0263d87895414d04a4b737",
+    "/home/henrytan/git/iamavirus/data/astra-spool/recovered-replay-cache-20261110/games.json": "7d5c259604aea04ceb7bbfcfcfc2595494bbd9fb1962a00076d5846ae4067aec",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/last-only-pilot-20261110/build/native-validator.so": "ae7a39913fe9d058b4b5392849ffc6a9260d2123a891d12454b016b4843665e3",
+    "/home/henrytan/git/fow-starter/referee.py": "2f82ac292bfad29bcb2d701b73c060d1ca8281378b4598f08a620fe5c97255be",
+    "/home/henrytan/git/iamavirus/learning/ingest.py": "141a47ad84c703e835e55bb293aa2ade443704eb7fe275ebb8d33287b7187b91",
+    "/home/henrytan/git/iamavirus/learning/rules.py": "6eca6e4e20b42e549caf0f9ad81247f77519085d36f9171063ffd6c9a5febd6c",
+    "/home/henrytan/git/iamavirus/learning/_native.py": "3bf861fb77073b385e53b36e42b5e2a6e309b2229e9fdbb0cf1cb0e98d5cfe35",
+    "/home/henrytan/git/iamavirus/learning/histories.py": "e3b6d5663f99316ae1ce017ab47c3fb264766830d83f6d25ef5a4387be96ef10"
+  },
+  "require_original_collector_complete": true,
+  "require_accepted": 6000,
+  "require_quarantined": 0,
+  "checks": [
+    "source pages/cursor/listing already reviewed",
+    "saved raw and journal byte hashes",
+    "played metadata, both private views and true board",
+    "C++ plus separate full course-rule walk",
+    "clock schema and descriptive timing flags",
+    "whole-sequence duplicate and prior-cache split overlaps"
+  ],
+  "scope": "Local data correctness/provenance review. No model fitting, inference, new game, split assignment, benchmark, network or deployment."
+}

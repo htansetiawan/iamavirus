@@ -1,0 +1,31 @@
+{
+  "at": "2026-11-11T05:59:03.268472+00:00",
+  "checks": [
+    "new valid replay accepted",
+    "repeat cached without rewriting original",
+    "missing listing repaired without replay rewrite or duplicate journal row",
+    "unaccepted conflicting source preserved"
+  ],
+  "first": {
+    "status": "newly_accepted",
+    "destination_sha256": "700952b2964503d5830465b8eb045b8517f7cf3ef6f19a114750b601a112491b",
+    "accepted_original_preserved": false,
+    "source_and_destination_bytes_identical": true
+  },
+  "second": {
+    "status": "cached",
+    "destination_sha256": "700952b2964503d5830465b8eb045b8517f7cf3ef6f19a114750b601a112491b",
+    "accepted_original_preserved": true,
+    "source_and_destination_bytes_identical": false
+  },
+  "repaired": {
+    "status": "repaired_missing_files",
+    "destination_sha256": "700952b2964503d5830465b8eb045b8517f7cf3ef6f19a114750b601a112491b",
+    "accepted_original_preserved": true,
+    "source_and_destination_bytes_identical": true
+  },
+  "conflict": {
+    "status": "unaccepted_source_conflict",
+    "destination_sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "created_at": "2026-11-11T14:42:12.843404+00:00",
+  "source_games": 234911,
+  "feature_version": "features-v2",
+  "action_version": "actions-v1",
+  "rules_fingerprint": "fow-v1/iamavirus-rules-capi",
+  "source_journal": {
+    "accepted_lines": 234942,
+    "bytes": 104270050,
+    "duplicate_lines": 31,
+    "selected_games": 234911,
+    "sha256": "febdba189a339e1710894a50c288ec9de12ae9022971ac275f479a6340074074",
+    "unique_games": 234911
+  },
+  "split_method": "seeded_duplicate_groups_missing_timestamps",
+  "undated_source_games": 164,
+  "manifest_sha256": "d020c844ab330f3d8976495cae8cd9fdc27623d2945e1f9bc9a752d0ed52dbc5",
+  "candidate_mismatch_episodes": 0,
+  "shards": {
+    "test": {
+      "bytes": 84643779,
+      "sha256": "7b4f70ff83c6ec044e690adf798238850c76ba86441c5188f6b899edeba676ed",
+      "counts": {
+        "color_black": 24076,
+        "color_white": 24076,
+        "decisions": 1667295,
+        "episodes": 48152,
+        "events": 3334786,
+        "games": 24076.0,
+        "outcome_0-1": 10960.0,
+        "outcome_1-0": 12413.0,
+        "outcome_1/2-1/2": 703.0,
+        "termination_crash": 8.0,
+        "termination_illegal": 3.0,
+        "termination_normal": 23978.0,
+        "termination_time": 86.0,
+        "termination_unknown": 1.0
+      }
+    },
+    "train": {
+      "bytes": 669829464,
+      "sha256": "1ce094afc0933587c2191d1fe6c205b23dc716899d1e7062def897cb60cbd9c5",
+      "counts": {
+        "color_black": 187250,
+        "color_white": 187250,
+        "decisions": 13162878,
+        "episodes": 374500,
+        "events": 26327362,
+        "games": 187250.0,
+        "outcome_0-1": 85040.0,
+        "outcome_1-0": 96399.0,
+        "outcome_1/2-1/2": 5811.0,
+        "termination_crash": 110.0,
+        "termination_illegal": 16.0,
+        "termination_normal": 186447.0,
+        "termination_time": 674.0,
+        "termination_unknown": 3.0
+      }
+    },
+    "validation": {
+      "bytes": 83905255,
+      "sha256": "4e9149b76f54fcd3387c54946572f0fd2117171867bc302e1d9fe583124c8973",
+      "counts": {
+        "color_black": 23585,
+        "color_white": 23585,
+        "decisions": 1644982,
+        "episodes": 47170,
+        "events": 3290592,
+        "games": 23585.0,
+        "outcome_0-1": 10885.0,
+        "outcome_1-0": 11944.0,
+        "outcome_1/2-1/2": 756.0,
+        "termination_crash": 218.0,
+        "termination_illegal": 2.0,
+        "termination_normal": 23271.0,
+        "termination_time": 93.0,
+        "termination_unknown": 1.0
+      }
+    }
+  }
+}

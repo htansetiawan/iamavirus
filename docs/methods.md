@@ -9,6 +9,28 @@ and the [current experiment map](presentation-experiments.html).
 
 [TOC]
 
+## November 11 qualifications for presenting the historical account
+
+Three claims in the older narrative below need narrower wording for v38:
+
+- **Legality:** being legal on *some* imagined board does not guarantee a
+  move is legal on the real board. V38 uses a conservative view-derived set
+  and a conditional history-based legality path. In the reviewed 90-game
+  corpus, seven true-legal candidate moves were absent from that view-only
+  set; all were en passant, including three actually played. This is not a
+  newly discovered illegal-play defect. [Source and referee review](https://github.com/htansetiawan/iamavirus/blob/astra/safe-recapture-20261111/astra-submissions/analysis/recapture-reach-20261111/README.md).
+- **Exactness:** enumeration extends retained states; merging, thinning and
+  recovery do not preserve the complete history posterior. The native merge
+  keeps the heaviest incoming history. The full weighted-history alternative
+  already exists and did not establish a useful gain. [Details](presentation-tables.html#what-exact-belief-does-and-does-not-mean).
+- **Mixed play:** CFR computes action distributions inside the represented
+  tree, but the deployed root chooses their largest-probability action.
+  Correct information-set arithmetic on that tree does not establish Nash
+  play or account for every past alternative the opponent considers possible.
+  [Information model](presentation-knowledge.html).
+
+The dated measurements and configurations below remain historical evidence.
+
 ## 1. Rules and observation
 
 **Exact legal moves from one observation** (C++ engine, `observation.*`; mist-c `src/board.c`). A Fog of War move is legal if it is legal on *some* board consistent with the view, so the engine derives the legal set from the observation alone and an illegal move is structurally impossible. Verified by a differential test against the course referee (47,875 of 47,875 checks for the C++ engine; 13,467 positions with 0 mismatches for mist-c). **Kept** in both engines; it is also why we have had one illegal-move forfeit in 34 versions, from a castling-rights bug in v7.

@@ -1,0 +1,26 @@
+{
+  "arm": "control",
+  "command": [
+    "gcc",
+    "-std=c11",
+    "-O2",
+    "-pthread",
+    "-D_POSIX_C_SOURCE=199309L",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/board.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/belief.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/movemodel.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/cfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/eval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/search.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/gtcfr.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/front.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/sfeval.c",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/src/main.c",
+    "-lm",
+    "-o",
+    "/home/henrytan/git/iamavirus/astra-submissions/experiments/presentation-real-decision-20261111/control/mist"
+  ],
+  "code": 0,
+  "stdout": "",
+  "stderr": ""
+}
