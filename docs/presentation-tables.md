@@ -34,6 +34,16 @@ or a collision-free count of full histories. They are the lookup keys actually
 stored. Stockfish has its own NNUE parameters, search history and transposition
 table; those belong to the external evaluator, outside the four CFR arrays.
 
+**Worker scheduling, checked November 12:** the archive defaults to two
+Stockfish workers, submitted and collected in synchronized waves. The main
+thread can wait for replies during a wave. Continuous pipelining requires
+`MIST_ASYNC=1`; the v38 launcher does not set it. `MIST_ITERS` is only read
+inside that optional branch. All eight saved current-v38 cost profiles record
+`async=0`. This corrects the older specification's “on” default, without
+asserting whether an unrecorded external environment supplied an override.
+The [source receipt](https://github.com/htansetiawan/iamavirus/blob/astra/presentation-review-20261111/astra-submissions/analysis/scorer-transport-audit-20261112/result.json)
+and independent read-back are included in the draft presentation review.
+
 One implementation detail matters: the generic `strategy` field is allocated
 and resized, but current strategies on the deployed path are calculated into
 separate temporary buffers. It is not an additional learned model. Similarly,

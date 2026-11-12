@@ -1,0 +1,195 @@
+{
+  "kind": "source-and-saved-profile-review",
+  "passed": true,
+  "archive_sha256": "ba6610f299c1589118ae335f3c46fbff802bf158456db9260ac911dce0d4f69f",
+  "input_sha256": {
+    "astra-submissions/analysis/scorer-transport-audit-20261112/plan.json": "ee2c2326cd02d4445c7317a9290749d69a0fa50162c8ab679057c0a7a1036b87",
+    "astra-submissions/v38-manifest.json": "08aeafacb25fb91894702344d731780002b1b3aab2f2621521d27b8102a7988a",
+    "astra-submissions/tools/audit_v38_scorer_transport.py": "385a9f56b9e2567eb01f8923bb3693b31f9e0c4eed95ffa523014485ef7d03dd",
+    "astra-submissions/analysis/v38-search-cost-20261110/465co8me-26-profile.json": "d300cd911177760fd41b0e0c0b0fd8a4e459281fb62b258eefb015b1ddccf368",
+    "astra-submissions/analysis/v38-search-cost-20261110/4zy248z7-16-profile.json": "93bad4a08bb04e950188216cc16ee45765a2637cb886cb05d10b5f78937fa335",
+    "astra-submissions/analysis/v38-search-cost-20261110/807otaeb-24-profile.json": "7abd5df5ce0a7e02fecb333128110fbe8209c1b07e6dd8c06af88093c6290f17",
+    "astra-submissions/analysis/v38-search-cost-20261110/axvqi3b1-59-profile.json": "b512838106f2df2699f9bdbc684ab86f34ac942002300fde3b99e622bb99c01e",
+    "astra-submissions/analysis/v38-search-cost-20261110/e9ap0123-48-profile.json": "0b7b47f8bea440c2d9705e2412e7aabde6d7ff19b81f364b4ea5e1321dbc8593",
+    "astra-submissions/analysis/v38-search-cost-20261110/jg8arl68-35-profile.json": "016d24a56dd9cef7f0056c745a5fea4da122584b5f14370320f10162753e3cb7",
+    "astra-submissions/analysis/v38-search-cost-20261110/o3b5wvz1-41-profile.json": "9718e8f12ed28520c445a582be49682798763af26f10801458258b3f359ee126",
+    "astra-submissions/analysis/v38-search-cost-20261110/u66jmz73-16-profile.json": "4098050361f476f422ef00ee66dc54af9a378985265b61135216bcc7a866c41d",
+    "astra-submissions/analysis/v38-search-cost-20261110/independent-arithmetic.json": "32e87a4c616d49166a7eeeec1facb7c0c445b3239288f1806b42394d24fe14ec"
+  },
+  "source_members_checked": 7,
+  "source_locations": [
+    {
+      "member": "run.sh",
+      "member_sha256": "aa6e1c9c17e2245c82afc46dab17911896b87431a54547a1d634564b6e5fda56",
+      "line": 7,
+      "needle": "export ASTRA_SF_ALLCHILDREN=1",
+      "finding": "Only the scorer mode is explicitly enabled here."
+    },
+    {
+      "member": "src/sfeval.c",
+      "member_sha256": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+      "line": 143,
+      "needle": "int want = getenv(\"MIST_SF_WORKERS\") ? atoi(getenv(\"MIST_SF_WORKERS\")) : 2;",
+      "finding": "Two workers by default."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "member_sha256": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+      "line": 339,
+      "needle": "const int async = W > 0 && getenv(\"MIST_ASYNC\") && atoi(getenv(\"MIST_ASYNC\")) != 0;",
+      "finding": "Continuous pipeline is opt-in; no launcher override."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "member_sha256": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+      "line": 341,
+      "needle": "const double iters_per = getenv(\"MIST_ITERS\") ? atof(getenv(\"MIST_ITERS\")) : 0.3;",
+      "finding": "MIST_ITERS is read inside the optional asynchronous branch."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "member_sha256": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+      "line": 201,
+      "needle": "for (int i = 0; i < n; i += W)",
+      "finding": "Default expansion submits a wave then collects its replies."
+    },
+    {
+      "member": "src/gtcfr.c",
+      "member_sha256": "0bcdbea2d0c903c7245f8dc835647da67baa6a0fed63c0c7c83626a8a6c5b984",
+      "line": 398,
+      "needle": "while (!async && seconds_since(&t0) < params->seconds * 0.85)",
+      "finding": "Default rounds run solver work before batched expansion."
+    },
+    {
+      "member": "src/sfeval.c",
+      "member_sha256": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+      "line": 248,
+      "needle": "sscanf(pv + 4, \"%7s\", move);",
+      "finding": "Parser reads the PV's first move."
+    },
+    {
+      "member": "src/sfeval.c",
+      "member_sha256": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+      "line": 250,
+      "needle": "if (strcmp(uci[i], move) == 0)",
+      "finding": "Linear move matching for each accepted score line."
+    },
+    {
+      "member": "src/sfeval.c",
+      "member_sha256": "3bc8516a2d058f2eaf693082e8a5aabfc0c20ccaef79b10436f2e2ba8fcf4d0a",
+      "line": 238,
+      "needle": "if (strstr(line, \"lowerbound\") || strstr(line, \"upperbound\")) continue;",
+      "finding": "Bound-only score lines are discarded."
+    },
+    {
+      "member": "third_party/stockfish19/src/search.cpp",
+      "member_sha256": "2aec3d048781db52a61d04011293d306594cfba2fd3e8c0b6b88e90dfebdfc23",
+      "line": 369,
+      "needle": "for (pvIdx = 0; pvIdx < multiPV; ++pvIdx)",
+      "finding": "Ordinary MultiPV runs repeated root searches."
+    },
+    {
+      "member": "third_party/stockfish19/src/search.cpp",
+      "member_sha256": "2aec3d048781db52a61d04011293d306594cfba2fd3e8c0b6b88e90dfebdfc23",
+      "line": 1421,
+      "needle": "if ((!PvNode || moveCount > 1) && !(rootNode && astraAllChildren))",
+      "finding": "All-child mode bypasses the ordinary non-PV root pass."
+    },
+    {
+      "member": "third_party/stockfish19/src/search.cpp",
+      "member_sha256": "2aec3d048781db52a61d04011293d306594cfba2fd3e8c0b6b88e90dfebdfc23",
+      "line": 1435,
+      "needle": "if (PvNode && (moveCount == 1 || value > alpha || (rootNode && astraAllChildren)))",
+      "finding": "Each all-child root move receives a PV search."
+    },
+    {
+      "member": "third_party/stockfish19/src/search.cpp",
+      "member_sha256": "2aec3d048781db52a61d04011293d306594cfba2fd3e8c0b6b88e90dfebdfc23",
+      "line": 1160,
+      "needle": "if (rootNode && !std::count(rootMoves.begin() + pvIdx, rootMoves.begin() + pvLast, move))",
+      "finding": "Root membership still scans a move range; whole scorer is not linear."
+    },
+    {
+      "member": "third_party/stockfish19/src/search.cpp",
+      "member_sha256": "2aec3d048781db52a61d04011293d306594cfba2fd3e8c0b6b88e90dfebdfc23",
+      "line": 1465,
+      "needle": "RootMove& rm = *std::find(rootMoves.begin(), rootMoves.end(), move);",
+      "finding": "Root score record lookup is still linear."
+    },
+    {
+      "member": "third_party/stockfish19/src/search.cpp",
+      "member_sha256": "2aec3d048781db52a61d04011293d306594cfba2fd3e8c0b6b88e90dfebdfc23",
+      "line": 2367,
+      "needle": "info.hashfull  = tt.hashfull();",
+      "finding": "Output construction recomputes table occupancy for each emitted PV."
+    },
+    {
+      "member": "third_party/stockfish19/src/uci.cpp",
+      "member_sha256": "a31fa10719b1d9ecaa23f774f14a5a995be65eeb52722798c2f2bb4255991b21",
+      "line": 654,
+      "needle": "void UCIEngine::on_update_full(const Engine::InfoFull& info, bool showWDL)",
+      "finding": "Every full-info callback formats a line and requests a flush."
+    },
+    {
+      "member": "third_party/stockfish19/src/misc.h",
+      "member_sha256": "fa97bd3c16ab7ea48f1e1e392f7723843daaa6aa0056a43127facb158ccc10d4",
+      "line": 192,
+      "needle": "#define sync_endl std::endl << IO_UNLOCK",
+      "finding": "The output macro flushes the stream; source alone does not count syscalls."
+    },
+    {
+      "member": "third_party/stockfish19/src/tt.cpp",
+      "member_sha256": "56435808c1ed7557e69afb85fc0fa0116fcb574bfa528d53cc0f07d20a926702",
+      "line": 168,
+      "needle": "static constexpr int ClusterSize = 3;",
+      "finding": "Three entries per hash cluster."
+    },
+    {
+      "member": "third_party/stockfish19/src/tt.cpp",
+      "member_sha256": "56435808c1ed7557e69afb85fc0fa0116fcb574bfa528d53cc0f07d20a926702",
+      "line": 244,
+      "needle": "for (int i = 0; i < 1000; ++i)",
+      "finding": "Each hashfull call visits 1000 clusters, hence 3000 entries."
+    }
+  ],
+  "default_mode": {
+    "workers": 2,
+    "continuous_async": false,
+    "external_environment_caveat": "The launcher inherits its environment. No claim about an unrecorded arena-side override.",
+    "saved_profiles_async": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "saved_costs": {
+    "search_wall": 43.527088748,
+    "turn_wall": 50.31065095,
+    "scorer_wrapper_wall": 20.997449393,
+    "scorer_wrapper_caller_cpu": 2.75854791,
+    "solver_plus_strategy_wall": 19.534797832,
+    "scorer_wrapper_share_turn": 0.41735594742886145,
+    "wrapper_caller_cpu_share_turn": 0.054830296525908886,
+    "serial_fixed_work_illustrations": {
+      "halve_all_scorer_wrapper_wall": 1.263708031348446,
+      "remove_all_scorer_wrapper_wall": 1.7163137520877791,
+      "remove_all_wrapper_caller_cpu": 1.0580110601560473
+    }
+  },
+  "illustration_not_native_counts": {
+    "M": 35,
+    "all_remaining_actions_once_per_ordinary_pass": 630,
+    "all_child_root_actions_once": 35,
+    "parser_unique_complete_lines_string_comparisons": 630,
+    "full_root_membership_entry_comparisons": 1225,
+    "hashfull_entry_visits_for_35_callbacks": 105000,
+    "caveat": "No timings. Full sweeps, one complete unique score per action, no bounds/retries, full legal-root coverage. Aspiration, cutoffs, deep work, diagnostics and actual move counts alter work."
+  },
+  "decision": "Stop before transport implementation. Worker formatting, metrics, flushes and pipe-only cost are not separately measured. This source review corrects the default-mode documentation and supplies a profiling question, not a new candidate.",
+  "scope": "No native/model execution, timing, syscalls, fit, GPU, policy/backend change, match, release or deployment. Serial illustrations are not measured speedups, parallel critical-path bounds, node gains or Elo."
+}
