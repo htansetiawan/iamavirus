@@ -69,3 +69,36 @@ Since game 127, 493 games, v38 has played at v37's level. The early edge
 looks like a good run, not a lasting gain. v38 is no worse than v37, so the
 keep decision stands; it should not be described as stronger. Against the top
 six it is at 0.28 (v37 0.244). Greek Gift 1-0-27.
+
+## Correction (14 Nov, 1,298 games): v38 is stronger where rank is decided
+
+The same-opponent average above was dominated by games against weaker teams,
+where v38 and v37 score alike. Split by opponent strength (current ratings):
+
+| Opponents | v37 | v38 |
+|---|---|---|
+| Rated 2000+ | 0.27 (418 games) | 0.34 (198 games) |
+| Rated 1850-2000 | 0.40 (784 games) | 0.45 (458 games) |
+| Rated below 1850 | 0.74 (1,120 games) | 0.75 (642 games) |
+
+Head-to-head, v37 then v38: Mist Opportunities 0.48 then 0.71; Knight Vision
+0.30 then 0.48; Crimson Fog 0.18 then 0.36; Cranberry Lemon 0.43 then 0.59;
+HYPOTHERMIA 0.46 then 0.56; Instructors 0.40 then 0.43. Lower against duck
+(0.35 then 0.27) and Farsight (0.43 then 0.39).
+
+Standing, from the arena's rating history sampled every 15 minutes:
+
+| | v37 (1-8 Nov) | v38 (8-14 Nov) |
+|---|---|---|
+| Time above Instructors | 14% | 82% |
+| Time above Mist Opportunities | 5% | 82% |
+| Median rank | 11 | 9 |
+| Our average rating | 1917 | 1927 |
+| Average gap to Knight Vision | -206 | -141 |
+
+Our own rating rose about 10 points on average while the teams around and
+above us fell about 60, partly from losing more often to v38. Opponents also
+changed versions over the period. Reading for the report: v38 searches 38%
+more positions in the same time and converts that into better results against
+teams at or above our level; against weaker teams it was already near its
+ceiling.
