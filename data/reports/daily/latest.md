@@ -1,143 +1,147 @@
-# Arena daily report, 2026-11-18 11:56 UTC
+# Arena daily report, 2026-11-19 11:50 UTC
 
 ## Corpus
 
-- games held: **251564** (251400 dated); created in the last 24 hours: **3714** (ours 176)
-- newest game: 2026-11-18T10:13; leaderboard fetched 2026-11-18T10:13
+- games held: **255526** (255362 dated); created in the last 24 hours: **3681** (ours 154)
+- newest game: 2026-11-19T10:07; leaderboard fetched 2026-11-19T10:08
 
 | rank | team | rating | active version | games |
 |---|---|---|---|---|
-| 1 | Greek Gift | 2319 | 30 | 17146 |
-| 2 | Farsight | 2040 | 33 | 5830 |
-| 3 | Strongly Invisible | 2030 | 42 | 47185 |
-| 4 | Knight Vision | 1990 | 36 | 28102 |
-| 5 | Next | 1972 | 10 | 1976 |
-| 6 | Decent Chess Bot | 1971 | 7 | 20705 |
-| 7 | duck | 1948 | 11 | 18922 |
-| 8 | HYPOTHERMIA | 1940 | 21 | 13332 |
-| 9 | Team 319 | 1939 | 2 | 1257 |
-| 10 | Crimson Fog | 1933 | 4 | 7626 |
-| 11 | Foggy Fischer | 1927 | 6 | 6497 |
-| 12 | In Pawn Sight | 1915 | 14 | 10179 |
+| 1 | Greek Gift | 2276 | 30 | 17280 |
+| 2 | Knight Vision | 2036 | 36 | 28282 |
+| 3 | Farsight | 2014 | 37 | 6004 |
+| 4 | Next | 2010 | 10 | 2200 |
+| 5 | Team 319 | 2008 | 3 | 1422 |
+| 6 | Strongly Invisible | 2006 | 42 | 47347 |
+| 7 | HYPOTHERMIA | 1973 | 21 | 13542 |
+| 8 | duck | 1965 | 11 | 19106 |
+| 9 | Crimson Fog | 1938 | 4 | 7792 |
+| 10 | Decent Chess Bot | 1932 | 7 | 20899 |
+| 11 | Foggy Fischer | 1919 | 8 | 6694 |
+| 12 | Gravel Road | 1915 | 15 | 13464 |
 
 ## Our results
 
-Last 24 hours: **85-8-83 (0.51)** over 176 games; last 7 days: 712-43-555 (0.56) over 1310.
+Last 24 hours: **75-13-66 (0.53)** over 154 games; last 7 days: 660-50-554 (0.54) over 1264.
 
 | our version (24 h) | games | W-D-L (score) |
 |---|---|---|
-| v38 | 176 | 85-8-83 (0.51) |
+| v38 | 154 | 75-13-66 (0.53) |
 
 | opponent (24 h) | games | W-D-L (score) |
 |---|---|---|
-| Strongly Invisible | 12 | 1-0-11 (0.08) |
-| Foggy Fischer | 10 | 4-0-6 (0.40) |
-| duck | 10 | 3-0-7 (0.30) |
-| Next | 8 | 2-1-5 (0.31) |
-| In Pawn Sight | 8 | 4-0-4 (0.50) |
-| Magnus Monte Carlsen | 8 | 4-0-4 (0.50) |
-| Mist Opportunities | 8 | 3-2-3 (0.50) |
-| Greek Gift | 8 | 0-0-8 (0.00) |
-| Decent Chess Bot | 8 | 4-0-4 (0.50) |
-| Crimson Fog | 8 | 2-0-6 (0.25) |
-| sillygeese | 8 | 3-2-3 (0.50) |
-| Instructors | 8 | 4-0-4 (0.50) |
-| TA Baseline S | 8 | 7-0-1 (0.88) |
-| Fogbreakers | 6 | 6-0-0 (1.00) |
-| Cranberry Lemon | 6 | 4-0-2 (0.67) |
+| Next | 14 | 1-2-11 (0.14) |
+| HYPOTHERMIA | 10 | 1-2-7 (0.20) |
+| Fogitos | 8 | 3-2-3 (0.50) |
+| In Pawn Sight | 8 | 4-1-3 (0.56) |
+| sillygeese | 8 | 5-0-3 (0.62) |
+| Crimson Fog | 8 | 3-0-5 (0.38) |
+| TUM | 6 | 5-0-1 (0.83) |
+| Strongly Invisible | 6 | 1-2-3 (0.33) |
+| Foggy Fischer | 6 | 0-1-5 (0.08) |
+| Decent Chess Bot | 6 | 1-1-4 (0.25) |
+| Mist Opportunities | 6 | 4-0-2 (0.67) |
+| duck | 6 | 2-0-4 (0.33) |
 | smusebots | 6 | 6-0-0 (1.00) |
-| Gravel Road | 6 | 3-0-3 (0.50) |
-| HYPOTHERMIA | 4 | 1-0-3 (0.25) |
-| Farsight | 4 | 0-1-3 (0.12) |
-| Team 319 | 4 | 1-1-2 (0.38) |
-| Mu1tip13 @g3nt$ | 4 | 3-0-1 (0.75) |
-| Knight Vision | 4 | 2-0-2 (0.50) |
-| TA Baseline A | 4 | 4-0-0 (1.00) |
-| Sausage | 4 | 4-0-0 (1.00) |
-| Trojan Horse | 2 | 2-0-0 (1.00) |
+| Beyond Visibility | 4 | 4-0-0 (1.00) |
+| Czechmate | 4 | 4-0-0 (1.00) |
+| Instructors | 4 | 3-0-1 (0.75) |
+| Cross-Registered Players | 4 | 1-1-2 (0.38) |
+| Unicorns | 4 | 2-1-1 (0.62) |
+| Cranberry Lemon | 4 | 2-0-2 (0.50) |
+| TA Baseline P | 4 | 4-0-0 (1.00) |
+| Prickly Bush | 2 | 2-0-0 (1.00) |
+| Gravel Road | 2 | 0-0-2 (0.00) |
 | Resting Bishop Faces | 2 | 2-0-0 (1.00) |
-| Fogitos | 2 | 1-1-0 (0.75) |
-| TA Baseline P | 2 | 2-0-0 (1.00) |
-| Unicorns | 2 | 2-0-0 (1.00) |
 | RATIRL | 2 | 1-0-1 (0.50) |
+| Sausage | 2 | 2-0-0 (1.00) |
+| TA Baseline S | 2 | 1-0-1 (0.50) |
+| Tiger | 2 | 2-0-0 (1.00) |
+| Trojan Horse | 2 | 1-0-1 (0.50) |
+| Lost Signal | 2 | 2-0-0 (1.00) |
+| Apricot Squad | 2 | 2-0-0 (1.00) |
+| Ex Republics | 2 | 0-0-2 (0.00) |
+| Fogbreakers | 2 | 2-0-0 (1.00) |
+| Mu1tip13 @g3nt$ | 2 | 2-0-0 (1.00) |
+| Knight Vision | 2 | 0-0-2 (0.00) |
 
 | teams above us, by their version (7 days) | games | W-D-L (score) |
 |---|---|---|
-| duck v11 | 60 | 16-2-42 (0.28) |
-| In Pawn Sight v14 | 54 | 19-1-34 (0.36) |
-| Instructors v4 | 54 | 26-1-27 (0.49) |
-| Cranberry Lemon v9 | 52 | 29-3-20 (0.59) |
-| Strongly Invisible v41 | 48 | 13-2-33 (0.29) |
-| Crimson Fog v4 | 48 | 20-0-28 (0.42) |
-| Knight Vision v36 | 40 | 14-2-24 (0.38) |
-| Decent Chess Bot v7 | 36 | 12-0-24 (0.33) |
-| Magnus Monte Carlsen v4 | 28 | 19-0-9 (0.68) |
+| duck v11 | 62 | 17-1-44 (0.28) |
+| Mist Opportunities v2 | 60 | 41-3-16 (0.71) |
+| Crimson Fog v4 | 52 | 22-0-30 (0.42) |
+| In Pawn Sight v14 | 52 | 21-2-29 (0.42) |
+| Strongly Invisible v41 | 40 | 9-1-30 (0.24) |
+| Cranberry Lemon v9 | 40 | 20-3-17 (0.54) |
+| Decent Chess Bot v7 | 34 | 11-1-22 (0.34) |
+| Knight Vision v36 | 34 | 10-2-22 (0.32) |
 | Team 319 v1 | 26 | 7-1-18 (0.29) |
 | Foggy Fischer v6 | 24 | 8-1-15 (0.35) |
 | HYPOTHERMIA v14 | 20 | 6-1-13 (0.33) |
+| Strongly Invisible v42 | 20 | 2-2-16 (0.15) |
 | Farsight v33 | 16 | 3-1-12 (0.22) |
 | Next v6 | 16 | 6-0-10 (0.38) |
 | Gravel Road v11 | 16 | 10-0-6 (0.62) |
-| Strongly Invisible v42 | 14 | 1-0-13 (0.07) |
+| Next v10 | 16 | 1-3-12 (0.16) |
+| HYPOTHERMIA v21 | 16 | 2-2-12 (0.19) |
 | Next v5 | 12 | 4-0-8 (0.33) |
-| Gravel Road v5 | 10 | 3-1-6 (0.35) |
-| Farsight v30 | 10 | 5-0-5 (0.50) |
 | Gravel Road v12 | 10 | 4-0-6 (0.40) |
 | Next v4 | 10 | 3-0-7 (0.30) |
 | Greek Gift v30 | 10 | 0-0-10 (0.00) |
 | Next v8 | 10 | 3-0-7 (0.30) |
-| Next v2 | 8 | 7-0-1 (0.88) |
-| HYPOTHERMIA v4 | 8 | 4-0-4 (0.50) |
 | Greek Gift v28 | 8 | 1-0-7 (0.12) |
-| HYPOTHERMIA v10 | 6 | 6-0-0 (1.00) |
-| Farsight v29 | 6 | 2-0-4 (0.33) |
-| In Pawn Sight v12 | 6 | 3-0-3 (0.50) |
-| duck v12 | 6 | 2-0-4 (0.33) |
-| Foggy Fischer v4 | 6 | 4-0-2 (0.67) |
+| sillygeese v4 | 8 | 3-2-3 (0.50) |
+| sillygeese v7 | 8 | 5-0-3 (0.62) |
+| Gravel Road v13 | 8 | 3-0-5 (0.38) |
 | Farsight v37 | 6 | 2-0-4 (0.33) |
 | Greek Gift v29 | 6 | 0-0-6 (0.00) |
-| Magnus Monte Carlsen v3 | 6 | 6-0-0 (1.00) |
 | HYPOTHERMIA v15 | 6 | 4-0-2 (0.67) |
+| Farsight v30 | 6 | 4-0-2 (0.67) |
+| Gravel Road v5 | 6 | 2-0-4 (0.33) |
 | HYPOTHERMIA v19 | 6 | 3-0-3 (0.50) |
 | Team 319 v2 | 6 | 2-1-3 (0.42) |
-| Gravel Road v13 | 6 | 3-0-3 (0.50) |
-| Crimson Fog v5 | 4 | 2-0-2 (0.50) |
+| Foggy Fischer v8 | 6 | 0-1-5 (0.08) |
 | Farsight v38 | 4 | 0-0-4 (0.00) |
-| HYPOTHERMIA v21 | 4 | 1-0-3 (0.25) |
-| Greek Gift v27 | 2 | 1-0-1 (0.50) |
+| Foggy Fischer v4 | 4 | 2-0-2 (0.50) |
+| duck v12 | 4 | 0-0-4 (0.00) |
 | Farsight v36 | 2 | 0-0-2 (0.00) |
+| sillygeese v2 | 2 | 1-1-0 (0.75) |
 | HYPOTHERMIA v17 | 2 | 1-0-1 (0.50) |
 | Farsight v31 | 2 | 0-0-2 (0.00) |
-| Magnus Monte Carlsen v2 | 2 | 2-0-0 (1.00) |
 | Next v3 | 2 | 1-0-1 (0.50) |
-| Next v10 | 2 | 0-1-1 (0.25) |
+| HYPOTHERMIA v4 | 2 | 1-0-1 (0.50) |
+| sillygeese v3 | 2 | 1-1-0 (0.75) |
+| sillygeese v6 | 2 | 1-1-0 (0.75) |
+| Gravel Road v15 | 2 | 0-0-2 (0.00) |
+| sillygeese v9 | 2 | 0-0-2 (0.00) |
+| sillygeese v8 | 2 | 1-0-1 (0.50) |
 
-## Move taxonomy, last 3 days (11454 games, all teams)
+## Move taxonomy, last 3 days (11541 games, all teams)
 
-Rates per 100 moves; in brackets the change since the previous report (2026-11-17T12:24).
+Rates per 100 moves; in brackets the change since the previous report (2026-11-18T11:56).
 
 | team | games | capture_unseen | victim_walked_in | fog_route | king_threat | king_threat_unseen | walk_into_unseen | queen_exposed_unseen | sacrifice | king_leaves_home | king_move | vision_gain |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| Greek Gift | 368 | 8.5 (-0.3) | 13.6 (-0.2) | 15.6 (-0.1) | 4.8 (+0.3) | 2.6 (+0.2) | 2.0 (+0.1) | 0.1 | 0.9 (+0.1) | 3.4 (-0.1) | 12.2 (-0.5) | 20.2 (+0.3) |
-| Farsight | 524 | 9.2 | 13.6 (+0.2) | 15.7 (-0.1) | 5.9 (-0.2) | 3.0 | 3.2 (-0.1) | 0.1 | 1.8 | 4.7 (-0.3) | 13.9 (-0.4) | 18.6 |
-| Strongly Invisible | 600 | 8.0 (-0.1) | 13.2 (+0.2) | 14.6 (-0.1) | 3.3 (-0.1) | 1.7 | 2.4 | 0.1 | 0.9 (-0.1) | 4.4 (-0.2) | 15.4 (+0.1) | 18.5 (+0.3) |
-| Knight Vision | 562 | 9.0 (+0.2) | 15.4 | 16.5 (+0.2) | 4.1 (+0.2) | 2.3 (+0.2) | 2.0 | 0.3 | 1.2 | 4.2 | 11.8 | 19.2 (+0.3) |
-| Next | 546 | 8.0 (-0.1) | 13.2 (-0.1) | 14.5 (-0.2) | 3.1 (-0.1) | 1.5 | 2.7 | 0.1 | 1.2 | 4.5 (+0.2) | 15.1 (+0.1) | 18.8 (-0.1) |
-| Decent Chess Bot | 579 | 8.9 (+0.1) | 14.7 | 15.8 (-0.1) | 3.9 (-0.2) | 2.0 (-0.1) | 2.6 (-0.2) | 0.1 | 1.4 (+0.1) | 3.4 | 12.8 (+0.3) | 19.5 (+0.1) |
-| duck | 644 | 9.2 (+0.1) | 13.8 (+0.2) | 15.6 (+0.2) | 3.7 (+0.1) | 1.8 | 2.4 (-0.1) | 0.1 | 1.4 | 4.2 (-0.1) | 13.8 (-0.5) | 19.1 (+0.2) |
-| HYPOTHERMIA | 574 | 8.3 (-0.2) | 13.1 (-0.4) | 15.0 (-0.2) | 3.2 | 1.4 (-0.1) | 2.5 (-0.1) | 0.1 | 1.3 | 3.5 | 13.9 (-0.1) | 19.4 (+0.1) |
-| Team 319 | 613 | 9.3 | 13.9 (-0.1) | 15.5 (-0.1) | 3.7 (+0.1) | 1.7 (+0.1) | 2.8 (+0.1) | 0.2 | 1.6 | 6.0 (+0.8) | 19.4 (+0.7) | 17.7 (-0.3) |
-| Crimson Fog | 556 | 10.3 (+0.1) | 13.6 (-0.2) | 16.7 (-0.1) | 4.3 | 2.1 | 2.8 (+0.1) | 0.2 | 1.9 (-0.2) | 4.3 (+0.1) | 12.9 (+0.2) | 20.3 (-0.2) |
-| Foggy Fischer | 613 | 8.5 (-0.1) | 13.6 (-0.4) | 15.2 (-0.3) | 3.3 (+0.1) | 1.6 | 2.1 (+0.1) | 0.2 | 1.2 (+0.1) | 3.8 | 14.3 (+0.1) | 20.1 (-0.2) |
-| In Pawn Sight | 564 | 9.0 (-0.1) | 13.7 (+0.2) | 15.5 | 4.4 (+0.2) | 1.8 (+0.1) | 3.0 (+0.1) | 0.2 | 1.7 | 5.0 (-0.1) | 15.4 (-0.1) | 18.7 |
-| Gravel Road | 598 | 8.7 (+0.2) | 13.4 (-0.1) | 15.4 (+0.1) | 3.4 (+0.1) | 1.6 | 2.5 | 0.2 | 1.3 | 3.8 (-0.3) | 14.4 | 18.9 (+0.2) |
-| Instructors | 563 | 9.1 (-0.2) | 13.1 (-0.1) | 15.3 (-0.2) | 3.8 | 1.8 | 2.8 | 0.2 (+0.1) | 2.0 | 3.9 | 14.4 (+0.4) | 20.0 |
-| Cranberry Lemon | 550 | 8.0 (-0.1) | 12.9 (+0.1) | 14.2 (-0.1) | 3.3 | 1.6 | 3.0 (+0.1) | 0.2 | 2.0 | 3.1 (+0.1) | 13.0 (-0.1) | 20.1 (-0.1) |
-| Magnus Monte Carlsen | 578 | 10.3 (-0.2) | 13.8 (-0.3) | 16.6 (-0.4) | 5.4 (+0.1) | 2.2 | 3.6 (+0.1) | 0.3 | 2.3 (+0.2) | 5.2 (-0.5) | 14.5 (+0.2) | 20.8 (-0.3) |
-| **IAmAVirus** | 572 | 8.7 | 12.7 (+0.1) | 15.0 | 3.9 (-0.1) | 2.1 (+0.1) | 2.8 | 0.1 | 2.2 (-0.1) | 3.3 | 14.0 (+0.1) | 20.8 (-0.2) |
-| TA Baseline S | 626 | 10.2 (-0.5) | 13.4 (-0.3) | 16.3 (-0.2) | 4.2 (-0.1) | 1.5 | 3.1 | 0.3 | 3.0 | 4.4 (+0.2) | 15.2 (+0.4) | 19.4 (-0.1) |
-| TA Baseline A | 611 | 9.5 (+0.2) | 17.9 (-0.1) | 16.7 (-0.1) | 3.2 (-0.1) | 1.1 | 3.3 (-0.1) | 0.4 | 3.0 (-0.1) | 1.6 (+0.4) | 10.7 (+0.2) | 18.8 |
-| TA Baseline P | 548 | 9.8 (+0.1) | 18.5 (+0.2) | 16.6 (-0.1) | 3.1 | 1.1 | 3.1 | 0.5 | 3.6 (+0.1) | 0.9 (-0.1) | 10.2 (-0.1) | 18.9 (+0.5) |
+| Greek Gift | 345 | 8.9 (+0.5) | 13.6 (+0.1) | 15.8 (+0.2) | 4.8 | 2.6 | 2.2 (+0.3) | 0.1 | 1.0 (+0.1) | 2.8 (-0.6) | 11.0 (-1.2) | 20.2 (-0.1) |
+| Knight Vision | 559 | 9.2 (+0.2) | 15.6 (+0.2) | 17.0 (+0.4) | 4.3 (+0.2) | 2.3 | 1.9 (-0.1) | 0.3 | 1.1 (-0.1) | 3.9 (-0.3) | 11.5 (-0.3) | 19.7 (+0.5) |
+| Farsight | 530 | 9.2 (+0.1) | 13.6 | 15.5 (-0.2) | 5.8 (-0.2) | 2.8 (-0.2) | 3.2 | 0.2 | 1.9 (+0.1) | 4.3 (-0.4) | 13.4 (-0.5) | 18.8 (+0.2) |
+| Next | 574 | 8.2 (+0.2) | 13.5 (+0.3) | 14.8 (+0.3) | 3.4 (+0.2) | 1.6 (+0.1) | 2.5 (-0.2) | 0.1 | 1.1 (-0.1) | 4.7 (+0.2) | 14.8 (-0.3) | 18.6 (-0.1) |
+| Team 319 | 554 | 9.3 | 13.9 | 15.6 (+0.1) | 3.7 | 1.7 | 2.7 (-0.1) | 0.1 | 1.3 (-0.3) | 6.4 (+0.4) | 19.4 (-0.1) | 17.3 (-0.3) |
+| Strongly Invisible | 548 | 8.0 | 13.1 (-0.1) | 14.4 (-0.2) | 3.4 | 1.7 | 2.4 | 0.1 | 0.9 | 4.7 (+0.3) | 15.5 | 18.5 |
+| HYPOTHERMIA | 587 | 8.2 | 13.2 (+0.1) | 15.0 | 3.4 (+0.1) | 1.5 (+0.1) | 2.4 | 0.1 | 1.3 (-0.1) | 3.6 (+0.1) | 13.5 (-0.5) | 19.5 (+0.1) |
+| duck | 628 | 9.5 (+0.3) | 13.8 (-0.1) | 15.6 | 3.8 (+0.1) | 1.9 (+0.1) | 2.5 | 0.1 | 1.4 (+0.1) | 4.1 (-0.1) | 13.3 (-0.5) | 19.2 (+0.1) |
+| Crimson Fog | 534 | 10.2 (-0.1) | 13.5 | 16.5 (-0.2) | 4.5 (+0.2) | 2.2 (+0.1) | 2.7 (-0.1) | 0.2 | 1.8 (-0.1) | 4.4 (+0.1) | 12.7 (-0.2) | 20.1 (-0.1) |
+| Decent Chess Bot | 561 | 8.6 (-0.3) | 14.6 (-0.1) | 15.8 (-0.1) | 3.8 (-0.1) | 1.9 (-0.1) | 2.8 (+0.2) | 0.1 | 1.4 | 3.6 (+0.2) | 12.9 (+0.1) | 19.6 |
+| Foggy Fischer | 592 | 8.1 (-0.4) | 13.4 (-0.2) | 14.8 (-0.4) | 3.3 | 1.5 (-0.1) | 2.4 (+0.2) | 0.2 | 1.2 (-0.1) | 4.0 (+0.2) | 15.0 (+0.7) | 19.6 (-0.5) |
+| Gravel Road | 578 | 9.0 (+0.3) | 13.6 (+0.2) | 15.7 (+0.3) | 3.6 (+0.2) | 1.7 | 2.5 | 0.2 | 1.3 | 3.8 | 14.5 (+0.1) | 19.1 (+0.2) |
+| sillygeese | 630 | 8.1 | 13.4 | 14.9 | 3.3 | 1.5 | 2.6 | 0.1 | 1.3 | 5.6 | 17.1 | 18.7 |
+| Cranberry Lemon | 566 | 7.9 (-0.1) | 12.8 (-0.1) | 14.2 | 3.5 (+0.2) | 1.6 | 3.0 | 0.2 | 1.9 (-0.1) | 2.9 (-0.3) | 12.8 (-0.2) | 19.9 (-0.2) |
+| In Pawn Sight | 550 | 9.1 | 13.9 (+0.2) | 15.6 (+0.2) | 4.3 (-0.1) | 1.8 | 3.0 (+0.1) | 0.2 | 1.7 (-0.1) | 4.9 (-0.1) | 14.9 (-0.5) | 18.4 (-0.3) |
+| Mist Opportunities | 628 | 8.3 | 12.4 | 14.4 | 4.1 | 2.0 | 3.5 | 0.1 | 1.8 | 4.3 | 14.7 | 18.3 |
+| **IAmAVirus** | 542 | 8.6 (-0.1) | 12.6 (-0.1) | 14.7 (-0.3) | 3.8 (-0.1) | 2.1 | 2.7 | 0.1 | 2.3 (+0.1) | 3.4 (+0.1) | 14.1 (+0.1) | 20.3 (-0.4) |
+| TA Baseline S | 644 | 10.2 | 13.4 | 16.3 (+0.1) | 4.1 (-0.1) | 1.5 | 3.1 (+0.1) | 0.3 | 3.1 (+0.1) | 4.2 (-0.2) | 15.1 | 19.7 (+0.3) |
+| TA Baseline A | 541 | 9.4 (-0.1) | 17.6 (-0.3) | 16.5 (-0.2) | 3.2 | 1.1 | 3.4 (+0.1) | 0.3 | 3.0 (-0.1) | 1.6 | 10.2 (-0.5) | 18.9 (+0.1) |
+| TA Baseline P | 498 | 9.5 (-0.3) | 18.3 (-0.2) | 16.5 (-0.1) | 2.9 (-0.1) | 1.0 (-0.1) | 3.4 (+0.3) | 0.5 | 3.5 (-0.1) | 0.9 | 10.8 (+0.5) | 19.3 (+0.4) |
 
 ### Played-version and colour breakdown
 
@@ -145,85 +149,107 @@ Rates per 100 moves. These describe behaviour, not optimal targets; opponent mix
 
 | team | version | side | games | moves | unseen king threat | walk into unseen | sacrifice | bare back rank |
 |---|---|---|---|---|---|---|---|---|
-| Cranberry Lemon | 9 | black | 275 | 12761 | 1.4 | 3.2 | 2.1 | 4.4 |
-| Cranberry Lemon | 9 | white | 275 | 14052 | 1.7 | 2.7 | 2.0 | 4.5 |
-| Crimson Fog | 4 | black | 278 | 11239 | 2.2 | 3.0 | 2.1 | 5.4 |
-| Crimson Fog | 4 | white | 278 | 11352 | 2.1 | 2.6 | 1.8 | 5.6 |
-| Decent Chess Bot | 7 | black | 289 | 13071 | 2.0 | 2.7 | 1.5 | 4.7 |
-| Decent Chess Bot | 7 | white | 290 | 13488 | 2.0 | 2.6 | 1.3 | 4.2 |
-| Farsight | 33 | black | 218 | 8931 | 3.0 | 3.4 | 1.9 | 4.8 |
-| Farsight | 33 | white | 218 | 8938 | 2.8 | 3.0 | 1.6 | 4.5 |
-| Farsight | 37 | black | 44 | 1800 | 3.4 | 3.8 | 2.5 | 5.7 |
-| Farsight | 37 | white | 44 | 2039 | 3.4 | 2.9 | 1.4 | 3.8 |
-| Foggy Fischer | 6 | black | 307 | 14450 | 1.5 | 2.3 | 1.3 | 4.0 |
-| Foggy Fischer | 6 | white | 306 | 15571 | 1.7 | 2.0 | 1.1 | 3.8 |
-| Gravel Road | 12 | black | 117 | 5721 | 1.4 | 2.4 | 1.6 | 4.7 |
-| Gravel Road | 12 | white | 117 | 5804 | 1.5 | 2.5 | 1.2 | 3.7 |
-| Gravel Road | 13 | black | 182 | 8563 | 1.5 | 2.7 | 1.3 | 6.1 |
-| Gravel Road | 13 | white | 182 | 8408 | 2.0 | 2.5 | 1.3 | 5.1 |
-| Greek Gift | 29 | black | 111 | 5571 | 2.4 | 2.1 | 0.9 | 4.0 |
-| Greek Gift | 29 | white | 111 | 4902 | 2.5 | 1.7 | 0.9 | 3.8 |
-| Greek Gift | 30 | black | 73 | 3477 | 2.6 | 2.2 | 0.8 | 3.3 |
-| Greek Gift | 30 | white | 73 | 3147 | 3.0 | 1.8 | 1.0 | 4.3 |
-| HYPOTHERMIA | 14 | black | 113 | 5652 | 1.2 | 2.6 | 1.3 | 5.0 |
-| HYPOTHERMIA | 14 | white | 113 | 5583 | 1.6 | 2.3 | 1.5 | 5.2 |
+| Cranberry Lemon | 9 | black | 283 | 13066 | 1.4 | 3.2 | 2.0 | 5.0 |
+| Cranberry Lemon | 9 | white | 283 | 14045 | 1.8 | 2.8 | 1.9 | 4.3 |
+| Crimson Fog | 4 | black | 267 | 10684 | 2.0 | 3.0 | 2.1 | 5.3 |
+| Crimson Fog | 4 | white | 267 | 11231 | 2.5 | 2.4 | 1.5 | 5.3 |
+| Decent Chess Bot | 7 | black | 281 | 12824 | 1.8 | 3.0 | 1.5 | 4.7 |
+| Decent Chess Bot | 7 | white | 280 | 12762 | 2.0 | 2.6 | 1.4 | 3.9 |
+| Farsight | 33 | black | 229 | 9349 | 3.0 | 3.3 | 1.9 | 4.8 |
+| Farsight | 33 | white | 229 | 9330 | 2.7 | 3.1 | 1.7 | 4.8 |
+| Farsight | 37 | black | 30 | 1155 | 2.4 | 4.4 | 2.2 | 5.6 |
+| Farsight | 37 | white | 30 | 1223 | 3.1 | 3.5 | 2.2 | 2.9 |
+| Farsight | 39 | black | 6 | 160 | 1.2 | 3.8 | 2.5 | 5.0 |
+| Farsight | 39 | white | 6 | 360 | 2.2 | 2.2 | 1.9 | 5.0 |
+| Foggy Fischer | 6 | black | 240 | 11580 | 1.6 | 2.5 | 1.3 | 4.1 |
+| Foggy Fischer | 6 | white | 240 | 12377 | 1.5 | 2.1 | 1.2 | 3.5 |
+| Foggy Fischer | 8 | black | 56 | 3277 | 1.2 | 2.5 | 0.8 | 3.1 |
+| Foggy Fischer | 8 | white | 56 | 2741 | 1.5 | 2.5 | 1.1 | 6.4 |
+| Gravel Road | 12 | black | 17 | 673 | 1.9 | 2.5 | 1.8 | 1.8 |
+| Gravel Road | 12 | white | 17 | 965 | 1.0 | 2.1 | 0.9 | 4.5 |
+| Gravel Road | 13 | black | 208 | 9759 | 1.5 | 2.6 | 1.3 | 5.8 |
+| Gravel Road | 13 | white | 208 | 9611 | 1.9 | 2.5 | 1.3 | 4.9 |
+| Gravel Road | 15 | black | 64 | 2802 | 2.0 | 3.2 | 1.7 | 5.0 |
+| Gravel Road | 15 | white | 64 | 3000 | 1.5 | 1.9 | 1.5 | 5.9 |
+| Greek Gift | 29 | black | 33 | 1767 | 2.7 | 2.0 | 1.3 | 3.2 |
+| Greek Gift | 29 | white | 32 | 1310 | 2.5 | 1.6 | 1.1 | 3.7 |
+| Greek Gift | 30 | black | 140 | 6828 | 2.4 | 2.5 | 0.8 | 4.2 |
+| Greek Gift | 30 | white | 140 | 5912 | 2.8 | 2.1 | 1.2 | 4.7 |
+| HYPOTHERMIA | 14 | black | 14 | 793 | 1.5 | 2.6 | 1.5 | 6.6 |
+| HYPOTHERMIA | 14 | white | 15 | 655 | 1.1 | 2.4 | 2.3 | 5.6 |
 | HYPOTHERMIA | 19 | black | 110 | 5947 | 1.3 | 3.0 | 1.3 | 4.6 |
 | HYPOTHERMIA | 19 | white | 110 | 5374 | 1.7 | 2.3 | 1.1 | 5.7 |
-| HYPOTHERMIA | 21 | black | 64 | 3269 | 1.3 | 2.1 | 1.4 | 3.9 |
-| HYPOTHERMIA | 21 | white | 64 | 2986 | 1.5 | 2.4 | 1.3 | 4.2 |
-| IAmAVirus | 38 | black | 286 | 13021 | 1.8 | 3.1 | 2.4 | 8.0 |
-| IAmAVirus | 38 | white | 286 | 12666 | 2.4 | 2.4 | 2.0 | 6.3 |
-| In Pawn Sight | 14 | black | 282 | 12528 | 1.6 | 2.8 | 1.7 | 3.9 |
-| In Pawn Sight | 14 | white | 282 | 12016 | 2.0 | 3.1 | 1.8 | 4.0 |
-| Instructors | 4 | black | 281 | 12605 | 1.6 | 2.9 | 2.1 | 5.8 |
-| Instructors | 4 | white | 282 | 12313 | 1.9 | 2.7 | 1.8 | 4.8 |
-| Knight Vision | 36 | black | 281 | 12251 | 2.0 | 2.2 | 1.2 | 3.8 |
-| Knight Vision | 36 | white | 281 | 12237 | 2.6 | 1.9 | 1.2 | 3.4 |
-| Magnus Monte Carlsen | 4 | black | 289 | 10987 | 1.9 | 3.5 | 2.5 | 5.4 |
-| Magnus Monte Carlsen | 4 | white | 289 | 10917 | 2.5 | 3.7 | 2.0 | 6.5 |
-| Next | 5 | black | 8 | 440 | 0.9 | 2.7 | 1.8 | 1.6 |
-| Next | 5 | white | 8 | 412 | 0.7 | 5.1 | 3.4 | 8.5 |
-| Next | 6 | black | 130 | 6591 | 1.5 | 2.9 | 1.4 | 3.9 |
-| Next | 6 | white | 130 | 6841 | 1.5 | 2.3 | 1.0 | 4.1 |
+| HYPOTHERMIA | 21 | black | 169 | 8513 | 1.4 | 2.2 | 1.4 | 4.1 |
+| HYPOTHERMIA | 21 | white | 169 | 7804 | 1.8 | 2.3 | 1.1 | 3.6 |
+| IAmAVirus | 38 | black | 271 | 12185 | 1.9 | 3.0 | 2.4 | 7.6 |
+| IAmAVirus | 38 | white | 271 | 12025 | 2.2 | 2.5 | 2.2 | 7.1 |
+| In Pawn Sight | 14 | black | 275 | 12296 | 1.6 | 2.9 | 1.5 | 3.9 |
+| In Pawn Sight | 14 | white | 275 | 11565 | 2.0 | 3.2 | 1.8 | 4.4 |
+| Instructors | 4 | black | 277 | 12444 | 1.6 | 3.0 | 2.2 | 5.4 |
+| Instructors | 4 | white | 277 | 12248 | 2.0 | 2.7 | 1.8 | 4.3 |
+| Knight Vision | 36 | black | 280 | 11777 | 2.0 | 2.0 | 1.1 | 3.0 |
+| Knight Vision | 36 | white | 279 | 11969 | 2.5 | 1.9 | 1.0 | 3.4 |
+| Mist Opportunities | 2 | black | 314 | 14573 | 2.3 | 4.2 | 2.0 | 4.1 |
+| Mist Opportunities | 2 | white | 314 | 15731 | 1.7 | 2.8 | 1.7 | 5.3 |
+| Next | 6 | black | 40 | 1953 | 1.2 | 2.5 | 1.6 | 3.9 |
+| Next | 6 | white | 40 | 2113 | 1.5 | 2.0 | 0.9 | 3.2 |
 | Next | 7 | black | 2 | 95 | 0.0 | 1.1 | 1.1 | 2.1 |
 | Next | 7 | white | 2 | 60 | 0.0 | 0.0 | 6.7 | 6.7 |
 | Next | 8 | black | 112 | 5801 | 1.6 | 3.1 | 1.1 | 3.9 |
 | Next | 8 | white | 112 | 5831 | 1.6 | 2.7 | 1.1 | 4.1 |
 | Next | 9 | black | 8 | 434 | 1.6 | 1.8 | 1.2 | 2.5 |
 | Next | 9 | white | 8 | 394 | 1.0 | 3.6 | 0.8 | 5.8 |
-| Next | 10 | black | 13 | 589 | 1.5 | 2.5 | 0.8 | 4.6 |
-| Next | 10 | white | 13 | 697 | 1.4 | 1.0 | 0.6 | 2.6 |
-| Strongly Invisible | 41 | black | 120 | 6157 | 1.5 | 2.4 | 1.0 | 3.6 |
-| Strongly Invisible | 41 | white | 120 | 6389 | 1.6 | 2.7 | 0.9 | 4.0 |
-| Strongly Invisible | 42 | black | 180 | 9755 | 1.6 | 2.7 | 0.8 | 2.5 |
-| Strongly Invisible | 42 | white | 180 | 9064 | 1.9 | 2.0 | 0.8 | 4.0 |
-| TA Baseline A | 5 | black | 306 | 9385 | 1.2 | 3.7 | 3.4 | 4.0 |
-| TA Baseline A | 5 | white | 305 | 10843 | 1.0 | 2.9 | 2.7 | 4.4 |
-| TA Baseline P | 5 | black | 274 | 8086 | 1.3 | 3.4 | 3.9 | 4.0 |
-| TA Baseline P | 5 | white | 274 | 9179 | 0.9 | 2.7 | 3.3 | 4.1 |
-| TA Baseline S | 3 | black | 313 | 11917 | 1.2 | 3.0 | 3.2 | 7.0 |
-| TA Baseline S | 3 | white | 313 | 12263 | 1.8 | 3.2 | 2.7 | 7.3 |
-| Team 319 | 1 | black | 158 | 7209 | 1.5 | 2.8 | 1.9 | 5.2 |
-| Team 319 | 1 | white | 158 | 7178 | 1.8 | 2.9 | 1.6 | 5.2 |
-| Team 319 | 2 | black | 149 | 7457 | 1.5 | 2.6 | 1.4 | 4.7 |
-| Team 319 | 2 | white | 148 | 6718 | 2.1 | 3.0 | 1.4 | 5.0 |
-| duck | 11 | black | 322 | 15147 | 1.6 | 2.8 | 1.5 | 5.2 |
-| duck | 11 | white | 322 | 14472 | 2.1 | 2.0 | 1.2 | 4.6 |
+| Next | 10 | black | 125 | 6331 | 1.4 | 2.4 | 1.0 | 4.4 |
+| Next | 10 | white | 125 | 6238 | 2.0 | 2.1 | 1.0 | 4.0 |
+| Strongly Invisible | 41 | black | 13 | 886 | 1.7 | 2.0 | 0.9 | 2.4 |
+| Strongly Invisible | 41 | white | 13 | 706 | 1.6 | 2.5 | 1.4 | 4.8 |
+| Strongly Invisible | 42 | black | 261 | 14064 | 1.6 | 2.6 | 0.8 | 3.1 |
+| Strongly Invisible | 42 | white | 261 | 13379 | 1.8 | 2.2 | 0.9 | 3.9 |
+| TA Baseline A | 5 | black | 271 | 8596 | 1.3 | 3.8 | 3.4 | 4.0 |
+| TA Baseline A | 5 | white | 270 | 9667 | 1.0 | 3.0 | 2.6 | 3.5 |
+| TA Baseline P | 5 | black | 249 | 7409 | 1.1 | 3.7 | 3.8 | 4.8 |
+| TA Baseline P | 5 | white | 249 | 8421 | 1.0 | 3.1 | 3.2 | 5.0 |
+| TA Baseline S | 3 | black | 322 | 11969 | 1.2 | 3.0 | 3.2 | 6.7 |
+| TA Baseline S | 3 | white | 322 | 12444 | 1.7 | 3.2 | 2.9 | 7.5 |
+| Team 319 | 1 | black | 46 | 2016 | 1.5 | 2.3 | 1.6 | 5.1 |
+| Team 319 | 1 | white | 46 | 1939 | 1.8 | 3.3 | 1.2 | 4.7 |
+| Team 319 | 2 | black | 191 | 9397 | 1.5 | 2.7 | 1.3 | 4.7 |
+| Team 319 | 2 | white | 191 | 8696 | 2.0 | 2.9 | 1.3 | 5.0 |
+| Team 319 | 3 | black | 40 | 2088 | 2.0 | 2.1 | 0.9 | 4.3 |
+| Team 319 | 3 | white | 40 | 1772 | 1.6 | 2.4 | 1.3 | 4.3 |
+| duck | 11 | black | 314 | 14515 | 1.8 | 2.8 | 1.6 | 5.0 |
+| duck | 11 | white | 314 | 14255 | 2.0 | 2.1 | 1.3 | 4.9 |
+| sillygeese | 3 | black | 21 | 865 | 1.3 | 2.2 | 1.3 | 1.7 |
+| sillygeese | 3 | white | 21 | 898 | 1.1 | 1.9 | 1.9 | 4.1 |
+| sillygeese | 4 | black | 123 | 6256 | 1.3 | 2.7 | 1.3 | 5.6 |
+| sillygeese | 4 | white | 123 | 5620 | 1.7 | 2.4 | 1.1 | 3.6 |
+| sillygeese | 5 | black | 11 | 440 | 1.6 | 3.0 | 0.9 | 7.3 |
+| sillygeese | 5 | white | 11 | 504 | 0.8 | 1.6 | 1.6 | 0.6 |
+| sillygeese | 6 | black | 35 | 1725 | 1.2 | 3.3 | 1.5 | 3.7 |
+| sillygeese | 6 | white | 35 | 1462 | 1.8 | 3.0 | 1.2 | 7.4 |
+| sillygeese | 7 | black | 45 | 2348 | 1.1 | 3.3 | 1.3 | 4.5 |
+| sillygeese | 7 | white | 45 | 2213 | 1.0 | 1.8 | 1.4 | 3.3 |
+| sillygeese | 8 | black | 31 | 1676 | 1.0 | 2.6 | 1.4 | 3.5 |
+| sillygeese | 8 | white | 31 | 1391 | 1.7 | 2.2 | 0.7 | 5.1 |
+| sillygeese | 9 | black | 43 | 2023 | 1.9 | 3.0 | 1.1 | 3.2 |
+| sillygeese | 9 | white | 43 | 1972 | 2.1 | 2.3 | 1.4 | 5.0 |
+| sillygeese | 10 | black | 6 | 274 | 2.6 | 3.6 | 1.1 | 1.1 |
+| sillygeese | 10 | white | 6 | 277 | 0.7 | 2.5 | 0.7 | 7.2 |
 
-## Us against the teams above us, last 3 days (328 games)
+## Us against the teams above us, last 3 days (308 games)
 
 | tag | us | them |
 |---|---|---|
-| capture_unseen | 8.7 | 9.4 |
-| victim_walked_in | 12.3 | 14.5 |
-| fog_route | 15.0 | 16.3 |
-| king_threat | 3.2 | 4.0 |
-| king_threat_unseen | 1.6 | 1.9 |
-| walk_into_unseen | 3.0 | 2.9 |
+| capture_unseen | 7.9 | 8.8 |
+| victim_walked_in | 11.6 | 13.7 |
+| fog_route | 13.8 | 15.3 |
+| king_threat | 3.2 | 3.9 |
+| king_threat_unseen | 1.5 | 1.8 |
+| walk_into_unseen | 2.9 | 2.9 |
 | queen_exposed_unseen | 0.2 | 0.2 |
-| sacrifice | 2.7 | 1.5 |
-| king_leaves_home | 4.0 | 4.1 |
-| king_move | 14.9 | 14.7 |
-| vision_gain | 20.7 | 19.5 |
+| sacrifice | 2.6 | 1.3 |
+| king_leaves_home | 3.6 | 3.7 |
+| king_move | 15.7 | 14.0 |
+| vision_gain | 19.7 | 19.2 |
 
-Our 207 losses to them ended: King capturable 207.
+Our 197 losses to them ended: King capturable 197.

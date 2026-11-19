@@ -1,126 +1,128 @@
-# Arena insights, 2026-11-18 12:04 UTC
+# Arena insights, 2026-11-19 12:00 UTC
 
-Our active version: v38. Window: 7 days (16639 games of all teams).
+Our active version: v38. Window: 7 days (18183 games of all teams).
 
-Current leaders at the latest snapshot (2026-11-18 10:13 UTC): Greek Gift, Farsight, Strongly Invisible, Knight Vision, Next, Decent Chess Bot. Sections 3 and 4 use the fixed 13 October top six (Greek Gift, Knight Vision, Strongly Invisible, Decent Chess Bot, duck, Instructors), kept fixed for comparison over time; not in today's top six: duck, Instructors; in today's but not the cohort: Farsight, Next.
+Current leaders at the latest snapshot (2026-11-19 10:08 UTC): Greek Gift, Knight Vision, Farsight, Next, Team 319, Strongly Invisible. Sections 3 and 4 use the fixed 13 October top six (Greek Gift, Knight Vision, Strongly Invisible, Decent Chess Bot, duck, Instructors), kept fixed for comparison over time; not in today's top six: Decent Chess Bot, duck, Instructors; in today's but not the cohort: Farsight, Next, Team 319.
 
 ## 1. Opponents' versions in the window, and our score against each
 
 | opponent | versions seen (games) | our score by version |
 |---|---|---|
-| Mist Opportunities | v2 (960) | v2: 42/60 |
-| Resting Bishop Faces **changed** | v8 (876), v9 (36), v10 (14) | v8: 31/48 |
-| Ex Republics | v32 (908) | v32: 20/36 |
-| duck **changed** | v11 (803), v12 (102) | v11: 17/60, v12: 2/6 |
-| TA Baseline S | v3 (894) | v3: 34/40 |
-| Foggy Fischer **changed** | v4 (164), v6 (723) | v4: 4/6, v6: 8/24 |
-| TUM | v9 (885) | v9: 34/48 |
-| HYPOTHERMIA **changed** | v4 (147), v10 (6), v11 (2), v14 (330), v15 (6), v17 (2), v18 (32), v19 (220), v21 (128) | v4: 4/8, v10: 6/6, v14: 6/20, v15: 4/6, v17: 1/2, v19: 3/6, v21: 1/4 |
-| Lost Signal **changed** | v26 (372), v29 (37), v30 (82), v31 (183), v32 (140), v33 (36), v34 (14) | v26: 23/30, v29: 0/2, v30: 3/4, v31: 2/2, v32: 1/2 |
-| Gravel Road **changed** | v5 (128), v11 (68), v12 (302), v13 (364) | v5: 4/10, v11: 10/16, v12: 4/10, v13: 3/6 |
-| Next **changed** | v2 (29), v3 (116), v4 (10), v5 (176), v6 (260), v7 (4), v8 (224), v9 (16), v10 (26) | v2: 7/8, v3: 1/2, v4: 3/10, v5: 4/12, v6: 6/16, v8: 3/10, v10: 0/2 |
-| TA Baseline A | v5 (856) | v5: 34/36 |
-| Magnus Monte Carlsen **changed** | v2 (125), v3 (6), v4 (724) | v2: 2/2, v3: 6/6, v4: 19/28 |
-| Strongly Invisible **changed** | v41 (494), v42 (360) | v41: 14/48, v42: 1/14 |
-| Unicorns | v4 (854) | v4: 24/30 |
-| Instructors | v4 (849) | v4: 26/54 |
-| Cranberry Lemon | v9 (846) | v9: 30/52 |
-| Decent Chess Bot | v7 (845) | v7: 12/36 |
-| Fogitos | v4 (843) | v4: 22/28 |
-| Mu1tip13 @g3nt$ | v6 (836) | v6: 20/24 |
-| In Pawn Sight **changed** | v12 (6), v14 (820) | v12: 3/6, v14: 20/54 |
-| Crimson Fog **changed** | v4 (773), v5 (40) | v4: 20/48, v5: 2/4 |
-| RATIRL | v2 (811) | v2: 30/38 |
-| Trojan Horse **changed** | v5 (54), v8 (751) | v5: 2/2, v8: 14/20 |
-| TA Baseline P | v5 (805) | v5: 16/16 |
-| Team 319 **changed** | v1 (508), v2 (297) | v1: 8/26, v2: 2/6 |
-| Beyond Visibility **changed** | v18 (128), v19 (2), v21 (458), v22 (26), v23 (54), v24 (60), v25 (60) | v18: 2/2, v19: 1/2, v21: 6/6, v22: 4/4, v23: 2/2 |
-| ADARSH **changed** | v2 (20), v3 (100), v5 (658) | v3: 4/4, v5: 4/4 |
-| Knight Vision | v36 (767) | v36: 15/40 |
-| Farsight **changed** | v29 (71), v30 (54), v31 (2), v33 (450), v36 (32), v37 (126), v38 (24) | v29: 2/6, v30: 5/10, v31: 0/2, v33: 4/16, v36: 0/2, v37: 2/6, v38: 0/4 |
-| Apricot Squad | v9 (732) | v9: 2/2 |
-| baseline.py | v1 (722) | v1: 4/4 |
-| Sausage | v1 (710) | v1: 15/16 |
-| smusebots **changed** | v5 (60), v6 (52), v7 (596) | v6: 2/2, v7: 10/10 |
-| sillygeese **changed** | v2 (258), v3 (76), v4 (246), v5 (22), v6 (70), v7 (34) | v2: 2/2, v3: 2/2, v4: 4/8, v6: 2/2, v7: 1/4 |
-| Czechmate | v3 (695) | v3: 4/4 |
-| Fogbreakers **changed** | v1 (168), v2 (60), v3 (154), v4 (92), v5 (106), v6 (2), v7 (12), v8 (24), v9 (22) | v1: 6/6, v4: 4/4, v5: 2/2, v9: 2/2 |
-| Greek Gift **changed** | v27 (72), v28 (8), v29 (305), v30 (146) | v27: 1/2, v28: 1/8, v29: 0/6, v30: 0/10 |
-| Bit Gambit | v10 (512) | v10: 2/2 |
-| Cross-Registered Players | v2 (364) | v2: 1/2 |
-| Tiger | v2 (130) |  |
-| Prickly Bush | v1 (98) |  |
+| Mist Opportunities | v2 (1006) | v2: 42/60 |
+| Ex Republics | v32 (986) | v32: 8/22 |
+| TUM | v9 (979) | v9: 34/48 |
+| Resting Bishop Faces **changed** | v8 (928), v9 (36), v10 (14) | v8: 20/28 |
+| duck **changed** | v11 (960), v12 (4) | v11: 18/62, v12: 0/4 |
+| TA Baseline S | v3 (957) | v3: 30/36 |
+| Lost Signal **changed** | v26 (238), v29 (37), v30 (82), v31 (396), v32 (140), v33 (36), v34 (14) | v26: 17/24, v29: 0/2, v30: 3/4, v31: 4/4, v32: 1/2 |
+| Next **changed** | v3 (2), v4 (10), v5 (176), v6 (260), v7 (4), v8 (224), v9 (16), v10 (250) | v3: 1/2, v4: 3/10, v5: 4/12, v6: 6/16, v8: 3/10, v10: 2/16 |
+| Unicorns | v4 (934) | v4: 26/34 |
+| HYPOTHERMIA **changed** | v4 (2), v14 (330), v15 (6), v17 (2), v18 (32), v19 (220), v21 (338) | v4: 1/2, v14: 6/20, v15: 4/6, v17: 1/2, v19: 3/6, v21: 3/16 |
+| Foggy Fischer **changed** | v4 (4), v6 (808), v8 (112) | v4: 2/4, v6: 8/24, v8: 0/6 |
+| Team 319 **changed** | v1 (460), v2 (382), v3 (80) | v1: 8/26, v2: 2/6 |
+| sillygeese **changed** | v2 (258), v3 (76), v4 (246), v5 (22), v6 (70), v7 (90), v8 (62), v9 (86), v10 (12) | v2: 2/2, v3: 2/2, v4: 4/8, v6: 2/2, v7: 5/8, v8: 1/2, v9: 0/2 |
+| Gravel Road **changed** | v5 (6), v11 (68), v12 (302), v13 (416), v15 (128) | v5: 2/6, v11: 10/16, v12: 4/10, v13: 3/8, v15: 0/2 |
+| Magnus Monte Carlsen **changed** | v2 (2), v3 (6), v4 (912) | v2: 2/2, v3: 6/6, v4: 19/28 |
+| Instructors | v4 (918) | v4: 26/52 |
+| TA Baseline A | v5 (902) | v5: 30/32 |
+| RATIRL | v2 (901) | v2: 27/36 |
+| Fogitos **changed** | v4 (842), v5 (57) | v4: 18/24, v5: 4/8 |
+| Strongly Invisible **changed** | v41 (376), v42 (522) | v41: 10/40, v42: 3/20 |
+| In Pawn Sight | v14 (894) | v14: 22/52 |
+| Mu1tip13 @g3nt$ | v6 (890) | v6: 20/24 |
+| Decent Chess Bot | v7 (889) | v7: 12/34 |
+| Cranberry Lemon | v9 (882) | v9: 22/40 |
+| Trojan Horse | v8 (881) | v8: 14/22 |
+| Crimson Fog | v4 (859) | v4: 22/52 |
+| Beyond Visibility **changed** | v19 (2), v21 (648), v22 (26), v23 (54), v24 (60), v25 (60) | v19: 1/2, v21: 10/10, v22: 4/4, v23: 2/2 |
+| Fogbreakers **changed** | v1 (168), v2 (60), v3 (154), v4 (92), v5 (106), v6 (2), v7 (12), v8 (24), v9 (60), v10 (94), v11 (4), v12 (74) | v1: 6/6, v4: 4/4, v5: 2/2, v9: 4/4 |
+| TA Baseline P | v5 (841) | v5: 20/20 |
+| Knight Vision | v36 (826) | v36: 11/34 |
+| ADARSH **changed** | v3 (4), v5 (820) | v3: 4/4, v5: 4/4 |
+| Farsight **changed** | v30 (6), v31 (2), v33 (580), v36 (32), v37 (158), v38 (24), v39 (12) | v30: 4/6, v31: 0/2, v33: 4/16, v36: 0/2, v37: 2/6, v38: 0/4 |
+| smusebots | v7 (810) | v7: 16/16 |
+| Apricot Squad | v9 (790) | v9: 4/4 |
+| baseline.py | v1 (766) | v1: 2/2 |
+| Sausage | v1 (756) | v1: 13/14 |
+| Czechmate | v3 (734) | v3: 6/6 |
+| Greek Gift **changed** | v28 (8), v29 (305), v30 (280) | v28: 1/8, v29: 0/6, v30: 0/10 |
+| Bit Gambit | v10 (548) |  |
+| Cross-Registered Players | v2 (546) | v2: 2/6 |
+| Tiger **changed** | v2 (170), v3 (26), v4 (86) | v2: 2/2, v4: 2/2 |
+| Prickly Bush **changed** | v1 (144), v2 (88) | v2: 2/2 |
 
 ## 2. Rating point flow per opponent, v38 (Elo, K = 8; an approximation)
 
-Each game is scored against both players' ratings in the latest leaderboard snapshot before it (1302 games; snapshot age median 15.6 h, max 44.1 h; 8 games skipped with no earlier snapshot). Until 26 October this table used the latest snapshot for every game, so earlier totals are not historical flows. Cohort: hist = the fixed 13 October top six, now = today's top six.
+Each game is scored against both players' ratings in the latest leaderboard snapshot before it (1256 games; snapshot age median 17.4 h, max 44.1 h; 8 games skipped with no earlier snapshot). Until 26 October this table used the latest snapshot for every game, so earlier totals are not historical flows. Cohort: hist = the fixed 13 October top six, now = today's top six.
 
 | opponent | games | score | Elo expects | net points | cohort |
 |---|---|---|---|---|---|
-| Next | 60 | 0.41 | 0.55 | -68 | now |
-| Team 319 | 32 | 0.31 | 0.54 | -58 |  |
-| duck | 66 | 0.29 | 0.39 | -52 | hist |
-| In Pawn Sight | 60 | 0.38 | 0.46 | -42 |  |
-| Gravel Road | 42 | 0.49 | 0.61 | -40 |  |
-| Foggy Fischer | 30 | 0.42 | 0.57 | -37 |  |
-| Trojan Horse | 22 | 0.70 | 0.91 | -35 |  |
-| Strongly Invisible | 62 | 0.24 | 0.31 | -33 | hist, now |
-| Ex Republics | 36 | 0.54 | 0.65 | -32 |  |
-| HYPOTHERMIA | 52 | 0.49 | 0.56 | -28 |  |
-| Resting Bishop Faces | 48 | 0.65 | 0.72 | -27 |  |
-| Instructors | 54 | 0.49 | 0.54 | -20 | hist |
-| sillygeese | 18 | 0.53 | 0.59 | -9 |  |
-| Fogitos | 28 | 0.77 | 0.80 | -6 |  |
-| TUM | 48 | 0.70 | 0.71 | -6 |  |
-| Unicorns | 30 | 0.78 | 0.81 | -6 |  |
-| Beyond Visibility | 16 | 0.94 | 0.97 | -4 |  |
-| Greek Gift | 26 | 0.08 | 0.09 | -4 | hist, now |
-| Farsight | 46 | 0.27 | 0.28 | -2 | now |
-| Sausage | 16 | 0.94 | 0.95 | -2 |  |
-| Decent Chess Bot | 36 | 0.33 | 0.34 | -1 | hist, now |
-| TA Baseline S | 40 | 0.85 | 0.85 | -1 |  |
-| Bit Gambit | 2 | 1.00 | 1.00 | +0 |  |
-| Apricot Squad | 2 | 1.00 | 0.99 | +0 |  |
-| Czechmate | 4 | 1.00 | 0.99 | +0 |  |
-| baseline.py | 4 | 1.00 | 0.99 | +0 |  |
+| Next | 66 | 0.30 | 0.49 | -102 | now |
+| duck | 66 | 0.27 | 0.38 | -62 | hist |
+| HYPOTHERMIA | 52 | 0.36 | 0.50 | -61 |  |
+| Team 319 | 32 | 0.31 | 0.54 | -58 | now |
+| Foggy Fischer | 34 | 0.32 | 0.52 | -54 |  |
+| Gravel Road | 42 | 0.45 | 0.59 | -46 |  |
+| Ex Republics | 22 | 0.39 | 0.63 | -43 |  |
+| Strongly Invisible | 60 | 0.21 | 0.30 | -42 | hist, now |
+| Trojan Horse | 22 | 0.66 | 0.89 | -41 |  |
+| Fogitos | 32 | 0.70 | 0.78 | -20 |  |
+| In Pawn Sight | 52 | 0.42 | 0.45 | -11 |  |
+| Greek Gift | 24 | 0.04 | 0.09 | -10 | hist, now |
+| Instructors | 52 | 0.50 | 0.52 | -9 | hist |
+| Unicorns | 34 | 0.76 | 0.79 | -7 |  |
+| Cross-Registered Players | 4 | 0.38 | 0.59 | -7 |  |
+| Lost Signal | 36 | 0.69 | 0.71 | -5 |  |
+| sillygeese | 26 | 0.56 | 0.58 | -5 |  |
+| TA Baseline S | 36 | 0.83 | 0.84 | -3 |  |
+| Beyond Visibility | 18 | 0.94 | 0.96 | -2 |  |
+| Sausage | 14 | 0.93 | 0.95 | -2 |  |
+| Farsight | 36 | 0.26 | 0.27 | -1 | now |
+| TUM | 48 | 0.70 | 0.70 | -0 |  |
+| baseline.py | 2 | 1.00 | 0.99 | +0 |  |
+| Czechmate | 6 | 1.00 | 0.99 | +0 |  |
+| Apricot Squad | 4 | 1.00 | 0.99 | +0 |  |
+| Tiger | 4 | 1.00 | 0.97 | +1 |  |
 | ADARSH | 8 | 1.00 | 0.98 | +1 |  |
-| smusebots | 12 | 1.00 | 0.97 | +2 |  |
-| TA Baseline A | 36 | 0.93 | 0.92 | +3 |  |
-| Fogbreakers | 8 | 1.00 | 0.95 | +3 |  |
+| Cranberry Lemon | 40 | 0.54 | 0.53 | +2 |  |
+| Prickly Bush | 2 | 1.00 | 0.86 | +2 |  |
+| Resting Bishop Faces | 28 | 0.71 | 0.70 | +3 |  |
+| Knight Vision | 34 | 0.32 | 0.31 | +3 | hist, now |
+| smusebots | 16 | 1.00 | 0.97 | +4 |  |
+| Fogbreakers | 10 | 1.00 | 0.95 | +4 |  |
+| Decent Chess Bot | 34 | 0.34 | 0.32 | +4 | hist |
 | Mu1tip13 @g3nt$ | 24 | 0.85 | 0.82 | +6 |  |
-| Lost Signal | 40 | 0.72 | 0.71 | +6 |  |
-| TA Baseline P | 16 | 1.00 | 0.95 | +7 |  |
-| Crimson Fog | 52 | 0.42 | 0.40 | +11 |  |
+| TA Baseline A | 32 | 0.95 | 0.92 | +9 |  |
+| TA Baseline P | 20 | 1.00 | 0.94 | +9 |  |
+| RATIRL | 36 | 0.75 | 0.71 | +12 |  |
 | Magnus Monte Carlsen | 36 | 0.75 | 0.71 | +12 |  |
-| Knight Vision | 40 | 0.38 | 0.33 | +16 | hist, now |
-| Cranberry Lemon | 52 | 0.59 | 0.54 | +18 |  |
-| RATIRL | 38 | 0.79 | 0.72 | +23 |  |
-| Mist Opportunities | 60 | 0.71 | 0.59 | +59 |  |
-| **total** | 1302 | | | -345 | |
+| Crimson Fog | 52 | 0.42 | 0.39 | +14 |  |
+| Mist Opportunities | 60 | 0.71 | 0.58 | +63 |  |
+| **total** | 1256 | | | -444 | |
 
-## 3. First queen event against the fixed 13 October top six, v38, last 3 days (130 games)
+## 3. First queen event against the fixed 13 October top six, v38, last 3 days (104 games)
 
 | event | games | share | our score |
 |---|---|---|---|
-| trade, they took first | 35 | 27% | 0.23 |
-| trade, we took first | 33 | 25% | 0.23 |
-| we lose the queen | 25 | 19% | 0.00 |
-| they lose the queen | 21 | 16% | 0.86 |
-| no queen event | 16 | 12% | 0.19 |
+| trade, we took first | 31 | 30% | 0.23 |
+| trade, they took first | 26 | 25% | 0.29 |
+| we lose the queen | 20 | 19% | 0.00 |
+| they lose the queen | 14 | 13% | 0.79 |
+| no queen event | 13 | 12% | 0.15 |
 
 ## 4. King moves per 100 moves by phase, last 3 days, in our games against the fixed 13 October top six (both sides from the same games)
 
 | side | opening | middle | late |
 |---|---|---|---|
-| IAmAVirus | 5.5 | 10.9 | 29.9 |
-| the fixed top six | 6.2 | 8.8 | 23.6 |
+| IAmAVirus | 5.6 | 11.9 | 28.5 |
+| the fixed top six | 6.2 | 8.7 | 23.8 |
 
 ## 5. Our king captured within four plies of our move, by fog lines from the king (last 3 days)
 
 | phase | 0 lines | 1 | 2 | 3+ |
 |---|---|---|---|---|
-| middle | 0.5% of 10740 | 2.0% of 4729 | 10.4% of 871 | 28.2% of 574 |
-| late | 0.8% of 1355 | 1.7% of 2416 | 4.6% of 1937 | 7.0% of 3065 |
+| middle | 0.5% of 10174 | 1.9% of 4526 | 11.0% of 793 | 32.2% of 540 |
+| late | 0.6% of 1325 | 2.2% of 2139 | 4.5% of 1714 | 7.1% of 2999 |
 
 ## 6. Our losses in 20 plies or fewer, last 3 days
 
