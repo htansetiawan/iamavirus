@@ -1,5 +1,12 @@
 # The month plan: 16 October to 15 November 2026
 
+**Historical proposal, not the current execution queue.** Its intended
+contributions and gates are retained below as written. They are not claims
+that the planned methods were all deployed or successful. The
+[November 11 review](learning-review-20261111.html) and
+[experiment evidence](presentation-experiments.html) supersede its priorities;
+the current phase is presentation review, without a new learner/candidate run.
+
 *Written at v35, eighth at 1912, 20 rating points behind sixth. The goal is a bot that beats the top six on method, not on patches, and a contribution worth writing up. Every item below names its evidence, its measurement and its contribution. Order matters: the first two weeks fix the evaluation the search trusts, the second two change how the search spends its budget.*
 
 [TOC]

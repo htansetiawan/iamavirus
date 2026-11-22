@@ -2,7 +2,7 @@
 
 *Evidence map for the [December 3 review](presentation-20261203.html),
 updated November 11 UTC. This is a curated map of the main experimental
-families, not a claim that 361 chatroom notes represent 361 independent tests.*
+families; numbered chatroom notes are not a count of independent tests.*
 
 [TOC]
 
@@ -40,12 +40,13 @@ tested configuration; it does not prove that an entire research area cannot work
 | Question and attempt | Observed outcome | What we learned |
 | --- | --- | --- |
 | Refit the same 28-feature model on much more data, v37/v38 prior | 148,357 recorded training games; full-model held-out gain +0.0077 nats over v35. Suite net +1 of 399; historical duel 56W–2D–42L, with interruption/replay qualifications | Saved fit outputs match deployed weights, but no decisive strength improvement follows from this small predictive gain. [Original report](https://github.com/htansetiawan/iamavirus/blob/main/fable-submissions/analysis/refit-all-20261101/result.md), [lineage audit](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/presentation-audit-20261111/fit-lineage.json) |
-| Faster frontier scoring, deployed v38 | About 1.6× scoring throughput and 38% more equal-time nodes; 11W–1D–4L vs v37; Misty gate failed; human-authorized arena trial retained | A measured engineering contribution. Neither node gain nor retention alone identifies causal arena Elo gain. [Release](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md) |
+| Faster frontier scoring, deployed v38 | About 1.6× scoring throughput and 38% more equal-time nodes; 11W–1D–4L vs v37; Misty gate failed; human-authorized arena trial retained. At 620 arena games: 339W–27D–254L; later 493 games approximately at v37's opponent-adjusted level | A measured engineering contribution; the arena follow-up does not establish a lasting strength gain. [Release](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-release.md), [620-game follow-up](https://github.com/htansetiawan/iamavirus/blob/main/fable-submissions/analysis/v38-arena-20261108/result.md) |
 | Cheaper exact CFR workspace/cached strategies/selective updates | 253/254 improve solver cost but old whole-search node gate fails | Local speed and whole-move speed differ. [254](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/254-astra-exact-selective-cfr.md) |
 | Last-only solver specialization on v38 | Correctness and +10.6% equal-time nodes pass; full-clock comparison ends 9W–7L below 10/16 screen | A correct speed improvement can miss its playing criterion. [335](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/335-astra-fresh-last-only-playing-pilot.md) |
 | Exact attack/visibility and deferred-prior speed | Whole-updater cost improves; full-clock combined build closes at 4W–7L by futility | Kernel speed is not a demonstrated strength result. [351](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/351-astra-deferred-prior-full-clock-pilot.md) |
 | Cap estimators, finite-state resampling and dual measures | Multiple fixed variants fail support/collapse or truth-log criteria | Retention selection changes the represented distribution; corrections need sequential checks. [Register](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/RESEARCH_REGISTER.md) |
 | Opponent style/history mixtures | Stationary three-expert adaptation improves conditional prediction only 0.0016 nats vs 0.05 target | This latent-style configuration lacked useful headroom. [206](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/206-astra-stationary-style-mixture.md) |
+| Preserve full weighted histories per physical board | 24-prefix diagnostic: +0.01052 truth-log nats, descriptive interval spans zero, 12.2% more matched filter CPU. Additional histories only split equivalent search roots | Implemented already; neither reliable posterior benefit nor useful search coupling established. [250](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/250-astra-full-history-mixture.md), [251](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/251-astra-history-partition-prerequisite.md) |
 | Predict a limited-information opponent response | Projected response-policy pilot loses 2–6 | Restricting features alone did not repair the search information model. [211](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/211-astra-observable-response-projection.md) |
 | Train the posterior directly | 231/232 improve log scores below their minimum-effect criteria | Choosing a theoretically appropriate target does not guarantee sufficient effect. [231](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/231-astra-posterior-vs-move-fit.md) |
 | Root fatal-cell correction, full risk census and tactical strata | Specific support/coverage defects repaired, but selected fatal choices persist | Finding the danger is not the same as valuing the alternatives correctly. [285](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/285-astra-native-tactical-strata.md) |
@@ -123,6 +124,46 @@ material deficits; two final positions had no true safe reply. A story
 focused only on the last king move would omit much of the failure.
 [Independent game audit](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/analysis/compact-mass-playing-20261111/independent-audit.json)
 · [Same-history diagnosis](https://github.com/htansetiawan/iamavirus/blob/main/chatroom/360-astra-candidate-own-path-prior-diagnosis.md).
+
+## Case study: diagnosing losses requires winning controls
+
+The reviewed 6,000-game field snapshot contains **345 v38 games**: 184 wins,
+17 draws and 144 losses. This is one dated arena window, not the complete
+v38 record or a comparison against another version. All outcomes were
+included in the material review, using piece values 1/3/3/5/9 for
+pawn/knight/bishop/rook/queen.
+
+| Recorded outcome | Games | Ever at least three material points behind | Behind for five consecutive recorded frames | Later even or ahead, among those five-frame cases |
+| --- | ---: | ---: | ---: | ---: |
+| Win | 184 | 134 | 18 | 15 |
+| Draw | 17 | 16 | 3 | 0 |
+| Loss | 144 | 137 | 121 | 26 |
+
+Ordinary exchanges can briefly put a player behind before recapture. Even
+the more selective five-frame definition appears in 18 wins; three of those
+win without returning to even material. Conversely, the 121 qualifying
+losses first cross the threshold at median ply 51, a median 29 plies before
+the end. Looking only at the fatal king move would hide that earlier context.
+Five frames are five positions, not five of our turns; the horizon is a
+diagnostic definition, not a proved boundary between good and bad play.
+
+Of those loss onsets, 111 follow a capture whose source was hidden in our
+view before the preceding choice. Fifty of those capturers are rooks.
+This is a pattern worth explaining, but the replay alone does not establish
+that a different action was identifiable as safer, that our belief omitted
+the attacker, or that the opponent deliberately set a trap. The raw and
+five-frame columns also show why a material drop is an unreliable automatic
+"bad move" training label.
+
+This curation extends earlier overlapping studies; it is not an independent
+confirmation or a reason to reopen failed material guards. Hindsight labels
+are kept separate from private observations and recorded candidate actions.
+There is no policy, belief-model or guard update from this table.
+Local source, definitions and selected loss/recovery figures:
+`astra-submissions/analysis/field-material-onsets-20261111/README.md`.
+This evidence is included in the
+[source review](https://github.com/htansetiawan/iamavirus/pull/1).
+Website publishing remains disabled; the live site is a separate snapshot.
 
 ## Our contribution and the attribution boundary
 

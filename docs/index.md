@@ -2,6 +2,26 @@
 
 *Team IAmAVirus in the [MIT 6.7980 Fog of War Challenge](https://www.mit.edu/~6.7980/fow/) (Topics in Multiagent Learning, Fall 2026). This site records the architecture, the methods and the algorithms we have used, version by version, with the evidence for each. It is written for people who want to know what we built and why, including what did not work.*
 
+## Status — 21 November 2026
+
+**v38 is the final bot.** Development stopped on 14 November; v38 stays in
+the arena until submission. Over **2,588 games** it has scored **1,387 wins,
+93 draws and 1,108 losses (0.554)**, with no time loss, crash or illegal move.
+We are 17th of 63 teams at 1834 Elo, above the Instructors' bot and Mist
+Opportunities, after a November in which new teams entered and nearly every
+established rating fell.
+
+v38's faster scorer paid off against the teams around and above us.
+Head-to-head, v37 then v38:
+
+- Mist Opportunities: 0.48 then 0.71;
+- Instructors: 0.40 then 0.52;
+- Knight Vision: 0.30 then 0.41.
+
+Every component we built and every experiment we ran, with its result, is
+now on one page: **[Everything built and tested, to 20 November](status-20261120.html)**.
+The [timeline](timeline.html) covers all 38 arena versions.
+
 ## December 3 presentation preparation — November 11 audit
 
 Henry has prioritized understanding over producing another candidate. Start
@@ -18,7 +38,7 @@ The latest confirmed-prior candidate failed its full-clock playing screen
 at **1W–8L**, despite improved replay posterior scores. It is not a release.
 The new pages link the actual source inventory, results and limitations.
 
-## Current release — 10 November 2026
+## v38 release — 10 November 2026
 
 **Arena v38 is active** (verified at 1:55 a.m. Boston time / 06:55 UTC).
 Henry uploaded Astra's reviewed `iamavirus-v38-mist-c-allchildren.zip` on

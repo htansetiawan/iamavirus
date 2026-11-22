@@ -15,6 +15,12 @@ launcher enabling its approximate all-child scorer. Its source and build
 recipe ship in the ZIP; the [manifest](https://github.com/htansetiawan/iamavirus/blob/main/astra-submissions/v38-manifest.json)
 pins individual members. The checkout's latest source is not the release.
 
+**Worker-mode correction, November 12:** the exact v38 launcher does not set
+`MIST_ASYNC`; its two workers run in synchronized waves by default. Continuous
+pipelining is opt-in, and the main thread can wait while collecting a wave.
+The historical knob table's “on” value below is not the archived v38 default.
+See the [current source explanation](presentation-tables.html).
+
 ```mermaid
 flowchart LR
   V[Own observation and clock] --> B[Update weighted consistent boards]

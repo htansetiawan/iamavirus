@@ -29,7 +29,16 @@ Paired games on the course referee between two engine builds, pinned to two core
 
 The bench answers two questions the suite cannot: does the change survive a full game against a different engine, and does it hold the clock. Our rule before any upload: **no forfeit, no crash, the lowest clock above 20 s, and the shortest loss not shorter than the previous version's**. Typical sizes are 40 games per pairing; 120 games were played before v34 against the v33 bytes, against v10 and against Misty.
 
-The bench cannot rank versions finely. Forty games resolve a 15-point gap at best, and local opponents are not arena opponents.
+The bench cannot rank versions finely. **Unit clarification, 11 November:**
+the earlier “15-point gap” wording did not specify score points or Elo. A
+20–20 result in forty independent decisive games has a 95% Wilson score
+interval of about 35.2–64.8%: approximately ±14.8 percentage points, mapping
+to −106 to +106 Elo under the usual logistic formula. This is an illustrative
+uncertainty interval, not 15-Elo precision or a formal power calculation.
+Pairing, draws, stopping and changing opponents need their
+own analysis. A small bench can reject conspicuous failures; it does not
+certify a fine Elo difference, and local opponents are not arena opponents.
+See the [current review and numerical scope](learning-review-20261111.html#how-to-read-the-bench).
 
 ## 3. Schedule-adjusted arena checkpoints
 

@@ -17,6 +17,9 @@ import sys
 
 import markdown
 
+# Absolute address of the published docs, for link-preview tags (og:url, og:image).
+SITE = "https://htansetiawan.github.io/iamavirus/docs/"
+
 EXTENSIONS = ["tables", "fenced_code", "toc", "attr_list", "md_in_html", "sane_lists"]
 
 TEMPLATE = """<!doctype html>
@@ -26,6 +29,22 @@ TEMPLATE = """<!doctype html>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="{description}">
 <title>{title} — IAmAVirus docs</title>
+<link rel="canonical" href="{url}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="IAmAVirus">
+<meta property="og:title" content="{og_title}">
+<meta property="og:description" content="{description}">
+<meta property="og:url" content="{url}">
+<meta property="og:image" content="{image}">
+<meta property="og:image:secure_url" content="{image}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{title} — IAmAVirus, a Fog of War chess bot for MIT 6.7980">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{og_title}">
+<meta name="twitter:description" content="{description}">
+<meta name="twitter:image" content="{image}">
 <style>
 :root{{--bg:#ffffff;--ink:#242424;--muted:#5f5d58;--line:#e6e5e1;--side:#fafaf9;--soft:#f3f2ef;--accent:#2d5be3;--code:#f6f5f2;--serif:Georgia,"Times New Roman",serif;color-scheme:light}}
 @media (prefers-color-scheme:dark){{:root:not([data-theme="light"]){{--bg:#161615;--ink:#e8e6e1;--muted:#b3b0a8;--line:#2e2d2b;--side:#1c1c1b;--soft:#262523;--accent:#8fb0ff;--code:#202020;color-scheme:dark}}}}
@@ -110,7 +129,8 @@ def first_paragraph(text):
     for para in text.split("\n\n"):
         p = para.strip()
         if p and not p.startswith("#") and not p.startswith("<") and not p.startswith("```") and not p.startswith("|"):
-            return re.sub(r"[*_`\[\]]", "", p)[:200]
+            p = re.sub(r"\[([^\]]*)\]\([^)]*\)", r"\1", p)  # [text](url) -> text
+            return re.sub(r"\s+", " ", re.sub(r"[*_`\[\]]", "", p))[:200]
     return ""
 
 
@@ -128,7 +148,10 @@ def render(docs_dir, out_dir, base):
         links = "\n".join(
             f'<a href="{base}{n}.html"{" class=\"current\"" if n == name else ""}>{html.escape(t)}</a>' for n, t in nav
         )
-        page = TEMPLATE.format(title=html.escape(title), description=html.escape(first_paragraph(text)), nav=links, body=body, base=base)
+        card = name if os.path.exists(os.path.join(docs_dir, "assets", "og", name + ".png")) else "index"
+        page = TEMPLATE.format(title=html.escape(title), description=html.escape(first_paragraph(text)), nav=links, body=body, base=base,
+                               url=f"{SITE}{name}.html", image=f"{SITE}assets/og/{card}.png",
+                               og_title=("IAmAVirus: a Fog of War chess bot, documented over time" if name == "index" else html.escape(title) + " — IAmAVirus"))
         out = os.path.join(out_dir, name + ".html")
         open(out, "w", encoding="utf-8").write(page)
         print("wrote", out, len(page), "bytes")

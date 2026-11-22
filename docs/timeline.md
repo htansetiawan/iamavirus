@@ -68,6 +68,36 @@ Withdrawn between v33 and v34: **mist-c v11** alone (the sharpened belief withou
 
 What we learned so far: the gain of v34 over v33 sits on Mist Opportunities (0.45 against 0.29) and Instructors (0.39 against 0.30) while the top six as a group is unchanged; the remaining losses are belief failures of a specific kind, where the opponent's non-captures argue the belief out of a hidden attacker.
 
+## 14 October to 8 November: guards, a refit and a faster scorer
+
+| v | time | change | outcome |
+| --- | --- | --- | --- |
+| 35 | 14 Oct 06:41 | **mist-c v14: the queen guard**. Queen danger is folded into the king guard's rule as one risk, king + 0.9 × queen, under the same 2-point margin. Why: our queen was lost outright in 43% of v34's games against the top six, against 10% for them | About 7,800 games at 0.52 over three weeks, the long-running baseline. No time forfeit in 7,198 games. 400-game reading: 209-16-175 (0.54), top six 0.27 |
+| 36 | 27 Oct 23:23 | **mist-c v20 r4: the piece guard**. A move's share of worlds in which it loses 3+ pawns net on the next ply is folded into the guard; an enemy capture that leaves its own king capturable counts as a won game | Withdrawn by the user 28 Oct ~02:05 after 48 games: 15-1-32 (0.32) against v35's expected 0.51, z −2.88. Its 104-game local bench later passed. **Local tests did not predict the arena** |
+| 37 | 1 Nov 14:29 | **v35's engine with the opponent model refitted on 148,357 games** (was 2,029) and the history table rebuilt to 359,889 records | 2,322 games, 1219-65-1038, 0.539. Held-out prediction gain +0.0077 nats (top-1 26.7% → 27.1%) |
+| 38 | 8 Nov 16:53 | **Astra's all-child scorer**: a modified Stockfish 19 scores all of a position's moves in one pass; same engine, model and table as v37 | 1.57–1.68× scoring speed, 38% more search nodes at equal time. Passed its 300-game keep rule (318 games, 0.582). 2,588 games to 21 Nov: 1387-93-1108 (0.554); no time loss, crash or illegal move |
+
+What we learned: guard rules bought at most about 30 Elo each, and the piece guard cost more than it saved. The oracle experiments of 28 to 30 October showed why. Told the true board, the bot won 81 of 81 games. Normally the true board holds a median of about 1% of the weight, so the gap is how boards are weighted, not the search. The v37 refit added 73 times more data to the same 28 features and barely moved prediction.
+
+v38's extra search paid off where rank is decided. Head-to-head, v37 then v38:
+
+- Mist Opportunities: 0.48 then 0.71;
+- Instructors: 0.40 then 0.52;
+- Knight Vision: 0.30 then 0.41;
+- Crimson Fog: 0.18 then 0.38.
+
+From 8 to 14 November, v38 spent 82% of the time above the Instructors' bot and Mist Opportunities; v37 managed 14% and 5%.
+
+## 8 to 20 November: research, then a freeze
+
+No new arena version. The research of this stretch is catalogued in [Everything built and tested](status-20261120.html). In short:
+
+- A compact opponent model passed every prediction test, then lost 1–8 to v38 at full clock.
+- The paper's opponent-knowledge search (M4), placed behind v38's guards, went 8–10 against v38.
+- A recapture defect in the queen guard was found and an isolated fix verified, but not shipped.
+
+On 14 November the human lead stopped development: v38 stays in the arena until submission. A reading of v38's arena record is taken every three days for the final report.
+
 ## Reading the registry
 
 `MUTATIONS.md` at the repository root is the registry of record: every arena version, its parent, the exact change, the zip hash, the prediction written before the first game, and the fate. `fable-submissions/README.md` holds the submission log with each checkpoint. The mermaid lineage in the registry shows which versions descend from which.

@@ -2,6 +2,12 @@
 
 *What the current engine still gets wrong, with the evidence, and the directions we are considering. Status as of 13 October 2026, v34 at 440 arena games.*
 
+**Historical snapshot.** The proposals below describe October 13, not an
+unexecuted current backlog. Several guard, model and evaluator families have
+since been implemented and tested. Use the
+[November 11 decision review](learning-review-20261111.html) and
+[completed experiment map](presentation-experiments.html) for current status.
+
 [TOC]
 
 ## Hidden checks the belief talks itself out of
