@@ -1,10 +1,12 @@
-<!-- Exported from the Claude Doc 'IAmAVirus: Chess in the Fog' (https://claude.ai/artifact/6RDBmnFzu2uth64GbeaWhs) on 2026-10-31, after the review pass. The three drawings and the chart live in the doc; here they appear as placeholders. -->
+<!-- Exported from the Claude Doc 'IAmAVirus: Chess in the Fog' (https://claude.ai/artifact/6RDBmnFzu2uth64GbeaWhs) on 2026-11-22, after the v38 update. The drawings and the chart live in the doc; here they appear as placeholders. -->
 
 # IAmAVirus: Chess in the Fog
 
 Oct 31, 2026 · @Henry Tan
 
 A technical account of the IAmAVirus Fog of War chess bot as built, written for the 3 December presentation in MIT 6.7980. Everything after this document is an improvement, extension or fix over the system it describes.
+
+**Updated 22 November 2026 for arena version 38, the final bot.** v38 is v35's design with two changes: the opponent model refitted on 148,357 games (v37, 1 November) and a faster Stockfish scorer (v38, 8 November). Development stopped on 14 November, and v38 plays until submission. The update touches Chapter 4 (what plays now, and what changed from v35), Chapter 5 (v37 and v38 in the arena, and the later experiments) and Chapter 6 (what came of the plan). Figures labelled v35 are its record to 31 October.
 
 ## Chapter 1. The game and the problem
 
@@ -52,7 +54,7 @@ Each game runs in a fresh process in a locked box: two processor cores shared wi
 
 The top row keeps the picture of the board up to date; the bottom row chooses the move; the loop runs once a turn.
 
-In words: the bot reads the views and works out every board that is consistent with everything it has seen in the game, keeping at most 200,000 of them. It gives each board a weight for how plausible it is, judged by a model of how arena opponents actually move, fitted on recorded games, with a memory of positions it has met before. It then draws 32 boards in proportion to those weights, grows a tree of moves and replies across them, with Stockfish, the standard open-source chess engine, scoring the positions at the ends, and settles on a plan that does well whichever of the 32 is real. Before playing, it strikes out any move that would leave its king or its queen exposed on too many of the boards. The time it spends is a twentieth of the remaining clock plus 1.6 seconds, never more than 10, and that rule has not lost a game on time in 7,907 arena games.
+In words: the bot reads the views and works out every board that is consistent with everything it has seen in the game, keeping at most 200,000 of them. It gives each board a weight for how plausible it is, judged by a model of how arena opponents actually move, fitted on recorded games, with a memory of positions it has met before. It then draws 32 boards in proportion to those weights, grows a tree of moves and replies across them, with Stockfish, the standard open-source chess engine, scoring the positions at the ends, and settles on a plan that does well whichever of the 32 is real. Before playing, it strikes out any move that would leave its king or its queen exposed on too many of the boards. The time it spends is a twentieth of the remaining clock plus 1.6 seconds, never more than 10, and that rule has not lost a game on time in 7,907 arena games for v35, 2,322 for v37 or 2,588 for v38.
 
 ### Why this is hard
 
@@ -76,13 +78,13 @@ Three questions were on the table from the first week.
 
 ### Why a C engine
 
-Efficiency is itself a strategy. The arena gives two shared cores and a clock that averages about six seconds a move; whatever the method, the implementation that does more per second imagines more boards and searches further. The Python prototype managed 44,000 nodes a second and was never submitted. The C++ engine reached 11 million. For training, a batched C++ simulator stepped 204,440 decisions a second against 800 in Python. mist-c, the current engine, is 4,227 lines of C that update an exact set of up to 200,000 boards inside the clock, with a bitboard update made 2.4 times faster this week at bit-identical output. C also gave us determinism: every random choice is seeded, so any recorded decision can be replayed exactly.
+Efficiency is itself a strategy. The arena gives two shared cores and a clock that averages about six seconds a move; whatever the method, the implementation that does more per second imagines more boards and searches further. The Python prototype managed 44,000 nodes a second and was never submitted. The C++ engine reached 11 million. For training, a batched C++ simulator stepped 204,440 decisions a second against 800 in Python. mist-c, the current engine, is 4,227 lines of C that update an exact set of up to 200,000 boards inside the clock, with a bitboard update made 2.4 times faster in late October at bit-identical output. v38 added a modified Stockfish that scores all of a position's moves in one pass, 1.57 to 1.68 times faster, for about 38% more search in the same time. C also gave us determinism: every random choice is seeded, so any recorded decision can be replayed exactly.
 
 ### Obscuro as the baseline
 
 We chose Obscuro (Zhang and Sandholm, ICLR 2026, arXiv 2506.01242) because it is the latest published method for this game, it reports superhuman play, and its design matches the first lesson: it does not guess one board, it solves for a strategy over the whole set of boards it cannot tell apart. On 11 October we ran Misty, an open-source implementation of Obscuro, under our team name for 22 hours as a yardstick. It scored 0.474 over 514 games, 0.12 a game better than our best hybrid on the same schedule (those 540 rated games as Misty count in the team's lifetime rating), and locally it beat that hybrid 8-0 with the same evaluator and the same belief idea. The difference was the search: an equilibrium over information sets instead of a best response to sampled boards.
 
-So we rebuilt it in C from the paper alone. Misty's code was never read; the engine was written in milestones (rules, exact belief, solver, front end) with tests against the course referee at each step. The first trial, arena version 26 on 10 October, lost 17 of 22, every loss to an unseen piece. Version 33 added 32 sampled worlds and a king guard and scored 0.489; version 34 added the history prior and the sharpened weighting and scored 0.526; version 35 added the queen guard and has sat between sixth and tenth place since 14 October; on 31 October it is eighth of 62 at a rating of 1918. Two parts of the paper are not in v35: carrying the solved strategy from one turn to the next, so each of our turns starts a fresh tree, and the purification of the final strategy.
+So we rebuilt it in C from the paper alone. Misty's code was never read; the engine was written in milestones (rules, exact belief, solver, front end) with tests against the course referee at each step. The first trial, arena version 26 on 10 October, lost 17 of 22, every loss to an unseen piece. Version 33 added 32 sampled worlds and a king guard and scored 0.489; version 34 added the history prior and the sharpened weighting and scored 0.526; version 35 added the queen guard and has sat between sixth and tenth place since 14 October; on 31 October it was eighth of 62 at a rating of 1918. Version 37 refitted the opponent model on every arena game and scored 0.539 over 2,322 games. Version 38 added the faster Stockfish scorer and scored 0.554 over 2,588 games to 21 November. Two parts of the paper are not in v35 or v38: carrying the solved strategy from one turn to the next, so each of our turns starts a fresh tree, and the purification of the final strategy.
 
 ### Sun Tzu as the frame
 
@@ -96,7 +98,7 @@ The frame that stuck is the epigraph of the mutation registry we keep for every 
 
 ### Learning from the arena
 
-The arena record is the team's largest asset and it feeds four things. The opponent move model, a conditional logit over 28 move features fitted on 2,029 games, refitted on 6,776 and, for v37, on all 148,357. The history table, 151,316 records of what opponents did after a given information history. The regression suite, 1,379 of our own losing decisions replayed with the exact inputs the engine saw. And the daily taxonomy, which measures every team on back-rank exposure, king moves, sacrifices, fog captures and a dozen other habits, so that our weaknesses are ranked against the field rather than guessed. One further use was tried and closed: replay books against deterministic opponents, since no strong bot is deterministic as deployed. The opening-choice spreads in our own record suggest an opponent-adjusted book worth 10 to 20 Elo; it is not yet built.
+The arena record is the team's largest asset and it feeds four things. The opponent move model, a conditional logit over 28 move features fitted on 2,029 games, refitted on 6,776 and, for v37, on all 148,357. The history table, 151,316 records of what opponents did after a given information history, rebuilt for v37 from 174,386 games to 359,889. The regression suite, 1,379 of our own losing decisions replayed with the exact inputs the engine saw. And the daily taxonomy, which measures every team on back-rank exposure, king moves, sacrifices, fog captures and a dozen other habits, so that our weaknesses are ranked against the field rather than guessed. One further use was tried and closed: replay books against deterministic opponents, since no strong bot is deterministic as deployed. The opening-choice spreads in our own record suggest an opponent-adjusted book worth 10 to 20 Elo; it is not yet built.
 
 ### Layers over the base
 
@@ -115,7 +117,7 @@ The bot that plays today is the fourth engine family in 25 days, chosen by measu
 | C++ belief with a matrix game at the root | 2 to 4 | 7 Oct | 276 | 0.435 | The capturing piece was hidden in essentially every loss: losses are belief failures |
 | Neural hybrid: imitation network, then PPO, inside the same engine | 5 to 25, 27 | 7 to 10 Oct | 2,254 | 0.457 | Imitation tops out near 35% of the top teams' moves; RL pays only as a prior; the hybrid failed to escape a hidden check 32% of the time |
 | Misty, an open Obscuro, as a yardstick | 28, 30 | 11 Oct | 540 | 0.475 | A strategy over information sets beats a best response to sampled boards, with the same evaluator |
-| mist-c, our C Obscuro with layers | 26, 32 to 36 | 10 Oct onward | 9,355 | 0.205 to 0.526 (0.489 to 0.526 for versions 33 to 35) | The layers reach rank 8; the belief's weights are the remaining gap |
+| mist-c, our C Obscuro with layers | 26, 32 to 38 | 10 Oct onward | 9,355 to 31 Oct; then 2,322 (v37) and 2,588 (v38) | 0.205 to 0.526 (0.489 to 0.526 for versions 33 to 35); 0.539 (v37); 0.554 (v38) | The layers reach rank 8; a faster scorer gains against the teams near us; the belief's weights are the remaining gap |
 
 ### The neural era and the gym
 
@@ -133,7 +135,7 @@ The two agents feed the ledger; the ledger feeds the gates; the arena answers; t
 
 Fable is a Claude Code session and owns the engine, the tools, the benches and the packaging; Astra is a Codex session and owns review, audits, the gate protocols and the confirmation runs; the lead sets direction, reads every note, answers in a sentence and performs every upload. The agents never upload. The division of work changed four times, and the hardest coordination failure was not disagreement but two agents editing the same engine source; it was solved on 10 October by splitting mist-c by file, and for good on 26 October by giving one agent the source and the other the review.
 
-The channels are simple on purpose. An append-only ledger of JSON lines (553 by 31 October: 350 from Astra, 202 from Fable, 1 from the lead), each with a sender, a recipient, a type, a subject and the paths it rests on; corrections are new lines that name the line they correct. Numbered notes, 197 files from 001 to 187, where nobody edits another author's note. A file that allocates the machine's cores before any timing run, because two agents' runs had contaminated each other. And rules for candidates: one version sequence with no number reused, every candidate pinned by hash before its first gate, queues immutable once named, bench games never pooled across candidates, and a prediction written before every upload. A phone channel for the lead was built on 7 October and never used; the lead's words reached the agents through their own sessions.
+The channels are simple on purpose. An append-only ledger of JSON lines (553 by 31 October: 350 from Astra, 202 from Fable, 1 from the lead; 1,096 by 22 November: 865, 230 and 1), each with a sender, a recipient, a type, a subject and the paths it rests on; corrections are new lines that name the line they correct. Numbered notes, 197 files from 001 to 187 by 31 October and 443 files to note 432 by 22 November, where nobody edits another author's note. A file that allocates the machine's cores before any timing run, because two agents' runs had contaminated each other. And rules for candidates: one version sequence with no number reused, every candidate pinned by hash before its first gate, queues immutable once named, bench games never pooled across candidates, and a prediction written before every upload. A phone channel for the lead was built on 7 October and never used; the lead's words reached the agents through their own sessions.
 
 ### What lectures 11 and 12 say about this
 
@@ -156,18 +158,18 @@ The arena is not a hidden-role game. There are no in-game teammates, and the opp
 
 ## Chapter 4. The architecture as built
 
-The deployed bot is arena version 35: mist-c, a C program of ten source files, Stockfish 19 as the evaluator at the ends of the search tree, and a 2.4 MB table of opponent moves recorded in the arena. The uploaded ZIP sets two environment variables, the paths to Stockfish and to that table, and nothing else, so every number below is a default in the source. v35 is mist-c commit 97b60f1 of 13 October; the current source differs in two ways noted at the end.
+The deployed bot is arena version 38, live since 8 November 2026: mist-c, a C program of ten source files, a modified Stockfish 19 as the evaluator at the ends of the search tree, and a 5.8 MB table of opponent moves recorded in the arena. The uploaded ZIP sets three environment variables: the paths to Stockfish and to that table, and the switch that turns on the faster scorer. Every number below is a default in the source. v38 runs mist-c commit f76a09e, which is v35's engine (commit 97b60f1 of 13 October) with v37's refitted model and table. The last section of this chapter lists what changed from v35.
 
 ### The pipeline with its constants
 
-| Stage | What happens | Constants in v35 | Where |
+| Stage | What happens | Constants in v38 | Where |
 | --- | --- | --- | --- |
 | Observe | A 64-character line is a view, a number is our clock, anything else is ignored. Two views arrive on our turn (before the opponent's ply and before ours), each triggering one belief update. The legal moves are generated from the view alone, as the moves legal on every board the view allows, so an illegal move cannot be sent. | 13,467 recorded positions with zero mismatches against the course referee | `src/front.c`, `view_moves` in `src/belief.c`, `tests/test_rules.c` |
 | Imagine | The belief is the exact set of boards consistent with every observation so far. After our move each board is advanced and kept if it still matches the view. After the opponent's move every board is expanded by every opponent move, the consistent successors are kept, boards where the opponent left its own king capturable are dropped (the referee would have ended the game), and boards reached by several histories are merged with their weights added. Past the cap the set is thinned by weighted sampling without replacement; before an update it is thinned to what half the move budget can afford. If it ever empties it is rebuilt from the view. | cap 200,000 boards; two threads above 4,000 boards; rebuild draws up to 2,000 boards from 60,000 tries; median 82 boards at a decision, maximum at the cap; the true board never missing while the set was exact (60 games, 5,228 plies) | `src/belief.c`, `MIST_CAP` in `src/main.c` |
-| Weigh | Each board's log-weight is the sum, over the opponent's hidden moves, of a conditional logit's log-probability for that move among all legal moves, times a temperature. A cheap version of the model runs while the set is above 10,000 boards. Where the opponent's information history has been seen three or more times in the arena, an empirical prior replaces the model: (count + 4 x model) / (N + 4). | 28 hand features fitted on 2,029 games (top-1 27.4% held out); temperature 2.0, so the weights are the fitted posterior squared; history table 151,316 records | `src/movemodel.c`, `MIST_MODEL_TEMP`, `MIST_HISTORY_TABLE` |
-| Search | 32 boards are drawn with replacement in proportion to weight. A game tree is grown across them (growing-tree CFR): information sets keyed by each player's own history, rounds of 10 predictive CFR+ iterations followed by 32 leaf expansions chosen by an explorer that alternates between uniform choice over its support and a PUCT rule, each leaf scored by Stockfish at depth 1 with every child's score read in one call. A root move that leaves our king capturable scores -2, a king capture +1, otherwise tanh(centipawns / 400). New information sets start on their best child. After 20 closing iterations the root plays the most probable move of the last iterate. | 32 worlds; two Stockfish processes, one thread and 16 MB hash each; at most 1.5 million nodes; stops at 85% of the budget; measured median 194,000 nodes and 1,890 iterations per decision, 4.1 to 8.5 s a move | `src/gtcfr.c`, `src/cfr.c`, `src/sfeval.c` |
-| Guard | For every allowed move, over the belief strided to 20,000 boards: the share on which the move leaves our king capturable, plus 0.9 times the share on which the queen is then lost for four or more pawns. A move is removed when its risk exceeds the safest move's by more than the margin under the belief's own sharpened weighting or under the fitted weighting; if nothing survives, the sharpened weighting alone decides. The repetition rule refuses a third arrangement of our own pieces when two or more points ahead, and yields to the guards when both would leave no move. | king margin 0.02, queen margin 0.05, queen weight 0.9; no piece guard in v35 | `MIST_KING_GUARD`, `MIST_QUEEN_GUARD`, `MIST_REPEAT_LEAD` in `src/main.c` |
-| Move | Budget = remaining clock / 20 + 0.8 x the 2 s increment, at least 0.3 s, at most 10 s and never over 30% of what is left; under 20 s left the search gets 0.3 s. The chosen move is checked against the view's legal set; if it fails, the best move by a static evaluation of the visible board is played instead. One log line goes to stderr, then `move e2e4` to stdout, flushed. | 0 losses on time in 7,907 arena games; 36 to 39 s left at the end of a typical game | `move_budget` in `src/main.c` |
+| Weigh | Each board's log-weight is the sum, over the opponent's hidden moves, of a conditional logit's log-probability for that move among all legal moves, times a temperature. A cheap version of the model runs while the set is above 10,000 boards. Where the opponent's information history has been seen three or more times in the arena, an empirical prior replaces the model: (count + 4 x model) / (N + 4). | 28 hand features refitted on 148,357 games (top-1 27.1% on 26,029 held-out games; v35's fit on 2,029 games scores 26.7% there); temperature 2.0, so the weights are the fitted posterior squared; history table 359,889 records (v35: 151,316) | `src/movemodel.c`, `MIST_MODEL_TEMP`, `MIST_HISTORY_TABLE` |
+| Search | 32 boards are drawn with replacement in proportion to weight. A game tree is grown across them (growing-tree CFR): information sets keyed by each player's own history, rounds of 10 predictive CFR+ iterations followed by 32 leaf expansions chosen by an explorer that alternates between uniform choice over its support and a PUCT rule, each leaf scored by Stockfish at depth 1 with every child's score read in one call; in v38 a modified Stockfish scores all the children in one pass, an approximation that runs 1.57 to 1.68 times faster. A root move that leaves our king capturable scores -2, a king capture +1, otherwise tanh(centipawns / 400). New information sets start on their best child. After 20 closing iterations the root plays the most probable move of the last iterate. | 32 worlds; two Stockfish processes, one thread and 16 MB hash each; at most 1.5 million nodes; stops at 85% of the budget; measured on v35: median 194,000 nodes and 1,890 iterations per decision, 4.1 to 8.5 s a move; v38 searches about 38% more nodes in the same time; the two workers are scored in synchronised waves (the source's asynchronous mode is off) | `src/gtcfr.c`, `src/cfr.c`, `src/sfeval.c` |
+| Guard | For every allowed move, over the belief strided to 20,000 boards: the share on which the move leaves our king capturable, plus 0.9 times the share on which the queen is then lost for four or more pawns. A move is removed when its risk exceeds the safest move's by more than the margin under the belief's own sharpened weighting or under the fitted weighting; if nothing survives, the sharpened weighting alone decides. The repetition rule refuses a third arrangement of our own pieces when two or more points ahead, and yields to the guards when both would leave no move. | margin 0.02 on the combined risk, king + 0.9 × queen; MIST\_QUEEN\_GUARD's 0.05 only switches the queen term on; no piece guard in v35 or v38 | `MIST_KING_GUARD`, `MIST_QUEEN_GUARD`, `MIST_REPEAT_LEAD` in `src/main.c` |
+| Move | Budget = remaining clock / 20 + 0.8 x the 2 s increment, at least 0.3 s, at most 10 s and never over 30% of what is left; under 20 s left the search gets 0.3 s. The chosen move is checked against the view's legal set; if it fails, the best move by a static evaluation of the visible board is played instead. One log line goes to stderr, then `move e2e4` to stdout, flushed. | 0 losses on time in 7,907 v35, 2,322 v37 or 2,588 v38 arena games; 36 to 39 s left at the end of a typical game | `move_budget` in `src/main.c` |
 
 ### Surviving the protocol
 
@@ -180,7 +182,7 @@ The design is Obscuro's (Zhang and Sandholm, ICLR 2026); the weighting, the guar
 | Piece of the bot | Origin | Our part |
 | --- | --- | --- |
 | Track every board consistent with the observations; play a strategy over that set | The definition of play on an information set; standard in Reconnaissance Blind Chess bots for years | None; it is the problem statement |
-| Exact belief update, sampled worlds, a public tree with each player's private information sets, growing-tree CFR, Stockfish at the leaves | Obscuro (arXiv 2506.01242); the growing tree follows Player of Games (Schmid et al., 2023) | A from-scratch C implementation written from the paper only; the cap, the weighted thinning, two-thread updates, the clock accounting |
+| Exact belief update, sampled worlds, a public tree with each player's private information sets, growing-tree CFR, Stockfish at the leaves | Obscuro (arXiv 2506.01242); the growing tree follows Player of Games (Schmid et al., 2023) | A from-scratch C implementation written from the paper only; the cap, the weighted thinning, two-thread updates, the clock accounting; for v38, Astra's modified Stockfish that scores all of a position's moves in one pass |
 | An equilibrium move over the sampled worlds, not a worst case over all boards | Obscuro's search | Argmax of the last iterate; the paper's purification is not implemented |
 | Weights on the belief from an opponent move model | The paper samples worlds uniformly and names sampling by a model of opponent behaviour as the next step in its conclusion | Ours: the conditional logit over 28 move features fitted on arena games, the temperature, and the history prior keyed by the opponent's information state |
 | King guard, queen guard, repetition rule, belief rebuild | Not in the paper | Ours, each motivated by a class of recorded losses and measured on a regression suite of our own arena losses |
@@ -188,7 +190,7 @@ The design is Obscuro's (Zhang and Sandholm, ICLR 2026); the weighting, the guar
 | The neural pipeline: imitation network, regularised PPO with a privileged critic, a league of frozen opponents, a native simulator | The course's deep RL unit | Ours, built and measured; not in the move selector |
 | Misty, a public Obscuro implementation | Brian Liou | Used only as a sparring partner, never read for mist-c |
 
-Two parts of the paper are not in v35: carrying the solved strategy between turns and re-solving against it (each of our turns starts a fresh tree), and the purification of the root strategy. Both are on the list in Chapter 6.
+Two parts of the paper are not in v35 or v38: carrying the solved strategy between turns and re-solving against it (each of our turns starts a fresh tree), and the purification of the root strategy. Both were on the list in Chapter 6. The first was built and tested on 14 November, behind v38's guards, and lost 8–10 to v38. Purification itself was never built; a pilot that mixed among the top three root moves lost 1–3.
 
 ### The measurement and release program
 
@@ -201,13 +203,41 @@ Every change passes through the same instruments, in order of cost.
 
 Candidate ZIPs and their queues are immutable once named, bench games are never pooled across candidates, and the human lead makes every upload. The diagnostics that feed the decisions are the oracle (the search handed the true board), the truth-share harness (the true board's weight and rank inside the belief), the sharpness curve (the truth forced to a fixed share), the hazard calibration (predicted against realised fog attacks), a replay tool that re-decides any recorded move, and a daily taxonomy of every arena game.
 
-### Where the current source differs from v35
+### What changed from v35 to v38
 
-A binary built from the current source is not v35 in two ways. The piece guard, which vetoes moves that hang a rook, bishop or knight, is on by default (it was v36, scored 0.33 in the arena and was withdrawn; local runs set `MIST_PIECE_GUARD=-1` to play as v35). And the move model has 39 features plus piece-square tables fitted on 6,776 games; it scored 0.525 over 100 games against v35, level, and was not deployed. The arena record in this document is v35's; the code paths are the same.
+Three arena versions followed v35, and two stayed.
+
+- **v36, 27 October: the piece guard.** It vetoed moves that hang a rook, bishop or knight. It scored 0.32 over 48 games (z −2.88) and was withdrawn. v37 and v38 do not have it.
+- **v37, 1 November: more data.** The same 28 features were refitted on 148,357 games instead of 2,029, and the history table was rebuilt from 174,386 games to 359,889 records. Held-out prediction rose by 0.0077 nats a move. A local 100-game duel against v35 scored 57% (47 to 68%).
+- **v38, 8 November: a faster scorer.** Astra's modified Stockfish 19 scores all of a position's legal moves in one pass, 1.57 to 1.68 times faster. That buys about 38% more search nodes in the same time. Its scores are close to standard Stockfish's but not identical. The C engine, model and table are v37's.
+
+Everything else in this chapter is v35's: the belief and its cap, the 32 worlds, the solver, the guards, the clock rule and the repetition rule. The 39-feature model with piece-square tables (v23) scored 52-1-47 against v35, level, and was not deployed.
 
 ## Chapter 5. Observations and limitations
 
-v35 wins more arena games than it loses, 0.526 over 7,907 games since 14 October, and still sits eighth of 62 at a rating of 1918, because the points come from the field below us while the five teams at the top take two games in three or more. Nearly every loss has the same shape: material drains into the fog by ply 25, and the king falls some sixty plies later to a piece we never saw.
+v35 wins more arena games than it loses, 0.526 over 7,907 games since 14 October, and on 31 October sat eighth of 62 at a rating of 1918, because the points come from the field below us while the five teams at the top take two games in three or more. Nearly every loss has the same shape: material drains into the fog by ply 25, and the king falls some sixty plies later to a piece we never saw.
+
+### v37 and v38 in the arena, to 21 November
+
+v38 is stronger than v37 against the teams near and above us, and level against the rest. Over 2,588 games it scored 1,387 wins, 93 draws and 1,108 losses (0.554), against v37's 0.539 over 2,322. As White it scores 0.61, as Black 0.50. No game was lost to time, a crash or an illegal move.
+
+| Opponent | v37 score (games) | v38 score (games) |
+| --- | --- | --- |
+| Mist Opportunities | 0.48 (126) | 0.71 (100) |
+| Instructors | 0.40 (132) | 0.52 (97) |
+| Knight Vision | 0.30 (82) | 0.41 (94) |
+| Crimson Fog | 0.18 (98) | 0.38 (86) |
+| HYPOTHERMIA | 0.46 (120) | 0.48 (104) |
+| Strongly Invisible | 0.22 (108) | 0.26 (96) |
+| Greek Gift | 0.03 (90) | 0.08 (62) |
+| Farsight | 0.43 (138) | 0.32 (84) |
+| duck | 0.35 (130) | 0.27 (108) |
+
+Head-to-head scores to 20 November. From 8 to 14 November v38 ranked above the Instructors' bot and Mist Opportunities 82% of the time; v37 managed 14% and 5%.
+
+On 21 November v38 is 17th of 63 at 1834 Elo, above Instructors (19th, 1818) and Mist Opportunities (21st, 1809). The top three are Greek Gift (2203), Knight Vision (2078) and Farsight (2029). Our rank number fell from 9 to 17 in November because new teams entered and nearly every established rating fell, ours included.
+
+So head-to-head scores against the same teams are the fairer comparison. They are still observational: opponents change versions, and pairing follows rating. The rest of this chapter analyses v35's 7,907 games to 31 October; v37 and v38 run the same engine and lose the same way.
 
 ### Where the points go
 
@@ -229,7 +259,7 @@ Two things this is not. It is not a conversion problem: on a lead held for three
 
 The move taxonomy over 10,843 arena games of 25 to 28 October, ranked among 15 teams, puts v35 last for leaving the back rank bare (6.9 per 100 moves against a tier-two median of 4.45), 13th for king moves (15.9 against 13.2), 12th for sacrifices, meaning three or more points given over two plies (2.5 against 1.35), and 12th for king threats. In the middlegame it moves its king 13.0 times per 100 moves against 7.6 for the top six, and when three or more fog lines reach the king it is captured within four plies 32% of the time. It ranks 4th or 5th for the things fog rewards: the share of its captures the victim could not see (0.46), vision gained per move and long strikes. The engine exploits the fog well when it attacks and does not defend against it. We lose the queen outright in 17% of games against the top six and score 0.02 in those games.
 
-### What this week's experiments established
+### What the experiments established, 28 October to 14 November
 
 | Question | Result | What it decided |
 | --- | --- | --- |
@@ -245,6 +275,12 @@ The move taxonomy over 10,843 arena games of 25 to 28 October, ranked among 15 t
 | Does the draw's sharpness matter? | The 32 worlds drawn from the fitted weighting and from flatter ones (temperature 1.0, 0.7 and 0.5 against v35's 2), guards unchanged: net −1, +2 and −2; the truth's presence in a 64-world sample stays at 60 to 61% | Not a lever; a global change of weighting lifts the tail and lowers the head alike |
 | Does the belief carry information? | v35 with the learned ranking switched off, every consistent board equal: 136 fatal decisions against 107 and 20 centipawns worse per move; with one board instead of 32: 111 against 107 | The ranking carries the information; the number of boards adds little |
 | Does more data help the formula? | v35's 28 facts refitted on 148,357 games, 73 times v35's sample: held-out score 0.638 to 0.645 nats per move, first choices 26.7% to 27.1%; the cheap formula 0.472 to 0.474 | Barely; on the suite v37 is within noise of v35 (net +1 of 399 fatal decisions, the weights and the table each within noise alone); v37 carries both to the arena (1 November), the lane against v35 alongside |
+| Does more data help in play? | v37, the refit, in the arena: 0.539 over 2,322 games, against v35's 0.526. A local 100-game duel against v35 scored 57% (47 to 68%) | Shipped for its data, not as a proven gain |
+| Does faster scoring help? | v38's all-child scorer, 38% more nodes at equal time: 0.554 over 2,588 games; against Mist Opportunities 0.48 to 0.71, against Instructors 0.40 to 0.52 | The one change since v35 that moved results against the teams near us; v38 is the final bot |
+| Can a compact opponent model help? | A quiet-move model passed every prediction test (+0.47 nats on 63 later games, 14 of 14 criteria), then lost 1–8 to v38 at full clock | Better prediction did not carry into play |
+| Do the paper's search extensions help? | Carrying the solved strategy between turns, behind v38's guards: 8–10 against v38. Mixing among the top three root moves: 1–3. Exploration by conditional value and variance: 7–9 | None beat v38 |
+| Do faster solver variants help? | Correct, and 10.6% more nodes, but their full-clock pilots ended 9–7 (short of the 10-of-16 screen) and 4–7 | Speed alone did not pass the playing screen |
+| Is anything left in the queen guard? | Loss ewav2dzr: the guard credited a recapture that would have exposed our own king to a hidden rook. An isolated fix matched a reference on 22 positions | Not shipped: development stopped on 14 November |
 
 ### Lessons about measuring
 
@@ -252,7 +288,18 @@ The arena is noisy at the scale that matters. The rating moves eight points a ga
 
 Three mistakes are on record. A 20-game screen is the high end of noise as often as a signal: v23 screened 14-0-6 and confirmed 52-1-47. A 104-game bench against v35 and Misty passed the piece guard that then scored 0.33 in the arena, because the arena population differs from both sparring partners. And a lead measured at a single ply can be an exchange in progress. The standard since 30 October is a 100-game confirmation: 50 colour-swapped pairs at full clocks, frozen bytes, held-out seeds, uncertainty computed at the pair level, then a fail-fast rule of 20 games in the arena.
 
+The reverse also happened. v38 failed its local gate against Misty, 9 of 14 points against the control's 10½, and still became the strongest version we put in the arena. Local screens catch crashes and clock trouble; they do not rank versions for the arena.
+
 ## Chapter 6. The road to December
+
+**Status, 22 November.** Development stopped on 14 November, and v38 is the final bot. The plan below is kept as written on 31 October; this is what came of it.
+
+- Item 1, a model of the opponent's decision: its control, the refit, shipped as v37 (0.539). A compact quiet-move model lost 1–8 to v38.
+- Item 3, a correction inside the search: on 1 November the calibration improved held-out king-risk predictions, but a root screen using it did not cut fatal decisions (10 and 11 against v35's 10, on 51 cases).
+- Item 5, carrying the strategy between turns: built behind v38's guards, it went 8–10 against v38.
+- Item 6, purification: not built; mixing among the top three root moves lost 1–3.
+- Item 7, the frontier value: a learned value to replace Stockfish failed a broader replication. What paid instead was a faster Stockfish, v38.
+- No other item reached the arena.
 
 Everything above is the system. What follows is the list of changes it can take between now and 3 December, in the order the evidence ranks them, each with the test it has to pass. Nothing on this list changes the architecture; each is an improvement, an extension or a fix over the scaffold of Chapters 1 to 4, and the results land in Chapter 5's table as they come.
 
@@ -285,7 +332,7 @@ The oracle fixed the route: the search wins every game on the truth, so the weig
 
 - The slide fact-check of 29 October marks the registry's epigraph (like a virus: we mutate, we learn from what kills us, and the mutations that win survive) as untraceable; it is the epigraph of the mutation registry and has been since 10 October. Correct the fact-check.
 - The draft paper gives the presentation as 1 December and the engine as 3,000 lines; the date on record here is 3 December and the engine is 4,227 lines. Reconcile before the talk.
-- The current source enables the piece guard by default and ships a different move model; a build from it is not v35. Set the default back to v35's or pin v35's commit for every local run that claims to be v35.
+- The current source enables the piece guard by default and ships a different move model; a build from it is not v35. Set the default back to v35's or pin v35's commit for every local run that claims to be v35. v37 and v38 were built from v35's source line (mist-c f76a09e), which has no piece guard, so this does not affect the deployed bot.
 
 ### What the talk should carry
 
@@ -293,7 +340,7 @@ Chapters 1 to 4 as the system, Chapter 5 as the evidence, and this chapter as th
 
 ## Sources
 
-Repository paths are in `github.com/htansetiawan/iamavirus` (private) unless marked mist-c (`github.com/htansetiawan/mist-c`); the deployed engine is mist-c commit 97b60f1. Numbers are as of 31 October 2026, 10:10 UTC for the arena record and 17:40 UTC for the local results.
+Repository paths are in `github.com/htansetiawan/iamavirus` (private) unless marked mist-c (`github.com/htansetiawan/mist-c`); the engine deployed on 31 October was mist-c commit 97b60f1, and v38 runs f76a09e with the all-child scorer. Numbers are as of 31 October 2026, 10:10 UTC for the arena record and 17:40 UTC for the local results, except where a passage gives a November date.
 
 - Chapter 1: the course starter kit's `referee.py` (rules, observation, protocol, failure codes) and its README (arena box, validation, Elo); mist-c `src/front.c`, `src/main.c`, `src/belief.c`; `tests/test_rules.c` on the referee's 13,467 positions.
 - Chapter 2: `chatroom/001`, `013`, `025`, `026`, `027`, `034`, `035`, `120`, `172`; `MUTATIONS.md` (the registry and its epigraph); `docs/methods.md`, `docs/timeline.md`, `docs/course-map.md`; mist-c `README.md` and `docs/SPEC.md`; `fable-submissions/analysis/perf-20261029/`.
@@ -304,11 +351,13 @@ Repository paths are in `github.com/htansetiawan/iamavirus` (private) unless mar
 - Papers: B. H. Zhang and T. Sandholm, General search techniques without common knowledge for imperfect-information games, and application to superhuman Fog of War chess, [arXiv 2506.01242](https://arxiv.org/abs/2506.01242), ICLR 2026. Brian Liou, Misty (misty-chess 0.1.3, GPL-3.0), used only as a sparring partner.
 - Earlier drafts this document supersedes: `fable-submissions/analysis/slides-factcheck-20261029/as-built.md` (the slide fact-check of 29 October) and `docs/paper.md` (mid-October).
 
+* The 22 November update: astra-submissions/v38-release.md; fable-submissions/analysis/refit-all-20261101/, v38-arena-20261108/ and kluss-m4-20261114/; docs/status-20261120.md and docs/presentation-experiments.md; chatroom/197 (the calibrated root screen); the arena's game listing and leaderboard to 21 November.
+
 ## Appendix A. One arena game, step by step
 
 One arena game from the bot's side, as the course referee runs it.
 
-*[Drawing in the Claude Doc: one arena game, start-up, the move loop, game over, shaded where our clock runs.]*
+&#91;embedded content: one arena game · start-up, the move loop, game over · shaded where our clock runs\]
 
 Shaded boxes are the only times our clock runs. As Black we start at Frozen and wait for White's first move.
 
@@ -321,13 +370,13 @@ Shaded boxes are the only times our clock runs. As Black we start at Frozen and 
 7. **Frozen again** while the opponent thinks. Their time is not ours.
 8. **Game over.** A king is captured, or the side to move has no move and loses, or a draw: threefold repetition, 100 plies without a capture or pawn move, 1,000 plies. Any failure also ends it: an illegal move, a bad line, stray output, a crash, moving before the prompt. No final message; the process is killed. The replay keeps the full board, both views and both clocks.
 
-The clock in short. 180 seconds is our thinking budget for the whole game, spent only on our turns; the opponent has its own. The 2 seconds are a bonus after each move, not a cost. There is no limit per move, but a clock at zero loses the game. Over 40 moves that is about 6.5 seconds a move. v35 spends a twentieth of what is left plus 1.6 seconds, never more than 10, and has never lost on time in 7,907 arena games.
+The clock in short. 180 seconds is our thinking budget for the whole game, spent only on our turns; the opponent has its own. The 2 seconds are a bonus after each move, not a cost. There is no limit per move, but a clock at zero loses the game. Over 40 moves that is about 6.5 seconds a move. v35 spends a twentieth of what is left plus 1.6 seconds, never more than 10, and has never lost on time in 7,907 arena games. v37 and v38 use the same rule and have not either, over 2,322 and 2,588 games.
 
 ## Appendix B. Reading a view
 
 Before every ply the referee sends each side one line of 64 characters, one per square, in the order a1, b1 and so on to h1, then a2 to h2, up to h8: rank 1 comes first, and inside each rank the files run from a to h. Four kinds of character appear. An uppercase letter is a White piece and a lowercase letter a Black piece, with the usual initials K, Q, R, B, N and P. A dash is a square we can see and is empty. A question mark is a square we cannot see. A square is seen when one of our pieces stands on it or could legally move to it this turn, plus, for the side to move, a pawn it could capture en passant. That is why an enemy piece appears only when we could capture it.
 
-*[Drawing in the Claude Doc: the first view White receives, board and the 64-character string side by side.]*
+&#91;embedded content: the first view White receives · board and the 64-character string side by side\]
 
 The three views below are printed the way a board is drawn: rank 8 at the top, rank 1 at the bottom, files a to h from left to right, one space between squares. The bot receives the same characters without spaces, as one line that starts at a1 and ends at h8; that line is shown under each board.
 
@@ -398,7 +447,7 @@ The second worker buys a third more tree. The third and fourth buy nothing measu
 
 Stockfish is our judge of chess positions and nothing more. It never sees the fog.
 
-*[Drawing in the Claude Doc: one leaf evaluation, what mist-c sends Stockfish, what comes back, where it goes.]*
+&#91;embedded content: one leaf evaluation · what mist-c sends Stockfish, what comes back, where it goes\]
 
 **What it is.** Stockfish 19 is the strongest open-source chess engine. mist-c starts two copies as separate processes while answering `ready` and talks to them over pipes in the standard UCI text protocol: one thread each, a 16 MB hash table, and MultiPV set to 256 so one question returns a score for every move.
 
@@ -420,13 +469,13 @@ In the second FEN, 3p4 on the fifth rank is three empty squares, Black's pawn on
 
 **Where it goes.** These leaf values are what the search of chapter 4 averages over the 32 sampled worlds. Stockfish judges each imagined board with no idea which one is real. That is why the oracle experiment settled the question: given the true board, this same judge wins 81 games to 0, so the judge is good enough and the gap is in which boards it is asked to judge.
 
-**Cost and failure.** A call takes 0.3 to 1.8 milliseconds, depending on the number of legal moves. At a 3-second budget the search makes about 3,500 calls and spends most of its time waiting on them, which is the Appendix C story. If a copy stops answering it is relaunched, at most three times a game; after that the search falls back to the engine's own simple evaluator of material and piece placement.
+**Cost and failure.** A call takes 0.3 to 1.8 milliseconds in v35, depending on the number of legal moves. v38's modified Stockfish answers the same call 1.57 to 1.68 times faster by scoring all the moves in one pass. At a 3-second budget the search makes about 3,500 calls and spends most of its time waiting on them, which is the Appendix C story. If a copy stops answering it is relaunched, at most three times a game; after that the search falls back to the engine's own simple evaluator of material and piece placement.
 
 ## Appendix E. The learning loop, step by step
 
 What runs every day, what runs when a candidate is built, and where each file lands.
 
-*[Drawing in the Claude Doc: the learning loop, arena to store to reports and engine data to the next candidate.]*
+&#91;embedded content: the learning loop · arena to store to reports and engine data to the next candidate\]
 
 The daily part is one shell script, `tools/daily_refresh.sh`, started by a systemd timer at 10:00 UTC, with up to ten minutes of jitter and a catch-up run after downtime, and runnable on demand through the `arena-daily` skill, which also writes the day's notes. A lock stops two runs from overlapping. Every step is stamped in `data/logs/daily/<date>.log`, with a "step failed" line for anything that broke, so a silent stop like the one of 9 October cannot recur unnoticed.
 
@@ -444,7 +493,7 @@ Every morning, with the times of the 31 October run:
 10. **Intelligence status.** Astra's reporter records what each artefact is and how fresh it is: the timestamps and hashes of the store and the export, the working model's declared fit (29 October, 6,776 games), the history table inside the reference ZIP (v35, 151,316 records), the frozen suite (1,379 decisions, unchanged), and a rolling index of recent losses, at most three per opponent version, our version and colour, 203 games on 31 October. It flags any mismatch between the active arena version and the reference archive. Written to `data/reports/daily/intel-latest.md`.
 11. **Commit and push** (12:20). The reports are force-added, since the data folder is otherwise ignored, committed as the day's arena report and pushed. Only report paths are committed, so another agent's staged work is left alone.
 
-The taxonomy behind steps 7, 9 and 10 labels every move of both sides from the true boards and both views in the replay: capture and capture by an unseen piece, a victim that walked in, a long strike, a route through the fog, a king threat and an unseen king threat, king capture, sacrifice and king-hunt sacrifice, forcing chain, vision gained or lost, king move, castling, king leaving home, queen raid, queen exposed to an unseen piece, walking into an unseen attacker, and the bare back rank. The point is that the kinds of move we never make, and the kinds that beat us, become named capabilities with a number attached and a rank against the field.
+The taxonomy behind steps 7 and 9 labels every move of both sides from the true boards and both views in the replay: capture and capture by an unseen piece, a victim that walked in, a long strike, a route through the fog, a king threat and an unseen king threat, king capture, sacrifice and king-hunt sacrifice, forcing chain, vision gained or lost, king move, castling, king leaving home, queen raid, queen exposed to an unseen piece, walking into an unseen attacker, and the bare back rank. The point is that the kinds of move we never make, and the kinds that beat us, become named capabilities with a number attached and a rank against the field.
 
 When a candidate is built, by hand, from the same store:
 
@@ -453,15 +502,15 @@ When a candidate is built, by hand, from the same store:
 - **The regression suite.** From our own losses since version 26, the decisions that decided them, with the exact referee input that reproduces each: 1,379 decisions, 892 material, 343 check, 144 fatal, built 11 October. A candidate is replayed over it and scored on the true board: did the move leave the king capturable, what did it cost in centipawns by Stockfish at depth 8, did it repeat the game move. The noise floor is about five flips, so a change must net ten.
 - **Loss replay.** Any recorded move can be re-decided with exactly the input our side saw, which is how the loss anatomy of chapter 5 was done.
 
-What is not automatic, plainly: the model, the history table and the suite are rebuilt only when someone builds a candidate. v35 plays with data as of 13 October and is tested on a suite from 11 October, while the store has grown by about 4,500 games a day since. The status report exists so that fresh data is never mistaken for a refreshed bot: a new fit, a rebuilt table and a promoted ZIP are three separate, recorded events. The rolling loss index is a list of games to look at, never pooled with the frozen suite, which stays fixed so that every candidate is compared on the same decisions. The taxonomy diagnoses and selects cases; it does not move a belief weight or a guard threshold until a change is specified, fitted and validated. Rebuilding the three engine artefacts on a schedule would be a few lines in the script. It has not been done because each rebuild changes how the engine plays, and a change in play goes through the candidate gate, not a timer. Astra's write-up of the loop and its boundary is `docs/arena-intelligence-loop.md`.
+What is not automatic, plainly: the model, the history table and the suite are rebuilt only when someone builds a candidate. v35 plays with data as of 13 October and is tested on a suite from 11 October, while the store has grown by about 4,500 games a day since. The status report exists so that fresh data is never mistaken for a refreshed bot: a new fit, a rebuilt table and a promoted ZIP are three separate, recorded events. The rolling loss index is a list of games to look at, never pooled with the frozen suite, which stays fixed so that every candidate is compared on the same decisions. The taxonomy diagnoses and selects cases; it does not move a belief weight or a guard threshold until a change is specified, fitted and validated. Rebuilding the three engine artefacts on a schedule would be a few lines in the script. It has not been done because each rebuild changes how the engine plays, and a change in play goes through the candidate gate, not a timer. Astra's write-up of the loop and its boundary is docs/arena-intelligence-loop.md.
 
 ## Appendix F. How the belief is built and weighted, step by step
 
-Everything here is read from the v35 source (mist-c 97b60f1: `src/belief.c`, `src/movemodel.c`, `src/movemodel.h`, `src/main.c`) and from the data shipped in the v35 ZIP. Settings are named where they exist, so a reader can re-run any step.
+Everything here is read from the v35 source (mist-c 97b60f1: `src/belief.c`, `src/movemodel.c`, `src/movemodel.h`, `src/main.c`) and from the data shipped in the v35 ZIP. Settings are named where they exist, so a reader can re-run any step. v37 and v38 use the same formula and steps, with weights refitted on 148,357 games and a table of 359,889 histories. The weights printed below are v35's; the paragraph on the refits says which moved most.
 
 **What a board is.** One board is a complete chess position: our pieces where they really are, and one hypothesis for where every opponent piece is. Each board carries two more things: the opponent's history on that board (everything the opponent would have seen and played if that board were true) and a weight.
 
-*Drawing: from one known board to 32 weighted guesses each turn. Six boxes: the start, the opponent's hidden move, the check against our view, weigh and merge, the lottery of 32, grade and choose. Under them: our own move is played on every board, and the next turn starts again at the second box.*
+&#91;embedded content: the belief each turn · 6 steps, worked on 1.e4\]
 
 **Step 1. The start.** The list holds one board, the starting position, with weight 1.
 
@@ -484,7 +533,7 @@ probability of the move = e^score divided by the sum of e^score over every legal
 The probabilities on one board add up to 1, and each extra point of score multiplies a move's odds by e, about 2.72. The 28 facts and their weights in v35:
 
 | # | Fact about the move | Weight |
-|---:|---|---:|
+| --: | --- | --: |
 | 1 | It captures | +1.088 |
 | 2 | Value of the captured piece, pawn 1 to queen 9, divided by 9 | +4.217 |
 | 3 | It captures the king | 0, fixed |
@@ -539,7 +588,7 @@ We are White and play 1.e4. Black replies, and we receive a view. Black has 20 l
 With no model each would have 7.7%. The formula alone gives the shares below (for these quiet moves every fact is zero except the piece type, the forward distance, the centre, development and the two-square push):
 
 | Reply | Score | Share of the 13 | After the power of 2 |
-|---|---:|---:|---:|
+| --- | --: | --: | --: |
 | Nf6, Nc6 | +1.31 | 16.3% each | 27.4% each |
 | Nh6 | +0.72 | 9.0% | 8.4% |
 | e6, d6, c6, f6 | +0.47 | 7.0% each | 5.1% each |
